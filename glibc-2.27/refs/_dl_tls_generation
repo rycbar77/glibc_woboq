@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='426' type='size_t'/>
+<def f='codebrowser/csu/libc-tls.c' l='64' type='size_t'/>
+<doc f='codebrowser/csu/libc-tls.c' l='63'>/* Generation counter for the dtv.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='83' macro='1' u='r' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='758' macro='1' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='474' macro='1' u='w' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-tls.c' l='481' macro='1' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='481' macro='1' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='851' macro='1' u='r' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='929' macro='1' u='w' c='_dl_add_to_slotinfo'/>
+<use f='codebrowser/elf/dl-tls.c' l='943' macro='1' u='r' c='_dl_add_to_slotinfo'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/string/string.h' l='386' type='void * mempcpy(void *restrict __dest, const void *restrict __src, size_t __n)'/>
+<dec f='codebrowser/include/string.h' l='148' type='void * mempcpy(void * , const void * , unsigned long )'/>
+<use f='codebrowser/include/string.h' l='148' c='mempcpy'/>
+<doc f='codebrowser/include/string.h' l='146'>/* Redirect calls to __builtin_mempcpy and __builtin_stpcpy to call
+   __mempcpy and __stpcpy if not inlined.  */</doc>
+<def f='codebrowser/string/bits/string3.h' l='63' ll='68' macro='1' type='void * mempcpy(void *restrict __dest, const void *restrict __src, size_t __len)'/>

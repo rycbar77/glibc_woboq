@@ -1,0 +1,13 @@
+<def f='codebrowser/include/shm-directory.h' l='28' ll='33'/>
+<use f='codebrowser/include/shm-directory.h' l='38' c='__shm_get_name'/>
+<use f='codebrowser/posix/shm-directory.c' l='28' c='__shm_get_name'/>
+<size>269</size>
+<mbr r='shmdir_name::name' o='0' t='char[269]'/>
+<use f='codebrowser/rt/shm_open.c' l='31' c='__shm_open'/>
+<size>269</size>
+<use f='codebrowser/rt/shm_unlink.c' l='29' c='__shm_unlink'/>
+<size>269</size>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='49' c='__sem_open'/>
+<size>269</size>
+<use f='codebrowser/sysdeps/pthread/sem_unlink.c' l='34' c='__sem_unlink'/>
+<size>269</size>

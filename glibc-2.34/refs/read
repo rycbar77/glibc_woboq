@@ -1,0 +1,28 @@
+<dec f='codebrowser/posix/unistd.h' l='371' type='ssize_t read(int __fd, void * __buf, size_t __nbytes)'/>
+<dec f='codebrowser/include/unistd.h' l='65' type='ssize_t read(int , void * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='65' c='read'/>
+<doc f='codebrowser/posix/unistd.h' l='366'>/* Read NBYTES into BUF from FD.  Return the
+   number read, -1 for errors or 0 for EOF.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/debug/pcprofiledump.c' l='114' u='c' c='main'/>
+<use f='codebrowser/debug/pcprofiledump.c' l='137' u='c' c='main'/>
+<use f='codebrowser/debug/pcprofiledump.c' l='164' u='c' c='main'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='497' u='c' c='process_fd'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='533' u='c' c='process_fd'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='553' u='c' c='process_fd'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='589' u='c' c='process_fd'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='652' u='c' c='open_archive'/>
+<use f='codebrowser/locale/programs/locfile.c' l='478' u='c' c='full_read'/>
+<use f='codebrowser/resolv/res_send.c' l='657' u='c' c='send_vc'/>
+<use f='codebrowser/resolv/res_send.c' l='742' u='c' c='send_vc'/>
+<use f='codebrowser/resolv/res_send.c' l='759' u='c' c='send_vc'/>
+<use f='codebrowser/rt/aio_misc.c' l='555' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/support/resolv_test.c' l='808' u='c' c='read_fully'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='38' u='c' c='transfer'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='137' u='c' c='copy_and_spawn_sgid'/>
+<use f='codebrowser/support/support_copy_file_range.c' l='81' u='c' c='support_copy_file_range'/>
+<use f='codebrowser/support/test-container.c' l='1158' u='c' c='main'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/read.c' l='33' macro='1' type='ssize_t read(int , void * , size_t )'/>
+<use f='codebrowser/debug/segfault.c' l='127' u='c' c='catch_segfault'/>

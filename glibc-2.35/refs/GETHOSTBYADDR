@@ -1,0 +1,24 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='59' type='6'/>
+<use f='codebrowser/nscd/cache.c' l='56'/>
+<use f='codebrowser/nscd/cache.c' l='144' u='r' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='145' u='r' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='360' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='362' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='522' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='524' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='219' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/connections.c' l='87' u='r'/>
+<use f='codebrowser/nscd/connections.c' l='225'/>
+<use f='codebrowser/nscd/connections.c' l='1096' u='r' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1101' u='r' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1193' c='handle_request'/>
+<use f='codebrowser/nscd/hstcache.c' l='388' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='388' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='419' u='r' c='lookup'/>
+<use f='codebrowser/nscd/hstcache.c' l='447' u='r' c='addhstbyX'/>
+<use f='codebrowser/nscd/hstcache.c' l='520' u='r' c='readdhstbyaddr'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='73' u='r' c='__nscd_gethostbyaddr_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='203' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='278' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='315' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/selinux.c' l='54' u='r'/>

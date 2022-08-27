@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='543' type='void *'/>
+<offset>64</offset>
+<use f='codebrowser/sysdeps/nptl/libc-lockP.h' l='291' u='r' c='__libc_cleanup_routine'/>
+<use f='codebrowser/dirent/scandir-tail.c' l='46' macro='1' u='w' c='__scandir_tail'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='42' macro='1' u='w' c='__dl_iterate_phdr'/>
+<use f='codebrowser/misc/getpass.c' l='74' macro='1' u='w' c='getpass'/>
+<use f='codebrowser/nptl/cleanup_routine.c' l='26' u='r' c='__pthread_cleanup_routine'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='26' u='r' c='__libc_cleanup_routine'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='178' macro='1' u='w' c='aio_suspend'/>
+<use f='codebrowser/misc/syslog.c' l='244' macro='1' u='w' c='__vsyslog_chk'/>
+<use f='codebrowser/misc/syslog.c' l='257' macro='1' u='w' c='__vsyslog_chk'/>
+<use f='codebrowser/misc/syslog.c' l='384' macro='1' u='w' c='openlog'/>
+<use f='codebrowser/misc/syslog.c' l='415' macro='1' u='w' c='closelog'/>

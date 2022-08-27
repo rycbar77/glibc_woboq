@@ -1,0 +1,15 @@
+<def f='codebrowser/elf/dl-hwcaps.h' l='68' ll='75'/>
+<use f='codebrowser/elf/dl-hwcaps.h' l='83' c='_dl_hwcaps_split_masked_init'/>
+<use f='codebrowser/elf/dl-hwcaps.h' l='93' c='_dl_hwcaps_split_masked'/>
+<size>32</size>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='66'>/* Similar to dl_hwcaps_split, but with bit-based and name-based
+   masking.  */</doc>
+<mbr r='dl_hwcaps_split_masked::split' o='0' t='struct dl_hwcaps_split'/>
+<mbr r='dl_hwcaps_split_masked::mask' o='128' t='const char *'/>
+<mbr r='dl_hwcaps_split_masked::bitmask' o='192' t='uint32_t'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='50' c='update_hwcaps_counts'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='75' c='copy_hwcaps'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='123' c='compute_priorities'/>
+<size>32</size>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='50' c='_dl_hwcaps_split_masked'/>
+<size>32</size>

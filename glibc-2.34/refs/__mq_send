@@ -1,0 +1,3 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/mq_send.c' l='25' ll='30' type='int __mq_send(mqd_t mqdes, const char * msg_ptr, size_t msg_len, unsigned int msg_prio)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_send.c' l='31' c='mq_send'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/mq_send.c' l='24'>/* Add message pointed by MSG_PTR to message queue MQDES.  */</doc>

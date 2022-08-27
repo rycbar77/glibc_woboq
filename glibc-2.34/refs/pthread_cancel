@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='528' type='int pthread_cancel(pthread_t __th)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='527'>/* Cancel THREAD immediately or at the next possibility.  */</doc>
+<def f='codebrowser/nptl/pthread_cancel.c' l='119' macro='1' type='int pthread_cancel(pthread_t )'/>
+<use f='codebrowser/support/xpthread_cancel.c' l='24' u='c' c='xpthread_cancel'/>

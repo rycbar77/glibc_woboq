@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/nptl/internaltypes.h' l='84' type='int'/>
+<offset>32</offset>
+<use f='codebrowser/nptl/pthread_rwlock_init.c' l='27' u='w'/>
+<use f='codebrowser/nptl/pthread_rwlock_init.c' l='54' u='r' c='__pthread_rwlock_init'/>
+<use f='codebrowser/nptl/pthread_rwlockattr_getpshared.c' l='25' u='r' c='pthread_rwlockattr_getpshared'/>
+<use f='codebrowser/nptl/pthread_rwlockattr_init.c' l='34' u='w' c='pthread_rwlockattr_init'/>
+<use f='codebrowser/nptl/pthread_rwlockattr_setpshared.c' l='35' u='w' c='pthread_rwlockattr_setpshared'/>

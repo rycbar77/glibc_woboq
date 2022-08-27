@@ -1,0 +1,21 @@
+<dec f='codebrowser/nscd/nscd.h' l='213' type='const char *'/>
+<doc f='codebrowser/nscd/nscd.h' l='212'>/* User name to run server processes as.  */</doc>
+<def f='codebrowser/nscd/connections.c' l='62' type='const char *'/>
+<use f='codebrowser/nscd/connections.c' l='486' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='843' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='1367' u='r' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1400' u='r' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1446' u='r' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='2458' u='r' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2462' u='r' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2464' u='r' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2477' u='r' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2480' u='r' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2487' u='r' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2490' u='r' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2508' u='r' c='finish_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2519' u='r' c='finish_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2529' u='r' c='finish_drop_privileges'/>
+<doc f='codebrowser/nscd/connections.c' l='61'>/* Support to run nscd as an unprivileged user */</doc>
+<use f='codebrowser/nscd/nscd_conf.c' l='193' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='194' u='w' c='nscd_parse_file'/>

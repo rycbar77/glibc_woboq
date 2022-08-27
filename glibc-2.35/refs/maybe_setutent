@@ -1,0 +1,6 @@
+<def f='codebrowser/login/utmp_file.c' l='157' ll='161' type='_Bool maybe_setutent()'/>
+<use f='codebrowser/login/utmp_file.c' l='191' u='c' c='__libc_getutent_r'/>
+<use f='codebrowser/login/utmp_file.c' l='270' u='c' c='__libc_getutid_r'/>
+<use f='codebrowser/login/utmp_file.c' l='297' u='c' c='__libc_getutline_r'/>
+<use f='codebrowser/login/utmp_file.c' l='346' u='c' c='__libc_pututline'/>
+<doc f='codebrowser/login/utmp_file.c' l='156'>/* Preform initialization if necessary.  */</doc>

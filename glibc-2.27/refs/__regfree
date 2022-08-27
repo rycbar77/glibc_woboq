@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/regex.h' l='46' type='void __regfree(regex_t * __preg)'/>
+<dec f='codebrowser/include/regex.h' l='47' type='void __regfree(regex_t * )'/>
+<use f='codebrowser/include/regex.h' l='47' c='__regfree'/>
+<def f='codebrowser/posix/regcomp.c' l='633' macro='1' type='void __regfree(regex_t * preg)'/>
+<use f='codebrowser/posix/regcomp.c' l='649' c='regfree'/>
+<use f='codebrowser/posix/regcomp.c' l='683' u='c' c='re_comp'/>
+<use f='codebrowser/posix/regcomp.c' l='714' u='c' c='free_mem'/>
+<doc f='codebrowser/posix/regcomp.c' l='630'>/* Free dynamically allocated space used by PREG.  */</doc>
+<use f='codebrowser/stdlib/rpmatch.c' l='39' u='c' c='try'/>

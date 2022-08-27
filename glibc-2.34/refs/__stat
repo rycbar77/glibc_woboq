@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/sys/stat.h' l='32' type='int __stat(const char * __file, struct stat * __buf)'/>
+<doc f='codebrowser/include/sys/stat.h' l='31'>/* Now define the internal interfaces. */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/stat64.c' l='50' macro='1' type='int __stat(const char * , struct stat64 * )'/>
+<use f='codebrowser/io/fts.c' l='85' u='c' c='fts_stat'/>
+<use f='codebrowser/io/ftw.c' l='141' u='c' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='141' u='c' c='ftw_startup'/>

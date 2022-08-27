@@ -1,0 +1,11 @@
+<dec f='codebrowser/sunrpc/rpc/xdr.h' l='311' type='bool_t xdr_bytes(XDR * __xdrs, char ** __cpp, u_int * __sizep, u_int __maxsize)'/>
+<dec f='codebrowser/include/rpc/xdr.h' l='9' type='bool_t xdr_bytes(XDR * , char ** , u_int * , u_int )'/>
+<use f='codebrowser/include/rpc/xdr.h' l='9' c='xdr_bytes'/>
+<use f='codebrowser/nis/nis_xdr.c' l='33' u='c' c='xdr_nis_attr'/>
+<use f='codebrowser/nis/nis_xdr.c' l='133' u='c' c='xdr_entry_col'/>
+<use f='codebrowser/nis/nis_xdr.c' l='230' u='c' c='xdr_objdata'/>
+<use f='codebrowser/nis/nis_xdr.c' l='432' u='c' c='_xdr_fd_result'/>
+<use f='codebrowser/nis/nis_xdr.c' l='435' u='c' c='_xdr_fd_result'/>
+<use f='codebrowser/nis/yp_xdr.c' l='82' u='c' c='xdr_keydat'/>
+<use f='codebrowser/nis/yp_xdr.c' l='90' u='c' c='xdr_valdat'/>
+<use f='codebrowser/nis/ypupdate_xdr.c' l='38' u='c' c='__GI_xdr_yp_buf'/>

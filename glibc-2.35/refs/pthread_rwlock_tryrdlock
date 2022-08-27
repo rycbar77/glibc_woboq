@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='980' type='int pthread_rwlock_tryrdlock(pthread_rwlock_t * __rwlock)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='979'>/* Try to acquire read lock for RWLOCK.  */</doc>
+<def f='codebrowser/nptl/pthread_rwlock_tryrdlock.c' l='118' macro='1' type='int pthread_rwlock_tryrdlock(pthread_rwlock_t * )'/>
+<use f='codebrowser/nscd/connections.c' l='1129' u='c' c='handle_request'/>

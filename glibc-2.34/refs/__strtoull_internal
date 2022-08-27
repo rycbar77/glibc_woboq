@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/stdlib.h' l='171' type='unsigned long long __strtoull_internal(const char *restrict __nptr, char **restrict __endptr, int __base, int __group)'/>
+<dec f='codebrowser/include/stdlib.h' l='182' type='unsigned long long __strtoull_internal(const char *restrict , char **restrict , int , int )'/>
+<use f='codebrowser/include/stdlib.h' l='182' c='__strtoull_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1856' u='c' c='__vfscanf_internal'/>
+<def f='codebrowser/sysdeps/wordsize-64/strtoul.c' l='11' macro='1' type='unsigned long __strtoull_internal(const char *restrict , char **restrict , int , int )'/>

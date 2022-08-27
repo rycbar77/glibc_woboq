@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1291' type='void _dl_non_dynamic_init()'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1290'>/* Initialization which is normally done by the dynamic linker.  */</doc>
+<use f='codebrowser/csu/init-first.c' l='68' u='c' c='__libc_init_first'/>
+<def f='codebrowser/elf/dl-support.c' l='326' ll='415' type='void _dl_non_dynamic_init()'/>

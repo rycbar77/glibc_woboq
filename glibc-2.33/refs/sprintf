@@ -1,0 +1,40 @@
+<dec f='codebrowser/libio/stdio.h' l='334' type='int sprintf(char *restrict __s, const char *restrict __format)'/>
+<dec f='codebrowser/include/stdio.h' l='214' type='int sprintf(char * , const char * )'/>
+<use f='codebrowser/include/stdio.h' l='214' c='sprintf'/>
+<doc f='codebrowser/libio/stdio.h' l='333'>/* Write formatted output to S.  */</doc>
+<use f='codebrowser/debug/backtracesyms.c' l='87' u='c' c='__backtrace_symbols'/>
+<use f='codebrowser/debug/backtracesyms.c' l='106' u='c' c='__backtrace_symbols'/>
+<use f='codebrowser/debug/backtracesyms.c' l='113' u='c' c='__backtrace_symbols'/>
+<use f='codebrowser/elf/cache.c' l='719' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='1127' u='c' c='save_aux_cache'/>
+<use f='codebrowser/inet/ether_ntoa_r.c' l='27' u='c' c='ether_ntoa_r'/>
+<use f='codebrowser/inet/rexec.c' l='139' u='c' c='rexec_af'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1364' u='c' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2935' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3294' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1394' u='c' c='charclass_symbolic_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2873' u='c' c='set_one_default'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3234' u='c' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3257' u='c' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/locfile.c' l='754' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='790' u='c' c='write_locale_data'/>
+<use f='codebrowser/misc/efgcvt-template.c' l='27' u='c' c='__gcvt'/>
+<use f='codebrowser/nptl/pthread_getname.c' l='46' u='c' c='pthread_getname_np'/>
+<use f='codebrowser/nptl/pthread_setname.c' l='47' u='c' c='pthread_setname_np'/>
+<use f='codebrowser/pwd/getpw.c' l='53' u='c' c='__getpw'/>
+<use f='codebrowser/resolv/inet_ntop.c' l='33' u='c' c='inet_ntop4'/>
+<use f='codebrowser/resolv/inet_ntop.c' l='33' u='c' c='inet_ntop6'/>
+<def f='codebrowser/stdio-common/sprintf.c' l='36' macro='1' type='int sprintf(char * , const char * )'/>
+<use f='codebrowser/support/support_test_main.c' l='210' u='c' c='run_test_function'/>
+<use f='codebrowser/support/test-container.c' l='1160' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1176' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1197' u='c' c='main'/>
+<use f='codebrowser/sysdeps/posix/tempname.c' l='164' u='c' c='__path_search'/>
+<use f='codebrowser/timezone/zic.c' l='2333' u='c' c='doabbr'/>
+<use f='codebrowser/timezone/zic.c' l='2385' u='c' c='stringoffset'/>
+<use f='codebrowser/timezone/zic.c' l='2387' u='c' c='stringoffset'/>
+<use f='codebrowser/timezone/zic.c' l='2389' u='c' c='stringoffset'/>
+<use f='codebrowser/timezone/zic.c' l='2410' u='c' c='stringrule'/>
+<use f='codebrowser/timezone/zic.c' l='2412' u='c' c='stringrule'/>
+<use f='codebrowser/timezone/zic.c' l='2439' u='c' c='stringrule'/>
+<use f='codebrowser/timezone/zic.c' l='3083' u='c' c='yearistype'/>

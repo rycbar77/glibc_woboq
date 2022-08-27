@@ -1,0 +1,8 @@
+<def f='codebrowser/posix/regcomp.c' l='2940' ll='3021' type='reg_errcode_t build_range_exp(bitset_word_t * sbcset, re_charset_t * mbcset, int * range_alloc, bracket_elem_t * start_elem, bracket_elem_t * end_elem, re_dfa_t * dfa, reg_syntax_t syntax, uint32_t nrules, const unsigned char * collseqmb, const char * collseqwc, int32_t table_size, const int32_t * symb_table, const unsigned char * extra)'/>
+<use f='codebrowser/posix/regcomp.c' l='3247' u='c' c='parse_bracket_exp'/>
+<doc f='codebrowser/posix/regcomp.c' l='2933'>/* Local function for parse_bracket_exp used in _LIBC environment.
+   Build the range expression which starts from START_ELEM, and ends
+   at END_ELEM.  The result are written to MBCSET and SBCSET.
+   RANGE_ALLOC is the allocated size of mbcset-&gt;range_starts, and
+   mbcset-&gt;range_ends, is a pointer argument since we may
+   update it.  */</doc>

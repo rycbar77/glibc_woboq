@@ -1,0 +1,5 @@
+<dec f='codebrowser/resolv/netdb.h' l='669' type='const char * gai_strerror(int __ecode)'/>
+<doc f='codebrowser/resolv/netdb.h' l='668'>/* Convert error return from getaddrinfo() to a string.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='144' u='c' c='rcmd_af'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='221' u='c' c='support_format_addrinfo'/>
+<def f='codebrowser/sysdeps/posix/gai_strerror.c' l='56' ll='68' type='const char * gai_strerror(int code)'/>

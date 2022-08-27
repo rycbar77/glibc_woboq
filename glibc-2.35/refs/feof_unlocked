@@ -1,0 +1,24 @@
+<dec f='codebrowser/libio/stdio.h' l='795' type='int feof_unlocked(FILE * __stream)'/>
+<def f='codebrowser/libio/bits/stdio.h' l='127' ll='131' macro='1' type='int feof_unlocked(FILE * __stream)'/>
+<dec f='codebrowser/include/stdio.h' l='245' type='int feof_unlocked(FILE * )'/>
+<use f='codebrowser/include/stdio.h' l='245' c='feof_unlocked'/>
+<use f='codebrowser/include/stdio.h' l='246' c='__feof_unlocked'/>
+<use f='codebrowser/elf/ldconfig.c' l='1289' u='c' c='parse_conf'/>
+<use f='codebrowser/elf/sln.c' l='104' u='c' c='makesymlinks'/>
+<use f='codebrowser/inet/ruserpass.c' l='220' u='c' c='token'/>
+<def f='codebrowser/libio/feof_u.c' l='38' macro='1' type='int feof_unlocked(FILE * )'/>
+<use f='codebrowser/locale/programs/locale.c' l='539' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1215' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='120' u='c' c='__pthread_getattr_np'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1793' u='c' c='gaiconf_init'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='274' u='c' c='nscd_parse_file'/>
+<use f='codebrowser/nss/makedb.c' l='432' u='c' c='process_input'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='260' u='c' c='getgrent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='393' u='c' c='internal_getgrnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='524' u='c' c='internal_getgrgid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='387' u='c' c='internal_getgrent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='500' u='c' c='getpwent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='699' u='c' c='internal_getpwnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='906' u='c' c='internal_getpwuid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='455' u='c' c='getspent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='655' u='c' c='internal_getspnam_r'/>

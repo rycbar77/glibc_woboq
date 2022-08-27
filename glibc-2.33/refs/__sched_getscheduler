@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/sched.h' l='14' type='int __sched_getscheduler(__pid_t __pid)'/>
+<dec f='codebrowser/include/sched.h' l='15' type='int __sched_getscheduler(__pid_t )'/>
+<use f='codebrowser/include/sched.h' l='15' c='__sched_getscheduler'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='56' u='c' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/tpp.c' l='134' u='c' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='182' u='c' c='__pthread_current_priority'/>

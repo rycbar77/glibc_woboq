@@ -1,0 +1,14 @@
+<dec f='codebrowser/include/unistd.h' l='33' type='__off_t __lseek(int __fd, __off_t __offset, int __whence)'/>
+<dec f='codebrowser/include/unistd.h' l='34' type='__off_t __lseek(int , __off_t , int )'/>
+<use f='codebrowser/include/unistd.h' l='34' c='__lseek'/>
+<dec f='codebrowser/sysdeps/generic/dl-unistd.h' l='27' type='__off_t __lseek(int , __off_t , int )'/>
+<use f='codebrowser/sysdeps/generic/dl-unistd.h' l='27' c='__lseek'/>
+<use f='codebrowser/elf/dl-load.c' l='965' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1606' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1644' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-profile.c' l='360' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/sunrpc/xdr_rec.c' l='307' u='c' c='xdrrec_getpos'/>
+<use f='codebrowser/sysdeps/posix/rewinddir.c' l='31' u='c' c='__rewinddir'/>
+<use f='codebrowser/sysdeps/posix/seekdir.c' l='30' u='c' c='seekdir'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/lseek64.c' l='41' macro='1' type='__off_t __lseek(int , __off64_t , int )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getdirentries.c' l='32' u='c' c='getdirentries'/>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/ctype/ctype.h' l='125' type='int toupper(int __c)'/>
+<def f='codebrowser/ctype/ctype.h' l='212' ll='216' macro='1' type='int toupper(int __c)'/>
+<dec f='codebrowser/include/ctype.h' l='15' type='int toupper(int )'/>
+<use f='codebrowser/include/ctype.h' l='15' c='toupper'/>
+<doc f='codebrowser/ctype/ctype.h' l='124'>/* Return the uppercase version of C.  */</doc>
+<def f='codebrowser/ctype/ctype.c' l='50' ll='54' type='int toupper(int c)'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='456' macro='1' u='c' c='add_alias'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='465' macro='1' u='c' c='add_alias'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='589' macro='1' u='c' c='add_module'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='599' macro='1' u='c' c='add_module'/>
+<use f='codebrowser/posix/regex_internal.c' l='309' macro='1' u='c' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='548' macro='1' u='c' c='build_upper_buffer'/>
+<use f='codebrowser/resolv/nsap_addr.c' l='44' macro='1' u='c' c='inet_nsap_addr'/>
+<use f='codebrowser/resolv/nsap_addr.c' l='49' macro='1' u='c' c='inet_nsap_addr'/>
+<use f='codebrowser/sunrpc/xcrypt.c' l='179' macro='1' u='c' c='hex2bin'/>
+<use f='codebrowser/sunrpc/xcrypt.c' l='179' macro='1' u='c' c='hex2bin'/>

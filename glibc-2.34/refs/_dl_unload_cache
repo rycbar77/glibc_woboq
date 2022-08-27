@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1152' type='void _dl_unload_cache()'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1148'>/* If the system does not support MAP_COPY we cannot leave the file open
+   all the time since this would create problems when the file is replaced.
+   Therefore we provide this function to close the file and open it again
+   once needed.  */</doc>
+<def f='codebrowser/elf/dl-cache.c' l='525' ll='537' type='void _dl_unload_cache()'/>
+<doc f='codebrowser/elf/dl-cache.c' l='521'>/* If the system does not support MAP_COPY we cannot leave the file open
+   all the time since this would create problems when the file is replaced.
+   Therefore we provide this function to close the file and open it again
+   once needed.  */</doc>
+<use f='codebrowser/elf/dl-open.c' l='867' u='c' c='_dl_open'/>
+<use f='codebrowser/elf/rtld.c' l='2506' u='c' c='dl_main'/>

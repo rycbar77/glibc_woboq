@@ -1,0 +1,46 @@
+<dec f='codebrowser/include/programs/xmalloc.h' l='28' type='void * xcalloc(size_t n, size_t s)'/>
+<use f='codebrowser/catgets/gencat.c' l='293' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='1089' u='c' c='find_set'/>
+<use f='codebrowser/elf/cache.c' l='931' u='c' c='init_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1047' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/stringtable.c' l='37' u='c' c='stringtable_init'/>
+<use f='codebrowser/elf/stringtable.c' l='62' u='c' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='160' u='c' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='201' u='c' c='stringtable_finalize'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='52' u='c' c='allocate_table'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='262' u='c' c='add_bytes'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='829' u='c' c='generate_name_info'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1042' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1048' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1053' u='c' c='write_output'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='88' u='c' c='address_startup'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1507' u='c' c='collate_startup'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3106' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='302' u='c' c='ctype_startup'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='333' u='c' c='ctype_startup'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1180' u='c' c='ctype_map_new'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3623' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3624' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3646' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='81' u='c' c='identification_startup'/>
+<use f='codebrowser/locale/programs/ld-measurement.c' l='47' u='c' c='measurement_startup'/>
+<use f='codebrowser/locale/programs/ld-messages.c' l='52' u='c' c='messages_startup'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='51' u='c' c='name_startup'/>
+<use f='codebrowser/locale/programs/ld-numeric.c' l='53' u='c' c='numeric_startup'/>
+<use f='codebrowser/locale/programs/ld-paper.c' l='47' u='c' c='paper_startup'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='49' u='c' c='telephone_startup'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='122' u='c' c='time_startup'/>
+<use f='codebrowser/locale/programs/localedef.c' l='627' u='c' c='add_to_readlist'/>
+<use f='codebrowser/locale/programs/simple-hash.c' l='77' u='c' c='init_hash'/>
+<use f='codebrowser/locale/programs/simple-hash.c' l='150' u='c' c='insert_entry_2'/>
+<dec f='codebrowser/locale/programs/xmalloc.c' l='30' type='void * xcalloc(size_t n, size_t s)'/>
+<def f='codebrowser/locale/programs/xmalloc.c' l='82' ll='91' macro='1' type='void * xcalloc(size_t n, size_t s)'/>
+<dec f='codebrowser/nscd/cache.c' l='38' type='void * xcalloc(size_t n, size_t s)'/>
+<use f='codebrowser/nscd/cache.c' l='331' u='c' c='prune_cache'/>
+<doc f='codebrowser/nscd/cache.c' l='37'>/* Wrapper functions with error checking for standard functions.  */</doc>
+<use f='codebrowser/nscd/connections.c' l='2433' u='c' c='start_threads'/>
+<use f='codebrowser/nscd/connections.c' l='2435' u='c' c='start_threads'/>
+<use f='codebrowser/nscd/mem.c' l='138' u='c' c='gc'/>
+<dec f='codebrowser/support/support.h' l='100' type='void * xcalloc(size_t n, size_t s)'/>
+<use f='codebrowser/support/temp_file.c' l='58' u='c' c='add_temp_file_internal'/>
+<def f='codebrowser/support/xcalloc.c' l='25' ll='34' type='void * xcalloc(size_t n, size_t s)'/>

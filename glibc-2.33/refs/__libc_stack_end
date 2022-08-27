@@ -1,0 +1,20 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='701' type='void *'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='696'>/* Variable pointing to the end of the stack (or close to it).  This value
+   must be constant over the runtime of the application.  Some programs
+   might use the variable which results in copy relocations on some
+   platforms.  But this does not matter, ld.so can always use the local
+   copy.  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='2319' u='r' c='_dl_map_object'/>
+<def f='codebrowser/elf/dl-support.c' l='74' type='void *'/>
+<doc f='codebrowser/elf/dl-support.c' l='73'>/* This is the address of the last stack address ever used.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='483' u='w' c='_dl_start_final'/>
+<use f='codebrowser/nptl/nptl-init.c' l='252' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='252' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='252' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='252' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='252' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='252' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='103' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='130' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='131' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/csu/libc-start.c' l='155' u='w' c='__libc_start_main'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/posix/unistd.h' l='794' type='__pid_t _Fork()'/>
+<dec f='codebrowser/include/unistd.h' l='143' type='__pid_t _Fork()'/>
+<dec f='codebrowser/include/unistd.h' l='144' type='__pid_t _Fork()'/>
+<use f='codebrowser/include/unistd.h' l='144' c='_Fork'/>
+<doc f='codebrowser/posix/unistd.h' l='791'>/* This is similar to fork, however it does not run the atfork handlers
+   neither reinitialize any internal locks in multithread case.
+   Different than fork, _Fork is async-signal-safe.  */</doc>
+<use f='codebrowser/posix/fork.c' l='73' u='c' c='__libc_fork'/>
+<def f='codebrowser/sysdeps/nptl/_Fork.c' l='25' ll='51' type='__pid_t _Fork()'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='105' type='void __aio_remove_request(struct requestlist * last, struct requestlist * req, int all)'/>
+<use f='codebrowser/rt/aio_cancel.c' l='98' u='c' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='125' u='c' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='132' u='c' c='__aio_cancel'/>
+<doc f='codebrowser/sysdeps/generic/aio_misc.h' l='104'>/* Remove request from the list.  */</doc>
+<def f='codebrowser/rt/aio_misc.c' l='218' ll='275' type='void __aio_remove_request(struct requestlist * last, struct requestlist * req, int all)'/>
+<use f='codebrowser/rt/aio_misc.c' l='453' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='615' u='c' c='handle_fildes_io'/>

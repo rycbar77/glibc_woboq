@@ -1,0 +1,8 @@
+<dec f='codebrowser/sunrpc/rpc/svc.h' l='106' type='void (*)(SVCXPRT *)'/>
+<offset>320</offset>
+<doc f='codebrowser/sunrpc/rpc/svc.h' l='105'>/* free mem allocated for args */</doc>
+<use f='codebrowser/nis/nis_callback.c' l='330' macro='1' u='r' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='340' macro='1' u='r' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='360' macro='1' u='r' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='373' macro='1' u='r' c='__nis_destroy_callback'/>
+<use f='codebrowser/sunrpc/svc.c' l='539' macro='1' u='r' c='__GI_svc_getreq_common'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sched_setaffinity.c' l='27' type='int __sched_setaffinity_new(pid_t , size_t , const cpu_set_t * )'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sched_setaffinity.c' l='28' type='int __sched_setaffinity_new(pid_t , size_t , const cpu_set_t * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sched_setaffinity.c' l='28' c='__sched_setaffinity_new'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/sched_setaffinity.c' l='30' ll='36' type='int __sched_setaffinity_new(pid_t pid, size_t cpusetsize, const cpu_set_t * cpuset)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sched_setaffinity.c' l='38' c='sched_setaffinity'/>

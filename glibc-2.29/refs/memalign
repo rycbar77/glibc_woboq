@@ -1,0 +1,5 @@
+<dec f='codebrowser/malloc/malloc.h' l='64' type='void * memalign(size_t __alignment, size_t __size)'/>
+<def f='codebrowser/malloc/malloc.c' l='5583' macro='1' type='void * memalign(size_t , size_t )'/>
+<doc f='codebrowser/malloc/malloc.h' l='63'>/* Allocate SIZE bytes allocated to ALIGNMENT bytes.  */</doc>
+<use f='codebrowser/malloc/mcheck.c' l='256' u='c' c='memalignhook'/>
+<use f='codebrowser/malloc/mtrace.c' l='238' u='c' c='tr_memalignhook'/>

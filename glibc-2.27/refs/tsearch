@@ -1,0 +1,4 @@
+<dec f='codebrowser/misc/search.h' l='129' type='void * tsearch(const void * __key, void ** __rootp, __compar_fn_t __compar)'/>
+<doc f='codebrowser/misc/search.h' l='127'>/* Search for an entry matching the given KEY in the tree pointed to
+   by *ROOTP and insert a new element if not found.  */</doc>
+<def f='codebrowser/misc/tsearch.c' l='365' macro='1' type='void * tsearch(const void * , void ** , __compar_fn_t )'/>

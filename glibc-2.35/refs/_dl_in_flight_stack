@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='507' type='uintptr_t'/>
+<def f='codebrowser/elf/dl-support.c' l='194' type='uintptr_t'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='28' macro='1' u='w' c='__nptl_stack_list_del'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='36' macro='1' u='w' c='__nptl_stack_list_del'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='43' macro='1' u='w' c='__nptl_stack_list_add'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='51' macro='1' u='w' c='__nptl_stack_list_add'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='64' macro='1' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='66' macro='1' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='67' macro='1' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='96' macro='1' u='w' c='reclaim_stacks'/>

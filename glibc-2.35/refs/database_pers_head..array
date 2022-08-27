@@ -1,0 +1,25 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='345' type='ref_t[0]'/>
+<offset>960</offset>
+<use f='codebrowser/nscd/cache.c' l='81' u='r' c='cache_search'/>
+<use f='codebrowser/nscd/cache.c' l='181' u='a' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='181' u='a' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='181' u='a' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='181' u='a' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='181' u='a' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='182' u='a' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='182' u='a' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='182' u='a' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='206' u='a' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='347' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='463' u='a' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='464' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='114' u='a' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='122' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/connections.c' l='388' u='a' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/connections.c' l='394' u='r' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/connections.c' l='568' u='a' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='737' u='a' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='767' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/mem.c' l='163' u='a' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='438' u='r' c='gc'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='456' u='r' c='__nscd_cache_search'/>

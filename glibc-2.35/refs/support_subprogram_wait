@@ -1,0 +1,5 @@
+<dec f='codebrowser/support/subprocess.h' l='43' type='int support_subprogram_wait(const char * file, char *const * argv)'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='177' u='c' c='copy_and_spawn_sgid'/>
+<doc f='codebrowser/support/subprocess.h' l='41'>/* Invoke program FILE with ARGV arguments by using posix_spawn and wait for it
+   to complete.  Return program exit status.  */</doc>
+<def f='codebrowser/support/support_subprocess.c' l='95' ll='106' type='int support_subprogram_wait(const char * file, char *const * argv)'/>

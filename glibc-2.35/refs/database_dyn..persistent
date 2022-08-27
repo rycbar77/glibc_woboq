@@ -1,0 +1,35 @@
+<dec f='codebrowser/nscd/nscd.h' l='137' type='int'/>
+<use f='codebrowser/nscd/aicache.c' l='495' u='r' c='addhstaiX'/>
+<offset>1632</offset>
+<use f='codebrowser/nscd/cache.c' l='203' u='r' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='507' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/connections.c' l='120' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='139' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='158' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='177' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='196' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='499' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='619' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='653' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='660' u='w' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='730' u='w' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='760' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='760' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='1420' u='r' c='restart'/>
+<use f='codebrowser/nscd/grpcache.c' l='139' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='327' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/hstcache.c' l='165' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='368' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/initgrcache.c' l='223' u='r' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='356' u='r' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/mem.c' l='486' u='r' c='gc'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='424' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='583' u='r' c='addinnetgrX'/>
+<use f='codebrowser/nscd/nscd.c' l='578' u='r' c='termination_handler'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='217' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='219' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='130' u='r' c='send_stats'/>
+<use f='codebrowser/nscd/pwdcache.c' l='146' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='306' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/servicescache.c' l='134' u='r' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='290' u='r' c='cache_addserv'/>

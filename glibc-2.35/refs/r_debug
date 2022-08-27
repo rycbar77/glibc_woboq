@@ -1,0 +1,30 @@
+<def f='codebrowser/elf/link.h' l='40' ll='63'/>
+<use f='codebrowser/elf/link.h' l='66'/>
+<use f='codebrowser/elf/link.h' l='76'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='1138' c='_dl_debug_initialize'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='1143' c='_dl_debug_update'/>
+<size>40</size>
+<doc f='codebrowser/elf/link.h' l='37'>/* The legacy rendezvous structure used by the run-time dynamic linker to
+   communicate details of shared object loading to the debugger.  */</doc>
+<mbr r='r_debug::r_version' o='0' t='int'/>
+<mbr r='r_debug::r_map' o='64' t='struct link_map_public *'/>
+<mbr r='r_debug::r_brk' o='128' t='Elf64_Addr'/>
+<mbr r='r_debug::r_state' o='192' t='enum (unnamed enum at /media/rr/Data/glibc_source/glibc-2.35/argp/../elf/link.h:53:5)'/>
+<mbr r='r_debug::r_ldbase' o='256' t='Elf64_Addr'/>
+<use f='codebrowser/elf/dl-close.c' l='462' c='_dl_close_worker'/>
+<size>40</size>
+<use f='codebrowser/elf/dl-debug.c' l='36' c='_dl_debug_update'/>
+<use f='codebrowser/elf/dl-debug.c' l='54' c='_dl_debug_initialize'/>
+<size>40</size>
+<use f='codebrowser/elf/dl-load.c' l='954' c='_dl_map_object_from_fd'/>
+<size>40</size>
+<use f='codebrowser/elf/dl-open.c' l='619' c='dl_open_worker_begin'/>
+<size>40</size>
+<use f='codebrowser/sysdeps/generic/dl-debug.h' l='27' c='elf_setup_debug_entry'/>
+<use f='codebrowser/elf/dl-reloc-static-pie.c' l='67' c='_dl_relocate_static_pie'/>
+<size>40</size>
+<use f='codebrowser/elf/pldd-xx.c' l='69'/>
+<use f='codebrowser/elf/pldd-xx.c' l='71'/>
+<size>40</size>
+<use f='codebrowser/elf/rtld.c' l='1729' c='dl_main'/>
+<size>40</size>

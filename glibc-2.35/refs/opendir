@@ -1,0 +1,17 @@
+<dec f='codebrowser/dirent/dirent.h' l='134' type='DIR * opendir(const char * __name)'/>
+<doc f='codebrowser/dirent/dirent.h' l='129'>/* Open a directory stream on NAME.
+   Return a DIR stream on the directory, or NULL if it could not be opened.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/elf/ldconfig.c' l='406' u='c' c='add_glibc_hwcaps_subdirectories'/>
+<use f='codebrowser/elf/ldconfig.c' l='825' u='c' c='search_dir'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='53' u='c' c='charmap_opendir'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1373' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locfile.c' l='391' u='c' c='siblings_uncached'/>
+<use f='codebrowser/nscd/nscd.c' l='249' u='c' c='main'/>
+<use f='codebrowser/support/support_descriptors.c' l='66' u='c' c='support_descriptors_list'/>
+<use f='codebrowser/support/support_wait_for_thread_exit.c' l='30' u='c' c='support_wait_for_thread_exit'/>
+<use f='codebrowser/support/test-container.c' l='502' u='c' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='595' u='c' c='rsync_1'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/opendir.c' l='88' macro='1' type='DIR * opendir(const char * )'/>

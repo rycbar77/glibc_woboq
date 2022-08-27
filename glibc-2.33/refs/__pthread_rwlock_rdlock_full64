@@ -1,0 +1,4 @@
+<def f='codebrowser/nptl/pthread_rwlock_common.c' l='280' ll='523' type='int __pthread_rwlock_rdlock_full64(pthread_rwlock_t * rwlock, clockid_t clockid, const struct timespec * abstime)'/>
+<use f='codebrowser/nptl/pthread_rwlock_clockrdlock.c' l='27' u='c' c='__pthread_rwlock_clockrdlock'/>
+<use f='codebrowser/nptl/pthread_rwlock_rdlock.c' l='27' u='c' c='__pthread_rwlock_rdlock'/>
+<use f='codebrowser/nptl/pthread_rwlock_timedrdlock.c' l='26' u='c' c='__pthread_rwlock_timedrdlock'/>

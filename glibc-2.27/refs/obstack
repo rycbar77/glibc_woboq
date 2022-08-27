@@ -1,0 +1,60 @@
+<use f='codebrowser/libio/stdio.h' l='826' c='obstack_printf'/>
+<use f='codebrowser/libio/stdio.h' l='829' c='obstack_vprintf'/>
+<use f='codebrowser/include/stdio.h' l='47' c='__obstack_printf_chk'/>
+<use f='codebrowser/include/stdio.h' l='49' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/libio/iolibio.h' l='59' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/iolibio.h' l='61' c='_IO_obstack_printf'/>
+<def f='codebrowser/malloc/obstack.h' l='153' ll='180'/>
+<use f='codebrowser/malloc/obstack.h' l='184' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.h' l='185' c='_obstack_begin'/>
+<use f='codebrowser/malloc/obstack.h' l='187' c='_obstack_begin_1'/>
+<use f='codebrowser/malloc/obstack.h' l='190' c='_obstack_memory_used'/>
+<use f='codebrowser/malloc/obstack.h' l='197' c='obstack_free'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='35'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='41' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='58' macro='1' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='59' macro='1' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='67' macro='1' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='70' macro='1' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='82' macro='1' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='82' macro='1' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='106' c='__obstack_printf_chk'/>
+<size>88</size>
+<doc f='codebrowser/malloc/obstack.h' l='153'>/* control current object in current chunk */</doc>
+<mbr r='obstack::chunk_size' o='0' t='long'/>
+<mbr r='obstack::chunk' o='64' t='struct _obstack_chunk *'/>
+<mbr r='obstack::object_base' o='128' t='char *'/>
+<mbr r='obstack::next_free' o='192' t='char *'/>
+<mbr r='obstack::chunk_limit' o='256' t='char *'/>
+<mbr r='obstack::temp' o='320' t='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.27/argp/../malloc/obstack.h:160:3)'/>
+<mbr r='obstack::alignment_mask' o='384' t='int'/>
+<mbr r='obstack::chunkfun' o='448' t='struct _obstack_chunk *(*)(void *, long)'/>
+<mbr r='obstack::freefun' o='512' t='void (*)(void *, struct _obstack_chunk *)'/>
+<mbr r='obstack::extra_arg' o='576' t='void *'/>
+<mbr r='obstack::use_extra_arg' o='640' t='unsigned int'/>
+<mbr r='obstack::maybe_empty_object' o='641' t='unsigned int'/>
+<mbr r='obstack::alloc_failed' o='642' t='unsigned int'/>
+<use f='codebrowser/libio/obprintf.c' l='35'/>
+<use f='codebrowser/libio/obprintf.c' l='42' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='48' macro='1' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='53' macro='1' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='65' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='76' macro='1' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='81' macro='1' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='120' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='136' macro='1' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='137' macro='1' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='145' macro='1' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='148' macro='1' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='160' macro='1' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='160' macro='1' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='179' c='_IO_obstack_printf'/>
+<size>88</size>
+<use f='codebrowser/malloc/obstack.c' l='144' c='_obstack_begin'/>
+<use f='codebrowser/malloc/obstack.c' l='191' c='_obstack_begin_1'/>
+<use f='codebrowser/malloc/obstack.c' l='245' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='319' c='_obstack_allocated_p'/>
+<use f='codebrowser/malloc/obstack.c' l='322' c='_obstack_allocated_p'/>
+<use f='codebrowser/malloc/obstack.c' l='345' c='obstack_free'/>
+<use f='codebrowser/malloc/obstack.c' l='381' c='_obstack_memory_used'/>
+<size>88</size>

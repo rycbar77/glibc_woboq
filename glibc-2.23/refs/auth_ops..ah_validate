@@ -1,0 +1,7 @@
+<dec f='codebrowser/sunrpc/rpc/auth.h' l='99' type='int (*)(AUTH *, struct opaque_auth *)'/>
+<offset>128</offset>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='186' macro='1' u='r' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='199' macro='1' u='r' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='303' macro='1' u='r' c='clnttcp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='462' macro='1' u='r' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='280' macro='1' u='r' c='clntunix_call'/>

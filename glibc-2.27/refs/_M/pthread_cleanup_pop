@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='686'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='684'>/* Remove a cleanup handler installed by the matching pthread_cleanup_push.
+   If EXECUTE is non-zero, the handler function is called. */</doc>
+<use f='codebrowser/nptl/pthread_join_common.c' l='93' u='c'/>
+<use f='codebrowser/nptl/pthread_once.c' l='118' u='c'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='221' u='c'/>

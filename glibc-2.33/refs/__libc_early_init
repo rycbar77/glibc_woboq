@@ -1,0 +1,11 @@
+<dec f='codebrowser/elf/libc-early-init.h' l='36' type='void __libc_early_init(_Bool initial)'/>
+<use f='codebrowser/elf/dl-call-libc-early-init.c' l='38' c='_dl_call_libc_early_init'/>
+<doc f='codebrowser/elf/libc-early-init.h' l='29'>/* In the shared case, this function is defined in libc.so and invoked
+   from ld.so (or on the fist static dlopen) after complete relocation
+   of a new loaded libc.so, but before user-defined ELF constructors
+   run.  In the static case, this function is called directly from the
+   startup code.  If INITIAL is true, the libc being initialized is
+   the libc for the main program.  INITIAL is false for libcs loaded
+   for audit modules, dlmopen, and static dlopen.  */</doc>
+<def f='codebrowser/elf/libc_early_init.c' l='28' ll='40' type='void __libc_early_init(_Bool initial)'/>
+<use f='codebrowser/csu/libc-start.c' l='254' u='c' c='__libc_start_main'/>

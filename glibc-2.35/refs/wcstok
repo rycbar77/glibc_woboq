@@ -1,0 +1,5 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='218' type='wchar_t * wcstok(wchar_t *restrict __s, const wchar_t *restrict __delim, wchar_t **restrict __ptr)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='217'>/* Divide WCS into tokens separated by characters in DELIM.  */</doc>
+<def f='codebrowser/wcsmbs/wcstok.c' l='24' ll='61' type='wchar_t * wcstok(wchar_t * wcs, const wchar_t * delim, wchar_t ** save_ptr)'/>
+<doc f='codebrowser/wcsmbs/wcstok.c' l='22'>/* Parse WCS into tokens separated by characters in DELIM.  If WCS is
+   NULL, the last string wcstok() was called with is used.  */</doc>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/posix/unistd.h' l='644' type='size_t confstr(int __name, char * __buf, size_t __len)'/>
+<dec f='codebrowser/include/unistd.h' l='16' type='size_t confstr(int , char * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='16' c='confstr'/>
+<doc f='codebrowser/posix/unistd.h' l='643'>/* Get the value of the string-valued system variable NAME.  */</doc>
+<use f='codebrowser/debug/confstr_chk.c' l='27' u='c' c='__confstr_chk'/>
+<def f='codebrowser/posix/bits/unistd.h' l='199' ll='205' macro='1' type='size_t confstr(int __name, char * __buf, size_t __len)'/>
+<def f='codebrowser/posix/confstr.c' l='294' macro='1' type='size_t confstr(int , char * , size_t )'/>
+<use f='codebrowser/posix/getconf.c' l='455' u='c' c='print_all'/>
+<use f='codebrowser/posix/getconf.c' l='459' u='c' c='print_all'/>
+<use f='codebrowser/posix/getconf.c' l='694' u='c' c='main'/>
+<use f='codebrowser/posix/getconf.c' l='699' u='c' c='main'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/nscd_setup_thread.c' l='29' u='c' c='setup_thread'/>

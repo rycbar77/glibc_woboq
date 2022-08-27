@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/resolv.h' l='68' type='int __libc_res_nameinquery(const char * , int , int , const unsigned char * , const unsigned char * )'/>
+<def f='codebrowser/resolv/res_nameinquery.c' l='89' ll='114' type='int __libc_res_nameinquery(const char * name, int type, int class, const unsigned char * buf, const unsigned char * eom)'/>
+<doc f='codebrowser/resolv/res_nameinquery.c' l='88'>/* Author: paul vixie, 29may94.  */</doc>
+<use f='codebrowser/resolv/res_queriesmatch.c' l='124' u='c' c='__libc_res_queriesmatch'/>
+<use f='codebrowser/resolv/resolv-deprecated.c' l='48' u='c' c='__res_nameinquery'/>

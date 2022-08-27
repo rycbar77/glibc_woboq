@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>gconv_charset.c source code [codebrowser/iconv/gconv_charset.c] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="gconv_parsed_code "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/iconv/gconv_charset.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>iconv</a>/<a href='gconv_charset.c.html'>gconv_charset.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Charset name normalization.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2020-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../include/ctype.h.html">&lt;ctype.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../include/locale.h.html">&lt;locale.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include &lt;stdbool.h&gt;</u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../include/sys/stat.h.html">&lt;sys/stat.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="gconv_int.h.html">"gconv_int.h"</a></u></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="gconv_charset.h.html">"gconv_charset.h"</a></u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><i  data-doc="find_suffix">/* This function returns a pointer to the last suffix in a conversion code</i></td></tr>
+<tr><th id="31">31</th><td><i  data-doc="find_suffix">   string.  Valid suffixes matched by this function are of the form: '/' or ','</i></td></tr>
+<tr><th id="32">32</th><td><i  data-doc="find_suffix">   followed by arbitrary text that doesn't contain '/' or ','.  It does not</i></td></tr>
+<tr><th id="33">33</th><td><i  data-doc="find_suffix">   edit the string in any way.  The caller is expected to parse the suffix and</i></td></tr>
+<tr><th id="34">34</th><td><i  data-doc="find_suffix">   remove it (by e.g. truncating the string) before the next call.  */</i></td></tr>
+<tr><th id="35">35</th><td><em>static</em> <em>char</em> *</td></tr>
+<tr><th id="36">36</th><td><dfn class="tu decl def fn" id="find_suffix" title='find_suffix' data-type='char * find_suffix(char * s)' data-ref="find_suffix" data-ref-filename="find_suffix">find_suffix</dfn> (<em>char</em> *<dfn class="local col7 decl" id="7s" title='s' data-type='char *' data-ref="7s" data-ref-filename="7s">s</dfn>)</td></tr>
+<tr><th id="37">37</th><td>{</td></tr>
+<tr><th id="38">38</th><td>  <i>/* The conversion code is in the form of a triplet, separated by '/' chars.</i></td></tr>
+<tr><th id="39">39</th><td><i>     The third component of the triplet contains suffixes. If we don't have two</i></td></tr>
+<tr><th id="40">40</th><td><i>     slashes, we don't have a suffix.  */</i></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td>  <em>int</em> <dfn class="local col8 decl" id="8slash_count" title='slash_count' data-type='int' data-ref="8slash_count" data-ref-filename="8slash_count">slash_count</dfn> = <var>0</var>;</td></tr>
+<tr><th id="43">43</th><td>  <em>char</em> *<dfn class="local col9 decl" id="9suffix_term" title='suffix_term' data-type='char *' data-ref="9suffix_term" data-ref-filename="9suffix_term">suffix_term</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td>  <b>for</b> (<em>int</em> <dfn class="local col0 decl" id="10i" title='i' data-type='int' data-ref="10i" data-ref-filename="10i">i</dfn> = <var>0</var>; <a class="local col7 ref" href="#7s" title='s' data-ref="7s" data-ref-filename="7s">s</a>[<a class="local col0 ref" href="#10i" title='i' data-ref="10i" data-ref-filename="10i">i</a>] != <kbd>'\0'</kbd>; <a class="local col0 ref" href="#10i" title='i' data-ref="10i" data-ref-filename="10i">i</a>++)</td></tr>
+<tr><th id="46">46</th><td>    <b>switch</b> (<a class="local col7 ref" href="#7s" title='s' data-ref="7s" data-ref-filename="7s">s</a>[<a class="local col0 ref" href="#10i" title='i' data-ref="10i" data-ref-filename="10i">i</a>])</td></tr>
+<tr><th id="47">47</th><td>      {</td></tr>
+<tr><th id="48">48</th><td>        <b>case</b> <kbd>'/'</kbd>:</td></tr>
+<tr><th id="49">49</th><td>          <a class="local col8 ref" href="#8slash_count" title='slash_count' data-ref="8slash_count" data-ref-filename="8slash_count">slash_count</a>++;</td></tr>
+<tr><th id="50">50</th><td>          <i>/* Fallthrough */</i></td></tr>
+<tr><th id="51">51</th><td>        <b>case</b> <kbd>','</kbd>:</td></tr>
+<tr><th id="52">52</th><td>          <a class="local col9 ref" href="#9suffix_term" title='suffix_term' data-ref="9suffix_term" data-ref-filename="9suffix_term">suffix_term</a> = &amp;<a class="local col7 ref" href="#7s" title='s' data-ref="7s" data-ref-filename="7s">s</a>[<a class="local col0 ref" href="#10i" title='i' data-ref="10i" data-ref-filename="10i">i</a>];</td></tr>
+<tr><th id="53">53</th><td>      }</td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td>  <b>if</b> (<a class="local col8 ref" href="#8slash_count" title='slash_count' data-ref="8slash_count" data-ref-filename="8slash_count">slash_count</a> &gt;= <var>2</var>)</td></tr>
+<tr><th id="56">56</th><td>    <b>return</b> <a class="local col9 ref" href="#9suffix_term" title='suffix_term' data-ref="9suffix_term" data-ref-filename="9suffix_term">suffix_term</a>;</td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td>  <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="59">59</th><td>}</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><b>struct</b> <dfn class="type def" id="gconv_parsed_code" title='gconv_parsed_code' data-ref="gconv_parsed_code" data-ref-filename="gconv_parsed_code">gconv_parsed_code</dfn></td></tr>
+<tr><th id="63">63</th><td>{</td></tr>
+<tr><th id="64">64</th><td>  <em>char</em> *<dfn class="tu decl field" id="gconv_parsed_code::code" title='gconv_parsed_code::code' data-type='char *' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</dfn>;</td></tr>
+<tr><th id="65">65</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="tu decl field" id="gconv_parsed_code::translit" title='gconv_parsed_code::translit' data-type='_Bool' data-ref="gconv_parsed_code::translit" data-ref-filename="gconv_parsed_code..translit">translit</dfn>;</td></tr>
+<tr><th id="66">66</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="tu decl field" id="gconv_parsed_code::ignore" title='gconv_parsed_code::ignore' data-type='_Bool' data-ref="gconv_parsed_code::ignore" data-ref-filename="gconv_parsed_code..ignore">ignore</dfn>;</td></tr>
+<tr><th id="67">67</th><td>};</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><i  data-doc="gconv_parse_code">/* This function parses an iconv_open encoding PC.CODE, strips any suffixes</i></td></tr>
+<tr><th id="71">71</th><td><i  data-doc="gconv_parse_code">   (such as TRANSLIT or IGNORE) from it and sets corresponding flags in it.  */</i></td></tr>
+<tr><th id="72">72</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="73">73</th><td><dfn class="tu decl def fn" id="gconv_parse_code" title='gconv_parse_code' data-type='void gconv_parse_code(struct gconv_parsed_code * pc)' data-ref="gconv_parse_code" data-ref-filename="gconv_parse_code">gconv_parse_code</dfn> (<b>struct</b> <a class="type" href="#gconv_parsed_code" title='gconv_parsed_code' data-ref="gconv_parsed_code" data-ref-filename="gconv_parsed_code">gconv_parsed_code</a> *<dfn class="local col1 decl" id="11pc" title='pc' data-type='struct gconv_parsed_code *' data-ref="11pc" data-ref-filename="11pc">pc</dfn>)</td></tr>
+<tr><th id="74">74</th><td>{</td></tr>
+<tr><th id="75">75</th><td>  <a class="local col1 ref" href="#11pc" title='pc' data-ref="11pc" data-ref-filename="11pc">pc</a>-&gt;<a class="tu ref field" href="#gconv_parsed_code::translit" title='gconv_parsed_code::translit' data-use='w' data-ref="gconv_parsed_code::translit" data-ref-filename="gconv_parsed_code..translit">translit</a> = <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="76">76</th><td>  <a class="local col1 ref" href="#11pc" title='pc' data-ref="11pc" data-ref-filename="11pc">pc</a>-&gt;<a class="tu ref field" href="#gconv_parsed_code::ignore" title='gconv_parsed_code::ignore' data-use='w' data-ref="gconv_parsed_code::ignore" data-ref-filename="gconv_parsed_code..ignore">ignore</a> = <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td>  <b>while</b> (<var>1</var>)</td></tr>
+<tr><th id="79">79</th><td>    {</td></tr>
+<tr><th id="80">80</th><td>      <i>/* First drop any trailing whitespaces and separators.  */</i></td></tr>
+<tr><th id="81">81</th><td>      <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col2 decl" id="12len" title='len' data-type='size_t' data-ref="12len" data-ref-filename="12len">len</dfn> = <a class="ref fn" href="../string/string.h.html#strlen" title='strlen' data-ref="strlen" data-ref-filename="strlen">strlen</a> (<a class="local col1 ref" href="#11pc" title='pc' data-ref="11pc" data-ref-filename="11pc">pc</a>-&gt;<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a>);</td></tr>
+<tr><th id="82">82</th><td>      <b>while</b> ((<a class="local col2 ref" href="#12len" title='len' data-ref="12len" data-ref-filename="12len">len</a> &gt; <var>0</var>)</td></tr>
+<tr><th id="83">83</th><td>             &amp;&amp; (<a class="macro" href="../ctype/ctype.h.html#197" title="((*__ctype_b_loc ())[(int) ((pc-&gt;code[len - 1]))] &amp; (unsigned short int) _ISspace)" data-ref="_M/isspace">isspace</a> (<a class="local col1 ref" href="#11pc" title='pc' data-ref="11pc" data-ref-filename="11pc">pc</a>-&gt;<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a>[<a class="local col2 ref" href="#12len" title='len' data-ref="12len" data-ref-filename="12len">len</a> - <var>1</var>])</td></tr>
+<tr><th id="84">84</th><td>                 || <a class="local col1 ref" href="#11pc" title='pc' data-ref="11pc" data-ref-filename="11pc">pc</a>-&gt;<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a>[<a class="local col2 ref" href="#12len" title='len' data-ref="12len" data-ref-filename="12len">len</a> - <var>1</var>] == <kbd>','</kbd></td></tr>
+<tr><th id="85">85</th><td>                 || <a class="local col1 ref" href="#11pc" title='pc' data-ref="11pc" data-ref-filename="11pc">pc</a>-&gt;<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a>[<a class="local col2 ref" href="#12len" title='len' data-ref="12len" data-ref-filename="12len">len</a> - <var>1</var>] == <kbd>'/'</kbd>))</td></tr>
+<tr><th id="86">86</th><td>        <a class="local col2 ref" href="#12len" title='len' data-ref="12len" data-ref-filename="12len">len</a>--;</td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td>      <a class="local col1 ref" href="#11pc" title='pc' data-ref="11pc" data-ref-filename="11pc">pc</a>-&gt;<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a>[<a class="local col2 ref" href="#12len" title='len' data-ref="12len" data-ref-filename="12len">len</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td>      <b>if</b> (<a class="local col2 ref" href="#12len" title='len' data-ref="12len" data-ref-filename="12len">len</a> == <var>0</var>)</td></tr>
+<tr><th id="91">91</th><td>        <b>return</b>;</td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td>      <em>char</em> * <dfn class="local col3 decl" id="13suffix" title='suffix' data-type='char *' data-ref="13suffix" data-ref-filename="13suffix">suffix</dfn> = <a class="tu ref fn" href="#find_suffix" title='find_suffix' data-use='c' data-ref="find_suffix" data-ref-filename="find_suffix">find_suffix</a> (<a class="local col1 ref" href="#11pc" title='pc' data-ref="11pc" data-ref-filename="11pc">pc</a>-&gt;<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a>);</td></tr>
+<tr><th id="94">94</th><td>      <b>if</b> (<a class="local col3 ref" href="#13suffix" title='suffix' data-ref="13suffix" data-ref-filename="13suffix">suffix</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="95">95</th><td>        {</td></tr>
+<tr><th id="96">96</th><td>          <i>/* At this point, we have processed and removed all suffixes from the</i></td></tr>
+<tr><th id="97">97</th><td><i>             code and what remains of the code is suffix free.  */</i></td></tr>
+<tr><th id="98">98</th><td>          <b>return</b>;</td></tr>
+<tr><th id="99">99</th><td>        }</td></tr>
+<tr><th id="100">100</th><td>      <b>else</b></td></tr>
+<tr><th id="101">101</th><td>        {</td></tr>
+<tr><th id="102">102</th><td>          <i>/* A suffix is processed from the end of the code array going</i></td></tr>
+<tr><th id="103">103</th><td><i>             backwards, one suffix at a time.  The suffix is an index into the</i></td></tr>
+<tr><th id="104">104</th><td><i>             code character array and points to: one past the end of the code</i></td></tr>
+<tr><th id="105">105</th><td><i>             and any unprocessed suffixes, and to the beginning of the suffix</i></td></tr>
+<tr><th id="106">106</th><td><i>             currently being processed during this iteration.  We must process</i></td></tr>
+<tr><th id="107">107</th><td><i>             this suffix and then drop it from the code by terminating the</i></td></tr>
+<tr><th id="108">108</th><td><i>             preceding text with NULL.</i></td></tr>
+<tr><th id="109">109</th><td><i></i></td></tr>
+<tr><th id="110">110</th><td><i>             We want to allow and recognize suffixes such as:</i></td></tr>
+<tr><th id="111">111</th><td><i></i></td></tr>
+<tr><th id="112">112</th><td><i>             "/TRANSLIT"         i.e. single suffix</i></td></tr>
+<tr><th id="113">113</th><td><i>             "//TRANSLIT"        i.e. single suffix and multiple separators</i></td></tr>
+<tr><th id="114">114</th><td><i>             "//TRANSLIT/IGNORE" i.e. suffixes separated by "/"</i></td></tr>
+<tr><th id="115">115</th><td><i>             "/TRANSLIT//IGNORE" i.e. suffixes separated by "//"</i></td></tr>
+<tr><th id="116">116</th><td><i>             "//IGNORE,TRANSLIT" i.e. suffixes separated by ","</i></td></tr>
+<tr><th id="117">117</th><td><i>             "//IGNORE,"         i.e. trailing ","</i></td></tr>
+<tr><th id="118">118</th><td><i>             "//TRANSLIT/"       i.e. trailing "/"</i></td></tr>
+<tr><th id="119">119</th><td><i>             "//TRANSLIT//"      i.e. trailing "//"</i></td></tr>
+<tr><th id="120">120</th><td><i>             "/"                 i.e. empty suffix.</i></td></tr>
+<tr><th id="121">121</th><td><i></i></td></tr>
+<tr><th id="122">122</th><td><i>             Unknown suffixes are silently discarded and ignored.  */</i></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td>          <b>if</b> ((<a class="ref fn" href="../include/string.h.html#__strcasecmp_l" title='__strcasecmp_l' data-ref="__strcasecmp_l" data-ref-filename="__strcasecmp_l">__strcasecmp_l</a> (<a class="local col3 ref" href="#13suffix" title='suffix' data-ref="13suffix" data-ref-filename="13suffix">suffix</a>,</td></tr>
+<tr><th id="125">125</th><td>                               <a class="macro" href="gconv_charset.h.html#45" title="&quot;/&quot;" data-ref="_M/GCONV_TRIPLE_SEPARATOR">GCONV_TRIPLE_SEPARATOR</a></td></tr>
+<tr><th id="126">126</th><td>                               <a class="macro" href="gconv_charset.h.html#47" title="&quot;TRANSLIT&quot;" data-ref="_M/GCONV_TRANSLIT_SUFFIX">GCONV_TRANSLIT_SUFFIX</a>,</td></tr>
+<tr><th id="127">127</th><td>                               <a class="macro" href="../include/locale.h.html#17" title="((struct __locale_struct *) &amp;_nl_C_locobj)" data-ref="_M/_nl_C_locobj_ptr">_nl_C_locobj_ptr</a>) == <var>0</var>)</td></tr>
+<tr><th id="128">128</th><td>              || (<a class="ref fn" href="../include/string.h.html#__strcasecmp_l" title='__strcasecmp_l' data-ref="__strcasecmp_l" data-ref-filename="__strcasecmp_l">__strcasecmp_l</a> (<a class="local col3 ref" href="#13suffix" title='suffix' data-ref="13suffix" data-ref-filename="13suffix">suffix</a>,</td></tr>
+<tr><th id="129">129</th><td>                                  <a class="macro" href="gconv_charset.h.html#46" title="&quot;,&quot;" data-ref="_M/GCONV_SUFFIX_SEPARATOR">GCONV_SUFFIX_SEPARATOR</a></td></tr>
+<tr><th id="130">130</th><td>                                  <a class="macro" href="gconv_charset.h.html#47" title="&quot;TRANSLIT&quot;" data-ref="_M/GCONV_TRANSLIT_SUFFIX">GCONV_TRANSLIT_SUFFIX</a>,</td></tr>
+<tr><th id="131">131</th><td>                                  <a class="macro" href="../include/locale.h.html#17" title="((struct __locale_struct *) &amp;_nl_C_locobj)" data-ref="_M/_nl_C_locobj_ptr">_nl_C_locobj_ptr</a>) == <var>0</var>))</td></tr>
+<tr><th id="132">132</th><td>            <a class="local col1 ref" href="#11pc" title='pc' data-ref="11pc" data-ref-filename="11pc">pc</a>-&gt;<a class="tu ref field" href="#gconv_parsed_code::translit" title='gconv_parsed_code::translit' data-use='w' data-ref="gconv_parsed_code::translit" data-ref-filename="gconv_parsed_code..translit">translit</a> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td>          <b>if</b> ((<a class="ref fn" href="../include/string.h.html#__strcasecmp_l" title='__strcasecmp_l' data-ref="__strcasecmp_l" data-ref-filename="__strcasecmp_l">__strcasecmp_l</a> (<a class="local col3 ref" href="#13suffix" title='suffix' data-ref="13suffix" data-ref-filename="13suffix">suffix</a>,</td></tr>
+<tr><th id="135">135</th><td>                               <a class="macro" href="gconv_charset.h.html#45" title="&quot;/&quot;" data-ref="_M/GCONV_TRIPLE_SEPARATOR">GCONV_TRIPLE_SEPARATOR</a></td></tr>
+<tr><th id="136">136</th><td>                               <a class="macro" href="gconv_charset.h.html#48" title="&quot;IGNORE&quot;" data-ref="_M/GCONV_IGNORE_ERRORS_SUFFIX">GCONV_IGNORE_ERRORS_SUFFIX</a>,</td></tr>
+<tr><th id="137">137</th><td>                               <a class="macro" href="../include/locale.h.html#17" title="((struct __locale_struct *) &amp;_nl_C_locobj)" data-ref="_M/_nl_C_locobj_ptr">_nl_C_locobj_ptr</a>) == <var>0</var>)</td></tr>
+<tr><th id="138">138</th><td>              || (<a class="ref fn" href="../include/string.h.html#__strcasecmp_l" title='__strcasecmp_l' data-ref="__strcasecmp_l" data-ref-filename="__strcasecmp_l">__strcasecmp_l</a> (<a class="local col3 ref" href="#13suffix" title='suffix' data-ref="13suffix" data-ref-filename="13suffix">suffix</a>,</td></tr>
+<tr><th id="139">139</th><td>                                  <a class="macro" href="gconv_charset.h.html#46" title="&quot;,&quot;" data-ref="_M/GCONV_SUFFIX_SEPARATOR">GCONV_SUFFIX_SEPARATOR</a></td></tr>
+<tr><th id="140">140</th><td>                                  <a class="macro" href="gconv_charset.h.html#48" title="&quot;IGNORE&quot;" data-ref="_M/GCONV_IGNORE_ERRORS_SUFFIX">GCONV_IGNORE_ERRORS_SUFFIX</a>,</td></tr>
+<tr><th id="141">141</th><td>                                  <a class="macro" href="../include/locale.h.html#17" title="((struct __locale_struct *) &amp;_nl_C_locobj)" data-ref="_M/_nl_C_locobj_ptr">_nl_C_locobj_ptr</a>) == <var>0</var>))</td></tr>
+<tr><th id="142">142</th><td>            <a class="local col1 ref" href="#11pc" title='pc' data-ref="11pc" data-ref-filename="11pc">pc</a>-&gt;<a class="tu ref field" href="#gconv_parsed_code::ignore" title='gconv_parsed_code::ignore' data-use='w' data-ref="gconv_parsed_code::ignore" data-ref-filename="gconv_parsed_code..ignore">ignore</a> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td>          <i>/* We just processed this suffix.  We can now drop it from the</i></td></tr>
+<tr><th id="145">145</th><td><i>             code string by truncating it at the suffix's position.  */</i></td></tr>
+<tr><th id="146">146</th><td>          <a class="local col3 ref" href="#13suffix" title='suffix' data-ref="13suffix" data-ref-filename="13suffix">suffix</a>[<var>0</var>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="147">147</th><td>        }</td></tr>
+<tr><th id="148">148</th><td>    }</td></tr>
+<tr><th id="149">149</th><td>}</td></tr>
+<tr><th id="150">150</th><td></td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><i>/* This function accepts the charset names of the source and destination of the</i></td></tr>
+<tr><th id="153">153</th><td><i>   conversion and populates *conv_spec with an equivalent conversion</i></td></tr>
+<tr><th id="154">154</th><td><i>   specification that may later be used by __gconv_open.  The charset names</i></td></tr>
+<tr><th id="155">155</th><td><i>   might contain options in the form of suffixes that alter the conversion,</i></td></tr>
+<tr><th id="156">156</th><td><i>   e.g. "ISO-10646/UTF-8/TRANSLIT".  It processes the charset names, ignoring</i></td></tr>
+<tr><th id="157">157</th><td><i>   and truncating any suffix options in fromcode, and processing and truncating</i></td></tr>
+<tr><th id="158">158</th><td><i>   any suffix options in tocode.  Supported suffix options ("TRANSLIT" or</i></td></tr>
+<tr><th id="159">159</th><td><i>   "IGNORE") when found in tocode lead to the corresponding flag in *conv_spec</i></td></tr>
+<tr><th id="160">160</th><td><i>   to be set to true.  Unrecognized suffix options are silently discarded.  If</i></td></tr>
+<tr><th id="161">161</th><td><i>   the function succeeds, it returns conv_spec back to the caller.  It returns</i></td></tr>
+<tr><th id="162">162</th><td><i>   NULL upon failure.  conv_spec must be allocated and freed by the caller.  */</i></td></tr>
+<tr><th id="163">163</th><td><b>struct</b> <a class="type" href="gconv_int.h.html#gconv_spec" title='gconv_spec' data-ref="gconv_spec" data-ref-filename="gconv_spec">gconv_spec</a> *</td></tr>
+<tr><th id="164">164</th><td><dfn class="decl def fn" id="__gconv_create_spec" title='__gconv_create_spec' data-ref="__gconv_create_spec" data-ref-filename="__gconv_create_spec">__gconv_create_spec</dfn> (<b>struct</b> <a class="type" href="gconv_int.h.html#gconv_spec" title='gconv_spec' data-ref="gconv_spec" data-ref-filename="gconv_spec">gconv_spec</a> *<dfn class="local col4 decl" id="14conv_spec" title='conv_spec' data-type='struct gconv_spec *' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</dfn>, <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="15fromcode" title='fromcode' data-type='const char *' data-ref="15fromcode" data-ref-filename="15fromcode">fromcode</dfn>,</td></tr>
+<tr><th id="165">165</th><td>                   <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="16tocode" title='tocode' data-type='const char *' data-ref="16tocode" data-ref-filename="16tocode">tocode</dfn>)</td></tr>
+<tr><th id="166">166</th><td>{</td></tr>
+<tr><th id="167">167</th><td>  <b>struct</b> <a class="type" href="#gconv_parsed_code" title='gconv_parsed_code' data-ref="gconv_parsed_code" data-ref-filename="gconv_parsed_code">gconv_parsed_code</a> <dfn class="local col7 decl" id="17pfc" title='pfc' data-type='struct gconv_parsed_code' data-ref="17pfc" data-ref-filename="17pfc">pfc</dfn>, <dfn class="local col8 decl" id="18ptc" title='ptc' data-type='struct gconv_parsed_code' data-ref="18ptc" data-ref-filename="18ptc">ptc</dfn>;</td></tr>
+<tr><th id="168">168</th><td>  <b>struct</b> <a class="type" href="gconv_int.h.html#gconv_spec" title='gconv_spec' data-ref="gconv_spec" data-ref-filename="gconv_spec">gconv_spec</a> *<dfn class="local col9 decl" id="19ret" title='ret' data-type='struct gconv_spec *' data-ref="19ret" data-ref-filename="19ret">ret</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="169">169</th><td></td></tr>
+<tr><th id="170">170</th><td>  <a class="local col7 ref" href="#17pfc" title='pfc' data-ref="17pfc" data-ref-filename="17pfc">pfc</a>.<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='w' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a> = <a class="ref fn" href="../include/string.h.html#__strdup" title='__strdup' data-ref="__strdup" data-ref-filename="__strdup">__strdup</a> (<a class="local col5 ref" href="#15fromcode" title='fromcode' data-ref="15fromcode" data-ref-filename="15fromcode">fromcode</a>);</td></tr>
+<tr><th id="171">171</th><td>  <a class="local col8 ref" href="#18ptc" title='ptc' data-ref="18ptc" data-ref-filename="18ptc">ptc</a>.<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='w' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a> = <a class="ref fn" href="../include/string.h.html#__strdup" title='__strdup' data-ref="__strdup" data-ref-filename="__strdup">__strdup</a> (<a class="local col6 ref" href="#16tocode" title='tocode' data-ref="16tocode" data-ref-filename="16tocode">tocode</a>);</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td>  <b>if</b> ((<a class="local col7 ref" href="#17pfc" title='pfc' data-ref="17pfc" data-ref-filename="17pfc">pfc</a>.<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="174">174</th><td>      || (<a class="local col8 ref" href="#18ptc" title='ptc' data-ref="18ptc" data-ref-filename="18ptc">ptc</a>.<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>))</td></tr>
+<tr><th id="175">175</th><td>    <b>goto</b> <a class="lbl" href="#20out" data-ref="20out" data-ref-filename="20out">out</a>;</td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td>  <a class="tu ref fn" href="#gconv_parse_code" title='gconv_parse_code' data-use='c' data-ref="gconv_parse_code" data-ref-filename="gconv_parse_code">gconv_parse_code</a> (&amp;<a class="local col7 ref" href="#17pfc" title='pfc' data-ref="17pfc" data-ref-filename="17pfc">pfc</a>);</td></tr>
+<tr><th id="178">178</th><td>  <a class="tu ref fn" href="#gconv_parse_code" title='gconv_parse_code' data-use='c' data-ref="gconv_parse_code" data-ref-filename="gconv_parse_code">gconv_parse_code</a> (&amp;<a class="local col8 ref" href="#18ptc" title='ptc' data-ref="18ptc" data-ref-filename="18ptc">ptc</a>);</td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td>  <i>/* We ignore suffixes in the fromcode because that is how the current</i></td></tr>
+<tr><th id="181">181</th><td><i>     implementation has always handled them.  Only suffixes in the tocode are</i></td></tr>
+<tr><th id="182">182</th><td><i>     processed and handled.  The reality is that invalid input in the input</i></td></tr>
+<tr><th id="183">183</th><td><i>     character set should only be ignored if the fromcode specifies IGNORE.</i></td></tr>
+<tr><th id="184">184</th><td><i>     The current implementation ignores invalid intput in the input character</i></td></tr>
+<tr><th id="185">185</th><td><i>     set if the tocode contains IGNORE.  We preserve this behavior for</i></td></tr>
+<tr><th id="186">186</th><td><i>     backwards compatibility.  In the future we may split the handling of</i></td></tr>
+<tr><th id="187">187</th><td><i>     IGNORE to allow a finer grained specification of ignorning invalid input</i></td></tr>
+<tr><th id="188">188</th><td><i>     and/or ignoring invalid output.  */</i></td></tr>
+<tr><th id="189">189</th><td>  <a class="local col4 ref" href="#14conv_spec" title='conv_spec' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::translit" title='gconv_spec::translit' data-ref="gconv_spec::translit" data-ref-filename="gconv_spec..translit">translit</a> = <a class="local col8 ref" href="#18ptc" title='ptc' data-ref="18ptc" data-ref-filename="18ptc">ptc</a>.<a class="tu ref field" href="#gconv_parsed_code::translit" title='gconv_parsed_code::translit' data-use='r' data-ref="gconv_parsed_code::translit" data-ref-filename="gconv_parsed_code..translit">translit</a>;</td></tr>
+<tr><th id="190">190</th><td>  <a class="local col4 ref" href="#14conv_spec" title='conv_spec' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::ignore" title='gconv_spec::ignore' data-ref="gconv_spec::ignore" data-ref-filename="gconv_spec..ignore">ignore</a> = <a class="local col8 ref" href="#18ptc" title='ptc' data-ref="18ptc" data-ref-filename="18ptc">ptc</a>.<a class="tu ref field" href="#gconv_parsed_code::ignore" title='gconv_parsed_code::ignore' data-use='r' data-ref="gconv_parsed_code::ignore" data-ref-filename="gconv_parsed_code..ignore">ignore</a>;</td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td>  <i>/* 3 extra bytes because 1 extra for '\0', and 2 extra so strip might</i></td></tr>
+<tr><th id="193">193</th><td><i>     be able to add one or two trailing '/' characters if necessary.  */</i></td></tr>
+<tr><th id="194">194</th><td>  <a class="local col4 ref" href="#14conv_spec" title='conv_spec' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::fromcode" title='gconv_spec::fromcode' data-ref="gconv_spec::fromcode" data-ref-filename="gconv_spec..fromcode">fromcode</a> = <a class="ref fn" href="../stdlib/stdlib.h.html#malloc" title='malloc' data-ref="malloc" data-ref-filename="malloc">malloc</a> (<a class="ref fn" href="../string/string.h.html#strlen" title='strlen' data-ref="strlen" data-ref-filename="strlen">strlen</a> (<a class="local col5 ref" href="#15fromcode" title='fromcode' data-ref="15fromcode" data-ref-filename="15fromcode">fromcode</a>) + <var>3</var>);</td></tr>
+<tr><th id="195">195</th><td>  <b>if</b> (<a class="local col4 ref" href="#14conv_spec" title='conv_spec' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::fromcode" title='gconv_spec::fromcode' data-ref="gconv_spec::fromcode" data-ref-filename="gconv_spec..fromcode">fromcode</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="196">196</th><td>    <b>goto</b> <a class="lbl" href="#20out" data-ref="20out" data-ref-filename="20out">out</a>;</td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td>  <a class="local col4 ref" href="#14conv_spec" title='conv_spec' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::tocode" title='gconv_spec::tocode' data-ref="gconv_spec::tocode" data-ref-filename="gconv_spec..tocode">tocode</a> = <a class="ref fn" href="../stdlib/stdlib.h.html#malloc" title='malloc' data-ref="malloc" data-ref-filename="malloc">malloc</a> (<a class="ref fn" href="../string/string.h.html#strlen" title='strlen' data-ref="strlen" data-ref-filename="strlen">strlen</a> (<a class="local col6 ref" href="#16tocode" title='tocode' data-ref="16tocode" data-ref-filename="16tocode">tocode</a>) + <var>3</var>);</td></tr>
+<tr><th id="199">199</th><td>  <b>if</b> (<a class="local col4 ref" href="#14conv_spec" title='conv_spec' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::tocode" title='gconv_spec::tocode' data-ref="gconv_spec::tocode" data-ref-filename="gconv_spec..tocode">tocode</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="200">200</th><td>    {</td></tr>
+<tr><th id="201">201</th><td>      <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col4 ref" href="#14conv_spec" title='conv_spec' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::fromcode" title='gconv_spec::fromcode' data-ref="gconv_spec::fromcode" data-ref-filename="gconv_spec..fromcode">fromcode</a>);</td></tr>
+<tr><th id="202">202</th><td>      <a class="local col4 ref" href="#14conv_spec" title='conv_spec' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::fromcode" title='gconv_spec::fromcode' data-ref="gconv_spec::fromcode" data-ref-filename="gconv_spec..fromcode">fromcode</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="203">203</th><td>      <b>goto</b> <a class="lbl" href="#20out" data-ref="20out" data-ref-filename="20out">out</a>;</td></tr>
+<tr><th id="204">204</th><td>    }</td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td>  <i>/* Strip unrecognized characters and ensure that the code has two '/'</i></td></tr>
+<tr><th id="207">207</th><td><i>     characters as per conversion code triplet specification.  */</i></td></tr>
+<tr><th id="208">208</th><td>  <a class="ref fn" href="gconv_charset.h.html#strip" title='strip' data-ref="strip" data-ref-filename="strip">strip</a> (<a class="local col4 ref" href="#14conv_spec" title='conv_spec' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::fromcode" title='gconv_spec::fromcode' data-ref="gconv_spec::fromcode" data-ref-filename="gconv_spec..fromcode">fromcode</a>, <a class="local col7 ref" href="#17pfc" title='pfc' data-ref="17pfc" data-ref-filename="17pfc">pfc</a>.<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a>);</td></tr>
+<tr><th id="209">209</th><td>  <a class="ref fn" href="gconv_charset.h.html#strip" title='strip' data-ref="strip" data-ref-filename="strip">strip</a> (<a class="local col4 ref" href="#14conv_spec" title='conv_spec' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::tocode" title='gconv_spec::tocode' data-ref="gconv_spec::tocode" data-ref-filename="gconv_spec..tocode">tocode</a>, <a class="local col8 ref" href="#18ptc" title='ptc' data-ref="18ptc" data-ref-filename="18ptc">ptc</a>.<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a>);</td></tr>
+<tr><th id="210">210</th><td>  <a class="local col9 ref" href="#19ret" title='ret' data-ref="19ret" data-ref-filename="19ret">ret</a> = <a class="local col4 ref" href="#14conv_spec" title='conv_spec' data-ref="14conv_spec" data-ref-filename="14conv_spec">conv_spec</a>;</td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td><dfn class="lbl" id="20out" data-ref="20out" data-ref-filename="20out">out</dfn>:</td></tr>
+<tr><th id="213">213</th><td>  <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col7 ref" href="#17pfc" title='pfc' data-ref="17pfc" data-ref-filename="17pfc">pfc</a>.<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a>);</td></tr>
+<tr><th id="214">214</th><td>  <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col8 ref" href="#18ptc" title='ptc' data-ref="18ptc" data-ref-filename="18ptc">ptc</a>.<a class="tu ref field" href="#gconv_parsed_code::code" title='gconv_parsed_code::code' data-use='r' data-ref="gconv_parsed_code::code" data-ref-filename="gconv_parsed_code..code">code</a>);</td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td>  <b>return</b> <a class="local col9 ref" href="#19ret" title='ret' data-ref="19ret" data-ref-filename="19ret">ret</a>;</td></tr>
+<tr><th id="217">217</th><td>}</td></tr>
+<tr><th id="218">218</th><td><a class="macro" href="../include/libc-symbols.h.html#626" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__gconv_create_spec)</td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td><em>void</em></td></tr>
+<tr><th id="222">222</th><td><dfn class="decl def fn" id="__gconv_destroy_spec" title='__gconv_destroy_spec' data-ref="__gconv_destroy_spec" data-ref-filename="__gconv_destroy_spec">__gconv_destroy_spec</dfn> (<b>struct</b> <a class="type" href="gconv_int.h.html#gconv_spec" title='gconv_spec' data-ref="gconv_spec" data-ref-filename="gconv_spec">gconv_spec</a> *<dfn class="local col1 decl" id="21conv_spec" title='conv_spec' data-type='struct gconv_spec *' data-ref="21conv_spec" data-ref-filename="21conv_spec">conv_spec</dfn>)</td></tr>
+<tr><th id="223">223</th><td>{</td></tr>
+<tr><th id="224">224</th><td>  <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col1 ref" href="#21conv_spec" title='conv_spec' data-ref="21conv_spec" data-ref-filename="21conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::fromcode" title='gconv_spec::fromcode' data-ref="gconv_spec::fromcode" data-ref-filename="gconv_spec..fromcode">fromcode</a>);</td></tr>
+<tr><th id="225">225</th><td>  <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col1 ref" href="#21conv_spec" title='conv_spec' data-ref="21conv_spec" data-ref-filename="21conv_spec">conv_spec</a>-&gt;<a class="ref field" href="gconv_int.h.html#gconv_spec::tocode" title='gconv_spec::tocode' data-ref="gconv_spec::tocode" data-ref-filename="gconv_spec..tocode">tocode</a>);</td></tr>
+<tr><th id="226">226</th><td>  <b>return</b>;</td></tr>
+<tr><th id="227">227</th><td>}</td></tr>
+<tr><th id="228">228</th><td><a class="macro" href="../include/libc-symbols.h.html#626" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__gconv_destroy_spec)</td></tr>
+<tr><th id="229">229</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.33</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

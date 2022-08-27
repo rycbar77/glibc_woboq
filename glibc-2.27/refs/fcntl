@@ -1,0 +1,8 @@
+<dec f='codebrowser/io/fcntl.h' l='170' type='int fcntl(int __fd, int __cmd)'/>
+<doc f='codebrowser/io/fcntl.h' l='165'>/* Do the file control operation described by CMD on FD.
+   The remaining arguments are interpreted depending on CMD.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/elf/sotruss-lib.c' l='106' u='c' c='init'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fcntl.c' l='89' macro='1' type='int fcntl(int , int )'/>

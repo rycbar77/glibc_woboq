@@ -1,0 +1,67 @@
+<def f='codebrowser/locale/programs/locfile.h' l='30' ll='36'/>
+<use f='codebrowser/locale/programs/locfile.h' l='108' c='init_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.h' l='109' c='align_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.h' l='110' c='add_locale_empty'/>
+<use f='codebrowser/locale/programs/locfile.h' l='111' c='add_locale_raw_data'/>
+<use f='codebrowser/locale/programs/locfile.h' l='113' c='add_locale_raw_obstack'/>
+<use f='codebrowser/locale/programs/locfile.h' l='115' c='add_locale_string'/>
+<use f='codebrowser/locale/programs/locfile.h' l='116' c='add_locale_wstring'/>
+<use f='codebrowser/locale/programs/locfile.h' l='118' c='add_locale_uint32'/>
+<use f='codebrowser/locale/programs/locfile.h' l='119' c='add_locale_uint32_array'/>
+<use f='codebrowser/locale/programs/locfile.h' l='121' c='add_locale_char'/>
+<use f='codebrowser/locale/programs/locfile.h' l='122' c='start_locale_structure'/>
+<use f='codebrowser/locale/programs/locfile.h' l='123' c='end_locale_structure'/>
+<use f='codebrowser/locale/programs/locfile.h' l='124' c='start_locale_prelude'/>
+<use f='codebrowser/locale/programs/locfile.h' l='125' c='end_locale_prelude'/>
+<use f='codebrowser/locale/programs/locfile.h' l='127' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='347' c='address_output'/>
+<size>120</size>
+<doc f='codebrowser/locale/programs/locfile.h' l='29'>/* Structure for storing the contents of a category file.  */</doc>
+<mbr r='locale_file::n_elements' o='0' t='size_t'/>
+<mbr r='locale_file::next_element' o='64' t='size_t'/>
+<mbr r='locale_file::offsets' o='128' t='uint32_t *'/>
+<mbr r='locale_file::data' o='192' t='struct obstack'/>
+<mbr r='locale_file::structure_stage' o='896' t='int'/>
+<use f='codebrowser/locale/programs/3level.h' l='212' c='add_locale_collidx_table'/>
+<use f='codebrowser/locale/programs/3level.h' l='212' c='add_locale_collseq_table'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2113' c='collate_output'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='158' c='add_locale_wctype_table'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='909' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3450' c='add_locale_wctype_table'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-identification.c' l='213' c='identification_output'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-measurement.c' l='122' c='measurement_output'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-messages.c' l='183' c='messages_output'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='372' c='monetary_output'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-name.c' l='157' c='name_output'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-numeric.c' l='134' c='numeric_output'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-paper.c' l='121' c='paper_output'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='175' c='telephone_output'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-time.c' l='538' c='time_output'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/locfile.c' l='552' c='record_offset'/>
+<use f='codebrowser/locale/programs/locfile.c' l='568' c='init_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='579' c='align_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='588' c='add_locale_empty'/>
+<use f='codebrowser/locale/programs/locfile.c' l='595' c='add_locale_raw_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='604' c='add_locale_raw_obstack'/>
+<use f='codebrowser/locale/programs/locfile.c' l='613' c='add_locale_string'/>
+<use f='codebrowser/locale/programs/locfile.c' l='621' c='add_locale_wstring'/>
+<use f='codebrowser/locale/programs/locfile.c' l='628' c='add_locale_uint32'/>
+<use f='codebrowser/locale/programs/locfile.c' l='639' c='add_locale_uint32_array'/>
+<use f='codebrowser/locale/programs/locfile.c' l='650' c='add_locale_char'/>
+<use f='codebrowser/locale/programs/locfile.c' l='661' c='start_locale_structure'/>
+<use f='codebrowser/locale/programs/locfile.c' l='670' c='end_locale_structure'/>
+<use f='codebrowser/locale/programs/locfile.c' l='682' c='start_locale_prelude'/>
+<use f='codebrowser/locale/programs/locfile.c' l='690' c='end_locale_prelude'/>
+<use f='codebrowser/locale/programs/locfile.c' l='699' c='write_locale_data'/>
+<size>120</size>

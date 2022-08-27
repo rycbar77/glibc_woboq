@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/x86/bits/indirect-return.h' l='33'/>
+<use f='codebrowser/stdlib/ucontext.h' l='43' u='c'/>
+<doc f='codebrowser/sysdeps/x86/bits/indirect-return.h' l='30'>/* Newer compilers provide the indirect_return attribute, but without
+   it we can use returns_twice to affect the optimizer in the same
+   way and avoid unsafe optimizations.  */</doc>

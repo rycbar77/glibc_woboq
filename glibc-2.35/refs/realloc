@@ -1,0 +1,158 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='551' type='void * realloc(void * __ptr, size_t __size)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='548'>/* __attribute_malloc__ is not used, because if realloc returns
+   the same pointer that was passed to it, aliasing needs to be allowed
+   between objects pointed by the old and new pointers.  */</doc>
+<use f='codebrowser/argp/argp-fmtstream.c' l='384' u='c' c='__argp_fmtstream_ensure'/>
+<use f='codebrowser/catgets/open_catalog.c' l='61' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='61' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='61' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='61' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='61' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='61' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='61' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='61' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='61' u='c' c='__open_catalog'/>
+<use f='codebrowser/crypt/md5-crypt.c' l='318' u='c' c='__md5_crypt'/>
+<use f='codebrowser/crypt/sha256-crypt.c' l='410' u='c' c='__sha256_crypt'/>
+<use f='codebrowser/crypt/sha512-crypt.c' l='432' u='c' c='__sha512_crypt'/>
+<use f='codebrowser/dirent/scandir-tail-common.c' l='62' u='c' c='__scandir64_tail'/>
+<use f='codebrowser/elf/dl-load.c' l='1791' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-minimal.c' l='38'/>
+<use f='codebrowser/elf/dl-object.c' l='218' u='c' c='_dl_new_object'/>
+<use f='codebrowser/grp/fgetgrent.c' l='59' u='c' c='fgetgrent'/>
+<use f='codebrowser/nss/getXXbyYY.c' l='145' u='c' c='getgrgid'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='91' u='c' c='compat_call'/>
+<use f='codebrowser/gshadow/fgetsgent.c' l='62' u='c' c='fgetsgent'/>
+<use f='codebrowser/gshadow/sgetsgent.c' l='56' u='c' c='sgetsgent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='242' u='c' c='_nss_hesiod_initgroups_dyn'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='522' u='c' c='process_fd'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='576' u='c' c='process_fd'/>
+<use f='codebrowser/intl/dcigettext.c' l='1040' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/dcigettext.c' l='1326' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/localealias.c' l='333' u='c' c='read_alias_file'/>
+<use f='codebrowser/intl/localealias.c' l='401' u='c' c='extend_alias_table'/>
+<use f='codebrowser/libio/iogetdelim.c' l='102' u='c' c='__getdelim'/>
+<use f='codebrowser/libio/memstream.c' l='131' u='c' c='_IO_mem_finish'/>
+<use f='codebrowser/libio/vasprintf.c' l='68' u='c' c='__vasprintf_internal'/>
+<use f='codebrowser/libio/vasprintf.c' l='79' u='c' c='__vasprintf_internal'/>
+<use f='codebrowser/libio/wmemstream.c' l='132' u='c' c='_IO_wmem_finish'/>
+<use f='codebrowser/locale/programs/xmalloc.c' l='102' u='c' c='xrealloc'/>
+<use f='codebrowser/login/login.c' l='59' u='c' c='tty_name'/>
+<use f='codebrowser/login/openpty.c' l='61' u='c' c='pts_name'/>
+<use f='codebrowser/malloc/dynarray_emplace_enlarge.c' l='66' u='c' c='__libc_dynarray_emplace_enlarge'/>
+<use f='codebrowser/malloc/dynarray_resize.c' l='56' u='c' c='__libc_dynarray_resize'/>
+<dec f='codebrowser/malloc/malloc.h' l='51' type='void * realloc(void * __ptr, size_t __size)'/>
+<def f='codebrowser/malloc/malloc-debug.c' l='268' macro='1' type='void * realloc(void * , size_t )'/>
+<doc f='codebrowser/malloc/malloc.h' l='48'>/* __attribute_malloc__ is not used, because if realloc returns
+   the same pointer that was passed to it, aliasing needs to be allowed
+   between objects pointed by the old and new pointers.  */</doc>
+<def f='codebrowser/malloc/memusage.c' l='396' ll='486' type='void * realloc(void * old, size_t len)'/>
+<doc f='codebrowser/malloc/memusage.c' l='394'>/* `realloc&apos; replacement.  We keep track of the memory usage if this is the
+   correct program.  */</doc>
+<use f='codebrowser/malloc/reallocarray.c' l='32' u='c' c='__libc_reallocarray'/>
+<use f='codebrowser/malloc/scratch_buffer_dupfree.c' l='37' u='c' c='__libc_scratch_buffer_dupfree'/>
+<use f='codebrowser/malloc/scratch_buffer_grow_preserve.c' l='46' u='c' c='__libc_scratch_buffer_grow_preserve'/>
+<use f='codebrowser/nis/nis_addmember.c' l='61' u='c' c='__GI_nis_addmember'/>
+<use f='codebrowser/nis/nis_call.c' l='163' u='c' c='get_ckey'/>
+<use f='codebrowser/nis/nis_findserv.c' l='118' u='c' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/nis/nis_subr.c' l='200' u='c' c='__GI_nis_getnames'/>
+<use f='codebrowser/nis/nis_subr.c' l='267' u='c' c='__GI_nis_getnames'/>
+<use f='codebrowser/nis/nis_table.c' l='105' u='c' c='__create_ib_request'/>
+<use f='codebrowser/nis/nis_table.c' l='418' u='c' c='__GI_nis_list'/>
+<use f='codebrowser/nptl/pthread_attr_setaffinity.c' l='51' u='c' c='__pthread_attr_setaffinity_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='180' u='c' c='__pthread_getattr_np'/>
+<use f='codebrowser/nscd/connections.c' l='1304' u='c' c='read_cmdline'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='235' u='c' c='make_request'/>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='105' u='c' c='__nscd_getgrouplist'/>
+<use f='codebrowser/nss/digits_dots.c' l='120' u='c' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nss/getnssent.c' l='41' u='c' c='__nss_getent'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='656' u='c' c='blacklist_store_name'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='190' u='c' c='add_group'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='544' u='c' c='blacklist_store_name'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='1105' u='c' c='blacklist_store_name'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='828' u='c' c='blacklist_store_name'/>
+<use f='codebrowser/nss/nss_db/db-initgroups.c' l='110' u='c' c='_nss_db_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_files/files-initgroups.c' l='101' u='c' c='_nss_files_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='41' u='c' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='41' u='c' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/posix/regex_internal.c' l='153' macro='1' u='c' c='re_string_realloc_buffers'/>
+<use f='codebrowser/posix/regex_internal.c' l='159' macro='1' u='c' c='re_string_realloc_buffers'/>
+<use f='codebrowser/posix/regex_internal.c' l='168' macro='1' u='c' c='re_string_realloc_buffers'/>
+<use f='codebrowser/posix/regex_internal.c' l='1065' macro='1' u='c' c='re_node_set_add_intersect'/>
+<use f='codebrowser/posix/regex_internal.c' l='1205' macro='1' u='c' c='re_node_set_merge'/>
+<use f='codebrowser/posix/regex_internal.c' l='1307' macro='1' u='c' c='re_node_set_insert'/>
+<use f='codebrowser/posix/regex_internal.c' l='1346' macro='1' u='c' c='re_node_set_insert_last'/>
+<use f='codebrowser/posix/regex_internal.c' l='1429' macro='1' u='c' c='re_dfa_add_node'/>
+<use f='codebrowser/posix/regex_internal.c' l='1433' macro='1' u='c' c='re_dfa_add_node'/>
+<use f='codebrowser/posix/regex_internal.c' l='1434' macro='1' u='c' c='re_dfa_add_node'/>
+<use f='codebrowser/posix/regex_internal.c' l='1435' macro='1' u='c' c='re_dfa_add_node'/>
+<use f='codebrowser/posix/regex_internal.c' l='1436' macro='1' u='c' c='re_dfa_add_node'/>
+<use f='codebrowser/posix/regex_internal.c' l='1598' macro='1' u='c' c='register_state'/>
+<use f='codebrowser/posix/regcomp.c' l='750' macro='1' u='c' c='re_compile_internal'/>
+<use f='codebrowser/posix/regcomp.c' l='2990' macro='1' u='c' c='build_range_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='2992' macro='1' u='c' c='build_range_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3068' macro='1' u='c' c='build_collating_symbol'/>
+<use f='codebrowser/posix/regcomp.c' l='3280' macro='1' u='c' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3554' macro='1' u='c' c='build_equiv_class'/>
+<use f='codebrowser/posix/regcomp.c' l='3607' macro='1' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regexec.c' l='489' macro='1' u='c' c='re_copy_regs'/>
+<use f='codebrowser/posix/regexec.c' l='493' macro='1' u='c' c='re_copy_regs'/>
+<use f='codebrowser/posix/regexec.c' l='1331' macro='1' u='c' c='push_fail_stack'/>
+<use f='codebrowser/posix/regexec.c' l='2858' macro='1' u='c' c='check_arrival'/>
+<use f='codebrowser/posix/regexec.c' l='4009' macro='1' u='c' c='extend_buffers'/>
+<use f='codebrowser/posix/regexec.c' l='4136' macro='1' u='c' c='match_ctx_add_entry'/>
+<use f='codebrowser/posix/regexec.c' l='4208' macro='1' u='c' c='match_ctx_add_subtop'/>
+<use f='codebrowser/posix/regexec.c' l='4235' macro='1' u='c' c='match_ctx_add_sublast'/>
+<use f='codebrowser/posix/spawn_faction_init.c' l='32' u='c' c='__posix_spawn_file_actions_realloc'/>
+<use f='codebrowser/posix/wordexp.c' l='85' u='c' c='w_addchar'/>
+<use f='codebrowser/posix/wordexp.c' l='111' u='c' c='w_addmem'/>
+<use f='codebrowser/posix/wordexp.c' l='160' u='c' c='w_addword'/>
+<use f='codebrowser/pwd/fgetpwent.c' l='59' u='c' c='fgetpwent'/>
+<use f='codebrowser/resolv/gai_misc.c' l='128' u='c' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='140' u='c' c='get_elem'/>
+<use f='codebrowser/shadow/fgetspent.c' l='62' u='c' c='fgetspent'/>
+<use f='codebrowser/shadow/sgetspent.c' l='56' u='c' c='sgetspent'/>
+<dec f='codebrowser/stdlib/gmp-impl.h' l='83' type='void * realloc(void * , size_t )'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='811' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='816' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='849' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='937' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='942' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1002' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1106' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1111' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1190' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1312' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1318' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1361' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2689' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2697' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2753' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2904' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2987' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdlib/setenv.c' l='156' u='c' c='__add_to_environ'/>
+<use f='codebrowser/string/argz-addsep.c' l='34' u='c' c='__argz_add_sep'/>
+<use f='codebrowser/string/argz-append.c' l='28' u='c' c='__argz_append'/>
+<use f='codebrowser/string/argz-insert.c' l='47' u='c' c='__argz_insert'/>
+<use f='codebrowser/string/argz-replace.c' l='30' u='c' c='str_append'/>
+<use f='codebrowser/string/envz.c' l='103' u='c' c='envz_add'/>
+<use f='codebrowser/sunrpc/svc.c' l='115' u='c' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc_run.c' l='68' u='c' c='__GI_svc_run'/>
+<use f='codebrowser/support/xrealloc.c' l='28' u='c' c='xrealloc'/>
+<use f='codebrowser/sysdeps/posix/sprofil.c' l='205' u='c' c='insert'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='431' u='c' c='__getcwd_generic'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='469' u='c' c='__getcwd_generic'/>
+<use f='codebrowser/posix/glob.c' l='909' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1054' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1154' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1427' u='c' c='glob_in_dir'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifreq.c' l='52' u='c' c='__ifreq'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifreq.c' l='72' u='c' c='__ifreq'/>
+<use f='codebrowser/io/fts.c' l='966' u='c' c='fts_sort'/>
+<use f='codebrowser/io/fts.c' l='1055' u='c' c='fts_palloc'/>
+<use f='codebrowser/io/ftw.c' l='209' u='c' c='ftw_allocate'/>
+<use f='codebrowser/io/ftw.c' l='305' u='c' c='open_dir_stream'/>
+<use f='codebrowser/io/ftw.c' l='326' u='c' c='open_dir_stream'/>
+<use f='codebrowser/elf/dl-tls.c' l='505' u='c' c='_dl_resize_dtv'/>
+<use f='codebrowser/time/era.c' l='77' u='c' c='_nl_init_era_entries'/>
+<use f='codebrowser/timezone/zic.c' l='480' u='c' c='erealloc'/>

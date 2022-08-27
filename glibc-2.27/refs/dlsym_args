@@ -1,0 +1,9 @@
+<def f='codebrowser/dlfcn/dlsym.c' l='34' ll='43'/>
+<use f='codebrowser/dlfcn/dlsym.c' l='48' c='dlsym_doit'/>
+<use f='codebrowser/dlfcn/dlsym.c' l='48' c='dlsym_doit'/>
+<use f='codebrowser/dlfcn/dlsym.c' l='62' c='__dlsym'/>
+<size>32</size>
+<mbr r='dlsym_args::handle' o='0' t='void *'/>
+<mbr r='dlsym_args::name' o='64' t='const char *'/>
+<mbr r='dlsym_args::who' o='128' t='void *'/>
+<mbr r='dlsym_args::sym' o='192' t='void *'/>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/x86/include/cpu-features.h' l='832' type='enum cpu_features_kind'/>
+<offset>0</offset>
+<use f='codebrowser/sysdeps/x86/dl-diagnostics-cpu.c' l='48' u='r' c='_dl_diagnostics_cpu'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='507' u='r' c='get_common_cache_info'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='544' u='r' c='get_common_cache_info'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='648' u='r' c='get_common_cache_info'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='722' u='r' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='752' u='r' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='772' u='r' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='906' u='r' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='698' u='w' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='771' u='r' c='init_cpu_features'/>

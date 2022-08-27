@@ -1,0 +1,6 @@
+<dec f='codebrowser/elf/rtld.c' l='2465' type='char **'/>
+<use f='codebrowser/elf/rtld.c' l='2471' u='r' c='process_envvars'/>
+<doc f='codebrowser/elf/rtld.c' l='2462'>/* Process all environments variables the dynamic linker must recognize.
+   Since all of them start with `LD_&apos; we are a bit smarter while finding
+   all the entries.  */</doc>
+<def f='codebrowser/posix/environ.c' l='12' macro='1' type='typeof (__environ)'/>

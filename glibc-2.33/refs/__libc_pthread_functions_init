@@ -1,0 +1,20 @@
+<dec f='codebrowser/sysdeps/nptl/pthread-functions.h' l='75' type='int'/>
+<def f='codebrowser/nptl/forward.c' l='31' type='int'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_broadcast_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_broadcast'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_signal_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_signal'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_wait_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_wait'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_timedwait_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_timedwait'/>
+<use f='codebrowser/nptl/forward.c' l='49' u='r' c='__pthread_exit'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_mutex_destroy'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_mutex_init'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_mutex_lock'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_mutex_unlock'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_setcancelstate'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_setcanceltype'/>
+<use f='codebrowser/nptl/forward.c' l='49' u='r' c='__pthread_unwind'/>
+<use f='codebrowser/sunrpc/auth_none.c' l='96' macro='1' u='r' c='__GI_authnone_create'/>
+<use f='codebrowser/sunrpc/rpc_thread.c' l='59' macro='1' u='r' c='__rpc_thread_variables'/>

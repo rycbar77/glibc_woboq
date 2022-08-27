@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/pthread/aio_misc.h' l='46' type='struct waitlist *'/>
+<offset>0</offset>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='128' u='r' c='__aio_notify'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='79' u='a' c='cleanup'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='82' u='r' c='cleanup'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='145' u='w' c='__aio_suspend'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='213' u='a' c='__aio_suspend'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='216' u='r' c='__aio_suspend'/>
+<dec f='codebrowser/resolv/gai_misc.h' l='29' type='struct waitlist *'/>
+<offset>0</offset>
+<use f='codebrowser/sysdeps/pthread/lio_listio.c' l='133' u='w' c='lio_listio_internal'/>
+<use f='codebrowser/sysdeps/pthread/lio_listio.c' l='196' u='w' c='lio_listio_internal'/>

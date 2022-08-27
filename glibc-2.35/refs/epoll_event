@@ -1,0 +1,16 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/sys/epoll.h' l='84' ll='88'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sys/epoll.h' l='111' c='epoll_ctl'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sys/epoll.h' l='124' c='epoll_wait'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sys/epoll.h' l='133' c='epoll_pwait'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sys/epoll.h' l='142' c='epoll_pwait2'/>
+<use f='codebrowser/nscd/connections.c' l='2189' c='main_loop_epoll'/>
+<use f='codebrowser/nscd/connections.c' l='2225' c='main_loop_epoll'/>
+<size>12</size>
+<mbr r='epoll_event::events' o='0' t='uint32_t'/>
+<mbr r='epoll_event::data' o='32' t='epoll_data_t'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/epoll_pwait.c' l='36' c='epoll_pwait'/>
+<size>12</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/epoll_pwait2.c' l='23' c='epoll_pwait2'/>
+<size>12</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/epoll_wait.c' l='27' c='epoll_wait'/>
+<size>12</size>

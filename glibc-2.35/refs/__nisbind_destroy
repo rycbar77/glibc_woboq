@@ -1,0 +1,13 @@
+<dec f='codebrowser/nis/rpcsvc/nislib.h' l='276' type='void __nisbind_destroy(dir_binding * )'/>
+<dec f='codebrowser/include/rpcsvc/nislib.h' l='32' type='void __nisbind_destroy(dir_binding * )'/>
+<use f='codebrowser/include/rpcsvc/nislib.h' l='32' c='__nisbind_destroy'/>
+<def f='codebrowser/nis/nis_call.c' l='58' ll='67' type='void __nisbind_destroy(dir_binding * bind)'/>
+<use f='codebrowser/nis/nis_call.c' l='68' c='__EI___nisbind_destroy'/>
+<use f='codebrowser/nis/nis_call.c' l='402' u='c' c='__do_niscall2'/>
+<use f='codebrowser/nis/nis_call.c' l='811' u='c' c='__prepare_niscall'/>
+<use f='codebrowser/nis/nis_call.c' l='837' u='c' c='__do_niscall'/>
+<use f='codebrowser/nis/nis_lookup.c' l='123' u='c' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='145' u='c' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='174' u='c' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_table.c' l='341' u='c' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='536' u='c' c='__GI_nis_list'/>

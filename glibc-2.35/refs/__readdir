@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/dirent.h' l='22' type='struct dirent * __readdir(DIR * __dirp)'/>
+<use f='codebrowser/iconv/gconv_parseconfdir.h' l='32' u='c' c='gconv_parseconfdir'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='92' macro='1' type='struct dirent64 * __readdir(DIR * )'/>
+<use f='codebrowser/io/fts.c' l='722' u='c' c='fts_build'/>

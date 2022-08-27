@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/rpc/rpc.h' l='33' type='SVCXPRT **'/>
+<offset>1792</offset>
+<doc f='codebrowser/include/rpc/rpc.h' l='33'>/* svc.c */</doc>
+<use f='codebrowser/sunrpc/rpc_thread.c' l='33' u='r' c='__rpc_thread_destroy'/>
+<use f='codebrowser/sunrpc/svc.c' l='64' u='r' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='64' u='w' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='64' u='r' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='64' u='r' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='64' u='r' c='__GI_xprt_unregister'/>
+<use f='codebrowser/sunrpc/svc.c' l='64' u='r' c='__GI_xprt_unregister'/>
+<use f='codebrowser/sunrpc/svc.c' l='64' u='r' c='__GI_svc_getreq_poll'/>
+<use f='codebrowser/sunrpc/svc.c' l='64' u='r' c='__GI_svc_getreq_common'/>

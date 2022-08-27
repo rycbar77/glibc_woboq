@@ -1,0 +1,11 @@
+<dec f='include/selinux/avc.h' l='117'/>
+<doc f='include/selinux/avc.h' l='108'>/**
+ * avc_entry_ref_init - initialize an AVC entry reference.
+ * @aeref: pointer to avc entry reference structure
+ *
+ * Use this macro to initialize an avc entry reference structure
+ * before first use.  These structures are passed to avc_has_perm(),
+ * which stores cache entry references in them.  They can increase
+ * performance on repeated queries.
+ */</doc>
+<use f='codebrowser/nscd/selinux.c' l='334' u='c'/>

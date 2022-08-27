@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/fork.h' l='22' type='unsigned long'/>
+<doc f='codebrowser/sysdeps/nptl/fork.h' l='21'>/* The fork generation counter, defined in libpthread.  */</doc>
+<use f='codebrowser/nptl/nptl-init.c' l='462' u='a' c='__pthread_initialize_minimal_internal'/>
+<def f='codebrowser/nptl/pthread_once.c' l='24' type='unsigned long'/>
+<use f='codebrowser/nptl/pthread_once.c' l='88' u='r' c='__pthread_once_slow'/>

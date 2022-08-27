@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/pthread/aio_misc.h' l='119' type='int __aio_sigqueue(int sig, const union sigval val, pid_t caller_pid)'/>
+<doc f='codebrowser/sysdeps/pthread/aio_misc.h' l='118'>/* Send the signal.  */</doc>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='97' u='c' c='__aio_notify_only'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/aio_sigqueue.c' l='30' ll='46' type='int __aio_sigqueue(int sig, const union sigval val, pid_t caller_pid)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/aio_sigqueue.c' l='29'>/* Return any pending signal or wait for one for the given time.  */</doc>

@@ -1,0 +1,6 @@
+<def f='codebrowser/nptl/sem_waitcommon.c' l='124' ll='159' type='int __new_sem_wait_fast(struct new_sem * sem, int definitive_result)'/>
+<use f='codebrowser/nptl/sem_clockwait.c' l='43' u='c' c='___sem_clockwait64'/>
+<doc f='codebrowser/nptl/sem_waitcommon.c' l='123'>/* Fast path: Try to grab a token without blocking.  */</doc>
+<use f='codebrowser/nptl/sem_timedwait.c' l='37' u='c' c='___sem_timedwait64'/>
+<use f='codebrowser/nptl/sem_wait.c' l='39' u='c' c='__new_sem_wait'/>
+<use f='codebrowser/nptl/sem_wait.c' l='81' u='c' c='__new_sem_trywait'/>

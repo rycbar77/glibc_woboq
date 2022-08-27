@@ -1,0 +1,15 @@
+<dec f='codebrowser/nscd/nscd.h' l='138' type='int'/>
+<offset>1664</offset>
+<use f='codebrowser/nscd/connections.c' l='122' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='141' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='160' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='179' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='198' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='579' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='624' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='637' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='667' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='775' u='w' c='nscd_init'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='228' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='230' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='129' u='r' c='send_stats'/>

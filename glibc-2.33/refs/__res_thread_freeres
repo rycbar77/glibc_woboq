@@ -1,0 +1,9 @@
+<dec f='codebrowser/resolv/resolv-internal.h' l='98' type='void __res_thread_freeres()'/>
+<dec f='codebrowser/malloc/thread-freeres.c' l='37' type='void __res_thread_freeres()'/>
+<use f='codebrowser/malloc/thread-freeres.c' l='37' c='__res_thread_freeres'/>
+<use f='codebrowser/malloc/thread-freeres.c' l='37' u='r' c='__libc_thread_freeres'/>
+<use f='codebrowser/malloc/thread-freeres.c' l='37' u='c' c='__libc_thread_freeres'/>
+<doc f='codebrowser/resolv/resolv-internal.h' l='97'>/* Called as part of the thread shutdown sequence.  */</doc>
+<def f='codebrowser/resolv/res-close.c' l='129' ll='142' type='void __res_thread_freeres()'/>
+<use f='codebrowser/resolv/res-close.c' l='144' u='a'/>
+<doc f='codebrowser/resolv/res-close.c' l='128'>/* This is called when a thread is exiting to free resources held in _res.  */</doc>

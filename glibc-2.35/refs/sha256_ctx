@@ -1,0 +1,16 @@
+<def f='codebrowser/crypt/sha256.h' l='30' ll='48'/>
+<use f='codebrowser/crypt/sha256.h' l='52' c='__sha256_init_ctx'/>
+<use f='codebrowser/crypt/sha256.h' l='59' c='__sha256_process_bytes'/>
+<use f='codebrowser/crypt/sha256.h' l='66' c='__sha256_finish_ctx'/>
+<use f='codebrowser/crypt/sha256-crypt.c' l='187' c='__sha256_crypt_r'/>
+<use f='codebrowser/crypt/sha256-crypt.c' l='188' c='__sha256_crypt_r'/>
+<size>176</size>
+<doc f='codebrowser/crypt/sha256.h' l='29'>/* Structure to save state of computation between the single steps.  */</doc>
+<mbr r='sha256_ctx::H' o='0' t='uint32_t[8]'/>
+<mbr r='sha256_ctx::buflen' o='320' t='uint32_t'/>
+<use f='codebrowser/crypt/sha256.c' l='83' c='__sha256_process_block'/>
+<use f='codebrowser/crypt/sha256.c' l='88' c='__sha256_init_ctx'/>
+<use f='codebrowser/crypt/sha256.c' l='110' c='__sha256_finish_ctx'/>
+<use f='codebrowser/crypt/sha256.c' l='143' c='__sha256_process_bytes'/>
+<use f='codebrowser/crypt/sha256-block.c' l='6' c='__sha256_process_block'/>
+<size>176</size>

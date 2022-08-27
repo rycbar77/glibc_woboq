@@ -1,0 +1,38 @@
+<dec f='codebrowser/malloc/obstack.h' l='158' type='char *'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='58' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='59' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='67' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='70' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='78' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='82' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='82' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='85' macro='1' u='w' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='97' macro='1' u='w' c='__obstack_vprintf_chk'/>
+<offset>192</offset>
+<doc f='codebrowser/malloc/obstack.h' l='158'>/* where to add next char to current object */</doc>
+<use f='codebrowser/libio/obprintf.c' l='48' macro='1' u='r' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='48' macro='1' u='w' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='52' macro='1' u='r' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='53' macro='1' u='r' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='56' macro='1' u='w' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='73' macro='1' u='w' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='76' macro='1' u='r' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='76' macro='1' u='r' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='76' macro='1' u='w' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='80' macro='1' u='r' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='81' macro='1' u='r' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='84' macro='1' u='w' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='136' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='137' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='145' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='148' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='156' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='160' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='160' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='163' macro='1' u='w' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='170' macro='1' u='w' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/malloc/obstack.c' l='179' u='w' c='_obstack_begin'/>
+<use f='codebrowser/malloc/obstack.c' l='227' u='w' c='_obstack_begin_1'/>
+<use f='codebrowser/malloc/obstack.c' l='250' u='r' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='305' u='w' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='365' u='w' c='obstack_free'/>

@@ -1,0 +1,28 @@
+<dec f='codebrowser/locale/programs/linereader.h' l='69' type='size_t'/>
+<use f='codebrowser/locale/programs/linereader.h' l='127' u='r' c='lr_getc'/>
+<use f='codebrowser/locale/programs/linereader.h' l='137' u='r' c='lr_getc'/>
+<use f='codebrowser/locale/programs/linereader.h' l='137' u='w' c='lr_getc'/>
+<use f='codebrowser/locale/programs/linereader.h' l='145' u='r' c='lr_ungetc'/>
+<use f='codebrowser/locale/programs/linereader.h' l='149' u='w' c='lr_ungetc'/>
+<use f='codebrowser/locale/programs/linereader.h' l='157' u='r' c='lr_ungetn'/>
+<use f='codebrowser/locale/programs/linereader.h' l='160' u='w' c='lr_ungetn'/>
+<offset>384</offset>
+<use f='codebrowser/locale/programs/linereader.c' l='77' u='w' c='lr_create'/>
+<use f='codebrowser/locale/programs/linereader.c' l='117' u='r' c='lr_ignore_rest'/>
+<use f='codebrowser/locale/programs/linereader.c' l='117' u='r' c='lr_ignore_rest'/>
+<use f='codebrowser/locale/programs/linereader.c' l='118' u='r' c='lr_ignore_rest'/>
+<use f='codebrowser/locale/programs/linereader.c' l='119' u='r' c='lr_ignore_rest'/>
+<use f='codebrowser/locale/programs/linereader.c' l='125' u='w' c='lr_ignore_rest'/>
+<use f='codebrowser/locale/programs/linereader.c' l='127' u='r' c='lr_ignore_rest'/>
+<use f='codebrowser/locale/programs/linereader.c' l='128' u='r' c='lr_ignore_rest'/>
+<use f='codebrowser/locale/programs/linereader.c' l='137' u='w' c='lr_ignore_rest'/>
+<use f='codebrowser/locale/programs/linereader.c' l='175' u='w' c='lr_next'/>
+<use f='codebrowser/locale/programs/linereader.c' l='226' u='w' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='243' u='r' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='251' u='r' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='259' u='r' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='266' u='r' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='274' u='r' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='341' u='r' c='get_toplvl_escape'/>
+<use f='codebrowser/locale/programs/linereader.c' l='372' u='r' c='get_toplvl_escape'/>
+<use f='codebrowser/locale/programs/linereader.c' l='549' u='r' c='get_ident'/>

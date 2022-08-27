@@ -1,0 +1,7 @@
+<def f='codebrowser/posix/regcomp.c' l='3029' ll='3088' type='reg_errcode_t build_collating_symbol(bitset_word_t * sbcset, re_charset_t * mbcset, int * coll_sym_alloc, const unsigned char * name, uint32_t nrules, int32_t table_size, const int32_t * symb_table, const unsigned char * extra)'/>
+<use f='codebrowser/posix/regcomp.c' l='3299' u='c' c='parse_bracket_exp'/>
+<doc f='codebrowser/posix/regcomp.c' l='3023'>/* Local function for parse_bracket_exp used in _LIBC environment.
+   Build the collating element which is represented by NAME.
+   The result are written to MBCSET and SBCSET.
+   COLL_SYM_ALLOC is the allocated size of mbcset-&gt;coll_sym, is a
+   pointer argument since we may update it.  */</doc>

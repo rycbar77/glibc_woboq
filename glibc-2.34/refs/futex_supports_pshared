@@ -1,0 +1,10 @@
+<def f='codebrowser/sysdeps/nptl/futex-internal.h' l='101' ll='110' type='int futex_supports_pshared(int pshared)'/>
+<doc f='codebrowser/sysdeps/nptl/futex-internal.h' l='98'>/* Returns EINVAL if PSHARED is neither PTHREAD_PROCESS_PRIVATE nor
+   PTHREAD_PROCESS_SHARED; otherwise, returns 0 if PSHARED is supported, and
+   ENOTSUP if not.  */</doc>
+<use f='codebrowser/nptl/pthread_barrierattr_setpshared.c' l='27' u='c' c='__pthread_barrierattr_setpshared'/>
+<use f='codebrowser/nptl/pthread_condattr_setpshared.c' l='27' u='c' c='__pthread_condattr_setpshared'/>
+<use f='codebrowser/nptl/pthread_mutexattr_setpshared.c' l='29' u='c' c='__pthread_mutexattr_setpshared'/>
+<use f='codebrowser/nptl/pthread_rwlockattr_setpshared.c' l='29' u='c' c='__pthread_rwlockattr_setpshared'/>
+<use f='codebrowser/nptl/sem_init.c' l='39' u='c' c='__new_sem_init'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='43' u='c' c='__sem_open'/>

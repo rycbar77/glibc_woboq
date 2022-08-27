@@ -1,0 +1,8 @@
+<dec f='codebrowser/posix/unistd.h' l='469' type='int usleep(__useconds_t __useconds)'/>
+<doc f='codebrowser/posix/unistd.h' l='464'>/* Sleep USECONDS microseconds, or until a signal arrives that is not blocked
+   or ignored.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/support/support_test_main.c' l='228' u='c' c='run_test_function'/>
+<def f='codebrowser/sysdeps/posix/usleep.c' l='23' ll='33' type='int usleep(useconds_t useconds)'/>

@@ -1,0 +1,10 @@
+<def f='codebrowser/elf/dl-tunable-types.h' l='60' ll='80'/>
+<use f='codebrowser/elf/dl-tunable-types.h' l='82'/>
+<size>112</size>
+<doc f='codebrowser/elf/dl-tunable-types.h' l='59'>/* A tunable.  */</doc>
+<mbr r='_tunable::name' o='0' t='const char[42]'/>
+<mbr r='_tunable::type' o='384' t='tunable_type_t'/>
+<mbr r='_tunable::val' o='576' t='tunable_val_t'/>
+<mbr r='_tunable::initialized' o='640' t='_Bool'/>
+<mbr r='_tunable::security_level' o='672' t='tunable_seclevel_t'/>
+<mbr r='_tunable::env_alias' o='704' t='const char[23]'/>

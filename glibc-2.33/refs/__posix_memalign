@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/stdlib.h' l='128' type='int __posix_memalign(void ** memptr, size_t alignment, size_t size)'/>
+<dec f='codebrowser/malloc/malloc.c' l='819' type='int __posix_memalign(void ** , size_t , size_t )'/>
+<def f='codebrowser/malloc/malloc.c' l='5631' ll='5654' type='int __posix_memalign(void ** memptr, size_t alignment, size_t size)'/>
+<use f='codebrowser/malloc/malloc.c' l='5655' c='posix_memalign'/>
+<doc f='codebrowser/malloc/malloc.c' l='814'>/*
+  posix_memalign(void **memptr, size_t alignment, size_t size);
+
+  POSIX wrapper like memalign(), checking for validity of size.
+*/</doc>
+<doc f='codebrowser/malloc/malloc.c' l='5630'>/* We need a wrapper function for one of the additions of POSIX.  */</doc>

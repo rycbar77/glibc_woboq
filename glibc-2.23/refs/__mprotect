@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/sys/mman.h' l='11' type='int __mprotect(void * __addr, size_t __len, int __prot)'/>
+<dec f='codebrowser/sysdeps/generic/dl-mman.h' l='21' type='int __mprotect(void * , size_t , int )'/>
+<use f='codebrowser/sysdeps/generic/dl-mman.h' l='21' c='__mprotect'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='72' u='c' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='122' u='c' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='129' u='c' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-reloc.c' l='204' u='c' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='290' u='c' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='321' u='c' c='_dl_protect_relro'/>
+<use f='codebrowser/malloc/arena.c' l='599' u='c' c='new_heap'/>
+<use f='codebrowser/malloc/arena.c' l='627' u='c' c='grow_heap'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='47' u='c' c='_dl_make_stack_executable'/>

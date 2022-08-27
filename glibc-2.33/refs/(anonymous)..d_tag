@@ -1,0 +1,57 @@
+<dec f='codebrowser/elf/elf.h' l='830' type='Elf32_Sword'/>
+<dec f='codebrowser/elf/elf.h' l='840' type='Elf64_Sxword'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/elf.h' l='830'>/* Dynamic entry type */</doc>
+<doc f='codebrowser/elf/elf.h' l='840'>/* Dynamic entry type */</doc>
+<use f='codebrowser/elf/get-dynamic-info.h' l='46' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='50' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='51' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='52' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='53' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='54' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='55' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='56' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='57' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='58' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='60' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='61' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='63' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='64' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='w' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='w' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='w' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='w' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='w' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='w' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='w' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='w' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='87' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/dl-deps.c' l='237' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='238' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='282' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='282' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='288' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='306' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/readelflib.c' l='259' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='263' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='297' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='300' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='300' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='305' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='322' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='259' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='263' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='297' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='300' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='300' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='305' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='322' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/rtld.c' l='2080' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2082' u='r' c='dl_main'/>

@@ -1,0 +1,3 @@
+<def f='codebrowser/nptl/pthread_cond_wait.c' l='669' ll='683' type='int ___pthread_cond_clockwait64(pthread_cond_t * cond, pthread_mutex_t * mutex, clockid_t clockid, const struct timespec * abstime)'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='686' c='___pthread_cond_clockwait'/>
+<doc f='codebrowser/nptl/pthread_cond_wait.c' l='668'>/* See __pthread_cond_wait_common.  */</doc>

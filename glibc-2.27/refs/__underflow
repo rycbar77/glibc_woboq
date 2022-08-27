@@ -1,0 +1,9 @@
+<dec f='codebrowser/libio/bits/libio.h' l='389' type='int __underflow(_IO_FILE * )'/>
+<dec f='codebrowser/include/bits/libio.h' l='11' type='int __underflow(_IO_FILE * )'/>
+<use f='codebrowser/include/bits/libio.h' l='11' c='__underflow'/>
+<use f='codebrowser/libio/fileops.c' l='1344' u='c' c='_IO_file_xsgetn'/>
+<def f='codebrowser/libio/genops.c' l='285' ll='312' type='int __underflow(_IO_FILE * fp)'/>
+<use f='codebrowser/libio/genops.c' l='461' u='c' c='_IO_default_xsgetn'/>
+<use f='codebrowser/libio/iogetdelim.c' l='73' u='c' c='_IO_getdelim'/>
+<use f='codebrowser/libio/iogetdelim.c' l='114' u='c' c='_IO_getdelim'/>
+<use f='codebrowser/libio/peekc.c' l='38' macro='1' u='c' c='_IO_peekc_locked'/>

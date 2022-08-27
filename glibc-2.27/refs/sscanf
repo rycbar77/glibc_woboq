@@ -1,0 +1,10 @@
+<dec f='codebrowser/libio/stdio.h' l='385' type='int sscanf(const char *restrict __s, const char *restrict __format)'/>
+<dec f='codebrowser/include/stdio.h' l='152' type='int sscanf(const char *restrict , const char *restrict )'/>
+<use f='codebrowser/include/stdio.h' l='152' c='sscanf'/>
+<doc f='codebrowser/libio/stdio.h' l='384'>/* Read formatted input from S.  */</doc>
+<use f='codebrowser/misc/mntent_r.c' l='173' u='c' c='__getmntent_r'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='123' u='c' c='pthread_getattr_np'/>
+<def f='codebrowser/stdio-common/sscanf.c' l='38' macro='1' type='int sscanf(const char * , const char * )'/>
+<use f='codebrowser/time/tzset.c' l='208' u='c' c='parse_offset'/>
+<use f='codebrowser/time/tzset.c' l='258' u='c' c='parse_rule'/>
+<use f='codebrowser/time/tzset.c' l='306' u='c' c='parse_rule'/>

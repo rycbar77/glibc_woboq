@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='977' type='int _rtld_catch_error(const char ** , const char ** , _Bool * , void (*)(void *) , void * )'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='976'>/* Used for initializing GLRO (_dl_catch_error).  */</doc>
+<def f='codebrowser/elf/dl-error-skeleton.c' l='253' ll='261' type='int _rtld_catch_error(const char ** objname, const char ** errstring, _Bool * mallocedp, void (*)(void *) operate, void * args)'/>
+<doc f='codebrowser/elf/dl-error-skeleton.c' l='252'>/* Forwarder used for initializing GLRO (_dl_catch_error).  */</doc>
+<use f='codebrowser/elf/rtld.c' l='384'/>

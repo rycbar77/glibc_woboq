@@ -1,0 +1,9 @@
+<dec f='codebrowser/nptl_db/thread_dbP.h' l='199'/>
+<doc f='codebrowser/nptl_db/thread_dbP.h' l='197'>/* Store in psaddr_t VAR the value of variable NAME[IDX] in the inferior.
+   A target value smaller than psaddr_t is zero-extended.  */</doc>
+<use f='codebrowser/nptl_db/td_init.c' l='38' u='c'/>
+<use f='codebrowser/nptl_db/td_ta_event_getmsg.c' l='45' u='c'/>
+<use f='codebrowser/nptl_db/td_ta_get_nthreads.c' l='35' u='c'/>
+<use f='codebrowser/nptl_db/td_thr_event_getmsg.c' l='73' u='c'/>
+<use f='codebrowser/nptl_db/td_thr_get_info.c' l='49' u='c'/>
+<use f='codebrowser/nptl_db/td_thr_tsd.c' l='34' u='c'/>

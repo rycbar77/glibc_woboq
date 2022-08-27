@@ -1,0 +1,9 @@
+<dec f='codebrowser/posix/unistd.h' l='1198' type='int getentropy(void * __buffer, size_t __length)'/>
+<doc f='codebrowser/posix/unistd.h' l='1196'>/* Write LENGTH bytes of randomness starting at BUFFER.  Return 0 on
+   success or -1 on error.  */</doc>
+<dec f='codebrowser/stdlib/sys/random.h' l='39' type='int getentropy(void * __buffer, size_t __length)'/>
+<doc f='codebrowser/stdlib/sys/random.h' l='37'>/* Write LENGTH bytes of randomness starting at BUFFER.  Return 0 on
+   success or -1 on error.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getentropy.c' l='27' ll='65' type='int getentropy(void * buffer, size_t length)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/getentropy.c' l='25'>/* Write LENGTH bytes of randomness starting at BUFFER.  Return 0 on
+   success and -1 on failure.  */</doc>

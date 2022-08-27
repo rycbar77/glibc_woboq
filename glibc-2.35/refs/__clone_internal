@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/clone_internal.h' l='8' type='int __clone_internal(struct clone_args * __cl_args, int (*)(void *) __func, void * __arg)'/>
+<dec f='codebrowser/include/clone_internal.h' l='13' type='int __clone_internal(struct clone_args * , int (*)(void *) , void * )'/>
+<use f='codebrowser/include/clone_internal.h' l='13' c='__clone_internal'/>
+<use f='codebrowser/nptl/pthread_create.c' l='295' u='c' c='create_thread'/>
+<doc f='codebrowser/include/clone_internal.h' l='6'>/* The internal wrapper of clone/clone2 and clone3.  If __clone3 returns
+   -1 with ENOSYS, fall back to clone or clone2.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='46' ll='89' type='int __clone_internal(struct clone_args * cl_args, int (*)(void *) func, void * arg)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='388' u='c' c='__spawnix'/>

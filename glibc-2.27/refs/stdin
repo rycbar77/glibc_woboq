@@ -1,0 +1,26 @@
+<dec f='codebrowser/libio/stdio.h' l='135' type='struct _IO_FILE *'/>
+<use f='codebrowser/libio/bits/stdio.h' l='46' macro='1' u='r' c='getchar'/>
+<use f='codebrowser/libio/bits/stdio.h' l='72' macro='1' u='r' c='getchar_unlocked'/>
+<use f='codebrowser/libio/bits/stdio.h' l='72' macro='1' u='r' c='getchar_unlocked'/>
+<use f='codebrowser/libio/bits/stdio.h' l='72' macro='1' u='r' c='getchar_unlocked'/>
+<use f='codebrowser/libio/bits/stdio.h' l='72' macro='1' u='r' c='getchar_unlocked'/>
+<doc f='codebrowser/libio/stdio.h' l='134'>/* Standard streams.  */</doc>
+<doc f='codebrowser/libio/stdio.h' l='135'>/* Standard input stream.  */</doc>
+<def f='codebrowser/libio/stdio.c' l='33' type='_IO_FILE *'/>
+<use f='codebrowser/libio/stdio.c' l='44'/>
+<use f='codebrowser/libio/wscanf.c' l='33' macro='1' u='r' c='__wscanf'/>
+<use f='codebrowser/misc/getpass.c' l='61' macro='1' u='r' c='getpass'/>
+<use f='codebrowser/misc/getpass.c' l='119' macro='1' u='r' c='getpass'/>
+<use f='codebrowser/stdio-common/isoc99_scanf.c' l='32' macro='1' u='r' c='__isoc99_scanf'/>
+<use f='codebrowser/stdio-common/isoc99_scanf.c' l='34' macro='1' u='r' c='__isoc99_scanf'/>
+<use f='codebrowser/stdio-common/isoc99_scanf.c' l='37' macro='1' u='r' c='__isoc99_scanf'/>
+<use f='codebrowser/stdio-common/isoc99_vscanf.c' l='28' macro='1' u='r' c='__isoc99_vscanf'/>
+<use f='codebrowser/stdio-common/isoc99_vscanf.c' l='29' macro='1' u='r' c='__isoc99_vscanf'/>
+<use f='codebrowser/stdio-common/isoc99_vscanf.c' l='30' macro='1' u='r' c='__isoc99_vscanf'/>
+<use f='codebrowser/stdio-common/scanf.c' l='33' macro='1' u='r' c='__scanf'/>
+<use f='codebrowser/wcsmbs/isoc99_vwscanf.c' l='29' macro='1' u='r' c='__isoc99_vwscanf'/>
+<use f='codebrowser/wcsmbs/isoc99_vwscanf.c' l='30' macro='1' u='r' c='__isoc99_vwscanf'/>
+<use f='codebrowser/wcsmbs/isoc99_vwscanf.c' l='31' macro='1' u='r' c='__isoc99_vwscanf'/>
+<use f='codebrowser/wcsmbs/isoc99_wscanf.c' l='32' macro='1' u='r' c='__isoc99_wscanf'/>
+<use f='codebrowser/wcsmbs/isoc99_wscanf.c' l='33' macro='1' u='r' c='__isoc99_wscanf'/>
+<use f='codebrowser/wcsmbs/isoc99_wscanf.c' l='36' macro='1' u='r' c='__isoc99_wscanf'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/dlfcn/dlfcn.h' l='222' type='int _dl_find_object(void * __address, struct dl_find_object * __result)'/>
+<doc f='codebrowser/dlfcn/dlfcn.h' l='220'>/* If ADDRESS is found in an object, fill in *RESULT and return 0.
+   Otherwise, return -1.  */</doc>
+<def f='codebrowser/elf/dl-find_object.c' l='358' ll='465' type='int _dl_find_object(void * pc1, struct dl_find_object * result)'/>
+<def f='codebrowser/elf/libc-dl_find_object.c' l='22' ll='26' type='int _dl_find_object(void * address, struct dl_find_object * result)'/>
+<use f='codebrowser/elf/rtld_static_init.c' l='81' u='r' c='__rtld_static_init'/>

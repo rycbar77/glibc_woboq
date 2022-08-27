@@ -1,0 +1,13 @@
+<def f='codebrowser/bits/waitstatus.h' l='66' ll='97'/>
+<use f='codebrowser/stdlib/stdlib.h' l='69'/>
+<size>4</size>
+<mbr r='wait::w_status' o='0' t='int'/>
+<mbr r='wait::__wait_terminated' o='0' t='struct (unnamed struct at /media/rr/Data/glibc_source/glibc-2.23/argp/../bits/waitstatus.h:69:5)'/>
+<mbr r='wait::__wait_stopped' o='0' t='struct (unnamed struct at /media/rr/Data/glibc_source/glibc-2.23/argp/../bits/waitstatus.h:84:5)'/>
+<dec f='codebrowser/posix/sys/wait.h' l='113' type='__pid_t wait(__WAIT_STATUS __stat_loc)'/>
+<doc f='codebrowser/posix/sys/wait.h' l='108'>/* Wait for a child to die.  When one does, put its status in *STAT_LOC
+   and return its process ID.  For errors, return (pid_t) -1.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/wait.c' l='35' macro='1' type='__pid_t wait(int * )'/>

@@ -1,0 +1,33 @@
+<dec f='codebrowser/sunrpc/rpc/clnt.h' l='144' type='struct clnt_ops *'/>
+<offset>64</offset>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='57' macro='1' u='r' c='__GI_clnt_sperror'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='125' u='w' c='__GI_clntraw_create'/>
+<use f='codebrowser/sunrpc/clnt_simp.c' l='91' macro='1' u='r' c='__GI_callrpc'/>
+<use f='codebrowser/sunrpc/clnt_simp.c' l='111' macro='1' u='r' c='__GI_callrpc'/>
+<use f='codebrowser/sunrpc/clnt_simp.c' l='129' macro='1' u='r' c='__rpc_thread_clnt_cleanup'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='208' u='w' c='__GI_clnttcp_create'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='157' u='w' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='191' u='w' c='__GI_clntunix_create'/>
+<use f='codebrowser/sunrpc/key_call.c' l='230' macro='1' u='r' c='__GI_key_gendes'/>
+<use f='codebrowser/sunrpc/key_call.c' l='233' macro='1' u='r' c='__GI_key_gendes'/>
+<use f='codebrowser/sunrpc/key_call.c' l='422' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='429' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='433' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='449' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='455' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='471' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='478' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='480' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='508' macro='1' u='r' c='key_call_socket'/>
+<use f='codebrowser/sunrpc/key_call.c' l='572' macro='1' u='r' c='__rpc_thread_key_cleanup'/>
+<use f='codebrowser/sunrpc/pm_getmaps.c' l='74' macro='1' u='r' c='__GI_pmap_getmaps'/>
+<use f='codebrowser/sunrpc/pm_getmaps.c' l='80' macro='1' u='r' c='__GI_pmap_getmaps'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='117' macro='1' u='r' c='__libc_rpc_getport'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='122' macro='1' u='r' c='__libc_rpc_getport'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='128' macro='1' u='r' c='__libc_rpc_getport'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='124' macro='1' u='r' c='__GI_pmap_set'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='131' macro='1' u='r' c='__GI_pmap_set'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='159' macro='1' u='r' c='__GI_pmap_unset'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='162' macro='1' u='r' c='__GI_pmap_unset'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='90' macro='1' u='r' c='__GI_pmap_rmtcall'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='94' macro='1' u='r' c='__GI_pmap_rmtcall'/>

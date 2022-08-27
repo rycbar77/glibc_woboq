@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1138' type='struct r_debug * _dl_debug_initialize(Elf64_Addr ldbase, Lmid_t ns)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1135'>/* Initialize `struct r_debug_extended&apos; for the namespace NS.  LDBASE
+   is the run-time load address of the dynamic linker, to be put in the
+   `r_ldbase&apos; member.  Return the address of the structure.  */</doc>
+<def f='codebrowser/elf/dl-debug.c' l='54' ll='107' type='struct r_debug * _dl_debug_initialize(Elf64_Addr ldbase, Lmid_t ns)'/>
+<doc f='codebrowser/elf/dl-debug.c' l='50'>/* Initialize _r_debug_extended for the namespace NS.  LDBASE is the
+   run-time load address of the dynamic linker, to be put in
+   _r_debug_extended.r_ldbase.  Return the address of _r_debug.  */</doc>
+<use f='codebrowser/elf/dl-open.c' l='530' u='c' c='dl_open_worker_begin'/>
+<use f='codebrowser/elf/dl-reloc-static-pie.c' l='67' u='c' c='_dl_relocate_static_pie'/>
+<use f='codebrowser/elf/rtld.c' l='1729' u='c' c='dl_main'/>
+<use f='codebrowser/csu/libc-start.c' l='389' u='c' c='__libc_start_main_impl'/>

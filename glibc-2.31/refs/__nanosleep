@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/time.h' l='214' type='int __nanosleep(const struct timespec * __requested_time, struct timespec * __remaining)'/>
+<dec f='codebrowser/include/time.h' l='216' type='int __nanosleep(const struct timespec * , struct timespec * )'/>
+<use f='codebrowser/include/time.h' l='216' c='__nanosleep'/>
+<def f='codebrowser/posix/nanosleep.c' l='23' ll='34' type='int __nanosleep(const struct timespec * requested_time, struct timespec * remaining)'/>
+<use f='codebrowser/posix/nanosleep.c' l='36' c='nanosleep'/>
+<doc f='codebrowser/posix/nanosleep.c' l='22'>/* Pause execution for a number of nanoseconds.  */</doc>
+<use f='codebrowser/sunrpc/svc.c' l='559' u='c' c='__svc_accept_failed'/>
+<use f='codebrowser/sysdeps/posix/sleep.c' l='55' u='c' c='__sleep'/>
+<use f='codebrowser/sysdeps/posix/usleep.c' l='32' u='c' c='usleep'/>

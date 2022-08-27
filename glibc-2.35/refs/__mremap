@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/sys/mman.h' l='21' type='void * __mremap(void * __addr, size_t __old_len, size_t __new_len, int __flags)'/>
+<dec f='codebrowser/include/sys/mman.h' l='23' type='void * __mremap(void * , size_t , size_t , int )'/>
+<use f='codebrowser/include/sys/mman.h' l='23' c='__mremap'/>
+<doc f='codebrowser/include/sys/mman.h' l='20'>/* This one is Linux specific.  */</doc>
+<use f='codebrowser/libio/fileops.c' l='571' u='c' c='mmap_remap_check'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/mremap.c' l='24' ll='39' type='void * __mremap(void * addr, size_t old_len, size_t new_len, int flags)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mremap.c' l='41' c='mremap'/>

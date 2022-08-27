@@ -1,0 +1,20 @@
+<dec f='codebrowser/io/fcntl.h' l='196' type='int open(const char * __file, int __oflag)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='32' c='__open_nocancel'/>
+<use f='codebrowser/debug/pcprofile.c' l='43' u='c' c='install'/>
+<use f='codebrowser/debug/pcprofiledump.c' l='105' u='c' c='main'/>
+<use f='codebrowser/elf/cache.c' l='318' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='722' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='1012' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1141' u='c' c='save_aux_cache'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='93' u='c' c='init'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='163' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='269' u='c' c='main'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='165' u='c' c='fopen_uncompressed'/>
+<use f='codebrowser/locale/programs/locfile.c' l='503' u='c' c='compare_files'/>
+<use f='codebrowser/locale/programs/locfile.c' l='506' u='c' c='compare_files'/>
+<use f='codebrowser/support/ignore_stderr.c' l='29' u='c' c='ignore_stderr'/>
+<use f='codebrowser/support/support_openpty.c' l='81' u='c' c='support_openpty'/>
+<use f='codebrowser/sysdeps/posix/shm_open.c' l='44' u='c' c='shm_open'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/open64.c' l='60' macro='1' type='int open(const char * , int )'/>
+<use f='codebrowser/debug/segfault.c' l='81' u='c' c='catch_segfault'/>
+<use f='codebrowser/debug/segfault.c' l='119' u='c' c='catch_segfault'/>

@@ -1,0 +1,38 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='218' type='uint8_t'/>
+<use f='codebrowser/nscd/nscd-client.h' l='250' u='w' c='datahead_init_common'/>
+<offset>144</offset>
+<doc f='codebrowser/nscd/nscd-client.h' l='218'>/* False if the entry must be ignored.  */</doc>
+<use f='codebrowser/nscd/aicache.c' l='418' u='w' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='471' u='w' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='511' u='w' c='addhstaiX'/>
+<use f='codebrowser/nscd/cache.c' l='97' u='r' c='cache_search'/>
+<use f='codebrowser/nscd/cache.c' l='165' u='w' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='401' u='w' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='419' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='425' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='425' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='473' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='153' u='a' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='153' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='153' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/connections.c' l='437' u='r' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/connections.c' l='437' u='r' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/grpcache.c' l='123' u='w' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='155' u='w' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='307' u='w' c='cache_addgr'/>
+<use f='codebrowser/nscd/hstcache.c' l='147' u='w' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='181' u='w' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='342' u='w' c='cache_addhst'/>
+<use f='codebrowser/nscd/initgrcache.c' l='206' u='w' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='239' u='w' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='335' u='w' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='408' u='w' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='440' u='w' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='600' u='w' c='addinnetgrX'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='497' u='r' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/pwdcache.c' l='129' u='w' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='162' u='w' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='285' u='w' c='cache_addpw'/>
+<use f='codebrowser/nscd/servicescache.c' l='117' u='w' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='150' u='w' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='270' u='w' c='cache_addserv'/>

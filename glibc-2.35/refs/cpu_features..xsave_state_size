@@ -1,0 +1,14 @@
+<dec f='codebrowser/sysdeps/x86/include/cpu-features.h' l='876' type='unsigned long'/>
+<offset>2560</offset>
+<doc f='codebrowser/sysdeps/x86/include/cpu-features.h' l='870'>/* The state size for XSAVEC or XSAVE.  The type must be unsigned long
+     int so that we use
+
+	sub xsave_state_size_offset(%rip) %RSP_LP
+
+     in _dl_runtime_resolve.  */</doc>
+<use f='codebrowser/sysdeps/x86_64/dl-machine.h' l='115' u='r' c='elf_machine_runtime_setup'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='183' u='w' c='_dl_tunable_set_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/dl-diagnostics-cpu.c' l='78' u='r' c='_dl_diagnostics_cpu'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='228' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='275' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='727' u='w' c='init_cpu_features'/>

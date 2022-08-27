@@ -1,0 +1,39 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='42' type='__mode_t'/>
+<offset>192</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='42'>/* File mode.  */</doc>
+<use f='codebrowser/support/shell-container.c' l='132' u='r' c='copy_func'/>
+<use f='codebrowser/support/test-container.c' l='173' u='r' c='maybe_xmkdir'/>
+<use f='codebrowser/support/test-container.c' l='430' u='r' c='copy_one_file'/>
+<use f='codebrowser/support/test-container.c' l='444' u='r' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='444' u='r' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='447' u='r' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='469' u='r' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='469' u='r' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='476' u='r' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='476' u='r' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='514' u='w' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='515' u='w' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='526' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='531' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='532' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='535' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='550' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='561' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='607' u='w' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='608' u='w' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='615' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='618' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='621' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='852' u='r' c='main'/>
+<use f='codebrowser/support/xmkdirp.c' l='42' u='r' c='xmkdirp'/>
+<use f='codebrowser/posix/glob.c' l='255' u='r' c='is_dir'/>
+<use f='codebrowser/io/fts.c' l='914' u='r' c='fts_stat'/>
+<use f='codebrowser/io/fts.c' l='943' u='r' c='fts_stat'/>
+<use f='codebrowser/io/fts.c' l='945' u='r' c='fts_stat'/>
+<use f='codebrowser/io/ftw.c' l='437' u='r' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='445' u='r' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='447' u='r' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='751' u='r' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='761' u='r' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='776' u='r' c='ftw_startup'/>
+<use f='codebrowser/timezone/zic.c' l='1067' u='r' c='itsdir'/>

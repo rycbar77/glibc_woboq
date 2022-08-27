@@ -1,0 +1,43 @@
+<def f='codebrowser/intl/plural-exp.h' l='57' ll='66'/>
+<use f='codebrowser/intl/plural-exp.h' l='64'/>
+<use f='codebrowser/intl/plural-exp.h' l='73'/>
+<use f='codebrowser/intl/plural-exp.h' l='104' c='__gettext_free_exp'/>
+<use f='codebrowser/intl/plural-exp.h' l='106'/>
+<use f='codebrowser/intl/plural-exp.h' l='108' c='__gettext_extract_plural'/>
+<use f='codebrowser/build/intl/plural.c' l='189'/>
+<use f='codebrowser/build/intl/plural.c' l='240' c='new_exp'/>
+<use f='codebrowser/build/intl/plural.c' l='242' c='new_exp'/>
+<use f='codebrowser/build/intl/plural.c' l='245' c='new_exp'/>
+<use f='codebrowser/build/intl/plural.c' l='253' c='new_exp'/>
+<use f='codebrowser/build/intl/plural.c' l='270' c='new_exp_0'/>
+<use f='codebrowser/build/intl/plural.c' l='276' c='new_exp_1'/>
+<use f='codebrowser/build/intl/plural.c' l='277' c='new_exp_1'/>
+<use f='codebrowser/build/intl/plural.c' l='279' c='new_exp_1'/>
+<use f='codebrowser/build/intl/plural.c' l='285' c='new_exp_2'/>
+<use f='codebrowser/build/intl/plural.c' l='286' c='new_exp_2'/>
+<use f='codebrowser/build/intl/plural.c' l='287' c='new_exp_2'/>
+<use f='codebrowser/build/intl/plural.c' l='289' c='new_exp_2'/>
+<use f='codebrowser/build/intl/plural.c' l='296' c='new_exp_3'/>
+<use f='codebrowser/build/intl/plural.c' l='297' c='new_exp_3'/>
+<use f='codebrowser/build/intl/plural.c' l='298' c='new_exp_3'/>
+<use f='codebrowser/build/intl/plural.c' l='298' c='new_exp_3'/>
+<use f='codebrowser/build/intl/plural.c' l='300' c='new_exp_3'/>
+<use f='codebrowser/build/intl/plural.c' l='1546' c='__gettext_free_exp'/>
+<size>32</size>
+<doc f='codebrowser/intl/plural-exp.h' l='55'>/* This is the representation of the expressions to determine the
+   plural form.  */</doc>
+<mbr r='expression::nargs' o='0' t='int'/>
+<mbr r='expression::operation' o='32' t='enum expression_operator'/>
+<mbr r='expression::val' o='64' t='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.35/argp/../intl/plural-exp.h:61:3)'/>
+<use f='codebrowser/intl/gettextP.h' l='194'/>
+<use f='codebrowser/intl/eval-plural.h' l='24' c='plural_eval'/>
+<size>32</size>
+<use f='codebrowser/intl/loadmsgcat.c' l='1293' c='_nl_unload_domain'/>
+<size>32</size>
+<use f='codebrowser/intl/plural-exp.c' l='34'/>
+<use f='codebrowser/intl/plural-exp.c' l='39'/>
+<use f='codebrowser/intl/plural-exp.c' l='48'/>
+<use f='codebrowser/intl/plural-exp.c' l='56'/>
+<use f='codebrowser/intl/plural-exp.c' l='57'/>
+<use f='codebrowser/intl/plural-exp.c' l='98' c='__gettext_extract_plural'/>
+<size>32</size>

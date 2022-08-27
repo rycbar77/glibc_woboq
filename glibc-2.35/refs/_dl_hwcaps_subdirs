@@ -1,0 +1,11 @@
+<dec f='codebrowser/elf/dl-hwcaps.h' l='106' type='const char[]'/>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='102'>/* Colon-separated string of glibc-hwcaps subdirectories, without the
+   &quot;glibc-hwcaps/&quot; prefix.  The most preferred subdirectory needs to
+   be listed first.  Up to 32 subdirectories are supported, limited by
+   the width of the uint32_t mask.  */</doc>
+<use f='codebrowser/elf/dl-diagnostics.c' l='243' u='r' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='124' u='r' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='187' u='r' c='_dl_important_hwcaps'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='270' u='r' c='_dl_important_hwcaps'/>
+<use f='codebrowser/elf/dl-usage.c' l='176' u='r' c='print_hwcaps_subdirectories'/>
+<def f='codebrowser/sysdeps/x86_64/dl-hwcaps-subdirs.c' l='24' type='const char[30]'/>

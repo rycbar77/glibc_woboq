@@ -1,0 +1,23 @@
+<dec f='codebrowser/include/link.h' l='330' type='size_t'/>
+<offset>8960</offset>
+<doc f='codebrowser/include/link.h' l='329'>/* Index of the module in the dtv array.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='205' u='w' c='__libc_setup_tls'/>
+<use f='codebrowser/dlfcn/dlinfo.c' l='67' u='r' c='dlinfo_doit'/>
+<use f='codebrowser/dlfcn/dlinfo.c' l='73' u='r' c='dlinfo_doit'/>
+<use f='codebrowser/elf/dl-close.c' l='573' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='72' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/rtld.c' l='1547' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2039' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2040' u='r' c='dl_main'/>
+<use f='codebrowser/nptl_db/structs.def' l='95' u='r'/>
+<use f='codebrowser/elf/dl-tls.c' l='191' u='w' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='574' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='575' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='581' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='581' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='594' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='960' u='r' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='973' u='r' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='977' u='r' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='992' u='r' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='1010' u='r' c='_dl_add_to_slotinfo'/>

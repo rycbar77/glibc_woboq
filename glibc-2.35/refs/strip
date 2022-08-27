@@ -1,0 +1,11 @@
+<def f='codebrowser/iconv/gconv_charset.h' l='55' ll='78' type='void strip(char * wp, const char * s)'/>
+<use f='codebrowser/iconv/gconv_charset.c' l='208' u='c' c='__gconv_create_spec'/>
+<use f='codebrowser/iconv/gconv_charset.c' l='209' u='c' c='__gconv_create_spec'/>
+<doc f='codebrowser/iconv/gconv_charset.h' l='50'>/* This function copies in-order, characters from the source &apos;s&apos; that are
+   either alpha-numeric or one in one of these: &quot;_-.,:/&quot; - into the destination
+   &apos;wp&apos; while dropping all other characters.  In the process, it converts all
+   alphabetical characters to upper case.  It then appends up to two &apos;/&apos;
+   characters so that the total number of &apos;/&apos;es in the destination is 2.  */</doc>
+<use f='codebrowser/libio/fileops.c' l='305' u='c' c='_IO_new_file_fopen'/>
+<use f='codebrowser/locale/findlocale.c' l='286' u='c' c='_nl_find_locale'/>
+<use f='codebrowser/locale/findlocale.c' l='289' u='c' c='_nl_find_locale'/>

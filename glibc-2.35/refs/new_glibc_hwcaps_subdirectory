@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldconfig.h' l='63' type='struct glibc_hwcaps_subdirectory * new_glibc_hwcaps_subdirectory(const char * name)'/>
+<def f='codebrowser/elf/cache.c' l='72' ll='86' type='struct glibc_hwcaps_subdirectory * new_glibc_hwcaps_subdirectory(const char * name)'/>
+<doc f='codebrowser/sysdeps/generic/ldconfig.h' l='61'>/* Return a struct describing the subdirectory for NAME.  Reuse an
+   existing struct if it exists.  */</doc>
+<use f='codebrowser/elf/ldconfig.c' l='449' u='c' c='add_glibc_hwcaps_subdirectories'/>

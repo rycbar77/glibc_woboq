@@ -1,0 +1,10 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='319' type='int32_t'/>
+<offset>32</offset>
+<use f='codebrowser/nscd/cachedumper.c' l='93' u='a' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='93' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='93' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/connections.c' l='369' u='r' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/connections.c' l='530' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='710' u='w' c='nscd_init'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='343' u='r' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='372' u='r' c='__nscd_get_mapping'/>

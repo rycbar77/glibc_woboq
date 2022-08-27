@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='430' type='struct link_map *'/>
+<offset>64</offset>
+<use f='codebrowser/csu/libc-tls.c' l='203' u='w' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/dl-close.c' l='74' u='r' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='84' u='w' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='97' u='r' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-libc.c' l='313' u='r' c='free_slotinfo'/>
+<use f='codebrowser/elf/rtld.c' l='734' u='w' c='init_tls'/>
+<use f='codebrowser/nptl_db/structs.def' l='117' u='r'/>
+<use f='codebrowser/elf/dl-tls.c' l='69' u='r' c='_dl_next_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='122' u='r' c='_dl_count_modids'/>
+<use f='codebrowser/elf/dl-tls.c' l='474' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='944' u='w' c='_dl_add_to_slotinfo'/>

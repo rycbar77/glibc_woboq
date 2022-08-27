@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='763' type='int _dl_make_stacks_executable(void ** stack_endp)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='761'>/* This function changes the permissions of all stacks (not just those
+   of the main stack).  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='1348' u='c' c='_dl_map_object_from_fd'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='61' ll='94' type='int _dl_make_stacks_executable(void ** stack_endp)'/>

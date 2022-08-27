@@ -1,0 +1,7 @@
+<dec f='codebrowser/dlfcn/dlfcn.h' l='93' type='void *'/>
+<offset>64</offset>
+<doc f='codebrowser/dlfcn/dlfcn.h' l='93'>/* Load address of that object.  */</doc>
+<use f='codebrowser/debug/backtracesyms.c' l='61' u='w' c='__backtrace_symbols'/>
+<use f='codebrowser/debug/backtracesyms.c' l='83' u='r' c='__backtrace_symbols'/>
+<use f='codebrowser/elf/dl-addr.c' l='31' u='w' c='determine_info'/>
+<use f='codebrowser/malloc/mtrace-impl.c' l='68' u='r' c='tr_where'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/dirent/dirent.h' l='149' type='int closedir(DIR * __dirp)'/>
+<doc f='codebrowser/dirent/dirent.h' l='144'>/* Close the directory stream DIRP.
+   Return 0 if successful, -1 if not.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='156' u='c' c='charmap_closedir'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1437' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locfile.c' l='435' u='c' c='siblings_uncached'/>
+<def f='codebrowser/sysdeps/posix/closedir.c' l='54' macro='1' type='int closedir(DIR * )'/>

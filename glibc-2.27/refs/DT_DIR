@@ -1,0 +1,5 @@
+<dec f='codebrowser/dirent/dirent.h' l='105' type='4'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='401' macro='1' u='r' c='generic_getcwd'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='250' macro='1' u='r' c='__get_nprocs_conf'/>
+<use f='codebrowser/posix/glob.c' l='1349' macro='1' c='glob_in_dir'/>
+<use f='codebrowser/io/fts.c' l='587' macro='1' u='r' c='dirent_not_directory'/>

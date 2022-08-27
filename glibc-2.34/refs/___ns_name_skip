@@ -1,0 +1,5 @@
+<def f='codebrowser/resolv/ns_name_skip.c' l='24' ll='63' type='int ___ns_name_skip(const unsigned char ** ptrptr, const unsigned char * eom)'/>
+<use f='codebrowser/resolv/ns_name_skip.c' l='64' c='ns_name_skip'/>
+<use f='codebrowser/resolv/ns_name_skip.c' l='65' c='__ns_name_skip'/>
+<doc f='codebrowser/resolv/ns_name_skip.c' l='22'>/* Advances *PTRPTR to skip over the compressed name it points at.
+   Returns 0 on success, -1 (with errno set) on failure.  */</doc>

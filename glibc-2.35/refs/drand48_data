@@ -1,0 +1,50 @@
+<def f='codebrowser/stdlib/stdlib.h' l='491' ll='499'/>
+<use f='codebrowser/stdlib/stdlib.h' l='502' c='drand48_r'/>
+<use f='codebrowser/stdlib/stdlib.h' l='505' c='erand48_r'/>
+<use f='codebrowser/stdlib/stdlib.h' l='509' c='lrand48_r'/>
+<use f='codebrowser/stdlib/stdlib.h' l='513' c='nrand48_r'/>
+<use f='codebrowser/stdlib/stdlib.h' l='518' c='mrand48_r'/>
+<use f='codebrowser/stdlib/stdlib.h' l='522' c='jrand48_r'/>
+<use f='codebrowser/stdlib/stdlib.h' l='527' c='srand48_r'/>
+<use f='codebrowser/stdlib/stdlib.h' l='531' c='seed48_r'/>
+<use f='codebrowser/stdlib/stdlib.h' l='534' c='lcong48_r'/>
+<use f='codebrowser/include/stdlib.h' l='66' c='__erand48_r'/>
+<use f='codebrowser/include/stdlib.h' l='69' c='__nrand48_r'/>
+<use f='codebrowser/include/stdlib.h' l='72' c='__jrand48_r'/>
+<use f='codebrowser/include/stdlib.h' l='75' c='__srand48_r'/>
+<use f='codebrowser/include/stdlib.h' l='77' c='__seed48_r'/>
+<use f='codebrowser/include/stdlib.h' l='79' c='__lcong48_r'/>
+<use f='codebrowser/include/stdlib.h' l='83' c='__drand48_iterate'/>
+<use f='codebrowser/include/stdlib.h' l='87'/>
+<size>24</size>
+<doc f='codebrowser/stdlib/stdlib.h' l='488'>/* Data structure for communication with thread safe versions.  This
+   type is to be regarded as opaque.  It&apos;s only exported because users
+   have to allocate objects of this type.  */</doc>
+<mbr r='drand48_data::__x' o='0' t='unsigned short[3]'/>
+<mbr r='drand48_data::__old_x' o='48' t='unsigned short[3]'/>
+<mbr r='drand48_data::__c' o='96' t='unsigned short'/>
+<mbr r='drand48_data::__init' o='112' t='unsigned short'/>
+<mbr r='drand48_data::__a' o='128' t='unsigned long long'/>
+<use f='codebrowser/stdlib/drand48-iter.c' l='25'/>
+<use f='codebrowser/stdlib/drand48-iter.c' l='29' c='__drand48_iterate'/>
+<size>24</size>
+<use f='codebrowser/stdlib/drand48_r.c' l='23' c='drand48_r'/>
+<size>24</size>
+<use f='codebrowser/stdlib/erand48_r.c' l='24' c='__erand48_r'/>
+<size>24</size>
+<use f='codebrowser/stdlib/jrand48_r.c' l='21' c='__jrand48_r'/>
+<size>24</size>
+<use f='codebrowser/stdlib/lcong48_r.c' l='24' c='__lcong48_r'/>
+<size>24</size>
+<use f='codebrowser/stdlib/lrand48_r.c' l='21' c='lrand48_r'/>
+<size>24</size>
+<use f='codebrowser/stdlib/mrand48_r.c' l='21' c='mrand48_r'/>
+<size>24</size>
+<use f='codebrowser/stdlib/nrand48_r.c' l='21' c='__nrand48_r'/>
+<size>24</size>
+<use f='codebrowser/stdlib/seed48_r.c' l='23' c='__seed48_r'/>
+<size>24</size>
+<use f='codebrowser/stdlib/srand48_r.c' l='22' c='__srand48_r'/>
+<size>24</size>
+<use f='codebrowser/sunrpc/create_xid.c' l='29'/>
+<size>24</size>

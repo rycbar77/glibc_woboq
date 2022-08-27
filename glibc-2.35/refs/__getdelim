@@ -1,0 +1,24 @@
+<dec f='codebrowser/libio/stdio.h' l='632' type='__ssize_t __getdelim(char **restrict __lineptr, size_t *restrict __n, int __delimiter, FILE *restrict __stream)'/>
+<use f='codebrowser/libio/bits/stdio.h' l='120' u='c' c='getline'/>
+<dec f='codebrowser/include/stdio.h' l='216' type='__ssize_t __getdelim(char **restrict , size_t *restrict , int , FILE *restrict )'/>
+<use f='codebrowser/include/stdio.h' l='216' c='__getdelim'/>
+<doc f='codebrowser/libio/stdio.h' l='622'>/* Read up to (and including) a DELIMITER from STREAM into *LINEPTR
+   (and null-terminate it). *LINEPTR is a pointer returned from malloc (or
+   NULL), pointing to *N characters of space.  It is realloc&apos;d as
+   necessary.  Returns the number of characters read (not including the
+   null terminator), or -1 on error or EOF.
+
+   These functions are not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation they are cancellation points and
+   therefore not marked with __THROW.  */</doc>
+<use f='codebrowser/iconv/gconv_parseconfdir.h' l='26' u='c' c='read_conf_file'/>
+<def f='codebrowser/libio/iogetdelim.c' l='39' ll='124' type='__ssize_t __getdelim(char ** lineptr, size_t * n, int delimiter, FILE * fp)'/>
+<use f='codebrowser/libio/iogetdelim.c' l='126' c='getdelim'/>
+<doc f='codebrowser/libio/iogetdelim.c' l='33'>/* Read up to (and including) a TERMINATOR from FP into *LINEPTR
+   (and null-terminate it).  *LINEPTR is a pointer returned from malloc (or
+   NULL), pointing to *N characters of space.  It is realloc&apos;ed as
+   necessary.  Returns the number of characters read (not including the
+   null terminator), or -1 on error or EOF.  */</doc>
+<use f='codebrowser/stdio-common/getline.c' l='28' u='c' c='__getline'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readonly-area.c' l='58' u='c' c='__readonly_area'/>

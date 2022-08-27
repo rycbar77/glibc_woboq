@@ -1,0 +1,8 @@
+<def f='codebrowser/malloc/malloc.c' l='1340' ll='1364' type='_Bool checked_request2size(size_t req, size_t * sz)'/>
+<use f='codebrowser/malloc/malloc.c' l='3803' u='c' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4955' u='c' c='_int_memalign'/>
+<use f='codebrowser/malloc/malloc-check.c' l='278' u='c' c='realloc_check'/>
+<doc f='codebrowser/malloc/malloc.c' l='1336'>/* Check if REQ overflows when padded and aligned and if the resulting value
+   is less than PTRDIFF_T.  Returns TRUE and the requested size or MINSIZE in
+   case the value is less than MINSIZE on SZ or false if any of the previous
+   check fail.  */</doc>

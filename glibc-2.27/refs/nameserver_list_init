@@ -1,0 +1,6 @@
+<def f='codebrowser/malloc/dynarray-skeleton.c' l='193' macro='1' type='void nameserver_list_init(struct nameserver_list * list)'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='208' macro='1' u='c' c='nameserver_list_free'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='492' macro='1' u='c' c='nameserver_list_finalize'/>
+<use f='codebrowser/resolv/res_init.c' l='181' u='c' c='resolv_conf_parser_init'/>
+<doc f='codebrowser/malloc/dynarray-skeleton.c' l='189'>/* Initialize a dynamic array object.  This must be called before any
+   use of the object.  */</doc>

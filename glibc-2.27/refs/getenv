@@ -1,0 +1,63 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='631' type='char * getenv(const char * __name)'/>
+<dec f='codebrowser/include/stdlib.h' l='29' type='char * getenv(const char * )'/>
+<use f='codebrowser/include/stdlib.h' l='29' c='getenv'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='630'>/* Return the value of envariable NAME, or NULL if it doesn&apos;t exist.  */</doc>
+<use f='codebrowser/argp/argp-help.c' l='167' u='c' c='fill_in_uparams'/>
+<use f='codebrowser/catgets/catgets.c' l='46' u='c' c='catopen'/>
+<use f='codebrowser/catgets/catgets.c' l='52' u='c' c='catopen'/>
+<use f='codebrowser/elf/dl-support.c' l='317' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='325' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='330' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='332' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='334' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='336' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='368' macro='1' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='68' u='c' c='init'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='71' u='c' c='init'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='74' u='c' c='init'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='78' u='c' c='init'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='83' u='c' c='init'/>
+<use f='codebrowser/gmon/gmon.c' l='359' u='c' c='write_gmon'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='56' u='c' c='__gconv_load_cache'/>
+<use f='codebrowser/intl/dcigettext.c' l='1566' u='c' c='guess_category_value'/>
+<use f='codebrowser/intl/dcigettext.c' l='1605' u='c' c='get_output_charset'/>
+<use f='codebrowser/io/getdirname.c' l='33' u='c' c='get_current_dir_name'/>
+<use f='codebrowser/locale/findlocale.c' l='119' u='c' c='_nl_find_locale'/>
+<use f='codebrowser/locale/findlocale.c' l='121' u='c' c='_nl_find_locale'/>
+<use f='codebrowser/locale/findlocale.c' l='124' u='c' c='_nl_find_locale'/>
+<use f='codebrowser/locale/newlocale.c' l='105' u='c' c='__newlocale'/>
+<use f='codebrowser/locale/setlocale.c' l='254' u='c' c='setlocale'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='48' u='c' c='__nscd_getai'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='145' u='c' c='nscd_gethst_r'/>
+<use f='codebrowser/posix/execvpe.c' l='94' u='c' c='__execvpe'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='236' u='c' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1012' u='c' c='end_pattern'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1074' u='c' c='ext_match'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='236' u='c' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1012' u='c' c='end_wpattern'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1074' u='c' c='ext_wmatch'/>
+<use f='codebrowser/posix/getopt.c' l='404' u='c' c='_getopt_initialize'/>
+<use f='codebrowser/posix/wordexp.c' l='313' u='c' c='parse_tilde'/>
+<use f='codebrowser/posix/wordexp.c' l='1501' u='c' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='2262' u='c' c='wordexp'/>
+<use f='codebrowser/resolv/res_hconf.c' l='277' u='c' c='do_init'/>
+<use f='codebrowser/resolv/res_hconf.c' l='296' u='c' c='do_init'/>
+<use f='codebrowser/resolv/res_hconf.c' l='300' u='c' c='do_init'/>
+<use f='codebrowser/resolv/res_hconf.c' l='304' u='c' c='do_init'/>
+<use f='codebrowser/resolv/res_hconf.c' l='308' u='c' c='do_init'/>
+<use f='codebrowser/resolv/res_init.c' l='262' u='c' c='res_vinit_1'/>
+<use f='codebrowser/resolv/res_init.c' l='533' u='c' c='res_vinit_1'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='212' u='c' c='init'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='213' u='c' c='init'/>
+<def f='codebrowser/stdlib/getenv.c' l='32' ll='91' type='char * getenv(const char * name)'/>
+<doc f='codebrowser/stdlib/getenv.c' l='26'>/* Return the value of the environment variable NAME.  This implementation
+   is tuned a bit in that it assumes no environment variable has an empty
+   name which of course should always be true.  We have a special case for
+   one character names so that for the general case we can assume at least
+   two characters which we can access.  By doing this we can avoid using the
+   `strncmp&apos; most of the time.  */</doc>
+<use f='codebrowser/stdlib/secure-getenv.c' l='29' u='c' c='__libc_secure_getenv'/>
+<use f='codebrowser/posix/glob.c' l='608' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/time/getdate.c' l='120' u='c' c='__getdate_r'/>
+<use f='codebrowser/time/tzfile.c' l='147' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzset.c' l='378' u='c' c='tzset_internal'/>

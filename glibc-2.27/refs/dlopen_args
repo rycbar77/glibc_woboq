@@ -1,0 +1,9 @@
+<def f='codebrowser/dlfcn/dlopen.c' l='36' ll='45'/>
+<use f='codebrowser/dlfcn/dlopen.c' l='59' c='dlopen_doit'/>
+<use f='codebrowser/dlfcn/dlopen.c' l='59' c='dlopen_doit'/>
+<use f='codebrowser/dlfcn/dlopen.c' l='81' c='__dlopen'/>
+<size>32</size>
+<mbr r='dlopen_args::file' o='0' t='const char *'/>
+<mbr r='dlopen_args::mode' o='64' t='int'/>
+<mbr r='dlopen_args::new' o='128' t='void *'/>
+<mbr r='dlopen_args::caller' o='192' t='const void *'/>

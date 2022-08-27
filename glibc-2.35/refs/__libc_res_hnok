@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/resolv.h' l='66' type='int __libc_res_hnok(const char * )'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='285' u='c' c='check_name'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='667' u='r' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='894' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1057' u='c' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1090' u='c' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1141' u='c' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='382' u='c' c='getanswer_r'/>
+<def f='codebrowser/resolv/res-name-checking.c' l='155' macro='1' type='int __libc_res_hnok(const char * )'/>

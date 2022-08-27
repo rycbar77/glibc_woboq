@@ -1,0 +1,9 @@
+<dec f='codebrowser/posix/unistd.h' l='389' type='ssize_t pread(int __fd, void * __buf, size_t __nbytes, __off_t __offset)'/>
+<doc f='codebrowser/posix/unistd.h' l='383'>/* Read NBYTES into BUF from FD at the given position OFFSET without
+   changing the file pointer.  Return the number read, -1 for errors
+   or 0 for EOF.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/locale/programs/locarchive.c' l='322' u='c' c='compare_from_file'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/pread64.c' l='36' macro='1' type='ssize_t pread(int , void * , size_t , __off64_t )'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.h' l='33' type='int'/>
+<offset>64</offset>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='46' u='w'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='88' u='w' c='do_set_elision_retry_try_xbegin'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='114' u='w' c='__lll_elision_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-lock.c' l='52' u='r' c='__lll_lock_elision'/>

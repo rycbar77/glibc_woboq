@@ -1,0 +1,12 @@
+<dec f='codebrowser/resolv/resolv_context.h' l='89' type='struct resolv_context * __resolv_context_get_override(struct __res_state * )'/>
+<dec f='codebrowser/resolv/resolv_context.h' l='91' type='struct resolv_context * __resolv_context_get_override(struct __res_state * )'/>
+<use f='codebrowser/resolv/resolv_context.h' l='91' c='__resolv_context_get_override'/>
+<doc f='codebrowser/resolv/resolv_context.h' l='86'>/* Wrap a struct __res_state object in a struct resolv_context object.
+   A call to this function must be paired with a call to
+   __resolv_context_put.  */</doc>
+<use f='codebrowser/resolv/res_mkquery.c' l='214' u='c' c='___res_nmkquery'/>
+<use f='codebrowser/resolv/res_query.c' l='306' u='c' c='___res_nquery'/>
+<use f='codebrowser/resolv/res_query.c' l='556' u='c' c='___res_nsearch'/>
+<use f='codebrowser/resolv/res_query.c' l='648' u='c' c='___res_nquerydomain'/>
+<use f='codebrowser/resolv/res_send.c' l='452' u='c' c='___res_nsend'/>
+<def f='codebrowser/resolv/resolv_context.c' l='206' ll='217' type='struct resolv_context * __resolv_context_get_override(struct __res_state * resp)'/>

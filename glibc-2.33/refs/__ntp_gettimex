@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettimex.c' l='29' macro='1' type='int __ntp_gettimex(struct ntptimeval * ntv)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettimex.c' l='62' c='ntp_gettimex'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettimex.c' l='25'>/* clock_adjtime64 with CLOCK_REALTIME does not trigger EINVAL,
+   ENODEV, or EOPNOTSUPP.  It might still trigger EPERM.  */</doc>

@@ -1,0 +1,26 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='435' type='struct link_map *'/>
+<offset>64</offset>
+<use f='codebrowser/csu/libc-tls.c' l='209' u='w' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/dl-close.c' l='74' u='r' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='83' u='a' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='83' u='a' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='83' u='a' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='83' u='a' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='83' u='a' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='100' u='r' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-libc.c' l='248' u='r' c='free_slotinfo'/>
+<use f='codebrowser/elf/rtld.c' l='778' u='w' c='init_tls'/>
+<use f='codebrowser/nptl_db/structs.def' l='120' u='r'/>
+<use f='codebrowser/elf/dl-tls.c' l='152' u='r' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='162' u='a' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='162' u='a' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='162' u='a' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='162' u='a' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='162' u='a' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='208' u='r' c='_dl_count_modids'/>
+<use f='codebrowser/elf/dl-tls.c' l='564' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='1055' u='a' c='_dl_add_to_slotinfo'/>
+<use f='codebrowser/elf/dl-tls.c' l='1055' u='a' c='_dl_add_to_slotinfo'/>
+<use f='codebrowser/elf/dl-tls.c' l='1055' u='a' c='_dl_add_to_slotinfo'/>
+<use f='codebrowser/elf/dl-tls.c' l='1055' u='a' c='_dl_add_to_slotinfo'/>
+<use f='codebrowser/elf/dl-tls.c' l='1055' u='a' c='_dl_add_to_slotinfo'/>

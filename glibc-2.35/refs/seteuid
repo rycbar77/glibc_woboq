@@ -1,0 +1,7 @@
+<dec f='codebrowser/posix/unistd.h' l='732' type='int seteuid(__uid_t __uid)'/>
+<dec f='codebrowser/include/unistd.h' l='27' type='int seteuid(__uid_t )'/>
+<use f='codebrowser/include/unistd.h' l='27' c='seteuid'/>
+<doc f='codebrowser/posix/unistd.h' l='731'>/* Set the effective user ID of the calling process to UID.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='562' u='c' c='ruserok2_sa'/>
+<use f='codebrowser/inet/rcmd.c' l='571' u='c' c='ruserok2_sa'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/seteuid.c' l='23' ll='38' type='int seteuid(uid_t uid)'/>

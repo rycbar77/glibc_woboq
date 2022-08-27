@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/regexec.c' l='115' type='re_dfastate_t * merge_state_with_log(reg_errcode_t * err, re_match_context_t * mctx, re_dfastate_t * next_state)'/>
+<use f='codebrowser/posix/regexec.c' l='1122' u='c' c='check_matching'/>
+<def f='codebrowser/posix/regexec.c' l='2268' ll='2341' type='re_dfastate_t * merge_state_with_log(reg_errcode_t * err, re_match_context_t * mctx, re_dfastate_t * next_state)'/>
+<use f='codebrowser/posix/regexec.c' l='2363' u='c' c='find_recover_state'/>
+<doc f='codebrowser/posix/regexec.c' l='2267'>/* Update the state_log if we need */</doc>

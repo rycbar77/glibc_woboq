@@ -1,0 +1,6 @@
+<dec f='codebrowser/socket/sys/socket.h' l='240' type='int accept4(int __fd, __SOCKADDR_ARG __addr, socklen_t *restrict __addr_len, int __flags)'/>
+<doc f='codebrowser/socket/sys/socket.h' l='236'>/* Similar to &apos;accept&apos; but takes an additional parameter to specify flags.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/accept4.c' l='28' ll='36' type='int accept4(int fd, __SOCKADDR_ARG addr, socklen_t * addr_len, int flags)'/>

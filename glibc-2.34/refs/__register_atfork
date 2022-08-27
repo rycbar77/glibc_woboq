@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='187' type='int __register_atfork(void (*)(void) __prepare, void (*)(void) __parent, void (*)(void) __child, void * __dso_handle)'/>
+<doc f='codebrowser/sysdeps/nptl/libc-lockP.h' l='184'>/* Register handlers to execute before and after `fork&apos;.  Note that the
+   last parameter is NULL.  The handlers registered by the libc are
+   never removed so this is OK.  */</doc>
+<dec f='codebrowser/include/register-atfork.h' l='57' type='int __register_atfork(void (*)(void) __prepare, void (*)(void) __parent, void (*)(void) __child, void * dso_handle)'/>
+<dec f='codebrowser/include/register-atfork.h' l='61' type='int __register_atfork(void (*)(void) , void (*)(void) , void (*)(void) , void * )'/>
+<use f='codebrowser/include/register-atfork.h' l='61' c='__register_atfork'/>
+<doc f='codebrowser/include/register-atfork.h' l='56'>/* C library side function to register new fork handlers.  */</doc>
+<def f='codebrowser/posix/register-atfork.c' l='34' ll='59' type='int __register_atfork(void (*)(void) prepare, void (*)(void) parent, void (*)(void) child, void * dso_handle)'/>
+<use f='codebrowser/sysdeps/pthread/pthread_atfork.c' l='52' u='c' c='__pthread_atfork'/>

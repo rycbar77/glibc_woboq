@@ -1,0 +1,15 @@
+<dec f='codebrowser/string/string.h' l='277' type='unsigned long strcspn(const char * __s, const char * __reject)'/>
+<dec f='codebrowser/include/string.h' l='143' type='unsigned long strcspn(const char * , const char * )'/>
+<use f='codebrowser/include/string.h' l='143' c='strcspn'/>
+<doc f='codebrowser/string/string.h' l='275'>/* Return the length of the initial segment of S which
+   consists entirely of characters not in REJECT.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='247' u='c' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='906' u='c' c='handle_preload_list'/>
+<use f='codebrowser/intl/dcigettext.c' l='1109' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/locale/programs/locale.c' l='780' u='c' c='print_assignment'/>
+<use f='codebrowser/posix/wordexp.c' l='1945' u='c' c='parse_param'/>
+<use f='codebrowser/string/strsep.c' l='33' u='c' c='__strsep'/>
+<use f='codebrowser/string/strtok_r.c' l='64' u='c' c='__strtok_r'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='298' c='__strcspn_sse42'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='300' c='__strcspn_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strcspn.c' l='29' macro='1' type='unsigned long strcspn(const char * , const char * )'/>

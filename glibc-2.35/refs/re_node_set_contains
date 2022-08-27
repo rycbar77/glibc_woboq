@@ -1,0 +1,26 @@
+<def f='codebrowser/posix/regex_internal.c' l='1375' ll='1395' type='Idx re_node_set_contains(const re_node_set * set, Idx elem)'/>
+<use f='codebrowser/posix/regcomp.c' l='1038' u='c' c='create_initial_state'/>
+<use f='codebrowser/posix/regexec.c' l='1223' u='c' c='proceed_next_node'/>
+<use f='codebrowser/posix/regexec.c' l='1235' u='c' c='proceed_next_node'/>
+<use f='codebrowser/posix/regexec.c' l='1244' u='c' c='proceed_next_node'/>
+<use f='codebrowser/posix/regexec.c' l='1298' u='c' c='proceed_next_node'/>
+<use f='codebrowser/posix/regexec.c' l='1310' u='c' c='proceed_next_node'/>
+<use f='codebrowser/posix/regexec.c' l='1420' u='c' c='set_regs'/>
+<use f='codebrowser/posix/regexec.c' l='1557' u='c' c='build_sifted_states'/>
+<use f='codebrowser/posix/regexec.c' l='1819' u='c' c='sub_epsilon_src_nodes'/>
+<use f='codebrowser/posix/regexec.c' l='1820' u='c' c='sub_epsilon_src_nodes'/>
+<use f='codebrowser/posix/regexec.c' l='1822' u='c' c='sub_epsilon_src_nodes'/>
+<use f='codebrowser/posix/regexec.c' l='1823' u='c' c='sub_epsilon_src_nodes'/>
+<use f='codebrowser/posix/regexec.c' l='1838' u='c' c='sub_epsilon_src_nodes'/>
+<use f='codebrowser/posix/regexec.c' l='1840' u='c' c='sub_epsilon_src_nodes'/>
+<use f='codebrowser/posix/regexec.c' l='2042' u='c' c='check_subexp_limits'/>
+<use f='codebrowser/posix/regexec.c' l='2044' u='c' c='check_subexp_limits'/>
+<use f='codebrowser/posix/regexec.c' l='1557' u='c' c='sift_states_bkref'/>
+<use f='codebrowser/posix/regexec.c' l='2161' macro='1' u='c' c='sift_states_bkref'/>
+<use f='codebrowser/posix/regexec.c' l='1557' u='c' c='sift_states_iter_mb'/>
+<use f='codebrowser/posix/regexec.c' l='2983' u='c' c='check_arrival'/>
+<use f='codebrowser/posix/regexec.c' l='3132' u='c' c='check_arrival_expand_ecl_sub'/>
+<use f='codebrowser/posix/regexec.c' l='3191' u='c' c='expand_bkref_cache'/>
+<use f='codebrowser/posix/regexec.c' l='3204' u='c' c='expand_bkref_cache'/>
+<use f='codebrowser/posix/regexec.c' l='3227' u='c' c='expand_bkref_cache'/>
+<doc f='codebrowser/posix/regex_internal.c' l='1373'>/* Return (idx + 1) if SET contains the element ELEM, return 0 otherwise.  */</doc>

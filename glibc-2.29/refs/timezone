@@ -1,0 +1,17 @@
+<use f='codebrowser/sunrpc/auth_des.c' l='255' c='authdes_marshal'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='456' c='synchronize'/>
+<size>8</size>
+<use f='codebrowser/sunrpc/auth_unix.c' l='125' c='__GI_authunix_create'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='300' c='authunix_refresh'/>
+<size>8</size>
+<use f='codebrowser/sunrpc/create_xid.c' l='44' c='_create_xid'/>
+<size>8</size>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='298' c='_svcauth_des'/>
+<size>8</size>
+<use f='codebrowser/sysdeps/unix/stime.c' l='38' c='stime'/>
+<size>8</size>
+<use f='codebrowser/sysdeps/unix/bsd/ftime.c' l='25' c='ftime'/>
+<size>8</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/gettimeofday.c' l='53' c='__gettimeofday'/>
+<size>8</size>
+<def f='codebrowser/time/tzset.c' l='37' macro='1' type='typeof (__timezone)'/>

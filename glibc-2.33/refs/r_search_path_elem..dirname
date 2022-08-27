@@ -1,0 +1,14 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='209' type='const char *'/>
+<offset>192</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='207'>/* Basename for this search path element.  The string must end with
+       a slash character.  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='492' u='r' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='520' u='w' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='522' u='r' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='743' u='w' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='748' u='r' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='748' u='r' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='1524' u='r' c='print_search_path'/>
+<use f='codebrowser/elf/dl-load.c' l='1893' u='r' c='open_path'/>
+<use f='codebrowser/elf/dl-load.c' l='2355' u='r' c='add_path'/>
+<use f='codebrowser/elf/dl-usage.c' l='63' u='r' c='print_search_path_for_help_1'/>

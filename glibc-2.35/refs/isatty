@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/unistd.h' l='809' type='int isatty(int __fd)'/>
+<doc f='codebrowser/posix/unistd.h' l='807'>/* Return 1 if FD is a valid descriptor associated
+   with a terminal, zero if not.  */</doc>
+<use f='codebrowser/iconv/iconv_prog.c' l='765' u='c' c='print_known_names'/>
+<def f='codebrowser/sysdeps/posix/isatty.c' l='30' macro='1' type='int isatty(int )'/>

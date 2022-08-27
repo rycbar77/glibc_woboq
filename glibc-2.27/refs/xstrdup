@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/programs/xmalloc.h' l='31' type='char * xstrdup(const char * )'/>
+<use f='codebrowser/elf/cache.c' l='633' u='c' c='search_aux_cache'/>
+<use f='codebrowser/elf/readlib.c' l='146' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='194' u='c' c='implicit_soname'/>
+<use f='codebrowser/elf/readelflib.c' l='236' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='236' u='c' c='process_elf64_file'/>
+<dec f='codebrowser/locale/programs/xstrdup.c' l='28' type='char * xstrdup(char * string)'/>
+<def f='codebrowser/locale/programs/xstrdup.c' l='32' ll='36' type='char * xstrdup(char * string)'/>
+<doc f='codebrowser/locale/programs/xstrdup.c' l='30'>/* Return a newly allocated copy of STRING.  */</doc>

@@ -1,0 +1,23 @@
+<dec f='codebrowser/elf/elf.h' l='680' type='Elf32_Word'/>
+<dec f='codebrowser/elf/elf.h' l='692' type='Elf64_Word'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/elf.h' l='680'>/* Segment type */</doc>
+<doc f='codebrowser/elf/elf.h' l='692'>/* Segment type */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='122' u='r' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/dl-addr-obj.c' l='70' u='r' c='_dl_addr_inside_object'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='66' u='r' c='_dl_important_hwcaps'/>
+<use f='codebrowser/elf/dl-load.c' l='1047' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1685' u='r' c='open_verify'/>
+<use f='codebrowser/elf/dl-profile.c' l='209' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-reloc.c' l='193' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/setup-vdso.h' l='44' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='49' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='61' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='61' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/dl-support.c' l='381' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/readelflib.c' l='99' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='99' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/rtld.c' l='1028' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1147' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1381' u='r' c='dl_main'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='61' u='r' c='dl_cet_mark_legacy_region'/>

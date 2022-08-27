@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/siglist-compat.h' l='30'/>
+<doc f='codebrowser/sysdeps/generic/siglist-compat.h' l='25'>/* Define new compat symbols for sys_siglist, _sys_siglist, and sys_sigabbrev
+   for version VERSION with NUMBERSIG times the number of bytes per long int.
+   Both _sys_siglist and sys_siglist alias to __sys_siglist while
+   sys_sigabbrev alias to __sys_sigabbrev.  Both target alias are
+   define in siglist.c.  */</doc>

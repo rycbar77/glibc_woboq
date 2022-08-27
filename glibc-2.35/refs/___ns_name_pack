@@ -1,0 +1,15 @@
+<def f='codebrowser/resolv/ns_name_pack.c' l='103' ll='195' type='int ___ns_name_pack(const unsigned char * src, unsigned char * dst, int dstsiz, const unsigned char ** dnptrs, const unsigned char ** lastdnptr)'/>
+<use f='codebrowser/resolv/ns_name_pack.c' l='196' c='ns_name_pack'/>
+<use f='codebrowser/resolv/ns_name_pack.c' l='197' c='__ns_name_pack'/>
+<doc f='codebrowser/resolv/ns_name_pack.c' l='91'>/* Packs domain name SRC into DST.  Returns size of the compressed
+   name, or -1.
+
+   DNPTRS is an array of pointers to previous compressed names.
+   DNPTRS[0] is a pointer to the beginning of the message. The array
+   ends with NULL.  LASTDNPTR is a pointer to the end of the array
+   pointed to by &apos;dnptrs&apos;.
+
+   The list of pointers in DNPTRS is updated for labels inserted into
+   the message as we compress the name.  If DNPTRS is NULL, we don&apos;t
+   try to compress names. If LASTDNPTR is NULL, we don&apos;t update the
+   list.  */</doc>

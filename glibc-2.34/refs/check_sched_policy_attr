@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/nptl/pthreadP.h' l='689' ll='696' type='int check_sched_policy_attr(int pol)'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='688'>/* Returns 0 if POL is a valid scheduling policy.  */</doc>
+<use f='codebrowser/nptl/pthread_attr_setschedpolicy.c' l='31' u='c' c='__pthread_attr_setschedpolicy'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='35' u='c' c='__pthread_setattr_default_np'/>

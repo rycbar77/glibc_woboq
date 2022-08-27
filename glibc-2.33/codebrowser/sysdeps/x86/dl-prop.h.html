@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dl-prop.h source code [codebrowser/sysdeps/x86/dl-prop.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86/dl-prop.h'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>sysdeps</a>/<a href='./'>x86</a>/<a href='dl-prop.h.html'>dl-prop.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Support for GNU properties.  x86 version.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2018-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_DL_PROP_H">_DL_PROP_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/_DL_PROP_H" data-ref="_M/_DL_PROP_H">_DL_PROP_H</dfn></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../../include/libintl.h.html">&lt;libintl.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><b>extern</b> <em>void</em> <dfn class="decl fn" id="_dl_cet_check" title='_dl_cet_check' data-ref="_dl_cet_check" data-ref-filename="_dl_cet_check">_dl_cet_check</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *, <em>const</em> <em>char</em> *)</td></tr>
+<tr><th id="25">25</th><td>    <a class="macro" href="../../include/libc-symbols.h.html#439" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="26">26</th><td><b>extern</b> <em>void</em> <dfn class="decl fn" id="_dl_cet_open_check" title='_dl_cet_open_check' data-ref="_dl_cet_open_check" data-ref-filename="_dl_cet_open_check">_dl_cet_open_check</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *)</td></tr>
+<tr><th id="27">27</th><td>    <a class="macro" href="../../include/libc-symbols.h.html#439" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="30">30</th><td><dfn class="decl def fn" id="dl_isa_level_check" title='dl_isa_level_check' data-ref="dl_isa_level_check" data-ref-filename="dl_isa_level_check">dl_isa_level_check</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col8 decl" id="38m" title='m' data-type='struct link_map *' data-ref="38m" data-ref-filename="38m">m</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="39program" title='program' data-type='const char *' data-ref="39program" data-ref-filename="39program">program</dfn>)</td></tr>
+<tr><th id="31">31</th><td>{</td></tr>
+<tr><th id="32">32</th><td>  <em>const</em> <b>struct</b> <a class="type" href="include/cpu-features.h.html#cpu_features" title='cpu_features' data-ref="cpu_features" data-ref-filename="cpu_features">cpu_features</a> *<dfn class="local col0 decl" id="40cpu_features" title='cpu_features' data-type='const struct cpu_features *' data-ref="40cpu_features" data-ref-filename="40cpu_features">cpu_features</dfn> = <a class="macro" href="include/cpu-features.h.html#903" title="(&amp;_dl_x86_cpu_features)" data-ref="_M/__get_cpu_features">__get_cpu_features</a> ();</td></tr>
+<tr><th id="33">33</th><td>  <em>unsigned</em> <em>int</em> <dfn class="local col1 decl" id="41i" title='i' data-type='unsigned int' data-ref="41i" data-ref-filename="41i">i</dfn>;</td></tr>
+<tr><th id="34">34</th><td>  <b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col2 decl" id="42l" title='l' data-type='struct link_map *' data-ref="42l" data-ref-filename="42l">l</dfn>;</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td>  <a class="local col1 ref" href="#41i" title='i' data-ref="41i" data-ref-filename="41i">i</a> = <a class="local col8 ref" href="#38m" title='m' data-ref="38m" data-ref-filename="38m">m</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_searchlist" title='link_map::l_searchlist' data-ref="link_map::l_searchlist" data-ref-filename="link_map..l_searchlist">l_searchlist</a>.<a class="ref field" href="../../include/link.h.html#r_scope_elem::r_nlist" title='r_scope_elem::r_nlist' data-ref="r_scope_elem::r_nlist" data-ref-filename="r_scope_elem..r_nlist">r_nlist</a>;</td></tr>
+<tr><th id="37">37</th><td>  <b>while</b> (<a class="local col1 ref" href="#41i" title='i' data-ref="41i" data-ref-filename="41i">i</a>-- &gt; <var>0</var>)</td></tr>
+<tr><th id="38">38</th><td>    {</td></tr>
+<tr><th id="39">39</th><td>      <i>/* Check each shared object to see if ISA level is compatible.  */</i></td></tr>
+<tr><th id="40">40</th><td>      <a class="local col2 ref" href="#42l" title='l' data-ref="42l" data-ref-filename="42l">l</a> = <a class="local col8 ref" href="#38m" title='m' data-ref="38m" data-ref-filename="38m">m</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_initfini" title='link_map::l_initfini' data-ref="link_map::l_initfini" data-ref-filename="link_map..l_initfini">l_initfini</a>[<a class="local col1 ref" href="#41i" title='i' data-ref="41i" data-ref-filename="41i">i</a>];</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td>      <i>/* Skip ISA level check if functions have been executed.  */</i></td></tr>
+<tr><th id="43">43</th><td>      <b>if</b> (<a class="local col2 ref" href="#42l" title='l' data-ref="42l" data-ref-filename="42l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_init_called" title='link_map::l_init_called' data-ref="link_map::l_init_called" data-ref-filename="link_map..l_init_called">l_init_called</a>)</td></tr>
+<tr><th id="44">44</th><td>	<b>continue</b>;</td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><u>#<span data-ppcond="46">ifdef</span> <span class="macro" data-ref="_M/SHARED">SHARED</span></u></td></tr>
+<tr><th id="47">47</th><td>      <i>/* Skip ISA level check for ld.so since ld.so won't run if its ISA</i></td></tr>
+<tr><th id="48">48</th><td><i>	 level is higher than CPU.  */</i></td></tr>
+<tr><th id="49">49</th><td>      <b>if</b> (l == &amp;GL(dl_rtld_map) || l-&gt;l_real == &amp;GL(dl_rtld_map))</td></tr>
+<tr><th id="50">50</th><td>	<b>continue</b>;</td></tr>
+<tr><th id="51">51</th><td><u>#<span data-ppcond="46">endif</span></u></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td>      <b>if</b> ((<a class="local col2 ref" href="#42l" title='l' data-ref="42l" data-ref-filename="42l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_x86_isa_1_needed" title='link_map::l_x86_isa_1_needed' data-ref="link_map::l_x86_isa_1_needed" data-ref-filename="link_map..l_x86_isa_1_needed">l_x86_isa_1_needed</a> &amp; <a class="local col0 ref" href="#40cpu_features" title='cpu_features' data-ref="40cpu_features" data-ref-filename="40cpu_features">cpu_features</a>-&gt;<a class="ref field" href="include/cpu-features.h.html#cpu_features::isa_1" title='cpu_features::isa_1' data-ref="cpu_features::isa_1" data-ref-filename="cpu_features..isa_1">isa_1</a>)</td></tr>
+<tr><th id="54">54</th><td>	  != <a class="local col2 ref" href="#42l" title='l' data-ref="42l" data-ref-filename="42l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_x86_isa_1_needed" title='link_map::l_x86_isa_1_needed' data-ref="link_map::l_x86_isa_1_needed" data-ref-filename="link_map..l_x86_isa_1_needed">l_x86_isa_1_needed</a>)</td></tr>
+<tr><th id="55">55</th><td>	{</td></tr>
+<tr><th id="56">56</th><td>	  <b>if</b> (<a class="local col9 ref" href="#39program" title='program' data-ref="39program" data-ref-filename="39program">program</a>)</td></tr>
+<tr><th id="57">57</th><td>	    <a class="ref fn" href="../generic/ldsodefs.h.html#_dl_fatal_printf" title='_dl_fatal_printf' data-ref="_dl_fatal_printf" data-ref-filename="_dl_fatal_printf">_dl_fatal_printf</a> (<q>"%s: CPU ISA level is lower than required\n"</q>,</td></tr>
+<tr><th id="58">58</th><td>			      *<a class="local col2 ref" href="#42l" title='l' data-ref="42l" data-ref-filename="42l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a> != <kbd>'\0'</kbd> ? <a class="local col2 ref" href="#42l" title='l' data-ref="42l" data-ref-filename="42l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a> : <a class="local col9 ref" href="#39program" title='program' data-ref="39program" data-ref-filename="39program">program</a>);</td></tr>
+<tr><th id="59">59</th><td>	  <b>else</b></td></tr>
+<tr><th id="60">60</th><td>	    <a class="ref fn" href="../generic/ldsodefs.h.html#_dl_signal_error" title='_dl_signal_error' data-ref="_dl_signal_error" data-ref-filename="_dl_signal_error">_dl_signal_error</a> (<var>0</var>, <a class="local col2 ref" href="#42l" title='l' data-ref="42l" data-ref-filename="42l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a>, <q>"dlopen"</q>,</td></tr>
+<tr><th id="61">61</th><td>			      <a class="macro" href="../../include/libintl.h.html#66" title="&quot;CPU ISA level is lower than required&quot;" data-ref="_M/N_">N_</a>(<q>"CPU ISA level is lower than required"</q>));</td></tr>
+<tr><th id="62">62</th><td>	}</td></tr>
+<tr><th id="63">63</th><td>    }</td></tr>
+<tr><th id="64">64</th><td>}</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><em>static</em> <b>inline</b> <em>void</em> <b>__attribute__</b> ((always_inline))</td></tr>
+<tr><th id="67">67</th><td><dfn class="decl def fn" id="_rtld_main_check" title='_rtld_main_check' data-ref="_rtld_main_check" data-ref-filename="_rtld_main_check">_rtld_main_check</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col3 decl" id="43m" title='m' data-type='struct link_map *' data-ref="43m" data-ref-filename="43m">m</dfn>, <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="44program" title='program' data-type='const char *' data-ref="44program" data-ref-filename="44program">program</dfn>)</td></tr>
+<tr><th id="68">68</th><td>{</td></tr>
+<tr><th id="69">69</th><td>  <a class="ref fn" href="#dl_isa_level_check" title='dl_isa_level_check' data-ref="dl_isa_level_check" data-ref-filename="dl_isa_level_check">dl_isa_level_check</a> (<a class="local col3 ref" href="#43m" title='m' data-ref="43m" data-ref-filename="43m">m</a>, <a class="local col4 ref" href="#44program" title='program' data-ref="44program" data-ref-filename="44program">program</a>);</td></tr>
+<tr><th id="70">70</th><td><u>#<span data-ppcond="70">if</span> <a class="macro" href="sysdep.h.html#42" title="1" data-ref="_M/CET_ENABLED">CET_ENABLED</a></u></td></tr>
+<tr><th id="71">71</th><td>  <a class="ref fn" href="#_dl_cet_check" title='_dl_cet_check' data-ref="_dl_cet_check" data-ref-filename="_dl_cet_check">_dl_cet_check</a> (<a class="local col3 ref" href="#43m" title='m' data-ref="43m" data-ref-filename="43m">m</a>, <a class="local col4 ref" href="#44program" title='program' data-ref="44program" data-ref-filename="44program">program</a>);</td></tr>
+<tr><th id="72">72</th><td><u>#<span data-ppcond="70">endif</span></u></td></tr>
+<tr><th id="73">73</th><td>}</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><em>static</em> <b>inline</b> <em>void</em> <b>__attribute__</b> ((always_inline))</td></tr>
+<tr><th id="76">76</th><td><dfn class="decl def fn" id="_dl_open_check" title='_dl_open_check' data-ref="_dl_open_check" data-ref-filename="_dl_open_check">_dl_open_check</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col5 decl" id="45m" title='m' data-type='struct link_map *' data-ref="45m" data-ref-filename="45m">m</dfn>)</td></tr>
+<tr><th id="77">77</th><td>{</td></tr>
+<tr><th id="78">78</th><td>  <a class="ref fn" href="#dl_isa_level_check" title='dl_isa_level_check' data-ref="dl_isa_level_check" data-ref-filename="dl_isa_level_check">dl_isa_level_check</a> (<a class="local col5 ref" href="#45m" title='m' data-ref="45m" data-ref-filename="45m">m</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="79">79</th><td><u>#<span data-ppcond="79">if</span> <a class="macro" href="sysdep.h.html#42" title="1" data-ref="_M/CET_ENABLED">CET_ENABLED</a></u></td></tr>
+<tr><th id="80">80</th><td>  <a class="ref fn" href="#_dl_cet_open_check" title='_dl_cet_open_check' data-ref="_dl_cet_open_check" data-ref-filename="_dl_cet_open_check">_dl_cet_open_check</a> (<a class="local col5 ref" href="#45m" title='m' data-ref="45m" data-ref-filename="45m">m</a>);</td></tr>
+<tr><th id="81">81</th><td><u>#<span data-ppcond="79">endif</span></u></td></tr>
+<tr><th id="82">82</th><td>}</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><em>static</em> <b>inline</b> <em>void</em> <b>__attribute__</b> ((unused))</td></tr>
+<tr><th id="85">85</th><td><dfn class="decl def fn" id="_dl_process_property_note" title='_dl_process_property_note' data-ref="_dl_process_property_note" data-ref-filename="_dl_process_property_note">_dl_process_property_note</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col6 decl" id="46l" title='l' data-type='struct link_map *' data-ref="46l" data-ref-filename="46l">l</dfn>, <em>const</em> <a class="macro" href="../../elf/link.h.html#30" title="Elf64_Nhdr" data-ref="_M/ElfW">ElfW</a>(Nhdr) *<dfn class="local col7 decl" id="47note" title='note' data-type='const Elf64_Nhdr *' data-ref="47note" data-ref-filename="47note">note</dfn>,</td></tr>
+<tr><th id="86">86</th><td>			   <em>const</em> <a class="macro" href="../../elf/link.h.html#30" title="Elf64_Addr" data-ref="_M/ElfW">ElfW</a>(Addr) <dfn class="local col8 decl" id="48size" title='size' data-type='const Elf64_Addr' data-ref="48size" data-ref-filename="48size">size</dfn>, <em>const</em> <a class="macro" href="../../elf/link.h.html#30" title="Elf64_Addr" data-ref="_M/ElfW">ElfW</a>(Addr) <dfn class="local col9 decl" id="49align" title='align' data-type='const Elf64_Addr' data-ref="49align" data-ref-filename="49align">align</dfn>)</td></tr>
+<tr><th id="87">87</th><td>{</td></tr>
+<tr><th id="88">88</th><td>  <i>/* Skip if we have seen a NT_GNU_PROPERTY_TYPE_0 note before.  */</i></td></tr>
+<tr><th id="89">89</th><td>  <b>if</b> (<a class="local col6 ref" href="#46l" title='l' data-ref="46l" data-ref-filename="46l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_property" title='link_map::l_property' data-ref="link_map::l_property" data-ref-filename="link_map..l_property">l_property</a> != <a class="enum" href="link_map.h.html#link_map::lc_property_unknown" title='link_map::lc_property_unknown' data-ref="link_map::lc_property_unknown" data-ref-filename="link_map..lc_property_unknown">lc_property_unknown</a>)</td></tr>
+<tr><th id="90">90</th><td>    <b>return</b>;</td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td>  <i>/* The NT_GNU_PROPERTY_TYPE_0 note must be aliged to 4 bytes in</i></td></tr>
+<tr><th id="93">93</th><td><i>     32-bit objects and to 8 bytes in 64-bit objects.  Skip notes</i></td></tr>
+<tr><th id="94">94</th><td><i>     with incorrect alignment.  */</i></td></tr>
+<tr><th id="95">95</th><td>  <b>if</b> (<a class="local col9 ref" href="#49align" title='align' data-ref="49align" data-ref-filename="49align">align</a> != (<a class="macro" href="../../bits/elfclass.h.html#11" title="64" data-ref="_M/__ELF_NATIVE_CLASS">__ELF_NATIVE_CLASS</a> / <var>8</var>))</td></tr>
+<tr><th id="96">96</th><td>    <b>return</b>;</td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td>  <em>const</em> <a class="macro" href="../../elf/link.h.html#30" title="Elf64_Addr" data-ref="_M/ElfW">ElfW</a>(Addr) <dfn class="local col0 decl" id="50start" title='start' data-type='const Elf64_Addr' data-ref="50start" data-ref-filename="50start">start</dfn> = (<a class="macro" href="../../elf/link.h.html#30" title="Elf64_Addr" data-ref="_M/ElfW">ElfW</a>(Addr)) <a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a>;</td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td>  <em>unsigned</em> <em>int</em> <dfn class="local col1 decl" id="51feature_1_and" title='feature_1_and' data-type='unsigned int' data-ref="51feature_1_and" data-ref-filename="51feature_1_and">feature_1_and</dfn> = <var>0</var>;</td></tr>
+<tr><th id="101">101</th><td>  <em>unsigned</em> <em>int</em> <dfn class="local col2 decl" id="52isa_1_needed" title='isa_1_needed' data-type='unsigned int' data-ref="52isa_1_needed" data-ref-filename="52isa_1_needed">isa_1_needed</dfn> = <var>0</var>;</td></tr>
+<tr><th id="102">102</th><td>  <em>unsigned</em> <em>int</em> <dfn class="local col3 decl" id="53last_type" title='last_type' data-type='unsigned int' data-ref="53last_type" data-ref-filename="53last_type">last_type</dfn> = <var>0</var>;</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td>  <b>while</b> ((<a class="macro" href="../../elf/link.h.html#30" title="Elf64_Addr" data-ref="_M/ElfW">ElfW</a>(Addr)) (<a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a> + <var>1</var>) - <a class="local col0 ref" href="#50start" title='start' data-ref="50start" data-ref-filename="50start">start</a> &lt; <a class="local col8 ref" href="#48size" title='size' data-ref="48size" data-ref-filename="48size">size</a>)</td></tr>
+<tr><th id="105">105</th><td>    {</td></tr>
+<tr><th id="106">106</th><td>      <i>/* Find the NT_GNU_PROPERTY_TYPE_0 note.  */</i></td></tr>
+<tr><th id="107">107</th><td>      <b>if</b> (<a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a>-&gt;<a class="ref field" href="../../elf/elf.h.html#(anonymous)::n_namesz" title='(anonymous struct)::n_namesz' data-ref="(anonymous)::n_namesz" data-ref-filename="(anonymous)..n_namesz">n_namesz</a> == <var>4</var></td></tr>
+<tr><th id="108">108</th><td>	  &amp;&amp; <a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a>-&gt;<a class="ref field" href="../../elf/elf.h.html#(anonymous)::n_type" title='(anonymous struct)::n_type' data-ref="(anonymous)::n_type" data-ref-filename="(anonymous)..n_type">n_type</a> == <a class="macro" href="../../elf/elf.h.html#1298" title="5" data-ref="_M/NT_GNU_PROPERTY_TYPE_0">NT_GNU_PROPERTY_TYPE_0</a></td></tr>
+<tr><th id="109">109</th><td>	  &amp;&amp; <a class="ref fn" href="../../string/string.h.html#memcmp" title='memcmp' data-ref="memcmp" data-ref-filename="memcmp">memcmp</a> (<a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a> + <var>1</var>, <q>"GNU"</q>, <var>4</var>) == <var>0</var>)</td></tr>
+<tr><th id="110">110</th><td>	{</td></tr>
+<tr><th id="111">111</th><td>	  <i>/* Stop if we see more than one GNU property note which may</i></td></tr>
+<tr><th id="112">112</th><td><i>	     be generated by the older linker.  */</i></td></tr>
+<tr><th id="113">113</th><td>	  <b>if</b> (<a class="local col6 ref" href="#46l" title='l' data-ref="46l" data-ref-filename="46l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_property" title='link_map::l_property' data-ref="link_map::l_property" data-ref-filename="link_map..l_property">l_property</a> != <a class="enum" href="link_map.h.html#link_map::lc_property_unknown" title='link_map::lc_property_unknown' data-ref="link_map::lc_property_unknown" data-ref-filename="link_map..lc_property_unknown">lc_property_unknown</a>)</td></tr>
+<tr><th id="114">114</th><td>	    <b>return</b>;</td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td>	  <i>/* Check CET status and ISA levels now.  */</i></td></tr>
+<tr><th id="117">117</th><td>	  <a class="local col6 ref" href="#46l" title='l' data-ref="46l" data-ref-filename="46l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_property" title='link_map::l_property' data-ref="link_map::l_property" data-ref-filename="link_map..l_property">l_property</a> = <a class="enum" href="link_map.h.html#link_map::lc_property_none" title='link_map::lc_property_none' data-ref="link_map::lc_property_none" data-ref-filename="link_map..lc_property_none">lc_property_none</a>;</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td>	  <i>/* Check for invalid property.  */</i></td></tr>
+<tr><th id="120">120</th><td>	  <b>if</b> (<a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a>-&gt;<a class="ref field" href="../../elf/elf.h.html#(anonymous)::n_descsz" title='(anonymous struct)::n_descsz' data-ref="(anonymous)::n_descsz" data-ref-filename="(anonymous)..n_descsz">n_descsz</a> &lt; <var>8</var></td></tr>
+<tr><th id="121">121</th><td>	      || (<a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a>-&gt;<a class="ref field" href="../../elf/elf.h.html#(anonymous)::n_descsz" title='(anonymous struct)::n_descsz' data-ref="(anonymous)::n_descsz" data-ref-filename="(anonymous)..n_descsz">n_descsz</a> % <b>sizeof</b> (<a class="macro" href="../../elf/link.h.html#30" title="Elf64_Addr" data-ref="_M/ElfW">ElfW</a>(Addr))) != <var>0</var>)</td></tr>
+<tr><th id="122">122</th><td>	    <b>return</b>;</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td>	  <i>/* Start and end of property array.  */</i></td></tr>
+<tr><th id="125">125</th><td>	  <em>unsigned</em> <em>char</em> *<dfn class="local col4 decl" id="54ptr" title='ptr' data-type='unsigned char *' data-ref="54ptr" data-ref-filename="54ptr">ptr</dfn> = (<em>unsigned</em> <em>char</em> *) (<a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a> + <var>1</var>) + <var>4</var>;</td></tr>
+<tr><th id="126">126</th><td>	  <em>unsigned</em> <em>char</em> *<dfn class="local col5 decl" id="55ptr_end" title='ptr_end' data-type='unsigned char *' data-ref="55ptr_end" data-ref-filename="55ptr_end">ptr_end</dfn> = <a class="local col4 ref" href="#54ptr" title='ptr' data-ref="54ptr" data-ref-filename="54ptr">ptr</a> + <a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a>-&gt;<a class="ref field" href="../../elf/elf.h.html#(anonymous)::n_descsz" title='(anonymous struct)::n_descsz' data-ref="(anonymous)::n_descsz" data-ref-filename="(anonymous)..n_descsz">n_descsz</a>;</td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td>	  <b>do</b></td></tr>
+<tr><th id="129">129</th><td>	    {</td></tr>
+<tr><th id="130">130</th><td>	      <em>unsigned</em> <em>int</em> <dfn class="local col6 decl" id="56type" title='type' data-type='unsigned int' data-ref="56type" data-ref-filename="56type">type</dfn> = *(<em>unsigned</em> <em>int</em> *) <a class="local col4 ref" href="#54ptr" title='ptr' data-ref="54ptr" data-ref-filename="54ptr">ptr</a>;</td></tr>
+<tr><th id="131">131</th><td>	      <em>unsigned</em> <em>int</em> <dfn class="local col7 decl" id="57datasz" title='datasz' data-type='unsigned int' data-ref="57datasz" data-ref-filename="57datasz">datasz</dfn> = *(<em>unsigned</em> <em>int</em> *) (<a class="local col4 ref" href="#54ptr" title='ptr' data-ref="54ptr" data-ref-filename="54ptr">ptr</a> + <var>4</var>);</td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td>	      <i>/* Property type must be in ascending order.  */</i></td></tr>
+<tr><th id="134">134</th><td>	      <b>if</b> (<a class="local col6 ref" href="#56type" title='type' data-ref="56type" data-ref-filename="56type">type</a> &lt; <a class="local col3 ref" href="#53last_type" title='last_type' data-ref="53last_type" data-ref-filename="53last_type">last_type</a>)</td></tr>
+<tr><th id="135">135</th><td>		<b>return</b>;</td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td>	      <a class="local col4 ref" href="#54ptr" title='ptr' data-ref="54ptr" data-ref-filename="54ptr">ptr</a> += <var>8</var>;</td></tr>
+<tr><th id="138">138</th><td>	      <b>if</b> ((<a class="local col4 ref" href="#54ptr" title='ptr' data-ref="54ptr" data-ref-filename="54ptr">ptr</a> + <a class="local col7 ref" href="#57datasz" title='datasz' data-ref="57datasz" data-ref-filename="57datasz">datasz</a>) &gt; <a class="local col5 ref" href="#55ptr_end" title='ptr_end' data-ref="55ptr_end" data-ref-filename="55ptr_end">ptr_end</a>)</td></tr>
+<tr><th id="139">139</th><td>		<b>return</b>;</td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td>	      <a class="local col3 ref" href="#53last_type" title='last_type' data-ref="53last_type" data-ref-filename="53last_type">last_type</a> = <a class="local col6 ref" href="#56type" title='type' data-ref="56type" data-ref-filename="56type">type</a>;</td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td>	      <b>if</b> (<a class="local col6 ref" href="#56type" title='type' data-ref="56type" data-ref-filename="56type">type</a> == <a class="macro" href="../../elf/elf.h.html#1332" title="0xc0000002" data-ref="_M/GNU_PROPERTY_X86_FEATURE_1_AND">GNU_PROPERTY_X86_FEATURE_1_AND</a></td></tr>
+<tr><th id="144">144</th><td>		  || <a class="local col6 ref" href="#56type" title='type' data-ref="56type" data-ref-filename="56type">type</a> == <a class="macro" href="../../elf/elf.h.html#1330" title="0xc0008002" data-ref="_M/GNU_PROPERTY_X86_ISA_1_NEEDED">GNU_PROPERTY_X86_ISA_1_NEEDED</a>)</td></tr>
+<tr><th id="145">145</th><td>		{</td></tr>
+<tr><th id="146">146</th><td>		  <i>/* The sizes of types which we are searching for are</i></td></tr>
+<tr><th id="147">147</th><td><i>		     4 bytes.  There is no point to continue if this</i></td></tr>
+<tr><th id="148">148</th><td><i>		     note is ill-formed.  */</i></td></tr>
+<tr><th id="149">149</th><td>		  <b>if</b> (<a class="local col7 ref" href="#57datasz" title='datasz' data-ref="57datasz" data-ref-filename="57datasz">datasz</a> != <var>4</var>)</td></tr>
+<tr><th id="150">150</th><td>		    <b>return</b>;</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td>		  <i>/* NB: Stop the scan only after seeing all types which</i></td></tr>
+<tr><th id="153">153</th><td><i>		     we are searching for.  */</i></td></tr>
+<tr><th id="154">154</th><td>		  <b>_Static_assert</b> ((<a class="macro" href="../../elf/elf.h.html#1330" title="0xc0008002" data-ref="_M/GNU_PROPERTY_X86_ISA_1_NEEDED">GNU_PROPERTY_X86_ISA_1_NEEDED</a> &gt;</td></tr>
+<tr><th id="155">155</th><td>				   <a class="macro" href="../../elf/elf.h.html#1332" title="0xc0000002" data-ref="_M/GNU_PROPERTY_X86_FEATURE_1_AND">GNU_PROPERTY_X86_FEATURE_1_AND</a>),</td></tr>
+<tr><th id="156">156</th><td>				  <q>"GNU_PROPERTY_X86_ISA_1_NEEDED &gt; "</q></td></tr>
+<tr><th id="157">157</th><td>				  <q>"GNU_PROPERTY_X86_FEATURE_1_AND"</q>);</td></tr>
+<tr><th id="158">158</th><td>		  <b>if</b> (<a class="local col6 ref" href="#56type" title='type' data-ref="56type" data-ref-filename="56type">type</a> == <a class="macro" href="../../elf/elf.h.html#1332" title="0xc0000002" data-ref="_M/GNU_PROPERTY_X86_FEATURE_1_AND">GNU_PROPERTY_X86_FEATURE_1_AND</a>)</td></tr>
+<tr><th id="159">159</th><td>		    <a class="local col1 ref" href="#51feature_1_and" title='feature_1_and' data-ref="51feature_1_and" data-ref-filename="51feature_1_and">feature_1_and</a> = *(<em>unsigned</em> <em>int</em> *) <a class="local col4 ref" href="#54ptr" title='ptr' data-ref="54ptr" data-ref-filename="54ptr">ptr</a>;</td></tr>
+<tr><th id="160">160</th><td>		  <b>else</b></td></tr>
+<tr><th id="161">161</th><td>		    {</td></tr>
+<tr><th id="162">162</th><td>		      <a class="local col2 ref" href="#52isa_1_needed" title='isa_1_needed' data-ref="52isa_1_needed" data-ref-filename="52isa_1_needed">isa_1_needed</a> = *(<em>unsigned</em> <em>int</em> *) <a class="local col4 ref" href="#54ptr" title='ptr' data-ref="54ptr" data-ref-filename="54ptr">ptr</a>;</td></tr>
+<tr><th id="163">163</th><td></td></tr>
+<tr><th id="164">164</th><td>		      <i>/* Keep searching for the next GNU property note</i></td></tr>
+<tr><th id="165">165</th><td><i>			 generated by the older linker.  */</i></td></tr>
+<tr><th id="166">166</th><td>		      <b>break</b>;</td></tr>
+<tr><th id="167">167</th><td>		    }</td></tr>
+<tr><th id="168">168</th><td>		}</td></tr>
+<tr><th id="169">169</th><td>	      <b>else</b> <b>if</b> (<a class="local col6 ref" href="#56type" title='type' data-ref="56type" data-ref-filename="56type">type</a> &gt; <a class="macro" href="../../elf/elf.h.html#1330" title="0xc0008002" data-ref="_M/GNU_PROPERTY_X86_ISA_1_NEEDED">GNU_PROPERTY_X86_ISA_1_NEEDED</a>)</td></tr>
+<tr><th id="170">170</th><td>		{</td></tr>
+<tr><th id="171">171</th><td>		  <i>/* Stop the scan since property type is in ascending</i></td></tr>
+<tr><th id="172">172</th><td><i>		     order.  */</i></td></tr>
+<tr><th id="173">173</th><td>		  <b>break</b>;</td></tr>
+<tr><th id="174">174</th><td>		}</td></tr>
+<tr><th id="175">175</th><td></td></tr>
+<tr><th id="176">176</th><td>	      <i>/* Check the next property item.  */</i></td></tr>
+<tr><th id="177">177</th><td>	      <a class="local col4 ref" href="#54ptr" title='ptr' data-ref="54ptr" data-ref-filename="54ptr">ptr</a> += <a class="macro" href="../../include/libc-pointer-arith.h.html#50" title="(((datasz) + (sizeof (Elf64_Addr)) - 1) &amp; -((__typeof__ ((datasz) + (sizeof (Elf64_Addr)) - 1)) ((sizeof (Elf64_Addr)))))" data-ref="_M/ALIGN_UP">ALIGN_UP</a> (<a class="local col7 ref" href="#57datasz" title='datasz' data-ref="57datasz" data-ref-filename="57datasz">datasz</a>, <b>sizeof</b> (<a class="macro" href="../../elf/link.h.html#30" title="Elf64_Addr" data-ref="_M/ElfW">ElfW</a>(Addr)));</td></tr>
+<tr><th id="178">178</th><td>	    }</td></tr>
+<tr><th id="179">179</th><td>	  <b>while</b> ((<a class="local col5 ref" href="#55ptr_end" title='ptr_end' data-ref="55ptr_end" data-ref-filename="55ptr_end">ptr_end</a> - <a class="local col4 ref" href="#54ptr" title='ptr' data-ref="54ptr" data-ref-filename="54ptr">ptr</a>) &gt;= <var>8</var>);</td></tr>
+<tr><th id="180">180</th><td>	}</td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td>      <i>/* NB: Note sections like .note.ABI-tag and .note.gnu.build-id are</i></td></tr>
+<tr><th id="183">183</th><td><i>	 aligned to 4 bytes in 64-bit ELF objects.  */</i></td></tr>
+<tr><th id="184">184</th><td>      <a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a> = ((<em>const</em> <em>void</em> *) <a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a></td></tr>
+<tr><th id="185">185</th><td>	      + <a class="macro" href="../../include/elf.h.html#15" title="((((((sizeof (Elf64_Nhdr) + ((note-&gt;n_namesz))) + (((align))) - 1) &amp; -((__typeof__ ((sizeof (Elf64_Nhdr) + ((note-&gt;n_namesz))) + (((align))) - 1)) ((((align)))))) + (note-&gt;n_descsz)) + ((align)) - 1) &amp; -((__typeof__ (((((sizeof (Elf64_Nhdr) + ((note-&gt;n_namesz))) + (((align))) - 1) &amp; -((__typeof__ ((sizeof (Elf64_Nhdr) + ((note-&gt;n_namesz))) + (((align))) - 1)) ((((align)))))) + (note-&gt;n_descsz)) + ((align)) - 1)) (((align)))))" data-ref="_M/ELF_NOTE_NEXT_OFFSET">ELF_NOTE_NEXT_OFFSET</a> (<a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a>-&gt;<a class="ref field" href="../../elf/elf.h.html#(anonymous)::n_namesz" title='(anonymous struct)::n_namesz' data-ref="(anonymous)::n_namesz" data-ref-filename="(anonymous)..n_namesz">n_namesz</a>, <a class="local col7 ref" href="#47note" title='note' data-ref="47note" data-ref-filename="47note">note</a>-&gt;<a class="ref field" href="../../elf/elf.h.html#(anonymous)::n_descsz" title='(anonymous struct)::n_descsz' data-ref="(anonymous)::n_descsz" data-ref-filename="(anonymous)..n_descsz">n_descsz</a>,</td></tr>
+<tr><th id="186">186</th><td>				      <a class="local col9 ref" href="#49align" title='align' data-ref="49align" data-ref-filename="49align">align</a>));</td></tr>
+<tr><th id="187">187</th><td>    }</td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td>  <i>/* We get here only if there is one or no GNU property note.  */</i></td></tr>
+<tr><th id="190">190</th><td>  <b>if</b> (<a class="local col2 ref" href="#52isa_1_needed" title='isa_1_needed' data-ref="52isa_1_needed" data-ref-filename="52isa_1_needed">isa_1_needed</a> != <var>0</var> || <a class="local col1 ref" href="#51feature_1_and" title='feature_1_and' data-ref="51feature_1_and" data-ref-filename="51feature_1_and">feature_1_and</a> != <var>0</var>)</td></tr>
+<tr><th id="191">191</th><td>    {</td></tr>
+<tr><th id="192">192</th><td>      <a class="local col6 ref" href="#46l" title='l' data-ref="46l" data-ref-filename="46l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_property" title='link_map::l_property' data-ref="link_map::l_property" data-ref-filename="link_map..l_property">l_property</a> = <a class="enum" href="link_map.h.html#link_map::lc_property_valid" title='link_map::lc_property_valid' data-ref="link_map::lc_property_valid" data-ref-filename="link_map..lc_property_valid">lc_property_valid</a>;</td></tr>
+<tr><th id="193">193</th><td>      <a class="local col6 ref" href="#46l" title='l' data-ref="46l" data-ref-filename="46l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_x86_isa_1_needed" title='link_map::l_x86_isa_1_needed' data-ref="link_map::l_x86_isa_1_needed" data-ref-filename="link_map..l_x86_isa_1_needed">l_x86_isa_1_needed</a> = <a class="local col2 ref" href="#52isa_1_needed" title='isa_1_needed' data-ref="52isa_1_needed" data-ref-filename="52isa_1_needed">isa_1_needed</a>;</td></tr>
+<tr><th id="194">194</th><td>      <a class="local col6 ref" href="#46l" title='l' data-ref="46l" data-ref-filename="46l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_x86_feature_1_and" title='link_map::l_x86_feature_1_and' data-ref="link_map::l_x86_feature_1_and" data-ref-filename="link_map..l_x86_feature_1_and">l_x86_feature_1_and</a> = <a class="local col1 ref" href="#51feature_1_and" title='feature_1_and' data-ref="51feature_1_and" data-ref-filename="51feature_1_and">feature_1_and</a>;</td></tr>
+<tr><th id="195">195</th><td>    }</td></tr>
+<tr><th id="196">196</th><td>  <b>else</b></td></tr>
+<tr><th id="197">197</th><td>    <a class="local col6 ref" href="#46l" title='l' data-ref="46l" data-ref-filename="46l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_property" title='link_map::l_property' data-ref="link_map::l_property" data-ref-filename="link_map..l_property">l_property</a> = <a class="enum" href="link_map.h.html#link_map::lc_property_none" title='link_map::lc_property_none' data-ref="link_map::lc_property_none" data-ref-filename="link_map..lc_property_none">lc_property_none</a>;</td></tr>
+<tr><th id="198">198</th><td>}</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><em>static</em> <b>inline</b> <em>void</em> <b>__attribute__</b> ((unused))</td></tr>
+<tr><th id="201">201</th><td><dfn class="decl def fn" id="_dl_process_pt_note" title='_dl_process_pt_note' data-ref="_dl_process_pt_note" data-ref-filename="_dl_process_pt_note">_dl_process_pt_note</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col8 decl" id="58l" title='l' data-type='struct link_map *' data-ref="58l" data-ref-filename="58l">l</dfn>, <em>int</em> <dfn class="local col9 decl" id="59fd" title='fd' data-type='int' data-ref="59fd" data-ref-filename="59fd">fd</dfn>, <em>const</em> <a class="macro" href="../../elf/link.h.html#30" title="Elf64_Phdr" data-ref="_M/ElfW">ElfW</a>(Phdr) *<dfn class="local col0 decl" id="60ph" title='ph' data-type='const Elf64_Phdr *' data-ref="60ph" data-ref-filename="60ph">ph</dfn>)</td></tr>
+<tr><th id="202">202</th><td>{</td></tr>
+<tr><th id="203">203</th><td>  <em>const</em> <a class="macro" href="../../elf/link.h.html#30" title="Elf64_Nhdr" data-ref="_M/ElfW">ElfW</a>(Nhdr) *<dfn class="local col1 decl" id="61note" title='note' data-type='const Elf64_Nhdr *' data-ref="61note" data-ref-filename="61note">note</dfn> = (<em>const</em> <em>void</em> *) (<a class="local col0 ref" href="#60ph" title='ph' data-ref="60ph" data-ref-filename="60ph">ph</a>-&gt;<a class="ref field" href="../../elf/elf.h.html#(anonymous)::p_vaddr" title='(anonymous struct)::p_vaddr' data-ref="(anonymous)::p_vaddr" data-ref-filename="(anonymous)..p_vaddr">p_vaddr</a> + <a class="local col8 ref" href="#58l" title='l' data-ref="58l" data-ref-filename="58l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_addr" title='link_map::l_addr' data-ref="link_map::l_addr" data-ref-filename="link_map..l_addr">l_addr</a>);</td></tr>
+<tr><th id="204">204</th><td>  <a class="ref fn" href="#_dl_process_property_note" title='_dl_process_property_note' data-ref="_dl_process_property_note" data-ref-filename="_dl_process_property_note">_dl_process_property_note</a> (<a class="local col8 ref" href="#58l" title='l' data-ref="58l" data-ref-filename="58l">l</a>, <a class="local col1 ref" href="#61note" title='note' data-ref="61note" data-ref-filename="61note">note</a>, <a class="local col0 ref" href="#60ph" title='ph' data-ref="60ph" data-ref-filename="60ph">ph</a>-&gt;<a class="ref field" href="../../elf/elf.h.html#(anonymous)::p_memsz" title='(anonymous struct)::p_memsz' data-ref="(anonymous)::p_memsz" data-ref-filename="(anonymous)..p_memsz">p_memsz</a>, <a class="local col0 ref" href="#60ph" title='ph' data-ref="60ph" data-ref-filename="60ph">ph</a>-&gt;<a class="ref field" href="../../elf/elf.h.html#(anonymous)::p_align" title='(anonymous struct)::p_align' data-ref="(anonymous)::p_align" data-ref-filename="(anonymous)..p_align">p_align</a>);</td></tr>
+<tr><th id="205">205</th><td>}</td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td><em>static</em> <b>inline</b> <em>int</em> <b>__attribute__</b> ((always_inline))</td></tr>
+<tr><th id="208">208</th><td><dfn class="decl def fn" id="_dl_process_gnu_property" title='_dl_process_gnu_property' data-ref="_dl_process_gnu_property" data-ref-filename="_dl_process_gnu_property">_dl_process_gnu_property</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col2 decl" id="62l" title='l' data-type='struct link_map *' data-ref="62l" data-ref-filename="62l">l</dfn>, <em>int</em> <dfn class="local col3 decl" id="63fd" title='fd' data-type='int' data-ref="63fd" data-ref-filename="63fd">fd</dfn>, <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="local col4 decl" id="64type" title='type' data-type='uint32_t' data-ref="64type" data-ref-filename="64type">type</dfn>,</td></tr>
+<tr><th id="209">209</th><td>			  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="local col5 decl" id="65datasz" title='datasz' data-type='uint32_t' data-ref="65datasz" data-ref-filename="65datasz">datasz</dfn>, <em>void</em> *<dfn class="local col6 decl" id="66data" title='data' data-type='void *' data-ref="66data" data-ref-filename="66data">data</dfn>)</td></tr>
+<tr><th id="210">210</th><td>{</td></tr>
+<tr><th id="211">211</th><td>  <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="212">212</th><td>}</td></tr>
+<tr><th id="213">213</th><td></td></tr>
+<tr><th id="214">214</th><td><u>#<span data-ppcond="19">endif</span> /* _DL_PROP_H */</u></td></tr>
+<tr><th id="215">215</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../elf/dl-load.c.html'>codebrowser/elf/dl-load.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.33</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

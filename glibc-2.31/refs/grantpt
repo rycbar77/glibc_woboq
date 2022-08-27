@@ -1,0 +1,7 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='976' type='int grantpt(int __fd)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='975'>/* Chown the slave to the calling user.  */</doc>
+<use f='codebrowser/support/support_openpty.c' l='66' u='c' c='support_openpty'/>
+<def f='codebrowser/sysdeps/unix/grantpt.c' l='99' ll='260' type='int grantpt(int fd)'/>
+<doc f='codebrowser/sysdeps/unix/grantpt.c' l='96'>/* Change the ownership and access permission of the slave pseudo
+   terminal associated with the master pseudo terminal specified
+   by FD.  */</doc>

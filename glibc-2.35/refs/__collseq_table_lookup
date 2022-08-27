@@ -1,0 +1,11 @@
+<def f='codebrowser/locale/coll-lookup.c' l='51' ll='77' type='uint32_t __collseq_table_lookup(const char * table, uint32_t wc)'/>
+<doc f='codebrowser/locale/coll-lookup.c' l='50'>/* Lookup in a table of uint32_t, with default value 0xffffffff.  */</doc>
+<dec f='codebrowser/locale/coll-lookup.h' l='25' type='uint32_t __collseq_table_lookup(const char * table, uint32_t wc)'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='614' u='c' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='624' u='c' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='770' u='c' c='internal_fnwmatch'/>
+<doc f='codebrowser/locale/coll-lookup.h' l='24'>/* Lookup in a table of uint32_t, with default value 0xffffffff.  */</doc>
+<use f='codebrowser/posix/regcomp.c' l='2884' u='c' c='lookup_collation_sequence_value'/>
+<use f='codebrowser/posix/regcomp.c' l='2890' u='c' c='lookup_collation_sequence_value'/>
+<use f='codebrowser/posix/regcomp.c' l='3016' u='c' c='build_range_exp'/>
+<use f='codebrowser/posix/regexec.c' l='3793' u='c' c='check_node_accept_bytes'/>

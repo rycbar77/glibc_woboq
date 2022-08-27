@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='432' type='struct dtv_slotinfo_list *'/>
+<def f='codebrowser/csu/libc-tls.c' l='46' type='struct dtv_slotinfo_list *'/>
+<use f='codebrowser/csu/libc-tls.c' l='78' macro='1' u='w' c='init_slotinfo'/>
+<doc f='codebrowser/csu/libc-tls.c' l='45'>/* Information about the dtv slots.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='569' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='571' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-libc.c' l='395' macro='1' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-load.c' l='1126' macro='1' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1385' macro='1' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/nptl_db/structs.def' l='108' macro='1' u='r'/>
+<use f='codebrowser/elf/dl-tls.c' l='54' macro='1' u='r' c='_dl_next_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='118' macro='1' u='r' c='_dl_count_modids'/>
+<use f='codebrowser/elf/dl-tls.c' l='460' macro='1' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='861' macro='1' u='r' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='896' macro='1' u='r' c='_dl_add_to_slotinfo'/>

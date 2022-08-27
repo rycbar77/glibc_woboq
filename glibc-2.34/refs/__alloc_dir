@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/dirent.h' l='51' type='DIR * __alloc_dir(int fd, _Bool close_fd, int flags, const struct stat64 * statp)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/opendir.c' l='63' u='c' c='opendir_tail'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/opendir.c' l='90' ll='134' type='DIR * __alloc_dir(int fd, _Bool close_fd, int flags, const struct stat64 * statp)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fdopendir.c' l='50' u='c' c='__fdopendir'/>

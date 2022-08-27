@@ -1,0 +1,274 @@
+<dec f='codebrowser/math/w_sqrt_template.c' l='24'/>
+<dec f='codebrowser/sysdeps/ieee754/ldbl-128/s_ceill.c' l='26'/>
+<doc f='codebrowser/sysdeps/ieee754/ldbl-128/s_ceill.c' l='19'>/*
+ * ceill(x)
+ * Return x rounded toward -inf to integral value
+ * Method:
+ *	Bit twiddling.
+ */</doc>
+<dec f='codebrowser/sysdeps/ieee754/ldbl-128/s_copysignl.c' l='25'/>
+<doc f='codebrowser/sysdeps/ieee754/ldbl-128/s_copysignl.c' l='19'>/*
+ * copysignl(long double x, long double y)
+ * copysignl(x,y) returns a value with the magnitude of x and
+ * with the sign bit of y.
+ */</doc>
+<dec f='codebrowser/sysdeps/ieee754/ldbl-128/s_floorl.c' l='26'/>
+<doc f='codebrowser/sysdeps/ieee754/ldbl-128/s_floorl.c' l='19'>/*
+ * floorl(x)
+ * Return x rounded toward -inf to integral value
+ * Method:
+ *	Bit twiddling.
+ */</doc>
+<dec f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='19'/>
+<doc f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='1'>/* Compute x * y + z as ternary operation.
+   Copyright (C) 2010-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/ieee754/ldbl-128/s_rintl.c' l='29'/>
+<doc f='codebrowser/sysdeps/ieee754/ldbl-128/s_rintl.c' l='19'>/*
+ * rintl(x)
+ * Return x rounded to integral value according to the prevailing
+ * rounding mode.
+ * Method:
+ *	Using floating addition.
+ * Exception:
+ *	Inexact flag raised if x not equal to rintl(x).
+ */</doc>
+<dec f='codebrowser/sysdeps/ieee754/ldbl-128/s_roundevenl.c' l='20'/>
+<doc f='codebrowser/sysdeps/ieee754/ldbl-128/s_roundevenl.c' l='1'>/* Round to nearest integer value, rounding halfway cases to even.
+   ldbl-128 version.
+   Copyright (C) 2016-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/ieee754/ldbl-128/s_roundl.c' l='19'/>
+<doc f='codebrowser/sysdeps/ieee754/ldbl-128/s_roundl.c' l='1'>/* Round long double to integer away from zero.
+   Copyright (C) 1997-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/ieee754/ldbl-128/s_truncl.c' l='19'/>
+<doc f='codebrowser/sysdeps/ieee754/ldbl-128/s_truncl.c' l='1'>/* Truncate argument to nearest integral value not larger than the argument.
+   Copyright (C) 1997-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/ieee754/dbl-64/s_ceil.c' l='20'/>
+<doc f='codebrowser/sysdeps/ieee754/dbl-64/s_ceil.c' l='13'>/*
+ * ceil(x)
+ * Return x rounded toward -inf to integral value
+ * Method:
+ *	Bit twiddling.
+ */</doc>
+<dec f='codebrowser/sysdeps/ieee754/flt-32/s_ceilf.c' l='15'/>
+<doc f='codebrowser/sysdeps/ieee754/flt-32/s_ceilf.c' l='4'>/*
+ * ====================================================
+ * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
+ *
+ * Developed at SunPro, a Sun Microsystems, Inc. business.
+ * Permission to use, copy, modify, and distribute this
+ * software is freely granted, provided that this notice
+ * is preserved.
+ * ====================================================
+ */</doc>
+<dec f='codebrowser/sysdeps/ieee754/dbl-64/s_floor.c' l='32'/>
+<doc f='codebrowser/sysdeps/ieee754/dbl-64/s_floor.c' l='21'>/*
+ * ====================================================
+ * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
+ *
+ * Developed at SunPro, a Sun Microsystems, Inc. business.
+ * Permission to use, copy, modify, and distribute this
+ * software is freely granted, provided that this notice
+ * is preserved.
+ * ====================================================
+ */</doc>
+<dec f='codebrowser/sysdeps/ieee754/flt-32/s_floorf.c' l='22'/>
+<doc f='codebrowser/sysdeps/ieee754/flt-32/s_floorf.c' l='15'>/*
+ * floorf(x)
+ * Return x rounded toward -inf to integral value
+ * Method:
+ *	Bit twiddling.
+ */</doc>
+<dec f='codebrowser/sysdeps/ieee754/dbl-64/s_fma.c' l='19'/>
+<doc f='codebrowser/sysdeps/ieee754/dbl-64/s_fma.c' l='1'>/* Compute x * y + z as ternary operation.
+   Copyright (C) 2010-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/ieee754/dbl-64/s_fmaf.c' l='19'/>
+<doc f='codebrowser/sysdeps/ieee754/dbl-64/s_fmaf.c' l='1'>/* Compute x * y + z as ternary operation.
+   Copyright (C) 2010-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/ieee754/dbl-64/s_rint.c' l='22'/>
+<doc f='codebrowser/sysdeps/ieee754/dbl-64/s_rint.c' l='12'>/*
+ * rint(x)
+ * Return x rounded to integral value according to the prevailing
+ * rounding mode.
+ * Method:
+ *	Using floating addition.
+ * Exception:
+ *	Inexact flag raised if x not equal to rint(x).
+ */</doc>
+<dec f='codebrowser/sysdeps/ieee754/flt-32/s_rintf.c' l='15'/>
+<doc f='codebrowser/sysdeps/ieee754/flt-32/s_rintf.c' l='4'>/*
+ * ====================================================
+ * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
+ *
+ * Developed at SunPro, a Sun Microsystems, Inc. business.
+ * Permission to use, copy, modify, and distribute this
+ * software is freely granted, provided that this notice
+ * is preserved.
+ * ====================================================
+ */</doc>
+<dec f='codebrowser/sysdeps/ieee754/dbl-64/s_roundeven.c' l='19'/>
+<doc f='codebrowser/sysdeps/ieee754/dbl-64/s_roundeven.c' l='1'>/* Round to nearest integer value, rounding halfway cases to even.
+   Copyright (C) 2016-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/ieee754/flt-32/s_roundevenf.c' l='20'/>
+<doc f='codebrowser/sysdeps/ieee754/flt-32/s_roundevenf.c' l='1'>/* Round to nearest integer value, rounding halfway cases to even.
+   flt-32 version.
+   Copyright (C) 2016-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/ieee754/dbl-64/s_trunc.c' l='19'/>
+<doc f='codebrowser/sysdeps/ieee754/dbl-64/s_trunc.c' l='1'>/* Truncate argument to nearest integral value not larger than the argument.
+   Copyright (C) 1997-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/ieee754/flt-32/s_truncf.c' l='19'/>
+<doc f='codebrowser/sysdeps/ieee754/flt-32/s_truncf.c' l='1'>/* Truncate argument to nearest integral value not larger than the argument.
+   Copyright (C) 1997-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/i386/fpu/s_rintl.c' l='5'/>
+<doc f='codebrowser/sysdeps/i386/fpu/s_rintl.c' l='1'>/*
+ * Public domain.
+ */</doc>

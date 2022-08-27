@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/netdb.h' l='55' type='int __gethostbyaddr2_r(const void *restrict __addr, socklen_t __len, int __type, struct hostent *restrict __result_buf, char *restrict __buf, size_t __buflen, struct hostent **restrict __result, int *restrict __h_errnop, int32_t * ttlp)'/>
+<use f='codebrowser/nscd/aicache.c' l='301' u='c' c='addhstaiX'/>
+<use f='codebrowser/nscd/gethstbyad_r.c' l='42' u='c' c='__gethostbyaddr_r'/>
+<use f='codebrowser/nscd/hstcache.c' l='420' u='c' c='lookup'/>
+<use f='codebrowser/nscd/hstcache.c' l='422' u='c' c='lookup'/>

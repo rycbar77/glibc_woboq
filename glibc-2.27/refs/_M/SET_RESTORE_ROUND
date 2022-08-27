@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/math_private.h' l='619'/>
+<doc f='codebrowser/sysdeps/generic/math_private.h' l='614'>/* Set the rounding mode within a lexical block.  Restore the rounding mode to
+   the value at the start of the block.  The exception mode must be preserved.
+   Exceptions raised within the block must be set in the exception flags.
+   Non-stop mode may be enabled inside the block.  */</doc>

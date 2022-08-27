@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/dlfcn.h' l='132' type='void __libc_register_dl_open_hook(struct link_map * map)'/>
+<use f='codebrowser/dlfcn/dlmopen.c' l='98' u='c' c='__dlmopen'/>
+<use f='codebrowser/dlfcn/dlopen.c' l='92' u='c' c='__dlopen'/>
+<use f='codebrowser/elf/dl-libc.c' l='200' u='c' c='__libc_dlopen_mode'/>
+<def f='codebrowser/elf/dl-libc.c' l='220' ll='233' type='void __libc_register_dl_open_hook(struct link_map * map)'/>

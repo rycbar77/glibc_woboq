@@ -1,0 +1,27 @@
+<dec f='codebrowser/stdlib/exit.h' l='77' type='__libc_lock_t'/>
+<doc f='codebrowser/stdlib/exit.h' l='70'>/* This lock protects __exit_funcs, __quick_exit_funcs, __exit_funcs_done
+   and __new_exitfn_called globals against simultaneous access from
+   atexit/on_exit/at_quick_exit in multiple threads, and also from
+   simultaneous access while another thread is in the middle of calling
+   exit handlers.  See BZ#14333.  Note: for lists, the entire list, and
+   each associated entry in the list, is protected for all access by this
+   lock.  */</doc>
+<def f='codebrowser/stdlib/cxa_atexit.c' l='29' macro='1' type='__libc_lock_t'/>
+<use f='codebrowser/stdlib/cxa_atexit.c' l='43' u='a' c='__internal_atexit'/>
+<use f='codebrowser/stdlib/cxa_atexit.c' l='48' u='a' c='__internal_atexit'/>
+<use f='codebrowser/stdlib/cxa_atexit.c' l='59' u='a' c='__internal_atexit'/>
+<use f='codebrowser/stdlib/cxa_finalize.c' l='33' u='a' c='__cxa_finalize'/>
+<use f='codebrowser/stdlib/cxa_finalize.c' l='82' u='a' c='__cxa_finalize'/>
+<use f='codebrowser/stdlib/cxa_finalize.c' l='84' u='a' c='__cxa_finalize'/>
+<use f='codebrowser/stdlib/cxa_finalize.c' l='107' u='a' c='__cxa_finalize'/>
+<use f='codebrowser/stdlib/exit.c' l='48' u='a' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/exit.c' l='88' u='a' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/exit.c' l='90' u='a' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/exit.c' l='98' u='a' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/exit.c' l='100' u='a' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/exit.c' l='112' u='a' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/exit.c' l='114' u='a' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/exit.c' l='131' u='a' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/on_exit.c' l='33' u='a' c='__on_exit'/>
+<use f='codebrowser/stdlib/on_exit.c' l='38' u='a' c='__on_exit'/>
+<use f='codebrowser/stdlib/on_exit.c' l='48' u='a' c='__on_exit'/>

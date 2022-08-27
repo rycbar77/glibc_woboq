@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/nss_files.h' l='51' type='int __nss_parse_line_result(FILE * fp, off64_t offset, int parse_line_result)'/>
+<doc f='codebrowser/include/nss_files.h' l='47'>/* Handles the result of a parse_line call (as defined by
+   nss/nss_files/files-parse.c).  Adjusts the file offset of FP as
+   necessary.  Returns 0 on success, and updates errno on failure (and
+   returns that error code).  */</doc>
+<use f='codebrowser/nss/nss_fgetent_r.c' l='44' u='c' c='__nss_fgetent_r'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='135' u='c' c='internal_getent'/>
+<def f='codebrowser/nss/nss_parse_line_result.c' l='24' ll='45' type='int __nss_parse_line_result(FILE * fp, off64_t offset, int parse_line_result)'/>

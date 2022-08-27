@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/sys/stat.h' l='94' type='int __fxstatat64(int ver, int __fildes, const char * __filename, struct stat64 * __stat_buf, int __flag)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fxstatat64.c' l='33' ll='66' type='int __fxstatat64(int vers, int fd, const char * file, struct stat64 * st, int flag)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fxstatat64.c' l='69' c='__fxstatat'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/fxstatat64.c' l='31'>/* Get information about the file FD in BUF.  */</doc>

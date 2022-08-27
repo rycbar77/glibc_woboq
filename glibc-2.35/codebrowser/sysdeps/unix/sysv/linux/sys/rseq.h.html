@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>rseq.h source code [codebrowser/sysdeps/unix/sysv/linux/sys/rseq.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/sys/rseq.h'; var root_path = '../../../../../..'; var data_path = '../../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../../..'>codebrowser</a>/<a href='../../../..'>sysdeps</a>/<a href='../../..'>unix</a>/<a href='../..'>sysv</a>/<a href='..'>linux</a>/<a href='./'>sys</a>/<a href='rseq.h.html'>rseq.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Restartable Sequences exported symbols.  Linux header.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i></i></td></tr>
+<tr><th id="4">4</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="5">5</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="6">6</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="7">7</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="8">8</th><td><i></i></td></tr>
+<tr><th id="9">9</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="10">10</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="11">11</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="12">12</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="13">13</th><td><i></i></td></tr>
+<tr><th id="14">14</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="15">15</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="16">16</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><u>#<span data-ppcond="18">ifndef</span> <span class="macro" data-ref="_M/_SYS_RSEQ_H">_SYS_RSEQ_H</span></u></td></tr>
+<tr><th id="19">19</th><td><u>#define <dfn class="macro" id="_M/_SYS_RSEQ_H" data-ref="_M/_SYS_RSEQ_H">_SYS_RSEQ_H</dfn>	1</u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><i>/* Architecture-specific rseq signature.  */</i></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../x86/bits/rseq.h.html">&lt;bits/rseq.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><u>#include &lt;stddef.h&gt;</u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../../../../../include/stdint.h.html">&lt;stdint.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../../../../../include/sys/cdefs.h.html">&lt;sys/cdefs.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="../../../../../include/bits/endian.h.html">&lt;bits/endian.h&gt;</a></u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="29">ifdef</span> <span class="macro" data-ref="_M/__has_include">__has_include</span></u></td></tr>
+<tr><th id="30">30</th><td><u># <span data-ppcond="30">if</span> <span class="macro" title="" data-ref="_M/__has_include">__has_include</span> ("linux/rseq.h")</u></td></tr>
+<tr><th id="31">31</th><td><u>#  define <dfn class="macro" id="_M/__GLIBC_HAVE_KERNEL_RSEQ" data-ref="_M/__GLIBC_HAVE_KERNEL_RSEQ">__GLIBC_HAVE_KERNEL_RSEQ</dfn></u></td></tr>
+<tr><th id="32">32</th><td><u># <span data-ppcond="30">endif</span></u></td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="29">else</span></u></td></tr>
+<tr><th id="34">34</th><td><u># include &lt;linux/version.h&gt;</u></td></tr>
+<tr><th id="35">35</th><td><u># if LINUX_VERSION_CODE &gt;= KERNEL_VERSION (4, 18, 0)</u></td></tr>
+<tr><th id="36">36</th><td><u>#  define __GLIBC_HAVE_KERNEL_RSEQ</u></td></tr>
+<tr><th id="37">37</th><td><u># endif</u></td></tr>
+<tr><th id="38">38</th><td><u>#<span data-ppcond="29">endif</span></u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#<span data-ppcond="40">ifdef</span> <a class="macro" href="#31" data-ref="_M/__GLIBC_HAVE_KERNEL_RSEQ">__GLIBC_HAVE_KERNEL_RSEQ</a></u></td></tr>
+<tr><th id="41">41</th><td><i>/* We use the structures declarations from the kernel headers.  */</i></td></tr>
+<tr><th id="42">42</th><td><u># include <a href="../../../../../../include/linux/rseq.h.html">&lt;linux/rseq.h&gt;</a></u></td></tr>
+<tr><th id="43">43</th><td><u>#<span data-ppcond="40">else</span> /* __GLIBC_HAVE_KERNEL_RSEQ */</u></td></tr>
+<tr><th id="44">44</th><td><i>/* We use a copy of the include/uapi/linux/rseq.h kernel header.  */</i></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><b>enum</b> rseq_cpu_id_state</td></tr>
+<tr><th id="47">47</th><td>  {</td></tr>
+<tr><th id="48">48</th><td>    RSEQ_CPU_ID_UNINITIALIZED = -<var>1</var>,</td></tr>
+<tr><th id="49">49</th><td>    RSEQ_CPU_ID_REGISTRATION_FAILED = -<var>2</var>,</td></tr>
+<tr><th id="50">50</th><td>  };</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td><b>enum</b> rseq_flags</td></tr>
+<tr><th id="53">53</th><td>  {</td></tr>
+<tr><th id="54">54</th><td>    RSEQ_FLAG_UNREGISTER = (<var>1</var> &lt;&lt; <var>0</var>),</td></tr>
+<tr><th id="55">55</th><td>  };</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><b>enum</b> rseq_cs_flags_bit</td></tr>
+<tr><th id="58">58</th><td>  {</td></tr>
+<tr><th id="59">59</th><td>    RSEQ_CS_FLAG_NO_RESTART_ON_PREEMPT_BIT = <var>0</var>,</td></tr>
+<tr><th id="60">60</th><td>    RSEQ_CS_FLAG_NO_RESTART_ON_SIGNAL_BIT = <var>1</var>,</td></tr>
+<tr><th id="61">61</th><td>    RSEQ_CS_FLAG_NO_RESTART_ON_MIGRATE_BIT = <var>2</var>,</td></tr>
+<tr><th id="62">62</th><td>  };</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td><b>enum</b> rseq_cs_flags</td></tr>
+<tr><th id="65">65</th><td>  {</td></tr>
+<tr><th id="66">66</th><td>    RSEQ_CS_FLAG_NO_RESTART_ON_PREEMPT =</td></tr>
+<tr><th id="67">67</th><td>      (<var>1U</var> &lt;&lt; RSEQ_CS_FLAG_NO_RESTART_ON_PREEMPT_BIT),</td></tr>
+<tr><th id="68">68</th><td>    RSEQ_CS_FLAG_NO_RESTART_ON_SIGNAL =</td></tr>
+<tr><th id="69">69</th><td>      (<var>1U</var> &lt;&lt; RSEQ_CS_FLAG_NO_RESTART_ON_SIGNAL_BIT),</td></tr>
+<tr><th id="70">70</th><td>    RSEQ_CS_FLAG_NO_RESTART_ON_MIGRATE =</td></tr>
+<tr><th id="71">71</th><td>      (<var>1U</var> &lt;&lt; RSEQ_CS_FLAG_NO_RESTART_ON_MIGRATE_BIT),</td></tr>
+<tr><th id="72">72</th><td>  };</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><i>/* struct rseq_cs is aligned on 32 bytes to ensure it is always</i></td></tr>
+<tr><th id="75">75</th><td><i>   contained within a single cache-line.  It is usually declared as</i></td></tr>
+<tr><th id="76">76</th><td><i>   link-time constant data.  */</i></td></tr>
+<tr><th id="77">77</th><td><b>struct</b> rseq_cs</td></tr>
+<tr><th id="78">78</th><td>  {</td></tr>
+<tr><th id="79">79</th><td>    <i>/* Version of this structure.  */</i></td></tr>
+<tr><th id="80">80</th><td>    uint32_t version;</td></tr>
+<tr><th id="81">81</th><td>    <i>/* enum rseq_cs_flags.  */</i></td></tr>
+<tr><th id="82">82</th><td>    uint32_t flags;</td></tr>
+<tr><th id="83">83</th><td>    uint64_t start_ip;</td></tr>
+<tr><th id="84">84</th><td>    <i>/* Offset from start_ip.  */</i></td></tr>
+<tr><th id="85">85</th><td>    uint64_t post_commit_offset;</td></tr>
+<tr><th id="86">86</th><td>    uint64_t abort_ip;</td></tr>
+<tr><th id="87">87</th><td>  } <b>__attribute__</b> ((__aligned__ (<var>32</var>)));</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td><i>/* struct rseq is aligned on 32 bytes to ensure it is always</i></td></tr>
+<tr><th id="90">90</th><td><i>   contained within a single cache-line.</i></td></tr>
+<tr><th id="91">91</th><td><i></i></td></tr>
+<tr><th id="92">92</th><td><i>   A single struct rseq per thread is allowed.  */</i></td></tr>
+<tr><th id="93">93</th><td><b>struct</b> rseq</td></tr>
+<tr><th id="94">94</th><td>  {</td></tr>
+<tr><th id="95">95</th><td>    <i>/* Restartable sequences cpu_id_start field.  Updated by the</i></td></tr>
+<tr><th id="96">96</th><td><i>       kernel.  Read by user-space with single-copy atomicity</i></td></tr>
+<tr><th id="97">97</th><td><i>       semantics.  This field should only be read by the thread which</i></td></tr>
+<tr><th id="98">98</th><td><i>       registered this data structure.  Aligned on 32-bit.  Always</i></td></tr>
+<tr><th id="99">99</th><td><i>       contains a value in the range of possible CPUs, although the</i></td></tr>
+<tr><th id="100">100</th><td><i>       value may not be the actual current CPU (e.g. if rseq is not</i></td></tr>
+<tr><th id="101">101</th><td><i>       initialized).  This CPU number value should always be compared</i></td></tr>
+<tr><th id="102">102</th><td><i>       against the value of the cpu_id field before performing a rseq</i></td></tr>
+<tr><th id="103">103</th><td><i>       commit or returning a value read from a data structure indexed</i></td></tr>
+<tr><th id="104">104</th><td><i>       using the cpu_id_start value.  */</i></td></tr>
+<tr><th id="105">105</th><td>    uint32_t cpu_id_start;</td></tr>
+<tr><th id="106">106</th><td>    <i>/* Restartable sequences cpu_id field.  Updated by the kernel.</i></td></tr>
+<tr><th id="107">107</th><td><i>       Read by user-space with single-copy atomicity semantics.  This</i></td></tr>
+<tr><th id="108">108</th><td><i>       field should only be read by the thread which registered this</i></td></tr>
+<tr><th id="109">109</th><td><i>       data structure.  Aligned on 32-bit.  Values</i></td></tr>
+<tr><th id="110">110</th><td><i>       RSEQ_CPU_ID_UNINITIALIZED and RSEQ_CPU_ID_REGISTRATION_FAILED</i></td></tr>
+<tr><th id="111">111</th><td><i>       have a special semantic: the former means "rseq uninitialized",</i></td></tr>
+<tr><th id="112">112</th><td><i>       and latter means "rseq initialization failed".  This value is</i></td></tr>
+<tr><th id="113">113</th><td><i>       meant to be read within rseq critical sections and compared</i></td></tr>
+<tr><th id="114">114</th><td><i>       with the cpu_id_start value previously read, before performing</i></td></tr>
+<tr><th id="115">115</th><td><i>       the commit instruction, or read and compared with the</i></td></tr>
+<tr><th id="116">116</th><td><i>       cpu_id_start value before returning a value loaded from a data</i></td></tr>
+<tr><th id="117">117</th><td><i>       structure indexed using the cpu_id_start value.  */</i></td></tr>
+<tr><th id="118">118</th><td>    uint32_t cpu_id;</td></tr>
+<tr><th id="119">119</th><td>    <i>/* Restartable sequences rseq_cs field.</i></td></tr>
+<tr><th id="120">120</th><td><i></i></td></tr>
+<tr><th id="121">121</th><td><i>       Contains NULL when no critical section is active for the current</i></td></tr>
+<tr><th id="122">122</th><td><i>       thread, or holds a pointer to the currently active struct rseq_cs.</i></td></tr>
+<tr><th id="123">123</th><td><i></i></td></tr>
+<tr><th id="124">124</th><td><i>       Updated by user-space, which sets the address of the currently</i></td></tr>
+<tr><th id="125">125</th><td><i>       active rseq_cs at the beginning of assembly instruction sequence</i></td></tr>
+<tr><th id="126">126</th><td><i>       block, and set to NULL by the kernel when it restarts an assembly</i></td></tr>
+<tr><th id="127">127</th><td><i>       instruction sequence block, as well as when the kernel detects that</i></td></tr>
+<tr><th id="128">128</th><td><i>       it is preempting or delivering a signal outside of the range</i></td></tr>
+<tr><th id="129">129</th><td><i>       targeted by the rseq_cs.  Also needs to be set to NULL by user-space</i></td></tr>
+<tr><th id="130">130</th><td><i>       before reclaiming memory that contains the targeted struct rseq_cs.</i></td></tr>
+<tr><th id="131">131</th><td><i></i></td></tr>
+<tr><th id="132">132</th><td><i>       Read and set by the kernel.  Set by user-space with single-copy</i></td></tr>
+<tr><th id="133">133</th><td><i>       atomicity semantics.  This field should only be updated by the</i></td></tr>
+<tr><th id="134">134</th><td><i>       thread which registered this data structure.  Aligned on 64-bit.  */</i></td></tr>
+<tr><th id="135">135</th><td>    <b>union</b></td></tr>
+<tr><th id="136">136</th><td>      {</td></tr>
+<tr><th id="137">137</th><td>        uint64_t ptr64;</td></tr>
+<tr><th id="138">138</th><td><u># ifdef __LP64__</u></td></tr>
+<tr><th id="139">139</th><td>        uint64_t ptr;</td></tr>
+<tr><th id="140">140</th><td><u># else /* __LP64__ */</u></td></tr>
+<tr><th id="141">141</th><td>        <b>struct</b></td></tr>
+<tr><th id="142">142</th><td>          {</td></tr>
+<tr><th id="143">143</th><td><u>#if __BYTE_ORDER == __BIG_ENDIAN</u></td></tr>
+<tr><th id="144">144</th><td>            uint32_t padding; <i>/* Initialized to zero.  */</i></td></tr>
+<tr><th id="145">145</th><td>            uint32_t ptr32;</td></tr>
+<tr><th id="146">146</th><td><u>#  else /* LITTLE */</u></td></tr>
+<tr><th id="147">147</th><td>            uint32_t ptr32;</td></tr>
+<tr><th id="148">148</th><td>            uint32_t padding; <i>/* Initialized to zero.  */</i></td></tr>
+<tr><th id="149">149</th><td><u>#  endif /* ENDIAN */</u></td></tr>
+<tr><th id="150">150</th><td>          } ptr;</td></tr>
+<tr><th id="151">151</th><td><u># endif /* __LP64__ */</u></td></tr>
+<tr><th id="152">152</th><td>      } rseq_cs;</td></tr>
+<tr><th id="153">153</th><td></td></tr>
+<tr><th id="154">154</th><td>    <i>/* Restartable sequences flags field.</i></td></tr>
+<tr><th id="155">155</th><td><i></i></td></tr>
+<tr><th id="156">156</th><td><i>       This field should only be updated by the thread which</i></td></tr>
+<tr><th id="157">157</th><td><i>       registered this data structure.  Read by the kernel.</i></td></tr>
+<tr><th id="158">158</th><td><i>       Mainly used for single-stepping through rseq critical sections</i></td></tr>
+<tr><th id="159">159</th><td><i>       with debuggers.</i></td></tr>
+<tr><th id="160">160</th><td><i></i></td></tr>
+<tr><th id="161">161</th><td><i>       - RSEQ_CS_FLAG_NO_RESTART_ON_PREEMPT</i></td></tr>
+<tr><th id="162">162</th><td><i>           Inhibit instruction sequence block restart on preemption</i></td></tr>
+<tr><th id="163">163</th><td><i>           for this thread.</i></td></tr>
+<tr><th id="164">164</th><td><i>       - RSEQ_CS_FLAG_NO_RESTART_ON_SIGNAL</i></td></tr>
+<tr><th id="165">165</th><td><i>           Inhibit instruction sequence block restart on signal</i></td></tr>
+<tr><th id="166">166</th><td><i>           delivery for this thread.</i></td></tr>
+<tr><th id="167">167</th><td><i>       - RSEQ_CS_FLAG_NO_RESTART_ON_MIGRATE</i></td></tr>
+<tr><th id="168">168</th><td><i>           Inhibit instruction sequence block restart on migration for</i></td></tr>
+<tr><th id="169">169</th><td><i>           this thread.  */</i></td></tr>
+<tr><th id="170">170</th><td>    uint32_t flags;</td></tr>
+<tr><th id="171">171</th><td>  } <b>__attribute__</b> ((__aligned__ (<var>32</var>)));</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td><u>#<span data-ppcond="40">endif</span> /* __GLIBC_HAVE_KERNEL_RSEQ */</u></td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td><i>/* Offset from the thread pointer to the rseq area.  */</i></td></tr>
+<tr><th id="176">176</th><td><b>extern</b> <em>const</em> <span class='typedef' title='ptrdiff_t' data-type='long' data-ref="ptrdiff_t" data-ref-filename="ptrdiff_t">ptrdiff_t</span> <dfn class="decl" id="__rseq_offset" title='__rseq_offset' data-ref="__rseq_offset" data-ref-filename="__rseq_offset">__rseq_offset</dfn>;</td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><i>/* Size of the registered rseq area.  0 if the registration was</i></td></tr>
+<tr><th id="179">179</th><td><i>   unsuccessful.  */</i></td></tr>
+<tr><th id="180">180</th><td><b>extern</b> <em>const</em> <em>unsigned</em> <em>int</em> <dfn class="decl" id="__rseq_size" title='__rseq_size' data-ref="__rseq_size" data-ref-filename="__rseq_size">__rseq_size</dfn>;</td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><i>/* Flags used during rseq registration.  */</i></td></tr>
+<tr><th id="183">183</th><td><b>extern</b> <em>const</em> <em>unsigned</em> <em>int</em> <dfn class="decl" id="__rseq_flags" title='__rseq_flags' data-ref="__rseq_flags" data-ref-filename="__rseq_flags">__rseq_flags</dfn>;</td></tr>
+<tr><th id="184">184</th><td></td></tr>
+<tr><th id="185">185</th><td><u>#<span data-ppcond="18">endif</span> /* sys/rseq.h */</u></td></tr>
+<tr><th id="186">186</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../../../../argp/argp-eexst.c.html'>codebrowser/argp/argp-eexst.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

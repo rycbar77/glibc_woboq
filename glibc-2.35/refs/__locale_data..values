@@ -1,0 +1,378 @@
+<dec f='codebrowser/locale/localeinfo.h' l='87' type='union locale_data_value[]'/>
+<use f='codebrowser/locale/localeinfo.h' l='315' u='m' c='_nl_lookup'/>
+<use f='codebrowser/locale/localeinfo.h' l='323' u='m' c='_nl_lookup_wstr'/>
+<use f='codebrowser/locale/localeinfo.h' l='330' u='m' c='_nl_lookup_word'/>
+<offset>512</offset>
+<use f='codebrowser/ctype/ctype-extn.c' l='31' macro='1' u='m' c='_tolower'/>
+<use f='codebrowser/ctype/ctype-extn.c' l='36' macro='1' u='m' c='_toupper'/>
+<use f='codebrowser/ctype/ctype-info.c' l='31' macro='1' u='m' c='__ctype_init'/>
+<use f='codebrowser/ctype/ctype-info.c' l='33' macro='1' u='m' c='__ctype_init'/>
+<use f='codebrowser/ctype/ctype-info.c' l='35' macro='1' u='m' c='__ctype_init'/>
+<use f='codebrowser/ctype/ctype.c' l='46' macro='1' u='m' c='tolower'/>
+<use f='codebrowser/ctype/ctype.c' l='53' macro='1' u='m' c='toupper'/>
+<use f='codebrowser/ctype/isctype.c' l='25' macro='1' u='m' c='__isctype'/>
+<use f='codebrowser/debug/wcrtomb_chk.c' l='30' macro='1' u='m' c='__wcrtomb_chk'/>
+<use f='codebrowser/debug/wctomb_chk.c' l='31' macro='1' u='m' c='__wctomb_chk'/>
+<use f='codebrowser/iconv/gconv_open.c' l='58' macro='1' u='m' c='__gconv_open'/>
+<use f='codebrowser/iconv/gconv_open.c' l='66' macro='1' u='m' c='__gconv_open'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='62' macro='1' u='m' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='68' macro='1' u='m' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='70' macro='1' u='m' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='72' macro='1' u='m' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='74' macro='1' u='m' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='168' macro='1' u='m' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='170' macro='1' u='m' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='172' macro='1' u='m' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='197' macro='1' u='m' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='200' macro='1' u='m' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='202' macro='1' u='m' c='__gconv_transliterate'/>
+<use f='codebrowser/intl/dcigettext.c' l='1631' macro='1' u='m' c='get_output_charset'/>
+<use f='codebrowser/locale/findlocale.c' l='281' u='m' c='_nl_find_locale'/>
+<use f='codebrowser/locale/lc-ctype.c' l='38' u='r' c='_nl_postload_ctype'/>
+<use f='codebrowser/locale/loadlocale.c' l='151' u='m' c='_nl_intern_locale_data'/>
+<use f='codebrowser/locale/loadlocale.c' l='156' u='m' c='_nl_intern_locale_data'/>
+<use f='codebrowser/locale/localeconv.c' l='28' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='29' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='30' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='34' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='35' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='36' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='38' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='40' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='43' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='44' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='50' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='51' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='52' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='53' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='54' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='55' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='56' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='57' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='58' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='59' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='60' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='61' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='62' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/localeconv.c' l='63' macro='1' u='m' c='__localeconv'/>
+<use f='codebrowser/locale/mb_cur_max.c' l='30' macro='1' u='m' c='__ctype_get_mb_cur_max'/>
+<use f='codebrowser/locale/newlocale.c' l='267' u='r' c='__newlocale'/>
+<use f='codebrowser/locale/nl_langinfo_l.c' l='66' u='m' c='__nl_langinfo_l'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='50' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='325' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='376' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='378' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='380' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='382' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='438' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='486' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='489' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='492' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='634' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='675' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='678' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='681' macro='1' u='m' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='47' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='325' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='367' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='369' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='371' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='373' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='438' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='486' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='489' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='492' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='634' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='675' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='678' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='681' macro='1' u='m' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch.c' l='255' macro='1' u='m' c='__fnmatch'/>
+<use f='codebrowser/posix/regex_internal.h' l='817' macro='1' u='m' c='re_string_elem_size_at'/>
+<use f='codebrowser/posix/regex_internal.h' l='821' macro='1' u='m' c='re_string_elem_size_at'/>
+<use f='codebrowser/posix/regex_internal.h' l='823' macro='1' u='m' c='re_string_elem_size_at'/>
+<use f='codebrowser/posix/regex_internal.h' l='824' macro='1' u='m' c='re_string_elem_size_at'/>
+<use f='codebrowser/posix/regcomp.c' l='357' macro='1' u='m' c='re_compile_fastmap_iter'/>
+<use f='codebrowser/posix/regcomp.c' l='361' macro='1' u='m' c='re_compile_fastmap_iter'/>
+<use f='codebrowser/posix/regcomp.c' l='869' macro='1' u='m' c='init_dfa'/>
+<use f='codebrowser/posix/regcomp.c' l='872' macro='1' u='m' c='init_dfa'/>
+<use f='codebrowser/posix/regcomp.c' l='874' macro='1' u='m' c='init_dfa'/>
+<use f='codebrowser/posix/regcomp.c' l='3120' macro='1' u='m' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3121' macro='1' u='m' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3127' macro='1' u='m' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3128' macro='1' u='m' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3129' macro='1' u='m' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3131' macro='1' u='m' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3504' macro='1' u='m' c='build_equiv_class'/>
+<use f='codebrowser/posix/regcomp.c' l='3515' macro='1' u='m' c='build_equiv_class'/>
+<use f='codebrowser/posix/regcomp.c' l='3516' macro='1' u='m' c='build_equiv_class'/>
+<use f='codebrowser/posix/regcomp.c' l='3518' macro='1' u='m' c='build_equiv_class'/>
+<use f='codebrowser/posix/regcomp.c' l='3520' macro='1' u='m' c='build_equiv_class'/>
+<use f='codebrowser/posix/regexec.c' l='3757' macro='1' u='m' c='check_node_accept_bytes'/>
+<use f='codebrowser/posix/regexec.c' l='3768' macro='1' u='m' c='check_node_accept_bytes'/>
+<use f='codebrowser/posix/regexec.c' l='3792' macro='1' u='m' c='check_node_accept_bytes'/>
+<use f='codebrowser/posix/regexec.c' l='3813' macro='1' u='m' c='check_node_accept_bytes'/>
+<use f='codebrowser/posix/regexec.c' l='3815' macro='1' u='m' c='check_node_accept_bytes'/>
+<use f='codebrowser/posix/regexec.c' l='3817' macro='1' u='m' c='check_node_accept_bytes'/>
+<use f='codebrowser/posix/regexec.c' l='3819' macro='1' u='m' c='check_node_accept_bytes'/>
+<use f='codebrowser/posix/regexec.c' l='3875' macro='1' u='m' c='find_collation_sequence_value'/>
+<use f='codebrowser/posix/regexec.c' l='3882' macro='1' u='m' c='find_collation_sequence_value'/>
+<use f='codebrowser/posix/regexec.c' l='3891' macro='1' u='m' c='find_collation_sequence_value'/>
+<use f='codebrowser/posix/regexec.c' l='3893' macro='1' u='m' c='find_collation_sequence_value'/>
+<use f='codebrowser/locale/outdigits.h' l='35' macro='1' u='m' c='outdigit_value'/>
+<use f='codebrowser/locale/outdigitswc.h' l='32' macro='1' u='m' c='outdigitwc_value'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='1352' macro='1' u='m' c='__vfprintf_internal'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='1355' macro='1' u='m' c='__vfprintf_internal'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='1656' macro='1' u='m' c='printf_positional'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='1659' macro='1' u='m' c='printf_positional'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='359' u='m' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='365' u='m' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1461' u='m' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1484' u='m' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1565' u='m' c='__vfscanf_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='69' u='m' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='96' u='m' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='96' u='m' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='96' u='m' c='____strtod_l_internal'/>
+<use f='codebrowser/string/strcoll_l.c' l='260' u='m' c='__strcoll_l'/>
+<use f='codebrowser/string/strcoll_l.c' l='277' u='m' c='__strcoll_l'/>
+<use f='codebrowser/string/strcoll_l.c' l='279' u='m' c='__strcoll_l'/>
+<use f='codebrowser/string/strcoll_l.c' l='281' u='m' c='__strcoll_l'/>
+<use f='codebrowser/string/strcoll_l.c' l='283' u='m' c='__strcoll_l'/>
+<use f='codebrowser/string/strcoll_l.c' l='285' u='m' c='__strcoll_l'/>
+<use f='codebrowser/string/strxfrm_l.c' l='671' u='m' c='__strxfrm_l'/>
+<use f='codebrowser/string/strxfrm_l.c' l='694' u='m' c='__strxfrm_l'/>
+<use f='codebrowser/string/strxfrm_l.c' l='696' u='m' c='__strxfrm_l'/>
+<use f='codebrowser/string/strxfrm_l.c' l='698' u='m' c='__strxfrm_l'/>
+<use f='codebrowser/string/strxfrm_l.c' l='700' u='m' c='__strxfrm_l'/>
+<use f='codebrowser/string/strxfrm_l.c' l='702' u='m' c='__strxfrm_l'/>
+<use f='codebrowser/stdlib/strtol_l.c' l='123' u='m' c='____strtol_l_internal'/>
+<use f='codebrowser/stdlib/strtol_l.c' l='123' u='m' c='____strtol_l_internal'/>
+<use f='codebrowser/stdio-common/printf_fphex.c' l='154' macro='1' u='m' c='__printf_fphex'/>
+<use f='codebrowser/stdio-common/printf_fphex.c' l='155' macro='1' u='m' c='__printf_fphex'/>
+<use f='codebrowser/stdio-common/printf_fphex.c' l='159' macro='1' u='m' c='__printf_fphex'/>
+<use f='codebrowser/stdio-common/printf_fphex.c' l='160' macro='1' u='m' c='__printf_fphex'/>
+<use f='codebrowser/time/alt_digit.c' l='29' u='m' c='_nl_init_alt_digit'/>
+<use f='codebrowser/time/alt_digit.c' l='29' u='m' c='_nl_get_alt_digit'/>
+<use f='codebrowser/time/alt_digit.c' l='31' u='m' c='_nl_get_walt_digit'/>
+<use f='codebrowser/time/alt_digit.c' l='31' u='m' c='_nl_get_walt_digit'/>
+<use f='codebrowser/time/alt_digit.c' l='31' u='m' c='_nl_parse_alt_digit'/>
+<use f='codebrowser/time/asctime.c' l='26' u='m' c='asctime_internal'/>
+<use f='codebrowser/time/asctime.c' l='27' u='m' c='asctime_internal'/>
+<use f='codebrowser/time/era.c' l='30' u='m' c='_nl_init_era_entries'/>
+<use f='codebrowser/time/era.c' l='30' u='m' c='_nl_init_era_entries'/>
+<use f='codebrowser/time/era.c' l='29' u='m' c='_nl_init_era_entries'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='287' u='m' c='__strftime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='122' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='124' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='122' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='122' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='124' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='124' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='125' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='126' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='128' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='128' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='125' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='125' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='126' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='126' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='128' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='128' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='130' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='130' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='131' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='131' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='131' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='132' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='132' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='132' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='133' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='134' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='133' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='133' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='134' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='134' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='136' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='136' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='136' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='137' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='137' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='137' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='131' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='131' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='131' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='187' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='187' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='187' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='132' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='132' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='132' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='184' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='137' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='137' u='m' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='137' u='m' c='__strptime_internal'/>
+<use f='codebrowser/wcsmbs/wcrtomb.c' l='62' macro='1' u='m' c='__wcrtomb'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='172' u='m' c='__wcsmbs_load_conv'/>
+<use f='codebrowser/wcsmbs/wcwidth.h' l='35' macro='1' u='m' c='internal_wcwidth'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='40' macro='1' u='m' c='__iswalnum'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='40' macro='1' u='m' c='__iswalnum'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='44' macro='1' u='m' c='__iswalpha'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='44' macro='1' u='m' c='__iswalpha'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='47' macro='1' u='m' c='__iswblank'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='47' macro='1' u='m' c='__iswblank'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='49' macro='1' u='m' c='__iswcntrl'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='49' macro='1' u='m' c='__iswcntrl'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='51' macro='1' u='m' c='__iswdigit'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='51' macro='1' u='m' c='__iswdigit'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='54' macro='1' u='m' c='__iswlower'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='54' macro='1' u='m' c='__iswlower'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='58' macro='1' u='m' c='__iswgraph'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='58' macro='1' u='m' c='__iswgraph'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='60' macro='1' u='m' c='__iswprint'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='60' macro='1' u='m' c='__iswprint'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='62' macro='1' u='m' c='__iswpunct'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='62' macro='1' u='m' c='__iswpunct'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='64' macro='1' u='m' c='__iswspace'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='64' macro='1' u='m' c='__iswspace'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='67' macro='1' u='m' c='__iswupper'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='67' macro='1' u='m' c='__iswupper'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='69' macro='1' u='m' c='__iswxdigit'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='69' macro='1' u='m' c='__iswxdigit'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='76' macro='1' u='m' c='__towlower'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='77' macro='1' u='m' c='__towlower'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='88' macro='1' u='m' c='__towupper'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='89' macro='1' u='m' c='__towupper'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswalnum_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswalnum_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswalpha_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswalpha_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswblank_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswblank_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswcntrl_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswcntrl_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswdigit_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswdigit_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswlower_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswlower_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswgraph_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswgraph_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswprint_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswprint_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswpunct_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswpunct_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswspace_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswspace_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswupper_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswupper_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='34' u='m' c='__iswxdigit_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='35' u='m' c='__iswxdigit_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='59' u='m' c='__towlower_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='60' u='m' c='__towlower_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='69' u='m' c='__towupper_l'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='70' u='m' c='__towupper_l'/>
+<use f='codebrowser/wctype/wctrans.c' l='30' macro='1' u='m' c='__wctrans'/>
+<use f='codebrowser/wctype/wctrans.c' l='44' macro='1' u='m' c='__wctrans'/>
+<use f='codebrowser/wctype/wctrans.c' l='45' u='m' c='__wctrans'/>
+<use f='codebrowser/wctype/wctrans_l.c' l='30' u='m' c='__wctrans_l'/>
+<use f='codebrowser/wctype/wctrans_l.c' l='44' u='m' c='__wctrans_l'/>
+<use f='codebrowser/wctype/wctrans_l.c' l='45' u='m' c='__wctrans_l'/>
+<use f='codebrowser/wctype/wctype.c' l='31' macro='1' u='m' c='__wctype'/>
+<use f='codebrowser/wctype/wctype.c' l='44' macro='1' u='m' c='__wctype'/>
+<use f='codebrowser/wctype/wctype.c' l='45' u='m' c='__wctype'/>
+<use f='codebrowser/wctype/wctype_l.c' l='32' u='m' c='__wctype_l'/>
+<use f='codebrowser/wctype/wctype_l.c' l='45' u='m' c='__wctype_l'/>
+<use f='codebrowser/wctype/wctype_l.c' l='46' u='m' c='__wctype_l'/>

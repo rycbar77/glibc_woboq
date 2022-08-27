@@ -1,0 +1,22 @@
+<dec f='codebrowser/posix/glob.h' l='151' type='void globfree(glob_t * __pglob)'/>
+<dec f='codebrowser/include/glob.h' l='9' type='void globfree(glob_t * )'/>
+<use f='codebrowser/include/glob.h' l='9' c='globfree'/>
+<doc f='codebrowser/posix/glob.h' l='150'>/* Free storage allocated in PGLOB by a previous `glob&apos; call.  */</doc>
+<use f='codebrowser/posix/wordexp.c' l='400' u='c' c='do_parse_glob'/>
+<use f='codebrowser/posix/wordexp.c' l='416' u='c' c='do_parse_glob'/>
+<use f='codebrowser/posix/wordexp.c' l='421' u='c' c='do_parse_glob'/>
+<use f='codebrowser/posix/glob.c' l='458' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1012' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1013' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1024' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1025' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1049' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1063' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1064' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1078' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1084' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1137' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1157' u='c' c='__glob_lstat_compat'/>
+<def f='codebrowser/posix/globfree.c' l='27' ll='38' type='void globfree(glob_t * pglob)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/globfree.c' l='28' c='globfree64'/>
+<doc f='codebrowser/posix/globfree.c' l='26'>/* Free storage allocated in PGLOB by a previous `glob&apos; call.  */</doc>

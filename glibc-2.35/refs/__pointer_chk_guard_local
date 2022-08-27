@@ -1,0 +1,4 @@
+<def f='codebrowser/elf/rtld.c' l='180' type='uintptr_t'/>
+<use f='codebrowser/elf/rtld.c' l='875' u='w' c='security_init'/>
+<doc f='codebrowser/elf/rtld.c' l='178'>/* Only exported for architectures that don&apos;t store the pointer guard
+   value in thread local area.  */</doc>

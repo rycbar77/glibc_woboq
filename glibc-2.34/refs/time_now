@@ -1,0 +1,9 @@
+<def f='codebrowser/include/time.h' l='512' ll='518' type='time_t time_now()'/>
+<doc f='codebrowser/include/time.h' l='511'>/* Helper function to get time in seconds, similar to time.  */</doc>
+<use f='codebrowser/misc/syslog.c' l='204' u='c' c='__vsyslog_internal'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='116' u='c' c='__nscd_get_nl_timestamp'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='352' u='c' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='418' u='c' c='__nscd_get_map_ref'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_native.c' l='75' u='c' c='__check_native'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='129' u='c' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='105' u='c' c='__netlink_sendreq'/>

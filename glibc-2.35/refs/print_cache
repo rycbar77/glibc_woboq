@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldconfig.h' l='53' type='void print_cache(const char * cache_name)'/>
+<def f='codebrowser/elf/cache.c' l='314' ll='426' type='void print_cache(const char * cache_name)'/>
+<doc f='codebrowser/elf/cache.c' l='312'>/* Print the whole cache file, if a file contains the new cache format
+   hidden in the old one, print the contents of the new format.  */</doc>
+<doc f='codebrowser/sysdeps/generic/ldconfig.h' l='52'>/* Declared in cache.c.  */</doc>
+<use f='codebrowser/elf/ldconfig.c' l='1441' u='c' c='main'/>

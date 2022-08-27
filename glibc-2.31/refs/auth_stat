@@ -1,0 +1,27 @@
+<def f='codebrowser/sunrpc/rpc/auth.h' l='52' ll='67'/>
+<use f='codebrowser/sunrpc/rpc/clnt.h' l='107'/>
+<use f='codebrowser/sunrpc/rpc/rpc_msg.h' l='115'/>
+<use f='codebrowser/include/rpc/auth_des.h' l='16' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/rpc/svc.h' l='256' c='svcerr_auth'/>
+<use f='codebrowser/sunrpc/rpc/svc_auth.h' l='45' c='_authenticate'/>
+<use f='codebrowser/include/rpc/svc_auth.h' l='7' c='_svcauth_unix'/>
+<use f='codebrowser/include/rpc/svc_auth.h' l='9' c='_svcauth_short'/>
+<doc f='codebrowser/sunrpc/rpc/auth.h' l='49'>/*
+ * Status returned from authentication check
+ */</doc>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='41' c='auth_errmsg'/>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='323'/>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='373' c='auth_errmsg'/>
+<use f='codebrowser/sunrpc/svc.c' l='327' c='__GI_svcerr_auth'/>
+<use f='codebrowser/sunrpc/svc.c' l='480' c='__GI_svc_getreq_common'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='54' c='_svcauth_null'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='56' c='_svcauth_unix'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='58' c='_svcauth_short'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='60' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='65'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='95' c='__GI__authenticate'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='111' c='_svcauth_null'/>
+<use f='codebrowser/sunrpc/svc_authux.c' l='47' c='_svcauth_unix'/>
+<use f='codebrowser/sunrpc/svc_authux.c' l='50' c='_svcauth_unix'/>
+<use f='codebrowser/sunrpc/svc_authux.c' l='143' c='_svcauth_short'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='105' c='_svcauth_des'/>

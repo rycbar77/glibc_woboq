@@ -1,0 +1,20 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='82' type='aiocb_union *'/>
+<use f='codebrowser/rt/aio_cancel.c' l='82' u='r' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='143' u='r' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='144' u='r' c='__aio_cancel'/>
+<offset>320</offset>
+<doc f='codebrowser/sysdeps/generic/aio_misc.h' l='81'>/* Pointer to the actual data.  */</doc>
+<use f='codebrowser/rt/aio_misc.c' l='190' u='r' c='__aio_find_req'/>
+<use f='codebrowser/rt/aio_misc.c' l='195' u='r' c='__aio_find_req'/>
+<use f='codebrowser/rt/aio_misc.c' l='198' u='r' c='__aio_find_req'/>
+<use f='codebrowser/rt/aio_misc.c' l='211' u='r' c='__aio_find_req_fd'/>
+<use f='codebrowser/rt/aio_misc.c' l='214' u='r' c='__aio_find_req_fd'/>
+<use f='codebrowser/rt/aio_misc.c' l='346' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='360' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='370' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='384' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='518' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='716' u='r' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='719' u='r' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='729' u='r' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_notify.c' l='119' u='r' c='__aio_notify'/>

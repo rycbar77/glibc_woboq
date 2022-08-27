@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/unistd.h' l='128' type='int __setpgid(__pid_t __pid, __pid_t __pgid)'/>
+<dec f='codebrowser/include/unistd.h' l='129' type='int __setpgid(__pid_t , __pid_t )'/>
+<use f='codebrowser/include/unistd.h' l='129' c='__setpgid'/>
+<use f='codebrowser/posix/setpgrp.c' l='23' u='c' c='setpgrp'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='164' u='c' c='__spawni_child'/>

@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='33' type='int getcon(char ** con)'/>
+<doc f='include/selinux/selinux.h' l='31'>/* Get current context, and set *con to refer to it.
+   Caller must free via freecon. */</doc>

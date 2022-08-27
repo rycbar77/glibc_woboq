@@ -1,0 +1,6 @@
+<def f='codebrowser/posix/regex_internal.c' l='1573' ll='1607' type='reg_errcode_t register_state(const re_dfa_t * dfa, re_dfastate_t * newstate, re_hashval_t hash)'/>
+<use f='codebrowser/posix/regex_internal.c' l='1666' u='c' c='create_ci_newstate'/>
+<use f='codebrowser/posix/regex_internal.c' l='1746' u='c' c='create_cd_newstate'/>
+<doc f='codebrowser/posix/regex_internal.c' l='1569'>/* Finish initialization of the new state NEWSTATE, and using its hash value
+   HASH put in the appropriate bucket of DFA&apos;s state table.  Return value
+   indicates the error code if failed.  */</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='522' type='int __pthread_join(pthread_t threadid, void ** thread_return)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='523' type='int __pthread_join(pthread_t , void ** )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='523' c='__pthread_join'/>
+<def f='codebrowser/nptl/pthread_join.c' l='30' macro='1' type='int __pthread_join(pthread_t , void ** )'/>
+<use f='codebrowser/sysdeps/pthread/thrd_join.c' l='26' u='c' c='__thrd_join'/>

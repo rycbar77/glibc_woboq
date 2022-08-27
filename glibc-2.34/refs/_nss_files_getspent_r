@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/nss_files.h' l='138' macro='1' type='enum nss_status _nss_files_getspent_r(struct spwd * , char * , size_t , int * )'/>
+<dec f='codebrowser/nss/function.def' l='69' macro='1' type='enum nss_status _nss_files_getspent_r(struct spwd * , char * , size_t , int * )'/>
+<use f='codebrowser/nss/function.def' l='69' macro='1' c='_nss_files_getspent_r'/>
+<dec f='codebrowser/include/shadow.h' l='39' macro='1' type='enum nss_status _nss_files_getspent_r(struct spwd * pwd, char * buffer, size_t buflen, int * errnop)'/>

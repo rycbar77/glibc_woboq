@@ -1,0 +1,30 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='90' type='pthread_mutex_t'/>
+<use f='codebrowser/rt/aio_cancel.c' l='55' u='a' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='64' u='a' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='77' u='a' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='151' u='a' c='__aio_cancel'/>
+<doc f='codebrowser/sysdeps/generic/aio_misc.h' l='89'>/* Lock for global I/O list of requests.  */</doc>
+<use f='codebrowser/rt/aio_error.c' l='42' u='a' c='__aio_error'/>
+<use f='codebrowser/rt/aio_error.c' l='44' u='a' c='__aio_error'/>
+<def f='codebrowser/rt/aio_misc.c' l='114' type='pthread_mutex_t'/>
+<use f='codebrowser/rt/aio_misc.c' l='288' u='a' c='__aio_init'/>
+<use f='codebrowser/rt/aio_misc.c' l='304' u='a' c='__aio_init'/>
+<use f='codebrowser/rt/aio_misc.c' l='339' u='a' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='356' u='a' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='485' u='a' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='511' u='a' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='599' u='a' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='643' u='a' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='689' u='a' c='handle_fildes_io'/>
+<doc f='codebrowser/rt/aio_misc.c' l='113'>/* Since the list is global we need a mutex protecting it.  */</doc>
+<use f='codebrowser/rt/aio_suspend.c' l='61' u='a' c='cleanup'/>
+<use f='codebrowser/rt/aio_suspend.c' l='93' u='a' c='cleanup'/>
+<use f='codebrowser/rt/aio_suspend.c' l='103' macro='1' u='a' c='do_aio_misc_wait'/>
+<use f='codebrowser/rt/aio_suspend.c' l='103' macro='1' u='a' c='do_aio_misc_wait'/>
+<use f='codebrowser/rt/aio_suspend.c' l='130' u='a' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/aio_suspend.c' l='252' u='a' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='91' u='a' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='124' u='a' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='159' macro='1' u='a' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='159' macro='1' u='a' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='227' u='a' c='lio_listio_internal'/>

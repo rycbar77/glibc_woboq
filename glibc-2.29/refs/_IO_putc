@@ -1,0 +1,9 @@
+<dec f='codebrowser/libio/bits/libio.h' l='434' type='int _IO_putc(int __c, _IO_FILE * __fp)'/>
+<dec f='codebrowser/include/bits/libio.h' l='19' type='int _IO_putc(int , _IO_FILE * )'/>
+<use f='codebrowser/include/bits/libio.h' l='19' c='_IO_putc'/>
+<use f='codebrowser/libio/bits/stdio.h' l='81' u='c' c='putchar'/>
+<dec f='codebrowser/libio/libio.h' l='227' type='int _IO_putc(int __c, FILE * __fp)'/>
+<dec f='codebrowser/libio/libio.h' l='314' type='int _IO_putc(int , FILE * )'/>
+<use f='codebrowser/libio/libio.h' l='314' c='_IO_putc'/>
+<def f='codebrowser/libio/putc.c' l='23' ll='34' type='int _IO_putc(int c, FILE * fp)'/>
+<use f='codebrowser/libio/putc.c' l='39' c='putc'/>

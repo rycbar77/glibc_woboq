@@ -1,0 +1,5 @@
+<def f='codebrowser/malloc/mtrace-impl.c' l='164' ll='170' type='void release_libc_mem()'/>
+<use f='codebrowser/malloc/mtrace-impl.c' l='201' u='r' c='do_mtrace'/>
+<doc f='codebrowser/malloc/mtrace-impl.c' l='161'>/* This function gets called to make sure all memory the library
+   allocates get freed and so does not irritate the user when studying
+   the mtrace output.  */</doc>

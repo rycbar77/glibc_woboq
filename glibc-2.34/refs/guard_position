@@ -1,0 +1,4 @@
+<def f='codebrowser/nptl/allocatestack.c' l='145' ll='157' type='char * guard_position(void * mem, size_t size, size_t guardsize, struct pthread * pd, size_t pagesize_m1)'/>
+<use f='codebrowser/nptl/allocatestack.c' l='393' u='c' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='478' u='c' c='allocate_stack'/>
+<doc f='codebrowser/nptl/allocatestack.c' l='144'>/* Return the guard page position on allocated stack.  */</doc>

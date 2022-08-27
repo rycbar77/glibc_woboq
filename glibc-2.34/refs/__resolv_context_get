@@ -1,0 +1,23 @@
+<dec f='codebrowser/resolv/resolv_context.h' l='71' type='struct resolv_context * __resolv_context_get()'/>
+<dec f='codebrowser/resolv/resolv_context.h' l='73' type='struct resolv_context * __resolv_context_get()'/>
+<use f='codebrowser/resolv/resolv_context.h' l='73' c='__resolv_context_get'/>
+<doc f='codebrowser/resolv/resolv_context.h' l='68'>/* Return the current temporary resolver context, or NULL if there was
+   an error (indicated by errno).  A call to this function must be
+   paired with a call to __resolv_context_put.  */</doc>
+<use f='codebrowser/nss/digits_dots.c' l='43' u='c' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/getnssent_r.c' l='66' u='c' c='__nss_setent'/>
+<use f='codebrowser/nss/getnssent_r.c' l='126' u='c' c='__nss_endent'/>
+<use f='codebrowser/nss/getnssent_r.c' l='173' u='c' c='__nss_getent_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='63' u='c' c='_nss_dns_getcanonname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='159' u='c' c='_nss_dns_gethostbyname3_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='313' u='c' c='_nss_dns_gethostbyname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='340' u='c' c='_nss_dns_gethostbyname4_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='464' u='c' c='_nss_dns_gethostbyaddr2_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='121' u='c' c='_nss_dns_getnetbyname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='179' u='c' c='_nss_dns_getnetbyaddr_r'/>
+<use f='codebrowser/resolv/res_query.c' l='318' u='c' c='___res_query'/>
+<use f='codebrowser/resolv/res_query.c' l='568' u='c' c='___res_search'/>
+<use f='codebrowser/resolv/res_query.c' l='661' u='c' c='___res_querydomain'/>
+<use f='codebrowser/resolv/res_send.c' l='464' u='c' c='___res_send'/>
+<def f='codebrowser/resolv/resolv_context.c' l='192' ll='196' type='struct resolv_context * __resolv_context_get()'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='729' u='c' c='gaih_inet'/>

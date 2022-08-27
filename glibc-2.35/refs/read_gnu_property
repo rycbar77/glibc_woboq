@@ -1,0 +1,8 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/x86/elf-read-prop.h' l='29' ll='58' type='_Bool read_gnu_property(unsigned int * isal_level, uint32_t type, uint32_t datasz, void * data)'/>
+<use f='codebrowser/elf/readelflib.c' l='220' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='220' u='c' c='process_elf64_file'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/elf-read-prop.h' l='24'>/* Called for each property in the NT_GNU_PROPERTY_TYPE_0 note of SEGMENT.
+   Return value:
+     false: Continue processing the properties.
+     true : Stop processing the properties.
+ */</doc>

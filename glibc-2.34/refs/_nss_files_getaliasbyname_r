@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/nss_files.h' l='138' macro='1' type='enum nss_status _nss_files_getaliasbyname_r(const char * , struct aliasent * , char * , size_t , int * )'/>
+<dec f='codebrowser/nss/function.def' l='33' macro='1' type='enum nss_status _nss_files_getaliasbyname_r(const char * , struct aliasent * , char * , size_t , int * )'/>
+<use f='codebrowser/nss/function.def' l='33' macro='1' c='_nss_files_getaliasbyname_r'/>
+<dec f='codebrowser/include/aliases.h' l='35' macro='1' type='enum nss_status _nss_files_getaliasbyname_r(const char * name, struct aliasent * alias, char * buffer, size_t buflen, int * errnop)'/>
+<def f='codebrowser/nss/nss_files/files-alias.c' l='359' ll='389' type='enum nss_status _nss_files_getaliasbyname_r(const char * name, struct aliasent * result, char * buffer, size_t buflen, int * errnop)'/>

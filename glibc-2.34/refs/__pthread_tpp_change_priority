@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='237' type='int __pthread_tpp_change_priority(int prev_prio, int new_prio)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='238' type='int __pthread_tpp_change_priority(int , int )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='238' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='546' u='c' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='550' u='c' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_setprioceiling.c' l='104' u='c' c='__pthread_mutex_setprioceiling'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='500' u='c' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='504' u='c' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='409' u='c' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='413' u='c' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='431' u='c' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='354' u='c' c='__pthread_mutex_unlock_full'/>
+<def f='codebrowser/nptl/tpp.c' l='53' ll='159' type='int __pthread_tpp_change_priority(int previous_prio, int new_prio)'/>

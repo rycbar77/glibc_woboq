@@ -1,0 +1,29 @@
+<dec f='codebrowser/elf/elf.h' l='1143' type='uint32_t'/>
+<dec f='codebrowser/elf/elf.h' l='1155' type='uint64_t'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/elf.h' l='1143'>/* Integer value */</doc>
+<doc f='codebrowser/elf/elf.h' l='1155'>/* Integer value */</doc>
+<use f='codebrowser/elf/dl-support.c' l='254' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='255' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='258' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='261' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='264' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='267' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='270' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='273' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='276' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='285' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='289' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='293' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='297' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='301' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='306' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='310' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='313' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/rtld.c' l='1399' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1402' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1405' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1408' u='w' c='dl_main'/>
+<use f='codebrowser/misc/getauxval.c' l='45' u='r' c='__getauxval2'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='40' u='r' c='print_auxv'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='42' u='r' c='print_auxv'/>

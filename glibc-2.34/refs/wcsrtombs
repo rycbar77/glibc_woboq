@@ -1,0 +1,4 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='344' type='size_t wcsrtombs(char *restrict __dst, const wchar_t **restrict __src, size_t __len, mbstate_t *restrict __ps)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='342'>/* Write multibyte character representation of wide character string
+   SRC to DST.  */</doc>
+<def f='codebrowser/wcsmbs/wcsrtombs.c' l='145' macro='1' type='size_t wcsrtombs(char *restrict , const wchar_t **restrict , size_t , __mbstate_t *restrict )'/>

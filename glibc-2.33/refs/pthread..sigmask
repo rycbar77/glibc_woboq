@@ -1,0 +1,9 @@
+<dec f='codebrowser/nptl/descr.h' l='404' type='sigset_t'/>
+<offset>18304</offset>
+<doc f='codebrowser/nptl/descr.h' l='401'>/* Signal mask for the new thread.  Used during thread startup to
+     restore the signal mask.  (Threads are launched with all signals
+     masked.)  */</doc>
+<use f='codebrowser/nptl/pthread_create.c' l='429' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='768' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='775' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='779' u='a' c='__pthread_create_2_1'/>

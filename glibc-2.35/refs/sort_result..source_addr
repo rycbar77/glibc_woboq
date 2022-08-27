@@ -1,0 +1,29 @@
+<dec f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1114' type='struct sockaddr_in6'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1400' u='a' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1401' u='a' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1437' u='a' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1441' u='a' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1539' u='m' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1539' u='m' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1540' u='m' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1540' u='m' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1550' u='a' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1561' u='a' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1570' u='m' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1570' u='m' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1571' u='m' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1571' u='m' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1579' u='a' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1581' u='a' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2310' u='a' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2310' u='a' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2344' u='r' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2348' u='a' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2363' u='a' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2379' u='a' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2399' u='a' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2401' u='a' c='getaddrinfo'/>
+<offset>64</offset>
+<doc f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1111'>/* Using sockaddr_storage is for now overkill.  We only support IPv4
+     and IPv6 so far.  If this changes at some point we can adjust the
+     type here.  */</doc>

@@ -1,0 +1,539 @@
+<use f='codebrowser/include/netinet/ether.h' l='19' c='_nss_files_setetherent'/>
+<use f='codebrowser/include/netinet/ether.h' l='20' c='_nss_files_endetherent'/>
+<use f='codebrowser/include/netinet/ether.h' l='21' c='_nss_files_getetherent_r'/>
+<use f='codebrowser/include/netinet/ether.h' l='24' c='_nss_files_gethostton_r'/>
+<use f='codebrowser/include/netinet/ether.h' l='27' c='_nss_files_getntohost_r'/>
+<def f='codebrowser/nss/nss.h' l='33' ll='40'/>
+<use f='codebrowser/nss/nss.h' l='80'/>
+<use f='codebrowser/nss/nss.h' l='81'/>
+<use f='codebrowser/nss/nss.h' l='82'/>
+<use f='codebrowser/nss/nss.h' l='83'/>
+<use f='codebrowser/nss/nss.h' l='84'/>
+<use f='codebrowser/nss/nss.h' l='85'/>
+<use f='codebrowser/nss/nss.h' l='86'/>
+<use f='codebrowser/nss/nss.h' l='87'/>
+<use f='codebrowser/nss/nss.h' l='88'/>
+<use f='codebrowser/nss/nss.h' l='89'/>
+<use f='codebrowser/nss/nss.h' l='90'/>
+<use f='codebrowser/nss/nss.h' l='91'/>
+<use f='codebrowser/nss/nss.h' l='92'/>
+<use f='codebrowser/nss/nss.h' l='94'/>
+<use f='codebrowser/nss/nss.h' l='96'/>
+<use f='codebrowser/nss/nss.h' l='98'/>
+<use f='codebrowser/nss/nss.h' l='100'/>
+<use f='codebrowser/nss/nss.h' l='101'/>
+<use f='codebrowser/nss/nss.h' l='103'/>
+<use f='codebrowser/nss/nss.h' l='105'/>
+<use f='codebrowser/nss/nss.h' l='108'/>
+<use f='codebrowser/nss/nss.h' l='111'/>
+<use f='codebrowser/nss/nss.h' l='114'/>
+<use f='codebrowser/nss/nss.h' l='118'/>
+<use f='codebrowser/nss/nss.h' l='122'/>
+<use f='codebrowser/nss/nss.h' l='124'/>
+<use f='codebrowser/nss/nss.h' l='126'/>
+<use f='codebrowser/nss/nss.h' l='128'/>
+<use f='codebrowser/nss/nss.h' l='130'/>
+<use f='codebrowser/nss/nss.h' l='132'/>
+<use f='codebrowser/nss/nss.h' l='134'/>
+<use f='codebrowser/nss/nss.h' l='136'/>
+<use f='codebrowser/nss/nss.h' l='139'/>
+<use f='codebrowser/nss/nss.h' l='141'/>
+<use f='codebrowser/nss/nss.h' l='143'/>
+<use f='codebrowser/nss/nss.h' l='145'/>
+<use f='codebrowser/nss/nss.h' l='146'/>
+<use f='codebrowser/nss/nss.h' l='148'/>
+<use f='codebrowser/nss/nss.h' l='150'/>
+<use f='codebrowser/nss/nss.h' l='152'/>
+<use f='codebrowser/nss/nss.h' l='154'/>
+<use f='codebrowser/nss/nss.h' l='156'/>
+<use f='codebrowser/nss/nss.h' l='158'/>
+<use f='codebrowser/nss/nss.h' l='159'/>
+<use f='codebrowser/nss/nss.h' l='162'/>
+<use f='codebrowser/nss/nss.h' l='165'/>
+<use f='codebrowser/nss/nss.h' l='167'/>
+<use f='codebrowser/nss/nss.h' l='168'/>
+<use f='codebrowser/nss/nss.h' l='170'/>
+<use f='codebrowser/nss/nss.h' l='171'/>
+<use f='codebrowser/nss/nss.h' l='174'/>
+<use f='codebrowser/nss/nss.h' l='177'/>
+<use f='codebrowser/nss/nss.h' l='179'/>
+<use f='codebrowser/nss/nss.h' l='180'/>
+<use f='codebrowser/nss/nss.h' l='181'/>
+<use f='codebrowser/nss/nss.h' l='182'/>
+<use f='codebrowser/nss/nss.h' l='183'/>
+<use f='codebrowser/nss/nss.h' l='184'/>
+<use f='codebrowser/nss/nss.h' l='185'/>
+<use f='codebrowser/nss/nss.h' l='186'/>
+<use f='codebrowser/nss/nss.h' l='187'/>
+<use f='codebrowser/nss/nss.h' l='188'/>
+<use f='codebrowser/nss/nss.h' l='189'/>
+<use f='codebrowser/nss/nss.h' l='190'/>
+<use f='codebrowser/include/nss_files.h' l='90' c='__nss_files_data_open'/>
+<use f='codebrowser/include/nss_files.h' l='103' c='__nss_files_data_setent'/>
+<use f='codebrowser/include/nss_files.h' l='108' c='__nss_files_data_endent'/>
+<use f='codebrowser/nss/nsswitch.h' l='132'/>
+<use f='codebrowser/nss/nsswitch.h' l='133'/>
+<use f='codebrowser/nss/nsswitch.h' l='134'/>
+<use f='codebrowser/nss/nsswitch.h' l='172' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nss/nsswitch.h' l='178' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/nss_action.h' l='54' c='nss_actions_bits_index'/>
+<use f='codebrowser/nss/nss_action.h' l='61' c='nss_action_get'/>
+<use f='codebrowser/nss/nss_action.h' l='70' c='nss_action_set'/>
+<use f='codebrowser/nss/nss_db/nss_db.h' l='64' c='internal_setent'/>
+<use f='codebrowser/nss/nss_db/db-XXX.c' l='65' c='_nss_db_setetherent'/>
+<use f='codebrowser/nss/nss_db/db-XXX.c' l='68' c='_nss_db_setetherent'/>
+<use f='codebrowser/nss/nss_db/db-XXX.c' l='90' c='_nss_db_endetherent'/>
+<use f='codebrowser/nss/nss_db/db-XXX.c' l='230' c='_nss_db_getetherent_r'/>
+<use f='codebrowser/nss/nss_db/db-XXX.c' l='235' c='_nss_db_getetherent_r'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='54' macro='1' c='_nss_db_gethostton_r'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='54' macro='1' c='_nss_db_gethostton_r'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='60' macro='1' c='_nss_db_getntohost_r'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='60' macro='1' c='_nss_db_getntohost_r'/>
+<doc f='codebrowser/nss/nss.h' l='32'>/* Possible results of lookup using a nss_* function.  */</doc>
+<use f='codebrowser/include/grp.h' l='34' c='_nss_compat_setgrent'/>
+<use f='codebrowser/include/grp.h' l='35' c='_nss_compat_endgrent'/>
+<use f='codebrowser/include/grp.h' l='36' c='_nss_compat_getgrgid_r'/>
+<use f='codebrowser/include/grp.h' l='39' c='_nss_compat_getgrnam_r'/>
+<use f='codebrowser/include/grp.h' l='42' c='_nss_compat_getgrent_r'/>
+<use f='codebrowser/include/grp.h' l='45' c='_nss_compat_initgroups_dyn'/>
+<use f='codebrowser/include/grp.h' l='34' c='_nss_files_setgrent'/>
+<use f='codebrowser/include/grp.h' l='35' c='_nss_files_endgrent'/>
+<use f='codebrowser/include/grp.h' l='36' c='_nss_files_getgrgid_r'/>
+<use f='codebrowser/include/grp.h' l='39' c='_nss_files_getgrnam_r'/>
+<use f='codebrowser/include/grp.h' l='42' c='_nss_files_getgrent_r'/>
+<use f='codebrowser/include/grp.h' l='45' c='_nss_files_initgroups_dyn'/>
+<use f='codebrowser/include/grp.h' l='34' c='_nss_hesiod_setgrent'/>
+<use f='codebrowser/include/grp.h' l='35' c='_nss_hesiod_endgrent'/>
+<use f='codebrowser/include/grp.h' l='36' c='_nss_hesiod_getgrgid_r'/>
+<use f='codebrowser/include/grp.h' l='39' c='_nss_hesiod_getgrnam_r'/>
+<use f='codebrowser/include/grp.h' l='42' c='_nss_hesiod_getgrent_r'/>
+<use f='codebrowser/include/grp.h' l='45' c='_nss_hesiod_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_files/files-grp.c' l='33' macro='1' c='_nss_db_getgrnam_r'/>
+<use f='codebrowser/nss/nss_files/files-grp.c' l='33' macro='1' c='_nss_db_getgrnam_r'/>
+<use f='codebrowser/nss/nss_files/files-grp.c' l='40' macro='1' c='_nss_db_getgrgid_r'/>
+<use f='codebrowser/nss/nss_files/files-grp.c' l='40' macro='1' c='_nss_db_getgrgid_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='28' c='_nss_files_setrpcent'/>
+<use f='codebrowser/include/rpc/netdb.h' l='29' c='_nss_files_endrpcent'/>
+<use f='codebrowser/include/rpc/netdb.h' l='30' c='_nss_files_getrpcent_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='33' c='_nss_files_getrpcbyname_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='36' c='_nss_files_getrpcbynumber_r'/>
+<use f='codebrowser/include/netdb.h' l='216' c='_nss_netgroup_parseline'/>
+<use f='codebrowser/include/netdb.h' l='223' c='_nss_compat_setprotoent'/>
+<use f='codebrowser/include/netdb.h' l='224' c='_nss_compat_endprotoent'/>
+<use f='codebrowser/include/netdb.h' l='225' c='_nss_compat_getprotoent_r'/>
+<use f='codebrowser/include/netdb.h' l='228' c='_nss_compat_getprotobyname_r'/>
+<use f='codebrowser/include/netdb.h' l='231' c='_nss_compat_getprotobynumber_r'/>
+<use f='codebrowser/include/netdb.h' l='234' c='_nss_compat_sethostent'/>
+<use f='codebrowser/include/netdb.h' l='235' c='_nss_compat_endhostent'/>
+<use f='codebrowser/include/netdb.h' l='236' c='_nss_compat_gethostent_r'/>
+<use f='codebrowser/include/netdb.h' l='239' c='_nss_compat_gethostbyname2_r'/>
+<use f='codebrowser/include/netdb.h' l='243' c='_nss_compat_gethostbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='246' c='_nss_compat_gethostbyaddr_r'/>
+<use f='codebrowser/include/netdb.h' l='250' c='_nss_compat_setservent'/>
+<use f='codebrowser/include/netdb.h' l='251' c='_nss_compat_endservent'/>
+<use f='codebrowser/include/netdb.h' l='252' c='_nss_compat_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='255' c='_nss_compat_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='259' c='_nss_compat_getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='262' c='_nss_compat_setnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='264' c='_nss_compat_endnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='266' c='_nss_compat_getnetgrent_r'/>
+<use f='codebrowser/include/netdb.h' l='269' c='_nss_compat_setnetent'/>
+<use f='codebrowser/include/netdb.h' l='270' c='_nss_compat_endnetent'/>
+<use f='codebrowser/include/netdb.h' l='271' c='_nss_compat_getnetent_r'/>
+<use f='codebrowser/include/netdb.h' l='274' c='_nss_compat_getnetbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='277' c='_nss_compat_getnetbyaddr_r'/>
+<use f='codebrowser/include/netdb.h' l='281' c='_nss_compat_endspent'/>
+<use f='codebrowser/include/netdb.h' l='223' c='_nss_dns_setprotoent'/>
+<use f='codebrowser/include/netdb.h' l='224' c='_nss_dns_endprotoent'/>
+<use f='codebrowser/include/netdb.h' l='225' c='_nss_dns_getprotoent_r'/>
+<use f='codebrowser/include/netdb.h' l='228' c='_nss_dns_getprotobyname_r'/>
+<use f='codebrowser/include/netdb.h' l='231' c='_nss_dns_getprotobynumber_r'/>
+<use f='codebrowser/include/netdb.h' l='234' c='_nss_dns_sethostent'/>
+<use f='codebrowser/include/netdb.h' l='235' c='_nss_dns_endhostent'/>
+<use f='codebrowser/include/netdb.h' l='236' c='_nss_dns_gethostent_r'/>
+<use f='codebrowser/include/netdb.h' l='239' c='_nss_dns_gethostbyname2_r'/>
+<use f='codebrowser/include/netdb.h' l='243' c='_nss_dns_gethostbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='246' c='_nss_dns_gethostbyaddr_r'/>
+<use f='codebrowser/include/netdb.h' l='250' c='_nss_dns_setservent'/>
+<use f='codebrowser/include/netdb.h' l='251' c='_nss_dns_endservent'/>
+<use f='codebrowser/include/netdb.h' l='252' c='_nss_dns_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='255' c='_nss_dns_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='259' c='_nss_dns_getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='262' c='_nss_dns_setnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='264' c='_nss_dns_endnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='266' c='_nss_dns_getnetgrent_r'/>
+<use f='codebrowser/include/netdb.h' l='269' c='_nss_dns_setnetent'/>
+<use f='codebrowser/include/netdb.h' l='270' c='_nss_dns_endnetent'/>
+<use f='codebrowser/include/netdb.h' l='271' c='_nss_dns_getnetent_r'/>
+<use f='codebrowser/include/netdb.h' l='274' c='_nss_dns_getnetbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='277' c='_nss_dns_getnetbyaddr_r'/>
+<use f='codebrowser/include/netdb.h' l='281' c='_nss_dns_endspent'/>
+<use f='codebrowser/include/netdb.h' l='223' c='_nss_files_setprotoent'/>
+<use f='codebrowser/include/netdb.h' l='224' c='_nss_files_endprotoent'/>
+<use f='codebrowser/include/netdb.h' l='225' c='_nss_files_getprotoent_r'/>
+<use f='codebrowser/include/netdb.h' l='228' c='_nss_files_getprotobyname_r'/>
+<use f='codebrowser/include/netdb.h' l='231' c='_nss_files_getprotobynumber_r'/>
+<use f='codebrowser/include/netdb.h' l='234' c='_nss_files_sethostent'/>
+<use f='codebrowser/include/netdb.h' l='235' c='_nss_files_endhostent'/>
+<use f='codebrowser/include/netdb.h' l='236' c='_nss_files_gethostent_r'/>
+<use f='codebrowser/include/netdb.h' l='239' c='_nss_files_gethostbyname2_r'/>
+<use f='codebrowser/include/netdb.h' l='243' c='_nss_files_gethostbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='246' c='_nss_files_gethostbyaddr_r'/>
+<use f='codebrowser/include/netdb.h' l='250' c='_nss_files_setservent'/>
+<use f='codebrowser/include/netdb.h' l='251' c='_nss_files_endservent'/>
+<use f='codebrowser/include/netdb.h' l='252' c='_nss_files_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='255' c='_nss_files_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='259' c='_nss_files_getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='262' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='264' c='_nss_files_endnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='266' c='_nss_files_getnetgrent_r'/>
+<use f='codebrowser/include/netdb.h' l='269' c='_nss_files_setnetent'/>
+<use f='codebrowser/include/netdb.h' l='270' c='_nss_files_endnetent'/>
+<use f='codebrowser/include/netdb.h' l='271' c='_nss_files_getnetent_r'/>
+<use f='codebrowser/include/netdb.h' l='274' c='_nss_files_getnetbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='277' c='_nss_files_getnetbyaddr_r'/>
+<use f='codebrowser/include/netdb.h' l='281' c='_nss_files_endspent'/>
+<use f='codebrowser/include/netdb.h' l='223' c='_nss_hesiod_setprotoent'/>
+<use f='codebrowser/include/netdb.h' l='224' c='_nss_hesiod_endprotoent'/>
+<use f='codebrowser/include/netdb.h' l='225' c='_nss_hesiod_getprotoent_r'/>
+<use f='codebrowser/include/netdb.h' l='228' c='_nss_hesiod_getprotobyname_r'/>
+<use f='codebrowser/include/netdb.h' l='231' c='_nss_hesiod_getprotobynumber_r'/>
+<use f='codebrowser/include/netdb.h' l='234' c='_nss_hesiod_sethostent'/>
+<use f='codebrowser/include/netdb.h' l='235' c='_nss_hesiod_endhostent'/>
+<use f='codebrowser/include/netdb.h' l='236' c='_nss_hesiod_gethostent_r'/>
+<use f='codebrowser/include/netdb.h' l='239' c='_nss_hesiod_gethostbyname2_r'/>
+<use f='codebrowser/include/netdb.h' l='243' c='_nss_hesiod_gethostbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='246' c='_nss_hesiod_gethostbyaddr_r'/>
+<use f='codebrowser/include/netdb.h' l='250' c='_nss_hesiod_setservent'/>
+<use f='codebrowser/include/netdb.h' l='251' c='_nss_hesiod_endservent'/>
+<use f='codebrowser/include/netdb.h' l='252' c='_nss_hesiod_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='255' c='_nss_hesiod_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='259' c='_nss_hesiod_getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='262' c='_nss_hesiod_setnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='264' c='_nss_hesiod_endnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='266' c='_nss_hesiod_getnetgrent_r'/>
+<use f='codebrowser/include/netdb.h' l='269' c='_nss_hesiod_setnetent'/>
+<use f='codebrowser/include/netdb.h' l='270' c='_nss_hesiod_endnetent'/>
+<use f='codebrowser/include/netdb.h' l='271' c='_nss_hesiod_getnetent_r'/>
+<use f='codebrowser/include/netdb.h' l='274' c='_nss_hesiod_getnetbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='277' c='_nss_hesiod_getnetbyaddr_r'/>
+<use f='codebrowser/include/netdb.h' l='281' c='_nss_hesiod_endspent'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='38' macro='1' c='_nss_db_getprotobyname_r'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='38' macro='1' c='_nss_db_getprotobyname_r'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='42' macro='1' c='_nss_db_getprotobynumber_r'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='42' macro='1' c='_nss_db_getprotobynumber_r'/>
+<use f='codebrowser/include/pwd.h' l='30' c='_nss_compat_setpwent'/>
+<use f='codebrowser/include/pwd.h' l='31' c='_nss_compat_endpwent'/>
+<use f='codebrowser/include/pwd.h' l='32' c='_nss_compat_getpwnam_r'/>
+<use f='codebrowser/include/pwd.h' l='35' c='_nss_compat_getpwuid_r'/>
+<use f='codebrowser/include/pwd.h' l='38' c='_nss_compat_getpwent_r'/>
+<use f='codebrowser/include/pwd.h' l='30' c='_nss_files_setpwent'/>
+<use f='codebrowser/include/pwd.h' l='31' c='_nss_files_endpwent'/>
+<use f='codebrowser/include/pwd.h' l='32' c='_nss_files_getpwnam_r'/>
+<use f='codebrowser/include/pwd.h' l='35' c='_nss_files_getpwuid_r'/>
+<use f='codebrowser/include/pwd.h' l='38' c='_nss_files_getpwent_r'/>
+<use f='codebrowser/include/pwd.h' l='30' c='_nss_hesiod_setpwent'/>
+<use f='codebrowser/include/pwd.h' l='31' c='_nss_hesiod_endpwent'/>
+<use f='codebrowser/include/pwd.h' l='32' c='_nss_hesiod_getpwnam_r'/>
+<use f='codebrowser/include/pwd.h' l='35' c='_nss_hesiod_getpwuid_r'/>
+<use f='codebrowser/include/pwd.h' l='38' c='_nss_hesiod_getpwent_r'/>
+<use f='codebrowser/nss/nss_files/files-pwd.c' l='33' macro='1' c='_nss_db_getpwnam_r'/>
+<use f='codebrowser/nss/nss_files/files-pwd.c' l='33' macro='1' c='_nss_db_getpwnam_r'/>
+<use f='codebrowser/nss/nss_files/files-pwd.c' l='40' macro='1' c='_nss_db_getpwuid_r'/>
+<use f='codebrowser/nss/nss_files/files-pwd.c' l='40' macro='1' c='_nss_db_getpwuid_r'/>
+<use f='codebrowser/nss/nss_files/files-rpc.c' l='38' macro='1' c='_nss_db_getrpcbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-rpc.c' l='38' macro='1' c='_nss_db_getrpcbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-rpc.c' l='42' macro='1' c='_nss_db_getrpcbynumber_r'/>
+<use f='codebrowser/nss/nss_files/files-rpc.c' l='42' macro='1' c='_nss_db_getrpcbynumber_r'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='41' macro='1' c='_nss_db_getservbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='41' macro='1' c='_nss_db_getservbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='55' macro='1' c='_nss_db_getservbyport_r'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='55' macro='1' c='_nss_db_getservbyport_r'/>
+<use f='codebrowser/nss/nss_files/files-sgrp.c' l='33' macro='1' c='_nss_db_getsgnam_r'/>
+<use f='codebrowser/nss/nss_files/files-sgrp.c' l='33' macro='1' c='_nss_db_getsgnam_r'/>
+<use f='codebrowser/include/shadow.h' l='29' c='_nss_compat_setspent'/>
+<use f='codebrowser/include/shadow.h' l='30' c='_nss_compat_endspent'/>
+<use f='codebrowser/include/shadow.h' l='31' c='_nss_compat_getspent_r'/>
+<use f='codebrowser/include/shadow.h' l='34' c='_nss_compat_getspnam_r'/>
+<use f='codebrowser/include/shadow.h' l='29' c='_nss_files_setspent'/>
+<use f='codebrowser/include/shadow.h' l='30' c='_nss_files_endspent'/>
+<use f='codebrowser/include/shadow.h' l='31' c='_nss_files_getspent_r'/>
+<use f='codebrowser/include/shadow.h' l='34' c='_nss_files_getspnam_r'/>
+<use f='codebrowser/include/shadow.h' l='29' c='_nss_hesiod_setspent'/>
+<use f='codebrowser/include/shadow.h' l='30' c='_nss_hesiod_endspent'/>
+<use f='codebrowser/include/shadow.h' l='31' c='_nss_hesiod_getspent_r'/>
+<use f='codebrowser/include/shadow.h' l='34' c='_nss_hesiod_getspnam_r'/>
+<use f='codebrowser/nss/nss_files/files-spwd.c' l='33' macro='1' c='_nss_db_getspnam_r'/>
+<use f='codebrowser/nss/nss_files/files-spwd.c' l='33' macro='1' c='_nss_db_getspnam_r'/>
+<use f='codebrowser/nss/getXXbyYY_r.c' l='176'/>
+<use f='codebrowser/nss/getXXbyYY_r.c' l='202' c='__getgrgid_r'/>
+<use f='codebrowser/grp/initgroups.c' l='35'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='2'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='5'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='8'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='12' c='compat_call'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='17' c='compat_call'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='39' c='compat_call'/>
+<use f='codebrowser/grp/initgroups.c' l='65' c='internal_getgrouplist'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='36' c='_nss_hesiod_setgrent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='42' c='_nss_hesiod_endgrent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='48' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='96' c='_nss_hesiod_getgrnam_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='103' c='_nss_hesiod_getgrgid_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='128' c='internal_gid_from_group'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='132' c='internal_gid_from_group'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='168' c='_nss_hesiod_initgroups_dyn'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='173' c='_nss_hesiod_initgroups_dyn'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='46' c='_nss_hesiod_setprotoent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='52' c='_nss_hesiod_endprotoent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='58' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='127' c='_nss_hesiod_getprotobyname_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='134' c='_nss_hesiod_getprotobynumber_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-pwd.c' l='34' c='_nss_hesiod_setpwent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-pwd.c' l='40' c='_nss_hesiod_endpwent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-pwd.c' l='46' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-pwd.c' l='94' c='_nss_hesiod_getpwnam_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-pwd.c' l='101' c='_nss_hesiod_getpwuid_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='47' c='_nss_hesiod_setservent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='53' c='_nss_hesiod_endservent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='59' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='128' c='_nss_hesiod_getservbyname_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='136' c='_nss_hesiod_getservbyport_r'/>
+<use f='codebrowser/inet/ether_hton.c' l='39' c='ether_hostton'/>
+<use f='codebrowser/inet/ether_ntoh.c' l='40' c='ether_ntohost'/>
+<use f='codebrowser/include/aliases.h' l='25' c='_nss_files_setaliasent'/>
+<use f='codebrowser/include/aliases.h' l='26' c='_nss_files_endaliasent'/>
+<use f='codebrowser/include/aliases.h' l='27' c='_nss_files_getaliasent_r'/>
+<use f='codebrowser/include/aliases.h' l='30' c='_nss_files_getaliasbyname_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='73' c='endnetgrent_hook'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='90' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='93' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='114' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='211' c='nscd_getnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='235' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='238' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='343' c='__getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='377' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='400' c='innetgr'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='542' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='543' c='gaih_inet'/>
+<use f='codebrowser/nscd/initgrcache.c' l='35'/>
+<use f='codebrowser/nscd/initgrcache.c' l='118' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='173' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='181' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='189' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='332' c='addgetnetgrentX'/>
+<use f='codebrowser/nss/digits_dots.c' l='38' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/digits_dots.c' l='65' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nss/getnssent_r.c' l='81' c='__nss_setent'/>
+<use f='codebrowser/nss/getnssent_r.c' l='168' c='__nss_getent_r'/>
+<use f='codebrowser/nss/nss_action_parse.c' l='81' c='nss_action_parse'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='33'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='34'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='37'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='40'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='42'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='63'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='93' c='internal_setgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='96' c='internal_setgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='126' c='_nss_compat_setgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='129' c='_nss_compat_setgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='144' c='internal_endgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='170' c='internal_endgrent_noerror'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='174' c='_nss_compat_endgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='177' c='_nss_compat_endgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='192' c='getgrent_next_nss'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='205' c='getgrent_next_nss'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='217' c='getgrnam_plusgroup'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='224' c='getgrnam_plusgroup'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='236' c='getgrent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='305' c='getgrent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='341' c='_nss_compat_getgrent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='345' c='_nss_compat_getgrent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='369' c='internal_getgrnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='443' c='internal_getgrnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='457' c='internal_getgrnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='472' c='_nss_compat_getgrnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='477' c='_nss_compat_getgrnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='500' c='internal_getgrgid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='573' c='internal_getgrgid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='592' c='internal_getgrgid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='604' c='_nss_compat_getgrgid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='609' c='_nss_compat_getgrgid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='36'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='39'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='42'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='45'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='46'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='48'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='106' c='internal_setgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='109' c='internal_setgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='134' c='internal_endgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='163' c='internal_endgrent_noerror'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='227' c='getgrent_next_nss'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='232' c='getgrent_next_nss'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='356' c='internal_getgrent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='480' c='_nss_compat_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='485' c='_nss_compat_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='37'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='38'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='41'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='44'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='46'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='69'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='202' c='internal_setpwent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='205' c='internal_setpwent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='243' c='_nss_compat_setpwent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='246' c='_nss_compat_setpwent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='261' c='internal_endpwent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='294' c='internal_endpwent_noerror'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='298' c='_nss_compat_endpwent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='301' c='_nss_compat_endpwent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='316' c='getpwent_next_nss_netgr'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='399' c='getpwent_next_nss'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='403' c='getpwent_next_nss'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='441' c='getpwnam_plususer'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='462' c='getpwnam_plususer'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='476' c='getpwent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='556' c='getpwent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='585' c='getpwent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='626' c='internal_getpwent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='632' c='internal_getpwent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='650' c='_nss_compat_getpwent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='654' c='_nss_compat_getpwent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='674' c='internal_getpwnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='749' c='internal_getpwnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='780' c='internal_getpwnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='795' c='internal_getpwnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='810' c='_nss_compat_getpwnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='814' c='_nss_compat_getpwnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='839' c='getpwuid_plususer'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='881' c='internal_getpwuid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='949' c='internal_getpwuid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='968' c='internal_getpwuid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='996' c='internal_getpwuid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='1013' c='internal_getpwuid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='1038' c='internal_getpwuid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='1052' c='_nss_compat_getpwuid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='1056' c='_nss_compat_getpwuid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='37'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='38'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='41'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='43'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='66'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='158' c='internal_setspent'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='161' c='internal_setspent'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='198' c='_nss_compat_setspent'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='201' c='_nss_compat_setspent'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='216' c='internal_endspent'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='250' c='internal_endspent_noerror'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='254' c='_nss_compat_endspent'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='257' c='_nss_compat_endspent'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='271' c='getspent_next_nss_netgr'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='295' c='getspent_next_nss_netgr'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='357' c='getspent_next_nss'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='361' c='getspent_next_nss'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='391' c='getspnam_plususer'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='416' c='getspnam_plususer'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='431' c='getspent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='538' c='getspent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='580' c='internal_getspent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='586' c='internal_getspent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='605' c='_nss_compat_getspent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='609' c='_nss_compat_getspent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='630' c='internal_getspnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='706' c='internal_getspnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='737' c='internal_getspnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='753' c='internal_getspnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='772' c='_nss_compat_getspnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='776' c='_nss_compat_getspnam_r'/>
+<use f='codebrowser/nss/nss_db/db-initgroups.c' l='34' c='_nss_db_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_db/db-initgroups.c' l='40' c='_nss_db_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_db/db-netgrp.c' l='40' c='_nss_db_setnetgrent'/>
+<use f='codebrowser/nss/nss_db/db-netgrp.c' l='44' c='_nss_db_setnetgrent'/>
+<use f='codebrowser/nss/nss_db/db-netgrp.c' l='95' c='_nss_db_endnetgrent'/>
+<use f='codebrowser/nss/nss_db/db-netgrp.c' l='106' c='_nss_netgroup_parseline'/>
+<use f='codebrowser/nss/nss_db/db-netgrp.c' l='111' c='_nss_db_getnetgrent_r'/>
+<use f='codebrowser/nss/nss_db/db-netgrp.c' l='115' c='_nss_db_getnetgrent_r'/>
+<use f='codebrowser/nss/nss_db/db-open.c' l='34' c='internal_setent'/>
+<use f='codebrowser/nss/nss_db/db-open.c' l='37' c='internal_setent'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='38' c='internal_setent'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='41' c='internal_setent'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='58' c='_nss_files_setaliasent'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='65' c='_nss_files_endaliasent'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='73' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='77' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='333' c='_nss_files_getaliasent_r'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='340' c='_nss_files_getaliasent_r'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='358' c='_nss_files_getaliasbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='363' c='_nss_files_getaliasbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='69' c='internal_setent'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='72' c='internal_setent'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='89' c='_nss_files_sethostent'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='96' c='_nss_files_endhostent'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='105' c='internal_getent'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='164' c='_nss_files_gethostent_r'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='171' c='_nss_files_gethostent_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='104' macro='1' c='_nss_files_gethostbyaddr_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='104' macro='1' c='_nss_files_gethostbyaddr_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='118' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='133' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='324' c='_nss_files_gethostbyname3_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='335' c='_nss_files_gethostbyname3_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='361' c='_nss_files_gethostbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='371' c='_nss_files_gethostbyname2_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='381' c='_nss_files_gethostbyname4_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='389' c='_nss_files_gethostbyname4_r'/>
+<use f='codebrowser/nss/nss_files/files-initgroups.c' l='31' c='_nss_files_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_files/files-initgroups.c' l='45' c='_nss_files_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='55' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='59' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='154' c='_nss_files_endnetgrent'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='185' c='_nss_netgroup_parseline'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='189' c='_nss_netgroup_parseline'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='282' c='_nss_files_getnetgrent_r'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='286' c='_nss_files_getnetgrent_r'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='79' macro='1' c='_nss_files_getnetbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='79' macro='1' c='_nss_files_getnetbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='83' macro='1' c='_nss_files_getnetbyaddr_r'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='83' macro='1' c='_nss_files_getnetbyaddr_r'/>
+<use f='codebrowser/nss/nss_files_data.c' l='50' c='__nss_files_data_get'/>
+<use f='codebrowser/nss/nss_files_data.c' l='75' c='__nss_files_data_internal_open'/>
+<use f='codebrowser/nss/nss_files_data.c' l='79' c='__nss_files_data_internal_open'/>
+<use f='codebrowser/nss/nss_files_data.c' l='93' c='__nss_files_data_open'/>
+<use f='codebrowser/nss/nss_files_data.c' l='98' c='__nss_files_data_open'/>
+<use f='codebrowser/nss/nss_files_data.c' l='124' c='__nss_files_data_setent'/>
+<use f='codebrowser/nss/nss_files_data.c' l='128' c='__nss_files_data_setent'/>
+<use f='codebrowser/nss/nss_files_data.c' l='142' c='__nss_files_data_endent'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='48' c='_nss_dns_getcanonname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='60' c='_nss_dns_getcanonname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='113' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='120' c='gaih_getanswer'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='128' c='gethostbyname3_context'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='153' c='_nss_dns_gethostbyname3_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='165' c='_nss_dns_gethostbyname3_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='172' c='gethostbyname3_context'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='189' c='gethostbyname3_context'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='282' c='check_name'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='291' c='_nss_dns_gethostbyname2_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='296' c='_nss_dns_gethostbyname2_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='304' c='_nss_dns_gethostbyname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='309' c='_nss_dns_gethostbyname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='331' c='_nss_dns_gethostbyname4_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='336' c='_nss_dns_gethostbyname4_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='423' c='_nss_dns_gethostbyaddr2_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='565' c='_nss_dns_gethostbyaddr_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='621' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1012' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1257' c='gaih_getanswer'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1265' c='gaih_getanswer'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1373' c='gaih_getanswer'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='99' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='105' c='_nss_dns_getnetbyname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='118' c='_nss_dns_getnetbyname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='155' c='_nss_dns_getnetbyaddr_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='161' c='_nss_dns_getnetbyaddr_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='249' c='getanswer_r'/>
+<use f='codebrowser/sunrpc/netname.c' l='153' c='__GI_netname2user'/>
+<use f='codebrowser/sunrpc/publickey.c' l='42' c='__GI_getpublickey'/>
+<use f='codebrowser/sunrpc/publickey.c' l='68' c='__GI_getsecretkey'/>

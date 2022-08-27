@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/stdio.h' l='35' type='int __vsnprintf_chk(char * , size_t , int , size_t , const char * , struct __va_list_tag * )'/>
+<dec f='codebrowser/include/stdio.h' l='185' type='int __vsnprintf_chk(char * , size_t , int , size_t , const char * , struct __va_list_tag * )'/>
+<use f='codebrowser/include/stdio.h' l='185' c='__vsnprintf_chk'/>
+<use f='codebrowser/debug/snprintf_chk.c' l='34' u='c' c='___snprintf_chk'/>
+<def f='codebrowser/debug/vsnprintf_chk.c' l='70' macro='1' type='int __vsnprintf_chk(char * , size_t , int , size_t , const char * , struct __va_list_tag * )'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='332' type='nscd_ssize_t'/>
+<offset>448</offset>
+<use f='codebrowser/nscd/cache.c' l='200' u='r' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='201' u='w' c='cache_add'/>
+<use f='codebrowser/nscd/cachedumper.c' l='101' u='a' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='101' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='101' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/connections.c' l='380' u='r' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='141' u='r' c='send_stats'/>

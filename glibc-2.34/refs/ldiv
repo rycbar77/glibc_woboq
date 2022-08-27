@@ -1,0 +1,5 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='860' type='ldiv_t ldiv(long __numer, long __denom)'/>
+<use f='codebrowser/build/cstdlib' l='177' u='c' c='_ZSt3divll'/>
+<def f='codebrowser/stdlib/ldiv.c' l='22' ll='31' type='ldiv_t ldiv(long numer, long denom)'/>
+<use f='codebrowser/sysdeps/wordsize-64/ldiv.c' l='26' c='imaxdiv'/>
+<doc f='codebrowser/stdlib/ldiv.c' l='21'>/* Return the `ldiv_t&apos; representation of NUMER over DENOM.  */</doc>

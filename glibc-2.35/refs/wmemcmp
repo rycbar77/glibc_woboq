@@ -1,0 +1,14 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='259' type='int wmemcmp(const wchar_t * __s1, const wchar_t * __s2, size_t __n)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='258'>/* Compare N wide characters of S1 and S2.  */</doc>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1786' u='c' c='collate_finish'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2014' u='c' c='add_to_tablewc'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2040' u='c' c='add_to_tablewc'/>
+<use f='include/c++/11/bits/char_traits.h' l='513' u='c' c='_ZNSt11char_traitsIwE7compareEPKwS2_m'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='754' c='__wmemcmp_avx2_movbe'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='759' c='__wmemcmp_avx2_movbe_rtm'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='765' c='__wmemcmp_evex_movbe'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='771' c='__wmemcmp_sse4_1'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='773' c='__wmemcmp_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='775' c='__wmemcmp_sse2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/wmemcmp-c.c' l='6' c='__wmemcmp_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/wmemcmp.c' l='30' macro='1' type='int wmemcmp(const wchar_t * , const wchar_t * , size_t )'/>

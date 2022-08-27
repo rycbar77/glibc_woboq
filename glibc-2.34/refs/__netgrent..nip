@@ -1,0 +1,21 @@
+<dec f='codebrowser/inet/netgroup.h' l='67' type='struct nss_action *'/>
+<offset>640</offset>
+<doc f='codebrowser/inet/netgroup.h' l='65'>/* This handle for the NSS data base is shared between all
+     set/get/endXXXent functions.  */</doc>
+<use f='codebrowser/inet/getnetgrent_r.c' l='75' u='r' c='endnetgrent_hook'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='75' u='r' c='endnetgrent_hook'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='78' u='r' c='endnetgrent_hook'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='81' u='w' c='endnetgrent_hook'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='100' u='a' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='108' u='r' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='109' u='a' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='243' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='250' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='255' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='282' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='284' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='394' u='a' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='404' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='468' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='476' u='a' c='innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='119' u='w' c='__nscd_setnetgrent'/>

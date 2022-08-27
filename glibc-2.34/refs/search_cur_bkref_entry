@@ -1,0 +1,9 @@
+<dec f='codebrowser/posix/regexec.c' l='26' type='Idx search_cur_bkref_entry(const re_match_context_t * mctx, Idx str_idx)'/>
+<use f='codebrowser/posix/regexec.c' l='1847' u='c' c='check_dst_limits'/>
+<use f='codebrowser/posix/regexec.c' l='1848' u='c' c='check_dst_limits'/>
+<use f='codebrowser/posix/regexec.c' l='2081' u='c' c='sift_states_bkref'/>
+<use f='codebrowser/posix/regexec.c' l='2627' u='c' c='get_subexp'/>
+<use f='codebrowser/posix/regexec.c' l='3168' u='c' c='expand_bkref_cache'/>
+<def f='codebrowser/posix/regexec.c' l='4166' ll='4183' type='Idx search_cur_bkref_entry(const re_match_context_t * mctx, Idx str_idx)'/>
+<doc f='codebrowser/posix/regexec.c' l='4163'>/* Return the first entry with the same str_idx, or -1 if none is
+   found.  Note that MCTX-&gt;BKREF_ENTS is already sorted by MCTX-&gt;STR_IDX.  */</doc>

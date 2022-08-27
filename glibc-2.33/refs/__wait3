@@ -1,0 +1,3 @@
+<dec f='codebrowser/include/sys/wait.h' l='13' type='__pid_t __wait3(int * __stat_loc, int __options, struct rusage * __usage)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/wait3.c' l='24' macro='1' type='__pid_t __wait3(int * stat_loc, int options, struct rusage * usage)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/wait3.c' l='44' c='wait3'/>

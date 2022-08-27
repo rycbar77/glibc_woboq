@@ -1,0 +1,4 @@
+<def f='codebrowser/nptl/forward.c' l='178' macro='1' type='int pthread_getschedparam(pthread_t target_thread, int * policy, struct sched_param * param)'/>
+<def f='codebrowser/nptl/pthread_getschedparam.c' l='73' macro='1' type='int pthread_getschedparam(pthread_t , int * , struct sched_param * )'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='322' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='488' u='c' c='handle_fildes_io'/>

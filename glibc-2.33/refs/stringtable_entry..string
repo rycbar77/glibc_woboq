@@ -1,0 +1,15 @@
+<dec f='codebrowser/elf/stringtable.h' l='31' type='char[]'/>
+<use f='codebrowser/elf/cache.c' l='67' u='r' c='glibc_hwcaps_subdirectory_name'/>
+<use f='codebrowser/elf/cache.c' l='440' u='r' c='compare'/>
+<use f='codebrowser/elf/cache.c' l='440' u='r' c='compare'/>
+<use f='codebrowser/elf/cache.c' l='559' c='compute_hwcap_value'/>
+<offset>128</offset>
+<doc f='codebrowser/elf/stringtable.h' l='31'>/* Null-terminated string.  */</doc>
+<use f='codebrowser/elf/stringtable.c' l='69' u='r' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='97' u='r' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='116' u='r' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='134' u='r' c='finalize_compare'/>
+<use f='codebrowser/elf/stringtable.c' l='135' u='r' c='finalize_compare'/>
+<use f='codebrowser/elf/stringtable.c' l='181' u='a' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='182' u='r' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='208' u='r' c='stringtable_finalize'/>

@@ -1,0 +1,7 @@
+<use f='codebrowser/io/fstat.c' l='52' u='c' c='__fstat'/>
+<use f='codebrowser/support/shell-container.c' l='107' macro='1' u='c' c='copy_func'/>
+<use f='codebrowser/support/test-container.c' l='388' macro='1' u='c' c='copy_one_file'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/fxstat.c' l='31' ll='39' type='int __fxstat(int vers, int fd, struct stat * buf)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/fxstat.c' l='42' c='_fxstat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/fxstat.c' l='44' c='__fxstat64'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/fxstat.c' l='30'>/* Get information about the file FD in BUF.  */</doc>

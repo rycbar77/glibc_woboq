@@ -1,0 +1,43 @@
+<dec f='codebrowser/include/unistd.h' l='35' type='int __access(const char * __name, int __type)'/>
+<dec f='codebrowser/include/unistd.h' l='36' type='int __access(const char * , int )'/>
+<use f='codebrowser/include/unistd.h' l='36' c='__access'/>
+<doc f='codebrowser/include/unistd.h' l='34'>/* Now define the internal interfaces.  */</doc>
+<dec f='codebrowser/sysdeps/generic/dl-unistd.h' l='20' type='int __access(const char * , int )'/>
+<use f='codebrowser/sysdeps/generic/dl-unistd.h' l='20' c='__access'/>
+<doc f='codebrowser/sysdeps/generic/dl-unistd.h' l='1'>/* Functions with hidden attribute internal to ld.so, which are declared
+   in include/unistd.h.  Generic version.
+   Copyright (C) 2015-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='1866' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2861' u='c' c='process_envvars'/>
+<use f='codebrowser/sysdeps/posix/euidaccess.c' l='161' u='c' c='__euidaccess'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/access.c' l='23' ll='31' type='int __access(const char * file, int type)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/access.c' l='33' c='access'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='86' u='c' c='distinguish_extX'/>
+<use f='codebrowser/login/updwtmp.c' l='29' macro='1' u='c' c='__updwtmp'/>
+<use f='codebrowser/login/updwtmp.c' l='29' macro='1' u='c' c='__updwtmp'/>
+<use f='codebrowser/login/updwtmp.c' l='29' macro='1' u='c' c='__updwtmp'/>
+<use f='codebrowser/login/updwtmp.c' l='29' macro='1' u='c' c='__updwtmp'/>
+<use f='codebrowser/login/utmp_file.c' l='141' macro='1' u='c' c='__libc_setutent'/>
+<use f='codebrowser/login/utmp_file.c' l='141' macro='1' u='c' c='__libc_setutent'/>
+<use f='codebrowser/login/utmp_file.c' l='141' macro='1' u='c' c='__libc_setutent'/>
+<use f='codebrowser/login/utmp_file.c' l='141' macro='1' u='c' c='__libc_setutent'/>
+<use f='codebrowser/login/utmp_file.c' l='354' macro='1' u='c' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='354' macro='1' u='c' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='354' macro='1' u='c' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='354' macro='1' u='c' c='__libc_pututline'/>
+<use f='codebrowser/time/getdate.c' l='129' u='c' c='__getdate_r'/>

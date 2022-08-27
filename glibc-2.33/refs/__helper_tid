@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='35' type='pid_t'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='117' type='pid_t'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='125' u='w' c='reset_helper_control'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='155' u='w' c='__start_helper_thread'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='116'>/* TID of the helper thread.  */</doc>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='34'>/* TID of the helper thread.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='78' u='r' c='__timer_create_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='121' u='r' c='__timer_create_new'/>

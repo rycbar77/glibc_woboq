@@ -1,0 +1,24 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='180' type='unsigned long strtoul(const char *restrict __nptr, char **restrict __endptr, int __base)'/>
+<dec f='codebrowser/include/stdlib.h' l='210' type='unsigned long strtoul(const char * , char ** , int )'/>
+<use f='codebrowser/include/stdlib.h' l='210' c='strtoul'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='179'>/* Convert a string to an unsigned long integer.  */</doc>
+<use f='codebrowser/elf/sotruss-lib.c' l='60' u='c' c='match_pid'/>
+<use f='codebrowser/nss/nss_files/files-parse.c' l='151' u='c' c='strtou32'/>
+<use f='codebrowser/intl/plural-exp.c' l='123' u='c' c='__gettext_extract_plural'/>
+<use f='codebrowser/resolv/inet_addr.c' l='131' u='c' c='__inet_aton'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1924' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1928' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1979' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1984' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2014' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2018' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2275' u='c' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getlogin_r.c' l='53' u='c' c='__getlogin_r_loginuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='156' u='c' c='__get_nprocs'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='167' u='c' c='__get_nprocs'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='253' u='c' c='__get_nprocs_conf'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readonly-area.c' l='62' u='c' c='__readonly_area'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readonly-area.c' l='68' u='c' c='__readonly_area'/>
+<use f='codebrowser/sysdeps/wordsize-64/strtoul.c' l='13' c='strtoull'/>
+<use f='codebrowser/sysdeps/wordsize-64/strtoul.c' l='14' c='strtouq'/>
+<use f='codebrowser/time/tzset.c' l='246' u='c' c='parse_rule'/>

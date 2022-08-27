@@ -1,0 +1,16 @@
+<dec f='codebrowser/include/dirent.h' l='24' type='struct dirent64 * __readdir64(DIR * __dirp)'/>
+<dec f='codebrowser/include/dirent.h' l='25' type='struct dirent64 * __readdir64(DIR * )'/>
+<use f='codebrowser/include/dirent.h' l='25' c='__readdir64'/>
+<use f='codebrowser/dirent/scandir-tail-common.c' l='41' macro='1' u='c' c='__scandir64_tail'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='317' u='c' c='__getcwd_generic'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='330' u='c' c='__getcwd_generic'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='105' u='c' c='__get_nprocs_conf'/>
+<use f='codebrowser/posix/glob.c' l='1355' u='c' c='glob_in_dir'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='30' ll='88' type='struct dirent64 * __readdir64(DIR * dirp)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='92' c='__readdir'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='93' c='readdir64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='94' c='readdir'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='29'>/* Read a directory entry from DIRP.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='54' u='c' c='getttyname_r'/>
+<use f='codebrowser/io/ftw.c' l='285' u='c' c='open_dir_stream'/>
+<use f='codebrowser/io/ftw.c' l='539' u='c' c='ftw_dir'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='562' type='int __pthread_attr_getsigmask_np(const pthread_attr_t * , __sigset_t * )'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='563' type='int __pthread_attr_getsigmask_np(const pthread_attr_t * , __sigset_t * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='563' c='__pthread_attr_getsigmask_np'/>
+<def f='codebrowser/nptl/pthread_attr_getsigmask.c' l='21' ll='36' type='int __pthread_attr_getsigmask_np(const pthread_attr_t * attr, sigset_t * sigmask)'/>
+<use f='codebrowser/nptl/pthread_attr_getsigmask.c' l='38' c='pthread_attr_getsigmask_np'/>

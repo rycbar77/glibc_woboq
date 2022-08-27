@@ -1,0 +1,9 @@
+<def f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='123' ll='145' type='double do_sin(double x, double dx)'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='187' u='c' c='do_sincos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sincos.c' l='56' u='c' c='__sincos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sincos.c' l='66' u='c' c='__sincos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sincos.c' l='92' u='c' c='__sincos'/>
+<doc f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='119'>/* Given a number partitioned into X and DX, this function computes the sine of
+   the number by combining the sin and cos of X (as computed by a variation of
+   the Taylor series) with the values looked up from the sin/cos table to get
+   the result.  */</doc>

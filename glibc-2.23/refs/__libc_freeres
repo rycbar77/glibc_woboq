@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/libc-internal.h' l='28' type='void __libc_freeres()'/>
+<doc f='codebrowser/include/libc-internal.h' l='27'>/* Free all allocated resources.  */</doc>
+<use f='codebrowser/malloc/mtrace.c' l='264' u='c' c='release_libc_mem'/>
+<def f='codebrowser/malloc/set-freeres.c' l='29' ll='48' type='void __libc_freeres()'/>

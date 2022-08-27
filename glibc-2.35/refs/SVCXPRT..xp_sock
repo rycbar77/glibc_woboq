@@ -1,0 +1,26 @@
+<dec f='codebrowser/sunrpc/rpc/svc.h' l='92' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/nis/nis_callback.c' l='326' u='r' c='__nis_create_callback'/>
+<use f='codebrowser/sunrpc/svc.c' l='87' u='r' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='134' u='r' c='__GI_xprt_unregister'/>
+<use f='codebrowser/sunrpc/svc_raw.c' l='81' u='w' c='__GI_svcraw_create'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='201' u='w' c='__GI_svctcp_create'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='247' u='w' c='makefd_xprt'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='263' u='r' c='rendezvous_request'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='299' u='r' c='svctcp_destroy'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='324' u='r' c='readtcp'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='369' u='r' c='writetcp'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='175' u='w' c='__GI_svcudp_bufcreate'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='260' u='r' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='288' u='r' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='314' u='r' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='318' u='r' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='351' u='r' c='svcudp_reply'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='355' u='r' c='svcudp_reply'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='392' u='r' c='svcudp_destroy'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='198' u='w' c='__GI_svcunix_create'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='240' u='w' c='makefd_xprt'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='257' u='r' c='rendezvous_request'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='295' u='r' c='svcunix_destroy'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='423' u='r' c='readunix'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='468' u='r' c='writeunix'/>

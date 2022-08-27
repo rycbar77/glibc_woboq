@@ -1,0 +1,14 @@
+<dec f='codebrowser/nss/nsswitch.h' l='128' type='int __nss_database_lookup(const char * database, const char * alternative_name, const char * defconfig, service_user ** ni)'/>
+<dec f='codebrowser/nss/nsswitch.h' l='131' type='int __nss_database_lookup(const char * , const char * , const char * , service_user ** )'/>
+<use f='codebrowser/nss/nsswitch.h' l='131' c='__nss_database_lookup'/>
+<doc f='codebrowser/nss/nsswitch.h' l='124'>/* Get the data structure representing the specified database.
+   If there is no configuration for this database in the file,
+   parse a service list from DEFCONFIG and use that.  More
+   than one function can use the database.  */</doc>
+<use f='codebrowser/grp/initgroups.c' l='82' u='c' c='internal_getgrouplist'/>
+<use f='codebrowser/grp/initgroups.c' l='86' u='c' c='internal_getgrouplist'/>
+<use f='codebrowser/nss/XXX-lookup.c' l='60' u='c' c='__nss_aliases_lookup2'/>
+<def f='codebrowser/nss/nsswitch.c' l='117' ll='187' type='int __nss_database_lookup(const char * database, const char * alternate_name, const char * defconfig, service_user ** ni)'/>
+<doc f='codebrowser/nss/nsswitch.c' l='115'>/* -1 == database not found
+    0 == database entry pointer stored */</doc>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='756' u='c' c='gaih_inet'/>

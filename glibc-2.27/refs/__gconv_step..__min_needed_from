@@ -1,0 +1,10 @@
+<dec f='codebrowser/iconv/gconv.h' l='101' type='int'/>
+<offset>576</offset>
+<doc f='codebrowser/iconv/gconv.h' l='99'>/* Information about the number of bytes needed or produced in this
+     step.  This helps optimizing the buffer sizes.  */</doc>
+<use f='codebrowser/iconv/gconv.c' l='83' u='r' c='__gconv'/>
+<use f='codebrowser/iconv/gconv_builtin.c' l='79' u='w' c='__gconv_get_builtin_trans'/>
+<use f='codebrowser/libio/iofwide.c' l='312' u='r' c='do_encoding'/>
+<use f='codebrowser/libio/iofwide.c' l='317' u='r' c='do_encoding'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='42' u='w'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='61' u='w'/>

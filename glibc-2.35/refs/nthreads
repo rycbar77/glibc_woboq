@@ -1,0 +1,20 @@
+<dec f='codebrowser/nscd/nscd.h' l='205' type='int'/>
+<doc f='codebrowser/nscd/nscd.h' l='204'>/* Initial number of threads to run.  */</doc>
+<def f='codebrowser/nscd/connections.c' l='244' type='int'/>
+<use f='codebrowser/nscd/connections.c' l='489' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='491' u='w' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='1751' u='r' c='fd_ready'/>
+<use f='codebrowser/nscd/connections.c' l='1753' u='r' c='fd_ready'/>
+<use f='codebrowser/nscd/connections.c' l='1756' u='w' c='fd_ready'/>
+<use f='codebrowser/nscd/connections.c' l='1775' u='r' c='restart_p'/>
+<use f='codebrowser/nscd/connections.c' l='2371' u='w' c='start_threads'/>
+<use f='codebrowser/nscd/connections.c' l='2371' u='r' c='start_threads'/>
+<use f='codebrowser/nscd/connections.c' l='2371' u='r' c='start_threads'/>
+<use f='codebrowser/nscd/connections.c' l='2400' u='r' c='start_threads'/>
+<doc f='codebrowser/nscd/connections.c' l='243'>/* Initial number of threads to use.  */</doc>
+<use f='codebrowser/nscd/nscd.c' l='460' u='w' c='parse_opt'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='180' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='181' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='293' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='294' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='117' u='r' c='send_stats'/>

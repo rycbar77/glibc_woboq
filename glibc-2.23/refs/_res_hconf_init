@@ -1,0 +1,5 @@
+<dec f='codebrowser/resolv/res_hconf.h' l='42' type='void _res_hconf_init()'/>
+<def f='codebrowser/resolv/res_hconf.c' l='357' ll='363' type='void _res_hconf_init()'/>
+<doc f='codebrowser/resolv/res_hconf.c' l='355'>/* Initialize hconf datastructure by reading host.conf file and
+   environment variables.  */</doc>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='818' u='c' c='gaih_inet'/>

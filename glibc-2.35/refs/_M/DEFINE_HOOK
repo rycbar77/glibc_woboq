@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/set-hooks.h' l='34'/>
+<use f='codebrowser/malloc/set-freeres.c' l='29' u='c'/>
+<doc f='codebrowser/include/set-hooks.h' l='30'>/* Define a hook variable called NAME.  Functions put on this hook take
+   arguments described by PROTO.  Use `text_set_element (NAME, FUNCTION)&apos;
+   from include/libc-symbols.h to add a function to the hook.  */</doc>
+<use f='codebrowser/stdlib/exit.c' l='26' u='c'/>

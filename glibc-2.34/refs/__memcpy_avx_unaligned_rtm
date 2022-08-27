@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='838' type='void * __memcpy_avx_unaligned_rtm(void * , const void * , unsigned long )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='838' u='r' c='__libc_ifunc_impl_list'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memmove.h' l='32' macro='1' type='void * __memcpy_avx_unaligned_rtm(void *restrict , const void *restrict , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memmove.h' l='85' macro='1' u='r' c='memcpy_ifunc_selector'/>

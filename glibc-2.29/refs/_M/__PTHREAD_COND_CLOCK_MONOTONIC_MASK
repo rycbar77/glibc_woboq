@@ -1,0 +1,6 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='192'/>
+<doc f='codebrowser/nptl/pthreadP.h' l='189'>/* Condition variable definitions.  See __pthread_cond_wait_common.
+   Need to be defined here so there is one place from which
+   nptl_lock_constants can grab them.  */</doc>
+<use f='codebrowser/nptl/pthread_cond_init.c' l='46' u='c'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='513' u='c'/>

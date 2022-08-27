@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='630' type='struct link_map *'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso.h' l='40' macro='1' u='r' c='dl_vdso_vsym'/>
+<def f='codebrowser/elf/dl-support.c' l='210' type='struct link_map *'/>
+<use f='codebrowser/elf/setup-vdso.h' l='114' macro='1' u='w' c='setup_vdso'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/pthread.h' l='23' type='int __pthread_kill(pthread_t threadid, int signo)'/>
+<dec f='codebrowser/include/pthread.h' l='23' type='int __pthread_kill(pthread_t threadid, int signo)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='515' type='int __pthread_kill(pthread_t threadid, int signo)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='516' type='int __pthread_kill(pthread_t , int )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='516' c='__pthread_kill'/>
+<def f='codebrowser/nptl/pthread_kill.c' l='81' ll='90' type='int __pthread_kill(pthread_t threadid, int signo)'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='96' c='pthread_kill'/>
+<use f='codebrowser/sysdeps/posix/raise.c' l='26' u='c' c='raise'/>

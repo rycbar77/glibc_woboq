@@ -1,0 +1,4 @@
+<dec f='include/selinux/selinux.h' l='71' type='int getfscreatecon(char ** con)'/>
+<doc f='include/selinux/selinux.h' l='68'>/* Get fscreate context, and set *con to refer to it.
+   Sets *con to NULL if no fs create context has been set, i.e. using default.
+   If non-NULL, caller must free via freecon. */</doc>

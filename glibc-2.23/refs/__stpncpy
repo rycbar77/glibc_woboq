@@ -1,0 +1,12 @@
+<dec f='codebrowser/string/string.h' l='569' type='char * __stpncpy(char *restrict __dest, const char *restrict __src, size_t __n)'/>
+<doc f='codebrowser/string/string.h' l='567'>/* Copy no more than N characters of SRC to DEST, returning the address of
+   the last character written into DEST.  */</doc>
+<use f='codebrowser/crypt/md5-crypt.c' l='252' u='c' c='__md5_crypt_r'/>
+<use f='codebrowser/crypt/md5-crypt.c' l='255' u='c' c='__md5_crypt_r'/>
+<use f='codebrowser/crypt/sha256-crypt.c' l='317' u='c' c='__sha256_crypt_r'/>
+<use f='codebrowser/crypt/sha256-crypt.c' l='328' u='c' c='__sha256_crypt_r'/>
+<use f='codebrowser/crypt/sha512-crypt.c' l='316' u='c' c='__sha512_crypt_r'/>
+<use f='codebrowser/crypt/sha512-crypt.c' l='327' u='c' c='__sha512_crypt_r'/>
+<use f='codebrowser/debug/stpncpy_chk.c' l='31' u='c' c='__stpncpy_chk'/>
+<use f='codebrowser/string/strxfrm_l.c' l='33' u='c' c='__strxfrm_l'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='69' u='c' c='getttyname_r'/>

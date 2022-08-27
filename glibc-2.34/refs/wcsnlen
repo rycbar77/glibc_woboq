@@ -1,0 +1,9 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='241' type='size_t wcsnlen(const wchar_t * __s, size_t __maxlen)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='240'>/* Return the number of wide characters in S, but at most MAXLEN.  */</doc>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='694' c='__wcsnlen_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='698' c='__wcsnlen_avx2_rtm'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='703' c='__wcsnlen_evex'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='708' c='__wcsnlen_sse4_1'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='711' c='__wcsnlen_sse2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/wcsnlen-c.c' l='6' c='__wcsnlen_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/wcsnlen.c' l='30' macro='1' type='size_t wcsnlen(const wchar_t * , size_t )'/>

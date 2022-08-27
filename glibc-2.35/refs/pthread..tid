@@ -1,0 +1,137 @@
+<dec f='codebrowser/nptl/descr.h' l='173' type='pid_t'/>
+<offset>5760</offset>
+<doc f='codebrowser/nptl/descr.h' l='171'>/* Thread ID - which is also a &apos;is this thread descriptor (and
+     therefore stack) used&apos; flag.  */</doc>
+<use f='codebrowser/nptl/nptl-stack.h' l='34' u='r' c='__nptl_stack_in_use'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='161' u='r' c='setxid_signal_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='161' u='r' c='setxid_signal_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='161' u='r' c='setxid_signal_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='161' u='r' c='setxid_signal_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='161' u='r' c='setxid_signal_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='161' u='r' c='setxid_signal_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='161' u='r' c='setxid_signal_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='161' u='r' c='setxid_signal_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='161' u='r' c='setxid_signal_thread'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='64' u='r' c='__pthread_cancel'/>
+<use f='codebrowser/nptl/pthread_create.c' l='288' u='a' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='289' u='a' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='290' u='a' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='311' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='311' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='311' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='311' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='311' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='311' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='311' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='311' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='311' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='323' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='323' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='323' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='323' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='323' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='323' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='323' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='323' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='323' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='852' u='a' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='852' u='a' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='852' u='a' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='852' u='a' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='852' u='a' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='853' u='a' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl_db/structs.def' l='54' u='r'/>
+<use f='codebrowser/nptl/pthread_detach.c' l='29' macro='1' u='r' c='___pthread_detach'/>
+<use f='codebrowser/nptl/pthread_getaffinity.c' l='33' u='r' c='__pthread_getaffinity_np'/>
+<use f='codebrowser/nptl/pthread_getaffinity.c' l='33' u='r' c='__pthread_getaffinity_np'/>
+<use f='codebrowser/nptl/pthread_getaffinity.c' l='33' u='r' c='__pthread_getaffinity_np'/>
+<use f='codebrowser/nptl/pthread_getaffinity.c' l='33' u='r' c='__pthread_getaffinity_np'/>
+<use f='codebrowser/nptl/pthread_getaffinity.c' l='33' u='r' c='__pthread_getaffinity_np'/>
+<use f='codebrowser/nptl/pthread_getaffinity.c' l='33' u='r' c='__pthread_getaffinity_np'/>
+<use f='codebrowser/nptl/pthread_getaffinity.c' l='33' u='r' c='__pthread_getaffinity_np'/>
+<use f='codebrowser/nptl/pthread_getaffinity.c' l='33' u='r' c='__pthread_getaffinity_np'/>
+<use f='codebrowser/nptl/pthread_getaffinity.c' l='33' u='r' c='__pthread_getaffinity_np'/>
+<use f='codebrowser/nptl/pthread_getcpuclockid.c' l='32' macro='1' u='r' c='__pthread_getcpuclockid'/>
+<use f='codebrowser/nptl/pthread_getcpuclockid.c' l='38' u='r' c='__pthread_getcpuclockid'/>
+<use f='codebrowser/nptl/pthread_getname.c' l='45' u='r' c='__pthread_getname_np'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='31' macro='1' u='r' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='47' u='r' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='55' u='r' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='43' macro='1' u='r' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='97' u='a' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='97' u='a' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='97' u='a' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='97' u='a' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='97' u='a' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='106' u='a' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='121' u='w' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='62' u='r' c='__pthread_kill_implementation'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='62' u='r' c='__pthread_kill_implementation'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='62' u='r' c='__pthread_kill_implementation'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='62' u='r' c='__pthread_kill_implementation'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='62' u='r' c='__pthread_kill_implementation'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='62' u='r' c='__pthread_kill_implementation'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='62' u='r' c='__pthread_kill_implementation'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='62' u='r' c='__pthread_kill_implementation'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='62' u='r' c='__pthread_kill_implementation'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='112' c='__pthread_mutex_cond_lock'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='159' c='__pthread_mutex_cond_lock'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='167' c='__pthread_mutex_cond_lock'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='184' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='643' c='__pthread_mutex_cond_lock_adjust'/>
+<use f='codebrowser/nptl/pthread_mutex_consistent.c' l='33' c='__pthread_mutex_consistent'/>
+<use f='codebrowser/nptl/pthread_mutex_setprioceiling.c' l='54' c='__pthread_mutex_setprioceiling'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='37' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='29' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='84' c='__pthread_mutex_unlock_usercnt'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='99' c='__pthread_mutex_unlock_usercnt'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='119' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='130' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='143' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='195' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='206' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='217' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='233' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='290' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='309' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='319' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_rwlock_common.c' l='299' c='__pthread_rwlock_rdlock_full64'/>
+<use f='codebrowser/nptl/pthread_rwlock_common.c' l='604' c='__pthread_rwlock_wrlock_full64'/>
+<use f='codebrowser/nptl/pthread_rwlock_common.c' l='948' c='__pthread_rwlock_wrlock_full64'/>
+<use f='codebrowser/nptl/pthread_rwlock_trywrlock.c' l='59' c='___pthread_rwlock_trywrlock'/>
+<use f='codebrowser/nptl/pthread_rwlock_unlock.c' l='39' c='___pthread_rwlock_unlock'/>
+<use f='codebrowser/nptl/pthread_setaffinity.c' l='32' u='r' c='__pthread_setaffinity_new'/>
+<use f='codebrowser/nptl/pthread_setaffinity.c' l='32' u='r' c='__pthread_setaffinity_new'/>
+<use f='codebrowser/nptl/pthread_setaffinity.c' l='32' u='r' c='__pthread_setaffinity_new'/>
+<use f='codebrowser/nptl/pthread_setaffinity.c' l='32' u='r' c='__pthread_setaffinity_new'/>
+<use f='codebrowser/nptl/pthread_setaffinity.c' l='32' u='r' c='__pthread_setaffinity_new'/>
+<use f='codebrowser/nptl/pthread_setaffinity.c' l='32' u='r' c='__pthread_setaffinity_new'/>
+<use f='codebrowser/nptl/pthread_setaffinity.c' l='32' u='r' c='__pthread_setaffinity_new'/>
+<use f='codebrowser/nptl/pthread_setaffinity.c' l='32' u='r' c='__pthread_setaffinity_new'/>
+<use f='codebrowser/nptl/pthread_setaffinity.c' l='32' u='r' c='__pthread_setaffinity_new'/>
+<use f='codebrowser/nptl/pthread_setname.c' l='47' u='r' c='__pthread_setname_np'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='32' macro='1' u='r' c='__pthread_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='55' u='r' c='__pthread_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='32' macro='1' u='r' c='__pthread_setschedprio'/>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='49' u='r' c='__pthread_setschedprio'/>
+<use f='codebrowser/nptl/pthread_sigqueue.c' l='36' c='__pthread_sigqueue'/>
+<use f='codebrowser/nptl/pthread_sigqueue.c' l='36' u='r' c='__pthread_sigqueue'/>
+<use f='codebrowser/nptl/pthread_tryjoin.c' l='26' u='r' c='__pthread_tryjoin_np'/>
+<use f='codebrowser/nptl/tpp.c' l='127' u='r' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='135' u='r' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='150' u='r' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='176' u='r' c='__pthread_current_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='184' u='r' c='__pthread_current_priority'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='107' u='w' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/_Fork.c' l='28' u='a' c='_Fork'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='75' u='w' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='75' u='a' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='75' u='a' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='75' u='a' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='75' u='a' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='75' u='a' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='75' u='a' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='75' u='a' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='75' u='a' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='75' u='a' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='150' u='r' c='__timer_start_helper_thread'/>

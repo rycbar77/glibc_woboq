@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='200' type='int pthread_create(pthread_t *restrict __newthread, const pthread_attr_t *restrict __attr, void *(*)(void *) __start_routine, void *restrict __arg)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='197'>/* Create a new thread, starting with execution of START-ROUTINE
+   getting passed ARG.  Creation attributed come from ATTR.  The new
+   handle is stored in *NEWTHREAD.  */</doc>
+<def f='codebrowser/nptl/pthread_create.c' l='884' macro='1' type='int pthread_create(pthread_t * , const pthread_attr_t * , void *(*)(void *) , void * )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='106' c='__gthrw_pthread_create'/>
+<use f='codebrowser/support/xpthread_create.c' l='27' u='c' c='xpthread_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_misc.h' l='59' u='c' c='__aio_create_helper_thread'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='667' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='84' u='c' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='113' u='c' c='__gai_create_helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='128' u='c' c='helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='183' u='c' c='init_mq_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='99' u='c' c='timer_helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='152' u='c' c='__start_helper_thread'/>

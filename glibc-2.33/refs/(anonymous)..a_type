@@ -1,0 +1,11 @@
+<dec f='codebrowser/elf/elf.h' l='1135' type='uint32_t'/>
+<dec f='codebrowser/elf/elf.h' l='1147' type='uint64_t'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/elf.h' l='1135'>/* Entry type */</doc>
+<doc f='codebrowser/elf/elf.h' l='1147'>/* Entry type */</doc>
+<use f='codebrowser/elf/dl-support.c' l='248' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='249' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/rtld.c' l='1410' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1411' u='r' c='dl_main'/>
+<use f='codebrowser/misc/getauxval.c' l='42' u='r' c='__getauxval2'/>
+<use f='codebrowser/misc/getauxval.c' l='43' u='r' c='__getauxval2'/>

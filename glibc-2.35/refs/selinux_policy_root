@@ -1,0 +1,6 @@
+<dec f='include/selinux/selinux.h' l='564' type='const char * selinux_policy_root()'/>
+<doc f='include/selinux/selinux.h' l='559'>/*
+  selinux_policy_root reads the /etc/selinux/config file and returns 
+  the directory path under which the compiled policy file and context 
+  configuration files exist.
+ */</doc>

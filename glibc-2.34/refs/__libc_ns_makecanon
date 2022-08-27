@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/arpa/nameser.h' l='73' type='int __libc_ns_makecanon(const char * , char * , size_t )'/>
+<dec f='codebrowser/include/arpa/nameser.h' l='74' type='int __libc_ns_makecanon(const char * , char * , size_t )'/>
+<use f='codebrowser/include/arpa/nameser.h' l='74' c='__libc_ns_makecanon'/>
+<def f='codebrowser/resolv/ns_makecanon.c' l='29' ll='49' type='int __libc_ns_makecanon(const char * src, char * dst, size_t dstsize)'/>
+<doc f='codebrowser/resolv/ns_makecanon.c' l='23'>/* Make a canonical copy of domain name SRC in DST.  Behavior:
+      foo -&gt; foo.
+      foo. -&gt; foo.
+      foo.. -&gt; foo.
+      foo\. -&gt; foo\..
+      foo\\. -&gt; foo\\.  */</doc>
+<use f='codebrowser/resolv/ns_samename.c' l='30' u='c' c='__libc_ns_samename'/>
+<use f='codebrowser/resolv/ns_samename.c' l='31' u='c' c='__libc_ns_samename'/>

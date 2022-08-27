@@ -1,0 +1,86 @@
+<dec f='codebrowser/posix/unistd.h' l='378' type='ssize_t write(int __fd, const void * __buf, size_t __n)'/>
+<dec f='codebrowser/include/unistd.h' l='71' type='ssize_t write(int , const void * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='71' c='write'/>
+<doc f='codebrowser/posix/unistd.h' l='374'>/* Write N bytes of BUF to FD.  Return the number written, or -1.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='988' u='c' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='993' u='c' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='994' u='c' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='1003' u='c' c='write_out'/>
+<use f='codebrowser/debug/pcprofile.c' l='53' u='c' c='install'/>
+<use f='codebrowser/debug/pcprofile.c' l='87' u='c' c='__cyg_profile_func_enter'/>
+<use f='codebrowser/elf/cache.c' l='544' u='c' c='write_extensions'/>
+<use f='codebrowser/elf/cache.c' l='545' u='c' c='write_extensions'/>
+<use f='codebrowser/elf/cache.c' l='546' u='c' c='write_extensions'/>
+<use f='codebrowser/elf/cache.c' l='731' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='742' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='745' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='750' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='1150' u='c' c='save_aux_cache'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='162' u='c' c='create_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='424' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1022' u='c' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1034' u='c' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1046' u='c' c='add_locale'/>
+<use f='codebrowser/malloc/memusage.c' l='203' u='c' c='update_data'/>
+<use f='codebrowser/malloc/memusage.c' l='205' u='c' c='update_data'/>
+<use f='codebrowser/malloc/memusage.c' l='291' u='c' c='me'/>
+<use f='codebrowser/malloc/memusage.c' l='292' u='c' c='me'/>
+<use f='codebrowser/malloc/memusage.c' l='825' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='828' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='835' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='841' u='c' c='dest'/>
+<use f='codebrowser/nptl_db/td_init.c' l='28' macro='1' u='c' c='td_init'/>
+<use f='codebrowser/nptl_db/td_log.c' l='28' macro='1' u='c' c='td_log'/>
+<use f='codebrowser/nptl_db/td_ta_clear_event.c' l='31' macro='1' u='c' c='td_ta_clear_event'/>
+<use f='codebrowser/nptl_db/td_ta_delete.c' l='27' macro='1' u='c' c='td_ta_delete'/>
+<use f='codebrowser/nptl_db/td_ta_enable_stats.c' l='26' macro='1' u='c' c='td_ta_enable_stats'/>
+<use f='codebrowser/nptl_db/td_ta_event_addr.c' l='30' macro='1' u='c' c='td_ta_event_addr'/>
+<use f='codebrowser/nptl_db/td_ta_event_getmsg.c' l='38' macro='1' u='c' c='td_ta_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_ta_get_nthreads.c' l='28' macro='1' u='c' c='td_ta_get_nthreads'/>
+<use f='codebrowser/nptl_db/td_ta_get_ph.c' l='25' macro='1' u='c' c='td_ta_get_ph'/>
+<use f='codebrowser/nptl_db/td_ta_get_stats.c' l='26' macro='1' u='c' c='td_ta_get_stats'/>
+<use f='codebrowser/nptl_db/td_ta_map_id2thr.c' l='25' macro='1' u='c' c='td_ta_map_id2thr'/>
+<use f='codebrowser/nptl_db/td_ta_map_lwp2thr.c' l='177' macro='1' u='c' c='td_ta_map_lwp2thr'/>
+<use f='codebrowser/nptl_db/td_ta_new.c' l='38' macro='1' u='c' c='td_ta_new'/>
+<use f='codebrowser/nptl_db/td_ta_reset_stats.c' l='26' macro='1' u='c' c='td_ta_reset_stats'/>
+<use f='codebrowser/nptl_db/td_ta_set_event.c' l='31' macro='1' u='c' c='td_ta_set_event'/>
+<use f='codebrowser/nptl_db/td_ta_setconcurrency.c' l='26' macro='1' u='c' c='td_ta_setconcurrency'/>
+<use f='codebrowser/nptl_db/td_ta_thr_iter.c' l='122' macro='1' u='c' c='td_ta_thr_iter'/>
+<use f='codebrowser/nptl_db/td_ta_tsd_iter.c' l='34' macro='1' u='c' c='td_ta_tsd_iter'/>
+<use f='codebrowser/nptl_db/td_thr_clear_event.c' l='32' macro='1' u='c' c='td_thr_clear_event'/>
+<use f='codebrowser/nptl_db/td_thr_dbresume.c' l='26' macro='1' u='c' c='td_thr_dbresume'/>
+<use f='codebrowser/nptl_db/td_thr_dbsuspend.c' l='26' macro='1' u='c' c='td_thr_dbsuspend'/>
+<use f='codebrowser/nptl_db/td_thr_event_enable.c' l='25' macro='1' u='c' c='td_thr_event_enable'/>
+<use f='codebrowser/nptl_db/td_thr_event_getmsg.c' l='31' macro='1' u='c' c='td_thr_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_thr_get_info.c' l='32' macro='1' u='c' c='td_thr_get_info'/>
+<use f='codebrowser/nptl_db/td_thr_getfpregs.c' l='28' macro='1' u='c' c='td_thr_getfpregs'/>
+<use f='codebrowser/nptl_db/td_thr_getgregs.c' l='28' macro='1' u='c' c='td_thr_getgregs'/>
+<use f='codebrowser/nptl_db/td_thr_getxregs.c' l='26' macro='1' u='c' c='td_thr_getxregs'/>
+<use f='codebrowser/nptl_db/td_thr_getxregsize.c' l='26' macro='1' u='c' c='td_thr_getxregsize'/>
+<use f='codebrowser/nptl_db/td_thr_set_event.c' l='32' macro='1' u='c' c='td_thr_set_event'/>
+<use f='codebrowser/nptl_db/td_thr_setfpregs.c' l='28' macro='1' u='c' c='td_thr_setfpregs'/>
+<use f='codebrowser/nptl_db/td_thr_setgregs.c' l='28' macro='1' u='c' c='td_thr_setgregs'/>
+<use f='codebrowser/nptl_db/td_thr_setprio.c' l='26' macro='1' u='c' c='td_thr_setprio'/>
+<use f='codebrowser/nptl_db/td_thr_setsigpending.c' l='27' macro='1' u='c' c='td_thr_setsigpending'/>
+<use f='codebrowser/nptl_db/td_thr_setxregs.c' l='26' macro='1' u='c' c='td_thr_setxregs'/>
+<use f='codebrowser/nptl_db/td_thr_sigsetmask.c' l='26' macro='1' u='c' c='td_thr_sigsetmask'/>
+<use f='codebrowser/nptl_db/td_thr_tsd.c' l='31' macro='1' u='c' c='td_thr_tsd'/>
+<use f='codebrowser/nptl_db/td_thr_validate.c' l='95' macro='1' u='c' c='td_thr_validate'/>
+<use f='codebrowser/nscd/connections.c' l='718' u='c' c='nscd_init'/>
+<use f='codebrowser/nscd/nscd.c' l='675' u='c' c='do_exit'/>
+<use f='codebrowser/nscd/nscd.c' l='708' u='c' c='notify_parent'/>
+<use f='codebrowser/rt/aio_misc.c' l='580' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='147' u='c' c='copy_and_spawn_sgid'/>
+<use f='codebrowser/support/support_copy_file_range.c' l='103' u='c' c='support_copy_file_range'/>
+<use f='codebrowser/support/support_write_file_string.c' l='31' u='c' c='support_write_file_string'/>
+<use f='codebrowser/support/test-container.c' l='1127' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1179' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1188' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1200' u='c' c='main'/>
+<use f='codebrowser/support/write_message.c' l='30' u='c' c='write_message'/>
+<use f='codebrowser/support/xwrite.c' l='30' u='c' c='xwrite'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='159' u='c' c='__sem_open'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/write.c' l='32' macro='1' type='ssize_t write(int , const void * , size_t )'/>

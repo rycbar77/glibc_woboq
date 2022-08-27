@@ -1,0 +1,7 @@
+<dec f='codebrowser/resource/bits/types/struct_rusage.h' l='36' type='struct timeval'/>
+<use f='codebrowser/include/sys/resource.h' l='97' u='w' c='rusage64_to_rusage'/>
+<use f='codebrowser/include/sys/resource.h' l='97' u='r' c='rusage64_to_rusage'/>
+<offset>0</offset>
+<doc f='codebrowser/resource/bits/types/struct_rusage.h' l='35'>/* Total amount of user time used.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='60' u='w' c='rusage32_to_rusage64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='86' u='r' c='rusage64_to_rusage32'/>

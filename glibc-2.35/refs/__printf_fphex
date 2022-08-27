@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/printf.h' l='18' type='int __printf_fphex(FILE * , const struct printf_info * , const void *const * )'/>
+<doc f='codebrowser/include/printf.h' l='17'>/* Now define the internal interfaces.  */</doc>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='352' u='c' c='__printf_fp_spec'/>
+<use f='codebrowser/stdlib/strfrom-skeleton.c' l='148' u='c' c='strfromd'/>
+<def f='codebrowser/stdio-common/printf_fphex.c' l='90' ll='482' type='int __printf_fphex(FILE * fp, const struct printf_info * info, const void *const * args)'/>

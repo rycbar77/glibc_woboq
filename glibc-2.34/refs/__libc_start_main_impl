@@ -1,0 +1,13 @@
+<dec f='codebrowser/csu/libc-start.c' l='101' type='int __libc_start_main_impl(int (*)(int, char **, char **) main, int argc, char ** argv, typeof (main) init, void (*)(void) fini, void (*)(void) rtld_fini, void * stack_end)'/>
+<def f='codebrowser/csu/libc-start.c' l='233' ll='410' type='int __libc_start_main_impl(int (*)(int, char **, char **) main, int argc, char ** argv, typeof (main) init, void (*)(void) fini, void (*)(void) rtld_fini, void * stack_end)'/>
+<use f='codebrowser/csu/libc-start.c' l='435' c='__libc_start_main'/>
+<doc f='codebrowser/csu/libc-start.c' l='223'>/* Note: The init and fini parameters are no longer used.  fini is
+   completely unused, init is still called if not NULL, but the
+   current startup code always passes NULL.  (In the future, it would
+   be possible to use fini to pass a version code if init is NULL, to
+   indicate the link-time glibc without introducing a hard
+   incompatibility for new programs with older glibc versions.)
+
+   For dynamically linked executables, the dynamic segment is used to
+   locate constructors and destructors.  For statically linked
+   executables, the relevant symbols are access directly.  */</doc>

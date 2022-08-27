@@ -1,0 +1,6 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/time64-support.h' l='54' ll='62' type='_Bool supports_time64()'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_getres.c' l='37' u='c' c='__clock_getres'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_gettime.c' l='38' u='c' c='__clock_gettime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ppoll.c' l='43' u='c' c='__ppoll'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pselect.c' l='45' u='c' c='__pselect'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/select.c' l='47' u='c' c='__select'/>

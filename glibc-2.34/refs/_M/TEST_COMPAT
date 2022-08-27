@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/shlib-compat.h' l='147'/>
+<doc f='codebrowser/include/shlib-compat.h' l='143'>/* The TEST_COMPAT macro acts just like the SHLIB_COMPAT macro except
+   that it does not check IS_IN.  It is used by tests that are testing
+   functionality that is only available in specific GLIBC versions.  */</doc>

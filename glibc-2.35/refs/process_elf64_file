@@ -1,0 +1,3 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/readelflib.c' l='22' type='int process_elf64_file(const char * file_name, const char * lib, int * flag, unsigned int * osversion, unsigned int * isa_level, char ** soname, void * file_contents, size_t file_length)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/readelflib.c' l='73' u='c' c='process_elf_file'/>
+<def f='codebrowser/elf/readelflib.c' l='42' macro='1' type='int process_elf64_file(const char * file_name, const char * lib, int * flag, unsigned int * osversion, unsigned int * isa_level, char ** soname, void * file_contents, size_t file_length)'/>

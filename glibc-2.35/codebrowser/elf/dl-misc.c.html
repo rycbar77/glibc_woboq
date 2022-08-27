@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dl-misc.c source code [codebrowser/elf/dl-misc.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/elf/dl-misc.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>elf</a>/<a href='dl-misc.c.html'>dl-misc.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Miscellaneous support functions for dynamic linker</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 1997-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../sysdeps/generic/_itoa.h.html">&lt;_itoa.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../include/fcntl.h.html">&lt;fcntl.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/ldsodefs.h.html">&lt;ldsodefs.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../include/link.h.html">&lt;link.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/not-cancel.h.html">&lt;not-cancel.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../include/stdint.h.html">&lt;stdint.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../include/sys/mman.h.html">&lt;sys/mman.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="../include/sys/stat.h.html">&lt;sys/stat.h&gt;</a></u></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="../include/unistd.h.html">&lt;unistd.h&gt;</a></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><i>/* Read the whole contents of FILE into new mmap'd space with given</i></td></tr>
+<tr><th id="31">31</th><td><i>   protections.  *SIZEP gets the size of the file.  On error MAP_FAILED</i></td></tr>
+<tr><th id="32">32</th><td><i>   is returned.  */</i></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><em>void</em> *</td></tr>
+<tr><th id="35">35</th><td><dfn class="decl def fn" id="_dl_sysdep_read_whole_file" title='_dl_sysdep_read_whole_file' data-ref="_dl_sysdep_read_whole_file" data-ref-filename="_dl_sysdep_read_whole_file">_dl_sysdep_read_whole_file</dfn> (<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="1file" title='file' data-type='const char *' data-ref="1file" data-ref-filename="1file">file</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> *<dfn class="local col2 decl" id="2sizep" title='sizep' data-type='size_t *' data-ref="2sizep" data-ref-filename="2sizep">sizep</dfn>, <em>int</em> <dfn class="local col3 decl" id="3prot" title='prot' data-type='int' data-ref="3prot" data-ref-filename="3prot">prot</dfn>)</td></tr>
+<tr><th id="36">36</th><td>{</td></tr>
+<tr><th id="37">37</th><td>  <em>void</em> *<dfn class="local col4 decl" id="4result" title='result' data-type='void *' data-ref="4result" data-ref-filename="4result">result</dfn> = <a class="macro" href="../misc/sys/mman.h.html#44" title="((void *) -1)" data-ref="_M/MAP_FAILED">MAP_FAILED</a>;</td></tr>
+<tr><th id="38">38</th><td>  <b>struct</b> <a class="macro" href="../sysdeps/unix/sysv/linux/struct_stat_time64.h.html#23" title="stat64" data-ref="_M/__stat64_t64">__stat64_t64</a> <dfn class="local col5 decl" id="5st" title='st' data-type='struct stat64' data-ref="5st" data-ref-filename="5st">st</dfn>;</td></tr>
+<tr><th id="39">39</th><td>  <em>int</em> <dfn class="local col6 decl" id="6fd" title='fd' data-type='int' data-ref="6fd" data-ref-filename="6fd">fd</dfn> = <a class="ref fn" href="../sysdeps/unix/sysv/linux/not-cancel.h.html#__open64_nocancel" title='__open64_nocancel' data-ref="__open64_nocancel" data-ref-filename="__open64_nocancel">__open64_nocancel</a> (<a class="local col1 ref" href="#1file" title='file' data-ref="1file" data-ref-filename="1file">file</a>, <a class="macro" href="../sysdeps/unix/sysv/linux/bits/fcntl-linux.h.html#43" title="00" data-ref="_M/O_RDONLY">O_RDONLY</a> | <a class="macro" href="../sysdeps/unix/sysv/linux/bits/fcntl-linux.h.html#144" title="02000000" data-ref="_M/O_CLOEXEC">O_CLOEXEC</a>);</td></tr>
+<tr><th id="40">40</th><td>  <b>if</b> (<a class="local col6 ref" href="#6fd" title='fd' data-ref="6fd" data-ref-filename="6fd">fd</a> &gt;= <var>0</var>)</td></tr>
+<tr><th id="41">41</th><td>    {</td></tr>
+<tr><th id="42">42</th><td>      <b>if</b> (<a class="macro" href="../include/sys/stat.h.html#51" title="__fstat64" data-ref="_M/__fstat64_time64">__fstat64_time64</a> (<a class="local col6 ref" href="#6fd" title='fd' data-ref="6fd" data-ref-filename="6fd">fd</a>, &amp;<a class="local col5 ref" href="#5st" title='st' data-ref="5st" data-ref-filename="5st">st</a>) &gt;= <var>0</var>)</td></tr>
+<tr><th id="43">43</th><td>	{</td></tr>
+<tr><th id="44">44</th><td>	  *<a class="local col2 ref" href="#2sizep" title='sizep' data-ref="2sizep" data-ref-filename="2sizep">sizep</a> = <a class="local col5 ref" href="#5st" title='st' data-ref="5st" data-ref-filename="5st">st</a>.<a class="ref field" href="../sysdeps/unix/sysv/linux/x86/bits/struct_stat.h.html#stat64::st_size" title='stat64::st_size' data-ref="stat64::st_size" data-ref-filename="stat64..st_size">st_size</a>;</td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td>	  <i>/* No need to map the file if it is empty.  */</i></td></tr>
+<tr><th id="47">47</th><td>	  <b>if</b> (*<a class="local col2 ref" href="#2sizep" title='sizep' data-ref="2sizep" data-ref-filename="2sizep">sizep</a> != <var>0</var>)</td></tr>
+<tr><th id="48">48</th><td>	    <i>/* Map a copy of the file contents.  */</i></td></tr>
+<tr><th id="49">49</th><td>	    <a class="local col4 ref" href="#4result" title='result' data-ref="4result" data-ref-filename="4result">result</a> = <a class="ref fn" href="../include/sys/mman.h.html#__mmap" title='__mmap' data-ref="__mmap" data-ref-filename="__mmap">__mmap</a> (<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, *<a class="local col2 ref" href="#2sizep" title='sizep' data-ref="2sizep" data-ref-filename="2sizep">sizep</a>, <a class="local col3 ref" href="#3prot" title='prot' data-ref="3prot" data-ref-filename="3prot">prot</a>,</td></tr>
+<tr><th id="50">50</th><td><u>#<span data-ppcond="50">ifdef</span> <span class="macro" data-ref="_M/MAP_COPY">MAP_COPY</span></u></td></tr>
+<tr><th id="51">51</th><td>			     MAP_COPY</td></tr>
+<tr><th id="52">52</th><td><u>#<span data-ppcond="50">else</span></u></td></tr>
+<tr><th id="53">53</th><td>			     <a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-linux.h.html#43" title="0x02" data-ref="_M/MAP_PRIVATE">MAP_PRIVATE</a></td></tr>
+<tr><th id="54">54</th><td><u>#<span data-ppcond="50">endif</span></u></td></tr>
+<tr><th id="55">55</th><td><u>#<span data-ppcond="55">ifdef</span> <a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-linux.h.html#53" data-ref="_M/MAP_FILE">MAP_FILE</a></u></td></tr>
+<tr><th id="56">56</th><td>			     | <a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-linux.h.html#53" title="0" data-ref="_M/MAP_FILE">MAP_FILE</a></td></tr>
+<tr><th id="57">57</th><td><u>#<span data-ppcond="55">endif</span></u></td></tr>
+<tr><th id="58">58</th><td>			     , <a class="local col6 ref" href="#6fd" title='fd' data-ref="6fd" data-ref-filename="6fd">fd</a>, <var>0</var>);</td></tr>
+<tr><th id="59">59</th><td>	}</td></tr>
+<tr><th id="60">60</th><td>      <a class="ref fn" href="../sysdeps/unix/sysv/linux/not-cancel.h.html#__close_nocancel" title='__close_nocancel' data-ref="__close_nocancel" data-ref-filename="__close_nocancel">__close_nocancel</a> (<a class="local col6 ref" href="#6fd" title='fd' data-ref="6fd" data-ref-filename="6fd">fd</a>);</td></tr>
+<tr><th id="61">61</th><td>    }</td></tr>
+<tr><th id="62">62</th><td>  <b>return</b> <a class="local col4 ref" href="#4result" title='result' data-ref="4result" data-ref-filename="4result">result</a>;</td></tr>
+<tr><th id="63">63</th><td>}</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><i>/* Test whether given NAME matches any of the names of the given object.  */</i></td></tr>
+<tr><th id="66">66</th><td><em>int</em></td></tr>
+<tr><th id="67">67</th><td><dfn class="decl def fn" id="_dl_name_match_p" title='_dl_name_match_p' data-ref="_dl_name_match_p" data-ref-filename="_dl_name_match_p">_dl_name_match_p</dfn> (<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="7name" title='name' data-type='const char *' data-ref="7name" data-ref-filename="7name">name</dfn>, <em>const</em> <b>struct</b> <a class="type" href="../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col8 decl" id="8map" title='map' data-type='const struct link_map *' data-ref="8map" data-ref-filename="8map">map</dfn>)</td></tr>
+<tr><th id="68">68</th><td>{</td></tr>
+<tr><th id="69">69</th><td>  <b>if</b> (<a class="ref fn" href="../string/string.h.html#strcmp" title='strcmp' data-ref="strcmp" data-ref-filename="strcmp">strcmp</a> (<a class="local col7 ref" href="#7name" title='name' data-ref="7name" data-ref-filename="7name">name</a>, <a class="local col8 ref" href="#8map" title='map' data-ref="8map" data-ref-filename="8map">map</a>-&gt;<a class="ref field" href="../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a>) == <var>0</var>)</td></tr>
+<tr><th id="70">70</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td>  <b>struct</b> <a class="type" href="../sysdeps/generic/ldsodefs.h.html#libname_list" title='libname_list' data-ref="libname_list" data-ref-filename="libname_list">libname_list</a> *<dfn class="local col9 decl" id="9runp" title='runp' data-type='struct libname_list *' data-ref="9runp" data-ref-filename="9runp">runp</dfn> = <a class="local col8 ref" href="#8map" title='map' data-ref="8map" data-ref-filename="8map">map</a>-&gt;<a class="ref field" href="../include/link.h.html#link_map::l_libname" title='link_map::l_libname' data-ref="link_map::l_libname" data-ref-filename="link_map..l_libname">l_libname</a>;</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td>  <b>while</b> (<a class="local col9 ref" href="#9runp" title='runp' data-ref="9runp" data-ref-filename="9runp">runp</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="75">75</th><td>    <b>if</b> (<a class="ref fn" href="../string/string.h.html#strcmp" title='strcmp' data-ref="strcmp" data-ref-filename="strcmp">strcmp</a> (<a class="local col7 ref" href="#7name" title='name' data-ref="7name" data-ref-filename="7name">name</a>, <a class="local col9 ref" href="#9runp" title='runp' data-ref="9runp" data-ref-filename="9runp">runp</a>-&gt;<a class="ref field" href="../sysdeps/generic/ldsodefs.h.html#libname_list::name" title='libname_list::name' data-ref="libname_list::name" data-ref-filename="libname_list..name">name</a>) == <var>0</var>)</td></tr>
+<tr><th id="76">76</th><td>      <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="77">77</th><td>    <b>else</b></td></tr>
+<tr><th id="78">78</th><td>      <i>/* Synchronize with the release MO store in add_name_to_object.</i></td></tr>
+<tr><th id="79">79</th><td><i>	 See CONCURRENCY NOTES in add_name_to_object in dl-load.c.  */</i></td></tr>
+<tr><th id="80">80</th><td>      <a class="local col9 ref" href="#9runp" title='runp' data-ref="9runp" data-ref-filename="9runp">runp</a> = <a class="macro" href="../include/atomic.h.html#577" title="({ if ((sizeof (*(&amp;runp-&gt;next)) != 1) &amp;&amp; (sizeof (*(&amp;runp-&gt;next)) != 2) &amp;&amp; (sizeof (*(&amp;runp-&gt;next)) != 4) &amp;&amp; (sizeof (*(&amp;runp-&gt;next)) != 8)) __atomic_link_error ();; __atomic_load_n ((&amp;runp-&gt;next), 2); })" data-ref="_M/atomic_load_acquire">atomic_load_acquire</a> (&amp;<a class="local col9 ref" href="#9runp" title='runp' data-ref="9runp" data-ref-filename="9runp">runp</a>-&gt;<a class="ref field" href="../sysdeps/generic/ldsodefs.h.html#libname_list::next" title='libname_list::next' data-ref="libname_list::next" data-ref-filename="libname_list..next">next</a>);</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td>  <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="83">83</th><td>}</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><em>unsigned</em> <em>long</em> <em>int</em></td></tr>
+<tr><th id="86">86</th><td><dfn class="decl def fn" id="_dl_higher_prime_number" title='_dl_higher_prime_number' data-ref="_dl_higher_prime_number" data-ref-filename="_dl_higher_prime_number">_dl_higher_prime_number</dfn> (<em>unsigned</em> <em>long</em> <em>int</em> <dfn class="local col0 decl" id="10n" title='n' data-type='unsigned long' data-ref="10n" data-ref-filename="10n">n</dfn>)</td></tr>
+<tr><th id="87">87</th><td>{</td></tr>
+<tr><th id="88">88</th><td>  <i>/* These are primes that are near, but slightly smaller than, a</i></td></tr>
+<tr><th id="89">89</th><td><i>     power of two.  */</i></td></tr>
+<tr><th id="90">90</th><td>  <em>static</em> <em>const</em> <a class="typedef" href="../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="local col1 decl" id="11primes" title='primes' data-type='const uint32_t[30]' data-ref="11primes" data-ref-filename="11primes">primes</dfn>[] = {</td></tr>
+<tr><th id="91">91</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="7U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>7</var>),</td></tr>
+<tr><th id="92">92</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="13U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>13</var>),</td></tr>
+<tr><th id="93">93</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="31U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>31</var>),</td></tr>
+<tr><th id="94">94</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="61U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>61</var>),</td></tr>
+<tr><th id="95">95</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="127U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>127</var>),</td></tr>
+<tr><th id="96">96</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="251U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>251</var>),</td></tr>
+<tr><th id="97">97</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="509U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>509</var>),</td></tr>
+<tr><th id="98">98</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="1021U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>1021</var>),</td></tr>
+<tr><th id="99">99</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="2039U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>2039</var>),</td></tr>
+<tr><th id="100">100</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="4093U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>4093</var>),</td></tr>
+<tr><th id="101">101</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="8191U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>8191</var>),</td></tr>
+<tr><th id="102">102</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="16381U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>16381</var>),</td></tr>
+<tr><th id="103">103</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="32749U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>32749</var>),</td></tr>
+<tr><th id="104">104</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="65521U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>65521</var>),</td></tr>
+<tr><th id="105">105</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="131071U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>131071</var>),</td></tr>
+<tr><th id="106">106</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="262139U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>262139</var>),</td></tr>
+<tr><th id="107">107</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="524287U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>524287</var>),</td></tr>
+<tr><th id="108">108</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="1048573U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>1048573</var>),</td></tr>
+<tr><th id="109">109</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="2097143U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>2097143</var>),</td></tr>
+<tr><th id="110">110</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="4194301U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>4194301</var>),</td></tr>
+<tr><th id="111">111</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="8388593U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>8388593</var>),</td></tr>
+<tr><th id="112">112</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="16777213U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>16777213</var>),</td></tr>
+<tr><th id="113">113</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="33554393U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>33554393</var>),</td></tr>
+<tr><th id="114">114</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="67108859U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>67108859</var>),</td></tr>
+<tr><th id="115">115</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="134217689U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>134217689</var>),</td></tr>
+<tr><th id="116">116</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="268435399U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>268435399</var>),</td></tr>
+<tr><th id="117">117</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="536870909U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>536870909</var>),</td></tr>
+<tr><th id="118">118</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="1073741789U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>1073741789</var>),</td></tr>
+<tr><th id="119">119</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="2147483647U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>2147483647</var>),</td></tr>
+<tr><th id="120">120</th><td>				       <i>/* 4294967291L */</i></td></tr>
+<tr><th id="121">121</th><td>    <a class="macro" href="../stdlib/stdint.h.html#260" title="2147483647U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>2147483647</var>) + <a class="macro" href="../stdlib/stdint.h.html#260" title="2147483644U" data-ref="_M/UINT32_C">UINT32_C</a> (<var>2147483644</var>)</td></tr>
+<tr><th id="122">122</th><td>  };</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td>  <em>const</em> <a class="typedef" href="../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> *<dfn class="local col2 decl" id="12low" title='low' data-type='const uint32_t *' data-ref="12low" data-ref-filename="12low">low</dfn> = &amp;<a class="local col1 ref" href="#11primes" title='primes' data-ref="11primes" data-ref-filename="11primes">primes</a>[<var>0</var>];</td></tr>
+<tr><th id="125">125</th><td>  <em>const</em> <a class="typedef" href="../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> *<dfn class="local col3 decl" id="13high" title='high' data-type='const uint32_t *' data-ref="13high" data-ref-filename="13high">high</dfn> = &amp;<a class="local col1 ref" href="#11primes" title='primes' data-ref="11primes" data-ref-filename="11primes">primes</a>[<b>sizeof</b> (<a class="local col1 ref" href="#11primes" title='primes' data-ref="11primes" data-ref-filename="11primes">primes</a>) / <b>sizeof</b> (<a class="local col1 ref" href="#11primes" title='primes' data-ref="11primes" data-ref-filename="11primes">primes</a>[<var>0</var>])];</td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td>  <b>while</b> (<a class="local col2 ref" href="#12low" title='low' data-ref="12low" data-ref-filename="12low">low</a> != <a class="local col3 ref" href="#13high" title='high' data-ref="13high" data-ref-filename="13high">high</a>)</td></tr>
+<tr><th id="128">128</th><td>    {</td></tr>
+<tr><th id="129">129</th><td>      <em>const</em> <a class="typedef" href="../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> *<dfn class="local col4 decl" id="14mid" title='mid' data-type='const uint32_t *' data-ref="14mid" data-ref-filename="14mid">mid</dfn> = <a class="local col2 ref" href="#12low" title='low' data-ref="12low" data-ref-filename="12low">low</a> + (<a class="local col3 ref" href="#13high" title='high' data-ref="13high" data-ref-filename="13high">high</a> - <a class="local col2 ref" href="#12low" title='low' data-ref="12low" data-ref-filename="12low">low</a>) / <var>2</var>;</td></tr>
+<tr><th id="130">130</th><td>      <b>if</b> (<a class="local col0 ref" href="#10n" title='n' data-ref="10n" data-ref-filename="10n">n</a> &gt; *<a class="local col4 ref" href="#14mid" title='mid' data-ref="14mid" data-ref-filename="14mid">mid</a>)</td></tr>
+<tr><th id="131">131</th><td>       <a class="local col2 ref" href="#12low" title='low' data-ref="12low" data-ref-filename="12low">low</a> = <a class="local col4 ref" href="#14mid" title='mid' data-ref="14mid" data-ref-filename="14mid">mid</a> + <var>1</var>;</td></tr>
+<tr><th id="132">132</th><td>      <b>else</b></td></tr>
+<tr><th id="133">133</th><td>       <a class="local col3 ref" href="#13high" title='high' data-ref="13high" data-ref-filename="13high">high</a> = <a class="local col4 ref" href="#14mid" title='mid' data-ref="14mid" data-ref-filename="14mid">mid</a>;</td></tr>
+<tr><th id="134">134</th><td>    }</td></tr>
+<tr><th id="135">135</th><td></td></tr>
+<tr><th id="136">136</th><td><u>#<span data-ppcond="136">if</span> 0</u></td></tr>
+<tr><th id="137">137</th><td>  <i>/* If we've run out of primes, abort.  */</i></td></tr>
+<tr><th id="138">138</th><td>  <b>if</b> (n &gt; *low)</td></tr>
+<tr><th id="139">139</th><td>    {</td></tr>
+<tr><th id="140">140</th><td>      fprintf (stderr, <q>"Cannot find prime bigger than %lu\n"</q>, n);</td></tr>
+<tr><th id="141">141</th><td>      abort ();</td></tr>
+<tr><th id="142">142</th><td>    }</td></tr>
+<tr><th id="143">143</th><td><u>#<span data-ppcond="136">endif</span></u></td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td>  <b>return</b> *<a class="local col2 ref" href="#12low" title='low' data-ref="12low" data-ref-filename="12low">low</a>;</td></tr>
+<tr><th id="146">146</th><td>}</td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td><i>/* A stripped down strtoul-like implementation for very early use.  It</i></td></tr>
+<tr><th id="149">149</th><td><i>   does not set errno if the result is outside bounds because it may get</i></td></tr>
+<tr><th id="150">150</th><td><i>   called before errno may have been set up.  */</i></td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><a class="typedef" href="../bits/stdint-uintn.h.html#uint64_t" title='uint64_t' data-type='__uint64_t' data-ref="uint64_t" data-ref-filename="uint64_t">uint64_t</a></td></tr>
+<tr><th id="153">153</th><td><dfn class="decl def fn" id="_dl_strtoul" title='_dl_strtoul' data-ref="_dl_strtoul" data-ref-filename="_dl_strtoul">_dl_strtoul</dfn> (<em>const</em> <em>char</em> *<dfn class="local col5 decl" id="15nptr" title='nptr' data-type='const char *' data-ref="15nptr" data-ref-filename="15nptr">nptr</dfn>, <em>char</em> **<dfn class="local col6 decl" id="16endptr" title='endptr' data-type='char **' data-ref="16endptr" data-ref-filename="16endptr">endptr</dfn>)</td></tr>
+<tr><th id="154">154</th><td>{</td></tr>
+<tr><th id="155">155</th><td>  <a class="typedef" href="../bits/stdint-uintn.h.html#uint64_t" title='uint64_t' data-type='__uint64_t' data-ref="uint64_t" data-ref-filename="uint64_t">uint64_t</a> <dfn class="local col7 decl" id="17result" title='result' data-type='uint64_t' data-ref="17result" data-ref-filename="17result">result</dfn> = <var>0</var>;</td></tr>
+<tr><th id="156">156</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col8 decl" id="18positive" title='positive' data-type='_Bool' data-ref="18positive" data-ref-filename="18positive">positive</dfn> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="157">157</th><td>  <em>unsigned</em> <dfn class="local col9 decl" id="19max_digit" title='max_digit' data-type='unsigned int' data-ref="19max_digit" data-ref-filename="19max_digit">max_digit</dfn>;</td></tr>
+<tr><th id="158">158</th><td></td></tr>
+<tr><th id="159">159</th><td>  <b>while</b> (*<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> == <kbd>' '</kbd> || *<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> == <kbd>'\t'</kbd>)</td></tr>
+<tr><th id="160">160</th><td>    ++<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a>;</td></tr>
+<tr><th id="161">161</th><td></td></tr>
+<tr><th id="162">162</th><td>  <b>if</b> (*<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> == <kbd>'-'</kbd>)</td></tr>
+<tr><th id="163">163</th><td>    {</td></tr>
+<tr><th id="164">164</th><td>      <a class="local col8 ref" href="#18positive" title='positive' data-ref="18positive" data-ref-filename="18positive">positive</a> = <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="165">165</th><td>      ++<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a>;</td></tr>
+<tr><th id="166">166</th><td>    }</td></tr>
+<tr><th id="167">167</th><td>  <b>else</b> <b>if</b> (*<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> == <kbd>'+'</kbd>)</td></tr>
+<tr><th id="168">168</th><td>    ++<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a>;</td></tr>
+<tr><th id="169">169</th><td></td></tr>
+<tr><th id="170">170</th><td>  <b>if</b> (*<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> &lt; <kbd>'0'</kbd> || *<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> &gt; <kbd>'9'</kbd>)</td></tr>
+<tr><th id="171">171</th><td>    {</td></tr>
+<tr><th id="172">172</th><td>      <b>if</b> (<a class="local col6 ref" href="#16endptr" title='endptr' data-ref="16endptr" data-ref-filename="16endptr">endptr</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="173">173</th><td>	*<a class="local col6 ref" href="#16endptr" title='endptr' data-ref="16endptr" data-ref-filename="16endptr">endptr</a> = (<em>char</em> *) <a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a>;</td></tr>
+<tr><th id="174">174</th><td>      <b>return</b> <var>0UL</var>;</td></tr>
+<tr><th id="175">175</th><td>    }</td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td>  <em>int</em> <dfn class="local col0 decl" id="20base" title='base' data-type='int' data-ref="20base" data-ref-filename="20base">base</dfn> = <var>10</var>;</td></tr>
+<tr><th id="178">178</th><td>  <a class="local col9 ref" href="#19max_digit" title='max_digit' data-ref="19max_digit" data-ref-filename="19max_digit">max_digit</a> = <var>9</var>;</td></tr>
+<tr><th id="179">179</th><td>  <b>if</b> (*<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> == <kbd>'0'</kbd>)</td></tr>
+<tr><th id="180">180</th><td>    {</td></tr>
+<tr><th id="181">181</th><td>      <b>if</b> (<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a>[<var>1</var>] == <kbd>'x'</kbd> || <a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a>[<var>1</var>] == <kbd>'X'</kbd>)</td></tr>
+<tr><th id="182">182</th><td>	{</td></tr>
+<tr><th id="183">183</th><td>	  <a class="local col0 ref" href="#20base" title='base' data-ref="20base" data-ref-filename="20base">base</a> = <var>16</var>;</td></tr>
+<tr><th id="184">184</th><td>	  <a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> += <var>2</var>;</td></tr>
+<tr><th id="185">185</th><td>	}</td></tr>
+<tr><th id="186">186</th><td>      <b>else</b></td></tr>
+<tr><th id="187">187</th><td>	{</td></tr>
+<tr><th id="188">188</th><td>	  <a class="local col0 ref" href="#20base" title='base' data-ref="20base" data-ref-filename="20base">base</a> = <var>8</var>;</td></tr>
+<tr><th id="189">189</th><td>	  <a class="local col9 ref" href="#19max_digit" title='max_digit' data-ref="19max_digit" data-ref-filename="19max_digit">max_digit</a> = <var>7</var>;</td></tr>
+<tr><th id="190">190</th><td>	}</td></tr>
+<tr><th id="191">191</th><td>    }</td></tr>
+<tr><th id="192">192</th><td></td></tr>
+<tr><th id="193">193</th><td>  <b>while</b> (<var>1</var>)</td></tr>
+<tr><th id="194">194</th><td>    {</td></tr>
+<tr><th id="195">195</th><td>      <em>int</em> <dfn class="local col1 decl" id="21digval" title='digval' data-type='int' data-ref="21digval" data-ref-filename="21digval">digval</dfn>;</td></tr>
+<tr><th id="196">196</th><td>      <b>if</b> (*<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> &gt;= <kbd>'0'</kbd> &amp;&amp; *<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> &lt;= <kbd>'0'</kbd> + <a class="local col9 ref" href="#19max_digit" title='max_digit' data-ref="19max_digit" data-ref-filename="19max_digit">max_digit</a>)</td></tr>
+<tr><th id="197">197</th><td>        <a class="local col1 ref" href="#21digval" title='digval' data-ref="21digval" data-ref-filename="21digval">digval</a> = *<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> - <kbd>'0'</kbd>;</td></tr>
+<tr><th id="198">198</th><td>      <b>else</b> <b>if</b> (<a class="local col0 ref" href="#20base" title='base' data-ref="20base" data-ref-filename="20base">base</a> == <var>16</var>)</td></tr>
+<tr><th id="199">199</th><td>        {</td></tr>
+<tr><th id="200">200</th><td>	  <b>if</b> (*<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> &gt;= <kbd>'a'</kbd> &amp;&amp; *<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> &lt;= <kbd>'f'</kbd>)</td></tr>
+<tr><th id="201">201</th><td>	    <a class="local col1 ref" href="#21digval" title='digval' data-ref="21digval" data-ref-filename="21digval">digval</a> = *<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> - <kbd>'a'</kbd> + <var>10</var>;</td></tr>
+<tr><th id="202">202</th><td>	  <b>else</b> <b>if</b> (*<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> &gt;= <kbd>'A'</kbd> &amp;&amp; *<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> &lt;= <kbd>'F'</kbd>)</td></tr>
+<tr><th id="203">203</th><td>	    <a class="local col1 ref" href="#21digval" title='digval' data-ref="21digval" data-ref-filename="21digval">digval</a> = *<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a> - <kbd>'A'</kbd> + <var>10</var>;</td></tr>
+<tr><th id="204">204</th><td>	  <b>else</b></td></tr>
+<tr><th id="205">205</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="206">206</th><td>	}</td></tr>
+<tr><th id="207">207</th><td>      <b>else</b></td></tr>
+<tr><th id="208">208</th><td>        <b>break</b>;</td></tr>
+<tr><th id="209">209</th><td></td></tr>
+<tr><th id="210">210</th><td>      <b>if</b> (<a class="local col7 ref" href="#17result" title='result' data-ref="17result" data-ref-filename="17result">result</a> &gt;= (<a class="macro" href="../stdlib/stdint.h.html#130" title="(18446744073709551615UL)" data-ref="_M/UINT64_MAX">UINT64_MAX</a> - <a class="local col1 ref" href="#21digval" title='digval' data-ref="21digval" data-ref-filename="21digval">digval</a>) / <a class="local col0 ref" href="#20base" title='base' data-ref="20base" data-ref-filename="20base">base</a>)</td></tr>
+<tr><th id="211">211</th><td>	{</td></tr>
+<tr><th id="212">212</th><td>	  <b>if</b> (<a class="local col6 ref" href="#16endptr" title='endptr' data-ref="16endptr" data-ref-filename="16endptr">endptr</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="213">213</th><td>	    *<a class="local col6 ref" href="#16endptr" title='endptr' data-ref="16endptr" data-ref-filename="16endptr">endptr</a> = (<em>char</em> *) <a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a>;</td></tr>
+<tr><th id="214">214</th><td>	  <b>return</b> <a class="macro" href="../stdlib/stdint.h.html#130" title="(18446744073709551615UL)" data-ref="_M/UINT64_MAX">UINT64_MAX</a>;</td></tr>
+<tr><th id="215">215</th><td>	}</td></tr>
+<tr><th id="216">216</th><td>      <a class="local col7 ref" href="#17result" title='result' data-ref="17result" data-ref-filename="17result">result</a> *= <a class="local col0 ref" href="#20base" title='base' data-ref="20base" data-ref-filename="20base">base</a>;</td></tr>
+<tr><th id="217">217</th><td>      <a class="local col7 ref" href="#17result" title='result' data-ref="17result" data-ref-filename="17result">result</a> += <a class="local col1 ref" href="#21digval" title='digval' data-ref="21digval" data-ref-filename="21digval">digval</a>;</td></tr>
+<tr><th id="218">218</th><td>      ++<a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a>;</td></tr>
+<tr><th id="219">219</th><td>    }</td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td>  <b>if</b> (<a class="local col6 ref" href="#16endptr" title='endptr' data-ref="16endptr" data-ref-filename="16endptr">endptr</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="222">222</th><td>    *<a class="local col6 ref" href="#16endptr" title='endptr' data-ref="16endptr" data-ref-filename="16endptr">endptr</a> = (<em>char</em> *) <a class="local col5 ref" href="#15nptr" title='nptr' data-ref="15nptr" data-ref-filename="15nptr">nptr</a>;</td></tr>
+<tr><th id="223">223</th><td></td></tr>
+<tr><th id="224">224</th><td>  <i>/* Avoid 64-bit multiplication.  */</i></td></tr>
+<tr><th id="225">225</th><td>  <b>if</b> (!<a class="local col8 ref" href="#18positive" title='positive' data-ref="18positive" data-ref-filename="18positive">positive</a>)</td></tr>
+<tr><th id="226">226</th><td>    <a class="local col7 ref" href="#17result" title='result' data-ref="17result" data-ref-filename="17result">result</a> = -<a class="local col7 ref" href="#17result" title='result' data-ref="17result" data-ref-filename="17result">result</a>;</td></tr>
+<tr><th id="227">227</th><td></td></tr>
+<tr><th id="228">228</th><td>  <b>return</b> <a class="local col7 ref" href="#17result" title='result' data-ref="17result" data-ref-filename="17result">result</a>;</td></tr>
+<tr><th id="229">229</th><td>}</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

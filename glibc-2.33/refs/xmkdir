@@ -1,0 +1,5 @@
+<dec f='codebrowser/support/xunistd.h' l='41' type='void xmkdir(const char * path, mode_t )'/>
+<use f='codebrowser/support/support_chroot.c' l='52' u='c' c='support_chroot_create'/>
+<use f='codebrowser/support/support_chroot.c' l='66' u='c' c='support_chroot_create'/>
+<use f='codebrowser/support/test-container.c' l='175' u='c' c='maybe_xmkdir'/>
+<def f='codebrowser/support/xmkdir.c' l='23' ll='28' type='void xmkdir(const char * path, mode_t mode)'/>

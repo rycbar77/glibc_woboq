@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='665' type='int __nptl_setxid(struct xid_command * cmdp)'/>
+<def f='codebrowser/nptl/nptl_setxid.c' l='173' ll='278' type='int __nptl_setxid(struct xid_command * cmdp)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setegid.c' l='34' macro='1' u='c' c='setegid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/seteuid.c' l='34' macro='1' u='c' c='seteuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgid.c' l='29' macro='1' u='c' c='__setgid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgroups.c' l='33' macro='1' u='c' c='setgroups'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setregid.c' l='29' macro='1' u='c' c='__setregid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresgid.c' l='29' macro='1' u='c' c='__setresgid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresuid.c' l='29' macro='1' u='c' c='__setresuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setreuid.c' l='29' macro='1' u='c' c='__setreuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setuid.c' l='28' macro='1' u='c' c='__setuid'/>

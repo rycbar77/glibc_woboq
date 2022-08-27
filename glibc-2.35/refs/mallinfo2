@@ -1,0 +1,26 @@
+<def f='codebrowser/malloc/malloc.h' l='99' ll='111'/>
+<dec f='codebrowser/malloc/malloc.h' l='117' type='struct mallinfo2 mallinfo2()'/>
+<use f='codebrowser/malloc/malloc.h' l='117' c='mallinfo2'/>
+<use f='codebrowser/malloc/malloc.c' l='5150' c='int_mallinfo'/>
+<use f='codebrowser/malloc/malloc.c' l='5213' c='__libc_mallinfo2'/>
+<use f='codebrowser/malloc/malloc.c' l='5216' c='__libc_mallinfo2'/>
+<use f='codebrowser/malloc/malloc.c' l='5242' c='__libc_mallinfo'/>
+<use f='codebrowser/malloc/malloc.c' l='5277' c='__malloc_stats'/>
+<def f='codebrowser/malloc/malloc-debug.c' l='466' ll='480' type='struct mallinfo2 mallinfo2()'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='466' c='mallinfo2'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='472' c='mallinfo2'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='475' c='mallinfo2'/>
+<size>80</size>
+<doc f='codebrowser/malloc/malloc.h' l='96'>/* SVID2/XPG mallinfo2 structure which can handle allocations
+   bigger than 4GB.  */</doc>
+<doc f='codebrowser/malloc/malloc.h' l='116'>/* Returns a copy of the updated current mallinfo. */</doc>
+<mbr r='mallinfo2::arena' o='0' t='size_t'/>
+<mbr r='mallinfo2::ordblks' o='64' t='size_t'/>
+<mbr r='mallinfo2::smblks' o='128' t='size_t'/>
+<mbr r='mallinfo2::hblks' o='192' t='size_t'/>
+<mbr r='mallinfo2::hblkhd' o='256' t='size_t'/>
+<mbr r='mallinfo2::usmblks' o='320' t='size_t'/>
+<mbr r='mallinfo2::fsmblks' o='384' t='size_t'/>
+<mbr r='mallinfo2::uordblks' o='448' t='size_t'/>
+<mbr r='mallinfo2::fordblks' o='512' t='size_t'/>
+<mbr r='mallinfo2::keepcost' o='576' t='size_t'/>

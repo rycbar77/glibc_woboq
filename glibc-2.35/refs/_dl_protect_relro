@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1090' type='void _dl_protect_relro(struct link_map * map)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1089'>/* Protect PT_GNU_RELRO area.  */</doc>
+<use f='codebrowser/elf/dl-reloc.c' l='336' u='c' c='_dl_relocate_object'/>
+<def f='codebrowser/elf/dl-reloc.c' l='340' ll='357' type='void _dl_protect_relro(struct link_map * l)'/>
+<use f='codebrowser/elf/dl-support.c' l='425' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/rtld.c' l='2395' u='c' c='dl_main'/>

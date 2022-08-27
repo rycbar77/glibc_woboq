@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1287' type='struct link_map * _dl_find_dso_for_object(const Elf64_Addr addr)'/>
+<use f='codebrowser/elf/dl-addr.c' l='133' u='c' c='_dl_addr'/>
+<def f='codebrowser/elf/dl-open.c' l='208' ll='224' type='struct link_map * _dl_find_dso_for_object(const Elf64_Addr addr)'/>
+<use f='codebrowser/elf/dl-open.c' l='506' u='c' c='dl_open_worker'/>
+<doc f='codebrowser/elf/dl-open.c' l='205'>/* Search link maps in all namespaces for the DSO that contains the object at
+   address ADDR.  Returns the pointer to the link map of the matching DSO, or
+   NULL if a match is not found.  */</doc>
+<use f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='125' u='c' c='__cxa_thread_atexit_impl'/>

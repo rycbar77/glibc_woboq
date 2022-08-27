@@ -1,0 +1,8 @@
+<dec f='codebrowser/elf/elf.h' l='1022' type='Elf32_Word'/>
+<dec f='codebrowser/elf/elf.h' l='1034' type='Elf64_Word'/>
+<offset>96</offset>
+<doc f='codebrowser/elf/elf.h' l='1022'>/* Offset in bytes to verdaux array */</doc>
+<doc f='codebrowser/elf/elf.h' l='1034'>/* Offset in bytes to verdaux array */</doc>
+<use f='codebrowser/elf/dl-version.c' l='110' u='r' c='match_symbol'/>
+<use f='codebrowser/elf/dl-version.c' l='334' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/rtld.c' l='734' u='r' c='match_version'/>

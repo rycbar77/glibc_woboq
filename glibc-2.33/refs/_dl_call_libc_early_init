@@ -1,0 +1,6 @@
+<dec f='codebrowser/elf/libc-early-init.h' l='26' type='void _dl_call_libc_early_init(struct link_map * libc_map, _Bool initial)'/>
+<def f='codebrowser/elf/dl-call-libc-early-init.c' l='25' ll='41' type='void _dl_call_libc_early_init(struct link_map * libc_map, _Bool initial)'/>
+<doc f='codebrowser/elf/libc-early-init.h' l='24'>/* If LIBC_MAP is not NULL, look up the __libc_early_init symbol in it
+   and call this function, with INITIAL as the argument.  */</doc>
+<use f='codebrowser/elf/dl-open.c' l='765' u='c' c='dl_open_worker'/>
+<use f='codebrowser/elf/rtld.c' l='2478' u='c' c='dl_main'/>

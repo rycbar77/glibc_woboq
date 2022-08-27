@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='24' type='void freecon(char * con)'/>
+<use f='codebrowser/nss/makedb.c' l='870' u='c' c='set_file_creation_context'/>
+<doc f='include/selinux/selinux.h' l='23'>/* Free the memory allocated for a context by any of the below get* calls. */</doc>

@@ -1,0 +1,30 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sysdep-cancel.h' l='36' type='int __pthread_enable_asynccancel()'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sysdep-cancel.h' l='35'>/* The two functions are in libpthread.so and not exported.  */</doc>
+<dec f='codebrowser/nptl/pthreadP.h' l='475' type='int __pthread_enable_asynccancel()'/>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='182' u='c' c='futex_wait_cancelable'/>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='243' macro='1' u='c' c='futex_reltimed_wait_cancelable'/>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='319' u='c' c='futex_abstimed_wait_cancelable'/>
+<use f='codebrowser/nptl/pthread_create.c' l='450' macro='1' u='c' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='73' macro='1' u='c' c='clockwait_tid'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='145' macro='1' u='c' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/accept.c' l='26' macro='1' u='c' c='__libc_accept'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/close.c' l='27' macro='1' u='c' c='__close'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/connect.c' l='26' macro='1' u='c' c='__libc_connect'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fsync.c' l='27' macro='1' u='c' c='fsync'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/msgrcv.c' l='28' macro='1' u='c' c='__libc_msgrcv'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/msgsnd.c' l='27' macro='1' u='c' c='__libc_msgsnd'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/msync.c' l='25' macro='1' u='c' c='msync'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/open64.c' l='48' macro='1' u='c' c='__libc_open64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pause.c' l='29' macro='1' u='c' c='__libc_pause'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pread64.c' l='29' macro='1' u='c' c='__libc_pread64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pwrite64.c' l='29' macro='1' u='c' c='__libc_pwrite64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/read.c' l='26' macro='1' u='c' c='__libc_read'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/recv.c' l='28' macro='1' u='c' c='__libc_recv'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/recvfrom.c' l='27' macro='1' u='c' c='__libc_recvfrom'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/recvmsg.c' l='28' macro='1' u='c' c='__libc_recvmsg'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/send.c' l='28' macro='1' u='c' c='__libc_send'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sendmsg.c' l='28' macro='1' u='c' c='__libc_sendmsg'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sendto.c' l='27' macro='1' u='c' c='__libc_sendto'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tcdrain.c' l='28' macro='1' u='c' c='__libc_tcdrain'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/write.c' l='26' macro='1' u='c' c='__libc_write'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/x86_64/cancellation.S' l='47' macro='1' type='int'/>

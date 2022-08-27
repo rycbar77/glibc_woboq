@@ -1,0 +1,10 @@
+<dec f='include/selinux/avc.h' l='218' type='int avc_open(struct selinux_opt * opts, unsigned int nopts)'/>
+<doc f='include/selinux/avc.h' l='209'>/**
+ * avc_open - Initialize the AVC.
+ * @opts: array of selabel_opt structures specifying AVC options or NULL.
+ * @nopts: number of elements in opts array or zero for no options.
+ *
+ * This function is identical to avc_init(), except the message prefix
+ * is set to &quot;avc&quot; and any callbacks desired should be specified via
+ * selinux_set_callback().  Available options are listed above.
+ */</doc>

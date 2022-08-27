@@ -1,0 +1,6 @@
+<use f='codebrowser/locale/programs/charmap.c' l='163' u='c' c='charmap_read'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='219' c='__strcasecmp_avx'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='222' c='__strcasecmp_sse42'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='225' c='__strcasecmp_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='228' c='__strcasecmp_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strcasecmp.c' l='34' macro='1' type='int strcasecmp(const char * , const char * )'/>

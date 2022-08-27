@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/unistd.h' l='160' type='int __brk(void * __addr)'/>
+<dec f='codebrowser/sysdeps/generic/dl-unistd.h' l='21' type='int __brk(void * )'/>
+<use f='codebrowser/sysdeps/generic/dl-unistd.h' l='21' c='__brk'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/brk.c' l='33' ll='44' type='int __brk(void * addr)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/brk.c' l='45' c='brk'/>
+<dec f='codebrowser/misc/sbrk.c' l='30' type='int __brk(void * addr)'/>
+<use f='codebrowser/misc/sbrk.c' l='59' u='c' c='__sbrk'/>
+<use f='codebrowser/misc/sbrk.c' l='74' u='c' c='__sbrk'/>

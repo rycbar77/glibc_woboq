@@ -1,0 +1,94 @@
+<dec f='codebrowser/malloc/malloc.h' l='135'/>
+<dec f='codebrowser/malloc/malloc.c' l='1074'/>
+<use f='codebrowser/malloc/malloc.c' l='5364' u='c'/>
+<doc f='codebrowser/malloc/malloc.c' l='982'>/*
+  M_MMAP_THRESHOLD is the request size threshold for using mmap()
+  to service a request. Requests of at least this size that cannot
+  be allocated using already-existing space will be serviced via mmap.
+  (If enough normal freed space already exists it is used instead.)
+
+  Using mmap segregates relatively large chunks of memory so that
+  they can be individually obtained and released from the host
+  system. A request serviced through mmap is never reused by any
+  other request (at least not directly; the system may just so
+  happen to remap successive requests to the same locations).
+
+  Segregating space in this way has the benefits that:
+
+   1. Mmapped space can ALWAYS be individually released back
+      to the system, which helps keep the system level memory
+      demands of a long-lived program low.
+   2. Mapped memory can never become `locked&apos; between
+      other chunks, as can happen with normally allocated chunks, which
+      means that even trimming via malloc_trim would not release them.
+   3. On some systems with &quot;holes&quot; in address spaces, mmap can obtain
+      memory that sbrk cannot.
+
+  However, it has the disadvantages that:
+
+   1. The space cannot be reclaimed, consolidated, and then
+      used to service later requests, as happens with normal chunks.
+   2. It can lead to more wastage because of mmap page alignment
+      requirements
+   3. It causes malloc performance to be more dependent on host
+      system memory management support routines which may vary in
+      implementation quality and may impose arbitrary
+      limitations. Generally, servicing a request via normal
+      malloc steps is faster than going through a system&apos;s mmap.
+
+  The advantages of mmap nearly always outweigh disadvantages for
+  &quot;large&quot; chunks, but the value of &quot;large&quot; varies across systems.  The
+  default is an empirically derived value that works well in most
+  systems.
+
+
+  Update in 2006:
+  The above was written in 2001. Since then the world has changed a lot.
+  Memory got bigger. Applications got bigger. The virtual address space
+  layout in 32 bit linux changed.
+
+  In the new situation, brk() and mmap space is shared and there are no
+  artificial limits on brk size imposed by the kernel. What is more,
+  applications have started using transient allocations larger than the
+  128Kb as was imagined in 2001.
+
+  The price for mmap is also high now; each time glibc mmaps from the
+  kernel, the kernel is forced to zero out the memory it gives to the
+  application. Zeroing memory is expensive and eats a lot of cache and
+  memory bandwidth. This has nothing to do with the efficiency of the
+  virtual memory system, by doing mmap the kernel just has no choice but
+  to zero.
+
+  In 2001, the kernel had a maximum size for brk() which was about 800
+  megabytes on 32 bit x86, at that point brk() would hit the first
+  mmaped shared libaries and couldn&apos;t expand anymore. With current 2.6
+  kernels, the VA space layout is different and brk() and mmap
+  both can span the entire heap at will.
+
+  Rather than using a static threshold for the brk/mmap tradeoff,
+  we are now using a simple dynamic one. The goal is still to avoid
+  fragmentation. The old goals we kept are
+  1) try to get the long lived large allocations to use mmap()
+  2) really large allocations should always use mmap()
+  and we&apos;re adding now:
+  3) transient allocations should use brk() to avoid forcing the kernel
+     having to zero memory over and over again
+
+  The implementation works with a sliding threshold, which is by default
+  limited to go between 128Kb and 32Mb (64Mb for 64 bitmachines) and starts
+  out at 128Kb as per the 2001 default.
+
+  This allows us to satisfy requirement 1) under the assumption that long
+  lived allocations are made early in the process&apos; lifespan, before it has
+  started doing dynamic allocations of the same size (which will
+  increase the threshold).
+
+  The upperbound on the threshold satisfies requirement 2)
+
+  The threshold goes up in value when the application frees memory that was
+  allocated with the mmap allocator. The idea is that once the application
+  starts freeing memory of a certain size, it&apos;s highly probable that this is
+  a size the application uses for transient allocations. This estimator
+  is there to satisfy the new third requirement.
+
+*/</doc>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/io/sys/stat.h' l='210' type='int fstat(int __fd, struct stat * __buf)'/>
+<doc f='codebrowser/io/sys/stat.h' l='208'>/* Get file attributes for the file, device, pipe, or socket
+   that file descriptor FD is open on and put them in BUF.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fstat64.c' l='63' macro='1' type='int fstat(int , struct stat64 * )'/>

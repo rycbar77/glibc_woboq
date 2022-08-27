@@ -1,0 +1,14 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='937' type='int wctomb(char * __s, wchar_t __wchar)'/>
+<dec f='codebrowser/include/stdlib.h' l='48' type='int wctomb(char * , wchar_t )'/>
+<use f='codebrowser/include/stdlib.h' l='48' c='wctomb'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='935'>/* Put the multibyte character represented
+   by WCHAR in S, returning its length.  */</doc>
+<def f='codebrowser/stdlib/bits/stdlib.h' l='78' ll='92' macro='1' type='int wctomb(char * __s, wchar_t __wchar)'/>
+<def f='codebrowser/stdlib/wctomb.c' l='35' ll='56' type='int wctomb(char * s, wchar_t wchar)'/>
+<doc f='codebrowser/stdlib/wctomb.c' l='28'>/* Convert WCHAR into its multibyte character representation,
+   putting this in S and returning its length.
+
+   Attention: this function should NEVER be intentionally used.
+   The interface is completely stupid.  The state is shared between
+   all conversion functions.  You should use instead the restartable
+   version `wcrtomb&apos;.  */</doc>

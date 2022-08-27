@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/nptl/futex-internal.h' l='366' ll='382' type='int __futex_clocklock64(int * futex, clockid_t clockid, const struct timespec * abstime, int private)'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='66' u='c' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='89' u='c' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='112' u='c' c='__pthread_mutex_clocklock_common'/>

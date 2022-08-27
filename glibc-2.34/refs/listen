@@ -1,0 +1,5 @@
+<dec f='codebrowser/socket/sys/socket.h' l='296' type='int listen(int __fd, int __n)'/>
+<doc f='codebrowser/socket/sys/socket.h' l='293'>/* Prepare to accept connections on socket FD.
+   N connection requests will be queued before further requests are refused.
+   Returns 0 on success, -1 for errors.  */</doc>
+<use f='codebrowser/support/xlisten.c' l='28' u='c' c='xlisten'/>

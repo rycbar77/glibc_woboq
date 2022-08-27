@@ -1,0 +1,21 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='218' type='int __pthread_rwlock_wrlock(pthread_rwlock_t * __rwlock)'/>
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='219' type='int __pthread_rwlock_wrlock(pthread_rwlock_t * )'/>
+<use f='codebrowser/sysdeps/nptl/libc-lockP.h' l='219' c='__pthread_rwlock_wrlock'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='410' type='int __pthread_rwlock_wrlock(pthread_rwlock_t * __rwlock)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='411' type='int __pthread_rwlock_wrlock(pthread_rwlock_t * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='411' c='__pthread_rwlock_wrlock'/>
+<use f='codebrowser/intl/bindtextdom.c' l='91' macro='1' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/dcigettext.c' l='793' macro='1' u='c' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='1019' macro='1' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/finddomain.c' l='143' macro='1' u='c' c='_nl_find_domain'/>
+<use f='codebrowser/intl/textdomain.c' l='73' macro='1' u='c' c='__textdomain'/>
+<use f='codebrowser/locale/duplocale.c' l='59' macro='1' u='c' c='__duplocale'/>
+<use f='codebrowser/locale/freelocale.c' l='40' macro='1' u='c' c='__freelocale'/>
+<use f='codebrowser/locale/newlocale.c' l='161' macro='1' u='c' c='__newlocale'/>
+<use f='codebrowser/locale/setlocale.c' l='234' macro='1' u='c' c='setlocale'/>
+<def f='codebrowser/nptl/pthread_rwlock_wrlock.c' l='32' macro='1' type='int __pthread_rwlock_wrlock(pthread_rwlock_t * )'/>
+<use f='codebrowser/time/alt_digit.c' l='79' macro='1' u='c' c='_nl_get_alt_digit'/>
+<use f='codebrowser/time/alt_digit.c' l='105' macro='1' u='c' c='_nl_get_walt_digit'/>
+<use f='codebrowser/time/alt_digit.c' l='159' macro='1' u='c' c='_nl_parse_alt_digit'/>
+<use f='codebrowser/time/era.c' l='48' macro='1' u='c' c='_nl_init_era_entries'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='154' macro='1' u='c' c='__wcsmbs_load_conv'/>

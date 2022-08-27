@@ -1,0 +1,4 @@
+<dec f='codebrowser/inet/netinet/ether.h' l='30' type='char * ether_ntoa(const struct ether_addr * __addr)'/>
+<doc f='codebrowser/inet/netinet/ether.h' l='29'>/* Convert 48 bit Ethernet ADDRess to ASCII.  */</doc>
+<def f='codebrowser/inet/ether_ntoa.c' l='23' ll='29' type='char * ether_ntoa(const struct ether_addr * addr)'/>
+<use f='codebrowser/nss/getent.c' l='177' u='c' c='ethers_keys'/>

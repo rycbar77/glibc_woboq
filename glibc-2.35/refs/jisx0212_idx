@@ -1,0 +1,13 @@
+<def f='codebrowser/iconvdata/jis0212.h' l='28' ll='33'/>
+<use f='codebrowser/iconvdata/jis0212.h' l='36'/>
+<use f='codebrowser/iconvdata/jis0212.h' l='39'/>
+<use f='codebrowser/iconvdata/jis0212.h' l='47' c='jisx0212_to_ucs4'/>
+<use f='codebrowser/iconvdata/jis0212.h' l='83' c='ucs4_to_jisx0212'/>
+<size>6</size>
+<doc f='codebrowser/iconvdata/jis0212.h' l='27'>/* Struct for table with indices in mapping table.  */</doc>
+<mbr r='jisx0212_idx::start' o='0' t='uint16_t'/>
+<mbr r='jisx0212_idx::end' o='16' t='uint16_t'/>
+<mbr r='jisx0212_idx::idx' o='32' t='uint16_t'/>
+<use f='codebrowser/iconvdata/jis0212.c' l='54'/>
+<use f='codebrowser/iconvdata/jis0212.c' l='905'/>
+<size>6</size>

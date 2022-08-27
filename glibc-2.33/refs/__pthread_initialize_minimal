@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1163' type='void __pthread_initialize_minimal()'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1161'>/* Initialization of libpthread for statically linked applications.
+   If libpthread is not linked in, this is an empty function.  */</doc>
+<def f='codebrowser/nptl/nptl-init.c' l='347' macro='1' type='void __pthread_initialize_minimal()'/>
+<use f='codebrowser/csu/libc-start.c' l='233' u='r' c='__libc_start_main'/>
+<use f='codebrowser/csu/libc-start.c' l='234' u='c' c='__libc_start_main'/>

@@ -1,0 +1,4 @@
+<def f='codebrowser/support/support.h' l='165' ll='172' type='_Bool support_itimer_support_time64()'/>
+<doc f='codebrowser/support/support.h' l='162'>/* Return true if the setitimer and getitimer syscalls support 64-bit time_t
+   values without resulting in overflow.  This is not true on some linux systems
+   which have 64-bit time_t due to legacy kernel API&apos;s.  */</doc>

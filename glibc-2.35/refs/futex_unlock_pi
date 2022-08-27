@@ -1,0 +1,12 @@
+<def f='codebrowser/sysdeps/nptl/futex-internal.h' l='262' ll='288' type='int futex_unlock_pi(unsigned int * futex_word, int private)'/>
+<doc f='codebrowser/sysdeps/nptl/futex-internal.h' l='256'>/* Wakes the top priority waiter that called a futex_lock_pi operation on
+   the futex.
+
+   Returns the same values as futex_lock_pi under those same conditions;
+   additionally, returns EPERM when the caller is not allowed to attach
+   itself to the futex.  */</doc>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='487' u='c' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_init.c' l='44' u='c' c='prio_inherit_missing'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='424' u='c' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='340' u='c' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='292' u='c' c='__pthread_mutex_unlock_full'/>

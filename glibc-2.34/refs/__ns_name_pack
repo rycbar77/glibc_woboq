@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/arpa/nameser.h' l='79' type='int __ns_name_pack(const unsigned char * , unsigned char * , int , const unsigned char ** , const unsigned char ** )'/>
+<dec f='codebrowser/include/arpa/nameser.h' l='80' type='int __ns_name_pack(const unsigned char * , unsigned char * , int , const unsigned char ** , const unsigned char ** )'/>
+<use f='codebrowser/include/arpa/nameser.h' l='80' c='__ns_name_pack'/>
+<use f='codebrowser/resolv/ns_name_compress.c' l='41' u='c' c='___ns_name_compress'/>
+<def f='codebrowser/resolv/ns_name_pack.c' l='197' macro='1' type='int __ns_name_pack(const unsigned char * , unsigned char * , int , const unsigned char ** , const unsigned char ** )'/>

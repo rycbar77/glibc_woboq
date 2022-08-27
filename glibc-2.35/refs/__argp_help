@@ -1,0 +1,5 @@
+<dec f='codebrowser/argp/argp.h' l='442' type='void __argp_help(const struct argp *restrict __argp, FILE *restrict __stream, unsigned int __flags, char * __name)'/>
+<def f='codebrowser/argp/argp-help.c' l='1801' ll='1805' type='void __argp_help(const struct argp * argp, FILE * stream, unsigned int flags, char * name)'/>
+<use f='codebrowser/argp/argp-help.c' l='1807' c='argp_help'/>
+<doc f='codebrowser/argp/argp-help.c' l='1799'>/* Output a usage message for ARGP to STREAM.  FLAGS are from the set
+   ARGP_HELP_*.  NAME is what to use wherever a `program name&apos; is needed. */</doc>

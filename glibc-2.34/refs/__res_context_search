@@ -1,0 +1,14 @@
+<dec f='codebrowser/resolv/resolv-internal.h' l='62' type='int __res_context_search(struct resolv_context * , const char * , int , int , unsigned char * , int , unsigned char ** , unsigned char ** , int * , int * , int * )'/>
+<dec f='codebrowser/resolv/resolv-internal.h' l='65' type='int __res_context_search(struct resolv_context * , const char * , int , int , unsigned char * , int , unsigned char ** , unsigned char ** , int * , int * , int * )'/>
+<use f='codebrowser/resolv/resolv-internal.h' l='65' c='__res_context_search'/>
+<doc f='codebrowser/resolv/resolv-internal.h' l='61'>/* Main resolver query function for use within glibc.  */</doc>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='221' u='c' c='gethostbyname3_context'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='254' u='c' c='gethostbyname3_context'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='374' u='c' c='_nss_dns_gethostbyname4_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='131' u='c' c='_nss_dns_getnetbyname_r'/>
+<def f='codebrowser/resolv/res_query.c' l='332' ll='528' type='int __res_context_search(struct resolv_context * ctx, const char * name, int class, int type, unsigned char * answer, int anslen, unsigned char ** answerp, unsigned char ** answerp2, int * nanswerp2, int * resplen2, int * answerp2_malloced)'/>
+<use f='codebrowser/resolv/res_query.c' l='542' u='c' c='context_search_common'/>
+<doc f='codebrowser/resolv/res_query.c' l='328'>/* Formulate a normal query, send, and retrieve answer in supplied
+   buffer.  Return the size of the response on success, -1 on error.
+   If enabled, implement search rules until answer or unrecoverable
+   failure is detected.  Error code, if any, is left in h_errno.  */</doc>

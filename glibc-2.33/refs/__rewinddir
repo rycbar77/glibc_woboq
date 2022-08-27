@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/dirent.h' l='54' type='void __rewinddir(DIR * )'/>
+<dec f='codebrowser/include/dirent.h' l='81' type='void __rewinddir(DIR * )'/>
+<use f='codebrowser/include/dirent.h' l='81' c='__rewinddir'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='329' u='c' c='__getcwd_generic'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/rewinddir.c' l='25' ll='39' type='void __rewinddir(DIR * dirp)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/rewinddir.c' l='41' c='rewinddir'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/rewinddir.c' l='24'>/* Rewind DIRP to the beginning of the directory.  */</doc>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/math_private_calls.h' l='45' macro='1' type='double __ieee754_lgamma_r(double , int * )'/>
+<use f='codebrowser/math/w_lgamma_r_template.c' l='40' macro='1' u='c' c='__lgamma_r'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_gamma_r.c' l='55' u='c' c='gamma_positive'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_gamma_r.c' l='60' u='c' c='gamma_positive'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_gamma_r.c' l='70' u='c' c='gamma_positive'/>
+<def f='codebrowser/sysdeps/ieee754/dbl-64/e_lgamma_r.c' l='202' ll='311' type='double __ieee754_lgamma_r(double x, int * signgamp)'/>

@@ -1,0 +1,30 @@
+<dec f='codebrowser/nptl/descr.h' l='296' type='int'/>
+<offset>6240</offset>
+<doc f='codebrowser/nptl/descr.h' l='295'>/* Flags.  Including those copied from the thread attribute.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/default-sched.h' l='29' u='r' c='collect_default_sched'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/default-sched.h' l='32' u='w' c='collect_default_sched'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/default-sched.h' l='35' u='r' c='collect_default_sched'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/default-sched.h' l='38' u='w' c='collect_default_sched'/>
+<use f='codebrowser/nptl/pthread_create.c' l='372' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='681' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='682' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='687' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='729' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='735' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='738' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='52' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='45' u='r' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='50' u='w' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='53' u='r' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='59' u='w' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='64' u='w' c='__pthread_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='57' u='w' c='__pthread_setschedprio'/>
+<use f='codebrowser/nptl/tpp.c' l='125' u='r' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='130' u='w' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='133' u='r' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='139' u='w' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='165' u='r' c='__pthread_current_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='174' u='r' c='__pthread_current_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='179' u='w' c='__pthread_current_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='182' u='r' c='__pthread_current_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='188' u='w' c='__pthread_current_priority'/>

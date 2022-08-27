@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>nss_dns_functions.c source code [codebrowser/resolv/nss_dns_functions.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/resolv/nss_dns_functions.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>resolv</a>/<a href='nss_dns_functions.c.html'>nss_dns_functions.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Direct access for nss_dns functions for NSS module loading.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../nss/nss_module.h.html">&lt;nss/nss_module.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../include/nss_dns.h.html">&lt;nss_dns.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><em>void</em></td></tr>
+<tr><th id="24">24</th><td><dfn class="decl def fn" id="__nss_dns_functions" title='__nss_dns_functions' data-ref="__nss_dns_functions" data-ref-filename="__nss_dns_functions">__nss_dns_functions</dfn> (<a class="typedef" href="../nss/nss_module.h.html#nss_module_functions_untyped" title='nss_module_functions_untyped' data-type='void *[64]' data-ref="nss_module_functions_untyped" data-ref-filename="nss_module_functions_untyped">nss_module_functions_untyped</a> <dfn class="local col1 decl" id="1pointers" title='pointers' data-type='void **' data-ref="1pointers" data-ref-filename="1pointers">pointers</dfn>)</td></tr>
+<tr><th id="25">25</th><td>{</td></tr>
+<tr><th id="26">26</th><td>  <b>struct</b> <a class="type" href="../nss/nss_module.h.html#nss_module_functions" title='nss_module_functions' data-ref="nss_module_functions" data-ref-filename="nss_module_functions">nss_module_functions</a> <dfn class="local col2 decl" id="2typed" title='typed' data-type='struct nss_module_functions' data-ref="2typed" data-ref-filename="2typed">typed</dfn> =</td></tr>
+<tr><th id="27">27</th><td>    {</td></tr>
+<tr><th id="28">28</th><td>      .<a class="ref field" href="../nss/function.def.html#35" title='nss_module_functions::getcanonname_r' data-ref="nss_module_functions::getcanonname_r" data-ref-filename="nss_module_functions..getcanonname_r">getcanonname_r</a> = &amp;<a class="ref fn" href="../include/nss_dns.h.html#24" title='_nss_dns_getcanonname_r' data-ref="_nss_dns_getcanonname_r" data-ref-filename="_nss_dns_getcanonname_r">_nss_dns_getcanonname_r</a>,</td></tr>
+<tr><th id="29">29</th><td>      .<a class="ref field" href="../nss/function.def.html#43" title='nss_module_functions::gethostbyname3_r' data-ref="nss_module_functions::gethostbyname3_r" data-ref-filename="nss_module_functions..gethostbyname3_r">gethostbyname3_r</a> = &amp;<a class="ref fn" href="../include/nss_dns.h.html#24" title='_nss_dns_gethostbyname3_r' data-ref="_nss_dns_gethostbyname3_r" data-ref-filename="_nss_dns_gethostbyname3_r">_nss_dns_gethostbyname3_r</a>,</td></tr>
+<tr><th id="30">30</th><td>      .<a class="ref field" href="../nss/function.def.html#42" title='nss_module_functions::gethostbyname2_r' data-ref="nss_module_functions::gethostbyname2_r" data-ref-filename="nss_module_functions..gethostbyname2_r">gethostbyname2_r</a> = &amp;<a class="ref fn" href="../include/nss_dns.h.html#24" title='_nss_dns_gethostbyname2_r' data-ref="_nss_dns_gethostbyname2_r" data-ref-filename="_nss_dns_gethostbyname2_r">_nss_dns_gethostbyname2_r</a>,</td></tr>
+<tr><th id="31">31</th><td>      .<a class="ref field" href="../nss/function.def.html#45" title='nss_module_functions::gethostbyname_r' data-ref="nss_module_functions::gethostbyname_r" data-ref-filename="nss_module_functions..gethostbyname_r">gethostbyname_r</a> = &amp;<a class="ref fn" href="../include/nss_dns.h.html#24" title='_nss_dns_gethostbyname_r' data-ref="_nss_dns_gethostbyname_r" data-ref-filename="_nss_dns_gethostbyname_r">_nss_dns_gethostbyname_r</a>,</td></tr>
+<tr><th id="32">32</th><td>      .<a class="ref field" href="../nss/function.def.html#44" title='nss_module_functions::gethostbyname4_r' data-ref="nss_module_functions::gethostbyname4_r" data-ref-filename="nss_module_functions..gethostbyname4_r">gethostbyname4_r</a> = &amp;<a class="ref fn" href="../include/nss_dns.h.html#24" title='_nss_dns_gethostbyname4_r' data-ref="_nss_dns_gethostbyname4_r" data-ref-filename="_nss_dns_gethostbyname4_r">_nss_dns_gethostbyname4_r</a>,</td></tr>
+<tr><th id="33">33</th><td>      .<a class="ref field" href="../nss/function.def.html#40" title='nss_module_functions::gethostbyaddr2_r' data-ref="nss_module_functions::gethostbyaddr2_r" data-ref-filename="nss_module_functions..gethostbyaddr2_r">gethostbyaddr2_r</a> = &amp;<a class="ref fn" href="../include/nss_dns.h.html#24" title='_nss_dns_gethostbyaddr2_r' data-ref="_nss_dns_gethostbyaddr2_r" data-ref-filename="_nss_dns_gethostbyaddr2_r">_nss_dns_gethostbyaddr2_r</a>,</td></tr>
+<tr><th id="34">34</th><td>      .<a class="ref field" href="../nss/function.def.html#41" title='nss_module_functions::gethostbyaddr_r' data-ref="nss_module_functions::gethostbyaddr_r" data-ref-filename="nss_module_functions..gethostbyaddr_r">gethostbyaddr_r</a> = &amp;<a class="ref fn" href="../include/nss_dns.h.html#24" title='_nss_dns_gethostbyaddr_r' data-ref="_nss_dns_gethostbyaddr_r" data-ref-filename="_nss_dns_gethostbyaddr_r">_nss_dns_gethostbyaddr_r</a>,</td></tr>
+<tr><th id="35">35</th><td>      .<a class="ref field" href="../nss/function.def.html#49" title='nss_module_functions::getnetbyname_r' data-ref="nss_module_functions::getnetbyname_r" data-ref-filename="nss_module_functions..getnetbyname_r">getnetbyname_r</a> = &amp;<a class="ref fn" href="../include/nss_dns.h.html#24" title='_nss_dns_getnetbyname_r' data-ref="_nss_dns_getnetbyname_r" data-ref-filename="_nss_dns_getnetbyname_r">_nss_dns_getnetbyname_r</a>,</td></tr>
+<tr><th id="36">36</th><td>      .<a class="ref field" href="../nss/function.def.html#48" title='nss_module_functions::getnetbyaddr_r' data-ref="nss_module_functions::getnetbyaddr_r" data-ref-filename="nss_module_functions..getnetbyaddr_r">getnetbyaddr_r</a> = &amp;<a class="ref fn" href="../include/nss_dns.h.html#24" title='_nss_dns_getnetbyaddr_r' data-ref="_nss_dns_getnetbyaddr_r" data-ref-filename="_nss_dns_getnetbyaddr_r">_nss_dns_getnetbyaddr_r</a>,</td></tr>
+<tr><th id="37">37</th><td>    };</td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td>  <a class="ref fn" href="../string/string.h.html#memcpy" title='memcpy' data-ref="memcpy" data-ref-filename="memcpy">memcpy</a> (<a class="local col1 ref" href="#1pointers" title='pointers' data-ref="1pointers" data-ref-filename="1pointers">pointers</a>, &amp;<a class="local col2 ref" href="#2typed" title='typed' data-ref="2typed" data-ref-filename="2typed">typed</a>, <b>sizeof</b> (<a class="typedef" href="../nss/nss_module.h.html#nss_module_functions_untyped" title='nss_module_functions_untyped' data-type='void *[64]' data-ref="nss_module_functions_untyped" data-ref-filename="nss_module_functions_untyped">nss_module_functions_untyped</a>));</td></tr>
+<tr><th id="40">40</th><td>}</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

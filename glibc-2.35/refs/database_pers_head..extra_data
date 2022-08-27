@@ -1,0 +1,6 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='324' type='volatile uint32_t[4]'/>
+<offset>192</offset>
+<doc f='codebrowser/nscd/nscd-client.h' l='323'>/* Room for extensions.  */</doc>
+<use f='codebrowser/nscd/connections.c' l='835' u='w' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='2129' u='w' c='main_loop_poll'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='121' u='r' c='__nscd_get_nl_timestamp'/>

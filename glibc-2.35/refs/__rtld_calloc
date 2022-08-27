@@ -1,0 +1,8 @@
+<def f='codebrowser/elf/dl-minimal.c' l='35' type='typeof (calloc) *'/>
+<use f='codebrowser/elf/dl-minimal.c' l='43' u='w' c='__rtld_malloc_init_stubs'/>
+<use f='codebrowser/elf/dl-minimal.c' l='99' u='w' c='__rtld_malloc_init_real'/>
+<doc f='codebrowser/elf/dl-minimal.c' l='30'>/* The rtld startup code calls __rtld_malloc_init_stubs after the
+  first self-relocation to adjust the pointers to the minimal
+  implementation below.  Before the final relocation,
+  __rtld_malloc_init_real is called to replace the pointers with the
+  real implementation.  */</doc>

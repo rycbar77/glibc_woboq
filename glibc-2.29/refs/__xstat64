@@ -1,0 +1,35 @@
+<use f='codebrowser/elf/cache.c' l='815' macro='1' u='c' c='save_aux_cache'/>
+<use f='codebrowser/elf/dl-load.c' l='1842' u='c' c='open_path'/>
+<use f='codebrowser/io/getdirname.c' l='35' macro='1' u='c' c='get_current_dir_name'/>
+<use f='codebrowser/io/getdirname.c' l='36' macro='1' u='c' c='get_current_dir_name'/>
+<use f='codebrowser/io/stat64.c' l='51' u='c' c='stat64'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='124' macro='1' u='c' c='charmap_readdir'/>
+<use f='codebrowser/locale/programs/locale.c' l='330' macro='1' u='c' c='select_dirs'/>
+<use f='codebrowser/locale/programs/locale.c' l='463' macro='1' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='638' macro='1' u='c' c='open_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1355' macro='1' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1399' macro='1' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1416' macro='1' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locfile.c' l='760' macro='1' u='c' c='write_locale_data'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='127' macro='1' u='c' c='__resolv_conf_get_current'/>
+<use f='codebrowser/support/support-xstat.c' l='28' macro='1' u='c' c='xstat'/>
+<use f='codebrowser/sysdeps/posix/euidaccess.c' l='143' macro='1' u='c' c='__euidaccess'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2163' u='c' c='gaiconf_reload'/>
+<use f='codebrowser/sysdeps/posix/tempname.c' l='107' u='c' c='direxists'/>
+<use f='codebrowser/posix/glob.c' l='56' u='c' c='glob_lstat'/>
+<use f='codebrowser/posix/glob.c' l='56' u='c' c='is_dir'/>
+<use f='codebrowser/sysdeps/posix/pathconf.c' l='134' u='c' c='posix_pathconf'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='70' macro='1' u='c' c='distinguish_extX'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='113' macro='1' u='c' c='distinguish_extX'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ptsname.c' l='141' u='c' c='__ptsname_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname.c' l='87' u='c' c='getttyname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname.c' l='165' u='c' c='ttyname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname.c' l='172' u='c' c='ttyname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='74' u='c' c='getttyname_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='149' u='c' c='__ttyname_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='160' u='c' c='__ttyname_r'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/xstat.c' l='43' macro='1' type='int __xstat64(int , const char * , struct stat * )'/>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='1223' u='c' c='__sysconf_check_spec'/>
+<use f='codebrowser/sysvipc/ftok.c' l='28' u='c' c='ftok'/>
+<use f='codebrowser/time/getdate.c' l='124' macro='1' u='c' c='__getdate_r'/>
+<use f='codebrowser/time/tzfile.c' l='158' macro='1' u='c' c='__tzfile_read'/>

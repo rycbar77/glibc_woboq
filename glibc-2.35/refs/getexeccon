@@ -1,0 +1,4 @@
+<dec f='include/selinux/selinux.h' l='60' type='int getexeccon(char ** con)'/>
+<doc f='include/selinux/selinux.h' l='57'>/* Get exec context, and set *con to refer to it.
+   Sets *con to NULL if no exec context has been set, i.e. using default.
+   If non-NULL, caller must free via freecon. */</doc>

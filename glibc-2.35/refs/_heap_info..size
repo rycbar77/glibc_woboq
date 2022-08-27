@@ -1,0 +1,19 @@
+<dec f='codebrowser/malloc/arena.c' l='79' type='size_t'/>
+<use f='codebrowser/malloc/arena.c' l='554' u='w' c='alloc_new_heap'/>
+<use f='codebrowser/malloc/arena.c' l='590' u='r' c='grow_heap'/>
+<use f='codebrowser/malloc/arena.c' l='604' u='w' c='grow_heap'/>
+<use f='codebrowser/malloc/arena.c' l='616' u='r' c='shrink_heap'/>
+<use f='codebrowser/malloc/arena.c' l='634' u='w' c='shrink_heap'/>
+<use f='codebrowser/malloc/arena.c' l='654' u='r' c='heap_trim'/>
+<use f='codebrowser/malloc/arena.c' l='666' u='r' c='heap_trim'/>
+<use f='codebrowser/malloc/arena.c' l='669' u='r' c='heap_trim'/>
+<use f='codebrowser/malloc/arena.c' l='682' u='r' c='heap_trim'/>
+<use f='codebrowser/malloc/arena.c' l='682' u='r' c='heap_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='2633' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2637' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2638' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2646' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2649' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='5825' u='r' c='__malloc_info'/>
+<offset>128</offset>
+<doc f='codebrowser/malloc/arena.c' l='79'>/* Current size in bytes. */</doc>

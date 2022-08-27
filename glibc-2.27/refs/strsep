@@ -1,0 +1,7 @@
+<dec f='codebrowser/string/string.h' l='439' type='char * strsep(char **restrict __stringp, const char *restrict __delim)'/>
+<doc f='codebrowser/string/string.h' l='437'>/* Return the next DELIM-delimited token from *STRINGP,
+   terminating it with a &apos;\0&apos;, and update *STRINGP to point past it.  */</doc>
+<def f='codebrowser/elf/dl-minimal.c' l='295' macro='1' type='char * strsep(char ** , const char * )'/>
+<use f='codebrowser/elf/rtld.c' l='1685' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2435' u='c' c='process_dl_audit'/>
+<def f='codebrowser/string/strsep.c' l='47' macro='1' type='char * strsep(char ** , const char * )'/>

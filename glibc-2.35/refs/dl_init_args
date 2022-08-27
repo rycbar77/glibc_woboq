@@ -1,0 +1,6 @@
+<def f='codebrowser/elf/dl-open.c' l='473' ll='479'/>
+<use f='codebrowser/elf/dl-open.c' l='484' c='call_dl_init'/>
+<use f='codebrowser/elf/dl-open.c' l='801' c='dl_open_worker'/>
+<size>32</size>
+<doc f='codebrowser/elf/dl-open.c' l='471'>/* struct dl_init_args and call_dl_init are used to call _dl_init with
+   exception handling disabled.  */</doc>

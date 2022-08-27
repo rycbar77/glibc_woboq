@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/arpa/nameser.h' l='89' type='int __libc_ns_samename(const char * , const char * )'/>
+<dec f='codebrowser/include/arpa/nameser.h' l='90' type='int __libc_ns_samename(const char * , const char * )'/>
+<use f='codebrowser/include/arpa/nameser.h' l='90' c='__libc_ns_samename'/>
+<def f='codebrowser/resolv/ns_samename.c' l='25' ll='37' type='int __libc_ns_samename(const char * a, const char * b)'/>
+<doc f='codebrowser/resolv/ns_samename.c' l='22'>/* Determines whether domain name A is the same as domain name B.
+   Returns -1 on error, 0 if names differ, 1 if names are the
+   same.  */</doc>
+<use f='codebrowser/resolv/res_context_hostalias.c' l='114' u='c' c='__res_context_hostalias'/>
+<use f='codebrowser/resolv/res_nameinquery.c' l='110' u='c' c='__libc_res_nameinquery'/>

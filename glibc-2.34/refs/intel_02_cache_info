@@ -1,0 +1,14 @@
+<def f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='19' ll='26'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='19'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='104' c='intel_02_known_compare'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='105' c='intel_02_known_compare'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='107' c='intel_02_known_compare'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='108' c='intel_02_known_compare'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='213' c='intel_check_word'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='214' c='intel_check_word'/>
+<size>8</size>
+<mbr r='intel_02_cache_info::idx' o='0' t='unsigned char'/>
+<mbr r='intel_02_cache_info::assoc' o='8' t='unsigned char'/>
+<mbr r='intel_02_cache_info::linesize' o='16' t='unsigned char'/>
+<mbr r='intel_02_cache_info::rel_name' o='24' t='unsigned char'/>
+<mbr r='intel_02_cache_info::size' o='32' t='unsigned int'/>

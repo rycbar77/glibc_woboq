@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>nptl-stack.c source code [codebrowser/nptl/nptl-stack.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/nptl/nptl-stack.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>nptl</a>/<a href='nptl-stack.c.html'>nptl-stack.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Stack cache management for NPTL.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2002-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i>   Contributed by Ulrich Drepper &lt;drepper@redhat.com&gt;, 2002.</i></td></tr>
+<tr><th id="5">5</th><td><i></i></td></tr>
+<tr><th id="6">6</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="7">7</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="8">8</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="9">9</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="10">10</th><td><i></i></td></tr>
+<tr><th id="11">11</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="12">12</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="13">13</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="14">14</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="15">15</th><td><i></i></td></tr>
+<tr><th id="16">16</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="17">17</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="18">18</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="nptl-stack.h.html">&lt;nptl-stack.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/ldsodefs.h.html">&lt;ldsodefs.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../sysdeps/nptl/pthreadP.h.html">&lt;pthreadP.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="decl def" id="__nptl_stack_cache_maxsize" title='__nptl_stack_cache_maxsize' data-ref="__nptl_stack_cache_maxsize" data-ref-filename="__nptl_stack_cache_maxsize">__nptl_stack_cache_maxsize</dfn> = <var>40</var> * <var>1024</var> * <var>1024</var>;</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><em>void</em></td></tr>
+<tr><th id="27">27</th><td><dfn class="decl def fn" id="__nptl_stack_list_del" title='__nptl_stack_list_del' data-ref="__nptl_stack_list_del" data-ref-filename="__nptl_stack_list_del">__nptl_stack_list_del</dfn> (<a class="typedef" href="../include/list_t.h.html#list_t" title='list_t' data-type='struct list_head' data-ref="list_t" data-ref-filename="list_t">list_t</a> *<dfn class="local col1 decl" id="1elem" title='elem' data-type='list_t *' data-ref="1elem" data-ref-filename="1elem">elem</dfn>)</td></tr>
+<tr><th id="28">28</th><td>{</td></tr>
+<tr><th id="29">29</th><td>  <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_in_flight_stack" data-ref="_M/GL">GL</a> (dl_in_flight_stack) = (<a class="typedef" href="../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a>) <a class="local col1 ref" href="#1elem" title='elem' data-ref="1elem" data-ref-filename="1elem">elem</a>;</td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td>  <a class="macro" href="../sysdeps/x86/atomic-machine.h.html#561" title="__asm (&quot;&quot; ::: &quot;memory&quot;)" data-ref="_M/atomic_write_barrier">atomic_write_barrier</a> ();</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td>  <a class="ref fn" href="../include/list.h.html#list_del" title='list_del' data-ref="list_del" data-ref-filename="list_del">list_del</a> (<a class="local col1 ref" href="#1elem" title='elem' data-ref="1elem" data-ref-filename="1elem">elem</a>);</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td>  <a class="macro" href="../sysdeps/x86/atomic-machine.h.html#561" title="__asm (&quot;&quot; ::: &quot;memory&quot;)" data-ref="_M/atomic_write_barrier">atomic_write_barrier</a> ();</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td>  <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_in_flight_stack" data-ref="_M/GL">GL</a> (dl_in_flight_stack) = <var>0</var>;</td></tr>
+<tr><th id="38">38</th><td>}</td></tr>
+<tr><th id="39">39</th><td><a class="macro" href="../include/libc-symbols.h.html#623" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__nptl_stack_list_del)</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><em>void</em></td></tr>
+<tr><th id="42">42</th><td><dfn class="decl def fn" id="__nptl_stack_list_add" title='__nptl_stack_list_add' data-ref="__nptl_stack_list_add" data-ref-filename="__nptl_stack_list_add">__nptl_stack_list_add</dfn> (<a class="typedef" href="../include/list_t.h.html#list_t" title='list_t' data-type='struct list_head' data-ref="list_t" data-ref-filename="list_t">list_t</a> *<dfn class="local col2 decl" id="2elem" title='elem' data-type='list_t *' data-ref="2elem" data-ref-filename="2elem">elem</dfn>, <a class="typedef" href="../include/list_t.h.html#list_t" title='list_t' data-type='struct list_head' data-ref="list_t" data-ref-filename="list_t">list_t</a> *<dfn class="local col3 decl" id="3list" title='list' data-type='list_t *' data-ref="3list" data-ref-filename="3list">list</dfn>)</td></tr>
+<tr><th id="43">43</th><td>{</td></tr>
+<tr><th id="44">44</th><td>  <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_in_flight_stack" data-ref="_M/GL">GL</a> (dl_in_flight_stack) = (<a class="typedef" href="../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a>) <a class="local col2 ref" href="#2elem" title='elem' data-ref="2elem" data-ref-filename="2elem">elem</a> | <var>1</var>;</td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td>  <a class="macro" href="../sysdeps/x86/atomic-machine.h.html#561" title="__asm (&quot;&quot; ::: &quot;memory&quot;)" data-ref="_M/atomic_write_barrier">atomic_write_barrier</a> ();</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td>  <a class="ref fn" href="../include/list.h.html#list_add" title='list_add' data-ref="list_add" data-ref-filename="list_add">list_add</a> (<a class="local col2 ref" href="#2elem" title='elem' data-ref="2elem" data-ref-filename="2elem">elem</a>, <a class="local col3 ref" href="#3list" title='list' data-ref="3list" data-ref-filename="3list">list</a>);</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td>  <a class="macro" href="../sysdeps/x86/atomic-machine.h.html#561" title="__asm (&quot;&quot; ::: &quot;memory&quot;)" data-ref="_M/atomic_write_barrier">atomic_write_barrier</a> ();</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td>  <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_in_flight_stack" data-ref="_M/GL">GL</a> (dl_in_flight_stack) = <var>0</var>;</td></tr>
+<tr><th id="53">53</th><td>}</td></tr>
+<tr><th id="54">54</th><td><a class="macro" href="../include/libc-symbols.h.html#623" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__nptl_stack_list_add)</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><em>void</em></td></tr>
+<tr><th id="57">57</th><td><dfn class="decl def fn" id="__nptl_free_stacks" title='__nptl_free_stacks' data-ref="__nptl_free_stacks" data-ref-filename="__nptl_free_stacks">__nptl_free_stacks</dfn> (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col4 decl" id="4limit" title='limit' data-type='size_t' data-ref="4limit" data-ref-filename="4limit">limit</dfn>)</td></tr>
+<tr><th id="58">58</th><td>{</td></tr>
+<tr><th id="59">59</th><td>  <i>/* We reduce the size of the cache.  Remove the last entries until</i></td></tr>
+<tr><th id="60">60</th><td><i>     the size is below the limit.  */</i></td></tr>
+<tr><th id="61">61</th><td>  <a class="typedef" href="../include/list_t.h.html#list_t" title='list_t' data-type='struct list_head' data-ref="list_t" data-ref-filename="list_t">list_t</a> *<dfn class="local col5 decl" id="5entry" title='entry' data-type='list_t *' data-ref="5entry" data-ref-filename="5entry">entry</dfn>;</td></tr>
+<tr><th id="62">62</th><td>  <a class="typedef" href="../include/list_t.h.html#list_t" title='list_t' data-type='struct list_head' data-ref="list_t" data-ref-filename="list_t">list_t</a> *<dfn class="local col6 decl" id="6prev" title='prev' data-type='list_t *' data-ref="6prev" data-ref-filename="6prev">prev</dfn>;</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td>  <i>/* Search from the end of the list.  */</i></td></tr>
+<tr><th id="65">65</th><td>  <a class="macro" href="../include/list.h.html#94" title="for (entry = (&amp;_dl_stack_cache)-&gt;prev, prev = entry-&gt;prev; entry != (&amp;_dl_stack_cache); entry = prev, prev = entry-&gt;prev)" data-ref="_M/list_for_each_prev_safe">list_for_each_prev_safe</a> (<a class="local col5 ref" href="#5entry" title='entry' data-ref="5entry" data-ref-filename="5entry">entry</a>, <a class="local col6 ref" href="#6prev" title='prev' data-ref="6prev" data-ref-filename="6prev">prev</a>, &amp;<a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_stack_cache" data-ref="_M/GL">GL</a> (dl_stack_cache))</td></tr>
+<tr><th id="66">66</th><td>    {</td></tr>
+<tr><th id="67">67</th><td>      <b>struct</b> <a class="type" href="descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a> *<dfn class="local col7 decl" id="7curr" title='curr' data-type='struct pthread *' data-ref="7curr" data-ref-filename="7curr">curr</dfn>;</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td>      <a class="local col7 ref" href="#7curr" title='curr' data-ref="7curr" data-ref-filename="7curr">curr</a> = <a class="macro" href="../include/list.h.html#77" title="((struct pthread *) ((char *) (entry) - (unsigned long) (&amp;((struct pthread *) 0)-&gt;list)))" data-ref="_M/list_entry">list_entry</a> (<a class="local col5 ref" href="#5entry" title='entry' data-ref="5entry" data-ref-filename="5entry">entry</a>, <b>struct</b> <a class="type" href="descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a>, <a class="ref field" href="descr.h.html#pthread::list" title='pthread::list' data-ref="pthread::list" data-ref-filename="pthread..list">list</a>);</td></tr>
+<tr><th id="70">70</th><td>      <b>if</b> (<a class="ref fn" href="nptl-stack.h.html#__nptl_stack_in_use" title='__nptl_stack_in_use' data-ref="__nptl_stack_in_use" data-ref-filename="__nptl_stack_in_use">__nptl_stack_in_use</a> (<a class="local col7 ref" href="#7curr" title='curr' data-ref="7curr" data-ref-filename="7curr">curr</a>))</td></tr>
+<tr><th id="71">71</th><td>	{</td></tr>
+<tr><th id="72">72</th><td>	  <i>/* Unlink the block.  */</i></td></tr>
+<tr><th id="73">73</th><td>	  <a class="ref fn" href="#__nptl_stack_list_del" title='__nptl_stack_list_del' data-ref="__nptl_stack_list_del" data-ref-filename="__nptl_stack_list_del">__nptl_stack_list_del</a> (<a class="local col5 ref" href="#5entry" title='entry' data-ref="5entry" data-ref-filename="5entry">entry</a>);</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td>	  <i>/* Account for the freed memory.  */</i></td></tr>
+<tr><th id="76">76</th><td>	  <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_stack_cache_actsize" data-ref="_M/GL">GL</a> (dl_stack_cache_actsize) -= <a class="local col7 ref" href="#7curr" title='curr' data-ref="7curr" data-ref-filename="7curr">curr</a>-&gt;<a class="ref field" href="descr.h.html#pthread::stackblock_size" title='pthread::stackblock_size' data-ref="pthread::stackblock_size" data-ref-filename="pthread..stackblock_size">stackblock_size</a>;</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td>	  <i>/* Free the memory associated with the ELF TLS.  */</i></td></tr>
+<tr><th id="79">79</th><td>	  <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_deallocate_tls" title='_dl_deallocate_tls' data-ref="_dl_deallocate_tls" data-ref-filename="_dl_deallocate_tls">_dl_deallocate_tls</a> (<a class="macro" href="descr.h.html#411" title="(curr)" data-ref="_M/TLS_TPADJ">TLS_TPADJ</a> (<a class="local col7 ref" href="#7curr" title='curr' data-ref="7curr" data-ref-filename="7curr">curr</a>), <span class="macro" title="0" data-ref="_M/false">false</span>);</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td>	  <i>/* Remove this block.  This should never fail.  If it does</i></td></tr>
+<tr><th id="82">82</th><td><i>	     something is really wrong.  */</i></td></tr>
+<tr><th id="83">83</th><td>	  <b>if</b> (<a class="ref fn" href="../include/sys/mman.h.html#__munmap" title='__munmap' data-ref="__munmap" data-ref-filename="__munmap">__munmap</a> (<a class="local col7 ref" href="#7curr" title='curr' data-ref="7curr" data-ref-filename="7curr">curr</a>-&gt;<a class="ref field" href="descr.h.html#pthread::stackblock" title='pthread::stackblock' data-ref="pthread::stackblock" data-ref-filename="pthread..stackblock">stackblock</a>, <a class="local col7 ref" href="#7curr" title='curr' data-ref="7curr" data-ref-filename="7curr">curr</a>-&gt;<a class="ref field" href="descr.h.html#pthread::stackblock_size" title='pthread::stackblock_size' data-ref="pthread::stackblock_size" data-ref-filename="pthread..stackblock_size">stackblock_size</a>) != <var>0</var>)</td></tr>
+<tr><th id="84">84</th><td>	    <a class="ref fn" href="../stdlib/stdlib.h.html#abort" title='abort' data-ref="abort" data-ref-filename="abort">abort</a> ();</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td>	  <i>/* Maybe we have freed enough.  */</i></td></tr>
+<tr><th id="87">87</th><td>	  <b>if</b> (<a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_stack_cache_actsize" data-ref="_M/GL">GL</a> (dl_stack_cache_actsize) &lt;= <a class="local col4 ref" href="#4limit" title='limit' data-ref="4limit" data-ref-filename="4limit">limit</a>)</td></tr>
+<tr><th id="88">88</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="89">89</th><td>	}</td></tr>
+<tr><th id="90">90</th><td>    }</td></tr>
+<tr><th id="91">91</th><td>}</td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td><i  data-doc="queue_stack">/* Add a stack frame which is not used anymore to the stack.  Must be</i></td></tr>
+<tr><th id="94">94</th><td><i  data-doc="queue_stack">   called with the cache lock held.  */</i></td></tr>
+<tr><th id="95">95</th><td><em>static</em> <b>inline</b> <em>void</em></td></tr>
+<tr><th id="96">96</th><td><b>__attribute</b> ((always_inline))</td></tr>
+<tr><th id="97">97</th><td><dfn class="tu decl def fn" id="queue_stack" title='queue_stack' data-type='void queue_stack(struct pthread * stack)' data-ref="queue_stack" data-ref-filename="queue_stack">queue_stack</dfn> (<b>struct</b> <a class="type" href="descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a> *<dfn class="local col8 decl" id="8stack" title='stack' data-type='struct pthread *' data-ref="8stack" data-ref-filename="8stack">stack</dfn>)</td></tr>
+<tr><th id="98">98</th><td>{</td></tr>
+<tr><th id="99">99</th><td>  <i>/* We unconditionally add the stack to the list.  The memory may</i></td></tr>
+<tr><th id="100">100</th><td><i>     still be in use but it will not be reused until the kernel marks</i></td></tr>
+<tr><th id="101">101</th><td><i>     the stack as not used anymore.  */</i></td></tr>
+<tr><th id="102">102</th><td>  <a class="ref fn" href="#__nptl_stack_list_add" title='__nptl_stack_list_add' data-ref="__nptl_stack_list_add" data-ref-filename="__nptl_stack_list_add">__nptl_stack_list_add</a> (&amp;<a class="local col8 ref" href="#8stack" title='stack' data-ref="8stack" data-ref-filename="8stack">stack</a>-&gt;<a class="ref field" href="descr.h.html#pthread::list" title='pthread::list' data-ref="pthread::list" data-ref-filename="pthread..list">list</a>, &amp;<a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_stack_cache" data-ref="_M/GL">GL</a> (dl_stack_cache));</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td>  <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_stack_cache_actsize" data-ref="_M/GL">GL</a> (dl_stack_cache_actsize) += <a class="local col8 ref" href="#8stack" title='stack' data-ref="8stack" data-ref-filename="8stack">stack</a>-&gt;<a class="ref field" href="descr.h.html#pthread::stackblock_size" title='pthread::stackblock_size' data-ref="pthread::stackblock_size" data-ref-filename="pthread..stackblock_size">stackblock_size</a>;</td></tr>
+<tr><th id="105">105</th><td>  <b>if</b> (<a class="macro" href="../misc/sys/cdefs.h.html#450" title="__builtin_expect ((_dl_stack_cache_actsize &gt; __nptl_stack_cache_maxsize), 0)" data-ref="_M/__glibc_unlikely">__glibc_unlikely</a> (<a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_stack_cache_actsize" data-ref="_M/GL">GL</a> (dl_stack_cache_actsize)</td></tr>
+<tr><th id="106">106</th><td>			&gt; <a class="ref" href="nptl-stack.h.html#__nptl_stack_cache_maxsize" title='__nptl_stack_cache_maxsize' data-ref="__nptl_stack_cache_maxsize" data-ref-filename="__nptl_stack_cache_maxsize">__nptl_stack_cache_maxsize</a>))</td></tr>
+<tr><th id="107">107</th><td>    <a class="ref fn" href="#__nptl_free_stacks" title='__nptl_free_stacks' data-ref="__nptl_free_stacks" data-ref-filename="__nptl_free_stacks">__nptl_free_stacks</a> (<a class="ref" href="nptl-stack.h.html#__nptl_stack_cache_maxsize" title='__nptl_stack_cache_maxsize' data-ref="__nptl_stack_cache_maxsize" data-ref-filename="__nptl_stack_cache_maxsize">__nptl_stack_cache_maxsize</a>);</td></tr>
+<tr><th id="108">108</th><td>}</td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td><em>void</em></td></tr>
+<tr><th id="111">111</th><td><dfn class="decl def fn" id="__nptl_deallocate_stack" title='__nptl_deallocate_stack' data-ref="__nptl_deallocate_stack" data-ref-filename="__nptl_deallocate_stack">__nptl_deallocate_stack</dfn> (<b>struct</b> <a class="type" href="descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a> *<dfn class="local col9 decl" id="9pd" title='pd' data-type='struct pthread *' data-ref="9pd" data-ref-filename="9pd">pd</dfn>)</td></tr>
+<tr><th id="112">112</th><td>{</td></tr>
+<tr><th id="113">113</th><td>  <a class="macro" href="../sysdeps/nptl/lowlevellock.h.html#107" title="((void) ({ int *__futex = (&amp;(_dl_stack_cache_lock)); if (__builtin_expect (((! __sync_bool_compare_and_swap (__futex, 0, 1))), 0)) { if (__builtin_constant_p (0) &amp;&amp; (0) == 0) __lll_lock_wait_private (__futex); else __lll_lock_wait (__futex, 0); } }))" data-ref="_M/lll_lock">lll_lock</a> (<a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_stack_cache_lock" data-ref="_M/GL">GL</a> (dl_stack_cache_lock), <a class="macro" href="../sysdeps/nptl/lowlevellock-futex.h.html#49" title="0" data-ref="_M/LLL_PRIVATE">LLL_PRIVATE</a>);</td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td>  <i>/* Remove the thread from the list of threads with user defined</i></td></tr>
+<tr><th id="116">116</th><td><i>     stacks.  */</i></td></tr>
+<tr><th id="117">117</th><td>  <a class="ref fn" href="#__nptl_stack_list_del" title='__nptl_stack_list_del' data-ref="__nptl_stack_list_del" data-ref-filename="__nptl_stack_list_del">__nptl_stack_list_del</a> (&amp;<a class="local col9 ref" href="#9pd" title='pd' data-ref="9pd" data-ref-filename="9pd">pd</a>-&gt;<a class="ref field" href="descr.h.html#pthread::list" title='pthread::list' data-ref="pthread::list" data-ref-filename="pthread..list">list</a>);</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td>  <i>/* Not much to do.  Just free the mmap()ed memory.  Note that we do</i></td></tr>
+<tr><th id="120">120</th><td><i>     not reset the 'used' flag in the 'tid' field.  This is done by</i></td></tr>
+<tr><th id="121">121</th><td><i>     the kernel.  If no thread has been created yet this field is</i></td></tr>
+<tr><th id="122">122</th><td><i>     still zero.  */</i></td></tr>
+<tr><th id="123">123</th><td>  <b>if</b> (<a class="macro" href="../misc/sys/cdefs.h.html#451" title="__builtin_expect ((! pd-&gt;user_stack), 1)" data-ref="_M/__glibc_likely">__glibc_likely</a> (! <a class="local col9 ref" href="#9pd" title='pd' data-ref="9pd" data-ref-filename="9pd">pd</a>-&gt;<a class="ref field" href="descr.h.html#pthread::user_stack" title='pthread::user_stack' data-ref="pthread::user_stack" data-ref-filename="pthread..user_stack">user_stack</a>))</td></tr>
+<tr><th id="124">124</th><td>    (<em>void</em>) <a class="tu ref fn" href="#queue_stack" title='queue_stack' data-use='c' data-ref="queue_stack" data-ref-filename="queue_stack">queue_stack</a> (<a class="local col9 ref" href="#9pd" title='pd' data-ref="9pd" data-ref-filename="9pd">pd</a>);</td></tr>
+<tr><th id="125">125</th><td>  <b>else</b></td></tr>
+<tr><th id="126">126</th><td>    <i>/* Free the memory associated with the ELF TLS.  */</i></td></tr>
+<tr><th id="127">127</th><td>    <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_deallocate_tls" title='_dl_deallocate_tls' data-ref="_dl_deallocate_tls" data-ref-filename="_dl_deallocate_tls">_dl_deallocate_tls</a> (<a class="macro" href="descr.h.html#411" title="(pd)" data-ref="_M/TLS_TPADJ">TLS_TPADJ</a> (<a class="local col9 ref" href="#9pd" title='pd' data-ref="9pd" data-ref-filename="9pd">pd</a>), <span class="macro" title="0" data-ref="_M/false">false</span>);</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td>  <a class="macro" href="../sysdeps/nptl/lowlevellock.h.html#159" title="((void) ({ int *__futex = (&amp;(_dl_stack_cache_lock)); int __private = (0); int __oldval = ({ __typeof (*__futex) result; if (sizeof (*__futex) == 1) __asm __volatile (&quot;xchgb %b0, %1&quot; : &quot;=q&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; (0), &quot;m&quot; (*__futex)); else if (sizeof (*__futex) == 2) __asm __volatile (&quot;xchgw %w0, %1&quot; : &quot;=r&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; (0), &quot;m&quot; (*__futex)); else if (sizeof (*__futex) == 4) __asm __volatile (&quot;xchgl %0, %1&quot; : &quot;=r&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; (0), &quot;m&quot; (*__futex)); else if (1) __asm __volatile (&quot;xchgq %q0, %1&quot; : &quot;=r&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; ((atomic64_t) ((__typeof__ (*(0 ? (__typeof__ (0 ? (__typeof__ ((__typeof__ (0)) 0) *) 0 : (void *) ((__builtin_classify_type ((__typeof__ (0)) 0) == 5)))) 0 : (__typeof__ (0 ? (intptr_t *) 0 : (void *) (!((__builtin_classify_type ((__typeof__ (0)) 0) == 5))))) 0))) (0))), &quot;m&quot; (*__futex)); else { result = 0; __atomic_link_error (); } result; }); if (__builtin_expect ((__oldval &gt; 1), 0)) { if (__builtin_constant_p (0) &amp;&amp; (0) == 0) __lll_lock_wake_private (__futex); else __lll_lock_wake (__futex, __private); } }))" data-ref="_M/lll_unlock">lll_unlock</a> (<a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_stack_cache_lock" data-ref="_M/GL">GL</a> (dl_stack_cache_lock), <a class="macro" href="../sysdeps/nptl/lowlevellock-futex.h.html#49" title="0" data-ref="_M/LLL_PRIVATE">LLL_PRIVATE</a>);</td></tr>
+<tr><th id="130">130</th><td>}</td></tr>
+<tr><th id="131">131</th><td><a class="macro" href="../include/libc-symbols.h.html#623" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__nptl_deallocate_stack)</td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td><i>/* This function is internal (it has a GLIBC_PRIVATE) version, but it</i></td></tr>
+<tr><th id="134">134</th><td><i>   is widely used (either via weak symbol, or dlsym) to obtain the</i></td></tr>
+<tr><th id="135">135</th><td><i>   __static_tls_size value.  This value is then used to adjust the</i></td></tr>
+<tr><th id="136">136</th><td><i>   value of the stack size attribute, so that applications receive the</i></td></tr>
+<tr><th id="137">137</th><td><i>   full requested stack size, not diminished by the TCB and static TLS</i></td></tr>
+<tr><th id="138">138</th><td><i>   allocation on the stack.  Once the TCB is separately allocated,</i></td></tr>
+<tr><th id="139">139</th><td><i>   this function should be removed or renamed (if it is still</i></td></tr>
+<tr><th id="140">140</th><td><i>   necessary at that point).  */</i></td></tr>
+<tr><th id="141">141</th><td><span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span></td></tr>
+<tr><th id="142">142</th><td><dfn class="decl def fn" id="__pthread_get_minstack" title='__pthread_get_minstack' data-ref="__pthread_get_minstack" data-ref-filename="__pthread_get_minstack">__pthread_get_minstack</dfn> (<em>const</em> <a class="typedef" href="../sysdeps/nptl/bits/pthreadtypes.h.html#pthread_attr_t" title='pthread_attr_t' data-type='union pthread_attr_t' data-ref="pthread_attr_t" data-ref-filename="pthread_attr_t">pthread_attr_t</a> *<dfn class="local col0 decl" id="10attr" title='attr' data-type='const pthread_attr_t *' data-ref="10attr" data-ref-filename="10attr">attr</dfn>)</td></tr>
+<tr><th id="143">143</th><td>{</td></tr>
+<tr><th id="144">144</th><td>  <b>return</b> (<a class="macro" href="../sysdeps/generic/ldsodefs.h.html#512" title="_dl_pagesize" data-ref="_M/GLRO">GLRO</a>(dl_pagesize) + <a class="ref fn" href="nptl-stack.h.html#__nptl_tls_static_size_for_stack" title='__nptl_tls_static_size_for_stack' data-ref="__nptl_tls_static_size_for_stack" data-ref-filename="__nptl_tls_static_size_for_stack">__nptl_tls_static_size_for_stack</a> ()</td></tr>
+<tr><th id="145">145</th><td>	  + <a class="macro" href="../sysdeps/unix/sysv/linux/bits/pthread_stack_min.h.html#20" title="16384" data-ref="_M/PTHREAD_STACK_MIN">PTHREAD_STACK_MIN</a>);</td></tr>
+<tr><th id="146">146</th><td>}</td></tr>
+<tr><th id="147">147</th><td><a class="macro" href="../include/libc-symbols.h.html#623" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__pthread_get_minstack)</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

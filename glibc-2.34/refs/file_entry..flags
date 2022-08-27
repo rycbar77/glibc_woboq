@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/dl-cache.h' l='69' type='int32_t'/>
+<use f='codebrowser/elf/cache.c' l='397' u='r' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='661' u='w' c='save_cache'/>
+<offset>0</offset>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='69'>/* This is 1 for an ELF library.  */</doc>
+<use f='codebrowser/elf/dl-cache.c' l='268' u='r' c='search_cache'/>

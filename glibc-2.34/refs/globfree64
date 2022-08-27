@@ -1,0 +1,4 @@
+<dec f='codebrowser/posix/glob.h' l='187' type='void globfree64(glob64_t * __pglob)'/>
+<dec f='codebrowser/include/glob.h' l='10' type='void globfree64(glob64_t * )'/>
+<use f='codebrowser/include/glob.h' l='10' c='globfree64'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/globfree.c' l='28' macro='1' type='void globfree64(glob_t * )'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/nss/nss_action.h' l='96' type='nss_action_list __nss_action_allocate(struct nss_action * actions, size_t count)'/>
+<doc f='codebrowser/nss/nss_action.h' l='94'>/* Returns a pointer to an allocated NSS action list that has COUNT
+   actions that matches the array at ACTIONS.  */</doc>
+<def f='codebrowser/nss/nss_action.c' l='80' ll='103' type='nss_action_list __nss_action_allocate(struct nss_action * actions, size_t count)'/>
+<use f='codebrowser/nss/nss_action_parse.c' l='177' u='c' c='__nss_action_parse'/>

@@ -1,0 +1,104 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='543' type='void * calloc(size_t __nmemb, size_t __size)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='542'>/* Allocate NMEMB elements of SIZE bytes each, all initialized to 0.  */</doc>
+<use f='codebrowser/elf/dl-lookup.c' l='271' u='c' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='314' u='c' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-minimal.c' l='35'/>
+<use f='codebrowser/elf/dl-object.c' l='92' u='c' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-profile.c' l='428' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-reloc.c' l='302' u='c' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-version.c' l='273' u='c' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/rtld.c' l='772' u='c' c='init_tls'/>
+<use f='codebrowser/elf/sprof.c' l='438' u='c' c='load_shobj'/>
+<use f='codebrowser/elf/sprof.c' l='821' u='c' c='load_profdata'/>
+<use f='codebrowser/elf/sprof.c' l='919' u='c' c='load_profdata'/>
+<use f='codebrowser/gmon/gmon.c' l='153' u='c' c='__monstartup'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='320' u='c' c='add_module'/>
+<use f='codebrowser/iconv/strtab.c' l='99' u='c' c='strtabinit'/>
+<use f='codebrowser/intl/dcigettext.c' l='1222' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='952' u='c' c='_nl_load_domain'/>
+<use f='codebrowser/libio/fmemopen.c' l='155' u='c' c='__fmemopen'/>
+<use f='codebrowser/libio/memstream.c' l='83' u='c' c='__open_memstream'/>
+<use f='codebrowser/libio/wmemstream.c' l='84' u='c' c='open_wmemstream'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='468' u='c' c='read_directions'/>
+<use f='codebrowser/locale/programs/xmalloc.c' l='87' u='c' c='xcalloc'/>
+<dec f='codebrowser/malloc/malloc.h' l='43' type='void * calloc(size_t __nmemb, size_t __size)'/>
+<def f='codebrowser/malloc/malloc-debug.c' l='397' macro='1' type='void * calloc(size_t , size_t )'/>
+<doc f='codebrowser/malloc/malloc.h' l='42'>/* Allocate NMEMB elements of SIZE bytes each, all initialized to 0.  */</doc>
+<def f='codebrowser/malloc/memusage.c' l='491' ll='537' type='void * calloc(size_t n, size_t len)'/>
+<doc f='codebrowser/malloc/memusage.c' l='489'>/* `calloc&apos; replacement.  We keep track of the memory usage if this is the
+   correct program.  */</doc>
+<use f='codebrowser/misc/hsearch_r.c' l='97' u='c' c='__hcreate_r'/>
+<use f='codebrowser/nis/nis_add.c' l='36' u='c' c='nis_add'/>
+<use f='codebrowser/nis/nis_call.c' l='444' u='c' c='rec_dirsearch'/>
+<use f='codebrowser/nis/nis_call.c' l='505' u='c' c='rec_dirsearch'/>
+<use f='codebrowser/nis/nis_call.c' l='548' u='c' c='first_shoot'/>
+<use f='codebrowser/nis/nis_call.c' l='613' u='c' c='nis_server_cache_search'/>
+<use f='codebrowser/nis/nis_call.c' l='658' u='c' c='nis_server_cache_add'/>
+<use f='codebrowser/nis/nis_callback.c' l='271' u='c' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='279' u='c' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_checkpoint.c' l='30' u='c' c='__GI_nis_checkpoint'/>
+<use f='codebrowser/nis/nis_clone_dir.c' l='36' u='c' c='__GI_nis_clone_directory'/>
+<use f='codebrowser/nis/nis_clone_dir.c' l='51' u='c' c='__GI_nis_clone_directory'/>
+<use f='codebrowser/nis/nis_clone_obj.c' l='37' u='c' c='__GI_nis_clone_object'/>
+<use f='codebrowser/nis/nis_clone_obj.c' l='42' u='c' c='__GI_nis_clone_object'/>
+<use f='codebrowser/nis/nis_clone_res.c' l='36' u='c' c='__GI_nis_clone_result'/>
+<use f='codebrowser/nis/nis_clone_res.c' l='51' u='c' c='__GI_nis_clone_result'/>
+<use f='codebrowser/nis/nis_creategroup.c' l='48' u='c' c='__GI_nis_creategroup'/>
+<use f='codebrowser/nis/nis_file.c' l='37' u='c' c='read_nis_obj'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='52' u='c' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_lookup.c' l='29' u='c' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_modify.c' l='36' u='c' c='__GI_nis_modify'/>
+<use f='codebrowser/nis/nis_remove.c' l='31' u='c' c='__GI_nis_remove'/>
+<use f='codebrowser/nis/nis_table.c' l='32' u='c' c='__create_ib_request'/>
+<use f='codebrowser/nis/nis_table.c' l='560' u='c' c='__GI_nis_add_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='630' u='c' c='__GI_nis_modify_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='684' u='c' c='__GI_nis_remove_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='732' u='c' c='__GI_nis_first_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='770' u='c' c='__GI_nis_next_entry'/>
+<use f='codebrowser/nis/nis_util.c' l='34' u='c' c='__nis_finddirectory'/>
+<use f='codebrowser/nis/ypclnt.c' l='172' u='c' c='__yp_bind'/>
+<use f='codebrowser/nis/ypclnt.c' l='348' u='c' c='do_ypcall'/>
+<use f='codebrowser/nptl/pthread_attr_extension.c' l='28' u='c' c='__pthread_attr_extension'/>
+<use f='codebrowser/nptl/pthread_setspecific.c' l='69' u='c' c='___pthread_setspecific'/>
+<use f='codebrowser/nptl/tpp.c' l='76' u='c' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl_db/td_ta_new.c' l='51' u='c' c='td_ta_new'/>
+<use f='codebrowser/nscd/connections.c' l='384' u='c' c='verify_persistent_db'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='215' u='c' c='convert_hostent_to_gaih_addrtuple'/>
+<use f='codebrowser/posix/regex_internal.c' l='1637' u='c' c='create_ci_newstate'/>
+<use f='codebrowser/posix/regex_internal.c' l='1687' u='c' c='create_cd_newstate'/>
+<use f='codebrowser/posix/regcomp.c' l='866' u='c' c='init_dfa'/>
+<use f='codebrowser/posix/regcomp.c' l='898' u='c' c='init_dfa'/>
+<use f='codebrowser/posix/regcomp.c' l='3135' u='c' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3137' u='c' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3677' u='c' c='build_charclass_op'/>
+<use f='codebrowser/posix/regcomp.c' l='3684' u='c' c='build_charclass_op'/>
+<use f='codebrowser/posix/regexec.c' l='2747' u='c' c='get_subexp'/>
+<use f='codebrowser/posix/regexec.c' l='3295' u='c' c='build_trtable'/>
+<use f='codebrowser/posix/regexec.c' l='3367' u='c' c='build_trtable'/>
+<use f='codebrowser/posix/regexec.c' l='3398' u='c' c='build_trtable'/>
+<use f='codebrowser/posix/regexec.c' l='4216' u='c' c='match_ctx_add_subtop'/>
+<use f='codebrowser/posix/regexec.c' l='4243' u='c' c='match_ctx_add_sublast'/>
+<use f='codebrowser/posix/wordexp.c' l='2231' u='c' c='wordexp'/>
+<use f='codebrowser/posix/wordexp.c' l='2240' u='c' c='wordexp'/>
+<use f='codebrowser/resolv/gai_misc.c' l='139' u='c' c='get_elem'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='94' u='c' c='get_locked_global'/>
+<use f='codebrowser/rt/aio_misc.c' l='151' u='c' c='get_elem'/>
+<use f='codebrowser/stdio-common/reg-modifier.c' l='69' u='c' c='__register_printf_modifier'/>
+<use f='codebrowser/stdio-common/reg-printf.c' l='57' u='c' c='__register_printf_specifier'/>
+<use f='codebrowser/stdio-common/reg-type.c' l='43' u='c' c='__register_printf_type'/>
+<use f='codebrowser/stdlib/cxa_atexit.c' l='114' u='c' c='__new_exitfn'/>
+<use f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='107' u='c' c='__cxa_thread_atexit_impl'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='95' u='c' c='__GI_clntraw_create'/>
+<use f='codebrowser/sunrpc/clnt_simp.c' l='65' u='c' c='__GI_callrpc'/>
+<use f='codebrowser/sunrpc/rpc_thread.c' l='62' u='c' c='__rpc_thread_variables'/>
+<use f='codebrowser/sunrpc/svc.c' l='92' u='c' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc_raw.c' l='77' u='c' c='__GI_svcraw_create'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='417' u='c' c='__GI_svcudp_enablecache'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='417' u='c' c='__GI_svcudp_enablecache'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='400' u='c' c='cache_init'/>
+<use f='codebrowser/sunrpc/xdr_array.c' l='99' u='c' c='__GI_xdr_array'/>
+<use f='codebrowser/sunrpc/xdr_ref.c' l='76' u='c' c='__GI_xdr_reference'/>
+<use f='codebrowser/support/xcalloc.c' l='30' u='c' c='xcalloc'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='417' u='c' c='getifaddrs_internal'/>
+<use f='codebrowser/elf/dl-tls.c' l='375' u='c' c='allocate_dtv'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='167' u='c' c='__wcsmbs_load_conv'/>

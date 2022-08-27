@@ -1,0 +1,15 @@
+<dec f='codebrowser/elf/dl-brk.c' l='3' type='void *'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/brk.c' l='24' type='void *'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/brk.c' l='36' u='w' c='__brk'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/brk.c' l='37' u='r' c='__brk'/>
+<doc f='codebrowser/elf/dl-brk.c' l='1'>/* We can use the normal code but we also know the __curbrk is not exported
+   from ld.so.  */</doc>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/brk.c' l='23'>/* This must be initialized data because commons can&apos;t have aliases.  */</doc>
+<dec f='codebrowser/misc/sbrk.c' l='29' type='void *'/>
+<use f='codebrowser/misc/sbrk.c' l='40' u='r' c='__sbrk'/>
+<use f='codebrowser/misc/sbrk.c' l='63' u='r' c='__sbrk'/>
+<use f='codebrowser/misc/sbrk.c' l='65' u='r' c='__sbrk'/>
+<doc f='codebrowser/misc/sbrk.c' l='28'>/* Defined in brk.c.  */</doc>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/dl-sbrk.c' l='3' type='void *'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/dl-sbrk.c' l='1'>/* We can use the normal code but we also know the __curbrk is not exported
+   from ld.so.  */</doc>

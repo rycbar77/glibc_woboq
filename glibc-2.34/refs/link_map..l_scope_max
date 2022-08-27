@@ -1,0 +1,14 @@
+<dec f='codebrowser/include/link.h' l='255' type='size_t'/>
+<offset>7296</offset>
+<doc f='codebrowser/include/link.h' l='254'>/* Size of array allocated for &apos;l_scope&apos;.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='404' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='453' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-load.c' l='1452' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-object.c' l='147' u='w' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-open.c' l='269' u='r' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='277' u='r' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='289' u='r' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='307' u='w' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='335' u='r' c='update_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='335' u='r' c='update_scopes'/>
+<use f='codebrowser/elf/dl-support.c' l='98' u='w'/>

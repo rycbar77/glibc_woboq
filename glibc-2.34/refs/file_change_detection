@@ -1,0 +1,31 @@
+<def f='codebrowser/include/file_change_detection.h' l='29' ll='38'/>
+<use f='codebrowser/include/file_change_detection.h' l='42' c='__file_is_unchanged'/>
+<use f='codebrowser/include/file_change_detection.h' l='43' c='__file_is_unchanged'/>
+<use f='codebrowser/include/file_change_detection.h' l='47' c='__file_change_detection_for_stat'/>
+<use f='codebrowser/include/file_change_detection.h' l='54' c='__file_change_detection_for_path'/>
+<use f='codebrowser/include/file_change_detection.h' l='60' c='__file_change_detection_for_fp'/>
+<use f='codebrowser/nss/nss_database.h' l='73'/>
+<size>48</size>
+<doc f='codebrowser/include/file_change_detection.h' l='27'>/* Items for identifying a particular file version.  Excerpt from
+   struct stat64.  */</doc>
+<mbr r='file_change_detection::size' o='0' t='off64_t'/>
+<mbr r='file_change_detection::ino' o='64' t='ino64_t'/>
+<mbr r='file_change_detection::mtime' o='128' t='struct timespec'/>
+<mbr r='file_change_detection::ctime' o='256' t='struct timespec'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='75' c='__resolv_conf_load'/>
+<size>48</size>
+<use f='codebrowser/io/file_change_detection.c' l='25' c='__file_is_unchanged'/>
+<use f='codebrowser/io/file_change_detection.c' l='26' c='__file_is_unchanged'/>
+<use f='codebrowser/io/file_change_detection.c' l='46' c='__file_change_detection_for_stat'/>
+<use f='codebrowser/io/file_change_detection.c' l='68' c='__file_change_detection_for_path'/>
+<use f='codebrowser/io/file_change_detection.c' l='98' c='__file_change_detection_for_fp'/>
+<size>48</size>
+<use f='codebrowser/nss/nss_database.c' l='304' c='nss_database_reload'/>
+<use f='codebrowser/nss/nss_database.c' l='409' c='nss_database_check_reload_and_get'/>
+<size>48</size>
+<use f='codebrowser/resolv/res_init.c' l='554' c='__resolv_conf_load'/>
+<size>48</size>
+<use f='codebrowser/resolv/resolv_conf.c' l='73'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='123' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='139' c='__resolv_conf_get_current'/>
+<size>48</size>

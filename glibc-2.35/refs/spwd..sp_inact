@@ -1,0 +1,16 @@
+<dec f='codebrowser/shadow/shadow.h' l='52' type='long'/>
+<offset>384</offset>
+<doc f='codebrowser/shadow/shadow.h' l='52'>/* Number of days the account may be
+				   inactive.  */</doc>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='107' u='w' c='give_spwd_free'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='150' u='r' c='copy_spwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='151' u='w' c='copy_spwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='151' u='r' c='copy_spwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='401' u='w' c='getspnam_plususer'/>
+<use f='codebrowser/shadow/putspent.c' l='72' u='r' c='putspent'/>
+<use f='codebrowser/shadow/putspent.c' l='73' u='r' c='putspent'/>
+<use f='codebrowser/shadow/putspent.c' l='74' u='r' c='putspent'/>
+<use f='codebrowser/shadow/sgetspent_r.c' l='47' u='w' c='_nss_files_parse_spent'/>
+<use f='codebrowser/shadow/sgetspent_r.c' l='66' u='w' c='_nss_files_parse_spent'/>
+<use f='codebrowser/shadow/sgetspent_r.c' l='74' u='w' c='_nss_files_parse_spent'/>
+<use f='codebrowser/shadow/sgetspent_r.c' l='74' u='w' c='_nss_files_parse_spent'/>

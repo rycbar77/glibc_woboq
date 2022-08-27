@@ -1,0 +1,13 @@
+<dec f='codebrowser/nss/nss_module.h' l='78' type='struct nss_module * __nss_module_allocate(const char * name, size_t name_length)'/>
+<doc f='codebrowser/nss/nss_module.h' l='74'>/* Allocates the NSS module NAME (of NAME_LENGTH bytes) and places it
+   into the global list.  If it already exists in the list, return the
+   pre-existing module.  This does not actually load the module.
+   Returns NULL on memory allocation failure.  */</doc>
+<use f='codebrowser/nss/nss_action_parse.c' l='57' u='c' c='nss_action_parse'/>
+<def f='codebrowser/nss/nss_module.c' l='74' ll='107' type='struct nss_module * __nss_module_allocate(const char * name, size_t name_length)'/>
+<doc f='codebrowser/nss/nss_module.c' l='68'>/* Allocate the service NAME with length NAME_LENGTH.  If the service
+   is already allocated in the nss_module_list cache then we return a
+   pointer to the struct nss_module, otherwise we try to allocate a
+   new struct nss_module entry and add it to the global
+   nss_modules_list cache.  If we fail to allocate the entry we return
+   NULL.  Failure to allocate the entry is always transient.  */</doc>

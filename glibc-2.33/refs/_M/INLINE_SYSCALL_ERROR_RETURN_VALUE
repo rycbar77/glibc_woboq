@@ -1,0 +1,26 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sysdep.h' l='56'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sysdep.h' l='53'>/* Set error number and return -1.  A target may choose to return the
+   internal function, __syscall_error, which sets errno and returns -1.
+   We use -1l, instead of -1, so that it can be casted to (void *).  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/adjtime.c' l='40' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/faccessat.c' l='37' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/faccessat.c' l='73' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fchmodat.c' l='34' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fcntl_nocancel.c' l='59' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='106' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimens.c' l='35' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fxstat64.c' l='52' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fxstatat64.c' l='65' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lxstat64.c' l='83' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mknodat.c' l='31' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mmap64.c' l='52' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_open.c' l='36' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_unlink.c' l='27' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_unlink.c' l='38' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setegid.c' l='29' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/seteuid.c' l='29' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/speed.c' l='59' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/speed.c' l='81' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tcsetattr.c' l='61' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/utimensat.c' l='74' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/xstat64.c' l='80' u='c'/>

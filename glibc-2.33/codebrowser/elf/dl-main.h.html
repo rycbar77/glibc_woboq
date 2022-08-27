@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dl-main.h source code [codebrowser/elf/dl-main.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="audit_list,dl_main_state,rtld_mode "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/elf/dl-main.h'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>elf</a>/<a href='dl-main.h.html'>dl-main.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Information collection during ld.so startup.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 1995-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_DL_MAIN">_DL_MAIN</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/_DL_MAIN" data-ref="_M/_DL_MAIN">_DL_MAIN</dfn></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/ldsodefs.h.html">&lt;ldsodefs.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../include/limits.h.html">&lt;limits.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><i>/* Length limits for names and paths, to protect the dynamic linker,</i></td></tr>
+<tr><th id="27">27</th><td><i>   particularly when __libc_enable_secure is active.  */</i></td></tr>
+<tr><th id="28">28</th><td><u>#<span data-ppcond="28">ifdef</span> <a class="macro" href="../../include/linux/limits.h.html#12" data-ref="_M/NAME_MAX">NAME_MAX</a></u></td></tr>
+<tr><th id="29">29</th><td><u># define <dfn class="macro" id="_M/SECURE_NAME_LIMIT" data-ref="_M/SECURE_NAME_LIMIT">SECURE_NAME_LIMIT</dfn> NAME_MAX</u></td></tr>
+<tr><th id="30">30</th><td><u>#<span data-ppcond="28">else</span></u></td></tr>
+<tr><th id="31">31</th><td><u># define SECURE_NAME_LIMIT 255</u></td></tr>
+<tr><th id="32">32</th><td><u>#<span data-ppcond="28">endif</span></u></td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="33">ifdef</span> <a class="macro" href="../../include/linux/limits.h.html#13" data-ref="_M/PATH_MAX">PATH_MAX</a></u></td></tr>
+<tr><th id="34">34</th><td><u># define <dfn class="macro" id="_M/SECURE_PATH_LIMIT" data-ref="_M/SECURE_PATH_LIMIT">SECURE_PATH_LIMIT</dfn> PATH_MAX</u></td></tr>
+<tr><th id="35">35</th><td><u>#<span data-ppcond="33">else</span></u></td></tr>
+<tr><th id="36">36</th><td><u># define SECURE_PATH_LIMIT 1024</u></td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="33">endif</span></u></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><i>/* Strings containing colon-separated lists of audit modules.  */</i></td></tr>
+<tr><th id="40">40</th><td><b>struct</b> <dfn class="type def" id="audit_list" title='audit_list' data-ref="audit_list" data-ref-filename="audit_list">audit_list</dfn></td></tr>
+<tr><th id="41">41</th><td>{</td></tr>
+<tr><th id="42">42</th><td>  <i>/* Array of strings containing colon-separated path lists.  Each</i></td></tr>
+<tr><th id="43">43</th><td><i>     audit module needs its own namespace, so pre-allocate the largest</i></td></tr>
+<tr><th id="44">44</th><td><i>     possible list.  */</i></td></tr>
+<tr><th id="45">45</th><td>  <em>const</em> <em>char</em> *<dfn class="decl field" id="audit_list::audit_strings" title='audit_list::audit_strings' data-ref="audit_list::audit_strings" data-ref-filename="audit_list..audit_strings">audit_strings</dfn>[<a class="macro" href="../sysdeps/generic/ldsodefs.h.html#317" title="16" data-ref="_M/DL_NNS">DL_NNS</a>];</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td>  <i>/* Number of entries added to audit_strings.  */</i></td></tr>
+<tr><th id="48">48</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="decl field" id="audit_list::length" title='audit_list::length' data-ref="audit_list::length" data-ref-filename="audit_list..length">length</dfn>;</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td>  <i>/* Index into the audit_strings array (for the iteration phase).  */</i></td></tr>
+<tr><th id="51">51</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="decl field" id="audit_list::current_index" title='audit_list::current_index' data-ref="audit_list::current_index" data-ref-filename="audit_list..current_index">current_index</dfn>;</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td>  <i>/* Tail of audit_strings[current_index] which still needs</i></td></tr>
+<tr><th id="54">54</th><td><i>     processing.  */</i></td></tr>
+<tr><th id="55">55</th><td>  <em>const</em> <em>char</em> *<dfn class="decl field" id="audit_list::current_tail" title='audit_list::current_tail' data-ref="audit_list::current_tail" data-ref-filename="audit_list..current_tail">current_tail</dfn>;</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td>  <i>/* Scratch buffer for returning a name which is part of the strings</i></td></tr>
+<tr><th id="58">58</th><td><i>     in audit_strings.  */</i></td></tr>
+<tr><th id="59">59</th><td>  <em>char</em> <dfn class="decl field" id="audit_list::fname" title='audit_list::fname' data-ref="audit_list::fname" data-ref-filename="audit_list..fname">fname</dfn>[<a class="macro" href="#29" title="255" data-ref="_M/SECURE_NAME_LIMIT">SECURE_NAME_LIMIT</a>];</td></tr>
+<tr><th id="60">60</th><td>};</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><i>/* This is a list of all the modes the dynamic loader can be in.  */</i></td></tr>
+<tr><th id="63">63</th><td><b>enum</b> <dfn class="type def" id="rtld_mode" title='rtld_mode' data-ref="rtld_mode" data-ref-filename="rtld_mode">rtld_mode</dfn></td></tr>
+<tr><th id="64">64</th><td>  {</td></tr>
+<tr><th id="65">65</th><td>    <dfn class="enum" id="rtld_mode_normal" title='rtld_mode_normal' data-ref="rtld_mode_normal" data-ref-filename="rtld_mode_normal">rtld_mode_normal</dfn>, <dfn class="enum" id="rtld_mode_list" title='rtld_mode_list' data-ref="rtld_mode_list" data-ref-filename="rtld_mode_list">rtld_mode_list</dfn>, <dfn class="enum" id="rtld_mode_verify" title='rtld_mode_verify' data-ref="rtld_mode_verify" data-ref-filename="rtld_mode_verify">rtld_mode_verify</dfn>, <dfn class="enum" id="rtld_mode_trace" title='rtld_mode_trace' data-ref="rtld_mode_trace" data-ref-filename="rtld_mode_trace">rtld_mode_trace</dfn>,</td></tr>
+<tr><th id="66">66</th><td>    <dfn class="enum" id="rtld_mode_list_tunables" title='rtld_mode_list_tunables' data-ref="rtld_mode_list_tunables" data-ref-filename="rtld_mode_list_tunables">rtld_mode_list_tunables</dfn>, <dfn class="enum" id="rtld_mode_help" title='rtld_mode_help' data-ref="rtld_mode_help" data-ref-filename="rtld_mode_help">rtld_mode_help</dfn>,</td></tr>
+<tr><th id="67">67</th><td>  };</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><i>/* Aggregated state information extracted from environment variables</i></td></tr>
+<tr><th id="70">70</th><td><i>   and the ld.so command line.  */</i></td></tr>
+<tr><th id="71">71</th><td><b>struct</b> <dfn class="type def" id="dl_main_state" title='dl_main_state' data-ref="dl_main_state" data-ref-filename="dl_main_state">dl_main_state</dfn></td></tr>
+<tr><th id="72">72</th><td>{</td></tr>
+<tr><th id="73">73</th><td>  <b>struct</b> <a class="type" href="#audit_list" title='audit_list' data-ref="audit_list" data-ref-filename="audit_list">audit_list</a> <dfn class="decl field" id="dl_main_state::audit_list" title='dl_main_state::audit_list' data-ref="dl_main_state::audit_list" data-ref-filename="dl_main_state..audit_list">audit_list</dfn>;</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td>  <i>/* The library search path.  */</i></td></tr>
+<tr><th id="76">76</th><td>  <em>const</em> <em>char</em> *<dfn class="decl field" id="dl_main_state::library_path" title='dl_main_state::library_path' data-ref="dl_main_state::library_path" data-ref-filename="dl_main_state..library_path">library_path</dfn>;</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td>  <i>/* Where library_path comes from.  LD_LIBRARY_PATH or --library-path.  */</i></td></tr>
+<tr><th id="79">79</th><td>  <em>const</em> <em>char</em> *<dfn class="decl field" id="dl_main_state::library_path_source" title='dl_main_state::library_path_source' data-ref="dl_main_state::library_path_source" data-ref-filename="dl_main_state..library_path_source">library_path_source</dfn>;</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td>  <i>/* The list preloaded objects from LD_PRELOAD.  */</i></td></tr>
+<tr><th id="82">82</th><td>  <em>const</em> <em>char</em> *<dfn class="decl field" id="dl_main_state::preloadlist" title='dl_main_state::preloadlist' data-ref="dl_main_state::preloadlist" data-ref-filename="dl_main_state..preloadlist">preloadlist</dfn>;</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td>  <i>/* The preload list passed as a command argument.  */</i></td></tr>
+<tr><th id="85">85</th><td>  <em>const</em> <em>char</em> *<dfn class="decl field" id="dl_main_state::preloadarg" title='dl_main_state::preloadarg' data-ref="dl_main_state::preloadarg" data-ref-filename="dl_main_state..preloadarg">preloadarg</dfn>;</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td>  <i>/* Additional glibc-hwcaps subdirectories to search first.</i></td></tr>
+<tr><th id="88">88</th><td><i>     Colon-separated list.  */</i></td></tr>
+<tr><th id="89">89</th><td>  <em>const</em> <em>char</em> *<dfn class="decl field" id="dl_main_state::glibc_hwcaps_prepend" title='dl_main_state::glibc_hwcaps_prepend' data-ref="dl_main_state::glibc_hwcaps_prepend" data-ref-filename="dl_main_state..glibc_hwcaps_prepend">glibc_hwcaps_prepend</dfn>;</td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td>  <i>/* Mask for the internal glibc-hwcaps subdirectories.</i></td></tr>
+<tr><th id="92">92</th><td><i>     Colon-separated list.  */</i></td></tr>
+<tr><th id="93">93</th><td>  <em>const</em> <em>char</em> *<dfn class="decl field" id="dl_main_state::glibc_hwcaps_mask" title='dl_main_state::glibc_hwcaps_mask' data-ref="dl_main_state::glibc_hwcaps_mask" data-ref-filename="dl_main_state..glibc_hwcaps_mask">glibc_hwcaps_mask</dfn>;</td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td>  <b>enum</b> <a class="type" href="#rtld_mode" title='rtld_mode' data-ref="rtld_mode" data-ref-filename="rtld_mode">rtld_mode</a> <dfn class="decl field" id="dl_main_state::mode" title='dl_main_state::mode' data-ref="dl_main_state::mode" data-ref-filename="dl_main_state..mode">mode</dfn>;</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td>  <i>/* True if any of the debugging options is enabled.  */</i></td></tr>
+<tr><th id="98">98</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl field" id="dl_main_state::any_debug" title='dl_main_state::any_debug' data-ref="dl_main_state::any_debug" data-ref-filename="dl_main_state..any_debug">any_debug</dfn>;</td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td>  <i>/* True if information about versions has to be printed.  */</i></td></tr>
+<tr><th id="101">101</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl field" id="dl_main_state::version_info" title='dl_main_state::version_info' data-ref="dl_main_state::version_info" data-ref-filename="dl_main_state..version_info">version_info</dfn>;</td></tr>
+<tr><th id="102">102</th><td>};</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><i>/* Helper function to invoke _dl_init_paths with the right arguments</i></td></tr>
+<tr><th id="105">105</th><td><i>   from *STATE.  */</i></td></tr>
+<tr><th id="106">106</th><td><em>static</em> <b>inline</b> <em>void</em></td></tr>
+<tr><th id="107">107</th><td><dfn class="decl def fn" id="call_init_paths" title='call_init_paths' data-ref="call_init_paths" data-ref-filename="call_init_paths">call_init_paths</dfn> (<em>const</em> <b>struct</b> <a class="type" href="#dl_main_state" title='dl_main_state' data-ref="dl_main_state" data-ref-filename="dl_main_state">dl_main_state</a> *<dfn class="local col1 decl" id="1state" title='state' data-type='const struct dl_main_state *' data-ref="1state" data-ref-filename="1state">state</dfn>)</td></tr>
+<tr><th id="108">108</th><td>{</td></tr>
+<tr><th id="109">109</th><td>  <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_init_paths" title='_dl_init_paths' data-ref="_dl_init_paths" data-ref-filename="_dl_init_paths">_dl_init_paths</a> (<a class="local col1 ref" href="#1state" title='state' data-ref="1state" data-ref-filename="1state">state</a>-&gt;<a class="ref field" href="#dl_main_state::library_path" title='dl_main_state::library_path' data-ref="dl_main_state::library_path" data-ref-filename="dl_main_state..library_path">library_path</a>, <a class="local col1 ref" href="#1state" title='state' data-ref="1state" data-ref-filename="1state">state</a>-&gt;<a class="ref field" href="#dl_main_state::library_path_source" title='dl_main_state::library_path_source' data-ref="dl_main_state::library_path_source" data-ref-filename="dl_main_state..library_path_source">library_path_source</a>,</td></tr>
+<tr><th id="110">110</th><td>                  <a class="local col1 ref" href="#1state" title='state' data-ref="1state" data-ref-filename="1state">state</a>-&gt;<a class="ref field" href="#dl_main_state::glibc_hwcaps_prepend" title='dl_main_state::glibc_hwcaps_prepend' data-ref="dl_main_state::glibc_hwcaps_prepend" data-ref-filename="dl_main_state..glibc_hwcaps_prepend">glibc_hwcaps_prepend</a>, <a class="local col1 ref" href="#1state" title='state' data-ref="1state" data-ref-filename="1state">state</a>-&gt;<a class="ref field" href="#dl_main_state::glibc_hwcaps_mask" title='dl_main_state::glibc_hwcaps_mask' data-ref="dl_main_state::glibc_hwcaps_mask" data-ref-filename="dl_main_state..glibc_hwcaps_mask">glibc_hwcaps_mask</a>);</td></tr>
+<tr><th id="111">111</th><td>}</td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td><i>/* Print ld.so usage information and exit.  */</i></td></tr>
+<tr><th id="114">114</th><td><b>_Noreturn</b> <em>void</em> <a class="decl fn" href="dl-usage.c.html#_dl_usage" title='_dl_usage' data-ref="_dl_usage" data-ref-filename="_dl_usage" id="_dl_usage">_dl_usage</a> (<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="2argv0" title='argv0' data-type='const char *' data-ref="2argv0" data-ref-filename="2argv0">argv0</dfn>, <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="3wrong_option" title='wrong_option' data-type='const char *' data-ref="3wrong_option" data-ref-filename="3wrong_option">wrong_option</dfn>)</td></tr>
+<tr><th id="115">115</th><td>  <a class="macro" href="../include/libc-symbols.h.html#439" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><i>/* Print ld.so version information and exit.  */</i></td></tr>
+<tr><th id="118">118</th><td><b>_Noreturn</b> <em>void</em> <a class="decl fn" href="dl-usage.c.html#_dl_version" title='_dl_version' data-ref="_dl_version" data-ref-filename="_dl_version" id="_dl_version">_dl_version</a> (<em>void</em>) <a class="macro" href="../include/libc-symbols.h.html#439" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><i>/* Print ld.so --help output and exit.  */</i></td></tr>
+<tr><th id="121">121</th><td><b>_Noreturn</b> <em>void</em> <a class="decl fn" href="dl-usage.c.html#_dl_help" title='_dl_help' data-ref="_dl_help" data-ref-filename="_dl_help" id="_dl_help">_dl_help</a> (<em>const</em> <em>char</em> *<dfn class="local col4 decl" id="4argv0" title='argv0' data-type='const char *' data-ref="4argv0" data-ref-filename="4argv0">argv0</dfn>, <b>struct</b> <a class="type" href="#dl_main_state" title='dl_main_state' data-ref="dl_main_state" data-ref-filename="dl_main_state">dl_main_state</a> *<dfn class="local col5 decl" id="5state" title='state' data-type='struct dl_main_state *' data-ref="5state" data-ref-filename="5state">state</dfn>)</td></tr>
+<tr><th id="122">122</th><td>  <a class="macro" href="../include/libc-symbols.h.html#439" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><u>#<span data-ppcond="19">endif</span> /* _DL_MAIN */</u></td></tr>
+<tr><th id="125">125</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='dl-usage.c.html'>codebrowser/elf/dl-usage.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.33</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

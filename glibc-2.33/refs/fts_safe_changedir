@@ -1,0 +1,11 @@
+<dec f='codebrowser/io/fts.c' l='98' type='int fts_safe_changedir(FTS * , FTSENT * , int , const char * )'/>
+<use f='codebrowser/io/fts.c' l='389' u='c' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='491' u='c' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='684' u='c' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='849' u='c' c='fts_build'/>
+<def f='codebrowser/io/fts.c' l='1109' ll='1136' type='int fts_safe_changedir(FTS * sp, FTSENT * p, int fd, const char * path)'/>
+<doc f='codebrowser/io/fts.c' l='1104'>/*
+ * Change to dir specified by fd or p-&gt;fts_accpath without getting
+ * tricked by someone changing the world out from underneath us.
+ * Assumes p-&gt;fts_dev and p-&gt;fts_ino are filled in.
+ */</doc>

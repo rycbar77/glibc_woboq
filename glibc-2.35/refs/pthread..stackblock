@@ -1,0 +1,15 @@
+<dec f='codebrowser/nptl/descr.h' l='371' type='void *'/>
+<offset>13440</offset>
+<doc f='codebrowser/nptl/descr.h' l='370'>/* If nonzero, pointer to the area allocated for the stack and guard. */</doc>
+<use f='codebrowser/nptl/nptl-stack.c' l='82' u='r' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/pthread_cleanup_upto.c' l='32' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/allocatestack.c' l='118' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='288' u='w' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='405' u='w' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='576' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='577' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/pthread_create.c' l='551' u='r' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='62' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='68' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/unwind.c' l='52' u='r' c='unwind_stop'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='106' u='r' c='__nptl_change_stack_perm'/>

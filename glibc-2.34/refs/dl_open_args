@@ -1,0 +1,6 @@
+<def f='codebrowser/elf/dl-open.c' l='47' ll='73'/>
+<use f='codebrowser/elf/dl-open.c' l='487' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='850' c='_dl_open'/>
+<size>72</size>
+<doc f='codebrowser/elf/dl-open.c' l='44'>/* We must be careful not to leave us in an inconsistent state.  Thus we
+   catch any error and re-raise it after cleaning up.  */</doc>

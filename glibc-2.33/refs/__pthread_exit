@@ -1,0 +1,6 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='529' type='void __pthread_exit(void * value)'/>
+<def f='codebrowser/nptl/forward.c' l='106' macro='1' type='void __pthread_exit(void * retval)'/>
+<use f='codebrowser/nptl/forward.c' l='108' c='pthread_exit'/>
+<def f='codebrowser/nptl/pthread_exit.c' l='23' ll='29' type='void __pthread_exit(void * value)'/>
+<use f='codebrowser/nptl/pthread_exit.c' l='30' c='pthread_exit'/>
+<use f='codebrowser/sysdeps/pthread/thrd_exit.c' l='24' u='c' c='thrd_exit'/>

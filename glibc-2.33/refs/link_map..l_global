@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/link.h' l='182' type='unsigned int'/>
+<offset>6372</offset>
+<doc f='codebrowser/include/link.h' l='182'>/* Nonzero if object in _dl_global_scope.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='326' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='94' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='178' u='r' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-open.c' l='180' u='w' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-open.c' l='555' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='570' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/rtld.c' l='1949' u='w' c='dl_main'/>

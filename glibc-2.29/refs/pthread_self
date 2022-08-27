@@ -1,0 +1,5 @@
+<def f='codebrowser/nptl/pthread_self.c' l='22' ll='26' type='pthread_t pthread_self()'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='109' c='__gthrw_pthread_self'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='322' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='481' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='98' u='c' c='notification_function'/>

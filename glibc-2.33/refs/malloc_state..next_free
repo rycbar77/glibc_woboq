@@ -1,0 +1,10 @@
+<dec f='codebrowser/malloc/malloc.c' l='1841' type='struct malloc_state *'/>
+<use f='codebrowser/malloc/arena.c' l='198' u='w' c='__malloc_fork_unlock_child'/>
+<use f='codebrowser/malloc/arena.c' l='817' u='r' c='get_free_list'/>
+<use f='codebrowser/malloc/arena.c' l='844' u='r' c='remove_from_free_list'/>
+<use f='codebrowser/malloc/arena.c' l='850' u='r' c='remove_from_free_list'/>
+<use f='codebrowser/malloc/arena.c' l='854' u='a' c='remove_from_free_list'/>
+<use f='codebrowser/malloc/arena.c' l='1014' u='w' c='__malloc_arena_thread_freeres'/>
+<offset>17344</offset>
+<doc f='codebrowser/malloc/malloc.c' l='1839'>/* Linked list for free arenas.  Access to this field is serialized
+     by free_list_lock in arena.c.  */</doc>

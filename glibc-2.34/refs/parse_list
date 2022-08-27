@@ -1,0 +1,9 @@
+<def f='codebrowser/nss/nss_files/files-parse.c' l='232' ll='297' type='char ** parse_list(char ** linep, char * eol, char * buf_end, int terminator_c, int * errnop)'/>
+<use f='codebrowser/grp/fgetgrent_r.c' l='33' macro='1' u='c' c='_nss_files_parse_grent'/>
+<use f='codebrowser/gshadow/sgetsgent_r.c' l='35' macro='1' u='c' c='_nss_files_parse_sgent'/>
+<use f='codebrowser/gshadow/sgetsgent_r.c' l='35' macro='1' u='c' c='_nss_files_parse_sgent'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='50' macro='1' u='c' c='parse_line'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='34' macro='1' u='c' c='_nss_files_parse_netent'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='30' macro='1' u='c' c='_nss_files_parse_protoent'/>
+<use f='codebrowser/nss/nss_files/files-rpc.c' l='30' macro='1' u='c' c='_nss_files_parse_rpcent'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='32' macro='1' u='c' c='_nss_files_parse_servent'/>

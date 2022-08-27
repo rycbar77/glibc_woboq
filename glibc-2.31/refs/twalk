@@ -1,0 +1,11 @@
+<dec f='codebrowser/misc/search.h' l='150' type='void twalk(const void * __root, __action_fn_t __action)'/>
+<doc f='codebrowser/misc/search.h' l='148'>/* Walk through the whole tree and call the ACTION callback for every node
+   or leaf.  */</doc>
+<use f='codebrowser/iconv/iconv_prog.c' l='775' u='c' c='print_known_names'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='794' u='c' c='print_known_names'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='499' u='c' c='get_aliases'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='765' u='c' c='get_modules'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1088' u='c' c='write_output'/>
+<use f='codebrowser/locale/programs/locale.c' l='616' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='766' u='c' c='write_charmaps'/>
+<def f='codebrowser/misc/tsearch.c' l='720' macro='1' type='void twalk(const void * , __action_fn_t )'/>

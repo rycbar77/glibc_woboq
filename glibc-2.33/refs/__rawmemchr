@@ -1,0 +1,16 @@
+<dec f='codebrowser/include/string.h' l='36' type='void * __rawmemchr(const void * __s, int __c)'/>
+<dec f='codebrowser/include/string.h' l='94' type='void * __rawmemchr(const void * , int )'/>
+<use f='codebrowser/include/string.h' l='94' c='__rawmemchr'/>
+<use f='codebrowser/elf/dl-support.c' l='371' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='595' u='c' c='__gconv_read_conf'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='596' u='c' c='__gconv_read_conf'/>
+<use f='codebrowser/iconvdata/iso646.c' l='137' u='c' c='gconv_init'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='220' u='c' c='nscd_getnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='222' u='c' c='nscd_getnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='224' u='c' c='nscd_getnetgrent'/>
+<use f='codebrowser/intl/dcigettext.c' l='1424' u='c' c='plural_lookup'/>
+<use f='codebrowser/libio/strops.c' l='41' u='c' c='_IO_str_init_static_internal'/>
+<use f='codebrowser/stdlib/canonicalize.c' l='250' u='c' c='realpath_stk'/>
+<use f='codebrowser/io/ftw.c' l='532' u='c' c='ftw_dir'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/rawmemchr.c' l='31' macro='1' type='void * __rawmemchr(const void * , int )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/rawmemchr.c' l='33' c='rawmemchr'/>

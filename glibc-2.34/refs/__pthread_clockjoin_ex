@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='529' type='int __pthread_clockjoin_ex(pthread_t , void ** , clockid_t , const struct timespec * , _Bool )'/>
+<use f='codebrowser/nptl/pthread_clockjoin.c' l='32' u='c' c='___pthread_clockjoin_np64'/>
+<use f='codebrowser/nptl/pthread_join.c' l='25' u='c' c='___pthread_join'/>
+<def f='codebrowser/nptl/pthread_join_common.c' l='35' ll='136' type='int __pthread_clockjoin_ex(pthread_t threadid, void ** thread_return, clockid_t clockid, const struct timespec * abstime, _Bool block)'/>
+<use f='codebrowser/nptl/pthread_timedjoin.c' l='27' u='c' c='___pthread_timedjoin_np64'/>
+<use f='codebrowser/nptl/pthread_tryjoin.c' l='32' u='c' c='__pthread_tryjoin_np'/>

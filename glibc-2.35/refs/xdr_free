@@ -1,0 +1,28 @@
+<dec f='codebrowser/sunrpc/rpc/xdr.h' l='373' type='void xdr_free(xdrproc_t __proc, char * __objp)'/>
+<dec f='codebrowser/include/rpc/xdr.h' l='14' type='void xdr_free(xdrproc_t , char * )'/>
+<use f='codebrowser/include/rpc/xdr.h' l='14' c='xdr_free'/>
+<doc f='codebrowser/sunrpc/rpc/xdr.h' l='372'>/* free memory buffers for xdr */</doc>
+<use f='codebrowser/nis/nis_callback.c' l='331' u='c' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='341' u='c' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='361' u='c' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='375' u='c' c='__nis_destroy_callback'/>
+<use f='codebrowser/nis/nis_free.c' l='27' u='c' c='__free_fdresult'/>
+<use f='codebrowser/nis/nis_free.c' l='38' u='c' c='__GI_nis_free_request'/>
+<use f='codebrowser/nis/nis_free.c' l='49' u='c' c='__GI_nis_free_directory'/>
+<use f='codebrowser/nis/nis_free.c' l='60' u='c' c='__GI_nis_free_object'/>
+<use f='codebrowser/nis/nis_free.c' l='71' u='c' c='__GI_nis_freeresult'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='164' u='c' c='__GI_nis_freeservlist'/>
+<use f='codebrowser/nis/nis_lookup.c' l='109' u='c' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_table.c' l='161' u='c' c='get_tablepath'/>
+<use f='codebrowser/nis/nis_table.c' l='370' u='c' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='393' u='c' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='436' u='c' c='__GI_nis_list'/>
+<use f='codebrowser/nis/ypclnt.c' l='477' u='c' c='__GI_yp_match'/>
+<use f='codebrowser/nis/ypclnt.c' l='532' u='c' c='__GI_yp_first'/>
+<use f='codebrowser/nis/ypclnt.c' l='589' u='c' c='__GI_yp_next'/>
+<use f='codebrowser/nis/ypclnt.c' l='619' u='c' c='__GI_yp_master'/>
+<use f='codebrowser/nis/ypclnt.c' l='649' u='c' c='__GI_yp_order'/>
+<use f='codebrowser/nis/ypclnt.c' l='673' u='c' c='__xdr_ypresp_all'/>
+<use f='codebrowser/nis/ypclnt.c' l='679' u='c' c='__xdr_ypresp_all'/>
+<use f='codebrowser/nis/ypclnt.c' l='702' u='c' c='__xdr_ypresp_all'/>
+<use f='codebrowser/nis/ypclnt.c' l='710' u='c' c='__xdr_ypresp_all'/>

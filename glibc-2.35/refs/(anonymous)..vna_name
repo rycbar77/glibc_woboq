@@ -1,0 +1,9 @@
+<dec f='codebrowser/elf/elf.h' l='1109' type='Elf32_Word'/>
+<dec f='codebrowser/elf/elf.h' l='1119' type='Elf64_Word'/>
+<offset>64</offset>
+<doc f='codebrowser/elf/elf.h' l='1109'>/* Dependency name string offset */</doc>
+<doc f='codebrowser/elf/elf.h' l='1119'>/* Dependency name string offset */</doc>
+<use f='codebrowser/elf/dl-version.c' l='219' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='305' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/rtld.c' l='2246' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2252' u='r' c='dl_main'/>

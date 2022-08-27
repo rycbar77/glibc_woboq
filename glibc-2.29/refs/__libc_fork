@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/unistd.h' l='182' type='__pid_t __libc_fork()'/>
+<doc f='codebrowser/include/unistd.h' l='181'>/* Internal name for fork function.  */</doc>
+<def f='codebrowser/sysdeps/nptl/fork.c' l='47' ll='156' type='__pid_t __libc_fork()'/>
+<use f='codebrowser/sysdeps/nptl/fork.c' l='157' c='__fork'/>
+<use f='codebrowser/sysdeps/nptl/fork.c' l='159' c='fork'/>

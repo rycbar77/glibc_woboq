@@ -1,0 +1,29 @@
+<dec f='codebrowser/malloc/malloc.c' l='1163' type='struct malloc_chunk *'/>
+<use f='codebrowser/malloc/malloc.c' l='1640' u='r' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='r' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1643' u='r' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1646' u='r' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1648' u='r' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1649' u='w' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1652' u='w' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1652' u='r' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1654' u='r' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1655' u='w' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1660' u='r' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1661' u='w' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='1661' u='r' c='unlink_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='3922' u='w' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='3999' u='w' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4001' u='w' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4008' u='r' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4018' u='w' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4020' u='r' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4023' u='w' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4031' u='w' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4117' u='w' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4225' u='w' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4522' u='w' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4676' u='w' c='malloc_consolidate'/>
+<offset>256</offset>
+<doc f='codebrowser/malloc/malloc.c' l='1162'>/* Only used for large blocks: pointer to next larger size.  */</doc>
+<doc f='codebrowser/malloc/malloc.c' l='1163'>/* double links -- used only if free. */</doc>

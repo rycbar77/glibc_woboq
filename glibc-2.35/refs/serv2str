@@ -1,0 +1,11 @@
+<dec f='codebrowser/nscd/nscd.h' l='195' type='const char *const[22]'/>
+<use f='codebrowser/nscd/cache.c' l='151' u='r' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='370' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='531' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='136' u='r' c='nscd_print_cache'/>
+<def f='codebrowser/nscd/connections.c' l='79' ll='103' type='const char *const[22]'/>
+<use f='codebrowser/nscd/connections.c' l='1100' u='r' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1106' u='r' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1161' u='r' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1163' u='r' c='handle_request'/>
+<doc f='codebrowser/nscd/connections.c' l='78'>/* Map request type to a string.  */</doc>

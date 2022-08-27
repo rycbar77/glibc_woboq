@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='73' type='256'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='110' u='r'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='113' u='r'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='76' macro='1' u='r' c='__pthread_mutex_cond_lock'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='86' macro='1' u='r' c='__pthread_mutex_cond_lock'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='86' macro='1' u='r' c='__pthread_mutex_cond_lock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='46' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='50' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='86' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='86' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='34' macro='1' u='r' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='38' u='r' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='71' macro='1' u='r' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='71' macro='1' u='r' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='52' macro='1' u='r' c='__pthread_mutex_unlock_usercnt'/>

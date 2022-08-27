@@ -1,0 +1,43 @@
+<dec f='codebrowser/nptl/descr.h' l='397' type='unsigned char'/>
+<offset>19344</offset>
+<doc f='codebrowser/nptl/descr.h' l='395'>/* Thread cancel type (PTHREAD_CANCEL_DEFERRED or
+     PTHREAD_CANCEL_ASYNCHRONOUS).  */</doc>
+<use f='codebrowser/nptl/cancellation.c' l='35' c='__pthread_enable_asynccancel'/>
+<use f='codebrowser/nptl/cancellation.c' l='36' u='r' c='__pthread_enable_asynccancel'/>
+<use f='codebrowser/nptl/cancellation.c' l='36' u='r' c='__pthread_enable_asynccancel'/>
+<use f='codebrowser/nptl/cancellation.c' l='36' u='r' c='__pthread_enable_asynccancel'/>
+<use f='codebrowser/nptl/cancellation.c' l='36' u='r' c='__pthread_enable_asynccancel'/>
+<use f='codebrowser/nptl/cancellation.c' l='36' u='r' c='__pthread_enable_asynccancel'/>
+<use f='codebrowser/nptl/cancellation.c' l='64' u='w' c='__pthread_disable_asynccancel'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='35' c='___pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='36' u='r' c='___pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='36' u='r' c='___pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='36' u='r' c='___pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='36' u='r' c='___pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='36' u='r' c='___pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='58' u='r' c='___pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='58' u='r' c='___pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='58' u='r' c='___pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='58' u='r' c='___pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='58' u='r' c='___pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='31' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='32' u='r' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='32' u='r' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='32' u='r' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='32' u='r' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='32' u='r' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='45' u='r' c='__libc_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='45' u='r' c='__libc_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='45' u='r' c='__libc_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='45' u='r' c='__libc_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='45' u='r' c='__libc_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='56' u='r' c='sigcancel_handler'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='112' u='r' c='__pthread_cancel'/>
+<use f='codebrowser/nptl/allocatestack.c' l='123' u='w' c='get_cached_stack'/>
+<use f='codebrowser/nptl/pthread_setcanceltype.c' l='33' u='r' c='__pthread_setcanceltype'/>
+<use f='codebrowser/nptl/pthread_setcanceltype.c' l='34' u='w' c='__pthread_setcanceltype'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='99' u='r' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='99' u='r' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='99' u='r' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='99' u='r' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='99' u='r' c='__tls_init_tp'/>

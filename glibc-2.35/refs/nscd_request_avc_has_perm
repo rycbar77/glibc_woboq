@@ -1,0 +1,15 @@
+<dec f='codebrowser/nscd/selinux.h' l='39' type='int nscd_request_avc_has_perm(int fd, request_type req)'/>
+<use f='codebrowser/nscd/connections.c' l='1057' u='c' c='handle_request'/>
+<doc f='codebrowser/nscd/selinux.h' l='38'>/* Check if the client has permission for the request type.  */</doc>
+<def f='codebrowser/nscd/selinux.c' l='364' ll='437' type='int nscd_request_avc_has_perm(int fd, request_type req)'/>
+<doc f='codebrowser/nscd/selinux.c' l='353'>/* Check the permission from the caller (via getpeercon) to nscd.
+   Returns 0 if access is allowed, 1 if denied, and -1 on error.
+
+   The SELinux policy, enablement, and permission bits are all dynamic and the
+   caching done by glibc is not entirely correct.  This nscd support should be
+   rewritten to use selinux_check_permission.  A rewrite is risky though and
+   requires some refactoring.  Currently we use symbolic mappings instead of
+   compile time constants (which SELinux upstream says are going away), and we
+   use security_deny_unknown to determine what to do if selinux-policy* doesn&apos;t
+   have a definition for the the permission or object class we are looking
+   up.  */</doc>

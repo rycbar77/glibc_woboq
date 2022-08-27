@@ -1,0 +1,33 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='838' type='void qsort(void * __base, size_t __nmemb, size_t __size, __compar_fn_t __compar)'/>
+<dec f='codebrowser/include/stdlib.h' l='44' type='void qsort(void * , size_t , size_t , __compar_fn_t )'/>
+<use f='codebrowser/include/stdlib.h' l='44' c='qsort'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='836'>/* Sort NMEMB elements of BASE, of SIZE bytes each,
+   using COMPAR to perform the comparisons.  */</doc>
+<use f='codebrowser/argp/argp-help.c' l='911' u='c' c='hol_sort'/>
+<use f='codebrowser/dirent/scandir-tail-common.c' l='86' u='c' c='__scandir64_tail'/>
+<use f='codebrowser/elf/cache.c' l='133' u='c' c='assign_glibc_hwcaps_indices'/>
+<use f='codebrowser/elf/stringtable.c' l='172' u='c' c='stringtable_finalize'/>
+<use f='codebrowser/intl/localealias.c' l='387' u='c' c='read_alias_file'/>
+<use f='codebrowser/locale/loadarchive.c' l='336' u='c' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/programs/locale.c' l='691' u='c' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='484' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='877' u='c' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1655' u='c' c='show_archive_content'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1678' u='c' c='show_archive_content'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2015' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2054' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2094' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2294' u='c' c='getaddrinfo'/>
+<use f='codebrowser/nscd/mem.c' l='197' u='c' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='200' u='c' c='gc'/>
+<def f='codebrowser/stdlib/msort.c' l='304' ll='308' type='void qsort(void * b, size_t n, size_t s, __compar_fn_t cmp)'/>
+<use f='codebrowser/support/support_descriptors.c' l='119' u='c' c='support_descriptors_list'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/x2y2m1.c' l='65' u='c' c='__x2y2m1'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/x2y2m1.c' l='72' u='c' c='__x2y2m1'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/x2y2m1l.c' l='65' u='c' c='__x2y2m1l'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/x2y2m1l.c' l='72' u='c' c='__x2y2m1l'/>
+<use f='codebrowser/sysdeps/posix/sprofil.c' l='318' u='c' c='__sprofil'/>
+<use f='codebrowser/posix/glob.c' l='1170' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/io/fts.c' l='977' u='c' c='fts_sort'/>
+<use f='codebrowser/timezone/zic.c' l='1113' u='c' c='associate'/>
+<use f='codebrowser/timezone/zic.c' l='1900' u='c' c='writezone'/>

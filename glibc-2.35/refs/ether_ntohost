@@ -1,0 +1,4 @@
+<dec f='codebrowser/inet/netinet/ether.h' l='41' type='int ether_ntohost(char * __hostname, const struct ether_addr * __addr)'/>
+<doc f='codebrowser/inet/netinet/ether.h' l='40'>/* Map 48 bit Ethernet number ADDR to HOSTNAME.  */</doc>
+<def f='codebrowser/inet/ether_ntoh.c' l='30' ll='61' type='int ether_ntohost(char * hostname, const struct ether_addr * addr)'/>
+<use f='codebrowser/nss/getent.c' l='161' u='c' c='ethers_keys'/>

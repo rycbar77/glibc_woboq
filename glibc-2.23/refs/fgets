@@ -1,0 +1,11 @@
+<dec f='codebrowser/libio/stdio.h' l='622' type='char * fgets(char *restrict __s, int __n, FILE *restrict __stream)'/>
+<doc f='codebrowser/libio/stdio.h' l='618'>/* Get a newline-terminated string of finite length from STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/iofgets.c' l='70' macro='1' type='char * fgets(char * , int , _IO_FILE * )'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='275' u='c' c='charmap_aliases'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='282' u='c' c='charmap_aliases'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='809' u='c' c='_gethtent'/>
+<use f='codebrowser/resolv/res_query.c' l='629' u='c' c='__res_hostalias'/>
+<use f='codebrowser/timezone/zic.c' l='995' u='c' c='infile'/>

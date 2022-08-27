@@ -1,0 +1,4 @@
+<dec f='codebrowser/string/string.h' l='265' type='char * strchrnul(const char * __s, int __c)'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='257' c='__strchrnul_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='260' c='__strchrnul_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strchrnul.c' l='33' macro='1' type='char * strchrnul(const char * , int )'/>

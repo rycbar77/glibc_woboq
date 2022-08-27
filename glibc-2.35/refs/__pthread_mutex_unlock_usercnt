@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='359' type='int __pthread_mutex_unlock_usercnt(pthread_mutex_t * __mutex, int __decr)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='361' type='int __pthread_mutex_unlock_usercnt(pthread_mutex_t * , int )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='361' c='__pthread_mutex_unlock_usercnt'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='419' u='c' c='__pthread_cond_wait_common'/>
+<def f='codebrowser/nptl/pthread_mutex_unlock.c' l='46' ll='104' type='int __pthread_mutex_unlock_usercnt(pthread_mutex_t * mutex, int decr)'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='368' u='c' c='___pthread_mutex_unlock'/>

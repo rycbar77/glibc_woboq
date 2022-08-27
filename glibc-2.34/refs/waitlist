@@ -1,0 +1,40 @@
+<def f='codebrowser/resolv/gai_misc.h' l='27' ll='40'/>
+<use f='codebrowser/resolv/gai_misc.h' l='29'/>
+<use f='codebrowser/resolv/gai_misc.h' l='54'/>
+<size>32</size>
+<doc f='codebrowser/resolv/gai_misc.h' l='26'>/* Used to synchronize.  */</doc>
+<mbr r='waitlist::next' o='0' t='struct waitlist *'/>
+<mbr r='waitlist::counterp' o='64' t='volatile unsigned int *'/>
+<mbr r='waitlist::sigevp' o='128' t='struct sigevent *'/>
+<mbr r='waitlist::caller_pid' o='192' t='pid_t'/>
+<use f='codebrowser/resolv/gai_notify.c' l='107' c='__gai_notify'/>
+<use f='codebrowser/resolv/gai_notify.c' l='113' c='__gai_notify'/>
+<size>32</size>
+<use f='codebrowser/resolv/gai_suspend.c' l='31' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='111' c='___gai_suspend_time64'/>
+<size>32</size>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='33'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='101' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='150' c='__getaddrinfo_a'/>
+<size>32</size>
+<def f='codebrowser/sysdeps/generic/aio_misc.h' l='44' ll='57'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='46'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='85'/>
+<size>32</size>
+<doc f='codebrowser/sysdeps/generic/aio_misc.h' l='43'>/* Used to synchronize.  */</doc>
+<mbr r='waitlist::next' o='0' t='struct waitlist *'/>
+<mbr r='waitlist::result' o='64' t='int *'/>
+<mbr r='waitlist::counterp' o='128' t='volatile unsigned int *'/>
+<mbr r='waitlist::sigevp' o='192' t='struct sigevent *'/>
+<use f='codebrowser/rt/aio_notify.c' l='118' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_notify.c' l='133' c='__aio_notify'/>
+<size>32</size>
+<use f='codebrowser/rt/aio_suspend.c' l='46'/>
+<use f='codebrowser/rt/aio_suspend.c' l='73' c='cleanup'/>
+<use f='codebrowser/rt/aio_suspend.c' l='119' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/aio_suspend.c' l='215' c='___aio_suspend_time64'/>
+<size>32</size>
+<use f='codebrowser/rt/lio_listio-common.c' l='57'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='137' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='191' c='lio_listio_internal'/>
+<size>32</size>

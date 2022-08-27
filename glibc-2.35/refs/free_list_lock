@@ -1,0 +1,8 @@
+<def f='codebrowser/malloc/arena.c' l='104' macro='1' type='__libc_lock_t'/>
+<use f='codebrowser/malloc/arena.c' l='220' u='w' c='__malloc_fork_unlock_child'/>
+<use f='codebrowser/malloc/arena.c' l='1010' u='a' c='__malloc_arena_thread_freeres'/>
+<use f='codebrowser/malloc/arena.c' l='1019' u='a' c='__malloc_arena_thread_freeres'/>
+<doc f='codebrowser/malloc/arena.c' l='99'>/* Arena free list.  free_list_lock synchronizes access to the
+   free_list variable below, and the next_free and attached_threads
+   members of struct malloc_state objects.  No other locks must be
+   acquired after free_list_lock has been acquired.  */</doc>

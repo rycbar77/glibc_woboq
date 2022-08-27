@@ -1,0 +1,375 @@
+<use f='codebrowser/argp/argp-help.c' l='634' u='c' c='hol_find_entry'/>
+<use f='codebrowser/argp/argp-parse.c' l='204' u='c' c='find_long_option'/>
+<use f='codebrowser/argp/argp-parse.c' l='825' u='c' c='parser_parse_next'/>
+<use f='codebrowser/catgets/gencat.c' l='278' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='278' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='433' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='507' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='659' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='977' u='c' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='978' u='c' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='1017' u='c' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='1018' u='c' c='write_out'/>
+<use f='codebrowser/sysdeps/x86/dl-hwcap.h' l='68' u='c' c='_dl_string_hwcap'/>
+<use f='codebrowser/sysdeps/x86/dl-procinfo.h' l='42' u='c' c='_dl_string_platform'/>
+<use f='codebrowser/elf/dl-load.c' l='419' u='c' c='add_name_to_object'/>
+<use f='codebrowser/elf/dl-load.c' l='1953' u='c' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-lookup.c' l='94' u='c' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='122' u='c' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='217' u='c' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='476' u='c' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-misc.c' l='283' u='c' c='_dl_name_match_p'/>
+<use f='codebrowser/elf/dl-misc.c' l='289' u='c' c='_dl_name_match_p'/>
+<use f='codebrowser/elf/dl-version.c' l='114' u='c' c='match_symbol'/>
+<use f='codebrowser/elf/readlib.c' l='71' u='c' c='is_gdb_python_file'/>
+<use f='codebrowser/elf/readelflib.c' l='121' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='227' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='121' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='227' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/rtld.c' l='663' u='c' c='match_version'/>
+<use f='codebrowser/elf/rtld.c' l='931' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='940' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='948' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='955' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='964' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='973' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1067' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1276' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1905' u='c' c='dl_main'/>
+<use f='codebrowser/grp/grp-merge.c' l='133' u='c' c='__merge_grp'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='64' u='c' c='compat_call'/>
+<use f='codebrowser/iconv/gconv_builtin.c' l='67' u='c' c='__gconv_get_builtin_trans'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='166' u='c' c='find_module_idx'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='237' u='c' c='__gconv_compare_alias_cache'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='115' u='c' c='detect_conflict'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='201' u='c' c='insert_module'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='206' u='c' c='insert_module'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='207' u='c' c='insert_module'/>
+<use f='codebrowser/iconv/gconv_db.c' l='65' u='c' c='__gconv_alias_compare'/>
+<use f='codebrowser/iconv/gconv_db.c' l='113' u='c' c='derivation_compare'/>
+<use f='codebrowser/iconv/gconv_db.c' l='115' u='c' c='derivation_compare'/>
+<use f='codebrowser/iconv/gconv_db.c' l='512' u='c' c='find_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='523' u='c' c='find_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='532' u='c' c='find_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='534' u='c' c='find_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='539' u='c' c='find_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='578' u='c' c='find_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='711' u='c' c='__gconv_compare_alias'/>
+<use f='codebrowser/iconv/gconv_db.c' l='755' u='c' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_db.c' l='756' u='c' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_db.c' l='758' u='c' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_db.c' l='760' u='c' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_dl.c' l='61' u='c' c='known_compare'/>
+<use f='codebrowser/iconv/gconv_open.c' l='96' u='c' c='__gconv_open'/>
+<use f='codebrowser/iconv/gconv_open.c' l='104' u='c' c='__gconv_open'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='137' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='159' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='282' u='c' c='main'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='441' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='720' u='c' c='add_known_names'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='722' u='c' c='add_known_names'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='748' u='c' c='insert_cache'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='411' u='c' c='alias_compare'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='510' u='c' c='module_compare'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='512' u='c' c='module_compare'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='741' u='c' c='append_module'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='799' u='c' c='name_compare'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='833' u='c' c='generate_name_list'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='839' u='c' c='generate_name_list'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='888' u='c' c='generate_name_info'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='893' u='c' c='generate_name_info'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='893' u='c' c='generate_name_info'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='898' u='c' c='generate_name_info'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='903' u='c' c='generate_name_info'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='903' u='c' c='generate_name_info'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='925' u='c' c='generate_name_info'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='925' u='c' c='generate_name_info'/>
+<use f='codebrowser/iconvdata/unicode.c' l='101' u='c' c='gconv_init'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='325' u='c' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='330' u='c' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='448' u='c' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='453' u='c' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='456' u='c' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='479' u='c' c='innetgr'/>
+<use f='codebrowser/inet/rcmd.c' l='668' u='c' c='__checkhost_sa'/>
+<use f='codebrowser/inet/rcmd.c' l='677' u='c' c='__checkhost_sa'/>
+<use f='codebrowser/inet/rcmd.c' l='718' u='c' c='__icheckuser'/>
+<use f='codebrowser/inet/rcmd.c' l='721' u='c' c='__icheckuser'/>
+<use f='codebrowser/inet/rcmd.c' l='725' u='c' c='__icheckuser'/>
+<use f='codebrowser/inet/ruserpass.c' l='170' u='c' c='ruserpass'/>
+<use f='codebrowser/inet/ruserpass.c' l='176' u='c' c='ruserpass'/>
+<use f='codebrowser/inet/ruserpass.c' l='247' u='c' c='token'/>
+<use f='codebrowser/intl/bindtextdom.c' l='97' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/bindtextdom.c' l='124' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/bindtextdom.c' l='126' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/bindtextdom.c' l='166' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/bindtextdom.c' l='219' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/bindtextdom.c' l='274' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/bindtextdom.c' l='283' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/dcigettext.c' l='290' u='c' c='transcmp'/>
+<use f='codebrowser/intl/dcigettext.c' l='294' u='c' c='transcmp'/>
+<use f='codebrowser/intl/dcigettext.c' l='298' u='c' c='transcmp'/>
+<use f='codebrowser/intl/dcigettext.c' l='604' u='c' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='697' u='c' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='698' u='c' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='920' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/dcigettext.c' l='925' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/dcigettext.c' l='953' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/dcigettext.c' l='1008' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/dcigettext.c' l='1028' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/dcigettext.c' l='1561' u='c' c='guess_category_value'/>
+<use f='codebrowser/intl/explodename.c' l='108' u='c' c='_nl_explode_name'/>
+<use f='codebrowser/intl/textdomain.c' l='79' u='c' c='__textdomain'/>
+<use f='codebrowser/intl/textdomain.c' l='84' u='c' c='__textdomain'/>
+<use f='codebrowser/locale/findlocale.c' l='133' u='c' c='_nl_find_locale'/>
+<use f='codebrowser/locale/findlocale.c' l='134' u='c' c='_nl_find_locale'/>
+<use f='codebrowser/locale/loadarchive.c' l='160' u='c' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/loadarchive.c' l='292' u='c' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/newlocale.c' l='74' u='c' c='__newlocale'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='98' u='c' c='charmap_readdir'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='100' u='c' c='charmap_readdir'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='215' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='254' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='262' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='283' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='291' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='324' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='336' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2729' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1126' u='c' c='ctype_class_new'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1154' u='c' c='ctype_map_new'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2223' u='c' c='ctype_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2527' u='c' c='ctype_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2800' u='c' c='ctype_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2810' u='c' c='ctype_read'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='193' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='432' u='c' c='curr_strcmp'/>
+<use f='codebrowser/locale/programs/linereader.c' l='53' u='c' c='lr_open'/>
+<use f='codebrowser/locale/programs/linereader.c' l='54' u='c' c='lr_open'/>
+<use f='codebrowser/locale/programs/locale.c' l='315' u='c' c='select_dirs'/>
+<use f='codebrowser/locale/programs/locale.c' l='315' u='c' c='select_dirs'/>
+<use f='codebrowser/locale/programs/locale.c' l='957' u='c' c='show_info'/>
+<use f='codebrowser/locale/programs/locale.c' l='972' u='c' c='show_info'/>
+<use f='codebrowser/locale/programs/localedef.c' l='345' u='c' c='set_warnings'/>
+<use f='codebrowser/locale/programs/localedef.c' l='347' u='c' c='set_warnings'/>
+<use f='codebrowser/locale/programs/localedef.c' l='613' u='c' c='add_to_readlist'/>
+<use f='codebrowser/intl/l10nflist.c' l='221' u='c' c='_nl_make_l10nflist'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='720' u='c' c='insert_name'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1282' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1285' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1292' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1293' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1380' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1555' u='c' c='delete_locales_from_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1599' u='c' c='nameentcmp'/>
+<use f='codebrowser/locale/programs/locfile.c' l='409' u='c' c='siblings_uncached'/>
+<use f='codebrowser/locale/programs/locfile.c' l='409' u='c' c='siblings_uncached'/>
+<use f='codebrowser/locale/programs/locfile.c' l='756' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='339' u='r' c='repertoire_complain'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='345' u='r' c='repertoire_complain'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='356' u='c' c='repertoire_compare'/>
+<use f='codebrowser/locale/setlocale.c' l='156' u='c' c='new_composite_name'/>
+<use f='codebrowser/locale/setlocale.c' l='163' u='c' c='new_composite_name'/>
+<use f='codebrowser/locale/setlocale.c' l='164' u='c' c='new_composite_name'/>
+<use f='codebrowser/locale/setlocale.c' l='238' u='c' c='setlocale'/>
+<use f='codebrowser/locale/setlocale.c' l='364' u='c' c='setlocale'/>
+<use f='codebrowser/login/utmpname.c' l='48' u='c' c='__utmpname'/>
+<use f='codebrowser/login/utmpname.c' l='50' u='c' c='__utmpname'/>
+<use f='codebrowser/malloc/memusage.c' l='243' u='c' c='me'/>
+<use f='codebrowser/misc/error.c' l='293' u='c' c='__error_at_line'/>
+<use f='codebrowser/misc/fstab.c' l='73' u='c' c='getfsspec'/>
+<use f='codebrowser/misc/fstab.c' l='89' u='c' c='getfsfile'/>
+<use f='codebrowser/misc/getttyent.c' l='53' u='c' c='__getttynam'/>
+<use f='codebrowser/misc/hsearch_r.c' l='171' u='c' c='__hsearch_r'/>
+<use f='codebrowser/misc/hsearch_r.c' l='196' u='c' c='__hsearch_r'/>
+<use f='codebrowser/misc/ttyslot.c' l='64' u='c' c='ttyslot'/>
+<use f='codebrowser/nptl/sem_open.c' l='52' u='c' c='__sem_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='321' u='c' c='__nscd_get_mapping'/>
+<use f='codebrowser/nss/nsswitch.c' l='146' u='c' c='__nss_database_lookup'/>
+<use f='codebrowser/nss/nsswitch.c' l='153' u='c' c='__nss_database_lookup'/>
+<use f='codebrowser/nss/nsswitch.c' l='281' u='c' c='__nss_configure_lookup'/>
+<use f='codebrowser/nss/nsswitch.c' l='330' u='c' c='known_compare'/>
+<use f='codebrowser/nss/nsswitch.c' l='812' u='c' c='nss_new_service'/>
+<use f='codebrowser/posix/getconf.c' l='482' u='c' c='main'/>
+<use f='codebrowser/posix/getconf.c' l='494' u='c' c='main'/>
+<use f='codebrowser/posix/getconf.c' l='632' u='c' c='main'/>
+<use f='codebrowser/posix/getconf.c' l='643' u='c' c='main'/>
+<use f='codebrowser/posix/getconf.c' l='650' u='c' c='main'/>
+<use f='codebrowser/posix/getconf.c' l='652' u='c' c='main'/>
+<use f='codebrowser/posix/getopt.c' l='527' u='c' c='_getopt_internal_r'/>
+<use f='codebrowser/posix/regcomp.c' l='872' u='c' c='init_dfa'/>
+<use f='codebrowser/posix/regcomp.c' l='3586' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3586' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3623' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3625' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3627' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3629' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3631' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3633' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3635' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3637' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3639' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3641' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3643' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regcomp.c' l='3645' u='c' c='build_charclass'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='324' u='c' c='resolv_conf_matches'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2213' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdlib/setenv.c' l='89' u='r' c='__add_to_environ'/>
+<use f='codebrowser/stdlib/setenv.c' l='93' u='r' c='__add_to_environ'/>
+<use f='codebrowser/string/strcoll_l.c' l='33' u='c' c='__strcoll_l'/>
+<use f='codebrowser/string/strcoll_l.c' l='33' u='c' c='__strcoll_l'/>
+<use f='codebrowser/support/check_addrinfo.c' l='33' u='c' c='check_addrinfo'/>
+<use f='codebrowser/support/check_dns_packet.c' l='34' u='c' c='check_dns_packet'/>
+<use f='codebrowser/support/check_hostent.c' l='33' u='c' c='check_hostent'/>
+<use f='codebrowser/support/check_netent.c' l='33' u='c' c='check_netent'/>
+<use f='codebrowser/support/shell-container.c' l='174' u='c' c='run_command_array'/>
+<use f='codebrowser/support/shell-container.c' l='180' u='c' c='run_command_array'/>
+<use f='codebrowser/support/shell-container.c' l='186' u='c' c='run_command_array'/>
+<use f='codebrowser/support/shell-container.c' l='192' u='c' c='run_command_array'/>
+<use f='codebrowser/support/shell-container.c' l='204' u='c' c='run_command_array'/>
+<use f='codebrowser/support/shell-container.c' l='377' u='c' c='main'/>
+<use f='codebrowser/support/shell-container.c' l='388' u='c' c='main'/>
+<use f='codebrowser/support/support_descriptors.c' l='210' u='c' c='support_descriptors_check'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='222' u='c' c='support_format_addrinfo'/>
+<use f='codebrowser/support/test-container.c' l='427' u='c' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='475' u='c' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='476' u='c' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='568' u='c' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='569' u='c' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='704' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='711' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='729' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='735' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='881' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='888' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='892' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='898' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='907' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='911' u='c' c='main'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1873' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1921' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1923' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1930' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1998' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/tempname.c' l='149' u='c' c='__path_search'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/gentempfd.c' l='29' u='c' c='__gen_tempfd'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='107' u='c' c='distinguish_extX'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='108' u='c' c='distinguish_extX'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='109' u='c' c='distinguish_extX'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='116' u='c' c='distinguish_extX'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/shm-directory.c' l='82' u='c' c='where_is_shmfs'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/shm-directory.c' l='83' u='c' c='where_is_shmfs'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname.c' l='67' u='c' c='getttyname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname.c' l='68' u='c' c='getttyname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname.c' l='69' u='c' c='getttyname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='56' u='c' c='getttyname_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='57' u='c' c='getttyname_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='58' u='c' c='getttyname_r'/>
+<use f='codebrowser/login/updwtmp.c' l='30' macro='1' u='c' c='__updwtmp'/>
+<use f='codebrowser/login/updwtmp.c' l='30' macro='1' u='c' c='__updwtmp'/>
+<use f='codebrowser/login/updwtmp.c' l='30' macro='1' u='c' c='__updwtmp'/>
+<use f='codebrowser/login/updwtmp.c' l='30' macro='1' u='c' c='__updwtmp'/>
+<use f='codebrowser/login/utmp_file.c' l='144' macro='1' u='c' c='setutent_file'/>
+<use f='codebrowser/login/utmp_file.c' l='144' macro='1' u='c' c='setutent_file'/>
+<use f='codebrowser/login/utmp_file.c' l='144' macro='1' u='c' c='setutent_file'/>
+<use f='codebrowser/login/utmp_file.c' l='144' macro='1' u='c' c='setutent_file'/>
+<use f='codebrowser/login/utmp_file.c' l='376' macro='1' u='c' c='pututline_file'/>
+<use f='codebrowser/login/utmp_file.c' l='376' macro='1' u='c' c='pututline_file'/>
+<use f='codebrowser/login/utmp_file.c' l='376' macro='1' u='c' c='pututline_file'/>
+<use f='codebrowser/login/utmp_file.c' l='376' macro='1' u='c' c='pututline_file'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='42' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='49' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='93' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='120' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='154' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='178' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='185' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='192' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='199' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='209' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='218' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='231' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='245' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='254' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='262' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='269' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='276' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='277' c='__strcmp_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='280' c='__strcmp_sse42'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='282' c='__strcmp_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='284' c='__strcmp_sse2_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='285' c='__strcmp_sse2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='288' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='297' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='303' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='317' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='331' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='341' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='351' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='358' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='364' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='369' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='376' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='383' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='390' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='397' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='403' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='410' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='420' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='427' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='439' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='482' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='540' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='567' macro='1' u='c' c='__libc_ifunc_impl_list'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strcmp.c' l='53' macro='1' type='int strcmp(const char * , const char * )'/>
+<use f='codebrowser/time/strptime_l.c' l='358' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='369' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='414' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='425' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='438' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='450' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='499' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='545' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='606' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='613' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='645' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='700' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='838' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='1002' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='1028' u='c' c='__strptime_internal'/>
+<use f='codebrowser/time/tzfile.c' l='750' u='c' c='__tzfile_compute'/>
+<use f='codebrowser/time/tzfile.c' l='750' u='c' c='__tzfile_compute'/>
+<use f='codebrowser/time/tzset.c' l='389' u='c' c='tzset_internal'/>
+<use f='codebrowser/time/tzset.c' l='412' u='c' c='tzset_internal'/>
+<use f='codebrowser/timezone/zdump.c' l='432' u='c' c='main'/>
+<use f='codebrowser/timezone/zdump.c' l='435' u='c' c='main'/>
+<use f='codebrowser/timezone/zdump.c' l='448' u='c' c='main'/>
+<use f='codebrowser/timezone/zdump.c' l='566' u='c' c='main'/>
+<use f='codebrowser/timezone/zdump.c' l='671' u='c' c='hunt'/>
+<use f='codebrowser/timezone/zdump.c' l='862' u='c' c='format_utc_offset'/>
+<use f='codebrowser/timezone/zdump.c' l='971' u='c' c='istrftime'/>
+<use f='codebrowser/timezone/zic.c' l='636' u='c' c='main'/>
+<use f='codebrowser/timezone/zic.c' l='640' u='c' c='main'/>
+<use f='codebrowser/timezone/zic.c' l='715' u='c' c='main'/>
+<use f='codebrowser/timezone/zic.c' l='751' u='c' c='main'/>
+<use f='codebrowser/timezone/zic.c' l='1011' u='c' c='rcomp'/>
+<use f='codebrowser/timezone/zic.c' l='1025' u='c' c='associate'/>
+<use f='codebrowser/timezone/zic.c' l='1028' u='c' c='associate'/>
+<use f='codebrowser/timezone/zic.c' l='1036' u='c' c='associate'/>
+<use f='codebrowser/timezone/zic.c' l='1039' u='c' c='associate'/>
+<use f='codebrowser/timezone/zic.c' l='1042' u='c' c='associate'/>
+<use f='codebrowser/timezone/zic.c' l='1058' u='c' c='associate'/>
+<use f='codebrowser/timezone/zic.c' l='1062' u='c' c='associate'/>
+<use f='codebrowser/timezone/zic.c' l='1100' u='c' c='infile'/>
+<use f='codebrowser/timezone/zic.c' l='1126' u='c' c='infile'/>
+<use f='codebrowser/timezone/zic.c' l='1290' u='c' c='inzone'/>
+<use f='codebrowser/timezone/zic.c' l='1296' u='c' c='inzone'/>
+<use f='codebrowser/timezone/zic.c' l='1304' u='c' c='inzone'/>
+<use f='codebrowser/timezone/zic.c' l='1487' u='c' c='inleap'/>
+<use f='codebrowser/timezone/zic.c' l='1490' u='c' c='inleap'/>
+<use f='codebrowser/timezone/zic.c' l='2001' u='c' c='writezone'/>
+<use f='codebrowser/timezone/zic.c' l='2775' u='c' c='addtype'/>
+<use f='codebrowser/timezone/zic.c' l='2798' u='c' c='addtype'/>
+<use f='codebrowser/timezone/zic.c' l='3209' u='c' c='newabbr'/>
+<use f='codebrowser/wctype/wctrans.c' l='35' u='c' c='__wctrans'/>
+<use f='codebrowser/wctype/wctrans_l.c' l='34' u='c' c='__wctrans_l'/>

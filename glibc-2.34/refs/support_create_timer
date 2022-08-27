@@ -1,0 +1,7 @@
+<dec f='codebrowser/support/support.h' l='172' type='timer_t support_create_timer(uint64_t sec, long nsec, _Bool repeat, void (*)(int) callback)'/>
+<doc f='codebrowser/support/support.h' l='167'>/* Create a timer that trigger after SEC seconds and NSEC nanoseconds.  If
+   REPEAT is true the timer will repeat indefinitely.  If CALLBACK is not
+   NULL, the function will be called when the timer expires; otherwise a
+   dummy empty function is used instead.
+   This is implemented with POSIX per-process timer with SIGEV_SIGNAL.  */</doc>
+<def f='codebrowser/support/support_create_timer.c' l='29' ll='59' type='timer_t support_create_timer(uint64_t sec, long nsec, _Bool repeat, void (*)(int) callback)'/>

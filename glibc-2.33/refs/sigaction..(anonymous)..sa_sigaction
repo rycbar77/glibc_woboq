@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/sigaction.h' l='36' type='void (*)(int, siginfo_t *, void *)'/>
+<offset>0</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/sigaction.h' l='35'>/* Used if SA_SIGINFO is set.  */</doc>
+<use f='codebrowser/nptl/nptl-init.c' l='265' macro='1' u='w' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='270' macro='1' u='w' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/sysdeps/posix/sprofil.c' l='338' macro='1' u='w' c='__sprofil'/>
+<use f='codebrowser/sysdeps/posix/profil.c' l='109' macro='1' u='w' c='__profil'/>
+<use f='codebrowser/debug/segfault.c' l='152' macro='1' u='w' c='install_handler'/>

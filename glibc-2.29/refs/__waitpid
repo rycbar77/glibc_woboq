@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/sys/wait.h' l='6' type='__pid_t __waitpid(__pid_t __pid, int * __stat_loc, int __options)'/>
+<dec f='codebrowser/include/sys/wait.h' l='8' type='__pid_t __waitpid(__pid_t , int * , int )'/>
+<use f='codebrowser/include/sys/wait.h' l='8' c='__waitpid'/>
+<doc f='codebrowser/include/sys/wait.h' l='5'>/* Now define the internal interfaces.  */</doc>
+<use f='codebrowser/posix/wordexp.c' l='915' u='c' c='exec_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='932' u='c' c='exec_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='967' u='c' c='exec_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='1101' u='c' c='exec_comm'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='167' u='c' c='do_system'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='404' u='c' c='__spawnix'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/waitpid.c' l='24' ll='32' type='__pid_t __waitpid(__pid_t pid, int * stat_loc, int options)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/waitpid.c' l='34' c='waitpid'/>

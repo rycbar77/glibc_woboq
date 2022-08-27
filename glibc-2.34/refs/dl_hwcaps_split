@@ -1,0 +1,17 @@
+<def f='codebrowser/elf/dl-hwcaps.h' l='43' ll='47'/>
+<use f='codebrowser/elf/dl-hwcaps.h' l='52' c='_dl_hwcaps_split_init'/>
+<use f='codebrowser/elf/dl-hwcaps.h' l='64' c='_dl_hwcaps_split'/>
+<use f='codebrowser/elf/dl-hwcaps.h' l='70'/>
+<size>16</size>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='41'>/* Used by _dl_hwcaps_split below, to split strings at &apos;:&apos;
+   separators.  */</doc>
+<mbr r='dl_hwcaps_split::segment' o='0' t='const char *'/>
+<mbr r='dl_hwcaps_split::length' o='64' t='size_t'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='110' c='compute_priorities'/>
+<size>16</size>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='24' c='_dl_hwcaps_split'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='70' c='_dl_hwcaps_contains'/>
+<size>16</size>
+<use f='codebrowser/elf/dl-usage.c' l='149' c='print_hwcaps_subdirectories_name'/>
+<use f='codebrowser/elf/dl-usage.c' l='160' c='print_hwcaps_subdirectories'/>
+<size>16</size>

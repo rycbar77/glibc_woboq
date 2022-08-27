@@ -1,0 +1,20 @@
+<dec f='codebrowser/resolv/arpa/nameser.h' l='334' type='1'/>
+<doc f='codebrowser/resolv/arpa/nameser.h' l='334'>/*%&lt; Internet. */</doc>
+<use f='codebrowser/hesiod/hesiod.c' l='89' macro='1' u='r' c='hesiod_init'/>
+<use f='codebrowser/hesiod/hesiod.c' l='252' macro='1' u='r' c='parse_config_file'/>
+<use f='codebrowser/hesiod/hesiod.c' l='297' macro='1' u='r' c='parse_config_file'/>
+<use f='codebrowser/hesiod/hesiod.c' l='305' macro='1' u='r' c='parse_config_file'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='72' u='r' c='_nss_dns_getcanonname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='153' u='r' c='_nss_dns_getcanonname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='220' macro='1' u='r' c='gethostbyname3_context'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='253' macro='1' u='r' c='gethostbyname3_context'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='373' macro='1' u='r' c='_nss_dns_gethostbyname4_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='530' macro='1' u='r' c='_nss_dns_gethostbyaddr2_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='790' macro='1' u='r' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1125' macro='1' u='r' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='131' macro='1' u='r' c='_nss_dns_getnetbyname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='214' macro='1' u='r' c='_nss_dns_getnetbyaddr_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='370' macro='1' u='r' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='397' macro='1' u='r' c='getanswer_r'/>
+<use f='codebrowser/resolv/res_debug.c' l='397' macro='1'/>
+<use f='codebrowser/resolv/res_debug.c' l='403' macro='1'/>

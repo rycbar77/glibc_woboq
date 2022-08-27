@@ -1,0 +1,5 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='89' type='35'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='217' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='349' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='312' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='221' c='__pthread_mutex_trylock'/>

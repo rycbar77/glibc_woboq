@@ -1,0 +1,15 @@
+<dec f='codebrowser/signal/signal.h' l='123' type='int raise(int __sig)'/>
+<dec f='codebrowser/include/signal.h' l='14' type='int raise(int )'/>
+<use f='codebrowser/include/signal.h' l='14' c='raise'/>
+<doc f='codebrowser/signal/signal.h' l='122'>/* Raise signal SIG, i.e., send SIG to yourself.  */</doc>
+<use f='codebrowser/intl/eval-plural.h' l='64' u='c' c='plural_eval'/>
+<use f='codebrowser/intl/eval-plural.h' l='70' u='c' c='plural_eval'/>
+<use f='codebrowser/stdlib/abort.c' l='79' u='c' c='abort'/>
+<use f='codebrowser/stdlib/abort.c' l='100' u='c' c='abort'/>
+<use f='codebrowser/support/shell-container.c' l='295' u='c' c='run_command_array'/>
+<use f='codebrowser/support/support_test_main.c' l='158' u='c' c='signal_handler'/>
+<use f='codebrowser/support/xraise.c' l='25' u='c' c='xraise'/>
+<def f='codebrowser/sysdeps/posix/raise.c' l='23' ll='33' type='int raise(int sig)'/>
+<use f='codebrowser/sysdeps/posix/raise.c' l='35' c='gsignal'/>
+<doc f='codebrowser/sysdeps/posix/raise.c' l='22'>/* Raise the signal SIG.  */</doc>
+<use f='codebrowser/debug/segfault.c' l='139' u='c' c='catch_segfault'/>

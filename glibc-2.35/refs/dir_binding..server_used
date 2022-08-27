@@ -1,0 +1,16 @@
+<dec f='codebrowser/nis/rpcsvc/nislib.h' l='259' type='unsigned int'/>
+<offset>160</offset>
+<doc f='codebrowser/nis/rpcsvc/nislib.h' l='259'>/* Which server we are bind in the moment ? */</doc>
+<use f='codebrowser/nis/nis_call.c' l='85' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='86' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='88' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='95' u='w' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='96' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='97' u='w' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='99' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='100' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='102' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='189' u='r' c='__nisbind_connect'/>
+<use f='codebrowser/nis/nis_call.c' l='287' u='w' c='__nisbind_create'/>
+<use f='codebrowser/nis/nis_call.c' l='778' u='r' c='__nisfind_server'/>
+<use f='codebrowser/nis/nis_findserv.c' l='180' u='w' c='__nis_findfastest_with_timeout'/>

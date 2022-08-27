@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='73' type='int __pause_nocancel()'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='90' type='int __pause_nocancel()'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='90' c='__pause_nocancel'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='72'>/* Uncancelable pause.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/pause_nocancel.c' l='24' ll='32' type='int __pause_nocancel()'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='437' u='c' c='__pthread_mutex_cond_lock_full'/>

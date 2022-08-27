@@ -1,0 +1,7 @@
+<def f='codebrowser/malloc/malloc-debug.c' l='91' macro='1' type='void *(*)(size_t, const void *)'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='110' u='w' c='generic_hook_ini'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='171' c='__debug_malloc'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='171' u='r' c='__debug_malloc'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='366' c='__debug_calloc'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='366' u='r' c='__debug_calloc'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='577' u='w' c='malloc_set_state'/>

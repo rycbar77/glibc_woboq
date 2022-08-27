@@ -1,0 +1,6 @@
+<dec f='codebrowser/string/string.h' l='383' type='void * __mempcpy(void *restrict __dest, const void *restrict __src, size_t __n)'/>
+<doc f='codebrowser/string/string.h' l='381'>/* Copy N bytes of SRC to DEST, return pointer to bytes after the
+   last written byte.  */</doc>
+<dec f='codebrowser/elf/rtld.c' l='48' type='void * __mempcpy(void *restrict , const void *restrict , size_t )'/>
+<use f='codebrowser/elf/rtld.c' l='48' c='__mempcpy'/>
+<doc f='codebrowser/elf/rtld.c' l='47'>/* Avoid PLT use for our local calls at startup.  */</doc>

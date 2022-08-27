@@ -1,0 +1,5 @@
+<dec f='codebrowser/inet/arpa/inet.h' l='49' type='in_addr_t inet_network(const char * __cp)'/>
+<use f='codebrowser/include/arpa/inet.h' l='15' c='__inet_network'/>
+<doc f='codebrowser/inet/arpa/inet.h' l='47'>/* Extract the network number in network byte order from the address
+   in numbers-and-dots natation starting at CP.  */</doc>
+<def f='codebrowser/inet/inet_net.c' l='111' macro='1' type='in_addr_t inet_network(const char * )'/>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='652' type='void _pthread_cleanup_push(struct _pthread_cleanup_buffer * buffer, void (*)(void *) routine, void * arg)'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='651'>/* Old cleanup interfaces, still used in libc.so.  */</doc>
+<def f='codebrowser/nptl/cleanup_compat.c' l='36' macro='1' type='void _pthread_cleanup_push(struct _pthread_cleanup_buffer * , void (*)(void *) , void * )'/>

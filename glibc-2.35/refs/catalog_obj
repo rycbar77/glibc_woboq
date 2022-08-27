@@ -1,0 +1,15 @@
+<def f='codebrowser/catgets/catgetsinfo.h' l='21' ll='29'/>
+<use f='codebrowser/catgets/catgetsinfo.h' l='42'/>
+<size>12</size>
+<mbr r='catalog_obj::magic' o='0' t='uint32_t'/>
+<mbr r='catalog_obj::plane_size' o='32' t='uint32_t'/>
+<mbr r='catalog_obj::plane_depth' o='64' t='uint32_t'/>
+<mbr r='catalog_obj::name_ptr' o='96' t='uint32_t[0]'/>
+<use f='codebrowser/catgets/gencat.c' l='850' c='write_out'/>
+<size>12</size>
+<use f='codebrowser/catgets/open_catalog.c' l='200' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='219' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='221' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='311' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='317' c='__open_catalog'/>
+<size>12</size>

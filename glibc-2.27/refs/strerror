@@ -1,0 +1,4 @@
+<dec f='codebrowser/string/string.h' l='396' type='char * strerror(int __errnum)'/>
+<doc f='codebrowser/string/string.h' l='395'>/* Return a string describing the meaning of the `errno&apos; code in ERRNUM.  */</doc>
+<use f='codebrowser/dlfcn/dlerror.c' l='103' u='c' c='__dlerror'/>
+<def f='codebrowser/string/strerror.c' l='28' ll='43' type='char * strerror(int errnum)'/>

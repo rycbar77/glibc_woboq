@@ -1,0 +1,55 @@
+<dec f='codebrowser/locale/programs/record-status.h' l='34' type='void record_warning(const char * format)'/>
+<use f='codebrowser/locale/programs/charmap.c' l='263' u='c' c='charmap_read'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='132' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='181' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='181' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='181' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='181' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='181' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='198' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='206' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='227' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='236' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='274' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='299' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='318' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='330' u='c' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1570' u='c' c='collate_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='429' u='c' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='130' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='143' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='172' u='c' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-measurement.c' l='91' u='c' c='measurement_finish'/>
+<use f='codebrowser/locale/programs/ld-messages.c' l='95' u='c' c='messages_finish'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='191' u='c' c='monetary_finish'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='243' u='c' c='monetary_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='92' u='c' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='140' u='c' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='140' u='c' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='140' u='c' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='140' u='c' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='140' u='c' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-numeric.c' l='96' u='c' c='numeric_finish'/>
+<use f='codebrowser/locale/programs/ld-paper.c' l='88' u='c' c='paper_finish'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='91' u='c' c='telephone_finish'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='159' u='c' c='telephone_finish'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='159' u='c' c='telephone_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='163' u='c' c='time_finish'/>
+<def f='codebrowser/locale/programs/record-status.c' l='131' ll='159' type='void record_warning(const char * format)'/>
+<doc f='codebrowser/locale/programs/record-status.c' l='127'>/* Wrapper to print warning messages.  We keep track of how
+   many were called because this effects our exit code.
+   Nothing is printed if --quiet is in effect, but warnings
+   are always counted.  */</doc>

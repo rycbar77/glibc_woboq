@@ -1,0 +1,24 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='476' type='list_t'/>
+<use f='codebrowser/csu/libc-tls.c' l='199' u='a' c='__libc_setup_tls'/>
+<use f='codebrowser/csu/libc-tls.c' l='199' u='a' c='__libc_setup_tls'/>
+<use f='codebrowser/csu/libc-tls.c' l='199' u='a' c='__libc_setup_tls'/>
+<use f='codebrowser/csu/libc-tls.c' l='200' u='a' c='__libc_setup_tls'/>
+<def f='codebrowser/elf/dl-support.c' l='194' type='list_t'/>
+<use f='codebrowser/nptl/allocatestack.c' l='504' macro='1' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='948' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='948' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='948' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='951' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1094' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1094' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1119' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1119' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1149' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1149' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1203' macro='1' u='a' c='__pthread_init_static_tls'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1203' macro='1' u='a' c='__pthread_init_static_tls'/>
+<use f='codebrowser/nptl/pthread_create.c' l='231' macro='1' u='a' c='__find_in_stack_list'/>
+<use f='codebrowser/nptl/pthread_create.c' l='231' macro='1' u='a' c='__find_in_stack_list'/>
+<use f='codebrowser/nptl_db/structs.def' l='107' macro='1' u='r'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='57' macro='1' u='a' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='57' macro='1' u='a' c='__thread_gscope_wait'/>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dl-runtime.h source code [codebrowser/sysdeps/x86_64/dl-runtime.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/dl-runtime.h'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>sysdeps</a>/<a href='./'>x86_64</a>/<a href='dl-runtime.h.html'>dl-runtime.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Helpers for On-demand PLT fixup for shared objects.  x86_64 version.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2020-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, write to the Free</i></td></tr>
+<tr><th id="17">17</th><td><i>   Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA</i></td></tr>
+<tr><th id="18">18</th><td><i>   02111-1307 USA.  */</i></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><i>/* The ABI calls for the PLT stubs to pass the index of the relocation</i></td></tr>
+<tr><th id="21">21</th><td><i>   and not its offset.  In _dl_profile_fixup and _dl_audit_pltexit we</i></td></tr>
+<tr><th id="22">22</th><td><i>   also use the index.  Therefore it is wasteful to compute the offset</i></td></tr>
+<tr><th id="23">23</th><td><i>   in the trampoline just to reverse the operation immediately</i></td></tr>
+<tr><th id="24">24</th><td><i>   afterwards.  */</i></td></tr>
+<tr><th id="25">25</th><td><em>static</em> <b>inline</b> <a class="typedef" href="../../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a></td></tr>
+<tr><th id="26">26</th><td><dfn class="decl def fn" id="reloc_offset" title='reloc_offset' data-ref="reloc_offset" data-ref-filename="reloc_offset">reloc_offset</dfn> (<a class="typedef" href="../../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a> <dfn class="local col4 decl" id="24plt0" title='plt0' data-type='uintptr_t' data-ref="24plt0" data-ref-filename="24plt0">plt0</dfn>, <a class="typedef" href="../../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a> <dfn class="local col5 decl" id="25pltn" title='pltn' data-type='uintptr_t' data-ref="25pltn" data-ref-filename="25pltn">pltn</dfn>)</td></tr>
+<tr><th id="27">27</th><td>{</td></tr>
+<tr><th id="28">28</th><td>  <b>return</b> <a class="local col5 ref" href="#25pltn" title='pltn' data-ref="25pltn" data-ref-filename="25pltn">pltn</a> * <b>sizeof</b> (<a class="macro" href="../../elf/link.h.html#30" title="Elf64_Rela" data-ref="_M/ElfW">ElfW</a>(Rela));</td></tr>
+<tr><th id="29">29</th><td>}</td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><em>static</em> <b>inline</b> <a class="typedef" href="../../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a></td></tr>
+<tr><th id="32">32</th><td><dfn class="decl def fn" id="reloc_index" title='reloc_index' data-ref="reloc_index" data-ref-filename="reloc_index">reloc_index</dfn> (<a class="typedef" href="../../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a> <dfn class="local col6 decl" id="26plt0" title='plt0' data-type='uintptr_t' data-ref="26plt0" data-ref-filename="26plt0">plt0</dfn>, <a class="typedef" href="../../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a> <dfn class="local col7 decl" id="27pltn" title='pltn' data-type='uintptr_t' data-ref="27pltn" data-ref-filename="27pltn">pltn</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col8 decl" id="28size" title='size' data-type='size_t' data-ref="28size" data-ref-filename="28size">size</dfn>)</td></tr>
+<tr><th id="33">33</th><td>{</td></tr>
+<tr><th id="34">34</th><td>  <b>return</b> <a class="local col7 ref" href="#27pltn" title='pltn' data-ref="27pltn" data-ref-filename="27pltn">pltn</a>;</td></tr>
+<tr><th id="35">35</th><td>}</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../elf/dl-audit.c.html'>codebrowser/elf/dl-audit.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,56 @@
+<dec f='codebrowser/include/link.h' l='267' type='struct r_scope_elem **'/>
+<offset>7360</offset>
+<doc f='codebrowser/include/link.h' l='265'>/* This is an array defining the lookup scope for this link map.
+       There are initially at most three different scope lists.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='343' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='347' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='350' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='373' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='391' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='393' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='396' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='411' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='415' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='417' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='718' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='719' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-libc.c' l='143' u='r' c='do_dlsym_private'/>
+<use f='codebrowser/elf/dl-load.c' l='1419' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1427' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1427' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1428' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1431' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-lookup.c' l='939' u='r' c='_dl_lookup_symbol_x'/>
+<use f='codebrowser/elf/dl-minimal.c' l='65' u='r' c='lookup_malloc_symbol'/>
+<use f='codebrowser/elf/dl-object.c' l='149' u='w' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='157' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='168' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='172' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='172' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='176' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-open.c' l='236' u='r' c='scope_has_map'/>
+<use f='codebrowser/elf/dl-open.c' l='237' u='r' c='scope_has_map'/>
+<use f='codebrowser/elf/dl-open.c' l='247' u='r' c='scope_size'/>
+<use f='codebrowser/elf/dl-open.c' l='280' u='r' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='302' u='r' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='303' u='r' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='304' u='r' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='306' u='w' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='344' u='r' c='update_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='346' u='r' c='update_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='702' u='r' c='dl_open_worker_begin'/>
+<use f='codebrowser/elf/dl-open.c' l='943' u='r' c='_dl_show_scope'/>
+<use f='codebrowser/elf/dl-open.c' l='944' u='r' c='_dl_show_scope'/>
+<use f='codebrowser/elf/dl-open.c' l='948' u='r' c='_dl_show_scope'/>
+<use f='codebrowser/elf/dl-open.c' l='949' u='r' c='_dl_show_scope'/>
+<use f='codebrowser/elf/dl-open.c' l='951' u='r' c='_dl_show_scope'/>
+<use f='codebrowser/elf/dl-runtime.c' l='95' u='r' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='279' u='r' c='_dl_profile_fixup'/>
+<use f='codebrowser/elf/dl-support.c' l='101' u='w'/>
+<use f='codebrowser/elf/dl-sym.c' l='80' u='r' c='call_dl_lookup'/>
+<use f='codebrowser/elf/dl-sym.c' l='106' u='r' c='do_sym'/>
+<use f='codebrowser/elf/rtld.c' l='658' u='r' c='relocate_doit'/>
+<use f='codebrowser/elf/rtld.c' l='2160' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2202' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2439' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2506' u='r' c='dl_main'/>

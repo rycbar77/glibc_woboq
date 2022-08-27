@@ -1,0 +1,7 @@
+<dec f='codebrowser/nss/nss_database.h' l='84' type='void __nss_database_fork_subprocess(struct nss_database_data * data)'/>
+<doc f='codebrowser/nss/nss_database.h' l='83'>/* Called by fork in the new subprocess, after forking.  */</doc>
+<def f='codebrowser/nss/nss_database.c' l='514' ll='529' type='void __nss_database_fork_subprocess(struct nss_database_data * data)'/>
+<dec f='codebrowser/posix/fork.c' l='95' type='void __nss_database_fork_subprocess(struct nss_database_data * )'/>
+<use f='codebrowser/posix/fork.c' l='95' c='__nss_database_fork_subprocess'/>
+<use f='codebrowser/posix/fork.c' l='95' u='r' c='__libc_fork'/>
+<use f='codebrowser/posix/fork.c' l='95' u='c' c='__libc_fork'/>

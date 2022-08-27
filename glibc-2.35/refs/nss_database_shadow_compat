@@ -1,0 +1,5 @@
+<dec f='codebrowser/nss/databases.def' l='38' macro='1' type='16'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='90' u='r' c='init_nss_interface'/>
+<use f='codebrowser/nss/nss_database.c' l='105' u='r'/>
+<use f='codebrowser/nss/nss_database.c' l='347' u='r' c='nss_database_reload'/>
+<use f='codebrowser/nss/nss_database.c' l='348' u='w' c='nss_database_reload'/>

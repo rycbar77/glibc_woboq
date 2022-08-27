@@ -1,0 +1,8 @@
+<def f='codebrowser/resolv/dn_expand.c' l='94' ll='102' type='int ___dn_expand(const unsigned char * msg, const unsigned char * eom, const unsigned char * src, char * dst, int dstsiz)'/>
+<use f='codebrowser/resolv/dn_expand.c' l='103' c='dn_expand'/>
+<use f='codebrowser/resolv/dn_expand.c' l='104' c='__libc_dn_expand'/>
+<doc f='codebrowser/resolv/dn_expand.c' l='89'>/* Expand compressed domain name COMP_DN to full domain name.  MSG is
+   a pointer to the beginning of the message, EOMORIG points to the
+   first location after the message, EXP_DN is a pointer to a buffer
+   of size LENGTH for the result.  Returns size of compressed name or
+   -1 if there was an error.  */</doc>

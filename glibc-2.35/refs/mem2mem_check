@@ -1,0 +1,6 @@
+<def f='codebrowser/malloc/malloc-check.c' l='75' ll='102' type='void * mem2mem_check(void * ptr, size_t req_sz)'/>
+<use f='codebrowser/malloc/malloc-check.c' l='207' u='c' c='malloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='333' u='c' c='realloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='375' u='c' c='memalign_check'/>
+<doc f='codebrowser/malloc/malloc-check.c' l='72'>/* Instrument a chunk with overrun detector byte(s) and convert it
+   into a user pointer with requested size req_sz. */</doc>

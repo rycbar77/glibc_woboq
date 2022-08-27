@@ -1,0 +1,53 @@
+<use f='codebrowser/nss/nsswitch.h' l='207' c='__nss_hostname_digits_dots_context'/>
+<def f='codebrowser/resolv/resolv_context.h' l='49' ll='68'/>
+<use f='codebrowser/resolv/resolv_context.h' l='67'/>
+<use f='codebrowser/resolv/resolv_context.h' l='73' c='__resolv_context_get'/>
+<use f='codebrowser/resolv/resolv_context.h' l='80' c='__resolv_context_put'/>
+<use f='codebrowser/resolv/resolv_context.h' l='85' c='__resolv_context_get_preinit'/>
+<use f='codebrowser/resolv/resolv_context.h' l='92' c='__resolv_context_get_override'/>
+<use f='codebrowser/resolv/resolv_context.h' l='99' c='__resolv_context_search_list'/>
+<use f='codebrowser/resolv/resolv_context.h' l='117' c='__resolv_context_nameserver_count'/>
+<use f='codebrowser/resolv/resolv_context.h' l='128' c='__resolv_context_nameserver'/>
+<use f='codebrowser/resolv/resolv_context.h' l='148' c='__resolv_context_sort_count'/>
+<use f='codebrowser/resolv/resolv_context.h' l='158' c='__resolv_context_sort_entry'/>
+<size>40</size>
+<doc f='codebrowser/resolv/resolv_context.h' l='48'>/* Temporary resolver state.  */</doc>
+<mbr r='resolv_context::resp' o='0' t='struct __res_state *'/>
+<mbr r='resolv_context::conf' o='64' t='struct resolv_conf *'/>
+<mbr r='resolv_context::__refcount' o='128' t='size_t'/>
+<mbr r='resolv_context::__from_res' o='192' t='_Bool'/>
+<mbr r='resolv_context::__next' o='256' t='struct resolv_context *'/>
+<use f='codebrowser/resolv/resolv-internal.h' l='59' c='__res_context_mkquery'/>
+<use f='codebrowser/resolv/resolv-internal.h' l='64' c='__res_context_search'/>
+<use f='codebrowser/resolv/resolv-internal.h' l='70' c='__res_context_query'/>
+<use f='codebrowser/resolv/resolv-internal.h' l='77' c='__res_context_send'/>
+<use f='codebrowser/resolv/resolv-internal.h' l='83' c='__res_context_hostalias'/>
+<use f='codebrowser/resolv/resolv-internal.h' l='88' c='__res_nopt'/>
+<use f='codebrowser/nss/digits_dots.c' l='43' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/digits_dots.c' l='62' c='__nss_hostname_digits_dots_context'/>
+<size>40</size>
+<use f='codebrowser/nss/getnssent_r.c' l='63' c='__nss_setent'/>
+<use f='codebrowser/nss/getnssent_r.c' l='123' c='__nss_endent'/>
+<use f='codebrowser/nss/getnssent_r.c' l='170' c='__nss_getent_r'/>
+<size>40</size>
+<use f='codebrowser/resolv/resolv_context.c' l='52'/>
+<use f='codebrowser/resolv/resolv_context.c' l='60' c='replicated_configuration_matches'/>
+<use f='codebrowser/resolv/resolv_context.c' l='71' c='maybe_init'/>
+<use f='codebrowser/resolv/resolv_context.c' l='130' c='context_alloc'/>
+<use f='codebrowser/resolv/resolv_context.c' l='133' c='context_alloc'/>
+<use f='codebrowser/resolv/resolv_context.c' l='147' c='context_free'/>
+<use f='codebrowser/resolv/resolv_context.c' l='157' c='context_reuse'/>
+<use f='codebrowser/resolv/resolv_context.c' l='175' c='context_get'/>
+<use f='codebrowser/resolv/resolv_context.c' l='181' c='context_get'/>
+<use f='codebrowser/resolv/resolv_context.c' l='192' c='__resolv_context_get'/>
+<use f='codebrowser/resolv/resolv_context.c' l='199' c='__resolv_context_get_preinit'/>
+<use f='codebrowser/resolv/resolv_context.c' l='206' c='__resolv_context_get_override'/>
+<use f='codebrowser/resolv/resolv_context.c' l='211' c='__resolv_context_get_override'/>
+<use f='codebrowser/resolv/resolv_context.c' l='221' c='__resolv_context_put'/>
+<use f='codebrowser/resolv/resolv_context.c' l='244' c='__resolv_context_freeres'/>
+<use f='codebrowser/resolv/resolv_context.c' l='248' c='__resolv_context_freeres'/>
+<size>40</size>
+<use f='codebrowser/resolv/res_use_inet6.h' l='29' c='__resolv_context_disable_inet6'/>
+<use f='codebrowser/resolv/res_use_inet6.h' l='43' c='__resolv_context_enable_inet6'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='560' c='gaih_inet'/>
+<size>40</size>

@@ -1,0 +1,36 @@
+<def f='codebrowser/sysdeps/nptl/internaltypes.h' l='160' ll='185'/>
+<size>16</size>
+<doc f='codebrowser/sysdeps/nptl/internaltypes.h' l='159'>/* Semaphore variable structure.  */</doc>
+<mbr r='new_sem::data' o='0' t='uint64_t'/>
+<mbr r='new_sem::private' o='64' t='int'/>
+<mbr r='new_sem::pad' o='96' t='int'/>
+<use f='codebrowser/nptl/semaphoreP.h' l='46' c='__new_sem_open_init'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='89' c='__sem_wait_cleanup'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='89' c='__sem_wait_cleanup'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='106' c='do_futex_wait'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='126' c='__new_sem_wait_fast'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='165' c='__new_sem_wait_slow64'/>
+<use f='codebrowser/nptl/sem_clockwait.c' l='43' c='__sem_clockwait'/>
+<use f='codebrowser/nptl/sem_clockwait.c' l='46' c='__sem_clockwait'/>
+<size>16</size>
+<use f='codebrowser/nptl/sem_getvalue.c' l='28' c='__new_sem_getvalue'/>
+<use f='codebrowser/nptl/sem_getvalue.c' l='28' c='__new_sem_getvalue'/>
+<size>16</size>
+<use f='codebrowser/nptl/sem_init.c' l='30' c='__new_sem_init'/>
+<use f='codebrowser/nptl/sem_init.c' l='47' c='__new_sem_init'/>
+<use f='codebrowser/nptl/sem_init.c' l='47' c='__new_sem_init'/>
+<size>16</size>
+<use f='codebrowser/nptl/sem_post.c' l='35' c='__new_sem_post'/>
+<use f='codebrowser/nptl/sem_post.c' l='35' c='__new_sem_post'/>
+<size>16</size>
+<use f='codebrowser/nptl/sem_timedwait.c' l='38' c='__sem_timedwait'/>
+<use f='codebrowser/nptl/sem_timedwait.c' l='41' c='__sem_timedwait'/>
+<size>16</size>
+<use f='codebrowser/nptl/sem_wait.c' l='40' c='__new_sem_wait'/>
+<use f='codebrowser/nptl/sem_wait.c' l='43' c='__new_sem_wait'/>
+<use f='codebrowser/nptl/sem_wait.c' l='78' c='__new_sem_trywait'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='211' c='sem_open'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='217' c='sem_open'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='218' c='sem_open'/>
+<size>16</size>

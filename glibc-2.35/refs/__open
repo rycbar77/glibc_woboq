@@ -1,0 +1,40 @@
+<dec f='codebrowser/include/fcntl.h' l='17' type='int __open(const char * __file, int __oflag)'/>
+<dec f='codebrowser/include/fcntl.h' l='18' type='int __open(const char * , int )'/>
+<use f='codebrowser/include/fcntl.h' l='18' c='__open'/>
+<dec f='codebrowser/sysdeps/generic/dl-fcntl.h' l='20' type='int __open(const char * , int )'/>
+<use f='codebrowser/sysdeps/generic/dl-fcntl.h' l='20' c='__open'/>
+<doc f='codebrowser/sysdeps/generic/dl-fcntl.h' l='1'>/* Functions with hidden attribute internal to ld.so, which are declared
+   in include/fcntl.h.  Generic version.
+   Copyright (C) 2016-2022 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<use f='codebrowser/io/open_2.c' l='28' u='c' c='__open_2'/>
+<use f='codebrowser/libio/fileops.c' l='188' u='c' c='_IO_file_open'/>
+<use f='codebrowser/misc/syslog.c' l='287' u='c' c='__vsyslog_internal'/>
+<use f='codebrowser/shadow/lckpwdf.c' l='100' u='c' c='__lckpwdf'/>
+<use f='codebrowser/sysdeps/posix/tempname.c' l='178' u='c' c='try_file'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='67' u='c' c='__sem_open'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='135' u='c' c='__sem_open'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/gentempfd.c' l='27' u='c' c='__gen_tempfd'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/gentempfd.c' l='30' u='c' c='__gen_tempfd'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getpt.c' l='30' u='c' c='__posix_openpt'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/open64.c' l='51' macro='1' type='int __open(const char * , int )'/>
+<use f='codebrowser/io/fts.c' l='221' u='c' c='fts_open'/>
+<use f='codebrowser/io/fts.c' l='345' u='c' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='438' u='c' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='575' u='c' c='fts_children'/>
+<use f='codebrowser/io/fts.c' l='1118' u='c' c='fts_safe_changedir'/>
+<use f='codebrowser/io/ftw.c' l='695' u='c' c='ftw_startup'/>

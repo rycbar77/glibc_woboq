@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='95'/>
+<doc f='codebrowser/sysdeps/nptl/libc-lockP.h' l='92'>/* All previously forwarded functions are now called directly (either
+   via local call in libc, or through a __export), but __libc_ptf_call
+   is still used in generic code shared with Hurd.  */</doc>

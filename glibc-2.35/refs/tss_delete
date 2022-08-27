@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/pthread/threads.h' l='233' type='void tss_delete(tss_t __tss_id)'/>
+<doc f='codebrowser/sysdeps/pthread/threads.h' l='231'>/* Destroys the thread-specific storage identified by __TSS_ID.  The
+   destructor is not called until thrd_exit is called.  */</doc>
+<def f='codebrowser/sysdeps/pthread/tss_delete.c' l='28' macro='1' type='void tss_delete(tss_t )'/>

@@ -1,0 +1,85 @@
+<use f='codebrowser/locale/programs/charmap.h' l='30'/>
+<use f='codebrowser/locale/programs/charmap.h' l='31'/>
+<def f='codebrowser/locale/programs/charmap.h' l='57' ll='63'/>
+<use f='codebrowser/locale/programs/charmap.h' l='76' c='charmap_find_value'/>
+<use f='codebrowser/locale/programs/charmap.h' l='80' c='charmap_find_symbol'/>
+<use f='codebrowser/locale/programs/repertoire.h' l='60' c='repertoire_find_seq'/>
+<size>16</size>
+<doc f='codebrowser/locale/programs/charmap.h' l='55'>/* This is the structure used for entries in the hash table.  It represents
+   the sequence of bytes used for the coded character.  */</doc>
+<mbr r='charseq::name' o='0' t='const char *'/>
+<mbr r='charseq::ucs4' o='64' t='uint32_t'/>
+<mbr r='charseq::nbytes' o='96' t='int'/>
+<mbr r='charseq::bytes' o='128' t='unsigned char[]'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='44'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='246' c='add_bytes'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='246' c='add_bytes'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='281' c='convert_charseq'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='282' c='convert_charseq'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='284' c='convert_charseq'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='304' c='convert_charseq'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='342' c='use_from_charmap'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='343' c='use_from_charmap'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='381' c='use_to_charmap'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='382' c='use_to_charmap'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='412' c='use_both_charmaps'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='412' c='use_both_charmaps'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='413' c='use_both_charmaps'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='434' c='process_block'/>
+<size>16</size>
+<use f='codebrowser/locale/programs/charmap.c' l='249' c='charmap_read'/>
+<use f='codebrowser/locale/programs/charmap.c' l='868' c='new_width'/>
+<use f='codebrowser/locale/programs/charmap.c' l='869' c='new_width'/>
+<use f='codebrowser/locale/programs/charmap.c' l='922' c='charmap_find_value'/>
+<use f='codebrowser/locale/programs/charmap.c' l='928' c='charmap_find_value'/>
+<use f='codebrowser/locale/programs/charmap.c' l='946' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='952' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='1046' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='1101' c='charmap_find_symbol'/>
+<use f='codebrowser/locale/programs/charmap.c' l='1108' c='charmap_find_symbol'/>
+<size>16</size>
+<use f='codebrowser/locale/programs/ld-collate.c' l='957' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1189' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1362' c='handle_ellipsis'/>
+<size>16</size>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='184'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='191'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='394' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='672' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='718' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='718' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='767' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='787' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='851' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='856' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1258' c='get_character'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1294' c='get_character'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1390' c='charclass_symbolic_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1474' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1493' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1511' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1520' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1606' c='charclass_charcode_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1652' c='charclass_charcode_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1661' c='charclass_charcode_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1671' c='charclass_charcode_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1818' c='read_widestring'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2286' c='ctype_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2562' c='ctype_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2564' c='ctype_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2865' c='set_one_default'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2964' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3102' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3179' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3225' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3225' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3327' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3770' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3770' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3809' c='allocate_arrays'/>
+<size>16</size>
+<use f='codebrowser/locale/programs/linereader.c' l='646' c='get_string'/>
+<size>16</size>
+<use f='codebrowser/locale/programs/repertoire.c' l='509' c='repertoire_find_seq'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='521' c='repertoire_find_seq'/>
+<size>16</size>

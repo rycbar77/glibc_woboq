@@ -1,0 +1,55 @@
+<def f='codebrowser/bits/types/struct_sched_param.h' l='23' ll='26'/>
+<use f='codebrowser/posix/sched.h' l='54' c='sched_setparam'/>
+<use f='codebrowser/posix/sched.h' l='58' c='sched_getparam'/>
+<use f='codebrowser/posix/sched.h' l='62' c='sched_setscheduler'/>
+<use f='codebrowser/include/sched.h' l='7' c='__sched_setparam'/>
+<use f='codebrowser/include/sched.h' l='9' c='__sched_getparam'/>
+<use f='codebrowser/include/sched.h' l='12' c='__sched_setscheduler'/>
+<use f='codebrowser/sysdeps/nptl/pthread.h' l='315' c='pthread_attr_getschedparam'/>
+<use f='codebrowser/sysdeps/nptl/pthread.h' l='320' c='pthread_attr_setschedparam'/>
+<use f='codebrowser/sysdeps/nptl/pthread.h' l='442' c='pthread_setschedparam'/>
+<use f='codebrowser/sysdeps/nptl/pthread.h' l='448' c='pthread_getschedparam'/>
+<use f='codebrowser/nptl/descr.h' l='354'/>
+<size>4</size>
+<doc f='codebrowser/bits/types/struct_sched_param.h' l='22'>/* Data structure to describe a process&apos; schedulability.  */</doc>
+<mbr r='sched_param::sched_priority' o='0' t='int'/>
+<use f='codebrowser/sysdeps/nptl/internaltypes.h' l='29'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='338' c='__pthread_getschedparam'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='341' c='__pthread_setschedparam'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='377' c='__pthread_attr_getschedparam'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='379' c='__pthread_attr_setschedparam'/>
+<size>4</size>
+<use f='codebrowser/posix/spawn.h' l='35'/>
+<use f='codebrowser/posix/spawn.h' l='159' c='posix_spawnattr_getschedparam'/>
+<use f='codebrowser/posix/spawn.h' l='165' c='posix_spawnattr_setschedparam'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_attr_getschedparam.c' l='24' c='__pthread_attr_getschedparam'/>
+<use f='codebrowser/nptl/pthread_attr_getschedparam.c' l='31' c='__pthread_attr_getschedparam'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_attr_setschedparam.c' l='25' c='__pthread_attr_setschedparam'/>
+<use f='codebrowser/nptl/pthread_attr_setschedparam.c' l='35' c='__pthread_attr_setschedparam'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='48' c='__pthread_getattr_np'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='26' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='65' c='__pthread_getschedparam'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='39' c='__pthread_setattr_default_np'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='27' c='__pthread_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='41' c='__pthread_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='42' c='__pthread_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='63' c='__pthread_setschedparam'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='37' c='__pthread_setschedprio'/>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='56' c='__pthread_setschedprio'/>
+<size>4</size>
+<use f='codebrowser/nptl/tpp.c' l='144' c='__pthread_tpp_change_priority'/>
+<size>4</size>
+<use f='codebrowser/posix/spawnattr_getschedparam.c' l='24' c='posix_spawnattr_getschedparam'/>
+<size>4</size>
+<use f='codebrowser/posix/spawnattr_setschedparam.c' l='24' c='posix_spawnattr_setschedparam'/>
+<size>4</size>
+<use f='codebrowser/rt/aio_misc.c' l='314' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='494' c='handle_fildes_io'/>
+<size>4</size>

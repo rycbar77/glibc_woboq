@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/x86_64/nptl/tls.h' l='49' type='struct (unnamed struct at /media/rr/Data/glibc_source/glibc-2.23/argp/../sysdeps/x86_64/nptl/tls.h:45:3)'/>
+<offset>0</offset>
+<use f='codebrowser/csu/libc-tls.c' l='169' u='m' c='__libc_setup_tls'/>
+<use f='codebrowser/csu/libc-tls.c' l='178' u='m' c='__libc_setup_tls'/>
+<use f='codebrowser/csu/libc-tls.c' l='180' u='m' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='496' u='m' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='497' u='m' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='554' u='m' c='_dl_deallocate_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='555' u='m' c='_dl_deallocate_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='556' u='m' c='_dl_deallocate_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='878' u='m' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/nptl/allocatestack.c' l='248' u='m' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='249' u='m' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='250' u='m' c='get_cached_stack'/>
+<use f='codebrowser/nptl_db/structs.def' l='98' u='m'/>

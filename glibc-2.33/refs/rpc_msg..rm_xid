@@ -1,0 +1,20 @@
+<dec f='codebrowser/sunrpc/rpc/rpc_msg.h' l='150' type='u_long'/>
+<offset>0</offset>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='181' u='w' c='__GI_clnttcp_create'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='294' u='r' c='clnttcp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='166' u='w' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='166' u='w' c='__GI_clntunix_create'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='271' u='r' c='clntunix_call'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='264' u='w' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='354' u='r' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/rpc_cmsg.c' l='64' u='r' c='__GI_xdr_callmsg'/>
+<use f='codebrowser/sunrpc/rpc_cmsg.c' l='100' u='w' c='__GI_xdr_callmsg'/>
+<use f='codebrowser/sunrpc/rpc_cmsg.c' l='186' u='a' c='__GI_xdr_callmsg'/>
+<use f='codebrowser/sunrpc/rpc_prot.c' l='135' u='a' c='__GI_xdr_replymsg'/>
+<use f='codebrowser/sunrpc/rpc_prot.c' l='159' u='a' c='__GI_xdr_callhdr'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='401' u='r' c='svctcp_recv'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='432' u='w' c='svctcp_reply'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='304' u='r' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='340' u='w' c='svcudp_reply'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='503' u='r' c='svcunix_recv'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='540' u='w' c='svcunix_reply'/>

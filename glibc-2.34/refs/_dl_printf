@@ -1,0 +1,57 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='813' type='void _dl_printf(const char * fmt)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='811'>/* Write a message on the specified descriptor standard output.  The
+   parameters are interpreted as for a `printf&apos; call.  */</doc>
+<use f='codebrowser/elf/dl-diagnostics.c' l='77' u='c' c='_dl_diagnostics_print_string'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='93' u='c' c='_dl_diagnostics_print_labeled_string'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='103' u='c' c='_dl_diagnostics_print_labeled_value'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='109' u='c' c='_dl_diagnostics_print_labeled_value'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='111' u='c' c='_dl_diagnostics_print_labeled_value'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='191' u='c' c='print_environ'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='215' u='c' c='print_paths'/>
+<def f='codebrowser/elf/dl-misc.c' l='305' ll='313' type='void _dl_printf(const char * fmt)'/>
+<use f='codebrowser/elf/dl-tunables.c' l='365' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='368' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='372' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='378' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='384' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='390' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-usage.c' l='42' u='c' c='_dl_version'/>
+<use f='codebrowser/elf/dl-usage.c' l='75' u='c' c='print_search_path_for_help_1'/>
+<use f='codebrowser/elf/dl-usage.c' l='88' u='c' c='print_search_path_for_help'/>
+<use f='codebrowser/elf/dl-usage.c' l='102' u='c' c='print_search_path_for_help'/>
+<use f='codebrowser/elf/dl-usage.c' l='115' u='c' c='print_hwcap_1'/>
+<use f='codebrowser/elf/dl-usage.c' l='119' u='c' c='print_hwcap_1'/>
+<use f='codebrowser/elf/dl-usage.c' l='120' u='c' c='print_hwcap_1'/>
+<use f='codebrowser/elf/dl-usage.c' l='130' u='c' c='print_hwcap_1_finish'/>
+<use f='codebrowser/elf/dl-usage.c' l='132' u='c' c='print_hwcap_1_finish'/>
+<use f='codebrowser/elf/dl-usage.c' l='141' u='c' c='print_hwcaps_subdirectories_header'/>
+<use f='codebrowser/elf/dl-usage.c' l='192' u='c' c='print_hwcaps_subdirectories'/>
+<use f='codebrowser/elf/dl-usage.c' l='201' u='c' c='print_legacy_hwcap_directories'/>
+<use f='codebrowser/elf/dl-usage.c' l='206' u='c' c='print_legacy_hwcap_directories'/>
+<use f='codebrowser/elf/dl-usage.c' l='208' u='c' c='print_legacy_hwcap_directories'/>
+<use f='codebrowser/elf/dl-usage.c' l='217' u='c' c='print_legacy_hwcap_directories'/>
+<use f='codebrowser/elf/dl-usage.c' l='230' u='c' c='_dl_help'/>
+<use f='codebrowser/elf/rtld.c' l='2026' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2031' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2040' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2044' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2080' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2084' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2094' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2100' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2102' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2106' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2125' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2186' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2190' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2209' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2626' u='c' c='process_dl_debug'/>
+<use f='codebrowser/elf/rtld.c' l='2630' u='c' c='process_dl_debug'/>
+<use f='codebrowser/elf/rtld.c' l='2634' u='c' c='process_dl_debug'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='32' u='c' c='print_auxv'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='42' u='c' c='print_auxv'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='43' u='c' c='print_auxv'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='52' u='c' c='print_utsname_entry'/>
+<use f='codebrowser/sysdeps/x86/dl-diagnostics-cpu.c' l='25' u='c' c='print_cpu_features_value'/>
+<use f='codebrowser/sysdeps/x86/dl-diagnostics-cpu.c' l='33' u='c' c='print_cpu_feature_internal'/>
+<use f='codebrowser/sysdeps/x86/dl-diagnostics-cpu.c' l='40' u='c' c='print_cpu_feature_preferred'/>

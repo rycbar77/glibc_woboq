@@ -1,0 +1,31 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/clone3.h' l='35' ll='59'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone3.h' l='62' c='clone3'/>
+<use f='codebrowser/include/clone_internal.h' l='8' c='__clone_internal'/>
+<use f='codebrowser/nptl/pthread_create.c' l='284' c='create_thread'/>
+<size>88</size>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/clone3.h' l='31'>/* This struct should only be used in an argument to the clone3 system
+   call (along with its size argument).  It may be extended with new
+   fields in the future.  */</doc>
+<mbr r='clone_args::flags' o='0' t='__aligned_uint64_t'/>
+<mbr r='clone_args::pidfd' o='64' t='__aligned_uint64_t'/>
+<mbr r='clone_args::child_tid' o='128' t='__aligned_uint64_t'/>
+<mbr r='clone_args::parent_tid' o='192' t='__aligned_uint64_t'/>
+<mbr r='clone_args::exit_signal' o='256' t='__aligned_uint64_t'/>
+<mbr r='clone_args::stack' o='320' t='__aligned_uint64_t'/>
+<mbr r='clone_args::stack_size' o='384' t='__aligned_uint64_t'/>
+<mbr r='clone_args::tls' o='448' t='__aligned_uint64_t'/>
+<mbr r='clone_args::set_tid' o='512' t='__aligned_uint64_t'/>
+<mbr r='clone_args::set_tid_size' o='576' t='__aligned_uint64_t'/>
+<mbr r='clone_args::cgroup' o='640' t='__aligned_uint64_t'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='35'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='37'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='37'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='39'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='39'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='41'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='41'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='43'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='47' c='__clone_internal'/>
+<size>88</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='371' c='__spawnix'/>
+<size>88</size>

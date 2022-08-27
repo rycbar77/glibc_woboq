@@ -1,0 +1,5 @@
+<dec f='codebrowser/support/temp_file.h' l='50' type='char * support_create_and_chdir_toolong_temp_directory(const char * basename)'/>
+<doc f='codebrowser/support/temp_file.h' l='47'>/* Create a temporary directory tree that is longer than PATH_MAX and schedule
+   it for deletion.  BASENAME is used as a prefix for the unique directory
+   name, which the function returns.  The caller should free this string.  */</doc>
+<def f='codebrowser/support/temp_file.c' l='167' ll='190' type='char * support_create_and_chdir_toolong_temp_directory(const char * basename)'/>

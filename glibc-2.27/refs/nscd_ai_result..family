@@ -1,0 +1,11 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='150' type='uint8_t *'/>
+<offset>128</offset>
+<use f='codebrowser/nscd/nscd_getai.c' l='131' u='w' c='__nscd_getai'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='133' u='r' c='__nscd_getai'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='669' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='672' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='676' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='703' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='716' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='718' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='722' u='r' c='gaih_inet'/>

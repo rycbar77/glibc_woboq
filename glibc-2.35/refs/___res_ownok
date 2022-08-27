@@ -1,0 +1,4 @@
+<def f='codebrowser/resolv/res-name-checking.c' l='163' ll='176' type='int ___res_ownok(const char * dn)'/>
+<use f='codebrowser/resolv/res-name-checking.c' l='177' c='res_ownok'/>
+<doc f='codebrowser/resolv/res-name-checking.c' l='161'>/* Hostname-like (A, MX, WKS) owners can have &quot;*&quot; as their first label
+   but must otherwise be as a host name.  */</doc>

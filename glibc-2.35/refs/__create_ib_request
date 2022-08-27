@@ -1,0 +1,11 @@
+<dec f='codebrowser/nis/libnsl.h' l='25' type='struct ib_request * __create_ib_request(const_nis_name name, unsigned int flags)'/>
+<dec f='codebrowser/nis/libnsl.h' l='27' type='struct ib_request * __create_ib_request(const_nis_name , unsigned int )'/>
+<use f='codebrowser/nis/libnsl.h' l='27' c='__create_ib_request'/>
+<def f='codebrowser/nis/nis_table.c' l='29' ll='129' type='struct ib_request * __create_ib_request(const_nis_name name, unsigned int flags)'/>
+<use f='codebrowser/nis/nis_table.c' l='130' c='__EI___create_ib_request'/>
+<use f='codebrowser/nis/nis_table.c' l='241' u='c' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='570' u='c' c='__GI_nis_add_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='634' u='c' c='__GI_nis_modify_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='694' u='c' c='__GI_nis_remove_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='742' u='c' c='__GI_nis_first_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='780' u='c' c='__GI_nis_next_entry'/>

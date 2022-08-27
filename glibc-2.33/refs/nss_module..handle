@@ -1,0 +1,6 @@
+<dec f='codebrowser/nss/nss_module.h' l='65' type='void *'/>
+<offset>4160</offset>
+<doc f='codebrowser/nss/nss_module.h' l='64'>/* Only used for __libc_freeres unloading.  */</doc>
+<use f='codebrowser/nss/nss_module.c' l='99' u='w' c='__nss_module_allocate'/>
+<use f='codebrowser/nss/nss_module.c' l='229' u='w' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='372' u='r' c='__nss_module_freeres'/>

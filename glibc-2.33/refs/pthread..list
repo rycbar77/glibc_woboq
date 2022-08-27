@@ -1,0 +1,35 @@
+<dec f='codebrowser/nptl/descr.h' l='167' type='list_t'/>
+<offset>5632</offset>
+<doc f='codebrowser/nptl/descr.h' l='165'>/* This descriptor&apos;s link on the GL (dl_stack_used) or
+     GL (dl_stack_user) list.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='200' u='a' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/rtld.c' l='808' u='a' c='init_tls'/>
+<use f='codebrowser/elf/rtld.c' l='2444' u='a' c='dl_main'/>
+<use f='codebrowser/nptl/allocatestack.c' l='176' u='a' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='206' u='a' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='209' u='a' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='257' u='a' c='free_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='297' u='a' c='queue_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='504' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='638' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='684' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='794' u='a' c='__deallocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='827' u='a' c='__make_stacks_executable'/>
+<use f='codebrowser/nptl/allocatestack.c' l='842' u='a' c='__make_stacks_executable'/>
+<use f='codebrowser/nptl/allocatestack.c' l='907' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='944' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='951' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='953' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1086' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1096' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1112' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1121' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1142' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1151' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1200' u='a' c='__pthread_init_static_tls'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1204' u='a' c='__pthread_init_static_tls'/>
+<use f='codebrowser/nptl/pthread_create.c' l='222' u='a' c='__find_in_stack_list'/>
+<use f='codebrowser/nptl/pthread_create.c' l='235' u='a' c='__find_in_stack_list'/>
+<use f='codebrowser/nptl_db/structs.def' l='48' u='r'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='36' u='a' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='59' u='a' c='__thread_gscope_wait'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldconfig.h' l='68' type='const char * glibc_hwcaps_subdirectory_name(const struct glibc_hwcaps_subdirectory * )'/>
+<def f='codebrowser/elf/cache.c' l='63' ll='67' type='const char * glibc_hwcaps_subdirectory_name(const struct glibc_hwcaps_subdirectory * dir)'/>
+<use f='codebrowser/elf/cache.c' l='97' u='c' c='assign_glibc_hwcaps_indices_compare'/>
+<use f='codebrowser/elf/cache.c' l='98' u='c' c='assign_glibc_hwcaps_indices_compare'/>
+<use f='codebrowser/elf/cache.c' l='456' u='c' c='compare'/>
+<use f='codebrowser/elf/cache.c' l='457' u='c' c='compare'/>
+<doc f='codebrowser/sysdeps/generic/ldconfig.h' l='66'>/* Returns the name that was specified when
+   add_glibc_hwcaps_subdirectory was called.  */</doc>
+<use f='codebrowser/elf/ldconfig.c' l='801' u='c' c='search_dir'/>

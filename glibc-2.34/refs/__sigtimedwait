@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/signal.h' l='49' type='int __sigtimedwait(const sigset_t * __set, siginfo_t * __info, const struct timespec * __timeout)'/>
+<dec f='codebrowser/include/signal.h' l='51' type='int __sigtimedwait(const sigset_t * , siginfo_t * , const struct timespec * )'/>
+<use f='codebrowser/include/signal.h' l='51' c='__sigtimedwait'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/sigtimedwait.c' l='22' macro='1' type='int __sigtimedwait(const sigset_t * set, siginfo_t * info, const struct timespec * timeout)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigtimedwait.c' l='83' c='sigtimedwait'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigwait.c' l='28' u='c' c='__sigwait'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigwaitinfo.c' l='25' u='c' c='__sigwaitinfo'/>

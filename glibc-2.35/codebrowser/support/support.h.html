@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>support.h source code [codebrowser/support/support.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="support_stack "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/support/support.h'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>support</a>/<a href='support.h.html'>support.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Common extra functions.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2016-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   Copyright The GNU Toolchain Authors.</i></td></tr>
+<tr><th id="4">4</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="5">5</th><td><i></i></td></tr>
+<tr><th id="6">6</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="7">7</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="8">8</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="9">9</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="10">10</th><td><i></i></td></tr>
+<tr><th id="11">11</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="12">12</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="13">13</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="14">14</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="15">15</th><td><i></i></td></tr>
+<tr><th id="16">16</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="17">17</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="18">18</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><i>/* This header file should only contain definitions compatible with</i></td></tr>
+<tr><th id="21">21</th><td><i>   C90.  (Using __attribute__ is fine because &lt;features.h&gt; provides a</i></td></tr>
+<tr><th id="22">22</th><td><i>   fallback.)  */</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><u>#<span data-ppcond="24">ifndef</span> <span class="macro" data-ref="_M/SUPPORT_H">SUPPORT_H</span></u></td></tr>
+<tr><th id="25">25</th><td><u>#define <dfn class="macro" id="_M/SUPPORT_H" data-ref="_M/SUPPORT_H">SUPPORT_H</dfn></u></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><u>#include &lt;stdbool.h&gt;</u></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="../include/stdint.h.html">&lt;stdint.h&gt;</a></u></td></tr>
+<tr><th id="29">29</th><td><u>#include &lt;stddef.h&gt;</u></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="../include/sys/cdefs.h.html">&lt;sys/cdefs.h&gt;</a></u></td></tr>
+<tr><th id="31">31</th><td><i>/* For mode_t.  */</i></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="../include/sys/stat.h.html">&lt;sys/stat.h&gt;</a></u></td></tr>
+<tr><th id="33">33</th><td><i>/* For ssize_t and off64_t.  */</i></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="../include/sys/types.h.html">&lt;sys/types.h&gt;</a></u></td></tr>
+<tr><th id="35">35</th><td><i>/* For locale_t.  */</i></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="../include/locale.h.html">&lt;locale.h&gt;</a></u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><a class="macro" href="../misc/sys/cdefs.h.html#136" title="" data-ref="_M/__BEGIN_DECLS">__BEGIN_DECLS</a></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><i>/* Write a message to standard output.  Can be used in signal</i></td></tr>
+<tr><th id="41">41</th><td><i>   handlers.  */</i></td></tr>
+<tr><th id="42">42</th><td><em>void</em> <dfn class="decl fn" id="write_message" title='write_message' data-ref="write_message" data-ref-filename="write_message">write_message</dfn> (<em>const</em> <em>char</em> *<dfn class="local col0 decl" id="60message" title='message' data-type='const char *' data-ref="60message" data-ref-filename="60message">message</dfn>) <b>__attribute__</b> ((nonnull (<var>1</var>)));</td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><i>/* Avoid all the buffer overflow messages on stderr.  */</i></td></tr>
+<tr><th id="45">45</th><td><em>void</em> <dfn class="decl fn" id="ignore_stderr" title='ignore_stderr' data-ref="ignore_stderr" data-ref-filename="ignore_stderr">ignore_stderr</dfn> (<em>void</em>);</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><i>/* Set fortification error handler.  Used when tests want to verify that bad</i></td></tr>
+<tr><th id="48">48</th><td><i>   code is caught by the library.  */</i></td></tr>
+<tr><th id="49">49</th><td><em>void</em> <dfn class="decl fn" id="set_fortify_handler" title='set_fortify_handler' data-ref="set_fortify_handler" data-ref-filename="set_fortify_handler">set_fortify_handler</dfn> (<em>void</em> (*<dfn class="local col1 decl" id="61handler" title='handler' data-type='void (*)(int)' data-ref="61handler" data-ref-filename="61handler">handler</dfn>) (<em>int</em> <dfn class="local col2 decl" id="62sig" title='sig' data-type='int' data-ref="62sig" data-ref-filename="62sig">sig</dfn>));</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><i>/* Report an out-of-memory error for the allocation of SIZE bytes in</i></td></tr>
+<tr><th id="52">52</th><td><i>   FUNCTION, terminating the process.  */</i></td></tr>
+<tr><th id="53">53</th><td><em>void</em> <dfn class="decl fn" id="oom_error" title='oom_error' data-ref="oom_error" data-ref-filename="oom_error">oom_error</dfn> (<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="63function" title='function' data-type='const char *' data-ref="63function" data-ref-filename="63function">function</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col4 decl" id="64size" title='size' data-type='size_t' data-ref="64size" data-ref-filename="64size">size</dfn>)</td></tr>
+<tr><th id="54">54</th><td>  <b>__attribute__</b> ((nonnull (<var>1</var>)));</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><i>/* Return a pointer to a memory region of SIZE bytes.  The memory is</i></td></tr>
+<tr><th id="57">57</th><td><i>   initialized to zero and will be shared with subprocesses (across</i></td></tr>
+<tr><th id="58">58</th><td><i>   fork).  The returned pointer must be freed using</i></td></tr>
+<tr><th id="59">59</th><td><i>   support_shared_free; it is not compatible with the malloc</i></td></tr>
+<tr><th id="60">60</th><td><i>   functions.  */</i></td></tr>
+<tr><th id="61">61</th><td><em>void</em> *<dfn class="decl fn" id="support_shared_allocate" title='support_shared_allocate' data-ref="support_shared_allocate" data-ref-filename="support_shared_allocate">support_shared_allocate</dfn> (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col5 decl" id="65size" title='size' data-type='size_t' data-ref="65size" data-ref-filename="65size">size</dfn>);</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><i>/* Deallocate a pointer returned by support_shared_allocate.  */</i></td></tr>
+<tr><th id="64">64</th><td><em>void</em> <dfn class="decl fn" id="support_shared_free" title='support_shared_free' data-ref="support_shared_free" data-ref-filename="support_shared_free">support_shared_free</dfn> (<em>void</em> *);</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><i>/* Write CONTENTS to the file PATH.  Create or truncate the file as</i></td></tr>
+<tr><th id="67">67</th><td><i>   needed.  The file mode is 0666 masked by the umask.  Terminate the</i></td></tr>
+<tr><th id="68">68</th><td><i>   process on error.  */</i></td></tr>
+<tr><th id="69">69</th><td><em>void</em> <dfn class="decl fn" id="support_write_file_string" title='support_write_file_string' data-ref="support_write_file_string" data-ref-filename="support_write_file_string">support_write_file_string</dfn> (<em>const</em> <em>char</em> *<dfn class="local col6 decl" id="66path" title='path' data-type='const char *' data-ref="66path" data-ref-filename="66path">path</dfn>, <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="67contents" title='contents' data-type='const char *' data-ref="67contents" data-ref-filename="67contents">contents</dfn>);</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><i>/* Quote the contents of the byte array starting at BLOB, of LENGTH</i></td></tr>
+<tr><th id="72">72</th><td><i>   bytes, in such a way that the result string can be included in a C</i></td></tr>
+<tr><th id="73">73</th><td><i>   literal (in single/double quotes, without putting the quotes into</i></td></tr>
+<tr><th id="74">74</th><td><i>   the result).  */</i></td></tr>
+<tr><th id="75">75</th><td><em>char</em> *<dfn class="decl fn" id="support_quote_blob" title='support_quote_blob' data-ref="support_quote_blob" data-ref-filename="support_quote_blob">support_quote_blob</dfn> (<em>const</em> <em>void</em> *<dfn class="local col8 decl" id="68blob" title='blob' data-type='const void *' data-ref="68blob" data-ref-filename="68blob">blob</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col9 decl" id="69length" title='length' data-type='size_t' data-ref="69length" data-ref-filename="69length">length</dfn>);</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td><i>/* Quote the contents of the wide character array starting at BLOB, of</i></td></tr>
+<tr><th id="78">78</th><td><i>   LENGTH wide characters, in such a way that the result string can be</i></td></tr>
+<tr><th id="79">79</th><td><i>   included in a C wide string literal (in single/double quotes,</i></td></tr>
+<tr><th id="80">80</th><td><i>   without putting the quotes into the result).  */</i></td></tr>
+<tr><th id="81">81</th><td><em>char</em> *<dfn class="decl fn" id="support_quote_blob_wide" title='support_quote_blob_wide' data-ref="support_quote_blob_wide" data-ref-filename="support_quote_blob_wide">support_quote_blob_wide</dfn> (<em>const</em> <em>void</em> *<dfn class="local col0 decl" id="70blob" title='blob' data-type='const void *' data-ref="70blob" data-ref-filename="70blob">blob</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col1 decl" id="71length" title='length' data-type='size_t' data-ref="71length" data-ref-filename="71length">length</dfn>);</td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><i>/* Quote the contents of the string, in such a way that the result</i></td></tr>
+<tr><th id="84">84</th><td><i>   string can be included in a C literal (in single/double quotes,</i></td></tr>
+<tr><th id="85">85</th><td><i>   without putting the quotes into the result).  */</i></td></tr>
+<tr><th id="86">86</th><td><em>char</em> *<dfn class="decl fn" id="support_quote_string" title='support_quote_string' data-ref="support_quote_string" data-ref-filename="support_quote_string">support_quote_string</dfn> (<em>const</em> <em>char</em> *);</td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td><i>/* Returns non-zero if the file descriptor is a regular file on a file</i></td></tr>
+<tr><th id="89">89</th><td><i>   system which supports holes (that is, seeking and writing does not</i></td></tr>
+<tr><th id="90">90</th><td><i>   allocate storage for the range of zeros).  FD must refer to a</i></td></tr>
+<tr><th id="91">91</th><td><i>   regular file open for writing, and initially empty.  */</i></td></tr>
+<tr><th id="92">92</th><td><em>int</em> <dfn class="decl fn" id="support_descriptor_supports_holes" title='support_descriptor_supports_holes' data-ref="support_descriptor_supports_holes" data-ref-filename="support_descriptor_supports_holes">support_descriptor_supports_holes</dfn> (<em>int</em> <dfn class="local col2 decl" id="72fd" title='fd' data-type='int' data-ref="72fd" data-ref-filename="72fd">fd</dfn>);</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td><i>/* Error-checking wrapper functions which terminate the process on</i></td></tr>
+<tr><th id="95">95</th><td><i>   error.  */</i></td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td><b>extern</b> <em>void</em> *<dfn class="decl fn" id="xmalloc" title='xmalloc' data-ref="xmalloc" data-ref-filename="xmalloc">xmalloc</dfn> (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col3 decl" id="73n" title='n' data-type='size_t' data-ref="73n" data-ref-filename="73n">n</dfn>)</td></tr>
+<tr><th id="98">98</th><td>  <a class="macro" href="../misc/sys/cdefs.h.html#281" title="__attribute__ ((__malloc__))" data-ref="_M/__attribute_malloc__">__attribute_malloc__</a> <a class="macro" href="../misc/sys/cdefs.h.html#292" title="" data-ref="_M/__attribute_alloc_size__">__attribute_alloc_size__</a> ((<var>1</var>)) <a class="macro" href="../misc/sys/cdefs.h.html#694" title="" data-ref="_M/__attr_dealloc_free">__attr_dealloc_free</a></td></tr>
+<tr><th id="99">99</th><td>  <a class="macro" href="../misc/sys/cdefs.h.html#397" title="__attribute__ ((__returns_nonnull__))" data-ref="_M/__returns_nonnull">__returns_nonnull</a>;</td></tr>
+<tr><th id="100">100</th><td><b>extern</b> <em>void</em> *<dfn class="decl fn" id="xcalloc" title='xcalloc' data-ref="xcalloc" data-ref-filename="xcalloc">xcalloc</dfn> (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col4 decl" id="74n" title='n' data-type='size_t' data-ref="74n" data-ref-filename="74n">n</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col5 decl" id="75s" title='s' data-type='size_t' data-ref="75s" data-ref-filename="75s">s</dfn>)</td></tr>
+<tr><th id="101">101</th><td>  <a class="macro" href="../misc/sys/cdefs.h.html#281" title="__attribute__ ((__malloc__))" data-ref="_M/__attribute_malloc__">__attribute_malloc__</a> <a class="macro" href="../misc/sys/cdefs.h.html#292" title="" data-ref="_M/__attribute_alloc_size__">__attribute_alloc_size__</a> ((<var>1</var>, <var>2</var>)) <a class="macro" href="../misc/sys/cdefs.h.html#694" title="" data-ref="_M/__attr_dealloc_free">__attr_dealloc_free</a></td></tr>
+<tr><th id="102">102</th><td>  <a class="macro" href="../misc/sys/cdefs.h.html#397" title="__attribute__ ((__returns_nonnull__))" data-ref="_M/__returns_nonnull">__returns_nonnull</a>;</td></tr>
+<tr><th id="103">103</th><td><b>extern</b> <em>void</em> *<dfn class="decl fn" id="xrealloc" title='xrealloc' data-ref="xrealloc" data-ref-filename="xrealloc">xrealloc</dfn> (<em>void</em> *<dfn class="local col6 decl" id="76o" title='o' data-type='void *' data-ref="76o" data-ref-filename="76o">o</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col7 decl" id="77n" title='n' data-type='size_t' data-ref="77n" data-ref-filename="77n">n</dfn>)</td></tr>
+<tr><th id="104">104</th><td>  <a class="macro" href="../misc/sys/cdefs.h.html#281" title="__attribute__ ((__malloc__))" data-ref="_M/__attribute_malloc__">__attribute_malloc__</a> <a class="macro" href="../misc/sys/cdefs.h.html#292" title="" data-ref="_M/__attribute_alloc_size__">__attribute_alloc_size__</a> ((<var>2</var>)) <a class="macro" href="../misc/sys/cdefs.h.html#694" title="" data-ref="_M/__attr_dealloc_free">__attr_dealloc_free</a>;</td></tr>
+<tr><th id="105">105</th><td><b>extern</b> <em>char</em> *<dfn class="decl fn" id="xstrdup" title='xstrdup' data-ref="xstrdup" data-ref-filename="xstrdup">xstrdup</dfn> (<em>const</em> <em>char</em> *) <a class="macro" href="../misc/sys/cdefs.h.html#281" title="__attribute__ ((__malloc__))" data-ref="_M/__attribute_malloc__">__attribute_malloc__</a> <a class="macro" href="../misc/sys/cdefs.h.html#694" title="" data-ref="_M/__attr_dealloc_free">__attr_dealloc_free</a></td></tr>
+<tr><th id="106">106</th><td>  <a class="macro" href="../misc/sys/cdefs.h.html#397" title="__attribute__ ((__returns_nonnull__))" data-ref="_M/__returns_nonnull">__returns_nonnull</a>;</td></tr>
+<tr><th id="107">107</th><td><em>void</em> *<dfn class="decl fn" id="xposix_memalign" title='xposix_memalign' data-ref="xposix_memalign" data-ref-filename="xposix_memalign">xposix_memalign</dfn> (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col8 decl" id="78alignment" title='alignment' data-type='size_t' data-ref="78alignment" data-ref-filename="78alignment">alignment</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col9 decl" id="79n" title='n' data-type='size_t' data-ref="79n" data-ref-filename="79n">n</dfn>)</td></tr>
+<tr><th id="108">108</th><td>  <a class="macro" href="../misc/sys/cdefs.h.html#281" title="__attribute__ ((__malloc__))" data-ref="_M/__attribute_malloc__">__attribute_malloc__</a> <a class="macro" href="../misc/sys/cdefs.h.html#298" title="__attribute__ ((__alloc_align__ (1)))" data-ref="_M/__attribute_alloc_align__">__attribute_alloc_align__</a> ((<var>1</var>))</td></tr>
+<tr><th id="109">109</th><td>  <a class="macro" href="../misc/sys/cdefs.h.html#292" title="" data-ref="_M/__attribute_alloc_size__">__attribute_alloc_size__</a> ((<var>2</var>)) <a class="macro" href="../misc/sys/cdefs.h.html#694" title="" data-ref="_M/__attr_dealloc_free">__attr_dealloc_free</a> <a class="macro" href="../misc/sys/cdefs.h.html#397" title="__attribute__ ((__returns_nonnull__))" data-ref="_M/__returns_nonnull">__returns_nonnull</a>;</td></tr>
+<tr><th id="110">110</th><td><em>char</em> *<dfn class="decl fn" id="xasprintf" title='xasprintf' data-ref="xasprintf" data-ref-filename="xasprintf">xasprintf</dfn> (<em>const</em> <em>char</em> *<dfn class="local col0 decl" id="80format" title='format' data-type='const char *' data-ref="80format" data-ref-filename="80format">format</dfn>, ...)</td></tr>
+<tr><th id="111">111</th><td>  <b>__attribute__</b> ((format (printf, <var>1</var>, <var>2</var>), malloc)) <a class="macro" href="../misc/sys/cdefs.h.html#694" title="" data-ref="_M/__attr_dealloc_free">__attr_dealloc_free</a></td></tr>
+<tr><th id="112">112</th><td>  <a class="macro" href="../misc/sys/cdefs.h.html#397" title="__attribute__ ((__returns_nonnull__))" data-ref="_M/__returns_nonnull">__returns_nonnull</a>;</td></tr>
+<tr><th id="113">113</th><td><em>char</em> *<a class="decl fn" href="#xstrdup" title='xstrdup' data-ref="xstrdup" data-ref-filename="xstrdup">xstrdup</a> (<em>const</em> <em>char</em> *) <a class="macro" href="../misc/sys/cdefs.h.html#694" title="" data-ref="_M/__attr_dealloc_free">__attr_dealloc_free</a> <a class="macro" href="../misc/sys/cdefs.h.html#397" title="__attribute__ ((__returns_nonnull__))" data-ref="_M/__returns_nonnull">__returns_nonnull</a>;</td></tr>
+<tr><th id="114">114</th><td><em>char</em> *<dfn class="decl fn" id="xstrndup" title='xstrndup' data-ref="xstrndup" data-ref-filename="xstrndup">xstrndup</dfn> (<em>const</em> <em>char</em> *, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span>) <a class="macro" href="../misc/sys/cdefs.h.html#694" title="" data-ref="_M/__attr_dealloc_free">__attr_dealloc_free</a> <a class="macro" href="../misc/sys/cdefs.h.html#397" title="__attribute__ ((__returns_nonnull__))" data-ref="_M/__returns_nonnull">__returns_nonnull</a>;</td></tr>
+<tr><th id="115">115</th><td><em>char</em> *<dfn class="decl fn" id="xsetlocale" title='xsetlocale' data-ref="xsetlocale" data-ref-filename="xsetlocale">xsetlocale</dfn> (<em>int</em> <dfn class="local col1 decl" id="81category" title='category' data-type='int' data-ref="81category" data-ref-filename="81category">category</dfn>, <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="82locale" title='locale' data-type='const char *' data-ref="82locale" data-ref-filename="82locale">locale</dfn>);</td></tr>
+<tr><th id="116">116</th><td><a class="typedef" href="../locale/bits/types/locale_t.h.html#locale_t" title='locale_t' data-type='__locale_t' data-ref="locale_t" data-ref-filename="locale_t">locale_t</a> <dfn class="decl fn" id="xnewlocale" title='xnewlocale' data-ref="xnewlocale" data-ref-filename="xnewlocale">xnewlocale</dfn> (<em>int</em> <dfn class="local col3 decl" id="83category_mask" title='category_mask' data-type='int' data-ref="83category_mask" data-ref-filename="83category_mask">category_mask</dfn>, <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="84locale" title='locale' data-type='const char *' data-ref="84locale" data-ref-filename="84locale">locale</dfn>, <a class="typedef" href="../locale/bits/types/locale_t.h.html#locale_t" title='locale_t' data-type='__locale_t' data-ref="locale_t" data-ref-filename="locale_t">locale_t</a> <dfn class="local col5 decl" id="85base" title='base' data-type='locale_t' data-ref="85base" data-ref-filename="85base">base</dfn>);</td></tr>
+<tr><th id="117">117</th><td><em>char</em> *<dfn class="decl fn" id="xuselocale" title='xuselocale' data-ref="xuselocale" data-ref-filename="xuselocale">xuselocale</dfn> (<a class="typedef" href="../locale/bits/types/locale_t.h.html#locale_t" title='locale_t' data-type='__locale_t' data-ref="locale_t" data-ref-filename="locale_t">locale_t</a> <dfn class="local col6 decl" id="86newloc" title='newloc' data-type='locale_t' data-ref="86newloc" data-ref-filename="86newloc">newloc</dfn>);</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td><i>/* These point to the TOP of the source/build tree, not your (or</i></td></tr>
+<tr><th id="120">120</th><td><i>   support's) subdirectory.  */</i></td></tr>
+<tr><th id="121">121</th><td><b>extern</b> <em>const</em> <em>char</em> <dfn class="decl" id="support_srcdir_root" title='support_srcdir_root' data-ref="support_srcdir_root" data-ref-filename="support_srcdir_root">support_srcdir_root</dfn>[];</td></tr>
+<tr><th id="122">122</th><td><b>extern</b> <em>const</em> <em>char</em> <dfn class="decl" id="support_objdir_root" title='support_objdir_root' data-ref="support_objdir_root" data-ref-filename="support_objdir_root">support_objdir_root</dfn>[];</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><i>/* Corresponds to the path to the runtime linker used by the testsuite,</i></td></tr>
+<tr><th id="125">125</th><td><i>   e.g. OBJDIR_PATH/elf/ld-linux-x86-64.so.2  */</i></td></tr>
+<tr><th id="126">126</th><td><b>extern</b> <em>const</em> <em>char</em> <dfn class="decl" id="support_objdir_elf_ldso" title='support_objdir_elf_ldso' data-ref="support_objdir_elf_ldso" data-ref-filename="support_objdir_elf_ldso">support_objdir_elf_ldso</dfn>[];</td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td><i>/* Corresponds to the --prefix= passed to configure.  */</i></td></tr>
+<tr><th id="129">129</th><td><b>extern</b> <em>const</em> <em>char</em> <dfn class="decl" id="support_install_prefix" title='support_install_prefix' data-ref="support_install_prefix" data-ref-filename="support_install_prefix">support_install_prefix</dfn>[];</td></tr>
+<tr><th id="130">130</th><td><i>/* Corresponds to the install's lib/ or lib64/ directory.  */</i></td></tr>
+<tr><th id="131">131</th><td><b>extern</b> <em>const</em> <em>char</em> <dfn class="decl" id="support_libdir_prefix" title='support_libdir_prefix' data-ref="support_libdir_prefix" data-ref-filename="support_libdir_prefix">support_libdir_prefix</dfn>[];</td></tr>
+<tr><th id="132">132</th><td><i>/* Corresponds to the install's bin/ directory.  */</i></td></tr>
+<tr><th id="133">133</th><td><b>extern</b> <em>const</em> <em>char</em> <dfn class="decl" id="support_bindir_prefix" title='support_bindir_prefix' data-ref="support_bindir_prefix" data-ref-filename="support_bindir_prefix">support_bindir_prefix</dfn>[];</td></tr>
+<tr><th id="134">134</th><td><i>/* Corresponds to the install's sbin/ directory.  */</i></td></tr>
+<tr><th id="135">135</th><td><b>extern</b> <em>const</em> <em>char</em> <dfn class="decl" id="support_sbindir_prefix" title='support_sbindir_prefix' data-ref="support_sbindir_prefix" data-ref-filename="support_sbindir_prefix">support_sbindir_prefix</dfn>[];</td></tr>
+<tr><th id="136">136</th><td><i>/* Corresponds to the install's system /lib or /lib64 directory.  */</i></td></tr>
+<tr><th id="137">137</th><td><b>extern</b> <em>const</em> <em>char</em> <dfn class="decl" id="support_slibdir_prefix" title='support_slibdir_prefix' data-ref="support_slibdir_prefix" data-ref-filename="support_slibdir_prefix">support_slibdir_prefix</dfn>[];</td></tr>
+<tr><th id="138">138</th><td><i>/* Corresponds to the install's sbin/ directory (without prefix).  */</i></td></tr>
+<tr><th id="139">139</th><td><b>extern</b> <em>const</em> <em>char</em> <dfn class="decl" id="support_install_rootsbindir" title='support_install_rootsbindir' data-ref="support_install_rootsbindir" data-ref-filename="support_install_rootsbindir">support_install_rootsbindir</dfn>[];</td></tr>
+<tr><th id="140">140</th><td><i>/* Corresponds to the install's compiled locale directory.  */</i></td></tr>
+<tr><th id="141">141</th><td><b>extern</b> <em>const</em> <em>char</em> <dfn class="decl" id="support_complocaledir_prefix" title='support_complocaledir_prefix' data-ref="support_complocaledir_prefix" data-ref-filename="support_complocaledir_prefix">support_complocaledir_prefix</dfn>[];</td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td><i>/* Copies the file at the path FROM to TO.  If TO does not exist, it</i></td></tr>
+<tr><th id="144">144</th><td><i>   is created.  If TO is a regular file, it is truncated before</i></td></tr>
+<tr><th id="145">145</th><td><i>   copying.  The file mode is copied, but the permissions are not.  */</i></td></tr>
+<tr><th id="146">146</th><td><b>extern</b> <em>void</em> <dfn class="decl fn" id="support_copy_file" title='support_copy_file' data-ref="support_copy_file" data-ref-filename="support_copy_file">support_copy_file</dfn> (<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="87from" title='from' data-type='const char *' data-ref="87from" data-ref-filename="87from">from</dfn>, <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="88to" title='to' data-type='const char *' data-ref="88to" data-ref-filename="88to">to</dfn>);</td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td><b>extern</b> <a class="typedef" href="../posix/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t" data-ref-filename="ssize_t">ssize_t</a> <dfn class="decl fn" id="support_copy_file_range" title='support_copy_file_range' data-ref="support_copy_file_range" data-ref-filename="support_copy_file_range">support_copy_file_range</dfn> (<em>int</em>, <a class="typedef" href="../io/fcntl.h.html#off64_t" title='off64_t' data-type='__off64_t' data-ref="off64_t" data-ref-filename="off64_t">off64_t</a> *, <em>int</em>, <a class="typedef" href="../io/fcntl.h.html#off64_t" title='off64_t' data-type='__off64_t' data-ref="off64_t" data-ref-filename="off64_t">off64_t</a> *,</td></tr>
+<tr><th id="149">149</th><td>					<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span>, <em>unsigned</em> <em>int</em>);</td></tr>
+<tr><th id="150">150</th><td></td></tr>
+<tr><th id="151">151</th><td><i>/* Return true if PATH supports 64-bit time_t interfaces for file</i></td></tr>
+<tr><th id="152">152</th><td><i>   operations (such as fstatat or utimensat).  */</i></td></tr>
+<tr><th id="153">153</th><td><b>extern</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl fn" id="support_path_support_time64_value" title='support_path_support_time64_value' data-ref="support_path_support_time64_value" data-ref-filename="support_path_support_time64_value">support_path_support_time64_value</dfn> (<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="89path" title='path' data-type='const char *' data-ref="89path" data-ref-filename="89path">path</dfn>, <a class="typedef" href="../bits/stdint-intn.h.html#int64_t" title='int64_t' data-type='__int64_t' data-ref="int64_t" data-ref-filename="int64_t">int64_t</a> <dfn class="local col0 decl" id="90at" title='at' data-type='int64_t' data-ref="90at" data-ref-filename="90at">at</dfn>,</td></tr>
+<tr><th id="154">154</th><td>					       <a class="typedef" href="../bits/stdint-intn.h.html#int64_t" title='int64_t' data-type='__int64_t' data-ref="int64_t" data-ref-filename="int64_t">int64_t</a> <dfn class="local col1 decl" id="91mt" title='mt' data-type='int64_t' data-ref="91mt" data-ref-filename="91mt">mt</dfn>);</td></tr>
+<tr><th id="155">155</th><td><em>static</em> <b>__inline</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl def fn" id="support_path_support_time64" title='support_path_support_time64' data-ref="support_path_support_time64" data-ref-filename="support_path_support_time64">support_path_support_time64</dfn> (<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="92path" title='path' data-type='const char *' data-ref="92path" data-ref-filename="92path">path</dfn>)</td></tr>
+<tr><th id="156">156</th><td>{</td></tr>
+<tr><th id="157">157</th><td>  <i>/* 1s and 2s after y2038 limit.  */</i></td></tr>
+<tr><th id="158">158</th><td>  <b>return</b> <a class="ref fn" href="#support_path_support_time64_value" title='support_path_support_time64_value' data-ref="support_path_support_time64_value" data-ref-filename="support_path_support_time64_value">support_path_support_time64_value</a> (<a class="local col2 ref" href="#92path" title='path' data-ref="92path" data-ref-filename="92path">path</a>, <var>0x80000001ULL</var>,</td></tr>
+<tr><th id="159">159</th><td>					    <var>0x80000002ULL</var>);</td></tr>
+<tr><th id="160">160</th><td>}</td></tr>
+<tr><th id="161">161</th><td></td></tr>
+<tr><th id="162">162</th><td><i>/* Return true if the setitimer and getitimer syscalls support 64-bit time_t</i></td></tr>
+<tr><th id="163">163</th><td><i>   values without resulting in overflow.  This is not true on some linux systems</i></td></tr>
+<tr><th id="164">164</th><td><i>   which have 64-bit time_t due to legacy kernel API's.  */</i></td></tr>
+<tr><th id="165">165</th><td><em>static</em> <b>__inline</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl def fn" id="support_itimer_support_time64" title='support_itimer_support_time64' data-ref="support_itimer_support_time64" data-ref-filename="support_itimer_support_time64">support_itimer_support_time64</dfn> (<em>void</em>)</td></tr>
+<tr><th id="166">166</th><td>{</td></tr>
+<tr><th id="167">167</th><td><u>#<span data-ppcond="167">ifdef</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/typesizes.h.html#93" data-ref="_M/__KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64">__KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64</a></u></td></tr>
+<tr><th id="168">168</th><td>  <b>return</b> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/typesizes.h.html#93" title="1" data-ref="_M/__KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64">__KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64</a>;</td></tr>
+<tr><th id="169">169</th><td><u>#<span data-ppcond="167">else</span></u></td></tr>
+<tr><th id="170">170</th><td>  <b>return</b> <b>sizeof</b> (__time_t) == <var>8</var>;</td></tr>
+<tr><th id="171">171</th><td><u>#<span data-ppcond="167">endif</span></u></td></tr>
+<tr><th id="172">172</th><td>}</td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td><i>/* Return true if stat supports nanoseconds resolution.  PATH is used</i></td></tr>
+<tr><th id="175">175</th><td><i>   for tests and its ctime may change.  */</i></td></tr>
+<tr><th id="176">176</th><td><b>extern</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl fn" id="support_stat_nanoseconds" title='support_stat_nanoseconds' data-ref="support_stat_nanoseconds" data-ref-filename="support_stat_nanoseconds">support_stat_nanoseconds</dfn> (<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="93path" title='path' data-type='const char *' data-ref="93path" data-ref-filename="93path">path</dfn>);</td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><i>/* Return true if select modify the timeout to reflect the amount of time</i></td></tr>
+<tr><th id="179">179</th><td><i>   no slept.  */</i></td></tr>
+<tr><th id="180">180</th><td><b>extern</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl fn" id="support_select_modifies_timeout" title='support_select_modifies_timeout' data-ref="support_select_modifies_timeout" data-ref-filename="support_select_modifies_timeout">support_select_modifies_timeout</dfn> (<em>void</em>);</td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><i>/* Return true if select normalize the timeout input by taking in account</i></td></tr>
+<tr><th id="183">183</th><td><i>   tv_usec larger than 1000000.  */</i></td></tr>
+<tr><th id="184">184</th><td><b>extern</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl fn" id="support_select_normalizes_timeout" title='support_select_normalizes_timeout' data-ref="support_select_normalizes_timeout" data-ref-filename="support_select_normalizes_timeout">support_select_normalizes_timeout</dfn> (<em>void</em>);</td></tr>
+<tr><th id="185">185</th><td></td></tr>
+<tr><th id="186">186</th><td><i>/* Return true if socket FD supports 64-bit timestamps with the SOL_SOCKET</i></td></tr>
+<tr><th id="187">187</th><td><i>   and SO_TIMESTAMP/SO_TIMESTAMPNS.  */</i></td></tr>
+<tr><th id="188">188</th><td><b>extern</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl fn" id="support_socket_so_timestamp_time64" title='support_socket_so_timestamp_time64' data-ref="support_socket_so_timestamp_time64" data-ref-filename="support_socket_so_timestamp_time64">support_socket_so_timestamp_time64</dfn> (<em>int</em> <dfn class="local col4 decl" id="94fd" title='fd' data-type='int' data-ref="94fd" data-ref-filename="94fd">fd</dfn>);</td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td><i>/* Create a timer that trigger after SEC seconds and NSEC nanoseconds.  If</i></td></tr>
+<tr><th id="191">191</th><td><i>   REPEAT is true the timer will repeat indefinitely.  If CALLBACK is not</i></td></tr>
+<tr><th id="192">192</th><td><i>   NULL, the function will be called when the timer expires; otherwise a</i></td></tr>
+<tr><th id="193">193</th><td><i>   dummy empty function is used instead.</i></td></tr>
+<tr><th id="194">194</th><td><i>   This is implemented with POSIX per-process timer with SIGEV_SIGNAL.  */</i></td></tr>
+<tr><th id="195">195</th><td><a class="typedef" href="../time/bits/types/timer_t.h.html#timer_t" title='timer_t' data-type='__timer_t' data-ref="timer_t" data-ref-filename="timer_t">timer_t</a> <dfn class="decl fn" id="support_create_timer" title='support_create_timer' data-ref="support_create_timer" data-ref-filename="support_create_timer">support_create_timer</dfn> (<a class="typedef" href="../bits/stdint-uintn.h.html#uint64_t" title='uint64_t' data-type='__uint64_t' data-ref="uint64_t" data-ref-filename="uint64_t">uint64_t</a> <dfn class="local col5 decl" id="95sec" title='sec' data-type='uint64_t' data-ref="95sec" data-ref-filename="95sec">sec</dfn>, <em>long</em> <em>int</em> <dfn class="local col6 decl" id="96nsec" title='nsec' data-type='long' data-ref="96nsec" data-ref-filename="96nsec">nsec</dfn>, <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col7 decl" id="97repeat" title='repeat' data-type='_Bool' data-ref="97repeat" data-ref-filename="97repeat">repeat</dfn>,</td></tr>
+<tr><th id="196">196</th><td>			      <em>void</em> (*<dfn class="local col8 decl" id="98callback" title='callback' data-type='void (*)(int)' data-ref="98callback" data-ref-filename="98callback">callback</dfn>)(<em>int</em>));</td></tr>
+<tr><th id="197">197</th><td><i>/* Disable the timer TIMER.  */</i></td></tr>
+<tr><th id="198">198</th><td><em>void</em> <dfn class="decl fn" id="support_delete_timer" title='support_delete_timer' data-ref="support_delete_timer" data-ref-filename="support_delete_timer">support_delete_timer</dfn> (<a class="typedef" href="../time/bits/types/timer_t.h.html#timer_t" title='timer_t' data-type='__timer_t' data-ref="timer_t" data-ref-filename="timer_t">timer_t</a> <dfn class="local col9 decl" id="99timer" title='timer' data-type='timer_t' data-ref="99timer" data-ref-filename="99timer">timer</dfn>);</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><i>/* Wait until all threads except the current thread have exited (as</i></td></tr>
+<tr><th id="201">201</th><td><i>   far as the kernel is concerned).  */</i></td></tr>
+<tr><th id="202">202</th><td><em>void</em> <dfn class="decl fn" id="support_wait_for_thread_exit" title='support_wait_for_thread_exit' data-ref="support_wait_for_thread_exit" data-ref-filename="support_wait_for_thread_exit">support_wait_for_thread_exit</dfn> (<em>void</em>);</td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td><b>struct</b> <dfn class="type def" id="support_stack" title='support_stack' data-ref="support_stack" data-ref-filename="support_stack">support_stack</dfn></td></tr>
+<tr><th id="205">205</th><td>{</td></tr>
+<tr><th id="206">206</th><td>  <em>void</em> *<dfn class="decl field" id="support_stack::stack" title='support_stack::stack' data-ref="support_stack::stack" data-ref-filename="support_stack..stack">stack</dfn>;</td></tr>
+<tr><th id="207">207</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="decl field" id="support_stack::size" title='support_stack::size' data-ref="support_stack::size" data-ref-filename="support_stack..size">size</dfn>;</td></tr>
+<tr><th id="208">208</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="decl field" id="support_stack::guardsize" title='support_stack::guardsize' data-ref="support_stack::guardsize" data-ref-filename="support_stack..guardsize">guardsize</dfn>;</td></tr>
+<tr><th id="209">209</th><td>};</td></tr>
+<tr><th id="210">210</th><td></td></tr>
+<tr><th id="211">211</th><td><i>/* Allocate stack suitable to used with xclone or sigaltstack call. The stack</i></td></tr>
+<tr><th id="212">212</th><td><i>   will have a minimum size of SIZE + MINSIGSTKSZ bytes, rounded up to a whole</i></td></tr>
+<tr><th id="213">213</th><td><i>   number of pages.  There will be a large (at least 1 MiB) inaccessible guard</i></td></tr>
+<tr><th id="214">214</th><td><i>   bands on either side of it.</i></td></tr>
+<tr><th id="215">215</th><td><i>   The returned value on ALLOC_BASE and ALLOC_SIZE will be the usable stack</i></td></tr>
+<tr><th id="216">216</th><td><i>   region, excluding the GUARD_SIZE allocated area.</i></td></tr>
+<tr><th id="217">217</th><td><i>   It also terminates the process on error.  */</i></td></tr>
+<tr><th id="218">218</th><td><b>struct</b> <a class="type" href="#support_stack" title='support_stack' data-ref="support_stack" data-ref-filename="support_stack">support_stack</a> <dfn class="decl fn" id="support_stack_alloc" title='support_stack_alloc' data-ref="support_stack_alloc" data-ref-filename="support_stack_alloc">support_stack_alloc</dfn> (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col0 decl" id="100size" title='size' data-type='size_t' data-ref="100size" data-ref-filename="100size">size</dfn>);</td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td><i>/* Deallocate the STACK.  */</i></td></tr>
+<tr><th id="221">221</th><td><em>void</em> <dfn class="decl fn" id="support_stack_free" title='support_stack_free' data-ref="support_stack_free" data-ref-filename="support_stack_free">support_stack_free</dfn> (<b>struct</b> <a class="type" href="#support_stack" title='support_stack' data-ref="support_stack" data-ref-filename="support_stack">support_stack</a> *<dfn class="local col1 decl" id="101stack" title='stack' data-type='struct support_stack *' data-ref="101stack" data-ref-filename="101stack">stack</dfn>);</td></tr>
+<tr><th id="222">222</th><td></td></tr>
+<tr><th id="223">223</th><td></td></tr>
+<tr><th id="224">224</th><td><i>/* Create a range of NUM opened '/dev/null' file descriptors using FLAGS and</i></td></tr>
+<tr><th id="225">225</th><td><i>   MODE.  The function takes care of restarting the open range if a file</i></td></tr>
+<tr><th id="226">226</th><td><i>   descriptor is found within the specified range and also increases</i></td></tr>
+<tr><th id="227">227</th><td><i>   RLIMIT_NOFILE if required.</i></td></tr>
+<tr><th id="228">228</th><td><i>   The returned value is the lowest file descriptor number.  */</i></td></tr>
+<tr><th id="229">229</th><td><em>int</em> <dfn class="decl fn" id="support_open_dev_null_range" title='support_open_dev_null_range' data-ref="support_open_dev_null_range" data-ref-filename="support_open_dev_null_range">support_open_dev_null_range</dfn> (<em>int</em> <dfn class="local col2 decl" id="102num" title='num' data-type='int' data-ref="102num" data-ref-filename="102num">num</dfn>, <em>int</em> <dfn class="local col3 decl" id="103flags" title='flags' data-type='int' data-ref="103flags" data-ref-filename="103flags">flags</dfn>, <a class="typedef" href="../io/fcntl.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t" data-ref-filename="mode_t">mode_t</a> <dfn class="local col4 decl" id="104mode" title='mode' data-type='mode_t' data-ref="104mode" data-ref-filename="104mode">mode</dfn>);</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td><a class="macro" href="../misc/sys/cdefs.h.html#137" title="" data-ref="_M/__END_DECLS">__END_DECLS</a></td></tr>
+<tr><th id="232">232</th><td></td></tr>
+<tr><th id="233">233</th><td><u>#<span data-ppcond="24">endif</span> /* SUPPORT_H */</u></td></tr>
+<tr><th id="234">234</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='blob_repeat.c.html'>codebrowser/support/blob_repeat.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

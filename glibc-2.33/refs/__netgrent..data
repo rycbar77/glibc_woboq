@@ -1,0 +1,10 @@
+<dec f='codebrowser/inet/netgroup.h' l='53' type='char *'/>
+<offset>256</offset>
+<doc f='codebrowser/inet/netgroup.h' l='51'>/* Room for the data kept between the calls to the netgroup
+     functions.  We must avoid global variables.  */</doc>
+<use f='codebrowser/inet/getnetgrent_r.c' l='103' u='r' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='103' u='r' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='215' u='r' c='nscd_getnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='397' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='397' u='r' c='innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='115' u='w' c='__nscd_setnetgrent'/>

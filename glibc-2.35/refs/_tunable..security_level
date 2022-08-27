@@ -1,0 +1,17 @@
+<dec f='codebrowser/elf/dl-tunable-types.h' l='67' type='tunable_seclevel_t'/>
+<use f='codebrowser/elf/dl-tunables.c' l='228' u='r' c='parse_tunables'/>
+<use f='codebrowser/elf/dl-tunables.c' l='244' u='r' c='parse_tunables'/>
+<use f='codebrowser/elf/dl-tunables.c' l='271' u='w' c='maybe_enable_malloc_check'/>
+<use f='codebrowser/elf/dl-tunables.c' l='322' u='r' c='__tunables_init'/>
+<use f='codebrowser/elf/dl-tunables.c' l='345' u='r' c='__tunables_init'/>
+<offset>672</offset>
+<doc f='codebrowser/elf/dl-tunable-types.h' l='67'>/* Specify the security level for the
+					   tunable with respect to AT_SECURE
+					   programs.  See description of
+					   tunable_seclevel_t to see a
+					   description of the values.
+
+					   Note that even if the tunable is
+					   read, it may not get used by the
+					   target module if the value is
+					   considered unsafe.  */</doc>

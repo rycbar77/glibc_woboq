@@ -1,0 +1,21 @@
+<dec f='codebrowser/locale/localeinfo.h' l='217'/>
+<doc f='codebrowser/locale/localeinfo.h' l='215'>/* This fetches the thread-local locale_t pointer, either one set with
+   uselocale or &amp;_nl_global_locale.  */</doc>
+<use f='codebrowser/locale/lc-ctype.c' l='65' u='c'/>
+<use f='codebrowser/locale/localename.c' l='25' u='c'/>
+<use f='codebrowser/locale/nl_langinfo.c' l='31' u='c'/>
+<use f='codebrowser/locale/uselocale.c' l='31' u='c'/>
+<use f='codebrowser/stdio-common/printf_fp.c' l='1272' u='c'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='291' u='c'/>
+<use f='codebrowser/stdlib/strfmon.c' l='33' u='c'/>
+<use f='codebrowser/stdlib/strfrom-skeleton.c' l='146' u='c'/>
+<use f='codebrowser/stdlib/strtod.c' l='70' u='c'/>
+<use f='codebrowser/stdlib/strtod.c' l='83' u='c'/>
+<use f='codebrowser/string/strcoll.c' l='34' u='c'/>
+<use f='codebrowser/string/strxfrm.c' l='31' u='c'/>
+<use f='codebrowser/stdlib/strtol.c' l='98' u='c'/>
+<use f='codebrowser/stdlib/strtol.c' l='106' u='c'/>
+<use f='codebrowser/time/strftime.c' l='25' u='c'/>
+<use f='codebrowser/time/strptime.c' l='32' u='c'/>
+<use f='codebrowser/time/wcsftime.c' l='26' u='c'/>
+<use f='codebrowser/wcsmbs/mbsrtowcs.c' l='29' u='c'/>

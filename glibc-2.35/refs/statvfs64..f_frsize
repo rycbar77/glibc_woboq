@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/statvfs.h' l='61' type='unsigned long'/>
+<use f='codebrowser/sysdeps/posix/fpathconf.c' l='199' u='r' c='posix_fpathconf'/>
+<use f='codebrowser/sysdeps/posix/fpathconf.c' l='211' u='r' c='posix_fpathconf'/>
+<offset>64</offset>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal_statvfs.c' l='78' u='w' c='__internal_statvfs64'/>
+<use f='codebrowser/sysdeps/posix/pathconf.c' l='197' u='r' c='posix_pathconf'/>
+<use f='codebrowser/sysdeps/posix/pathconf.c' l='209' u='r' c='posix_pathconf'/>

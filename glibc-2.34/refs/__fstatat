@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/sys/stat.h' l='38' type='int __fstatat(int dirfd, const char * pathname, struct stat * buf, int flags)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='185' macro='1' type='int __fstatat(int , const char * , struct stat64 * , int )'/>
+<use f='codebrowser/io/ftw.c' l='142' u='c' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='142' u='c' c='process_entry'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='89' type='int __fcntl_nocancel(int , int )'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='90' type='int __fcntl_nocancel(int , int )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='90' c='__fcntl_nocancel'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='88'>/* Uncancelable fcntl.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fcntl.c' l='70' ll='81' type='int __fcntl_nocancel(int fd, int cmd)'/>
+<use f='codebrowser/login/utmp_file.c' l='85' u='c' c='getutent_r_file'/>
+<use f='codebrowser/login/utmp_file.c' l='93' u='c' c='getutent_r_file'/>
+<use f='codebrowser/login/utmp_file.c' l='85' u='c' c='internal_getut_r'/>
+<use f='codebrowser/login/utmp_file.c' l='93' u='c' c='internal_getut_r'/>
+<use f='codebrowser/login/utmp_file.c' l='85' u='c' c='getutline_r_file'/>
+<use f='codebrowser/login/utmp_file.c' l='93' u='c' c='getutline_r_file'/>
+<use f='codebrowser/login/utmp_file.c' l='85' u='c' c='pututline_file'/>
+<use f='codebrowser/login/utmp_file.c' l='93' u='c' c='pututline_file'/>
+<use f='codebrowser/login/utmp_file.c' l='85' u='c' c='updwtmp_file'/>
+<use f='codebrowser/login/utmp_file.c' l='93' u='c' c='updwtmp_file'/>

@@ -1,0 +1,24 @@
+<use f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='42'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='58' ll='68'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='67'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='84' c='timer_to_timerid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='95' c='timerid_to_timer'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='98' c='timerid_to_timer'/>
+<size>88</size>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='57'>/* Internal representation of SIGEV_THREAD timer.  */</doc>
+<mbr r='timer::ktimerid' o='0' t='kernel_timer_t'/>
+<mbr r='timer::thrfunc' o='64' t='void (*)(sigval_t)'/>
+<mbr r='timer::sival' o='128' t='sigval_t'/>
+<mbr r='timer::attr' o='192' t='pthread_attr_t'/>
+<mbr r='timer::next' o='640' t='struct timer *'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='79' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='79' c='___timer_create'/>
+<size>88</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='37' c='___timer_delete'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='45' c='___timer_delete'/>
+<size>88</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='29'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='74' c='timer_helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='74' c='timer_helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='80' c='timer_helper_thread'/>
+<size>88</size>

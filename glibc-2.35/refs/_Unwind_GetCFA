@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/unwind.h' l='151' type='_Unwind_Word _Unwind_GetCFA(struct _Unwind_Context * )'/>
+<doc f='codebrowser/sysdeps/generic/unwind.h' l='150'>/* @@@ Retrieve the CFA of the given context.  */</doc>
+<use f='codebrowser/debug/backtrace.c' l='51' u='a' c='backtrace_helper'/>
+<use f='codebrowser/nptl/unwind.c' l='60' macro='1' u='c' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='70' u='c' c='unwind_stop'/>
+<def f='codebrowser/sysdeps/generic/unwind-resume.c' l='55' ll='59' type='_Unwind_Word _Unwind_GetCFA(struct _Unwind_Context * context)'/>

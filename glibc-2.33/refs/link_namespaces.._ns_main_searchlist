@@ -1,0 +1,19 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='328' type='struct r_scope_elem *'/>
+<offset>128</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='327'>/* Direct pointer to the searchlist of the main object.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='508' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-libc.c' l='363' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-libc.c' l='369' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-libc.c' l='372' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-open.c' l='121' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='138' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='152' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='153' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='156' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='173' u='r' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-open.c' l='185' u='r' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-open.c' l='196' u='r' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-open.c' l='201' u='r' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-support.c' l='114' u='w'/>
+<use f='codebrowser/elf/rtld.c' l='2310' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2314' u='r' c='dl_main'/>

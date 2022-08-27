@@ -1,0 +1,10 @@
+<dec f='codebrowser/posix/unistd.h' l='1150' type='int fdatasync(int __fildes)'/>
+<dec f='codebrowser/include/unistd.h' l='32' type='int fdatasync(int )'/>
+<use f='codebrowser/include/unistd.h' l='32' c='fdatasync'/>
+<doc f='codebrowser/posix/unistd.h' l='1148'>/* Synchronize at least the data part of a file with the underlying
+   media.  */</doc>
+<use f='codebrowser/elf/cache.c' l='1152' u='c' c='save_aux_cache'/>
+<use f='codebrowser/rt/aio_misc.c' l='586' u='c' c='handle_fildes_io'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fdatasync.c' l='25' ll='29' type='int fdatasync(int fd)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/fdatasync.c' l='23'>/* Synchronize at least the data part of a file with the underlying
+   media.  */</doc>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/malloc/malloc.c' l='1778'/>
+<doc f='codebrowser/malloc/malloc.c' l='1769'>/*
+   NONCONTIGUOUS_BIT indicates that MORECORE does not return contiguous
+   regions.  Otherwise, contiguity is exploited in merging together,
+   when possible, results from consecutive MORECORE calls.
+
+   The initial value comes from MORECORE_CONTIGUOUS, but is
+   changed dynamically if mmap is ever used as an sbrk substitute.
+ */</doc>

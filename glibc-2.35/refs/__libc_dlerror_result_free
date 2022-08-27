@@ -1,0 +1,11 @@
+<dec f='codebrowser/dlfcn/dlerror.h' l='90' type='void __libc_dlerror_result_free()'/>
+<def f='codebrowser/dlfcn/libc_dlerror_result.c' l='27' ll='39' type='void __libc_dlerror_result_free()'/>
+<doc f='codebrowser/dlfcn/libc_dlerror_result.c' l='26'>/* Called during thread shutdown to free resources.  */</doc>
+<dec f='codebrowser/malloc/set-freeres.c' l='69' type='void __libc_dlerror_result_free()'/>
+<use f='codebrowser/malloc/set-freeres.c' l='69' c='__libc_dlerror_result_free'/>
+<use f='codebrowser/malloc/set-freeres.c' l='69' u='r' c='__libc_freeres'/>
+<use f='codebrowser/malloc/set-freeres.c' l='69' u='c' c='__libc_freeres'/>
+<dec f='codebrowser/malloc/thread-freeres.c' l='40' type='void __libc_dlerror_result_free()'/>
+<use f='codebrowser/malloc/thread-freeres.c' l='40' c='__libc_dlerror_result_free'/>
+<use f='codebrowser/malloc/thread-freeres.c' l='40' u='r' c='__libc_thread_freeres'/>
+<use f='codebrowser/malloc/thread-freeres.c' l='40' u='c' c='__libc_thread_freeres'/>

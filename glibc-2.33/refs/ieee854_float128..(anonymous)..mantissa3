@@ -1,0 +1,24 @@
+<dec f='codebrowser/sysdeps/ieee754/float128/ieee754_float128.h' l='122' type='unsigned int'/>
+<dec f='codebrowser/sysdeps/ieee754/float128/ieee754_float128.h' l='134' type='unsigned int'/>
+<offset>0</offset>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/ldbl2mpn.c' l='52' u='r' c='__mpn_extract_float128'/>
+<use f='codebrowser/sysdeps/ieee754/float128/mpn2float128.c' l='44' u='w' c='__mpn_construct_float128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_faddl.c' l='31' u='w' c='__f32addf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fdivl.c' l='31' u='w' c='__f32divf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmull.c' l='31' u='w' c='__f32mulf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fsubl.c' l='31' u='w' c='__f32subf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_daddl.c' l='35' u='w' c='__f64addf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_ddivl.c' l='35' u='w' c='__f64divf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_dmull.c' l='35' u='w' c='__f64mulf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_dsubl.c' l='35' u='w' c='__f64subf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='98' u='r' c='__fmaf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='235' u='r' c='__fmaf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='236' u='w' c='__fmaf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='243' u='r' c='__fmaf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='244' u='w' c='__fmaf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='251' u='r' c='__fmaf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='252' u='w' c='__fmaf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='293' u='w' c='__fmaf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='293' u='r' c='__fmaf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='295' u='w' c='__fmaf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='300' u='w' c='__fmaf128'/>

@@ -1,0 +1,32 @@
+<dec f='codebrowser/nptl/descr.h' l='334' type='unsigned int'/>
+<offset>12512</offset>
+<doc f='codebrowser/nptl/descr.h' l='333'>/* Lock for synchronizing setxid calls.  */</doc>
+<use f='codebrowser/nptl/nptl_setxid.c' l='88' u='w' c='__nptl_setxid_sighandler'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='89' u='a' c='__nptl_setxid_sighandler'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='102' u='r' c='setxid_mark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='103' u='a' c='setxid_mark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='105' u='a' c='setxid_mark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='106' u='r' c='setxid_mark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='109' u='w' c='setxid_mark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='122' u='w' c='setxid_mark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='123' u='a' c='setxid_mark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='148' u='w' c='setxid_unmark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='149' u='a' c='setxid_unmark_thread'/>
+<use f='codebrowser/nptl/allocatestack.c' l='102' u='w' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='306' u='w' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='427' u='w' c='allocate_stack'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='418' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='419' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='563' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='567' u='w' c='start_thread'/>

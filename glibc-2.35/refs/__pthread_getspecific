@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='502' type='void * __pthread_getspecific(pthread_key_t key)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='503' type='void * __pthread_getspecific(pthread_key_t )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='503' c='__pthread_getspecific'/>
+<def f='codebrowser/nptl/pthread_getspecific.c' l='69' macro='1' type='void * __pthread_getspecific(pthread_key_t )'/>
+<use f='codebrowser/sysdeps/pthread/tss_get.c' l='25' u='c' c='__tss_get'/>

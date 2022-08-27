@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/stdio.h' l='158' type='void __fortify_fail(const char * msg)'/>
+<dec f='codebrowser/include/stdio.h' l='159' type='void __fortify_fail(const char * )'/>
+<use f='codebrowser/include/stdio.h' l='159' c='__fortify_fail'/>
+<use f='codebrowser/debug/chk_fail.c' l='28' u='c' c='__chk_fail'/>
+<def f='codebrowser/debug/fortify_fail.c' l='20' ll='27' type='void __fortify_fail(const char * msg)'/>
+<use f='codebrowser/debug/stack_chk_fail.c' l='24' u='c' c='__stack_chk_fail'/>
+<use f='codebrowser/io/open64_2.c' l='26' u='c' c='__open64_2'/>
+<use f='codebrowser/io/open_2.c' l='26' u='c' c='__open_2'/>
+<use f='codebrowser/io/openat64_2.c' l='26' u='c' c='__openat64_2'/>
+<use f='codebrowser/io/openat_2.c' l='26' u='c' c='__openat_2'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/closefrom.c' l='34' u='c' c='__closefrom'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_open.c' l='62' u='c' c='___mq_open_2'/>

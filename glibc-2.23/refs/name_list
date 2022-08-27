@@ -1,0 +1,32 @@
+<def f='codebrowser/inet/netgroup.h' l='26' ll='30'/>
+<use f='codebrowser/inet/netgroup.h' l='28'/>
+<use f='codebrowser/inet/netgroup.h' l='62'/>
+<use f='codebrowser/inet/netgroup.h' l='63'/>
+<size>8</size>
+<doc f='codebrowser/inet/netgroup.h' l='24'>/* A netgroup can consist of names of other netgroups.  We have to
+   track which netgroups were read and which still have to be read.  */</doc>
+<mbr r='name_list::next' o='0' t='struct name_list *'/>
+<mbr r='name_list::name' o='64' t='char[]'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='89' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='96' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='127' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='157' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='157' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='309' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='328' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='345' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='345' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='452' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='468' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='518' c='innetgr'/>
+<size>8</size>
+<def f='codebrowser/locale/programs/ld-collate.c' l='189' ll='193'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='191'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='274'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2596' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3801' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3823' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3824' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3835' c='collate_read'/>
+<size>8</size>
+<doc f='codebrowser/locale/programs/ld-collate.c' l='188'>/* Simple name list for the preprocessor.  */</doc>

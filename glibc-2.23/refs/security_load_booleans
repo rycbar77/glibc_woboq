@@ -1,0 +1,4 @@
+<dec f='include/selinux/selinux.h' l='334' type='int security_load_booleans(char * path)'/>
+<doc f='include/selinux/selinux.h' l='331'>/* Load policy boolean settings. Deprecated as local policy booleans no
+ * longer supported. Will always return -1.
+ */</doc>

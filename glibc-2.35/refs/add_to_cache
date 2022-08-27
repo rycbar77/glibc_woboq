@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/generic/ldconfig.h' l='71' type='void add_to_cache(const char * path, const char * filename, const char * soname, int flags, unsigned int osversion, unsigned int isa_level, uint64_t hwcap, struct glibc_hwcaps_subdirectory * )'/>
+<def f='codebrowser/elf/cache.c' l='793' ll='853' type='void add_to_cache(const char * path, const char * filename, const char * soname, int flags, unsigned int osversion, unsigned int isa_level, uint64_t hwcap, struct glibc_hwcaps_subdirectory * hwcaps)'/>
+<doc f='codebrowser/elf/cache.c' l='792'>/* Add one library to the cache.  */</doc>
+<use f='codebrowser/elf/ldconfig.c' l='1168' u='c' c='search_dir'/>

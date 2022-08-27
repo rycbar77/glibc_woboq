@@ -1,0 +1,18 @@
+<dec f='codebrowser/inet/arpa/inet.h' l='58' type='int inet_pton(int __af, const char *restrict __cp, void *restrict __buf)'/>
+<use f='codebrowser/include/arpa/inet.h' l='10' c='__inet_pton'/>
+<doc f='codebrowser/inet/arpa/inet.h' l='55'>/* Convert from presentation format of an Internet number in buffer
+   starting at CP to the binary network format and store result for
+   interface type AF in buffer starting at BUF.  */</doc>
+<use f='codebrowser/nss/digits_dots.c' l='152' u='c' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/digits_dots.c' l='246' u='c' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/getent.c' l='313' u='c' c='hosts_keys'/>
+<use f='codebrowser/nss/getent.c' l='315' u='c' c='hosts_keys'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='562' u='c' c='res_gethostbyname2'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='595' u='c' c='res_gethostbyname2'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='821' u='c' c='_gethtent'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='824' u='c' c='_gethtent'/>
+<def f='codebrowser/resolv/inet_pton.c' l='66' macro='1' type='int inet_pton(int , const char *restrict , void *restrict )'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='501' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2041' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2093' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2131' u='c' c='gaiconf_init'/>

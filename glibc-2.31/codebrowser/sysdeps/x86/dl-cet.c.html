@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dl-cet.c source code [codebrowser/sysdeps/x86/dl-cet.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86/dl-cet.c'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>sysdeps</a>/<a href='./'>x86</a>/<a href='dl-cet.c.html'>dl-cet.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* x86 CET initializers function.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2018-2020 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i></i></td></tr>
+<tr><th id="4">4</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="5">5</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="6">6</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="7">7</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="8">8</th><td><i></i></td></tr>
+<tr><th id="9">9</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="10">10</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="11">11</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="12">12</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="13">13</th><td><i></i></td></tr>
+<tr><th id="14">14</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="15">15</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="16">16</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><u>#include <a href="../../include/unistd.h.html">&lt;unistd.h&gt;</a></u></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../../include/libintl.h.html">&lt;libintl.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../unix/sysv/linux/ldsodefs.h.html">&lt;ldsodefs.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../unix/sysv/linux/x86/dl-cet.h.html">&lt;dl-cet.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="cet-tunables.h.html">&lt;cet-tunables.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><i>/* GNU_PROPERTY_X86_FEATURE_1_IBT and GNU_PROPERTY_X86_FEATURE_1_SHSTK</i></td></tr>
+<tr><th id="26">26</th><td><i>   are defined in &lt;elf.h&gt;, which are only available for C sources.</i></td></tr>
+<tr><th id="27">27</th><td><i>   X86_FEATURE_1_IBT and X86_FEATURE_1_SHSTK are defined in &lt;sysdep.h&gt;</i></td></tr>
+<tr><th id="28">28</th><td><i>   which are available for both C and asm sources.  They must match.   */</i></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="29">if</span> <a class="macro" href="../../elf/elf.h.html#1351" title="(1U &lt;&lt; 0)" data-ref="_M/GNU_PROPERTY_X86_FEATURE_1_IBT">GNU_PROPERTY_X86_FEATURE_1_IBT</a> != <a class="macro" href="sysdep.h.html#37" title="(1U &lt;&lt; 0)" data-ref="_M/X86_FEATURE_1_IBT">X86_FEATURE_1_IBT</a></u></td></tr>
+<tr><th id="30">30</th><td><u># error GNU_PROPERTY_X86_FEATURE_1_IBT != X86_FEATURE_1_IBT</u></td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="29">endif</span></u></td></tr>
+<tr><th id="32">32</th><td><u>#<span data-ppcond="32">if</span> <a class="macro" href="../../elf/elf.h.html#1354" title="(1U &lt;&lt; 1)" data-ref="_M/GNU_PROPERTY_X86_FEATURE_1_SHSTK">GNU_PROPERTY_X86_FEATURE_1_SHSTK</a> != <a class="macro" href="sysdep.h.html#39" title="(1U &lt;&lt; 1)" data-ref="_M/X86_FEATURE_1_SHSTK">X86_FEATURE_1_SHSTK</a></u></td></tr>
+<tr><th id="33">33</th><td><u># error GNU_PROPERTY_X86_FEATURE_1_SHSTK != X86_FEATURE_1_SHSTK</u></td></tr>
+<tr><th id="34">34</th><td><u>#<span data-ppcond="32">endif</span></u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="37">37</th><td><dfn class="tu decl def fn" id="dl_cet_mark_legacy_region" title='dl_cet_mark_legacy_region' data-type='int dl_cet_mark_legacy_region(struct link_map * l)' data-ref="dl_cet_mark_legacy_region" data-ref-filename="dl_cet_mark_legacy_region">dl_cet_mark_legacy_region</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col1 decl" id="1l" title='l' data-type='struct link_map *' data-ref="1l" data-ref-filename="1l">l</dfn>)</td></tr>
+<tr><th id="38">38</th><td>{</td></tr>
+<tr><th id="39">39</th><td>  <i>/* Mark PT_LOAD segments with PF_X in legacy code page bitmap.  */</i></td></tr>
+<tr><th id="40">40</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col2 decl" id="2i" title='i' data-type='size_t' data-ref="2i" data-ref-filename="2i">i</dfn>, <dfn class="local col3 decl" id="3phnum" title='phnum' data-type='size_t' data-ref="3phnum" data-ref-filename="3phnum">phnum</dfn> = <a class="local col1 ref" href="#1l" title='l' data-ref="1l" data-ref-filename="1l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_phnum" title='link_map::l_phnum' data-ref="link_map::l_phnum" data-ref-filename="link_map..l_phnum">l_phnum</a>;</td></tr>
+<tr><th id="41">41</th><td>  <em>const</em> <a class="macro" href="../../elf/link.h.html#30" title="Elf64_Phdr" data-ref="_M/ElfW">ElfW</a>(Phdr) *<dfn class="local col4 decl" id="4phdr" title='phdr' data-type='const Elf64_Phdr *' data-ref="4phdr" data-ref-filename="4phdr">phdr</dfn> = <a class="local col1 ref" href="#1l" title='l' data-ref="1l" data-ref-filename="1l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_phdr" title='link_map::l_phdr' data-ref="link_map::l_phdr" data-ref-filename="link_map..l_phdr">l_phdr</a>;</td></tr>
+<tr><th id="42">42</th><td><u>#<span data-ppcond="42">ifdef</span> <span class="macro" data-ref="_M/__x86_64__">__x86_64__</span></u></td></tr>
+<tr><th id="43">43</th><td>  <b>typedef</b> <em>unsigned</em> <em>long</em> <em>long</em> <dfn class="local col5 typedef" id="5word_t" title='word_t' data-type='unsigned long long' data-ref="5word_t" data-ref-filename="5word_t">word_t</dfn>;</td></tr>
+<tr><th id="44">44</th><td><u>#<span data-ppcond="42">else</span></u></td></tr>
+<tr><th id="45">45</th><td>  <b>typedef</b> <em>unsigned</em> <em>long</em> word_t;</td></tr>
+<tr><th id="46">46</th><td><u>#<span data-ppcond="42">endif</span></u></td></tr>
+<tr><th id="47">47</th><td>  <em>unsigned</em> <em>int</em> <dfn class="local col6 decl" id="6bits_to_set" title='bits_to_set' data-type='unsigned int' data-ref="6bits_to_set" data-ref-filename="6bits_to_set">bits_to_set</dfn>;</td></tr>
+<tr><th id="48">48</th><td>  <a class="local col5 typedef" href="#5word_t" title='word_t' data-type='unsigned long long' data-ref="5word_t" data-ref-filename="5word_t">word_t</a> <dfn class="local col7 decl" id="7mask_to_set" title='mask_to_set' data-type='word_t' data-ref="7mask_to_set" data-ref-filename="7mask_to_set">mask_to_set</dfn>;</td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/BITS_PER_WORD" data-ref="_M/BITS_PER_WORD">BITS_PER_WORD</dfn> (sizeof (<a class="local col5 typedef" href="#5word_t" title='word_t' data-type='unsigned long long' data-ref="5word_t" data-ref-filename="5word_t">word_t</a>) * 8)</u></td></tr>
+<tr><th id="50">50</th><td><u>#define <dfn class="macro" id="_M/BITMAP_FIRST_WORD_MASK" data-ref="_M/BITMAP_FIRST_WORD_MASK">BITMAP_FIRST_WORD_MASK</dfn>(start) \</u></td></tr>
+<tr><th id="51">51</th><td><u>  (~((<a class="local col5 typedef" href="#5word_t" title='word_t' data-type='unsigned long long' data-ref="5word_t" data-ref-filename="5word_t">word_t</a>) 0) &lt;&lt; ((start) &amp; (BITS_PER_WORD - 1)))</u></td></tr>
+<tr><th id="52">52</th><td><u>#define <dfn class="macro" id="_M/BITMAP_LAST_WORD_MASK" data-ref="_M/BITMAP_LAST_WORD_MASK">BITMAP_LAST_WORD_MASK</dfn>(nbits) \</u></td></tr>
+<tr><th id="53">53</th><td><u>  (~((<a class="local col5 typedef" href="#5word_t" title='word_t' data-type='unsigned long long' data-ref="5word_t" data-ref-filename="5word_t">word_t</a>) 0) &gt;&gt; (-(nbits) &amp; (BITS_PER_WORD - 1)))</u></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td>  <a class="local col5 typedef" href="#5word_t" title='word_t' data-type='unsigned long long' data-ref="5word_t" data-ref-filename="5word_t">word_t</a> *<dfn class="local col8 decl" id="8bitmap" title='bitmap' data-type='word_t *' data-ref="8bitmap" data-ref-filename="8bitmap">bitmap</dfn> = (<a class="local col5 typedef" href="#5word_t" title='word_t' data-type='unsigned long long' data-ref="5word_t" data-ref-filename="5word_t">word_t</a> *) <a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_legacy_bitmap" data-ref="_M/GL">GL</a>(dl_x86_legacy_bitmap)[<var>0</var>];</td></tr>
+<tr><th id="56">56</th><td>  <a class="local col5 typedef" href="#5word_t" title='word_t' data-type='unsigned long long' data-ref="5word_t" data-ref-filename="5word_t">word_t</a> <dfn class="local col9 decl" id="9bitmap_size" title='bitmap_size' data-type='word_t' data-ref="9bitmap_size" data-ref-filename="9bitmap_size">bitmap_size</dfn> = <a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_legacy_bitmap" data-ref="_M/GL">GL</a>(dl_x86_legacy_bitmap)[<var>1</var>];</td></tr>
+<tr><th id="57">57</th><td>  <a class="local col5 typedef" href="#5word_t" title='word_t' data-type='unsigned long long' data-ref="5word_t" data-ref-filename="5word_t">word_t</a> *<dfn class="local col0 decl" id="10p" title='p' data-type='word_t *' data-ref="10p" data-ref-filename="10p">p</dfn>;</td></tr>
+<tr><th id="58">58</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col1 decl" id="11page_size" title='page_size' data-type='size_t' data-ref="11page_size" data-ref-filename="11page_size">page_size</dfn> = <a class="macro" href="../generic/ldsodefs.h.html#488" title="_dl_pagesize" data-ref="_M/GLRO">GLRO</a>(dl_pagesize);</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td>  <b>for</b> (<a class="local col2 ref" href="#2i" title='i' data-ref="2i" data-ref-filename="2i">i</a> = <var>0</var>; <a class="local col2 ref" href="#2i" title='i' data-ref="2i" data-ref-filename="2i">i</a> &lt; <a class="local col3 ref" href="#3phnum" title='phnum' data-ref="3phnum" data-ref-filename="3phnum">phnum</a>; <a class="local col2 ref" href="#2i" title='i' data-ref="2i" data-ref-filename="2i">i</a>++)</td></tr>
+<tr><th id="61">61</th><td>    <b>if</b> (<a class="local col4 ref" href="#4phdr" title='phdr' data-ref="4phdr" data-ref-filename="4phdr">phdr</a>[<a class="local col2 ref" href="#2i" title='i' data-ref="2i" data-ref-filename="2i">i</a>].<a class="ref field" href="../../elf/elf.h.html#(anonymous)::p_type" title='(anonymous struct)::p_type' data-ref="(anonymous)::p_type" data-ref-filename="(anonymous)..p_type">p_type</a> == <a class="macro" href="../../elf/elf.h.html#712" title="1" data-ref="_M/PT_LOAD">PT_LOAD</a> &amp;&amp; (<a class="local col4 ref" href="#4phdr" title='phdr' data-ref="4phdr" data-ref-filename="4phdr">phdr</a>[<a class="local col2 ref" href="#2i" title='i' data-ref="2i" data-ref-filename="2i">i</a>].<a class="ref field" href="../../elf/elf.h.html#(anonymous)::p_flags" title='(anonymous struct)::p_flags' data-ref="(anonymous)::p_flags" data-ref-filename="(anonymous)..p_flags">p_flags</a> &amp; <a class="macro" href="../../elf/elf.h.html#734" title="(1 &lt;&lt; 0)" data-ref="_M/PF_X">PF_X</a>))</td></tr>
+<tr><th id="62">62</th><td>      {</td></tr>
+<tr><th id="63">63</th><td>	<i>/* One bit in legacy bitmap represents a page.  */</i></td></tr>
+<tr><th id="64">64</th><td>	<a class="macro" href="../../elf/link.h.html#30" title="Elf64_Addr" data-ref="_M/ElfW">ElfW</a>(Addr) <dfn class="local col2 decl" id="12start" title='start' data-type='Elf64_Addr' data-ref="12start" data-ref-filename="12start">start</dfn> = (<a class="local col4 ref" href="#4phdr" title='phdr' data-ref="4phdr" data-ref-filename="4phdr">phdr</a>[<a class="local col2 ref" href="#2i" title='i' data-ref="2i" data-ref-filename="2i">i</a>].<a class="ref field" href="../../elf/elf.h.html#(anonymous)::p_vaddr" title='(anonymous struct)::p_vaddr' data-ref="(anonymous)::p_vaddr" data-ref-filename="(anonymous)..p_vaddr">p_vaddr</a> + <a class="local col1 ref" href="#1l" title='l' data-ref="1l" data-ref-filename="1l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_addr" title='link_map::l_addr' data-ref="link_map::l_addr" data-ref-filename="link_map..l_addr">l_addr</a>) / <a class="local col1 ref" href="#11page_size" title='page_size' data-ref="11page_size" data-ref-filename="11page_size">page_size</a>;</td></tr>
+<tr><th id="65">65</th><td>	<a class="macro" href="../../elf/link.h.html#30" title="Elf64_Addr" data-ref="_M/ElfW">ElfW</a>(Addr) <dfn class="local col3 decl" id="13len" title='len' data-type='Elf64_Addr' data-ref="13len" data-ref-filename="13len">len</dfn> = (<a class="local col4 ref" href="#4phdr" title='phdr' data-ref="4phdr" data-ref-filename="4phdr">phdr</a>[<a class="local col2 ref" href="#2i" title='i' data-ref="2i" data-ref-filename="2i">i</a>].<a class="ref field" href="../../elf/elf.h.html#(anonymous)::p_memsz" title='(anonymous struct)::p_memsz' data-ref="(anonymous)::p_memsz" data-ref-filename="(anonymous)..p_memsz">p_memsz</a> + <a class="local col1 ref" href="#11page_size" title='page_size' data-ref="11page_size" data-ref-filename="11page_size">page_size</a> - <var>1</var>) / <a class="local col1 ref" href="#11page_size" title='page_size' data-ref="11page_size" data-ref-filename="11page_size">page_size</a>;</td></tr>
+<tr><th id="66">66</th><td>	<a class="macro" href="../../elf/link.h.html#30" title="Elf64_Addr" data-ref="_M/ElfW">ElfW</a>(Addr) <dfn class="local col4 decl" id="14end" title='end' data-type='Elf64_Addr' data-ref="14end" data-ref-filename="14end">end</dfn> = <a class="local col2 ref" href="#12start" title='start' data-ref="12start" data-ref-filename="12start">start</a> + <a class="local col3 ref" href="#13len" title='len' data-ref="13len" data-ref-filename="13len">len</a>;</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td>	<b>if</b> ((<a class="local col4 ref" href="#14end" title='end' data-ref="14end" data-ref-filename="14end">end</a> / <var>8</var>) &gt; <a class="local col9 ref" href="#9bitmap_size" title='bitmap_size' data-ref="9bitmap_size" data-ref-filename="9bitmap_size">bitmap_size</a>)</td></tr>
+<tr><th id="69">69</th><td>	  <b>return</b> -<a class="macro" href="../../../include/asm-generic/errno-base.h.html#26" title="22" data-ref="_M/EINVAL">EINVAL</a>;</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td>	<a class="local col0 ref" href="#10p" title='p' data-ref="10p" data-ref-filename="10p">p</a> = <a class="local col8 ref" href="#8bitmap" title='bitmap' data-ref="8bitmap" data-ref-filename="8bitmap">bitmap</a> + (<a class="local col2 ref" href="#12start" title='start' data-ref="12start" data-ref-filename="12start">start</a> / <a class="macro" href="#49" title="(sizeof (word_t) * 8)" data-ref="_M/BITS_PER_WORD">BITS_PER_WORD</a>);</td></tr>
+<tr><th id="72">72</th><td>	<a class="local col6 ref" href="#6bits_to_set" title='bits_to_set' data-ref="6bits_to_set" data-ref-filename="6bits_to_set">bits_to_set</a> = <a class="macro" href="#49" title="(sizeof (word_t) * 8)" data-ref="_M/BITS_PER_WORD">BITS_PER_WORD</a> - (<a class="local col2 ref" href="#12start" title='start' data-ref="12start" data-ref-filename="12start">start</a> % <a class="macro" href="#49" title="(sizeof (word_t) * 8)" data-ref="_M/BITS_PER_WORD">BITS_PER_WORD</a>);</td></tr>
+<tr><th id="73">73</th><td>	<a class="local col7 ref" href="#7mask_to_set" title='mask_to_set' data-ref="7mask_to_set" data-ref-filename="7mask_to_set">mask_to_set</a> = <a class="macro" href="#50" title="(~((word_t) 0) &lt;&lt; ((start) &amp; ((sizeof (word_t) * 8) - 1)))" data-ref="_M/BITMAP_FIRST_WORD_MASK">BITMAP_FIRST_WORD_MASK</a> (<a class="local col2 ref" href="#12start" title='start' data-ref="12start" data-ref-filename="12start">start</a>);</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td>	<b>while</b> (<a class="local col3 ref" href="#13len" title='len' data-ref="13len" data-ref-filename="13len">len</a> &gt;= <a class="local col6 ref" href="#6bits_to_set" title='bits_to_set' data-ref="6bits_to_set" data-ref-filename="6bits_to_set">bits_to_set</a>)</td></tr>
+<tr><th id="76">76</th><td>	  {</td></tr>
+<tr><th id="77">77</th><td>	    *<a class="local col0 ref" href="#10p" title='p' data-ref="10p" data-ref-filename="10p">p</a> |= <a class="local col7 ref" href="#7mask_to_set" title='mask_to_set' data-ref="7mask_to_set" data-ref-filename="7mask_to_set">mask_to_set</a>;</td></tr>
+<tr><th id="78">78</th><td>	    <a class="local col3 ref" href="#13len" title='len' data-ref="13len" data-ref-filename="13len">len</a> -= <a class="local col6 ref" href="#6bits_to_set" title='bits_to_set' data-ref="6bits_to_set" data-ref-filename="6bits_to_set">bits_to_set</a>;</td></tr>
+<tr><th id="79">79</th><td>	    <a class="local col6 ref" href="#6bits_to_set" title='bits_to_set' data-ref="6bits_to_set" data-ref-filename="6bits_to_set">bits_to_set</a> = <a class="macro" href="#49" title="(sizeof (word_t) * 8)" data-ref="_M/BITS_PER_WORD">BITS_PER_WORD</a>;</td></tr>
+<tr><th id="80">80</th><td>	    <a class="local col7 ref" href="#7mask_to_set" title='mask_to_set' data-ref="7mask_to_set" data-ref-filename="7mask_to_set">mask_to_set</a> = ~((<a class="local col5 typedef" href="#5word_t" title='word_t' data-type='unsigned long long' data-ref="5word_t" data-ref-filename="5word_t">word_t</a>) <var>0</var>);</td></tr>
+<tr><th id="81">81</th><td>	    <a class="local col0 ref" href="#10p" title='p' data-ref="10p" data-ref-filename="10p">p</a>++;</td></tr>
+<tr><th id="82">82</th><td>	  }</td></tr>
+<tr><th id="83">83</th><td>	<b>if</b> (<a class="local col3 ref" href="#13len" title='len' data-ref="13len" data-ref-filename="13len">len</a>)</td></tr>
+<tr><th id="84">84</th><td>	  {</td></tr>
+<tr><th id="85">85</th><td>	    <a class="local col7 ref" href="#7mask_to_set" title='mask_to_set' data-ref="7mask_to_set" data-ref-filename="7mask_to_set">mask_to_set</a> &amp;= <a class="macro" href="#52" title="(~((word_t) 0) &gt;&gt; (-(end) &amp; ((sizeof (word_t) * 8) - 1)))" data-ref="_M/BITMAP_LAST_WORD_MASK">BITMAP_LAST_WORD_MASK</a> (<a class="local col4 ref" href="#14end" title='end' data-ref="14end" data-ref-filename="14end">end</a>);</td></tr>
+<tr><th id="86">86</th><td>	    *<a class="local col0 ref" href="#10p" title='p' data-ref="10p" data-ref-filename="10p">p</a> |= <a class="local col7 ref" href="#7mask_to_set" title='mask_to_set' data-ref="7mask_to_set" data-ref-filename="7mask_to_set">mask_to_set</a>;</td></tr>
+<tr><th id="87">87</th><td>	  }</td></tr>
+<tr><th id="88">88</th><td>      }</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td>  <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="91">91</th><td>}</td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td><i  data-doc="dl_cet_check">/* Check if object M is compatible with CET.  */</i></td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="96">96</th><td><dfn class="tu decl def fn" id="dl_cet_check" title='dl_cet_check' data-type='void dl_cet_check(struct link_map * m, const char * program)' data-ref="dl_cet_check" data-ref-filename="dl_cet_check">dl_cet_check</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col5 decl" id="15m" title='m' data-type='struct link_map *' data-ref="15m" data-ref-filename="15m">m</dfn>, <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="16program" title='program' data-type='const char *' data-ref="16program" data-ref-filename="16program">program</dfn>)</td></tr>
+<tr><th id="97">97</th><td>{</td></tr>
+<tr><th id="98">98</th><td>  <i>/* Check how IBT should be enabled.  */</i></td></tr>
+<tr><th id="99">99</th><td>  <em>unsigned</em> <em>int</em> <dfn class="local col7 decl" id="17enable_ibt_type" title='enable_ibt_type' data-type='unsigned int' data-ref="17enable_ibt_type" data-ref-filename="17enable_ibt_type">enable_ibt_type</dfn></td></tr>
+<tr><th id="100">100</th><td>    = <a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_feature_1" data-ref="_M/GL">GL</a>(dl_x86_feature_1)[<var>1</var>] &amp; ((<var>1</var> &lt;&lt; <a class="macro" href="cet-tunables.h.html#29" title="3" data-ref="_M/CET_MAX">CET_MAX</a>) - <var>1</var>);</td></tr>
+<tr><th id="101">101</th><td>  <i>/* Check how SHSTK should be enabled.  */</i></td></tr>
+<tr><th id="102">102</th><td>  <em>unsigned</em> <em>int</em> <dfn class="local col8 decl" id="18enable_shstk_type" title='enable_shstk_type' data-type='unsigned int' data-ref="18enable_shstk_type" data-ref-filename="18enable_shstk_type">enable_shstk_type</dfn></td></tr>
+<tr><th id="103">103</th><td>    = ((<a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_feature_1" data-ref="_M/GL">GL</a>(dl_x86_feature_1)[<var>1</var>] &gt;&gt; <a class="macro" href="cet-tunables.h.html#29" title="3" data-ref="_M/CET_MAX">CET_MAX</a>) &amp; ((<var>1</var> &lt;&lt; <a class="macro" href="cet-tunables.h.html#29" title="3" data-ref="_M/CET_MAX">CET_MAX</a>) - <var>1</var>));</td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td>  <i>/* No legacy object check if both IBT and SHSTK are always on.  */</i></td></tr>
+<tr><th id="106">106</th><td>  <b>if</b> (<a class="local col7 ref" href="#17enable_ibt_type" title='enable_ibt_type' data-ref="17enable_ibt_type" data-ref-filename="17enable_ibt_type">enable_ibt_type</a> == <a class="macro" href="cet-tunables.h.html#27" title="2" data-ref="_M/CET_ALWAYS_ON">CET_ALWAYS_ON</a></td></tr>
+<tr><th id="107">107</th><td>      &amp;&amp; <a class="local col8 ref" href="#18enable_shstk_type" title='enable_shstk_type' data-ref="18enable_shstk_type" data-ref-filename="18enable_shstk_type">enable_shstk_type</a> == <a class="macro" href="cet-tunables.h.html#27" title="2" data-ref="_M/CET_ALWAYS_ON">CET_ALWAYS_ON</a>)</td></tr>
+<tr><th id="108">108</th><td>    <b>return</b>;</td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td>  <i>/* Check if IBT is enabled by kernel.  */</i></td></tr>
+<tr><th id="111">111</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col9 decl" id="19ibt_enabled" title='ibt_enabled' data-type='_Bool' data-ref="19ibt_enabled" data-ref-filename="19ibt_enabled">ibt_enabled</dfn></td></tr>
+<tr><th id="112">112</th><td>    = (<a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_feature_1" data-ref="_M/GL">GL</a>(dl_x86_feature_1)[<var>0</var>] &amp; <a class="macro" href="../../elf/elf.h.html#1351" title="(1U &lt;&lt; 0)" data-ref="_M/GNU_PROPERTY_X86_FEATURE_1_IBT">GNU_PROPERTY_X86_FEATURE_1_IBT</a>) != <var>0</var>;</td></tr>
+<tr><th id="113">113</th><td>  <i>/* Check if SHSTK is enabled by kernel.  */</i></td></tr>
+<tr><th id="114">114</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col0 decl" id="20shstk_enabled" title='shstk_enabled' data-type='_Bool' data-ref="20shstk_enabled" data-ref-filename="20shstk_enabled">shstk_enabled</dfn></td></tr>
+<tr><th id="115">115</th><td>    = (<a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_feature_1" data-ref="_M/GL">GL</a>(dl_x86_feature_1)[<var>0</var>] &amp; <a class="macro" href="../../elf/elf.h.html#1354" title="(1U &lt;&lt; 1)" data-ref="_M/GNU_PROPERTY_X86_FEATURE_1_SHSTK">GNU_PROPERTY_X86_FEATURE_1_SHSTK</a>) != <var>0</var>;</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td>  <b>if</b> (<a class="local col9 ref" href="#19ibt_enabled" title='ibt_enabled' data-ref="19ibt_enabled" data-ref-filename="19ibt_enabled">ibt_enabled</a> || <a class="local col0 ref" href="#20shstk_enabled" title='shstk_enabled' data-ref="20shstk_enabled" data-ref-filename="20shstk_enabled">shstk_enabled</a>)</td></tr>
+<tr><th id="118">118</th><td>    {</td></tr>
+<tr><th id="119">119</th><td>      <b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col1 decl" id="21l" title='l' data-type='struct link_map *' data-ref="21l" data-ref-filename="21l">l</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td>      <i>/* Check if IBT and SHSTK are enabled in object.  */</i></td></tr>
+<tr><th id="122">122</th><td>      <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col2 decl" id="22enable_ibt" title='enable_ibt' data-type='_Bool' data-ref="22enable_ibt" data-ref-filename="22enable_ibt">enable_ibt</dfn> = (<a class="local col9 ref" href="#19ibt_enabled" title='ibt_enabled' data-ref="19ibt_enabled" data-ref-filename="19ibt_enabled">ibt_enabled</a></td></tr>
+<tr><th id="123">123</th><td>			 &amp;&amp; <a class="local col7 ref" href="#17enable_ibt_type" title='enable_ibt_type' data-ref="17enable_ibt_type" data-ref-filename="17enable_ibt_type">enable_ibt_type</a> != <a class="macro" href="cet-tunables.h.html#26" title="1" data-ref="_M/CET_ALWAYS_OFF">CET_ALWAYS_OFF</a>);</td></tr>
+<tr><th id="124">124</th><td>      <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col3 decl" id="23enable_shstk" title='enable_shstk' data-type='_Bool' data-ref="23enable_shstk" data-ref-filename="23enable_shstk">enable_shstk</dfn> = (<a class="local col0 ref" href="#20shstk_enabled" title='shstk_enabled' data-ref="20shstk_enabled" data-ref-filename="20shstk_enabled">shstk_enabled</a></td></tr>
+<tr><th id="125">125</th><td>			   &amp;&amp; <a class="local col8 ref" href="#18enable_shstk_type" title='enable_shstk_type' data-ref="18enable_shstk_type" data-ref-filename="18enable_shstk_type">enable_shstk_type</a> != <a class="macro" href="cet-tunables.h.html#26" title="1" data-ref="_M/CET_ALWAYS_OFF">CET_ALWAYS_OFF</a>);</td></tr>
+<tr><th id="126">126</th><td>      <b>if</b> (<a class="local col6 ref" href="#16program" title='program' data-ref="16program" data-ref-filename="16program">program</a>)</td></tr>
+<tr><th id="127">127</th><td>	{</td></tr>
+<tr><th id="128">128</th><td>	  <i>/* Enable IBT and SHSTK only if they are enabled in executable.</i></td></tr>
+<tr><th id="129">129</th><td><i>	     NB: IBT and SHSTK may be disabled by environment variable:</i></td></tr>
+<tr><th id="130">130</th><td><i></i></td></tr>
+<tr><th id="131">131</th><td><i>	     GLIBC_TUNABLES=glibc.cpu.hwcaps=-IBT,-SHSTK</i></td></tr>
+<tr><th id="132">132</th><td><i>	   */</i></td></tr>
+<tr><th id="133">133</th><td>	  <a class="local col2 ref" href="#22enable_ibt" title='enable_ibt' data-ref="22enable_ibt" data-ref-filename="22enable_ibt">enable_ibt</a> &amp;= (<a class="macro" href="cpu-features.h.html#107" title="(((&amp;_dl_x86_cpu_features)-&gt;cpuid[COMMON_CPUID_INDEX_7].edx &amp; ((1u &lt;&lt; 20))) != 0)" data-ref="_M/HAS_CPU_FEATURE">HAS_CPU_FEATURE</a> (IBT)</td></tr>
+<tr><th id="134">134</th><td>			 &amp;&amp; (<a class="local col7 ref" href="#17enable_ibt_type" title='enable_ibt_type' data-ref="17enable_ibt_type" data-ref-filename="17enable_ibt_type">enable_ibt_type</a> == <a class="macro" href="cet-tunables.h.html#27" title="2" data-ref="_M/CET_ALWAYS_ON">CET_ALWAYS_ON</a></td></tr>
+<tr><th id="135">135</th><td>			     || (<a class="local col5 ref" href="#15m" title='m' data-ref="15m" data-ref-filename="15m">m</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_cet" title='link_map::l_cet' data-ref="link_map::l_cet" data-ref-filename="link_map..l_cet">l_cet</a> &amp; <a class="enum" href="link_map.h.html#link_map::lc_ibt" title='link_map::lc_ibt' data-ref="link_map::lc_ibt" data-ref-filename="link_map..lc_ibt">lc_ibt</a>) != <var>0</var>));</td></tr>
+<tr><th id="136">136</th><td>	  <a class="local col3 ref" href="#23enable_shstk" title='enable_shstk' data-ref="23enable_shstk" data-ref-filename="23enable_shstk">enable_shstk</a> &amp;= (<a class="macro" href="cpu-features.h.html#107" title="(((&amp;_dl_x86_cpu_features)-&gt;cpuid[COMMON_CPUID_INDEX_7].ecx &amp; ((1u &lt;&lt; 7))) != 0)" data-ref="_M/HAS_CPU_FEATURE">HAS_CPU_FEATURE</a> (SHSTK)</td></tr>
+<tr><th id="137">137</th><td>			   &amp;&amp; (<a class="local col8 ref" href="#18enable_shstk_type" title='enable_shstk_type' data-ref="18enable_shstk_type" data-ref-filename="18enable_shstk_type">enable_shstk_type</a> == <a class="macro" href="cet-tunables.h.html#27" title="2" data-ref="_M/CET_ALWAYS_ON">CET_ALWAYS_ON</a></td></tr>
+<tr><th id="138">138</th><td>			       || (<a class="local col5 ref" href="#15m" title='m' data-ref="15m" data-ref-filename="15m">m</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_cet" title='link_map::l_cet' data-ref="link_map::l_cet" data-ref-filename="link_map..l_cet">l_cet</a> &amp; <a class="enum" href="link_map.h.html#link_map::lc_shstk" title='link_map::lc_shstk' data-ref="link_map::lc_shstk" data-ref-filename="link_map..lc_shstk">lc_shstk</a>) != <var>0</var>));</td></tr>
+<tr><th id="139">139</th><td>	}</td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td>      <i>/* ld.so is CET-enabled by kernel.  But shared objects may not</i></td></tr>
+<tr><th id="142">142</th><td><i>	 support IBT nor SHSTK.  */</i></td></tr>
+<tr><th id="143">143</th><td>      <b>if</b> (<a class="local col2 ref" href="#22enable_ibt" title='enable_ibt' data-ref="22enable_ibt" data-ref-filename="22enable_ibt">enable_ibt</a> || <a class="local col3 ref" href="#23enable_shstk" title='enable_shstk' data-ref="23enable_shstk" data-ref-filename="23enable_shstk">enable_shstk</a>)</td></tr>
+<tr><th id="144">144</th><td>	{</td></tr>
+<tr><th id="145">145</th><td>	  <em>int</em> <dfn class="local col4 decl" id="24res" title='res' data-type='int' data-ref="24res" data-ref-filename="24res">res</dfn>;</td></tr>
+<tr><th id="146">146</th><td>	  <em>unsigned</em> <em>int</em> <dfn class="local col5 decl" id="25i" title='i' data-type='unsigned int' data-ref="25i" data-ref-filename="25i">i</dfn>;</td></tr>
+<tr><th id="147">147</th><td>	  <em>unsigned</em> <em>int</em> <dfn class="local col6 decl" id="26first_legacy" title='first_legacy' data-type='unsigned int' data-ref="26first_legacy" data-ref-filename="26first_legacy">first_legacy</dfn>, <dfn class="local col7 decl" id="27last_legacy" title='last_legacy' data-type='unsigned int' data-ref="27last_legacy" data-ref-filename="27last_legacy">last_legacy</dfn>;</td></tr>
+<tr><th id="148">148</th><td>	  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col8 decl" id="28need_legacy_bitmap" title='need_legacy_bitmap' data-type='_Bool' data-ref="28need_legacy_bitmap" data-ref-filename="28need_legacy_bitmap">need_legacy_bitmap</dfn> = <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td>	  <a class="local col5 ref" href="#25i" title='i' data-ref="25i" data-ref-filename="25i">i</a> = <a class="local col5 ref" href="#15m" title='m' data-ref="15m" data-ref-filename="15m">m</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_searchlist" title='link_map::l_searchlist' data-ref="link_map::l_searchlist" data-ref-filename="link_map..l_searchlist">l_searchlist</a>.<a class="ref field" href="../../include/link.h.html#r_scope_elem::r_nlist" title='r_scope_elem::r_nlist' data-ref="r_scope_elem::r_nlist" data-ref-filename="r_scope_elem..r_nlist">r_nlist</a>;</td></tr>
+<tr><th id="151">151</th><td>	  <b>while</b> (<a class="local col5 ref" href="#25i" title='i' data-ref="25i" data-ref-filename="25i">i</a>-- &gt; <var>0</var>)</td></tr>
+<tr><th id="152">152</th><td>	    {</td></tr>
+<tr><th id="153">153</th><td>	      <i>/* Check each shared object to see if IBT and SHSTK are</i></td></tr>
+<tr><th id="154">154</th><td><i>		 enabled.  */</i></td></tr>
+<tr><th id="155">155</th><td>	      <a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a> = <a class="local col5 ref" href="#15m" title='m' data-ref="15m" data-ref-filename="15m">m</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_initfini" title='link_map::l_initfini' data-ref="link_map::l_initfini" data-ref-filename="link_map..l_initfini">l_initfini</a>[<a class="local col5 ref" href="#25i" title='i' data-ref="25i" data-ref-filename="25i">i</a>];</td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td>	      <b>if</b> (<a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_init_called" title='link_map::l_init_called' data-ref="link_map::l_init_called" data-ref-filename="link_map..l_init_called">l_init_called</a>)</td></tr>
+<tr><th id="158">158</th><td>		<b>continue</b>;</td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td><u>#<span data-ppcond="160">ifdef</span> <span class="macro" data-ref="_M/SHARED">SHARED</span></u></td></tr>
+<tr><th id="161">161</th><td>	      <i>/* Skip CET check for ld.so since ld.so is CET-enabled.</i></td></tr>
+<tr><th id="162">162</th><td><i>		 CET will be disabled later if CET isn't enabled in</i></td></tr>
+<tr><th id="163">163</th><td><i>		 executable.  */</i></td></tr>
+<tr><th id="164">164</th><td>	      <b>if</b> (l == &amp;GL(dl_rtld_map)</td></tr>
+<tr><th id="165">165</th><td>		  ||  l-&gt;l_real == &amp;GL(dl_rtld_map)</td></tr>
+<tr><th id="166">166</th><td>		  || (program &amp;&amp; l == m))</td></tr>
+<tr><th id="167">167</th><td>		<b>continue</b>;</td></tr>
+<tr><th id="168">168</th><td><u>#<span data-ppcond="160">endif</span></u></td></tr>
+<tr><th id="169">169</th><td></td></tr>
+<tr><th id="170">170</th><td>	      <b>if</b> (<a class="local col2 ref" href="#22enable_ibt" title='enable_ibt' data-ref="22enable_ibt" data-ref-filename="22enable_ibt">enable_ibt</a></td></tr>
+<tr><th id="171">171</th><td>		  &amp;&amp; <a class="local col7 ref" href="#17enable_ibt_type" title='enable_ibt_type' data-ref="17enable_ibt_type" data-ref-filename="17enable_ibt_type">enable_ibt_type</a> != <a class="macro" href="cet-tunables.h.html#27" title="2" data-ref="_M/CET_ALWAYS_ON">CET_ALWAYS_ON</a></td></tr>
+<tr><th id="172">172</th><td>		  &amp;&amp; !(<a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_cet" title='link_map::l_cet' data-ref="link_map::l_cet" data-ref-filename="link_map..l_cet">l_cet</a> &amp; <a class="enum" href="link_map.h.html#link_map::lc_ibt" title='link_map::lc_ibt' data-ref="link_map::lc_ibt" data-ref-filename="link_map..lc_ibt">lc_ibt</a>))</td></tr>
+<tr><th id="173">173</th><td>		{</td></tr>
+<tr><th id="174">174</th><td>		  <i>/* Remember the first and last legacy objects.  */</i></td></tr>
+<tr><th id="175">175</th><td>		  <b>if</b> (!<a class="local col8 ref" href="#28need_legacy_bitmap" title='need_legacy_bitmap' data-ref="28need_legacy_bitmap" data-ref-filename="28need_legacy_bitmap">need_legacy_bitmap</a>)</td></tr>
+<tr><th id="176">176</th><td>		    <a class="local col7 ref" href="#27last_legacy" title='last_legacy' data-ref="27last_legacy" data-ref-filename="27last_legacy">last_legacy</a> = <a class="local col5 ref" href="#25i" title='i' data-ref="25i" data-ref-filename="25i">i</a>;</td></tr>
+<tr><th id="177">177</th><td>		  <a class="local col6 ref" href="#26first_legacy" title='first_legacy' data-ref="26first_legacy" data-ref-filename="26first_legacy">first_legacy</a> = <a class="local col5 ref" href="#25i" title='i' data-ref="25i" data-ref-filename="25i">i</a>;</td></tr>
+<tr><th id="178">178</th><td>		  <a class="local col8 ref" href="#28need_legacy_bitmap" title='need_legacy_bitmap' data-ref="28need_legacy_bitmap" data-ref-filename="28need_legacy_bitmap">need_legacy_bitmap</a> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="179">179</th><td>		}</td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td>	      <i>/* SHSTK is enabled only if it is enabled in executable as</i></td></tr>
+<tr><th id="182">182</th><td><i>		 well as all shared objects.  */</i></td></tr>
+<tr><th id="183">183</th><td>	      <a class="local col3 ref" href="#23enable_shstk" title='enable_shstk' data-ref="23enable_shstk" data-ref-filename="23enable_shstk">enable_shstk</a> &amp;= (<a class="local col8 ref" href="#18enable_shstk_type" title='enable_shstk_type' data-ref="18enable_shstk_type" data-ref-filename="18enable_shstk_type">enable_shstk_type</a> == <a class="macro" href="cet-tunables.h.html#27" title="2" data-ref="_M/CET_ALWAYS_ON">CET_ALWAYS_ON</a></td></tr>
+<tr><th id="184">184</th><td>			       || (<a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_cet" title='link_map::l_cet' data-ref="link_map::l_cet" data-ref-filename="link_map..l_cet">l_cet</a> &amp; <a class="enum" href="link_map.h.html#link_map::lc_shstk" title='link_map::lc_shstk' data-ref="link_map::lc_shstk" data-ref-filename="link_map..lc_shstk">lc_shstk</a>) != <var>0</var>);</td></tr>
+<tr><th id="185">185</th><td>	    }</td></tr>
+<tr><th id="186">186</th><td></td></tr>
+<tr><th id="187">187</th><td>	  <b>if</b> (<a class="local col8 ref" href="#28need_legacy_bitmap" title='need_legacy_bitmap' data-ref="28need_legacy_bitmap" data-ref-filename="28need_legacy_bitmap">need_legacy_bitmap</a>)</td></tr>
+<tr><th id="188">188</th><td>	    {</td></tr>
+<tr><th id="189">189</th><td>	      <b>if</b> (<a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_legacy_bitmap" data-ref="_M/GL">GL</a>(dl_x86_legacy_bitmap)[<var>0</var>])</td></tr>
+<tr><th id="190">190</th><td>		{</td></tr>
+<tr><th id="191">191</th><td>		  <i>/* Change legacy bitmap to writable.  */</i></td></tr>
+<tr><th id="192">192</th><td>		  <b>if</b> (<a class="ref fn" href="../../include/sys/mman.h.html#__mprotect" title='__mprotect' data-ref="__mprotect" data-ref-filename="__mprotect">__mprotect</a> ((<em>void</em> *) <a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_legacy_bitmap" data-ref="_M/GL">GL</a>(dl_x86_legacy_bitmap)[<var>0</var>],</td></tr>
+<tr><th id="193">193</th><td>				  <a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_legacy_bitmap" data-ref="_M/GL">GL</a>(dl_x86_legacy_bitmap)[<var>1</var>],</td></tr>
+<tr><th id="194">194</th><td>				  <a class="macro" href="../unix/sysv/linux/bits/mman-linux.h.html#32" title="0x1" data-ref="_M/PROT_READ">PROT_READ</a> | <a class="macro" href="../unix/sysv/linux/bits/mman-linux.h.html#33" title="0x2" data-ref="_M/PROT_WRITE">PROT_WRITE</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="195">195</th><td>		    {</td></tr>
+<tr><th id="196">196</th><td><dfn class="lbl" id="29mprotect_failure" data-ref="29mprotect_failure" data-ref-filename="29mprotect_failure">mprotect_failure</dfn>:</td></tr>
+<tr><th id="197">197</th><td>		      <b>if</b> (<a class="local col6 ref" href="#16program" title='program' data-ref="16program" data-ref-filename="16program">program</a>)</td></tr>
+<tr><th id="198">198</th><td>			<a class="macro" href="../generic/ldsodefs.h.html#760" title="do { _dl_dprintf (2, &quot;%s: mprotect legacy bitmap failed\n&quot;, l-&gt;l_name); _exit (127); } while (1)" data-ref="_M/_dl_fatal_printf">_dl_fatal_printf</a> (<q>"%s: mprotect legacy bitmap failed\n"</q>,</td></tr>
+<tr><th id="199">199</th><td>					  <a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a>);</td></tr>
+<tr><th id="200">200</th><td>		      <b>else</b></td></tr>
+<tr><th id="201">201</th><td>			<a class="ref fn" href="../generic/ldsodefs.h.html#_dl_signal_error" title='_dl_signal_error' data-ref="_dl_signal_error" data-ref-filename="_dl_signal_error">_dl_signal_error</a> (<a class="macro" href="../../../include/asm-generic/errno-base.h.html#26" title="22" data-ref="_M/EINVAL">EINVAL</a>, <a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a>, <q>"dlopen"</q>,</td></tr>
+<tr><th id="202">202</th><td>					  <a class="macro" href="../../include/libintl.h.html#45" title="&quot;mprotect legacy bitmap failed&quot;" data-ref="_M/N_">N_</a>(<q>"mprotect legacy bitmap failed"</q>));</td></tr>
+<tr><th id="203">203</th><td>		    }</td></tr>
+<tr><th id="204">204</th><td>		}</td></tr>
+<tr><th id="205">205</th><td>	      <b>else</b></td></tr>
+<tr><th id="206">206</th><td>		{</td></tr>
+<tr><th id="207">207</th><td>		  <i>/* Allocate legacy bitmap.  */</i></td></tr>
+<tr><th id="208">208</th><td>		  <em>int</em> <dfn class="local col0 decl" id="30res" title='res' data-type='int' data-ref="30res" data-ref-filename="30res">res</dfn> = <a class="ref fn" href="../unix/sysv/linux/x86/dl-cet.h.html#dl_cet_allocate_legacy_bitmap" title='dl_cet_allocate_legacy_bitmap' data-ref="dl_cet_allocate_legacy_bitmap" data-ref-filename="dl_cet_allocate_legacy_bitmap">dl_cet_allocate_legacy_bitmap</a></td></tr>
+<tr><th id="209">209</th><td>		    (<a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_legacy_bitmap" data-ref="_M/GL">GL</a>(dl_x86_legacy_bitmap));</td></tr>
+<tr><th id="210">210</th><td>		  <b>if</b> (<a class="local col0 ref" href="#30res" title='res' data-ref="30res" data-ref-filename="30res">res</a> != <var>0</var>)</td></tr>
+<tr><th id="211">211</th><td>		    {</td></tr>
+<tr><th id="212">212</th><td>		      <b>if</b> (<a class="local col6 ref" href="#16program" title='program' data-ref="16program" data-ref-filename="16program">program</a>)</td></tr>
+<tr><th id="213">213</th><td>			<a class="macro" href="../generic/ldsodefs.h.html#760" title="do { _dl_dprintf (2, &quot;%s: legacy bitmap isn&apos;t available\n&quot;, l-&gt;l_name); _exit (127); } while (1)" data-ref="_M/_dl_fatal_printf">_dl_fatal_printf</a> (<q>"%s: legacy bitmap isn't available\n"</q>,</td></tr>
+<tr><th id="214">214</th><td>					  <a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a>);</td></tr>
+<tr><th id="215">215</th><td>		      <b>else</b></td></tr>
+<tr><th id="216">216</th><td>			<a class="ref fn" href="../generic/ldsodefs.h.html#_dl_signal_error" title='_dl_signal_error' data-ref="_dl_signal_error" data-ref-filename="_dl_signal_error">_dl_signal_error</a> (<a class="macro" href="../../../include/asm-generic/errno-base.h.html#26" title="22" data-ref="_M/EINVAL">EINVAL</a>, <a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a>, <q>"dlopen"</q>,</td></tr>
+<tr><th id="217">217</th><td>					  <a class="macro" href="../../include/libintl.h.html#45" title="&quot;legacy bitmap isn&apos;t available&quot;" data-ref="_M/N_">N_</a>(<q>"legacy bitmap isn't available"</q>));</td></tr>
+<tr><th id="218">218</th><td>		    }</td></tr>
+<tr><th id="219">219</th><td>		}</td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td>	      <i>/* Put legacy shared objects in legacy bitmap.  */</i></td></tr>
+<tr><th id="222">222</th><td>	      <b>for</b> (<a class="local col5 ref" href="#25i" title='i' data-ref="25i" data-ref-filename="25i">i</a> = <a class="local col6 ref" href="#26first_legacy" title='first_legacy' data-ref="26first_legacy" data-ref-filename="26first_legacy">first_legacy</a>; <a class="local col5 ref" href="#25i" title='i' data-ref="25i" data-ref-filename="25i">i</a> &lt;= <a class="local col7 ref" href="#27last_legacy" title='last_legacy' data-ref="27last_legacy" data-ref-filename="27last_legacy">last_legacy</a>; <a class="local col5 ref" href="#25i" title='i' data-ref="25i" data-ref-filename="25i">i</a>++)</td></tr>
+<tr><th id="223">223</th><td>		{</td></tr>
+<tr><th id="224">224</th><td>		  <a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a> = <a class="local col5 ref" href="#15m" title='m' data-ref="15m" data-ref-filename="15m">m</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_initfini" title='link_map::l_initfini' data-ref="link_map::l_initfini" data-ref-filename="link_map..l_initfini">l_initfini</a>[<a class="local col5 ref" href="#25i" title='i' data-ref="25i" data-ref-filename="25i">i</a>];</td></tr>
+<tr><th id="225">225</th><td></td></tr>
+<tr><th id="226">226</th><td>		  <b>if</b> (<a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_init_called" title='link_map::l_init_called' data-ref="link_map::l_init_called" data-ref-filename="link_map..l_init_called">l_init_called</a> || (<a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="link_map.h.html#link_map::l_cet" title='link_map::l_cet' data-ref="link_map::l_cet" data-ref-filename="link_map..l_cet">l_cet</a> &amp; <a class="enum" href="link_map.h.html#link_map::lc_ibt" title='link_map::lc_ibt' data-ref="link_map::lc_ibt" data-ref-filename="link_map..lc_ibt">lc_ibt</a>))</td></tr>
+<tr><th id="227">227</th><td>		    <b>continue</b>;</td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td><u>#<span data-ppcond="229">ifdef</span> <span class="macro" data-ref="_M/SHARED">SHARED</span></u></td></tr>
+<tr><th id="230">230</th><td>		  <b>if</b> (l == &amp;GL(dl_rtld_map)</td></tr>
+<tr><th id="231">231</th><td>		      ||  l-&gt;l_real == &amp;GL(dl_rtld_map)</td></tr>
+<tr><th id="232">232</th><td>		      || (program &amp;&amp; l == m))</td></tr>
+<tr><th id="233">233</th><td>		    <b>continue</b>;</td></tr>
+<tr><th id="234">234</th><td><u>#<span data-ppcond="229">endif</span></u></td></tr>
+<tr><th id="235">235</th><td></td></tr>
+<tr><th id="236">236</th><td>		  <i>/* If IBT is enabled in executable and IBT isn't enabled</i></td></tr>
+<tr><th id="237">237</th><td><i>		     in this shard object, mark PT_LOAD segments with PF_X</i></td></tr>
+<tr><th id="238">238</th><td><i>		     in legacy code page bitmap.  */</i></td></tr>
+<tr><th id="239">239</th><td>		  <a class="local col4 ref" href="#24res" title='res' data-ref="24res" data-ref-filename="24res">res</a> = <a class="tu ref fn" href="#dl_cet_mark_legacy_region" title='dl_cet_mark_legacy_region' data-use='c' data-ref="dl_cet_mark_legacy_region" data-ref-filename="dl_cet_mark_legacy_region">dl_cet_mark_legacy_region</a> (<a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>);</td></tr>
+<tr><th id="240">240</th><td>		  <b>if</b> (<a class="local col4 ref" href="#24res" title='res' data-ref="24res" data-ref-filename="24res">res</a> != <var>0</var>)</td></tr>
+<tr><th id="241">241</th><td>		    {</td></tr>
+<tr><th id="242">242</th><td>		      <b>if</b> (<a class="local col6 ref" href="#16program" title='program' data-ref="16program" data-ref-filename="16program">program</a>)</td></tr>
+<tr><th id="243">243</th><td>			<a class="macro" href="../generic/ldsodefs.h.html#760" title="do { _dl_dprintf (2, &quot;%s: failed to mark legacy code region\n&quot;, l-&gt;l_name); _exit (127); } while (1)" data-ref="_M/_dl_fatal_printf">_dl_fatal_printf</a> (<q>"%s: failed to mark legacy code region\n"</q>,</td></tr>
+<tr><th id="244">244</th><td>					  <a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a>);</td></tr>
+<tr><th id="245">245</th><td>		      <b>else</b></td></tr>
+<tr><th id="246">246</th><td>			<a class="ref fn" href="../generic/ldsodefs.h.html#_dl_signal_error" title='_dl_signal_error' data-ref="_dl_signal_error" data-ref-filename="_dl_signal_error">_dl_signal_error</a> (-<a class="local col4 ref" href="#24res" title='res' data-ref="24res" data-ref-filename="24res">res</a>, <a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a>, <q>"dlopen"</q>,</td></tr>
+<tr><th id="247">247</th><td>					  <a class="macro" href="../../include/libintl.h.html#45" title="&quot;failed to mark legacy code region&quot;" data-ref="_M/N_">N_</a>(<q>"failed to mark legacy code region"</q>));</td></tr>
+<tr><th id="248">248</th><td>		    }</td></tr>
+<tr><th id="249">249</th><td>		}</td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td>	      <i>/* Change legacy bitmap to read-only.  */</i></td></tr>
+<tr><th id="252">252</th><td>	      <b>if</b> (<a class="ref fn" href="../../include/sys/mman.h.html#__mprotect" title='__mprotect' data-ref="__mprotect" data-ref-filename="__mprotect">__mprotect</a> ((<em>void</em> *) <a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_legacy_bitmap" data-ref="_M/GL">GL</a>(dl_x86_legacy_bitmap)[<var>0</var>],</td></tr>
+<tr><th id="253">253</th><td>			      <a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_legacy_bitmap" data-ref="_M/GL">GL</a>(dl_x86_legacy_bitmap)[<var>1</var>], <a class="macro" href="../unix/sysv/linux/bits/mman-linux.h.html#32" title="0x1" data-ref="_M/PROT_READ">PROT_READ</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="254">254</th><td>		<b>goto</b> <a class="lbl" href="#29mprotect_failure" data-ref="29mprotect_failure" data-ref-filename="29mprotect_failure">mprotect_failure</a>;</td></tr>
+<tr><th id="255">255</th><td>	    }</td></tr>
+<tr><th id="256">256</th><td>	}</td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td>      <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col1 decl" id="31cet_feature_changed" title='cet_feature_changed' data-type='_Bool' data-ref="31cet_feature_changed" data-ref-filename="31cet_feature_changed">cet_feature_changed</dfn> = <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="259">259</th><td></td></tr>
+<tr><th id="260">260</th><td>      <b>if</b> (<a class="local col2 ref" href="#22enable_ibt" title='enable_ibt' data-ref="22enable_ibt" data-ref-filename="22enable_ibt">enable_ibt</a> != <a class="local col9 ref" href="#19ibt_enabled" title='ibt_enabled' data-ref="19ibt_enabled" data-ref-filename="19ibt_enabled">ibt_enabled</a> || <a class="local col3 ref" href="#23enable_shstk" title='enable_shstk' data-ref="23enable_shstk" data-ref-filename="23enable_shstk">enable_shstk</a> != <a class="local col0 ref" href="#20shstk_enabled" title='shstk_enabled' data-ref="20shstk_enabled" data-ref-filename="20shstk_enabled">shstk_enabled</a>)</td></tr>
+<tr><th id="261">261</th><td>	{</td></tr>
+<tr><th id="262">262</th><td>	  <b>if</b> (!<a class="local col6 ref" href="#16program" title='program' data-ref="16program" data-ref-filename="16program">program</a></td></tr>
+<tr><th id="263">263</th><td>	      &amp;&amp; <a class="local col8 ref" href="#18enable_shstk_type" title='enable_shstk_type' data-ref="18enable_shstk_type" data-ref-filename="18enable_shstk_type">enable_shstk_type</a> != <a class="macro" href="cet-tunables.h.html#28" title="3" data-ref="_M/CET_PERMISSIVE">CET_PERMISSIVE</a>)</td></tr>
+<tr><th id="264">264</th><td>	    {</td></tr>
+<tr><th id="265">265</th><td>	      <i>/* When SHSTK is enabled, we can't dlopening a shared</i></td></tr>
+<tr><th id="266">266</th><td><i>		 object without SHSTK.  */</i></td></tr>
+<tr><th id="267">267</th><td>	      <b>if</b> (<a class="local col3 ref" href="#23enable_shstk" title='enable_shstk' data-ref="23enable_shstk" data-ref-filename="23enable_shstk">enable_shstk</a> != <a class="local col0 ref" href="#20shstk_enabled" title='shstk_enabled' data-ref="20shstk_enabled" data-ref-filename="20shstk_enabled">shstk_enabled</a>)</td></tr>
+<tr><th id="268">268</th><td>		<a class="ref fn" href="../generic/ldsodefs.h.html#_dl_signal_error" title='_dl_signal_error' data-ref="_dl_signal_error" data-ref-filename="_dl_signal_error">_dl_signal_error</a> (<a class="macro" href="../../../include/asm-generic/errno-base.h.html#26" title="22" data-ref="_M/EINVAL">EINVAL</a>, <a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a>, <q>"dlopen"</q>,</td></tr>
+<tr><th id="269">269</th><td>				  <a class="macro" href="../../include/libintl.h.html#45" title="&quot;shadow stack isn&apos;t enabled&quot;" data-ref="_M/N_">N_</a>(<q>"shadow stack isn't enabled"</q>));</td></tr>
+<tr><th id="270">270</th><td>	      <b>return</b>;</td></tr>
+<tr><th id="271">271</th><td>	    }</td></tr>
+<tr><th id="272">272</th><td></td></tr>
+<tr><th id="273">273</th><td>	  <i>/* Disable IBT and/or SHSTK if they are enabled by kernel, but</i></td></tr>
+<tr><th id="274">274</th><td><i>	     disabled in executable or shared objects.  */</i></td></tr>
+<tr><th id="275">275</th><td>	  <em>unsigned</em> <em>int</em> <dfn class="local col2 decl" id="32cet_feature" title='cet_feature' data-type='unsigned int' data-ref="32cet_feature" data-ref-filename="32cet_feature">cet_feature</dfn> = <var>0</var>;</td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td>	  <i>/* Disable IBT only during program startup.  */</i></td></tr>
+<tr><th id="278">278</th><td>	  <b>if</b> (<a class="local col6 ref" href="#16program" title='program' data-ref="16program" data-ref-filename="16program">program</a> &amp;&amp; !<a class="local col2 ref" href="#22enable_ibt" title='enable_ibt' data-ref="22enable_ibt" data-ref-filename="22enable_ibt">enable_ibt</a>)</td></tr>
+<tr><th id="279">279</th><td>	    <a class="local col2 ref" href="#32cet_feature" title='cet_feature' data-ref="32cet_feature" data-ref-filename="32cet_feature">cet_feature</a> |= <a class="macro" href="../../elf/elf.h.html#1351" title="(1U &lt;&lt; 0)" data-ref="_M/GNU_PROPERTY_X86_FEATURE_1_IBT">GNU_PROPERTY_X86_FEATURE_1_IBT</a>;</td></tr>
+<tr><th id="280">280</th><td>	  <b>if</b> (!<a class="local col3 ref" href="#23enable_shstk" title='enable_shstk' data-ref="23enable_shstk" data-ref-filename="23enable_shstk">enable_shstk</a>)</td></tr>
+<tr><th id="281">281</th><td>	    <a class="local col2 ref" href="#32cet_feature" title='cet_feature' data-ref="32cet_feature" data-ref-filename="32cet_feature">cet_feature</a> |= <a class="macro" href="../../elf/elf.h.html#1354" title="(1U &lt;&lt; 1)" data-ref="_M/GNU_PROPERTY_X86_FEATURE_1_SHSTK">GNU_PROPERTY_X86_FEATURE_1_SHSTK</a>;</td></tr>
+<tr><th id="282">282</th><td></td></tr>
+<tr><th id="283">283</th><td>	  <em>int</em> <dfn class="local col3 decl" id="33res" title='res' data-type='int' data-ref="33res" data-ref-filename="33res">res</dfn> = <a class="ref fn" href="../unix/sysv/linux/x86/dl-cet.h.html#dl_cet_disable_cet" title='dl_cet_disable_cet' data-ref="dl_cet_disable_cet" data-ref-filename="dl_cet_disable_cet">dl_cet_disable_cet</a> (<a class="local col2 ref" href="#32cet_feature" title='cet_feature' data-ref="32cet_feature" data-ref-filename="32cet_feature">cet_feature</a>);</td></tr>
+<tr><th id="284">284</th><td>	  <b>if</b> (<a class="local col3 ref" href="#33res" title='res' data-ref="33res" data-ref-filename="33res">res</a> != <var>0</var>)</td></tr>
+<tr><th id="285">285</th><td>	    {</td></tr>
+<tr><th id="286">286</th><td>	      <b>if</b> (<a class="local col6 ref" href="#16program" title='program' data-ref="16program" data-ref-filename="16program">program</a>)</td></tr>
+<tr><th id="287">287</th><td>		<a class="macro" href="../generic/ldsodefs.h.html#760" title="do { _dl_dprintf (2, &quot;%s: can&apos;t disable CET\n&quot;, program); _exit (127); } while (1)" data-ref="_M/_dl_fatal_printf">_dl_fatal_printf</a> (<q>"%s: can't disable CET\n"</q>, <a class="local col6 ref" href="#16program" title='program' data-ref="16program" data-ref-filename="16program">program</a>);</td></tr>
+<tr><th id="288">288</th><td>	      <b>else</b></td></tr>
+<tr><th id="289">289</th><td>		<a class="ref fn" href="../generic/ldsodefs.h.html#_dl_signal_error" title='_dl_signal_error' data-ref="_dl_signal_error" data-ref-filename="_dl_signal_error">_dl_signal_error</a> (-<a class="local col3 ref" href="#33res" title='res' data-ref="33res" data-ref-filename="33res">res</a>, <a class="local col1 ref" href="#21l" title='l' data-ref="21l" data-ref-filename="21l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_name" title='link_map::l_name' data-ref="link_map::l_name" data-ref-filename="link_map..l_name">l_name</a>, <q>"dlopen"</q>,</td></tr>
+<tr><th id="290">290</th><td>				  <a class="macro" href="../../include/libintl.h.html#45" title="&quot;can&apos;t disable CET&quot;" data-ref="_M/N_">N_</a>(<q>"can't disable CET"</q>));</td></tr>
+<tr><th id="291">291</th><td>	    }</td></tr>
+<tr><th id="292">292</th><td></td></tr>
+<tr><th id="293">293</th><td>	  <i>/* Clear the disabled bits in dl_x86_feature_1.  */</i></td></tr>
+<tr><th id="294">294</th><td>	  <a class="macro" href="../generic/ldsodefs.h.html#300" title="_dl_x86_feature_1" data-ref="_M/GL">GL</a>(dl_x86_feature_1)[<var>0</var>] &amp;= ~<a class="local col2 ref" href="#32cet_feature" title='cet_feature' data-ref="32cet_feature" data-ref-filename="32cet_feature">cet_feature</a>;</td></tr>
+<tr><th id="295">295</th><td></td></tr>
+<tr><th id="296">296</th><td>	  <a class="local col1 ref" href="#31cet_feature_changed" title='cet_feature_changed' data-ref="31cet_feature_changed" data-ref-filename="31cet_feature_changed">cet_feature_changed</a> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="297">297</th><td>	}</td></tr>
+<tr><th id="298">298</th><td></td></tr>
+<tr><th id="299">299</th><td><u>#<span data-ppcond="299">ifdef</span> <span class="macro" data-ref="_M/SHARED">SHARED</span></u></td></tr>
+<tr><th id="300">300</th><td>      <b>if</b> (program</td></tr>
+<tr><th id="301">301</th><td>	  &amp;&amp; (!shstk_enabled</td></tr>
+<tr><th id="302">302</th><td>	      || enable_shstk_type != CET_PERMISSIVE)</td></tr>
+<tr><th id="303">303</th><td>	  &amp;&amp; (ibt_enabled || shstk_enabled))</td></tr>
+<tr><th id="304">304</th><td>	{</td></tr>
+<tr><th id="305">305</th><td>	  <i>/* Lock CET if IBT or SHSTK is enabled in executable.  Don't</i></td></tr>
+<tr><th id="306">306</th><td><i>	     lock CET if SHSTK is enabled permissively.  */</i></td></tr>
+<tr><th id="307">307</th><td>	  <em>int</em> res = dl_cet_lock_cet ();</td></tr>
+<tr><th id="308">308</th><td>	  <b>if</b> (res != <var>0</var>)</td></tr>
+<tr><th id="309">309</th><td>	    _dl_fatal_printf (<q>"%s: can't lock CET\n"</q>, program);</td></tr>
+<tr><th id="310">310</th><td></td></tr>
+<tr><th id="311">311</th><td>	  cet_feature_changed = true;</td></tr>
+<tr><th id="312">312</th><td>	}</td></tr>
+<tr><th id="313">313</th><td><u>#<span data-ppcond="299">endif</span></u></td></tr>
+<tr><th id="314">314</th><td></td></tr>
+<tr><th id="315">315</th><td>      <b>if</b> (<a class="local col1 ref" href="#31cet_feature_changed" title='cet_feature_changed' data-ref="31cet_feature_changed" data-ref-filename="31cet_feature_changed">cet_feature_changed</a>)</td></tr>
+<tr><th id="316">316</th><td>	{</td></tr>
+<tr><th id="317">317</th><td>	  <em>unsigned</em> <em>int</em> <dfn class="local col4 decl" id="34feature_1" title='feature_1' data-type='unsigned int' data-ref="34feature_1" data-ref-filename="34feature_1">feature_1</dfn> = <var>0</var>;</td></tr>
+<tr><th id="318">318</th><td>	  <b>if</b> (<a class="local col2 ref" href="#22enable_ibt" title='enable_ibt' data-ref="22enable_ibt" data-ref-filename="22enable_ibt">enable_ibt</a>)</td></tr>
+<tr><th id="319">319</th><td>	    <a class="local col4 ref" href="#34feature_1" title='feature_1' data-ref="34feature_1" data-ref-filename="34feature_1">feature_1</a> |= <a class="macro" href="../../elf/elf.h.html#1351" title="(1U &lt;&lt; 0)" data-ref="_M/GNU_PROPERTY_X86_FEATURE_1_IBT">GNU_PROPERTY_X86_FEATURE_1_IBT</a>;</td></tr>
+<tr><th id="320">320</th><td>	  <b>if</b> (<a class="local col3 ref" href="#23enable_shstk" title='enable_shstk' data-ref="23enable_shstk" data-ref-filename="23enable_shstk">enable_shstk</a>)</td></tr>
+<tr><th id="321">321</th><td>	    <a class="local col4 ref" href="#34feature_1" title='feature_1' data-ref="34feature_1" data-ref-filename="34feature_1">feature_1</a> |= <a class="macro" href="../../elf/elf.h.html#1354" title="(1U &lt;&lt; 1)" data-ref="_M/GNU_PROPERTY_X86_FEATURE_1_SHSTK">GNU_PROPERTY_X86_FEATURE_1_SHSTK</a>;</td></tr>
+<tr><th id="322">322</th><td>	  <b>struct</b> <a class="type" href="../../nptl/descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a> *<dfn class="local col5 decl" id="35self" title='self' data-type='struct pthread *' data-ref="35self" data-ref-filename="35self">self</dfn> = <a class="macro" href="../x86_64/nptl/tls.h.html#189" title="({ struct pthread *__self; asm (&quot;mov %%fs:%c1,%0&quot; : &quot;=r&quot; (__self) : &quot;i&quot; (__builtin_offsetof(struct pthread, header.self))); __self;})" data-ref="_M/THREAD_SELF">THREAD_SELF</a>;</td></tr>
+<tr><th id="323">323</th><td>	  <a class="macro" href="../x86_64/nptl/tls.h.html#261" title="({ if (sizeof (self-&gt;header.feature_1) == 1) asm volatile (&quot;movb %b0,%%fs:%P1&quot; : : &quot;iq&quot; (feature_1), &quot;i&quot; (__builtin_offsetof(struct pthread, header.feature_1))); else if (sizeof (self-&gt;header.feature_1) == 4) asm volatile (&quot;movl %0,%%fs:%P1&quot; : : &quot;nr&quot; (feature_1), &quot;i&quot; (__builtin_offsetof(struct pthread, header.feature_1))); else { if (sizeof (self-&gt;header.feature_1) != 8) abort (); asm volatile (&quot;movq %q0,%%fs:%P1&quot; : : &quot;nr&quot; ((uint64_t) ((__typeof__ (*(0 ? (__typeof__ (0 ? (__typeof__ ((__typeof__ (feature_1)) 0) *) 0 : (void *) ((__builtin_classify_type ((__typeof__ (feature_1)) 0) == 5)))) 0 : (__typeof__ (0 ? (intptr_t *) 0 : (void *) (!((__builtin_classify_type ((__typeof__ (feature_1)) 0) == 5))))) 0))) (feature_1))), &quot;i&quot; (__builtin_offsetof(struct pthread, header.feature_1))); }})" data-ref="_M/THREAD_SETMEM">THREAD_SETMEM</a> (<a class="local col5 ref" href="#35self" title='self' data-ref="35self" data-ref-filename="35self">self</a>, <a class="ref field" href="../../nptl/descr.h.html#pthread::(anonymous)::header" title='pthread::(anonymous union)::header' data-ref="pthread::(anonymous)::header" data-ref-filename="pthread..(anonymous)..header">header</a>.<a class="ref field" href="../x86_64/nptl/tls.h.html#(anonymous)::feature_1" title='(anonymous struct)::feature_1' data-ref="(anonymous)::feature_1" data-ref-filename="(anonymous)..feature_1">feature_1</a>, <a class="local col4 ref" href="#34feature_1" title='feature_1' data-ref="34feature_1" data-ref-filename="34feature_1">feature_1</a>);</td></tr>
+<tr><th id="324">324</th><td>	}</td></tr>
+<tr><th id="325">325</th><td>    }</td></tr>
+<tr><th id="326">326</th><td>}</td></tr>
+<tr><th id="327">327</th><td></td></tr>
+<tr><th id="328">328</th><td><em>void</em></td></tr>
+<tr><th id="329">329</th><td><dfn class="decl def fn" id="_dl_cet_open_check" title='_dl_cet_open_check' data-ref="_dl_cet_open_check" data-ref-filename="_dl_cet_open_check">_dl_cet_open_check</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col6 decl" id="36l" title='l' data-type='struct link_map *' data-ref="36l" data-ref-filename="36l">l</dfn>)</td></tr>
+<tr><th id="330">330</th><td>{</td></tr>
+<tr><th id="331">331</th><td>  <a class="tu ref fn" href="#dl_cet_check" title='dl_cet_check' data-use='c' data-ref="dl_cet_check" data-ref-filename="dl_cet_check">dl_cet_check</a> (<a class="local col6 ref" href="#36l" title='l' data-ref="36l" data-ref-filename="36l">l</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="332">332</th><td>}</td></tr>
+<tr><th id="333">333</th><td></td></tr>
+<tr><th id="334">334</th><td><u>#<span data-ppcond="334">ifdef</span> <span class="macro" data-ref="_M/SHARED">SHARED</span></u></td></tr>
+<tr><th id="335">335</th><td></td></tr>
+<tr><th id="336">336</th><td><u># ifndef LINKAGE</u></td></tr>
+<tr><th id="337">337</th><td><u>#  define LINKAGE</u></td></tr>
+<tr><th id="338">338</th><td><u># endif</u></td></tr>
+<tr><th id="339">339</th><td></td></tr>
+<tr><th id="340">340</th><td>LINKAGE</td></tr>
+<tr><th id="341">341</th><td><em>void</em></td></tr>
+<tr><th id="342">342</th><td>_dl_cet_check (<b>struct</b> link_map *main_map, <em>const</em> <em>char</em> *program)</td></tr>
+<tr><th id="343">343</th><td>{</td></tr>
+<tr><th id="344">344</th><td>  dl_cet_check (main_map, program);</td></tr>
+<tr><th id="345">345</th><td>}</td></tr>
+<tr><th id="346">346</th><td><u>#<span data-ppcond="334">endif</span> /* SHARED */</u></td></tr>
+<tr><th id="347">347</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.31</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

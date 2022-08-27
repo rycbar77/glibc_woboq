@@ -1,0 +1,6 @@
+<def f='codebrowser/malloc/arena.c' l='152' ll='157' type='heap_info * heap_for_ptr(void * ptr)'/>
+<use f='codebrowser/malloc/arena.c' l='162' u='c' c='arena_for_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='2632' u='c' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4685' u='c' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='5822' u='c' c='__malloc_info'/>
+<doc f='codebrowser/malloc/arena.c' l='150'>/* find the heap and corresponding arena for a given ptr */</doc>

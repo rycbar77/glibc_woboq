@@ -1,0 +1,13 @@
+<dec f='codebrowser/sunrpc/rpc/rpc_msg.h' l='125' type='enum reply_stat'/>
+<offset>0</offset>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='355' u='r' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/rpc_prot.c' l='138' u='a' c='__GI_xdr_replymsg'/>
+<use f='codebrowser/sunrpc/rpc_prot.c' l='236' u='r' c='__GI__seterr_reply'/>
+<use f='codebrowser/sunrpc/rpc_prot.c' l='253' u='r' c='__GI__seterr_reply'/>
+<use f='codebrowser/sunrpc/svc.c' l='257' u='w' c='__GI_svc_sendreply'/>
+<use f='codebrowser/sunrpc/svc.c' l='277' u='w' c='__GI_svcerr_noproc'/>
+<use f='codebrowser/sunrpc/svc.c' l='295' u='w' c='__GI_svcerr_decode'/>
+<use f='codebrowser/sunrpc/svc.c' l='313' u='w' c='__GI_svcerr_systemerr'/>
+<use f='codebrowser/sunrpc/svc.c' l='331' u='w' c='__GI_svcerr_auth'/>
+<use f='codebrowser/sunrpc/svc.c' l='353' u='w' c='__GI_svcerr_noprog'/>
+<use f='codebrowser/sunrpc/svc.c' l='368' u='w' c='__GI_svcerr_progvers'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/elf/elf.h' l='74' type='Elf32_Half'/>
+<dec f='codebrowser/elf/elf.h' l='92' type='Elf64_Half'/>
+<offset>432</offset>
+<doc f='codebrowser/elf/elf.h' l='74'>/* Program header table entry size */</doc>
+<doc f='codebrowser/elf/elf.h' l='92'>/* Program header table entry size */</doc>
+<use f='codebrowser/elf/dl-load.c' l='1774' u='r' c='open_verify'/>
+<use f='codebrowser/elf/rtld.c' l='1703' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1703' u='r' c='dl_main'/>
+<use f='codebrowser/csu/libc-start.c' l='282' u='r' c='__libc_start_main_impl'/>
+<use f='codebrowser/csu/libc-start.c' l='282' u='r' c='__libc_start_main_impl'/>

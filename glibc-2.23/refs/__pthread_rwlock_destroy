@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='353' type='int __pthread_rwlock_destroy(pthread_rwlock_t * __rwlock)'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='462' type='int __pthread_rwlock_destroy(pthread_rwlock_t * __rwlock)'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='1300' macro='1' c='_nl_load_domain'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='1300' macro='1' u='r' c='_nl_load_domain'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='1338' macro='1' c='_nl_unload_domain'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='1338' macro='1' u='r' c='_nl_unload_domain'/>
+<def f='codebrowser/nptl/pthread_rwlock_destroy.c' l='23' ll='30' type='int __pthread_rwlock_destroy(pthread_rwlock_t * rwlock)'/>
+<use f='codebrowser/nptl/pthread_rwlock_destroy.c' l='31' c='pthread_rwlock_destroy'/>

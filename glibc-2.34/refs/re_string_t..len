@@ -1,0 +1,43 @@
+<dec f='codebrowser/posix/regex_internal.h' l='394' type='Idx'/>
+<use f='codebrowser/posix/regex_internal.h' l='823' u='r' c='re_string_elem_size_at'/>
+<use f='codebrowser/posix/regex_internal.c' l='185' u='w' c='re_string_construct_common'/>
+<use f='codebrowser/posix/regex_internal.c' l='193' u='r' c='re_string_construct_common'/>
+<use f='codebrowser/posix/regex_internal.c' l='225' u='r' c='build_wcs_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='225' u='r' c='build_wcs_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='250' u='r' c='build_wcs_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='294' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='294' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='349' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='435' u='w' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='438' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='439' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='464' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='542' u='r' c='build_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='542' u='r' c='build_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='561' u='r' c='re_string_translate_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='561' u='r' c='re_string_translate_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='592' u='w' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='649' u='w' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='700' u='w' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='739' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='806' u='w' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='832' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='933' u='r' c='re_string_context_at'/>
+<use f='codebrowser/posix/regcomp.c' l='1810' macro='1' u='r' c='peek_token'/>
+<use f='codebrowser/posix/regcomp.c' l='1999' macro='1' u='r' c='peek_token'/>
+<use f='codebrowser/posix/regcomp.c' l='2042' macro='1' u='r' c='peek_token_bracket'/>
+<use f='codebrowser/posix/regcomp.c' l='2056' macro='1' u='r' c='peek_token_bracket'/>
+<use f='codebrowser/posix/regexec.c' l='1108' u='r' c='check_matching'/>
+<use f='codebrowser/posix/regexec.c' l='1110' u='r' c='check_matching'/>
+<use f='codebrowser/posix/regexec.c' l='1671' u='r' c='clean_state_log_if_needed'/>
+<use f='codebrowser/posix/regexec.c' l='1673' u='r' c='clean_state_log_if_needed'/>
+<use f='codebrowser/posix/regexec.c' l='2668' u='r' c='get_subexp'/>
+<use f='codebrowser/posix/regexec.c' l='2715' u='r' c='get_subexp'/>
+<use f='codebrowser/posix/regexec.c' l='3649' u='r' c='check_node_accept_bytes'/>
+<use f='codebrowser/posix/regexec.c' l='3682' u='r' c='check_node_accept_bytes'/>
+<use f='codebrowser/posix/regexec.c' l='3988' u='r' c='extend_buffers'/>
+<use f='codebrowser/posix/regexec.c' l='3988' u='r' c='extend_buffers'/>
+<use f='codebrowser/posix/regexec.c' l='3988' u='r' c='extend_buffers'/>
+<use f='codebrowser/posix/regexec.c' l='3988' u='r' c='extend_buffers'/>
+<offset>512</offset>
+<doc f='codebrowser/posix/regex_internal.h' l='393'>/* This is RAW_LEN - RAW_MBS_IDX + VALID_LEN - VALID_RAW_LEN.  */</doc>

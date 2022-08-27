@@ -1,0 +1,19 @@
+<dec f='codebrowser/misc/sys/single_threaded.h' l='29' type='char'/>
+<use f='codebrowser/elf/libc_early_init.c' l='38' u='w' c='__libc_early_init'/>
+<doc f='codebrowser/misc/sys/single_threaded.h' l='26'>/* If this variable is non-zero, then the current thread is the only
+   thread in the process image.  If it is zero, the process might be
+   multi-threaded.  */</doc>
+<def f='codebrowser/misc/single_threaded.c' l='26' type='char'/>
+<use f='codebrowser/nptl/pthread_create.c' l='589' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='592' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/posix/fork.c' l='48' u='r' c='__libc_fork'/>
+<use f='include/c++/11/ext/atomicity.h' l='52' u='r' c='__gnu_cxx::__is_single_threaded'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setegid.c' l='34' macro='1' u='r' c='setegid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/seteuid.c' l='34' macro='1' u='r' c='seteuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgid.c' l='29' macro='1' u='r' c='__setgid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgroups.c' l='33' macro='1' u='r' c='setgroups'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setregid.c' l='29' macro='1' u='r' c='__setregid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresgid.c' l='29' macro='1' u='r' c='__setresgid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresuid.c' l='29' macro='1' u='r' c='__setresuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setreuid.c' l='29' macro='1' u='r' c='__setreuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setuid.c' l='28' macro='1' u='r' c='__setuid'/>

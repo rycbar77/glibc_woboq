@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/resolv.h' l='60' type='int __libc_dn_expand(const unsigned char * , const unsigned char * , const unsigned char * , char * , int )'/>
+<def f='codebrowser/resolv/dn_expand.c' l='104' macro='1' type='int __libc_dn_expand(const unsigned char * , const unsigned char * , const unsigned char * , char * , int )'/>
+<use f='codebrowser/resolv/ns_parse.c' l='157' u='c' c='ns_parserr'/>
+<use f='codebrowser/resolv/ns_print.c' l='696' u='c' c='addname'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='126' u='c' c='_nss_dns_getcanonname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='805' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='844' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1139' u='c' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/res_debug.c' l='338' u='c' c='__p_cdnname'/>
+<use f='codebrowser/resolv/res_debug.c' l='362' u='c' c='__p_fqnname'/>
+<use f='codebrowser/resolv/res_nameinquery.c' l='101' u='c' c='__libc_res_nameinquery'/>
+<use f='codebrowser/resolv/res_queriesmatch.c' l='116' u='c' c='__libc_res_queriesmatch'/>

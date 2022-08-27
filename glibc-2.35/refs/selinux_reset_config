@@ -1,0 +1,6 @@
+<dec f='include/selinux/selinux.h' l='737' type='void selinux_reset_config()'/>
+<doc f='include/selinux/selinux.h' l='732'>/* 
+ * Force a reset of the loaded configuration
+ * WARNING: This is not thread safe. Be very sure that no other threads
+ * are calling into libselinux when this is called.
+ */</doc>

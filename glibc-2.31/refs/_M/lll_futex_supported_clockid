@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/lowlevellock-futex.h' l='95'/>
+<doc f='codebrowser/sysdeps/nptl/lowlevellock-futex.h' l='93'>/* Verify whether the supplied clockid is supported by
+   lll_futex_clock_wait_bitset.  */</doc>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='270' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='606' u='c'/>

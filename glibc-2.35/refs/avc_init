@@ -1,0 +1,17 @@
+<dec f='include/selinux/avc.h' l='199' type='int avc_init(const char * msgprefix, const struct avc_memory_callback * mem_callbacks, const struct avc_log_callback * log_callbacks, const struct avc_thread_callback * thread_callbacks, const struct avc_lock_callback * lock_callbacks)'/>
+<doc f='include/selinux/avc.h' l='184'>/**
+ * avc_init - Initialize the AVC.
+ * @msgprefix: prefix for log messages
+ * @mem_callbacks: user-supplied memory callbacks
+ * @log_callbacks: user-supplied logging callbacks
+ * @thread_callbacks: user-supplied threading callbacks
+ * @lock_callbacks: user-supplied locking callbacks
+ *
+ * Initialize the access vector cache.  Return %0 on
+ * success or -%1 with @errno set on failure.  
+ * If @msgprefix is NULL, use &quot;uavc&quot;.  If any callback 
+ * structure references are NULL, use default methods 
+ * for those callbacks (see the definition of the callback
+ * structures above).
+ */</doc>
+<use f='codebrowser/nscd/selinux.c' l='336' u='c' c='nscd_avc_init'/>

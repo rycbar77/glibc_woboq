@@ -1,0 +1,33 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='346' type='int __pthread_rwlock_wrlock(pthread_rwlock_t * __rwlock)'/>
+<use f='codebrowser/intl/bindtextdom.c' l='91' macro='1' c='set_binding_values'/>
+<use f='codebrowser/intl/bindtextdom.c' l='91' macro='1' u='r' c='set_binding_values'/>
+<use f='codebrowser/intl/dcigettext.c' l='793' macro='1' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='793' macro='1' u='r' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='1019' macro='1' c='_nl_find_msg'/>
+<use f='codebrowser/intl/dcigettext.c' l='1019' macro='1' u='r' c='_nl_find_msg'/>
+<use f='codebrowser/intl/finddomain.c' l='143' macro='1' c='_nl_find_domain'/>
+<use f='codebrowser/intl/finddomain.c' l='143' macro='1' u='r' c='_nl_find_domain'/>
+<use f='codebrowser/intl/textdomain.c' l='73' macro='1' c='__textdomain'/>
+<use f='codebrowser/intl/textdomain.c' l='73' macro='1' u='r' c='__textdomain'/>
+<use f='codebrowser/locale/duplocale.c' l='60' macro='1' c='__duplocale'/>
+<use f='codebrowser/locale/duplocale.c' l='60' macro='1' u='r' c='__duplocale'/>
+<use f='codebrowser/locale/freelocale.c' l='41' macro='1' c='__freelocale'/>
+<use f='codebrowser/locale/freelocale.c' l='41' macro='1' u='r' c='__freelocale'/>
+<use f='codebrowser/locale/newlocale.c' l='162' macro='1' c='__newlocale'/>
+<use f='codebrowser/locale/newlocale.c' l='162' macro='1' u='r' c='__newlocale'/>
+<use f='codebrowser/locale/setlocale.c' l='234' macro='1' c='setlocale'/>
+<use f='codebrowser/locale/setlocale.c' l='234' macro='1' u='r' c='setlocale'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='440' type='int __pthread_rwlock_wrlock(pthread_rwlock_t * __rwlock)'/>
+<def f='codebrowser/nptl/pthread_rwlock_wrlock.c' l='22' ll='30' type='int __pthread_rwlock_wrlock(pthread_rwlock_t * rwlock)'/>
+<use f='codebrowser/nptl/pthread_rwlock_wrlock.c' l='32' c='pthread_rwlock_wrlock'/>
+<doc f='codebrowser/nptl/pthread_rwlock_wrlock.c' l='21'>/* See pthread_rwlock_common.c.  */</doc>
+<use f='codebrowser/time/alt_digit.c' l='79' macro='1' c='_nl_get_alt_digit'/>
+<use f='codebrowser/time/alt_digit.c' l='79' macro='1' u='r' c='_nl_get_alt_digit'/>
+<use f='codebrowser/time/alt_digit.c' l='105' macro='1' c='_nl_get_walt_digit'/>
+<use f='codebrowser/time/alt_digit.c' l='105' macro='1' u='r' c='_nl_get_walt_digit'/>
+<use f='codebrowser/time/alt_digit.c' l='159' macro='1' c='_nl_parse_alt_digit'/>
+<use f='codebrowser/time/alt_digit.c' l='159' macro='1' u='r' c='_nl_parse_alt_digit'/>
+<use f='codebrowser/time/era.c' l='48' macro='1' c='_nl_init_era_entries'/>
+<use f='codebrowser/time/era.c' l='48' macro='1' u='r' c='_nl_init_era_entries'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='155' macro='1' c='__wcsmbs_load_conv'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='155' macro='1' u='r' c='__wcsmbs_load_conv'/>

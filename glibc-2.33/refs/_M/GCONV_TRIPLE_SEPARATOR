@@ -1,0 +1,19 @@
+<dec f='codebrowser/iconv/gconv_charset.h' l='45'/>
+<use f='codebrowser/iconv/gconv_charset.c' l='125' u='c'/>
+<use f='codebrowser/iconv/gconv_charset.c' l='135' u='c'/>
+<doc f='codebrowser/iconv/gconv_charset.h' l='29'>/* An iconv encoding is in the form of a triplet, with parts separated by
+   a &apos;/&apos; character.  The first part is the standard name, the second part is
+   the character set, and the third part is the error handler.  If the first
+   part is sufficient to identify both the standard and the character set
+   then the second part can be empty e.g. UTF-8//.  If the first part is not
+   sufficient to identify both the standard and the character set then the
+   second part is required e.g. ISO-10646/UTF8/.  If neither the first or
+   second parts are provided e.g. //, then the current locale is used.
+   The actual values used in the first and second parts are not entirely
+   relevant to the implementation.  The values themselves are used in a hash
+   table to lookup modules and so the naming convention of the first two parts
+   is somewhat arbitrary and only helps locate the entries in the cache.
+   The third part is the error handler and is comprised of a &apos;,&apos; or &apos;/&apos;
+   separated list of suffixes.  Currently, we support &quot;TRANSLIT&quot; for
+   transliteration and &quot;IGNORE&quot; for ignoring conversion errors due to
+   unrecognized input characters.  */</doc>

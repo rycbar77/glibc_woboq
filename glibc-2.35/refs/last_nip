@@ -1,0 +1,5 @@
+<def f='codebrowser/nss/getXXent_r.c' l='99' type='nss_action_list'/>
+<use f='codebrowser/nss/getXXent_r.c' l='125' u='a' c='setgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='143' u='a' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='160' u='a' c='__getgrent_r'/>
+<doc f='codebrowser/nss/getXXent_r.c' l='98'>/* Remember the last service used since the last call to  `endXXent&apos;.  */</doc>

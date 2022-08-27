@@ -1,0 +1,8 @@
+<dec f='include/selinux/avc.h' l='435' type='void avc_av_stats()'/>
+<doc f='include/selinux/avc.h' l='428'>/**
+ * avc_av_stats - log av table statistics.
+ *
+ * Log a message with information about the size and
+ * distribution of the access vector table.  The audit
+ * callback is used to print the message.
+ */</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/nss/nss_database.h' l='64' type='nss_action_list __nss_database_get_noreload(enum nss_database db)'/>
+<doc f='codebrowser/nss/nss_database.h' l='61'>/* Like __nss_database_get, but does not reload /etc/nsswitch.conf
+   from disk.  This assumes that there has been a previous successful
+   __nss_database_get call (which may not have returned any data).  */</doc>
+<def f='codebrowser/nss/nss_database.c' l='476' ll='487' type='nss_action_list __nss_database_get_noreload(enum nss_database db)'/>

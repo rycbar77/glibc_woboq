@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='967' type='size_t _dl_count_modids()'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='966'>/* Count the modules with TLS segments.  */</doc>
+<def f='codebrowser/elf/dl-tls.c' l='107' ll='131' type='size_t _dl_count_modids()'/>
+<use f='codebrowser/elf/rtld.c' l='1437' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2091' u='c' c='dl_main'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/libio/libioP.h' l='389' type='void _IO_wsetb(FILE * , wchar_t * , wchar_t * , int )'/>
+<dec f='codebrowser/libio/libioP.h' l='390' type='void _IO_wsetb(FILE * , wchar_t * , wchar_t * , int )'/>
+<use f='codebrowser/libio/libioP.h' l='390' c='_IO_wsetb'/>
+<use f='codebrowser/libio/fileops.c' l='150' u='c' c='_IO_new_file_close_it'/>
+<use f='codebrowser/libio/genops.c' l='827' u='c' c='_IO_unbuffer_all'/>
+<use f='codebrowser/libio/vswprintf.c' l='45' u='c' c='_IO_wstrn_overflow'/>
+<use f='codebrowser/libio/wfiledoalloc.c' l='82' u='c' c='_IO_wfile_doallocate'/>
+<def f='codebrowser/libio/wgenops.c' l='93' ll='104' type='void _IO_wsetb(FILE * f, wchar_t * b, wchar_t * eb, int a)'/>
+<use f='codebrowser/libio/wgenops.c' l='373' u='c' c='_IO_wdoallocbuf'/>
+<use f='codebrowser/libio/wgenops.c' l='386' u='c' c='_IO_wdefault_doallocate'/>
+<use f='codebrowser/libio/wstrops.c' l='48' u='c' c='_IO_wstr_init_static'/>
+<use f='codebrowser/libio/wstrops.c' l='114' u='c' c='_IO_wstr_overflow'/>
+<use f='codebrowser/libio/wstrops.c' l='200' u='c' c='enlarge_userbuf'/>

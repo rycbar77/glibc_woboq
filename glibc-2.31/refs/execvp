@@ -1,0 +1,10 @@
+<dec f='codebrowser/posix/unistd.h' l='578' type='int execvp(const char * __file, char *const * __argv)'/>
+<dec f='codebrowser/include/unistd.h' l='15' type='int execvp(const char * , char *const * )'/>
+<use f='codebrowser/include/unistd.h' l='15' c='execvp'/>
+<doc f='codebrowser/posix/unistd.h' l='576'>/* Execute FILE, searching in the `PATH&apos; environment variable if it contains
+   no slashes, with arguments ARGV and environment from `environ&apos;.  */</doc>
+<def f='codebrowser/posix/execvp.c' l='23' ll='27' type='int execvp(const char * file, char *const * argv)'/>
+<doc f='codebrowser/posix/execvp.c' l='21'>/* Execute FILE, searching in the `PATH&apos; environment variable if it contains
+   no slashes, with arguments ARGV and environment from `environ&apos;.  */</doc>
+<use f='codebrowser/support/shell-container.c' l='237' u='c' c='run_command_array'/>
+<use f='codebrowser/support/test-container.c' l='1093' u='c' c='main'/>

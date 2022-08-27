@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/link.h' l='31'/>
+<use f='codebrowser/elf/link.h' l='46' u='c'/>
+<use f='codebrowser/elf/link.h' l='84' u='c'/>
+<use f='codebrowser/elf/link.h' l='93' u='c'/>
+<use f='codebrowser/elf/link.h' l='179' u='c'/>
+<use f='codebrowser/include/link.h' l='39' u='w'/>
+<doc f='codebrowser/include/link.h' l='28'>/* Get most of the contents from the public header, but we define a
+   different `struct link_map&apos; type for private use.  The la_objopen
+   prototype uses the type, so we have to declare it separately.  */</doc>

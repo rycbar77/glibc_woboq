@@ -1,0 +1,15 @@
+<dec f='codebrowser/elf/dl-hwcaps.h' l='152' type='struct dl_hwcaps_priority *'/>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='150'>/* Pre-computed hwcaps priorities.  Set up by
+   _dl_important_hwcaps.  */</doc>
+<def f='codebrowser/elf/dl-hwcaps.c' l='92' type='struct dl_hwcaps_priority *'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='100' u='w' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='101' u='r' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='102' u='r' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='114' u='r' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='115' u='r' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='116' u='r' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='127' u='r' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='128' u='r' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='129' u='r' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='145' u='r' c='sort_priorities_by_name'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='146' u='r' c='sort_priorities_by_name'/>

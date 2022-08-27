@@ -1,0 +1,3 @@
+<dec f='codebrowser/include/unistd.h' l='34' type='ssize_t __pread(int __fd, void * __buf, size_t __nbytes, __off_t __offset)'/>
+<use f='codebrowser/debug/pread_chk.c' l='28' u='c' c='__pread_chk'/>
+<use f='codebrowser/sysdeps/posix/posix_fallocate.c' l='107' u='c' c='internal_fallocate'/>

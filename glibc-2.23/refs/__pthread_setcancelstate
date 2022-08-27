@@ -1,0 +1,24 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='380' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/assert/assert.c' l='53' macro='1' c='__assert_fail_base'/>
+<use f='codebrowser/assert/assert.c' l='53' macro='1' u='r' c='__assert_fail_base'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='411' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/misc/error.c' l='301' c='__error'/>
+<use f='codebrowser/misc/error.c' l='301' u='r' c='__error'/>
+<use f='codebrowser/misc/error.c' l='326' c='__error'/>
+<use f='codebrowser/misc/error.c' l='326' u='r' c='__error'/>
+<use f='codebrowser/misc/error.c' l='363' c='__error_at_line'/>
+<use f='codebrowser/misc/error.c' l='363' u='r' c='__error_at_line'/>
+<use f='codebrowser/misc/error.c' l='397' c='__error_at_line'/>
+<use f='codebrowser/misc/error.c' l='397' u='r' c='__error_at_line'/>
+<def f='codebrowser/nptl/forward.c' l='200' macro='1' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/nptl/forward.c' l='202' c='pthread_setcancelstate'/>
+<def f='codebrowser/nptl/pthread_setcancelstate.c' l='24' ll='69' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/nptl/pthread_setcancelstate.c' l='70' c='pthread_setcancelstate'/>
+<use f='codebrowser/posix/wordexp.c' l='1189' c='parse_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='1189' u='r' c='parse_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='1197' c='parse_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='1197' u='r' c='parse_comm'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='130' c='fmtmsg'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='130' u='r' c='fmtmsg'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='202' c='fmtmsg'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='202' u='r' c='fmtmsg'/>

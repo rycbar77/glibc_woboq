@@ -1,0 +1,14 @@
+<dec f='codebrowser/nscd/nscd_proto.h' l='37' type='int'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='155' u='r' c='nscd_setnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='156' u='w' c='nscd_setnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='157' u='w' c='nscd_setnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='159' u='r' c='nscd_setnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='362' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='363' u='w' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='364' u='w' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='366' u='r' c='innetgr'/>
+<def f='codebrowser/nscd/nscd_netgroup.c' l='27' type='int'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='89' u='w' c='__nscd_setnetgrent'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='129' u='w' c='__nscd_setnetgrent'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='241' u='w' c='__nscd_innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='253' u='w' c='__nscd_innetgr'/>

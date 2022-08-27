@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/unistd.h' l='750' type='int setegid(__gid_t __gid)'/>
+<dec f='codebrowser/include/unistd.h' l='25' type='int setegid(__gid_t )'/>
+<use f='codebrowser/include/unistd.h' l='25' c='setegid'/>
+<doc f='codebrowser/posix/unistd.h' l='749'>/* Set the effective group ID of the calling process to GID.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/setegid.c' l='23' ll='38' type='int setegid(gid_t gid)'/>

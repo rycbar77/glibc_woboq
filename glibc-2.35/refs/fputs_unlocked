@@ -1,0 +1,18 @@
+<dec f='codebrowser/libio/stdio.h' l='691' type='int fputs_unlocked(const char *restrict __s, FILE *restrict __stream)'/>
+<dec f='codebrowser/include/stdio.h' l='242' type='int fputs_unlocked(const char *restrict , FILE *restrict )'/>
+<use f='codebrowser/include/stdio.h' l='242' c='fputs_unlocked'/>
+<use f='codebrowser/include/stdio.h' l='243' c='__fputs_unlocked'/>
+<doc f='codebrowser/libio/stdio.h' l='685'>/* This function does the same as `fputs&apos; but does not lock the stream.
+
+   This function is not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation it is a cancellation point and
+   therefore not marked with __THROW.  */</doc>
+<def f='codebrowser/libio/iofputs_u.c' l='42' macro='1' type='int fputs_unlocked(const char *restrict , FILE *restrict )'/>
+<use f='codebrowser/nss/getent.c' l='103' u='c' c='print_aliases'/>
+<use f='codebrowser/nss/getent.c' l='287' u='c' c='print_hosts'/>
+<use f='codebrowser/nss/getent.c' l='567' u='c' c='print_networks'/>
+<use f='codebrowser/nss/getent.c' l='662' u='c' c='print_protocols'/>
+<use f='codebrowser/nss/getent.c' l='760' u='c' c='print_services'/>
+<use f='codebrowser/nss/getent.c' l='930' u='c' c='more_help'/>
+<use f='codebrowser/nss/getent.c' l='946' u='c' c='more_help'/>

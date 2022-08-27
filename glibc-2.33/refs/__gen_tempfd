@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/stdio.h' l='263' type='int __gen_tempfd(int flags)'/>
+<dec f='codebrowser/include/stdio.h' l='264' type='int __gen_tempfd(int )'/>
+<use f='codebrowser/include/stdio.h' l='264' c='__gen_tempfd'/>
+<use f='codebrowser/stdio-common/tmpfile.c' l='45' u='c' c='__new_tmpfile'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/gentempfd.c' l='24' ll='34' type='int __gen_tempfd(int flags)'/>

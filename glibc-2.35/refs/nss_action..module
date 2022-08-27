@@ -1,0 +1,19 @@
+<dec f='codebrowser/nss/nss_action.h' l='36' type='struct nss_module *'/>
+<offset>0</offset>
+<doc f='codebrowser/nss/nss_action.h' l='34'>/* The service module that provides the functionality (potentially
+     not yet loaded).  */</doc>
+<use f='codebrowser/grp/initgroups.c' l='91' u='r' c='internal_getgrouplist'/>
+<use f='codebrowser/nscd/aicache.c' l='437' u='r' c='addhstaiX'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='903' u='r' c='gaih_inet'/>
+<use f='codebrowser/nscd/initgrcache.c' l='162' u='r' c='addinitgroupsX'/>
+<use f='codebrowser/nss/nss_action.c' l='52' u='r' c='actions_equal'/>
+<use f='codebrowser/nss/nss_action.c' l='52' u='r' c='actions_equal'/>
+<use f='codebrowser/nss/nss_action_parse.c' l='57' u='w' c='nss_action_parse'/>
+<use f='codebrowser/nss/nss_action_parse.c' l='58' u='r' c='nss_action_parse'/>
+<use f='codebrowser/nss/nss_action_parse.c' l='173' u='w' c='__nss_action_parse'/>
+<use f='codebrowser/nss/nsswitch.c' l='73' u='r' c='__nss_lookup'/>
+<use f='codebrowser/nss/nsswitch.c' l='82' u='r' c='__nss_lookup'/>
+<use f='codebrowser/nss/nsswitch.c' l='113' u='r' c='__nss_next2'/>
+<use f='codebrowser/nss/nsswitch.c' l='126' u='r' c='__nss_next2'/>
+<use f='codebrowser/nss/nsswitch.c' l='135' u='r' c='__nss_lookup_function'/>
+<use f='codebrowser/nss/nsswitch.c' l='137' u='r' c='__nss_lookup_function'/>

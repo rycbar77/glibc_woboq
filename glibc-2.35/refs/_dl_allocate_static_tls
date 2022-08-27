@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1280' type='void _dl_allocate_static_tls(struct link_map * map)'/>
+<def f='codebrowser/elf/dl-reloc.c' l='132' ll='142' type='void _dl_allocate_static_tls(struct link_map * map)'/>
+<doc f='codebrowser/elf/dl-reloc.c' l='129'>/* This function intentionally does not return any value but signals error
+   directly, as static TLS should be rare and code handling it should
+   not be inlined as much as possible.  */</doc>

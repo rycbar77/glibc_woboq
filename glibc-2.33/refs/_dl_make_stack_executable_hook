@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='418' type='int (*)(void **)'/>
+<use f='codebrowser/elf/dl-load.c' l='1354' macro='1' u='r' c='_dl_map_object_from_fd'/>
+<def f='codebrowser/elf/dl-support.c' l='189' type='int (*)(void **)'/>
+<doc f='codebrowser/elf/dl-support.c' l='186'>/* If loading a shared object requires that we make the stack executable
+   when it was not, we do it by calling this function.
+   It returns an errno code or zero on success.  */</doc>

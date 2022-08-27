@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/unistd.h' l='183' type='void * __sbrk(intptr_t __delta)'/>
+<dec f='codebrowser/include/unistd.h' l='184' type='void * __sbrk(intptr_t )'/>
+<use f='codebrowser/include/unistd.h' l='184' c='__sbrk'/>
+<use f='codebrowser/csu/libc-tls.c' l='148' u='c' c='__libc_setup_tls'/>
+<dec f='codebrowser/sysdeps/generic/dl-unistd.h' l='30' type='void * __sbrk(intptr_t )'/>
+<use f='codebrowser/sysdeps/generic/dl-unistd.h' l='30' c='__sbrk'/>
+<use f='codebrowser/malloc/morecore.c' l='29' u='c' c='__glibc_morecore'/>
+<def f='codebrowser/misc/sbrk.c' l='35' ll='78' type='void * __sbrk(intptr_t increment)'/>
+<use f='codebrowser/misc/sbrk.c' l='80' c='sbrk'/>
+<doc f='codebrowser/misc/sbrk.c' l='32'>/* Extend the process&apos;s data space by INCREMENT.
+   If INCREMENT is negative, shrink data space by - INCREMENT.
+   Return start of new space allocated, or -1 for errors.  */</doc>

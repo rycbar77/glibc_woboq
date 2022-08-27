@@ -1,0 +1,8 @@
+<dec f='codebrowser/stdlib/grouping.h' l='28' type='const char * __correctly_grouped_prefixmb(const char * begin, const char * end, const char * thousands, const char * grouping)'/>
+<def f='codebrowser/stdlib/grouping.c' l='45' ll='200' type='const char * __correctly_grouped_prefixmb(const char * begin, const char * end, const char * thousands, const char * grouping)'/>
+<doc f='codebrowser/stdlib/grouping.c' l='41'>/* Find the maximum prefix of the string between BEGIN and END which
+   satisfies the grouping rules.  It is assumed that at least one digit
+   follows BEGIN directly.  */</doc>
+<use f='codebrowser/stdlib/strtod_l.c' l='760' u='c' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='811' u='c' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtol_l.c' l='363' u='c' c='____strtol_l_internal'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/libio/stdio.h' l='632' type='int puts(const char * __s)'/>
+<doc f='codebrowser/libio/stdio.h' l='628'>/* Write a string, followed by a newline, to stdout.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/ioputs.c' l='48' macro='1' type='int puts(const char * )'/>

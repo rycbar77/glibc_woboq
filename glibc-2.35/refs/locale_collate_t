@@ -1,0 +1,49 @@
+<use f='codebrowser/locale/programs/localedef.h' l='94'/>
+<def f='codebrowser/locale/programs/ld-collate.c' l='196' ll='268'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='246'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='316' c='make_seclist_elem'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='333' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='401' c='new_symbol'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='419' c='check_duplicate'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='470' c='read_directions'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='639' c='find_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='676' c='unlink_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='703' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='960' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1082' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1501' c='collate_startup'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1506' c='collate_startup'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1507' c='collate_startup'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1555' c='collate_finish'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1898' c='output_weight'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1936' c='output_weightwc'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1978'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2111' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2521' c='skip_to'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2566' c='collate_read'/>
+<size>3480</size>
+<doc f='codebrowser/locale/programs/ld-collate.c' l='195'>/* The real definition of the struct for the LC_COLLATE locale.  */</doc>
+<mbr r='locale_collate_t::codepoint_collation' o='0' t='_Bool'/>
+<mbr r='locale_collate_t::col_weight_max' o='32' t='int'/>
+<mbr r='locale_collate_t::cur_weight_max' o='64' t='int'/>
+<mbr r='locale_collate_t::known_sections' o='128' t='struct section_list *'/>
+<mbr r='locale_collate_t::sections' o='192' t='struct section_list *'/>
+<mbr r='locale_collate_t::current_section' o='256' t='struct section_list *'/>
+<mbr r='locale_collate_t::unnamed_section' o='320' t='struct section_list'/>
+<mbr r='locale_collate_t::unnamed_section_defined' o='768' t='_Bool'/>
+<mbr r='locale_collate_t::error_section' o='832' t='struct section_list'/>
+<mbr r='locale_collate_t::symbol_section' o='1280' t='struct section_list'/>
+<mbr r='locale_collate_t::start' o='1728' t='struct element_t *'/>
+<mbr r='locale_collate_t::undefined' o='1792' t='struct element_t'/>
+<mbr r='locale_collate_t::cursor' o='3008' t='struct element_t *'/>
+<mbr r='locale_collate_t::ellipsis_weight' o='3072' t='struct element_t'/>
+<mbr r='locale_collate_t::elem_table' o='4288' t='hash_table'/>
+<mbr r='locale_collate_t::sym_table' o='5248' t='hash_table'/>
+<mbr r='locale_collate_t::seq_table' o='6208' t='hash_table'/>
+<mbr r='locale_collate_t::mempool' o='7168' t='struct obstack'/>
+<mbr r='locale_collate_t::next' o='7872' t='struct locale_collate_t *'/>
+<mbr r='locale_collate_t::mbheads' o='7936' t='struct element_t *[256]'/>
+<mbr r='locale_collate_t::wcheads' o='24320' t='struct wchead_table'/>
+<mbr r='locale_collate_t::mbseqorder' o='25024' t='unsigned char[256]'/>
+<mbr r='locale_collate_t::wcseqorder' o='27072' t='struct collseq_table'/>
+<mbr r='locale_collate_t::else_action' o='27776' t='enum (unnamed enum at /media/rr/Data/glibc_source/glibc-2.35/locale/programs/ld-collate.c:261:3)'/>

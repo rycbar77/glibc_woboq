@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='354' type='struct link_map *'/>
+<use f='codebrowser/elf/dl-profile.c' l='206' macro='1' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='207' macro='1' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='207' macro='1' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='223' macro='1' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='225' macro='1' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profstub.c' l='38' macro='1' u='r' c='_dl_mcount_wrapper_check'/>
+<def f='codebrowser/elf/dl-support.c' l='62' type='struct link_map *'/>
+<doc f='codebrowser/elf/dl-support.c' l='61'>/* The map for the object we will profile.  */</doc>

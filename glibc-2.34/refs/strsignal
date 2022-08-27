@@ -1,0 +1,11 @@
+<dec f='codebrowser/string/string.h' l='462' type='char * strsignal(int __sig)'/>
+<doc f='codebrowser/string/string.h' l='461'>/* Return a string describing the meaning of the signal number in SIG.  */</doc>
+<def f='codebrowser/string/strsignal.c' l='26' ll='50' type='char * strsignal(int signum)'/>
+<doc f='codebrowser/string/strsignal.c' l='25'>/* Return a string describing the meaning of the signal number SIGNUM.  */</doc>
+<use f='codebrowser/support/support_test_main.c' l='165' u='c' c='signal_handler'/>
+<use f='codebrowser/support/support_test_main.c' l='168' u='c' c='signal_handler'/>
+<use f='codebrowser/support/support_test_main.c' l='386' u='c' c='support_test_main'/>
+<use f='codebrowser/support/support_test_main.c' l='471' u='c' c='support_test_main'/>
+<use f='codebrowser/support/support_test_main.c' l='493' u='c' c='support_test_main'/>
+<use f='codebrowser/support/support_test_main.c' l='499' u='c' c='support_test_main'/>
+<use f='codebrowser/support/support_test_main.c' l='500' u='c' c='support_test_main'/>

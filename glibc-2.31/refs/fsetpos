@@ -1,0 +1,6 @@
+<dec f='codebrowser/libio/stdio.h' l='736' type='int fsetpos(FILE * __stream, const fpos_t * __pos)'/>
+<doc f='codebrowser/libio/stdio.h' l='732'>/* Set STREAM&apos;s position.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/iofsetpos.c' l='71' macro='1' type='int fsetpos(FILE * , const __fpos_t * )'/>

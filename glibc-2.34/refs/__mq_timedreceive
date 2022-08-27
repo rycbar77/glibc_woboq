@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/mqueue.h' l='4' type='ssize_t __mq_timedreceive(mqd_t , char *restrict , size_t , unsigned int *restrict , const struct timespec *restrict )'/>
+<dec f='codebrowser/include/mqueue.h' l='17' type='ssize_t __mq_timedreceive(mqd_t , char *restrict , size_t , unsigned int *restrict , const struct timespec *restrict )'/>
+<use f='codebrowser/include/mqueue.h' l='17' c='__mq_timedreceive'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_receive.c' l='30' u='c' c='__mq_receive'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/mq_timedreceive.c' l='66' macro='1' type='ssize_t __mq_timedreceive(mqd_t , char *restrict , size_t , unsigned int *restrict , const struct timespec *restrict )'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='239' type='long strtol_l(const char *restrict __nptr, char **restrict __endptr, int __base, __locale_t __loc)'/>
+<use f='codebrowser/include/stdlib.h' l='18' c='__strtol_l'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='237'>/* Special versions of the functions above which take the locale to
+   use as an additional parameter.  */</doc>
+<def f='codebrowser/stdlib/strtol_l.c' l='551' macro='1' type='long strtol_l(const char *restrict , char **restrict , int , __locale_t )'/>

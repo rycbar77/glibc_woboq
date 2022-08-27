@@ -1,0 +1,24 @@
+<dec f='codebrowser/elf/elf.h' l='682' type='Elf32_Word'/>
+<dec f='codebrowser/elf/elf.h' l='695' type='Elf64_Xword'/>
+<offset>256</offset>
+<doc f='codebrowser/elf/elf.h' l='682'>/* Segment size in file */</doc>
+<doc f='codebrowser/elf/elf.h' l='695'>/* Segment size in file */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='125' u='r' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/dl-load.c' l='1128' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1160' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1160' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1161' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1196' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1782' u='r' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1785' u='r' c='open_verify'/>
+<use f='codebrowser/elf/readelflib.c' l='109' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='127' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='131' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='180' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='274' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='109' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='127' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='131' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='180' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='274' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/rtld.c' l='1558' u='r' c='dl_main'/>

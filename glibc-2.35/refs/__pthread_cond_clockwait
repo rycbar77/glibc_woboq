@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='481' type='int __pthread_cond_clockwait(pthread_cond_t * cond, pthread_mutex_t * mutex, clockid_t clockid, const struct timespec * abstime)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='486' type='int __pthread_cond_clockwait(pthread_cond_t * , pthread_mutex_t * , clockid_t , const struct timespec * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='486' c='__pthread_cond_clockwait'/>
+<def f='codebrowser/nptl/pthread_cond_wait.c' l='703' macro='1' type='int __pthread_cond_clockwait(pthread_cond_t * , pthread_mutex_t * , clockid_t , const struct timespec * )'/>

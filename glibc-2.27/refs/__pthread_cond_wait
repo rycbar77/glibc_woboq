@@ -1,0 +1,5 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='484' type='int __pthread_cond_wait(pthread_cond_t * cond, pthread_mutex_t * mutex)'/>
+<def f='codebrowser/nptl/forward.c' l='149' macro='1' type='int __pthread_cond_wait(pthread_cond_t * cond, pthread_mutex_t * mutex)'/>
+<def f='codebrowser/nptl/pthread_cond_wait.c' l='652' ll='656' type='int __pthread_cond_wait(pthread_cond_t * cond, pthread_mutex_t * mutex)'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='670' c='pthread_cond_wait'/>
+<doc f='codebrowser/nptl/pthread_cond_wait.c' l='651'>/* See __pthread_cond_wait_common.  */</doc>

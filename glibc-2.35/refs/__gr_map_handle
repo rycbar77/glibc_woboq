@@ -1,0 +1,8 @@
+<def f='codebrowser/nscd/nscd_getgr_r.c' l='67' macro='1' type='struct locked_map_ptr'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='73' u='m' c='gr_map_free'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='75' u='m' c='gr_map_free'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='76' u='m' c='gr_map_free'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='96' u='a' c='nscd_getgr_r'/>
+<dec f='codebrowser/nscd/nscd_initgroups.c' l='31' type='struct locked_map_ptr'/>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='45' u='a' c='__nscd_getgrouplist'/>
+<doc f='codebrowser/nscd/nscd_initgroups.c' l='30'>/* We use the same mapping as in nscd_getgr.   */</doc>

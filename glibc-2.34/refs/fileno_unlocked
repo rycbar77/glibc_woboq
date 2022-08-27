@@ -1,0 +1,3 @@
+<dec f='codebrowser/libio/stdio.h' l='808' type='int fileno_unlocked(FILE * __stream)'/>
+<doc f='codebrowser/libio/stdio.h' l='807'>/* Faster version when locking is not required.  */</doc>
+<def f='codebrowser/libio/fileno.c' l='51' macro='1' type='int fileno_unlocked(FILE * )'/>

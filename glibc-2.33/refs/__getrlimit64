@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/sys/resource.h' l='124' type='int __getrlimit64(__rlimit_resource_t , struct rlimit64 * )'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getrlimit64.c' l='36' ll='40' type='int __getrlimit64(enum __rlimit_resource resource, struct rlimit64 * rlimits)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getrlimit64.c' l='46' c='__GI_getrlimit'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getrlimit64.c' l='47' c='__GI___getrlimit'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getrlimit64.c' l='48' c='__getrlimit'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getrlimit64.c' l='51' c='getrlimit'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getrlimit64.c' l='52' c='getrlimit64'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/getrlimit64.c' l='34'>/* Put the soft and hard limits for RESOURCE in *RLIMITS.
+   Returns 0 if successful, -1 if not (and sets errno).  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='211' u='c' c='__spawni_child'/>

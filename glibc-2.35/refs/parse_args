@@ -1,0 +1,16 @@
+<def f='codebrowser/intl/plural-exp.h' l='70' ll='74'/>
+<use f='codebrowser/intl/plural-exp.h' l='105' c='__gettextparse'/>
+<use f='codebrowser/build/intl/plural.c' l='201' c='__gettextparse'/>
+<use f='codebrowser/build/intl/plural.c' l='235' c='__gettextlex'/>
+<use f='codebrowser/build/intl/plural.c' l='236' c='__gettexterror'/>
+<use f='codebrowser/build/intl/plural.c' l='998' c='yydestruct'/>
+<use f='codebrowser/build/intl/plural.c' l='1021' c='__gettextparse'/>
+<use f='codebrowser/build/intl/plural.c' l='1572' c='__gettextlex'/>
+<use f='codebrowser/build/intl/plural.c' l='1715' c='__gettexterror'/>
+<size>16</size>
+<doc f='codebrowser/intl/plural-exp.h' l='68'>/* This is the data structure to pass information to the parser and get
+   the result in a thread-safe way.  */</doc>
+<mbr r='parse_args::cp' o='0' t='const char *'/>
+<mbr r='parse_args::res' o='64' t='struct expression *'/>
+<use f='codebrowser/intl/plural-exp.c' l='114' c='__gettext_extract_plural'/>
+<size>16</size>

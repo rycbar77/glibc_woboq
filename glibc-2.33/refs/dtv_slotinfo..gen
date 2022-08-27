@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='434' type='size_t'/>
+<offset>0</offset>
+<use f='codebrowser/elf/dl-close.c' l='83' u='w' c='remove_slotinfo'/>
+<use f='codebrowser/nptl_db/structs.def' l='116' u='r'/>
+<use f='codebrowser/elf/dl-tls.c' l='561' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='561' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='562' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='562' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='951' u='r' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='1025' u='w' c='_dl_add_to_slotinfo'/>

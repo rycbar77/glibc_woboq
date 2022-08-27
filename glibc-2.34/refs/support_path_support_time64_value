@@ -1,0 +1,5 @@
+<dec f='codebrowser/support/support.h' l='146' type='_Bool support_path_support_time64_value(const char * path, int64_t at, int64_t mt)'/>
+<use f='codebrowser/support/support.h' l='151' u='c' c='support_path_support_time64'/>
+<doc f='codebrowser/support/support.h' l='144'>/* Return true if PATH supports 64-bit time_t interfaces for file
+   operations (such as fstatat or utimensat).  */</doc>
+<def f='codebrowser/support/support_path_support_time64.c' l='39' ll='73' macro='1' type='_Bool support_path_support_time64_value(const char * path, int64_t at, int64_t mt)'/>

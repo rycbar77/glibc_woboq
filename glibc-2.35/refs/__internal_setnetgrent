@@ -1,0 +1,8 @@
+<dec f='codebrowser/inet/netgroup.h' l='72' type='int __internal_setnetgrent(const char * group, struct __netgrent * datap)'/>
+<doc f='codebrowser/inet/netgroup.h' l='71'>/* The internal netgroup handling functions might be called from outside.  */</doc>
+<def f='codebrowser/inet/getnetgrent_r.c' l='141' ll='148' type='int __internal_setnetgrent(const char * group, struct __netgrent * datap)'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='175' u='c' c='setnetgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='333' u='c' c='getpwent_next_nss_netgr'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='541' u='c' c='getpwent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='289' u='c' c='getspent_next_nss_netgr'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='493' u='c' c='getspent_next_file'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/posix/unistd.h' l='537' type='char * get_current_dir_name()'/>
+<doc f='codebrowser/posix/unistd.h' l='534'>/* Return a malloc&apos;d string containing the current directory name.
+   If the environment variable `PWD&apos; is set, and its value is correct,
+   that value is used.  */</doc>
+<def f='codebrowser/io/getdirname.c' l='27' ll='43' type='char * get_current_dir_name()'/>
+<doc f='codebrowser/io/getdirname.c' l='23'>/* Return a malloc&apos;d string containing the current directory name.
+   If the environment variable `PWD&apos; is set, and its value is correct,
+   that value is used.  */</doc>
+<use f='codebrowser/nscd/nscd_conf.c' l='282' u='c' c='nscd_parse_file'/>
+<use f='codebrowser/support/test-container.c' l='796' u='c' c='main'/>

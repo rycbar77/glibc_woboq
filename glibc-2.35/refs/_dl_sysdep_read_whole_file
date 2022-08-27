@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1200' type='void * _dl_sysdep_read_whole_file(const char * file, size_t * sizep, int prot)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1197'>/* System-dependent function to read a file&apos;s whole contents in the
+   most convenient manner available.  *SIZEP gets the size of the
+   file.  On error MAP_FAILED is returned.  */</doc>
+<use f='codebrowser/elf/dl-cache.c' l='414' u='c' c='_dl_load_cache_lookup'/>
+<def f='codebrowser/elf/dl-misc.c' l='34' ll='63' type='void * _dl_sysdep_read_whole_file(const char * file, size_t * sizep, int prot)'/>
+<doc f='codebrowser/elf/dl-misc.c' l='30'>/* Read the whole contents of FILE into new mmap&apos;d space with given
+   protections.  *SIZEP gets the size of the file.  On error MAP_FAILED
+   is returned.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='1869' u='c' c='dl_main'/>

@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='429' type='int security_av_string(security_class_t tclass, access_vector_t av, char ** result)'/>
+<doc f='include/selinux/selinux.h' l='427'>/* Returns an access vector in a string representation.  User must free the
+ * returned string via free(). */</doc>

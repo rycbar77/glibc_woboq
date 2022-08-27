@@ -1,0 +1,19 @@
+<dec f='codebrowser/grp/grp.h' l='46' type='__gid_t'/>
+<offset>128</offset>
+<doc f='codebrowser/grp/grp.h' l='46'>/* Group ID.	*/</doc>
+<use f='codebrowser/grp/fgetgrent_r.c' l='40' u='w' c='_nss_files_parse_grent'/>
+<use f='codebrowser/grp/fgetgrent_r.c' l='46' u='w' c='_nss_files_parse_grent'/>
+<use f='codebrowser/grp/fgetgrent_r.c' l='46' u='w' c='_nss_files_parse_grent'/>
+<use f='codebrowser/grp/fgetgrent_r.c' l='48' u='w' c='_nss_files_parse_grent'/>
+<use f='codebrowser/grp/grp-merge.c' l='49' u='w' c='__copy_grp'/>
+<use f='codebrowser/grp/grp-merge.c' l='49' u='r' c='__copy_grp'/>
+<use f='codebrowser/grp/grp-merge.c' l='132' u='r' c='__merge_grp'/>
+<use f='codebrowser/grp/grp-merge.c' l='132' u='r' c='__merge_grp'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='59' u='r' c='compat_call'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='69' u='r' c='compat_call'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='99' u='r' c='compat_call'/>
+<use f='codebrowser/grp/putgrent.c' l='53' u='r' c='putgrent'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='187' u='w' c='nscd_getgr_r'/>
+<use f='codebrowser/nss/nss_files/files-grp.c' l='42' u='r' c='_nss_files_getgrgid_r'/>
+<use f='codebrowser/nss/nss_files/files-initgroups.c' l='83' u='r' c='_nss_files_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_files/files-initgroups.c' l='113' u='r' c='_nss_files_initgroups_dyn'/>

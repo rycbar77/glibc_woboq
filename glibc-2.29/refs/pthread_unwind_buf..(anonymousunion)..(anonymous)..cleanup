@@ -1,0 +1,5 @@
+<use f='codebrowser/nptl/cleanup.c' l='32' u='w' c='__pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='32' u='w' c='__pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/pthread_create.c' l='446' u='w' c='start_thread'/>
+<use f='codebrowser/nptl/unwind.c' l='69' u='r' c='unwind_stop'/>
+<use f='codebrowser/csu/libc-start.c' l='302' u='w' c='__libc_start_main'/>

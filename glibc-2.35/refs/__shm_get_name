@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/shm-directory.h' l='38' type='int __shm_get_name(struct shmdir_name * result, const char * name, _Bool sem_prefix)'/>
+<dec f='codebrowser/include/shm-directory.h' l='40' type='int __shm_get_name(struct shmdir_name * , const char * , _Bool )'/>
+<use f='codebrowser/include/shm-directory.h' l='40' c='__shm_get_name'/>
+<def f='codebrowser/posix/shm-directory.c' l='27' ll='44' type='int __shm_get_name(struct shmdir_name * result, const char * name, _Bool sem_prefix)'/>
+<doc f='codebrowser/include/shm-directory.h' l='35'>/* Sets RESULT-&gt;name to the constructed name and returns 0 on success,
+   or -1 on failure.  Includes the &quot;sem.&quot; prefix in the name if
+   SEM_PREFIX is true.  */</doc>
+<use f='codebrowser/rt/shm_open.c' l='32' u='c' c='__shm_open'/>
+<use f='codebrowser/rt/shm_unlink.c' l='30' u='c' c='__shm_unlink'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='50' u='c' c='__sem_open'/>
+<use f='codebrowser/sysdeps/pthread/sem_unlink.c' l='35' u='c' c='__sem_unlink'/>

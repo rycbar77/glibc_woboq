@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>mq_timedreceive.c source code [codebrowser/sysdeps/unix/sysv/linux/mq_timedreceive.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/mq_timedreceive.c'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>unix</a>/<a href='..'>sysv</a>/<a href='./'>linux</a>/<a href='mq_timedreceive.c.html'>mq_timedreceive.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Receive a message from a message queue with a timeout.  Linux version.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2017-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../../../../include/mqueue.h.html">&lt;mqueue.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="sysdep-cancel.h.html">&lt;sysdep-cancel.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../../../../include/shlib-compat.h.html">&lt;shlib-compat.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><i>/* Receive the oldest from highest priority messages in message queue</i></td></tr>
+<tr><th id="24">24</th><td><i>   MQDES, stop waiting if ABS_TIMEOUT expires.  */</i></td></tr>
+<tr><th id="25">25</th><td><a class="typedef" href="../../../../posix/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t" data-ref-filename="ssize_t">ssize_t</a></td></tr>
+<tr><th id="26">26</th><td><dfn class="decl def fn" id="___mq_timedreceive_time64" title='___mq_timedreceive_time64' data-ref="___mq_timedreceive_time64" data-ref-filename="___mq_timedreceive_time64">___mq_timedreceive_time64</dfn> (<a class="typedef" href="bits/mqueue.h.html#mqd_t" title='mqd_t' data-type='int' data-ref="mqd_t" data-ref-filename="mqd_t">mqd_t</a> <dfn class="local col1 decl" id="1mqdes" title='mqdes' data-type='mqd_t' data-ref="1mqdes" data-ref-filename="1mqdes">mqdes</dfn>, <em>char</em> *<b>__restrict</b> <dfn class="local col2 decl" id="2msg_ptr" title='msg_ptr' data-type='char *restrict' data-ref="2msg_ptr" data-ref-filename="2msg_ptr">msg_ptr</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col3 decl" id="3msg_len" title='msg_len' data-type='size_t' data-ref="3msg_len" data-ref-filename="3msg_len">msg_len</dfn>,</td></tr>
+<tr><th id="27">27</th><td>                          <em>unsigned</em> <em>int</em> *<b>__restrict</b> <dfn class="local col4 decl" id="4msg_prio" title='msg_prio' data-type='unsigned int *restrict' data-ref="4msg_prio" data-ref-filename="4msg_prio">msg_prio</dfn>,</td></tr>
+<tr><th id="28">28</th><td>                          <em>const</em> <b>struct</b> <a class="macro" href="../../../../include/struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a> *<b>__restrict</b> <dfn class="local col5 decl" id="5abs_timeout" title='abs_timeout' data-type='const struct timespec *restrict' data-ref="5abs_timeout" data-ref-filename="5abs_timeout">abs_timeout</dfn>)</td></tr>
+<tr><th id="29">29</th><td>{</td></tr>
+<tr><th id="30">30</th><td><u>#<span data-ppcond="30">ifndef</span> <span class="macro" data-ref="_M/__NR_mq_timedreceive_time64">__NR_mq_timedreceive_time64</span></u></td></tr>
+<tr><th id="31">31</th><td><u># define <dfn class="macro" id="_M/__NR_mq_timedreceive_time64" data-ref="_M/__NR_mq_timedreceive_time64">__NR_mq_timedreceive_time64</dfn> __NR_mq_timedreceive</u></td></tr>
+<tr><th id="32">32</th><td><u>#<span data-ppcond="30">endif</span></u></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><u>#<span data-ppcond="34">ifdef</span> <a class="macro" href="kernel-features.h.html#206" data-ref="_M/__ASSUME_TIME64_SYSCALLS">__ASSUME_TIME64_SYSCALLS</a></u></td></tr>
+<tr><th id="35">35</th><td>  <b>return</b> <a class="macro" href="../../sysdep.h.html#98" title="({ long int sc_ret; if ((({ __typeof (({ struct pthread *__self; asm (&quot;mov %%fs:%c1,%0&quot; : &quot;=r&quot; (__self) : &quot;i&quot; (__builtin_offsetof(struct pthread, header.self))); __self;})-&gt;header.multiple_threads) __value; _Static_assert (sizeof (__value) == 1 || sizeof (__value) == 4 || sizeof (__value) == 8, &quot;size of per-thread data&quot;); if (sizeof (__value) == 1) asm volatile (&quot;movb %%fs:%P2,%b0&quot; : &quot;=q&quot; (__value) : &quot;0&quot; (0), &quot;i&quot; (__builtin_offsetof(struct pthread, header.multiple_threads))); else if (sizeof (__value) == 4) asm volatile (&quot;movl %%fs:%P1,%0&quot; : &quot;=r&quot; (__value) : &quot;i&quot; (__builtin_offsetof(struct pthread, header.multiple_threads))); else { asm volatile (&quot;movq %%fs:%P1,%q0&quot; : &quot;=r&quot; (__value) : &quot;i&quot; (__builtin_offsetof(struct pthread, header.multiple_threads))); } __value; }) == 0)) sc_ret = ({ long int sc_ret = ({ unsigned long int resultvar; __typeof__ (((__typeof__ ((abs_timeout) - (abs_timeout))) (abs_timeout))) __arg5 = ((__typeof__ ((abs_timeout) - (abs_timeout))) (abs_timeout)); __typeof__ (((__typeof__ ((msg_prio) - (msg_prio))) (msg_prio))) __arg4 = ((__typeof__ ((msg_prio) - (msg_prio))) (msg_prio)); __typeof__ (((__typeof__ ((msg_len) - (msg_len))) (msg_len))) __arg3 = ((__typeof__ ((msg_len) - (msg_len))) (msg_len)); __typeof__ (((__typeof__ ((msg_ptr) - (msg_ptr))) (msg_ptr))) __arg2 = ((__typeof__ ((msg_ptr) - (msg_ptr))) (msg_ptr)); __typeof__ (((__typeof__ ((mqdes) - (mqdes))) (mqdes))) __arg1 = ((__typeof__ ((mqdes) - (mqdes))) (mqdes)); register __typeof__ (((__typeof__ ((abs_timeout) - (abs_timeout))) (abs_timeout))) _a5 asm (&quot;r8&quot;) = __arg5; register __typeof__ (((__typeof__ ((msg_prio) - (msg_prio))) (msg_prio))) _a4 asm (&quot;r10&quot;) = __arg4; register __typeof__ (((__typeof__ ((msg_len) - (msg_len))) (msg_len))) _a3 asm (&quot;rdx&quot;) = __arg3; register __typeof__ (((__typeof__ ((msg_ptr) - (msg_ptr))) (msg_ptr))) _a2 asm (&quot;rsi&quot;) = __arg2; register __typeof__ (((__typeof__ ((mqdes) - (mqdes))) (mqdes))) _a1 asm (&quot;rdi&quot;) = __arg1; asm volatile ( &quot;syscall\n\t&quot; : &quot;=a&quot; (resultvar) : &quot;0&quot; (243), &quot;r&quot; (_a1), &quot;r&quot; (_a2), &quot;r&quot; (_a3), &quot;r&quot; (_a4), &quot;r&quot; (_a5) : &quot;memory&quot;, &quot;cc&quot;, &quot;r11&quot;, &quot;cx&quot;); (long int) resultvar; }); __builtin_expect ((((unsigned long int) (sc_ret) &gt; -4096UL)), 0) ? ({ (__libc_errno = ((-(sc_ret)))); -1L; }) : sc_ret; }); else { int sc_cancel_oldtype = __pthread_enable_asynccancel (); sc_ret = ({ long int sc_ret = ({ unsigned long int resultvar; __typeof__ (((__typeof__ ((abs_timeout) - (abs_timeout))) (abs_timeout))) __arg5 = ((__typeof__ ((abs_timeout) - (abs_timeout))) (abs_timeout)); __typeof__ (((__typeof__ ((msg_prio) - (msg_prio))) (msg_prio))) __arg4 = ((__typeof__ ((msg_prio) - (msg_prio))) (msg_prio)); __typeof__ (((__typeof__ ((msg_len) - (msg_len))) (msg_len))) __arg3 = ((__typeof__ ((msg_len) - (msg_len))) (msg_len)); __typeof__ (((__typeof__ ((msg_ptr) - (msg_ptr))) (msg_ptr))) __arg2 = ((__typeof__ ((msg_ptr) - (msg_ptr))) (msg_ptr)); __typeof__ (((__typeof__ ((mqdes) - (mqdes))) (mqdes))) __arg1 = ((__typeof__ ((mqdes) - (mqdes))) (mqdes)); register __typeof__ (((__typeof__ ((abs_timeout) - (abs_timeout))) (abs_timeout))) _a5 asm (&quot;r8&quot;) = __arg5; register __typeof__ (((__typeof__ ((msg_prio) - (msg_prio))) (msg_prio))) _a4 asm (&quot;r10&quot;) = __arg4; register __typeof__ (((__typeof__ ((msg_len) - (msg_len))) (msg_len))) _a3 asm (&quot;rdx&quot;) = __arg3; register __typeof__ (((__typeof__ ((msg_ptr) - (msg_ptr))) (msg_ptr))) _a2 asm (&quot;rsi&quot;) = __arg2; register __typeof__ (((__typeof__ ((mqdes) - (mqdes))) (mqdes))) _a1 asm (&quot;rdi&quot;) = __arg1; asm volatile ( &quot;syscall\n\t&quot; : &quot;=a&quot; (resultvar) : &quot;0&quot; (243), &quot;r&quot; (_a1), &quot;r&quot; (_a2), &quot;r&quot; (_a3), &quot;r&quot; (_a4), &quot;r&quot; (_a5) : &quot;memory&quot;, &quot;cc&quot;, &quot;r11&quot;, &quot;cx&quot;); (long int) resultvar; }); __builtin_expect ((((unsigned long int) (sc_ret) &gt; -4096UL)), 0) ? ({ (__libc_errno = ((-(sc_ret)))); -1L; }) : sc_ret; }); __pthread_disable_asynccancel (sc_cancel_oldtype); } sc_ret; })" data-ref="_M/SYSCALL_CANCEL">SYSCALL_CANCEL</a> (mq_timedreceive_time64, <a class="local col1 ref" href="#1mqdes" title='mqdes' data-ref="1mqdes" data-ref-filename="1mqdes">mqdes</a>, <a class="local col2 ref" href="#2msg_ptr" title='msg_ptr' data-ref="2msg_ptr" data-ref-filename="2msg_ptr">msg_ptr</a>, <a class="local col3 ref" href="#3msg_len" title='msg_len' data-ref="3msg_len" data-ref-filename="3msg_len">msg_len</a>,</td></tr>
+<tr><th id="36">36</th><td>			 <a class="local col4 ref" href="#4msg_prio" title='msg_prio' data-ref="4msg_prio" data-ref-filename="4msg_prio">msg_prio</a>, <a class="local col5 ref" href="#5abs_timeout" title='abs_timeout' data-ref="5abs_timeout" data-ref-filename="5abs_timeout">abs_timeout</a>);</td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="34">else</span></u></td></tr>
+<tr><th id="38">38</th><td>  bool need_time64 = abs_timeout != NULL</td></tr>
+<tr><th id="39">39</th><td>		     &amp;&amp; !in_time_t_range (abs_timeout-&gt;tv_sec);</td></tr>
+<tr><th id="40">40</th><td>  <b>if</b> (need_time64)</td></tr>
+<tr><th id="41">41</th><td>    {</td></tr>
+<tr><th id="42">42</th><td>      <em>int</em> r = SYSCALL_CANCEL (mq_timedreceive_time64, mqdes, msg_ptr, msg_len,</td></tr>
+<tr><th id="43">43</th><td>			      msg_prio, abs_timeout);</td></tr>
+<tr><th id="44">44</th><td>      <b>if</b> (r == <var>0</var> || errno != ENOSYS)</td></tr>
+<tr><th id="45">45</th><td>	<b>return</b> r;</td></tr>
+<tr><th id="46">46</th><td>      __set_errno (EOVERFLOW);</td></tr>
+<tr><th id="47">47</th><td>      <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="48">48</th><td>    }</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td>  <b>struct</b> timespec ts32, *pts32 = NULL;</td></tr>
+<tr><th id="51">51</th><td>  <b>if</b> (abs_timeout != NULL)</td></tr>
+<tr><th id="52">52</th><td>    {</td></tr>
+<tr><th id="53">53</th><td>      ts32 = valid_timespec64_to_timespec (*abs_timeout);</td></tr>
+<tr><th id="54">54</th><td>      pts32 = &amp;ts32;</td></tr>
+<tr><th id="55">55</th><td>    }</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td>  <b>return</b> SYSCALL_CANCEL (mq_timedreceive, mqdes, msg_ptr, msg_len, msg_prio,</td></tr>
+<tr><th id="58">58</th><td>			 pts32);</td></tr>
+<tr><th id="59">59</th><td><u>#<span data-ppcond="34">endif</span></u></td></tr>
+<tr><th id="60">60</th><td>}</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><u>#<span data-ppcond="62">if</span> <a class="macro" href="x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="63">63</th><td><a class="macro" href="../../../../include/shlib-compat.h.html#116" title="extern __typeof (___mq_timedreceive_time64) mq_timedreceive __attribute__ ((weak, alias (&quot;___mq_timedreceive_time64&quot;))) ;" data-ref="_M/versioned_symbol">versioned_symbol</a> (libc, <a class="ref fn" href="#___mq_timedreceive_time64" title='___mq_timedreceive_time64' data-ref="___mq_timedreceive_time64" data-ref-filename="___mq_timedreceive_time64">___mq_timedreceive_time64</a>, <dfn class="decl def fn" id="mq_timedreceive" title='mq_timedreceive' data-ref="mq_timedreceive" data-ref-filename="mq_timedreceive">mq_timedreceive</dfn>, GLIBC_2_34);</td></tr>
+<tr><th id="64">64</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#626" title="" data-ref="_M/libc_hidden_ver">libc_hidden_ver</a> (___mq_timedreceive_time64, __mq_timedreceive)</td></tr>
+<tr><th id="65">65</th><td><u># <span data-ppcond="65">ifndef</span> <span class="macro" data-ref="_M/SHARED">SHARED</span></u></td></tr>
+<tr><th id="66">66</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#141" title="extern __typeof (___mq_timedreceive_time64) __mq_timedreceive __attribute__ ((alias (&quot;___mq_timedreceive_time64&quot;))) ;" data-ref="_M/strong_alias">strong_alias</a> (<a class="ref fn" href="#___mq_timedreceive_time64" title='___mq_timedreceive_time64' data-ref="___mq_timedreceive_time64" data-ref-filename="___mq_timedreceive_time64">___mq_timedreceive_time64</a>, <dfn class="decl def fn" id="__mq_timedreceive" title='__mq_timedreceive' data-ref="__mq_timedreceive" data-ref-filename="__mq_timedreceive">__mq_timedreceive</dfn>)</td></tr>
+<tr><th id="67">67</th><td><u># <span data-ppcond="65">endif</span></u></td></tr>
+<tr><th id="68">68</th><td><u># <span data-ppcond="68">if</span> <a class="macro" href="../../../../include/shlib-compat.h.html#113" title="0" data-ref="_M/OTHER_SHLIB_COMPAT">OTHER_SHLIB_COMPAT</a> (librt, GLIBC_2_3_4, GLIBC_2_34)</u></td></tr>
+<tr><th id="69">69</th><td>compat_symbol (librt, ___mq_timedreceive_time64, mq_timedreceive, GLIBC_2_3_4);</td></tr>
+<tr><th id="70">70</th><td><u># <span data-ppcond="68">endif</span></u></td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><u>#<span data-ppcond="62">else</span> /* __TIMESIZE != 64 */</u></td></tr>
+<tr><th id="73">73</th><td>libc_hidden_ver (___mq_timedreceive_time64, __mq_timedreceive_time64)</td></tr>
+<tr><th id="74">74</th><td>versioned_symbol (libc, ___mq_timedreceive_time64, __mq_timedreceive_time64,</td></tr>
+<tr><th id="75">75</th><td>		  GLIBC_2_34);</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td>ssize_t</td></tr>
+<tr><th id="78">78</th><td>___mq_timedreceive (mqd_t mqdes, <em>char</em> *<b>__restrict</b> msg_ptr, size_t msg_len,</td></tr>
+<tr><th id="79">79</th><td>		    <em>unsigned</em> <em>int</em> *<b>__restrict</b> msg_prio,</td></tr>
+<tr><th id="80">80</th><td>		    <em>const</em> <b>struct</b> timespec *<b>__restrict</b> abs_timeout)</td></tr>
+<tr><th id="81">81</th><td>{</td></tr>
+<tr><th id="82">82</th><td>  <b>struct</b> __timespec64 ts64;</td></tr>
+<tr><th id="83">83</th><td>  <b>if</b> (abs_timeout != NULL)</td></tr>
+<tr><th id="84">84</th><td>    ts64 = valid_timespec_to_timespec64 (*abs_timeout);</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td>  <b>return</b> __mq_timedreceive_time64 (mqdes, msg_ptr, msg_len, msg_prio,</td></tr>
+<tr><th id="87">87</th><td>                                   abs_timeout != NULL ? &amp;ts64 : NULL);</td></tr>
+<tr><th id="88">88</th><td>}</td></tr>
+<tr><th id="89">89</th><td>versioned_symbol (libc, ___mq_timedreceive, mq_timedreceive, GLIBC_2_34);</td></tr>
+<tr><th id="90">90</th><td>libc_hidden_ver (___mq_timedreceive, __mq_timedreceive)</td></tr>
+<tr><th id="91">91</th><td><u># ifndef SHARED</u></td></tr>
+<tr><th id="92">92</th><td>strong_alias (___mq_timedreceive, __mq_timedreceive)</td></tr>
+<tr><th id="93">93</th><td><u># endif</u></td></tr>
+<tr><th id="94">94</th><td><u># if OTHER_SHLIB_COMPAT (librt, GLIBC_2_3_4, GLIBC_2_34)</u></td></tr>
+<tr><th id="95">95</th><td>compat_symbol (librt, ___mq_timedreceive, mq_timedreceive, GLIBC_2_3_4);</td></tr>
+<tr><th id="96">96</th><td><u># endif</u></td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td><u>#<span data-ppcond="62">endif</span> /* __TIMESIZE != 64 */</u></td></tr>
+<tr><th id="99">99</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

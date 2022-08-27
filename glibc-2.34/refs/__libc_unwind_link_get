@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/generic/unwind-link.h' l='86' ll='92' type='struct unwind_link * __libc_unwind_link_get()'/>
+<use f='codebrowser/debug/backtrace.c' l='70' u='c' c='__backtrace'/>
+<use f='codebrowser/nptl/pthread_exit.c' l='29' u='c' c='__pthread_exit'/>
+<use f='codebrowser/sysdeps/generic/unwind-resume.c' l='28' u='c' c='link'/>

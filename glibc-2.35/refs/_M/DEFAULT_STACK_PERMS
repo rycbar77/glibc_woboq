@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/x86_64/stackinfo.h' l='37'/>
+<doc f='codebrowser/sysdeps/x86_64/stackinfo.h' l='35'>/* Default to an executable stack.  PF_X can be overridden if PT_GNU_STACK is
+ * present, but it is presumed absent.  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='1096' u='c'/>
+<use f='codebrowser/elf/dl-support.c' l='187' u='c'/>
+<use f='codebrowser/elf/rtld.c' l='335' u='c'/>
+<use f='codebrowser/support/support_stack_alloc.c' l='71' u='c'/>

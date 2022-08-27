@@ -1,0 +1,23 @@
+<dec f='codebrowser/string/string.h' l='323' type='char * strpbrk(const char * __s, const char * __accept)'/>
+<dec f='codebrowser/include/string.h' l='148' type='char * strpbrk(const char * , const char * )'/>
+<use f='codebrowser/include/string.h' l='148' c='strpbrk'/>
+<use f='codebrowser/grp/fgetgrent_r.c' l='33' macro='1' u='c' c='_nss_files_parse_grent'/>
+<use f='codebrowser/gshadow/sgetsgent_r.c' l='35' macro='1' u='c' c='_nss_files_parse_sgent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='40' macro='1' u='c' c='_nss_files_parse_protoent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='40' macro='1' u='c' c='_nss_files_parse_servent'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='123' u='c' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='213' u='c' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='317' u='c' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='50' macro='1' u='c' c='parse_line'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='34' macro='1' u='c' c='_nss_files_parse_netent'/>
+<use f='codebrowser/nss/rewrite_field.c' l='34' u='c' c='__nss_rewrite_field'/>
+<use f='codebrowser/nss/rewrite_field.c' l='46' u='c' c='__nss_rewrite_field'/>
+<use f='codebrowser/nss/valid_field.c' l='30' u='c' c='__nss_valid_field'/>
+<use f='codebrowser/nss/valid_list_field.c' l='32' u='c' c='__nss_valid_list_field'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='31' macro='1' u='c' c='_nss_files_parse_pwent'/>
+<use f='codebrowser/resolv/res_init.c' l='347' u='c' c='res_vinit_1'/>
+<use f='codebrowser/resolv/res_init.c' l='407' u='c' c='res_vinit_1'/>
+<use f='codebrowser/shadow/sgetspent_r.c' l='36' macro='1' u='c' c='_nss_files_parse_spent'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='601' c='__strpbrk_sse42'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='603' c='__strpbrk_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strpbrk.c' l='29' macro='1' type='char * strpbrk(const char * , const char * )'/>

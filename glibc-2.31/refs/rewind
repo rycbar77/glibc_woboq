@@ -1,0 +1,10 @@
+<dec f='codebrowser/libio/stdio.h' l='694' type='void rewind(FILE * __stream)'/>
+<dec f='codebrowser/include/stdio.h' l='191' type='void rewind(FILE * )'/>
+<use f='codebrowser/include/stdio.h' l='191' c='rewind'/>
+<doc f='codebrowser/libio/stdio.h' l='690'>/* Rewind to the beginning of STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/rewind.c' l='30' ll='38' type='void rewind(FILE * fp)'/>
+<use f='codebrowser/misc/fstab.c' l='131' u='c' c='fstab_init'/>
+<use f='codebrowser/misc/getttyent.c' l='188' u='c' c='__setttyent'/>

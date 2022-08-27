@@ -1,0 +1,18 @@
+<dec f='codebrowser/nscd/nscd.h' l='194' type='const char *const[5]'/>
+<use f='codebrowser/nscd/cache.c' l='151' u='r' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='341' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/connections.c' l='574' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='649' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='910' u='r' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='947' u='r' c='invalidate_cache'/>
+<use f='codebrowser/nscd/mem.c' l='427' u='r' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='567' u='r' c='mempool_alloc'/>
+<use f='codebrowser/nscd/nscd.c' l='444' u='r' c='parse_opt'/>
+<use f='codebrowser/nscd/nscd.c' l='484' u='r' c='more_help'/>
+<use f='codebrowser/nscd/nscd.c' l='488' u='r' c='more_help'/>
+<def f='codebrowser/nscd/nscd_conf.c' l='36' ll='43' type='const char *const[5]'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='50' u='r' c='find_db'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='306' u='r' c='nscd_parse_file'/>
+<doc f='codebrowser/nscd/nscd_conf.c' l='35'>/* Names of the databases.  */</doc>
+<use f='codebrowser/nscd/nscd_stat.c' l='312' u='r' c='receive_print_stats'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='323' u='r' c='receive_print_stats'/>

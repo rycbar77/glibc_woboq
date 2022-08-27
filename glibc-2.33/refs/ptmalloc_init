@@ -1,0 +1,11 @@
+<def f='codebrowser/malloc/arena.c' l='323' ll='451' type='void ptmalloc_init()'/>
+<use f='codebrowser/malloc/hooks.c' l='31' u='c' c='malloc_hook_ini'/>
+<use f='codebrowser/malloc/hooks.c' l='40' u='c' c='realloc_hook_ini'/>
+<use f='codebrowser/malloc/hooks.c' l='48' u='c' c='memalign_hook_ini'/>
+<use f='codebrowser/malloc/malloc.c' l='3537' u='c' c='__libc_valloc'/>
+<use f='codebrowser/malloc/malloc.c' l='3551' u='c' c='__libc_pvalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='5058' u='c' c='__malloc_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='5199' u='c' c='__libc_mallinfo2'/>
+<use f='codebrowser/malloc/malloc.c' l='5250' u='c' c='__malloc_stats'/>
+<use f='codebrowser/malloc/malloc.c' l='5419' u='c' c='__libc_mallopt'/>
+<use f='codebrowser/malloc/malloc.c' l='5678' u='c' c='__malloc_info'/>

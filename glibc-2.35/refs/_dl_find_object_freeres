@@ -1,0 +1,4 @@
+<dec f='codebrowser/elf/dl-find_object.h' l='139' type='void _dl_find_object_freeres()'/>
+<doc f='codebrowser/elf/dl-find_object.h' l='138'>/* Called from __libc_freeres to deallocate malloc&apos;ed memory.  */</doc>
+<def f='codebrowser/elf/dl-find_object.c' l='841' ll='856' type='void _dl_find_object_freeres()'/>
+<use f='codebrowser/elf/dl-libc_freeres.c' l='25' u='c' c='__rtld_libc_freeres'/>

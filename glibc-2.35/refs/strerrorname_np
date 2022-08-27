@@ -1,0 +1,4 @@
+<dec f='codebrowser/string/string.h' l='452' type='const char * strerrorname_np(int __err)'/>
+<doc f='codebrowser/string/string.h' l='451'>/* Return a string with the error name in ERR.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='1124' u='c' c='rtld_chain_load'/>
+<def f='codebrowser/string/strerrorname_np.c' l='21' ll='25' type='const char * strerrorname_np(int errnum)'/>

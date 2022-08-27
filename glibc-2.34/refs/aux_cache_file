@@ -1,0 +1,13 @@
+<def f='codebrowser/elf/cache.c' l='893' ll='900'/>
+<use f='codebrowser/elf/cache.c' l='1022' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1030' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1033' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1035' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1086' c='save_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1088' c='save_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1092' c='save_aux_cache'/>
+<size>32</size>
+<doc f='codebrowser/elf/cache.c' l='889'>/* ldconfig maintains an auxiliary cache file that allows
+   only reading those libraries that have changed since the last iteration.
+   For this for each library some information is cached in the auxiliary
+   cache.  */</doc>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>s_ffma.c source code [codebrowser/sysdeps/x86/fpu/s_ffma.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86/fpu/s_ffma.c'; var root_path = '../../../..'; var data_path = '../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>sysdeps</a>/<a href='..'>x86</a>/<a href='./'>fpu</a>/<a href='s_ffma.c.html'>s_ffma.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Fused multiply-add of double value, narrowing the result to float.</i></td></tr>
+<tr><th id="2">2</th><td><i>   x86 version.</i></td></tr>
+<tr><th id="3">3</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="4">4</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="5">5</th><td><i></i></td></tr>
+<tr><th id="6">6</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="7">7</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="8">8</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="9">9</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="10">10</th><td><i></i></td></tr>
+<tr><th id="11">11</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="12">12</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="13">13</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="14">14</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="15">15</th><td><i></i></td></tr>
+<tr><th id="16">16</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="17">17</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="18">18</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/f32fmaf64" data-ref="_M/f32fmaf64">f32fmaf64</dfn> __hide_f32fmaf64</u></td></tr>
+<tr><th id="21">21</th><td><u>#define <dfn class="macro" id="_M/f32fmaf32x" data-ref="_M/f32fmaf32x">f32fmaf32x</dfn> __hide_f32fmaf32x</u></td></tr>
+<tr><th id="22">22</th><td><u>#define <dfn class="macro" id="_M/ffmal" data-ref="_M/ffmal">ffmal</dfn> __hide_ffmal</u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../../../include/math.h.html">&lt;math.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#undef <a class="macro" href="#20" data-ref="_M/f32fmaf64">f32fmaf64</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#undef <a class="macro" href="#21" data-ref="_M/f32fmaf32x">f32fmaf32x</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#undef <a class="macro" href="#22" data-ref="_M/ffmal">ffmal</a></u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="../../../math/math-narrow.h.html">&lt;math-narrow.h&gt;</a></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#<span data-ppcond="30">ifndef</span> <span class="macro" data-ref="_M/__FP_FAST_FMA">__FP_FAST_FMA</span></u></td></tr>
+<tr><th id="31">31</th><td><i>/* Depending on the details of the glibc configuration, fma might use</i></td></tr>
+<tr><th id="32">32</th><td><i>   either SSE or 387 arithmetic; ensure that both parts of the</i></td></tr>
+<tr><th id="33">33</th><td><i>   floating-point state are handled in the round-to-odd code.  If</i></td></tr>
+<tr><th id="34">34</th><td><i>   __FP_FAST_FMA is defined, that implies that the compiler is using</i></td></tr>
+<tr><th id="35">35</th><td><i>   SSE floating point and that the fma call will be inlined, so the</i></td></tr>
+<tr><th id="36">36</th><td><i>   x86 macros will work with only the SSE state and that is</i></td></tr>
+<tr><th id="37">37</th><td><i>   sufficient.  */</i></td></tr>
+<tr><th id="38">38</th><td><u># undef <a class="macro" href="fenv_private.h.html#262" data-ref="_M/libc_feholdexcept_setround">libc_feholdexcept_setround</a></u></td></tr>
+<tr><th id="39">39</th><td><u># define <dfn class="macro" id="_M/libc_feholdexcept_setround" data-ref="_M/libc_feholdexcept_setround">libc_feholdexcept_setround</dfn>	<a class="ref fn" href="../../generic/fenv_private.h.html#default_libc_feholdexcept_setround" title='default_libc_feholdexcept_setround' data-ref="default_libc_feholdexcept_setround" data-ref-filename="default_libc_feholdexcept_setround">default_libc_feholdexcept_setround</a></u></td></tr>
+<tr><th id="40">40</th><td><u># undef <a class="macro" href="fenv_private.h.html#265" data-ref="_M/libc_feupdateenv_test">libc_feupdateenv_test</a></u></td></tr>
+<tr><th id="41">41</th><td><u># define <dfn class="macro" id="_M/libc_feupdateenv_test" data-ref="_M/libc_feupdateenv_test">libc_feupdateenv_test</dfn>		<a class="ref fn" href="../../generic/fenv_private.h.html#default_libc_feupdateenv_test" title='default_libc_feupdateenv_test' data-ref="default_libc_feupdateenv_test" data-ref-filename="default_libc_feupdateenv_test">default_libc_feupdateenv_test</a></u></td></tr>
+<tr><th id="42">42</th><td><u>#<span data-ppcond="30">endif</span></u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><em>float</em></td></tr>
+<tr><th id="45">45</th><td><dfn class="decl def fn" id="__ffma" title='__ffma' data-ref="__ffma" data-ref-filename="__ffma">__ffma</dfn> (<em>double</em> <dfn class="local col1 decl" id="1x" title='x' data-type='double' data-ref="1x" data-ref-filename="1x">x</dfn>, <em>double</em> <dfn class="local col2 decl" id="2y" title='y' data-type='double' data-ref="2y" data-ref-filename="2y">y</dfn>, <em>double</em> <dfn class="local col3 decl" id="3z" title='z' data-type='double' data-ref="3z" data-ref-filename="3z">z</dfn>)</td></tr>
+<tr><th id="46">46</th><td>{</td></tr>
+<tr><th id="47">47</th><td>  <a class="macro" href="../../../math/math-narrow.h.html#359" title="do { typeof (x) tmp; float ret; tmp = ({ fenv_t env; union ieee754_double u; default_libc_feholdexcept_setround (&amp;env, 0xc00); u.d = (fma (({ __typeof(x) __x; if (sizeof (x) &lt;= sizeof (double) || __builtin_types_compatible_p (__typeof (x), _Float128)) __asm (&quot;&quot; : &quot;=x&quot; (__x) : &quot;0&quot; (x)); else __asm (&quot;&quot; : &quot;=t&quot; (__x) : &quot;0&quot; (x)); __x; }), (y), (z))); do { if (sizeof (u.d) &lt;= sizeof (double) || __builtin_types_compatible_p (__typeof (u.d), _Float128)) __asm __volatile (&quot;&quot; : : &quot;x&quot; (u.d)); else __asm __volatile (&quot;&quot; : : &quot;f&quot; (u.d)); } while (0); if (0) feclearexcept (0x10); u.ieee.mantissa1 |= default_libc_feupdateenv_test (&amp;env, 0x20) != 0; u.d; }); if (tmp == 0) ret = (float) (({ __typeof(x) __x; if (sizeof (x) &lt;= sizeof (double) || __builtin_types_compatible_p (__typeof (x), _Float128)) __asm (&quot;&quot; : &quot;=x&quot; (__x) : &quot;0&quot; (x)); else __asm (&quot;&quot; : &quot;=t&quot; (__x) : &quot;0&quot; (x)); __x; }) * (y) + (z)); else ret = (float) tmp; do { } while (0); return ret; } while (0)" data-ref="_M/NARROW_FMA_ROUND_TO_ODD">NARROW_FMA_ROUND_TO_ODD</a> (<a class="local col1 ref" href="#1x" title='x' data-ref="1x" data-ref-filename="1x">x</a>, <a class="local col2 ref" href="#2y" title='y' data-ref="2y" data-ref-filename="2y">y</a>, <a class="local col3 ref" href="#3z" title='z' data-ref="3z" data-ref-filename="3z">z</a>, <em>float</em>, <b>union</b> <a class="type" href="../../ieee754/ieee754.h.html#ieee754_double" title='ieee754_double' data-ref="ieee754_double" data-ref-filename="ieee754_double">ieee754_double</a>, , <a class="ref field" href="../../ieee754/ieee754.h.html#ieee754_double::(anonymous)::mantissa1" title='ieee754_double::(anonymous struct)::mantissa1' data-ref="ieee754_double::(anonymous)::mantissa1" data-ref-filename="ieee754_double..(anonymous)..mantissa1">mantissa1</a>,</td></tr>
+<tr><th id="48">48</th><td>			   <span class="macro" title="0" data-ref="_M/false">false</span>);</td></tr>
+<tr><th id="49">49</th><td>}</td></tr>
+<tr><th id="50">50</th><td><a class="macro" href="../../generic/math-narrow-alias.h.html#42" title="extern __typeof (__ffma) ffma __attribute__ ((weak, alias (&quot;__ffma&quot;))) ; extern __typeof (__ffma) f32fmaf64 __attribute__ ((weak, alias (&quot;__ffma&quot;))) ; extern __typeof (__ffma) f32fmaf32x __attribute__ ((weak, alias (&quot;__ffma&quot;))) ;" data-ref="_M/libm_alias_float_double">libm_alias_float_double</a> (fma)</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

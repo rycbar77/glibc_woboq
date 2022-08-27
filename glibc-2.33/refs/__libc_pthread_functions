@@ -1,0 +1,40 @@
+<dec f='codebrowser/sysdeps/nptl/pthread-functions.h' l='74' type='struct pthread_functions'/>
+<doc f='codebrowser/sysdeps/nptl/pthread-functions.h' l='73'>/* Variable in libc.so.  */</doc>
+<def f='codebrowser/nptl/forward.c' l='30' type='struct pthread_functions'/>
+<use f='codebrowser/nptl/forward.c' l='60' macro='1' u='m' c='__pthread_cond_broadcast_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='60' macro='1' u='m' c='__pthread_cond_broadcast_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='65' macro='1' u='m' c='__pthread_cond_broadcast'/>
+<use f='codebrowser/nptl/forward.c' l='65' macro='1' u='m' c='__pthread_cond_broadcast'/>
+<use f='codebrowser/nptl/forward.c' l='70' macro='1' u='m' c='__pthread_cond_signal_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='70' macro='1' u='m' c='__pthread_cond_signal_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='75' macro='1' u='m' c='__pthread_cond_signal'/>
+<use f='codebrowser/nptl/forward.c' l='75' macro='1' u='m' c='__pthread_cond_signal'/>
+<use f='codebrowser/nptl/forward.c' l='80' macro='1' u='m' c='__pthread_cond_wait_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='80' macro='1' u='m' c='__pthread_cond_wait_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='86' macro='1' u='m' c='__pthread_cond_wait'/>
+<use f='codebrowser/nptl/forward.c' l='86' macro='1' u='m' c='__pthread_cond_wait'/>
+<use f='codebrowser/nptl/forward.c' l='92' macro='1' u='m' c='__pthread_cond_timedwait_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='92' macro='1' u='m' c='__pthread_cond_timedwait_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='99' macro='1' u='m' c='__pthread_cond_timedwait'/>
+<use f='codebrowser/nptl/forward.c' l='99' macro='1' u='m' c='__pthread_cond_timedwait'/>
+<use f='codebrowser/nptl/forward.c' l='106' macro='1' u='m' c='__pthread_exit'/>
+<use f='codebrowser/nptl/forward.c' l='106' macro='1' u='m' c='__pthread_exit'/>
+<use f='codebrowser/nptl/forward.c' l='111' macro='1' u='m' c='pthread_mutex_destroy'/>
+<use f='codebrowser/nptl/forward.c' l='111' macro='1' u='m' c='pthread_mutex_destroy'/>
+<use f='codebrowser/nptl/forward.c' l='113' macro='1' u='m' c='pthread_mutex_init'/>
+<use f='codebrowser/nptl/forward.c' l='113' macro='1' u='m' c='pthread_mutex_init'/>
+<use f='codebrowser/nptl/forward.c' l='117' macro='1' u='m' c='pthread_mutex_lock'/>
+<use f='codebrowser/nptl/forward.c' l='117' macro='1' u='m' c='pthread_mutex_lock'/>
+<use f='codebrowser/nptl/forward.c' l='119' macro='1' u='m' c='pthread_mutex_unlock'/>
+<use f='codebrowser/nptl/forward.c' l='119' macro='1' u='m' c='pthread_mutex_unlock'/>
+<use f='codebrowser/nptl/forward.c' l='121' macro='1' u='m' c='__pthread_setcancelstate'/>
+<use f='codebrowser/nptl/forward.c' l='121' macro='1' u='m' c='__pthread_setcancelstate'/>
+<use f='codebrowser/nptl/forward.c' l='125' macro='1' u='m' c='pthread_setcanceltype'/>
+<use f='codebrowser/nptl/forward.c' l='125' macro='1' u='m' c='pthread_setcanceltype'/>
+<use f='codebrowser/nptl/forward.c' l='127' macro='1' u='m' c='__pthread_unwind'/>
+<use f='codebrowser/nptl/forward.c' l='127' macro='1' u='m' c='__pthread_unwind'/>
+<doc f='codebrowser/nptl/forward.c' l='29'>/* Pointers to the libc functions.  */</doc>
+<use f='codebrowser/sunrpc/auth_none.c' l='96' macro='1' u='m' c='__GI_authnone_create'/>
+<use f='codebrowser/sunrpc/auth_none.c' l='96' macro='1' u='m' c='__GI_authnone_create'/>
+<use f='codebrowser/sunrpc/rpc_thread.c' l='59' macro='1' u='m' c='__rpc_thread_variables'/>
+<use f='codebrowser/sunrpc/rpc_thread.c' l='59' macro='1' u='m' c='__rpc_thread_variables'/>

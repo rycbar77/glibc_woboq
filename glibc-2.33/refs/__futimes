@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/sys/time.h' l='46' type='int __futimes(int fd, const struct timeval * tvp)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='25' macro='1' type='int __futimes(int fd, const struct timeval * tvp64)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='55' c='futimes'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='22'>/* Change the access time of the file associated with FD to TVP[0] and
+   the modification time of FILE to TVP[1].  */</doc>

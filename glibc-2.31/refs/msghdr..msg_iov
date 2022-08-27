@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='262' type='struct iovec *'/>
+<offset>128</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='262'>/* Vector of data to send/receive into.  */</doc>
+<use f='codebrowser/nscd/nscd_helper.c' l='287' u='w' c='__nscd_get_mapping'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='431' u='w' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='448' u='w' c='__msgread'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='509' u='w' c='__msgwrite'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='252' u='w' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='329' u='w' c='__msgread'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='390' u='w' c='__msgwrite'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_native.c' l='116' u='w' c='__check_native'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='163' u='w' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='166' u='w' c='__netlink_request'/>

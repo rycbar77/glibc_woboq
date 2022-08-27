@@ -1,0 +1,6 @@
+<dec f='codebrowser/math/math-narrow.h' l='334'/>
+<doc f='codebrowser/math/math-narrow.h' l='329'>/* Implement a narrowing square root function where no attempt is made
+   to be correctly rounding (this only applies to IBM long double; the
+   case where the function is not actually narrowing is handled by
+   aliasing other sqrt functions in libm, not using this macro).  The
+   argument is X and the return type is TYPE.  */</doc>

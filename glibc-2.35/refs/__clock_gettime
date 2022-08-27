@@ -1,0 +1,32 @@
+<dec f='codebrowser/include/time.h' l='27' type='int __clock_gettime(clockid_t , struct timespec * )'/>
+<dec f='codebrowser/include/time.h' l='28' type='int __clock_gettime(clockid_t , struct timespec * )'/>
+<use f='codebrowser/include/time.h' l='28' c='__clock_gettime'/>
+<use f='codebrowser/include/time.h' l='518' u='c' c='time_now'/>
+<use f='codebrowser/include/time.h' l='319' u='c' c='time64_now'/>
+<use f='codebrowser/inet/deadline.c' l='31' macro='1' u='c' c='__deadline_current_time'/>
+<use f='codebrowser/inet/deadline.c' l='32' macro='1' u='c' c='__deadline_current_time'/>
+<use f='codebrowser/login/logout.c' l='51' macro='1' u='c' c='__logout'/>
+<use f='codebrowser/login/logwtmp.c' l='40' macro='1' u='c' c='__logwtmp'/>
+<use f='codebrowser/include/random-bits.h' l='34' macro='1' u='c' c='random_bits'/>
+<use f='codebrowser/nis/nis_call.c' l='720' macro='1' u='c' c='__nisfind_server'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='63' macro='1' u='c' c='wait_on_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='74' macro='1' u='c' c='wait_on_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='216' macro='1' u='c' c='open_socket'/>
+<use f='codebrowser/resolv/gai_misc.c' l='372' u='c' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='67' macro='1' u='c' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/res_send.c' l='175' u='c' c='evNowTime'/>
+<use f='codebrowser/rt/aio_misc.c' l='633' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_suspend.c' l='164' macro='1' u='c' c='___aio_suspend_time64'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='256' u='c' c='authdes_marshal'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='458' u='c' c='synchronize'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='126' u='c' c='__GI_authunix_create'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='301' u='c' c='authunix_refresh'/>
+<use f='codebrowser/sunrpc/create_xid.c' l='43' u='c' c='_create_xid'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='300' u='c' c='_svcauth_des'/>
+<use f='codebrowser/sysdeps/posix/tempname.c' l='90' macro='1' u='c' c='random_bits'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock.c' l='31' macro='1' u='c' c='clock'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/clock_gettime.c' l='29' macro='1' type='int __clock_gettime(clockid_t clock_id, struct timespec * tp)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_gettime.c' l='115' c='clock_gettime'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/clock_gettime.c' l='27'>/* Get current value of CLOCK and store it in TP.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ftime.c' l='28' macro='1' u='c' c='ftime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timespec_get.c' l='28' macro='1' u='c' c='__timespec_get'/>

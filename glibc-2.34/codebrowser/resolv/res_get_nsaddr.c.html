@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>res_get_nsaddr.c source code [codebrowser/resolv/res_get_nsaddr.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/resolv/res_get_nsaddr.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>resolv</a>/<a href='res_get_nsaddr.c.html'>res_get_nsaddr.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Name server address at specified index in res_state.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2015-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../include/assert.h.html">&lt;assert.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../include/resolv.h.html">&lt;resolv.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="resolv-internal.h.html">&lt;resolv-internal.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><b>struct</b> <a class="type" href="../sysdeps/unix/sysv/linux/bits/socket.h.html#sockaddr" title='sockaddr' data-ref="sockaddr" data-ref-filename="sockaddr">sockaddr</a> *</td></tr>
+<tr><th id="24">24</th><td><dfn class="decl def fn" id="__res_get_nsaddr" title='__res_get_nsaddr' data-ref="__res_get_nsaddr" data-ref-filename="__res_get_nsaddr">__res_get_nsaddr</dfn> (<a class="typedef" href="bits/types/res_state.h.html#res_state" title='res_state' data-type='struct __res_state *' data-ref="res_state" data-ref-filename="res_state">res_state</a> <dfn class="local col1 decl" id="1statp" title='statp' data-type='res_state' data-ref="1statp" data-ref-filename="1statp">statp</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col2 decl" id="2n" title='n' data-type='unsigned int' data-ref="2n" data-ref-filename="2n">n</dfn>)</td></tr>
+<tr><th id="25">25</th><td>{</td></tr>
+<tr><th id="26">26</th><td>  <a class="macro" href="../assert/assert.h.html#104" title="((void) sizeof ((n &lt; statp-&gt;nscount) ? 1 : 0), __extension__ ({ if (n &lt; statp-&gt;nscount) ; else __assert_fail (&quot;n &lt; statp-&gt;nscount&quot;, &quot;/media/rr/Data/glibc_source/glibc-2.34/resolv/res_get_nsaddr.c&quot;, 26, __extension__ __PRETTY_FUNCTION__); }))" data-ref="_M/assert">assert</a> (<a class="local col2 ref" href="#2n" title='n' data-ref="2n" data-ref-filename="2n">n</a> &lt; <a class="local col1 ref" href="#1statp" title='statp' data-ref="1statp" data-ref-filename="1statp">statp</a>-&gt;<a class="ref field" href="bits/types/res_state.h.html#__res_state::nscount" title='__res_state::nscount' data-ref="__res_state::nscount" data-ref-filename="__res_state..nscount">nscount</a>);</td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td>  <b>if</b> (<a class="local col1 ref" href="#1statp" title='statp' data-ref="1statp" data-ref-filename="1statp">statp</a>-&gt;<a class="ref field" href="bits/types/res_state.h.html#__res_state::nsaddr_list" title='__res_state::nsaddr_list' data-ref="__res_state::nsaddr_list" data-ref-filename="__res_state..nsaddr_list">nsaddr_list</a>[<a class="local col2 ref" href="#2n" title='n' data-ref="2n" data-ref-filename="2n">n</a>].<a class="ref field" href="../inet/netinet/in.h.html#244" title='sockaddr_in::sin_family' data-ref="sockaddr_in::sin_family" data-ref-filename="sockaddr_in..sin_family">sin_family</a> == <var>0</var></td></tr>
+<tr><th id="29">29</th><td>      &amp;&amp; <a class="local col1 ref" href="#1statp" title='statp' data-ref="1statp" data-ref-filename="1statp">statp</a>-&gt;<a class="ref field" href="bits/types/res_state.h.html#__res_state::_u" title='__res_state::_u' data-ref="__res_state::_u" data-ref-filename="__res_state.._u">_u</a>.<a class="ref field" href="bits/types/res_state.h.html#__res_state::(anonymous)::_ext" title='__res_state::(anonymous union)::_ext' data-ref="__res_state::(anonymous)::_ext" data-ref-filename="__res_state..(anonymous).._ext">_ext</a>.<a class="ref field" href="bits/types/res_state.h.html#__res_state::(anonymousunion)::(anonymous)::nsaddrs" title='__res_state::(anonymous union)::(anonymous struct)::nsaddrs' data-ref="__res_state::(anonymousunion)::(anonymous)::nsaddrs" data-ref-filename="__res_state..(anonymousunion)..(anonymous)..nsaddrs">nsaddrs</a>[<a class="local col2 ref" href="#2n" title='n' data-ref="2n" data-ref-filename="2n">n</a>] != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="30">30</th><td>    <i>/* statp-&gt;_u._ext.nsaddrs[n] holds an address that is larger than</i></td></tr>
+<tr><th id="31">31</th><td><i>       struct sockaddr, and user code did not update</i></td></tr>
+<tr><th id="32">32</th><td><i>       statp-&gt;nsaddr_list[n].  */</i></td></tr>
+<tr><th id="33">33</th><td>    <b>return</b> (<b>struct</b> <a class="type" href="../sysdeps/unix/sysv/linux/bits/socket.h.html#sockaddr" title='sockaddr' data-ref="sockaddr" data-ref-filename="sockaddr">sockaddr</a> *) <a class="local col1 ref" href="#1statp" title='statp' data-ref="1statp" data-ref-filename="1statp">statp</a>-&gt;<a class="ref field" href="bits/types/res_state.h.html#__res_state::_u" title='__res_state::_u' data-ref="__res_state::_u" data-ref-filename="__res_state.._u">_u</a>.<a class="ref field" href="bits/types/res_state.h.html#__res_state::(anonymous)::_ext" title='__res_state::(anonymous union)::_ext' data-ref="__res_state::(anonymous)::_ext" data-ref-filename="__res_state..(anonymous).._ext">_ext</a>.<a class="ref field" href="bits/types/res_state.h.html#__res_state::(anonymousunion)::(anonymous)::nsaddrs" title='__res_state::(anonymous union)::(anonymous struct)::nsaddrs' data-ref="__res_state::(anonymousunion)::(anonymous)::nsaddrs" data-ref-filename="__res_state..(anonymousunion)..(anonymous)..nsaddrs">nsaddrs</a>[<a class="local col2 ref" href="#2n" title='n' data-ref="2n" data-ref-filename="2n">n</a>];</td></tr>
+<tr><th id="34">34</th><td>  <b>else</b></td></tr>
+<tr><th id="35">35</th><td>    <i>/* User code updated statp-&gt;nsaddr_list[n], or statp-&gt;nsaddr_list[n]</i></td></tr>
+<tr><th id="36">36</th><td><i>       has the same content as statp-&gt;_u._ext.nsaddrs[n].  */</i></td></tr>
+<tr><th id="37">37</th><td>    <b>return</b> (<b>struct</b> <a class="type" href="../sysdeps/unix/sysv/linux/bits/socket.h.html#sockaddr" title='sockaddr' data-ref="sockaddr" data-ref-filename="sockaddr">sockaddr</a> *) (<em>void</em> *) &amp;<a class="local col1 ref" href="#1statp" title='statp' data-ref="1statp" data-ref-filename="1statp">statp</a>-&gt;<a class="ref field" href="bits/types/res_state.h.html#__res_state::nsaddr_list" title='__res_state::nsaddr_list' data-ref="__res_state::nsaddr_list" data-ref-filename="__res_state..nsaddr_list">nsaddr_list</a>[<a class="local col2 ref" href="#2n" title='n' data-ref="2n" data-ref-filename="2n">n</a>];</td></tr>
+<tr><th id="38">38</th><td>}</td></tr>
+<tr><th id="39">39</th><td><a class="macro" href="../include/libc-symbols.h.html#623" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__res_get_nsaddr)</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/printf.h' l='27' type='unsigned int __guess_grouping(unsigned int intdig_max, const char * grouping)'/>
+<use f='codebrowser/stdio-common/printf_fp.c' l='905' u='c' c='__printf_fp_l'/>
+<use f='codebrowser/stdio-common/printf_fp.c' l='1112' u='c' c='__printf_fp_l'/>
+<def f='codebrowser/stdio-common/printf_fp.c' l='1288' ll='1321' type='unsigned int __guess_grouping(unsigned int intdig_max, const char * grouping)'/>
+<doc f='codebrowser/stdio-common/printf_fp.c' l='1285'>/* Return the number of extra grouping characters that will be inserted
+   into a number with INTDIG_MAX integer digits.  */</doc>
+<use f='codebrowser/stdlib/strfmon_l.c' l='330' u='c' c='__vstrfmon_l_internal'/>

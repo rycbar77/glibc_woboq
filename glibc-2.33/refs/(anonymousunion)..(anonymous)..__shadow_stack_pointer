@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/setjmpP.h' l='105' type='unsigned long'/>
+<offset>128</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/setjmpP.h' l='102'>/* Used for shadow stack pointer.  NB: Shadow stack pointer
+	   must have the same alignment as __saved_mask.  Otherwise
+	   offset of __saved_mask will be changed.  */</doc>

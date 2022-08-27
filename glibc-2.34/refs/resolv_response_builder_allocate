@@ -1,0 +1,6 @@
+<dec f='codebrowser/support/resolv_test.h' l='209' type='struct resolv_response_builder * resolv_response_builder_allocate(const unsigned char * query_buffer, size_t query_length)'/>
+<doc f='codebrowser/support/resolv_test.h' l='206'>/* Allocates a response builder tied to a specific query packet,
+   starting at QUERY_BUFFER, containing QUERY_LENGTH bytes.  */</doc>
+<def f='codebrowser/support/resolv_test.c' l='439' ll='448' type='struct resolv_response_builder * resolv_response_builder_allocate(const unsigned char * query_buffer, size_t query_length)'/>
+<use f='codebrowser/support/resolv_test.c' l='676' u='c' c='server_thread_udp_process_one'/>
+<use f='codebrowser/support/resolv_test.c' l='922' u='c' c='server_thread_tcp_client'/>

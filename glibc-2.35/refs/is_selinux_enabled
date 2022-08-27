@@ -1,0 +1,4 @@
+<dec f='include/selinux/selinux.h' l='12' type='int is_selinux_enabled()'/>
+<doc f='include/selinux/selinux.h' l='11'>/* Return 1 if we are running on a SELinux kernel, or 0 otherwise. */</doc>
+<use f='codebrowser/nscd/selinux.c' l='251' u='c' c='nscd_selinux_enabled'/>
+<use f='codebrowser/nss/makedb.c' l='873' u='c' c='set_file_creation_context'/>

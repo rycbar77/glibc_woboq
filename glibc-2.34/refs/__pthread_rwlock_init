@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='209' type='int __pthread_rwlock_init(pthread_rwlock_t * __rwlock, const pthread_rwlockattr_t * __attr)'/>
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='211' type='int __pthread_rwlock_init(pthread_rwlock_t * , const pthread_rwlockattr_t * )'/>
+<use f='codebrowser/sysdeps/nptl/libc-lockP.h' l='211' c='__pthread_rwlock_init'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='404' type='int __pthread_rwlock_init(pthread_rwlock_t *restrict __rwlock, const pthread_rwlockattr_t *restrict __attr)'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='1253' macro='1' u='c' c='_nl_load_domain'/>
+<def f='codebrowser/nptl/pthread_rwlock_init.c' l='62' macro='1' type='int __pthread_rwlock_init(pthread_rwlock_t * , const pthread_rwlockattr_t * )'/>

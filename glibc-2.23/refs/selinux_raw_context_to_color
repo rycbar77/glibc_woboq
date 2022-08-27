@@ -1,0 +1,6 @@
+<dec f='include/selinux/selinux.h' l='701' type='int selinux_raw_context_to_color(const char * raw, char ** color_str)'/>
+<doc f='include/selinux/selinux.h' l='696'>/* Perform context translation between security contexts
+   and display colors.  Returns a space-separated list of ten
+   ten hex RGB triples prefixed by hash marks, e.g. &quot;#ff0000&quot;.
+   Caller must free the resulting string via free.
+   Returns -1 upon an error or 0 otherwise. */</doc>

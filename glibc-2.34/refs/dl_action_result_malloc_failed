@@ -1,0 +1,9 @@
+<def f='codebrowser/dlfcn/dlerror.h' l='83' ll='84' type='struct dl_action_result *const'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='47' u='r' c='__dlerror'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='117' u='r' c='_dlerror_run'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='162' u='r' c='_dlerror_run'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='175' u='r' c='_dlerror_run'/>
+<doc f='codebrowser/dlfcn/dlerror.h' l='80'>/* Stand-in for an error result object whose allocation failed.  No
+   precise message can be reported for this, but an error must still
+   be signaled.  */</doc>
+<use f='codebrowser/dlfcn/libc_dlerror_result.c' l='32' u='r' c='__libc_dlerror_result_free'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/time/time.h' l='202' type='char * ctime_r(const time_t *restrict __timer, char *restrict __buf)'/>
+<def f='codebrowser/time/ctime_r.c' l='24' macro='1' type='char * ctime_r(const time_t * t, char * buf)'/>
+<doc f='codebrowser/time/ctime_r.c' l='21'>/* Return a string as returned by asctime which is the representation
+   of *T in that form.  Reentrant version.  */</doc>

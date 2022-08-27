@@ -1,0 +1,38 @@
+<def f='codebrowser/nscd/nscd-client.h' l='212' ll='239'/>
+<use f='codebrowser/nscd/nscd-client.h' l='242' c='datahead_init_common'/>
+<use f='codebrowser/nscd/nscd-client.h' l='260' c='datahead_init_pos'/>
+<use f='codebrowser/nscd/nscd-client.h' l='272' c='datahead_init_neg'/>
+<use f='codebrowser/nscd/nscd-client.h' l='432' c='__nscd_cache_search'/>
+<size>24</size>
+<doc f='codebrowser/nscd/nscd-client.h' l='211'>/* Head of record in data part of database.  */</doc>
+<mbr r='datahead::allocsize' o='0' t='nscd_ssize_t'/>
+<mbr r='datahead::recsize' o='32' t='nscd_ssize_t'/>
+<mbr r='datahead::timeout' o='64' t='nscd_time_t'/>
+<mbr r='datahead::notfound' o='128' t='uint8_t'/>
+<mbr r='datahead::nreloads' o='136' t='uint8_t'/>
+<mbr r='datahead::usable' o='144' t='uint8_t'/>
+<mbr r='datahead::unused' o='152' t='uint8_t'/>
+<mbr r='datahead::ttl' o='160' t='uint32_t'/>
+<mbr r='datahead::data' o='192' t='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.23/grp/./../nscd/nscd-client.h:226:3)[0]'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='76' c='__nscd_getai'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='110' c='nscd_getgr_r'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='175' c='nscd_gethst_r'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='105' c='nscd_getpw_r'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='119' c='nscd_getserv_r'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_helper.c' l='450' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='461' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='485' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='488' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='489' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='500' c='__nscd_cache_search'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='56' c='__nscd_getgrouplist'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='65' c='__nscd_setnetgrent'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='219' c='__nscd_innetgr'/>
+<size>24</size>

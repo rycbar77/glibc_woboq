@@ -1,0 +1,6 @@
+<def f='codebrowser/malloc/hooks.c' l='220' ll='234' type='void top_check()'/>
+<use f='codebrowser/malloc/hooks.c' l='249' u='c' c='malloc_check'/>
+<use f='codebrowser/malloc/hooks.c' l='346' u='c' c='realloc_check'/>
+<use f='codebrowser/malloc/hooks.c' l='358' u='c' c='realloc_check'/>
+<use f='codebrowser/malloc/hooks.c' l='417' u='c' c='memalign_check'/>
+<doc f='codebrowser/malloc/hooks.c' l='219'>/* Check for corruption of the top chunk.  */</doc>

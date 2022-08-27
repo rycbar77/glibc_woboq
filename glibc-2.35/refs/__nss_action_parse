@@ -1,0 +1,9 @@
+<dec f='codebrowser/nss/nss_action.h' l='102' type='nss_action_list __nss_action_parse(const char * line)'/>
+<doc f='codebrowser/nss/nss_action.h' l='99'>/* Returns a pointer to a list allocated by __nss_action_allocate, or
+   NULL on error.  ENOMEM means a (temporary) memory allocation error,
+   EINVAL means that LINE is syntactically invalid.  */</doc>
+<use f='codebrowser/grp/initgroups.c' l='87' u='c' c='internal_getgrouplist'/>
+<def f='codebrowser/nss/nss_action_parse.c' l='164' ll='191' type='nss_action_list __nss_action_parse(const char * line)'/>
+<use f='codebrowser/nss/nss_database.c' l='166' u='c' c='nss_database_select_default'/>
+<use f='codebrowser/nss/nss_database.c' l='232' u='c' c='process_line'/>
+<use f='codebrowser/nss/nss_database.c' l='258' u='c' c='__nss_configure_lookup'/>

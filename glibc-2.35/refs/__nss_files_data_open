@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/nss_files.h' l='90' type='enum nss_status __nss_files_data_open(struct nss_files_per_file_data ** pdata, enum nss_files_file file, const char * path, int * errnop, int * herrnop)'/>
+<doc f='codebrowser/include/nss_files.h' l='84'>/* Obtains a pointer to the per-file data for FILE, which is written
+   to *PDATA, and tries to open the file at PATH for it.  On success,
+   returns NSS_STATUS_SUCCESS, and the caller must later call
+   __nss_files_data_put.  On failure, NSS_STATUS_TRYAGAIN is returned,
+   and *ERRNOP and *HERRNOP are updated if these pointers are not
+   null.  */</doc>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='340' u='c' c='_nss_files_getaliasent_r'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='171' u='c' c='_nss_files_gethostent_r'/>
+<def f='codebrowser/nss/nss_files_data.c' l='93' ll='113' type='enum nss_status __nss_files_data_open(struct nss_files_per_file_data ** pdata, enum nss_files_file file, const char * path, int * errnop, int * herrnop)'/>

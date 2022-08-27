@@ -1,0 +1,105 @@
+<def f='codebrowser/sysdeps/x86/include/cpu-features.h' l='863' ll='920'/>
+<use f='codebrowser/sysdeps/x86/include/cpu-features.h' l='923' c='_dl_x86_get_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/dl-procinfo.c' l='46'/>
+<size>480</size>
+<doc f='codebrowser/sysdeps/x86/include/cpu-features.h' l='861'>/* NB: When adding new fields, update sysdeps/x86/dl-diagnostics-cpu.c
+   to print them.  */</doc>
+<mbr r='cpu_features::basic' o='0' t='struct cpu_features_basic'/>
+<mbr r='cpu_features::features' o='160' t='struct cpuid_feature_internal[9]'/>
+<mbr r='cpu_features::preferred' o='2464' t='unsigned int[1]'/>
+<mbr r='cpu_features::isa_1' o='2496' t='unsigned int'/>
+<mbr r='cpu_features::xsave_state_size' o='2560' t='unsigned long'/>
+<mbr r='cpu_features::xsave_state_full_size' o='2624' t='unsigned int'/>
+<mbr r='cpu_features::data_cache_size' o='2688' t='unsigned long'/>
+<mbr r='cpu_features::shared_cache_size' o='2752' t='unsigned long'/>
+<mbr r='cpu_features::non_temporal_threshold' o='2816' t='unsigned long'/>
+<mbr r='cpu_features::rep_movsb_threshold' o='2880' t='unsigned long'/>
+<mbr r='cpu_features::rep_movsb_stop_threshold' o='2944' t='unsigned long'/>
+<mbr r='cpu_features::rep_stosb_threshold' o='3008' t='unsigned long'/>
+<mbr r='cpu_features::level1_icache_size' o='3072' t='unsigned long'/>
+<mbr r='cpu_features::level1_icache_linesize' o='3136' t='unsigned long'/>
+<mbr r='cpu_features::level1_dcache_size' o='3200' t='unsigned long'/>
+<mbr r='cpu_features::level1_dcache_assoc' o='3264' t='unsigned long'/>
+<mbr r='cpu_features::level1_dcache_linesize' o='3328' t='unsigned long'/>
+<mbr r='cpu_features::level2_cache_size' o='3392' t='unsigned long'/>
+<mbr r='cpu_features::level2_cache_assoc' o='3456' t='unsigned long'/>
+<mbr r='cpu_features::level2_cache_linesize' o='3520' t='unsigned long'/>
+<mbr r='cpu_features::level3_cache_size' o='3584' t='unsigned long'/>
+<mbr r='cpu_features::level3_cache_assoc' o='3648' t='unsigned long'/>
+<mbr r='cpu_features::level3_cache_linesize' o='3712' t='unsigned long'/>
+<mbr r='cpu_features::level4_cache_size' o='3776' t='unsigned long'/>
+<use f='codebrowser/sysdeps/x86/dl-isa-level.h' l='26' c='dl_cache_hwcap_isa_level_compatible'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='32' c='dl_isa_level_check'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='110' c='_dl_tunable_set_hwcaps'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86/cacheinfo.c' l='29' c='__cache_sysconf'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86/dl-diagnostics-cpu.c' l='46' c='_dl_diagnostics_cpu'/>
+<use f='codebrowser/sysdeps/x86/dl-diagnostics-cpu.c' l='116' c='_dl_diagnostics_cpu'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86/dl-get-cpu-features.c' l='77' c='_dl_x86_get_cpu_features'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86/get-isa-level.h' l='26' c='get_isa_level'/>
+<use f='codebrowser/sysdeps/x86/cacheinfo.h' l='60' c='init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='121' c='intel_check_word'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='250' c='handle_intel'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='495' c='get_common_cache_info'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='698' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/dl-minsigstacksize.h' l='21' c='dl_check_minsigstacksize'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='43' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='300' c='get_extended_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='325' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='399' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/libc-start.c' l='30'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/dl-hwcaps-subdirs.c' l='30' c='_dl_hwcaps_subdirs_active'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-fma4.h' l='29' c='ieee754_asin_ifunc_selector'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-fma4.h' l='29' c='ieee754_acos_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-avx-fma4.h' l='30' c='ieee754_atan2_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-fma.h' l='27' c='exp2f_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-sse4_1.h' l='27' c='ceil_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-mathvec-sse4_1.h' l='32' c='_ZGVbN2v_acos_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-mathvec-avx2.h' l='32' c='_ZGVdN4v_acos_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-mathvec-avx512-skx.h' l='32' c='_ZGVeN8v_acos_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-mathvec-avx512.h' l='33' c='_ZGVeN8v_cos_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-evex.h' l='32' c='memchr_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memcmp.h' l='32' c='memcmp_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memcmpeq.h' l='30' c='__memcmpeq_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memmove.h' l='50' c='memcpy_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-avx2.h' l='30' c='memrchr_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memset.h' l='48' c='memset_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-strcpy.h' l='34' c='stpcpy_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-strcasecmp.h' l='30' c='strcasecmp_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strchr.c' l='38' c='strchr_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strcmp.c' l='39' c='strcmp_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-sse4_2.h' l='28' c='strcspn_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strncmp.c' l='39' c='strncmp_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/wcscpy.c' l='35' c='wcscpy_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-wcslen.h' l='31' c='wcslen_ifunc_selector'/>
+<size>480</size>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-wmemset.h' l='31' c='wmemset_ifunc_selector'/>
+<size>480</size>

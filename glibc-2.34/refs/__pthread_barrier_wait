@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/pthread.h' l='14' type='int __pthread_barrier_wait(pthread_barrier_t * __barrier)'/>
+<dec f='codebrowser/include/pthread.h' l='17' type='int __pthread_barrier_wait(pthread_barrier_t * )'/>
+<use f='codebrowser/include/pthread.h' l='17' c='__pthread_barrier_wait'/>
+<dec f='codebrowser/include/pthread.h' l='14' type='int __pthread_barrier_wait(pthread_barrier_t * __barrier)'/>
+<dec f='codebrowser/include/pthread.h' l='17' type='int __pthread_barrier_wait(pthread_barrier_t * )'/>
+<use f='codebrowser/include/pthread.h' l='17' c='__pthread_barrier_wait'/>
+<def f='codebrowser/nptl/pthread_barrier_wait.c' l='228' macro='1' type='int __pthread_barrier_wait(pthread_barrier_t * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='93' u='c' c='notification_function'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='132' u='c' c='helper_thread'/>

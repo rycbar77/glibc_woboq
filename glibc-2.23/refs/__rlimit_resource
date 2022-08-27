@@ -1,0 +1,9 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/bits/resource.h' l='31' ll='111'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/resource.h' l='308' c='prlimit'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/resource.h' l='322' c='prlimit64'/>
+<use f='codebrowser/resource/sys/resource.h' l='38'/>
+<use f='codebrowser/include/sys/resource.h' l='18' c='__getrlimit'/>
+<use f='codebrowser/include/sys/resource.h' l='24' c='__setrlimit'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/resource.h' l='30'>/* Kinds of resource limit.  */</doc>
+<use f='codebrowser/resource/vlimit.c' l='35' c='vlimit'/>
+<use f='codebrowser/resource/vlimit.c' l='36' c='vlimit'/>

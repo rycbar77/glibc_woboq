@@ -1,0 +1,31 @@
+<dec f='codebrowser/malloc/malloc.c' l='1833' type='__libc_lock_t'/>
+<use f='codebrowser/malloc/malloc.c' l='1928' u='w'/>
+<use f='codebrowser/malloc/arena.c' l='189' u='a' c='__malloc_fork_lock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='204' u='a' c='__malloc_fork_unlock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='226' u='w' c='__malloc_fork_unlock_child'/>
+<use f='codebrowser/malloc/malloc.c' l='4515' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4518' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4576' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4693' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='5106' u='a' c='__malloc_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='5108' u='a' c='__malloc_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='5226' u='a' c='__libc_mallinfo2'/>
+<use f='codebrowser/malloc/malloc.c' l='5228' u='a' c='__libc_mallinfo2'/>
+<use f='codebrowser/malloc/malloc.c' l='5280' u='a' c='__malloc_stats'/>
+<use f='codebrowser/malloc/malloc.c' l='5291' u='a' c='__malloc_stats'/>
+<use f='codebrowser/malloc/malloc.c' l='5457' u='a' c='__libc_mallopt'/>
+<use f='codebrowser/malloc/malloc.c' l='5511' u='a' c='__libc_mallopt'/>
+<use f='codebrowser/malloc/malloc.c' l='5747' u='a' c='__malloc_info'/>
+<use f='codebrowser/malloc/malloc.c' l='5833' u='a' c='__malloc_info'/>
+<use f='codebrowser/malloc/malloc-check.c' l='203' u='a' c='malloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='206' u='a' c='malloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='225' u='a' c='free_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='231' u='a' c='free_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='239' u='a' c='free_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='271' u='a' c='realloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='273' u='a' c='realloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='284' u='a' c='realloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='331' u='a' c='realloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='371' u='a' c='memalign_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='374' u='a' c='memalign_check'/>
+<offset>0</offset>

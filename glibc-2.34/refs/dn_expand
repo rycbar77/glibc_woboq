@@ -1,0 +1,5 @@
+<dec f='codebrowser/resolv/resolv.h' l='273' type='int dn_expand(const unsigned char * , const unsigned char * , const unsigned char * , char * , int )'/>
+<use f='codebrowser/include/resolv.h' l='60' c='__libc_dn_expand'/>
+<def f='codebrowser/resolv/dn_expand.c' l='103' macro='1' type='int dn_expand(const unsigned char * , const unsigned char * , const unsigned char * , char * , int )'/>
+<use f='codebrowser/support/resolv_test.c' l='492' u='c' c='parse_query'/>
+<use f='codebrowser/support/support_format_dns_packet.c' l='95' u='c' c='extract_name'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/internaltypes.h' l='175' type='int'/>
+<offset>64</offset>
+<use f='codebrowser/nptl/semaphoreP.h' l='37' u='w' c='__new_sem_open_init'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='114' u='r' c='do_futex_wait'/>
+<use f='codebrowser/nptl/sem_init.c' l='58' u='w' c='__new_sem_init'/>
+<use f='codebrowser/nptl/sem_post.c' l='35' u='r' c='__new_sem_post'/>

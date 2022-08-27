@@ -1,0 +1,15 @@
+<def f='codebrowser/sysdeps/generic/ldsodefs.h' l='361' ll='367'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='361'/>
+<size>32</size>
+<mbr r='unique_sym::hashval' o='0' t='uint32_t'/>
+<mbr r='unique_sym::name' o='64' t='const char *'/>
+<mbr r='unique_sym::sym' o='128' t='const Elf64_Sym *'/>
+<mbr r='unique_sym::map' o='192' t='const struct link_map *'/>
+<use f='codebrowser/elf/dl-close.c' l='634' c='_dl_close_worker'/>
+<size>32</size>
+<use f='codebrowser/elf/dl-lookup.c' l='166' c='enter_unique_sym'/>
+<use f='codebrowser/elf/dl-lookup.c' l='226' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='270' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='271' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='314' c='do_lookup_unique'/>
+<size>32</size>

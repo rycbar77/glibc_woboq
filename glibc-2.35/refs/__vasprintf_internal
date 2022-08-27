@@ -1,0 +1,8 @@
+<dec f='codebrowser/libio/libioP.h' l='674' type='int __vasprintf_internal(char ** result_ptr, const char * format, struct __va_list_tag * ap, unsigned int mode_flags)'/>
+<use f='codebrowser/argp/argp-help.c' l='1882' u='c' c='__argp_error_internal'/>
+<use f='codebrowser/argp/argp-help.c' l='1956' u='c' c='__argp_failure_internal'/>
+<use f='codebrowser/debug/asprintf_chk.c' l='34' u='c' c='__asprintf_chk'/>
+<use f='codebrowser/debug/vasprintf_chk.c' l='36' u='c' c='__vasprintf_chk'/>
+<def f='codebrowser/libio/vasprintf.c' l='31' ll='85' type='int __vasprintf_internal(char ** result_ptr, const char * format, struct __va_list_tag * args, unsigned int mode_flags)'/>
+<use f='codebrowser/libio/vasprintf.c' l='90' u='c' c='__vasprintf'/>
+<use f='codebrowser/stdio-common/asprintf.c' l='31' u='c' c='___asprintf'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/search.h' l='21' type='void * __tdelete(const void * __key, void ** __rootp, __compar_fn_t compar)'/>
+<dec f='codebrowser/include/search.h' l='23' type='void * __tdelete(const void * , void ** , __compar_fn_t )'/>
+<use f='codebrowser/include/search.h' l='23' c='__tdelete'/>
+<def f='codebrowser/misc/tsearch.c' l='403' ll='678' type='void * __tdelete(const void * key, void ** vrootp, __compar_fn_t compar)'/>
+<use f='codebrowser/misc/tsearch.c' l='680' c='tdelete'/>
+<doc f='codebrowser/misc/tsearch.c' l='400'>/* Delete node with given key.
+   KEY is the key to be deleted, ROOTP is the address of the root of tree,
+   COMPAR the comparison function.  */</doc>
+<use f='codebrowser/nptl/sem_close.c' l='61' u='c' c='sem_close'/>
+<use f='codebrowser/nss/nsswitch.c' l='454' u='c' c='__nss_lookup_function'/>

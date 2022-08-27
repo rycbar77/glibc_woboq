@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/dlfcn.h' l='52' type='void * __libc_dlvsym(void * map, const char * name, const char * version)'/>
+<def f='codebrowser/elf/dl-libc.c' l='198' ll='219' type='void * __libc_dlvsym(void * map, const char * name, const char * version)'/>
+<doc f='codebrowser/elf/dl-libc.c' l='195'>/* Replacement for dlvsym.  MAP must be a real map.  This function
+   returns NULL without setting the dlerror value in case of static
+   dlopen from an old binary.  */</doc>
+<use f='codebrowser/elf/rtld_static_init.c' l='41' u='r'/>
+<use f='codebrowser/inet/idna.c' l='62' u='c' c='functions_allocate'/>
+<use f='codebrowser/inet/idna.c' l='64' u='c' c='functions_allocate'/>

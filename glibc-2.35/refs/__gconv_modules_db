@@ -1,0 +1,11 @@
+<dec f='codebrowser/iconv/gconv_int.h' l='105' type='struct gconv_module *'/>
+<doc f='codebrowser/iconv/gconv_int.h' l='104'>/* Array with available modules.  */</doc>
+<use f='codebrowser/iconv/gconv_conf.c' l='103' u='r' c='detect_conflict'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='186' u='a' c='insert_module'/>
+<def f='codebrowser/iconv/gconv_db.c' l='38' type='struct gconv_module *'/>
+<use f='codebrowser/iconv/gconv_db.c' l='48' u='r' c='__gconv_get_modules_db'/>
+<use f='codebrowser/iconv/gconv_db.c' l='508' u='r' c='find_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='741' u='r' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_db.c' l='844' u='r' c='free_mem'/>
+<use f='codebrowser/iconv/gconv_db.c' l='845' u='r' c='free_mem'/>
+<doc f='codebrowser/iconv/gconv_db.c' l='37'>/* Array with available modules.  */</doc>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/bits/netdb.h' l='28' type='char *'/>
+<offset>0</offset>
+<doc f='codebrowser/bits/netdb.h' l='28'>/* Official name of network.  */</doc>
+<use f='codebrowser/nss/getent.c' l='561' u='r' c='print_networks'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='41' u='w' c='_nss_files_parse_netent'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='80' u='r' c='_nss_files_getnetbyname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='412' u='w' c='getanswer_r'/>
+<use f='codebrowser/support/support_format_netent.c' l='41' u='r' c='support_format_netent'/>
+<use f='codebrowser/support/support_format_netent.c' l='42' u='r' c='support_format_netent'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1252' type='void * _dl_open(const char * name, int mode, const void * caller, Lmid_t nsid, int argc, char ** argv, char ** env)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1249'>/* Open the shared object NAME, relocate it, and run its initializer if it
+   hasn&apos;t already been run.  MODE is as for `dlopen&apos; (see &lt;dlfcn.h&gt;).  If
+   the object is already opened, returns its existing map.  */</doc>
+<use f='codebrowser/dlfcn/dlmopen.c' l='61' macro='1' u='c' c='dlmopen_doit'/>
+<use f='codebrowser/dlfcn/dlopen.c' l='56' macro='1' u='c' c='dlopen_doit'/>
+<use f='codebrowser/elf/dl-libc.c' l='96' macro='1' u='c' c='do_dlopen'/>
+<def f='codebrowser/elf/dl-open.c' l='801' ll='917' type='void * _dl_open(const char * file, int mode, const void * caller_dlopen, Lmid_t nsid, int argc, char ** argv, char ** env)'/>
+<use f='codebrowser/elf/rtld.c' l='367'/>
+<use f='codebrowser/elf/rtld.c' l='661' u='c' c='dlmopen_doit'/>

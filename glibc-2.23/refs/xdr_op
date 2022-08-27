@@ -1,0 +1,12 @@
+<def f='codebrowser/sunrpc/rpc/xdr.h' l='81' ll='85'/>
+<use f='codebrowser/sunrpc/rpc/xdr.h' l='112'/>
+<use f='codebrowser/sunrpc/rpc/xdr.h' l='351' c='xdrmem_create'/>
+<use f='codebrowser/sunrpc/rpc/xdr.h' l='354' c='xdrstdio_create'/>
+<doc f='codebrowser/sunrpc/rpc/xdr.h' l='75'>/*
+ * Xdr operations.  XDR_ENCODE causes the type to be encoded into the
+ * stream.  XDR_DECODE causes the type to be extracted from the stream.
+ * XDR_FREE can be used to release the space allocated by an XDR_DECODE
+ * request.
+ */</doc>
+<use f='codebrowser/sunrpc/xdr_mem.c' l='72' c='__GI_xdrmem_create'/>
+<use f='codebrowser/sunrpc/xdr_stdio.c' l='82' c='__GI_xdrstdio_create'/>

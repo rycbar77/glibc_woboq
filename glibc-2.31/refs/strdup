@@ -1,0 +1,15 @@
+<dec f='codebrowser/string/string.h' l='167' type='char * strdup(const char * __s)'/>
+<doc f='codebrowser/string/string.h' l='166'>/* Duplicate S, returning an identical malloc&apos;d string.  */</doc>
+<use f='codebrowser/locale/programs/record-status.c' l='69' u='c' c='push_locale'/>
+<def f='codebrowser/string/strdup.c' l='53' macro='1' type='char * strdup(const char * )'/>
+<use f='codebrowser/support/shell-container.c' l='333' u='c' c='run_command_string'/>
+<use f='codebrowser/support/temp_file.c' l='50' u='c' c='add_temp_file'/>
+<use f='codebrowser/support/test-container.c' l='749' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='751' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='781' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='784' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='795' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='809' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='811' u='c' c='main'/>
+<use f='codebrowser/support/xstrdup.c' l='26' u='c' c='xstrdup'/>
+<use f='codebrowser/timezone/zic.c' l='483' u='c' c='ecpyalloc'/>

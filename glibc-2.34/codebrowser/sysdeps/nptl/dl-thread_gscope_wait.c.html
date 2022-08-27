@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dl-thread_gscope_wait.c source code [codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>sysdeps</a>/<a href='./'>nptl</a>/<a href='dl-thread_gscope_wait.c.html'>dl-thread_gscope_wait.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Out-of-line notification function for the GSCOPE locking mechanism.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2007-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../../nptl/descr.h.html">&lt;nptl/descr.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="futex-internal.h.html">&lt;futex-internal.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../unix/sysv/linux/ldsodefs.h.html">&lt;ldsodefs.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../../include/list.h.html">&lt;list.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="lowlevellock.h.html">&lt;lowlevellock.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>void</em></td></tr>
+<tr><th id="26">26</th><td><dfn class="decl def fn" id="__thread_gscope_wait" title='__thread_gscope_wait' data-ref="__thread_gscope_wait" data-ref-filename="__thread_gscope_wait">__thread_gscope_wait</dfn> (<em>void</em>)</td></tr>
+<tr><th id="27">27</th><td>{</td></tr>
+<tr><th id="28">28</th><td>  <a class="macro" href="lowlevellock.h.html#107" title="((void) ({ int *__futex = (&amp;(_dl_stack_cache_lock)); if (__builtin_expect (((! __sync_bool_compare_and_swap (__futex, 0, 1))), 0)) { if (__builtin_constant_p (0) &amp;&amp; (0) == 0) __lll_lock_wait_private (__futex); else __lll_lock_wait (__futex, 0); } }))" data-ref="_M/lll_lock">lll_lock</a> (<a class="macro" href="../generic/ldsodefs.h.html#299" title="_dl_stack_cache_lock" data-ref="_M/GL">GL</a> (dl_stack_cache_lock), <a class="macro" href="lowlevellock-futex.h.html#49" title="0" data-ref="_M/LLL_PRIVATE">LLL_PRIVATE</a>);</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td>  <b>struct</b> <a class="type" href="../../nptl/descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a> *<dfn class="local col1 decl" id="1self" title='self' data-type='struct pthread *' data-ref="1self" data-ref-filename="1self">self</dfn> = <a class="macro" href="../x86_64/nptl/tls.h.html#187" title="({ struct pthread *__self; asm (&quot;mov %%fs:%c1,%0&quot; : &quot;=r&quot; (__self) : &quot;i&quot; (__builtin_offsetof(struct pthread, header.self))); __self;})" data-ref="_M/THREAD_SELF">THREAD_SELF</a>;</td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td>  <i>/* Iterate over the list with system-allocated threads first.  */</i></td></tr>
+<tr><th id="33">33</th><td>  <a class="typedef" href="../../include/list_t.h.html#list_t" title='list_t' data-type='struct list_head' data-ref="list_t" data-ref-filename="list_t">list_t</a> *<dfn class="local col2 decl" id="2runp" title='runp' data-type='list_t *' data-ref="2runp" data-ref-filename="2runp">runp</dfn>;</td></tr>
+<tr><th id="34">34</th><td>  <a class="macro" href="../../include/list.h.html#83" title="for (runp = (&amp;_dl_stack_used)-&gt;next; runp != (&amp;_dl_stack_used); runp = runp-&gt;next)" data-ref="_M/list_for_each">list_for_each</a> (<a class="local col2 ref" href="#2runp" title='runp' data-ref="2runp" data-ref-filename="2runp">runp</a>, &amp;<a class="macro" href="../generic/ldsodefs.h.html#299" title="_dl_stack_used" data-ref="_M/GL">GL</a> (dl_stack_used))</td></tr>
+<tr><th id="35">35</th><td>    {</td></tr>
+<tr><th id="36">36</th><td>      <b>struct</b> <a class="type" href="../../nptl/descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a> *<dfn class="local col3 decl" id="3t" title='t' data-type='struct pthread *' data-ref="3t" data-ref-filename="3t">t</dfn> = <a class="macro" href="../../include/list.h.html#77" title="((struct pthread *) ((char *) (runp) - (unsigned long) (&amp;((struct pthread *) 0)-&gt;list)))" data-ref="_M/list_entry">list_entry</a> (<a class="local col2 ref" href="#2runp" title='runp' data-ref="2runp" data-ref-filename="2runp">runp</a>, <b>struct</b> <a class="type" href="../../nptl/descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a>, <a class="ref field" href="../../nptl/descr.h.html#pthread::list" title='pthread::list' data-ref="pthread::list" data-ref-filename="pthread..list">list</a>);</td></tr>
+<tr><th id="37">37</th><td>      <b>if</b> (<a class="local col3 ref" href="#3t" title='t' data-ref="3t" data-ref-filename="3t">t</a> == <a class="local col1 ref" href="#1self" title='self' data-ref="1self" data-ref-filename="1self">self</a> || <a class="local col3 ref" href="#3t" title='t' data-ref="3t" data-ref-filename="3t">t</a>-&gt;<a class="ref field" href="../../nptl/descr.h.html#pthread::(anonymous)::header" title='pthread::(anonymous union)::header' data-ref="pthread::(anonymous)::header" data-ref-filename="pthread..(anonymous)..header">header</a>.<a class="ref field" href="../x86_64/nptl/tls.h.html#(anonymous)::gscope_flag" title='(anonymous struct)::gscope_flag' data-ref="(anonymous)::gscope_flag" data-ref-filename="(anonymous)..gscope_flag">gscope_flag</a> == <a class="macro" href="../x86_64/nptl/tls.h.html#330" title="0" data-ref="_M/THREAD_GSCOPE_FLAG_UNUSED">THREAD_GSCOPE_FLAG_UNUSED</a>)</td></tr>
+<tr><th id="38">38</th><td>        <b>continue</b>;</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td>      <em>int</em> *<em>const</em> <dfn class="local col4 decl" id="4gscope_flagp" title='gscope_flagp' data-type='int *const' data-ref="4gscope_flagp" data-ref-filename="4gscope_flagp">gscope_flagp</dfn> = &amp;<a class="local col3 ref" href="#3t" title='t' data-ref="3t" data-ref-filename="3t">t</a>-&gt;<a class="ref field" href="../../nptl/descr.h.html#pthread::(anonymous)::header" title='pthread::(anonymous union)::header' data-ref="pthread::(anonymous)::header" data-ref-filename="pthread..(anonymous)..header">header</a>.<a class="ref field" href="../x86_64/nptl/tls.h.html#(anonymous)::gscope_flag" title='(anonymous struct)::gscope_flag' data-ref="(anonymous)::gscope_flag" data-ref-filename="(anonymous)..gscope_flag">gscope_flag</a>;</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td>      <i>/* We have to wait until this thread is done with the global</i></td></tr>
+<tr><th id="43">43</th><td><i>         scope.  First tell the thread that we are waiting and</i></td></tr>
+<tr><th id="44">44</th><td><i>         possibly have to be woken.  */</i></td></tr>
+<tr><th id="45">45</th><td>      <b>if</b> (<a class="macro" href="../x86/atomic-machine.h.html#73" title="(! __sync_bool_compare_and_swap (gscope_flagp, 1, 2))" data-ref="_M/atomic_compare_and_exchange_bool_acq">atomic_compare_and_exchange_bool_acq</a> (<a class="local col4 ref" href="#4gscope_flagp" title='gscope_flagp' data-ref="4gscope_flagp" data-ref-filename="4gscope_flagp">gscope_flagp</a>,</td></tr>
+<tr><th id="46">46</th><td>                                                <a class="macro" href="../x86_64/nptl/tls.h.html#332" title="2" data-ref="_M/THREAD_GSCOPE_FLAG_WAIT">THREAD_GSCOPE_FLAG_WAIT</a>,</td></tr>
+<tr><th id="47">47</th><td>                                                <a class="macro" href="../x86_64/nptl/tls.h.html#331" title="1" data-ref="_M/THREAD_GSCOPE_FLAG_USED">THREAD_GSCOPE_FLAG_USED</a>))</td></tr>
+<tr><th id="48">48</th><td>        <b>continue</b>;</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td>      <b>do</b></td></tr>
+<tr><th id="51">51</th><td>        <a class="ref fn" href="futex-internal.h.html#futex_wait_simple" title='futex_wait_simple' data-ref="futex_wait_simple" data-ref-filename="futex_wait_simple">futex_wait_simple</a> ((<em>unsigned</em> <em>int</em> *) <a class="local col4 ref" href="#4gscope_flagp" title='gscope_flagp' data-ref="4gscope_flagp" data-ref-filename="4gscope_flagp">gscope_flagp</a>,</td></tr>
+<tr><th id="52">52</th><td>                           <a class="macro" href="../x86_64/nptl/tls.h.html#332" title="2" data-ref="_M/THREAD_GSCOPE_FLAG_WAIT">THREAD_GSCOPE_FLAG_WAIT</a>, <a class="macro" href="futex-internal.h.html#72" title="0" data-ref="_M/FUTEX_PRIVATE">FUTEX_PRIVATE</a>);</td></tr>
+<tr><th id="53">53</th><td>      <b>while</b> (*<a class="local col4 ref" href="#4gscope_flagp" title='gscope_flagp' data-ref="4gscope_flagp" data-ref-filename="4gscope_flagp">gscope_flagp</a> == <a class="macro" href="../x86_64/nptl/tls.h.html#332" title="2" data-ref="_M/THREAD_GSCOPE_FLAG_WAIT">THREAD_GSCOPE_FLAG_WAIT</a>);</td></tr>
+<tr><th id="54">54</th><td>    }</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td>  <i>/* Now the list with threads using user-allocated stacks.  */</i></td></tr>
+<tr><th id="57">57</th><td>  <a class="macro" href="../../include/list.h.html#83" title="for (runp = (&amp;_dl_stack_user)-&gt;next; runp != (&amp;_dl_stack_user); runp = runp-&gt;next)" data-ref="_M/list_for_each">list_for_each</a> (<a class="local col2 ref" href="#2runp" title='runp' data-ref="2runp" data-ref-filename="2runp">runp</a>, &amp;<a class="macro" href="../generic/ldsodefs.h.html#299" title="_dl_stack_user" data-ref="_M/GL">GL</a> (dl_stack_user))</td></tr>
+<tr><th id="58">58</th><td>    {</td></tr>
+<tr><th id="59">59</th><td>      <b>struct</b> <a class="type" href="../../nptl/descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a> *<dfn class="local col5 decl" id="5t" title='t' data-type='struct pthread *' data-ref="5t" data-ref-filename="5t">t</dfn> = <a class="macro" href="../../include/list.h.html#77" title="((struct pthread *) ((char *) (runp) - (unsigned long) (&amp;((struct pthread *) 0)-&gt;list)))" data-ref="_M/list_entry">list_entry</a> (<a class="local col2 ref" href="#2runp" title='runp' data-ref="2runp" data-ref-filename="2runp">runp</a>, <b>struct</b> <a class="type" href="../../nptl/descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a>, <a class="ref field" href="../../nptl/descr.h.html#pthread::list" title='pthread::list' data-ref="pthread::list" data-ref-filename="pthread..list">list</a>);</td></tr>
+<tr><th id="60">60</th><td>      <b>if</b> (<a class="local col5 ref" href="#5t" title='t' data-ref="5t" data-ref-filename="5t">t</a> == <a class="local col1 ref" href="#1self" title='self' data-ref="1self" data-ref-filename="1self">self</a> || <a class="local col5 ref" href="#5t" title='t' data-ref="5t" data-ref-filename="5t">t</a>-&gt;<a class="ref field" href="../../nptl/descr.h.html#pthread::(anonymous)::header" title='pthread::(anonymous union)::header' data-ref="pthread::(anonymous)::header" data-ref-filename="pthread..(anonymous)..header">header</a>.<a class="ref field" href="../x86_64/nptl/tls.h.html#(anonymous)::gscope_flag" title='(anonymous struct)::gscope_flag' data-ref="(anonymous)::gscope_flag" data-ref-filename="(anonymous)..gscope_flag">gscope_flag</a> == <a class="macro" href="../x86_64/nptl/tls.h.html#330" title="0" data-ref="_M/THREAD_GSCOPE_FLAG_UNUSED">THREAD_GSCOPE_FLAG_UNUSED</a>)</td></tr>
+<tr><th id="61">61</th><td>        <b>continue</b>;</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td>      <em>int</em> *<em>const</em> <dfn class="local col6 decl" id="6gscope_flagp" title='gscope_flagp' data-type='int *const' data-ref="6gscope_flagp" data-ref-filename="6gscope_flagp">gscope_flagp</dfn> = &amp;<a class="local col5 ref" href="#5t" title='t' data-ref="5t" data-ref-filename="5t">t</a>-&gt;<a class="ref field" href="../../nptl/descr.h.html#pthread::(anonymous)::header" title='pthread::(anonymous union)::header' data-ref="pthread::(anonymous)::header" data-ref-filename="pthread..(anonymous)..header">header</a>.<a class="ref field" href="../x86_64/nptl/tls.h.html#(anonymous)::gscope_flag" title='(anonymous struct)::gscope_flag' data-ref="(anonymous)::gscope_flag" data-ref-filename="(anonymous)..gscope_flag">gscope_flag</a>;</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td>      <i>/* We have to wait until this thread is done with the global</i></td></tr>
+<tr><th id="66">66</th><td><i>         scope.  First tell the thread that we are waiting and</i></td></tr>
+<tr><th id="67">67</th><td><i>         possibly have to be woken.  */</i></td></tr>
+<tr><th id="68">68</th><td>      <b>if</b> (<a class="macro" href="../x86/atomic-machine.h.html#73" title="(! __sync_bool_compare_and_swap (gscope_flagp, 1, 2))" data-ref="_M/atomic_compare_and_exchange_bool_acq">atomic_compare_and_exchange_bool_acq</a> (<a class="local col6 ref" href="#6gscope_flagp" title='gscope_flagp' data-ref="6gscope_flagp" data-ref-filename="6gscope_flagp">gscope_flagp</a>,</td></tr>
+<tr><th id="69">69</th><td>                                                <a class="macro" href="../x86_64/nptl/tls.h.html#332" title="2" data-ref="_M/THREAD_GSCOPE_FLAG_WAIT">THREAD_GSCOPE_FLAG_WAIT</a>,</td></tr>
+<tr><th id="70">70</th><td>                                                <a class="macro" href="../x86_64/nptl/tls.h.html#331" title="1" data-ref="_M/THREAD_GSCOPE_FLAG_USED">THREAD_GSCOPE_FLAG_USED</a>))</td></tr>
+<tr><th id="71">71</th><td>        <b>continue</b>;</td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td>      <b>do</b></td></tr>
+<tr><th id="74">74</th><td>        <a class="ref fn" href="futex-internal.h.html#futex_wait_simple" title='futex_wait_simple' data-ref="futex_wait_simple" data-ref-filename="futex_wait_simple">futex_wait_simple</a> ((<em>unsigned</em> <em>int</em> *) <a class="local col6 ref" href="#6gscope_flagp" title='gscope_flagp' data-ref="6gscope_flagp" data-ref-filename="6gscope_flagp">gscope_flagp</a>,</td></tr>
+<tr><th id="75">75</th><td>                           <a class="macro" href="../x86_64/nptl/tls.h.html#332" title="2" data-ref="_M/THREAD_GSCOPE_FLAG_WAIT">THREAD_GSCOPE_FLAG_WAIT</a>, <a class="macro" href="futex-internal.h.html#72" title="0" data-ref="_M/FUTEX_PRIVATE">FUTEX_PRIVATE</a>);</td></tr>
+<tr><th id="76">76</th><td>      <b>while</b> (*<a class="local col6 ref" href="#6gscope_flagp" title='gscope_flagp' data-ref="6gscope_flagp" data-ref-filename="6gscope_flagp">gscope_flagp</a> == <a class="macro" href="../x86_64/nptl/tls.h.html#332" title="2" data-ref="_M/THREAD_GSCOPE_FLAG_WAIT">THREAD_GSCOPE_FLAG_WAIT</a>);</td></tr>
+<tr><th id="77">77</th><td>    }</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td>  <a class="macro" href="lowlevellock.h.html#159" title="((void) ({ int *__futex = (&amp;(_dl_stack_cache_lock)); int __private = (0); int __oldval = ({ __typeof (*__futex) result; if (sizeof (*__futex) == 1) __asm __volatile (&quot;xchgb %b0, %1&quot; : &quot;=q&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; (0), &quot;m&quot; (*__futex)); else if (sizeof (*__futex) == 2) __asm __volatile (&quot;xchgw %w0, %1&quot; : &quot;=r&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; (0), &quot;m&quot; (*__futex)); else if (sizeof (*__futex) == 4) __asm __volatile (&quot;xchgl %0, %1&quot; : &quot;=r&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; (0), &quot;m&quot; (*__futex)); else if (1) __asm __volatile (&quot;xchgq %q0, %1&quot; : &quot;=r&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; ((atomic64_t) ((__typeof__ (*(0 ? (__typeof__ (0 ? (__typeof__ ((__typeof__ (0)) 0) *) 0 : (void *) ((__builtin_classify_type ((__typeof__ (0)) 0) == 5)))) 0 : (__typeof__ (0 ? (intptr_t *) 0 : (void *) (!((__builtin_classify_type ((__typeof__ (0)) 0) == 5))))) 0))) (0))), &quot;m&quot; (*__futex)); else { result = 0; __atomic_link_error (); } result; }); if (__builtin_expect ((__oldval &gt; 1), 0)) { if (__builtin_constant_p (0) &amp;&amp; (0) == 0) __lll_lock_wake_private (__futex); else __lll_lock_wake (__futex, __private); } }))" data-ref="_M/lll_unlock">lll_unlock</a> (<a class="macro" href="../generic/ldsodefs.h.html#299" title="_dl_stack_cache_lock" data-ref="_M/GL">GL</a> (dl_stack_cache_lock), <a class="macro" href="lowlevellock-futex.h.html#49" title="0" data-ref="_M/LLL_PRIVATE">LLL_PRIVATE</a>);</td></tr>
+<tr><th id="80">80</th><td>}</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

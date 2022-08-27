@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/pthread/threads.h' l='114' type='int thrd_join(thrd_t __thr, int * __res)'/>
+<doc f='codebrowser/sysdeps/pthread/threads.h' l='112'>/* Block current thread until execution of __THR is complete.  In case that
+   __RES is not NULL, will store the return value of __THR when exiting.  */</doc>
+<def f='codebrowser/sysdeps/pthread/thrd_join.c' l='33' macro='1' type='int thrd_join(thrd_t , int * )'/>

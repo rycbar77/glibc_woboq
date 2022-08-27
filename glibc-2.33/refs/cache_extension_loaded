@@ -1,0 +1,8 @@
+<def f='codebrowser/sysdeps/generic/dl-cache.h' l='259' ll='268'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='274'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='285' c='cache_extension_verify'/>
+<size>24</size>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='258'>/* A relocated version of struct cache_extension_section.  */</doc>
+<mbr r='cache_extension_loaded::base' o='0' t='const void *'/>
+<mbr r='cache_extension_loaded::size' o='64' t='size_t'/>
+<mbr r='cache_extension_loaded::flags' o='128' t='uint32_t'/>

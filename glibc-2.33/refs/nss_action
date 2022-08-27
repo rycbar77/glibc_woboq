@@ -1,0 +1,67 @@
+<use f='codebrowser/nss/nsswitch.h' l='97' c='__nss_database_lookup2'/>
+<use f='codebrowser/nss/nsswitch.h' l='103' c='__nss_lookup'/>
+<use f='codebrowser/nss/nsswitch.h' l='120' c='__nss_next2'/>
+<use f='codebrowser/nss/nsswitch.h' l='124' c='__nss_next'/>
+<use f='codebrowser/nss/nsswitch.h' l='129' c='__nss_lookup_function'/>
+<use f='codebrowser/nss/nsswitch.h' l='139'/>
+<use f='codebrowser/nss/nsswitch.h' l='150' c='__nss_setent'/>
+<use f='codebrowser/nss/nsswitch.h' l='150' c='__nss_setent'/>
+<use f='codebrowser/nss/nsswitch.h' l='151' c='__nss_setent'/>
+<use f='codebrowser/nss/nsswitch.h' l='156' c='__nss_endent'/>
+<use f='codebrowser/nss/nsswitch.h' l='156' c='__nss_endent'/>
+<use f='codebrowser/nss/nsswitch.h' l='157' c='__nss_endent'/>
+<use f='codebrowser/nss/nsswitch.h' l='162' c='__nss_getent_r'/>
+<use f='codebrowser/nss/nsswitch.h' l='162' c='__nss_getent_r'/>
+<use f='codebrowser/nss/nsswitch.h' l='163' c='__nss_getent_r'/>
+<use f='codebrowser/nss/databases.def' l='23' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='23' macro='1' c='__nss_aliases_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='24' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='24' macro='1' c='__nss_ethers_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='25' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='25' macro='1' c='__nss_group_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='26' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='26' macro='1' c='__nss_gshadow_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='27' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='27' macro='1' c='__nss_hosts_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='28' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='28' macro='1' c='__nss_initgroups_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='29' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='29' macro='1' c='__nss_netgroup_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='30' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='30' macro='1' c='__nss_networks_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='31' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='31' macro='1' c='__nss_passwd_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='32' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='32' macro='1' c='__nss_protocols_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='33' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='33' macro='1' c='__nss_publickey_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='34' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='34' macro='1' c='__nss_rpc_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='35' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='35' macro='1' c='__nss_services_lookup2'/>
+<use f='codebrowser/nss/databases.def' l='36' macro='1'/>
+<use f='codebrowser/nss/databases.def' l='36' macro='1' c='__nss_shadow_lookup2'/>
+<def f='codebrowser/nss/nss_action.h' l='32' ll='41'/>
+<use f='codebrowser/nss/nss_action.h' l='61' c='nss_action_get'/>
+<use f='codebrowser/nss/nss_action.h' l='69' c='nss_action_set'/>
+<use f='codebrowser/nss/nss_action.h' l='79' c='nss_action_set_all'/>
+<use f='codebrowser/nss/nss_action.h' l='92'/>
+<use f='codebrowser/nss/nss_action.h' l='96' c='__nss_action_allocate'/>
+<size>16</size>
+<doc f='codebrowser/nss/nss_action.h' l='30'>/* A NSS action pairs a service module with the action for each result
+   state.  */</doc>
+<mbr r='nss_action::module' o='0' t='struct nss_module *'/>
+<mbr r='nss_action::action_bits' o='64' t='unsigned int'/>
+<use f='codebrowser/inet/netgroup.h' l='67'/>
+<size>16</size>
+<use f='codebrowser/nss/nss_action.c' l='38'/>
+<use f='codebrowser/nss/nss_action.c' l='50' c='actions_equal'/>
+<use f='codebrowser/nss/nss_action.c' l='50' c='actions_equal'/>
+<use f='codebrowser/nss/nss_action.c' l='60' c='action_lists_equal'/>
+<use f='codebrowser/nss/nss_action.c' l='60' c='action_lists_equal'/>
+<use f='codebrowser/nss/nss_action.c' l='72' c='find_allocated'/>
+<use f='codebrowser/nss/nss_action.c' l='81' c='__nss_action_allocate'/>
+<size>16</size>
+<use f='codebrowser/nss/nss_action_parse.c' l='56' c='nss_action_parse'/>
+<use f='codebrowser/nss/nss_action_parse.c' l='172' c='__nss_action_parse'/>
+<size>16</size>

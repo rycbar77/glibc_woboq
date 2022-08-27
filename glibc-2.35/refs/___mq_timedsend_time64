@@ -1,0 +1,5 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/mq_timedsend.c' l='25' ll='60' type='int ___mq_timedsend_time64(mqd_t mqdes, const char * msg_ptr, size_t msg_len, unsigned int msg_prio, const struct timespec * abs_timeout)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_timedsend.c' l='63' c='mq_timedsend'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_timedsend.c' l='66' c='__mq_timedsend'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/mq_timedsend.c' l='23'>/* Add message pointed by MSG_PTR to message queue MQDES, stop blocking
+   on full message queue if ABS_TIMEOUT expires.  */</doc>

@@ -1,0 +1,34 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='367' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/assert/assert.c' l='53' macro='1' c='__assert_fail_base'/>
+<use f='codebrowser/assert/assert.c' l='53' macro='1' u='r' c='__assert_fail_base'/>
+<use f='codebrowser/libio/iopopen.c' l='285' c='_IO_new_proc_close'/>
+<use f='codebrowser/libio/iopopen.c' l='285' u='r' c='_IO_new_proc_close'/>
+<use f='codebrowser/libio/iopopen.c' l='288' c='_IO_new_proc_close'/>
+<use f='codebrowser/libio/iopopen.c' l='288' u='r' c='_IO_new_proc_close'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='383' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/misc/error.c' l='243' c='__error_internal'/>
+<use f='codebrowser/misc/error.c' l='243' u='r' c='__error_internal'/>
+<use f='codebrowser/misc/error.c' l='267' c='__error_internal'/>
+<use f='codebrowser/misc/error.c' l='267' u='r' c='__error_internal'/>
+<use f='codebrowser/misc/error.c' l='312' c='__error_at_line_internal'/>
+<use f='codebrowser/misc/error.c' l='312' u='r' c='__error_at_line_internal'/>
+<use f='codebrowser/misc/error.c' l='345' c='__error_at_line_internal'/>
+<use f='codebrowser/misc/error.c' l='345' u='r' c='__error_at_line_internal'/>
+<def f='codebrowser/nptl/forward.c' l='121' macro='1' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/nptl/forward.c' l='123' c='pthread_setcancelstate'/>
+<def f='codebrowser/nptl/pthread_setcancelstate.c' l='24' ll='69' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/nptl/pthread_setcancelstate.c' l='70' c='pthread_setcancelstate'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='129' c='fmtmsg'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='129' u='r' c='fmtmsg'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='201' c='fmtmsg'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='201' u='r' c='fmtmsg'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='85' c='cancel_handler'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='85' u='r' c='cancel_handler'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='88' c='cancel_handler'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='88' u='r' c='cancel_handler'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='159' u='c' c='sem_open'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='316' u='c' c='sem_open'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='357' c='__spawnix'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='357' u='r' c='__spawnix'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='416' c='__spawnix'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='416' u='r' c='__spawnix'/>

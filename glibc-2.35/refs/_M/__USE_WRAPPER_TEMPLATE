@@ -1,0 +1,42 @@
+<dec f='codebrowser/sysdeps/generic/math-type-macros-double.h' l='53'/>
+<dec f='codebrowser/sysdeps/generic/math-type-macros-float.h' l='54'/>
+<dec f='codebrowser/sysdeps/generic/math-type-macros-float128.h' l='53'/>
+<doc f='codebrowser/sysdeps/generic/math-type-macros-float128.h' l='52'>/* Use the type-generic wrapper templates.  */</doc>
+<dec f='codebrowser/sysdeps/generic/math-type-macros-ldouble.h' l='53'/>
+<use f='codebrowser/math/w_acos_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_acosh_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_asin_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_atan2_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_atanh_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_cosh_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_exp10_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_exp2_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_exp_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_fmod_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_hypot_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_j0_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_j1_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_jn_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_lgamma_r_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_lgamma_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_log10_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_log2_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_log_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_pow_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_remainder_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_scalb_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_sinh_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_sqrt_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_tgamma_template.c' l='22' u='c'/>
+<use f='codebrowser/math/w_lgamma.c' l='3' u='c'/>
+<use f='codebrowser/math/w_lgammaf.c' l='3' u='c'/>
+<use f='codebrowser/math/w_lgammal.c' l='3' u='c'/>
+<use f='codebrowser/math/w_remainder.c' l='3' u='c'/>
+<use f='codebrowser/math/w_remainderf.c' l='3' u='c'/>
+<use f='codebrowser/math/w_remainderl.c' l='3' u='c'/>
+<use f='codebrowser/math/w_exp.c' l='2' u='w'/>
+<dec f='codebrowser/math/w_exp.c' l='3'/>
+<use f='codebrowser/math/w_log.c' l='2' u='w'/>
+<dec f='codebrowser/math/w_log.c' l='3'/>
+<use f='codebrowser/math/w_pow.c' l='2' u='w'/>
+<dec f='codebrowser/math/w_pow.c' l='3'/>

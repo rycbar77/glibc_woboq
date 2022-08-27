@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>prlimit64.c source code [codebrowser/sysdeps/unix/sysv/linux/prlimit64.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/prlimit64.c'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>unix</a>/<a href='..'>sysv</a>/<a href='./'>linux</a>/<a href='prlimit64.c.html'>prlimit64.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Get/set resource limits.  Linux specific syscall.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#define <dfn class="macro" id="_M/prlimit" data-ref="_M/prlimit">prlimit</dfn> __redirect_prlimit</u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../../../../include/sys/resource.h.html">&lt;sys/resource.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#undef <a class="macro" href="#19" data-ref="_M/prlimit">prlimit</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><em>int</em></td></tr>
+<tr><th id="25">25</th><td><dfn class="decl def fn" id="__prlimit64" title='__prlimit64' data-ref="__prlimit64" data-ref-filename="__prlimit64">__prlimit64</dfn> (<a class="typedef" href="../../../../time/time.h.html#pid_t" title='pid_t' data-type='__pid_t' data-ref="pid_t" data-ref-filename="pid_t">pid_t</a> <dfn class="local col1 decl" id="1pid" title='pid' data-type='pid_t' data-ref="1pid" data-ref-filename="1pid">pid</dfn>, <b>enum</b> <a class="type" href="bits/resource.h.html#__rlimit_resource" title='__rlimit_resource' data-ref="__rlimit_resource" data-ref-filename="__rlimit_resource">__rlimit_resource</a> <dfn class="local col2 decl" id="2resource" title='resource' data-type='enum __rlimit_resource' data-ref="2resource" data-ref-filename="2resource">resource</dfn>,</td></tr>
+<tr><th id="26">26</th><td>	     <em>const</em> <b>struct</b> <a class="type" href="bits/resource.h.html#rlimit64" title='rlimit64' data-ref="rlimit64" data-ref-filename="rlimit64">rlimit64</a> *<dfn class="local col3 decl" id="3new_rlimit" title='new_rlimit' data-type='const struct rlimit64 *' data-ref="3new_rlimit" data-ref-filename="3new_rlimit">new_rlimit</dfn>, <b>struct</b> <a class="type" href="bits/resource.h.html#rlimit64" title='rlimit64' data-ref="rlimit64" data-ref-filename="rlimit64">rlimit64</a> *<dfn class="local col4 decl" id="4old_rlimit" title='old_rlimit' data-type='struct rlimit64 *' data-ref="4old_rlimit" data-ref-filename="4old_rlimit">old_rlimit</dfn>)</td></tr>
+<tr><th id="27">27</th><td>{</td></tr>
+<tr><th id="28">28</th><td>  <b>return</b> <a class="macro" href="../../sysdep.h.html#108" title="({ long int sc_ret = ({ unsigned long int resultvar; __typeof__ (((__typeof__ ((old_rlimit) - (old_rlimit))) (old_rlimit))) __arg4 = ((__typeof__ ((old_rlimit) - (old_rlimit))) (old_rlimit)); __typeof__ (((__typeof__ ((new_rlimit) - (new_rlimit))) (new_rlimit))) __arg3 = ((__typeof__ ((new_rlimit) - (new_rlimit))) (new_rlimit)); __typeof__ (((__typeof__ ((resource) - (resource))) (resource))) __arg2 = ((__typeof__ ((resource) - (resource))) (resource)); __typeof__ (((__typeof__ ((pid) - (pid))) (pid))) __arg1 = ((__typeof__ ((pid) - (pid))) (pid)); register __typeof__ (((__typeof__ ((old_rlimit) - (old_rlimit))) (old_rlimit))) _a4 asm (&quot;r10&quot;) = __arg4; register __typeof__ (((__typeof__ ((new_rlimit) - (new_rlimit))) (new_rlimit))) _a3 asm (&quot;rdx&quot;) = __arg3; register __typeof__ (((__typeof__ ((resource) - (resource))) (resource))) _a2 asm (&quot;rsi&quot;) = __arg2; register __typeof__ (((__typeof__ ((pid) - (pid))) (pid))) _a1 asm (&quot;rdi&quot;) = __arg1; asm volatile ( &quot;syscall\n\t&quot; : &quot;=a&quot; (resultvar) : &quot;0&quot; (302), &quot;r&quot; (_a1), &quot;r&quot; (_a2), &quot;r&quot; (_a3), &quot;r&quot; (_a4) : &quot;memory&quot;, &quot;cc&quot;, &quot;r11&quot;, &quot;cx&quot;); (long int) resultvar; }); __builtin_expect ((((unsigned long int) (sc_ret) &gt; -4096UL)), 0) ? ({ (__libc_errno = ((-(sc_ret)))); -1L; }) : sc_ret; })" data-ref="_M/INLINE_SYSCALL_CALL">INLINE_SYSCALL_CALL</a> (prlimit64, <a class="local col1 ref" href="#1pid" title='pid' data-ref="1pid" data-ref-filename="1pid">pid</a>, <a class="local col2 ref" href="#2resource" title='resource' data-ref="2resource" data-ref-filename="2resource">resource</a>, <a class="local col3 ref" href="#3new_rlimit" title='new_rlimit' data-ref="3new_rlimit" data-ref-filename="3new_rlimit">new_rlimit</a>,</td></tr>
+<tr><th id="29">29</th><td>			      <a class="local col4 ref" href="#4old_rlimit" title='old_rlimit' data-ref="4old_rlimit" data-ref-filename="4old_rlimit">old_rlimit</a>);</td></tr>
+<tr><th id="30">30</th><td>}</td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="31">ifdef</span> <span class="macro" data-ref="_M/VERSION_prlimit64">VERSION_prlimit64</span></u></td></tr>
+<tr><th id="32">32</th><td><u># include &lt;shlib-compat.h&gt;</u></td></tr>
+<tr><th id="33">33</th><td>versioned_symbol (libc, __prlimit64, prlimit64, VERSION_prlimit64);</td></tr>
+<tr><th id="34">34</th><td><u>#<span data-ppcond="31">else</span></u></td></tr>
+<tr><th id="35">35</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#141" title="extern __typeof (__prlimit64) prlimit64 __attribute__ ((alias (&quot;__prlimit64&quot;))) ;" data-ref="_M/strong_alias">strong_alias</a> (<a class="ref fn" href="#__prlimit64" title='__prlimit64' data-ref="__prlimit64" data-ref-filename="__prlimit64">__prlimit64</a>, <dfn class="decl def fn" id="prlimit64" title='prlimit64' data-ref="prlimit64" data-ref-filename="prlimit64">prlimit64</dfn>)</td></tr>
+<tr><th id="36">36</th><td><u># <span data-ppcond="36">if</span> <a class="macro" href="x86/bits/typesizes.h.html#87" title="1" data-ref="_M/__RLIM_T_MATCHES_RLIM64_T">__RLIM_T_MATCHES_RLIM64_T</a></u></td></tr>
+<tr><th id="37">37</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#141" title="extern __typeof (prlimit64) prlimit __attribute__ ((alias (&quot;prlimit64&quot;))) ;" data-ref="_M/strong_alias">strong_alias</a> (<a class="ref fn" href="bits/resource.h.html#prlimit64" title='prlimit64' data-ref="prlimit64" data-ref-filename="prlimit64">prlimit64</a>, <dfn class="decl def fn" id="prlimit" title='prlimit' data-ref="prlimit" data-ref-filename="prlimit">prlimit</dfn>)</td></tr>
+<tr><th id="38">38</th><td><u># <span data-ppcond="36">endif</span></u></td></tr>
+<tr><th id="39">39</th><td><u>#<span data-ppcond="31">endif</span></u></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

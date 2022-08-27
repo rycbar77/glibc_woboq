@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1374' type='void __rtld_static_init(struct link_map * map)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1371'>/* Called before relocating ld.so during static dlopen.  This can be
+   used to partly initialize the dormant ld.so copy in the static
+   dlopen namespace.  */</doc>
+<use f='codebrowser/elf/dl-open.c' l='609' u='c' c='dl_open_worker_begin'/>
+<def f='codebrowser/elf/rtld_static_init.c' l='45' ll='84' type='void __rtld_static_init(struct link_map * map)'/>

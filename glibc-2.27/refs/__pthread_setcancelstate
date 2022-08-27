@@ -1,0 +1,30 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='380' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/assert/assert.c' l='53' macro='1' c='__assert_fail_base'/>
+<use f='codebrowser/assert/assert.c' l='53' macro='1' u='r' c='__assert_fail_base'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='421' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/misc/error.c' l='301' c='__error'/>
+<use f='codebrowser/misc/error.c' l='301' u='r' c='__error'/>
+<use f='codebrowser/misc/error.c' l='326' c='__error'/>
+<use f='codebrowser/misc/error.c' l='326' u='r' c='__error'/>
+<use f='codebrowser/misc/error.c' l='363' c='__error_at_line'/>
+<use f='codebrowser/misc/error.c' l='363' u='r' c='__error_at_line'/>
+<use f='codebrowser/misc/error.c' l='397' c='__error_at_line'/>
+<use f='codebrowser/misc/error.c' l='397' u='r' c='__error_at_line'/>
+<def f='codebrowser/nptl/forward.c' l='196' macro='1' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/nptl/forward.c' l='198' c='pthread_setcancelstate'/>
+<def f='codebrowser/nptl/pthread_setcancelstate.c' l='24' ll='69' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/nptl/pthread_setcancelstate.c' l='70' c='pthread_setcancelstate'/>
+<use f='codebrowser/nptl/sem_open.c' l='159' u='c' c='sem_open'/>
+<use f='codebrowser/nptl/sem_open.c' l='325' u='c' c='sem_open'/>
+<use f='codebrowser/posix/wordexp.c' l='1141' c='parse_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='1141' u='r' c='parse_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='1149' c='parse_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='1149' u='r' c='parse_comm'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='129' c='fmtmsg'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='129' u='r' c='fmtmsg'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='201' c='fmtmsg'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='201' u='r' c='fmtmsg'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='335' c='__spawnix'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='335' u='r' c='__spawnix'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='394' c='__spawnix'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='394' u='r' c='__spawnix'/>

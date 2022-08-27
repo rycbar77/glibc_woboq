@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='45' type='pthread_mutex_t'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='44'>/* Lock for __timer_active_sigev_thread.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='129' u='a' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='132' u='a' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='40' u='a' c='___timer_delete'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='55' u='a' c='___timer_delete'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='32' type='pthread_mutex_t'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='78' u='a' c='timer_helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='103' u='a' c='timer_helper_thread'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='31'>/* Lock for _timer_active_sigev_thread.  */</doc>

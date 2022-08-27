@@ -1,0 +1,11 @@
+<def f='codebrowser/login/utmp_file.c' l='120' ll='128' type='void file_unlock(int fd)'/>
+<use f='codebrowser/login/utmp_file.c' l='202' u='c' c='__libc_getutent_r'/>
+<use f='codebrowser/login/utmp_file.c' l='260' u='c' c='internal_getut_r'/>
+<use f='codebrowser/login/utmp_file.c' l='314' u='c' c='__libc_getutline_r'/>
+<use f='codebrowser/login/utmp_file.c' l='321' u='c' c='__libc_getutline_r'/>
+<use f='codebrowser/login/utmp_file.c' l='335' u='c' c='__libc_getutline_r'/>
+<use f='codebrowser/login/utmp_file.c' l='383' u='c' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='422' u='c' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='432' u='c' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='439' u='c' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='500' u='c' c='__libc_updwtmp'/>

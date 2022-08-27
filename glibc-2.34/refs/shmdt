@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysvipc/sys/shm.h' l='69' type='int shmdt(const void * __shmaddr)'/>
+<doc f='codebrowser/sysvipc/sys/shm.h' l='68'>/* Detach shared memory segment.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/shmdt.c' l='26' ll='34' type='int shmdt(const void * shmaddr)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/shmdt.c' l='23'>/* Detach shared memory segment starting at address specified by SHMADDR
+   from the caller&apos;s data segment.  */</doc>

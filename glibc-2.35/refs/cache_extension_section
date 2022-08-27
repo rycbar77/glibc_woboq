@@ -1,0 +1,13 @@
+<def f='codebrowser/sysdeps/generic/dl-cache.h' l='229' ll='244'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='255'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='320' c='cache_extension_load'/>
+<use f='codebrowser/elf/cache.c' l='484'/>
+<use f='codebrowser/elf/cache.c' l='510' c='write_extensions'/>
+<use f='codebrowser/elf/cache.c' l='543' c='write_extensions'/>
+<size>16</size>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='227'>/* Element in the array following struct cache_extension.  Similar to
+   an ELF section header.  */</doc>
+<mbr r='cache_extension_section::tag' o='0' t='uint32_t'/>
+<mbr r='cache_extension_section::flags' o='32' t='uint32_t'/>
+<mbr r='cache_extension_section::offset' o='64' t='uint32_t'/>
+<mbr r='cache_extension_section::size' o='96' t='uint32_t'/>

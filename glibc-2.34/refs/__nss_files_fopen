@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/nss_files.h' l='29' type='FILE * __nss_files_fopen(const char * path)'/>
+<dec f='codebrowser/include/nss_files.h' l='30' type='FILE * __nss_files_fopen(const char * )'/>
+<use f='codebrowser/include/nss_files.h' l='30' c='__nss_files_fopen'/>
+<doc f='codebrowser/include/nss_files.h' l='28'>/* Open PATH for reading, as a data source for nss_files.  */</doc>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='46' u='c' c='internal_setent'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='186' u='c' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='76' u='c' c='internal_setent'/>
+<use f='codebrowser/nss/nss_files/files-initgroups.c' l='36' u='c' c='_nss_files_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='66' u='c' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/nss/nss_files_data.c' l='83' u='c' c='__nss_files_data_internal_open'/>
+<def f='codebrowser/nss/nss_files_fopen.c' l='24' ll='46' type='FILE * __nss_files_fopen(const char * path)'/>

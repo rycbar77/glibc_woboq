@@ -1,0 +1,8 @@
+<dec f='codebrowser/posix/spawn.h' l='196' type='int posix_spawn_file_actions_adddup2(posix_spawn_file_actions_t * __file_actions, int __fd, int __newfd)'/>
+<use f='codebrowser/include/spawn.h' l='11' c='__posix_spawn_file_actions_adddup2'/>
+<doc f='codebrowser/posix/spawn.h' l='194'>/* Add an action to FILE-ACTIONS which tells the implementation to call
+   `dup2&apos; for the given file descriptors during the `spawn&apos; call.  */</doc>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='181' u='c' c='fopen_uncompressed'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='185' u='c' c='fopen_uncompressed'/>
+<def f='codebrowser/posix/spawn_faction_adddup2.c' l='52' macro='1' type='int posix_spawn_file_actions_adddup2(posix_spawn_file_actions_t * , int , int )'/>
+<use f='codebrowser/support/xposix_spawn_file_actions_adddup2.c' l='26' u='c' c='xposix_spawn_file_actions_adddup2'/>

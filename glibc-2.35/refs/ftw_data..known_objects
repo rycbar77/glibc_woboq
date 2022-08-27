@@ -1,0 +1,8 @@
+<dec f='codebrowser/io/ftw.c' l='203' type='void *'/>
+<use f='codebrowser/io/ftw.c' l='262' u='a' c='add_object'/>
+<use f='codebrowser/io/ftw.c' l='272' u='a' c='find_object'/>
+<use f='codebrowser/io/ftw.c' l='687' u='w' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='806' u='r' c='ftw_startup'/>
+<offset>640</offset>
+<doc f='codebrowser/io/ftw.c' l='201'>/* Data structure for keeping fingerprints of already processed
+     object.  This is needed when not using FTW_PHYS.  */</doc>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/nscd/selinux.h' l='37' type='void nscd_selinux_enabled(int * selinux_enabled)'/>
+<doc f='codebrowser/nscd/selinux.h' l='36'>/* Determine if we are running on an SELinux kernel.  */</doc>
+<use f='codebrowser/nscd/nscd.c' l='151' u='c' c='main'/>
+<def f='codebrowser/nscd/selinux.c' l='248' ll='257' type='void nscd_selinux_enabled(int * selinux_enabled)'/>
+<doc f='codebrowser/nscd/selinux.c' l='246'>/* Determine if we are running on an SELinux kernel. Set selinux_enabled
+   to the result.  */</doc>

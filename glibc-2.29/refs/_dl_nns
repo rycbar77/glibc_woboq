@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='334' type='size_t'/>
+<use f='codebrowser/elf/dl-close.c' l='786' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='788' macro='1' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='789' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-fini.c' l='50' macro='1' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-libc.c' l='339' macro='1' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-load.c' l='1933' macro='1' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='1933' macro='1' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-open.c' l='167' macro='1' u='r' c='_dl_find_dso_for_object'/>
+<use f='codebrowser/elf/dl-open.c' l='542' macro='1' u='r' c='_dl_open'/>
+<use f='codebrowser/elf/dl-open.c' l='554' macro='1' u='r' c='_dl_open'/>
+<use f='codebrowser/elf/dl-open.c' l='557' macro='1' u='w' c='_dl_open'/>
+<use f='codebrowser/elf/dl-open.c' l='566' macro='1' u='r' c='_dl_open'/>
+<def f='codebrowser/elf/dl-support.c' l='108' type='size_t'/>
+<use f='codebrowser/elf/setup-vdso.h' l='110' macro='1' u='w' c='setup_vdso'/>

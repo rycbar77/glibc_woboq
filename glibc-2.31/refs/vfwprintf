@@ -1,0 +1,6 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='598' type='int vfwprintf(__FILE *restrict __s, const wchar_t *restrict __format, struct __va_list_tag * __arg)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='594'>/* Write formatted output to S from argument list ARG.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/stdio-common/vfwprintf.c' l='25' macro='1' type='int vfwprintf(FILE * , const wchar_t * , struct __va_list_tag * )'/>

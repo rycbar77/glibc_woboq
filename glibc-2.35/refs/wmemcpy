@@ -1,0 +1,7 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='263' type='int * wmemcpy(wchar_t *restrict __s1, const wchar_t *restrict __s2, size_t __n)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='262'>/* Copy N wide characters of SRC to DEST.  */</doc>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3973' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3982' u='c' c='allocate_arrays'/>
+<def f='codebrowser/wcsmbs/bits/wchar2.h' l='38' ll='45' macro='1' type='int * wmemcpy(wchar_t *restrict __s1, const wchar_t *restrict __s2, size_t __n)'/>
+<use f='include/c++/11/bits/char_traits.h' l='561' u='c' c='_ZNSt11char_traitsIwE4copyEPwPKwm'/>
+<def f='codebrowser/wcsmbs/wmemcpy.c' l='27' macro='1' type='int * wmemcpy(wchar_t * , const wchar_t * , size_t )'/>

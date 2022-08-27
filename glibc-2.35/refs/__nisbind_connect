@@ -1,0 +1,11 @@
+<dec f='codebrowser/nis/rpcsvc/nislib.h' l='274' type='nis_error __nisbind_connect(dir_binding * )'/>
+<dec f='codebrowser/include/rpcsvc/nislib.h' l='34' type='nis_error __nisbind_connect(dir_binding * )'/>
+<use f='codebrowser/include/rpcsvc/nislib.h' l='34' c='__nisbind_connect'/>
+<def f='codebrowser/nis/nis_call.c' l='180' ll='248' type='nis_error __nisbind_connect(dir_binding * dbp)'/>
+<use f='codebrowser/nis/nis_call.c' l='249' c='__EI___nisbind_connect'/>
+<use f='codebrowser/nis/nis_call.c' l='344' u='c' c='__do_niscall3'/>
+<use f='codebrowser/nis/nis_call.c' l='396' u='c' c='__do_niscall2'/>
+<use f='codebrowser/nis/nis_call.c' l='807' u='c' c='__prepare_niscall'/>
+<use f='codebrowser/nis/nis_lookup.c' l='158' u='c' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_table.c' l='293' u='c' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='486' u='c' c='__GI_nis_list'/>

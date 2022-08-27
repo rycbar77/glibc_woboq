@@ -1,0 +1,15 @@
+<def f='codebrowser/dlfcn/dlmopen.c' l='37' ll='48'/>
+<use f='codebrowser/dlfcn/dlmopen.c' l='53' c='dlmopen_doit'/>
+<use f='codebrowser/dlfcn/dlmopen.c' l='53' c='dlmopen_doit'/>
+<use f='codebrowser/dlfcn/dlmopen.c' l='86' c='__dlmopen'/>
+<size>40</size>
+<mbr r='dlmopen_args::nsid' o='0' t='Lmid_t'/>
+<mbr r='dlmopen_args::file' o='64' t='const char *'/>
+<mbr r='dlmopen_args::mode' o='128' t='int'/>
+<mbr r='dlmopen_args::new' o='192' t='void *'/>
+<mbr r='dlmopen_args::caller' o='256' t='const void *'/>
+<def f='codebrowser/elf/rtld.c' l='558' ll='562'/>
+<use f='codebrowser/elf/rtld.c' l='598' c='dlmopen_doit'/>
+<use f='codebrowser/elf/rtld.c' l='598' c='dlmopen_doit'/>
+<use f='codebrowser/elf/rtld.c' l='1419' c='dl_main'/>
+<size>16</size>

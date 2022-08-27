@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/string.h' l='24' type='int __strcasecmp(const char * __s1, const char * __s2)'/>
+<dec f='codebrowser/include/string.h' l='89' type='int __strcasecmp(const char * , const char * )'/>
+<use f='codebrowser/include/string.h' l='89' c='__strcasecmp'/>
+<use f='codebrowser/argp/argp-help.c' l='775' u='c' c='hol_entry_cmp'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='477' u='c' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='481' u='c' c='innetgr'/>
+<use f='codebrowser/inet/ruserpass.c' l='139' u='c' c='ruserpass'/>
+<use f='codebrowser/inet/ruserpass.c' l='149' u='c' c='ruserpass'/>
+<use f='codebrowser/resolv/res_hconf.c' l='549' u='c' c='_res_hconf_trim_domain'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strcasecmp.c' l='31' macro='1' type='int __strcasecmp(const char * , const char * )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strcasecmp.c' l='34' c='strcasecmp'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='546' type='int'/>
+<def f='codebrowser/elf/dl-support.c' l='233' type='int'/>
+<use f='codebrowser/elf/dl-support.c' l='256' macro='1' u='w' c='_dl_aux_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getclktck.c' l='30' macro='1' u='r' c='__getclktck'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/prof-freq.c' l='27' macro='1' u='r' c='__profile_frequency'/>

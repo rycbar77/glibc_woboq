@@ -1,0 +1,28 @@
+<dec f='codebrowser/include/link.h' l='310' type='size_t'/>
+<offset>8704</offset>
+<doc f='codebrowser/include/link.h' l='309'>/* Size of the TLS block.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='206' u='w' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/dl-close.c' l='565' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='589' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='594' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='608' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='613' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='620' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-load.c' l='1190' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1474' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-open.c' l='366' u='r' c='resize_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-open.c' l='388' u='r' c='update_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-open.c' l='411' u='r' c='update_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-reloc.c' l='68' u='r' c='_dl_try_allocate_static_tls'/>
+<use f='codebrowser/elf/dl-reloc.c' l='160' u='r' c='_dl_nothread_init_static_tls'/>
+<use f='codebrowser/elf/rtld.c' l='773' u='r' c='init_tls'/>
+<use f='codebrowser/elf/rtld.c' l='1551' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1737' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2366' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2411' u='r' c='dl_main'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1188' u='r' c='init_one_static_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='572' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='572' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='574' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='574' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='589' u='r' c='_dl_allocate_tls_init'/>

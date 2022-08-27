@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1237' type='void __tls_init_tp()'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1234'>/* This function is called after processor-specific initialization of
+   the TCB and thread pointer via TLS_INIT_TP, to complete very early
+   initialization of the thread library.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='198' u='c' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/rtld.c' l='821' u='c' c='init_tls'/>
+<use f='codebrowser/elf/rtld.c' l='2475' u='c' c='dl_main'/>
+<def f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='66' ll='134' type='void __tls_init_tp()'/>

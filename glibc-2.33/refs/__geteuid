@@ -1,0 +1,16 @@
+<dec f='codebrowser/include/unistd.h' l='116' type='__uid_t __geteuid()'/>
+<use f='codebrowser/sysdeps/generic/startup.h' l='36' u='c' c='startup_geteuid'/>
+<use f='codebrowser/inet/rcmd.c' l='560' u='c' c='ruserok2_sa'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='168' u='c' c='__GI_authunix_create_default'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='498' u='c' c='__msgwrite'/>
+<use f='codebrowser/sunrpc/key_call.c' l='443' u='c' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='445' u='c' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='468' u='c' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='533' u='c' c='key_call'/>
+<use f='codebrowser/sunrpc/key_call.c' l='540' u='c' c='key_call'/>
+<use f='codebrowser/sunrpc/key_call.c' l='547' u='c' c='key_call'/>
+<use f='codebrowser/sunrpc/netname.c' l='131' u='c' c='__GI_getnetname'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='387' u='c' c='__msgwrite'/>
+<use f='codebrowser/sysdeps/posix/cuserid.c' l='35' u='c' c='cuserid'/>
+<use f='codebrowser/sysdeps/posix/euidaccess.c' l='156' u='c' c='__euidaccess'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/faccessat.c' l='54' u='c' c='__faccessat'/>

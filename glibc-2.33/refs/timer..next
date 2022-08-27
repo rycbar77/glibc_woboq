@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='56' type='struct timer *'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='85' u='r' c='timer_helper_thread'/>
+<offset>640</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='55'>/* Next element in list of active SIGEV_THREAD timers.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='136' u='w' c='__timer_create_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='47' u='r' c='__timer_delete_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='51' u='r' c='__timer_delete_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='52' u='r' c='__timer_delete_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='54' u='w' c='__timer_delete_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='54' u='r' c='__timer_delete_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='58' u='r' c='__timer_delete_new'/>

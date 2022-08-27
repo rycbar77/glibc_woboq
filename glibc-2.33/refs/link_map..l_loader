@@ -1,0 +1,13 @@
+<dec f='codebrowser/include/link.h' l='151' type='struct link_map *'/>
+<offset>5888</offset>
+<doc f='codebrowser/include/link.h' l='150'>/* Dependent object that first caused this object to be loaded.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='462' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='463' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='464' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-load.c' l='2124' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2394' u='r' c='_dl_rtld_di_serinfo'/>
+<use f='codebrowser/elf/dl-object.c' l='129' u='w' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='161' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='162' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-sym.c' l='143' u='r' c='do_sym'/>
+<use f='codebrowser/elf/dl-sym.c' l='144' u='r' c='do_sym'/>

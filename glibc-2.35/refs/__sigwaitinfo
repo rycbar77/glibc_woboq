@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/signal.h' l='39' type='int __sigwaitinfo(const sigset_t * __set, siginfo_t * __info)'/>
+<dec f='codebrowser/include/signal.h' l='40' type='int __sigwaitinfo(const sigset_t * , siginfo_t * )'/>
+<use f='codebrowser/include/signal.h' l='40' c='__sigwaitinfo'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/sigwaitinfo.c' l='22' ll='26' type='int __sigwaitinfo(const sigset_t * set, siginfo_t * info)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigwaitinfo.c' l='29' c='sigwaitinfo'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigwaitinfo.c' l='30' c='__libc_sigwaitinfo'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sigwaitinfo.c' l='21'>/* Return any pending signal or wait for one for the given time.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='70' u='c' c='timer_helper_thread'/>

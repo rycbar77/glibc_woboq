@@ -1,0 +1,5 @@
+<dec f='codebrowser/setjmp/setjmp.h' l='62'/>
+<doc f='codebrowser/setjmp/setjmp.h' l='60'>/* Do not save the signal mask.  This is equivalent to the `_setjmp&apos;
+   BSD function.  */</doc>
+<use f='codebrowser/nptl/pthread_create.c' l='423' u='c'/>
+<use f='codebrowser/csu/libc-start.c' l='295' u='c'/>

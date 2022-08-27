@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='334' type='hp_timing_t'/>
+<def f='codebrowser/elf/dl-support.c' l='133' type='hp_timing_t'/>
+<use f='codebrowser/elf/dl-support.c' l='315' u='w' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/nptl/nptl-init.c' l='322' macro='1' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='322' macro='1' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='322' macro='1' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='322' macro='1' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='322' macro='1' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='322' macro='1' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/sysdeps/nptl/fork.c' l='150' macro='1' u='w' c='__libc_fork'/>
+<use f='codebrowser/sysdeps/unix/clock_gettime.c' l='64' macro='1' u='r' c='hp_timing_gettime'/>

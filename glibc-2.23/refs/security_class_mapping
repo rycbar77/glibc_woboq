@@ -1,0 +1,6 @@
+<def f='include/selinux/selinux.h' l='387' ll='390'/>
+<use f='include/selinux/selinux.h' l='411' c='selinux_set_mapping'/>
+<size>272</size>
+<doc f='include/selinux/selinux.h' l='386'>/* Userspace class mapping support */</doc>
+<mbr r='security_class_mapping::name' o='0' t='const char *'/>
+<mbr r='security_class_mapping::perms' o='64' t='const char *[33]'/>

@@ -1,0 +1,23 @@
+<dec f='codebrowser/locale/langinfo.h' l='661' type='char * nl_langinfo(nl_item __item)'/>
+<dec f='codebrowser/include/langinfo.h' l='6' type='char * nl_langinfo(nl_item )'/>
+<use f='codebrowser/include/langinfo.h' l='6' c='nl_langinfo'/>
+<doc f='codebrowser/locale/langinfo.h' l='655'>/* Return the current locale&apos;s value for ITEM.
+   If ITEM is invalid, an empty string is returned.
+
+   The string returned will not change until `setlocale&apos; is called;
+   it is usually in read-only memory and cannot be modified.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='1316' u='c' c='open_conversion'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='204' u='c' c='main'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='206' u='c' c='main'/>
+<use f='codebrowser/locale/broken_cur_max.c' l='47' u='c' c='__ctype_get_mb_cur_max'/>
+<def f='codebrowser/locale/nl_langinfo.c' l='28' ll='32' type='char * nl_langinfo(nl_item item)'/>
+<doc f='codebrowser/locale/nl_langinfo.c' l='26'>/* Return a string with the data for locale-dependent parameter ITEM.  */</doc>
+<use f='codebrowser/locale/programs/locale.c' l='836' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='851' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='857' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='869' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='887' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='899' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='918' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='930' u='c' c='print_item'/>
+<use f='codebrowser/stdlib/rpmatch.c' l='32' u='c' c='try'/>

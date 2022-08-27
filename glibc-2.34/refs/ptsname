@@ -1,0 +1,8 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='992' type='char * ptsname(int __fd)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='989'>/* Return the pathname of the pseudo terminal slave associated with
+   the master FD is open on, or NULL on errors.
+   The returned storage is good until the next call to this function.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/ptsname.c' l='39' ll='43' type='char * ptsname(int fd)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/ptsname.c' l='36'>/* Return the pathname of the pseudo terminal slave associated with
+   the master FD is open on, or NULL on errors.
+   The returned storage is good until the next call to this function.  */</doc>

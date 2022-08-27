@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/stdio.h' l='227' type='FILE * __open_memstream(char ** , size_t * )'/>
+<dec f='codebrowser/include/stdio.h' l='228' type='FILE * __open_memstream(char ** , size_t * )'/>
+<use f='codebrowser/include/stdio.h' l='228' c='__open_memstream'/>
+<doc f='codebrowser/include/stdio.h' l='225'>/* The prototype needs repeating instead of using __typeof to use
+   __THROW in C++ tests.  */</doc>
+<def f='codebrowser/libio/memstream.c' l='63' ll='103' type='FILE * __open_memstream(char ** bufloc, size_t * sizeloc)'/>
+<use f='codebrowser/libio/memstream.c' l='105' c='open_memstream'/>
+<doc f='codebrowser/libio/memstream.c' l='60'>/* Open a stream that writes into a malloc&apos;d buffer that is expanded as
+   necessary.  *BUFLOC and *SIZELOC are updated with the buffer&apos;s location
+   and the number of characters written on fflush or fclose.  */</doc>
+<use f='codebrowser/misc/syslog.c' l='181' u='c' c='__vsyslog_internal'/>

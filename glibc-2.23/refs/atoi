@@ -1,0 +1,21 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='147' type='int atoi(const char * __nptr)'/>
+<def f='codebrowser/stdlib/stdlib.h' l='277' ll='281' macro='1' type='int atoi(const char * __nptr)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='146'>/* Convert a string to an integer.  */</doc>
+<use f='codebrowser/argp/argp-help.c' l='211' u='c' c='fill_in_uparams'/>
+<use f='codebrowser/argp/argp-parse.c' l='150' u='c' c='argp_default_parser'/>
+<use f='codebrowser/catgets/gencat.c' l='593' u='c' c='read_input_file'/>
+<use f='codebrowser/inet/rexec.c' l='141' u='c' c='rexec_af'/>
+<use f='codebrowser/malloc/arena.c' l='431' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='433' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='440' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='442' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='449' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='456' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='458' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/memusage.c' l='282' u='c' c='me'/>
+<use f='codebrowser/posix/wordexp.c' l='1459' u='c' c='parse_param'/>
+<use f='codebrowser/resolv/res_init.c' l='483' u='c' c='res_setoptions'/>
+<use f='codebrowser/resolv/res_init.c' l='493' u='c' c='res_setoptions'/>
+<use f='codebrowser/resolv/res_init.c' l='499' u='c' c='res_setoptions'/>
+<def f='codebrowser/stdlib/atoi.c' l='24' ll='28' type='int atoi(const char * nptr)'/>
+<doc f='codebrowser/stdlib/atoi.c' l='23'>/* Convert a string to an int.  */</doc>

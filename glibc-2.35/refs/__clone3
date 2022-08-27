@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/clone_internal.h' l='4' type='int __clone3(struct clone_args * , size_t , int (*)(void *) , void * )'/>
+<dec f='codebrowser/include/clone_internal.h' l='12' type='int __clone3(struct clone_args * , size_t , int (*)(void *) , void * )'/>
+<use f='codebrowser/include/clone_internal.h' l='12' c='__clone3'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='54' u='c' c='__clone_internal'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/x86_64/clone3.S' l='42' macro='1' type='int'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86_64/clone3.S' l='92' u='r'/>

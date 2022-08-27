@@ -1,0 +1,9 @@
+<dec f='codebrowser/signal/signal.h' l='286' type='const char *const[65]'/>
+<dec f='codebrowser/include/signal.h' l='15' type='typeof (_sys_siglist)'/>
+<use f='codebrowser/include/signal.h' l='15'/>
+<doc f='codebrowser/signal/signal.h' l='284'>/* Names of the signals.  This variable exists only for compatibility.
+   Use `strsignal&apos; instead (see &lt;string.h&gt;).  */</doc>
+<use f='codebrowser/stdio-common/psiginfo.c' l='83' u='r' c='psiginfo'/>
+<use f='codebrowser/stdio-common/psignal.c' l='37' u='r' c='psignal'/>
+<use f='codebrowser/string/strsignal.c' l='54' u='r' c='strsignal'/>
+<def f='codebrowser/sysdeps/gnu/siglist.c' l='75' macro='1' type='typeof (__new_sys_siglist)'/>

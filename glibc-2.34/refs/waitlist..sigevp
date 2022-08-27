@@ -1,0 +1,16 @@
+<dec f='codebrowser/resolv/gai_misc.h' l='36' type='struct sigevent *'/>
+<offset>128</offset>
+<doc f='codebrowser/resolv/gai_misc.h' l='35'>/* The next field is used in asynchronous `lio_listio&apos; operations.  */</doc>
+<use f='codebrowser/resolv/gai_notify.c' l='115' u='r' c='__gai_notify'/>
+<use f='codebrowser/resolv/gai_notify.c' l='131' u='r' c='__gai_notify'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='58' u='w' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='113' u='w' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='167' u='w' c='__getaddrinfo_a'/>
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='56' type='struct sigevent *'/>
+<offset>192</offset>
+<doc f='codebrowser/sysdeps/generic/aio_misc.h' l='55'>/* The next field is used in asynchronous `lio_listio&apos; operations.  */</doc>
+<use f='codebrowser/rt/aio_notify.c' l='135' u='r' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_notify.c' l='154' u='r' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_suspend.c' l='149' u='w' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='152' u='w' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='215' u='w' c='lio_listio_internal'/>

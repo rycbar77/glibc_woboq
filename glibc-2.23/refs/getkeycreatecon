@@ -1,0 +1,4 @@
+<dec f='include/selinux/selinux.h' l='82' type='int getkeycreatecon(char ** con)'/>
+<doc f='include/selinux/selinux.h' l='79'>/* Get keycreate context, and set *con to refer to it.
+   Sets *con to NULL if no key create context has been set, i.e. using default.
+   If non-NULL, caller must free via freecon. */</doc>

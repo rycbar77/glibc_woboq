@@ -1,0 +1,23 @@
+<dec f='codebrowser/sysdeps/nptl/futex-internal.h' l='352' type='int __futex_abstimed_wait_cancelable64(unsigned int * futex_word, unsigned int expected, clockid_t clockid, const struct timespec * abstime, int private)'/>
+<dec f='codebrowser/sysdeps/nptl/futex-internal.h' l='356' type='int __futex_abstimed_wait_cancelable64(unsigned int * , unsigned int , clockid_t , const struct timespec * , int )'/>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='356' c='__futex_abstimed_wait_cancelable64'/>
+<doc f='codebrowser/sysdeps/nptl/futex-internal.h' l='340'>/* Like futex_wait, but will eventually time out (i.e., stop being blocked)
+   after the duration of time provided (i.e., ABSTIME) has passed using the
+   clock specified by CLOCKID (currently only CLOCK_REALTIME and
+   CLOCK_MONOTONIC, the ones support by lll_futex_supported_clockid). ABSTIME
+   can also equal NULL, in which case this function behaves equivalent to
+   futex_wait.
+
+   Returns the same values as futex_wait under those same conditions;
+   additionally, returns ETIMEDOUT if the timeout expired.
+
+   The call acts as a cancellation entrypoint.  */</doc>
+<def f='codebrowser/nptl/futex-internal.c' l='133' ll='141' type='int __futex_abstimed_wait_cancelable64(unsigned int * futex_word, unsigned int expected, clockid_t clockid, const struct timespec * abstime, int private)'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='504' u='c' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_create.c' l='810' u='c' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='105' u='c' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='112' u='c' c='do_futex_wait'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='98' macro='1' u='c' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='128' macro='1' u='c' c='__getaddrinfo_a'/>
+<use f='codebrowser/rt/aio_suspend.c' l='103' macro='1' u='c' c='do_aio_misc_wait'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='159' macro='1' u='c' c='lio_listio_internal'/>

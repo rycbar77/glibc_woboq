@@ -1,0 +1,10 @@
+<dec f='codebrowser/math/bits/mathcalls-helper-functions.h' l='33' macro='1' type='int __finitef(float __value)'/>
+<dec f='codebrowser/include/math.h' l='17' type='int __finitef(float )'/>
+<use f='codebrowser/include/math.h' l='17' c='__finitef'/>
+<use f='codebrowser/math/s_ldexp_template.c' l='24' macro='1' u='c' c='__ldexp'/>
+<use f='codebrowser/math/s_ldexp_template.c' l='26' macro='1' u='c' c='__ldexp'/>
+<use f='codebrowser/misc/efgcvt_r.c' l='88' macro='1' u='c' c='__fcvt_r'/>
+<use f='codebrowser/misc/efgcvt_r.c' l='174' macro='1' u='c' c='__ecvt_r'/>
+<use f='codebrowser/misc/efgcvt_r.c' l='226' macro='1' u='c' c='__ecvt_r'/>
+<def f='codebrowser/sysdeps/ieee754/flt-32/s_finitef.c' l='34' ll='39' type='int __finitef(float x)'/>
+<use f='codebrowser/sysdeps/ieee754/flt-32/s_finitef.c' l='41' c='finitef'/>

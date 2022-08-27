@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1289' type='void _dl_deallocate_tls(void * tcb, _Bool dealloc_tcb)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1288'>/* Deallocate memory allocated with _dl_allocate_tls.  */</doc>
+<use f='codebrowser/nptl/nptl-stack.c' l='78' u='c' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='126' u='c' c='__nptl_deallocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='493' u='c' c='allocate_stack'/>
+<def f='codebrowser/elf/dl-tls.c' l='639' ll='654' type='void _dl_deallocate_tls(void * tcb, _Bool dealloc_tcb)'/>

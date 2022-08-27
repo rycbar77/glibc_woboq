@@ -1,0 +1,9 @@
+<dec f='codebrowser/io/sys/stat.h' l='434' type='int __fxstatat64(int __ver, int __fildes, const char * __filename, struct stat64 * __stat_buf, int __flag)'/>
+<use f='codebrowser/io/sys/stat.h' l='522' u='c' c='fstatat64'/>
+<dec f='codebrowser/include/sys/stat.h' l='38' type='int __fxstatat64(int , int , const char * , struct stat64 * , int )'/>
+<use f='codebrowser/include/sys/stat.h' l='38' c='__fxstatat64'/>
+<use f='codebrowser/io/fstatat64.c' l='51' u='c' c='fstatat64'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='418' macro='1' u='c' c='generic_getcwd'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/faccessat.c' l='40' u='c' c='faccessat'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/fxstatat.c' l='47' macro='1' type='int __fxstatat64(int , int , const char * , struct stat * , int )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/fxstatat.c' l='48' c='__GI___fxstatat64'/>

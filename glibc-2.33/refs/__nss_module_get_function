@@ -1,0 +1,9 @@
+<dec f='codebrowser/nss/nss_module.h' l='87' type='void * __nss_module_get_function(struct nss_module * module, const char * name)'/>
+<doc f='codebrowser/nss/nss_module.h' l='84'>/* Ensures that MODULE is loaded and returns a pointer to the function
+   NAME defined in it.  Returns NULL if MODULE could not be loaded, or
+   if the function NAME is not defined in the module.  */</doc>
+<def f='codebrowser/nss/nss_module.c' l='274' ll='290' type='void * __nss_module_get_function(struct nss_module * module, const char * name)'/>
+<doc f='codebrowser/nss/nss_module.c' l='271'>/* Load module MODULE (if it isn&apos;t already) and return a pointer to
+   the module&apos;s implementation of NAME, otherwise return NULL on
+   failure or error.  */</doc>
+<use f='codebrowser/nss/nsswitch.c' l='178' u='c' c='__nss_lookup_function'/>

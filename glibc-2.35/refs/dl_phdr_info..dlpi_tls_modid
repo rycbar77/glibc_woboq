@@ -1,0 +1,6 @@
+<dec f='codebrowser/elf/link.h' l='174' type='size_t'/>
+<offset>384</offset>
+<doc f='codebrowser/elf/link.h' l='172'>/* If there is a PT_TLS segment, its module ID as used in
+       TLS relocations, else zero.  */</doc>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='71' u='w' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='72' u='r' c='__dl_iterate_phdr'/>

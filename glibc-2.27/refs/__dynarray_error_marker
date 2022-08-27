@@ -1,0 +1,10 @@
+<def f='codebrowser/malloc/dynarray.h' l='110' ll='114' type='size_t __dynarray_error_marker()'/>
+<use f='codebrowser/malloc/dynarray.h' l='121' u='c' c='__dynarray_error'/>
+<doc f='codebrowser/malloc/dynarray.h' l='108'>/* Marker used in the allocated member to indicate that an error was
+   encountered.  */</doc>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='216' u='c' c='nameserver_list_has_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='230' u='c' c='nameserver_list_mark_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='216' u='c' c='search_list_has_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='230' u='c' c='search_list_mark_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='216' u='c' c='sort_list_has_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='230' u='c' c='sort_list_mark_failed'/>

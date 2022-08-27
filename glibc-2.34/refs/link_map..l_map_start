@@ -1,0 +1,27 @@
+<dec f='codebrowser/include/link.h' l='248' type='Elf64_Addr'/>
+<offset>6848</offset>
+<use f='codebrowser/elf/dl-addr.c' l='31' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-unmap-segments.h' l='32' u='r' c='_dl_unmap_segments'/>
+<use f='codebrowser/elf/dl-unmap-segments.h' l='32' u='r' c='_dl_unmap_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='56' u='w' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='60' u='r' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='63' u='r' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='64' u='r' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='86' u='w' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='87' u='r' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-load.c' l='975' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1279' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-open.c' l='216' u='r' c='_dl_find_dso_for_object'/>
+<use f='codebrowser/elf/setup-vdso.h' l='63' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='64' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/dl-sym.c' l='136' u='r' c='do_sym'/>
+<use f='codebrowser/elf/rtld.c' l='473' u='w' c='_dl_start_final'/>
+<use f='codebrowser/elf/rtld.c' l='1455' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1517' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1518' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2034' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2035' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2103' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2104' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2107' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2108' u='r' c='dl_main'/>

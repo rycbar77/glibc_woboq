@@ -1,0 +1,22 @@
+<dec f='codebrowser/malloc/obstack.h' l='157' type='char *'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='59' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='77' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='82' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='82' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<offset>128</offset>
+<doc f='codebrowser/malloc/obstack.h' l='157'>/* address of object we are building */</doc>
+<use f='codebrowser/libio/obprintf.c' l='51' macro='1' u='r' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='79' macro='1' u='r' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='137' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='155' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='160' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='160' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/malloc/obstack.c' l='179' u='w' c='_obstack_begin'/>
+<use f='codebrowser/malloc/obstack.c' l='227' u='w' c='_obstack_begin_1'/>
+<use f='codebrowser/malloc/obstack.c' l='250' u='r' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='280' u='r' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='290' u='r' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='296' u='r' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='304' u='w' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='305' u='r' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='365' u='w' c='obstack_free'/>

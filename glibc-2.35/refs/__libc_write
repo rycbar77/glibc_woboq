@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/unistd.h' l='69' type='ssize_t __libc_write(int __fd, const void * __buf, size_t __n)'/>
+<dec f='codebrowser/include/unistd.h' l='70' type='ssize_t __libc_write(int , const void * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='70' c='__libc_write'/>
+<use f='codebrowser/assert/assert.c' l='89' u='c' c='__assert_fail_base'/>
+<dec f='codebrowser/sysdeps/generic/dl-unistd.h' l='26' type='ssize_t __libc_write(int , const void * , size_t )'/>
+<use f='codebrowser/sysdeps/generic/dl-unistd.h' l='26' c='__libc_write'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/write.c' l='23' ll='27' type='ssize_t __libc_write(int fd, const void * buf, size_t nbytes)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/write.c' l='30' c='__write'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/write.c' l='32' c='write'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/write.c' l='22'>/* Write NBYTES of BUF to FD.  Return the number written, or -1.  */</doc>

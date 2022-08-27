@@ -1,0 +1,70 @@
+<def f='codebrowser/malloc/malloc.c' l='1918' ll='1923' type='struct malloc_state'/>
+<use f='codebrowser/malloc/malloc.c' l='1921' u='a'/>
+<use f='codebrowser/malloc/malloc.c' l='1965' u='a' c='malloc_init_state'/>
+<use f='codebrowser/malloc/malloc.c' l='1968' u='a' c='malloc_init_state'/>
+<use f='codebrowser/malloc/arena.c' l='156' u='a' c='__malloc_fork_lock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='160' u='a' c='__malloc_fork_lock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='171' u='a' c='__malloc_fork_unlock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='175' u='a' c='__malloc_fork_unlock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='193' u='a' c='__malloc_fork_unlock_child'/>
+<use f='codebrowser/malloc/arena.c' l='204' u='a' c='__malloc_fork_unlock_child'/>
+<use f='codebrowser/malloc/arena.c' l='315' u='a' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='317' u='a' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/malloc.c' l='2525' u='a' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2847' u='a' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='3802' u='a' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='3927' u='a' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='3948' u='a' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4098' u='a' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4121' u='a' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4200' u='a' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4229' u='a' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4268' u='a' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4563' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4745' u='a' c='_int_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4802' u='a' c='_int_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4810' u='a' c='_int_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4812' u='a' c='_int_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4890' u='a' c='_int_memalign'/>
+<use f='codebrowser/malloc/malloc.c' l='4892' u='a' c='_int_memalign'/>
+<use f='codebrowser/malloc/malloc.c' l='4909' u='a' c='_int_memalign'/>
+<use f='codebrowser/malloc/malloc.c' l='4974' u='a' c='mtrim'/>
+<use f='codebrowser/malloc/malloc.c' l='4990' u='a' c='__malloc_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='4999' u='a' c='__malloc_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='5098' u='a' c='int_mallinfo'/>
+<use f='codebrowser/malloc/malloc.c' l='5118' u='a' c='__libc_mallinfo2'/>
+<use f='codebrowser/malloc/malloc.c' l='5127' u='a' c='__libc_mallinfo2'/>
+<use f='codebrowser/malloc/malloc.c' l='5170' u='a' c='__malloc_stats'/>
+<use f='codebrowser/malloc/malloc.c' l='5188' u='a' c='__malloc_stats'/>
+<use f='codebrowser/malloc/malloc.c' l='5331' u='a' c='__libc_mallopt'/>
+<use f='codebrowser/malloc/malloc.c' l='5608' u='a' c='__malloc_info'/>
+<use f='codebrowser/malloc/malloc.c' l='5698' u='a' c='__malloc_info'/>
+<use f='codebrowser/malloc/malloc.c' l='5743' u='a' c='__malloc_info'/>
+<use f='codebrowser/malloc/malloc.c' l='5766' u='a' c='__malloc_info'/>
+<use f='codebrowser/malloc/malloc-check.c' l='124' u='a' c='mem2chunk_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='127' u='m' c='mem2chunk_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='179' u='a' c='top_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='181' u='a' c='top_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='185' u='a' c='top_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='186' u='m' c='top_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='204' u='m' c='malloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='206' u='a' c='malloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='207' u='m' c='malloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='226' u='m' c='free_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='232' u='m' c='free_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='239' u='a' c='free_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='240' u='m' c='free_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='272' u='m' c='realloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='274' u='m' c='realloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='285' u='m' c='realloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='303' u='a' c='realloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='315' u='a' c='realloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='332' u='m' c='realloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='372' u='m' c='memalign_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='374' u='a' c='memalign_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='375' u='m' c='memalign_check'/>
+<doc f='codebrowser/malloc/malloc.c' l='1912'>/* There are several instances of this struct (&quot;arenas&quot;) in this
+   malloc.  If you are adapting this malloc in a way that does NOT use
+   a static or mmapped malloc_state, you MUST explicitly zero-fill it
+   before using. This malloc relies on the property that malloc_state
+   is initialized to all zeroes (as is true of C statics).  */</doc>

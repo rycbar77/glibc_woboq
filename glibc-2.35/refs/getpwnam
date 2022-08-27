@@ -1,0 +1,8 @@
+<dec f='codebrowser/pwd/pwd.h' l='116' type='struct passwd * getpwnam(const char * __name)'/>
+<doc f='codebrowser/pwd/pwd.h' l='112'>/* Retrieve the user database entry for the given username.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/nscd/connections.c' l='2458' u='c' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='206' u='c' c='nscd_parse_file'/>
+<use f='codebrowser/nss/getent.c' l='639' u='c' c='passwd_keys'/>

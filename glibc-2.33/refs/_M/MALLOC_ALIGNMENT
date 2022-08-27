@@ -1,0 +1,24 @@
+<dec f='codebrowser/sysdeps/generic/malloc-alignment.h' l='27'/>
+<use f='codebrowser/elf/dl-minimal.c' l='140' u='c'/>
+<use f='codebrowser/elf/dl-minimal.c' l='141' u='c'/>
+<doc f='codebrowser/sysdeps/generic/malloc-alignment.h' l='22'>/* MALLOC_ALIGNMENT is the minimum alignment for malloc&apos;ed chunks.  It
+   must be a power of two at least 2 * SIZE_SZ, even on machines for
+   which smaller alignments would suffice. It may be defined as larger
+   than this though. Note however that code and data structures are
+   optimized for the case of 8-byte alignment.  */</doc>
+<use f='codebrowser/malloc/arena.c' l='69' u='c'/>
+<use f='codebrowser/malloc/arena.c' l='743' u='c'/>
+<use f='codebrowser/malloc/arena.c' l='750' u='c'/>
+<use f='codebrowser/malloc/arena.c' l='764' u='c'/>
+<use f='codebrowser/malloc/hooks.c' l='194' u='c'/>
+<use f='codebrowser/malloc/hooks.c' l='386' u='c'/>
+<use f='codebrowser/malloc/hooks.c' l='410' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='2458' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='2480' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='2494' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='2749' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='2794' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='2810' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='3477' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='3496' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='5728' u='c'/>

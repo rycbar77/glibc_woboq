@@ -1,0 +1,5 @@
+<def f='codebrowser/elf/get-dynamic-info.h' l='26' ll='182' type='void elf_get_dynamic_info(struct link_map * l, Elf64_Dyn * temp)'/>
+<use f='codebrowser/elf/dl-load.c' l='1295' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/setup-vdso.h' l='68' u='c' c='setup_vdso'/>
+<use f='codebrowser/elf/rtld.c' l='549' u='c' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='1616' u='c' c='dl_main'/>

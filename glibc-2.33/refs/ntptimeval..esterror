@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sys/timex.h' l='34' type='long'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='171' u='w' c='valid_ntptimeval_to_ntptimeval64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='171' u='r' c='valid_ntptimeval_to_ntptimeval64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='189' u='w' c='valid_ntptimeval64_to_ntptimeval'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='189' u='r' c='valid_ntptimeval64_to_ntptimeval'/>
+<offset>192</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sys/timex.h' l='34'>/* estimated error (us) (ro) */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettime.c' l='42' u='w' c='__ntp_gettime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettimex.c' l='38' u='w' c='__ntp_gettimex'/>

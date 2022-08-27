@@ -1,0 +1,7 @@
+<dec f='codebrowser/nss/nss_module.h' l='78' type='struct nss_module *'/>
+<offset>4224</offset>
+<doc f='codebrowser/nss/nss_module.h' l='77'>/* The next module in the list. */</doc>
+<use f='codebrowser/nss/nss_module.c' l='75' u='r' c='__nss_module_allocate'/>
+<use f='codebrowser/nss/nss_module.c' l='95' u='w' c='__nss_module_allocate'/>
+<use f='codebrowser/nss/nss_module.c' l='414' u='r' c='__nss_module_disable_loading'/>
+<use f='codebrowser/nss/nss_module.c' l='432' u='r' c='__nss_module_freeres'/>

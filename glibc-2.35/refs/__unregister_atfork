@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/register-atfork.h' l='32' type='void __unregister_atfork(void * dso_handle)'/>
+<doc f='codebrowser/include/register-atfork.h' l='31'>/* Function to call to unregister fork handlers.  */</doc>
+<def f='codebrowser/posix/register-atfork.c' l='74' ll='104' type='void __unregister_atfork(void * dso_handle)'/>
+<use f='codebrowser/stdlib/cxa_finalize.c' l='106' macro='1' u='c' c='__cxa_finalize'/>

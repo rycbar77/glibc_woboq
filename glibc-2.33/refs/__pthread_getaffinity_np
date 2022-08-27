@@ -1,0 +1,6 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='572' type='int __pthread_getaffinity_np(pthread_t th, size_t cpusetsize, cpu_set_t * cpuset)'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='574' type='int __pthread_getaffinity_np(pthread_t , size_t , cpu_set_t * )'/>
+<use f='codebrowser/nptl/pthreadP.h' l='574' c='__pthread_getaffinity_np'/>
+<def f='codebrowser/nptl/pthread_getaffinity.c' l='29' ll='43' type='int __pthread_getaffinity_np(pthread_t th, size_t cpusetsize, cpu_set_t * cpuset)'/>
+<use f='codebrowser/nptl/pthread_getaffinity.c' l='45' c='pthread_getaffinity_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='189' u='c' c='__pthread_getattr_np'/>

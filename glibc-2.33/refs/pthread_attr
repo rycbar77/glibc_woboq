@@ -1,0 +1,113 @@
+<def f='codebrowser/sysdeps/nptl/internaltypes.h' l='27' ll='43'/>
+<use f='codebrowser/sysdeps/nptl/internaltypes.h' l='58'/>
+<size>56</size>
+<mbr r='pthread_attr::schedparam' o='0' t='struct sched_param'/>
+<mbr r='pthread_attr::schedpolicy' o='32' t='int'/>
+<mbr r='pthread_attr::flags' o='64' t='int'/>
+<mbr r='pthread_attr::guardsize' o='128' t='size_t'/>
+<mbr r='pthread_attr::stackaddr' o='192' t='void *'/>
+<mbr r='pthread_attr::stacksize' o='256' t='size_t'/>
+<mbr r='pthread_attr::extension' o='320' t='struct pthread_attr_extension *'/>
+<mbr r='pthread_attr::unused' o='384' t='void *'/>
+<use f='codebrowser/nptl/pthreadP.h' l='212'/>
+<use f='codebrowser/nptl/pthreadP.h' l='639' c='__pthread_attr_extension'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_copy.c' l='36' c='__pthread_attr_copy'/>
+<use f='codebrowser/nptl/pthread_attr_copy.c' l='36' c='__pthread_attr_copy'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_destroy.c' l='28' c='__pthread_attr_destroy'/>
+<use f='codebrowser/nptl/pthread_attr_destroy.c' l='30' c='__pthread_attr_destroy'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_extension.c' l='24' c='__pthread_attr_extension'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_getaffinity.c' l='32' c='__pthread_attr_getaffinity_new'/>
+<use f='codebrowser/nptl/pthread_attr_getaffinity.c' l='34' c='__pthread_attr_getaffinity_new'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_getdetachstate.c' l='25' c='__pthread_attr_getdetachstate'/>
+<use f='codebrowser/nptl/pthread_attr_getdetachstate.c' l='27' c='__pthread_attr_getdetachstate'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_getguardsize.c' l='25' c='pthread_attr_getguardsize'/>
+<use f='codebrowser/nptl/pthread_attr_getguardsize.c' l='27' c='pthread_attr_getguardsize'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_getinheritsched.c' l='25' c='__pthread_attr_getinheritsched'/>
+<use f='codebrowser/nptl/pthread_attr_getinheritsched.c' l='27' c='__pthread_attr_getinheritsched'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_getschedparam.c' l='27' c='__pthread_attr_getschedparam'/>
+<use f='codebrowser/nptl/pthread_attr_getschedparam.c' l='29' c='__pthread_attr_getschedparam'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_getschedpolicy.c' l='25' c='__pthread_attr_getschedpolicy'/>
+<use f='codebrowser/nptl/pthread_attr_getschedpolicy.c' l='27' c='__pthread_attr_getschedpolicy'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_getscope.c' l='25' c='__pthread_attr_getscope'/>
+<use f='codebrowser/nptl/pthread_attr_getscope.c' l='27' c='__pthread_attr_getscope'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_getsigmask.c' l='24' c='__pthread_attr_getsigmask_np'/>
+<use f='codebrowser/nptl/pthread_attr_getsigmask.c' l='24' c='__pthread_attr_getsigmask_np'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_getstack.c' l='26' c='__pthread_attr_getstack'/>
+<use f='codebrowser/nptl/pthread_attr_getstack.c' l='28' c='__pthread_attr_getstack'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_getstackaddr.c' l='26' c='__pthread_attr_getstackaddr'/>
+<use f='codebrowser/nptl/pthread_attr_getstackaddr.c' l='28' c='__pthread_attr_getstackaddr'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_getstacksize.c' l='25' c='__pthread_attr_getstacksize'/>
+<use f='codebrowser/nptl/pthread_attr_getstacksize.c' l='27' c='__pthread_attr_getstacksize'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_init.c' l='27'/>
+<use f='codebrowser/nptl/pthread_attr_init.c' l='34' c='__pthread_attr_init'/>
+<use f='codebrowser/nptl/pthread_attr_init.c' l='37' c='__pthread_attr_init'/>
+<use f='codebrowser/nptl/pthread_attr_init.c' l='44' c='__pthread_attr_init'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setaffinity.c' l='31' c='__pthread_attr_setaffinity_np'/>
+<use f='codebrowser/nptl/pthread_attr_setaffinity.c' l='33' c='__pthread_attr_setaffinity_np'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setdetachstate.c' l='26' c='__pthread_attr_setdetachstate'/>
+<use f='codebrowser/nptl/pthread_attr_setdetachstate.c' l='28' c='__pthread_attr_setdetachstate'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setguardsize.c' l='25' c='pthread_attr_setguardsize'/>
+<use f='codebrowser/nptl/pthread_attr_setguardsize.c' l='27' c='pthread_attr_setguardsize'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setinheritsched.c' l='26' c='__pthread_attr_setinheritsched'/>
+<use f='codebrowser/nptl/pthread_attr_setinheritsched.c' l='28' c='__pthread_attr_setinheritsched'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setschedparam.c' l='28' c='__pthread_attr_setschedparam'/>
+<use f='codebrowser/nptl/pthread_attr_setschedparam.c' l='28' c='__pthread_attr_setschedparam'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setschedpolicy.c' l='26' c='__pthread_attr_setschedpolicy'/>
+<use f='codebrowser/nptl/pthread_attr_setschedpolicy.c' l='28' c='__pthread_attr_setschedpolicy'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setscope.c' l='26' c='__pthread_attr_setscope'/>
+<use f='codebrowser/nptl/pthread_attr_setscope.c' l='28' c='__pthread_attr_setscope'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setsigmask.c' l='30' c='pthread_attr_setsigmask_np'/>
+<use f='codebrowser/nptl/pthread_attr_setsigmask.c' l='30' c='pthread_attr_setsigmask_np'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setsigmask_internal.c' l='26' c='__pthread_attr_setsigmask_internal'/>
+<use f='codebrowser/nptl/pthread_attr_setsigmask_internal.c' l='26' c='__pthread_attr_setsigmask_internal'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setstack.c' l='33' c='__pthread_attr_setstack'/>
+<use f='codebrowser/nptl/pthread_attr_setstack.c' l='35' c='__pthread_attr_setstack'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setstackaddr.c' l='26' c='__pthread_attr_setstackaddr'/>
+<use f='codebrowser/nptl/pthread_attr_setstackaddr.c' l='32' c='__pthread_attr_setstackaddr'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_setstacksize.c' l='31' c='__pthread_attr_setstacksize'/>
+<use f='codebrowser/nptl/pthread_attr_setstacksize.c' l='33' c='__pthread_attr_setstacksize'/>
+<size>56</size>
+<use f='codebrowser/nptl/allocatestack.c' l='401' c='allocate_stack'/>
+<use f='codebrowser/nptl/pthread_create.c' l='203' c='create_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/createthread.c' l='49' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='630' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='630' c='__pthread_create_2_1'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='42' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='42' c='__pthread_getattr_np'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='28' c='pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='31' c='pthread_setattr_default_np'/>
+<size>56</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='99' c='__timer_create_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='100' c='__timer_create_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='102' c='__timer_create_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='103' c='__timer_create_new'/>
+<size>56</size>

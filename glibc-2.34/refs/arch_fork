@@ -1,0 +1,9 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/arch-fork.h' l='34' ll='57' type='pid_t arch_fork(void * ctid)'/>
+<use f='codebrowser/sysdeps/nptl/_Fork.c' l='28' u='c' c='_Fork'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/arch-fork.h' l='27'>/* Call the clone syscall with fork semantic.  The CTID address is used
+   to store the child thread ID at its locationm, to erase it in child memory
+   when the child exits, and do a wakeup on the futex at that address.
+
+   The architecture with non-default kernel abi semantic should correctlly
+   override it with one of the supported calling convention (check generic
+   kernel-features.h for the clone abi variants).  */</doc>

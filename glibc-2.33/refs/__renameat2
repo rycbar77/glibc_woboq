@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/stdio.h' l='294' type='int __renameat2(int , const char * , int , const char * , unsigned int )'/>
+<dec f='codebrowser/include/stdio.h' l='295' type='int __renameat2(int , const char * , int , const char * , unsigned int )'/>
+<use f='codebrowser/include/stdio.h' l='295' c='__renameat2'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/renameat2.c' l='23' ll='43' type='int __renameat2(int oldfd, const char * old, int newfd, const char * new, unsigned int flags)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/renameat2.c' l='45' c='renameat2'/>

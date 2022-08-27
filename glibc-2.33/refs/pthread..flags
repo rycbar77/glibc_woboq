@@ -1,0 +1,28 @@
+<dec f='codebrowser/nptl/descr.h' l='313' type='int'/>
+<offset>6240</offset>
+<doc f='codebrowser/nptl/descr.h' l='312'>/* Flags.  Including those copied from the thread attribute.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/default-sched.h' l='29' u='r' c='collect_default_sched'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/default-sched.h' l='32' u='w' c='collect_default_sched'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/default-sched.h' l='35' u='r' c='collect_default_sched'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/default-sched.h' l='38' u='w' c='collect_default_sched'/>
+<use f='codebrowser/nptl/pthread_create.c' l='678' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='679' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='721' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='727' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='730' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='53' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='46' u='r' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='51' u='w' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='54' u='r' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='60' u='w' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='65' u='w' c='__pthread_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='58' u='w' c='pthread_setschedprio'/>
+<use f='codebrowser/nptl/tpp.c' l='124' u='r' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='129' u='w' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='132' u='r' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='138' u='w' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='163' u='r' c='__pthread_current_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='172' u='r' c='__pthread_current_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='177' u='w' c='__pthread_current_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='180' u='r' c='__pthread_current_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='186' u='w' c='__pthread_current_priority'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/support/xsignal.h' l='40' type='void xpthread_sigmask(int how, const sigset_t * set, sigset_t * oldset)'/>
+<use f='codebrowser/support/delayed_exit.c' l='48' u='c' c='delayed_exit'/>
+<use f='codebrowser/support/delayed_exit.c' l='54' u='c' c='delayed_exit'/>
+<doc f='codebrowser/support/xsignal.h' l='37'>/* The following functions call the corresponding libpthread functions
+   and terminate the process on error.  */</doc>
+<def f='codebrowser/support/xpthread_sigmask.c' l='24' ll='34' type='void xpthread_sigmask(int how, const sigset_t * set, sigset_t * oldset)'/>

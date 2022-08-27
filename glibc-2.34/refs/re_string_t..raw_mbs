@@ -1,0 +1,26 @@
+<dec f='codebrowser/posix/regex_internal.h' l='369' type='const unsigned char *'/>
+<use f='codebrowser/posix/regex_internal.c' l='184' u='w' c='re_string_construct_common'/>
+<use f='codebrowser/posix/regex_internal.c' l='240' u='r' c='build_wcs_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='246' u='r' c='build_wcs_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='254' u='r' c='build_wcs_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='303' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='322' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='342' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='384' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='390' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='467' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='512' u='r' c='re_string_skip_chars'/>
+<use f='codebrowser/posix/regex_internal.c' l='521' u='r' c='re_string_skip_chars'/>
+<use f='codebrowser/posix/regex_internal.c' l='546' u='r' c='build_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='565' u='r' c='re_string_translate_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='601' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='718' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='720' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='721' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='792' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='861' u='r' c='re_string_peek_byte_case'/>
+<use f='codebrowser/posix/regex_internal.c' l='898' u='r' c='re_string_fetch_byte_case'/>
+<use f='codebrowser/posix/regex_internal.c' l='909' u='r' c='re_string_fetch_byte_case'/>
+<offset>0</offset>
+<doc f='codebrowser/posix/regex_internal.h' l='367'>/* Indicate the raw buffer which is the original string passed as an
+     argument of regexec(), re_search(), etc..  */</doc>

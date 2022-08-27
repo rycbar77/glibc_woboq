@@ -1,0 +1,46 @@
+<def f='include/linux/rtnetlink.h' l='202' ll='205'/>
+<size>4</size>
+<doc f='include/linux/rtnetlink.h' l='196'>/* 
+   Generic structure for encapsulation of optional route information.
+   It is reminiscent of sockaddr, but with sa_family replaced
+   with attribute type.
+ */</doc>
+<mbr r='rtattr::rta_len' o='0' t='unsigned short'/>
+<mbr r='rtattr::rta_type' o='16' t='unsigned short'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='190' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='190' macro='1' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='199' macro='1' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='199' macro='1' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='204' macro='1' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='208' macro='1' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='212' macro='1' c='make_request'/>
+<size>4</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='159' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='159' macro='1' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='164' macro='1' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='164' macro='1' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='166' macro='1' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='167' macro='1' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='182' macro='1' c='if_nameindex_netlink'/>
+<size>4</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='382' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='382' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='385' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='385' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='387' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='395' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='456' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='456' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='473' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='473' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='475' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='476' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='541' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='547' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='547' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='564' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='564' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='566' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='567' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='733' macro='1' c='getifaddrs_internal'/>
+<size>4</size>

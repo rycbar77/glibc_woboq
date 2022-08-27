@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/rpc/auth_des.h' l='16' type='enum auth_stat _svcauth_des(struct svc_req * rqst, struct rpc_msg * msg)'/>
+<dec f='codebrowser/sunrpc/svc_auth.c' l='60' type='enum auth_stat _svcauth_des(struct svc_req * , struct rpc_msg * )'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='72' u='r'/>
+<doc f='codebrowser/sunrpc/svc_auth.c' l='59'>/* short hand unix style */</doc>
+<def f='codebrowser/sunrpc/svcauth_des.c' l='105' ll='389' type='enum auth_stat _svcauth_des(struct svc_req * rqst, struct rpc_msg * msg)'/>
+<doc f='codebrowser/sunrpc/svcauth_des.c' l='102'>/*
+ * Service side authenticator for AUTH_DES
+ */</doc>

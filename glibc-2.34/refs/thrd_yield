@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/pthread/threads.h' l='119' type='void thrd_yield()'/>
+<doc f='codebrowser/sysdeps/pthread/threads.h' l='116'>/* Stop current thread execution and call the scheduler to decide which
+   thread should execute next.  The current thread may be selected by the
+   scheduler to keep running.  */</doc>
+<def f='codebrowser/nptl/thrd_yield.c' l='21' ll='25' type='void thrd_yield()'/>

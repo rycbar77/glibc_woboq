@@ -1,0 +1,10 @@
+<dec f='codebrowser/support/support.h' l='48' type='void oom_error(const char * function, size_t size)'/>
+<doc f='codebrowser/support/support.h' l='46'>/* Report an out-of-memory error for the allocation of SIZE bytes in
+   FUNCTION, terminating the process.  */</doc>
+<def f='codebrowser/support/oom_error.c' l='24' ll='29' type='void oom_error(const char * function, size_t size)'/>
+<use f='codebrowser/support/support_shared_allocate.c' l='40' u='c' c='support_shared_allocate'/>
+<use f='codebrowser/support/xcalloc.c' l='32' u='c' c='xcalloc'/>
+<use f='codebrowser/support/xmalloc.c' l='32' u='c' c='xmalloc'/>
+<use f='codebrowser/support/xrealloc.c' l='30' u='c' c='xrealloc'/>
+<use f='codebrowser/support/xstrdup.c' l='28' u='c' c='xstrdup'/>
+<use f='codebrowser/support/xstrndup.c' l='28' u='c' c='xstrndup'/>

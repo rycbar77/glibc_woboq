@@ -1,0 +1,8 @@
+<dec f='codebrowser/elf/dl-main.h' l='89' type='const char *'/>
+<use f='codebrowser/elf/dl-main.h' l='110' u='r' c='call_init_paths'/>
+<offset>3520</offset>
+<doc f='codebrowser/elf/dl-main.h' l='87'>/* Additional glibc-hwcaps subdirectories to search first.
+     Colon-separated list.  */</doc>
+<use f='codebrowser/elf/dl-usage.c' l='163' u='r' c='print_hwcaps_subdirectories'/>
+<use f='codebrowser/elf/rtld.c' l='294' u='w' c='dl_main_state_init'/>
+<use f='codebrowser/elf/rtld.c' l='1241' u='w' c='dl_main'/>

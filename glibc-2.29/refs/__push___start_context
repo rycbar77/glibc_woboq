@@ -1,0 +1,14 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/x86_64/__start_context.S' l='37' macro='1' type='int'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86_64/__start_context.S' l='25'>/* Use CALL to push __start_context onto the new stack as well as the new
+   shadow stack.  RDI points to ucontext:
+   Incoming:
+     __ssp[0]: The original caller&apos;s shadow stack pointer.
+     __ssp[1]: The size of the new shadow stack.
+     __ssp[2]: The size of the new shadow stack.
+   Outgoing:
+     __ssp[0]: The new shadow stack pointer.
+     __ssp[1]: The base address of the new shadow stack.
+     __ssp[2]: The size of the new shadow stack.
+ */</doc>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86_64/makecontext.c' l='60' type='void __push___start_context(ucontext_t * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86_64/makecontext.c' l='109' u='c' c='__makecontext'/>

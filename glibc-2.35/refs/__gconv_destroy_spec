@@ -1,0 +1,8 @@
+<dec f='codebrowser/iconv/gconv_int.h' l='172' type='void __gconv_destroy_spec(struct gconv_spec * conv_spec)'/>
+<dec f='codebrowser/iconv/gconv_int.h' l='173' type='void __gconv_destroy_spec(struct gconv_spec * )'/>
+<use f='codebrowser/iconv/gconv_int.h' l='173' c='__gconv_destroy_spec'/>
+<doc f='codebrowser/iconv/gconv_int.h' l='170'>/* This function frees all heap memory allocated by __gconv_create_spec.  */</doc>
+<def f='codebrowser/iconv/gconv_charset.c' l='221' ll='227' type='void __gconv_destroy_spec(struct gconv_spec * conv_spec)'/>
+<use f='codebrowser/iconv/iconv_open.c' l='41' u='c' c='iconv_open'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='186' u='c' c='main'/>
+<use f='codebrowser/intl/dcigettext.c' l='1133' u='c' c='_nl_find_msg'/>

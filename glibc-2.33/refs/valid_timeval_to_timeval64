@@ -1,0 +1,4 @@
+<def f='codebrowser/include/time.h' l='352' ll='361' type='struct timeval valid_timeval_to_timeval64(const struct timeval tv)'/>
+<doc f='codebrowser/include/time.h' l='351'>/* Convert a known valid struct timeval into a struct __timeval64.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='118' u='c' c='valid_timex_to_timex64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='169' u='c' c='valid_ntptimeval_to_ntptimeval64'/>

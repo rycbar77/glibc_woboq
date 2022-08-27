@@ -1,0 +1,8 @@
+<dec f='codebrowser/nptl/descr.h' l='405' type='int'/>
+<offset>19360</offset>
+<doc f='codebrowser/nptl/descr.h' l='405'>/* A low-level lock (for use with __libc_lock_init etc).  */</doc>
+<use f='codebrowser/nptl/allocatestack.c' l='131' u='w' c='get_cached_stack'/>
+<use f='codebrowser/nptl/pthread_create.c' l='513' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='515' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='50' u='a' c='__pthread_kill_implementation'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='66' u='a' c='__pthread_kill_implementation'/>

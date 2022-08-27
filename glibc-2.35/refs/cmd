@@ -1,0 +1,13 @@
+<def f='codebrowser/resolv/res_hconf.c' l='66' ll='71'/>
+<def f='codebrowser/resolv/res_hconf.c' l='66' ll='77' type='const struct cmd[4]'/>
+<use f='codebrowser/resolv/res_hconf.c' l='66'/>
+<use f='codebrowser/resolv/res_hconf.c' l='192' c='parse_line'/>
+<use f='codebrowser/resolv/res_hconf.c' l='205' u='r' c='parse_line'/>
+<use f='codebrowser/resolv/res_hconf.c' l='205' u='r' c='parse_line'/>
+<use f='codebrowser/resolv/res_hconf.c' l='207' u='m' c='parse_line'/>
+<use f='codebrowser/resolv/res_hconf.c' l='208' u='m' c='parse_line'/>
+<use f='codebrowser/resolv/res_hconf.c' l='210' u='a' c='parse_line'/>
+<size>16</size>
+<mbr r='cmd::name' o='0' t='const char[11]'/>
+<mbr r='cmd::cb' o='88' t='uint8_t'/>
+<mbr r='cmd::arg' o='96' t='unsigned int'/>

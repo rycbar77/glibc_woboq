@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='112' type='unsigned int'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='113' u='w' c='__tls_init_tp'/>
+<doc f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='110'>/* We need a writable view of the variables.  They are in
+           .data.relro and are not yet write-protected.  */</doc>

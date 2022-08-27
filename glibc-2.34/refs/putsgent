@@ -1,0 +1,10 @@
+<dec f='codebrowser/gshadow/gshadow.h' l='100' type='int putsgent(const struct sgrp * __g, FILE * __stream)'/>
+<doc f='codebrowser/gshadow/gshadow.h' l='94'>/* Write line containing shadow password entry to stream.
+
+   This function is not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation it is a cancellation point and
+   therefore not marked with __THROW.  */</doc>
+<def f='codebrowser/gshadow/putsgent.c' l='29' ll='81' type='int putsgent(const struct sgrp * g, FILE * stream)'/>
+<doc f='codebrowser/gshadow/putsgent.c' l='27'>/* Write an entry to the given stream.
+   This must know the format of the group file.  */</doc>

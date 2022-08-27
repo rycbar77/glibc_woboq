@@ -1,0 +1,62 @@
+<dec f='codebrowser/include/list_t.h' l='27' type='struct list_head *'/>
+<offset>0</offset>
+<use f='codebrowser/include/list.h' l='44' u='w' c='list_add'/>
+<use f='codebrowser/include/list.h' l='44' u='r' c='list_add'/>
+<use f='codebrowser/include/list.h' l='46' u='r' c='list_add'/>
+<use f='codebrowser/include/list.h' l='48' u='w' c='list_add'/>
+<use f='codebrowser/include/list.h' l='56' u='r' c='list_del'/>
+<use f='codebrowser/include/list.h' l='57' u='w' c='list_del'/>
+<use f='codebrowser/include/list.h' l='57' u='r' c='list_del'/>
+<use f='codebrowser/include/list.h' l='66' u='r' c='list_splice'/>
+<use f='codebrowser/include/list.h' l='68' u='r' c='list_splice'/>
+<use f='codebrowser/include/list.h' l='69' u='w' c='list_splice'/>
+<use f='codebrowser/include/list.h' l='69' u='r' c='list_splice'/>
+<use f='codebrowser/include/list.h' l='70' u='r' c='list_splice'/>
+<use f='codebrowser/include/list.h' l='71' u='w' c='list_splice'/>
+<use f='codebrowser/include/list.h' l='71' u='r' c='list_splice'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='190' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='190' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='200' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='200' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='216' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='216' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='225' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='225' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='246' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='246' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='255' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='255' macro='1' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='71' macro='1' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='71' macro='1' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl_db/thread_dbP.h' l='142' macro='1' u='r' c='ta_ok'/>
+<use f='codebrowser/nptl_db/thread_dbP.h' l='142' macro='1' u='r' c='ta_ok'/>
+<use f='codebrowser/nptl_db/structs.def' l='66' u='r'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='76' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='78' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='83' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='83' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='84' u='w' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='84' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='86' u='w' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='92' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='93' u='w' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='93' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='101' macro='1' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='101' macro='1' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='143' macro='1' u='w' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='144' macro='1' u='w' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='34' macro='1' u='r' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='34' macro='1' u='r' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='57' macro='1' u='r' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='57' macro='1' u='r' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='47' macro='1' u='w' c='__tls_pre_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='48' macro='1' u='w' c='__tls_pre_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='49' macro='1' u='w' c='__tls_pre_init_tp'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='72' macro='1' u='r' c='_dl_make_stacks_executable'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='72' macro='1' u='r' c='_dl_make_stacks_executable'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='83' macro='1' u='r' c='_dl_make_stacks_executable'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='83' macro='1' u='r' c='_dl_make_stacks_executable'/>
+<use f='codebrowser/elf/dl-tls.c' l='1085' macro='1' u='r' c='_dl_init_static_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='1085' macro='1' u='r' c='_dl_init_static_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='1089' macro='1' u='r' c='_dl_init_static_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='1089' macro='1' u='r' c='_dl_init_static_tls'/>

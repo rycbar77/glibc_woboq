@@ -1,0 +1,17 @@
+<dec f='codebrowser/sysdeps/x86_64/nptl/tls.h' l='46' type='dtv_t *'/>
+<offset>64</offset>
+<use f='codebrowser/csu/libc-tls.c' l='187' macro='1' u='w' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/rtld.c' l='815' macro='1' u='r' c='init_tls'/>
+<use f='codebrowser/nptl/allocatestack.c' l='135' macro='1' u='r' c='get_cached_stack'/>
+<dec f='codebrowser/nptl_db/db_info.c' l='37' type='union dtv[134217727]'/>
+<use f='codebrowser/nptl_db/structs.def' l='98' u='r'/>
+<use f='codebrowser/nptl_db/structs.def' l='98' u='r'/>
+<use f='codebrowser/nptl_db/structs.def' l='98' u='r'/>
+<use f='codebrowser/nptl_db/structs.def' l='103' macro='1' u='r'/>
+<offset>0</offset>
+<doc f='codebrowser/nptl_db/db_info.c' l='37'>/* No constant bound.  */</doc>
+<use f='codebrowser/elf/dl-tls.c' l='385' macro='1' u='w' c='allocate_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='533' macro='1' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='548' macro='1' u='w' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='642' macro='1' u='r' c='_dl_deallocate_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='975' macro='1' c='_dl_tls_get_addr_soft'/>

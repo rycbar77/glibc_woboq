@@ -1,0 +1,8 @@
+<dec f='codebrowser/malloc/set-freeres.c' l='33' type='void __libpthread_freeres()'/>
+<dec f='codebrowser/malloc/set-freeres.c' l='63' type='void __libpthread_freeres()'/>
+<use f='codebrowser/malloc/set-freeres.c' l='63' c='__libpthread_freeres'/>
+<use f='codebrowser/malloc/set-freeres.c' l='63' u='r' c='__libc_freeres'/>
+<use f='codebrowser/malloc/set-freeres.c' l='63' u='c' c='__libc_freeres'/>
+<def f='codebrowser/nptl/nptlfreeres.c' l='26' ll='31' type='void __libpthread_freeres()'/>
+<doc f='codebrowser/nptl/nptlfreeres.c' l='24'>/* Free libpthread.so resources.
+   Note: Caller ensures we are called only once.  */</doc>

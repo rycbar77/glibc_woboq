@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/stdio.h' l='183' type='const char * __get_errlist(int )'/>
+<def f='codebrowser/stdio-common/errlist.c' l='34' ll='40' type='const char * __get_errlist(int errnum)'/>
+<use f='codebrowser/string/_strerror.c' l='27' u='c' c='__strerror_r'/>
+<use f='codebrowser/string/strerror_l.c' l='40' u='c' c='__strerror_l'/>
+<use f='codebrowser/string/strerrordesc_np.c' l='24' u='c' c='__strerrordesc_np'/>

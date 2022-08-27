@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/dlfcn.h' l='47' type='int _dl_addr(const void * address, Dl_info * info, struct link_map ** mapp, const Elf64_Sym ** symbolp)'/>
+<dec f='codebrowser/include/dlfcn.h' l='49' type='int _dl_addr(const void * , Dl_info * , struct link_map ** , const Elf64_Sym ** )'/>
+<use f='codebrowser/include/dlfcn.h' l='49' c='_dl_addr'/>
+<use f='codebrowser/debug/backtracesyms.c' l='49' u='c' c='__backtrace_symbols'/>
+<use f='codebrowser/debug/backtracesymsfd.c' l='49' u='c' c='__backtrace_symbols_fd'/>
+<use f='codebrowser/dlfcn/dladdr.c' l='39' u='c' c='__dladdr'/>
+<use f='codebrowser/dlfcn/dladdr1.c' l='44' u='c' c='__dladdr1'/>
+<use f='codebrowser/dlfcn/dladdr1.c' l='46' u='c' c='__dladdr1'/>
+<use f='codebrowser/dlfcn/dladdr1.c' l='48' u='c' c='__dladdr1'/>
+<def f='codebrowser/elf/dl-addr.c' l='123' ll='144' type='int _dl_addr(const void * address, Dl_info * info, struct link_map ** mapp, const Elf64_Sym ** symbolp)'/>
+<use f='codebrowser/malloc/mtrace.c' l='117' u='c' c='lock_and_info'/>

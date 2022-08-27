@@ -1,0 +1,3 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='944' type='int pthread_rwlock_timedwrlock(pthread_rwlock_t *restrict __rwlock, const struct timespec *restrict __abstime)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='943'>/* Try to acquire write lock for RWLOCK or return after specfied time.  */</doc>
+<def f='codebrowser/nptl/pthread_rwlock_timedwrlock.c' l='41' macro='1' type='int pthread_rwlock_timedwrlock(pthread_rwlock_t * , const struct timespec * )'/>

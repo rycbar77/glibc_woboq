@@ -1,0 +1,37 @@
+<dec f='codebrowser/ctype/ctype.h' l='267' type='int __tolower_l(int __c, locale_t __l)'/>
+<doc f='codebrowser/ctype/ctype.h' l='266'>/* Return the lowercase version of C in locale L.  */</doc>
+<def f='codebrowser/ctype/ctype_l.c' l='39' ll='43' type='int __tolower_l(int c, locale_t l)'/>
+<use f='codebrowser/ctype/ctype_l.c' l='44' c='tolower_l'/>
+<use f='codebrowser/intl/l10nflist.c' l='332' macro='1' u='c' c='_nl_normalize_codeset'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1420' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1822' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1823' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1824' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1933' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1939' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1946' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1954' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1960' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1967' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1975' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1983' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1990' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1997' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2004' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2024' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2064' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2289' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='645' macro='1' u='c' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='690' macro='1' u='c' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='733' macro='1' u='c' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='751' macro='1' u='c' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='778' macro='1' u='c' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='866' macro='1' u='c' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='881' macro='1' u='c' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='1097' macro='1' u='c' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='1131' macro='1' u='c' c='____strtod_l_internal'/>
+<use f='codebrowser/string/strcasecmp.c' l='58' macro='1' u='c' c='__strcasecmp_l_nonascii'/>
+<use f='codebrowser/string/strcasecmp.c' l='58' macro='1' u='c' c='__strcasecmp_l_nonascii'/>
+<use f='codebrowser/string/strncase.c' l='61' macro='1' u='c' c='__strncasecmp_l_nonascii'/>
+<use f='codebrowser/string/strncase.c' l='61' macro='1' u='c' c='__strncasecmp_l_nonascii'/>
+<use f='codebrowser/time/strftime_l.c' l='336' macro='1' u='c' c='memcpy_lowcase'/>

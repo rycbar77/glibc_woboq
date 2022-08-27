@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/dlfcn.h' l='39' type='int __libc_dlclose(void * __map)'/>
+<dec f='codebrowser/include/dlfcn.h' l='43' type='int __libc_dlclose(void * )'/>
+<use f='codebrowser/include/dlfcn.h' l='43' c='__libc_dlclose'/>
+<use f='codebrowser/elf/dl-libc.c' l='177' u='r'/>
+<def f='codebrowser/elf/dl-libc.c' l='285' ll='293' type='int __libc_dlclose(void * map)'/>
+<use f='codebrowser/iconv/gconv_dl.c' l='177' u='c' c='do_release_shlib'/>
+<use f='codebrowser/iconv/gconv_dl.c' l='205' u='c' c='do_release_all'/>
+<use f='codebrowser/libidn/idn-stub.c' l='60' u='c' c='load_dso'/>
+<use f='codebrowser/libidn/idn-stub.c' l='138' u='c' c='unload_libidn'/>
+<use f='codebrowser/nss/nsswitch.c' l='931' u='c' c='free_mem'/>
+<use f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='89' u='c' c='__unwind_freeres'/>

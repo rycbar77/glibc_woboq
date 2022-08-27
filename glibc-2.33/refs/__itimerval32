@@ -1,0 +1,5 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='26' ll='30'/>
+<size>16</size>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='25'>/* Structures containing &apos;struct timeval&apos; with 32-bit time_t.  */</doc>
+<mbr r='__itimerval32::it_interval' o='0' t='struct __timeval32'/>
+<mbr r='__itimerval32::it_value' o='64' t='struct __timeval32'/>

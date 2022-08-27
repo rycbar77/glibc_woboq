@@ -1,0 +1,24 @@
+<dec f='codebrowser/libio/stdio.h' l='655' type='int puts(const char * __s)'/>
+<doc f='codebrowser/libio/stdio.h' l='651'>/* Write a string, followed by a newline, to stdout.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/iconv/iconv_prog.c' l='690' u='c' c='do_print'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='780' u='c' c='print_known_names'/>
+<use f='codebrowser/io/pwd.c' l='37' u='c' c='main'/>
+<def f='codebrowser/libio/ioputs.c' l='48' macro='1' type='int puts(const char * )'/>
+<use f='codebrowser/locale/programs/locale.c' l='307' u='c' c='print_names'/>
+<use f='codebrowser/locale/programs/locale.c' l='964' u='c' c='show_info'/>
+<use f='codebrowser/locale/programs/locale.c' l='978' u='c' c='show_info'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1749' u='c' c='show_archive_content'/>
+<use f='codebrowser/posix/getconf.c' l='669' u='c' c='main'/>
+<use f='codebrowser/posix/getconf.c' l='685' u='c' c='main'/>
+<use f='codebrowser/support/check.c' l='33' u='c' c='print_failure'/>
+<use f='codebrowser/support/support_capture_subprocess_check.c' l='89' u='c' c='support_capture_subprocess_check'/>
+<use f='codebrowser/support/support_capture_subprocess_check.c' l='96' u='c' c='support_capture_subprocess_check'/>
+<use f='codebrowser/support/support_descriptors.c' l='161' u='c' c='dump_mismatch'/>
+<use f='codebrowser/support/support_descriptors.c' l='162' u='c' c='dump_mismatch'/>
+<use f='codebrowser/support/support_descriptors.c' l='164' u='c' c='dump_mismatch'/>
+<use f='codebrowser/support/support_descriptors.c' l='166' u='c' c='dump_mismatch'/>
+<use f='codebrowser/support/support_test_main.c' l='162' u='c' c='signal_handler'/>
+<use f='codebrowser/timezone/zdump.c' l='1022' u='c' c='showtrans'/>

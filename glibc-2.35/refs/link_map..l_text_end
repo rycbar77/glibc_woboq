@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/link.h' l='259' type='Elf64_Addr'/>
+<offset>6976</offset>
+<use f='codebrowser/elf/dl-load.h' l='92' u='w' c='_dl_postprocess_loadcmd'/>
+<use f='codebrowser/elf/setup-vdso.h' l='55' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='56' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='65' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/rtld.c' l='492' u='w' c='_dl_start_final'/>
+<use f='codebrowser/elf/rtld.c' l='1146' u='w' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1238' u='r' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1239' u='w' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1299' u='r' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1300' u='w' c='rtld_setup_main_map'/>

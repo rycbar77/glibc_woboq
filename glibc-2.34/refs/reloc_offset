@@ -1,0 +1,8 @@
+<def f='codebrowser/sysdeps/x86_64/dl-runtime.h' l='25' ll='29' type='uintptr_t reloc_offset(uintptr_t plt0, uintptr_t pltn)'/>
+<use f='codebrowser/elf/dl-runtime.c' l='69' u='c' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='226' u='c' c='_dl_profile_fixup'/>
+<doc f='codebrowser/sysdeps/x86_64/dl-runtime.h' l='20'>/* The ABI calls for the PLT stubs to pass the index of the relocation
+   and not its offset.  In _dl_profile_fixup and _dl_call_pltexit we
+   also use the index.  Therefore it is wasteful to compute the offset
+   in the trampoline just to reverse the operation immediately
+   afterwards.  */</doc>

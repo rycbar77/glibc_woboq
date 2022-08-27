@@ -1,0 +1,6 @@
+<def f='codebrowser/sysdeps/generic/elf_machine_sym_no_match.h' l='28' ll='32' type='_Bool elf_machine_sym_no_match(const Elf64_Sym * sym)'/>
+<use f='codebrowser/elf/dl-lookup-direct.c' l='39' u='c' c='check_match'/>
+<doc f='codebrowser/sysdeps/generic/elf_machine_sym_no_match.h' l='25'>/* This can be customized to ignore certain symbols during lookup in
+   case there are machine-specific rules to disregard some
+   symbols.  */</doc>
+<use f='codebrowser/elf/dl-lookup.c' l='76' u='c' c='check_match'/>

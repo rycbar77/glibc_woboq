@@ -1,0 +1,5 @@
+<dec f='codebrowser/elf/dl-tunable-types.h' l='51' type='0'/>
+<use f='codebrowser/elf/dl-tunables.c' l='228' u='r' c='parse_tunables'/>
+<use f='codebrowser/elf/dl-tunables.c' l='322' u='r' c='__tunables_init'/>
+<doc f='codebrowser/elf/dl-tunable-types.h' l='49'>/* Erase the tunable for AT_SECURE binaries so that child processes don&apos;t
+     read it.  */</doc>

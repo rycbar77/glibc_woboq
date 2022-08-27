@@ -1,0 +1,64 @@
+<use f='codebrowser/inet/net-internal.h' l='96' u='r' c='__deadline_is_infinite'/>
+<use f='codebrowser/inet/net-internal.h' l='107' u='r' c='__deadline_elapsed'/>
+<use f='codebrowser/inet/net-internal.h' l='107' u='r' c='__deadline_elapsed'/>
+<use f='codebrowser/inet/net-internal.h' l='117' u='r' c='__deadline_first'/>
+<use f='codebrowser/inet/net-internal.h' l='117' u='r' c='__deadline_first'/>
+<use f='codebrowser/inet/deadline.c' l='37' u='w' c='__deadline_current_time'/>
+<use f='codebrowser/inet/deadline.c' l='65' u='r' c='__deadline_from_timeval'/>
+<use f='codebrowser/inet/deadline.c' l='91' u='r' c='__deadline_to_ms'/>
+<use f='codebrowser/inet/deadline.c' l='91' u='r' c='__deadline_to_ms'/>
+<use f='codebrowser/inet/deadline.c' l='97' u='r' c='__deadline_to_ms'/>
+<use f='codebrowser/inet/deadline.c' l='97' u='r' c='__deadline_to_ms'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='626' u='w' c='open_archive'/>
+<use f='codebrowser/nptl/pthread_clock_gettime.c' l='63' u='w' c='__pthread_clock_gettime'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='523' u='w' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='523' u='r' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='523' u='r' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='524' u='r' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='526' u='w' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='665' u='r' c='__pthread_cond_timedwait'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='665' u='r' c='__pthread_cond_timedwait'/>
+<use f='codebrowser/nptl/pthread_rwlock_timedrdlock.c' l='32' u='r' c='pthread_rwlock_timedrdlock'/>
+<use f='codebrowser/nptl/pthread_rwlock_timedrdlock.c' l='33' u='r' c='pthread_rwlock_timedrdlock'/>
+<use f='codebrowser/nptl/pthread_rwlock_timedwrlock.c' l='32' u='r' c='pthread_rwlock_timedwrlock'/>
+<use f='codebrowser/nptl/pthread_rwlock_timedwrlock.c' l='33' u='r' c='pthread_rwlock_timedwrlock'/>
+<use f='codebrowser/nptl/sem_timedwait.c' l='27' u='r' c='sem_timedwait'/>
+<use f='codebrowser/nptl/sem_timedwait.c' l='27' u='r' c='sem_timedwait'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='152' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='152' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='154' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='154' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/sunrpc/svc.c' l='558' u='w' c='__svc_accept_failed'/>
+<use f='codebrowser/support/support_test_main.c' l='138' u='w' c='signal_handler'/>
+<use f='codebrowser/support/support_test_main.c' l='173' u='r' c='signal_handler'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1680' u='r' c='check_gaiconf_mtime'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1680' u='r' c='check_gaiconf_mtime'/>
+<use f='codebrowser/sysdeps/posix/usleep.c' l='27' u='w' c='usleep'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='623' u='w' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='624' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='626' u='w' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock.c' l='38' u='r' c='clock'/>
+<use f='codebrowser/sysdeps/posix/clock_getres.c' l='52' u='w' c='hp_timing_getres'/>
+<use f='codebrowser/sysdeps/posix/clock_getres.c' l='69' u='w' c='realtime_getres'/>
+<use f='codebrowser/sysdeps/unix/clock_gettime.c' l='71' u='w' c='hp_timing_gettime'/>
+<use f='codebrowser/sysdeps/unix/clock_gettime.c' l='85' macro='1' u='w' c='realtime_gettime'/>
+<use f='codebrowser/sysdeps/unix/clock_settime.c' l='79' u='r' c='__clock_settime'/>
+<use f='codebrowser/sysdeps/unix/clock_settime.c' l='79' u='r' c='__clock_settime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='45' macro='1' u='w' c='__futimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='46' macro='1' u='w' c='__futimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lutimes.c' l='38' macro='1' u='w' c='lutimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lutimes.c' l='39' macro='1' u='w' c='lutimes'/>
+<use f='codebrowser/io/statx_generic.c' l='27' u='r' c='statx_convert_timestamp'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='237' u='r' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='237' u='r' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='436' u='w' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='436' u='r' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='436' u='r' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='437' u='r' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='439' u='w' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='590' u='r' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='590' u='r' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='604' u='w' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='604' u='r' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='605' u='r' c='__pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='607' u='w' c='__pthread_mutex_timedlock'/>

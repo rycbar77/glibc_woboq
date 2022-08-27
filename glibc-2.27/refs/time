@@ -1,0 +1,16 @@
+<dec f='codebrowser/time/time.h' l='75' type='time_t time(time_t * __timer)'/>
+<dec f='codebrowser/include/time.h' l='11' type='time_t time(time_t * )'/>
+<use f='codebrowser/include/time.h' l='11' c='time'/>
+<doc f='codebrowser/time/time.h' l='74'>/* Return the current time and put it in *TIMER if TIMER is not NULL.  */</doc>
+<use f='codebrowser/nscd/nscd-client.h' l='256' u='c' c='datahead_init_common'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='120' u='c' c='__nscd_get_nl_timestamp'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='351' u='c' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='417' u='c' c='__nscd_get_map_ref'/>
+<use f='codebrowser/string/strfry.c' l='33' u='c' c='strfry'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_native.c' l='72' u='c' c='__check_native'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='129' u='c' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='131' u='c' c='__get_nprocs'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='105' u='c' c='__netlink_sendreq'/>
+<use f='codebrowser/misc/syslog.c' l='194' u='c' c='__vsyslog_chk'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/x86/time.c' l='52' ll='57' type='time_t time(time_t * t)'/>
+<use f='codebrowser/time/getdate.c' l='222' u='c' c='__getdate_r'/>

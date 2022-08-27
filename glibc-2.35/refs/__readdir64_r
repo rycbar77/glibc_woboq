@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/dirent.h' l='28' type='int __readdir64_r(DIR * __dirp, struct dirent64 * __entry, struct dirent64 ** __result)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='30' ll='118' type='int __readdir64_r(DIR * dirp, struct dirent64 * entry, struct dirent64 ** result)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='122' c='__readdir_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='123' c='readdir_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='124' c='readdir64_r'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='29'>/* Read a directory entry from DIRP.  */</doc>

@@ -1,0 +1,948 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>cpu-features.h source code [codebrowser/sysdeps/x86/include/cpu-features.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="cpu_features,cpu_features_basic,cpu_features_kind,cpuid_feature_internal,cpuid_registers "/>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86/include/cpu-features.h'; var root_path = '../../../..'; var data_path = '../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>sysdeps</a>/<a href='..'>x86</a>/<a href='./'>include</a>/<a href='cpu-features.h.html'>cpu-features.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Data structure for x86 CPU features.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2020-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span>	<span class="macro" data-ref="_M/_PRIVATE_CPU_FEATURES_H">_PRIVATE_CPU_FEATURES_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define	<dfn class="macro" id="_M/_PRIVATE_CPU_FEATURES_H" data-ref="_M/_PRIVATE_CPU_FEATURES_H">_PRIVATE_CPU_FEATURES_H</dfn>	1</u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#<span data-ppcond="22">ifdef</span> <span class="macro" data-ref="_M/_CPU_FEATURES_H">_CPU_FEATURES_H</span></u></td></tr>
+<tr><th id="23">23</th><td><u># error this should be impossible</u></td></tr>
+<tr><th id="24">24</th><td><u>#<span data-ppcond="22">endif</span></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><i>/* Get data structures without inline functions.  */</i></td></tr>
+<tr><th id="27">27</th><td><u>#define <dfn class="macro" id="_M/_SYS_PLATFORM_X86_H" data-ref="_M/_SYS_PLATFORM_X86_H">_SYS_PLATFORM_X86_H</dfn></u></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="../bits/platform/x86.h.html">&lt;bits/platform/x86.h&gt;</a></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><b>enum</b></td></tr>
+<tr><th id="31">31</th><td>{</td></tr>
+<tr><th id="32">32</th><td>  <dfn class="enum" id="CPUID_INDEX_MAX" title='CPUID_INDEX_MAX' data-ref="CPUID_INDEX_MAX" data-ref-filename="CPUID_INDEX_MAX">CPUID_INDEX_MAX</dfn> = <a class="enum" href="../bits/platform/x86.h.html#CPUID_INDEX_19" title='CPUID_INDEX_19' data-ref="CPUID_INDEX_19" data-ref-filename="CPUID_INDEX_19">CPUID_INDEX_19</a> + <var>1</var></td></tr>
+<tr><th id="33">33</th><td>};</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><b>enum</b></td></tr>
+<tr><th id="36">36</th><td>{</td></tr>
+<tr><th id="37">37</th><td>  <i>/* The integer bit array index for the first set of preferred feature</i></td></tr>
+<tr><th id="38">38</th><td><i>     bits.  */</i></td></tr>
+<tr><th id="39">39</th><td>  <dfn class="enum" id="PREFERRED_FEATURE_INDEX_1" title='PREFERRED_FEATURE_INDEX_1' data-ref="PREFERRED_FEATURE_INDEX_1" data-ref-filename="PREFERRED_FEATURE_INDEX_1">PREFERRED_FEATURE_INDEX_1</dfn> = <var>0</var>,</td></tr>
+<tr><th id="40">40</th><td>  <i>/* The current maximum size of the feature integer bit array.  */</i></td></tr>
+<tr><th id="41">41</th><td>  <dfn class="enum" id="PREFERRED_FEATURE_INDEX_MAX" title='PREFERRED_FEATURE_INDEX_MAX' data-ref="PREFERRED_FEATURE_INDEX_MAX" data-ref-filename="PREFERRED_FEATURE_INDEX_MAX">PREFERRED_FEATURE_INDEX_MAX</dfn></td></tr>
+<tr><th id="42">42</th><td>};</td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><i>/* Only used directly in cpu-features.c.  */</i></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/CPU_FEATURE_SET" data-ref="_M/CPU_FEATURE_SET">CPU_FEATURE_SET</dfn>(ptr, name) \</u></td></tr>
+<tr><th id="46">46</th><td><u>  ptr-&gt;features[index_cpu_##name].usable.reg_##name |= bit_cpu_##name;</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/CPU_FEATURE_UNSET" data-ref="_M/CPU_FEATURE_UNSET">CPU_FEATURE_UNSET</dfn>(ptr, name) \</u></td></tr>
+<tr><th id="48">48</th><td><u>  ptr-&gt;features[index_cpu_##name].usable.reg_##name &amp;= ~bit_cpu_##name;</u></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/CPU_FEATURE_SET_USABLE" data-ref="_M/CPU_FEATURE_SET_USABLE">CPU_FEATURE_SET_USABLE</dfn>(ptr, name) \</u></td></tr>
+<tr><th id="50">50</th><td><u>  ptr-&gt;features[index_cpu_##name].usable.reg_##name \</u></td></tr>
+<tr><th id="51">51</th><td><u>     |= ptr-&gt;features[index_cpu_##name].cpuid.reg_##name &amp; bit_cpu_##name;</u></td></tr>
+<tr><th id="52">52</th><td><u>#define <dfn class="macro" id="_M/CPU_FEATURE_PREFERRED_P" data-ref="_M/CPU_FEATURE_PREFERRED_P">CPU_FEATURE_PREFERRED_P</dfn>(ptr, name) \</u></td></tr>
+<tr><th id="53">53</th><td><u>  ((ptr-&gt;preferred[index_arch_##name] &amp; bit_arch_##name) != 0)</u></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><u>#define <dfn class="macro" id="_M/CPU_FEATURE_CHECK_P" data-ref="_M/CPU_FEATURE_CHECK_P">CPU_FEATURE_CHECK_P</dfn>(ptr, name, check) \</u></td></tr>
+<tr><th id="56">56</th><td><u>  ((ptr-&gt;features[index_cpu_##name].check.reg_##name \</u></td></tr>
+<tr><th id="57">57</th><td><u>    &amp; bit_cpu_##name) != 0)</u></td></tr>
+<tr><th id="58">58</th><td><u>#define <dfn class="macro" id="_M/CPU_FEATURE_CPU_P" data-ref="_M/CPU_FEATURE_CPU_P">CPU_FEATURE_CPU_P</dfn>(ptr, name) \</u></td></tr>
+<tr><th id="59">59</th><td><u>  CPU_FEATURE_CHECK_P (ptr, name, cpuid)</u></td></tr>
+<tr><th id="60">60</th><td><u>#define <dfn class="macro" id="_M/CPU_FEATURE_USABLE_P" data-ref="_M/CPU_FEATURE_USABLE_P">CPU_FEATURE_USABLE_P</dfn>(ptr, name) \</u></td></tr>
+<tr><th id="61">61</th><td><u>  CPU_FEATURE_CHECK_P (ptr, name, usable)</u></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><i>/* HAS_CPU_FEATURE evaluates to true if CPU supports the feature.  */</i></td></tr>
+<tr><th id="64">64</th><td><u>#define <dfn class="macro" id="_M/HAS_CPU_FEATURE" data-ref="_M/HAS_CPU_FEATURE">HAS_CPU_FEATURE</dfn>(name) \</u></td></tr>
+<tr><th id="65">65</th><td><u>  CPU_FEATURE_CPU_P (__get_cpu_features (), name)</u></td></tr>
+<tr><th id="66">66</th><td><i>/* CPU_FEATURE_USABLE evaluates to true if the feature is usable.  */</i></td></tr>
+<tr><th id="67">67</th><td><u>#define <dfn class="macro" id="_M/CPU_FEATURE_USABLE" data-ref="_M/CPU_FEATURE_USABLE">CPU_FEATURE_USABLE</dfn>(name) \</u></td></tr>
+<tr><th id="68">68</th><td><u>  CPU_FEATURE_USABLE_P (__get_cpu_features (), name)</u></td></tr>
+<tr><th id="69">69</th><td><i>/* CPU_FEATURE_PREFER evaluates to true if we prefer the feature at</i></td></tr>
+<tr><th id="70">70</th><td><i>   runtime.  */</i></td></tr>
+<tr><th id="71">71</th><td><u>#define <dfn class="macro" id="_M/CPU_FEATURE_PREFERRED" data-ref="_M/CPU_FEATURE_PREFERRED">CPU_FEATURE_PREFERRED</dfn>(name) \</u></td></tr>
+<tr><th id="72">72</th><td><u>  CPU_FEATURE_PREFERRED_P(__get_cpu_features (), name)</u></td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><u>#define <dfn class="macro" id="_M/CPU_FEATURES_CPU_P" data-ref="_M/CPU_FEATURES_CPU_P">CPU_FEATURES_CPU_P</dfn>(ptr, name) \</u></td></tr>
+<tr><th id="75">75</th><td><u>  CPU_FEATURE_CPU_P (ptr, name)</u></td></tr>
+<tr><th id="76">76</th><td><u>#define <dfn class="macro" id="_M/CPU_FEATURES_ARCH_P" data-ref="_M/CPU_FEATURES_ARCH_P">CPU_FEATURES_ARCH_P</dfn>(ptr, name) \</u></td></tr>
+<tr><th id="77">77</th><td><u>  CPU_FEATURE_PREFERRED_P (ptr, name)</u></td></tr>
+<tr><th id="78">78</th><td><u>#define <dfn class="macro" id="_M/HAS_ARCH_FEATURE" data-ref="_M/HAS_ARCH_FEATURE">HAS_ARCH_FEATURE</dfn>(name) \</u></td></tr>
+<tr><th id="79">79</th><td><u>  CPU_FEATURE_PREFERRED (name)</u></td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><i>/* CPU features.  */</i></td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><i>/* CPUID_INDEX_1.  */</i></td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><i>/* ECX.  */</i></td></tr>
+<tr><th id="86">86</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SSE3" data-ref="_M/bit_cpu_SSE3">bit_cpu_SSE3</dfn>		(1u &lt;&lt; 0)</u></td></tr>
+<tr><th id="87">87</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PCLMULQDQ" data-ref="_M/bit_cpu_PCLMULQDQ">bit_cpu_PCLMULQDQ</dfn>	(1u &lt;&lt; 1)</u></td></tr>
+<tr><th id="88">88</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_DTES64" data-ref="_M/bit_cpu_DTES64">bit_cpu_DTES64</dfn>		(1u &lt;&lt; 2)</u></td></tr>
+<tr><th id="89">89</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_MONITOR" data-ref="_M/bit_cpu_MONITOR">bit_cpu_MONITOR</dfn>		(1u &lt;&lt; 3)</u></td></tr>
+<tr><th id="90">90</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_DS_CPL" data-ref="_M/bit_cpu_DS_CPL">bit_cpu_DS_CPL</dfn>		(1u &lt;&lt; 4)</u></td></tr>
+<tr><th id="91">91</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_VMX" data-ref="_M/bit_cpu_VMX">bit_cpu_VMX</dfn>		(1u &lt;&lt; 5)</u></td></tr>
+<tr><th id="92">92</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SMX" data-ref="_M/bit_cpu_SMX">bit_cpu_SMX</dfn>		(1u &lt;&lt; 6)</u></td></tr>
+<tr><th id="93">93</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_EIST" data-ref="_M/bit_cpu_EIST">bit_cpu_EIST</dfn>		(1u &lt;&lt; 7)</u></td></tr>
+<tr><th id="94">94</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_TM2" data-ref="_M/bit_cpu_TM2">bit_cpu_TM2</dfn>		(1u &lt;&lt; 8)</u></td></tr>
+<tr><th id="95">95</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SSSE3" data-ref="_M/bit_cpu_SSSE3">bit_cpu_SSSE3</dfn>		(1u &lt;&lt; 9)</u></td></tr>
+<tr><th id="96">96</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_CNXT_ID" data-ref="_M/bit_cpu_CNXT_ID">bit_cpu_CNXT_ID</dfn>		(1u &lt;&lt; 10)</u></td></tr>
+<tr><th id="97">97</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SDBG" data-ref="_M/bit_cpu_SDBG">bit_cpu_SDBG</dfn>		(1u &lt;&lt; 11)</u></td></tr>
+<tr><th id="98">98</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_FMA" data-ref="_M/bit_cpu_FMA">bit_cpu_FMA</dfn>		(1u &lt;&lt; 12)</u></td></tr>
+<tr><th id="99">99</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_CMPXCHG16B" data-ref="_M/bit_cpu_CMPXCHG16B">bit_cpu_CMPXCHG16B</dfn>	(1u &lt;&lt; 13)</u></td></tr>
+<tr><th id="100">100</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_XTPRUPDCTRL" data-ref="_M/bit_cpu_XTPRUPDCTRL">bit_cpu_XTPRUPDCTRL</dfn>	(1u &lt;&lt; 14)</u></td></tr>
+<tr><th id="101">101</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PDCM" data-ref="_M/bit_cpu_PDCM">bit_cpu_PDCM</dfn>		(1u &lt;&lt; 15)</u></td></tr>
+<tr><th id="102">102</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_1_ECX_16" data-ref="_M/bit_cpu_INDEX_1_ECX_16">bit_cpu_INDEX_1_ECX_16</dfn>	(1u &lt;&lt; 16)</u></td></tr>
+<tr><th id="103">103</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PCID" data-ref="_M/bit_cpu_PCID">bit_cpu_PCID</dfn>		(1u &lt;&lt; 17)</u></td></tr>
+<tr><th id="104">104</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_DCA" data-ref="_M/bit_cpu_DCA">bit_cpu_DCA</dfn>		(1u &lt;&lt; 18)</u></td></tr>
+<tr><th id="105">105</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SSE4_1" data-ref="_M/bit_cpu_SSE4_1">bit_cpu_SSE4_1</dfn>		(1u &lt;&lt; 19)</u></td></tr>
+<tr><th id="106">106</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SSE4_2" data-ref="_M/bit_cpu_SSE4_2">bit_cpu_SSE4_2</dfn>		(1u &lt;&lt; 20)</u></td></tr>
+<tr><th id="107">107</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_X2APIC" data-ref="_M/bit_cpu_X2APIC">bit_cpu_X2APIC</dfn>		(1u &lt;&lt; 21)</u></td></tr>
+<tr><th id="108">108</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_MOVBE" data-ref="_M/bit_cpu_MOVBE">bit_cpu_MOVBE</dfn>		(1u &lt;&lt; 22)</u></td></tr>
+<tr><th id="109">109</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_POPCNT" data-ref="_M/bit_cpu_POPCNT">bit_cpu_POPCNT</dfn>		(1u &lt;&lt; 23)</u></td></tr>
+<tr><th id="110">110</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_TSC_DEADLINE" data-ref="_M/bit_cpu_TSC_DEADLINE">bit_cpu_TSC_DEADLINE</dfn>	(1u &lt;&lt; 24)</u></td></tr>
+<tr><th id="111">111</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AES" data-ref="_M/bit_cpu_AES">bit_cpu_AES</dfn>		(1u &lt;&lt; 25)</u></td></tr>
+<tr><th id="112">112</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_XSAVE" data-ref="_M/bit_cpu_XSAVE">bit_cpu_XSAVE</dfn>		(1u &lt;&lt; 26)</u></td></tr>
+<tr><th id="113">113</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_OSXSAVE" data-ref="_M/bit_cpu_OSXSAVE">bit_cpu_OSXSAVE</dfn>		(1u &lt;&lt; 27)</u></td></tr>
+<tr><th id="114">114</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX" data-ref="_M/bit_cpu_AVX">bit_cpu_AVX</dfn>		(1u &lt;&lt; 28)</u></td></tr>
+<tr><th id="115">115</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_F16C" data-ref="_M/bit_cpu_F16C">bit_cpu_F16C</dfn>		(1u &lt;&lt; 29)</u></td></tr>
+<tr><th id="116">116</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_RDRAND" data-ref="_M/bit_cpu_RDRAND">bit_cpu_RDRAND</dfn>		(1u &lt;&lt; 30)</u></td></tr>
+<tr><th id="117">117</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_1_ECX_31" data-ref="_M/bit_cpu_INDEX_1_ECX_31">bit_cpu_INDEX_1_ECX_31</dfn>	(1u &lt;&lt; 31)</u></td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td><i>/* EDX.  */</i></td></tr>
+<tr><th id="120">120</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_FPU" data-ref="_M/bit_cpu_FPU">bit_cpu_FPU</dfn>		(1u &lt;&lt; 0)</u></td></tr>
+<tr><th id="121">121</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_VME" data-ref="_M/bit_cpu_VME">bit_cpu_VME</dfn>		(1u &lt;&lt; 1)</u></td></tr>
+<tr><th id="122">122</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_DE" data-ref="_M/bit_cpu_DE">bit_cpu_DE</dfn>		(1u &lt;&lt; 2)</u></td></tr>
+<tr><th id="123">123</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PSE" data-ref="_M/bit_cpu_PSE">bit_cpu_PSE</dfn>		(1u &lt;&lt; 3)</u></td></tr>
+<tr><th id="124">124</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_TSC" data-ref="_M/bit_cpu_TSC">bit_cpu_TSC</dfn>		(1u &lt;&lt; 4)</u></td></tr>
+<tr><th id="125">125</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_MSR" data-ref="_M/bit_cpu_MSR">bit_cpu_MSR</dfn>		(1u &lt;&lt; 5)</u></td></tr>
+<tr><th id="126">126</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PAE" data-ref="_M/bit_cpu_PAE">bit_cpu_PAE</dfn>		(1u &lt;&lt; 6)</u></td></tr>
+<tr><th id="127">127</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_MCE" data-ref="_M/bit_cpu_MCE">bit_cpu_MCE</dfn>		(1u &lt;&lt; 7)</u></td></tr>
+<tr><th id="128">128</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_CX8" data-ref="_M/bit_cpu_CX8">bit_cpu_CX8</dfn>		(1u &lt;&lt; 8)</u></td></tr>
+<tr><th id="129">129</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_APIC" data-ref="_M/bit_cpu_APIC">bit_cpu_APIC</dfn>		(1u &lt;&lt; 9)</u></td></tr>
+<tr><th id="130">130</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_1_EDX_10" data-ref="_M/bit_cpu_INDEX_1_EDX_10">bit_cpu_INDEX_1_EDX_10</dfn>	(1u &lt;&lt; 10)</u></td></tr>
+<tr><th id="131">131</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SEP" data-ref="_M/bit_cpu_SEP">bit_cpu_SEP</dfn>		(1u &lt;&lt; 11)</u></td></tr>
+<tr><th id="132">132</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_MTRR" data-ref="_M/bit_cpu_MTRR">bit_cpu_MTRR</dfn>		(1u &lt;&lt; 12)</u></td></tr>
+<tr><th id="133">133</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PGE" data-ref="_M/bit_cpu_PGE">bit_cpu_PGE</dfn>		(1u &lt;&lt; 13)</u></td></tr>
+<tr><th id="134">134</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_MCA" data-ref="_M/bit_cpu_MCA">bit_cpu_MCA</dfn>		(1u &lt;&lt; 14)</u></td></tr>
+<tr><th id="135">135</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_CMOV" data-ref="_M/bit_cpu_CMOV">bit_cpu_CMOV</dfn>		(1u &lt;&lt; 15)</u></td></tr>
+<tr><th id="136">136</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PAT" data-ref="_M/bit_cpu_PAT">bit_cpu_PAT</dfn>		(1u &lt;&lt; 16)</u></td></tr>
+<tr><th id="137">137</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PSE_36" data-ref="_M/bit_cpu_PSE_36">bit_cpu_PSE_36</dfn>		(1u &lt;&lt; 17)</u></td></tr>
+<tr><th id="138">138</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PSN" data-ref="_M/bit_cpu_PSN">bit_cpu_PSN</dfn>		(1u &lt;&lt; 18)</u></td></tr>
+<tr><th id="139">139</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_CLFSH" data-ref="_M/bit_cpu_CLFSH">bit_cpu_CLFSH</dfn>		(1u &lt;&lt; 19)</u></td></tr>
+<tr><th id="140">140</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_1_EDX_20" data-ref="_M/bit_cpu_INDEX_1_EDX_20">bit_cpu_INDEX_1_EDX_20</dfn>	(1u &lt;&lt; 20)</u></td></tr>
+<tr><th id="141">141</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_DS" data-ref="_M/bit_cpu_DS">bit_cpu_DS</dfn>		(1u &lt;&lt; 21)</u></td></tr>
+<tr><th id="142">142</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_ACPI" data-ref="_M/bit_cpu_ACPI">bit_cpu_ACPI</dfn>		(1u &lt;&lt; 22)</u></td></tr>
+<tr><th id="143">143</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_MMX" data-ref="_M/bit_cpu_MMX">bit_cpu_MMX</dfn>		(1u &lt;&lt; 23)</u></td></tr>
+<tr><th id="144">144</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_FXSR" data-ref="_M/bit_cpu_FXSR">bit_cpu_FXSR</dfn>		(1u &lt;&lt; 24)</u></td></tr>
+<tr><th id="145">145</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SSE" data-ref="_M/bit_cpu_SSE">bit_cpu_SSE</dfn>		(1u &lt;&lt; 25)</u></td></tr>
+<tr><th id="146">146</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SSE2" data-ref="_M/bit_cpu_SSE2">bit_cpu_SSE2</dfn>		(1u &lt;&lt; 26)</u></td></tr>
+<tr><th id="147">147</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SS" data-ref="_M/bit_cpu_SS">bit_cpu_SS</dfn>		(1u &lt;&lt; 27)</u></td></tr>
+<tr><th id="148">148</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_HTT" data-ref="_M/bit_cpu_HTT">bit_cpu_HTT</dfn>		(1u &lt;&lt; 28)</u></td></tr>
+<tr><th id="149">149</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_TM" data-ref="_M/bit_cpu_TM">bit_cpu_TM</dfn>		(1u &lt;&lt; 29)</u></td></tr>
+<tr><th id="150">150</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_1_EDX_30" data-ref="_M/bit_cpu_INDEX_1_EDX_30">bit_cpu_INDEX_1_EDX_30</dfn>	(1u &lt;&lt; 30)</u></td></tr>
+<tr><th id="151">151</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PBE" data-ref="_M/bit_cpu_PBE">bit_cpu_PBE</dfn>		(1u &lt;&lt; 31)</u></td></tr>
+<tr><th id="152">152</th><td></td></tr>
+<tr><th id="153">153</th><td><i>/* CPUID_INDEX_7.  */</i></td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><i>/* EBX.  */</i></td></tr>
+<tr><th id="156">156</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_FSGSBASE" data-ref="_M/bit_cpu_FSGSBASE">bit_cpu_FSGSBASE</dfn>	(1u &lt;&lt; 0)</u></td></tr>
+<tr><th id="157">157</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_TSC_ADJUST" data-ref="_M/bit_cpu_TSC_ADJUST">bit_cpu_TSC_ADJUST</dfn>	(1u &lt;&lt; 1)</u></td></tr>
+<tr><th id="158">158</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SGX" data-ref="_M/bit_cpu_SGX">bit_cpu_SGX</dfn>		(1u &lt;&lt; 2)</u></td></tr>
+<tr><th id="159">159</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_BMI1" data-ref="_M/bit_cpu_BMI1">bit_cpu_BMI1</dfn>		(1u &lt;&lt; 3)</u></td></tr>
+<tr><th id="160">160</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_HLE" data-ref="_M/bit_cpu_HLE">bit_cpu_HLE</dfn>		(1u &lt;&lt; 4)</u></td></tr>
+<tr><th id="161">161</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX2" data-ref="_M/bit_cpu_AVX2">bit_cpu_AVX2</dfn>		(1u &lt;&lt; 5)</u></td></tr>
+<tr><th id="162">162</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EBX_6" data-ref="_M/bit_cpu_INDEX_7_EBX_6">bit_cpu_INDEX_7_EBX_6</dfn>	(1u &lt;&lt; 6)</u></td></tr>
+<tr><th id="163">163</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SMEP" data-ref="_M/bit_cpu_SMEP">bit_cpu_SMEP</dfn>		(1u &lt;&lt; 7)</u></td></tr>
+<tr><th id="164">164</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_BMI2" data-ref="_M/bit_cpu_BMI2">bit_cpu_BMI2</dfn>		(1u &lt;&lt; 8)</u></td></tr>
+<tr><th id="165">165</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_ERMS" data-ref="_M/bit_cpu_ERMS">bit_cpu_ERMS</dfn>		(1u &lt;&lt; 9)</u></td></tr>
+<tr><th id="166">166</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INVPCID" data-ref="_M/bit_cpu_INVPCID">bit_cpu_INVPCID</dfn>		(1u &lt;&lt; 10)</u></td></tr>
+<tr><th id="167">167</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_RTM" data-ref="_M/bit_cpu_RTM">bit_cpu_RTM</dfn>		(1u &lt;&lt; 11)</u></td></tr>
+<tr><th id="168">168</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_RDT_M" data-ref="_M/bit_cpu_RDT_M">bit_cpu_RDT_M</dfn>		(1u &lt;&lt; 12)</u></td></tr>
+<tr><th id="169">169</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_DEPR_FPU_CS_DS" data-ref="_M/bit_cpu_DEPR_FPU_CS_DS">bit_cpu_DEPR_FPU_CS_DS</dfn>	(1u &lt;&lt; 13)</u></td></tr>
+<tr><th id="170">170</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_MPX" data-ref="_M/bit_cpu_MPX">bit_cpu_MPX</dfn>		(1u &lt;&lt; 14)</u></td></tr>
+<tr><th id="171">171</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_RDT_A" data-ref="_M/bit_cpu_RDT_A">bit_cpu_RDT_A</dfn>		(1u &lt;&lt; 15)</u></td></tr>
+<tr><th id="172">172</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512F" data-ref="_M/bit_cpu_AVX512F">bit_cpu_AVX512F</dfn>		(1u &lt;&lt; 16)</u></td></tr>
+<tr><th id="173">173</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512DQ" data-ref="_M/bit_cpu_AVX512DQ">bit_cpu_AVX512DQ</dfn>	(1u &lt;&lt; 17)</u></td></tr>
+<tr><th id="174">174</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_RDSEED" data-ref="_M/bit_cpu_RDSEED">bit_cpu_RDSEED</dfn>		(1u &lt;&lt; 18)</u></td></tr>
+<tr><th id="175">175</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_ADX" data-ref="_M/bit_cpu_ADX">bit_cpu_ADX</dfn>		(1u &lt;&lt; 19)</u></td></tr>
+<tr><th id="176">176</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SMAP" data-ref="_M/bit_cpu_SMAP">bit_cpu_SMAP</dfn>		(1u &lt;&lt; 20)</u></td></tr>
+<tr><th id="177">177</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512_IFMA" data-ref="_M/bit_cpu_AVX512_IFMA">bit_cpu_AVX512_IFMA</dfn>	(1u &lt;&lt; 21)</u></td></tr>
+<tr><th id="178">178</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EBX_22" data-ref="_M/bit_cpu_INDEX_7_EBX_22">bit_cpu_INDEX_7_EBX_22</dfn>	(1u &lt;&lt; 22)</u></td></tr>
+<tr><th id="179">179</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_CLFLUSHOPT" data-ref="_M/bit_cpu_CLFLUSHOPT">bit_cpu_CLFLUSHOPT</dfn>	(1u &lt;&lt; 23)</u></td></tr>
+<tr><th id="180">180</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_CLWB" data-ref="_M/bit_cpu_CLWB">bit_cpu_CLWB</dfn>		(1u &lt;&lt; 24)</u></td></tr>
+<tr><th id="181">181</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_TRACE" data-ref="_M/bit_cpu_TRACE">bit_cpu_TRACE</dfn>		(1u &lt;&lt; 25)</u></td></tr>
+<tr><th id="182">182</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512PF" data-ref="_M/bit_cpu_AVX512PF">bit_cpu_AVX512PF</dfn>	(1u &lt;&lt; 26)</u></td></tr>
+<tr><th id="183">183</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512ER" data-ref="_M/bit_cpu_AVX512ER">bit_cpu_AVX512ER</dfn>	(1u &lt;&lt; 27)</u></td></tr>
+<tr><th id="184">184</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512CD" data-ref="_M/bit_cpu_AVX512CD">bit_cpu_AVX512CD</dfn>	(1u &lt;&lt; 28)</u></td></tr>
+<tr><th id="185">185</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SHA" data-ref="_M/bit_cpu_SHA">bit_cpu_SHA</dfn>		(1u &lt;&lt; 29)</u></td></tr>
+<tr><th id="186">186</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512BW" data-ref="_M/bit_cpu_AVX512BW">bit_cpu_AVX512BW</dfn>	(1u &lt;&lt; 30)</u></td></tr>
+<tr><th id="187">187</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512VL" data-ref="_M/bit_cpu_AVX512VL">bit_cpu_AVX512VL</dfn>	(1u &lt;&lt; 31)</u></td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td><i>/* ECX.  */</i></td></tr>
+<tr><th id="190">190</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PREFETCHWT1" data-ref="_M/bit_cpu_PREFETCHWT1">bit_cpu_PREFETCHWT1</dfn>	(1u &lt;&lt; 0)</u></td></tr>
+<tr><th id="191">191</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512_VBMI" data-ref="_M/bit_cpu_AVX512_VBMI">bit_cpu_AVX512_VBMI</dfn>	(1u &lt;&lt; 1)</u></td></tr>
+<tr><th id="192">192</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_UMIP" data-ref="_M/bit_cpu_UMIP">bit_cpu_UMIP</dfn>		(1u &lt;&lt; 2)</u></td></tr>
+<tr><th id="193">193</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PKU" data-ref="_M/bit_cpu_PKU">bit_cpu_PKU</dfn>		(1u &lt;&lt; 3)</u></td></tr>
+<tr><th id="194">194</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_OSPKE" data-ref="_M/bit_cpu_OSPKE">bit_cpu_OSPKE</dfn>		(1u &lt;&lt; 4)</u></td></tr>
+<tr><th id="195">195</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_WAITPKG" data-ref="_M/bit_cpu_WAITPKG">bit_cpu_WAITPKG</dfn>		(1u &lt;&lt; 5)</u></td></tr>
+<tr><th id="196">196</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512_VBMI2" data-ref="_M/bit_cpu_AVX512_VBMI2">bit_cpu_AVX512_VBMI2</dfn>	(1u &lt;&lt; 6)</u></td></tr>
+<tr><th id="197">197</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SHSTK" data-ref="_M/bit_cpu_SHSTK">bit_cpu_SHSTK</dfn>		(1u &lt;&lt; 7)</u></td></tr>
+<tr><th id="198">198</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_GFNI" data-ref="_M/bit_cpu_GFNI">bit_cpu_GFNI</dfn>		(1u &lt;&lt; 8)</u></td></tr>
+<tr><th id="199">199</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_VAES" data-ref="_M/bit_cpu_VAES">bit_cpu_VAES</dfn>		(1u &lt;&lt; 9)</u></td></tr>
+<tr><th id="200">200</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_VPCLMULQDQ" data-ref="_M/bit_cpu_VPCLMULQDQ">bit_cpu_VPCLMULQDQ</dfn>	(1u &lt;&lt; 10)</u></td></tr>
+<tr><th id="201">201</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512_VNNI" data-ref="_M/bit_cpu_AVX512_VNNI">bit_cpu_AVX512_VNNI</dfn>	(1u &lt;&lt; 11)</u></td></tr>
+<tr><th id="202">202</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512_BITALG" data-ref="_M/bit_cpu_AVX512_BITALG">bit_cpu_AVX512_BITALG</dfn>	(1u &lt;&lt; 12)</u></td></tr>
+<tr><th id="203">203</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_ECX_13" data-ref="_M/bit_cpu_INDEX_7_ECX_13">bit_cpu_INDEX_7_ECX_13</dfn>	(1u &lt;&lt; 13)</u></td></tr>
+<tr><th id="204">204</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512_VPOPCNTDQ" data-ref="_M/bit_cpu_AVX512_VPOPCNTDQ">bit_cpu_AVX512_VPOPCNTDQ</dfn> (1u &lt;&lt; 14)</u></td></tr>
+<tr><th id="205">205</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_ECX_15" data-ref="_M/bit_cpu_INDEX_7_ECX_15">bit_cpu_INDEX_7_ECX_15</dfn>	(1u &lt;&lt; 15)</u></td></tr>
+<tr><th id="206">206</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_ECX_16" data-ref="_M/bit_cpu_INDEX_7_ECX_16">bit_cpu_INDEX_7_ECX_16</dfn>	(1u &lt;&lt; 16)</u></td></tr>
+<tr><th id="207">207</th><td><i>/* Note: Bits 17-21: The value of MAWAU used by the BNDLDX and BNDSTX</i></td></tr>
+<tr><th id="208">208</th><td><i>   instructions in 64-bit mode.  */</i></td></tr>
+<tr><th id="209">209</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_RDPID" data-ref="_M/bit_cpu_RDPID">bit_cpu_RDPID</dfn>		(1u &lt;&lt; 22)</u></td></tr>
+<tr><th id="210">210</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_KL" data-ref="_M/bit_cpu_KL">bit_cpu_KL</dfn>		(1u &lt;&lt; 23)</u></td></tr>
+<tr><th id="211">211</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_ECX_24" data-ref="_M/bit_cpu_INDEX_7_ECX_24">bit_cpu_INDEX_7_ECX_24</dfn>	(1u &lt;&lt; 24)</u></td></tr>
+<tr><th id="212">212</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_CLDEMOTE" data-ref="_M/bit_cpu_CLDEMOTE">bit_cpu_CLDEMOTE</dfn>	(1u &lt;&lt; 25)</u></td></tr>
+<tr><th id="213">213</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_ECX_26" data-ref="_M/bit_cpu_INDEX_7_ECX_26">bit_cpu_INDEX_7_ECX_26</dfn>	(1u &lt;&lt; 26)</u></td></tr>
+<tr><th id="214">214</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_MOVDIRI" data-ref="_M/bit_cpu_MOVDIRI">bit_cpu_MOVDIRI</dfn>		(1u &lt;&lt; 27)</u></td></tr>
+<tr><th id="215">215</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_MOVDIR64B" data-ref="_M/bit_cpu_MOVDIR64B">bit_cpu_MOVDIR64B</dfn>	(1u &lt;&lt; 28)</u></td></tr>
+<tr><th id="216">216</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_ENQCMD" data-ref="_M/bit_cpu_ENQCMD">bit_cpu_ENQCMD</dfn>		(1u &lt;&lt; 29)</u></td></tr>
+<tr><th id="217">217</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SGX_LC" data-ref="_M/bit_cpu_SGX_LC">bit_cpu_SGX_LC</dfn>		(1u &lt;&lt; 30)</u></td></tr>
+<tr><th id="218">218</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PKS" data-ref="_M/bit_cpu_PKS">bit_cpu_PKS</dfn>		(1u &lt;&lt; 31)</u></td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td><i>/* EDX.  */</i></td></tr>
+<tr><th id="221">221</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EDX_0" data-ref="_M/bit_cpu_INDEX_7_EDX_0">bit_cpu_INDEX_7_EDX_0</dfn>	(1u &lt;&lt; 0)</u></td></tr>
+<tr><th id="222">222</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EDX_1" data-ref="_M/bit_cpu_INDEX_7_EDX_1">bit_cpu_INDEX_7_EDX_1</dfn>	(1u &lt;&lt; 1)</u></td></tr>
+<tr><th id="223">223</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512_4VNNIW" data-ref="_M/bit_cpu_AVX512_4VNNIW">bit_cpu_AVX512_4VNNIW</dfn>	(1u &lt;&lt; 2)</u></td></tr>
+<tr><th id="224">224</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512_4FMAPS" data-ref="_M/bit_cpu_AVX512_4FMAPS">bit_cpu_AVX512_4FMAPS</dfn>	(1u &lt;&lt; 3)</u></td></tr>
+<tr><th id="225">225</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_FSRM" data-ref="_M/bit_cpu_FSRM">bit_cpu_FSRM</dfn>		(1u &lt;&lt; 4)</u></td></tr>
+<tr><th id="226">226</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_UINTR" data-ref="_M/bit_cpu_UINTR">bit_cpu_UINTR</dfn>		(1u &lt;&lt; 5)</u></td></tr>
+<tr><th id="227">227</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EDX_6" data-ref="_M/bit_cpu_INDEX_7_EDX_6">bit_cpu_INDEX_7_EDX_6</dfn>	(1u &lt;&lt; 6)</u></td></tr>
+<tr><th id="228">228</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EDX_7" data-ref="_M/bit_cpu_INDEX_7_EDX_7">bit_cpu_INDEX_7_EDX_7</dfn>	(1u &lt;&lt; 7)</u></td></tr>
+<tr><th id="229">229</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512_VP2INTERSECT" data-ref="_M/bit_cpu_AVX512_VP2INTERSECT">bit_cpu_AVX512_VP2INTERSECT</dfn> (1u &lt;&lt; 8)</u></td></tr>
+<tr><th id="230">230</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EDX_9" data-ref="_M/bit_cpu_INDEX_7_EDX_9">bit_cpu_INDEX_7_EDX_9</dfn>	(1u &lt;&lt; 9)</u></td></tr>
+<tr><th id="231">231</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_MD_CLEAR" data-ref="_M/bit_cpu_MD_CLEAR">bit_cpu_MD_CLEAR</dfn>	(1u &lt;&lt; 10)</u></td></tr>
+<tr><th id="232">232</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EDX_11" data-ref="_M/bit_cpu_INDEX_7_EDX_11">bit_cpu_INDEX_7_EDX_11</dfn>	(1u &lt;&lt; 11)</u></td></tr>
+<tr><th id="233">233</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EDX_12" data-ref="_M/bit_cpu_INDEX_7_EDX_12">bit_cpu_INDEX_7_EDX_12</dfn>	(1u &lt;&lt; 12)</u></td></tr>
+<tr><th id="234">234</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EDX_13" data-ref="_M/bit_cpu_INDEX_7_EDX_13">bit_cpu_INDEX_7_EDX_13</dfn>	(1u &lt;&lt; 13)</u></td></tr>
+<tr><th id="235">235</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SERIALIZE" data-ref="_M/bit_cpu_SERIALIZE">bit_cpu_SERIALIZE</dfn>	(1u &lt;&lt; 14)</u></td></tr>
+<tr><th id="236">236</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_HYBRID" data-ref="_M/bit_cpu_HYBRID">bit_cpu_HYBRID</dfn>		(1u &lt;&lt; 15)</u></td></tr>
+<tr><th id="237">237</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_TSXLDTRK" data-ref="_M/bit_cpu_TSXLDTRK">bit_cpu_TSXLDTRK</dfn>	(1u &lt;&lt; 16)</u></td></tr>
+<tr><th id="238">238</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EDX_17" data-ref="_M/bit_cpu_INDEX_7_EDX_17">bit_cpu_INDEX_7_EDX_17</dfn>	(1u &lt;&lt; 17)</u></td></tr>
+<tr><th id="239">239</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PCONFIG" data-ref="_M/bit_cpu_PCONFIG">bit_cpu_PCONFIG</dfn>		(1u &lt;&lt; 18)</u></td></tr>
+<tr><th id="240">240</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EDX_19" data-ref="_M/bit_cpu_INDEX_7_EDX_19">bit_cpu_INDEX_7_EDX_19</dfn>	(1u &lt;&lt; 19)</u></td></tr>
+<tr><th id="241">241</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_IBT" data-ref="_M/bit_cpu_IBT">bit_cpu_IBT</dfn>		(1u &lt;&lt; 20)</u></td></tr>
+<tr><th id="242">242</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INDEX_7_EDX_21" data-ref="_M/bit_cpu_INDEX_7_EDX_21">bit_cpu_INDEX_7_EDX_21</dfn>	(1u &lt;&lt; 21)</u></td></tr>
+<tr><th id="243">243</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AMX_BF16" data-ref="_M/bit_cpu_AMX_BF16">bit_cpu_AMX_BF16</dfn>	(1u &lt;&lt; 22)</u></td></tr>
+<tr><th id="244">244</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512_FP16" data-ref="_M/bit_cpu_AVX512_FP16">bit_cpu_AVX512_FP16</dfn>	(1u &lt;&lt; 23)</u></td></tr>
+<tr><th id="245">245</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AMX_TILE" data-ref="_M/bit_cpu_AMX_TILE">bit_cpu_AMX_TILE</dfn>	(1u &lt;&lt; 24)</u></td></tr>
+<tr><th id="246">246</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AMX_INT8" data-ref="_M/bit_cpu_AMX_INT8">bit_cpu_AMX_INT8</dfn>	(1u &lt;&lt; 25)</u></td></tr>
+<tr><th id="247">247</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_IBRS_IBPB" data-ref="_M/bit_cpu_IBRS_IBPB">bit_cpu_IBRS_IBPB</dfn>	(1u &lt;&lt; 26)</u></td></tr>
+<tr><th id="248">248</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_STIBP" data-ref="_M/bit_cpu_STIBP">bit_cpu_STIBP</dfn>		(1u &lt;&lt; 27)</u></td></tr>
+<tr><th id="249">249</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_L1D_FLUSH" data-ref="_M/bit_cpu_L1D_FLUSH">bit_cpu_L1D_FLUSH</dfn>	(1u &lt;&lt; 28)</u></td></tr>
+<tr><th id="250">250</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_ARCH_CAPABILITIES" data-ref="_M/bit_cpu_ARCH_CAPABILITIES">bit_cpu_ARCH_CAPABILITIES</dfn> (1u &lt;&lt; 29)</u></td></tr>
+<tr><th id="251">251</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_CORE_CAPABILITIES" data-ref="_M/bit_cpu_CORE_CAPABILITIES">bit_cpu_CORE_CAPABILITIES</dfn> (1u &lt;&lt; 30)</u></td></tr>
+<tr><th id="252">252</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SSBD" data-ref="_M/bit_cpu_SSBD">bit_cpu_SSBD</dfn>		(1u &lt;&lt; 31)</u></td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td><i>/* CPUID_INDEX_80000001.  */</i></td></tr>
+<tr><th id="255">255</th><td></td></tr>
+<tr><th id="256">256</th><td><i>/* ECX.  */</i></td></tr>
+<tr><th id="257">257</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_LAHF64_SAHF64" data-ref="_M/bit_cpu_LAHF64_SAHF64">bit_cpu_LAHF64_SAHF64</dfn>	(1u &lt;&lt; 0)</u></td></tr>
+<tr><th id="258">258</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SVM" data-ref="_M/bit_cpu_SVM">bit_cpu_SVM</dfn>		(1u &lt;&lt; 2)</u></td></tr>
+<tr><th id="259">259</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_LZCNT" data-ref="_M/bit_cpu_LZCNT">bit_cpu_LZCNT</dfn>		(1u &lt;&lt; 5)</u></td></tr>
+<tr><th id="260">260</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SSE4A" data-ref="_M/bit_cpu_SSE4A">bit_cpu_SSE4A</dfn>		(1u &lt;&lt; 6)</u></td></tr>
+<tr><th id="261">261</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PREFETCHW" data-ref="_M/bit_cpu_PREFETCHW">bit_cpu_PREFETCHW</dfn>	(1u &lt;&lt; 8)</u></td></tr>
+<tr><th id="262">262</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_XOP" data-ref="_M/bit_cpu_XOP">bit_cpu_XOP</dfn>		(1u &lt;&lt; 11)</u></td></tr>
+<tr><th id="263">263</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_LWP" data-ref="_M/bit_cpu_LWP">bit_cpu_LWP</dfn>		(1u &lt;&lt; 15)</u></td></tr>
+<tr><th id="264">264</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_FMA4" data-ref="_M/bit_cpu_FMA4">bit_cpu_FMA4</dfn>		(1u &lt;&lt; 16)</u></td></tr>
+<tr><th id="265">265</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_TBM" data-ref="_M/bit_cpu_TBM">bit_cpu_TBM</dfn>		(1u &lt;&lt; 21)</u></td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td><i>/* EDX.  */</i></td></tr>
+<tr><th id="268">268</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_SYSCALL_SYSRET" data-ref="_M/bit_cpu_SYSCALL_SYSRET">bit_cpu_SYSCALL_SYSRET</dfn>	(1u &lt;&lt; 11)</u></td></tr>
+<tr><th id="269">269</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_NX" data-ref="_M/bit_cpu_NX">bit_cpu_NX</dfn>		(1u &lt;&lt; 20)</u></td></tr>
+<tr><th id="270">270</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_PAGE1GB" data-ref="_M/bit_cpu_PAGE1GB">bit_cpu_PAGE1GB</dfn>		(1u &lt;&lt; 26)</u></td></tr>
+<tr><th id="271">271</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_RDTSCP" data-ref="_M/bit_cpu_RDTSCP">bit_cpu_RDTSCP</dfn>		(1u &lt;&lt; 27)</u></td></tr>
+<tr><th id="272">272</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_LM" data-ref="_M/bit_cpu_LM">bit_cpu_LM</dfn>		(1u &lt;&lt; 29)</u></td></tr>
+<tr><th id="273">273</th><td></td></tr>
+<tr><th id="274">274</th><td><i>/* CPUID_INDEX_D_ECX_1.  */</i></td></tr>
+<tr><th id="275">275</th><td></td></tr>
+<tr><th id="276">276</th><td><i>/* EAX.  */</i></td></tr>
+<tr><th id="277">277</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_XSAVEOPT" data-ref="_M/bit_cpu_XSAVEOPT">bit_cpu_XSAVEOPT</dfn>	(1u &lt;&lt; 0)</u></td></tr>
+<tr><th id="278">278</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_XSAVEC" data-ref="_M/bit_cpu_XSAVEC">bit_cpu_XSAVEC</dfn>		(1u &lt;&lt; 1)</u></td></tr>
+<tr><th id="279">279</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_XGETBV_ECX_1" data-ref="_M/bit_cpu_XGETBV_ECX_1">bit_cpu_XGETBV_ECX_1</dfn>	(1u &lt;&lt; 2)</u></td></tr>
+<tr><th id="280">280</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_XSAVES" data-ref="_M/bit_cpu_XSAVES">bit_cpu_XSAVES</dfn>		(1u &lt;&lt; 3)</u></td></tr>
+<tr><th id="281">281</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_XFD" data-ref="_M/bit_cpu_XFD">bit_cpu_XFD</dfn>		(1u &lt;&lt; 4)</u></td></tr>
+<tr><th id="282">282</th><td></td></tr>
+<tr><th id="283">283</th><td><i>/* CPUID_INDEX_80000007.  */</i></td></tr>
+<tr><th id="284">284</th><td></td></tr>
+<tr><th id="285">285</th><td><i>/* EDX.  */</i></td></tr>
+<tr><th id="286">286</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_INVARIANT_TSC" data-ref="_M/bit_cpu_INVARIANT_TSC">bit_cpu_INVARIANT_TSC</dfn>	(1u &lt;&lt; 8)</u></td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><i>/* CPUID_INDEX_80000008.  */</i></td></tr>
+<tr><th id="289">289</th><td></td></tr>
+<tr><th id="290">290</th><td><i>/* EBX.  */</i></td></tr>
+<tr><th id="291">291</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_WBNOINVD" data-ref="_M/bit_cpu_WBNOINVD">bit_cpu_WBNOINVD</dfn>	(1u &lt;&lt; 9)</u></td></tr>
+<tr><th id="292">292</th><td></td></tr>
+<tr><th id="293">293</th><td><i>/* CPUID_INDEX_7_ECX_1.  */</i></td></tr>
+<tr><th id="294">294</th><td></td></tr>
+<tr><th id="295">295</th><td><i>/* EAX.  */</i></td></tr>
+<tr><th id="296">296</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX_VNNI" data-ref="_M/bit_cpu_AVX_VNNI">bit_cpu_AVX_VNNI</dfn>	(1u &lt;&lt; 4)</u></td></tr>
+<tr><th id="297">297</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AVX512_BF16" data-ref="_M/bit_cpu_AVX512_BF16">bit_cpu_AVX512_BF16</dfn>	(1u &lt;&lt; 5)</u></td></tr>
+<tr><th id="298">298</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_FZLRM" data-ref="_M/bit_cpu_FZLRM">bit_cpu_FZLRM</dfn>		(1u &lt;&lt; 10)</u></td></tr>
+<tr><th id="299">299</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_FSRS" data-ref="_M/bit_cpu_FSRS">bit_cpu_FSRS</dfn>		(1u &lt;&lt; 11)</u></td></tr>
+<tr><th id="300">300</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_FSRCS" data-ref="_M/bit_cpu_FSRCS">bit_cpu_FSRCS</dfn>		(1u &lt;&lt; 12)</u></td></tr>
+<tr><th id="301">301</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_HRESET" data-ref="_M/bit_cpu_HRESET">bit_cpu_HRESET</dfn>		(1u &lt;&lt; 22)</u></td></tr>
+<tr><th id="302">302</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_LAM" data-ref="_M/bit_cpu_LAM">bit_cpu_LAM</dfn>		(1u &lt;&lt; 26)</u></td></tr>
+<tr><th id="303">303</th><td></td></tr>
+<tr><th id="304">304</th><td><i>/* CPUID_INDEX_19.  */</i></td></tr>
+<tr><th id="305">305</th><td></td></tr>
+<tr><th id="306">306</th><td><i>/* EBX.  */</i></td></tr>
+<tr><th id="307">307</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_AESKLE" data-ref="_M/bit_cpu_AESKLE">bit_cpu_AESKLE</dfn>		(1u &lt;&lt; 0)</u></td></tr>
+<tr><th id="308">308</th><td><u>#define <dfn class="macro" id="_M/bit_cpu_WIDE_KL" data-ref="_M/bit_cpu_WIDE_KL">bit_cpu_WIDE_KL</dfn>		(1u &lt;&lt; 2)</u></td></tr>
+<tr><th id="309">309</th><td></td></tr>
+<tr><th id="310">310</th><td><i>/* CPUID_INDEX_1.  */</i></td></tr>
+<tr><th id="311">311</th><td></td></tr>
+<tr><th id="312">312</th><td><i>/* ECX.  */</i></td></tr>
+<tr><th id="313">313</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SSE3" data-ref="_M/index_cpu_SSE3">index_cpu_SSE3</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="314">314</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PCLMULQDQ" data-ref="_M/index_cpu_PCLMULQDQ">index_cpu_PCLMULQDQ</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="315">315</th><td><u>#define <dfn class="macro" id="_M/index_cpu_DTES64" data-ref="_M/index_cpu_DTES64">index_cpu_DTES64</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="316">316</th><td><u>#define <dfn class="macro" id="_M/index_cpu_MONITOR" data-ref="_M/index_cpu_MONITOR">index_cpu_MONITOR</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="317">317</th><td><u>#define <dfn class="macro" id="_M/index_cpu_DS_CPL" data-ref="_M/index_cpu_DS_CPL">index_cpu_DS_CPL</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="318">318</th><td><u>#define <dfn class="macro" id="_M/index_cpu_VMX" data-ref="_M/index_cpu_VMX">index_cpu_VMX</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="319">319</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SMX" data-ref="_M/index_cpu_SMX">index_cpu_SMX</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="320">320</th><td><u>#define <dfn class="macro" id="_M/index_cpu_EIST" data-ref="_M/index_cpu_EIST">index_cpu_EIST</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="321">321</th><td><u>#define <dfn class="macro" id="_M/index_cpu_TM2" data-ref="_M/index_cpu_TM2">index_cpu_TM2</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="322">322</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SSSE3" data-ref="_M/index_cpu_SSSE3">index_cpu_SSSE3</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="323">323</th><td><u>#define <dfn class="macro" id="_M/index_cpu_CNXT_ID" data-ref="_M/index_cpu_CNXT_ID">index_cpu_CNXT_ID</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="324">324</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SDBG" data-ref="_M/index_cpu_SDBG">index_cpu_SDBG</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="325">325</th><td><u>#define <dfn class="macro" id="_M/index_cpu_FMA" data-ref="_M/index_cpu_FMA">index_cpu_FMA</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="326">326</th><td><u>#define <dfn class="macro" id="_M/index_cpu_CMPXCHG16B" data-ref="_M/index_cpu_CMPXCHG16B">index_cpu_CMPXCHG16B</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="327">327</th><td><u>#define <dfn class="macro" id="_M/index_cpu_XTPRUPDCTRL" data-ref="_M/index_cpu_XTPRUPDCTRL">index_cpu_XTPRUPDCTRL</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="328">328</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PDCM" data-ref="_M/index_cpu_PDCM">index_cpu_PDCM</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="329">329</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_1_ECX_16" data-ref="_M/index_cpu_INDEX_1_ECX_16">index_cpu_INDEX_1_ECX_16</dfn> CPUID_INDEX_1</u></td></tr>
+<tr><th id="330">330</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PCID" data-ref="_M/index_cpu_PCID">index_cpu_PCID</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="331">331</th><td><u>#define <dfn class="macro" id="_M/index_cpu_DCA" data-ref="_M/index_cpu_DCA">index_cpu_DCA</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="332">332</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SSE4_1" data-ref="_M/index_cpu_SSE4_1">index_cpu_SSE4_1</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="333">333</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SSE4_2" data-ref="_M/index_cpu_SSE4_2">index_cpu_SSE4_2</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="334">334</th><td><u>#define <dfn class="macro" id="_M/index_cpu_X2APIC" data-ref="_M/index_cpu_X2APIC">index_cpu_X2APIC</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="335">335</th><td><u>#define <dfn class="macro" id="_M/index_cpu_MOVBE" data-ref="_M/index_cpu_MOVBE">index_cpu_MOVBE</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="336">336</th><td><u>#define <dfn class="macro" id="_M/index_cpu_POPCNT" data-ref="_M/index_cpu_POPCNT">index_cpu_POPCNT</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="337">337</th><td><u>#define <dfn class="macro" id="_M/index_cpu_TSC_DEADLINE" data-ref="_M/index_cpu_TSC_DEADLINE">index_cpu_TSC_DEADLINE</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="338">338</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AES" data-ref="_M/index_cpu_AES">index_cpu_AES</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="339">339</th><td><u>#define <dfn class="macro" id="_M/index_cpu_XSAVE" data-ref="_M/index_cpu_XSAVE">index_cpu_XSAVE</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="340">340</th><td><u>#define <dfn class="macro" id="_M/index_cpu_OSXSAVE" data-ref="_M/index_cpu_OSXSAVE">index_cpu_OSXSAVE</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="341">341</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX" data-ref="_M/index_cpu_AVX">index_cpu_AVX</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="342">342</th><td><u>#define <dfn class="macro" id="_M/index_cpu_F16C" data-ref="_M/index_cpu_F16C">index_cpu_F16C</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="343">343</th><td><u>#define <dfn class="macro" id="_M/index_cpu_RDRAND" data-ref="_M/index_cpu_RDRAND">index_cpu_RDRAND</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="344">344</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_1_ECX_31" data-ref="_M/index_cpu_INDEX_1_ECX_31">index_cpu_INDEX_1_ECX_31</dfn> CPUID_INDEX_1</u></td></tr>
+<tr><th id="345">345</th><td></td></tr>
+<tr><th id="346">346</th><td><i>/* ECX.  */</i></td></tr>
+<tr><th id="347">347</th><td><u>#define <dfn class="macro" id="_M/index_cpu_FPU" data-ref="_M/index_cpu_FPU">index_cpu_FPU</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="348">348</th><td><u>#define <dfn class="macro" id="_M/index_cpu_VME" data-ref="_M/index_cpu_VME">index_cpu_VME</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="349">349</th><td><u>#define <dfn class="macro" id="_M/index_cpu_DE" data-ref="_M/index_cpu_DE">index_cpu_DE</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="350">350</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PSE" data-ref="_M/index_cpu_PSE">index_cpu_PSE</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="351">351</th><td><u>#define <dfn class="macro" id="_M/index_cpu_TSC" data-ref="_M/index_cpu_TSC">index_cpu_TSC</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="352">352</th><td><u>#define <dfn class="macro" id="_M/index_cpu_MSR" data-ref="_M/index_cpu_MSR">index_cpu_MSR</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="353">353</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PAE" data-ref="_M/index_cpu_PAE">index_cpu_PAE</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="354">354</th><td><u>#define <dfn class="macro" id="_M/index_cpu_MCE" data-ref="_M/index_cpu_MCE">index_cpu_MCE</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="355">355</th><td><u>#define <dfn class="macro" id="_M/index_cpu_CX8" data-ref="_M/index_cpu_CX8">index_cpu_CX8</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="356">356</th><td><u>#define <dfn class="macro" id="_M/index_cpu_APIC" data-ref="_M/index_cpu_APIC">index_cpu_APIC</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="357">357</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_1_EDX_10" data-ref="_M/index_cpu_INDEX_1_EDX_10">index_cpu_INDEX_1_EDX_10</dfn> CPUID_INDEX_1</u></td></tr>
+<tr><th id="358">358</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SEP" data-ref="_M/index_cpu_SEP">index_cpu_SEP</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="359">359</th><td><u>#define <dfn class="macro" id="_M/index_cpu_MTRR" data-ref="_M/index_cpu_MTRR">index_cpu_MTRR</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="360">360</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PGE" data-ref="_M/index_cpu_PGE">index_cpu_PGE</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="361">361</th><td><u>#define <dfn class="macro" id="_M/index_cpu_MCA" data-ref="_M/index_cpu_MCA">index_cpu_MCA</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="362">362</th><td><u>#define <dfn class="macro" id="_M/index_cpu_CMOV" data-ref="_M/index_cpu_CMOV">index_cpu_CMOV</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="363">363</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PAT" data-ref="_M/index_cpu_PAT">index_cpu_PAT</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="364">364</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PSE_36" data-ref="_M/index_cpu_PSE_36">index_cpu_PSE_36</dfn>	CPUID_INDEX_1</u></td></tr>
+<tr><th id="365">365</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PSN" data-ref="_M/index_cpu_PSN">index_cpu_PSN</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="366">366</th><td><u>#define <dfn class="macro" id="_M/index_cpu_CLFSH" data-ref="_M/index_cpu_CLFSH">index_cpu_CLFSH</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="367">367</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_1_EDX_20" data-ref="_M/index_cpu_INDEX_1_EDX_20">index_cpu_INDEX_1_EDX_20</dfn> CPUID_INDEX_1</u></td></tr>
+<tr><th id="368">368</th><td><u>#define <dfn class="macro" id="_M/index_cpu_DS" data-ref="_M/index_cpu_DS">index_cpu_DS</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="369">369</th><td><u>#define <dfn class="macro" id="_M/index_cpu_ACPI" data-ref="_M/index_cpu_ACPI">index_cpu_ACPI</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="370">370</th><td><u>#define <dfn class="macro" id="_M/index_cpu_MMX" data-ref="_M/index_cpu_MMX">index_cpu_MMX</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="371">371</th><td><u>#define <dfn class="macro" id="_M/index_cpu_FXSR" data-ref="_M/index_cpu_FXSR">index_cpu_FXSR</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="372">372</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SSE" data-ref="_M/index_cpu_SSE">index_cpu_SSE</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="373">373</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SSE2" data-ref="_M/index_cpu_SSE2">index_cpu_SSE2</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="374">374</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SS" data-ref="_M/index_cpu_SS">index_cpu_SS</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="375">375</th><td><u>#define <dfn class="macro" id="_M/index_cpu_HTT" data-ref="_M/index_cpu_HTT">index_cpu_HTT</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="376">376</th><td><u>#define <dfn class="macro" id="_M/index_cpu_TM" data-ref="_M/index_cpu_TM">index_cpu_TM</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="377">377</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_1_EDX_30" data-ref="_M/index_cpu_INDEX_1_EDX_30">index_cpu_INDEX_1_EDX_30</dfn> CPUID_INDEX_1</u></td></tr>
+<tr><th id="378">378</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PBE" data-ref="_M/index_cpu_PBE">index_cpu_PBE</dfn>		CPUID_INDEX_1</u></td></tr>
+<tr><th id="379">379</th><td></td></tr>
+<tr><th id="380">380</th><td><i>/* CPUID_INDEX_7.  */</i></td></tr>
+<tr><th id="381">381</th><td></td></tr>
+<tr><th id="382">382</th><td><i>/* EBX.  */</i></td></tr>
+<tr><th id="383">383</th><td><u>#define <dfn class="macro" id="_M/index_cpu_FSGSBASE" data-ref="_M/index_cpu_FSGSBASE">index_cpu_FSGSBASE</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="384">384</th><td><u>#define <dfn class="macro" id="_M/index_cpu_TSC_ADJUST" data-ref="_M/index_cpu_TSC_ADJUST">index_cpu_TSC_ADJUST</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="385">385</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SGX" data-ref="_M/index_cpu_SGX">index_cpu_SGX</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="386">386</th><td><u>#define <dfn class="macro" id="_M/index_cpu_BMI1" data-ref="_M/index_cpu_BMI1">index_cpu_BMI1</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="387">387</th><td><u>#define <dfn class="macro" id="_M/index_cpu_HLE" data-ref="_M/index_cpu_HLE">index_cpu_HLE</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="388">388</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX2" data-ref="_M/index_cpu_AVX2">index_cpu_AVX2</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="389">389</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EBX_6" data-ref="_M/index_cpu_INDEX_7_EBX_6">index_cpu_INDEX_7_EBX_6</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="390">390</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SMEP" data-ref="_M/index_cpu_SMEP">index_cpu_SMEP</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="391">391</th><td><u>#define <dfn class="macro" id="_M/index_cpu_BMI2" data-ref="_M/index_cpu_BMI2">index_cpu_BMI2</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="392">392</th><td><u>#define <dfn class="macro" id="_M/index_cpu_ERMS" data-ref="_M/index_cpu_ERMS">index_cpu_ERMS</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="393">393</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INVPCID" data-ref="_M/index_cpu_INVPCID">index_cpu_INVPCID</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="394">394</th><td><u>#define <dfn class="macro" id="_M/index_cpu_RTM" data-ref="_M/index_cpu_RTM">index_cpu_RTM</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="395">395</th><td><u>#define <dfn class="macro" id="_M/index_cpu_RDT_M" data-ref="_M/index_cpu_RDT_M">index_cpu_RDT_M</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="396">396</th><td><u>#define <dfn class="macro" id="_M/index_cpu_DEPR_FPU_CS_DS" data-ref="_M/index_cpu_DEPR_FPU_CS_DS">index_cpu_DEPR_FPU_CS_DS</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="397">397</th><td><u>#define <dfn class="macro" id="_M/index_cpu_MPX" data-ref="_M/index_cpu_MPX">index_cpu_MPX</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="398">398</th><td><u>#define <dfn class="macro" id="_M/index_cpu_RDT_A" data-ref="_M/index_cpu_RDT_A">index_cpu_RDT_A</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="399">399</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512F" data-ref="_M/index_cpu_AVX512F">index_cpu_AVX512F</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="400">400</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512DQ" data-ref="_M/index_cpu_AVX512DQ">index_cpu_AVX512DQ</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="401">401</th><td><u>#define <dfn class="macro" id="_M/index_cpu_RDSEED" data-ref="_M/index_cpu_RDSEED">index_cpu_RDSEED</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="402">402</th><td><u>#define <dfn class="macro" id="_M/index_cpu_ADX" data-ref="_M/index_cpu_ADX">index_cpu_ADX</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="403">403</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SMAP" data-ref="_M/index_cpu_SMAP">index_cpu_SMAP</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="404">404</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512_IFMA" data-ref="_M/index_cpu_AVX512_IFMA">index_cpu_AVX512_IFMA</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="405">405</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EBX_22" data-ref="_M/index_cpu_INDEX_7_EBX_22">index_cpu_INDEX_7_EBX_22</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="406">406</th><td><u>#define <dfn class="macro" id="_M/index_cpu_CLFLUSHOPT" data-ref="_M/index_cpu_CLFLUSHOPT">index_cpu_CLFLUSHOPT</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="407">407</th><td><u>#define <dfn class="macro" id="_M/index_cpu_CLWB" data-ref="_M/index_cpu_CLWB">index_cpu_CLWB</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="408">408</th><td><u>#define <dfn class="macro" id="_M/index_cpu_TRACE" data-ref="_M/index_cpu_TRACE">index_cpu_TRACE</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="409">409</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512PF" data-ref="_M/index_cpu_AVX512PF">index_cpu_AVX512PF</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="410">410</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512ER" data-ref="_M/index_cpu_AVX512ER">index_cpu_AVX512ER</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="411">411</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512CD" data-ref="_M/index_cpu_AVX512CD">index_cpu_AVX512CD</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="412">412</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SHA" data-ref="_M/index_cpu_SHA">index_cpu_SHA</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="413">413</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512BW" data-ref="_M/index_cpu_AVX512BW">index_cpu_AVX512BW</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="414">414</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512VL" data-ref="_M/index_cpu_AVX512VL">index_cpu_AVX512VL</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="415">415</th><td></td></tr>
+<tr><th id="416">416</th><td><i>/* ECX.  */</i></td></tr>
+<tr><th id="417">417</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PREFETCHWT1" data-ref="_M/index_cpu_PREFETCHWT1">index_cpu_PREFETCHWT1</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="418">418</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512_VBMI" data-ref="_M/index_cpu_AVX512_VBMI">index_cpu_AVX512_VBMI</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="419">419</th><td><u>#define <dfn class="macro" id="_M/index_cpu_UMIP" data-ref="_M/index_cpu_UMIP">index_cpu_UMIP</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="420">420</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PKU" data-ref="_M/index_cpu_PKU">index_cpu_PKU</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="421">421</th><td><u>#define <dfn class="macro" id="_M/index_cpu_OSPKE" data-ref="_M/index_cpu_OSPKE">index_cpu_OSPKE</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="422">422</th><td><u>#define <dfn class="macro" id="_M/index_cpu_WAITPKG" data-ref="_M/index_cpu_WAITPKG">index_cpu_WAITPKG</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="423">423</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512_VBMI2" data-ref="_M/index_cpu_AVX512_VBMI2">index_cpu_AVX512_VBMI2</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="424">424</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SHSTK" data-ref="_M/index_cpu_SHSTK">index_cpu_SHSTK</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="425">425</th><td><u>#define <dfn class="macro" id="_M/index_cpu_GFNI" data-ref="_M/index_cpu_GFNI">index_cpu_GFNI</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="426">426</th><td><u>#define <dfn class="macro" id="_M/index_cpu_VAES" data-ref="_M/index_cpu_VAES">index_cpu_VAES</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="427">427</th><td><u>#define <dfn class="macro" id="_M/index_cpu_VPCLMULQDQ" data-ref="_M/index_cpu_VPCLMULQDQ">index_cpu_VPCLMULQDQ</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="428">428</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512_VNNI" data-ref="_M/index_cpu_AVX512_VNNI">index_cpu_AVX512_VNNI</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="429">429</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512_BITALG" data-ref="_M/index_cpu_AVX512_BITALG">index_cpu_AVX512_BITALG</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="430">430</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_ECX_13" data-ref="_M/index_cpu_INDEX_7_ECX_13">index_cpu_INDEX_7_ECX_13</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="431">431</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512_VPOPCNTDQ" data-ref="_M/index_cpu_AVX512_VPOPCNTDQ">index_cpu_AVX512_VPOPCNTDQ</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="432">432</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_ECX_15" data-ref="_M/index_cpu_INDEX_7_ECX_15">index_cpu_INDEX_7_ECX_15</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="433">433</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_ECX_16" data-ref="_M/index_cpu_INDEX_7_ECX_16">index_cpu_INDEX_7_ECX_16</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="434">434</th><td><u>#define <dfn class="macro" id="_M/index_cpu_RDPID" data-ref="_M/index_cpu_RDPID">index_cpu_RDPID</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="435">435</th><td><u>#define <dfn class="macro" id="_M/index_cpu_KL" data-ref="_M/index_cpu_KL">index_cpu_KL</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="436">436</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_ECX_24" data-ref="_M/index_cpu_INDEX_7_ECX_24">index_cpu_INDEX_7_ECX_24</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="437">437</th><td><u>#define <dfn class="macro" id="_M/index_cpu_CLDEMOTE" data-ref="_M/index_cpu_CLDEMOTE">index_cpu_CLDEMOTE</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="438">438</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_ECX_26" data-ref="_M/index_cpu_INDEX_7_ECX_26">index_cpu_INDEX_7_ECX_26</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="439">439</th><td><u>#define <dfn class="macro" id="_M/index_cpu_MOVDIRI" data-ref="_M/index_cpu_MOVDIRI">index_cpu_MOVDIRI</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="440">440</th><td><u>#define <dfn class="macro" id="_M/index_cpu_MOVDIR64B" data-ref="_M/index_cpu_MOVDIR64B">index_cpu_MOVDIR64B</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="441">441</th><td><u>#define <dfn class="macro" id="_M/index_cpu_ENQCMD" data-ref="_M/index_cpu_ENQCMD">index_cpu_ENQCMD</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="442">442</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SGX_LC" data-ref="_M/index_cpu_SGX_LC">index_cpu_SGX_LC</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="443">443</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PKS" data-ref="_M/index_cpu_PKS">index_cpu_PKS</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="444">444</th><td></td></tr>
+<tr><th id="445">445</th><td><i>/* EDX.  */</i></td></tr>
+<tr><th id="446">446</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EDX_0" data-ref="_M/index_cpu_INDEX_7_EDX_0">index_cpu_INDEX_7_EDX_0</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="447">447</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EDX_1" data-ref="_M/index_cpu_INDEX_7_EDX_1">index_cpu_INDEX_7_EDX_1</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="448">448</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512_4VNNIW" data-ref="_M/index_cpu_AVX512_4VNNIW">index_cpu_AVX512_4VNNIW</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="449">449</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512_4FMAPS" data-ref="_M/index_cpu_AVX512_4FMAPS">index_cpu_AVX512_4FMAPS</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="450">450</th><td><u>#define <dfn class="macro" id="_M/index_cpu_FSRM" data-ref="_M/index_cpu_FSRM">index_cpu_FSRM</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="451">451</th><td><u>#define <dfn class="macro" id="_M/index_cpu_UINTR" data-ref="_M/index_cpu_UINTR">index_cpu_UINTR</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="452">452</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EDX_6" data-ref="_M/index_cpu_INDEX_7_EDX_6">index_cpu_INDEX_7_EDX_6</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="453">453</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EDX_7" data-ref="_M/index_cpu_INDEX_7_EDX_7">index_cpu_INDEX_7_EDX_7</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="454">454</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512_VP2INTERSECT" data-ref="_M/index_cpu_AVX512_VP2INTERSECT">index_cpu_AVX512_VP2INTERSECT</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="455">455</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EDX_9" data-ref="_M/index_cpu_INDEX_7_EDX_9">index_cpu_INDEX_7_EDX_9</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="456">456</th><td><u>#define <dfn class="macro" id="_M/index_cpu_MD_CLEAR" data-ref="_M/index_cpu_MD_CLEAR">index_cpu_MD_CLEAR</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="457">457</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EDX_11" data-ref="_M/index_cpu_INDEX_7_EDX_11">index_cpu_INDEX_7_EDX_11</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="458">458</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EDX_12" data-ref="_M/index_cpu_INDEX_7_EDX_12">index_cpu_INDEX_7_EDX_12</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="459">459</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EDX_13" data-ref="_M/index_cpu_INDEX_7_EDX_13">index_cpu_INDEX_7_EDX_13</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="460">460</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SERIALIZE" data-ref="_M/index_cpu_SERIALIZE">index_cpu_SERIALIZE</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="461">461</th><td><u>#define <dfn class="macro" id="_M/index_cpu_HYBRID" data-ref="_M/index_cpu_HYBRID">index_cpu_HYBRID</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="462">462</th><td><u>#define <dfn class="macro" id="_M/index_cpu_TSXLDTRK" data-ref="_M/index_cpu_TSXLDTRK">index_cpu_TSXLDTRK</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="463">463</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EDX_17" data-ref="_M/index_cpu_INDEX_7_EDX_17">index_cpu_INDEX_7_EDX_17</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="464">464</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PCONFIG" data-ref="_M/index_cpu_PCONFIG">index_cpu_PCONFIG</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="465">465</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EDX_19" data-ref="_M/index_cpu_INDEX_7_EDX_19">index_cpu_INDEX_7_EDX_19</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="466">466</th><td><u>#define <dfn class="macro" id="_M/index_cpu_IBT" data-ref="_M/index_cpu_IBT">index_cpu_IBT</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="467">467</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INDEX_7_EDX_21" data-ref="_M/index_cpu_INDEX_7_EDX_21">index_cpu_INDEX_7_EDX_21</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="468">468</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AMX_BF16" data-ref="_M/index_cpu_AMX_BF16">index_cpu_AMX_BF16</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="469">469</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512_FP16" data-ref="_M/index_cpu_AVX512_FP16">index_cpu_AVX512_FP16</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="470">470</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AMX_TILE" data-ref="_M/index_cpu_AMX_TILE">index_cpu_AMX_TILE</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="471">471</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AMX_INT8" data-ref="_M/index_cpu_AMX_INT8">index_cpu_AMX_INT8</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="472">472</th><td><u>#define <dfn class="macro" id="_M/index_cpu_IBRS_IBPB" data-ref="_M/index_cpu_IBRS_IBPB">index_cpu_IBRS_IBPB</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="473">473</th><td><u>#define <dfn class="macro" id="_M/index_cpu_STIBP" data-ref="_M/index_cpu_STIBP">index_cpu_STIBP</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="474">474</th><td><u>#define <dfn class="macro" id="_M/index_cpu_L1D_FLUSH" data-ref="_M/index_cpu_L1D_FLUSH">index_cpu_L1D_FLUSH</dfn>	CPUID_INDEX_7</u></td></tr>
+<tr><th id="475">475</th><td><u>#define <dfn class="macro" id="_M/index_cpu_ARCH_CAPABILITIES" data-ref="_M/index_cpu_ARCH_CAPABILITIES">index_cpu_ARCH_CAPABILITIES</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="476">476</th><td><u>#define <dfn class="macro" id="_M/index_cpu_CORE_CAPABILITIES" data-ref="_M/index_cpu_CORE_CAPABILITIES">index_cpu_CORE_CAPABILITIES</dfn> CPUID_INDEX_7</u></td></tr>
+<tr><th id="477">477</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SSBD" data-ref="_M/index_cpu_SSBD">index_cpu_SSBD</dfn>		CPUID_INDEX_7</u></td></tr>
+<tr><th id="478">478</th><td></td></tr>
+<tr><th id="479">479</th><td><i>/* CPUID_INDEX_80000001.  */</i></td></tr>
+<tr><th id="480">480</th><td></td></tr>
+<tr><th id="481">481</th><td><i>/* ECX.  */</i></td></tr>
+<tr><th id="482">482</th><td><u>#define <dfn class="macro" id="_M/index_cpu_LAHF64_SAHF64" data-ref="_M/index_cpu_LAHF64_SAHF64">index_cpu_LAHF64_SAHF64</dfn> CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="483">483</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SVM" data-ref="_M/index_cpu_SVM">index_cpu_SVM</dfn>		CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="484">484</th><td><u>#define <dfn class="macro" id="_M/index_cpu_LZCNT" data-ref="_M/index_cpu_LZCNT">index_cpu_LZCNT</dfn>		CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="485">485</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SSE4A" data-ref="_M/index_cpu_SSE4A">index_cpu_SSE4A</dfn>		CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="486">486</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PREFETCHW" data-ref="_M/index_cpu_PREFETCHW">index_cpu_PREFETCHW</dfn>	CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="487">487</th><td><u>#define <dfn class="macro" id="_M/index_cpu_XOP" data-ref="_M/index_cpu_XOP">index_cpu_XOP</dfn>		CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="488">488</th><td><u>#define <dfn class="macro" id="_M/index_cpu_LWP" data-ref="_M/index_cpu_LWP">index_cpu_LWP</dfn>		CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="489">489</th><td><u>#define <dfn class="macro" id="_M/index_cpu_FMA4" data-ref="_M/index_cpu_FMA4">index_cpu_FMA4</dfn>		CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="490">490</th><td><u>#define <dfn class="macro" id="_M/index_cpu_TBM" data-ref="_M/index_cpu_TBM">index_cpu_TBM</dfn>		CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="491">491</th><td></td></tr>
+<tr><th id="492">492</th><td><i>/* EDX.  */</i></td></tr>
+<tr><th id="493">493</th><td><u>#define <dfn class="macro" id="_M/index_cpu_SYSCALL_SYSRET" data-ref="_M/index_cpu_SYSCALL_SYSRET">index_cpu_SYSCALL_SYSRET</dfn> CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="494">494</th><td><u>#define <dfn class="macro" id="_M/index_cpu_NX" data-ref="_M/index_cpu_NX">index_cpu_NX</dfn>		CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="495">495</th><td><u>#define <dfn class="macro" id="_M/index_cpu_PAGE1GB" data-ref="_M/index_cpu_PAGE1GB">index_cpu_PAGE1GB</dfn>	CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="496">496</th><td><u>#define <dfn class="macro" id="_M/index_cpu_RDTSCP" data-ref="_M/index_cpu_RDTSCP">index_cpu_RDTSCP</dfn>	CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="497">497</th><td><u>#define <dfn class="macro" id="_M/index_cpu_LM" data-ref="_M/index_cpu_LM">index_cpu_LM</dfn>		CPUID_INDEX_80000001</u></td></tr>
+<tr><th id="498">498</th><td></td></tr>
+<tr><th id="499">499</th><td><i>/* CPUID_INDEX_D_ECX_1.  */</i></td></tr>
+<tr><th id="500">500</th><td></td></tr>
+<tr><th id="501">501</th><td><i>/* EAX.  */</i></td></tr>
+<tr><th id="502">502</th><td><u>#define <dfn class="macro" id="_M/index_cpu_XSAVEOPT" data-ref="_M/index_cpu_XSAVEOPT">index_cpu_XSAVEOPT</dfn>	CPUID_INDEX_D_ECX_1</u></td></tr>
+<tr><th id="503">503</th><td><u>#define <dfn class="macro" id="_M/index_cpu_XSAVEC" data-ref="_M/index_cpu_XSAVEC">index_cpu_XSAVEC</dfn>	CPUID_INDEX_D_ECX_1</u></td></tr>
+<tr><th id="504">504</th><td><u>#define <dfn class="macro" id="_M/index_cpu_XGETBV_ECX_1" data-ref="_M/index_cpu_XGETBV_ECX_1">index_cpu_XGETBV_ECX_1</dfn>	CPUID_INDEX_D_ECX_1</u></td></tr>
+<tr><th id="505">505</th><td><u>#define <dfn class="macro" id="_M/index_cpu_XSAVES" data-ref="_M/index_cpu_XSAVES">index_cpu_XSAVES</dfn>	CPUID_INDEX_D_ECX_1</u></td></tr>
+<tr><th id="506">506</th><td><u>#define <dfn class="macro" id="_M/index_cpu_XFD" data-ref="_M/index_cpu_XFD">index_cpu_XFD</dfn>		CPUID_INDEX_D_ECX_1</u></td></tr>
+<tr><th id="507">507</th><td></td></tr>
+<tr><th id="508">508</th><td><i>/* CPUID_INDEX_80000007.  */</i></td></tr>
+<tr><th id="509">509</th><td></td></tr>
+<tr><th id="510">510</th><td><i>/* EDX.  */</i></td></tr>
+<tr><th id="511">511</th><td><u>#define <dfn class="macro" id="_M/index_cpu_INVARIANT_TSC" data-ref="_M/index_cpu_INVARIANT_TSC">index_cpu_INVARIANT_TSC</dfn>	CPUID_INDEX_80000007</u></td></tr>
+<tr><th id="512">512</th><td></td></tr>
+<tr><th id="513">513</th><td><i>/* CPUID_INDEX_80000008.  */</i></td></tr>
+<tr><th id="514">514</th><td></td></tr>
+<tr><th id="515">515</th><td><i>/* EBX.  */</i></td></tr>
+<tr><th id="516">516</th><td><u>#define <dfn class="macro" id="_M/index_cpu_WBNOINVD" data-ref="_M/index_cpu_WBNOINVD">index_cpu_WBNOINVD</dfn>	CPUID_INDEX_80000008</u></td></tr>
+<tr><th id="517">517</th><td></td></tr>
+<tr><th id="518">518</th><td><i>/* CPUID_INDEX_7_ECX_1.  */</i></td></tr>
+<tr><th id="519">519</th><td></td></tr>
+<tr><th id="520">520</th><td><i>/* EAX.  */</i></td></tr>
+<tr><th id="521">521</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX_VNNI" data-ref="_M/index_cpu_AVX_VNNI">index_cpu_AVX_VNNI</dfn>	CPUID_INDEX_7_ECX_1</u></td></tr>
+<tr><th id="522">522</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AVX512_BF16" data-ref="_M/index_cpu_AVX512_BF16">index_cpu_AVX512_BF16</dfn>	CPUID_INDEX_7_ECX_1</u></td></tr>
+<tr><th id="523">523</th><td><u>#define <dfn class="macro" id="_M/index_cpu_FZLRM" data-ref="_M/index_cpu_FZLRM">index_cpu_FZLRM</dfn>		CPUID_INDEX_7_ECX_1</u></td></tr>
+<tr><th id="524">524</th><td><u>#define <dfn class="macro" id="_M/index_cpu_FSRS" data-ref="_M/index_cpu_FSRS">index_cpu_FSRS</dfn>		CPUID_INDEX_7_ECX_1</u></td></tr>
+<tr><th id="525">525</th><td><u>#define <dfn class="macro" id="_M/index_cpu_FSRCS" data-ref="_M/index_cpu_FSRCS">index_cpu_FSRCS</dfn>		CPUID_INDEX_7_ECX_1</u></td></tr>
+<tr><th id="526">526</th><td><u>#define <dfn class="macro" id="_M/index_cpu_HRESET" data-ref="_M/index_cpu_HRESET">index_cpu_HRESET</dfn>	CPUID_INDEX_7_ECX_1</u></td></tr>
+<tr><th id="527">527</th><td><u>#define <dfn class="macro" id="_M/index_cpu_LAM" data-ref="_M/index_cpu_LAM">index_cpu_LAM</dfn>		CPUID_INDEX_7_ECX_1</u></td></tr>
+<tr><th id="528">528</th><td></td></tr>
+<tr><th id="529">529</th><td><i>/* CPUID_INDEX_19.  */</i></td></tr>
+<tr><th id="530">530</th><td></td></tr>
+<tr><th id="531">531</th><td><i>/* EBX.  */</i></td></tr>
+<tr><th id="532">532</th><td><u>#define <dfn class="macro" id="_M/index_cpu_AESKLE" data-ref="_M/index_cpu_AESKLE">index_cpu_AESKLE</dfn>	CPUID_INDEX_19</u></td></tr>
+<tr><th id="533">533</th><td><u>#define <dfn class="macro" id="_M/index_cpu_WIDE_KL" data-ref="_M/index_cpu_WIDE_KL">index_cpu_WIDE_KL</dfn>	CPUID_INDEX_19</u></td></tr>
+<tr><th id="534">534</th><td></td></tr>
+<tr><th id="535">535</th><td><i>/* CPUID_INDEX_1.  */</i></td></tr>
+<tr><th id="536">536</th><td></td></tr>
+<tr><th id="537">537</th><td><i>/* ECX.  */</i></td></tr>
+<tr><th id="538">538</th><td><u>#define <dfn class="macro" id="_M/reg_SSE3" data-ref="_M/reg_SSE3">reg_SSE3</dfn>		ecx</u></td></tr>
+<tr><th id="539">539</th><td><u>#define <dfn class="macro" id="_M/reg_PCLMULQDQ" data-ref="_M/reg_PCLMULQDQ">reg_PCLMULQDQ</dfn>		ecx</u></td></tr>
+<tr><th id="540">540</th><td><u>#define <dfn class="macro" id="_M/reg_DTES64" data-ref="_M/reg_DTES64">reg_DTES64</dfn>		ecx</u></td></tr>
+<tr><th id="541">541</th><td><u>#define <dfn class="macro" id="_M/reg_MONITOR" data-ref="_M/reg_MONITOR">reg_MONITOR</dfn>		ecx</u></td></tr>
+<tr><th id="542">542</th><td><u>#define <dfn class="macro" id="_M/reg_DS_CPL" data-ref="_M/reg_DS_CPL">reg_DS_CPL</dfn>		ecx</u></td></tr>
+<tr><th id="543">543</th><td><u>#define <dfn class="macro" id="_M/reg_VMX" data-ref="_M/reg_VMX">reg_VMX</dfn>			ecx</u></td></tr>
+<tr><th id="544">544</th><td><u>#define <dfn class="macro" id="_M/reg_SMX" data-ref="_M/reg_SMX">reg_SMX</dfn>			ecx</u></td></tr>
+<tr><th id="545">545</th><td><u>#define <dfn class="macro" id="_M/reg_EIST" data-ref="_M/reg_EIST">reg_EIST</dfn>		ecx</u></td></tr>
+<tr><th id="546">546</th><td><u>#define <dfn class="macro" id="_M/reg_TM2" data-ref="_M/reg_TM2">reg_TM2</dfn>			ecx</u></td></tr>
+<tr><th id="547">547</th><td><u>#define <dfn class="macro" id="_M/reg_SSSE3" data-ref="_M/reg_SSSE3">reg_SSSE3</dfn>		ecx</u></td></tr>
+<tr><th id="548">548</th><td><u>#define <dfn class="macro" id="_M/reg_CNXT_ID" data-ref="_M/reg_CNXT_ID">reg_CNXT_ID</dfn>		ecx</u></td></tr>
+<tr><th id="549">549</th><td><u>#define <dfn class="macro" id="_M/reg_SDBG" data-ref="_M/reg_SDBG">reg_SDBG</dfn>		ecx</u></td></tr>
+<tr><th id="550">550</th><td><u>#define <dfn class="macro" id="_M/reg_FMA" data-ref="_M/reg_FMA">reg_FMA</dfn>			ecx</u></td></tr>
+<tr><th id="551">551</th><td><u>#define <dfn class="macro" id="_M/reg_CMPXCHG16B" data-ref="_M/reg_CMPXCHG16B">reg_CMPXCHG16B</dfn>		ecx</u></td></tr>
+<tr><th id="552">552</th><td><u>#define <dfn class="macro" id="_M/reg_XTPRUPDCTRL" data-ref="_M/reg_XTPRUPDCTRL">reg_XTPRUPDCTRL</dfn>		ecx</u></td></tr>
+<tr><th id="553">553</th><td><u>#define <dfn class="macro" id="_M/reg_PDCM" data-ref="_M/reg_PDCM">reg_PDCM</dfn>		ecx</u></td></tr>
+<tr><th id="554">554</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_1_ECX_16" data-ref="_M/reg_INDEX_1_ECX_16">reg_INDEX_1_ECX_16</dfn>	ecx</u></td></tr>
+<tr><th id="555">555</th><td><u>#define <dfn class="macro" id="_M/reg_PCID" data-ref="_M/reg_PCID">reg_PCID</dfn>		ecx</u></td></tr>
+<tr><th id="556">556</th><td><u>#define <dfn class="macro" id="_M/reg_DCA" data-ref="_M/reg_DCA">reg_DCA</dfn>			ecx</u></td></tr>
+<tr><th id="557">557</th><td><u>#define <dfn class="macro" id="_M/reg_SSE4_1" data-ref="_M/reg_SSE4_1">reg_SSE4_1</dfn>		ecx</u></td></tr>
+<tr><th id="558">558</th><td><u>#define <dfn class="macro" id="_M/reg_SSE4_2" data-ref="_M/reg_SSE4_2">reg_SSE4_2</dfn>		ecx</u></td></tr>
+<tr><th id="559">559</th><td><u>#define <dfn class="macro" id="_M/reg_X2APIC" data-ref="_M/reg_X2APIC">reg_X2APIC</dfn>		ecx</u></td></tr>
+<tr><th id="560">560</th><td><u>#define <dfn class="macro" id="_M/reg_MOVBE" data-ref="_M/reg_MOVBE">reg_MOVBE</dfn>		ecx</u></td></tr>
+<tr><th id="561">561</th><td><u>#define <dfn class="macro" id="_M/reg_POPCNT" data-ref="_M/reg_POPCNT">reg_POPCNT</dfn>		ecx</u></td></tr>
+<tr><th id="562">562</th><td><u>#define <dfn class="macro" id="_M/reg_TSC_DEADLINE" data-ref="_M/reg_TSC_DEADLINE">reg_TSC_DEADLINE</dfn>	ecx</u></td></tr>
+<tr><th id="563">563</th><td><u>#define <dfn class="macro" id="_M/reg_AES" data-ref="_M/reg_AES">reg_AES</dfn>			ecx</u></td></tr>
+<tr><th id="564">564</th><td><u>#define <dfn class="macro" id="_M/reg_XSAVE" data-ref="_M/reg_XSAVE">reg_XSAVE</dfn>		ecx</u></td></tr>
+<tr><th id="565">565</th><td><u>#define <dfn class="macro" id="_M/reg_OSXSAVE" data-ref="_M/reg_OSXSAVE">reg_OSXSAVE</dfn>		ecx</u></td></tr>
+<tr><th id="566">566</th><td><u>#define <dfn class="macro" id="_M/reg_AVX" data-ref="_M/reg_AVX">reg_AVX</dfn>			ecx</u></td></tr>
+<tr><th id="567">567</th><td><u>#define <dfn class="macro" id="_M/reg_F16C" data-ref="_M/reg_F16C">reg_F16C</dfn>		ecx</u></td></tr>
+<tr><th id="568">568</th><td><u>#define <dfn class="macro" id="_M/reg_RDRAND" data-ref="_M/reg_RDRAND">reg_RDRAND</dfn>		ecx</u></td></tr>
+<tr><th id="569">569</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_1_ECX_31" data-ref="_M/reg_INDEX_1_ECX_31">reg_INDEX_1_ECX_31</dfn>	ecx</u></td></tr>
+<tr><th id="570">570</th><td></td></tr>
+<tr><th id="571">571</th><td><i>/* EDX.  */</i></td></tr>
+<tr><th id="572">572</th><td><u>#define <dfn class="macro" id="_M/reg_FPU" data-ref="_M/reg_FPU">reg_FPU</dfn>			edx</u></td></tr>
+<tr><th id="573">573</th><td><u>#define <dfn class="macro" id="_M/reg_VME" data-ref="_M/reg_VME">reg_VME</dfn>			edx</u></td></tr>
+<tr><th id="574">574</th><td><u>#define <dfn class="macro" id="_M/reg_DE" data-ref="_M/reg_DE">reg_DE</dfn>			edx</u></td></tr>
+<tr><th id="575">575</th><td><u>#define <dfn class="macro" id="_M/reg_PSE" data-ref="_M/reg_PSE">reg_PSE</dfn>			edx</u></td></tr>
+<tr><th id="576">576</th><td><u>#define <dfn class="macro" id="_M/reg_TSC" data-ref="_M/reg_TSC">reg_TSC</dfn>			edx</u></td></tr>
+<tr><th id="577">577</th><td><u>#define <dfn class="macro" id="_M/reg_MSR" data-ref="_M/reg_MSR">reg_MSR</dfn>			edx</u></td></tr>
+<tr><th id="578">578</th><td><u>#define <dfn class="macro" id="_M/reg_PAE" data-ref="_M/reg_PAE">reg_PAE</dfn>			edx</u></td></tr>
+<tr><th id="579">579</th><td><u>#define <dfn class="macro" id="_M/reg_MCE" data-ref="_M/reg_MCE">reg_MCE</dfn>			edx</u></td></tr>
+<tr><th id="580">580</th><td><u>#define <dfn class="macro" id="_M/reg_CX8" data-ref="_M/reg_CX8">reg_CX8</dfn>			edx</u></td></tr>
+<tr><th id="581">581</th><td><u>#define <dfn class="macro" id="_M/reg_APIC" data-ref="_M/reg_APIC">reg_APIC</dfn>		edx</u></td></tr>
+<tr><th id="582">582</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_1_EDX_10" data-ref="_M/reg_INDEX_1_EDX_10">reg_INDEX_1_EDX_10</dfn>	edx</u></td></tr>
+<tr><th id="583">583</th><td><u>#define <dfn class="macro" id="_M/reg_SEP" data-ref="_M/reg_SEP">reg_SEP</dfn>			edx</u></td></tr>
+<tr><th id="584">584</th><td><u>#define <dfn class="macro" id="_M/reg_MTRR" data-ref="_M/reg_MTRR">reg_MTRR</dfn>		edx</u></td></tr>
+<tr><th id="585">585</th><td><u>#define <dfn class="macro" id="_M/reg_PGE" data-ref="_M/reg_PGE">reg_PGE</dfn>			edx</u></td></tr>
+<tr><th id="586">586</th><td><u>#define <dfn class="macro" id="_M/reg_MCA" data-ref="_M/reg_MCA">reg_MCA</dfn>			edx</u></td></tr>
+<tr><th id="587">587</th><td><u>#define <dfn class="macro" id="_M/reg_CMOV" data-ref="_M/reg_CMOV">reg_CMOV</dfn>		edx</u></td></tr>
+<tr><th id="588">588</th><td><u>#define <dfn class="macro" id="_M/reg_PAT" data-ref="_M/reg_PAT">reg_PAT</dfn>			edx</u></td></tr>
+<tr><th id="589">589</th><td><u>#define <dfn class="macro" id="_M/reg_PSE_36" data-ref="_M/reg_PSE_36">reg_PSE_36</dfn>		edx</u></td></tr>
+<tr><th id="590">590</th><td><u>#define <dfn class="macro" id="_M/reg_PSN" data-ref="_M/reg_PSN">reg_PSN</dfn>			edx</u></td></tr>
+<tr><th id="591">591</th><td><u>#define <dfn class="macro" id="_M/reg_CLFSH" data-ref="_M/reg_CLFSH">reg_CLFSH</dfn>		edx</u></td></tr>
+<tr><th id="592">592</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_1_EDX_20" data-ref="_M/reg_INDEX_1_EDX_20">reg_INDEX_1_EDX_20</dfn>	edx</u></td></tr>
+<tr><th id="593">593</th><td><u>#define <dfn class="macro" id="_M/reg_DS" data-ref="_M/reg_DS">reg_DS</dfn>			edx</u></td></tr>
+<tr><th id="594">594</th><td><u>#define <dfn class="macro" id="_M/reg_ACPI" data-ref="_M/reg_ACPI">reg_ACPI</dfn>		edx</u></td></tr>
+<tr><th id="595">595</th><td><u>#define <dfn class="macro" id="_M/reg_MMX" data-ref="_M/reg_MMX">reg_MMX</dfn>			edx</u></td></tr>
+<tr><th id="596">596</th><td><u>#define <dfn class="macro" id="_M/reg_FXSR" data-ref="_M/reg_FXSR">reg_FXSR</dfn>		edx</u></td></tr>
+<tr><th id="597">597</th><td><u>#define <dfn class="macro" id="_M/reg_SSE" data-ref="_M/reg_SSE">reg_SSE</dfn>			edx</u></td></tr>
+<tr><th id="598">598</th><td><u>#define <dfn class="macro" id="_M/reg_SSE2" data-ref="_M/reg_SSE2">reg_SSE2</dfn>		edx</u></td></tr>
+<tr><th id="599">599</th><td><u>#define <dfn class="macro" id="_M/reg_SS" data-ref="_M/reg_SS">reg_SS</dfn>			edx</u></td></tr>
+<tr><th id="600">600</th><td><u>#define <dfn class="macro" id="_M/reg_HTT" data-ref="_M/reg_HTT">reg_HTT</dfn>			edx</u></td></tr>
+<tr><th id="601">601</th><td><u>#define <dfn class="macro" id="_M/reg_TM" data-ref="_M/reg_TM">reg_TM</dfn>			edx</u></td></tr>
+<tr><th id="602">602</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_1_EDX_30" data-ref="_M/reg_INDEX_1_EDX_30">reg_INDEX_1_EDX_30</dfn>	edx</u></td></tr>
+<tr><th id="603">603</th><td><u>#define <dfn class="macro" id="_M/reg_PBE" data-ref="_M/reg_PBE">reg_PBE</dfn>			edx</u></td></tr>
+<tr><th id="604">604</th><td></td></tr>
+<tr><th id="605">605</th><td><i>/* CPUID_INDEX_7.  */</i></td></tr>
+<tr><th id="606">606</th><td></td></tr>
+<tr><th id="607">607</th><td><i>/* EBX.  */</i></td></tr>
+<tr><th id="608">608</th><td><u>#define <dfn class="macro" id="_M/reg_FSGSBASE" data-ref="_M/reg_FSGSBASE">reg_FSGSBASE</dfn>		ebx</u></td></tr>
+<tr><th id="609">609</th><td><u>#define <dfn class="macro" id="_M/reg_TSC_ADJUST" data-ref="_M/reg_TSC_ADJUST">reg_TSC_ADJUST</dfn>		ebx</u></td></tr>
+<tr><th id="610">610</th><td><u>#define <dfn class="macro" id="_M/reg_SGX" data-ref="_M/reg_SGX">reg_SGX</dfn>			ebx</u></td></tr>
+<tr><th id="611">611</th><td><u>#define <dfn class="macro" id="_M/reg_BMI1" data-ref="_M/reg_BMI1">reg_BMI1</dfn>		ebx</u></td></tr>
+<tr><th id="612">612</th><td><u>#define <dfn class="macro" id="_M/reg_HLE" data-ref="_M/reg_HLE">reg_HLE</dfn>			ebx</u></td></tr>
+<tr><th id="613">613</th><td><u>#define <dfn class="macro" id="_M/reg_BMI2" data-ref="_M/reg_BMI2">reg_BMI2</dfn>		ebx</u></td></tr>
+<tr><th id="614">614</th><td><u>#define <dfn class="macro" id="_M/reg_AVX2" data-ref="_M/reg_AVX2">reg_AVX2</dfn>		ebx</u></td></tr>
+<tr><th id="615">615</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EBX_6" data-ref="_M/reg_INDEX_7_EBX_6">reg_INDEX_7_EBX_6</dfn>	ebx</u></td></tr>
+<tr><th id="616">616</th><td><u>#define <dfn class="macro" id="_M/reg_SMEP" data-ref="_M/reg_SMEP">reg_SMEP</dfn>		ebx</u></td></tr>
+<tr><th id="617">617</th><td><u>#define <dfn class="macro" id="_M/reg_ERMS" data-ref="_M/reg_ERMS">reg_ERMS</dfn>		ebx</u></td></tr>
+<tr><th id="618">618</th><td><u>#define <dfn class="macro" id="_M/reg_INVPCID" data-ref="_M/reg_INVPCID">reg_INVPCID</dfn>		ebx</u></td></tr>
+<tr><th id="619">619</th><td><u>#define <dfn class="macro" id="_M/reg_RTM" data-ref="_M/reg_RTM">reg_RTM</dfn>			ebx</u></td></tr>
+<tr><th id="620">620</th><td><u>#define <dfn class="macro" id="_M/reg_RDT_M" data-ref="_M/reg_RDT_M">reg_RDT_M</dfn>		ebx</u></td></tr>
+<tr><th id="621">621</th><td><u>#define <dfn class="macro" id="_M/reg_DEPR_FPU_CS_DS" data-ref="_M/reg_DEPR_FPU_CS_DS">reg_DEPR_FPU_CS_DS</dfn>	ebx</u></td></tr>
+<tr><th id="622">622</th><td><u>#define <dfn class="macro" id="_M/reg_MPX" data-ref="_M/reg_MPX">reg_MPX</dfn>			ebx</u></td></tr>
+<tr><th id="623">623</th><td><u>#define <dfn class="macro" id="_M/reg_RDT_A" data-ref="_M/reg_RDT_A">reg_RDT_A</dfn>		ebx</u></td></tr>
+<tr><th id="624">624</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512F" data-ref="_M/reg_AVX512F">reg_AVX512F</dfn>		ebx</u></td></tr>
+<tr><th id="625">625</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512DQ" data-ref="_M/reg_AVX512DQ">reg_AVX512DQ</dfn>		ebx</u></td></tr>
+<tr><th id="626">626</th><td><u>#define <dfn class="macro" id="_M/reg_RDSEED" data-ref="_M/reg_RDSEED">reg_RDSEED</dfn>		ebx</u></td></tr>
+<tr><th id="627">627</th><td><u>#define <dfn class="macro" id="_M/reg_ADX" data-ref="_M/reg_ADX">reg_ADX</dfn>			ebx</u></td></tr>
+<tr><th id="628">628</th><td><u>#define <dfn class="macro" id="_M/reg_SMAP" data-ref="_M/reg_SMAP">reg_SMAP</dfn>		ebx</u></td></tr>
+<tr><th id="629">629</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512_IFMA" data-ref="_M/reg_AVX512_IFMA">reg_AVX512_IFMA</dfn>		ebx</u></td></tr>
+<tr><th id="630">630</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EBX_22" data-ref="_M/reg_INDEX_7_EBX_22">reg_INDEX_7_EBX_22</dfn>	ebx</u></td></tr>
+<tr><th id="631">631</th><td><u>#define <dfn class="macro" id="_M/reg_CLFLUSHOPT" data-ref="_M/reg_CLFLUSHOPT">reg_CLFLUSHOPT</dfn>		ebx</u></td></tr>
+<tr><th id="632">632</th><td><u>#define <dfn class="macro" id="_M/reg_CLWB" data-ref="_M/reg_CLWB">reg_CLWB</dfn>		ebx</u></td></tr>
+<tr><th id="633">633</th><td><u>#define <dfn class="macro" id="_M/reg_TRACE" data-ref="_M/reg_TRACE">reg_TRACE</dfn>		ebx</u></td></tr>
+<tr><th id="634">634</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512PF" data-ref="_M/reg_AVX512PF">reg_AVX512PF</dfn>		ebx</u></td></tr>
+<tr><th id="635">635</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512ER" data-ref="_M/reg_AVX512ER">reg_AVX512ER</dfn>		ebx</u></td></tr>
+<tr><th id="636">636</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512CD" data-ref="_M/reg_AVX512CD">reg_AVX512CD</dfn>		ebx</u></td></tr>
+<tr><th id="637">637</th><td><u>#define <dfn class="macro" id="_M/reg_SHA" data-ref="_M/reg_SHA">reg_SHA</dfn>			ebx</u></td></tr>
+<tr><th id="638">638</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512BW" data-ref="_M/reg_AVX512BW">reg_AVX512BW</dfn>		ebx</u></td></tr>
+<tr><th id="639">639</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512VL" data-ref="_M/reg_AVX512VL">reg_AVX512VL</dfn>		ebx</u></td></tr>
+<tr><th id="640">640</th><td></td></tr>
+<tr><th id="641">641</th><td><i>/* ECX.  */</i></td></tr>
+<tr><th id="642">642</th><td><u>#define <dfn class="macro" id="_M/reg_PREFETCHWT1" data-ref="_M/reg_PREFETCHWT1">reg_PREFETCHWT1</dfn>		ecx</u></td></tr>
+<tr><th id="643">643</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512_VBMI" data-ref="_M/reg_AVX512_VBMI">reg_AVX512_VBMI</dfn>		ecx</u></td></tr>
+<tr><th id="644">644</th><td><u>#define <dfn class="macro" id="_M/reg_UMIP" data-ref="_M/reg_UMIP">reg_UMIP</dfn>		ecx</u></td></tr>
+<tr><th id="645">645</th><td><u>#define <dfn class="macro" id="_M/reg_PKU" data-ref="_M/reg_PKU">reg_PKU</dfn>			ecx</u></td></tr>
+<tr><th id="646">646</th><td><u>#define <dfn class="macro" id="_M/reg_OSPKE" data-ref="_M/reg_OSPKE">reg_OSPKE</dfn>		ecx</u></td></tr>
+<tr><th id="647">647</th><td><u>#define <dfn class="macro" id="_M/reg_WAITPKG" data-ref="_M/reg_WAITPKG">reg_WAITPKG</dfn>		ecx</u></td></tr>
+<tr><th id="648">648</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512_VBMI2" data-ref="_M/reg_AVX512_VBMI2">reg_AVX512_VBMI2</dfn>	ecx</u></td></tr>
+<tr><th id="649">649</th><td><u>#define <dfn class="macro" id="_M/reg_SHSTK" data-ref="_M/reg_SHSTK">reg_SHSTK</dfn>		ecx</u></td></tr>
+<tr><th id="650">650</th><td><u>#define <dfn class="macro" id="_M/reg_GFNI" data-ref="_M/reg_GFNI">reg_GFNI</dfn>		ecx</u></td></tr>
+<tr><th id="651">651</th><td><u>#define <dfn class="macro" id="_M/reg_VAES" data-ref="_M/reg_VAES">reg_VAES</dfn>		ecx</u></td></tr>
+<tr><th id="652">652</th><td><u>#define <dfn class="macro" id="_M/reg_VPCLMULQDQ" data-ref="_M/reg_VPCLMULQDQ">reg_VPCLMULQDQ</dfn>		ecx</u></td></tr>
+<tr><th id="653">653</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512_VNNI" data-ref="_M/reg_AVX512_VNNI">reg_AVX512_VNNI</dfn>		ecx</u></td></tr>
+<tr><th id="654">654</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512_BITALG" data-ref="_M/reg_AVX512_BITALG">reg_AVX512_BITALG</dfn>	ecx</u></td></tr>
+<tr><th id="655">655</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_ECX_13" data-ref="_M/reg_INDEX_7_ECX_13">reg_INDEX_7_ECX_13</dfn>	ecx</u></td></tr>
+<tr><th id="656">656</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512_VPOPCNTDQ" data-ref="_M/reg_AVX512_VPOPCNTDQ">reg_AVX512_VPOPCNTDQ</dfn>	ecx</u></td></tr>
+<tr><th id="657">657</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_ECX_15" data-ref="_M/reg_INDEX_7_ECX_15">reg_INDEX_7_ECX_15</dfn>	ecx</u></td></tr>
+<tr><th id="658">658</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_ECX_16" data-ref="_M/reg_INDEX_7_ECX_16">reg_INDEX_7_ECX_16</dfn>	ecx</u></td></tr>
+<tr><th id="659">659</th><td><u>#define <dfn class="macro" id="_M/reg_RDPID" data-ref="_M/reg_RDPID">reg_RDPID</dfn>		ecx</u></td></tr>
+<tr><th id="660">660</th><td><u>#define <dfn class="macro" id="_M/reg_KL" data-ref="_M/reg_KL">reg_KL</dfn>			ecx</u></td></tr>
+<tr><th id="661">661</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_ECX_24" data-ref="_M/reg_INDEX_7_ECX_24">reg_INDEX_7_ECX_24</dfn>	ecx</u></td></tr>
+<tr><th id="662">662</th><td><u>#define <dfn class="macro" id="_M/reg_CLDEMOTE" data-ref="_M/reg_CLDEMOTE">reg_CLDEMOTE</dfn>		ecx</u></td></tr>
+<tr><th id="663">663</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_ECX_26" data-ref="_M/reg_INDEX_7_ECX_26">reg_INDEX_7_ECX_26</dfn>	ecx</u></td></tr>
+<tr><th id="664">664</th><td><u>#define <dfn class="macro" id="_M/reg_MOVDIRI" data-ref="_M/reg_MOVDIRI">reg_MOVDIRI</dfn>		ecx</u></td></tr>
+<tr><th id="665">665</th><td><u>#define <dfn class="macro" id="_M/reg_MOVDIR64B" data-ref="_M/reg_MOVDIR64B">reg_MOVDIR64B</dfn>		ecx</u></td></tr>
+<tr><th id="666">666</th><td><u>#define <dfn class="macro" id="_M/reg_ENQCMD" data-ref="_M/reg_ENQCMD">reg_ENQCMD</dfn>		ecx</u></td></tr>
+<tr><th id="667">667</th><td><u>#define <dfn class="macro" id="_M/reg_SGX_LC" data-ref="_M/reg_SGX_LC">reg_SGX_LC</dfn>		ecx</u></td></tr>
+<tr><th id="668">668</th><td><u>#define <dfn class="macro" id="_M/reg_PKS" data-ref="_M/reg_PKS">reg_PKS</dfn>			ecx</u></td></tr>
+<tr><th id="669">669</th><td></td></tr>
+<tr><th id="670">670</th><td><i>/* EDX.  */</i></td></tr>
+<tr><th id="671">671</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EDX_0" data-ref="_M/reg_INDEX_7_EDX_0">reg_INDEX_7_EDX_0</dfn>	edx</u></td></tr>
+<tr><th id="672">672</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EDX_1" data-ref="_M/reg_INDEX_7_EDX_1">reg_INDEX_7_EDX_1</dfn>	edx</u></td></tr>
+<tr><th id="673">673</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512_4VNNIW" data-ref="_M/reg_AVX512_4VNNIW">reg_AVX512_4VNNIW</dfn>	edx</u></td></tr>
+<tr><th id="674">674</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512_4FMAPS" data-ref="_M/reg_AVX512_4FMAPS">reg_AVX512_4FMAPS</dfn>	edx</u></td></tr>
+<tr><th id="675">675</th><td><u>#define <dfn class="macro" id="_M/reg_FSRM" data-ref="_M/reg_FSRM">reg_FSRM</dfn>		edx</u></td></tr>
+<tr><th id="676">676</th><td><u>#define <dfn class="macro" id="_M/reg_UINTR" data-ref="_M/reg_UINTR">reg_UINTR</dfn>		edx</u></td></tr>
+<tr><th id="677">677</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EDX_6" data-ref="_M/reg_INDEX_7_EDX_6">reg_INDEX_7_EDX_6</dfn>	edx</u></td></tr>
+<tr><th id="678">678</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EDX_7" data-ref="_M/reg_INDEX_7_EDX_7">reg_INDEX_7_EDX_7</dfn>	edx</u></td></tr>
+<tr><th id="679">679</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512_VP2INTERSECT" data-ref="_M/reg_AVX512_VP2INTERSECT">reg_AVX512_VP2INTERSECT</dfn>	edx</u></td></tr>
+<tr><th id="680">680</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EDX_9" data-ref="_M/reg_INDEX_7_EDX_9">reg_INDEX_7_EDX_9</dfn>	edx</u></td></tr>
+<tr><th id="681">681</th><td><u>#define <dfn class="macro" id="_M/reg_MD_CLEAR" data-ref="_M/reg_MD_CLEAR">reg_MD_CLEAR</dfn>		edx</u></td></tr>
+<tr><th id="682">682</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EDX_11" data-ref="_M/reg_INDEX_7_EDX_11">reg_INDEX_7_EDX_11</dfn>	edx</u></td></tr>
+<tr><th id="683">683</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EDX_12" data-ref="_M/reg_INDEX_7_EDX_12">reg_INDEX_7_EDX_12</dfn>	edx</u></td></tr>
+<tr><th id="684">684</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EDX_13" data-ref="_M/reg_INDEX_7_EDX_13">reg_INDEX_7_EDX_13</dfn>	edx</u></td></tr>
+<tr><th id="685">685</th><td><u>#define <dfn class="macro" id="_M/reg_SERIALIZE" data-ref="_M/reg_SERIALIZE">reg_SERIALIZE</dfn>		edx</u></td></tr>
+<tr><th id="686">686</th><td><u>#define <dfn class="macro" id="_M/reg_HYBRID" data-ref="_M/reg_HYBRID">reg_HYBRID</dfn>		edx</u></td></tr>
+<tr><th id="687">687</th><td><u>#define <dfn class="macro" id="_M/reg_TSXLDTRK" data-ref="_M/reg_TSXLDTRK">reg_TSXLDTRK</dfn>		edx</u></td></tr>
+<tr><th id="688">688</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EDX_17" data-ref="_M/reg_INDEX_7_EDX_17">reg_INDEX_7_EDX_17</dfn>	edx</u></td></tr>
+<tr><th id="689">689</th><td><u>#define <dfn class="macro" id="_M/reg_PCONFIG" data-ref="_M/reg_PCONFIG">reg_PCONFIG</dfn>		edx</u></td></tr>
+<tr><th id="690">690</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EDX_19" data-ref="_M/reg_INDEX_7_EDX_19">reg_INDEX_7_EDX_19</dfn>	edx</u></td></tr>
+<tr><th id="691">691</th><td><u>#define <dfn class="macro" id="_M/reg_IBT" data-ref="_M/reg_IBT">reg_IBT</dfn>			edx</u></td></tr>
+<tr><th id="692">692</th><td><u>#define <dfn class="macro" id="_M/reg_INDEX_7_EDX_21" data-ref="_M/reg_INDEX_7_EDX_21">reg_INDEX_7_EDX_21</dfn>	edx</u></td></tr>
+<tr><th id="693">693</th><td><u>#define <dfn class="macro" id="_M/reg_AMX_BF16" data-ref="_M/reg_AMX_BF16">reg_AMX_BF16</dfn>		edx</u></td></tr>
+<tr><th id="694">694</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512_FP16" data-ref="_M/reg_AVX512_FP16">reg_AVX512_FP16</dfn>		edx</u></td></tr>
+<tr><th id="695">695</th><td><u>#define <dfn class="macro" id="_M/reg_AMX_TILE" data-ref="_M/reg_AMX_TILE">reg_AMX_TILE</dfn>		edx</u></td></tr>
+<tr><th id="696">696</th><td><u>#define <dfn class="macro" id="_M/reg_AMX_INT8" data-ref="_M/reg_AMX_INT8">reg_AMX_INT8</dfn>		edx</u></td></tr>
+<tr><th id="697">697</th><td><u>#define <dfn class="macro" id="_M/reg_IBRS_IBPB" data-ref="_M/reg_IBRS_IBPB">reg_IBRS_IBPB</dfn>		edx</u></td></tr>
+<tr><th id="698">698</th><td><u>#define <dfn class="macro" id="_M/reg_STIBP" data-ref="_M/reg_STIBP">reg_STIBP</dfn>		edx</u></td></tr>
+<tr><th id="699">699</th><td><u>#define <dfn class="macro" id="_M/reg_L1D_FLUSH" data-ref="_M/reg_L1D_FLUSH">reg_L1D_FLUSH</dfn>		edx</u></td></tr>
+<tr><th id="700">700</th><td><u>#define <dfn class="macro" id="_M/reg_ARCH_CAPABILITIES" data-ref="_M/reg_ARCH_CAPABILITIES">reg_ARCH_CAPABILITIES</dfn>	edx</u></td></tr>
+<tr><th id="701">701</th><td><u>#define <dfn class="macro" id="_M/reg_CORE_CAPABILITIES" data-ref="_M/reg_CORE_CAPABILITIES">reg_CORE_CAPABILITIES</dfn>	edx</u></td></tr>
+<tr><th id="702">702</th><td><u>#define <dfn class="macro" id="_M/reg_SSBD" data-ref="_M/reg_SSBD">reg_SSBD</dfn>		edx</u></td></tr>
+<tr><th id="703">703</th><td></td></tr>
+<tr><th id="704">704</th><td><i>/* CPUID_INDEX_80000001.  */</i></td></tr>
+<tr><th id="705">705</th><td></td></tr>
+<tr><th id="706">706</th><td><i>/* ECX.  */</i></td></tr>
+<tr><th id="707">707</th><td><u>#define <dfn class="macro" id="_M/reg_LAHF64_SAHF64" data-ref="_M/reg_LAHF64_SAHF64">reg_LAHF64_SAHF64</dfn>	ecx</u></td></tr>
+<tr><th id="708">708</th><td><u>#define <dfn class="macro" id="_M/reg_SVM" data-ref="_M/reg_SVM">reg_SVM</dfn>			ecx</u></td></tr>
+<tr><th id="709">709</th><td><u>#define <dfn class="macro" id="_M/reg_LZCNT" data-ref="_M/reg_LZCNT">reg_LZCNT</dfn>		ecx</u></td></tr>
+<tr><th id="710">710</th><td><u>#define <dfn class="macro" id="_M/reg_SSE4A" data-ref="_M/reg_SSE4A">reg_SSE4A</dfn>		ecx</u></td></tr>
+<tr><th id="711">711</th><td><u>#define <dfn class="macro" id="_M/reg_PREFETCHW" data-ref="_M/reg_PREFETCHW">reg_PREFETCHW</dfn>		ecx</u></td></tr>
+<tr><th id="712">712</th><td><u>#define <dfn class="macro" id="_M/reg_XOP" data-ref="_M/reg_XOP">reg_XOP</dfn>			ecx</u></td></tr>
+<tr><th id="713">713</th><td><u>#define <dfn class="macro" id="_M/reg_LWP" data-ref="_M/reg_LWP">reg_LWP</dfn>			ecx</u></td></tr>
+<tr><th id="714">714</th><td><u>#define <dfn class="macro" id="_M/reg_FMA4" data-ref="_M/reg_FMA4">reg_FMA4</dfn>		ecx</u></td></tr>
+<tr><th id="715">715</th><td><u>#define <dfn class="macro" id="_M/reg_TBM" data-ref="_M/reg_TBM">reg_TBM</dfn>			ecx</u></td></tr>
+<tr><th id="716">716</th><td></td></tr>
+<tr><th id="717">717</th><td><i>/* EDX.  */</i></td></tr>
+<tr><th id="718">718</th><td><u>#define <dfn class="macro" id="_M/reg_SYSCALL_SYSRET" data-ref="_M/reg_SYSCALL_SYSRET">reg_SYSCALL_SYSRET</dfn>	edx</u></td></tr>
+<tr><th id="719">719</th><td><u>#define <dfn class="macro" id="_M/reg_NX" data-ref="_M/reg_NX">reg_NX</dfn>			edx</u></td></tr>
+<tr><th id="720">720</th><td><u>#define <dfn class="macro" id="_M/reg_PAGE1GB" data-ref="_M/reg_PAGE1GB">reg_PAGE1GB</dfn>		edx</u></td></tr>
+<tr><th id="721">721</th><td><u>#define <dfn class="macro" id="_M/reg_RDTSCP" data-ref="_M/reg_RDTSCP">reg_RDTSCP</dfn>		edx</u></td></tr>
+<tr><th id="722">722</th><td><u>#define <dfn class="macro" id="_M/reg_LM" data-ref="_M/reg_LM">reg_LM</dfn>			edx</u></td></tr>
+<tr><th id="723">723</th><td></td></tr>
+<tr><th id="724">724</th><td><i>/* CPUID_INDEX_D_ECX_1.  */</i></td></tr>
+<tr><th id="725">725</th><td></td></tr>
+<tr><th id="726">726</th><td><i>/* EAX.  */</i></td></tr>
+<tr><th id="727">727</th><td><u>#define <dfn class="macro" id="_M/reg_XSAVEOPT" data-ref="_M/reg_XSAVEOPT">reg_XSAVEOPT</dfn>		eax</u></td></tr>
+<tr><th id="728">728</th><td><u>#define <dfn class="macro" id="_M/reg_XSAVEC" data-ref="_M/reg_XSAVEC">reg_XSAVEC</dfn>		eax</u></td></tr>
+<tr><th id="729">729</th><td><u>#define <dfn class="macro" id="_M/reg_XGETBV_ECX_1" data-ref="_M/reg_XGETBV_ECX_1">reg_XGETBV_ECX_1</dfn>	eax</u></td></tr>
+<tr><th id="730">730</th><td><u>#define <dfn class="macro" id="_M/reg_XSAVES" data-ref="_M/reg_XSAVES">reg_XSAVES</dfn>		eax</u></td></tr>
+<tr><th id="731">731</th><td><u>#define <dfn class="macro" id="_M/reg_XFD" data-ref="_M/reg_XFD">reg_XFD</dfn>			eax</u></td></tr>
+<tr><th id="732">732</th><td></td></tr>
+<tr><th id="733">733</th><td><i>/* CPUID_INDEX_80000007.  */</i></td></tr>
+<tr><th id="734">734</th><td></td></tr>
+<tr><th id="735">735</th><td><i>/* EDX.  */</i></td></tr>
+<tr><th id="736">736</th><td><u>#define <dfn class="macro" id="_M/reg_INVARIANT_TSC" data-ref="_M/reg_INVARIANT_TSC">reg_INVARIANT_TSC</dfn>	edx</u></td></tr>
+<tr><th id="737">737</th><td></td></tr>
+<tr><th id="738">738</th><td><i>/* CPUID_INDEX_80000008.  */</i></td></tr>
+<tr><th id="739">739</th><td></td></tr>
+<tr><th id="740">740</th><td><i>/* EBX.  */</i></td></tr>
+<tr><th id="741">741</th><td><u>#define <dfn class="macro" id="_M/reg_WBNOINVD" data-ref="_M/reg_WBNOINVD">reg_WBNOINVD</dfn>		ebx</u></td></tr>
+<tr><th id="742">742</th><td></td></tr>
+<tr><th id="743">743</th><td><i>/* CPUID_INDEX_7_ECX_1.  */</i></td></tr>
+<tr><th id="744">744</th><td></td></tr>
+<tr><th id="745">745</th><td><i>/* EAX.  */</i></td></tr>
+<tr><th id="746">746</th><td><u>#define <dfn class="macro" id="_M/reg_AVX_VNNI" data-ref="_M/reg_AVX_VNNI">reg_AVX_VNNI</dfn>		eax</u></td></tr>
+<tr><th id="747">747</th><td><u>#define <dfn class="macro" id="_M/reg_AVX512_BF16" data-ref="_M/reg_AVX512_BF16">reg_AVX512_BF16</dfn>		eax</u></td></tr>
+<tr><th id="748">748</th><td><u>#define <dfn class="macro" id="_M/reg_FZLRM" data-ref="_M/reg_FZLRM">reg_FZLRM</dfn>		eax</u></td></tr>
+<tr><th id="749">749</th><td><u>#define <dfn class="macro" id="_M/reg_FSRS" data-ref="_M/reg_FSRS">reg_FSRS</dfn>		eax</u></td></tr>
+<tr><th id="750">750</th><td><u>#define <dfn class="macro" id="_M/reg_FSRCS" data-ref="_M/reg_FSRCS">reg_FSRCS</dfn>		eax</u></td></tr>
+<tr><th id="751">751</th><td><u>#define <dfn class="macro" id="_M/reg_HRESET" data-ref="_M/reg_HRESET">reg_HRESET</dfn>		eax</u></td></tr>
+<tr><th id="752">752</th><td><u>#define <dfn class="macro" id="_M/reg_LAM" data-ref="_M/reg_LAM">reg_LAM</dfn>			eax</u></td></tr>
+<tr><th id="753">753</th><td></td></tr>
+<tr><th id="754">754</th><td><i>/* CPUID_INDEX_19.  */</i></td></tr>
+<tr><th id="755">755</th><td></td></tr>
+<tr><th id="756">756</th><td><i>/* EBX.  */</i></td></tr>
+<tr><th id="757">757</th><td><u>#define <dfn class="macro" id="_M/reg_AESKLE" data-ref="_M/reg_AESKLE">reg_AESKLE</dfn>		ebx</u></td></tr>
+<tr><th id="758">758</th><td><u>#define <dfn class="macro" id="_M/reg_WIDE_KL" data-ref="_M/reg_WIDE_KL">reg_WIDE_KL</dfn>		ebx</u></td></tr>
+<tr><th id="759">759</th><td></td></tr>
+<tr><th id="760">760</th><td><i>/* PREFERRED_FEATURE_INDEX_1.  */</i></td></tr>
+<tr><th id="761">761</th><td><u>#define <dfn class="macro" id="_M/bit_arch_I586" data-ref="_M/bit_arch_I586">bit_arch_I586</dfn>				(1u &lt;&lt; 0)</u></td></tr>
+<tr><th id="762">762</th><td><u>#define <dfn class="macro" id="_M/bit_arch_I686" data-ref="_M/bit_arch_I686">bit_arch_I686</dfn>				(1u &lt;&lt; 1)</u></td></tr>
+<tr><th id="763">763</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Fast_Rep_String" data-ref="_M/bit_arch_Fast_Rep_String">bit_arch_Fast_Rep_String</dfn>		(1u &lt;&lt; 2)</u></td></tr>
+<tr><th id="764">764</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Fast_Copy_Backward" data-ref="_M/bit_arch_Fast_Copy_Backward">bit_arch_Fast_Copy_Backward</dfn>		(1u &lt;&lt; 3)</u></td></tr>
+<tr><th id="765">765</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Fast_Unaligned_Load" data-ref="_M/bit_arch_Fast_Unaligned_Load">bit_arch_Fast_Unaligned_Load</dfn>		(1u &lt;&lt; 4)</u></td></tr>
+<tr><th id="766">766</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Fast_Unaligned_Copy" data-ref="_M/bit_arch_Fast_Unaligned_Copy">bit_arch_Fast_Unaligned_Copy</dfn>		(1u &lt;&lt; 5)</u></td></tr>
+<tr><th id="767">767</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Slow_BSF" data-ref="_M/bit_arch_Slow_BSF">bit_arch_Slow_BSF</dfn>			(1u &lt;&lt; 6)</u></td></tr>
+<tr><th id="768">768</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Slow_SSE4_2" data-ref="_M/bit_arch_Slow_SSE4_2">bit_arch_Slow_SSE4_2</dfn>			(1u &lt;&lt; 7)</u></td></tr>
+<tr><th id="769">769</th><td><u>#define <dfn class="macro" id="_M/bit_arch_AVX_Fast_Unaligned_Load" data-ref="_M/bit_arch_AVX_Fast_Unaligned_Load">bit_arch_AVX_Fast_Unaligned_Load</dfn>	(1u &lt;&lt; 8)</u></td></tr>
+<tr><th id="770">770</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Prefer_MAP_32BIT_EXEC" data-ref="_M/bit_arch_Prefer_MAP_32BIT_EXEC">bit_arch_Prefer_MAP_32BIT_EXEC</dfn>		(1u &lt;&lt; 9)</u></td></tr>
+<tr><th id="771">771</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Prefer_PMINUB_for_stringop" data-ref="_M/bit_arch_Prefer_PMINUB_for_stringop">bit_arch_Prefer_PMINUB_for_stringop</dfn>	(1u &lt;&lt; 10)</u></td></tr>
+<tr><th id="772">772</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Prefer_No_VZEROUPPER" data-ref="_M/bit_arch_Prefer_No_VZEROUPPER">bit_arch_Prefer_No_VZEROUPPER</dfn>		(1u &lt;&lt; 11)</u></td></tr>
+<tr><th id="773">773</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Prefer_ERMS" data-ref="_M/bit_arch_Prefer_ERMS">bit_arch_Prefer_ERMS</dfn>			(1u &lt;&lt; 12)</u></td></tr>
+<tr><th id="774">774</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Prefer_FSRM" data-ref="_M/bit_arch_Prefer_FSRM">bit_arch_Prefer_FSRM</dfn>			(1u &lt;&lt; 13)</u></td></tr>
+<tr><th id="775">775</th><td><u>#define <dfn class="macro" id="_M/bit_arch_Prefer_No_AVX512" data-ref="_M/bit_arch_Prefer_No_AVX512">bit_arch_Prefer_No_AVX512</dfn>		(1u &lt;&lt; 14)</u></td></tr>
+<tr><th id="776">776</th><td><u>#define <dfn class="macro" id="_M/bit_arch_MathVec_Prefer_No_AVX512" data-ref="_M/bit_arch_MathVec_Prefer_No_AVX512">bit_arch_MathVec_Prefer_No_AVX512</dfn>	(1u &lt;&lt; 15)</u></td></tr>
+<tr><th id="777">777</th><td></td></tr>
+<tr><th id="778">778</th><td><u>#define <dfn class="macro" id="_M/index_arch_Fast_Rep_String" data-ref="_M/index_arch_Fast_Rep_String">index_arch_Fast_Rep_String</dfn>		PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="779">779</th><td><u>#define <dfn class="macro" id="_M/index_arch_Fast_Copy_Backward" data-ref="_M/index_arch_Fast_Copy_Backward">index_arch_Fast_Copy_Backward</dfn>		PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="780">780</th><td><u>#define <dfn class="macro" id="_M/index_arch_Slow_BSF" data-ref="_M/index_arch_Slow_BSF">index_arch_Slow_BSF</dfn>			PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="781">781</th><td><u>#define <dfn class="macro" id="_M/index_arch_Fast_Unaligned_Load" data-ref="_M/index_arch_Fast_Unaligned_Load">index_arch_Fast_Unaligned_Load</dfn>		PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="782">782</th><td><u>#define <dfn class="macro" id="_M/index_arch_Prefer_PMINUB_for_stringop" data-ref="_M/index_arch_Prefer_PMINUB_for_stringop">index_arch_Prefer_PMINUB_for_stringop</dfn> 	PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="783">783</th><td><u>#define <dfn class="macro" id="_M/index_arch_Fast_Unaligned_Copy" data-ref="_M/index_arch_Fast_Unaligned_Copy">index_arch_Fast_Unaligned_Copy</dfn>		PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="784">784</th><td><u>#define <dfn class="macro" id="_M/index_arch_I586" data-ref="_M/index_arch_I586">index_arch_I586</dfn>				PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="785">785</th><td><u>#define <dfn class="macro" id="_M/index_arch_I686" data-ref="_M/index_arch_I686">index_arch_I686</dfn>				PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="786">786</th><td><u>#define <dfn class="macro" id="_M/index_arch_Slow_SSE4_2" data-ref="_M/index_arch_Slow_SSE4_2">index_arch_Slow_SSE4_2</dfn>			PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="787">787</th><td><u>#define <dfn class="macro" id="_M/index_arch_AVX_Fast_Unaligned_Load" data-ref="_M/index_arch_AVX_Fast_Unaligned_Load">index_arch_AVX_Fast_Unaligned_Load</dfn>	PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="788">788</th><td><u>#define <dfn class="macro" id="_M/index_arch_Prefer_MAP_32BIT_EXEC" data-ref="_M/index_arch_Prefer_MAP_32BIT_EXEC">index_arch_Prefer_MAP_32BIT_EXEC</dfn>	PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="789">789</th><td><u>#define <dfn class="macro" id="_M/index_arch_Prefer_No_VZEROUPPER" data-ref="_M/index_arch_Prefer_No_VZEROUPPER">index_arch_Prefer_No_VZEROUPPER</dfn>		PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="790">790</th><td><u>#define <dfn class="macro" id="_M/index_arch_Prefer_ERMS" data-ref="_M/index_arch_Prefer_ERMS">index_arch_Prefer_ERMS</dfn>			PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="791">791</th><td><u>#define <dfn class="macro" id="_M/index_arch_Prefer_No_AVX512" data-ref="_M/index_arch_Prefer_No_AVX512">index_arch_Prefer_No_AVX512</dfn>		PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="792">792</th><td><u>#define <dfn class="macro" id="_M/index_arch_MathVec_Prefer_No_AVX512" data-ref="_M/index_arch_MathVec_Prefer_No_AVX512">index_arch_MathVec_Prefer_No_AVX512</dfn>	PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="793">793</th><td><u>#define <dfn class="macro" id="_M/index_arch_Prefer_FSRM" data-ref="_M/index_arch_Prefer_FSRM">index_arch_Prefer_FSRM</dfn>			PREFERRED_FEATURE_INDEX_1</u></td></tr>
+<tr><th id="794">794</th><td></td></tr>
+<tr><th id="795">795</th><td><i>/* XCR0 Feature flags.  */</i></td></tr>
+<tr><th id="796">796</th><td><u>#define <dfn class="macro" id="_M/bit_XMM_state" data-ref="_M/bit_XMM_state">bit_XMM_state</dfn>		(1u &lt;&lt; 1)</u></td></tr>
+<tr><th id="797">797</th><td><u>#define <dfn class="macro" id="_M/bit_YMM_state" data-ref="_M/bit_YMM_state">bit_YMM_state</dfn>		(1u &lt;&lt; 2)</u></td></tr>
+<tr><th id="798">798</th><td><u>#define <dfn class="macro" id="_M/bit_Opmask_state" data-ref="_M/bit_Opmask_state">bit_Opmask_state</dfn>	(1u &lt;&lt; 5)</u></td></tr>
+<tr><th id="799">799</th><td><u>#define <dfn class="macro" id="_M/bit_ZMM0_15_state" data-ref="_M/bit_ZMM0_15_state">bit_ZMM0_15_state</dfn>	(1u &lt;&lt; 6)</u></td></tr>
+<tr><th id="800">800</th><td><u>#define <dfn class="macro" id="_M/bit_ZMM16_31_state" data-ref="_M/bit_ZMM16_31_state">bit_ZMM16_31_state</dfn>	(1u &lt;&lt; 7)</u></td></tr>
+<tr><th id="801">801</th><td><u>#define <dfn class="macro" id="_M/bit_XTILECFG_state" data-ref="_M/bit_XTILECFG_state">bit_XTILECFG_state</dfn>	(1u &lt;&lt; 17)</u></td></tr>
+<tr><th id="802">802</th><td><u>#define <dfn class="macro" id="_M/bit_XTILEDATA_state" data-ref="_M/bit_XTILEDATA_state">bit_XTILEDATA_state</dfn>	(1u &lt;&lt; 18)</u></td></tr>
+<tr><th id="803">803</th><td></td></tr>
+<tr><th id="804">804</th><td><b>enum</b> <dfn class="type def" id="cpu_features_kind" title='cpu_features_kind' data-ref="cpu_features_kind" data-ref-filename="cpu_features_kind">cpu_features_kind</dfn></td></tr>
+<tr><th id="805">805</th><td>{</td></tr>
+<tr><th id="806">806</th><td>  <dfn class="enum" id="arch_kind_unknown" title='arch_kind_unknown' data-ref="arch_kind_unknown" data-ref-filename="arch_kind_unknown">arch_kind_unknown</dfn> = <var>0</var>,</td></tr>
+<tr><th id="807">807</th><td>  <dfn class="enum" id="arch_kind_intel" title='arch_kind_intel' data-ref="arch_kind_intel" data-ref-filename="arch_kind_intel">arch_kind_intel</dfn>,</td></tr>
+<tr><th id="808">808</th><td>  <dfn class="enum" id="arch_kind_amd" title='arch_kind_amd' data-ref="arch_kind_amd" data-ref-filename="arch_kind_amd">arch_kind_amd</dfn>,</td></tr>
+<tr><th id="809">809</th><td>  <dfn class="enum" id="arch_kind_zhaoxin" title='arch_kind_zhaoxin' data-ref="arch_kind_zhaoxin" data-ref-filename="arch_kind_zhaoxin">arch_kind_zhaoxin</dfn>,</td></tr>
+<tr><th id="810">810</th><td>  <dfn class="enum" id="arch_kind_other" title='arch_kind_other' data-ref="arch_kind_other" data-ref-filename="arch_kind_other">arch_kind_other</dfn></td></tr>
+<tr><th id="811">811</th><td>};</td></tr>
+<tr><th id="812">812</th><td></td></tr>
+<tr><th id="813">813</th><td><b>struct</b> <dfn class="type def" id="cpu_features_basic" title='cpu_features_basic' data-ref="cpu_features_basic" data-ref-filename="cpu_features_basic">cpu_features_basic</dfn></td></tr>
+<tr><th id="814">814</th><td>{</td></tr>
+<tr><th id="815">815</th><td>  <b>enum</b> <a class="type" href="#cpu_features_kind" title='cpu_features_kind' data-ref="cpu_features_kind" data-ref-filename="cpu_features_kind">cpu_features_kind</a> <dfn class="decl field" id="cpu_features_basic::kind" title='cpu_features_basic::kind' data-ref="cpu_features_basic::kind" data-ref-filename="cpu_features_basic..kind">kind</dfn>;</td></tr>
+<tr><th id="816">816</th><td>  <em>int</em> <dfn class="decl field" id="cpu_features_basic::max_cpuid" title='cpu_features_basic::max_cpuid' data-ref="cpu_features_basic::max_cpuid" data-ref-filename="cpu_features_basic..max_cpuid">max_cpuid</dfn>;</td></tr>
+<tr><th id="817">817</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpu_features_basic::family" title='cpu_features_basic::family' data-ref="cpu_features_basic::family" data-ref-filename="cpu_features_basic..family">family</dfn>;</td></tr>
+<tr><th id="818">818</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpu_features_basic::model" title='cpu_features_basic::model' data-ref="cpu_features_basic::model" data-ref-filename="cpu_features_basic..model">model</dfn>;</td></tr>
+<tr><th id="819">819</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpu_features_basic::stepping" title='cpu_features_basic::stepping' data-ref="cpu_features_basic::stepping" data-ref-filename="cpu_features_basic..stepping">stepping</dfn>;</td></tr>
+<tr><th id="820">820</th><td>};</td></tr>
+<tr><th id="821">821</th><td></td></tr>
+<tr><th id="822">822</th><td><b>struct</b> <dfn class="type def" id="cpuid_registers" title='cpuid_registers' data-ref="cpuid_registers" data-ref-filename="cpuid_registers">cpuid_registers</dfn></td></tr>
+<tr><th id="823">823</th><td>{</td></tr>
+<tr><th id="824">824</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpuid_registers::eax" title='cpuid_registers::eax' data-ref="cpuid_registers::eax" data-ref-filename="cpuid_registers..eax">eax</dfn>;</td></tr>
+<tr><th id="825">825</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpuid_registers::ebx" title='cpuid_registers::ebx' data-ref="cpuid_registers::ebx" data-ref-filename="cpuid_registers..ebx">ebx</dfn>;</td></tr>
+<tr><th id="826">826</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpuid_registers::ecx" title='cpuid_registers::ecx' data-ref="cpuid_registers::ecx" data-ref-filename="cpuid_registers..ecx">ecx</dfn>;</td></tr>
+<tr><th id="827">827</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpuid_registers::edx" title='cpuid_registers::edx' data-ref="cpuid_registers::edx" data-ref-filename="cpuid_registers..edx">edx</dfn>;</td></tr>
+<tr><th id="828">828</th><td>};</td></tr>
+<tr><th id="829">829</th><td></td></tr>
+<tr><th id="830">830</th><td><b>struct</b> <dfn class="type def" id="cpuid_feature_internal" title='cpuid_feature_internal' data-ref="cpuid_feature_internal" data-ref-filename="cpuid_feature_internal">cpuid_feature_internal</dfn></td></tr>
+<tr><th id="831">831</th><td>{</td></tr>
+<tr><th id="832">832</th><td>  <b>union</b></td></tr>
+<tr><th id="833">833</th><td>    {</td></tr>
+<tr><th id="834">834</th><td>      <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpuid_feature_internal::(anonymous)::cpuid_array" title='cpuid_feature_internal::(anonymous union)::cpuid_array' data-ref="cpuid_feature_internal::(anonymous)::cpuid_array" data-ref-filename="cpuid_feature_internal..(anonymous)..cpuid_array">cpuid_array</dfn>[<var>4</var>];</td></tr>
+<tr><th id="835">835</th><td>      <b>struct</b> <a class="type" href="#cpuid_registers" title='cpuid_registers' data-ref="cpuid_registers" data-ref-filename="cpuid_registers">cpuid_registers</a> <dfn class="decl field" id="cpuid_feature_internal::(anonymous)::cpuid" title='cpuid_feature_internal::(anonymous union)::cpuid' data-ref="cpuid_feature_internal::(anonymous)::cpuid" data-ref-filename="cpuid_feature_internal..(anonymous)..cpuid">cpuid</dfn>;</td></tr>
+<tr><th id="836">836</th><td>    };</td></tr>
+<tr><th id="837">837</th><td>  <b>union</b></td></tr>
+<tr><th id="838">838</th><td>    {</td></tr>
+<tr><th id="839">839</th><td>      <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpuid_feature_internal::(anonymous)::usable_array" title='cpuid_feature_internal::(anonymous union)::usable_array' data-ref="cpuid_feature_internal::(anonymous)::usable_array" data-ref-filename="cpuid_feature_internal..(anonymous)..usable_array">usable_array</dfn>[<var>4</var>];</td></tr>
+<tr><th id="840">840</th><td>      <b>struct</b> <a class="type" href="#cpuid_registers" title='cpuid_registers' data-ref="cpuid_registers" data-ref-filename="cpuid_registers">cpuid_registers</a> <dfn class="decl field" id="cpuid_feature_internal::(anonymous)::usable" title='cpuid_feature_internal::(anonymous union)::usable' data-ref="cpuid_feature_internal::(anonymous)::usable" data-ref-filename="cpuid_feature_internal..(anonymous)..usable">usable</dfn>;</td></tr>
+<tr><th id="841">841</th><td>    };</td></tr>
+<tr><th id="842">842</th><td>};</td></tr>
+<tr><th id="843">843</th><td></td></tr>
+<tr><th id="844">844</th><td><b>struct</b> <dfn class="type def" id="cpu_features" title='cpu_features' data-ref="cpu_features" data-ref-filename="cpu_features">cpu_features</dfn></td></tr>
+<tr><th id="845">845</th><td>{</td></tr>
+<tr><th id="846">846</th><td>  <b>struct</b> <a class="type" href="#cpu_features_basic" title='cpu_features_basic' data-ref="cpu_features_basic" data-ref-filename="cpu_features_basic">cpu_features_basic</a> <dfn class="decl field" id="cpu_features::basic" title='cpu_features::basic' data-ref="cpu_features::basic" data-ref-filename="cpu_features..basic">basic</dfn>;</td></tr>
+<tr><th id="847">847</th><td>  <b>struct</b> <a class="type" href="#cpuid_feature_internal" title='cpuid_feature_internal' data-ref="cpuid_feature_internal" data-ref-filename="cpuid_feature_internal">cpuid_feature_internal</a> <dfn class="decl field" id="cpu_features::features" title='cpu_features::features' data-ref="cpu_features::features" data-ref-filename="cpu_features..features">features</dfn>[<a class="enum" href="#CPUID_INDEX_MAX" title='CPUID_INDEX_MAX' data-ref="CPUID_INDEX_MAX" data-ref-filename="CPUID_INDEX_MAX">CPUID_INDEX_MAX</a>];</td></tr>
+<tr><th id="848">848</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpu_features::preferred" title='cpu_features::preferred' data-ref="cpu_features::preferred" data-ref-filename="cpu_features..preferred">preferred</dfn>[<a class="enum" href="#PREFERRED_FEATURE_INDEX_MAX" title='PREFERRED_FEATURE_INDEX_MAX' data-ref="PREFERRED_FEATURE_INDEX_MAX" data-ref-filename="PREFERRED_FEATURE_INDEX_MAX">PREFERRED_FEATURE_INDEX_MAX</a>];</td></tr>
+<tr><th id="849">849</th><td>  <i>/* X86 micro-architecture ISA levels.  */</i></td></tr>
+<tr><th id="850">850</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpu_features::isa_1" title='cpu_features::isa_1' data-ref="cpu_features::isa_1" data-ref-filename="cpu_features..isa_1">isa_1</dfn>;</td></tr>
+<tr><th id="851">851</th><td>  <i>/* The state size for XSAVEC or XSAVE.  The type must be unsigned long</i></td></tr>
+<tr><th id="852">852</th><td><i>     int so that we use</i></td></tr>
+<tr><th id="853">853</th><td><i></i></td></tr>
+<tr><th id="854">854</th><td><i>	sub xsave_state_size_offset(%rip) %RSP_LP</i></td></tr>
+<tr><th id="855">855</th><td><i></i></td></tr>
+<tr><th id="856">856</th><td><i>     in _dl_runtime_resolve.  */</i></td></tr>
+<tr><th id="857">857</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::xsave_state_size" title='cpu_features::xsave_state_size' data-ref="cpu_features::xsave_state_size" data-ref-filename="cpu_features..xsave_state_size">xsave_state_size</dfn>;</td></tr>
+<tr><th id="858">858</th><td>  <i>/* The full state size for XSAVE when XSAVEC is disabled by</i></td></tr>
+<tr><th id="859">859</th><td><i></i></td></tr>
+<tr><th id="860">860</th><td><i>     GLIBC_TUNABLES=glibc.cpu.hwcaps=-XSAVEC</i></td></tr>
+<tr><th id="861">861</th><td><i>   */</i></td></tr>
+<tr><th id="862">862</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cpu_features::xsave_state_full_size" title='cpu_features::xsave_state_full_size' data-ref="cpu_features::xsave_state_full_size" data-ref-filename="cpu_features..xsave_state_full_size">xsave_state_full_size</dfn>;</td></tr>
+<tr><th id="863">863</th><td>  <i>/* Data cache size for use in memory and string routines, typically</i></td></tr>
+<tr><th id="864">864</th><td><i>     L1 size.  */</i></td></tr>
+<tr><th id="865">865</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::data_cache_size" title='cpu_features::data_cache_size' data-ref="cpu_features::data_cache_size" data-ref-filename="cpu_features..data_cache_size">data_cache_size</dfn>;</td></tr>
+<tr><th id="866">866</th><td>  <i>/* Shared cache size for use in memory and string routines, typically</i></td></tr>
+<tr><th id="867">867</th><td><i>     L2 or L3 size.  */</i></td></tr>
+<tr><th id="868">868</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::shared_cache_size" title='cpu_features::shared_cache_size' data-ref="cpu_features::shared_cache_size" data-ref-filename="cpu_features..shared_cache_size">shared_cache_size</dfn>;</td></tr>
+<tr><th id="869">869</th><td>  <i>/* Threshold to use non temporal store.  */</i></td></tr>
+<tr><th id="870">870</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::non_temporal_threshold" title='cpu_features::non_temporal_threshold' data-ref="cpu_features::non_temporal_threshold" data-ref-filename="cpu_features..non_temporal_threshold">non_temporal_threshold</dfn>;</td></tr>
+<tr><th id="871">871</th><td>  <i>/* Threshold to use "rep movsb".  */</i></td></tr>
+<tr><th id="872">872</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::rep_movsb_threshold" title='cpu_features::rep_movsb_threshold' data-ref="cpu_features::rep_movsb_threshold" data-ref-filename="cpu_features..rep_movsb_threshold">rep_movsb_threshold</dfn>;</td></tr>
+<tr><th id="873">873</th><td>  <i>/* Threshold to use "rep stosb".  */</i></td></tr>
+<tr><th id="874">874</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::rep_stosb_threshold" title='cpu_features::rep_stosb_threshold' data-ref="cpu_features::rep_stosb_threshold" data-ref-filename="cpu_features..rep_stosb_threshold">rep_stosb_threshold</dfn>;</td></tr>
+<tr><th id="875">875</th><td>  <i>/* _SC_LEVEL1_ICACHE_SIZE.  */</i></td></tr>
+<tr><th id="876">876</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::level1_icache_size" title='cpu_features::level1_icache_size' data-ref="cpu_features::level1_icache_size" data-ref-filename="cpu_features..level1_icache_size">level1_icache_size</dfn>;</td></tr>
+<tr><th id="877">877</th><td>  <i>/* _SC_LEVEL1_DCACHE_SIZE.  */</i></td></tr>
+<tr><th id="878">878</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::level1_dcache_size" title='cpu_features::level1_dcache_size' data-ref="cpu_features::level1_dcache_size" data-ref-filename="cpu_features..level1_dcache_size">level1_dcache_size</dfn>;</td></tr>
+<tr><th id="879">879</th><td>  <i>/* _SC_LEVEL1_DCACHE_ASSOC.  */</i></td></tr>
+<tr><th id="880">880</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::level1_dcache_assoc" title='cpu_features::level1_dcache_assoc' data-ref="cpu_features::level1_dcache_assoc" data-ref-filename="cpu_features..level1_dcache_assoc">level1_dcache_assoc</dfn>;</td></tr>
+<tr><th id="881">881</th><td>  <i>/* _SC_LEVEL1_DCACHE_LINESIZE.  */</i></td></tr>
+<tr><th id="882">882</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::level1_dcache_linesize" title='cpu_features::level1_dcache_linesize' data-ref="cpu_features::level1_dcache_linesize" data-ref-filename="cpu_features..level1_dcache_linesize">level1_dcache_linesize</dfn>;</td></tr>
+<tr><th id="883">883</th><td>  <i>/* _SC_LEVEL2_CACHE_ASSOC.  */</i></td></tr>
+<tr><th id="884">884</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::level2_cache_size" title='cpu_features::level2_cache_size' data-ref="cpu_features::level2_cache_size" data-ref-filename="cpu_features..level2_cache_size">level2_cache_size</dfn>;</td></tr>
+<tr><th id="885">885</th><td>  <i>/* _SC_LEVEL2_DCACHE_ASSOC.  */</i></td></tr>
+<tr><th id="886">886</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::level2_cache_assoc" title='cpu_features::level2_cache_assoc' data-ref="cpu_features::level2_cache_assoc" data-ref-filename="cpu_features..level2_cache_assoc">level2_cache_assoc</dfn>;</td></tr>
+<tr><th id="887">887</th><td>  <i>/* _SC_LEVEL2_CACHE_LINESIZE.  */</i></td></tr>
+<tr><th id="888">888</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::level2_cache_linesize" title='cpu_features::level2_cache_linesize' data-ref="cpu_features::level2_cache_linesize" data-ref-filename="cpu_features..level2_cache_linesize">level2_cache_linesize</dfn>;</td></tr>
+<tr><th id="889">889</th><td>  <i>/* /_SC_LEVEL3_CACHE_SIZE.  */</i></td></tr>
+<tr><th id="890">890</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::level3_cache_size" title='cpu_features::level3_cache_size' data-ref="cpu_features::level3_cache_size" data-ref-filename="cpu_features..level3_cache_size">level3_cache_size</dfn>;</td></tr>
+<tr><th id="891">891</th><td>  <i>/* _SC_LEVEL3_CACHE_ASSOC.  */</i></td></tr>
+<tr><th id="892">892</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::level3_cache_assoc" title='cpu_features::level3_cache_assoc' data-ref="cpu_features::level3_cache_assoc" data-ref-filename="cpu_features..level3_cache_assoc">level3_cache_assoc</dfn>;</td></tr>
+<tr><th id="893">893</th><td>  <i>/* _SC_LEVEL3_CACHE_LINESIZE.  */</i></td></tr>
+<tr><th id="894">894</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::level3_cache_linesize" title='cpu_features::level3_cache_linesize' data-ref="cpu_features::level3_cache_linesize" data-ref-filename="cpu_features..level3_cache_linesize">level3_cache_linesize</dfn>;</td></tr>
+<tr><th id="895">895</th><td>  <i>/* /_SC_LEVEL4_CACHE_SIZE.  */</i></td></tr>
+<tr><th id="896">896</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="decl field" id="cpu_features::level4_cache_size" title='cpu_features::level4_cache_size' data-ref="cpu_features::level4_cache_size" data-ref-filename="cpu_features..level4_cache_size">level4_cache_size</dfn>;</td></tr>
+<tr><th id="897">897</th><td>};</td></tr>
+<tr><th id="898">898</th><td></td></tr>
+<tr><th id="899">899</th><td><i>/* Get a pointer to the CPU features structure.  */</i></td></tr>
+<tr><th id="900">900</th><td><b>extern</b> <em>const</em> <b>struct</b> <a class="type" href="#cpu_features" title='cpu_features' data-ref="cpu_features" data-ref-filename="cpu_features">cpu_features</a> *<dfn class="decl fn" id="_dl_x86_get_cpu_features" title='_dl_x86_get_cpu_features' data-ref="_dl_x86_get_cpu_features" data-ref-filename="_dl_x86_get_cpu_features">_dl_x86_get_cpu_features</dfn> (<em>void</em>)</td></tr>
+<tr><th id="901">901</th><td>     <b>__attribute__</b> ((pure));</td></tr>
+<tr><th id="902">902</th><td></td></tr>
+<tr><th id="903">903</th><td><u>#define <dfn class="macro" id="_M/__get_cpu_features" data-ref="_M/__get_cpu_features">__get_cpu_features</dfn>() _dl_x86_get_cpu_features()</u></td></tr>
+<tr><th id="904">904</th><td></td></tr>
+<tr><th id="905">905</th><td><u>#<span data-ppcond="905">if</span> defined (<a class="macro" href="../../../include/libc-symbols.h.html#71" data-ref="_M/_LIBC">_LIBC</a>) &amp;&amp; !<a class="macro" href="../../../include/libc-symbols.h.html#35" title="(19 == 11)" data-ref="_M/IS_IN">IS_IN</a> (nonlib)</u></td></tr>
+<tr><th id="906">906</th><td><i>/* Unused for x86.  */</i></td></tr>
+<tr><th id="907">907</th><td><u># define <dfn class="macro" id="_M/INIT_ARCH" data-ref="_M/INIT_ARCH">INIT_ARCH</dfn>()</u></td></tr>
+<tr><th id="908">908</th><td><u># define <dfn class="macro" id="_M/_dl_x86_get_cpu_features" data-ref="_M/_dl_x86_get_cpu_features">_dl_x86_get_cpu_features</dfn>() (&amp;GLRO(dl_x86_cpu_features))</u></td></tr>
+<tr><th id="909">909</th><td><b>extern</b> <em>void</em> <dfn class="decl fn" id="_dl_x86_init_cpu_features" title='_dl_x86_init_cpu_features' data-ref="_dl_x86_init_cpu_features" data-ref-filename="_dl_x86_init_cpu_features">_dl_x86_init_cpu_features</dfn> (<em>void</em>) <a class="macro" href="../../../include/libc-symbols.h.html#439" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="910">910</th><td><u>#<span data-ppcond="905">endif</span></u></td></tr>
+<tr><th id="911">911</th><td></td></tr>
+<tr><th id="912">912</th><td><u>#<span data-ppcond="912">ifdef</span> <span class="macro" data-ref="_M/__x86_64__">__x86_64__</span></u></td></tr>
+<tr><th id="913">913</th><td><u># define <dfn class="macro" id="_M/HAS_CPUID" data-ref="_M/HAS_CPUID">HAS_CPUID</dfn> 1</u></td></tr>
+<tr><th id="914">914</th><td><u>#<span data-ppcond="912">elif</span> (defined __i586__ || defined __pentium__	\</u></td></tr>
+<tr><th id="915">915</th><td><u>	|| defined __geode__ || defined __k6__)</u></td></tr>
+<tr><th id="916">916</th><td><u># define HAS_CPUID 1</u></td></tr>
+<tr><th id="917">917</th><td><u># define HAS_I586 1</u></td></tr>
+<tr><th id="918">918</th><td><u># define HAS_I686 HAS_ARCH_FEATURE (I686)</u></td></tr>
+<tr><th id="919">919</th><td><u>#elif defined __i486__</u></td></tr>
+<tr><th id="920">920</th><td><u># define HAS_CPUID 0</u></td></tr>
+<tr><th id="921">921</th><td><u># define HAS_I586 HAS_ARCH_FEATURE (I586)</u></td></tr>
+<tr><th id="922">922</th><td><u># define HAS_I686 HAS_ARCH_FEATURE (I686)</u></td></tr>
+<tr><th id="923">923</th><td><u>#else</u></td></tr>
+<tr><th id="924">924</th><td><u># define HAS_CPUID 1</u></td></tr>
+<tr><th id="925">925</th><td><u># define HAS_I586 1</u></td></tr>
+<tr><th id="926">926</th><td><u># define HAS_I686 1</u></td></tr>
+<tr><th id="927">927</th><td><u># <span data-ppcond="912">endif</span></u></td></tr>
+<tr><th id="928">928</th><td></td></tr>
+<tr><th id="929">929</th><td><u>#<span data-ppcond="19">endif</span> /* include/cpu-features.h */</u></td></tr>
+<tr><th id="930">930</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../../assert/assert.c.html'>codebrowser/assert/assert.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.33</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,46 @@
+<def f='codebrowser/nss/getXXent.c' l='62' macro='1' type='__libc_lock_t'/>
+<use f='codebrowser/nss/getXXent.c' l='81' c='getgrent'/>
+<use f='codebrowser/nss/getXXent.c' l='81' c='getgrent'/>
+<use f='codebrowser/nss/getXXent.c' l='81' c='getgrent'/>
+<use f='codebrowser/nss/getXXent.c' l='81' c='getgrent'/>
+<use f='codebrowser/nss/getXXent.c' l='89' c='getgrent'/>
+<use f='codebrowser/nss/getXXent.c' l='89' c='getgrent'/>
+<use f='codebrowser/nss/getXXent.c' l='89' c='getgrent'/>
+<use f='codebrowser/nss/getXXent.c' l='89' c='getgrent'/>
+<doc f='codebrowser/nss/getXXent.c' l='61'>/* We need to protect the dynamic buffer handling.  */</doc>
+<def f='codebrowser/nss/getXXent_r.c' l='112' macro='1' type='__libc_lock_t'/>
+<use f='codebrowser/nss/getXXent_r.c' l='124' c='setgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='124' c='setgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='124' c='setgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='124' c='setgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='129' c='setgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='129' c='setgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='129' c='setgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='129' c='setgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='142' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='142' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='142' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='142' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='146' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='146' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='146' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='146' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='159' c='__getgrent_r'/>
+<use f='codebrowser/nss/getXXent_r.c' l='159' c='__getgrent_r'/>
+<use f='codebrowser/nss/getXXent_r.c' l='159' c='__getgrent_r'/>
+<use f='codebrowser/nss/getXXent_r.c' l='159' c='__getgrent_r'/>
+<use f='codebrowser/nss/getXXent_r.c' l='165' c='__getgrent_r'/>
+<use f='codebrowser/nss/getXXent_r.c' l='165' c='__getgrent_r'/>
+<use f='codebrowser/nss/getXXent_r.c' l='165' c='__getgrent_r'/>
+<use f='codebrowser/nss/getXXent_r.c' l='165' c='__getgrent_r'/>
+<doc f='codebrowser/nss/getXXent_r.c' l='111'>/* Protect above variable against multiple uses at the same time.  */</doc>
+<def f='codebrowser/nss/getXXbyYY.c' l='86' macro='1' type='__libc_lock_t'/>
+<use f='codebrowser/nss/getXXbyYY.c' l='116' c='getgrgid'/>
+<use f='codebrowser/nss/getXXbyYY.c' l='116' c='getgrgid'/>
+<use f='codebrowser/nss/getXXbyYY.c' l='116' c='getgrgid'/>
+<use f='codebrowser/nss/getXXbyYY.c' l='116' c='getgrgid'/>
+<use f='codebrowser/nss/getXXbyYY.c' l='163' c='getgrgid'/>
+<use f='codebrowser/nss/getXXbyYY.c' l='163' c='getgrgid'/>
+<use f='codebrowser/nss/getXXbyYY.c' l='163' c='getgrgid'/>
+<use f='codebrowser/nss/getXXbyYY.c' l='163' c='getgrgid'/>
+<doc f='codebrowser/nss/getXXbyYY.c' l='85'>/* We need to protect the dynamic buffer handling.  */</doc>

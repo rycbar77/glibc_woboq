@@ -1,0 +1,25 @@
+<dec f='codebrowser/nscd/nscd.h' l='75' type='int[2]'/>
+<use f='codebrowser/nscd/nscd.h' l='97' u='w' c='init_traced_file'/>
+<use f='codebrowser/nscd/nscd.h' l='98' u='w' c='init_traced_file'/>
+<offset>160</offset>
+<use f='codebrowser/nscd/cache.c' l='274' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/connections.c' l='854' u='r' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='855' u='w' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='858' u='r' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='865' u='r' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='871' u='r' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='872' u='w' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='875' u='r' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='882' u='r' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='1827' u='r' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1853' u='w' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1861' u='r' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1874' u='r' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1887' u='r' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1891' u='r' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1895' u='w' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1896' u='w' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1906' u='r' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1919' u='r' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1921' u='r' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1930' u='w' c='inotify_check_files'/>

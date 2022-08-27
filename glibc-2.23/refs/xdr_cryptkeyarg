@@ -1,0 +1,5 @@
+<dec f='codebrowser/sunrpc/rpc/key_prot.h' l='97' type='bool_t xdr_cryptkeyarg(XDR * , cryptkeyarg * )'/>
+<dec f='codebrowser/include/rpc/key_prot.h' l='3' type='bool_t xdr_cryptkeyarg(XDR * , cryptkeyarg * )'/>
+<use f='codebrowser/include/rpc/key_prot.h' l='3' c='xdr_cryptkeyarg'/>
+<use f='codebrowser/sunrpc/key_call.c' l='123' u='r' c='__GI_key_encryptsession'/>
+<use f='codebrowser/sunrpc/key_call.c' l='146' u='r' c='__GI_key_decryptsession'/>

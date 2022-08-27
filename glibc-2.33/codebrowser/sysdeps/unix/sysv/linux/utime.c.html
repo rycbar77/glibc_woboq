@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>utime.c source code [codebrowser/sysdeps/unix/sysv/linux/utime.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/utime.c'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>unix</a>/<a href='..'>sysv</a>/<a href='./'>linux</a>/<a href='utime.c.html'>utime.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* utime -- Change access and modification times of file.  Linux version.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2020-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../../../../include/utime.h.html">&lt;utime.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../../../../include/time.h.html">&lt;time.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../../../../include/fcntl.h.html">&lt;fcntl.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><em>int</em></td></tr>
+<tr><th id="24">24</th><td><a class="macro" href="../../../../include/time.h.html#178" title="__utime" data-ref="_M/__utime64">__utime64</a> (<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="1file" title='file' data-type='const char *' data-ref="1file" data-ref-filename="1file">file</dfn>, <em>const</em> <b>struct</b> <a class="macro" href="../../../../include/time.h.html#78" title="utimbuf" data-ref="_M/__utimbuf64">__utimbuf64</a> *<dfn class="local col2 decl" id="2times" title='times' data-type='const struct utimbuf *' data-ref="2times" data-ref-filename="2times">times</dfn>)</td></tr>
+<tr><th id="25">25</th><td>{</td></tr>
+<tr><th id="26">26</th><td>  <b>struct</b> <a class="macro" href="../../../../include/struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a> <dfn class="local col3 decl" id="3ts64" title='ts64' data-type='struct timespec[2]' data-ref="3ts64" data-ref-filename="3ts64">ts64</dfn>[<var>2</var>];</td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td>  <b>if</b> (<a class="local col2 ref" href="#2times" title='times' data-ref="2times" data-ref-filename="2times">times</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="29">29</th><td>    {</td></tr>
+<tr><th id="30">30</th><td>      <a class="local col3 ref" href="#3ts64" title='ts64' data-ref="3ts64" data-ref-filename="3ts64">ts64</a>[<var>0</var>].<a class="ref field" href="../../../../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a> = <a class="local col2 ref" href="#2times" title='times' data-ref="2times" data-ref-filename="2times">times</a>-&gt;<a class="ref field" href="../../../../io/utime.h.html#utimbuf::actime" title='utimbuf::actime' data-ref="utimbuf::actime" data-ref-filename="utimbuf..actime">actime</a>;</td></tr>
+<tr><th id="31">31</th><td>      <a class="local col3 ref" href="#3ts64" title='ts64' data-ref="3ts64" data-ref-filename="3ts64">ts64</a>[<var>0</var>].<a class="ref field" href="../../../../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> = <var>0LL</var>;</td></tr>
+<tr><th id="32">32</th><td>      <a class="local col3 ref" href="#3ts64" title='ts64' data-ref="3ts64" data-ref-filename="3ts64">ts64</a>[<var>1</var>].<a class="ref field" href="../../../../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a> = <a class="local col2 ref" href="#2times" title='times' data-ref="2times" data-ref-filename="2times">times</a>-&gt;<a class="ref field" href="../../../../io/utime.h.html#utimbuf::modtime" title='utimbuf::modtime' data-ref="utimbuf::modtime" data-ref-filename="utimbuf..modtime">modtime</a>;</td></tr>
+<tr><th id="33">33</th><td>      <a class="local col3 ref" href="#3ts64" title='ts64' data-ref="3ts64" data-ref-filename="3ts64">ts64</a>[<var>1</var>].<a class="ref field" href="../../../../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> = <var>0LL</var>;</td></tr>
+<tr><th id="34">34</th><td>    }</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td>  <b>return</b> <a class="ref fn" href="../../../../include/time.h.html#__utimensat64_helper" title='__utimensat64_helper' data-ref="__utimensat64_helper" data-ref-filename="__utimensat64_helper">__utimensat64_helper</a> (<a class="macro" href="../../../../io/fcntl.h.html#149" title="-100" data-ref="_M/AT_FDCWD">AT_FDCWD</a>, <a class="local col1 ref" href="#1file" title='file' data-ref="1file" data-ref-filename="1file">file</a>, <a class="local col2 ref" href="#2times" title='times' data-ref="2times" data-ref-filename="2times">times</a> ? <a class="local col3 ref" href="#3ts64" title='ts64' data-ref="3ts64" data-ref-filename="3ts64">ts64</a> : <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <var>0</var>);</td></tr>
+<tr><th id="37">37</th><td>}</td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><u>#<span data-ppcond="39">if</span> <a class="macro" href="x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> != 64</u></td></tr>
+<tr><th id="40">40</th><td>libc_hidden_def (__utime64)</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><em>int</em></td></tr>
+<tr><th id="43">43</th><td>__utime (<em>const</em> <em>char</em> *file, <em>const</em> <b>struct</b> utimbuf *times)</td></tr>
+<tr><th id="44">44</th><td>{</td></tr>
+<tr><th id="45">45</th><td>  <b>struct</b> __utimbuf64 utb64;</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td>  <b>if</b> (times != NULL)</td></tr>
+<tr><th id="48">48</th><td>    {</td></tr>
+<tr><th id="49">49</th><td>      utb64.actime = (__time64_t) times-&gt;actime;</td></tr>
+<tr><th id="50">50</th><td>      utb64.modtime = (__time64_t) times-&gt;modtime;</td></tr>
+<tr><th id="51">51</th><td>    }</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td>  <b>return</b> __utime64 (file, times ? &amp;utb64 : NULL);</td></tr>
+<tr><th id="54">54</th><td>}</td></tr>
+<tr><th id="55">55</th><td><u>#<span data-ppcond="39">endif</span></u></td></tr>
+<tr><th id="56">56</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#138" title="extern __typeof (__utime) utime __attribute__ ((alias (&quot;__utime&quot;))) ;" data-ref="_M/strong_alias">strong_alias</a> (<a class="ref fn" href="#24" title='__utime' data-ref="__utime" data-ref-filename="__utime">__utime</a>, <dfn class="decl def fn" id="utime" title='utime' data-ref="utime" data-ref-filename="utime">utime</dfn>)</td></tr>
+<tr><th id="57">57</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#626" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (utime)</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.33</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

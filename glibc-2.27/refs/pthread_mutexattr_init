@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='807' type='int pthread_mutexattr_init(pthread_mutexattr_t * __attr)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='805'>/* Initialize mutex attribute object ATTR with default attributes
+   (kind is PTHREAD_MUTEX_TIMED_NP).  */</doc>
+<def f='codebrowser/nptl/pthread_mutexattr_init.c' l='40' macro='1' type='int pthread_mutexattr_init(pthread_mutexattr_t * )'/>

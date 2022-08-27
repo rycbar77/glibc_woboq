@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>select.h source code [codebrowser/include/sys/select.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/include/sys/select.h'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>include</a>/<a href='./'>sys</a>/<a href='select.h.html'>select.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/_SYS_SELECT_H">_SYS_SELECT_H</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#include <a href="../../misc/sys/select.h.html">&lt;misc/sys/select.h&gt;</a></u></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#<span data-ppcond="4">ifndef</span> <span class="macro" data-ref="_M/_ISOMAC">_ISOMAC</span></u></td></tr>
+<tr><th id="5">5</th><td><i>/* Now define the internal interfaces.  */</i></td></tr>
+<tr><th id="6">6</th><td><u># <span data-ppcond="6">if</span> <a class="macro" href="../../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="7">7</th><td><u>#  define <dfn class="macro" id="_M/__pselect64" data-ref="_M/__pselect64">__pselect64</dfn> __pselect</u></td></tr>
+<tr><th id="8">8</th><td><u>#  define <dfn class="macro" id="_M/__select64" data-ref="_M/__select64">__select64</dfn>  __select</u></td></tr>
+<tr><th id="9">9</th><td><u>#<span data-ppcond="6">else</span></u></td></tr>
+<tr><th id="10">10</th><td><u># include &lt;struct___timespec64.h&gt;</u></td></tr>
+<tr><th id="11">11</th><td><u># include &lt;struct___timeval64.h&gt;</u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><b>extern</b> <em>int</em> __pselect64 (<em>int</em> __nfds, fd_set *__readfds,</td></tr>
+<tr><th id="14">14</th><td>			fd_set *__writefds, fd_set *__exceptfds,</td></tr>
+<tr><th id="15">15</th><td>			<em>const</em> <b>struct</b> __timespec64 *__timeout,</td></tr>
+<tr><th id="16">16</th><td>			<em>const</em> __sigset_t *__sigmask);</td></tr>
+<tr><th id="17">17</th><td>libc_hidden_proto (__pselect64)</td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><b>extern</b> <em>int</em> __pselect32 (<em>int</em> __nfds, fd_set *__readfds,</td></tr>
+<tr><th id="20">20</th><td>			fd_set *__writefds, fd_set *__exceptfds,</td></tr>
+<tr><th id="21">21</th><td>			<em>const</em> <b>struct</b> __timespec64 *__timeout,</td></tr>
+<tr><th id="22">22</th><td>			<em>const</em> __sigset_t *__sigmask)</td></tr>
+<tr><th id="23">23</th><td>  attribute_hidden;</td></tr>
+<tr><th id="24">24</th><td><b>extern</b> <em>int</em> __select32 (<em>int</em> __nfds, fd_set *__readfds,</td></tr>
+<tr><th id="25">25</th><td>		       fd_set *__writefds, fd_set *__exceptfds,</td></tr>
+<tr><th id="26">26</th><td>		       <em>const</em> <b>struct</b> __timespec64 *ts64,</td></tr>
+<tr><th id="27">27</th><td>		       <b>struct</b> __timeval64 *timeout)</td></tr>
+<tr><th id="28">28</th><td>  attribute_hidden;</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><b>extern</b> <em>int</em> __select64 (<em>int</em> __nfds, fd_set *__readfds,</td></tr>
+<tr><th id="31">31</th><td>		       fd_set *__writefds, fd_set *__exceptfds,</td></tr>
+<tr><th id="32">32</th><td>		       <b>struct</b> __timeval64 *__timeout);</td></tr>
+<tr><th id="33">33</th><td>libc_hidden_proto (__select64)</td></tr>
+<tr><th id="34">34</th><td><u>#<span data-ppcond="6">endif</span></u></td></tr>
+<tr><th id="35">35</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pselect" title='__pselect' data-ref="__pselect" data-ref-filename="__pselect">__pselect</dfn> (<em>int</em> <dfn class="local col6 decl" id="436__nfds" title='__nfds' data-type='int' data-ref="436__nfds" data-ref-filename="436__nfds">__nfds</dfn>, <a class="typedef" href="../../misc/sys/select.h.html#fd_set" title='fd_set' data-type='struct fd_set' data-ref="fd_set" data-ref-filename="fd_set">fd_set</a> *<dfn class="local col7 decl" id="437__readfds" title='__readfds' data-type='fd_set *' data-ref="437__readfds" data-ref-filename="437__readfds">__readfds</dfn>,</td></tr>
+<tr><th id="36">36</th><td>		      <a class="typedef" href="../../misc/sys/select.h.html#fd_set" title='fd_set' data-type='struct fd_set' data-ref="fd_set" data-ref-filename="fd_set">fd_set</a> *<dfn class="local col8 decl" id="438__writefds" title='__writefds' data-type='fd_set *' data-ref="438__writefds" data-ref-filename="438__writefds">__writefds</dfn>, <a class="typedef" href="../../misc/sys/select.h.html#fd_set" title='fd_set' data-type='struct fd_set' data-ref="fd_set" data-ref-filename="fd_set">fd_set</a> *<dfn class="local col9 decl" id="439__exceptfds" title='__exceptfds' data-type='fd_set *' data-ref="439__exceptfds" data-ref-filename="439__exceptfds">__exceptfds</dfn>,</td></tr>
+<tr><th id="37">37</th><td>		      <em>const</em> <b>struct</b> <a class="type" href="../../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a> *<dfn class="local col0 decl" id="440__timeout" title='__timeout' data-type='const struct timespec *' data-ref="440__timeout" data-ref-filename="440__timeout">__timeout</dfn>,</td></tr>
+<tr><th id="38">38</th><td>		      <em>const</em> <a class="typedef" href="../../sysdeps/unix/sysv/linux/bits/types/__sigset_t.h.html#__sigset_t" title='__sigset_t' data-type='struct __sigset_t' data-ref="__sigset_t" data-ref-filename="__sigset_t">__sigset_t</a> *<dfn class="local col1 decl" id="441__sigmask" title='__sigmask' data-type='const __sigset_t *' data-ref="441__sigmask" data-ref-filename="441__sigmask">__sigmask</dfn>);</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__select" title='__select' data-ref="__select" data-ref-filename="__select">__select</dfn> (<em>int</em> <dfn class="local col2 decl" id="442__nfds" title='__nfds' data-type='int' data-ref="442__nfds" data-ref-filename="442__nfds">__nfds</dfn>, <a class="typedef" href="../../misc/sys/select.h.html#fd_set" title='fd_set' data-type='struct fd_set' data-ref="fd_set" data-ref-filename="fd_set">fd_set</a> *<b>__restrict</b> <dfn class="local col3 decl" id="443__readfds" title='__readfds' data-type='fd_set *restrict' data-ref="443__readfds" data-ref-filename="443__readfds">__readfds</dfn>,</td></tr>
+<tr><th id="41">41</th><td>		     <a class="typedef" href="../../misc/sys/select.h.html#fd_set" title='fd_set' data-type='struct fd_set' data-ref="fd_set" data-ref-filename="fd_set">fd_set</a> *<b>__restrict</b> <dfn class="local col4 decl" id="444__writefds" title='__writefds' data-type='fd_set *restrict' data-ref="444__writefds" data-ref-filename="444__writefds">__writefds</dfn>,</td></tr>
+<tr><th id="42">42</th><td>		     <a class="typedef" href="../../misc/sys/select.h.html#fd_set" title='fd_set' data-type='struct fd_set' data-ref="fd_set" data-ref-filename="fd_set">fd_set</a> *<b>__restrict</b> <dfn class="local col5 decl" id="445__exceptfds" title='__exceptfds' data-type='fd_set *restrict' data-ref="445__exceptfds" data-ref-filename="445__exceptfds">__exceptfds</dfn>,</td></tr>
+<tr><th id="43">43</th><td>		     <b>struct</b> <a class="type" href="../../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a> *<b>__restrict</b> <dfn class="local col6 decl" id="446__timeout" title='__timeout' data-type='struct timeval *restrict' data-ref="446__timeout" data-ref-filename="446__timeout">__timeout</dfn>);</td></tr>
+<tr><th id="44">44</th><td><a class="macro" href="../libc-symbols.h.html#621" title="extern __typeof (__select) __select __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__select" title='__select' data-ref="__select" data-ref-filename="__select"><a class="ref fn" href="#__select" title='__select' data-ref="__select" data-ref-filename="__select">__select</a></a>)</td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><u>#<span data-ppcond="4">endif</span></u></td></tr>
+<tr><th id="47">47</th><td><u>#<span data-ppcond="1">endif</span></u></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../argp/argp-eexst.c.html'>codebrowser/argp/argp-eexst.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

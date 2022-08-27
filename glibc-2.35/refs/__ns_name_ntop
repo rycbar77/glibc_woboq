@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/arpa/nameser.h' l='54' type='int __ns_name_ntop(const unsigned char * , char * , size_t )'/>
+<dec f='codebrowser/include/arpa/nameser.h' l='77' type='int __ns_name_ntop(const unsigned char * , char * , size_t )'/>
+<def f='codebrowser/resolv/ns_name_ntop.c' l='140' macro='1' type='int __ns_name_ntop(const unsigned char * , char * , size_t )'/>
+<use f='codebrowser/resolv/ns_name_uncompress.c' l='32' u='c' c='___ns_name_uncompress'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='696' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='756' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='886' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1038' u='c' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1083' u='c' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='340' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='374' u='c' c='getanswer_r'/>

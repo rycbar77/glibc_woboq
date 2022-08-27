@@ -1,0 +1,27 @@
+<def f='codebrowser/posix/regex_internal.h' l='581' ll='589'/>
+<use f='codebrowser/posix/regex_internal.h' l='607'/>
+<use f='codebrowser/posix/regexec.c' l='102' c='check_subexp_limits'/>
+<use f='codebrowser/posix/regexec.c' l='1860' c='check_dst_limits'/>
+<use f='codebrowser/posix/regexec.c' l='1901' c='check_dst_limits_calc_pos_1'/>
+<use f='codebrowser/posix/regexec.c' l='1969' c='check_dst_limits_calc_pos'/>
+<use f='codebrowser/posix/regexec.c' l='1996' c='check_subexp_limits'/>
+<use f='codebrowser/posix/regexec.c' l='2004' c='check_subexp_limits'/>
+<use f='codebrowser/posix/regexec.c' l='2100' c='sift_states_bkref'/>
+<use f='codebrowser/posix/regexec.c' l='2559' c='transit_state_bkref'/>
+<use f='codebrowser/posix/regexec.c' l='2639' c='get_subexp'/>
+<use f='codebrowser/posix/regexec.c' l='3179' c='expand_bkref_cache'/>
+<use f='codebrowser/posix/regexec.c' l='4060' c='match_ctx_init'/>
+<use f='codebrowser/posix/regexec.c' l='4060' c='match_ctx_init'/>
+<use f='codebrowser/posix/regexec.c' l='4065' c='match_ctx_init'/>
+<use f='codebrowser/posix/regexec.c' l='4065' c='match_ctx_init'/>
+<use f='codebrowser/posix/regexec.c' l='4135' c='match_ctx_add_entry'/>
+<use f='codebrowser/posix/regexec.c' l='4136' c='match_ctx_add_entry'/>
+<use f='codebrowser/posix/regexec.c' l='4136' c='match_ctx_add_entry'/>
+<use f='codebrowser/posix/regexec.c' l='4145' c='match_ctx_add_entry'/>
+<size>32</size>
+<mbr r='re_backref_cache_entry::node' o='0' t='Idx'/>
+<mbr r='re_backref_cache_entry::str_idx' o='32' t='Idx'/>
+<mbr r='re_backref_cache_entry::subexp_from' o='64' t='Idx'/>
+<mbr r='re_backref_cache_entry::subexp_to' o='96' t='Idx'/>
+<mbr r='re_backref_cache_entry::eps_reachable_subexps_map' o='128' t='bitset_word_t'/>
+<mbr r='re_backref_cache_entry::more' o='192' t='char'/>

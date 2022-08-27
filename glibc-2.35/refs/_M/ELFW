@@ -1,0 +1,62 @@
+<dec f='codebrowser/include/link.h' l='389'/>
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='71'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='137' u='c'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='138' u='c'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='69'>/* We use this macro to refer to ELF types independent of the native wordsize.
+   `ElfW(TYPE)&apos; is used in place of `Elf32_TYPE&apos; or `Elf64_TYPE&apos;.  */</doc>
+<doc f='codebrowser/include/link.h' l='386'>/* We use this macro to refer to ELF macros independent of the native
+   wordsize.  `ELFW(R_TYPE)&apos; is used in place of `ELF32_R_TYPE&apos; or
+   `ELF64_R_TYPE&apos;.  */</doc>
+<use f='codebrowser/elf/dl-addr.c' l='64' u='c'/>
+<use f='codebrowser/elf/dl-addr.c' l='88' u='c'/>
+<use f='codebrowser/elf/dl-addr.c' l='89' u='c'/>
+<use f='codebrowser/elf/dl-addr.c' l='91' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='65' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='78' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='128' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='129' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='133' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='145' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='160' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='163' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='165' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='177' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='180' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='191' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='207' u='c'/>
+<use f='codebrowser/elf/do-rel.h' l='208' u='c'/>
+<use f='codebrowser/elf/dl-load.c' l='1588' u='c'/>
+<use f='codebrowser/elf/dl-load.c' l='1698' u='c'/>
+<use f='codebrowser/elf/dl-load.c' l='2300' u='c'/>
+<use f='codebrowser/elf/dl-lookup-direct.c' l='35' u='c'/>
+<use f='codebrowser/elf/dl-lookup.c' l='71' u='c'/>
+<use f='codebrowser/elf/dl-lookup.c' l='496' u='c'/>
+<use f='codebrowser/elf/dl-lookup.c' l='499' u='c'/>
+<use f='codebrowser/elf/dl-lookup.c' l='531' u='c'/>
+<use f='codebrowser/elf/dl-lookup.c' l='535' u='c'/>
+<use f='codebrowser/elf/dl-lookup.c' l='867' u='c'/>
+<use f='codebrowser/elf/dl-lookup.c' l='889' u='c'/>
+<use f='codebrowser/elf/dl-lookup.c' l='911' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/dl-irel.h' l='40' u='c'/>
+<use f='codebrowser/elf/dl-sym-post.h' l='41' u='c'/>
+<use f='codebrowser/elf/dl-minimal.c' l='68' u='c'/>
+<use f='codebrowser/elf/dl-runtime.c' l='56' u='c'/>
+<use f='codebrowser/elf/dl-runtime.c' l='63' u='c'/>
+<use f='codebrowser/elf/dl-runtime.c' l='67' u='c'/>
+<use f='codebrowser/elf/dl-runtime.c' l='75' u='c'/>
+<use f='codebrowser/elf/dl-runtime.c' l='124' u='c'/>
+<use f='codebrowser/elf/dl-runtime.c' l='245' u='c'/>
+<use f='codebrowser/elf/dl-runtime.c' l='250' u='c'/>
+<use f='codebrowser/elf/dl-runtime.c' l='254' u='c'/>
+<use f='codebrowser/elf/dl-runtime.c' l='262' u='c'/>
+<use f='codebrowser/elf/dl-runtime.c' l='293' u='c'/>
+<use f='codebrowser/elf/dl-runtime.c' l='303' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso.h' l='46' u='c'/>
+<use f='codebrowser/elf/sprof.c' l='1070' u='c'/>
+<use f='codebrowser/elf/sprof.c' l='1071' u='c'/>
+<use f='codebrowser/elf/sprof.c' l='1084' u='c'/>
+<use f='codebrowser/elf/sprof.c' l='1085' u='c'/>
+<use f='codebrowser/elf/sprof.c' l='1126' u='c'/>
+<use f='codebrowser/elf/sprof.c' l='1127' u='c'/>
+<use f='codebrowser/elf/sprof.c' l='1142' u='c'/>
+<use f='codebrowser/elf/sprof.c' l='1143' u='c'/>

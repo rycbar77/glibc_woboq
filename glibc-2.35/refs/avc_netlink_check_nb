@@ -1,0 +1,7 @@
+<dec f='include/selinux/avc.h' l='482' type='int avc_netlink_check_nb()'/>
+<doc f='include/selinux/avc.h' l='476'>/**
+ * avc_netlink_check_nb - Check netlink socket for new messages.
+ *
+ * Called by the application when using avc_netlink_acquire_fd() to
+ * process kernel netlink events.
+ */</doc>

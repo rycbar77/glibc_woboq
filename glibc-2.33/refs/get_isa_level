@@ -1,0 +1,5 @@
+<def f='codebrowser/sysdeps/x86/get-isa-level.h' l='25' ll='67' type='unsigned int get_isa_level(const struct cpu_features * cpu_features)'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='288' u='c' c='update_usable'/>
+<doc f='codebrowser/sysdeps/x86/get-isa-level.h' l='22'>/* Get GNU_PROPERTY_X86_ISA_1_BASELINE and GNU_PROPERTY_X86_ISA_1_V[234]
+   ISA level.  */</doc>
+<use f='codebrowser/sysdeps/x86_64/dl-hwcaps-subdirs.c' l='31' u='c' c='_dl_hwcaps_subdirs_active'/>

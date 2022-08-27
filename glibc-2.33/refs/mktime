@@ -1,0 +1,9 @@
+<dec f='codebrowser/time/time.h' l='82' type='time_t mktime(struct tm * __tp)'/>
+<dec f='codebrowser/include/time.h' l='20' type='time_t mktime(struct tm * )'/>
+<use f='codebrowser/include/time.h' l='20' c='mktime'/>
+<doc f='codebrowser/time/time.h' l='81'>/* Return the `time_t&apos; representation of TP and normalize TP.  */</doc>
+<use f='codebrowser/time/getdate.c' l='67' u='c' c='first_wday'/>
+<use f='codebrowser/time/getdate.c' l='288' u='c' c='__getdate_r'/>
+<def f='codebrowser/time/mktime.c' l='524' macro='1' type='time_t mktime(struct tm * tp)'/>
+<use f='codebrowser/time/mktime.c' l='564' c='timelocal'/>
+<use f='codebrowser/time/strftime_l.c' l='1144' u='c' c='__strftime_internal'/>

@@ -1,0 +1,16 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='49' ll='55' type='void __sigemptyset(sigset_t * set)'/>
+<use f='codebrowser/inet/rcmd.c' l='166' u='c' c='rcmd_af'/>
+<use f='codebrowser/nptl/pthread_attr_getsigmask.c' l='28' u='c' c='__pthread_attr_getsigmask_np'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='80' u='c' c='__pthread_cancel'/>
+<use f='codebrowser/nptl/pthread_create.c' l='72' u='c' c='late_init'/>
+<use f='codebrowser/shadow/lckpwdf.c' l='125' u='c' c='__lckpwdf'/>
+<use f='codebrowser/signal/sigempty.c' l='33' u='c' c='sigemptyset'/>
+<use f='codebrowser/stdlib/abort.c' l='62' u='c' c='abort'/>
+<use f='codebrowser/sysdeps/posix/sigignore.c' l='33' u='c' c='sigignore'/>
+<use f='codebrowser/sysdeps/posix/sigset.c' l='34' u='c' c='sigset'/>
+<use f='codebrowser/sysdeps/posix/sigset.c' l='57' u='c' c='sigset'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='115' u='c' c='do_system'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='131' u='c' c='do_system'/>
+<use f='codebrowser/sysdeps/posix/sysv_signal.c' l='49' u='c' c='__sysv_signal'/>
+<use f='codebrowser/sysdeps/posix/signal.c' l='42' u='c' c='__bsd_signal'/>
+<use f='codebrowser/login/utmp_file.c' l='91' u='c' c='try_file_lock'/>

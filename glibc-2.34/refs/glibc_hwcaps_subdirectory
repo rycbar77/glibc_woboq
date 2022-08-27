@@ -1,0 +1,28 @@
+<use f='codebrowser/sysdeps/generic/ldconfig.h' l='64' c='new_glibc_hwcaps_subdirectory'/>
+<use f='codebrowser/sysdeps/generic/ldconfig.h' l='70' c='glibc_hwcaps_subdirectory_name'/>
+<use f='codebrowser/sysdeps/generic/ldconfig.h' l='76' c='add_to_cache'/>
+<def f='codebrowser/elf/cache.c' l='47' ll='62'/>
+<use f='codebrowser/elf/cache.c' l='49'/>
+<use f='codebrowser/elf/cache.c' l='65' c='glibc_hwcaps_subdirectory_name'/>
+<use f='codebrowser/elf/cache.c' l='71'/>
+<use f='codebrowser/elf/cache.c' l='73' c='new_glibc_hwcaps_subdirectory'/>
+<use f='codebrowser/elf/cache.c' l='77' c='new_glibc_hwcaps_subdirectory'/>
+<use f='codebrowser/elf/cache.c' l='80' c='new_glibc_hwcaps_subdirectory'/>
+<use f='codebrowser/elf/cache.c' l='94' c='assign_glibc_hwcaps_indices_compare'/>
+<use f='codebrowser/elf/cache.c' l='95' c='assign_glibc_hwcaps_indices_compare'/>
+<use f='codebrowser/elf/cache.c' l='96' c='assign_glibc_hwcaps_indices_compare'/>
+<use f='codebrowser/elf/cache.c' l='97' c='assign_glibc_hwcaps_indices_compare'/>
+<use f='codebrowser/elf/cache.c' l='108' c='glibc_hwcaps_count'/>
+<use f='codebrowser/elf/cache.c' l='121' c='assign_glibc_hwcaps_indices'/>
+<use f='codebrowser/elf/cache.c' l='125' c='assign_glibc_hwcaps_indices'/>
+<use f='codebrowser/elf/cache.c' l='154'/>
+<use f='codebrowser/elf/cache.c' l='503' c='write_extensions'/>
+<use f='codebrowser/elf/cache.c' l='798' c='add_to_cache'/>
+<size>24</size>
+<doc f='codebrowser/elf/cache.c' l='44'>/* Keeping track of &quot;glibc-hwcaps&quot; subdirectories.  During cache
+   construction, a linear search by name is performed to deduplicate
+   entries.  */</doc>
+<mbr r='glibc_hwcaps_subdirectory::next' o='0' t='struct glibc_hwcaps_subdirectory *'/>
+<mbr r='glibc_hwcaps_subdirectory::name' o='64' t='struct stringtable_entry *'/>
+<mbr r='glibc_hwcaps_subdirectory::section_index' o='128' t='uint32_t'/>
+<mbr r='glibc_hwcaps_subdirectory::used' o='160' t='_Bool'/>

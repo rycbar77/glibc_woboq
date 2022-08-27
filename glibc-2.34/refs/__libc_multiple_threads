@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/single-thread.h' l='31' type='int'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/single-thread.h' l='32' type='typeof (__libc_multiple_threads)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/single-thread.h' l='32'/>
+<def f='codebrowser/nptl/libc_multiple_threads.c' l='26' type='int'/>
+<doc f='codebrowser/nptl/libc_multiple_threads.c' l='23'>/* Variable set to a nonzero value either if more than one thread runs or ran,
+   or if a single-threaded process is trying to cancel itself.  See
+   nptl/descr.h for more context on the single-threaded process case.  */</doc>
+<use f='codebrowser/nptl/pthread_cancel.c' l='107' u='w' c='__pthread_cancel'/>
+<use f='codebrowser/nptl/allocatestack.c' l='296' u='w' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='417' u='w' c='allocate_stack'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/sunrpc/rpc/svc.h' l='109' type='int'/>
+<offset>128</offset>
+<doc f='codebrowser/sunrpc/rpc/svc.h' l='109'>/* length of remote address */</doc>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='244' u='w' c='makefd_xprt'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='283' u='w' c='rendezvous_request'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='291' u='w' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='357' u='r' c='svcudp_reply'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='237' u='w' c='makefd_xprt'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='279' u='w' c='rendezvous_request'/>

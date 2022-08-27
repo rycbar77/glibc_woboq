@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='289' type='void __nptl_free_tcb(struct pthread * pd)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='290' type='void __nptl_free_tcb(struct pthread * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='290' c='__nptl_free_tcb'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='287'>/* Deallocate a thread&apos;s stack after optionally making sure the thread
+   descriptor is still valid.  */</doc>
+<def f='codebrowser/nptl/nptl_free_tcb.c' l='23' ll='43' type='void __nptl_free_tcb(struct pthread * pd)'/>
+<use f='codebrowser/nptl/pthread_create.c' l='573' u='c' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_detach.c' l='51' u='c' c='___pthread_detach'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='128' u='c' c='__pthread_clockjoin_ex'/>

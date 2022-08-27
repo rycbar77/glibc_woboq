@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/fcntl.h' l='26' type='int __openat64(int __fd, const char * __file, int __oflag)'/>
+<dec f='codebrowser/include/fcntl.h' l='28' type='int __openat64(int , const char * , int )'/>
+<use f='codebrowser/include/fcntl.h' l='28' c='__openat64'/>
+<use f='codebrowser/io/openat64_2.c' l='28' u='c' c='__openat64_2'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='275' u='c' c='__getcwd_generic'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/openat64.c' l='48' macro='1' type='int __openat64(int , const char * , int )'/>

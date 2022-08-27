@@ -1,0 +1,71 @@
+<dec f='codebrowser/string/string.h' l='397' type='void * __mempcpy(void *restrict __dest, const void *restrict __src, size_t __n)'/>
+<dec f='codebrowser/include/string.h' l='85' type='void * __mempcpy(void *restrict , const void *restrict , size_t )'/>
+<use f='codebrowser/include/string.h' l='85' c='__mempcpy'/>
+<doc f='codebrowser/string/string.h' l='395'>/* Copy N bytes of SRC to DEST, return pointer to bytes after the
+   last written byte.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='380' u='c' c='read_input_file'/>
+<use f='codebrowser/crypt/sha256-crypt.c' l='259' u='c' c='__sha256_crypt_r'/>
+<use f='codebrowser/crypt/sha256-crypt.c' l='275' u='c' c='__sha256_crypt_r'/>
+<use f='codebrowser/crypt/sha512-crypt.c' l='258' u='c' c='__sha512_crypt_r'/>
+<use f='codebrowser/crypt/sha512-crypt.c' l='274' u='c' c='__sha512_crypt_r'/>
+<use f='codebrowser/elf/cache.c' l='1120' u='c' c='save_aux_cache'/>
+<use f='codebrowser/elf/chroot_canon.c' l='63' u='c' c='chroot_canon'/>
+<use f='codebrowser/elf/chroot_canon.c' l='114' u='c' c='chroot_canon'/>
+<dec f='codebrowser/elf/rtld.c' l='114' type='void * __mempcpy(void *restrict , const void *restrict , size_t )'/>
+<use f='codebrowser/elf/rtld.c' l='114' c='__mempcpy'/>
+<doc f='codebrowser/elf/rtld.c' l='113'>/* Avoid PLT use for our local calls at startup.  */</doc>
+<use f='codebrowser/elf/sprof.c' l='292' u='c' c='main'/>
+<use f='codebrowser/sysdeps/posix/libc_fatal.c' l='138' u='c' c='__libc_message'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='425' u='c' c='new_alias'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='535' u='c' c='new_module'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='537' u='c' c='new_module'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='542' u='c' c='new_module'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1023' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1026' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1029' u='c' c='write_output'/>
+<use f='codebrowser/iconv/strtab.c' l='294' u='c' c='copystrings'/>
+<use f='codebrowser/intl/dcigettext.c' l='655' u='c' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='773' u='c' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='1113' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/locale/programs/locfile.c' l='165' u='c' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='738' u='c' c='write_locale_data'/>
+<use f='codebrowser/misc/fd_to_filename.c' l='30' u='c' c='__fd_to_filename'/>
+<use f='codebrowser/misc/mntent_r.c' l='43' u='c' c='__setmntent'/>
+<use f='codebrowser/nptl/pthread_attr_getaffinity.c' l='47' u='c' c='__pthread_attr_getaffinity_new'/>
+<use f='codebrowser/posix/execvpe.c' l='132' u='c' c='__execvpe_common'/>
+<use f='codebrowser/resolv/res_send.c' l='327' u='c' c='__res_context_send'/>
+<use f='codebrowser/posix/glob.c' l='403' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='444' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='444' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='568' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='732' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='732' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='785' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='808' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='866' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='868' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='921' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1247' u='c' c='prefix_array'/>
+<use f='codebrowser/posix/glob.c' l='1249' u='c' c='prefix_array'/>
+<use f='codebrowser/posix/glob.c' l='1314' u='c' c='glob_in_dir'/>
+<use f='codebrowser/posix/glob.c' l='1314' u='c' c='glob_in_dir'/>
+<use f='codebrowser/posix/glob.c' l='1314' u='c' c='glob_in_dir'/>
+<use f='codebrowser/posix/glob.c' l='1413' u='c' c='glob_in_dir'/>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='1226' u='c' c='__sysconf_check_spec'/>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='1226' u='c' c='__sysconf_check_spec'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='933' c='__mempcpy_avx512_no_vzeroupper'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='936' c='__mempcpy_avx512_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='939' c='__mempcpy_avx512_unaligned_erms'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='942' c='__mempcpy_avx_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='945' c='__mempcpy_avx_unaligned_erms'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='948' c='__mempcpy_avx_unaligned_rtm'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='952' c='__mempcpy_avx_unaligned_erms_rtm'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='956' c='__mempcpy_evex_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='959' c='__mempcpy_evex_unaligned_erms'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='962' c='__mempcpy_ssse3_back'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='964' c='__mempcpy_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='966' c='__mempcpy_sse2_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='968' c='__mempcpy_sse2_unaligned_erms'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='970' c='__mempcpy_erms'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/mempcpy.c' l='33' macro='1' type='void * __mempcpy(void *restrict , const void *restrict , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/mempcpy.c' l='35' c='mempcpy'/>

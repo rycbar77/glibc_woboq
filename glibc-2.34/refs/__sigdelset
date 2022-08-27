@@ -1,0 +1,7 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='107' ll='113' type='void __sigdelset(sigset_t * set, int sig)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='59' u='c' c='__clear_internal_signals'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='60' u='c' c='__clear_internal_signals'/>
+<use f='codebrowser/nptl/pthread_create.c' l='743' u='c' c='__pthread_create_2_1'/>
+<use f='codebrowser/signal/sigdelset.c' l='34' u='c' c='sigdelset'/>
+<use f='codebrowser/sysdeps/posix/sigintr.c' l='43' u='c' c='siginterrupt'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='138' u='c' c='__timer_start_helper_thread'/>

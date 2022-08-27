@@ -1,0 +1,4 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='975' type='int posix_openpt(int __oflag)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='974'>/* Return a master pseudo-terminal handle.  */</doc>
+<use f='codebrowser/support/support_openpty.c' l='62' u='c' c='support_openpty'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getpt.c' l='33' macro='1' type='int posix_openpt(int )'/>

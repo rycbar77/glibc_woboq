@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/intprops.h' l='254'/>
+<use f='codebrowser/include/intprops.h' l='265' u='c'/>
+<use f='codebrowser/include/intprops.h' l='355' u='c'/>
+<doc f='codebrowser/include/intprops.h' l='250'>/* Clang 11 lacks __builtin_mul_overflow_p, and even if it did it
+   would presumably run afoul of Clang bug 16404.  ICC 2021.1&apos;s
+   __builtin_add_overflow_p etc. are not treated as integral constant
+   expressions even when all arguments are.  */</doc>

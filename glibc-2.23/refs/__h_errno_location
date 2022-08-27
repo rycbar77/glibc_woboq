@@ -1,0 +1,6 @@
+<dec f='codebrowser/resolv/netdb.h' l='61' type='int * __h_errno_location()'/>
+<doc f='codebrowser/resolv/netdb.h' l='60'>/* Function to get address of global `h_errno&apos; variable.  */</doc>
+<def f='codebrowser/inet/herrno-loc.c' l='23' ll='28' type='int * __h_errno_location()'/>
+<doc f='codebrowser/inet/herrno-loc.c' l='22'>/* When threaded, h_errno may be a per-thread variable.  */</doc>
+<def f='codebrowser/nptl/herrno.c' l='30' ll='34' type='int * __h_errno_location()'/>
+<doc f='codebrowser/nptl/herrno.c' l='29'>/* When threaded, h_errno may be a per-thread variable.  */</doc>

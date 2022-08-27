@@ -1,0 +1,8 @@
+<dec f='codebrowser/locale/programs/record-status.h' l='48' type='void pop_locale(struct locale_state ls)'/>
+<use f='codebrowser/locale/programs/linereader.h' l='114' u='c' c='lr_error'/>
+<def f='codebrowser/locale/programs/record-status.c' l='77' ll='91' type='void pop_locale(struct locale_state ls)'/>
+<use f='codebrowser/locale/programs/record-status.c' l='118' u='c' c='record_verbose'/>
+<use f='codebrowser/locale/programs/record-status.c' l='152' u='c' c='record_warning'/>
+<use f='codebrowser/locale/programs/record-status.c' l='189' u='c' c='record_error'/>
+<use f='codebrowser/locale/programs/record-status.c' l='222' u='c' c='record_error_at_line'/>
+<doc f='codebrowser/locale/programs/record-status.c' l='76'>/* Use the saved state to restore the locale.  */</doc>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/string/string.h' l='450' type='void explicit_bzero(void * __s, size_t __n)'/>
+<doc f='codebrowser/string/string.h' l='448'>/* Set N bytes of S to 0.  The compiler will not delete a call to this
+   function, even if S is dead after the call.  */</doc>
+<def f='codebrowser/string/explicit_bzero.c' l='32' ll='38' type='void explicit_bzero(void * s, size_t len)'/>
+<doc f='codebrowser/string/explicit_bzero.c' l='30'>/* Set LEN bytes of S to 0.  The compiler will not delete a call to
+   this function, even if S is dead after the call.  */</doc>

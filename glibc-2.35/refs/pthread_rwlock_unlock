@@ -1,0 +1,23 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='1071' type='int pthread_rwlock_unlock(pthread_rwlock_t * __rwlock)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='1070'>/* Unlock RWLOCK.  */</doc>
+<def f='codebrowser/nptl/pthread_rwlock_unlock.c' l='45' macro='1' type='int pthread_rwlock_unlock(pthread_rwlock_t * )'/>
+<use f='codebrowser/nscd/aicache.c' l='507' u='c' c='addhstaiX'/>
+<use f='codebrowser/nscd/cache.c' l='504' u='c' c='prune_cache'/>
+<use f='codebrowser/nscd/connections.c' l='1151' u='c' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1156' u='c' c='handle_request'/>
+<use f='codebrowser/nscd/grpcache.c' l='151' u='c' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='375' u='c' c='cache_addgr'/>
+<use f='codebrowser/nscd/hstcache.c' l='177' u='c' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='394' u='c' c='cache_addhst'/>
+<use f='codebrowser/nscd/initgrcache.c' l='235' u='c' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='368' u='c' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/mem.c' l='498' u='c' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='563' u='c' c='mempool_alloc'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='436' u='c' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='566' u='c' c='addinnetgrX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='596' u='c' c='addinnetgrX'/>
+<use f='codebrowser/nscd/pwdcache.c' l='158' u='c' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='353' u='c' c='cache_addpw'/>
+<use f='codebrowser/nscd/servicescache.c' l='146' u='c' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='302' u='c' c='cache_addserv'/>
+<use f='codebrowser/support/xpthread_rwlock_unlock.c' l='25' u='c' c='xpthread_rwlock_unlock'/>

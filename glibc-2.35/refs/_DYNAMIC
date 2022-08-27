@@ -1,0 +1,10 @@
+<dec f='codebrowser/elf/link.h' l='93' type='Elf64_Dyn[]'/>
+<doc f='codebrowser/elf/link.h' l='86'>/* This symbol refers to the &quot;dynamic structure&quot; in the `.dynamic&apos; section
+   of whatever module refers to `_DYNAMIC&apos;.  So, to find its own
+   `struct r_debug_extended&apos;, a program could do:
+     for (dyn = _DYNAMIC; dyn-&gt;d_tag != DT_NULL; ++dyn)
+       if (dyn-&gt;d_tag == DT_DEBUG)
+	 r_debug_extended = (struct r_debug_extended *) dyn-&gt;d_un.d_ptr;
+ */</doc>
+<dec f='codebrowser/sysdeps/x86_64/dl-machine.h' l='52' type='Elf64_Dyn[]'/>
+<use f='codebrowser/sysdeps/x86_64/dl-machine.h' l='53' u='r' c='elf_machine_dynamic'/>

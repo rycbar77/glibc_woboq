@@ -1,0 +1,5 @@
+<def f='codebrowser/sysdeps/generic/libc-mtag.h' l='66' ll='71' type='void * __libc_mtag_new_tag(void * p)'/>
+<use f='codebrowser/malloc/malloc.c' l='471' u='c' c='tag_new_zero_region'/>
+<use f='codebrowser/malloc/malloc.c' l='1483' u='c' c='tag_new_usable'/>
+<doc f='codebrowser/sysdeps/generic/libc-mtag.h' l='64'>/* Assign a new (random) tag to a pointer P (does not adjust the tag on
+   the memory addressed).  */</doc>

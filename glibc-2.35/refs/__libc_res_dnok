@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/resolv.h' l='64' type='int __libc_res_dnok(const char * )'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='670' u='r' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='846' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='348' u='c' c='getanswer_r'/>
+<def f='codebrowser/resolv/res-name-checking.c' l='216' macro='1' type='int __libc_res_dnok(const char * )'/>

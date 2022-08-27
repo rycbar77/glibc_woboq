@@ -1,0 +1,8 @@
+<dec f='codebrowser/malloc/mcheck-impl.c' l='41' type='void *'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='88' u='r' c='checkhdr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='182' u='r' c='free_mcheck'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='216' u='w' c='malloc_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='267' u='w' c='memalign_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='338' u='w' c='realloc_mcheck_after'/>
+<offset>256</offset>
+<doc f='codebrowser/malloc/mcheck-impl.c' l='41'>/* Real block allocated, for memalign.  */</doc>

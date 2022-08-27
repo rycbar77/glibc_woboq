@@ -1,0 +1,31 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='326' type='int __pthread_mutex_lock(pthread_mutex_t * __mutex)'/>
+<use f='codebrowser/elf/dl-addr.c' l='131' macro='1' c='_dl_addr'/>
+<use f='codebrowser/elf/dl-addr.c' l='131' macro='1' u='r' c='_dl_addr'/>
+<use f='codebrowser/elf/dl-close.c' l='550' macro='1' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='550' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='666' macro='1' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='666' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='829' macro='1' c='_dl_close'/>
+<use f='codebrowser/elf/dl-close.c' l='829' macro='1' u='r' c='_dl_close'/>
+<use f='codebrowser/elf/dl-fini.c' l='53' macro='1' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-fini.c' l='53' macro='1' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='40' macro='1' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='40' macro='1' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-lookup.c' l='229' macro='1' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='229' macro='1' u='r' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='647' macro='1' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='647' macro='1' u='r' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='693' macro='1' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='693' macro='1' u='r' c='add_dependency'/>
+<use f='codebrowser/elf/dl-object.c' l='33' macro='1' c='_dl_add_to_namespace_list'/>
+<use f='codebrowser/elf/dl-object.c' l='33' macro='1' u='r' c='_dl_add_to_namespace_list'/>
+<use f='codebrowser/elf/dl-open.c' l='786' macro='1' c='_dl_open'/>
+<use f='codebrowser/elf/dl-open.c' l='786' macro='1' u='r' c='_dl_open'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='390' type='int __pthread_mutex_lock(pthread_mutex_t * __mutex)'/>
+<use f='codebrowser/nptl/mtx_lock.c' l='24' u='c' c='mtx_lock'/>
+<use f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='114' macro='1' c='__cxa_thread_atexit_impl'/>
+<use f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='114' macro='1' u='r' c='__cxa_thread_atexit_impl'/>
+<use f='codebrowser/elf/tlsdeschtab.h' l='146' macro='1' c='_dl_tlsdesc_resolve_early_return_p'/>
+<use f='codebrowser/elf/tlsdeschtab.h' l='146' macro='1' u='r' c='_dl_tlsdesc_resolve_early_return_p'/>
+<use f='codebrowser/sysdeps/x86_64/tlsdesc.c' l='129' macro='1' c='_dl_tlsdesc_resolve_hold_fixup'/>
+<use f='codebrowser/sysdeps/x86_64/tlsdesc.c' l='129' macro='1' u='r' c='_dl_tlsdesc_resolve_hold_fixup'/>

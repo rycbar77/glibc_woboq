@@ -1,0 +1,9 @@
+<def f='codebrowser/include/list.h' l='41' ll='49' type='void list_add(list_t * newp, list_t * head)'/>
+<use f='codebrowser/csu/libc-tls.c' l='200' u='c' c='__libc_setup_tls'/>
+<doc f='codebrowser/include/list.h' l='40'>/* Add new element at the head of the list.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='808' u='c' c='init_tls'/>
+<use f='codebrowser/elf/rtld.c' l='2444' u='c' c='dl_main'/>
+<use f='codebrowser/nptl/allocatestack.c' l='143' u='c' c='stack_list_add'/>
+<use f='codebrowser/nptl/allocatestack.c' l='504' u='c' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='951' u='c' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='953' u='c' c='__reclaim_stacks'/>

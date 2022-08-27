@@ -1,0 +1,6 @@
+<dec f='codebrowser/malloc/malloc.h' l='160' type='void __malloc_check_init()'/>
+<dec f='codebrowser/include/malloc.h' l='12' type='void __malloc_check_init()'/>
+<use f='codebrowser/include/malloc.h' l='12' c='__malloc_check_init'/>
+<doc f='codebrowser/malloc/malloc.h' l='159'>/* Activate a standard set of debugging hooks. */</doc>
+<use f='codebrowser/malloc/arena.c' l='216' u='c' c='_dl_tunable_set_mallopt_check'/>
+<def f='codebrowser/malloc/hooks.c' l='71' ll='84' macro='1' type='void __malloc_check_init()'/>

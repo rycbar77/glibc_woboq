@@ -1,0 +1,6 @@
+<dec f='codebrowser/nptl/nptlfreeres.c' l='31' type='void __nptl_unwind_freeres()'/>
+<use f='codebrowser/nptl/nptlfreeres.c' l='31' c='__nptl_unwind_freeres'/>
+<use f='codebrowser/nptl/nptlfreeres.c' l='31' u='r' c='__libpthread_freeres'/>
+<use f='codebrowser/nptl/nptlfreeres.c' l='31' u='c' c='__libpthread_freeres'/>
+<def f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='83' ll='92' type='void __nptl_unwind_freeres()'/>
+<doc f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='82'>/* Register for cleanup in libpthread.so.  */</doc>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/bits/netdb.h' l='31' type='uint32_t'/>
+<offset>160</offset>
+<doc f='codebrowser/bits/netdb.h' l='31'>/* Network number.  */</doc>
+<use f='codebrowser/nss/nss_files/files-network.c' l='72' u='w' c='_nss_files_parse_netent'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='86' u='r' c='_nss_files_getnetbyaddr_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='242' u='w' c='_nss_dns_getnetbyaddr_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='414' u='w' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='473' u='w' c='getanswer_r'/>
+<use f='codebrowser/support/support_format_netent.c' l='48' u='r' c='support_format_netent'/>

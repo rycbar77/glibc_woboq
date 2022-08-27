@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>svml_s_erff16_core_avx512.S source code [codebrowser/sysdeps/x86_64/fpu/multiarch/svml_s_erff16_core_avx512.S] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/fpu/multiarch/svml_s_erff16_core_avx512.S'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>x86_64</a>/<a href='..'>fpu</a>/<a href='./'>multiarch</a>/<a href='svml_s_erff16_core_avx512.S.html'>svml_s_erff16_core_avx512.S</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Function erff vectorized with AVX-512.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/*</i></td></tr>
+<tr><th id="20">20</th><td><i> * ALGORITHM DESCRIPTION:</i></td></tr>
+<tr><th id="21">21</th><td><i> *</i></td></tr>
+<tr><th id="22">22</th><td><i> *   erf(x) is computed as higher precision simple polynomial</i></td></tr>
+<tr><th id="23">23</th><td><i> *   with no lookup table:</i></td></tr>
+<tr><th id="24">24</th><td><i> *</i></td></tr>
+<tr><th id="25">25</th><td><i> *     R = P0 + x^2*(P1 + x^2*(P2 + .... x^2*P12));</i></td></tr>
+<tr><th id="26">26</th><td><i> *     erf(x) = R * R * x;</i></td></tr>
+<tr><th id="27">27</th><td><i> *</i></td></tr>
+<tr><th id="28">28</th><td><i> *   Special cases:</i></td></tr>
+<tr><th id="29">29</th><td><i> *</i></td></tr>
+<tr><th id="30">30</th><td><i> *   erf(0)    = 0</i></td></tr>
+<tr><th id="31">31</th><td><i> *   erf(+INF) = +1</i></td></tr>
+<tr><th id="32">32</th><td><i> *   erf(-INF) = -1</i></td></tr>
+<tr><th id="33">33</th><td><i> *   erf(QNaN) = QNaN</i></td></tr>
+<tr><th id="34">34</th><td><i> *   erf(SNaN) = QNaN</i></td></tr>
+<tr><th id="35">35</th><td><i> *</i></td></tr>
+<tr><th id="36">36</th><td><i> */</i></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><i>/* Offsets for data table __svml_serf_data_internal</i></td></tr>
+<tr><th id="39">39</th><td><i> */</i></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/_AbsMask" data-ref="_M/_AbsMask">_AbsMask</dfn>                      	0</u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/_One" data-ref="_M/_One">_One</dfn>                          	64</u></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/_gf_MaxThreshold_LA" data-ref="_M/_gf_MaxThreshold_LA">_gf_MaxThreshold_LA</dfn>           	128</u></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_0" data-ref="_M/_gf_la_poly_0">_gf_la_poly_0</dfn>                 	192</u></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_1" data-ref="_M/_gf_la_poly_1">_gf_la_poly_1</dfn>                 	256</u></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_2" data-ref="_M/_gf_la_poly_2">_gf_la_poly_2</dfn>                 	320</u></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_3" data-ref="_M/_gf_la_poly_3">_gf_la_poly_3</dfn>                 	384</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_4" data-ref="_M/_gf_la_poly_4">_gf_la_poly_4</dfn>                 	448</u></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_5" data-ref="_M/_gf_la_poly_5">_gf_la_poly_5</dfn>                 	512</u></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_6" data-ref="_M/_gf_la_poly_6">_gf_la_poly_6</dfn>                 	576</u></td></tr>
+<tr><th id="50">50</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_7" data-ref="_M/_gf_la_poly_7">_gf_la_poly_7</dfn>                 	640</u></td></tr>
+<tr><th id="51">51</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_8" data-ref="_M/_gf_la_poly_8">_gf_la_poly_8</dfn>                 	704</u></td></tr>
+<tr><th id="52">52</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_9" data-ref="_M/_gf_la_poly_9">_gf_la_poly_9</dfn>                 	768</u></td></tr>
+<tr><th id="53">53</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_10" data-ref="_M/_gf_la_poly_10">_gf_la_poly_10</dfn>                	832</u></td></tr>
+<tr><th id="54">54</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_11" data-ref="_M/_gf_la_poly_11">_gf_la_poly_11</dfn>                	896</u></td></tr>
+<tr><th id="55">55</th><td><u>#define <dfn class="macro" id="_M/_gf_la_poly_12" data-ref="_M/_gf_la_poly_12">_gf_la_poly_12</dfn>                	960</u></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><u>#include <a href="../../../unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td>        .text</td></tr>
+<tr><th id="60">60</th><td>	.section .text.exex512,<q>"ax"</q>,@progbits</td></tr>
+<tr><th id="61">61</th><td><a class="macro" href="../../../x86/sysdep.h.html#91" title=".globl _ZGVeN16v_erff_skx; .type _ZGVeN16v_erff_skx,@function; .align 1&lt;&lt;4; _ZGVeN16v_erff_skx: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a>(<span class='warning' title="type specifier missing, defaults to &apos;int&apos;"><dfn class="decl def" id="_ZGVeN16v_erff_skx" title='_ZGVeN16v_erff_skx' data-ref="_ZGVeN16v_erff_skx" data-ref-filename="_ZGVeN16v_erff_skx">_ZGVeN16v_erff_skx</dfn></span>)</td></tr>
+<tr><th id="62">62</th><td>        <span class='error' title="unknown type name &apos;vmovaps&apos;">vmovaps</span>   <span class='error' title="expected identifier or &apos;(&apos;">%</span>zmm0, %zmm8</td></tr>
+<tr><th id="63">63</th><td>        vmulps    {rn-sae}, %zmm8, %zmm8, %zmm11</td></tr>
+<tr><th id="64">64</th><td>        vmovups   <a class="macro" href="#54" title="896" data-ref="_M/_gf_la_poly_11">_gf_la_poly_11</a>+__svml_serf_data_internal(%rip), %zmm15</td></tr>
+<tr><th id="65">65</th><td>        vmovups   <a class="macro" href="#55" title="960" data-ref="_M/_gf_la_poly_12">_gf_la_poly_12</a>+__svml_serf_data_internal(%rip), %zmm10</td></tr>
+<tr><th id="66">66</th><td>        vmovups   <a class="macro" href="#53" title="832" data-ref="_M/_gf_la_poly_10">_gf_la_poly_10</a>+__svml_serf_data_internal(%rip), %zmm9</td></tr>
+<tr><th id="67">67</th><td>        vmovups   <a class="macro" href="#52" title="768" data-ref="_M/_gf_la_poly_9">_gf_la_poly_9</a>+__svml_serf_data_internal(%rip), %zmm7</td></tr>
+<tr><th id="68">68</th><td>        vmovups   <a class="macro" href="#51" title="704" data-ref="_M/_gf_la_poly_8">_gf_la_poly_8</a>+__svml_serf_data_internal(%rip), %zmm0</td></tr>
+<tr><th id="69">69</th><td>        vmovups   <a class="macro" href="#50" title="640" data-ref="_M/_gf_la_poly_7">_gf_la_poly_7</a>+__svml_serf_data_internal(%rip), %zmm1</td></tr>
+<tr><th id="70">70</th><td>        vmovups   <a class="macro" href="#49" title="576" data-ref="_M/_gf_la_poly_6">_gf_la_poly_6</a>+__svml_serf_data_internal(%rip), %zmm2</td></tr>
+<tr><th id="71">71</th><td>        vmovups   <a class="macro" href="#48" title="512" data-ref="_M/_gf_la_poly_5">_gf_la_poly_5</a>+__svml_serf_data_internal(%rip), %zmm3</td></tr>
+<tr><th id="72">72</th><td>        vmovups   <a class="macro" href="#47" title="448" data-ref="_M/_gf_la_poly_4">_gf_la_poly_4</a>+__svml_serf_data_internal(%rip), %zmm4</td></tr>
+<tr><th id="73">73</th><td>        vmovups   <a class="macro" href="#46" title="384" data-ref="_M/_gf_la_poly_3">_gf_la_poly_3</a>+__svml_serf_data_internal(%rip), %zmm5</td></tr>
+<tr><th id="74">74</th><td>        vmovups   <a class="macro" href="#45" title="320" data-ref="_M/_gf_la_poly_2">_gf_la_poly_2</a>+__svml_serf_data_internal(%rip), %zmm6</td></tr>
+<tr><th id="75">75</th><td>        vextractf32x8 $<var>1</var>, %zmm8, %ymm13</td></tr>
+<tr><th id="76">76</th><td>        vcvtps2pd {sae}, %ymm8, %zmm12</td></tr>
+<tr><th id="77">77</th><td>        vcvtps2pd {sae}, %ymm13, %zmm14</td></tr>
+<tr><th id="78">78</th><td>        vmulpd    {rn-sae}, %zmm12, %zmm12, %zmm12</td></tr>
+<tr><th id="79">79</th><td>        vmulpd    {rn-sae}, %zmm14, %zmm14, %zmm13</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><i>/* R = P0 + x^2*(P1 + x^2*(P2 + .... x^2*P12)); */</i></td></tr>
+<tr><th id="82">82</th><td>        vmovaps   %zmm15, %zmm14</td></tr>
+<tr><th id="83">83</th><td>        vfmadd231pd {rn-sae}, %zmm12, %zmm10, %zmm14</td></tr>
+<tr><th id="84">84</th><td>        vfmadd231pd {rn-sae}, %zmm13, %zmm10, %zmm15</td></tr>
+<tr><th id="85">85</th><td>        vmovups   <a class="macro" href="#44" title="256" data-ref="_M/_gf_la_poly_1">_gf_la_poly_1</a>+__svml_serf_data_internal(%rip), %zmm10</td></tr>
+<tr><th id="86">86</th><td>        vfmadd213pd {rn-sae}, %zmm9, %zmm12, %zmm14</td></tr>
+<tr><th id="87">87</th><td>        vfmadd231pd {rn-sae}, %zmm13, %zmm15, %zmm9</td></tr>
+<tr><th id="88">88</th><td>        vfmadd213pd {rn-sae}, %zmm7, %zmm12, %zmm14</td></tr>
+<tr><th id="89">89</th><td>        vfmadd231pd {rn-sae}, %zmm13, %zmm9, %zmm7</td></tr>
+<tr><th id="90">90</th><td>        vfmadd213pd {rn-sae}, %zmm0, %zmm12, %zmm14</td></tr>
+<tr><th id="91">91</th><td>        vfmadd231pd {rn-sae}, %zmm13, %zmm7, %zmm0</td></tr>
+<tr><th id="92">92</th><td>        vmovups   <a class="macro" href="#42" title="128" data-ref="_M/_gf_MaxThreshold_LA">_gf_MaxThreshold_LA</a>+__svml_serf_data_internal(%rip), %zmm7</td></tr>
+<tr><th id="93">93</th><td>        vfmadd213pd {rn-sae}, %zmm1, %zmm12, %zmm14</td></tr>
+<tr><th id="94">94</th><td>        vfmadd231pd {rn-sae}, %zmm13, %zmm0, %zmm1</td></tr>
+<tr><th id="95">95</th><td>        vmovups   <a class="macro" href="#43" title="192" data-ref="_M/_gf_la_poly_0">_gf_la_poly_0</a>+__svml_serf_data_internal(%rip), %zmm0</td></tr>
+<tr><th id="96">96</th><td>        vcmpps    $<var>22</var>, {sae}, %zmm11, %zmm7, %k1</td></tr>
+<tr><th id="97">97</th><td>        vfmadd213pd {rn-sae}, %zmm2, %zmm12, %zmm14</td></tr>
+<tr><th id="98">98</th><td>        vfmadd231pd {rn-sae}, %zmm13, %zmm1, %zmm2</td></tr>
+<tr><th id="99">99</th><td>        vfmadd213pd {rn-sae}, %zmm3, %zmm12, %zmm14</td></tr>
+<tr><th id="100">100</th><td>        vfmadd231pd {rn-sae}, %zmm13, %zmm2, %zmm3</td></tr>
+<tr><th id="101">101</th><td>        vfmadd213pd {rn-sae}, %zmm4, %zmm12, %zmm14</td></tr>
+<tr><th id="102">102</th><td>        vfmadd231pd {rn-sae}, %zmm13, %zmm3, %zmm4</td></tr>
+<tr><th id="103">103</th><td>        vfmadd213pd {rn-sae}, %zmm5, %zmm12, %zmm14</td></tr>
+<tr><th id="104">104</th><td>        vfmadd231pd {rn-sae}, %zmm13, %zmm4, %zmm5</td></tr>
+<tr><th id="105">105</th><td>        vfmadd213pd {rn-sae}, %zmm6, %zmm12, %zmm14</td></tr>
+<tr><th id="106">106</th><td>        vfmadd231pd {rn-sae}, %zmm13, %zmm5, %zmm6</td></tr>
+<tr><th id="107">107</th><td>        vmovups   <a class="macro" href="#40" title="0" data-ref="_M/_AbsMask">_AbsMask</a>+__svml_serf_data_internal(%rip), %zmm5</td></tr>
+<tr><th id="108">108</th><td>        vfmadd213pd {rn-sae}, %zmm10, %zmm12, %zmm14</td></tr>
+<tr><th id="109">109</th><td>        vfmadd231pd {rn-sae}, %zmm13, %zmm6, %zmm10</td></tr>
+<tr><th id="110">110</th><td>        vandnps   %zmm8, %zmm5, %zmm6</td></tr>
+<tr><th id="111">111</th><td>        vfmadd213pd {rn-sae}, %zmm0, %zmm14, %zmm12</td></tr>
+<tr><th id="112">112</th><td>        vfmadd213pd {rn-sae}, %zmm0, %zmm10, %zmm13</td></tr>
+<tr><th id="113">113</th><td>        vorps     <a class="macro" href="#41" title="64" data-ref="_M/_One">_One</a>+__svml_serf_data_internal(%rip), %zmm6, %zmm0</td></tr>
+<tr><th id="114">114</th><td>        vmulpd    {rn-sae}, %zmm12, %zmm12, %zmm1</td></tr>
+<tr><th id="115">115</th><td>        vmulpd    {rn-sae}, %zmm13, %zmm13, %zmm3</td></tr>
+<tr><th id="116">116</th><td>        vcvtpd2ps {rn-sae}, %zmm1, %ymm2</td></tr>
+<tr><th id="117">117</th><td>        vcvtpd2ps {rn-sae}, %zmm3, %ymm4</td></tr>
+<tr><th id="118">118</th><td>        vinsertf32x8 $<var>1</var>, %ymm4, %zmm2, %zmm9</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><i>/* erf(x) = R * R * x; */</i></td></tr>
+<tr><th id="121">121</th><td>        vmulps    {rn-sae}, %zmm8, %zmm9, %zmm0{%k1}</td></tr>
+<tr><th id="122">122</th><td>        <span class='error' title="unknown type name &apos;ret&apos;">ret</span></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><a class="macro" href="../../../x86/sysdep.h.html#94" title=".cfi_endproc; .size _ZGVeN16v_erff_skx,.-_ZGVeN16v_erff_skx;" data-ref="_M/END">END</a>(_ZGVeN16v_erff_skx)</td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td>        <span class='error' title="expected identifier or &apos;(&apos;">.</span>section .rodata, <q>"a"</q></td></tr>
+<tr><th id="127">127</th><td>        .align <var>64</var></td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><u>#<span data-ppcond="129">ifdef</span> <span class="macro" data-ref="_M/__svml_serf_data_internal_typedef">__svml_serf_data_internal_typedef</span></u></td></tr>
+<tr><th id="130">130</th><td><b>typedef</b> <em>unsigned</em> <em>int</em> VUINT32;</td></tr>
+<tr><th id="131">131</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="132">132</th><td>{</td></tr>
+<tr><th id="133">133</th><td>        __declspec(align(<var>64</var>)) VUINT32 _AbsMask[<var>16</var>][<var>1</var>];</td></tr>
+<tr><th id="134">134</th><td>        __declspec(align(<var>64</var>)) VUINT32 _One[<var>16</var>][<var>1</var>];</td></tr>
+<tr><th id="135">135</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_MaxThreshold_LA[<var>16</var>][<var>1</var>];</td></tr>
+<tr><th id="136">136</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_0[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="137">137</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_1[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="138">138</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_2[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="139">139</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_3[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="140">140</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_4[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="141">141</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_5[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="142">142</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_6[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="143">143</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_7[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="144">144</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_8[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="145">145</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_9[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="146">146</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_10[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="147">147</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_11[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="148">148</th><td>        __declspec(align(<var>64</var>)) VUINT32 _gf_la_poly_12[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="149">149</th><td>} __svml_serf_data_internal;</td></tr>
+<tr><th id="150">150</th><td><u>#<span data-ppcond="129">endif</span></u></td></tr>
+<tr><th id="151">151</th><td>__svml_serf_data_internal:</td></tr>
+<tr><th id="152">152</th><td>        .<em>long</em> <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>  <i>/* _AbsMask */</i></td></tr>
+<tr><th id="153">153</th><td>        .align <var>64</var></td></tr>
+<tr><th id="154">154</th><td>        .<em>long</em> <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>  <i>/* _One */</i></td></tr>
+<tr><th id="155">155</th><td>        .align <var>64</var></td></tr>
+<tr><th id="156">156</th><td>        .<em>long</em> <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>, <var>0x41558c5a</var>          <i>/* _gf_MaxThreshold_LA */</i></td></tr>
+<tr><th id="157">157</th><td>        .align <var>64</var></td></tr>
+<tr><th id="158">158</th><td>        .quad <var>0x3ff0fefbd933b903</var>, <var>0x3ff0fefbd933b903</var>, <var>0x3ff0fefbd933b903</var>, <var>0x3ff0fefbd933b903</var>, <var>0x3ff0fefbd933b903</var>, <var>0x3ff0fefbd933b903</var>, <var>0x3ff0fefbd933b903</var>, <var>0x3ff0fefbd933b903</var>  <i>/* _gf_la_poly_0 */</i></td></tr>
+<tr><th id="159">159</th><td>        .align <var>64</var></td></tr>
+<tr><th id="160">160</th><td>        .quad <var>0xbfc6a948101e6367</var>, <var>0xbfc6a948101e6367</var>, <var>0xbfc6a948101e6367</var>, <var>0xbfc6a948101e6367</var>, <var>0xbfc6a948101e6367</var>, <var>0xbfc6a948101e6367</var>, <var>0xbfc6a948101e6367</var>, <var>0xbfc6a948101e6367</var>  <i>/* _gf_la_poly_1 */</i></td></tr>
+<tr><th id="161">161</th><td>        .align <var>64</var></td></tr>
+<tr><th id="162">162</th><td>        .quad <var>0x3fa3a334ce602c6b</var>, <var>0x3fa3a334ce602c6b</var>, <var>0x3fa3a334ce602c6b</var>, <var>0x3fa3a334ce602c6b</var>, <var>0x3fa3a334ce602c6b</var>, <var>0x3fa3a334ce602c6b</var>, <var>0x3fa3a334ce602c6b</var>, <var>0x3fa3a334ce602c6b</var>  <i>/* _gf_la_poly_2 */</i></td></tr>
+<tr><th id="163">163</th><td>        .align <var>64</var></td></tr>
+<tr><th id="164">164</th><td>        .quad <var>0xbf799309ea0c81dc</var>, <var>0xbf799309ea0c81dc</var>, <var>0xbf799309ea0c81dc</var>, <var>0xbf799309ea0c81dc</var>, <var>0xbf799309ea0c81dc</var>, <var>0xbf799309ea0c81dc</var>, <var>0xbf799309ea0c81dc</var>, <var>0xbf799309ea0c81dc</var>  <i>/* _gf_la_poly_3 */</i></td></tr>
+<tr><th id="165">165</th><td>        .align <var>64</var></td></tr>
+<tr><th id="166">166</th><td>        .quad <var>0x3f476df64a40e392</var>, <var>0x3f476df64a40e392</var>, <var>0x3f476df64a40e392</var>, <var>0x3f476df64a40e392</var>, <var>0x3f476df64a40e392</var>, <var>0x3f476df64a40e392</var>, <var>0x3f476df64a40e392</var>, <var>0x3f476df64a40e392</var>  <i>/* _gf_la_poly_4 */</i></td></tr>
+<tr><th id="167">167</th><td>        .align <var>64</var></td></tr>
+<tr><th id="168">168</th><td>        .quad <var>0xbf0a5216b9508ede</var>, <var>0xbf0a5216b9508ede</var>, <var>0xbf0a5216b9508ede</var>, <var>0xbf0a5216b9508ede</var>, <var>0xbf0a5216b9508ede</var>, <var>0xbf0a5216b9508ede</var>, <var>0xbf0a5216b9508ede</var>, <var>0xbf0a5216b9508ede</var>  <i>/* _gf_la_poly_5 */</i></td></tr>
+<tr><th id="169">169</th><td>        .align <var>64</var></td></tr>
+<tr><th id="170">170</th><td>        .quad <var>0x3ea5794b95c8e8a0</var>, <var>0x3ea5794b95c8e8a0</var>, <var>0x3ea5794b95c8e8a0</var>, <var>0x3ea5794b95c8e8a0</var>, <var>0x3ea5794b95c8e8a0</var>, <var>0x3ea5794b95c8e8a0</var>, <var>0x3ea5794b95c8e8a0</var>, <var>0x3ea5794b95c8e8a0</var>  <i>/* _gf_la_poly_6 */</i></td></tr>
+<tr><th id="171">171</th><td>        .align <var>64</var></td></tr>
+<tr><th id="172">172</th><td>        .quad <var>0x3e94b6c0b485f30f</var>, <var>0x3e94b6c0b485f30f</var>, <var>0x3e94b6c0b485f30f</var>, <var>0x3e94b6c0b485f30f</var>, <var>0x3e94b6c0b485f30f</var>, <var>0x3e94b6c0b485f30f</var>, <var>0x3e94b6c0b485f30f</var>, <var>0x3e94b6c0b485f30f</var>  <i>/* _gf_la_poly_7 */</i></td></tr>
+<tr><th id="173">173</th><td>        .align <var>64</var></td></tr>
+<tr><th id="174">174</th><td>        .quad <var>0xbe65806ce17f0523</var>, <var>0xbe65806ce17f0523</var>, <var>0xbe65806ce17f0523</var>, <var>0xbe65806ce17f0523</var>, <var>0xbe65806ce17f0523</var>, <var>0xbe65806ce17f0523</var>, <var>0xbe65806ce17f0523</var>, <var>0xbe65806ce17f0523</var>  <i>/* _gf_la_poly_8 */</i></td></tr>
+<tr><th id="175">175</th><td>        .align <var>64</var></td></tr>
+<tr><th id="176">176</th><td>        .quad <var>0x3e2715640470db47</var>, <var>0x3e2715640470db47</var>, <var>0x3e2715640470db47</var>, <var>0x3e2715640470db47</var>, <var>0x3e2715640470db47</var>, <var>0x3e2715640470db47</var>, <var>0x3e2715640470db47</var>, <var>0x3e2715640470db47</var>  <i>/* _gf_la_poly_9 */</i></td></tr>
+<tr><th id="177">177</th><td>        .align <var>64</var></td></tr>
+<tr><th id="178">178</th><td>        .quad <var>0xbdddcb2653d80f03</var>, <var>0xbdddcb2653d80f03</var>, <var>0xbdddcb2653d80f03</var>, <var>0xbdddcb2653d80f03</var>, <var>0xbdddcb2653d80f03</var>, <var>0xbdddcb2653d80f03</var>, <var>0xbdddcb2653d80f03</var>, <var>0xbdddcb2653d80f03</var>  <i>/* _gf_la_poly_10 */</i></td></tr>
+<tr><th id="179">179</th><td>        .align <var>64</var></td></tr>
+<tr><th id="180">180</th><td>        .quad <var>0x3d85eadfc762d3eb</var>, <var>0x3d85eadfc762d3eb</var>, <var>0x3d85eadfc762d3eb</var>, <var>0x3d85eadfc762d3eb</var>, <var>0x3d85eadfc762d3eb</var>, <var>0x3d85eadfc762d3eb</var>, <var>0x3d85eadfc762d3eb</var>, <var>0x3d85eadfc762d3eb</var>  <i>/* _gf_la_poly_11 */</i></td></tr>
+<tr><th id="181">181</th><td>        .align <var>64</var></td></tr>
+<tr><th id="182">182</th><td>        .quad <var>0xbd1c668a2871f0f1</var>, <var>0xbd1c668a2871f0f1</var>, <var>0xbd1c668a2871f0f1</var>, <var>0xbd1c668a2871f0f1</var>, <var>0xbd1c668a2871f0f1</var>, <var>0xbd1c668a2871f0f1</var>, <var>0xbd1c668a2871f0f1</var>, <var>0xbd1c668a2871f0f1</var>  <i>/* _gf_la_poly_12 */</i></td></tr>
+<tr><th id="183">183</th><td>        .align <var>64</var></td></tr>
+<tr><th id="184">184</th><td>        .type	__svml_serf_data_internal,@object</td></tr>
+<tr><th id="185">185</th><td>        .size	__svml_serf_data_internal,.-__svml_serf_data_internal</td></tr>
+<tr><th id="186">186</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

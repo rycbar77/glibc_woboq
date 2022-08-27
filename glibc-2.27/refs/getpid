@@ -1,0 +1,9 @@
+<dec f='codebrowser/posix/unistd.h' l='631' type='__pid_t getpid()'/>
+<dec f='codebrowser/include/unistd.h' l='14' type='__pid_t getpid()'/>
+<use f='codebrowser/include/unistd.h' l='14' c='getpid'/>
+<doc f='codebrowser/posix/unistd.h' l='630'>/* Get the process ID of the calling process.  */</doc>
+<use f='codebrowser/elf/sotruss-lib.c' l='79' u='c' c='init'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='250' u='c' c='print_enter'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='337' u='c' c='print_exit'/>
+<use f='codebrowser/string/strfry.c' l='33' u='c' c='strfry'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pthread_sigqueue.c' l='52' u='c' c='pthread_sigqueue'/>

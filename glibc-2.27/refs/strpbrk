@@ -1,0 +1,16 @@
+<dec f='codebrowser/string/string.h' l='302' type='char * strpbrk(const char * __s, const char * __accept)'/>
+<dec f='codebrowser/include/string.h' l='139' type='char * strpbrk(const char * , const char * )'/>
+<use f='codebrowser/include/string.h' l='139' c='strpbrk'/>
+<use f='codebrowser/grp/fgetgrent_r.c' l='37' macro='1' u='c' c='_nss_files_parse_grent'/>
+<use f='codebrowser/gshadow/sgetsgent_r.c' l='35' macro='1' u='c' c='_nss_files_parse_sgent'/>
+<use f='codebrowser/nss/rewrite_field.c' l='34' u='c' c='__nss_rewrite_field'/>
+<use f='codebrowser/nss/rewrite_field.c' l='46' u='c' c='__nss_rewrite_field'/>
+<use f='codebrowser/nss/valid_field.c' l='30' u='c' c='__nss_valid_field'/>
+<use f='codebrowser/nss/valid_list_field.c' l='32' u='c' c='__nss_valid_list_field'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='34' macro='1' u='c' c='_nss_files_parse_pwent'/>
+<use f='codebrowser/resolv/res_init.c' l='346' u='c' c='res_vinit_1'/>
+<use f='codebrowser/resolv/res_init.c' l='414' u='c' c='res_vinit_1'/>
+<use f='codebrowser/shadow/sgetspent_r.c' l='36' macro='1' u='c' c='_nss_files_parse_spent'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='337' c='__strpbrk_sse42'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='339' c='__strpbrk_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strpbrk.c' l='29' macro='1' type='char * strpbrk(const char * , const char * )'/>

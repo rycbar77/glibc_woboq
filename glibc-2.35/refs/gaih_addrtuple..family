@@ -1,0 +1,25 @@
+<dec f='codebrowser/nss/nss.h' l='48' type='int'/>
+<offset>128</offset>
+<use f='codebrowser/nscd/aicache.c' l='147' u='r' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='149' u='r' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='181' u='r' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='182' u='r' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='184' u='r' c='addhstaiX'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='224' u='w' c='convert_hostent_to_gaih_addrtuple'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='230' u='w' c='convert_hostent_to_gaih_addrtuple'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='462' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='479' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='486' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='497' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='509' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='514' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='536' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='781' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='786' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='795' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='933' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='953' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='961' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1020' u='r' c='gaih_inet'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='461' u='w' c='_nss_files_gethostbyname4_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1223' u='w' c='gaih_getanswer_slice'/>

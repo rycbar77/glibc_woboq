@@ -1,0 +1,16 @@
+<dec f='codebrowser/posix/regex_internal.h' l='528' type='re_node_set *'/>
+<use f='codebrowser/posix/regex_internal.c' l='1558' u='r' c='re_acquire_state_context'/>
+<use f='codebrowser/posix/regex_internal.c' l='1614' u='r' c='free_state'/>
+<use f='codebrowser/posix/regex_internal.c' l='1616' u='r' c='free_state'/>
+<use f='codebrowser/posix/regex_internal.c' l='1617' u='r' c='free_state'/>
+<use f='codebrowser/posix/regex_internal.c' l='1647' u='w' c='create_ci_newstate'/>
+<use f='codebrowser/posix/regex_internal.c' l='1698' u='w' c='create_cd_newstate'/>
+<use f='codebrowser/posix/regex_internal.c' l='1720' u='r' c='create_cd_newstate'/>
+<use f='codebrowser/posix/regex_internal.c' l='1728' u='w' c='create_cd_newstate'/>
+<use f='codebrowser/posix/regex_internal.c' l='1729' u='r' c='create_cd_newstate'/>
+<use f='codebrowser/posix/regexec.c' l='1021' u='r' c='acquire_init_state_context'/>
+<use f='codebrowser/posix/regexec.c' l='2294' u='r' c='merge_state_with_log'/>
+<use f='codebrowser/posix/regexec.c' l='2297' u='r' c='merge_state_with_log'/>
+<use f='codebrowser/posix/regexec.c' l='2499' u='r' c='transit_state_mb'/>
+<use f='codebrowser/posix/regexec.c' l='2588' u='r' c='transit_state_bkref'/>
+<offset>448</offset>

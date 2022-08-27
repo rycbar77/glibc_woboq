@@ -1,0 +1,77 @@
+<def f='codebrowser/nscd/nscd-client.h' l='350' ll='357'/>
+<use f='codebrowser/nscd/nscd-client.h' l='363'/>
+<use f='codebrowser/nscd/nscd-client.h' l='394' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd-client.h' l='396' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd-client.h' l='399' c='__nscd_get_map_ref'/>
+<use f='codebrowser/nscd/nscd-client.h' l='406' c='__nscd_unmap'/>
+<use f='codebrowser/nscd/nscd-client.h' l='412' c='__nscd_drop_map_ref'/>
+<use f='codebrowser/nscd/nscd-client.h' l='358' c='__nscd_drop_map_ref'/>
+<use f='codebrowser/nscd/nscd-client.h' l='436' c='__nscd_cache_search'/>
+<size>40</size>
+<doc f='codebrowser/nscd/nscd-client.h' l='349'>/* Mapped database record.  */</doc>
+<mbr r='mapped_database::head' o='0' t='const struct database_pers_head *'/>
+<mbr r='mapped_database::data' o='64' t='const char *'/>
+<mbr r='mapped_database::mapsize' o='128' t='size_t'/>
+<mbr r='mapped_database::counter' o='192' t='int'/>
+<mbr r='mapped_database::datasize' o='256' t='size_t'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='61' c='__nscd_getai'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='73' macro='1' c='__nscd_getai'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='203' macro='1' c='__nscd_getai'/>
+<size>40</size>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='73' macro='1' c='gr_map_free'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='76' macro='1' c='gr_map_free'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='95' c='nscd_getgr_r'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='105' macro='1' c='nscd_getgr_r'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='317' macro='1' c='nscd_getgr_r'/>
+<size>40</size>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='86' macro='1' c='hst_map_free'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='89' macro='1' c='hst_map_free'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='110' c='__nscd_get_nl_timestamp'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='113' macro='1' c='__nscd_get_nl_timestamp'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='118' macro='1' c='__nscd_get_nl_timestamp'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='153' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='166' macro='1' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='445' macro='1' c='nscd_gethst_r'/>
+<size>40</size>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='72' macro='1' c='pw_map_free'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='75' macro='1' c='pw_map_free'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='91' c='nscd_getpw_r'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='100' macro='1' c='nscd_getpw_r'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='230' macro='1' c='nscd_getpw_r'/>
+<size>40</size>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='67' macro='1' c='serv_map_free'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='70' macro='1' c='serv_map_free'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='87' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='116' macro='1' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='370' macro='1' c='nscd_getserv_r'/>
+<size>40</size>
+<use f='codebrowser/nscd/nscd_helper.c' l='246' c='__nscd_unmap'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='256' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='258' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='260' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='260' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='366' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='390' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='399' c='__nscd_get_map_ref'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='403' c='__nscd_get_map_ref'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='404' macro='1' c='__nscd_get_map_ref'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='408' macro='1' c='__nscd_get_map_ref'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='412' macro='1' c='__nscd_get_map_ref'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='420' c='__nscd_get_map_ref'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='422' macro='1' c='__nscd_get_map_ref'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='426' macro='1' c='__nscd_get_map_ref'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='451' c='__nscd_cache_search'/>
+<size>40</size>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='44' c='__nscd_getgrouplist'/>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='53' macro='1' c='__nscd_getgrouplist'/>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='171' macro='1' c='__nscd_getgrouplist'/>
+<size>40</size>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='36' macro='1' c='pw_map_free'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='39' macro='1' c='pw_map_free'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='54' c='__nscd_setnetgrent'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='62' macro='1' c='__nscd_setnetgrent'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='153' macro='1' c='__nscd_setnetgrent'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='208' c='__nscd_innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='216' macro='1' c='__nscd_innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='277' macro='1' c='__nscd_innetgr'/>
+<size>40</size>

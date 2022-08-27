@@ -1,0 +1,20 @@
+<dec f='codebrowser/bits/types/struct_sched_param.h' l='25' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/nptl/pthread_attr_setschedparam.c' l='30' macro='1' u='r' c='__pthread_attr_setschedparam'/>
+<use f='codebrowser/nptl_db/structs.def' l='58' macro='1' u='r'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='40' macro='1' u='r' c='__pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='42' macro='1' u='r' c='__pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='48' macro='1' u='r' c='__pthread_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='51' macro='1' u='w' c='__pthread_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='39' macro='1' u='w' c='__pthread_setschedprio'/>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='47' macro='1' u='w' c='__pthread_setschedprio'/>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='56' macro='1' u='w' c='__pthread_setschedprio'/>
+<use f='codebrowser/nptl/tpp.c' l='146' macro='1' u='r' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='146' macro='1' u='r' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='148' macro='1' u='r' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='149' macro='1' u='w' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='168' macro='1' u='r' c='__pthread_current_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='193' macro='1' u='r' c='__pthread_current_priority'/>
+<use f='codebrowser/rt/aio_misc.c' l='336' macro='1' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='522' macro='1' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='525' macro='1' u='w' c='handle_fildes_io'/>

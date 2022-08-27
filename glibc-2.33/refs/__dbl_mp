@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/ieee754/dbl-64/mpa.h' l='112' type='void __dbl_mp(double , mp_no * , int )'/>
+<def f='codebrowser/sysdeps/ieee754/dbl-64/mpa.c' l='325' ll='361' type='void __dbl_mp(double x, mp_no * y, int p)'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/mpa.c' l='881' u='c' c='__inv'/>
+<doc f='codebrowser/sysdeps/ieee754/dbl-64/mpa.c' l='323'>/* Get the multiple precision equivalent of X into *Y.  If the precision is too
+   small, the result is truncated.  */</doc>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/mpsqrt.c' l='65' u='c' c='__mpsqrt'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/sincos32.c' l='150' u='c' c='__mpsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/sincos32.c' l='151' u='c' c='__mpsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/sincos32.c' l='209' u='c' c='__mpcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/sincos32.c' l='210' u='c' c='__mpcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/sincos32.c' l='266' u='c' c='__mpranred'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/sincos32.c' l='268' u='c' c='__mpranred'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/sincos32.c' l='275' u='c' c='__mpranred'/>

@@ -1,0 +1,9 @@
+<def f='codebrowser/elf/dl-profile.c' l='130' ll='146'/>
+<use f='codebrowser/elf/dl-profile.c' l='148'/>
+<use f='codebrowser/elf/dl-profile.c' l='164'/>
+<use f='codebrowser/elf/dl-profile.c' l='259' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='404' c='_dl_start_profile'/>
+<size>20</size>
+<doc f='codebrowser/elf/dl-profile.c' l='127'>/* We define a special type to address the elements of the arc table.
+   This is basically the `gmon_cg_arc_record&apos; format but it includes
+   the room for the tag and it uses real types.  */</doc>

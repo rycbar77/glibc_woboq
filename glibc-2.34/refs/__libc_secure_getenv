@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/stdlib.h' l='41' type='char * __libc_secure_getenv(const char * )'/>
+<dec f='codebrowser/include/stdlib.h' l='42' type='char * __libc_secure_getenv(const char * )'/>
+<use f='codebrowser/include/stdlib.h' l='42' c='__libc_secure_getenv'/>
+<use f='codebrowser/inet/ruserpass.c' l='100' u='c' c='ruserpass'/>
+<def f='codebrowser/stdlib/secure-getenv.c' l='26' ll='30' type='char * __libc_secure_getenv(const char * name)'/>
+<use f='codebrowser/stdlib/secure-getenv.c' l='31' c='secure_getenv'/>
+<doc f='codebrowser/stdlib/secure-getenv.c' l='23'>/* Some programs and especially the libc itself have to be careful
+   what values to accept from the environment.  This special version
+   checks for SUID or SGID first before doing any work.  */</doc>
+<use f='codebrowser/sysdeps/posix/tempname.c' l='59' u='c' c='__path_search'/>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='1221' u='c' c='__sysconf_check_spec'/>

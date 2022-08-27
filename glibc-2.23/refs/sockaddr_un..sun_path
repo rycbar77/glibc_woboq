@@ -1,0 +1,10 @@
+<dec f='codebrowser/socket/sys/un.h' l='32' type='char[108]'/>
+<use f='codebrowser/inet/getnameinfo.c' l='458' u='r' c='getnameinfo'/>
+<offset>16</offset>
+<doc f='codebrowser/socket/sys/un.h' l='32'>/* Path name.  */</doc>
+<use f='codebrowser/nscd/nscd_helper.c' l='182' u='r' c='open_socket'/>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='65' u='r' c='__GI_clnt_create'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='136' u='r' c='__GI_clntunix_create'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='170' u='r' c='__GI_svcunix_create'/>
+<use f='codebrowser/misc/syslog.c' l='346' u='r' c='openlog_internal'/>
+<use f='codebrowser/misc/syslog.c' l='347' u='r' c='openlog_internal'/>

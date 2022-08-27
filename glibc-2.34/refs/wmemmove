@@ -1,0 +1,5 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='268' type='int * wmemmove(wchar_t * __s1, const wchar_t * __s2, size_t __n)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='266'>/* Copy N wide characters of SRC to DEST, guaranteeing
+   correct behavior for overlapping strings.  */</doc>
+<use f='include/c++/11/bits/char_traits.h' l='549' u='c' c='_ZNSt11char_traitsIwE4moveEPwPKwm'/>
+<def f='codebrowser/wcsmbs/wmemmove.c' l='28' macro='1' type='int * wmemmove(wchar_t * , const wchar_t * , size_t )'/>

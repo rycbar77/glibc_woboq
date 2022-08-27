@@ -1,0 +1,7 @@
+<dec f='codebrowser/posix/unistd.h' l='489' type='int pause()'/>
+<doc f='codebrowser/posix/unistd.h' l='484'>/* Suspend the process until a signal arrives.
+   This always returns -1 and sets `errno&apos; to EINTR.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/pause.c' l='34' macro='1' type='int pause()'/>

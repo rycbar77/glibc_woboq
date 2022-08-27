@@ -1,0 +1,13 @@
+<dec f='codebrowser/nptl/descr.h' l='97' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/nptl/nptl_setxid.c' l='70' u='r' c='__nptl_setxid_sighandler'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='266' u='r' c='__nptl_setxid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setegid.c' l='34' macro='1' u='w' c='setegid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/seteuid.c' l='34' macro='1' u='w' c='seteuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgid.c' l='29' macro='1' u='w' c='__setgid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgroups.c' l='33' macro='1' u='w' c='setgroups'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setregid.c' l='29' macro='1' u='w' c='__setregid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresgid.c' l='29' macro='1' u='w' c='__setresgid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresuid.c' l='29' macro='1' u='w' c='__setresuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setreuid.c' l='29' macro='1' u='w' c='__setreuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setuid.c' l='28' macro='1' u='w' c='__setuid'/>

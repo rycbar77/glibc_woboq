@@ -1,0 +1,7 @@
+<def f='codebrowser/malloc/mcheck-impl.c' l='103' ll='130' type='enum mcheck_status __mcheck_checkptr(const void * ptr)'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='172' u='c' c='free_mcheck'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='193' u='c' c='malloc_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='237' u='c' c='memalign_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='304' u='c' c='realloc_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck.c' l='29' u='c' c='mcheck_check_all'/>
+<use f='codebrowser/malloc/mcheck.c' l='59' u='c' c='mprobe'/>

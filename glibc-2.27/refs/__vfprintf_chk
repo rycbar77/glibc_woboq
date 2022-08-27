@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/stdio.h' l='40' type='int __vfprintf_chk(FILE * , int , const char * , struct __va_list_tag * )'/>
+<dec f='codebrowser/include/stdio.h' l='186' type='int __vfprintf_chk(FILE * , int , const char * , struct __va_list_tag * )'/>
+<use f='codebrowser/include/stdio.h' l='186' c='__vfprintf_chk'/>
+<def f='codebrowser/debug/vfprintf_chk.c' l='42' macro='1' type='int __vfprintf_chk(FILE * , int , const char * , struct __va_list_tag * )'/>
+<use f='codebrowser/misc/syslog.c' l='222' u='c' c='__vsyslog_chk'/>

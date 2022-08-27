@@ -1,0 +1,5 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='222' type='unsigned long wcslen(const wchar_t * __s)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='221'>/* Return the number of wide characters in S.  */</doc>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='375' c='__wcslen_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='378' c='__wcslen_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/wcslen.c' l='30' macro='1' type='unsigned long wcslen(const wchar_t * )'/>

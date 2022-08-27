@@ -1,0 +1,9 @@
+<use f='codebrowser/malloc/malloc.c' l='3063'/>
+<def f='codebrowser/malloc/malloc.c' l='3071' ll='3075'/>
+<use f='codebrowser/malloc/malloc.c' l='3071'/>
+<size>640</size>
+<doc f='codebrowser/malloc/malloc.c' l='3066'>/* There is one of these for each thread, which contains the
+   per-thread cache (hence &quot;tcache_perthread_struct&quot;).  Keeping
+   overall size low is mildly important.  Note that COUNTS and ENTRIES
+   are redundant (we could have just counted the linked list each
+   time), this is for performance reasons.  */</doc>

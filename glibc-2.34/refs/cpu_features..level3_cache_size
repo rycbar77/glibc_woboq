@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/x86/include/cpu-features.h' l='913' type='unsigned long'/>
+<offset>3584</offset>
+<doc f='codebrowser/sysdeps/x86/include/cpu-features.h' l='912'>/* /_SC_LEVEL3_CACHE_SIZE.  */</doc>
+<use f='codebrowser/sysdeps/x86/cacheinfo.c' l='57' u='r' c='__cache_sysconf'/>
+<use f='codebrowser/sysdeps/x86/dl-diagnostics-cpu.c' l='109' u='r' c='_dl_diagnostics_cpu'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='848' u='w' c='dl_init_cacheinfo'/>

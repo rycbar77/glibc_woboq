@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/resolv.h' l='36' type='void __res_iclose(res_state statp, _Bool free_addr)'/>
+<dec f='codebrowser/include/resolv.h' l='39' type='void __res_iclose(res_state , _Bool )'/>
+<use f='codebrowser/include/resolv.h' l='39' c='__res_iclose'/>
+<def f='codebrowser/resolv/res-close.c' l='93' ll='118' type='void __res_iclose(res_state statp, _Bool free_addr)'/>
+<use f='codebrowser/resolv/res-close.c' l='124' u='c' c='__res_nclose'/>
+<use f='codebrowser/resolv/res-close.c' l='138' u='c' c='res_thread_freeres'/>
+<doc f='codebrowser/resolv/res-close.c' l='91'>/* Close all open sockets.  If FREE_ADDR is true, deallocate any
+   separately allocated name server addresses.  */</doc>
+<use f='codebrowser/resolv/res_libc.c' l='73' u='c' c='__res_init'/>
+<use f='codebrowser/resolv/resolv_context.c' l='94' u='c' c='maybe_init'/>

@@ -1,0 +1,4 @@
+<def f='codebrowser/resolv/resolv_context.h' l='95' ll='110' type='const char * __resolv_context_search_list(const struct resolv_context * ctx, size_t index)'/>
+<doc f='codebrowser/resolv/resolv_context.h' l='93'>/* Return the search path entry at INDEX, or NULL if there are fewer
+   than INDEX entries.  */</doc>
+<use f='codebrowser/resolv/res_query.c' l='407' u='c' c='__res_context_search'/>

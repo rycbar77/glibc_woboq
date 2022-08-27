@@ -1,0 +1,9 @@
+<dec f='codebrowser/nis/libnsl.h' l='21' type='nis_error __prepare_niscall(const_nis_name name, directory_obj ** dirp, dir_binding * bptrp, unsigned int flags)'/>
+<dec f='codebrowser/nis/libnsl.h' l='23' type='nis_error __prepare_niscall(const_nis_name , directory_obj ** , dir_binding * , unsigned int )'/>
+<use f='codebrowser/nis/libnsl.h' l='23' c='__prepare_niscall'/>
+<def f='codebrowser/nis/nis_call.c' l='798' ll='819' type='nis_error __prepare_niscall(const_nis_name name, directory_obj ** dirp, dir_binding * bptrp, unsigned int flags)'/>
+<use f='codebrowser/nis/nis_call.c' l='820' c='__EI___prepare_niscall'/>
+<use f='codebrowser/nis/nis_call.c' l='832' u='c' c='__do_niscall'/>
+<doc f='codebrowser/nis/libnsl.h' l='20'>/* Set up everything for a call to __do_niscall3.  */</doc>
+<use f='codebrowser/nis/nis_lookup.c' l='65' u='c' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='148' u='c' c='__GI_nis_lookup'/>

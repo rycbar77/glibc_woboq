@@ -1,0 +1,11 @@
+<def f='codebrowser/sysdeps/nptl/internaltypes.h' l='110' ll='120'/>
+<size>16</size>
+<doc f='codebrowser/sysdeps/nptl/internaltypes.h' l='109'>/* Thread-local data handling.  */</doc>
+<mbr r='pthread_key_struct::seq' o='0' t='uintptr_t'/>
+<mbr r='pthread_key_struct::destr' o='64' t='void (*)(void *)'/>
+<use f='codebrowser/nptl/pthreadP.h' l='210'/>
+<size>16</size>
+<use f='codebrowser/nptl_db/db_info.c' l='27'/>
+<size>16</size>
+<use f='codebrowser/nptl/vars.c' l='41'/>
+<size>16</size>

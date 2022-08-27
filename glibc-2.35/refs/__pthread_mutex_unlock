@@ -1,0 +1,58 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='204' type='int __pthread_mutex_unlock(pthread_mutex_t * __mutex)'/>
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='205' type='int __pthread_mutex_unlock(pthread_mutex_t * )'/>
+<use f='codebrowser/sysdeps/nptl/libc-lockP.h' l='205' c='__pthread_mutex_unlock'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='357' type='int __pthread_mutex_unlock(pthread_mutex_t * __mutex)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='358' type='int __pthread_mutex_unlock(pthread_mutex_t * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='358' c='__pthread_mutex_unlock'/>
+<use f='codebrowser/dlfcn/dlsym.c' l='56' macro='1' u='c' c='dlsym_implementation'/>
+<use f='codebrowser/dlfcn/dlvsym.c' l='59' macro='1' u='c' c='dlvsym_implementation'/>
+<use f='codebrowser/elf/dl-addr.c' l='141' macro='1' u='c' c='_dl_addr'/>
+<use f='codebrowser/elf/dl-close.c' l='651' macro='1' u='c' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='737' macro='1' u='c' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='753' macro='1' u='c' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='798' macro='1' u='c' c='_dl_close'/>
+<use f='codebrowser/elf/dl-close.c' l='814' macro='1' u='c' c='_dl_close'/>
+<use f='codebrowser/elf/dl-close.c' l='820' macro='1' u='c' c='_dl_close'/>
+<use f='codebrowser/elf/dl-fini.c' l='64' macro='1' u='c' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-fini.c' l='108' macro='1' u='c' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='27' macro='1' u='c' c='cancel_handler'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='81' macro='1' u='c' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-lookup.c' l='250' macro='1' u='c' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='275' macro='1' u='c' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='347' macro='1' u='c' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='808' macro='1' u='c' c='add_dependency'/>
+<use f='codebrowser/elf/dl-object.c' l='50' macro='1' u='c' c='_dl_add_to_namespace_list'/>
+<use f='codebrowser/elf/dl-open.c' l='784' macro='1' u='c' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='842' macro='1' u='c' c='_dl_open'/>
+<use f='codebrowser/elf/dl-open.c' l='923' macro='1' u='c' c='_dl_open'/>
+<use f='codebrowser/elf/dl-open.c' l='932' macro='1' u='c' c='_dl_open'/>
+<def f='codebrowser/nptl/pthread_mutex_unlock.c' l='372' macro='1' type='int __pthread_mutex_unlock(pthread_mutex_t * )'/>
+<use f='codebrowser/resolv/gai_cancel.c' l='43' u='c' c='__gai_cancel'/>
+<use f='codebrowser/resolv/gai_misc.c' l='233' u='c' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='300' u='c' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='428' u='c' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='97' macro='1' u='c' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='147' u='c' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='87' u='c' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='127' macro='1' u='c' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='178' u='c' c='__getaddrinfo_a'/>
+<use f='codebrowser/rt/aio_cancel.c' l='63' u='c' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='76' u='c' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='150' u='c' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_error.c' l='43' u='c' c='__aio_error'/>
+<use f='codebrowser/rt/aio_misc.c' l='303' u='c' c='__aio_init'/>
+<use f='codebrowser/rt/aio_misc.c' l='355' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='484' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='688' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_suspend.c' l='92' u='c' c='cleanup'/>
+<use f='codebrowser/rt/aio_suspend.c' l='102' macro='1' u='c' c='do_aio_misc_wait'/>
+<use f='codebrowser/rt/aio_suspend.c' l='251' u='c' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='123' u='c' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='158' macro='1' u='c' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='226' u='c' c='lio_listio_internal'/>
+<use f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='138' macro='1' u='c' c='__cxa_thread_atexit_impl'/>
+<use f='codebrowser/sysdeps/pthread/mtx_unlock.c' l='25' u='c' c='__mtx_unlock'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='131' u='c' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='54' u='c' c='___timer_delete'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='102' u='c' c='timer_helper_thread'/>
+<use f='codebrowser/elf/dl-tls.c' l='620' macro='1' u='c' c='_dl_allocate_tls_init'/>

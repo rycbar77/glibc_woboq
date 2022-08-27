@@ -1,0 +1,5 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/mq_timedreceive.c' l='25' ll='60' type='ssize_t ___mq_timedreceive_time64(mqd_t mqdes, char *restrict msg_ptr, size_t msg_len, unsigned int *restrict msg_prio, const struct timespec *restrict abs_timeout)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_timedreceive.c' l='63' c='mq_timedreceive'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_timedreceive.c' l='66' c='__mq_timedreceive'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/mq_timedreceive.c' l='23'>/* Receive the oldest from highest priority messages in message queue
+   MQDES, stop waiting if ABS_TIMEOUT expires.  */</doc>

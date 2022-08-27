@@ -1,0 +1,13 @@
+<dec f='codebrowser/hesiod/hesiod.h' l='46' type='char ** hesiod_resolve(void * context, const char * name, const char * type)'/>
+<use f='codebrowser/hesiod/hesiod.c' l='162' u='c' c='hesiod_to_bind'/>
+<def f='codebrowser/hesiod/hesiod.c' l='208' ll='225' type='char ** hesiod_resolve(void * context, const char * name, const char * type)'/>
+<doc f='codebrowser/hesiod/hesiod.c' l='204'>/*
+ * This is the core function.  Given a hesiod (name, type), it
+ * returns an array of strings returned by the resolver.
+ */</doc>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='63' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='134' u='c' c='internal_gid_from_group'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='183' u='c' c='_nss_hesiod_initgroups_dyn'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='73' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-pwd.c' l='61' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='74' u='c' c='lookup'/>

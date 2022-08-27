@@ -1,0 +1,6 @@
+<dec f='codebrowser/libio/stdio.h' l='146' type='int rename(const char * __old, const char * __new)'/>
+<doc f='codebrowser/libio/stdio.h' l='145'>/* Rename file OLD to NEW.  */</doc>
+<use f='codebrowser/elf/cache.c' l='468' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='828' u='c' c='save_aux_cache'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/rename.c' l='25' ll='35' type='int rename(const char * old, const char * new)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/rename.c' l='24'>/* Rename the file OLD to NEW.  */</doc>

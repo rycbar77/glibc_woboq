@@ -1,0 +1,5 @@
+<dec f='codebrowser/malloc/dynarray.h' l='160' type='_Bool __libc_dynarray_finalize(struct dynarray_header * list, void * scratch, size_t element_size, struct dynarray_finalize_result * result)'/>
+<dec f='codebrowser/malloc/dynarray.h' l='174' type='_Bool __libc_dynarray_finalize(struct dynarray_header * , void * , size_t , struct dynarray_finalize_result * )'/>
+<use f='codebrowser/malloc/dynarray.h' l='174' c='__libc_dynarray_finalize'/>
+<def f='codebrowser/malloc/dynarray_finalize.c' l='23' ll='61' macro='1' type='_Bool __libc_dynarray_finalize(struct dynarray_header * list, void * scratch, size_t element_size, struct dynarray_finalize_result * result)'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='491' u='c' c='action_list_finalize'/>

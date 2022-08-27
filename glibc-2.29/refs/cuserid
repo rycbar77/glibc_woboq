@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/posix/cuserid.c' l='27' ll='47' type='char * cuserid(char * s)'/>
+<doc f='codebrowser/sysdeps/posix/cuserid.c' l='24'>/* Return the username of the caller.
+   If S is not NULL, it points to a buffer of at least L_cuserid bytes
+   into which the name is copied; otherwise, a static buffer is used.  */</doc>

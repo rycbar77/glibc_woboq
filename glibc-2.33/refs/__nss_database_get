@@ -1,0 +1,6 @@
+<dec f='codebrowser/nss/nss_database.h' l='59' type='_Bool __nss_database_get(enum nss_database db, nss_action_list * actions)'/>
+<use f='codebrowser/grp/initgroups.c' l='75' u='c' c='internal_getgrouplist'/>
+<use f='codebrowser/grp/initgroups.c' l='80' u='c' c='internal_getgrouplist'/>
+<use f='codebrowser/nss/nss_database.c' l='252' u='c' c='__nss_configure_lookup'/>
+<def f='codebrowser/nss/nss_database.c' l='437' ll='442' macro='1' type='_Bool __nss_database_get(enum nss_database db, nss_action_list * actions)'/>
+<use f='codebrowser/nss/nsswitch.c' l='87' u='c' c='__nss_database_lookup2'/>

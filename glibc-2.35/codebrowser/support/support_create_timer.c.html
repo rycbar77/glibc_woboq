@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>support_create_timer.c source code [codebrowser/support/support_create_timer.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/support/support_create_timer.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>support</a>/<a href='support_create_timer.c.html'>support_create_timer.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Create a periodic timer.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="check.h.html">&lt;support/check.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="support.h.html">&lt;support/support.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="xsignal.h.html">&lt;support/xsignal.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../include/time.h.html">&lt;time.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="25">25</th><td><dfn class="tu decl def fn" id="dummy_alrm_handler" title='dummy_alrm_handler' data-type='void dummy_alrm_handler(int sig)' data-ref="dummy_alrm_handler" data-ref-filename="dummy_alrm_handler">dummy_alrm_handler</dfn> (<em>int</em> <dfn class="local col1 decl" id="1sig" title='sig' data-type='int' data-ref="1sig" data-ref-filename="1sig">sig</dfn>)</td></tr>
+<tr><th id="26">26</th><td>{</td></tr>
+<tr><th id="27">27</th><td>}</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><a class="typedef" href="../time/bits/types/timer_t.h.html#timer_t" title='timer_t' data-type='__timer_t' data-ref="timer_t" data-ref-filename="timer_t">timer_t</a></td></tr>
+<tr><th id="30">30</th><td><dfn class="decl def fn" id="support_create_timer" title='support_create_timer' data-ref="support_create_timer" data-ref-filename="support_create_timer">support_create_timer</dfn> (<a class="typedef" href="../bits/stdint-uintn.h.html#uint64_t" title='uint64_t' data-type='__uint64_t' data-ref="uint64_t" data-ref-filename="uint64_t">uint64_t</a> <dfn class="local col2 decl" id="2sec" title='sec' data-type='uint64_t' data-ref="2sec" data-ref-filename="2sec">sec</dfn>, <em>long</em> <em>int</em> <dfn class="local col3 decl" id="3nsec" title='nsec' data-type='long' data-ref="3nsec" data-ref-filename="3nsec">nsec</dfn>, <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col4 decl" id="4repeat" title='repeat' data-type='_Bool' data-ref="4repeat" data-ref-filename="4repeat">repeat</dfn>,</td></tr>
+<tr><th id="31">31</th><td>		      <em>void</em> (*<dfn class="local col5 decl" id="5callback" title='callback' data-type='void (*)(int)' data-ref="5callback" data-ref-filename="5callback">callback</dfn>)(<em>int</em>))</td></tr>
+<tr><th id="32">32</th><td>{</td></tr>
+<tr><th id="33">33</th><td>  <b>struct</b> <a class="type" href="../sysdeps/unix/sysv/linux/bits/sigaction.h.html#sigaction" title='sigaction' data-ref="sigaction" data-ref-filename="sigaction">sigaction</a> <dfn class="local col6 decl" id="6sa" title='sa' data-type='struct sigaction' data-ref="6sa" data-ref-filename="6sa">sa</dfn>;</td></tr>
+<tr><th id="34">34</th><td>  <a class="local col6 ref" href="#6sa" title='sa' data-ref="6sa" data-ref-filename="6sa">sa</a>.<a class="macro" href="../sysdeps/unix/sysv/linux/bits/sigaction.h.html#39" title="__sigaction_handler.sa_handler" data-ref="_M/sa_handler">sa_handler</a> = <a class="local col5 ref" href="#5callback" title='callback' data-ref="5callback" data-ref-filename="5callback">callback</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> ? <a class="local col5 ref" href="#5callback" title='callback' data-ref="5callback" data-ref-filename="5callback">callback</a> : <a class="tu ref fn" href="#dummy_alrm_handler" title='dummy_alrm_handler' data-use='r' data-ref="dummy_alrm_handler" data-ref-filename="dummy_alrm_handler">dummy_alrm_handler</a>;</td></tr>
+<tr><th id="35">35</th><td>  <a class="ref fn" href="../signal/signal.h.html#sigemptyset" title='sigemptyset' data-ref="sigemptyset" data-ref-filename="sigemptyset">sigemptyset</a> (&amp;<a class="local col6 ref" href="#6sa" title='sa' data-ref="6sa" data-ref-filename="6sa">sa</a>.<a class="ref field" href="../sysdeps/unix/sysv/linux/bits/sigaction.h.html#sigaction::sa_mask" title='sigaction::sa_mask' data-ref="sigaction::sa_mask" data-ref-filename="sigaction..sa_mask">sa_mask</a>);</td></tr>
+<tr><th id="36">36</th><td>  <a class="local col6 ref" href="#6sa" title='sa' data-ref="6sa" data-ref-filename="6sa">sa</a>.<a class="ref field" href="../sysdeps/unix/sysv/linux/bits/sigaction.h.html#sigaction::sa_flags" title='sigaction::sa_flags' data-ref="sigaction::sa_flags" data-ref-filename="sigaction..sa_flags">sa_flags</a> = <var>0</var>;</td></tr>
+<tr><th id="37">37</th><td>  <a class="ref fn" href="xsignal.h.html#xsigaction" title='xsigaction' data-ref="xsigaction" data-ref-filename="xsigaction">xsigaction</a> (<a class="macro" href="../bits/signum-generic.h.html#61" title="14" data-ref="_M/SIGALRM">SIGALRM</a>, &amp;<a class="local col6 ref" href="#6sa" title='sa' data-ref="6sa" data-ref-filename="6sa">sa</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td>  <b>struct</b> <a class="type" href="../sysdeps/unix/sysv/linux/bits/types/sigevent_t.h.html#sigevent" title='sigevent' data-ref="sigevent" data-ref-filename="sigevent">sigevent</a> <dfn class="local col7 decl" id="7ev" title='ev' data-type='struct sigevent' data-ref="7ev" data-ref-filename="7ev">ev</dfn> = {</td></tr>
+<tr><th id="40">40</th><td>    .<a class="ref field" href="../sysdeps/unix/sysv/linux/bits/types/sigevent_t.h.html#sigevent::sigev_notify" title='sigevent::sigev_notify' data-ref="sigevent::sigev_notify" data-ref-filename="sigevent..sigev_notify">sigev_notify</a> = <a class="macro" href="../sysdeps/unix/sysv/linux/bits/sigevent-consts.h.html#30" title="SIGEV_SIGNAL" data-ref="_M/SIGEV_SIGNAL">SIGEV_SIGNAL</a>,</td></tr>
+<tr><th id="41">41</th><td>    .<a class="ref field" href="../sysdeps/unix/sysv/linux/bits/types/sigevent_t.h.html#sigevent::sigev_signo" title='sigevent::sigev_signo' data-ref="sigevent::sigev_signo" data-ref-filename="sigevent..sigev_signo">sigev_signo</a> = <a class="macro" href="../bits/signum-generic.h.html#61" title="14" data-ref="_M/SIGALRM">SIGALRM</a></td></tr>
+<tr><th id="42">42</th><td>  };</td></tr>
+<tr><th id="43">43</th><td>  <a class="typedef" href="../time/bits/types/timer_t.h.html#timer_t" title='timer_t' data-type='__timer_t' data-ref="timer_t" data-ref-filename="timer_t">timer_t</a> <dfn class="local col8 decl" id="8timerid" title='timerid' data-type='timer_t' data-ref="8timerid" data-ref-filename="8timerid">timerid</dfn>;</td></tr>
+<tr><th id="44">44</th><td>  <em>int</em> <dfn class="local col9 decl" id="9r" title='r' data-type='int' data-ref="9r" data-ref-filename="9r">r</dfn> = <a class="ref fn" href="../time/time.h.html#timer_create" title='timer_create' data-ref="timer_create" data-ref-filename="timer_create">timer_create</a> (<a class="macro" href="../sysdeps/unix/sysv/linux/bits/time.h.html#46" title="0" data-ref="_M/CLOCK_REALTIME">CLOCK_REALTIME</a>, &amp;<a class="local col7 ref" href="#7ev" title='ev' data-ref="7ev" data-ref-filename="7ev">ev</a>, &amp;<a class="local col8 ref" href="#8timerid" title='timerid' data-ref="8timerid" data-ref-filename="8timerid">timerid</a>);</td></tr>
+<tr><th id="45">45</th><td>  <b>if</b> (<a class="local col9 ref" href="#9r" title='r' data-ref="9r" data-ref-filename="9r">r</a> == -<var>1</var>)</td></tr>
+<tr><th id="46">46</th><td>    <a class="macro" href="check.h.html#40" title="support_exit_failure_impl (1, &quot;/media/rr/Data/glibc_source/glibc-2.35/support/support_create_timer.c&quot;, 46, &quot;timer_create: %m&quot;)" data-ref="_M/FAIL_EXIT1">FAIL_EXIT1</a> (<q>"timer_create: %m"</q>);</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td>  <i>/* Single timer with 0.1s.  */</i></td></tr>
+<tr><th id="49">49</th><td>  <b>struct</b> <a class="type" href="../time/bits/types/struct_itimerspec.h.html#itimerspec" title='itimerspec' data-ref="itimerspec" data-ref-filename="itimerspec">itimerspec</a> <dfn class="local col0 decl" id="10its" title='its' data-type='struct itimerspec' data-ref="10its" data-ref-filename="10its">its</dfn> =</td></tr>
+<tr><th id="50">50</th><td>    {</td></tr>
+<tr><th id="51">51</th><td>      { .<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a> = <a class="local col4 ref" href="#4repeat" title='repeat' data-ref="4repeat" data-ref-filename="4repeat">repeat</a> ? <a class="local col2 ref" href="#2sec" title='sec' data-ref="2sec" data-ref-filename="2sec">sec</a> : <var>0</var>, .<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> = <a class="local col4 ref" href="#4repeat" title='repeat' data-ref="4repeat" data-ref-filename="4repeat">repeat</a> ? <a class="local col3 ref" href="#3nsec" title='nsec' data-ref="3nsec" data-ref-filename="3nsec">nsec</a> : <var>0</var> },</td></tr>
+<tr><th id="52">52</th><td>      { .<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a> = <a class="local col2 ref" href="#2sec" title='sec' data-ref="2sec" data-ref-filename="2sec">sec</a>, .<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> = <a class="local col3 ref" href="#3nsec" title='nsec' data-ref="3nsec" data-ref-filename="3nsec">nsec</a> }</td></tr>
+<tr><th id="53">53</th><td>    };</td></tr>
+<tr><th id="54">54</th><td>  <a class="local col9 ref" href="#9r" title='r' data-ref="9r" data-ref-filename="9r">r</a> = <a class="ref fn" href="../time/time.h.html#timer_settime" title='timer_settime' data-ref="timer_settime" data-ref-filename="timer_settime">timer_settime</a> (<a class="local col8 ref" href="#8timerid" title='timerid' data-ref="8timerid" data-ref-filename="8timerid">timerid</a>, <var>0</var>, &amp;<a class="local col0 ref" href="#10its" title='its' data-ref="10its" data-ref-filename="10its">its</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="55">55</th><td>  <b>if</b> (<a class="local col9 ref" href="#9r" title='r' data-ref="9r" data-ref-filename="9r">r</a> == -<var>1</var>)</td></tr>
+<tr><th id="56">56</th><td>    <a class="macro" href="check.h.html#40" title="support_exit_failure_impl (1, &quot;/media/rr/Data/glibc_source/glibc-2.35/support/support_create_timer.c&quot;, 56, &quot;timer_settime: %m&quot;)" data-ref="_M/FAIL_EXIT1">FAIL_EXIT1</a> (<q>"timer_settime: %m"</q>);</td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td>  <b>return</b> <a class="local col8 ref" href="#8timerid" title='timerid' data-ref="8timerid" data-ref-filename="8timerid">timerid</a>;</td></tr>
+<tr><th id="59">59</th><td>}</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><i>/* Disable the timer TIMER.  */</i></td></tr>
+<tr><th id="62">62</th><td><em>void</em></td></tr>
+<tr><th id="63">63</th><td><dfn class="decl def fn" id="support_delete_timer" title='support_delete_timer' data-ref="support_delete_timer" data-ref-filename="support_delete_timer">support_delete_timer</dfn> (<a class="typedef" href="../time/bits/types/timer_t.h.html#timer_t" title='timer_t' data-type='__timer_t' data-ref="timer_t" data-ref-filename="timer_t">timer_t</a> <dfn class="local col1 decl" id="11timer" title='timer' data-type='timer_t' data-ref="11timer" data-ref-filename="11timer">timer</dfn>)</td></tr>
+<tr><th id="64">64</th><td>{</td></tr>
+<tr><th id="65">65</th><td>  <em>int</em> <dfn class="local col2 decl" id="12r" title='r' data-type='int' data-ref="12r" data-ref-filename="12r">r</dfn> = <a class="ref fn" href="../time/time.h.html#timer_delete" title='timer_delete' data-ref="timer_delete" data-ref-filename="timer_delete">timer_delete</a> (<a class="local col1 ref" href="#11timer" title='timer' data-ref="11timer" data-ref-filename="11timer">timer</a>);</td></tr>
+<tr><th id="66">66</th><td>  <b>if</b> (<a class="local col2 ref" href="#12r" title='r' data-ref="12r" data-ref-filename="12r">r</a> == -<var>1</var>)</td></tr>
+<tr><th id="67">67</th><td>    <a class="macro" href="check.h.html#40" title="support_exit_failure_impl (1, &quot;/media/rr/Data/glibc_source/glibc-2.35/support/support_create_timer.c&quot;, 67, &quot;timer_delete: %m&quot;)" data-ref="_M/FAIL_EXIT1">FAIL_EXIT1</a> (<q>"timer_delete: %m"</q>);</td></tr>
+<tr><th id="68">68</th><td>  <a class="ref fn" href="xsignal.h.html#xsignal" title='xsignal' data-ref="xsignal" data-ref-filename="xsignal">xsignal</a> (<a class="macro" href="../bits/signum-generic.h.html#61" title="14" data-ref="_M/SIGALRM">SIGALRM</a>, <a class="macro" href="../bits/signum-generic.h.html#29" title="((__sighandler_t) 0)" data-ref="_M/SIG_DFL">SIG_DFL</a>);</td></tr>
+<tr><th id="69">69</th><td>}</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

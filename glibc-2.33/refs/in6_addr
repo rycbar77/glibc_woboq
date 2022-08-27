@@ -1,0 +1,79 @@
+<def f='codebrowser/inet/netinet/in.h' l='216' ll='229'/>
+<use f='codebrowser/inet/netinet/in.h' l='232'/>
+<use f='codebrowser/inet/netinet/in.h' l='233'/>
+<use f='codebrowser/inet/netinet/in.h' l='262'/>
+<use f='codebrowser/inet/netinet/in.h' l='296'/>
+<use f='codebrowser/inet/netinet/in.h' l='543'/>
+<use f='codebrowser/inet/netinet/in.h' l='597' c='inet6_rth_add'/>
+<use f='codebrowser/inet/netinet/in.h' l='600' c='inet6_rth_getaddr'/>
+<size>16</size>
+<doc f='codebrowser/inet/netinet/in.h' l='215'>/* IPv6 address */</doc>
+<mbr r='in6_addr::__in6_u' o='0' t='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.33/argp/../inet/netinet/in.h:218:5)'/>
+<use f='codebrowser/inet/net-internal.h' l='29' c='__inet6_scopeid_pton'/>
+<size>16</size>
+<use f='codebrowser/inet/getnameinfo.c' l='232' c='gni_host_inet_name'/>
+<use f='codebrowser/inet/getnameinfo.c' l='337' macro='1' c='gni_host_inet_numeric'/>
+<use f='codebrowser/inet/getnameinfo.c' l='337' macro='1' c='gni_host_inet_numeric'/>
+<size>16</size>
+<use f='codebrowser/inet/in6_addr.c' l='21'/>
+<use f='codebrowser/inet/in6_addr.c' l='26'/>
+<size>16</size>
+<use f='codebrowser/inet/netinet/ip6.h' l='38'/>
+<use f='codebrowser/inet/netinet/ip6.h' l='39'/>
+<use f='codebrowser/inet/netinet/ip6.h' l='92'/>
+<size>16</size>
+<use f='codebrowser/inet/inet6_rth.c' l='39' c='inet6_rth_space'/>
+<use f='codebrowser/inet/inet6_rth.c' l='64' c='inet6_rth_init'/>
+<use f='codebrowser/inet/inet6_rth.c' l='72' c='inet6_rth_init'/>
+<use f='codebrowser/inet/inet6_rth.c' l='86' c='inet6_rth_add'/>
+<use f='codebrowser/inet/inet6_rth.c' l='95' c='inet6_rth_add'/>
+<use f='codebrowser/inet/inet6_rth.c' l='100' c='inet6_rth_add'/>
+<use f='codebrowser/inet/inet6_rth.c' l='132' c='inet6_rth_reverse'/>
+<use f='codebrowser/inet/inet6_rth.c' l='136' c='inet6_rth_reverse'/>
+<use f='codebrowser/inet/inet6_rth.c' l='165' c='inet6_rth_segments'/>
+<use f='codebrowser/inet/inet6_rth.c' l='178' c='inet6_rth_getaddr'/>
+<use f='codebrowser/inet/inet6_rth.c' l='189' c='inet6_rth_getaddr'/>
+<size>16</size>
+<use f='codebrowser/inet/inet6_scopeid_pton.c' l='32' c='__inet6_scopeid_pton'/>
+<use f='codebrowser/inet/inet6_scopeid_pton.c' l='35' macro='1' c='__inet6_scopeid_pton'/>
+<use f='codebrowser/inet/inet6_scopeid_pton.c' l='35' macro='1' c='__inet6_scopeid_pton'/>
+<size>16</size>
+<use f='codebrowser/inet/rcmd.c' l='607' c='iruserok_af'/>
+<size>16</size>
+<use f='codebrowser/resolv/res_init.c' l='420' c='res_vinit_1'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='511' macro='1' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='511' macro='1' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='523' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='957' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1032' macro='1' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1032' macro='1' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1077' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1168' macro='1' c='get_scope'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1168' macro='1' c='get_scope'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1171' macro='1' c='get_scope'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1171' macro='1' c='get_scope'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1173' macro='1' c='get_scope'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1173' macro='1' c='get_scope'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1207'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1848' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1905' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1918' macro='1' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1918' macro='1' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2000' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2038' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2401' macro='1' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2401' macro='1' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2401' macro='1' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2401' macro='1' c='getaddrinfo'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='227' macro='1' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='227' macro='1' c='make_request'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='618' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='618' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='665' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='665' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='706' macro='1' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='706' macro='1' c='getifaddrs_internal'/>
+<size>16</size>

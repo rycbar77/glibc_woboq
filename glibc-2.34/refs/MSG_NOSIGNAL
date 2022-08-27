@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='235' type='16384'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='235'>/* Do not generate SIGPIPE.  */</doc>
+<use f='codebrowser/misc/syslog.c' l='267' macro='1' u='r' c='__vsyslog_internal'/>
+<use f='codebrowser/misc/syslog.c' l='277' macro='1' u='r' c='__vsyslog_internal'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='203' macro='1' u='r' c='open_socket'/>
+<use f='codebrowser/resolv/res_send.c' l='1065' macro='1' u='r' c='send_dg'/>
+<use f='codebrowser/resolv/res_send.c' l='1104' macro='1' u='r' c='send_dg'/>
+<use f='codebrowser/resolv/res_send.c' l='1106' macro='1' u='r' c='send_dg'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='119' macro='1' u='r' c='helper_thread'/>

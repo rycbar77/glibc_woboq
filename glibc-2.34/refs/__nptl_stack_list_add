@@ -1,0 +1,9 @@
+<dec f='codebrowser/nptl/nptl-stack.h' l='44' type='void __nptl_stack_list_add(list_t * elem, list_t * list)'/>
+<dec f='codebrowser/nptl/nptl-stack.h' l='45' type='void __nptl_stack_list_add(list_t * , list_t * )'/>
+<use f='codebrowser/nptl/nptl-stack.h' l='45' c='__nptl_stack_list_add'/>
+<doc f='codebrowser/nptl/nptl-stack.h' l='42'>/* Add ELEM to a stack list.  LIST can be either &amp;GL (dl_stack_used)
+   or &amp;GL (dl_stack_cache).  */</doc>
+<def f='codebrowser/nptl/nptl-stack.c' l='41' ll='53' type='void __nptl_stack_list_add(list_t * elem, list_t * list)'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='102' u='c' c='queue_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='108' u='c' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='444' u='c' c='allocate_stack'/>

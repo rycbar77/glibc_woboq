@@ -1,0 +1,27 @@
+<def f='codebrowser/elf/dl-main.h' l='71' ll='102'/>
+<use f='codebrowser/elf/dl-main.h' l='107' c='call_init_paths'/>
+<use f='codebrowser/elf/dl-main.h' l='121' c='_dl_help'/>
+<size>464</size>
+<doc f='codebrowser/elf/dl-main.h' l='69'>/* Aggregated state information extracted from environment variables
+   and the ld.so command line.  */</doc>
+<mbr r='dl_main_state::audit_list' o='0' t='struct audit_list'/>
+<mbr r='dl_main_state::library_path' o='3264' t='const char *'/>
+<mbr r='dl_main_state::library_path_source' o='3328' t='const char *'/>
+<mbr r='dl_main_state::preloadlist' o='3392' t='const char *'/>
+<mbr r='dl_main_state::preloadarg' o='3456' t='const char *'/>
+<mbr r='dl_main_state::glibc_hwcaps_prepend' o='3520' t='const char *'/>
+<mbr r='dl_main_state::glibc_hwcaps_mask' o='3584' t='const char *'/>
+<mbr r='dl_main_state::mode' o='3648' t='enum rtld_mode'/>
+<mbr r='dl_main_state::any_debug' o='3680' t='_Bool'/>
+<mbr r='dl_main_state::version_info' o='3688' t='_Bool'/>
+<use f='codebrowser/elf/dl-usage.c' l='82' c='print_search_path_for_help'/>
+<use f='codebrowser/elf/dl-usage.c' l='157' c='print_hwcaps_subdirectories'/>
+<use f='codebrowser/elf/dl-usage.c' l='228' c='_dl_help'/>
+<size>464</size>
+<use f='codebrowser/elf/rtld.c' l='152' c='dl_main_state_init'/>
+<use f='codebrowser/elf/rtld.c' l='158' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='301' c='dl_main_state_init'/>
+<use f='codebrowser/elf/rtld.c' l='1329' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2568' c='process_dl_debug'/>
+<use f='codebrowser/elf/rtld.c' l='2673' c='process_envvars'/>
+<size>464</size>

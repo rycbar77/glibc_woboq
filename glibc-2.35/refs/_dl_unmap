@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/x86/dl-lookupcfg.h' l='29' type='void _dl_unmap(struct link_map * map)'/>
+<dec f='codebrowser/sysdeps/x86/dl-lookupcfg.h' l='29' type='void _dl_unmap(struct link_map * map)'/>
+<use f='codebrowser/elf/dl-close.c' l='657' macro='1' u='c' c='_dl_close_worker'/>
+<def f='codebrowser/sysdeps/x86_64/tlsdesc.c' l='28' ll='41' type='void _dl_unmap(struct link_map * map)'/>
+<doc f='codebrowser/sysdeps/x86_64/tlsdesc.c' l='25'>/* Unmap the dynamic object, but also release its TLS descriptor table
+   if there is one.  */</doc>

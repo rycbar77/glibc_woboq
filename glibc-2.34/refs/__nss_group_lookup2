@@ -1,0 +1,15 @@
+<dec f='codebrowser/nss/databases.def' l='25' macro='1' type='int __nss_group_lookup2(struct nss_action ** , const char * , const char * , void ** )'/>
+<dec f='codebrowser/nss/databases.def' l='25' macro='1' type='int __nss_group_lookup2(struct nss_action ** , const char * , const char * , void ** )'/>
+<use f='codebrowser/nss/databases.def' l='25' macro='1' c='__nss_group_lookup2'/>
+<dec f='codebrowser/nss/getXXent_r.c' l='115' macro='1' type='int __nss_group_lookup2(nss_action_list * nip, const char * name, const char * name2, void ** fctp)'/>
+<dec f='codebrowser/nss/getXXent_r.c' l='117' macro='1' type='int __nss_group_lookup2(struct nss_action ** , const char * , const char * , void ** )'/>
+<use f='codebrowser/nss/getXXent_r.c' l='117' macro='1' c='__nss_group_lookup2'/>
+<use f='codebrowser/nss/getXXent_r.c' l='125' macro='1' u='r' c='setgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='143' macro='1' u='r' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='161' macro='1' u='r' c='__getgrent_r'/>
+<doc f='codebrowser/nss/getXXent_r.c' l='114'>/* The lookup function for the first entry of this service.  */</doc>
+<dec f='codebrowser/nss/getXXbyYY_r.c' l='182' macro='1' type='int __nss_group_lookup2(nss_action_list * nip, const char * name, const char * name2, void ** fctp)'/>
+<dec f='codebrowser/nss/getXXbyYY_r.c' l='184' macro='1' type='int __nss_group_lookup2(struct nss_action ** , const char * , const char * , void ** )'/>
+<use f='codebrowser/nss/getXXbyYY_r.c' l='184' macro='1' c='__nss_group_lookup2'/>
+<use f='codebrowser/nss/getXXbyYY_r.c' l='265' macro='1' u='c' c='__getgrgid_r'/>
+<doc f='codebrowser/nss/getXXbyYY_r.c' l='181'>/* The lookup function for the first entry of this service.  */</doc>

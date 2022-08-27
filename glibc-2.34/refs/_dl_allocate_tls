@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1219' type='void * _dl_allocate_tls(void * mem)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1218'>/* Allocate memory for static TLS block (unless MEM is nonzero) and dtv.  */</doc>
+<use f='codebrowser/nptl/allocatestack.c' l='307' u='c' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='428' u='c' c='allocate_stack'/>
+<def f='codebrowser/elf/dl-tls.c' l='618' ll='624' type='void * _dl_allocate_tls(void * mem)'/>

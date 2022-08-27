@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1200' type='void __libc_setup_tls()'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1197'>/* Set up the TCB for statically linked applications.  This is called
+   early during startup because we always use TLS (for errno and the
+   stack protector, among other things).  */</doc>
+<def f='codebrowser/csu/libc-tls.c' l='103' ll='218' type='void __libc_setup_tls()'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/cpu-features.c' l='36' u='c' c='x86_setup_tls'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/string/strings.h' l='116' type='int strcasecmp(const char * __s1, const char * __s2)'/>
+<doc f='codebrowser/string/strings.h' l='115'>/* Compare S1 and S2, ignoring case.  */</doc>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='215' c='__strcasecmp_avx'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='218' c='__strcasecmp_sse42'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='221' c='__strcasecmp_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='224' c='__strcasecmp_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strcasecmp.c' l='34' macro='1' type='int strcasecmp(const char * , const char * )'/>

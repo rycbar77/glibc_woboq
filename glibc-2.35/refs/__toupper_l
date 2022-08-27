@@ -1,0 +1,20 @@
+<dec f='codebrowser/ctype/ctype.h' l='271' type='int __toupper_l(int __c, locale_t __l)'/>
+<doc f='codebrowser/ctype/ctype.h' l='270'>/* Return the uppercase version of C.  */</doc>
+<def f='codebrowser/ctype/ctype_l.c' l='46' ll='50' type='int __toupper_l(int c, locale_t l)'/>
+<use f='codebrowser/ctype/ctype_l.c' l='51' c='toupper_l'/>
+<use f='codebrowser/iconv/gconv_charset.h' l='64' macro='1' u='c' c='strip'/>
+<use f='codebrowser/iconv/gconv_charset.h' l='85' macro='1' u='c' c='upstr'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='163' macro='1' u='c' c='add_alias'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='172' macro='1' u='c' c='add_alias'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='261' macro='1' u='c' c='add_module'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='271' macro='1' u='c' c='add_module'/>
+<use f='codebrowser/stdlib/strtol_l.c' l='309' macro='1' u='c' c='____strtol_l_internal'/>
+<use f='codebrowser/stdlib/strtol_l.c' l='357' macro='1' u='c' c='____strtol_l_internal'/>
+<use f='codebrowser/stdlib/strtol_l.c' l='405' macro='1' u='c' c='____strtol_l_internal'/>
+<use f='codebrowser/stdlib/strtol_l.c' l='412' macro='1' u='c' c='____strtol_l_internal'/>
+<use f='codebrowser/stdlib/strtol_l.c' l='453' macro='1' u='c' c='____strtol_l_internal'/>
+<use f='codebrowser/stdlib/strtol_l.c' l='460' macro='1' u='c' c='____strtol_l_internal'/>
+<use f='codebrowser/stdlib/strtol_l.c' l='515' macro='1' u='c' c='____strtol_l_internal'/>
+<use f='codebrowser/time/strftime_l.c' l='347' macro='1' u='c' c='memcpy_uppcase'/>
+<use f='codebrowser/time/strftime_l.c' l='850' macro='1' u='c' c='__strftime_internal'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='179' macro='1' u='c' c='__wcsmbs_load_conv'/>

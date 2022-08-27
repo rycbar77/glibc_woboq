@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1176' type='void * _dl_allocate_tls_storage()'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1174'>/* These are internal entry points to the two halves of _dl_allocate_tls,
+   only used within rtld.c itself at startup time.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='794' u='c' c='init_tls'/>
+<def f='codebrowser/elf/dl-tls.c' l='410' ll='465' type='void * _dl_allocate_tls_storage()'/>
+<use f='codebrowser/elf/dl-tls.c' l='611' u='c' c='_dl_allocate_tls'/>

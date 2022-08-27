@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='808' type='ssize_t _dl_write(int fd, const void * buffer, size_t length)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='805'>/* Write LENGTH bytes at BUFFER to FD, like write.  Returns the number
+   of bytes written on success, or a negative error constant on
+   failure.  */</doc>
+<use f='codebrowser/elf/dl-diagnostics.c' l='37' u='c' c='_dl_putc'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='51' u='c' c='print_quoted_char'/>
+<use f='codebrowser/elf/dl-usage.c' l='62' u='c' c='print_search_path_for_help_1'/>
+<use f='codebrowser/elf/dl-usage.c' l='74' u='c' c='print_search_path_for_help_1'/>
+<use f='codebrowser/elf/dl-usage.c' l='151' u='c' c='print_hwcaps_subdirectories_name'/>
+<use f='codebrowser/elf/dl-usage.c' l='152' u='c' c='print_hwcaps_subdirectories_name'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/dl-write.c' l='23' ll='30' type='ssize_t _dl_write(int fd, const void * buffer, size_t length)'/>

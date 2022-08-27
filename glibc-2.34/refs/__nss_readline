@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/nss_files.h' l='37' type='int __nss_readline(FILE * fp, char * buf, size_t len, off64_t * poffset)'/>
+<dec f='codebrowser/include/nss_files.h' l='38' type='int __nss_readline(FILE * , char * , size_t , off64_t * )'/>
+<use f='codebrowser/include/nss_files.h' l='38' c='__nss_readline'/>
+<doc f='codebrowser/include/nss_files.h' l='32'>/* Read a line from FP, storing it BUF.  Strip leading blanks and skip
+   comments.  Sets errno and returns error code on failure.  Special
+   failure: ERANGE means the buffer is too small.  The function writes
+   the original offset to *POFFSET (which can be negative in the case
+   of non-seekable input).  */</doc>
+<use f='codebrowser/nss/nss_fgetent_r.c' l='34' u='c' c='__nss_fgetent_r'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='124' u='c' c='internal_getent'/>
+<def f='codebrowser/nss/nss_readline.c' l='25' ll='79' type='int __nss_readline(FILE * fp, char * buf, size_t len, off64_t * poffset)'/>

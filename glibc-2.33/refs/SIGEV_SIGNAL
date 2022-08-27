@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/sigevent-consts.h' l='29' type='0'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/sigevent-consts.h' l='29'>/* Notify via signal.  */</doc>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='91' macro='1' u='r' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='60' macro='1' u='r' c='__timer_create_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='120' macro='1' u='r' c='__timer_create_new'/>

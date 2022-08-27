@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/pthread.h' l='7' type='int __pthread_barrier_init(pthread_barrier_t *restrict __barrier, const pthread_barrierattr_t *restrict __attr, unsigned int __count)'/>
+<dec f='codebrowser/include/pthread.h' l='12' type='int __pthread_barrier_init(pthread_barrier_t *restrict , const pthread_barrierattr_t *restrict , unsigned int )'/>
+<use f='codebrowser/include/pthread.h' l='12' c='__pthread_barrier_init'/>
+<dec f='codebrowser/include/pthread.h' l='7' type='int __pthread_barrier_init(pthread_barrier_t *restrict __barrier, const pthread_barrierattr_t *restrict __attr, unsigned int __count)'/>
+<dec f='codebrowser/include/pthread.h' l='12' type='int __pthread_barrier_init(pthread_barrier_t *restrict , const pthread_barrierattr_t *restrict , unsigned int )'/>
+<use f='codebrowser/include/pthread.h' l='12' c='__pthread_barrier_init'/>
+<doc f='codebrowser/include/pthread.h' l='4'>/* Prototypes repeated instead of using __typeof because pthread.h is
+   included in C++ tests, and declaring functions with __typeof and
+   __THROW doesn&apos;t work for C++.  */</doc>
+<def f='codebrowser/nptl/pthread_barrier_init.c' l='68' macro='1' type='int __pthread_barrier_init(pthread_barrier_t * , const pthread_barrierattr_t * , unsigned int )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='169' u='c' c='init_mq_netlink'/>

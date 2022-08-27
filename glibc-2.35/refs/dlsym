@@ -1,0 +1,19 @@
+<dec f='codebrowser/dlfcn/dlfcn.h' l='66' type='void * dlsym(void *restrict __handle, const char *restrict __name)'/>
+<doc f='codebrowser/dlfcn/dlfcn.h' l='64'>/* Find the run-time address in the shared object HANDLE refers to
+   of the symbol called NAME.  */</doc>
+<def f='codebrowser/dlfcn/dlsym.c' l='89' macro='1' type='void * dlsym(void * , const char * )'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='423' u='c' c='malloc_info'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='423' u='c' c='mallopt'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='423' u='c' c='malloc_stats'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='423' u='c' c='mallinfo2'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='423' u='c' c='mallinfo'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='423' u='c' c='malloc_trim'/>
+<use f='codebrowser/malloc/memusage.c' l='242' u='c' c='me'/>
+<use f='codebrowser/malloc/memusage.c' l='243' u='c' c='me'/>
+<use f='codebrowser/malloc/memusage.c' l='244' u='c' c='me'/>
+<use f='codebrowser/malloc/memusage.c' l='245' u='c' c='me'/>
+<use f='codebrowser/malloc/memusage.c' l='247' u='c' c='me'/>
+<use f='codebrowser/malloc/memusage.c' l='250' u='c' c='me'/>
+<use f='codebrowser/malloc/memusage.c' l='252' u='c' c='me'/>
+<use f='codebrowser/malloc/memusage.c' l='254' u='c' c='me'/>
+<use f='codebrowser/support/xdlfcn.c' l='40' u='c' c='xdlsym'/>

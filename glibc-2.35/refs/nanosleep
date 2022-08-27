@@ -1,0 +1,12 @@
+<dec f='codebrowser/time/time.h' l='272' type='int nanosleep(const struct timespec * __requested_time, struct timespec * __remaining)'/>
+<doc f='codebrowser/time/time.h' l='268'>/* Pause execution for a number of nanoseconds.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/locale/programs/locarchive.c' l='626' u='c' c='open_archive'/>
+<use f='codebrowser/support/delayed_exit.c' l='34' u='c' c='delayed_exit_thread'/>
+<use f='codebrowser/support/support_process_state.c' l='83' u='c' c='support_process_state_wait'/>
+<use f='codebrowser/support/support_process_state.c' l='91' u='c' c='support_process_state_wait'/>
+<use f='codebrowser/support/support_subprocess.c' l='141' u='c' c='support_process_kill'/>
+<use f='codebrowser/support/support_test_main.c' l='144' u='c' c='signal_handler'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/nanosleep.c' l='50' macro='1' type='int nanosleep(const struct timespec * , struct timespec * )'/>

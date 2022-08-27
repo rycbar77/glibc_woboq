@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/wchar.h' l='211' type='wchar_t * __wmemset_chk(wchar_t * __s, wchar_t __c, size_t __n, size_t __ns)'/>
+<dec f='codebrowser/wcsmbs/bits/wchar2.h' l='94' type='wchar_t * __wmemset_chk(wchar_t * __s, wchar_t __c, size_t __n, size_t __ns)'/>
+<use f='codebrowser/wcsmbs/bits/wchar2.h' l='107' macro='1' u='c' c='wmemset'/>
+<def f='codebrowser/sysdeps/x86_64/wmemset_chk.S' l='28' macro='1' type='int'/>

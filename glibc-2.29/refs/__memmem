@@ -1,0 +1,6 @@
+<use f='codebrowser/locale/findlocale.c' l='82' u='c' c='valid_locale_name'/>
+<def f='codebrowser/string/memmem.c' l='42' ll='81' type='void * __memmem(const void * haystack_start, size_t haystack_len, const void * needle_start, size_t needle_len)'/>
+<use f='codebrowser/string/memmem.c' l='83' c='memmem'/>
+<doc f='codebrowser/string/memmem.c' l='39'>/* Return the first occurrence of NEEDLE in HAYSTACK.  Return HAYSTACK
+   if NEEDLE_LEN is 0, otherwise NULL if NEEDLE is not found in
+   HAYSTACK.  */</doc>

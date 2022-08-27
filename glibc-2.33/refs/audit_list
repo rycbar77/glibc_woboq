@@ -1,0 +1,20 @@
+<def f='codebrowser/elf/dl-main.h' l='40' ll='60'/>
+<use f='codebrowser/elf/dl-main.h' l='73'/>
+<size>408</size>
+<doc f='codebrowser/elf/dl-main.h' l='39'>/* Strings containing colon-separated lists of audit modules.  */</doc>
+<mbr r='audit_list::audit_strings' o='0' t='const char *[16]'/>
+<mbr r='audit_list::length' o='1024' t='size_t'/>
+<mbr r='audit_list::current_index' o='1088' t='size_t'/>
+<mbr r='audit_list::current_tail' o='1152' t='const char *'/>
+<mbr r='audit_list::fname' o='1216' t='char[255]'/>
+<use f='codebrowser/elf/rtld.c' l='119' c='audit_list_init'/>
+<use f='codebrowser/elf/rtld.c' l='123' c='audit_list_add_string'/>
+<use f='codebrowser/elf/rtld.c' l='128' c='audit_list_add_dynamic_tag'/>
+<use f='codebrowser/elf/rtld.c' l='136' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='190' c='audit_list_init'/>
+<use f='codebrowser/elf/rtld.c' l='198' c='audit_list_add_string'/>
+<use f='codebrowser/elf/rtld.c' l='216' c='audit_list_add_dynamic_tag'/>
+<use f='codebrowser/elf/rtld.c' l='226' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='273' c='audit_list_count'/>
+<use f='codebrowser/elf/rtld.c' l='1102' c='load_audit_modules'/>
+<size>408</size>

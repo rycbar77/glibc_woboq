@@ -1,0 +1,462 @@
+<dec f='codebrowser/math/bits/mathcalls.h' l='162' type='double fabs(double __x)'/>
+<use f='codebrowser/math/e_scalb_template.c' l='51' macro='1' u='c' c='__ieee754_scalb'/>
+<use f='codebrowser/math/k_casinh_template.c' l='39' macro='1' u='c' c='__kernel_casinh'/>
+<use f='codebrowser/math/k_casinh_template.c' l='40' macro='1' u='c' c='__kernel_casinh'/>
+<use f='codebrowser/math/s_catan_template.c' l='65' macro='1' u='c' c='__catan'/>
+<use f='codebrowser/math/s_catan_template.c' l='66' macro='1' u='c' c='__catan'/>
+<use f='codebrowser/math/s_catan_template.c' l='69' macro='1' u='c' c='__catan'/>
+<use f='codebrowser/math/s_catan_template.c' l='71' macro='1' u='c' c='__catan'/>
+<use f='codebrowser/math/s_catan_template.c' l='83' macro='1' u='c' c='__catan'/>
+<use f='codebrowser/math/s_catan_template.c' l='84' macro='1' u='c' c='__catan'/>
+<use f='codebrowser/math/s_catan_template.c' l='107' macro='1' u='c' c='__catan'/>
+<use f='codebrowser/math/s_catan_template.c' l='108' macro='1' u='c' c='__catan'/>
+<use f='codebrowser/math/s_catan_template.c' l='111' macro='1' u='c' c='__catan'/>
+<use f='codebrowser/math/s_catan_template.c' l='116' macro='1' u='c' c='__catan'/>
+<use f='codebrowser/math/s_catanh_template.c' l='60' macro='1' u='c' c='__catanh'/>
+<use f='codebrowser/math/s_catanh_template.c' l='61' macro='1' u='c' c='__catanh'/>
+<use f='codebrowser/math/s_catanh_template.c' l='64' macro='1' u='c' c='__catanh'/>
+<use f='codebrowser/math/s_catanh_template.c' l='66' macro='1' u='c' c='__catanh'/>
+<use f='codebrowser/math/s_catanh_template.c' l='76' macro='1' u='c' c='__catanh'/>
+<use f='codebrowser/math/s_catanh_template.c' l='77' macro='1' u='c' c='__catanh'/>
+<use f='codebrowser/math/s_catanh_template.c' l='80' macro='1' u='c' c='__catanh'/>
+<use f='codebrowser/math/s_catanh_template.c' l='84' macro='1' u='c' c='__catanh'/>
+<use f='codebrowser/math/s_catanh_template.c' l='105' macro='1' u='c' c='__catanh'/>
+<use f='codebrowser/math/s_catanh_template.c' l='106' macro='1' u='c' c='__catanh'/>
+<use f='codebrowser/math/s_ccosh_template.c' l='43' macro='1' u='c' c='__ccosh'/>
+<use f='codebrowser/math/s_ccosh_template.c' l='53' macro='1' u='c' c='__ccosh'/>
+<use f='codebrowser/math/s_ccosh_template.c' l='56' macro='1' u='c' c='__ccosh'/>
+<use f='codebrowser/math/s_ccosh_template.c' l='103' macro='1' u='c' c='__ccosh'/>
+<use f='codebrowser/math/s_cexp_template.c' l='43' macro='1' u='c' c='__cexp'/>
+<use f='codebrowser/math/s_cexp_template.c' l='108' macro='1' u='c' c='__cexp'/>
+<use f='codebrowser/math/s_clog_template.c' l='39' macro='1' u='c' c='__clog'/>
+<use f='codebrowser/math/s_clog_template.c' l='44' macro='1' u='c' c='__clog'/>
+<use f='codebrowser/math/s_clog_template.c' l='44' macro='1' u='c' c='__clog'/>
+<use f='codebrowser/math/s_clog10_template.c' l='45' macro='1' u='c' c='__clog10'/>
+<use f='codebrowser/math/s_clog10_template.c' l='50' macro='1' u='c' c='__clog10'/>
+<use f='codebrowser/math/s_clog10_template.c' l='50' macro='1' u='c' c='__clog10'/>
+<use f='codebrowser/math/s_csin_template.c' l='35' macro='1' u='c' c='__csin'/>
+<use f='codebrowser/math/s_csin_template.c' l='59' macro='1' u='c' c='__csin'/>
+<use f='codebrowser/math/s_csin_template.c' l='62' macro='1' u='c' c='__csin'/>
+<use f='codebrowser/math/s_csinh_template.c' l='35' macro='1' u='c' c='__csinh'/>
+<use f='codebrowser/math/s_csinh_template.c' l='46' macro='1' u='c' c='__csinh'/>
+<use f='codebrowser/math/s_csinh_template.c' l='59' macro='1' u='c' c='__csinh'/>
+<use f='codebrowser/math/s_csinh_template.c' l='62' macro='1' u='c' c='__csinh'/>
+<use f='codebrowser/math/s_csinh_template.c' l='120' macro='1' u='c' c='__csinh'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='72' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='79' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='80' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='82' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='92' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='98' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='101' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='107' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='108' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='121' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='134' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='137' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_csqrt_template.c' l='142' macro='1' u='c' c='__csqrt'/>
+<use f='codebrowser/math/s_ctan_template.c' l='36' macro='1' u='c' c='__ctan'/>
+<use f='codebrowser/math/s_ctan_template.c' l='71' macro='1' u='c' c='__ctan'/>
+<use f='codebrowser/math/s_ctan_template.c' l='81' macro='1' u='c' c='__ctan'/>
+<use f='codebrowser/math/s_ctan_template.c' l='91' macro='1' u='c' c='__ctan'/>
+<use f='codebrowser/math/s_ctan_template.c' l='106' macro='1' u='c' c='__ctan'/>
+<use f='codebrowser/math/s_ctan_template.c' l='117' macro='1' u='c' c='__ctan'/>
+<use f='codebrowser/math/s_ctan_template.c' l='117' macro='1' u='c' c='__ctan'/>
+<use f='codebrowser/math/s_ctanh_template.c' l='37' macro='1' u='c' c='__ctanh'/>
+<use f='codebrowser/math/s_ctanh_template.c' l='71' macro='1' u='c' c='__ctanh'/>
+<use f='codebrowser/math/s_ctanh_template.c' l='81' macro='1' u='c' c='__ctanh'/>
+<use f='codebrowser/math/s_ctanh_template.c' l='91' macro='1' u='c' c='__ctanh'/>
+<use f='codebrowser/math/s_ctanh_template.c' l='106' macro='1' u='c' c='__ctanh'/>
+<use f='codebrowser/math/s_ctanh_template.c' l='117' macro='1' u='c' c='__ctanh'/>
+<use f='codebrowser/math/s_ctanh_template.c' l='117' macro='1' u='c' c='__ctanh'/>
+<use f='codebrowser/math/s_fmaxmag_template.c' l='24' macro='1' u='c' c='__fmaxmag'/>
+<use f='codebrowser/math/s_fmaxmag_template.c' l='25' macro='1' u='c' c='__fmaxmag'/>
+<use f='codebrowser/math/s_fminmag_template.c' l='24' macro='1' u='c' c='__fminmag'/>
+<use f='codebrowser/math/s_fminmag_template.c' l='25' macro='1' u='c' c='__fminmag'/>
+<use f='codebrowser/math/w_acos_template.c' l='32' macro='1' u='c' c='__acos'/>
+<use f='codebrowser/math/w_asin_template.c' l='32' macro='1' u='c' c='__asin'/>
+<use f='codebrowser/math/w_atanh_template.c' l='32' macro='1' u='c' c='__atanh'/>
+<use f='codebrowser/math/w_atanh_template.c' l='34' macro='1' u='c' c='__atanh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/branred.c' l='127' u='c' c='__branred'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/branred.c' l='127' u='c' c='__branred'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/doasin.c' l='69' macro='1' u='c' c='__doasin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/doasin.c' l='69' macro='1' u='c' c='__doasin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/doasin.c' l='71' macro='1' u='c' c='__doasin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/doasin.c' l='71' macro='1' u='c' c='__doasin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/doasin.c' l='73' macro='1' u='c' c='__doasin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/doasin.c' l='73' macro='1' u='c' c='__doasin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/doasin.c' l='75' macro='1' u='c' c='__doasin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/doasin.c' l='75' macro='1' u='c' c='__doasin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/doasin.c' l='78' macro='1' u='c' c='__doasin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/doasin.c' l='78' macro='1' u='c' c='__doasin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='80' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='80' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='82' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='82' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='85' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='85' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='89' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='89' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='91' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='91' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='93' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='93' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='98' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='98' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='99' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='99' macro='1' u='c' c='__dubsin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='130' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='130' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='132' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='132' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='135' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='135' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='138' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='138' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='140' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='140' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='142' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='142' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='149' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='149' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='151' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='151' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='154' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='154' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='156' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='156' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='158' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='158' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='160' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='160' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='164' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='164' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='165' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dosincos.c' l='165' macro='1' u='c' c='__dubcos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atanh.c' l='51' u='c' c='__ieee754_atanh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_cosh.c' l='57' u='c' c='__ieee754_cosh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_cosh.c' l='63' u='c' c='__ieee754_cosh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_cosh.c' l='68' u='c' c='__ieee754_cosh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_cosh.c' l='75' u='c' c='__ieee754_cosh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_exp10.c' l='39' u='c' c='__ieee754_exp10'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_j0.c' l='95' u='c' c='__ieee754_j0'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_j1.c' l='99' u='c' c='__ieee754_j1'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_jn.c' l='81' u='c' c='__ieee754_jn'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_jn.c' l='205' u='c' c='__ieee754_jn'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_jn.c' l='241' u='c' c='__ieee754_jn'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_jn.c' l='241' u='c' c='__ieee754_jn'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_lgamma_r.c' l='218' u='c' c='__ieee754_lgamma_r'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_lgamma_r.c' l='230' u='c' c='__ieee754_lgamma_r'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_lgamma_r.c' l='235' u='c' c='__ieee754_lgamma_r'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_log10.c' l='70' u='c' c='__ieee754_log10'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='72' u='c' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='104' u='c' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='107' u='c' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='120' u='c' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='130' u='c' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='132' u='c' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='133' u='c' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_sinh.c' l='71' u='c' c='__ieee754_sinh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_sinh.c' l='79' u='c' c='__ieee754_sinh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_sinh.c' l='85' u='c' c='__ieee754_sinh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/lgamma_neg.c' l='315' u='c' c='__lgamma_neg'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/lgamma_neg.c' l='315' u='c' c='__lgamma_neg'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/mpatan.c' l='69' u='c' c='__mpatan'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_asinh.c' l='52' u='c' c='__asinh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_asinh.c' l='56' u='c' c='__asinh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_cbrt.c' l='45' u='c' c='__cbrt'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_erf.c' l='239' u='c' c='__erf'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_erf.c' l='262' u='c' c='__erf'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_erf.c' l='345' u='c' c='__erfc'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_erf.c' l='367' u='c' c='__erfc'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_logb.c' l='34' u='c' c='__logb'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_remquo.c' l='59' u='c' c='__remquo'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='108' u='c' c='do_cos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='109' u='c' c='do_cos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='129' u='c' c='do_sin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='136' u='c' c='do_sin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='137' u='c' c='do_sin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sincos.c' l='63' u='c' c='__sincos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tanh.c' l='80' u='c' c='__tanh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tanh.c' l='85' u='c' c='__tanh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/sincos32.c' l='260' u='c' c='__mpranred'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/x2y2m1.c' l='43' u='c' c='compare'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/x2y2m1.c' l='44' u='c' c='compare'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='118' u='c' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='150' u='c' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='184' u='c' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='221' u='c' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='259' u='c' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='214' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='278' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='278' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='280' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='280' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='282' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='282' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='284' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='284' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='287' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='287' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='298' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='298' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='324' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='324' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='330' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='330' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='332' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='332' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='334' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='334' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='336' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='336' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='338' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='338' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='355' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='355' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='364' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='364' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='366' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='366' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='368' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='368' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='370' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='370' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='373' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='373' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='374' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='374' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='399' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='399' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='407' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='407' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='409' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='409' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='411' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='411' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='413' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='413' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='415' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='415' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='416' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='416' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='434' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='434' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='442' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='442' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='444' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='444' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='446' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='446' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='448' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='448' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='451' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='451' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='452' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='452' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='476' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='476' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='482' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='482' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='484' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='484' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='486' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='486' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='488' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='488' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='490' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='490' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='491' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='491' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='506' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='506' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='513' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='513' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='515' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='515' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='517' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='517' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='519' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='519' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='522' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='522' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='523' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='523' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='547' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='547' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='554' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='554' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='556' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='556' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='558' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='558' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='560' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='560' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='562' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='562' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='563' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='563' macro='1' u='c' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_pow.c' l='158' u='c' c='specialcase'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='116' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='116' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='118' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='118' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='120' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='120' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='122' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='122' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='125' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='125' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='169' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='169' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='171' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='171' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='173' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='173' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='175' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='175' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='177' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='177' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='211' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='211' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='219' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='219' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='221' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='221' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='223' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='223' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='225' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='225' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='227' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='227' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='228' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='228' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='250' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='250' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='264' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='264' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='266' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='266' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='268' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='268' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='270' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='270' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='273' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='273' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='274' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='274' macro='1' u='c' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='128' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='128' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='130' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='130' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='132' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='132' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='134' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='134' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='136' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='136' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='138' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='138' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='141' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='141' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='180' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='180' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='182' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='182' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='185' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='185' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='187' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='187' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='189' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='189' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='246' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='246' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='278' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='278' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='291' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='291' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='293' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='293' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='295' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='295' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='297' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='297' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='299' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='299' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='301' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='301' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='304' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='304' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='376' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='376' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='379' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='379' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='381' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='381' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='384' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='384' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='386' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='386' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='388' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='388' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='430' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='430' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='466' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='466' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='494' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='494' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='496' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='496' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='498' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='498' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='500' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='500' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='502' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='502' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='504' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='504' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='507' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='507' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='578' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='578' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='581' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='581' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='583' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='583' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='586' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='586' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='588' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='588' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='590' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='590' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='619' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='619' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='654' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='654' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='691' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='691' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='693' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='693' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='695' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='695' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='697' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='697' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='699' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='699' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='701' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='701' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='704' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='704' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='775' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='775' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='778' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='778' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='780' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='780' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='783' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='783' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='785' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='785' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='787' macro='1' u='c' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='787' macro='1' u='c' c='__tan_avx'/>
+<def f='codebrowser/sysdeps/x86_64/fpu/s_fabs.c' l='27' macro='1' type='double fabs(double )'/>

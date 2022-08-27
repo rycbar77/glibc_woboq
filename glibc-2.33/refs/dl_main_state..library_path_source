@@ -1,0 +1,7 @@
+<dec f='codebrowser/elf/dl-main.h' l='79' type='const char *'/>
+<use f='codebrowser/elf/dl-main.h' l='109' u='r' c='call_init_paths'/>
+<offset>3328</offset>
+<doc f='codebrowser/elf/dl-main.h' l='78'>/* Where library_path comes from.  LD_LIBRARY_PATH or --library-path.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='292' u='w' c='dl_main_state_init'/>
+<use f='codebrowser/elf/rtld.c' l='1226' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2762' u='w' c='process_envvars'/>

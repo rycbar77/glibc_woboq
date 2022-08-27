@@ -1,0 +1,17 @@
+<dec f='codebrowser/inet/netinet/in.h' l='56' type='17'/>
+<doc f='codebrowser/inet/netinet/in.h' l='56'>/* User Datagram Protocol.  */</doc>
+<use f='codebrowser/nis/nis_call.c' l='203' macro='1' u='r' c='__nisbind_connect'/>
+<use f='codebrowser/nis/nis_call.c' l='237' macro='1' u='r' c='__nisbind_connect'/>
+<use f='codebrowser/nis/nis_findserv.c' l='107' macro='1' u='r' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/nis/nis_findserv.c' l='144' macro='1' u='r' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='129' macro='1' u='r'/>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='106' macro='1' c='__GI_clnt_create'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='151' macro='1' u='r' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='179' macro='1' u='r' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='242' macro='1' u='r' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/svc_simple.c' l='88' macro='1' u='r' c='__registerrpc'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='134' macro='1' u='r' c='__GI_svcudp_bufcreate'/>
+<use f='codebrowser/support/resolv_test.c' l='1009' macro='1' u='r' c='make_server_sockets'/>
+<use f='codebrowser/support/resolv_test.c' l='1058' macro='1' u='r' c='make_server_sockets_for_address'/>
+<use f='codebrowser/support/resolv_test.c' l='1243' macro='1' u='r' c='resolv_test_end'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='146' macro='1' c='format_ai_one'/>

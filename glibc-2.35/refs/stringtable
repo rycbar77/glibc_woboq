@@ -1,0 +1,15 @@
+<def f='codebrowser/elf/stringtable.h' l='35' ll='40'/>
+<use f='codebrowser/elf/stringtable.h' l='43' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.h' l='56' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.h' l='62' c='stringtable_free'/>
+<use f='codebrowser/elf/cache.c' l='41'/>
+<size>16</size>
+<doc f='codebrowser/elf/stringtable.h' l='34'>/* A string table.  Zero-initialization produces a valid atable.  */</doc>
+<mbr r='stringtable::entries' o='0' t='struct stringtable_entry **'/>
+<mbr r='stringtable::count' o='64' t='uint32_t'/>
+<mbr r='stringtable::allocated' o='96' t='uint32_t'/>
+<use f='codebrowser/elf/stringtable.c' l='27' c='stringtable_init'/>
+<use f='codebrowser/elf/stringtable.c' l='56' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='82' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='149' c='stringtable_finalize'/>
+<size>16</size>

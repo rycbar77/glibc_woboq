@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='697' type='void __pthread_register_cancel(__pthread_unwind_buf_t * __buf)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='264' type='void __pthread_register_cancel(__pthread_unwind_buf_t * __buf)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='266' type='void __pthread_register_cancel(__pthread_unwind_buf_t * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='266' c='__pthread_register_cancel'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='261'>/* NB: No hidden proto for __pthread_unwind_next: inside glibc, the
+   legacy unwinding mechanism is used.  */</doc>
+<def f='codebrowser/nptl/cleanup.c' l='37' macro='1' type='void __pthread_register_cancel(__pthread_unwind_buf_t * )'/>

@@ -1,0 +1,29 @@
+<use f='codebrowser/nss/nss.h' l='92'/>
+<use f='codebrowser/nss/nss.h' l='94'/>
+<def f='codebrowser/inet/aliases.h' l='29' ll='35'/>
+<use f='codebrowser/inet/aliases.h' l='45' c='getaliasent'/>
+<use f='codebrowser/inet/aliases.h' l='48' c='getaliasent_r'/>
+<use f='codebrowser/inet/aliases.h' l='50' c='getaliasent_r'/>
+<use f='codebrowser/inet/aliases.h' l='53' c='getaliasbyname'/>
+<use f='codebrowser/inet/aliases.h' l='57' c='getaliasbyname_r'/>
+<use f='codebrowser/inet/aliases.h' l='59' c='getaliasbyname_r'/>
+<use f='codebrowser/include/aliases.h' l='6' c='__getaliasent_r'/>
+<use f='codebrowser/include/aliases.h' l='8' c='__getaliasent_r'/>
+<use f='codebrowser/include/aliases.h' l='10' c='__old_getaliasent_r'/>
+<use f='codebrowser/include/aliases.h' l='12' c='__old_getaliasent_r'/>
+<use f='codebrowser/include/aliases.h' l='15' c='__getaliasbyname_r'/>
+<use f='codebrowser/include/aliases.h' l='17' c='__getaliasbyname_r'/>
+<use f='codebrowser/include/aliases.h' l='20' c='__old_getaliasbyname_r'/>
+<use f='codebrowser/include/aliases.h' l='22' c='__old_getaliasbyname_r'/>
+<use f='codebrowser/include/aliases.h' l='28' c='_nss_files_getaliasent_r'/>
+<use f='codebrowser/include/aliases.h' l='31' c='_nss_files_getaliasbyname_r'/>
+<size>32</size>
+<doc f='codebrowser/inet/aliases.h' l='28'>/* Structure to represent one entry of the alias database.  */</doc>
+<mbr r='aliasent::alias_name' o='0' t='char *'/>
+<mbr r='aliasent::alias_members_len' o='64' t='size_t'/>
+<mbr r='aliasent::alias_members' o='128' t='char **'/>
+<mbr r='aliasent::alias_local' o='192' t='int'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='75' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='335' c='_nss_files_getaliasent_r'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='360' c='_nss_files_getaliasbyname_r'/>
+<size>32</size>

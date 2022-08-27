@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='38' type='int __openat_nocancel(int , const char * , int )'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='77' type='int __openat_nocancel(int , const char * , int )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='77' c='__openat_nocancel'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='37'>/* Non cancellable openat syscall.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fchmodat.c' l='41' u='c' c='fchmodat'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/openat64_nocancel.c' l='49' macro='1' type='int __openat_nocancel(int , const char * , int )'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/socket_type.h' l='52' type='2048'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/socket_type.h' l='52'>/* Atomically mark descriptor(s) as
+				   non-blocking.  */</doc>
+<use f='codebrowser/nscd/nscd_helper.c' l='169' macro='1' u='r' c='open_socket'/>
+<use f='codebrowser/resolv/res_send.c' l='988' macro='1' u='r' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='994' macro='1' u='r' c='reopen'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='174' macro='1' u='r' c='__libc_clntudp_bufcreate'/>

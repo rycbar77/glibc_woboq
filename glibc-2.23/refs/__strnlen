@@ -1,0 +1,17 @@
+<dec f='codebrowser/include/string.h' l='9' type='size_t __strnlen(const char * __string, size_t __maxlen)'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='319' macro='1' u='c' c='add_module'/>
+<use f='codebrowser/inet/getnameinfo.c' l='352' u='c' c='getnameinfo'/>
+<use f='codebrowser/posix/fnmatch.c' l='344' u='c' c='__fnmatch'/>
+<use f='codebrowser/posix/fnmatch.c' l='388' u='c' c='__fnmatch'/>
+<use f='codebrowser/posix/wordexp.c' l='355' macro='1' u='c' c='parse_tilde'/>
+<use f='codebrowser/stdio-common/vfprintf.c' l='1143' u='c' c='_IO_vfprintf_internal'/>
+<use f='codebrowser/stdio-common/vfprintf.c' l='1143' u='c' c='printf_positional'/>
+<use f='codebrowser/stdlib/putenv.c' l='68' macro='1' u='c' c='putenv'/>
+<use f='codebrowser/string/argz-stringify.c' l='31' u='c' c='__argz_stringify'/>
+<use f='codebrowser/string/strndup.c' l='42' u='c' c='__strndup'/>
+<use f='codebrowser/string/stpncpy.c' l='42' u='c' c='__stpncpy_sse2'/>
+<use f='codebrowser/string/strncat.c' l='33' u='c' c='__strncat_sse2'/>
+<use f='codebrowser/string/strncpy.c' l='29' u='c' c='__strncpy_sse2'/>
+<use f='codebrowser/sysdeps/x86_64/strnlen.S' l='5' u='r'/>
+<use f='codebrowser/wcsmbs/mbsnrtowcs.c' l='60' u='c' c='__mbsnrtowcs'/>
+<use f='codebrowser/wcsmbs/mbsrtowcs_l.c' l='116' u='c' c='__mbsrtowcs_l'/>

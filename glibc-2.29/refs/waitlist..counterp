@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/pthread/aio_misc.h' l='54' type='volatile unsigned int *'/>
+<offset>128</offset>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='136' macro='1' u='r' c='__aio_notify'/>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='136' macro='1' u='r' c='__aio_notify'/>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='136' macro='1' u='r' c='__aio_notify'/>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='147' u='r' c='__aio_notify'/>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='152' u='r' c='__aio_notify'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='146' u='w' c='aio_suspend'/>
+<dec f='codebrowser/resolv/gai_misc.h' l='34' type='volatile unsigned int *'/>
+<offset>64</offset>
+<use f='codebrowser/sysdeps/pthread/lio_listio.c' l='134' u='w' c='lio_listio_internal'/>
+<use f='codebrowser/sysdeps/pthread/lio_listio.c' l='197' u='w' c='lio_listio_internal'/>

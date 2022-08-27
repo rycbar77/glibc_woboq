@@ -1,0 +1,6 @@
+<dec f='codebrowser/malloc/dynarray.h' l='138' type='_Bool __libc_dynarray_resize(struct dynarray_header * , size_t size, void * scratch, size_t element_size)'/>
+<dec f='codebrowser/malloc/dynarray.h' l='172' type='_Bool __libc_dynarray_resize(struct dynarray_header * , size_t , void * , size_t )'/>
+<use f='codebrowser/malloc/dynarray.h' l='172' c='__libc_dynarray_resize'/>
+<def f='codebrowser/malloc/dynarray_resize.c' l='25' ll='63' macro='1' type='_Bool __libc_dynarray_resize(struct dynarray_header * list, size_t size, void * scratch, size_t element_size)'/>
+<use f='codebrowser/malloc/dynarray_resize_clear.c' l='27' u='c' c='__libc_dynarray_resize_clear'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='400' u='c' c='gid_list_resize'/>

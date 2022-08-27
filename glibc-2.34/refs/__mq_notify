@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='203' ll='270' type='int __mq_notify(mqd_t mqdes, const struct sigevent * notification)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='271' c='mq_notify'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='201'>/* Register notification upon message arrival to an empty message queue
+   MQDES.  */</doc>

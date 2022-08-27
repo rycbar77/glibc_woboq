@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='148' type='1'/>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='106' macro='1' u='r' c='futex_supports_pshared'/>
+<use f='codebrowser/nptl/pthread_condattr_getpshared.c' l='26' macro='1' u='r' c='__pthread_condattr_getpshared'/>
+<use f='codebrowser/nptl/pthread_mutexattr_getpshared.c' l='30' macro='1' u='r' c='__pthread_mutexattr_getpshared'/>
+<use f='codebrowser/nptl/sem_init.c' l='38' macro='1' u='r' c='__new_sem_init'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='43' macro='1' u='r' c='__sem_open'/>

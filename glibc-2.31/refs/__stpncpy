@@ -1,0 +1,10 @@
+<dec f='codebrowser/string/string.h' l='457' type='char * __stpncpy(char *restrict __dest, const char *restrict __src, size_t __n)'/>
+<dec f='codebrowser/include/string.h' l='90' type='char * __stpncpy(char *restrict , const char *restrict , size_t )'/>
+<use f='codebrowser/include/string.h' l='90' c='__stpncpy'/>
+<doc f='codebrowser/string/string.h' l='455'>/* Copy no more than N characters of SRC to DEST, returning the address of
+   the last character written into DEST.  */</doc>
+<use f='codebrowser/debug/stpncpy_chk.c' l='31' u='c' c='__stpncpy_chk'/>
+<use f='codebrowser/string/strxfrm_l.c' l='33' u='c' c='__strxfrm_l'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='71' u='c' c='getttyname_r'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/stpncpy.c' l='31' macro='1' type='char * __stpncpy(char *restrict , const char *restrict , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/stpncpy.c' l='33' c='stpncpy'/>

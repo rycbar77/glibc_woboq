@@ -1,0 +1,24 @@
+<dec f='codebrowser/libio/stdio.h' l='272' type='FILE * fopen(const char *restrict __filename, const char *restrict __modes)'/>
+<doc f='codebrowser/libio/stdio.h' l='268'>/* Open a file and create a new stream for it.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='284' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='1022' u='c' c='write_out'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='139' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='446' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='673' u='c' c='handle_dir'/>
+<def f='codebrowser/libio/iofopen.c' l='103' macro='1' type='_IO_FILE * fopen(const char * , const char * )'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='225' u='c' c='charmap_open'/>
+<use f='codebrowser/locale/programs/linereader.c' l='58' u='c' c='lr_open'/>
+<use f='codebrowser/locale/programs/locale.c' l='535' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1201' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='75' u='c' c='pthread_getattr_np'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='781' u='c' c='_sethtent'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='804' u='c' c='_gethtent'/>
+<use f='codebrowser/resolv/res_query.c' l='625' u='c' c='__res_hostalias'/>
+<use f='codebrowser/timezone/zic.c' l='798' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='806' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='985' u='c' c='infile'/>
+<use f='codebrowser/timezone/zic.c' l='1695' u='c' c='writezone'/>
+<use f='codebrowser/timezone/zic.c' l='1698' u='c' c='writezone'/>

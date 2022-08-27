@@ -1,0 +1,25 @@
+<dec f='codebrowser/io/sys/poll.h' l='39' type='short'/>
+<offset>32</offset>
+<doc f='codebrowser/io/sys/poll.h' l='39'>/* Types of events poller cares about.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='149' u='w' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='150' u='w' c='rcmd_af'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='56' u='w' c='wait_on_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='231' u='w' c='open_socket'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='478' u='w' c='readtcp'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='362' u='w' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='546' u='w' c='readunix'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='257' u='w' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/rtime.c' l='105' u='w' c='__GI_rtime'/>
+<use f='codebrowser/sunrpc/svc.c' l='111' u='w' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='125' u='w' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc_run.c' l='83' u='w' c='__GI_svc_run'/>
+<use f='codebrowser/sunrpc/svc_run.c' l='83' u='r' c='__GI_svc_run'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='331' u='w' c='readtcp'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='433' u='w' c='readunix'/>
+<use f='codebrowser/support/resolv_test.c' l='754' u='w' c='server_thread_udp_single'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='40' u='w' c='transfer'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='46' u='w' c='transfer'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='61' u='w' c='support_capture_poll'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='62' u='w' c='support_capture_poll'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='71' u='r' c='support_capture_poll'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='71' u='r' c='support_capture_poll'/>

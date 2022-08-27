@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/settimeofday.c' l='26' macro='1' type='int __settimeofday(const struct timeval * tv, const struct timezone * tz)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/settimeofday.c' l='58' c='settimeofday'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/settimeofday.c' l='23'>/* Set the current time of day and timezone information.
+   This call is restricted to the super-user.  */</doc>

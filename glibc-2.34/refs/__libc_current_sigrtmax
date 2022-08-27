@@ -1,0 +1,11 @@
+<dec f='codebrowser/signal/signal.h' l='385' type='int __libc_current_sigrtmax()'/>
+<dec f='codebrowser/include/signal.h' l='16' type='int __libc_current_sigrtmax()'/>
+<use f='codebrowser/include/signal.h' l='16' c='__libc_current_sigrtmax'/>
+<doc f='codebrowser/signal/signal.h' l='384'>/* Return number of available real-time signal with lowest priority.  */</doc>
+<def f='codebrowser/signal/allocrtsig.c' l='45' ll='53' type='int __libc_current_sigrtmax()'/>
+<doc f='codebrowser/signal/allocrtsig.c' l='44'>/* Return number of available real-time signal with lowest priority.  */</doc>
+<use f='codebrowser/stdio-common/psiginfo.c' l='85' macro='1' u='c' c='psiginfo'/>
+<use f='codebrowser/stdio-common/psiginfo.c' l='92' macro='1' u='c' c='psiginfo'/>
+<use f='codebrowser/stdio-common/psiginfo.c' l='101' macro='1' u='c' c='psiginfo'/>
+<use f='codebrowser/stdio-common/psiginfo.c' l='104' macro='1' u='c' c='psiginfo'/>
+<use f='codebrowser/string/strsignal.c' l='38' macro='1' u='c' c='strsignal'/>

@@ -1,0 +1,17 @@
+<dec f='codebrowser/posix/unistd.h' l='989' type='int fsync(int __fd)'/>
+<dec f='codebrowser/include/unistd.h' l='31' type='int fsync(int )'/>
+<use f='codebrowser/include/unistd.h' l='31' c='fsync'/>
+<doc f='codebrowser/posix/unistd.h' l='985'>/* Make all changes done to FD actually appear on disk.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/elf/cache.c' l='769' u='c' c='save_cache'/>
+<use f='codebrowser/rt/aio_misc.c' l='589' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/support/support_descriptor_supports_holes.c' l='59' u='c' c='support_descriptor_supports_holes'/>
+<use f='codebrowser/support/support_descriptor_supports_holes.c' l='59' u='c' c='support_descriptor_supports_holes'/>
+<use f='codebrowser/support/support_descriptor_supports_holes.c' l='73' u='c' c='support_descriptor_supports_holes'/>
+<use f='codebrowser/support/support_descriptor_supports_holes.c' l='73' u='c' c='support_descriptor_supports_holes'/>
+<use f='codebrowser/support/support_descriptor_supports_holes.c' l='80' u='c' c='support_descriptor_supports_holes'/>
+<use f='codebrowser/support/support_descriptor_supports_holes.c' l='80' u='c' c='support_descriptor_supports_holes'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fsync.c' l='24' ll='28' type='int fsync(int fd)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/fsync.c' l='23'>/* Make all changes done to FD actually appear on disk.  */</doc>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/elf/dl-find_object.h' l='125' type='void _dl_find_object_init()'/>
+<doc f='codebrowser/elf/dl-find_object.h' l='122'>/* Called by the dynamic linker to set up the data structures for the
+   initially loaded objects.  This creates a few persistent
+   allocations, so it should be called with the minimal malloc.  */</doc>
+<def f='codebrowser/elf/dl-find_object.c' l='559' ll='604' type='void _dl_find_object_init()'/>
+<dec f='codebrowser/elf/dl-support.c' l='421' type='void _dl_find_object_init()'/>
+<use f='codebrowser/elf/dl-support.c' l='421' c='_dl_find_object_init'/>
+<use f='codebrowser/elf/dl-support.c' l='421' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='421' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/rtld.c' l='2380' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2491' u='c' c='dl_main'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/intprops.h' l='212'/>
+<doc f='codebrowser/include/intprops.h' l='207'>/* Return 1 if A % B would overflow in [MIN,MAX] arithmetic.
+   See above for restrictions.  Do not check for division by zero.
+   Mathematically, % should never overflow, but on x86-like hosts
+   INT_MIN % -1 traps, and the C standard permits this, so treat this
+   as an overflow too.  */</doc>

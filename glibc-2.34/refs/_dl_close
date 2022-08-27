@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/dlfcn.h' l='67' type='void _dl_close(void * map)'/>
+<doc f='codebrowser/include/dlfcn.h' l='66'>/* Close an object previously opened by _dl_open.  */</doc>
+<use f='codebrowser/dlfcn/dlclose.c' l='31' macro='1' u='r' c='__dlclose'/>
+<def f='codebrowser/elf/dl-close.c' l='836' ll='876' type='void _dl_close(void * _map)'/>
+<use f='codebrowser/elf/dl-libc.c' l='126' macro='1' u='c' c='do_dlclose'/>
+<use f='codebrowser/elf/rtld.c' l='368'/>
+<use f='codebrowser/elf/rtld.c' l='918' u='c' c='unload_audit_module'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/time.h' l='288' type='int __getclktck()'/>
+<doc f='codebrowser/include/time.h' l='287'>/* Determine CLK_TCK value.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getclktck.c' l='27' ll='31' type='int __getclktck()'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/getclktck.c' l='26'>/* Return frequency of times().  */</doc>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='77' u='c' c='posix_sysconf'/>

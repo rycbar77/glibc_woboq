@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/rpc/svc.h' l='41' type='void __svc_wait_on_error()'/>
+<def f='codebrowser/sunrpc/svc.c' l='547' ll='552' type='void __svc_wait_on_error()'/>
+<use f='codebrowser/sunrpc/svc.c' l='564' u='c' c='__svc_accept_failed'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='278' u='c' c='rendezvous_request'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='274' u='c' c='rendezvous_request'/>

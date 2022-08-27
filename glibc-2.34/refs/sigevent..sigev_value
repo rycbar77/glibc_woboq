@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/types/sigevent_t.h' l='24' type='__sigval_t'/>
+<offset>0</offset>
+<use f='codebrowser/resolv/gai_notify.c' l='86' u='r' c='__gai_notify_only'/>
+<use f='codebrowser/resolv/gai_notify.c' l='96' u='r' c='__gai_notify_only'/>
+<use f='codebrowser/rt/aio_notify.c' l='88' u='r' c='__aio_notify_only'/>
+<use f='codebrowser/rt/aio_notify.c' l='102' u='r' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='234' u='r' c='__mq_notify'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='257' u='m' c='__mq_notify'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='56' u='m' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='84' u='r' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='112' u='w' c='___timer_create'/>

@@ -1,0 +1,22 @@
+<dec f='codebrowser/resolv/gai_misc.h' l='73' type='pthread_mutex_t'/>
+<use f='codebrowser/resolv/gai_cancel.c' l='31' u='a' c='__gai_cancel'/>
+<use f='codebrowser/resolv/gai_cancel.c' l='43' u='a' c='__gai_cancel'/>
+<doc f='codebrowser/resolv/gai_misc.h' l='72'>/* Lock for global I/O list of requests.  */</doc>
+<def f='codebrowser/resolv/gai_misc.c' l='103' type='pthread_mutex_t'/>
+<use f='codebrowser/resolv/gai_misc.c' l='227' u='a' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='233' u='a' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='300' u='a' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='320' u='a' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='332' u='a' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='381' u='a' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='428' u='a' c='handle_requests'/>
+<doc f='codebrowser/resolv/gai_misc.c' l='102'>/* Since the list is global we need a mutex protecting it.  */</doc>
+<use f='codebrowser/resolv/gai_suspend.c' l='41' u='a' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='97' macro='1' u='a' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='97' macro='1' u='a' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='147' u='a' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='59' u='a' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='87' u='a' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='127' macro='1' u='a' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='127' macro='1' u='a' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='178' u='a' c='__getaddrinfo_a'/>

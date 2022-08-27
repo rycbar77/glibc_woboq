@@ -1,0 +1,13 @@
+<def f='codebrowser/posix/regex_internal.h' l='631' ll='636'/>
+<use f='codebrowser/posix/regexec.c' l='60' c='push_fail_stack'/>
+<use f='codebrowser/posix/regexec.c' l='68' c='free_fail_stack_return'/>
+<use f='codebrowser/posix/regexec.c' l='1215' c='proceed_next_node'/>
+<use f='codebrowser/posix/regexec.c' l='1322' c='push_fail_stack'/>
+<use f='codebrowser/posix/regexec.c' l='1350' c='pop_fail_stack'/>
+<use f='codebrowser/posix/regexec.c' l='1386' c='set_regs'/>
+<use f='codebrowser/posix/regexec.c' l='1387' c='set_regs'/>
+<use f='codebrowser/posix/regexec.c' l='1473' c='free_fail_stack_return'/>
+<size>16</size>
+<mbr r='re_fail_stack_t::num' o='0' t='Idx'/>
+<mbr r='re_fail_stack_t::alloc' o='32' t='Idx'/>
+<mbr r='re_fail_stack_t::stack' o='64' t='struct re_fail_stack_ent_t *'/>

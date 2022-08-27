@@ -1,0 +1,9 @@
+<dec f='codebrowser/misc/sys/mman.h' l='76' type='int munmap(void * __addr, size_t __len)'/>
+<doc f='codebrowser/misc/sys/mman.h' l='74'>/* Deallocate any mapping for the region starting at ADDR and extending LEN
+   bytes.  Returns 0 if successful, -1 for errors (and sets errno).  */</doc>
+<use f='codebrowser/elf/cache.c' l='250' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='729' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/readlib.c' l='182' u='c' c='process_file'/>
+<use f='codebrowser/nptl/sem_close.c' l='63' u='c' c='sem_close'/>
+<use f='codebrowser/nptl/sem_open.c' l='131' u='c' c='check_add_mapping'/>
+<use f='codebrowser/nptl/sem_open.c' l='280' u='c' c='sem_open'/>

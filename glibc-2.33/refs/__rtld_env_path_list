@@ -1,0 +1,16 @@
+<dec f='codebrowser/include/link.h' l='84' type='struct r_search_path_struct'/>
+<def f='codebrowser/elf/dl-load.c' l='101' type='struct r_search_path_struct'/>
+<use f='codebrowser/elf/dl-load.c' l='817' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='819' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='825' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='828' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='830' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='831' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='834' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='837' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='2002' u='a' c='open_path'/>
+<use f='codebrowser/elf/dl-load.c' l='2150' u='m' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2151' u='a' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2409' u='a' c='_dl_rtld_di_serinfo'/>
+<doc f='codebrowser/elf/dl-load.c' l='100'>/* This is the decomposed LD_LIBRARY_PATH search path.  */</doc>
+<use f='codebrowser/elf/dl-usage.c' l='97' u='m' c='print_search_path_for_help'/>

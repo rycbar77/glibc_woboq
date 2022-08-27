@@ -1,0 +1,9 @@
+<dec f='codebrowser/libio/libioP.h' l='383' type='void _IO_switch_to_main_wget_area(FILE * )'/>
+<dec f='codebrowser/libio/libioP.h' l='384' type='void _IO_switch_to_main_wget_area(FILE * )'/>
+<use f='codebrowser/libio/libioP.h' l='384' c='_IO_switch_to_main_wget_area'/>
+<def f='codebrowser/libio/wgenops.c' l='54' ll='69' type='void _IO_switch_to_main_wget_area(FILE * fp)'/>
+<use f='codebrowser/libio/wgenops.c' l='237' u='c' c='__wuflow'/>
+<use f='codebrowser/libio/wgenops.c' l='267' u='c' c='__wunderflow'/>
+<use f='codebrowser/libio/wgenops.c' l='420' u='c' c='_IO_free_wbackup_area'/>
+<use f='codebrowser/libio/wgenops.c' l='587' u='c' c='_IO_seekwmark'/>
+<doc f='codebrowser/libio/wgenops.c' l='53'>/* Switch current get area from backup buffer to (start of) main get area. */</doc>

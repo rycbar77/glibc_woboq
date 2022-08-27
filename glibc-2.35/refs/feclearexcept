@@ -1,0 +1,34 @@
+<dec f='codebrowser/math/fenv.h' l='71' type='int feclearexcept(int __excepts)'/>
+<doc f='codebrowser/math/fenv.h' l='70'>/* Clear the supported exceptions represented by EXCEPTS.  */</doc>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_fadd.c' l='32' macro='1' u='c' c='__fadd'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_fdiv.c' l='32' macro='1' u='c' c='__fdiv'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_fmul.c' l='32' macro='1' u='c' c='__fmul'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_fsqrt.c' l='32' macro='1' u='c' c='__fsqrt'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_fsub.c' l='32' macro='1' u='c' c='__fsub'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_faddl.c' l='30' macro='1' u='c' c='__f32addf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fdivl.c' l='30' macro='1' u='c' c='__f32divf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmull.c' l='30' macro='1' u='c' c='__f32mulf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fsqrtl.c' l='30' macro='1' u='c' c='__f32sqrtf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fsubl.c' l='30' macro='1' u='c' c='__f32subf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_daddl.c' l='34' macro='1' u='c' c='__f64addf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_ddivl.c' l='34' macro='1' u='c' c='__f64divf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_dmull.c' l='34' macro='1' u='c' c='__f64mulf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_dsqrtl.c' l='34' macro='1' u='c' c='__f64sqrtf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_dsubl.c' l='34' macro='1' u='c' c='__f64subf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_fmal.c' l='221' u='c' c='__fmaf128'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_daddl.c' l='30' macro='1' u='c' c='__daddl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_ddivl.c' l='30' macro='1' u='c' c='__ddivl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_dfmal.c' l='31' macro='1' u='c' c='__dfmal'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_dmull.c' l='30' macro='1' u='c' c='__dmull'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_dsqrtl.c' l='30' macro='1' u='c' c='__dsqrtl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_dsubl.c' l='30' macro='1' u='c' c='__dsubl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_faddl.c' l='28' macro='1' u='c' c='__faddl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_fdivl.c' l='28' macro='1' u='c' c='__fdivl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_ffmal.c' l='29' macro='1' u='c' c='__ffmal'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_fmal.c' l='211' u='c' c='__fmal'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_fmull.c' l='28' macro='1' u='c' c='__fmull'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_fsqrtl.c' l='28' macro='1' u='c' c='__fsqrtl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_fsubl.c' l='28' macro='1' u='c' c='__fsubl'/>
+<use f='codebrowser/sysdeps/x86/fpu/s_ffma.c' l='47' macro='1' u='c' c='__ffma'/>
+<def f='codebrowser/sysdeps/x86_64/fpu/fclrexcpt.c' l='21' ll='51' type='int feclearexcept(int excepts)'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_fma.c' l='219' u='c' c='__fma_sse2'/>

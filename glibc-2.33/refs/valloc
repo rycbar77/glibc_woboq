@@ -1,0 +1,5 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='574' type='void * valloc(size_t __size)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='573'>/* Allocate SIZE bytes on a page boundary.  The storage cannot be freed.  */</doc>
+<dec f='codebrowser/malloc/malloc.h' l='69' type='void * valloc(size_t __size)'/>
+<def f='codebrowser/malloc/malloc.c' l='5868' macro='1' type='void * valloc(size_t )'/>
+<doc f='codebrowser/malloc/malloc.h' l='68'>/* Allocate SIZE bytes on a page boundary.  */</doc>

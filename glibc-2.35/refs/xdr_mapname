@@ -1,0 +1,9 @@
+<dec f='codebrowser/nis/rpcsvc/yp.h' l='314' type='bool_t xdr_mapname(XDR * , mapname * )'/>
+<dec f='codebrowser/include/rpcsvc/yp.h' l='12' type='bool_t xdr_mapname(XDR * , mapname * )'/>
+<use f='codebrowser/include/rpcsvc/yp.h' l='12' c='xdr_mapname'/>
+<def f='codebrowser/nis/yp_xdr.c' l='65' ll='69' type='bool_t xdr_mapname(XDR * xdrs, mapname * objp)'/>
+<use f='codebrowser/nis/yp_xdr.c' l='70' c='__EI_xdr_mapname'/>
+<use f='codebrowser/nis/yp_xdr.c' l='100' u='c' c='xdr_ypmap_parms'/>
+<use f='codebrowser/nis/yp_xdr.c' l='113' u='c' c='xdr_ypreq_key'/>
+<use f='codebrowser/nis/yp_xdr.c' l='124' u='c' c='xdr_ypreq_nokey'/>
+<use f='codebrowser/nis/yp_xdr.c' l='209' u='c' c='xdr_ypmaplist'/>

@@ -1,0 +1,24 @@
+<dec f='codebrowser/nscd/nscd.h' l='146' type='unsigned long'/>
+<use f='codebrowser/nscd/aicache.c' l='467' u='r' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='479' u='r' c='addhstaiX'/>
+<offset>2048</offset>
+<doc f='codebrowser/nscd/nscd.h' l='146'>/* In seconds.  */</doc>
+<use f='codebrowser/nscd/connections.c' l='128' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='147' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='166' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='185' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='204' u='w'/>
+<use f='codebrowser/nscd/grpcache.c' l='119' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='130' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/hstcache.c' l='143' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='156' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/initgrcache.c' l='202' u='r' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='214' u='r' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='84' u='r' c='do_notfound'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='95' u='r' c='do_notfound'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='133' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='132' u='r' c='send_stats'/>
+<use f='codebrowser/nscd/pwdcache.c' l='125' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='137' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/servicescache.c' l='113' u='r' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='125' u='r' c='cache_addserv'/>

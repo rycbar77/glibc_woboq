@@ -1,0 +1,10 @@
+<dec f='codebrowser/nss/nss_action.h' l='40' type='unsigned int'/>
+<use f='codebrowser/nss/nss_action.h' l='63' u='r' c='nss_action_get'/>
+<use f='codebrowser/nss/nss_action.h' l='74' u='w' c='nss_action_set'/>
+<use f='codebrowser/nss/nss_action.h' l='74' u='r' c='nss_action_set'/>
+<use f='codebrowser/nss/nss_action.h' l='82' u='w' c='nss_action_set_all'/>
+<offset>64</offset>
+<doc f='codebrowser/nss/nss_action.h' l='38'>/* Action according to result.  Two bits for each lookup_actions
+     value (from nsswitch.h), indexed by enum nss_status (from nss.h).  */</doc>
+<use f='codebrowser/nss/nss_action.c' l='52' u='r' c='actions_equal'/>
+<use f='codebrowser/nss/nss_action.c' l='52' u='r' c='actions_equal'/>

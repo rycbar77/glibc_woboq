@@ -1,0 +1,63 @@
+<dec f='codebrowser/malloc/malloc.h' l='133'/>
+<dec f='codebrowser/malloc/malloc.c' l='922'/>
+<use f='codebrowser/malloc/malloc.c' l='5356' u='c'/>
+<doc f='codebrowser/malloc/malloc.h' l='132'>/* mallopt options that actually do something */</doc>
+<doc f='codebrowser/malloc/malloc.c' l='862'>/*
+  M_TRIM_THRESHOLD is the maximum amount of unused top-most memory
+  to keep before releasing via malloc_trim in free().
+
+  Automatic trimming is mainly useful in long-lived programs.
+  Because trimming via sbrk can be slow on some systems, and can
+  sometimes be wasteful (in cases where programs immediately
+  afterward allocate more large chunks) the value should be high
+  enough so that your overall system performance would improve by
+  releasing this much memory.
+
+  The trim threshold and the mmap control parameters (see below)
+  can be traded off with one another. Trimming and mmapping are
+  two different ways of releasing unused memory back to the
+  system. Between these two, it is often possible to keep
+  system-level demands of a long-lived program down to a bare
+  minimum. For example, in one test suite of sessions measuring
+  the XF86 X server on Linux, using a trim threshold of 128K and a
+  mmap threshold of 192K led to near-minimal long term resource
+  consumption.
+
+  If you are using this malloc in a long-lived program, it should
+  pay to experiment with these values.  As a rough guide, you
+  might set to a value close to the average size of a process
+  (program) running on your system.  Releasing this much memory
+  would allow such a process to run in memory.  Generally, it&apos;s
+  worth it to tune for trimming rather tham memory mapping when a
+  program undergoes phases where several large chunks are
+  allocated and released in ways that can reuse each other&apos;s
+  storage, perhaps mixed with phases where there are no such
+  chunks at all.  And in well-behaved long-lived programs,
+  controlling release of large blocks via trimming versus mapping
+  is usually faster.
+
+  However, in most programs, these parameters serve mainly as
+  protection against the system-level effects of carrying around
+  massive amounts of unneeded memory. Since frequent calls to
+  sbrk, mmap, and munmap otherwise degrade performance, the default
+  parameters are set to relatively high values that serve only as
+  safeguards.
+
+  The trim value It must be greater than page size to have any useful
+  effect.  To disable trimming completely, you can set to
+  (unsigned long)(-1)
+
+  Trim settings interact with fastbin (MXFAST) settings: Unless
+  TRIM_FASTBINS is defined, automatic trimming never takes place upon
+  freeing a chunk with size less than or equal to MXFAST. Trimming is
+  instead delayed until subsequent freeing of larger chunks. However,
+  you can still force an attempted trim by calling malloc_trim.
+
+  Also, trimming is not generally possible in cases where
+  the main arena is obtained via mmap.
+
+  Note that the trick some people use of mallocing a huge space and
+  then freeing it at program startup, in an attempt to reserve system
+  memory, doesn&apos;t have the intended effect under automatic trimming,
+  since that memory will immediately be returned to the system.
+*/</doc>

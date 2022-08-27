@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/unistd.h' l='72' type='int __pipe(int * __pipedes)'/>
+<dec f='codebrowser/include/unistd.h' l='73' type='int __pipe(int * )'/>
+<use f='codebrowser/include/unistd.h' l='73' c='__pipe'/>
+<use f='codebrowser/sunrpc/openchild.c' l='59' u='c' c='_openchild'/>
+<use f='codebrowser/sunrpc/openchild.c' l='61' u='c' c='_openchild'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/pipe.c' l='26' ll='30' type='int __pipe(int * __pipedes)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pipe.c' l='32' c='pipe'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/pipe.c' l='22'>/* Create a one-way communication channel (__pipe).
+   If successful, two file descriptors are stored in PIPEDES;
+   bytes written on PIPEDES[1] can be read from PIPEDES[0].
+   Returns 0 if successful, -1 if not.  */</doc>

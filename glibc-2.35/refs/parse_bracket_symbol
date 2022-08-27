@@ -1,0 +1,6 @@
+<dec f='codebrowser/posix/regcomp.c' l='89' type='reg_errcode_t parse_bracket_symbol(bracket_elem_t * elem, re_string_t * regexp, re_token_t * token)'/>
+<use f='codebrowser/posix/regcomp.c' l='3427' u='c' c='parse_bracket_element'/>
+<def f='codebrowser/posix/regcomp.c' l='3448' ll='3487' type='reg_errcode_t parse_bracket_symbol(bracket_elem_t * elem, re_string_t * regexp, re_token_t * token)'/>
+<doc f='codebrowser/posix/regcomp.c' l='3444'>/* Parse a bracket symbol in the bracket expression.  Bracket symbols are
+   such as [:&lt;character_class&gt;:], [.&lt;collating_element&gt;.], and
+   [=&lt;equivalent_class&gt;=].  */</doc>

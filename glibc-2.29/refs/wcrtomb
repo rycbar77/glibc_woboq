@@ -1,0 +1,7 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='301' type='size_t wcrtomb(char *restrict __s, wchar_t __wc, mbstate_t *restrict __ps)'/>
+<dec f='codebrowser/include/wchar.h' l='120' type='size_t wcrtomb(char *restrict , wchar_t , mbstate_t *restrict )'/>
+<use f='codebrowser/include/wchar.h' l='120' c='wcrtomb'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='300'>/* Write multibyte representation of wide character WC to S.  */</doc>
+<use f='codebrowser/wcsmbs/c16rtomb.c' l='66' u='c' c='c16rtomb'/>
+<use f='codebrowser/wcsmbs/c32rtomb.c' l='31' u='c' c='c32rtomb'/>
+<def f='codebrowser/wcsmbs/wcrtomb.c' l='114' macro='1' type='size_t wcrtomb(char *restrict , wchar_t , __mbstate_t *restrict )'/>

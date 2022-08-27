@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/pthread/bits/sigthread.h' l='36' type='int pthread_kill(pthread_t __threadid, int __signo)'/>
+<doc f='codebrowser/sysdeps/pthread/bits/sigthread.h' l='35'>/* Send signal SIGNO to the given thread. */</doc>
+<def f='codebrowser/nptl/pthread_kill.c' l='96' macro='1' type='int pthread_kill(pthread_t , int )'/>
+<use f='codebrowser/support/xpthread_kill.c' l='25' u='c' c='xpthread_kill'/>

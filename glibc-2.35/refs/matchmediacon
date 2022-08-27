@@ -1,0 +1,4 @@
+<dec f='include/selinux/selinux.h' l='535' type='int matchmediacon(const char * media, char ** con)'/>
+<doc f='include/selinux/selinux.h' l='532'>/* Match the specified media and against the media contexts 
+   configuration and set *con to refer to the resulting context.
+   Caller must free con via freecon. */</doc>

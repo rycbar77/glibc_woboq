@@ -1,0 +1,85 @@
+<dec f='codebrowser/libio/stdio.h' l='879' type='int __uflow(FILE * )'/>
+<use f='codebrowser/libio/bits/stdio.h' l='58' macro='1' u='c' c='fgetc_unlocked'/>
+<use f='codebrowser/libio/bits/stdio.h' l='68' macro='1' u='c' c='getc_unlocked'/>
+<use f='codebrowser/libio/bits/stdio.h' l='75' macro='1' u='c' c='getchar_unlocked'/>
+<dec f='codebrowser/libio/libio.h' l='266' type='int __uflow(FILE * )'/>
+<use f='codebrowser/libio/libio.h' l='266' c='__uflow'/>
+<use f='codebrowser/include/stdio.h' l='284' macro='1' u='c' c='__getc_unlocked'/>
+<doc f='codebrowser/libio/stdio.h' l='877'>/* Slow-path routines used by the optimized inline functions in
+   bits/stdio.h.  */</doc>
+<use f='codebrowser/debug/gets_chk.c' l='41' macro='1' u='c' c='__gets_chk'/>
+<def f='codebrowser/libio/genops.c' l='297' ll='324' type='int __uflow(FILE * fp)'/>
+<use f='codebrowser/libio/getc.c' l='38' macro='1' u='c' c='_IO_getc'/>
+<use f='codebrowser/libio/getc.c' l='40' macro='1' u='c' c='_IO_getc'/>
+<use f='codebrowser/libio/getc_u.c' l='36' macro='1' u='c' c='__getc_unlocked'/>
+<use f='codebrowser/libio/getchar.c' l='37' macro='1' u='c' c='getchar'/>
+<use f='codebrowser/libio/getchar.c' l='39' macro='1' u='c' c='getchar'/>
+<use f='codebrowser/libio/getchar_u.c' l='35' macro='1' u='c' c='getchar_unlocked'/>
+<use f='codebrowser/libio/iogetline.c' l='60' u='c' c='_IO_getline_info'/>
+<use f='codebrowser/libio/iogets.c' l='38' macro='1' u='c' c='_IO_gets'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='427' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='453' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='464' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='628' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='640' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='740' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='839' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='842' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='866' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='977' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='994' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1021' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1144' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1211' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1293' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1353' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1398' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1408' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1418' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1428' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1577' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1630' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1686' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1728' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1759' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1801' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1822' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1822' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1822' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1822' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1822' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1823' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1823' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1823' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1823' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1823' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1824' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1824' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1824' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1824' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1824' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1825' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1912' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1925' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1938' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1945' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1959' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1966' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1973' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1982' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1989' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1996' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2003' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2021' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2034' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2097' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2133' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2159' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2183' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2330' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2388' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2652' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2733' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2767' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2936' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='3018' macro='1' u='c' c='__vfscanf_internal'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/stdio.h' l='228' type='int __fseeko64(FILE * , __off64_t , int )'/>
+<dec f='codebrowser/include/stdio.h' l='229' type='int __fseeko64(FILE * , __off64_t , int )'/>
+<use f='codebrowser/include/stdio.h' l='229' c='__fseeko64'/>
+<def f='codebrowser/libio/fseeko.c' l='49' macro='1' type='int __fseeko64(FILE * , off_t , int )'/>
+<use f='codebrowser/nss/nss_files_fopen.c' l='36' u='c' c='__nss_files_fopen'/>
+<use f='codebrowser/nss/nss_readline.c' l='86' u='c' c='__nss_readline_seek'/>

@@ -1,0 +1,17 @@
+<dec f='codebrowser/libio/stdio.h' l='645' type='__ssize_t getline(char **restrict __lineptr, size_t *restrict __n, FILE *restrict __stream)'/>
+<def f='codebrowser/libio/bits/stdio.h' l='117' ll='121' macro='1' type='__ssize_t getline(char ** __lineptr, size_t * __n, FILE * __stream)'/>
+<doc f='codebrowser/libio/stdio.h' l='639'>/* Like `getdelim&apos;, but reads up to a newline.
+
+   This function is not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation it is a cancellation point and
+   therefore not marked with __THROW.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='320' u='c' c='read_input_file'/>
+<use f='codebrowser/elf/ldconfig.c' l='1254' u='c' c='parse_conf'/>
+<use f='codebrowser/elf/sln.c' l='106' u='c' c='makesymlinks'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1795' macro='1' u='c' c='gaiconf_init'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='79' u='c' c='nscd_parse_file'/>
+<use f='codebrowser/nss/makedb.c' l='434' u='c' c='process_input'/>
+<def f='codebrowser/stdio-common/getline.c' l='31' macro='1' type='__ssize_t getline(char ** , size_t * , FILE * )'/>
+<use f='codebrowser/support/test-container.c' l='897' u='c' c='main'/>
+<use f='codebrowser/support/xgetline.c' l='26' u='c' c='xgetline'/>

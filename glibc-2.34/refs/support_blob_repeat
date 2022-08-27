@@ -1,0 +1,23 @@
+<def f='codebrowser/support/blob_repeat.h' l='25' ll='30'/>
+<use f='codebrowser/support/blob_repeat.h' l='37' c='support_blob_repeat_allocate'/>
+<use f='codebrowser/support/blob_repeat.h' l='47' c='support_blob_repeat_allocate_shared'/>
+<use f='codebrowser/support/blob_repeat.h' l='52' c='support_blob_repeat_free'/>
+<use f='codebrowser/support/blob_repeat.c' l='89' c='allocate_malloc'/>
+<use f='codebrowser/support/blob_repeat.c' l='95' c='allocate_malloc'/>
+<use f='codebrowser/support/blob_repeat.c' l='97' c='allocate_malloc'/>
+<use f='codebrowser/support/blob_repeat.c' l='130' c='allocate_big'/>
+<use f='codebrowser/support/blob_repeat.c' l='139' c='allocate_big'/>
+<use f='codebrowser/support/blob_repeat.c' l='157' c='allocate_big'/>
+<use f='codebrowser/support/blob_repeat.c' l='194' c='allocate_big'/>
+<use f='codebrowser/support/blob_repeat.c' l='238' c='allocate_big'/>
+<use f='codebrowser/support/blob_repeat.c' l='250' c='allocate_big'/>
+<use f='codebrowser/support/blob_repeat.c' l='258' c='repeat_allocate'/>
+<use f='codebrowser/support/blob_repeat.c' l='266' c='repeat_allocate'/>
+<use f='codebrowser/support/blob_repeat.c' l='274' c='support_blob_repeat_allocate'/>
+<use f='codebrowser/support/blob_repeat.c' l='281' c='support_blob_repeat_allocate_shared'/>
+<use f='codebrowser/support/blob_repeat.c' l='289' c='support_blob_repeat_free'/>
+<use f='codebrowser/support/blob_repeat.c' l='300' c='support_blob_repeat_free'/>
+<size>24</size>
+<mbr r='support_blob_repeat::start' o='0' t='void *'/>
+<mbr r='support_blob_repeat::size' o='64' t='size_t'/>
+<mbr r='support_blob_repeat::use_malloc' o='128' t='_Bool'/>

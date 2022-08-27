@@ -1,0 +1,4 @@
+<dec f='include/selinux/selinux.h' l='494' type='int realpath_not_final(const char * name, char * resolved_path)'/>
+<doc f='include/selinux/selinux.h' l='491'>/* Resolve all of the symlinks and relative portions of a pathname, but NOT
+ * the final component (same a realpath() unless the final component is a
+ * symlink.  Resolved path must be a path of size PATH_MAX + 1 */</doc>

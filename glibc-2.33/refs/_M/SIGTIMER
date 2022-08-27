@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='36'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='63' u='c'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='33'>/* Signal needed for the kernel-supported POSIX timer implementation.
+   We can reuse the cancellation signal since we can distinguish
+   cancellation from timer expirations.  */</doc>
+<use f='codebrowser/sysdeps/nptl/allocrtsig.c' l='22' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pthread_kill.c' l='47' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pthread_sigqueue.c' l='49' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='119' u='c'/>

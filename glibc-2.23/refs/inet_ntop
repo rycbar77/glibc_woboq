@@ -1,0 +1,21 @@
+<dec f='codebrowser/inet/arpa/inet.h' l='64' type='const char * inet_ntop(int __af, const void *restrict __cp, char *restrict __buf, socklen_t __len)'/>
+<doc f='codebrowser/inet/arpa/inet.h' l='61'>/* Convert a Internet address in binary network format for interface
+   type AF in buffer starting at CP to presentation form and place
+   result in buffer of length LEN astarting at BUF.  */</doc>
+<use f='codebrowser/inet/getnameinfo.c' l='343' u='c' c='getnameinfo'/>
+<use f='codebrowser/inet/getnameinfo.c' l='386' u='c' c='getnameinfo'/>
+<use f='codebrowser/nss/getent.c' l='277' u='c' c='print_hosts'/>
+<use f='codebrowser/nss/getent.c' l='397' u='c' c='ahosts_keys_int'/>
+<def f='codebrowser/resolv/inet_ntop.c' l='58' ll='71' type='const char * inet_ntop(int af, const void * src, char * dst, socklen_t size)'/>
+<doc f='codebrowser/resolv/inet_ntop.c' l='50'>/* char *
+ * inet_ntop(af, src, dst, size)
+ *	convert a network format address to presentation format.
+ * return:
+ *	pointer to presentation format address (`dst&apos;), or NULL (see errno).
+ * author:
+ *	Paul Vixie, 1996.
+ */</doc>
+<use f='codebrowser/resolv/ns_print.c' l='150' u='c' c='ns_sprintrrf'/>
+<use f='codebrowser/resolv/ns_print.c' l='318' u='c' c='ns_sprintrrf'/>
+<use f='codebrowser/resolv/ns_print.c' l='409' u='c' c='ns_sprintrrf'/>
+<use f='codebrowser/resolv/ns_print.c' l='669' u='c' c='ns_sprintrrf'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/stdlib/exit.h' l='44' type='void (*)(int, void *)'/>
+<dec f='codebrowser/stdlib/exit.h' l='49' type='void (*)(void *, int)'/>
+<offset>0</offset>
+<use f='codebrowser/stdlib/cxa_atexit.c' l='51' u='w' c='__internal_atexit'/>
+<use f='codebrowser/stdlib/cxa_finalize.c' l='44' u='r' c='__cxa_finalize'/>
+<use f='codebrowser/stdlib/exit.c' l='87' u='r' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/exit.c' l='104' u='r' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/on_exit.c' l='40' u='w' c='__on_exit'/>

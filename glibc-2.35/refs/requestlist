@@ -1,0 +1,103 @@
+<def f='codebrowser/resolv/gai_misc.h' l='43' ll='54'/>
+<use f='codebrowser/resolv/gai_misc.h' l='47'/>
+<use f='codebrowser/resolv/gai_misc.h' l='77' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.h' l='81' c='__gai_find_request'/>
+<use f='codebrowser/resolv/gai_misc.h' l='89' c='__gai_notify'/>
+<size>32</size>
+<doc f='codebrowser/resolv/gai_misc.h' l='42'>/* Used to queue requests..  */</doc>
+<mbr r='requestlist::running' o='0' t='int'/>
+<mbr r='requestlist::next' o='64' t='struct requestlist *'/>
+<mbr r='requestlist::gaicbp' o='128' t='struct gaicb *'/>
+<mbr r='requestlist::waiting' o='192' t='struct waitlist *'/>
+<use f='codebrowser/resolv/gai_misc.c' l='59'/>
+<use f='codebrowser/resolv/gai_misc.c' l='74'/>
+<use f='codebrowser/resolv/gai_misc.c' l='77'/>
+<use f='codebrowser/resolv/gai_misc.c' l='78'/>
+<use f='codebrowser/resolv/gai_misc.c' l='112' c='get_elem'/>
+<use f='codebrowser/resolv/gai_misc.c' l='115' c='get_elem'/>
+<use f='codebrowser/resolv/gai_misc.c' l='119' c='get_elem'/>
+<use f='codebrowser/resolv/gai_misc.c' l='125' c='get_elem'/>
+<use f='codebrowser/resolv/gai_misc.c' l='127' c='get_elem'/>
+<use f='codebrowser/resolv/gai_misc.c' l='128' c='get_elem'/>
+<use f='codebrowser/resolv/gai_misc.c' l='139' c='get_elem'/>
+<use f='codebrowser/resolv/gai_misc.c' l='140' c='get_elem'/>
+<use f='codebrowser/resolv/gai_misc.c' l='162' c='__gai_find_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='165' c='__gai_find_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='181' c='__gai_remove_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='182' c='__gai_remove_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='220' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='223' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='224' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='310' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='310' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='325' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='326' c='handle_requests'/>
+<size>32</size>
+<use f='codebrowser/resolv/gai_notify.c' l='104' c='__gai_notify'/>
+<size>32</size>
+<use f='codebrowser/resolv/gai_suspend.c' l='31' c='___gai_suspend_time64'/>
+<size>32</size>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='40' c='__getaddrinfo_a'/>
+<size>32</size>
+<def f='codebrowser/sysdeps/generic/aio_misc.h' l='72' ll='86'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='76'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='77'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='78'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='79'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='94' c='__aio_enqueue_request'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='99' c='__aio_find_req'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='102' c='__aio_find_req_fd'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='105' c='__aio_remove_request'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='106' c='__aio_remove_request'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='110' c='__aio_free_request'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='113' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_cancel.c' l='43' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='69' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='118' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='140' c='__aio_cancel'/>
+<size>56</size>
+<doc f='codebrowser/sysdeps/generic/aio_misc.h' l='71'>/* Used to queue requests..  */</doc>
+<mbr r='requestlist::running' o='0' t='int'/>
+<mbr r='requestlist::last_fd' o='64' t='struct requestlist *'/>
+<mbr r='requestlist::next_fd' o='128' t='struct requestlist *'/>
+<mbr r='requestlist::next_prio' o='192' t='struct requestlist *'/>
+<mbr r='requestlist::next_run' o='256' t='struct requestlist *'/>
+<mbr r='requestlist::aiocbp' o='320' t='aiocb_union *'/>
+<mbr r='requestlist::waiting' o='384' t='struct waitlist *'/>
+<use f='codebrowser/rt/aio_misc.c' l='64' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='67'/>
+<use f='codebrowser/rt/aio_misc.c' l='82'/>
+<use f='codebrowser/rt/aio_misc.c' l='85'/>
+<use f='codebrowser/rt/aio_misc.c' l='88'/>
+<use f='codebrowser/rt/aio_misc.c' l='122' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='125' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='129' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='137' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='139' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='140' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='151' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='152' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='175' c='__aio_free_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='183' c='__aio_find_req'/>
+<use f='codebrowser/rt/aio_misc.c' l='186' c='__aio_find_req'/>
+<use f='codebrowser/rt/aio_misc.c' l='205' c='__aio_find_req_fd'/>
+<use f='codebrowser/rt/aio_misc.c' l='208' c='__aio_find_req_fd'/>
+<use f='codebrowser/rt/aio_misc.c' l='219' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='219' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='257' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='309' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='315' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='315' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='315' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='495' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='495' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='713' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='716' c='add_request_to_runlist'/>
+<size>56</size>
+<use f='codebrowser/rt/aio_notify.c' l='115' c='__aio_notify'/>
+<size>56</size>
+<use f='codebrowser/rt/aio_suspend.c' l='46'/>
+<use f='codebrowser/rt/aio_suspend.c' l='119' c='___aio_suspend_time64'/>
+<size>56</size>
+<use f='codebrowser/rt/lio_listio-common.c' l='78' c='lio_listio_internal'/>
+<size>56</size>

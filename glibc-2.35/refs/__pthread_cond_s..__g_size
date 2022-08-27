@@ -1,0 +1,16 @@
+<dec f='codebrowser/sysdeps/nptl/bits/thread-shared-types.h' l='99' type='unsigned int[2]'/>
+<offset>192</offset>
+<use f='codebrowser/nptl/pthread_cond_common.c' l='215' u='r' c='__condvar_quiesce_and_switch_g1'/>
+<use f='codebrowser/nptl/pthread_cond_common.c' l='320' u='w' c='__condvar_quiesce_and_switch_g1'/>
+<use f='codebrowser/nptl/pthread_cond_common.c' l='325' u='r' c='__condvar_quiesce_and_switch_g1'/>
+<use f='codebrowser/nptl/pthread_cond_broadcast.c' l='56' u='r' c='___pthread_cond_broadcast'/>
+<use f='codebrowser/nptl/pthread_cond_broadcast.c' l='60' u='r' c='___pthread_cond_broadcast'/>
+<use f='codebrowser/nptl/pthread_cond_broadcast.c' l='61' u='w' c='___pthread_cond_broadcast'/>
+<use f='codebrowser/nptl/pthread_cond_broadcast.c' l='76' u='r' c='___pthread_cond_broadcast'/>
+<use f='codebrowser/nptl/pthread_cond_broadcast.c' l='77' u='w' c='___pthread_cond_broadcast'/>
+<use f='codebrowser/nptl/pthread_cond_signal.c' l='76' u='r' c='___pthread_cond_signal'/>
+<use f='codebrowser/nptl/pthread_cond_signal.c' l='85' u='w' c='___pthread_cond_signal'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='101' u='r' c='__condvar_cancel_waiting'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='103' u='w' c='__condvar_cancel_waiting'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='119' u='r' c='__condvar_cancel_waiting'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='129' u='w' c='__condvar_cancel_waiting'/>

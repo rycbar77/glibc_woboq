@@ -1,0 +1,15 @@
+<dec f='codebrowser/inet/netinet/in.h' l='266' type='uint32_t'/>
+<offset>192</offset>
+<doc f='codebrowser/inet/netinet/in.h' l='266'>/* IPv6 scope-id */</doc>
+<use f='codebrowser/inet/getnameinfo.c' l='329' u='r' c='gni_host_inet_numeric'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1076' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1309' u='w' c='match_prefix'/>
+<use f='codebrowser/nss/getent.c' l='400' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='405' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/resolv/res_init.c' l='437' u='w' c='res_vinit_1'/>
+<use f='codebrowser/resolv/res_init.c' l='442' u='a' c='res_vinit_1'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='220' u='r' c='same_address_v6'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='220' u='r' c='same_address_v6'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='620' u='w' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='667' u='w' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='708' u='w' c='getifaddrs_internal'/>

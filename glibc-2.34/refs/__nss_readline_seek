@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/nss_files.h' l='45' type='int __nss_readline_seek(FILE * fp, off64_t offset)'/>
+<doc f='codebrowser/include/nss_files.h' l='40'>/* Seek FP to OFFSET.  Sets errno and returns error code on failure.
+   On success, sets errno to ERANGE and returns ERANGE (to indicate
+   re-reading of the same input line to the caller).  If OFFSET is
+   negative, fail with ESPIPE without seeking.  Intended to be used
+   after parsing data read by __nss_readline failed with ERANGE.  */</doc>
+<use f='codebrowser/nss/nss_parse_line_result.c' l='40' u='c' c='__nss_parse_line_result'/>
+<use f='codebrowser/nss/nss_readline.c' l='62' u='c' c='__nss_readline'/>
+<def f='codebrowser/nss/nss_readline.c' l='82' ll='99' type='int __nss_readline_seek(FILE * fp, off64_t offset)'/>

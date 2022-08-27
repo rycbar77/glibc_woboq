@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/generic/dl-dtv.h' l='31' type='size_t'/>
+<offset>0</offset>
+<use f='codebrowser/csu/libc-tls.c' l='163' u='w' c='__libc_setup_tls'/>
+<use f='codebrowser/nptl/allocatestack.c' l='232' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='234' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl_db/structs.def' l='97' u='r'/>
+<use f='codebrowser/elf/dl-tls.c' l='370' u='w' c='allocate_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='482' u='r' c='_dl_resize_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='504' u='w' c='_dl_resize_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='528' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='601' u='w' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='623' u='r' c='_dl_deallocate_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='931' u='r' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='936' u='r' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='951' u='r' c='_dl_tls_get_addr_soft'/>

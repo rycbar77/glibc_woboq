@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/netdb.h' l='216' type='enum nss_status _nss_netgroup_parseline(char ** cursor, struct __netgrent * result, char * buffer, size_t buflen, int * errnop)'/>
+<dec f='codebrowser/include/netdb.h' l='220' type='enum nss_status _nss_netgroup_parseline(char ** , struct __netgrent * , char * , size_t , int * )'/>
+<use f='codebrowser/include/netdb.h' l='220' c='_nss_netgroup_parseline'/>
+<def f='codebrowser/nss/nss_files/files-netgrp.c' l='186' ll='279' type='enum nss_status _nss_netgroup_parseline(char ** cursor, struct __netgrent * result, char * buffer, size_t buflen, int * errnop)'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='289' u='c' c='_nss_files_getnetgrent_r'/>

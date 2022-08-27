@@ -1,0 +1,6 @@
+<dec f='codebrowser/support/xstdio.h' l='33' type='size_t xgetline(char ** lineptr, size_t * n, FILE * stream)'/>
+<use f='codebrowser/support/support_process_state.c' l='62' u='c' c='support_process_state_wait'/>
+<doc f='codebrowser/support/xstdio.h' l='30'>/* Read a line from FP, using getline.  *BUFFER must be NULL, or a
+   heap-allocated pointer of *LENGTH bytes.  Return the number of
+   bytes in the line if a line was read, or 0 on EOF.  */</doc>
+<def f='codebrowser/support/xgetline.c' l='22' ll='39' type='size_t xgetline(char ** lineptr, size_t * n, FILE * stream)'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1130' type='char * _dl_next_ld_env_entry(char *** position)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1128'>/* Return all environment variables starting with `LD_&apos;, one after the
+   other.  */</doc>
+<def f='codebrowser/elf/dl-environ.c' l='26' ll='49' type='char * _dl_next_ld_env_entry(char *** position)'/>
+<doc f='codebrowser/elf/dl-environ.c' l='24'>/* Walk through the environment of the process and return all entries
+   starting with `LD_&apos;.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='2652' u='c' c='process_envvars'/>

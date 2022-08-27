@@ -1,0 +1,16 @@
+<dec f='codebrowser/sysdeps/x86/include/cpu-features-preferred_feature_index_1.def' l='30' macro='1' type='2048'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='258' macro='1' u='r' c='_dl_tunable_set_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='258' macro='1' u='r' c='_dl_tunable_set_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='538' u='r' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='548' u='r' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-evex.h' l='50' macro='1' u='r' c='memchr_ifunc_selector'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memcmp.h' l='46' macro='1' u='r' c='memcmp_ifunc_selector'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memmove.h' l='88' macro='1' u='r' c='memcpy_ifunc_selector'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-avx2.h' l='43' macro='1' u='r' c='memrchr_ifunc_selector'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memset.h' l='89' macro='1' u='r' c='memset_ifunc_selector'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-strcpy.h' l='46' macro='1' u='r' c='stpcpy_ifunc_selector'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strchr.c' l='51' macro='1' u='r' c='strchr_ifunc_selector'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strcmp.c' l='53' macro='1' u='r' c='strcmp_ifunc_selector'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strncmp.c' l='53' macro='1' u='r' c='strncmp_ifunc_selector'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-wcslen.h' l='44' macro='1' u='r' c='wcslen_ifunc_selector'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-wmemset.h' l='47' macro='1' u='r' c='wmemset_ifunc_selector'/>

@@ -1,0 +1,17 @@
+<dec f='codebrowser/elf/elf.h' l='634' type='Elf32_Addr'/>
+<dec f='codebrowser/elf/elf.h' l='645' type='Elf64_Addr'/>
+<dec f='codebrowser/elf/elf.h' l='653' type='Elf32_Addr'/>
+<dec f='codebrowser/elf/elf.h' l='660' type='Elf64_Addr'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/elf.h' l='634'>/* Address */</doc>
+<doc f='codebrowser/elf/elf.h' l='645'>/* Address */</doc>
+<doc f='codebrowser/elf/elf.h' l='653'>/* Address */</doc>
+<doc f='codebrowser/elf/elf.h' l='660'>/* Address */</doc>
+<use f='codebrowser/elf/do-rel.h' l='34' u='r' c='elf_dynamic_do_Rela'/>
+<use f='codebrowser/elf/do-rel.h' l='130' u='r' c='elf_dynamic_do_Rela'/>
+<use f='codebrowser/elf/do-rel.h' l='167' u='r' c='elf_dynamic_do_Rela'/>
+<use f='codebrowser/elf/do-rel.h' l='178' u='r' c='elf_dynamic_do_Rela'/>
+<use f='codebrowser/elf/do-rel.h' l='209' u='r' c='elf_dynamic_do_Rela'/>
+<use f='codebrowser/elf/dl-conflict.c' l='74' u='r' c='_dl_resolve_conflicts'/>
+<use f='codebrowser/sysdeps/x86_64/dl-irel.h' l='39' u='r' c='elf_irela'/>
+<use f='codebrowser/elf/dl-runtime.c' l='58' u='r' c='_dl_fixup'/>

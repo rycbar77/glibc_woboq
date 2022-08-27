@@ -1,0 +1,51 @@
+<def f='codebrowser/resolv/netdb.h' l='567' ll='577'/>
+<use f='codebrowser/resolv/netdb.h' l='576'/>
+<use f='codebrowser/resolv/netdb.h' l='585'/>
+<use f='codebrowser/resolv/netdb.h' l='586'/>
+<use f='codebrowser/resolv/netdb.h' l='664' c='getaddrinfo'/>
+<use f='codebrowser/resolv/netdb.h' l='665' c='getaddrinfo'/>
+<use f='codebrowser/resolv/netdb.h' l='668' c='freeaddrinfo'/>
+<size>48</size>
+<doc f='codebrowser/resolv/netdb.h' l='566'>/* Structure to contain information about address of a service provider.  */</doc>
+<mbr r='addrinfo::ai_flags' o='0' t='int'/>
+<mbr r='addrinfo::ai_family' o='32' t='int'/>
+<mbr r='addrinfo::ai_socktype' o='64' t='int'/>
+<mbr r='addrinfo::ai_protocol' o='96' t='int'/>
+<mbr r='addrinfo::ai_addrlen' o='128' t='socklen_t'/>
+<mbr r='addrinfo::ai_addr' o='192' t='struct sockaddr *'/>
+<mbr r='addrinfo::ai_canonname' o='256' t='char *'/>
+<mbr r='addrinfo::ai_next' o='320' t='struct addrinfo *'/>
+<use f='codebrowser/inet/rcmd.c' l='110' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='110' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='110' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='437' c='ruserok_af'/>
+<use f='codebrowser/inet/rcmd.c' l='437' c='ruserok_af'/>
+<use f='codebrowser/inet/rcmd.c' l='437' c='ruserok_af'/>
+<use f='codebrowser/inet/rcmd.c' l='652' c='__checkhost_sa'/>
+<use f='codebrowser/inet/rcmd.c' l='652' c='__checkhost_sa'/>
+<use f='codebrowser/inet/rcmd.c' l='652' c='__checkhost_sa'/>
+<size>48</size>
+<use f='codebrowser/inet/rexec.c' l='56' c='rexec_af'/>
+<use f='codebrowser/inet/rexec.c' l='56' c='rexec_af'/>
+<size>48</size>
+<use f='codebrowser/nss/getent.c' l='346' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='354' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='360' c='ahosts_keys_int'/>
+<size>48</size>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='123'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='138' c='gaih_inet_serv'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='273' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='273' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1214' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1215' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1290'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2322' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2322' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2326' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2328' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2411' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2446' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2447' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2663' c='freeaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2665' c='freeaddrinfo'/>
+<size>48</size>

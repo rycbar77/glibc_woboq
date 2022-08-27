@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/stdio.h' l='222' type='int __fileno(FILE * )'/>
+<dec f='codebrowser/include/stdio.h' l='223' type='int __fileno(FILE * )'/>
+<use f='codebrowser/include/stdio.h' l='223' c='__fileno'/>
+<use f='codebrowser/io/file_change_detection.c' l='110' u='c' c='__file_change_detection_for_fp'/>
+<def f='codebrowser/libio/fileno.c' l='30' ll='42' type='int __fileno(FILE * fp)'/>
+<use f='codebrowser/libio/fileno.c' l='44' c='fileno'/>
+<use f='codebrowser/libio/fileno.c' l='51' c='fileno_unlocked'/>
+<use f='codebrowser/stdio-common/perror.c' l='59' u='c' c='perror'/>
+<use f='codebrowser/time/tzfile.c' l='167' u='c' c='__tzfile_read'/>

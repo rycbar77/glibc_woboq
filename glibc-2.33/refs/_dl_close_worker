@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/dlfcn.h' l='80' type='void _dl_close_worker(struct link_map * map, _Bool force)'/>
+<doc f='codebrowser/include/dlfcn.h' l='78'>/* Same as above, but without locking and safety checks for user
+   provided map arguments.  */</doc>
+<def f='codebrowser/elf/dl-close.c' l='134' ll='825' type='void _dl_close_worker(struct link_map * map, _Bool force)'/>
+<use f='codebrowser/elf/dl-close.c' l='865' u='c' c='_dl_close'/>
+<use f='codebrowser/elf/dl-open.c' l='900' u='c' c='_dl_open'/>

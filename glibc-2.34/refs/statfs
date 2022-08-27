@@ -1,0 +1,34 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/bits/statfs.h' l='24' ll='46'/>
+<dec f='codebrowser/io/sys/statfs.h' l='31' type='int statfs(const char * __file, struct statfs * __buf)'/>
+<use f='codebrowser/io/sys/statfs.h' l='31' c='statfs'/>
+<use f='codebrowser/io/sys/statfs.h' l='50' c='fstatfs'/>
+<use f='codebrowser/include/sys/statfs.h' l='7' c='__statfs'/>
+<use f='codebrowser/include/sys/statfs.h' l='9' c='__fstatfs'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.h' l='26' c='__statfs_link_max'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.h' l='32' c='__statfs_filesize_max'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.h' l='37' c='__statfs_symlinks'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.h' l='43' c='__statfs_chown_restricted'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fpathconf.c' l='33' c='__fpathconf'/>
+<size>120</size>
+<mbr r='statfs::f_type' o='0' t='__fsword_t'/>
+<mbr r='statfs::f_bsize' o='64' t='__fsword_t'/>
+<mbr r='statfs::f_blocks' o='128' t='__fsblkcnt_t'/>
+<mbr r='statfs::f_bfree' o='192' t='__fsblkcnt_t'/>
+<mbr r='statfs::f_bavail' o='256' t='__fsblkcnt_t'/>
+<mbr r='statfs::f_files' o='320' t='__fsfilcnt_t'/>
+<mbr r='statfs::f_ffree' o='384' t='__fsfilcnt_t'/>
+<mbr r='statfs::f_fsid' o='448' t='__fsid_t'/>
+<mbr r='statfs::f_namelen' o='512' t='__fsword_t'/>
+<mbr r='statfs::f_frsize' o='576' t='__fsword_t'/>
+<mbr r='statfs::f_flags' o='640' t='__fsword_t'/>
+<mbr r='statfs::f_spare' o='704' t='__fsword_t[4]'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal_statvfs.h' l='22' c='__internal_statvfs'/>
+<size>120</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='41' c='__pathconf'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='64' c='distinguish_extX'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='133' c='__statfs_link_max'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='197' c='__statfs_filesize_max'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='246' c='__statfs_symlinks'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='281' c='__statfs_chown_restricted'/>
+<size>120</size>
+<def f='codebrowser/sysdeps/unix/sysv/linux/statfs64.c' l='41' macro='1' type='int statfs(const char * , struct statfs64 * )'/>

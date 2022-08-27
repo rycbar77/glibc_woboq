@@ -1,0 +1,5 @@
+<dec f='codebrowser/support/resolv_test.h' l='213' type='void resolv_response_builder_free(struct resolv_response_builder * )'/>
+<doc f='codebrowser/support/resolv_test.h' l='212'>/* Deallocates a response buffer.  */</doc>
+<def f='codebrowser/support/resolv_test.c' l='450' ll='455' type='void resolv_response_builder_free(struct resolv_response_builder * b)'/>
+<use f='codebrowser/support/resolv_test.c' l='705' u='c' c='server_thread_udp_process_one'/>
+<use f='codebrowser/support/resolv_test.c' l='954' u='c' c='server_thread_tcp_client'/>

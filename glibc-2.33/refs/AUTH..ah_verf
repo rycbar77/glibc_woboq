@@ -1,0 +1,11 @@
+<dec f='codebrowser/sunrpc/rpc/auth.h' l='94' type='struct opaque_auth'/>
+<offset>192</offset>
+<use f='codebrowser/sunrpc/auth_des.c' l='191' u='m' c='__GI_authdes_pk_create'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='331' u='m' c='authdes_marshal'/>
+<use f='codebrowser/sunrpc/auth_none.c' l='82' u='w' c='authnone_create_once'/>
+<use f='codebrowser/sunrpc/auth_none.c' l='88' u='a' c='authnone_create_once'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='120' u='w' c='__GI_authunix_create'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='330' u='m' c='authunix_destroy'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='331' u='m' c='authunix_destroy'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='349' u='a' c='marshal_new_auth'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='272' u='r' c='__GI_clnt_broadcast'/>

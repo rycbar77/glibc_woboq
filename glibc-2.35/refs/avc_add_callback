@@ -1,0 +1,16 @@
+<dec f='include/selinux/avc.h' l='388' type='int avc_add_callback(int (*)(uint32_t, security_id_t, security_id_t, security_class_t, access_vector_t, access_vector_t *) callback, uint32_t events, security_id_t ssid, security_id_t tsid, security_class_t tclass, access_vector_t perms)'/>
+<doc f='include/selinux/avc.h' l='373'>/**
+ * avc_add_callback - Register a callback for security events.
+ * @callback: callback function
+ * @events: bitwise OR of desired security events
+ * @ssid: source security identifier or %SECSID_WILD
+ * @tsid: target security identifier or %SECSID_WILD
+ * @tclass: target security class
+ * @perms: permissions
+ *
+ * Register a callback function for events in the set @events
+ * related to the SID pair (@ssid, @tsid) and
+ * and the permissions @perms, interpreting
+ * @perms based on @tclass.  Returns %0 on success or
+ * -%1 if insufficient memory exists to add the callback.
+ */</doc>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/libio/libio.h' l='218' type='size_t _IO_sgetn(FILE * , void * , size_t )'/>
+<dec f='codebrowser/libio/libio.h' l='273' type='size_t _IO_sgetn(FILE * , void * , size_t )'/>
+<use f='codebrowser/libio/libio.h' l='273' c='_IO_sgetn'/>
+<use f='codebrowser/debug/fread_chk.c' l='51' u='c' c='__fread_chk'/>
+<use f='codebrowser/debug/fread_u_chk.c' l='49' u='c' c='__fread_unlocked_chk'/>
+<def f='codebrowser/libio/genops.c' l='407' ll='412' type='size_t _IO_sgetn(FILE * fp, void * data, size_t n)'/>
+<use f='codebrowser/libio/iofread.c' l='38' u='c' c='_IO_fread'/>
+<use f='codebrowser/libio/iofread_u.c' l='40' u='c' c='__fread_unlocked'/>

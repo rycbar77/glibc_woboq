@@ -1,0 +1,7 @@
+<dec f='include/selinux/selinux.h' l='261' type='int security_compute_user(const char * scon, const char * username, char *** con)'/>
+<doc f='include/selinux/selinux.h' l='255'>/*
+ * Compute the set of reachable user contexts and set *con to refer to
+ * the NULL-terminated array of contexts.  Caller must free via freeconary.
+ * These interfaces are deprecated.  Use get_ordered_context_list() or
+ * one of its variant interfaces instead.
+ */</doc>

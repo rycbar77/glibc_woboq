@@ -1,0 +1,25 @@
+<dec f='codebrowser/io/fcntl.h' l='206' type='int open64(const char * __file, int __oflag)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='35' c='__open64_nocancel'/>
+<use f='codebrowser/locale/programs/locale.c' l='480' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='496' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='648' u='c' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='581' u='c' c='open_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1452' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1469' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/support/shell-container.c' l='99' u='c' c='copy_func'/>
+<use f='codebrowser/support/shell-container.c' l='114' u='c' c='copy_func'/>
+<use f='codebrowser/support/shell-container.c' l='209' u='c' c='run_command_array'/>
+<use f='codebrowser/support/shell-container.c' l='215' u='c' c='run_command_array'/>
+<use f='codebrowser/support/shell-container.c' l='221' u='c' c='run_command_array'/>
+<use f='codebrowser/support/shell-container.c' l='227' u='c' c='run_command_array'/>
+<use f='codebrowser/support/support_become_root.c' l='35' u='c' c='setup_uid_gid_mapping'/>
+<use f='codebrowser/support/support_become_root.c' l='56' u='c' c='setup_uid_gid_mapping'/>
+<use f='codebrowser/support/test-container.c' l='244' u='c' c='devmount'/>
+<use f='codebrowser/support/test-container.c' l='414' u='c' c='copy_one_file'/>
+<use f='codebrowser/support/test-container.c' l='421' u='c' c='copy_one_file'/>
+<use f='codebrowser/support/test-container.c' l='799' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1172' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1183' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1193' u='c' c='main'/>
+<use f='codebrowser/support/xopen.c' l='26' u='c' c='xopen'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/open64.c' l='54' macro='1' type='int open64(const char * , int )'/>

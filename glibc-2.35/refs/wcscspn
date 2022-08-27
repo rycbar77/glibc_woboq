@@ -1,0 +1,6 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='188' type='size_t wcscspn(const wchar_t * __wcs, const wchar_t * __reject)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='186'>/* Return the length of the initial segmet of WCS which
+   consists entirely of wide characters not in REJECT.  */</doc>
+<def f='codebrowser/wcsmbs/wcscspn.c' l='26' ll='38' type='size_t wcscspn(const wchar_t * wcs, const wchar_t * reject)'/>
+<doc f='codebrowser/wcsmbs/wcscspn.c' l='24'>/* Return the length of the maximum initial segment
+   of WCS which contains only wide-characters not in REJECT.  */</doc>

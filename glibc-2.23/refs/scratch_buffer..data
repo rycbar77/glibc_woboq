@@ -1,0 +1,35 @@
+<dec f='codebrowser/include/scratch_buffer.h' l='67' type='void *'/>
+<use f='codebrowser/include/scratch_buffer.h' l='78' u='w' c='scratch_buffer_init'/>
+<use f='codebrowser/include/scratch_buffer.h' l='86' u='r' c='scratch_buffer_free'/>
+<use f='codebrowser/include/scratch_buffer.h' l='87' u='r' c='scratch_buffer_free'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='44' u='r' c='compat_call'/>
+<offset>0</offset>
+<doc f='codebrowser/include/scratch_buffer.h' l='67'>/* Pointer to the beginning of the scratch area.  */</doc>
+<use f='codebrowser/inet/getnameinfo.c' l='92' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='110' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='114' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='114' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='114' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='119' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='122' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='145' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='230' u='r' c='getnameinfo'/>
+<use f='codebrowser/inet/getnameinfo.c' l='248' u='r' c='getnameinfo'/>
+<use f='codebrowser/inet/getnameinfo.c' l='433' u='r' c='getnameinfo'/>
+<use f='codebrowser/malloc/scratch_buffer_grow.c' l='48' u='w' c='__libc_scratch_buffer_grow'/>
+<use f='codebrowser/malloc/scratch_buffer_grow_preserve.c' l='29' u='r' c='__libc_scratch_buffer_grow_preserve'/>
+<use f='codebrowser/malloc/scratch_buffer_grow_preserve.c' l='42' u='r' c='__libc_scratch_buffer_grow_preserve'/>
+<use f='codebrowser/malloc/scratch_buffer_grow_preserve.c' l='52' u='r' c='__libc_scratch_buffer_grow_preserve'/>
+<use f='codebrowser/malloc/scratch_buffer_grow_preserve.c' l='59' u='w' c='__libc_scratch_buffer_grow_preserve'/>
+<use f='codebrowser/malloc/scratch_buffer_set_array_size.c' l='55' u='w' c='__libc_scratch_buffer_set_array_size'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='208' u='r' c='nscd_getgr_r'/>
+<use f='codebrowser/stdio-common/vfprintf.c' l='1704' u='r' c='printf_positional'/>
+<use f='codebrowser/stdio-common/vfprintf.c' l='1754' u='r' c='printf_positional'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='207' u='r' c='char_buffer_start'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='241' u='r' c='char_buffer_add_slow'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='2506' u='r' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='2514' u='r' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='2525' u='r' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='2529' u='r' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='2658' u='r' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='2886' u='r' c='_IO_vfscanf_internal'/>

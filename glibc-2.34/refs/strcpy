@@ -1,0 +1,69 @@
+<dec f='codebrowser/string/string.h' l='125' type='char * strcpy(char *restrict __dest, const char *restrict __src)'/>
+<dec f='codebrowser/include/string.h' l='142' type='char * strcpy(char * , const char * )'/>
+<use f='codebrowser/include/string.h' l='142' c='strcpy'/>
+<doc f='codebrowser/string/string.h' l='124'>/* Copy SRC to DEST.  */</doc>
+<use f='codebrowser/assert/assert.c' l='73' u='c' c='__assert_fail_base'/>
+<use f='codebrowser/dlfcn/dlinfo.c' l='62' u='c' c='dlinfo_doit'/>
+<use f='codebrowser/elf/dl-cache.c' l='516' u='c' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1016' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1019' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1022' u='c' c='write_output'/>
+<use f='codebrowser/inet/ether_ntoh.c' l='59' u='c' c='ether_ntohost'/>
+<use f='codebrowser/inet/ruserpass.c' l='168' u='c' c='ruserpass'/>
+<use f='codebrowser/inet/ruserpass.c' l='191' u='c' c='ruserpass'/>
+<use f='codebrowser/intl/dcigettext.c' l='778' u='c' c='__dcigettext'/>
+<use f='codebrowser/io/getwd.c' l='50' u='c' c='getwd'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2862' u='c' c='set_one_default'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3222' u='c' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='365' u='c' c='monetary_finish'/>
+<use f='codebrowser/locale/programs/locale.c' l='495' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='128' u='c' c='create_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='348' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='349' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='575' u='c' c='open_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1396' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1413' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1451' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1466' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locfile.c' l='415' u='c' c='siblings_uncached'/>
+<use f='codebrowser/locale/programs/locfile.c' l='874' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='923' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/xstrdup.c' l='35' u='c' c='xstrdup'/>
+<use f='codebrowser/login/openpty.c' l='142' u='c' c='__openpty'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='185' u='c' c='open_socket'/>
+<use f='codebrowser/nss/digits_dots.c' l='178' u='c' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nss/digits_dots.c' l='270' u='c' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nscd/nscd.h' l='100' u='c' c='init_traced_file'/>
+<use f='codebrowser/posix/wordexp.c' l='2259' u='c' c='wordexp'/>
+<use f='codebrowser/resolv/inet_ntop.c' l='89' u='c' c='inet_ntop4'/>
+<use f='codebrowser/resolv/inet_ntop.c' l='184' u='c' c='inet_ntop6'/>
+<use f='codebrowser/resolv/ns_makecanon.c' l='39' u='c' c='__libc_ns_makecanon'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='524' u='c' c='_nss_dns_gethostbyaddr2_r'/>
+<use f='codebrowser/stdlib/canonicalize.c' l='157' u='c' c='dir_check'/>
+<use f='codebrowser/stdlib/canonicalize.c' l='404' u='c' c='realpath_stk'/>
+<use f='codebrowser/support/support_enter_network_namespace.c' l='49' u='c' c='support_enter_network_namespace'/>
+<use f='codebrowser/support/test-container.c' l='217' u='c' c='concat'/>
+<use f='codebrowser/support/test-container.c' l='221' u='c' c='concat'/>
+<use f='codebrowser/support/test-container.c' l='347' u='c' c='r_setup'/>
+<use f='codebrowser/support/test-container.c' l='365' u='c' c='r_append'/>
+<use f='codebrowser/sysdeps/posix/ctermid.c' l='34' u='c' c='ctermid'/>
+<use f='codebrowser/posix/glob.c' l='1162' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/opensock.c' l='78' u='c' c='__opensock'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/opensock.c' l='88' u='c' c='__opensock'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='496' c='__strcpy_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='498' c='__strcpy_avx2_rtm'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='502' c='__strcpy_evex'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='506' c='__strcpy_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='508' c='__strcpy_sse2_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='509' c='__strcpy_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strcpy.c' l='29' macro='1' type='char * strcpy(char *restrict , const char *restrict )'/>
+<use f='codebrowser/timezone/zdump.c' l='246' u='c' c='zdump_tzalloc'/>
+<use f='codebrowser/timezone/zdump.c' l='368' u='c' c='saveabbr'/>
+<use f='codebrowser/timezone/zdump.c' l='948' u='c' c='istrftime'/>
+<use f='codebrowser/timezone/zic.c' l='951' u='c' c='relname'/>
+<use f='codebrowser/timezone/zic.c' l='953' u='c' c='relname'/>
+<use f='codebrowser/timezone/zic.c' l='1074' u='c' c='itsdir'/>
+<use f='codebrowser/timezone/zic.c' l='2169' u='c' c='writezone'/>
+<use f='codebrowser/timezone/zic.c' l='2335' u='c' c='doabbr'/>
+<use f='codebrowser/timezone/zic.c' l='2886' u='c' c='outzone'/>
+<use f='codebrowser/timezone/zic.c' l='3436' u='c' c='newabbr'/>

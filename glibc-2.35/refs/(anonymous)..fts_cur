@@ -1,0 +1,19 @@
+<dec f='codebrowser/io/fts.h' l='58' type='struct _ftsent *'/>
+<dec f='codebrowser/io/fts.h' l='85' type='struct _ftsent64 *'/>
+<use f='codebrowser/io/fts.c' l='208' u='w' c='fts_open'/>
+<use f='codebrowser/io/fts.c' l='210' u='r' c='fts_open'/>
+<use f='codebrowser/io/fts.c' l='211' u='r' c='fts_open'/>
+<use f='codebrowser/io/fts.c' l='268' u='r' c='fts_close'/>
+<use f='codebrowser/io/fts.c' l='269' u='r' c='fts_close'/>
+<use f='codebrowser/io/fts.c' l='319' u='r' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='323' u='r' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='404' u='w' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='411' u='w' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='455' u='w' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='465' u='w' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='530' u='r' c='fts_children'/>
+<use f='codebrowser/io/fts.c' l='623' u='r' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='770' u='r' c='fts_build'/>
+<offset>0</offset>
+<doc f='codebrowser/io/fts.h' l='58'>/* current node */</doc>
+<doc f='codebrowser/io/fts.h' l='85'>/* current node */</doc>

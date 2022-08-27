@@ -1,0 +1,3 @@
+<dec f='codebrowser/sysdeps/generic/ldconfig.h' l='78' type='char * implicit_soname(const char * lib, int flag)'/>
+<def f='codebrowser/elf/readlib.c' l='191' ll='209' type='char * implicit_soname(const char * lib, int flag)'/>
+<doc f='codebrowser/elf/readlib.c' l='189'>/* Returns made up soname if lib doesn&apos;t have explicit DT_SONAME.  */</doc>

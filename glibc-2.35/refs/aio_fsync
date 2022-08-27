@@ -1,0 +1,4 @@
+<dec f='codebrowser/rt/aio.h' l='173' type='int aio_fsync(int __operation, struct aiocb * __aiocbp)'/>
+<doc f='codebrowser/rt/aio.h' l='171'>/* Force all operations associated with file desriptor described by
+   `aio_fildes&apos; member of AIOCBP.  */</doc>
+<def f='codebrowser/rt/aio_fsync.c' l='57' macro='1' type='int aio_fsync(int , struct aiocb * )'/>

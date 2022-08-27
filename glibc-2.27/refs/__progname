@@ -1,0 +1,23 @@
+<dec f='codebrowser/assert/assert.c' l='29' type='const char *'/>
+<use f='codebrowser/assert/assert.c' l='58' u='r' c='__assert_fail_base'/>
+<use f='codebrowser/assert/assert.c' l='58' u='r' c='__assert_fail_base'/>
+<dec f='codebrowser/elf/dl-support.c' l='38' type='char *'/>
+<use f='codebrowser/elf/dl-support.c' l='39' u='a'/>
+<dec f='codebrowser/elf/sotruss-lib.c' l='32' type='const char *'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='171' u='r' c='la_objopen'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='192' u='r' c='la_objopen'/>
+<dec f='codebrowser/malloc/malloc.c' l='286' type='const char *'/>
+<use f='codebrowser/malloc/malloc.c' l='293' u='r' c='__malloc_assert'/>
+<use f='codebrowser/malloc/malloc.c' l='293' u='r' c='__malloc_assert'/>
+<dec f='codebrowser/misc/err.c' l='30' type='char *'/>
+<use f='codebrowser/misc/err.c' l='91' u='r' c='vwarnx'/>
+<use f='codebrowser/misc/err.c' l='97' u='r' c='vwarnx'/>
+<use f='codebrowser/misc/err.c' l='114' u='r' c='vwarn'/>
+<use f='codebrowser/misc/err.c' l='125' u='r' c='vwarn'/>
+<def f='codebrowser/misc/init-misc.c' l='23' type='char *'/>
+<use f='codebrowser/misc/init-misc.c' l='25'/>
+<use f='codebrowser/misc/init-misc.c' l='35' u='w' c='__init_misc'/>
+<use f='codebrowser/misc/init-misc.c' l='37' u='w' c='__init_misc'/>
+<dec f='codebrowser/misc/syslog.c' l='70' type='char *'/>
+<use f='codebrowser/misc/syslog.c' l='203' u='r' c='__vsyslog_chk'/>
+<doc f='codebrowser/misc/syslog.c' l='70'>/* Program name, from crt0. */</doc>

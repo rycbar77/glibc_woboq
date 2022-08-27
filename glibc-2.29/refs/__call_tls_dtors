@@ -1,0 +1,7 @@
+<use f='codebrowser/nptl/pthread_create.c' l='492' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='494' u='c' c='start_thread'/>
+<def f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='143' ll='164' type='void __call_tls_dtors()'/>
+<doc f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='141'>/* Call the destructors.  This is called either when a thread returns from the
+   initial function or when the process exits via the exit function.  */</doc>
+<use f='codebrowser/stdlib/exit.c' l='43' u='a' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/exit.c' l='46' u='c' c='__run_exit_handlers'/>

@@ -1,0 +1,57 @@
+<dec f='codebrowser/malloc/malloc.c' l='1692' type='int'/>
+<use f='codebrowser/malloc/malloc.c' l='1657' u='w' c='malloc_init_state'/>
+<use f='codebrowser/malloc/malloc.c' l='1818' u='w' c='malloc_init_state'/>
+<use f='codebrowser/malloc/arena.c' l='892' macro='1' u='r' c='reused_arena'/>
+<use f='codebrowser/malloc/arena.c' l='907' macro='1' u='r' c='reused_arena'/>
+<use f='codebrowser/malloc/arena.c' l='1005' macro='1' u='r' c='arena_get_retry'/>
+<use f='codebrowser/malloc/hooks.c' l='190' macro='1' u='r' c='mem2chunk_check'/>
+<use f='codebrowser/malloc/hooks.c' l='251' macro='1' u='r' c='top_check'/>
+<use f='codebrowser/malloc/hooks.c' l='565' macro='1' u='a' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='565' macro='1' u='a' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='565' macro='1' u='a' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='565' macro='1' u='a' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='565' macro='1' u='a' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='565' macro='1' u='a' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='565' macro='1' u='a' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='565' macro='1' u='a' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='565' macro='1' u='a' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='565' macro='1' u='a' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='565' macro='1' u='a' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/malloc.c' l='1655' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1655' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1657' u='w' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1655' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1655' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1666' u='r' c='__libc_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1666' u='r' c='_mid_memalign'/>
+<use f='codebrowser/malloc/malloc.c' l='1666' u='r' c='__libc_calloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1640' u='r' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1640' u='r' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1642' u='a' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1655' u='r' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1640' u='r' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='1641' u='a' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='1641' u='a' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='1641' u='a' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='1641' u='a' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='1641' u='a' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='1641' u='a' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='1641' u='a' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='1641' u='a' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='1641' u='a' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='1641' u='a' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='1641' u='a' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='1666' u='r' c='mtrim'/>
+<use f='codebrowser/malloc/malloc.c' l='1667' u='w' c='malloc_printerr'/>
+<offset>32</offset>
+<doc f='codebrowser/malloc/malloc.c' l='1691'>/* Flags (formerly in max_fast).  */</doc>

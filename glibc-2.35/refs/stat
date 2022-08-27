@@ -1,0 +1,105 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='26' ll='99'/>
+<dec f='codebrowser/io/sys/stat.h' l='205' type='int stat(const char *restrict __file, struct stat *restrict __buf)'/>
+<use f='codebrowser/io/sys/stat.h' l='206' c='stat'/>
+<use f='codebrowser/io/sys/stat.h' l='210' c='fstat'/>
+<use f='codebrowser/io/sys/stat.h' l='265' c='fstatat'/>
+<use f='codebrowser/io/sys/stat.h' l='314' c='lstat'/>
+<use f='codebrowser/include/sys/stat.h' l='32' c='__stat'/>
+<use f='codebrowser/include/sys/stat.h' l='34' c='__fstat'/>
+<use f='codebrowser/include/sys/stat.h' l='36' c='__lstat'/>
+<use f='codebrowser/include/sys/stat.h' l='38' c='__fstatat'/>
+<use f='codebrowser/include/sys/stat.h' l='85' c='__fxstat'/>
+<use f='codebrowser/include/sys/stat.h' l='87' c='__xstat'/>
+<use f='codebrowser/include/sys/stat.h' l='88' c='__lxstat'/>
+<use f='codebrowser/include/sys/stat.h' l='90' c='__fxstatat'/>
+<size>144</size>
+<doc f='codebrowser/io/sys/stat.h' l='204'>/* Get file attributes for FILE and put them in BUF.  */</doc>
+<mbr r='stat::st_dev' o='0' t='__dev_t'/>
+<mbr r='stat::st_ino' o='64' t='__ino_t'/>
+<mbr r='stat::st_nlink' o='128' t='__nlink_t'/>
+<mbr r='stat::st_mode' o='192' t='__mode_t'/>
+<mbr r='stat::st_uid' o='224' t='__uid_t'/>
+<mbr r='stat::st_gid' o='256' t='__gid_t'/>
+<mbr r='stat::__pad0' o='288' t='int'/>
+<mbr r='stat::st_rdev' o='320' t='__dev_t'/>
+<mbr r='stat::st_size' o='384' t='__off_t'/>
+<mbr r='stat::st_blksize' o='448' t='__blksize_t'/>
+<mbr r='stat::st_blocks' o='512' t='__blkcnt_t'/>
+<mbr r='stat::st_atim' o='576' t='struct timespec'/>
+<mbr r='stat::st_mtim' o='704' t='struct timespec'/>
+<mbr r='stat::st_ctim' o='832' t='struct timespec'/>
+<mbr r='stat::__glibc_reserved' o='960' t='__syscall_slong_t[3]'/>
+<use f='codebrowser/sysdeps/generic/ldconfig.h' l='81' c='search_aux_cache'/>
+<use f='codebrowser/sysdeps/generic/ldconfig.h' l='85' c='add_to_aux_cache'/>
+<use f='codebrowser/sysdeps/generic/ldconfig.h' l='96' c='process_file'/>
+<use f='codebrowser/elf/cache.c' l='321' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='935' c='search_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='997' c='add_to_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1020' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1137' c='save_aux_cache'/>
+<size>144</size>
+<use f='codebrowser/elf/chroot_canon.c' l='70' c='chroot_canon'/>
+<size>144</size>
+<use f='codebrowser/posix/glob.h' l='99'/>
+<use f='codebrowser/posix/glob.h' l='100'/>
+<use f='codebrowser/elf/ldconfig.c' l='340' c='new_sub_entry'/>
+<use f='codebrowser/elf/ldconfig.c' l='430' c='add_glibc_hwcaps_subdirectories'/>
+<use f='codebrowser/elf/ldconfig.c' l='515' c='add_dir_1'/>
+<use f='codebrowser/elf/ldconfig.c' l='544' c='chroot_stat'/>
+<use f='codebrowser/elf/ldconfig.c' l='572' c='create_links'/>
+<use f='codebrowser/elf/ldconfig.c' l='572' c='create_links'/>
+<use f='codebrowser/elf/ldconfig.c' l='572' c='create_links'/>
+<use f='codebrowser/elf/ldconfig.c' l='659' c='manual_link'/>
+<use f='codebrowser/elf/ldconfig.c' l='888' c='search_dir'/>
+<use f='codebrowser/elf/ldconfig.c' l='899' c='search_dir'/>
+<size>144</size>
+<use f='codebrowser/elf/readlib.c' l='77' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='80' c='process_file'/>
+<size>144</size>
+<use f='codebrowser/elf/sln.c' l='156' c='makesymlink'/>
+<size>144</size>
+<use f='codebrowser/nscd/cachedumper.c' l='67' c='nscd_print_cache'/>
+<size>144</size>
+<use f='codebrowser/support/shell-container.c' l='97' c='copy_func'/>
+<size>144</size>
+<use f='codebrowser/support/support_stat_nanoseconds.c' l='35' c='support_stat_nanoseconds'/>
+<use f='codebrowser/support/support_stat_nanoseconds.c' l='36' u='c' c='support_stat_nanoseconds'/>
+<use f='codebrowser/support/support_stat_nanoseconds.c' l='42' c='support_stat_nanoseconds'/>
+<use f='codebrowser/support/support_stat_nanoseconds.c' l='43' u='c' c='support_stat_nanoseconds'/>
+<size>144</size>
+<use f='codebrowser/support/test-container.c' l='170' c='maybe_xmkdir'/>
+<use f='codebrowser/support/test-container.c' l='372' c='file_exists'/>
+<use f='codebrowser/support/test-container.c' l='411' c='copy_one_file'/>
+<use f='codebrowser/support/test-container.c' l='442' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='442' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='488' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='488' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='733' c='main'/>
+<size>144</size>
+<use f='codebrowser/support/xmkdirp.c' l='33' c='xmkdirp'/>
+<use f='codebrowser/support/xmkdirp.c' l='40' u='c' c='xmkdirp'/>
+<size>144</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/xstatconv.h' l='25' c='__xstat32_conv'/>
+<size>144</size>
+<use f='codebrowser/posix/glob.c' l='213' macro='1' c='glob_lstat'/>
+<use f='codebrowser/posix/glob.c' l='256' macro='1' c='is_dir'/>
+<size>144</size>
+<def f='codebrowser/sysdeps/unix/sysv/linux/stat64.c' l='51' macro='1' type='int stat(const char * , struct stat64 * )'/>
+<use f='codebrowser/io/fts.h' l='145'/>
+<use f='codebrowser/io/fts.c' l='84' c='fts_stat'/>
+<use f='codebrowser/io/fts.c' l='84' c='fts_stat'/>
+<use f='codebrowser/io/fts.c' l='84' c='fts_stat'/>
+<use f='codebrowser/io/fts.c' l='84' c='fts_alloc'/>
+<use f='codebrowser/io/fts.c' l='84' c='fts_alloc'/>
+<size>144</size>
+<use f='codebrowser/io/ftw.h' l='115'/>
+<use f='codebrowser/io/ftw.h' l='122'/>
+<use f='codebrowser/io/ftw.c' l='137' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='137' c='add_object'/>
+<use f='codebrowser/io/ftw.c' l='137' c='find_object'/>
+<use f='codebrowser/io/ftw.c' l='137' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='137' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='137' c='ftw_startup'/>
+<size>144</size>
+<use f='codebrowser/timezone/zic.c' l='1063' c='itsdir'/>
+<size>144</size>

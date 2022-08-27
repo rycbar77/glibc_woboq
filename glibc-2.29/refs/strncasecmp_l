@@ -1,0 +1,5 @@
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='318' c='__strncasecmp_l_avx'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='321' c='__strncasecmp_l_sse42'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='324' c='__strncasecmp_l_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='327' c='__strncasecmp_l_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strncase_l.c' l='34' macro='1' type='int strncasecmp_l(const char * , const char * , size_t , locale_t )'/>

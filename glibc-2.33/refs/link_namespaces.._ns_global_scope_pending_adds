@@ -1,0 +1,14 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='338' type='unsigned int'/>
+<offset>224</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='334'>/* During dlopen, this is the number of objects that still need to
+       be added to the global scope map.  It has to be taken into
+       account when resizing the map, for future map additions after
+       recursive dlopen calls from ELF constructors.  */</doc>
+<use f='codebrowser/elf/dl-open.c' l='111' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='112' u='a' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='122' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='197' u='r' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-open.c' l='197' u='r' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-open.c' l='198' u='w' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-open.c' l='518' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='875' u='w' c='_dl_open'/>

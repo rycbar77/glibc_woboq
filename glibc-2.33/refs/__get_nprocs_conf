@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/sys/sysinfo.h' l='9' type='int __get_nprocs_conf()'/>
+<dec f='codebrowser/include/sys/sysinfo.h' l='10' type='int __get_nprocs_conf()'/>
+<use f='codebrowser/include/sys/sysinfo.h' l='10' c='__get_nprocs_conf'/>
+<doc f='codebrowser/include/sys/sysinfo.h' l='8'>/* Return number of configured processors.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='236' ll='283' type='int __get_nprocs_conf()'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='285' c='get_nprocs_conf'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='234'>/* On some architectures it is possible to distinguish between configured
+   and active cpus.  */</doc>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='628' u='c' c='posix_sysconf'/>

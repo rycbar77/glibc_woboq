@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/pthread.h' l='25' type='pthread_t __pthread_self()'/>
+<dec f='codebrowser/include/pthread.h' l='25' type='pthread_t __pthread_self()'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='511' type='pthread_t __pthread_self()'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='511' c='__pthread_self'/>
+<def f='codebrowser/nptl/pthread_self.c' l='21' ll='25' type='pthread_t __pthread_self()'/>
+<use f='codebrowser/nptl/pthread_self.c' l='27' c='pthread_self'/>
+<use f='codebrowser/rt/aio_misc.c' l='334' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='493' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/posix/raise.c' l='26' u='c' c='raise'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='95' u='c' c='notification_function'/>

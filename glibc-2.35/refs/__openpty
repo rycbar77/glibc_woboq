@@ -1,0 +1,5 @@
+<def f='codebrowser/login/openpty.c' l='84' ll='158' type='int __openpty(int * pptmx, int * pterminal, char * name, const struct termios * termp, const struct winsize * winp)'/>
+<use f='codebrowser/login/openpty.c' l='159' c='openpty'/>
+<doc f='codebrowser/login/openpty.c' l='81'>/* Create pseudo tty multiplexer/terminal pair and set terminal attributes
+   according to TERMP and WINP.  Return handles for both ends in
+   *PPTMX and *PTERMINAL, and return the name of the terminal end in NAME.  */</doc>

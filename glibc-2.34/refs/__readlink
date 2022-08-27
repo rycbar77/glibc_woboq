@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/unistd.h' l='148' type='ssize_t __readlink(const char * __path, char * __buf, size_t __len)'/>
+<use f='codebrowser/debug/readlink_chk.c' l='32' u='c' c='__readlink_chk'/>
+<use f='codebrowser/stdlib/canonicalize.c' l='321' u='c' c='realpath_stk'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='79' u='c' c='distinguish_extX'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='125' u='c' c='__ttyname_r'/>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>clone_internal.h source code [codebrowser/include/clone_internal.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/include/clone_internal.h'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>include</a>/<a href='clone_internal.h.html'>clone_internal.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/_CLONE3_H">_CLONE3_H</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#include_next <a href="../sysdeps/unix/sysv/linux/clone3.h.html">&lt;clone3.h&gt;</a></u></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><b>extern</b> <b>__typeof</b> (<a class="ref fn" href="../sysdeps/unix/sysv/linux/clone3.h.html#clone3" title='clone3' data-ref="clone3" data-ref-filename="clone3">clone3</a>) <dfn class="decl fn" id="__clone3" title='__clone3' data-ref="__clone3" data-ref-filename="__clone3">__clone3</dfn>;</td></tr>
+<tr><th id="5">5</th><td></td></tr>
+<tr><th id="6">6</th><td><i>/* The internal wrapper of clone/clone2 and clone3.  If __clone3 returns</i></td></tr>
+<tr><th id="7">7</th><td><i>   -1 with ENOSYS, fall back to clone or clone2.  */</i></td></tr>
+<tr><th id="8">8</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__clone_internal" title='__clone_internal' data-ref="__clone_internal" data-ref-filename="__clone_internal">__clone_internal</dfn> (<b>struct</b> <a class="type" href="../sysdeps/unix/sysv/linux/clone3.h.html#clone_args" title='clone_args' data-ref="clone_args" data-ref-filename="clone_args">clone_args</a> *<dfn class="local col1 decl" id="11__cl_args" title='__cl_args' data-type='struct clone_args *' data-ref="11__cl_args" data-ref-filename="11__cl_args">__cl_args</dfn>,</td></tr>
+<tr><th id="9">9</th><td>			     <em>int</em> (*<dfn class="local col2 decl" id="12__func" title='__func' data-type='int (*)(void *)' data-ref="12__func" data-ref-filename="12__func">__func</dfn>) (<em>void</em> *<dfn class="local col3 decl" id="13__arg" title='__arg' data-type='void *' data-ref="13__arg" data-ref-filename="13__arg">__arg</dfn>), <em>void</em> *<dfn class="local col4 decl" id="14__arg" title='__arg' data-type='void *' data-ref="14__arg" data-ref-filename="14__arg">__arg</dfn>);</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#<span data-ppcond="11">ifndef</span> <span class="macro" data-ref="_M/_ISOMAC">_ISOMAC</span></u></td></tr>
+<tr><th id="12">12</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (__clone3) __clone3 __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__clone3" title='__clone3' data-ref="__clone3" data-ref-filename="__clone3"><a class="ref fn" href="#__clone3" title='__clone3' data-ref="__clone3" data-ref-filename="__clone3">__clone3</a></a>)</td></tr>
+<tr><th id="13">13</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (__clone_internal) __clone_internal __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__clone_internal" title='__clone_internal' data-ref="__clone_internal" data-ref-filename="__clone_internal"><a class="ref fn" href="#__clone_internal" title='__clone_internal' data-ref="__clone_internal" data-ref-filename="__clone_internal">__clone_internal</a></a>)</td></tr>
+<tr><th id="14">14</th><td><u>#<span data-ppcond="11">endif</span></u></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#<span data-ppcond="1">endif</span></u></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../nptl/pthread_create.c.html'>codebrowser/nptl/pthread_create.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

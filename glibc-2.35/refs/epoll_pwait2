@@ -1,0 +1,2 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sys/epoll.h' l='142' type='int epoll_pwait2(int __epfd, struct epoll_event * __events, int __maxevents, const struct timespec * __timeout, const __sigset_t * __ss)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/epoll_pwait2.c' l='23' macro='1' type='int epoll_pwait2(int fd, struct epoll_event * ev, int maxev, const struct timespec * tmo, const sigset_t * s)'/>

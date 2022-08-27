@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/internal_statvfs.h' l='24' type='void __internal_statvfs64(struct statvfs64 * buf, const struct statfs64 * fsbuf)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatvfs64.c' l='36' u='c' c='__fstatvfs64'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/internal_statvfs.c' l='71' ll='110' type='void __internal_statvfs64(struct statvfs64 * buf, const struct statfs64 * fsbuf)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/statvfs64.c' l='36' u='c' c='__statvfs64'/>

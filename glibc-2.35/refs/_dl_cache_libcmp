@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/generic/dl-cache.h' l='353' type='int _dl_cache_libcmp(const char * p1, const char * p2)'/>
+<use f='codebrowser/elf/cache.c' l='439' u='c' c='compare'/>
+<use f='codebrowser/elf/dl-cache.c' l='231' u='c' c='search_cache'/>
+<use f='codebrowser/elf/dl-cache.c' l='247' u='c' c='search_cache'/>
+<use f='codebrowser/elf/dl-cache.c' l='264' u='c' c='search_cache'/>
+<def f='codebrowser/elf/dl-cache.c' l='358' ll='394' type='int _dl_cache_libcmp(const char * p1, const char * p2)'/>
+<use f='codebrowser/elf/ldconfig.c' l='1093' u='c' c='search_dir'/>

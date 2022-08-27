@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='214' type='int security_compute_create(const char * scon, const char * tcon, security_class_t tclass, char ** newcon)'/>
+<doc f='include/selinux/selinux.h' l='212'>/* Compute a labeling decision and set *newcon to refer to it.
+   Caller must free via freecon. */</doc>

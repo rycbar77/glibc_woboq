@@ -1,0 +1,9 @@
+<def f='codebrowser/time/bits/types/struct_timeb.h' l='7' ll='13'/>
+<use f='codebrowser/time/sys/timeb.h' l='29' c='ftime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ftime.c' l='25' macro='1' c='ftime'/>
+<size>16</size>
+<doc f='codebrowser/time/bits/types/struct_timeb.h' l='6'>/* Structure returned by the &apos;ftime&apos; function.  */</doc>
+<mbr r='timeb::time' o='0' t='time_t'/>
+<mbr r='timeb::millitm' o='64' t='unsigned short'/>
+<mbr r='timeb::timezone' o='80' t='short'/>
+<mbr r='timeb::dstflag' o='96' t='short'/>

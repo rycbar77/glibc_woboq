@@ -1,0 +1,5 @@
+<def f='codebrowser/nptl/pthread_once.c' l='145' macro='1' type='int pthread_once(pthread_once_t * , void (*)(void) )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='102' c='__gthrw_pthread_once'/>
+<use f='codebrowser/support/xpthread_once.c' l='24' u='c' c='xpthread_once'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='237' u='c' c='mq_notify'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='101' u='c' c='__timer_create_new'/>

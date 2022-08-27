@@ -1,0 +1,7 @@
+<dec f='codebrowser/signal/signal.h' l='199' type='int sigfillset(sigset_t * __set)'/>
+<dec f='codebrowser/include/signal.h' l='6' type='int sigfillset(sigset_t * )'/>
+<use f='codebrowser/include/signal.h' l='6' c='sigfillset'/>
+<doc f='codebrowser/signal/signal.h' l='198'>/* Set all signals in SET.  */</doc>
+<def f='codebrowser/signal/sigfillset.c' l='23' ll='44' type='int sigfillset(sigset_t * set)'/>
+<doc f='codebrowser/signal/sigfillset.c' l='22'>/* Set all signals in SET.  */</doc>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='108' u='c' c='__gai_create_helper_thread'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/netinet/ether.h' l='14' type='const char *'/>
+<offset>0</offset>
+<use f='codebrowser/inet/ether_ntoh.c' l='59' u='r' c='ether_ntohost'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='48' u='w' c='_nss_files_parse_etherent'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='56' u='r' c='_nss_files_gethostton_r'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/sys/resource.h' l='128' type='int __getrlimit(enum __rlimit_resource __resource, struct rlimit * __rlimits)'/>
+<use f='codebrowser/nptl/nptl-init.c' l='297' u='c' c='__pthread_initialize_minimal_internal'/>
+<doc f='codebrowser/include/sys/resource.h' l='127'>/* Now define the internal interfaces.  */</doc>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='92' u='c' c='__pthread_getattr_np'/>
+<use f='codebrowser/resource/vlimit.c' l='39' u='c' c='vlimit'/>
+<use f='codebrowser/sysdeps/posix/ulimit.c' l='48' u='c' c='__ulimit'/>
+<use f='codebrowser/sysdeps/unix/get_child_max.c' l='29' u='c' c='__get_child_max'/>
+<use f='codebrowser/sysdeps/posix/getdtsz.c' l='32' u='c' c='__getdtablesize'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getrlimit64.c' l='48' macro='1' type='int __getrlimit(__rlimit_resource_t , struct rlimit64 * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf.c' l='55' u='c' c='linux_sysconf'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf.c' l='70' u='c' c='linux_sysconf'/>

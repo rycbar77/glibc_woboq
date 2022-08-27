@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/types/sigevent_t.h' l='25' type='int'/>
+<offset>64</offset>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='97' u='r' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='265' u='w' c='mq_notify'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='61' u='w' c='__timer_create_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='119' u='w' c='__timer_create_new'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/resolv/arpa/nameser_compat.h' l='79' type='unsigned int'/>
+<offset>32</offset>
+<doc f='codebrowser/resolv/arpa/nameser_compat.h' l='78'>/* remaining bytes */</doc>
+<doc f='codebrowser/resolv/arpa/nameser_compat.h' l='79'>/*%&lt; number of question entries */</doc>
+<use f='codebrowser/resolv/gethnamaddr.c' l='215' u='r' c='getanswer'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='70' u='r' c='_nss_dns_getcanonname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='654' u='r' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='991' u='r' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='290' u='r' c='getanswer_r'/>
+<use f='codebrowser/resolv/res_mkquery.c' l='174' u='w' c='__res_nmkquery'/>
+<use f='codebrowser/resolv/res_send.c' l='277' u='r' c='__res_nameinquery'/>
+<use f='codebrowser/resolv/res_send.c' l='328' u='r' c='__res_queriesmatch'/>
+<use f='codebrowser/resolv/res_send.c' l='329' u='r' c='__res_queriesmatch'/>

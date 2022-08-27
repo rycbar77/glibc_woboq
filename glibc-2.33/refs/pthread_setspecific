@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='1167' type='int pthread_setspecific(pthread_key_t __key, const void * __pointer)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='1166'>/* Store POINTER in the thread-specific data slot identified by KEY. */</doc>
+<def f='codebrowser/nptl/pthread_setspecific.c' l='92' macro='1' type='int pthread_setspecific(pthread_key_t , const void * )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='104' c='__gthrw_pthread_setspecific'/>

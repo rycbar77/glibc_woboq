@@ -1,0 +1,11 @@
+<use f='codebrowser/locale/programs/localedef.h' l='99'/>
+<def f='codebrowser/locale/programs/ld-paper.c' l='34' ll='38'/>
+<use f='codebrowser/locale/programs/ld-paper.c' l='47' c='paper_startup'/>
+<use f='codebrowser/locale/programs/ld-paper.c' l='47' c='paper_startup'/>
+<use f='codebrowser/locale/programs/ld-paper.c' l='60' c='paper_finish'/>
+<use f='codebrowser/locale/programs/ld-paper.c' l='120' c='paper_output'/>
+<use f='codebrowser/locale/programs/ld-paper.c' l='137' c='paper_read'/>
+<size>8</size>
+<doc f='codebrowser/locale/programs/ld-paper.c' l='33'>/* The real definition of the struct for the LC_PAPER locale.  */</doc>
+<mbr r='locale_paper_t::height' o='0' t='uint32_t'/>
+<mbr r='locale_paper_t::width' o='32' t='uint32_t'/>

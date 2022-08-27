@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/pthread.h' l='7' type='int __pthread_barrier_init(pthread_barrier_t *restrict __barrier, const pthread_barrierattr_t *restrict __attr, unsigned int __count)'/>
+<doc f='codebrowser/include/pthread.h' l='4'>/* Prototypes repeated instead of using __typeof because pthread.h is
+   included in C++ tests, and declaring functions with __typeof and
+   __THROW doesn&apos;t work for C++.  */</doc>
+<def f='codebrowser/nptl/pthread_barrier_init.c' l='31' ll='63' type='int __pthread_barrier_init(pthread_barrier_t * barrier, const pthread_barrierattr_t * attr, unsigned int count)'/>
+<use f='codebrowser/nptl/pthread_barrier_init.c' l='64' c='pthread_barrier_init'/>

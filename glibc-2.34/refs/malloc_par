@@ -1,0 +1,15 @@
+<def f='codebrowser/malloc/malloc.c' l='1875' ll='1910'/>
+<use f='codebrowser/malloc/malloc.c' l='1927'/>
+<size>80</size>
+<mbr r='malloc_par::trim_threshold' o='0' t='unsigned long'/>
+<mbr r='malloc_par::top_pad' o='64' t='size_t'/>
+<mbr r='malloc_par::mmap_threshold' o='128' t='size_t'/>
+<mbr r='malloc_par::arena_test' o='192' t='size_t'/>
+<mbr r='malloc_par::arena_max' o='256' t='size_t'/>
+<mbr r='malloc_par::n_mmaps' o='320' t='int'/>
+<mbr r='malloc_par::n_mmaps_max' o='352' t='int'/>
+<mbr r='malloc_par::max_n_mmaps' o='384' t='int'/>
+<mbr r='malloc_par::no_dyn_threshold' o='416' t='int'/>
+<mbr r='malloc_par::mmapped_mem' o='448' t='size_t'/>
+<mbr r='malloc_par::max_mmapped_mem' o='512' t='size_t'/>
+<mbr r='malloc_par::sbrk_base' o='576' t='char *'/>

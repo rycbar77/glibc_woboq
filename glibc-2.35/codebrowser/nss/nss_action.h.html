@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>nss_action.h source code [codebrowser/nss/nss_action.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="nss_action "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/nss/nss_action.h'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>nss</a>/<a href='nss_action.h.html'>nss_action.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* NSS actions, elements in a nsswitch.conf configuration line.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (c) 2020-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_NSS_ACTION_H">_NSS_ACTION_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/_NSS_ACTION_H" data-ref="_M/_NSS_ACTION_H">_NSS_ACTION_H</dfn></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#include &lt;stddef.h&gt;</u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><i>/* See nss_database.h for a summary of how this relates.  */</i></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="nsswitch.h.html">"nsswitch.h"</a> /* For lookup_actions.  */</u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><b>struct</b> <a class="type" href="nss_module.h.html#nss_module" title='nss_module' data-ref="nss_module" data-ref-filename="nss_module" id="nss_module">nss_module</a>;</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><i>/* A NSS action pairs a service module with the action for each result</i></td></tr>
+<tr><th id="31">31</th><td><i>   state.  */</i></td></tr>
+<tr><th id="32">32</th><td><b>struct</b> <dfn class="type def" id="nss_action" title='nss_action' data-ref="nss_action" data-ref-filename="nss_action">nss_action</dfn></td></tr>
+<tr><th id="33">33</th><td>{</td></tr>
+<tr><th id="34">34</th><td>  <i>/* The service module that provides the functionality (potentially</i></td></tr>
+<tr><th id="35">35</th><td><i>     not yet loaded).  */</i></td></tr>
+<tr><th id="36">36</th><td>  <b>struct</b> <a class="type" href="nss_module.h.html#nss_module" title='nss_module' data-ref="nss_module" data-ref-filename="nss_module">nss_module</a> *<dfn class="decl field" id="nss_action::module" title='nss_action::module' data-ref="nss_action::module" data-ref-filename="nss_action..module">module</dfn>;</td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td>  <i>/* Action according to result.  Two bits for each lookup_actions</i></td></tr>
+<tr><th id="39">39</th><td><i>     value (from nsswitch.h), indexed by enum nss_status (from nss.h).  */</i></td></tr>
+<tr><th id="40">40</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="nss_action::action_bits" title='nss_action::action_bits' data-ref="nss_action::action_bits" data-ref-filename="nss_action..action_bits">action_bits</dfn>;</td></tr>
+<tr><th id="41">41</th><td>};</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><i>/* Value to add to first nss_status value to get zero.  */</i></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/NSS_STATUS_BIAS" data-ref="_M/NSS_STATUS_BIAS">NSS_STATUS_BIAS</dfn> 2</u></td></tr>
+<tr><th id="45">45</th><td><i>/* Number of bits per lookup action.  */</i></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/NSS_BPL" data-ref="_M/NSS_BPL">NSS_BPL</dfn> 2</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/NSS_BPL_MASK" data-ref="_M/NSS_BPL_MASK">NSS_BPL_MASK</dfn> ((1 &lt;&lt; NSS_BPL) - 1)</u></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><i>/* Index in actions of an NSS status.  Note that in nss/nss.h the</i></td></tr>
+<tr><th id="50">50</th><td><i>   status starts at -2, and we shift that up to zero by adding 2.</i></td></tr>
+<tr><th id="51">51</th><td><i>   Thus for example NSS_STATUS_TRYAGAIN, which is -2, would index into</i></td></tr>
+<tr><th id="52">52</th><td><i>   the 0th bit place as expected.  */</i></td></tr>
+<tr><th id="53">53</th><td><em>static</em> <b>inline</b> <em>int</em></td></tr>
+<tr><th id="54">54</th><td><dfn class="decl def fn" id="nss_actions_bits_index" title='nss_actions_bits_index' data-ref="nss_actions_bits_index" data-ref-filename="nss_actions_bits_index">nss_actions_bits_index</dfn> (<b>enum</b> <a class="type" href="../include/netinet/ether.h.html#32" title='nss_status' data-ref="nss_status" data-ref-filename="nss_status">nss_status</a> <dfn class="local col2 decl" id="222status" title='status' data-type='enum nss_status' data-ref="222status" data-ref-filename="222status">status</dfn>)</td></tr>
+<tr><th id="55">55</th><td>{</td></tr>
+<tr><th id="56">56</th><td>  <b>return</b> <a class="macro" href="#46" title="2" data-ref="_M/NSS_BPL">NSS_BPL</a> * (<a class="macro" href="#44" title="2" data-ref="_M/NSS_STATUS_BIAS">NSS_STATUS_BIAS</a> + <a class="local col2 ref" href="#222status" title='status' data-ref="222status" data-ref-filename="222status">status</a>);</td></tr>
+<tr><th id="57">57</th><td>}</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><i>/* Returns the lookup_action value for STATUS in ACTION.  */</i></td></tr>
+<tr><th id="60">60</th><td><em>static</em> <b>inline</b> <a class="typedef" href="nsswitch.h.html#lookup_actions" title='lookup_actions' data-type='enum lookup_actions' data-ref="lookup_actions" data-ref-filename="lookup_actions">lookup_actions</a></td></tr>
+<tr><th id="61">61</th><td><dfn class="decl def fn" id="nss_action_get" title='nss_action_get' data-ref="nss_action_get" data-ref-filename="nss_action_get">nss_action_get</dfn> (<em>const</em> <b>struct</b> <a class="type" href="#nss_action" title='nss_action' data-ref="nss_action" data-ref-filename="nss_action">nss_action</a> *<dfn class="local col3 decl" id="223action" title='action' data-type='const struct nss_action *' data-ref="223action" data-ref-filename="223action">action</dfn>, <b>enum</b> <a class="type" href="../include/netinet/ether.h.html#32" title='nss_status' data-ref="nss_status" data-ref-filename="nss_status">nss_status</a> <dfn class="local col4 decl" id="224status" title='status' data-type='enum nss_status' data-ref="224status" data-ref-filename="224status">status</dfn>)</td></tr>
+<tr><th id="62">62</th><td>{</td></tr>
+<tr><th id="63">63</th><td>  <b>return</b> ((<a class="local col3 ref" href="#223action" title='action' data-ref="223action" data-ref-filename="223action">action</a>-&gt;<a class="ref field" href="#nss_action::action_bits" title='nss_action::action_bits' data-ref="nss_action::action_bits" data-ref-filename="nss_action..action_bits">action_bits</a> &gt;&gt; <a class="ref fn" href="#nss_actions_bits_index" title='nss_actions_bits_index' data-ref="nss_actions_bits_index" data-ref-filename="nss_actions_bits_index">nss_actions_bits_index</a> (<a class="local col4 ref" href="#224status" title='status' data-ref="224status" data-ref-filename="224status">status</a>))</td></tr>
+<tr><th id="64">64</th><td>	  &amp; <a class="macro" href="#47" title="((1 &lt;&lt; 2) - 1)" data-ref="_M/NSS_BPL_MASK">NSS_BPL_MASK</a>);</td></tr>
+<tr><th id="65">65</th><td>}</td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><i>/* Sets the lookup_action value for STATUS in ACTION.  */</i></td></tr>
+<tr><th id="68">68</th><td><em>static</em> <b>inline</b> <em>void</em></td></tr>
+<tr><th id="69">69</th><td><dfn class="decl def fn" id="nss_action_set" title='nss_action_set' data-ref="nss_action_set" data-ref-filename="nss_action_set">nss_action_set</dfn> (<b>struct</b> <a class="type" href="#nss_action" title='nss_action' data-ref="nss_action" data-ref-filename="nss_action">nss_action</a> *<dfn class="local col5 decl" id="225action" title='action' data-type='struct nss_action *' data-ref="225action" data-ref-filename="225action">action</dfn>,</td></tr>
+<tr><th id="70">70</th><td>                <b>enum</b> <a class="type" href="../include/netinet/ether.h.html#32" title='nss_status' data-ref="nss_status" data-ref-filename="nss_status">nss_status</a> <dfn class="local col6 decl" id="226status" title='status' data-type='enum nss_status' data-ref="226status" data-ref-filename="226status">status</dfn>, <a class="typedef" href="nsswitch.h.html#lookup_actions" title='lookup_actions' data-type='enum lookup_actions' data-ref="lookup_actions" data-ref-filename="lookup_actions">lookup_actions</a> <dfn class="local col7 decl" id="227actions" title='actions' data-type='lookup_actions' data-ref="227actions" data-ref-filename="227actions">actions</dfn>)</td></tr>
+<tr><th id="71">71</th><td>{</td></tr>
+<tr><th id="72">72</th><td>  <em>int</em> <dfn class="local col8 decl" id="228offset" title='offset' data-type='int' data-ref="228offset" data-ref-filename="228offset">offset</dfn> = <a class="ref fn" href="#nss_actions_bits_index" title='nss_actions_bits_index' data-ref="nss_actions_bits_index" data-ref-filename="nss_actions_bits_index">nss_actions_bits_index</a> (<a class="local col6 ref" href="#226status" title='status' data-ref="226status" data-ref-filename="226status">status</a>);</td></tr>
+<tr><th id="73">73</th><td>  <em>unsigned</em> <em>int</em> <dfn class="local col9 decl" id="229mask" title='mask' data-type='unsigned int' data-ref="229mask" data-ref-filename="229mask">mask</dfn> = <a class="macro" href="#47" title="((1 &lt;&lt; 2) - 1)" data-ref="_M/NSS_BPL_MASK">NSS_BPL_MASK</a> &lt;&lt; <a class="local col8 ref" href="#228offset" title='offset' data-ref="228offset" data-ref-filename="228offset">offset</a>;</td></tr>
+<tr><th id="74">74</th><td>  <a class="local col5 ref" href="#225action" title='action' data-ref="225action" data-ref-filename="225action">action</a>-&gt;<a class="ref field" href="#nss_action::action_bits" title='nss_action::action_bits' data-ref="nss_action::action_bits" data-ref-filename="nss_action..action_bits">action_bits</a> = ((<a class="local col5 ref" href="#225action" title='action' data-ref="225action" data-ref-filename="225action">action</a>-&gt;<a class="ref field" href="#nss_action::action_bits" title='nss_action::action_bits' data-ref="nss_action::action_bits" data-ref-filename="nss_action..action_bits">action_bits</a> &amp; ~<a class="local col9 ref" href="#229mask" title='mask' data-ref="229mask" data-ref-filename="229mask">mask</a>)</td></tr>
+<tr><th id="75">75</th><td>                         | ((<em>unsigned</em> <em>int</em>) <a class="local col7 ref" href="#227actions" title='actions' data-ref="227actions" data-ref-filename="227actions">actions</a> &lt;&lt; <a class="local col8 ref" href="#228offset" title='offset' data-ref="228offset" data-ref-filename="228offset">offset</a>));</td></tr>
+<tr><th id="76">76</th><td>}</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><em>static</em> <b>inline</b> <em>void</em></td></tr>
+<tr><th id="79">79</th><td><dfn class="decl def fn" id="nss_action_set_all" title='nss_action_set_all' data-ref="nss_action_set_all" data-ref-filename="nss_action_set_all">nss_action_set_all</dfn> (<b>struct</b> <a class="type" href="#nss_action" title='nss_action' data-ref="nss_action" data-ref-filename="nss_action">nss_action</a> *<dfn class="local col0 decl" id="230action" title='action' data-type='struct nss_action *' data-ref="230action" data-ref-filename="230action">action</dfn>, <a class="typedef" href="nsswitch.h.html#lookup_actions" title='lookup_actions' data-type='enum lookup_actions' data-ref="lookup_actions" data-ref-filename="lookup_actions">lookup_actions</a> <dfn class="local col1 decl" id="231actions" title='actions' data-type='lookup_actions' data-ref="231actions" data-ref-filename="231actions">actions</dfn>)</td></tr>
+<tr><th id="80">80</th><td>{</td></tr>
+<tr><th id="81">81</th><td>  <em>unsigned</em> <em>int</em> <dfn class="local col2 decl" id="232bits" title='bits' data-type='unsigned int' data-ref="232bits" data-ref-filename="232bits">bits</dfn> = <a class="local col1 ref" href="#231actions" title='actions' data-ref="231actions" data-ref-filename="231actions">actions</a> &amp; <a class="macro" href="#47" title="((1 &lt;&lt; 2) - 1)" data-ref="_M/NSS_BPL_MASK">NSS_BPL_MASK</a>;</td></tr>
+<tr><th id="82">82</th><td>  <a class="local col0 ref" href="#230action" title='action' data-ref="230action" data-ref-filename="230action">action</a>-&gt;<a class="ref field" href="#nss_action::action_bits" title='nss_action::action_bits' data-ref="nss_action::action_bits" data-ref-filename="nss_action..action_bits">action_bits</a> = (   <a class="local col2 ref" href="#232bits" title='bits' data-ref="232bits" data-ref-filename="232bits">bits</a></td></tr>
+<tr><th id="83">83</th><td>			 | (<a class="local col2 ref" href="#232bits" title='bits' data-ref="232bits" data-ref-filename="232bits">bits</a> &lt;&lt; (<a class="macro" href="#46" title="2" data-ref="_M/NSS_BPL">NSS_BPL</a> * <var>1</var>))</td></tr>
+<tr><th id="84">84</th><td>			 | (<a class="local col2 ref" href="#232bits" title='bits' data-ref="232bits" data-ref-filename="232bits">bits</a> &lt;&lt; (<a class="macro" href="#46" title="2" data-ref="_M/NSS_BPL">NSS_BPL</a> * <var>2</var>))</td></tr>
+<tr><th id="85">85</th><td>			 | (<a class="local col2 ref" href="#232bits" title='bits' data-ref="232bits" data-ref-filename="232bits">bits</a> &lt;&lt; (<a class="macro" href="#46" title="2" data-ref="_M/NSS_BPL">NSS_BPL</a> * <var>3</var>))</td></tr>
+<tr><th id="86">86</th><td>			 | (<a class="local col2 ref" href="#232bits" title='bits' data-ref="232bits" data-ref-filename="232bits">bits</a> &lt;&lt; (<a class="macro" href="#46" title="2" data-ref="_M/NSS_BPL">NSS_BPL</a> * <var>4</var>))</td></tr>
+<tr><th id="87">87</th><td>			 );</td></tr>
+<tr><th id="88">88</th><td>}</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><i>/* A list of struct nss_action objects in array terminated by an</i></td></tr>
+<tr><th id="91">91</th><td><i>   action with a NULL module.  */</i></td></tr>
+<tr><th id="92">92</th><td><b>typedef</b> <b>struct</b> <a class="type" href="#nss_action" title='nss_action' data-ref="nss_action" data-ref-filename="nss_action">nss_action</a> *<dfn class="typedef" id="nss_action_list" title='nss_action_list' data-type='struct nss_action *' data-ref="nss_action_list" data-ref-filename="nss_action_list">nss_action_list</dfn>;</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td><i>/* Returns a pointer to an allocated NSS action list that has COUNT</i></td></tr>
+<tr><th id="95">95</th><td><i>   actions that matches the array at ACTIONS.  */</i></td></tr>
+<tr><th id="96">96</th><td><a class="typedef" href="#nss_action_list" title='nss_action_list' data-type='struct nss_action *' data-ref="nss_action_list" data-ref-filename="nss_action_list">nss_action_list</a> <dfn class="decl fn" id="__nss_action_allocate" title='__nss_action_allocate' data-ref="__nss_action_allocate" data-ref-filename="__nss_action_allocate">__nss_action_allocate</dfn> (<b>struct</b> <a class="type" href="#nss_action" title='nss_action' data-ref="nss_action" data-ref-filename="nss_action">nss_action</a> *<dfn class="local col3 decl" id="233actions" title='actions' data-type='struct nss_action *' data-ref="233actions" data-ref-filename="233actions">actions</dfn>,</td></tr>
+<tr><th id="97">97</th><td>                                       <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col4 decl" id="234count" title='count' data-type='size_t' data-ref="234count" data-ref-filename="234count">count</dfn>) <a class="macro" href="../include/libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><i>/* Returns a pointer to a list allocated by __nss_action_allocate, or</i></td></tr>
+<tr><th id="100">100</th><td><i>   NULL on error.  ENOMEM means a (temporary) memory allocation error,</i></td></tr>
+<tr><th id="101">101</th><td><i>   EINVAL means that LINE is syntactically invalid.  */</i></td></tr>
+<tr><th id="102">102</th><td><a class="typedef" href="#nss_action_list" title='nss_action_list' data-type='struct nss_action *' data-ref="nss_action_list" data-ref-filename="nss_action_list">nss_action_list</a> <dfn class="decl fn" id="__nss_action_parse" title='__nss_action_parse' data-ref="__nss_action_parse" data-ref-filename="__nss_action_parse">__nss_action_parse</dfn> (<em>const</em> <em>char</em> *<dfn class="local col5 decl" id="235line" title='line' data-type='const char *' data-ref="235line" data-ref-filename="235line">line</dfn>);</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><i>/* Called from __libc_freeres.  */</i></td></tr>
+<tr><th id="105">105</th><td><em>void</em> <dfn class="decl fn" id="__nss_action_freeres" title='__nss_action_freeres' data-ref="__nss_action_freeres" data-ref-filename="__nss_action_freeres">__nss_action_freeres</dfn> (<em>void</em>) <a class="macro" href="../include/libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td><u>#<span data-ppcond="19">endif</span> /* _NSS_ACTION_H */</u></td></tr>
+<tr><th id="109">109</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../build/nss/db-ethers.c.html'>codebrowser/build/nss/db-ethers.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

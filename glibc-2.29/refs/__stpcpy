@@ -1,0 +1,54 @@
+<use f='codebrowser/elf/sotruss-lib.c' l='89' u='c' c='init'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1066' u='c' c='write_output'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='115' u='c' c='charmap_readdir'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='115' u='c' c='charmap_readdir'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='218' u='c' c='charmap_open'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='221' u='c' c='charmap_open'/>
+<use f='codebrowser/locale/programs/charmap.c' l='79' u='c' c='cmlr_open'/>
+<use f='codebrowser/locale/programs/charmap.c' l='82' u='c' c='cmlr_open'/>
+<use f='codebrowser/locale/programs/charmap.c' l='118' u='c' c='charmap_read'/>
+<use f='codebrowser/locale/programs/charmap.c' l='118' u='c' c='charmap_read'/>
+<use f='codebrowser/locale/programs/locale.c' l='327' u='c' c='select_dirs'/>
+<use f='codebrowser/locale/programs/locale.c' l='327' u='c' c='select_dirs'/>
+<use f='codebrowser/locale/programs/locale.c' l='327' u='c' c='select_dirs'/>
+<use f='codebrowser/locale/programs/locale.c' l='457' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='457' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='457' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='457' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='530' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='530' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/localedef.c' l='590' u='c' c='normalize_codeset'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='128' u='c' c='create_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='349' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locfile.c' l='81' u='c' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='81' u='c' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='81' u='c' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='87' u='c' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='87' u='c' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='87' u='c' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='99' u='c' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='99' u='c' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='99' u='c' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='923' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='91' u='c' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='91' u='c' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='91' u='c' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='98' u='c' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='98' u='c' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='98' u='c' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='111' u='c' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='111' u='c' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='111' u='c' c='repertoire_read'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='181' u='c' c='__nscd_innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='185' u='c' c='__nscd_innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='192' u='c' c='__nscd_innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='199' u='c' c='__nscd_innetgr'/>
+<use f='codebrowser/support/temp_file.c' l='70' u='c' c='create_temp_file'/>
+<use f='codebrowser/support/temp_file.c' l='70' u='c' c='create_temp_file'/>
+<use f='codebrowser/support/temp_file.c' l='70' u='c' c='create_temp_file'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='210' c='__stpcpy_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='212' c='__stpcpy_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='214' c='__stpcpy_sse2_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='215' c='__stpcpy_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/stpcpy.c' l='33' macro='1' type='char * __stpcpy(char *restrict , const char *restrict )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/stpcpy.c' l='35' c='stpcpy'/>

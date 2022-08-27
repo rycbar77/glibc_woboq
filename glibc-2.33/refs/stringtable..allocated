@@ -1,0 +1,14 @@
+<dec f='codebrowser/elf/stringtable.h' l='39' type='uint32_t'/>
+<offset>96</offset>
+<doc f='codebrowser/elf/stringtable.h' l='39'>/* Length of the entries array.  */</doc>
+<use f='codebrowser/elf/stringtable.c' l='35' u='w' c='stringtable_init'/>
+<use f='codebrowser/elf/stringtable.c' l='37' u='r' c='stringtable_init'/>
+<use f='codebrowser/elf/stringtable.c' l='60' u='r' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='65' u='r' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='78' u='w' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='85' u='r' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='95' u='r' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='104' u='r' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='111' u='r' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='163' u='r' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='204' u='r' c='stringtable_finalize'/>

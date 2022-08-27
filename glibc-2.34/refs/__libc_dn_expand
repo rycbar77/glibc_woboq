@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/resolv.h' l='60' type='int __libc_dn_expand(const unsigned char * , const unsigned char * , const unsigned char * , char * , int )'/>
+<dec f='codebrowser/include/resolv.h' l='61' type='int __libc_dn_expand(const unsigned char * , const unsigned char * , const unsigned char * , char * , int )'/>
+<use f='codebrowser/include/resolv.h' l='61' c='__libc_dn_expand'/>
+<def f='codebrowser/resolv/dn_expand.c' l='104' macro='1' type='int __libc_dn_expand(const unsigned char * , const unsigned char * , const unsigned char * , char * , int )'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='127' u='c' c='_nss_dns_getcanonname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='806' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='845' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1140' u='c' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/res_nameinquery.c' l='101' u='c' c='__libc_res_nameinquery'/>
+<use f='codebrowser/resolv/res_queriesmatch.c' l='116' u='c' c='__libc_res_queriesmatch'/>

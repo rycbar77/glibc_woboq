@@ -1,0 +1,115 @@
+<use f='codebrowser/iconv/gconv.h' l='71'/>
+<def f='codebrowser/iconv/gconv.h' l='116' ll='136'/>
+<use f='codebrowser/iconv/gconv.h' l='144'/>
+<use f='codebrowser/libio/libio.h' l='53'/>
+<size>48</size>
+<doc f='codebrowser/iconv/gconv.h' l='114'>/* Additional data for steps in use of conversion descriptor.  This is
+   allocated by the `init&apos; function.  */</doc>
+<mbr r='__gconv_step_data::__outbuf' o='0' t='unsigned char *'/>
+<mbr r='__gconv_step_data::__outbufend' o='64' t='unsigned char *'/>
+<mbr r='__gconv_step_data::__flags' o='128' t='int'/>
+<mbr r='__gconv_step_data::__invocation_counter' o='160' t='int'/>
+<mbr r='__gconv_step_data::__internal_use' o='192' t='int'/>
+<mbr r='__gconv_step_data::__statep' o='256' t='__mbstate_t *'/>
+<mbr r='__gconv_step_data::__state' o='320' t='__mbstate_t'/>
+<use f='codebrowser/iconv/gconv_int.h' l='259' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_ascii_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_internal_ascii'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_utf8_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_internal_utf8'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_ucs2_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_internal_ucs2'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_ucs2reverse_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_internal_ucs2reverse'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_internal_ucs4'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_ucs4_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_internal_ucs4le'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_ucs4le_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_internal_utf16'/>
+<use f='codebrowser/iconv/gconv_int.h' l='276' c='__gconv_transform_utf16_internal'/>
+<size>48</size>
+<use f='codebrowser/iconv/gconv_close.c' l='28' c='__gconv_close'/>
+<size>48</size>
+<use f='codebrowser/iconv/gconv_open.c' l='79' c='__gconv_open'/>
+<use f='codebrowser/iconv/gconv_open.c' l='90' c='__gconv_open'/>
+<size>48</size>
+<use f='codebrowser/iconv/gconv_simple.c' l='76' c='internal_ucs4_loop'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='169' c='internal_ucs4_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_internal_ucs4'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_ucs4'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_internal_ucs4'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='233' c='ucs4_internal_loop'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='366' c='ucs4_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_ucs4_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_ucs4_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_ucs4_internal'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='443' c='internal_ucs4le_loop'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='540' c='internal_ucs4le_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_internal_ucs4le'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_ucs4le'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_internal_ucs4le'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='603' c='ucs4le_internal_loop'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='743' c='ucs4le_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_ucs4le_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_ucs4le_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_ucs4le_internal'/>
+<use f='codebrowser/iconv/loop.c' l='286' c='ascii_internal_loop'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_ascii_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_ascii_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_ascii_internal'/>
+<use f='codebrowser/iconv/loop.c' l='286' c='internal_ascii_loop'/>
+<use f='codebrowser/iconv/loop.c' l='368' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_internal_ascii'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_ascii'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_internal_ascii'/>
+<use f='codebrowser/iconv/loop.c' l='286' c='internal_utf8_loop'/>
+<use f='codebrowser/iconv/loop.c' l='368' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_internal_utf8'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_utf8'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_internal_utf8'/>
+<use f='codebrowser/iconv/loop.c' l='286' c='utf8_internal_loop'/>
+<use f='codebrowser/iconv/loop.c' l='368' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_utf8_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_utf8_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_utf8_internal'/>
+<use f='codebrowser/iconv/loop.c' l='286' c='ucs2_internal_loop'/>
+<use f='codebrowser/iconv/loop.c' l='368' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_ucs2_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_ucs2_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_ucs2_internal'/>
+<use f='codebrowser/iconv/loop.c' l='286' c='internal_ucs2_loop'/>
+<use f='codebrowser/iconv/loop.c' l='368' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_internal_ucs2'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_ucs2'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_internal_ucs2'/>
+<use f='codebrowser/iconv/loop.c' l='286' c='ucs2reverse_internal_loop'/>
+<use f='codebrowser/iconv/loop.c' l='368' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_ucs2reverse_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_ucs2reverse_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_ucs2reverse_internal'/>
+<use f='codebrowser/iconv/loop.c' l='286' c='internal_ucs2reverse_loop'/>
+<use f='codebrowser/iconv/loop.c' l='368' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='388' c='__gconv_transform_internal_ucs2reverse'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_ucs2reverse'/>
+<use f='codebrowser/iconv/skeleton.c' l='400' c='__gconv_transform_internal_ucs2reverse'/>
+<size>48</size>
+<use f='codebrowser/iconv/gconv_trans.c' l='33' c='__gconv_transliterate'/>
+<size>48</size>
+<use f='codebrowser/wcsmbs/btowc.c' l='63' c='__btowc'/>
+<size>48</size>
+<use f='codebrowser/wcsmbs/mbrtoc16.c' l='56' c='mbrtoc16'/>
+<size>48</size>
+<use f='codebrowser/wcsmbs/mbrtowc.c' l='38' c='__mbrtowc'/>
+<size>48</size>
+<use f='codebrowser/wcsmbs/mbsnrtowcs.c' l='44' c='__mbsnrtowcs'/>
+<size>48</size>
+<use f='codebrowser/wcsmbs/mbsrtowcs_l.c' l='42' c='__mbsrtowcs_l'/>
+<size>48</size>
+<use f='codebrowser/wcsmbs/wcrtomb.c' l='40' c='__wcrtomb'/>
+<size>48</size>
+<use f='codebrowser/wcsmbs/wcsnrtombs.c' l='42' c='__wcsnrtombs'/>
+<size>48</size>
+<use f='codebrowser/wcsmbs/wcsrtombs.c' l='39' c='__wcsrtombs'/>
+<size>48</size>
+<use f='codebrowser/wcsmbs/wctob.c' l='32' c='wctob'/>
+<size>48</size>

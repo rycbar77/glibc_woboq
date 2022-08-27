@@ -1,0 +1,32 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='473' type='list_t'/>
+<use f='codebrowser/csu/libc-tls.c' l='198' u='a' c='__libc_setup_tls'/>
+<use f='codebrowser/csu/libc-tls.c' l='198' u='a' c='__libc_setup_tls'/>
+<use f='codebrowser/csu/libc-tls.c' l='198' u='a' c='__libc_setup_tls'/>
+<def f='codebrowser/elf/dl-support.c' l='193' type='list_t'/>
+<use f='codebrowser/nptl/allocatestack.c' l='209' macro='1' u='a' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='638' macro='1' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='825' macro='1' u='a' c='__make_stacks_executable'/>
+<use f='codebrowser/nptl/allocatestack.c' l='825' macro='1' u='a' c='__make_stacks_executable'/>
+<use f='codebrowser/nptl/allocatestack.c' l='882' macro='1' u='m' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='882' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='883' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='905' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='905' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='939' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='947' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='947' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='947' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='953' macro='1' u='a' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1084' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1084' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1110' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1110' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1140' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1140' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1199' macro='1' u='a' c='__pthread_init_static_tls'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1199' macro='1' u='a' c='__pthread_init_static_tls'/>
+<use f='codebrowser/nptl/pthread_create.c' l='218' macro='1' u='a' c='__find_in_stack_list'/>
+<use f='codebrowser/nptl/pthread_create.c' l='218' macro='1' u='a' c='__find_in_stack_list'/>
+<use f='codebrowser/nptl_db/structs.def' l='108' macro='1' u='r'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='34' macro='1' u='a' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='34' macro='1' u='a' c='__thread_gscope_wait'/>

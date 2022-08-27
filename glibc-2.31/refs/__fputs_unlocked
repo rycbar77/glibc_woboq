@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/stdio.h' l='214' type='int __fputs_unlocked(const char *restrict , FILE *restrict )'/>
+<dec f='codebrowser/include/stdio.h' l='215' type='int __fputs_unlocked(const char *restrict , FILE *restrict )'/>
+<use f='codebrowser/include/stdio.h' l='215' c='__fputs_unlocked'/>
+<def f='codebrowser/libio/iofputs_u.c' l='31' ll='40' type='int __fputs_unlocked(const char * str, FILE * fp)'/>
+<use f='codebrowser/libio/iofputs_u.c' l='42' c='fputs_unlocked'/>
+<use f='codebrowser/misc/syslog.c' l='219' u='c' c='__vsyslog_internal'/>

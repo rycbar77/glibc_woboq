@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/ldconfig.h' l='108' type='char * chroot_canon(const char * chroot, const char * name)'/>
+<doc f='codebrowser/sysdeps/generic/ldconfig.h' l='107'>/* Declared in chroot_canon.c.  */</doc>
+<def f='codebrowser/elf/chroot_canon.c' l='40' ll='177' type='char * chroot_canon(const char * chroot, const char * name)'/>
+<doc f='codebrowser/elf/chroot_canon.c' l='34'>/* Return the canonical absolute name of file NAME as if chroot(CHROOT) was
+   done first.  A canonical name does not contain any `.&apos;, `..&apos; components
+   nor any repeated path separators (&apos;/&apos;) or symlinks.  All path components
+   must exist and NAME must be absolute filename.  The result is malloc&apos;d.
+   The returned name includes the CHROOT prefix.  */</doc>

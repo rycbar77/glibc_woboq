@@ -1,0 +1,4 @@
+<dec f='codebrowser/posix/unistd.h' l='774' type='int ttyname_r(int __fd, char * __buf, size_t __buflen)'/>
+<doc f='codebrowser/posix/unistd.h' l='772'>/* Store at most BUFLEN characters of the pathname of the terminal FD is
+   open on in BUF.  Return 0 on success, otherwise an error number.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='200' macro='1' type='int ttyname_r(int , char * , size_t )'/>

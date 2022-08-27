@@ -1,0 +1,18 @@
+<def f='codebrowser/nptl/descr.h' l='300' ll='309'/>
+<use f='codebrowser/nptl/descr.h' l='300'/>
+<use f='codebrowser/nptl/descr.h' l='312'/>
+<size>16</size>
+<mbr r='pthread_key_data::seq' o='0' t='uintptr_t'/>
+<mbr r='pthread_key_data::data' o='64' t='void *'/>
+<use f='codebrowser/nptl/nptl_deallocate_tsd.c' l='43' c='__nptl_deallocate_tsd'/>
+<use f='codebrowser/nptl/nptl_deallocate_tsd.c' l='96' c='__nptl_deallocate_tsd'/>
+<size>16</size>
+<use f='codebrowser/nptl_db/db_info.c' l='28'/>
+<use f='codebrowser/nptl_db/db_info.c' l='31'/>
+<size>16</size>
+<use f='codebrowser/nptl/pthread_getspecific.c' l='25' c='___pthread_getspecific'/>
+<use f='codebrowser/nptl/pthread_getspecific.c' l='44' c='___pthread_getspecific'/>
+<size>16</size>
+<use f='codebrowser/nptl/pthread_setspecific.c' l='29' c='___pthread_setspecific'/>
+<use f='codebrowser/nptl/pthread_setspecific.c' l='69' c='___pthread_setspecific'/>
+<size>16</size>

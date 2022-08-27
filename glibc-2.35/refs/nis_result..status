@@ -1,0 +1,82 @@
+<dec f='codebrowser/nis/rpcsvc/nis.h' l='320' type='nis_error'/>
+<use f='codebrowser/nis/nis_add.c' l='58' macro='1' u='w' c='nis_add'/>
+<use f='codebrowser/nis/nis_add.c' l='68' macro='1' u='w' c='nis_add'/>
+<offset>0</offset>
+<use f='codebrowser/nis/nis_addmember.c' l='44' macro='1' u='r' c='__GI_nis_addmember'/>
+<use f='codebrowser/nis/nis_addmember.c' l='46' macro='1' u='r' c='__GI_nis_addmember'/>
+<use f='codebrowser/nis/nis_addmember.c' l='84' macro='1' u='r' c='__GI_nis_addmember'/>
+<use f='codebrowser/nis/nis_call.c' l='319' u='r' c='__do_niscall3'/>
+<use f='codebrowser/nis/nis_call.c' l='337' u='r' c='__do_niscall3'/>
+<use f='codebrowser/nis/nis_call.c' l='338' u='r' c='__do_niscall3'/>
+<use f='codebrowser/nis/nis_call.c' l='339' u='r' c='__do_niscall3'/>
+<use f='codebrowser/nis/nis_checkpoint.c' l='40' macro='1' u='r' c='__GI_nis_checkpoint'/>
+<use f='codebrowser/nis/nis_checkpoint.c' l='50' macro='1' u='w' c='__GI_nis_checkpoint'/>
+<use f='codebrowser/nis/nis_checkpoint.c' l='64' macro='1' u='w' c='__GI_nis_checkpoint'/>
+<use f='codebrowser/nis/nis_checkpoint.c' l='67' macro='1' u='w' c='__GI_nis_checkpoint'/>
+<use f='codebrowser/nis/nis_checkpoint.c' l='75' macro='1' u='w' c='__GI_nis_checkpoint'/>
+<use f='codebrowser/nis/nis_creategroup.c' l='77' macro='1' u='r' c='__GI_nis_creategroup'/>
+<use f='codebrowser/nis/nis_destroygroup.c' l='44' macro='1' u='r' c='__GI_nis_destroygroup'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='33' macro='1' u='r' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_ismember.c' l='47' macro='1' u='r' c='internal_ismember'/>
+<use f='codebrowser/nis/nis_local_names.c' l='115' macro='1' u='r' c='__GI_nis_local_principal'/>
+<use f='codebrowser/nis/nis_lookup.c' l='47' macro='1' u='w' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='68' macro='1' u='w' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='89' macro='1' u='r' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='97' macro='1' u='w' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='117' macro='1' u='r' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='118' macro='1' u='r' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='119' macro='1' u='r' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='141' macro='1' u='w' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='152' macro='1' u='w' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='179' macro='1' u='w' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='183' macro='1' u='r' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_lookup.c' l='197' macro='1' u='w' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_modify.c' l='58' macro='1' u='w' c='__GI_nis_modify'/>
+<use f='codebrowser/nis/nis_modify.c' l='68' macro='1' u='w' c='__GI_nis_modify'/>
+<use f='codebrowser/nis/nis_ping.c' l='39' macro='1' u='r' c='__GI_nis_ping'/>
+<use f='codebrowser/nis/nis_print.c' l='372' macro='1' u='r' c='__GI_nis_print_result'/>
+<use f='codebrowser/nis/nis_print_group_entry.c' l='50' macro='1' u='r' c='__GI_nis_print_group_entry'/>
+<use f='codebrowser/nis/nis_remove.c' l='52' macro='1' u='w' c='__GI_nis_remove'/>
+<use f='codebrowser/nis/nis_removemember.c' l='46' macro='1' u='r' c='__GI_nis_removemember'/>
+<use f='codebrowser/nis/nis_removemember.c' l='48' macro='1' u='r' c='__GI_nis_removemember'/>
+<use f='codebrowser/nis/nis_removemember.c' l='83' macro='1' u='r' c='__GI_nis_removemember'/>
+<use f='codebrowser/nis/nis_table.c' l='152' macro='1' u='r' c='get_tablepath'/>
+<use f='codebrowser/nis/nis_table.c' l='237' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='289' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='296' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='315' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='317' macro='1' u='r' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='330' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='339' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='376' macro='1' u='r' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='383' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='410' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='413' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='413' macro='1' u='r' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='424' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='435' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='435' macro='1' u='r' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='446' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='457' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='468' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='505' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='518' macro='1' u='w' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='566' macro='1' u='w' c='__GI_nis_add_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='573' macro='1' u='w' c='__GI_nis_add_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='599' macro='1' u='w' c='__GI_nis_add_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='610' macro='1' u='w' c='__GI_nis_add_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='637' macro='1' u='w' c='__GI_nis_modify_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='658' macro='1' u='w' c='__GI_nis_modify_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='668' macro='1' u='w' c='__GI_nis_modify_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='690' macro='1' u='w' c='__GI_nis_remove_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='697' macro='1' u='w' c='__GI_nis_remove_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='707' macro='1' u='w' c='__GI_nis_remove_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='717' macro='1' u='w' c='__GI_nis_remove_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='738' macro='1' u='w' c='__GI_nis_first_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='745' macro='1' u='w' c='__GI_nis_first_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='755' macro='1' u='w' c='__GI_nis_first_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='776' macro='1' u='w' c='__GI_nis_next_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='783' macro='1' u='w' c='__GI_nis_next_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='799' macro='1' u='w' c='__GI_nis_next_entry'/>
+<use f='codebrowser/nis/nis_verifygroup.c' l='44' macro='1' u='r' c='__GI_nis_verifygroup'/>
+<use f='codebrowser/nis/nis_xdr.c' l='296' u='a' c='__GI__xdr_nis_result'/>

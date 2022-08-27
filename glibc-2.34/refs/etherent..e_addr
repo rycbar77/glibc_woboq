@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/netinet/ether.h' l='15' type='struct ether_addr'/>
+<offset>64</offset>
+<use f='codebrowser/inet/ether_hton.c' l='55' u='m' c='ether_hostton'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='45' u='m' c='_nss_files_parse_etherent'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='65' u='a' c='_nss_files_getntohost_r'/>

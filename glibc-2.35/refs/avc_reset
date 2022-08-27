@@ -1,0 +1,9 @@
+<dec f='include/selinux/avc.h' l='238' type='int avc_reset()'/>
+<doc f='include/selinux/avc.h' l='230'>/**
+ * avc_reset - Flush the cache and reset statistics.
+ *
+ * Remove all entries from the cache and reset all access
+ * statistics (as returned by avc_cache_stats()) to zero.
+ * The SID mapping is not affected.  Return %0 on success, 
+ * -%1 with @errno set on error.
+ */</doc>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/nscd/selinux.h' l='35' type='void nscd_avc_init()'/>
+<doc f='codebrowser/nscd/selinux.h' l='34'>/* Initialize the userspace AVC.  */</doc>
+<use f='codebrowser/nscd/nscd.c' l='326' u='c' c='main'/>
+<def f='codebrowser/nscd/selinux.c' l='331' ll='343' type='void nscd_avc_init()'/>
+<doc f='codebrowser/nscd/selinux.c' l='329'>/* Initialize the user space access vector cache (AVC) for NSCD along with
+   log/thread/lock callbacks.  */</doc>

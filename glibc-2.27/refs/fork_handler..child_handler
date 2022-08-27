@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/fork.h' l='36' type='void (*)(void)'/>
+<offset>192</offset>
+<use f='codebrowser/nptl/register-atfork.c' l='96' u='w' c='__register_atfork'/>
+<use f='codebrowser/sysdeps/nptl/fork.c' l='203' u='r' c='__libc_fork'/>
+<use f='codebrowser/sysdeps/nptl/fork.c' l='204' u='r' c='__libc_fork'/>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/include/dlfcn.h' l='24' type='int'/>
+<doc f='codebrowser/include/dlfcn.h' l='23'>/* These variables are defined and initialized in the startup code.  */</doc>
+<dec f='codebrowser/elf/dl-libc.c' l='25' type='int'/>
+<use f='codebrowser/elf/dl-libc.c' l='97' u='r' c='do_dlopen'/>
+<dec f='codebrowser/posix/wordexp.c' l='60' type='int'/>
+<use f='codebrowser/posix/wordexp.c' l='1408' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1424' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1444' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1444' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1481' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1483' u='r' c='parse_param'/>
+<doc f='codebrowser/posix/wordexp.c' l='59'>/* These variables are defined and initialized in the startup code.  */</doc>
+<def f='codebrowser/csu/init-first.c' l='38' type='int'/>
+<use f='codebrowser/csu/init-first.c' l='67' u='w' c='__libc_init_first'/>
+<doc f='codebrowser/csu/init-first.c' l='36'>/* Remember the command line argument and enviroment contents for
+   later calls of initializers for dynamic libraries.  */</doc>

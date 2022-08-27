@@ -1,0 +1,7 @@
+<dec f='codebrowser/math/bits/mathcalls.h' l='147' macro='1' type='double __hypot(double __x, double __y)'/>
+<use f='codebrowser/math/cabs_template.c' l='25' u='c' c='__cabs'/>
+<def f='codebrowser/sysdeps/ieee754/dbl-64/e_hypot.c' l='96' ll='139' type='double __hypot(double x, double y)'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_hypot.c' l='140' c='__ieee754_hypot'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_hypot.c' l='146' c='hypot'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_hypot.c' l='146' c='hypotf64'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_hypot.c' l='146' c='hypotf32x'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/argz.h' l='19' type='error_t __argz_add_sep(char **restrict __argz, size_t *restrict __argz_len, const char *restrict __string, int __delim)'/>
+<use f='codebrowser/locale/newlocale.c' l='111' u='c' c='__newlocale'/>
+<use f='codebrowser/locale/setlocale.c' l='257' u='c' c='setlocale'/>
+<def f='codebrowser/string/argz-addsep.c' l='24' ll='56' type='error_t __argz_add_sep(char ** argz, size_t * argz_len, const char * string, int delim)'/>
+<use f='codebrowser/string/argz-addsep.c' l='57' c='argz_add_sep'/>

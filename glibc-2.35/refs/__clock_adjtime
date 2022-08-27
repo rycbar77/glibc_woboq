@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/time.h' l='39' type='int __clock_adjtime(__clockid_t , struct timex * )'/>
+<dec f='codebrowser/include/time.h' l='40' type='int __clock_adjtime(__clockid_t , struct timex * )'/>
+<use f='codebrowser/include/time.h' l='40' c='__clock_adjtime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/adjtime.c' l='47' macro='1' u='c' c='__adjtime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/adjtimex.c' l='25' macro='1' u='c' c='___adjtimex'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/clock_adjtime.c' l='27' macro='1' type='int __clock_adjtime(const clockid_t clock_id, struct timex * tx64)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_adjtime.c' l='70' c='clock_adjtime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettime.c' l='39' macro='1' u='c' c='__ntp_gettime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettimex.c' l='35' macro='1' u='c' c='__ntp_gettimex'/>

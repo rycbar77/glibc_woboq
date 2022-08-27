@@ -1,0 +1,28 @@
+<dec f='codebrowser/elf/elf.h' l='685' type='Elf32_Word'/>
+<dec f='codebrowser/elf/elf.h' l='698' type='Elf64_Xword'/>
+<offset>320</offset>
+<doc f='codebrowser/elf/elf.h' l='685'>/* Segment size in memory */</doc>
+<doc f='codebrowser/elf/elf.h' l='698'>/* Segment size in memory */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='125' u='r' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/dl-addr-obj.c' l='71' u='r' c='_dl_addr_inside_object'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='93' u='r' c='_dl_important_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='191' u='r' c='_rtld_process_pt_note'/>
+<use f='codebrowser/elf/dl-load.c' l='1059' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1087' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1111' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1115' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1155' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-profile.c' l='212' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-reloc.c' l='198' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='198' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/setup-vdso.h' l='47' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='53' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='54' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='56' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='57' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/rtld.c' l='1207' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1216' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1222' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1243' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1384' u='r' c='dl_main'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='65' u='r' c='dl_cet_mark_legacy_region'/>

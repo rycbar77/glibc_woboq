@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1020' type='void _dl_process_pt_gnu_property(struct link_map * l, int fd, const Elf64_Phdr * ph)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1018'>/* Process PT_GNU_PROPERTY program header PH in module L after
+   PT_LOAD segments are mapped from file FD.  */</doc>
+<def f='codebrowser/elf/dl-load.c' l='866' ll='930' type='void _dl_process_pt_gnu_property(struct link_map * l, int fd, const Elf64_Phdr * ph)'/>
+<use f='codebrowser/elf/dl-load.c' l='1375' u='c' c='_dl_map_object_from_fd'/>
+<doc f='codebrowser/elf/dl-load.c' l='860'>/* Process PT_GNU_PROPERTY program header PH in module L after
+   PT_LOAD segments are mapped.  Only one NT_GNU_PROPERTY_TYPE_0
+   note is handled which contains processor specific properties.
+   FD is -1 for the kernel mapped main executable otherwise it is
+   the fd used for loading module L.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='1288' u='c' c='rtld_setup_main_map'/>

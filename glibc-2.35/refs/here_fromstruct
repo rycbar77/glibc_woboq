@@ -1,0 +1,14 @@
+<def f='codebrowser/elf/dl-profile.c' l='162' ll='166'/>
+<use f='codebrowser/elf/dl-profile.c' l='170'/>
+<use f='codebrowser/elf/dl-profile.c' l='255' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='436' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='493' c='_dl_mcount'/>
+<size>16</size>
+<def f='codebrowser/elf/sprof.c' l='123' ll='127'/>
+<use f='codebrowser/elf/sprof.c' l='219'/>
+<use f='codebrowser/elf/sprof.c' l='481' c='load_shobj'/>
+<use f='codebrowser/elf/sprof.c' l='488' c='load_shobj'/>
+<use f='codebrowser/elf/sprof.c' l='752' c='load_profdata'/>
+<use f='codebrowser/elf/sprof.c' l='928' c='load_profdata'/>
+<size>16</size>
+<doc f='codebrowser/elf/sprof.c' l='122'>/* Strcuture describing calls.  */</doc>

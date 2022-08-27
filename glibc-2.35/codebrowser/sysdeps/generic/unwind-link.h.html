@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>unwind-link.h source code [codebrowser/sysdeps/generic/unwind-link.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/generic/unwind-link.h'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>sysdeps</a>/<a href='./'>generic</a>/<a href='unwind-link.h.html'>unwind-link.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Dynamic loading of the libgcc unwinder.  Generic version.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_UNWIND_LINK_H">_UNWIND_LINK_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/_UNWIND_LINK_H" data-ref="_M/_UNWIND_LINK_H">_UNWIND_LINK_H</dfn></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="unwind.h.html">&lt;unwind.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="unwind-arch.h.html">&lt;unwind-arch.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><u>#<span data-ppcond="25">if</span> !<a class="macro" href="unwind-arch.h.html#29" title="0" data-ref="_M/UNWIND_LINK_FRAME_ADJUSTMENT">UNWIND_LINK_FRAME_ADJUSTMENT</a></u></td></tr>
+<tr><th id="26">26</th><td><em>static</em> <b>inline</b> <em>void</em> *</td></tr>
+<tr><th id="27">27</th><td><dfn class="decl def fn" id="unwind_arch_adjustment" title='unwind_arch_adjustment' data-ref="unwind_arch_adjustment" data-ref-filename="unwind_arch_adjustment">unwind_arch_adjustment</dfn> (<em>void</em> *<dfn class="local col5 decl" id="15prev" title='prev' data-type='void *' data-ref="15prev" data-ref-filename="15prev">prev</dfn>, <em>void</em> *<dfn class="local col6 decl" id="16addr" title='addr' data-type='void *' data-ref="16addr" data-ref-filename="16addr">addr</dfn>)</td></tr>
+<tr><th id="28">28</th><td>{</td></tr>
+<tr><th id="29">29</th><td>  <b>return</b> <a class="local col6 ref" href="#16addr" title='addr' data-ref="16addr" data-ref-filename="16addr">addr</a>;</td></tr>
+<tr><th id="30">30</th><td>}</td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="25">endif</span></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="33">ifdef</span> <span class="macro" data-ref="_M/SHARED">SHARED</span></u></td></tr>
+<tr><th id="34">34</th><td><u># include &lt;sysdep.h&gt;</u></td></tr>
+<tr><th id="35">35</th><td><u># include &lt;unwind-resume.h&gt;</u></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><u># if UNWIND_LINK_FRAME_STATE_FOR</u></td></tr>
+<tr><th id="38">38</th><td><b>struct</b> frame_state;</td></tr>
+<tr><th id="39">39</th><td><u># endif</u></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><b>struct</b> unwind_link</td></tr>
+<tr><th id="42">42</th><td>{</td></tr>
+<tr><th id="43">43</th><td>  <b>__typeof</b> (_Unwind_Backtrace) *ptr__Unwind_Backtrace;</td></tr>
+<tr><th id="44">44</th><td>  <b>__typeof</b> (_Unwind_ForcedUnwind) *ptr__Unwind_ForcedUnwind;</td></tr>
+<tr><th id="45">45</th><td>  <b>__typeof</b> (_Unwind_GetCFA) *ptr__Unwind_GetCFA;</td></tr>
+<tr><th id="46">46</th><td><u># if UNWIND_LINK_GETIP</u></td></tr>
+<tr><th id="47">47</th><td>  <b>__typeof</b> (_Unwind_GetIP) *ptr__Unwind_GetIP;</td></tr>
+<tr><th id="48">48</th><td><u># endif</u></td></tr>
+<tr><th id="49">49</th><td>  <b>__typeof</b> (_Unwind_Resume) *ptr__Unwind_Resume;</td></tr>
+<tr><th id="50">50</th><td><u>#if UNWIND_LINK_FRAME_STATE_FOR</u></td></tr>
+<tr><th id="51">51</th><td>  <b>struct</b> frame_state *(*ptr___frame_state_for) (<em>void</em> *, <b>struct</b> frame_state *);</td></tr>
+<tr><th id="52">52</th><td><u>#endif</u></td></tr>
+<tr><th id="53">53</th><td>  _Unwind_Reason_Code (*ptr_personality) PERSONALITY_PROTO;</td></tr>
+<tr><th id="54">54</th><td>  UNWIND_LINK_EXTRA_FIELDS</td></tr>
+<tr><th id="55">55</th><td>};</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><i>/* Return a pointer to the implementation, or NULL on failure.  */</i></td></tr>
+<tr><th id="58">58</th><td><b>struct</b> unwind_link *__libc_unwind_link_get (<em>void</em>);</td></tr>
+<tr><th id="59">59</th><td>libc_hidden_proto (__libc_unwind_link_get)</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><i>/* UNWIND_LINK_PTR returns the stored function pointer NAME from the</i></td></tr>
+<tr><th id="62">62</th><td><i>   cached unwind link OBJ (which was previously returned by</i></td></tr>
+<tr><th id="63">63</th><td><i>   __libc_unwind_link_get).  */</i></td></tr>
+<tr><th id="64">64</th><td><u># ifdef PTR_DEMANGLE</u></td></tr>
+<tr><th id="65">65</th><td><u>#  define UNWIND_LINK_PTR(obj, name, ...)                          \</u></td></tr>
+<tr><th id="66">66</th><td><u>  ({                                                                \</u></td></tr>
+<tr><th id="67">67</th><td><u>    __typeof ((obj)-&gt;ptr_##name) __unwind_fptr = (obj)-&gt;ptr_##name; \</u></td></tr>
+<tr><th id="68">68</th><td><u>    PTR_DEMANGLE (__unwind_fptr);                                   \</u></td></tr>
+<tr><th id="69">69</th><td><u>    __unwind_fptr;                                                  \</u></td></tr>
+<tr><th id="70">70</th><td><u>  })</u></td></tr>
+<tr><th id="71">71</th><td><u># else /* !PTR_DEMANGLE */</u></td></tr>
+<tr><th id="72">72</th><td><u>#  define UNWIND_LINK_PTR(obj, name, ...) ((obj)-&gt;ptr_##name)</u></td></tr>
+<tr><th id="73">73</th><td><u># endif</u></td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><i>/* Called from fork, in the new subprocess.  */</i></td></tr>
+<tr><th id="76">76</th><td><em>void</em> __libc_unwind_link_after_fork (<em>void</em>);</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><i>/* Called from __libc_freeres.  */</i></td></tr>
+<tr><th id="79">79</th><td><em>void</em> __libc_unwind_link_freeres (<em>void</em>) attribute_hidden;</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><u>#<span data-ppcond="33">else</span> /* !SHARED */</u></td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><i>/* Dummy implementation so that the code can be shared with the SHARED</i></td></tr>
+<tr><th id="84">84</th><td><i>   version.  */</i></td></tr>
+<tr><th id="85">85</th><td><b>struct</b> <dfn class="type" id="unwind_link" title='unwind_link' data-ref="unwind_link" data-ref-filename="unwind_link">unwind_link</dfn>;</td></tr>
+<tr><th id="86">86</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="type" href="#unwind_link" title='unwind_link' data-ref="unwind_link" data-ref-filename="unwind_link">unwind_link</a> *</td></tr>
+<tr><th id="87">87</th><td><dfn class="decl def fn" id="__libc_unwind_link_get" title='__libc_unwind_link_get' data-ref="__libc_unwind_link_get" data-ref-filename="__libc_unwind_link_get">__libc_unwind_link_get</dfn> (<em>void</em>)</td></tr>
+<tr><th id="88">88</th><td>{</td></tr>
+<tr><th id="89">89</th><td>  <i>/* Return something that is not a null pointer, so that error checks</i></td></tr>
+<tr><th id="90">90</th><td><i>     succeed.  */</i></td></tr>
+<tr><th id="91">91</th><td>  <b>return</b> (<b>struct</b> <a class="type" href="#unwind_link" title='unwind_link' data-ref="unwind_link" data-ref-filename="unwind_link">unwind_link</a> *) <var>1</var>;</td></tr>
+<tr><th id="92">92</th><td>}</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td><i>/* Directly call the static implementation.  */</i></td></tr>
+<tr><th id="95">95</th><td><u># define <dfn class="macro" id="_M/UNWIND_LINK_PTR" data-ref="_M/UNWIND_LINK_PTR">UNWIND_LINK_PTR</dfn>(obj, name, ...) \</u></td></tr>
+<tr><th id="96">96</th><td><u>  ((void) (obj), &amp;name)</u></td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td><em>static</em> <b>inline</b> <em>void</em></td></tr>
+<tr><th id="99">99</th><td><dfn class="decl def fn" id="__libc_unwind_link_after_fork" title='__libc_unwind_link_after_fork' data-ref="__libc_unwind_link_after_fork" data-ref-filename="__libc_unwind_link_after_fork">__libc_unwind_link_after_fork</dfn> (<em>void</em>)</td></tr>
+<tr><th id="100">100</th><td>{</td></tr>
+<tr><th id="101">101</th><td>  <i>/* No need to clean up if the unwinder is statically linked.  */</i></td></tr>
+<tr><th id="102">102</th><td>}</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><u>#<span data-ppcond="33">endif</span> /* !SHARED */</u></td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><u>#<span data-ppcond="19">endif</span> /* _UNWIND_LINK_H */</u></td></tr>
+<tr><th id="107">107</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../debug/backtrace.c.html'>codebrowser/debug/backtrace.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

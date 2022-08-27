@@ -1,0 +1,17 @@
+<dec f='codebrowser/elf/dl-main.h' l='55' type='const char *'/>
+<offset>1152</offset>
+<doc f='codebrowser/elf/dl-main.h' l='53'>/* Tail of audit_strings[current_index] which still needs
+     processing.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='193' u='w' c='audit_list_init'/>
+<use f='codebrowser/elf/rtld.c' l='211' u='w' c='audit_list_add_string'/>
+<use f='codebrowser/elf/rtld.c' l='227' u='r' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='234' u='r' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='239' u='w' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='242' u='w' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='246' u='r' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='249' u='r' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='257' u='w' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='258' u='r' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='259' u='w' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='275' u='r' c='audit_list_count'/>
+<use f='codebrowser/elf/rtld.c' l='281' u='w' c='audit_list_count'/>

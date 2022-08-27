@@ -1,0 +1,20 @@
+<def f='codebrowser/inet/netinet/ip6.h' l='115' ll='119'/>
+<use f='codebrowser/inet/inet6_opt.c' l='58' c='add_padding'/>
+<use f='codebrowser/inet/inet6_opt.c' l='58' c='add_padding'/>
+<use f='codebrowser/inet/inet6_opt.c' l='61' c='add_padding'/>
+<use f='codebrowser/inet/inet6_opt.c' l='104' c='inet6_opt_append'/>
+<use f='codebrowser/inet/inet6_opt.c' l='118' c='inet6_opt_append'/>
+<use f='codebrowser/inet/inet6_opt.c' l='118' c='inet6_opt_append'/>
+<use f='codebrowser/inet/inet6_opt.c' l='128' c='inet6_opt_append'/>
+<use f='codebrowser/inet/inet6_opt.c' l='196' c='inet6_opt_next'/>
+<use f='codebrowser/inet/inet6_opt.c' l='196' c='inet6_opt_next'/>
+<use f='codebrowser/inet/inet6_opt.c' l='202' c='inet6_opt_next'/>
+<use f='codebrowser/inet/inet6_opt.c' l='206' c='inet6_opt_next'/>
+<use f='codebrowser/inet/inet6_opt.c' l='238' c='inet6_opt_find'/>
+<use f='codebrowser/inet/inet6_opt.c' l='238' c='inet6_opt_find'/>
+<use f='codebrowser/inet/inet6_opt.c' l='252' c='inet6_opt_find'/>
+<use f='codebrowser/inet/inet6_opt.c' l='256' c='inet6_opt_find'/>
+<size>2</size>
+<doc f='codebrowser/inet/netinet/ip6.h' l='114'>/* IPv6 options */</doc>
+<mbr r='ip6_opt::ip6o_type' o='0' t='uint8_t'/>
+<mbr r='ip6_opt::ip6o_len' o='8' t='uint8_t'/>

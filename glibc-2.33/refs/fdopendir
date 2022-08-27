@@ -1,0 +1,6 @@
+<dec f='codebrowser/dirent/dirent.h' l='141' type='DIR * fdopendir(int __fd)'/>
+<doc f='codebrowser/dirent/dirent.h' l='137'>/* Same as opendir, but open the stream on the file descriptor FD.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fdopendir.c' l='52' macro='1' type='DIR * fdopendir(int )'/>

@@ -1,0 +1,6 @@
+<dec f='include/selinux/selinux.h' l='448' type='void set_matchpathcon_invalidcon(int (*)(const char *, unsigned int, char *) f)'/>
+<doc f='include/selinux/selinux.h' l='443'>/* Set the function used by matchpathcon_init when checking the
+   validity of a context in the file contexts configuration.  If not set,
+   then this defaults to a test based on security_check_context().  
+   The function is also responsible for reporting any such error, and
+   may include the &apos;path&apos; and &apos;lineno&apos; in such error messages. */</doc>

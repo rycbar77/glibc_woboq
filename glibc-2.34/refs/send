@@ -1,0 +1,6 @@
+<dec f='codebrowser/socket/sys/socket.h' l='138' type='ssize_t send(int __fd, const void * __buf, size_t __n, int __flags)'/>
+<doc f='codebrowser/socket/sys/socket.h' l='134'>/* Send N bytes of BUF to socket FD.  Returns the number sent or -1.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/send.c' l='33' macro='1' type='ssize_t send(int , const void * , size_t , int )'/>

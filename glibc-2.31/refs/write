@@ -1,0 +1,49 @@
+<dec f='codebrowser/posix/unistd.h' l='366' type='ssize_t write(int __fd, const void * __buf, size_t __n)'/>
+<dec f='codebrowser/include/unistd.h' l='65' type='ssize_t write(int , const void * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='65' c='write'/>
+<doc f='codebrowser/posix/unistd.h' l='362'>/* Write N bytes of BUF to FD.  Return the number written, or -1.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='989' u='c' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='994' u='c' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='995' u='c' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='1004' u='c' c='write_out'/>
+<use f='codebrowser/debug/pcprofile.c' l='54' u='c' c='install'/>
+<use f='codebrowser/debug/pcprofile.c' l='88' u='c' c='__cyg_profile_func_enter'/>
+<use f='codebrowser/elf/cache.c' l='443' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='454' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='457' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='462' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='827' u='c' c='save_aux_cache'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='163' u='c' c='create_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='425' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1016' u='c' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1028' u='c' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1040' u='c' c='add_locale'/>
+<use f='codebrowser/malloc/memusage.c' l='185' u='c' c='update_data'/>
+<use f='codebrowser/malloc/memusage.c' l='187' u='c' c='update_data'/>
+<use f='codebrowser/malloc/memusage.c' l='273' u='c' c='me'/>
+<use f='codebrowser/malloc/memusage.c' l='274' u='c' c='me'/>
+<use f='codebrowser/malloc/memusage.c' l='807' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='810' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='817' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='823' u='c' c='dest'/>
+<use f='codebrowser/support/support_copy_file_range.c' l='103' u='c' c='support_copy_file_range'/>
+<use f='codebrowser/support/support_write_file_string.c' l='31' u='c' c='support_write_file_string'/>
+<use f='codebrowser/support/test-container.c' l='1023' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1068' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1077' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1089' u='c' c='main'/>
+<use f='codebrowser/support/write_message.c' l='30' u='c' c='write_message'/>
+<use f='codebrowser/support/xwrite.c' l='30' u='c' c='xwrite'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='568' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/debug/segfault.c' l='46' u='c' c='write_strsignal'/>
+<use f='codebrowser/debug/segfault.c' l='62' u='c' c='write_strsignal'/>
+<use f='codebrowser/debug/segfault.c' l='46' u='c' c='write_strsignal'/>
+<use f='codebrowser/debug/segfault.c' l='46' u='c' c='catch_segfault'/>
+<use f='codebrowser/debug/segfault.c' l='46' u='c' c='catch_segfault'/>
+<use f='codebrowser/debug/segfault.c' l='46' u='c' c='catch_segfault'/>
+<use f='codebrowser/debug/segfault.c' l='126' u='c' c='catch_segfault'/>
+<use f='codebrowser/debug/segfault.c' l='132' u='c' c='catch_segfault'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/write.c' l='32' macro='1' type='ssize_t write(int , const void * , size_t )'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/malloc/obstack.h' l='173' type='unsigned int'/>
+<offset>641</offset>
+<doc f='codebrowser/malloc/obstack.h' l='173'>/* There is a possibility that the current
+				      chunk contains a zero-length object.  This
+				      prevents freeing the chunk if we allocate
+				      a bigger chunk to replace it. */</doc>
+<use f='codebrowser/malloc/obstack.c' l='185' u='w' c='_obstack_begin'/>
+<use f='codebrowser/malloc/obstack.c' l='233' u='w' c='_obstack_begin_1'/>
+<use f='codebrowser/malloc/obstack.c' l='295' u='r' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='307' u='w' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='361' u='w' c='obstack_free'/>

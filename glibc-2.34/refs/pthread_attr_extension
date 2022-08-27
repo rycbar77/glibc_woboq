@@ -1,0 +1,9 @@
+<use f='codebrowser/sysdeps/nptl/internaltypes.h' l='41'/>
+<def f='codebrowser/sysdeps/nptl/internaltypes.h' l='63' ll='71'/>
+<size>152</size>
+<doc f='codebrowser/sysdeps/nptl/internaltypes.h' l='61'>/* Extension space for pthread attributes.  Referenced by the
+   extension member of struct pthread_attr.  */</doc>
+<mbr r='pthread_attr_extension::cpuset' o='0' t='cpu_set_t *'/>
+<mbr r='pthread_attr_extension::cpusetsize' o='64' t='size_t'/>
+<mbr r='pthread_attr_extension::sigmask' o='128' t='sigset_t'/>
+<mbr r='pthread_attr_extension::sigmask_set' o='1152' t='_Bool'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/rt/aio.h' l='47' type='int'/>
+<use f='codebrowser/rt/aio_cancel.c' l='67' u='r' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='142' u='w' c='__aio_cancel'/>
+<offset>896</offset>
+<use f='codebrowser/rt/aio_error.c' l='42' u='r' c='__aio_error'/>
+<use f='codebrowser/rt/aio_misc.c' l='328' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='365' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='478' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='601' u='w' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='603' u='w' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_notify.c' l='124' u='w' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_suspend.c' l='70' u='r' c='cleanup'/>
+<use f='codebrowser/rt/aio_suspend.c' l='136' u='r' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/aio_suspend.c' l='212' u='r' c='___aio_suspend_time64'/>

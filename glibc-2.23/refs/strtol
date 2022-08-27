@@ -1,0 +1,26 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='183' type='long strtol(const char *restrict __nptr, char **restrict __endptr, int __base)'/>
+<use f='codebrowser/stdlib/stdlib.h' l='280' u='c' c='atoi'/>
+<use f='codebrowser/stdlib/stdlib.h' l='285' u='c' c='atol'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='182'>/* Convert a string to a long integer.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fips-private.h' l='61' u='c' c='fips_enabled_p'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='298' u='c' c='add_module'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='622' u='c' c='add_module'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1344' u='c' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1349' u='c' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='267' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='308' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='318' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='325' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='385' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='395' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='402' u='c' c='time_finish'/>
+<use f='codebrowser/nss/getent.c' l='752' u='c' c='services_keys'/>
+<use f='codebrowser/posix/wordexp.c' l='584' u='c' c='eval_expr_val'/>
+<use f='codebrowser/resolv/ns_name.c' l='876' u='c' c='encode_bitstring'/>
+<use f='codebrowser/stdlib/atoi.c' l='27' u='c' c='atoi'/>
+<use f='codebrowser/stdlib/atol.c' l='27' u='c' c='atol'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='273' u='c' c='init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf.c' l='133' u='c' c='linux_sysconf'/>
+<def f='codebrowser/stdlib/strtol.c' l='108' macro='1' type='long strtol(const char * , char ** , int )'/>
+<use f='codebrowser/sysdeps/wordsize-64/strtol.c' l='13' c='strtoll'/>
+<use f='codebrowser/sysdeps/wordsize-64/strtol.c' l='15' c='strtoq'/>

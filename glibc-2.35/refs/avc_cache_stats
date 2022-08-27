@@ -1,0 +1,28 @@
+<use f='codebrowser/nscd/selinux.h' l='41' c='nscd_avc_cache_stats'/>
+<use f='codebrowser/nscd/selinux.h' l='43' c='nscd_avc_print_stats'/>
+<def f='include/selinux/avc.h' l='406' ll='415'/>
+<dec f='include/selinux/avc.h' l='426' type='void avc_cache_stats(struct avc_cache_stats * stats)'/>
+<use f='include/selinux/avc.h' l='426' c='avc_cache_stats'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='100'/>
+<size>32</size>
+<doc f='include/selinux/avc.h' l='417'>/**
+ * avc_cache_stats - get cache access statistics.
+ * @stats: reference to statistics structure
+ *
+ * Fill the supplied structure with information about AVC 
+ * activity since the last call to avc_init() or
+ * avc_reset().  See the structure definition for
+ * details.
+ */</doc>
+<mbr r='avc_cache_stats::entry_lookups' o='0' t='unsigned int'/>
+<mbr r='avc_cache_stats::entry_hits' o='32' t='unsigned int'/>
+<mbr r='avc_cache_stats::entry_misses' o='64' t='unsigned int'/>
+<mbr r='avc_cache_stats::entry_discards' o='96' t='unsigned int'/>
+<mbr r='avc_cache_stats::cav_lookups' o='128' t='unsigned int'/>
+<mbr r='avc_cache_stats::cav_hits' o='160' t='unsigned int'/>
+<mbr r='avc_cache_stats::cav_probes' o='192' t='unsigned int'/>
+<mbr r='avc_cache_stats::cav_misses' o='224' t='unsigned int'/>
+<use f='codebrowser/nscd/selinux.c' l='443' c='nscd_avc_cache_stats'/>
+<use f='codebrowser/nscd/selinux.c' l='445' u='c' c='nscd_avc_cache_stats'/>
+<use f='codebrowser/nscd/selinux.c' l='451' c='nscd_avc_print_stats'/>
+<size>32</size>

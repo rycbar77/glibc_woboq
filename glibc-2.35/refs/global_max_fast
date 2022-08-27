@@ -1,0 +1,6 @@
+<def f='codebrowser/malloc/malloc.c' l='1786' type='size_t'/>
+<use f='codebrowser/malloc/malloc.c' l='1810' u='r' c='get_max_fast'/>
+<use f='codebrowser/malloc/malloc.c' l='1812' u='r' c='get_max_fast'/>
+<use f='codebrowser/malloc/malloc.c' l='1798' u='w' c='malloc_init_state'/>
+<use f='codebrowser/malloc/malloc.c' l='1798' u='w' c='do_set_mxfast'/>
+<doc f='codebrowser/malloc/malloc.c' l='1785'>/* Maximum size of memory handled in fastbins.  */</doc>

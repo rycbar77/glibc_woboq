@@ -1,0 +1,10 @@
+<dec f='codebrowser/libio/stdio.h' l='652' type='unsigned long fwrite(const void *restrict __ptr, size_t __size, size_t __n, FILE *restrict __s)'/>
+<dec f='codebrowser/include/stdio.h' l='153' type='unsigned long fwrite(const void * , unsigned long , unsigned long , FILE * )'/>
+<use f='codebrowser/include/stdio.h' l='153' c='fwrite'/>
+<dec f='codebrowser/include/stdio.h' l='160' type='unsigned long fwrite(const void * , unsigned long , unsigned long , FILE * )'/>
+<use f='codebrowser/include/stdio.h' l='160' c='fwrite'/>
+<doc f='codebrowser/libio/stdio.h' l='648'>/* Write chunks of generic data to STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/iofwrite.c' l='53' macro='1' type='unsigned long fwrite(const void * , size_t , size_t , _IO_FILE * )'/>

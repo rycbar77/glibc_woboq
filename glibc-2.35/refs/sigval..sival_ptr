@@ -1,0 +1,6 @@
+<dec f='codebrowser/signal/bits/types/__sigval_t.h' l='27' type='void *'/>
+<offset>0</offset>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='256' u='w' c='__mq_notify'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='55' u='w' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='111' u='w' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='73' macro='1' u='r' c='timer_helper_thread'/>

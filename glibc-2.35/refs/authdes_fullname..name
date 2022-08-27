@@ -1,0 +1,15 @@
+<dec f='codebrowser/sunrpc/rpc/auth_des.h' l='37' type='char *'/>
+<offset>0</offset>
+<doc f='codebrowser/sunrpc/rpc/auth_des.h' l='37'>/* network name of client, up to MAXNETNAMELEN */</doc>
+<use f='codebrowser/sunrpc/auth_des.c' l='424' u='w' c='authdes_refresh'/>
+<use f='codebrowser/sunrpc/authdes_prot.c' l='53' u='a' c='__GI_xdr_authdes_cred'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='151' u='w' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='152' u='r' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='153' u='r' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='187' u='r' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='194' u='r' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='271' u='r' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='364' u='r' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='367' u='r' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='383' u='w' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='522' u='r' c='__GI_authdes_getucred'/>

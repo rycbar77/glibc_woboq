@@ -1,0 +1,19 @@
+<dec f='codebrowser/libio/stdio.h' l='371' type='int vfprintf(FILE *restrict __s, const char *restrict __format, struct __va_list_tag * __arg)'/>
+<use f='codebrowser/libio/bits/stdio.h' l='38' u='c' c='vprintf'/>
+<doc f='codebrowser/libio/stdio.h' l='367'>/* Write formatted output to S from argument list ARG.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/debug/fprintf_chk.c' l='35' u='c' c='___fprintf_chk'/>
+<use f='codebrowser/debug/printf_chk.c' l='35' u='c' c='___printf_chk'/>
+<use f='codebrowser/debug/vfprintf_chk.c' l='33' u='c' c='___vfprintf_chk'/>
+<use f='codebrowser/debug/vprintf_chk.c' l='33' u='c' c='___vprintf_chk'/>
+<use f='codebrowser/misc/err.c' l='99' u='c' c='vwarnx'/>
+<use f='codebrowser/misc/err.c' l='128' u='c' c='vwarn'/>
+<use f='codebrowser/misc/error.c' l='271' u='c' c='error_tail'/>
+<use f='codebrowser/stdio-common/fprintf.c' l='32' u='c' c='__fprintf'/>
+<use f='codebrowser/stdio-common/printf.c' l='33' u='c' c='__printf'/>
+<def f='codebrowser/stdio-common/vfprintf.c' l='2358' macro='1' type='int vfprintf(_IO_FILE * , const char * , struct __va_list_tag * )'/>
+<use f='codebrowser/stdio-common/vprintf.c' l='30' u='c' c='__vprintf'/>
+<use f='codebrowser/misc/syslog.c' l='220' u='c' c='__vsyslog_chk'/>
+<use f='codebrowser/timezone/zic.c' l='452' u='c' c='verror'/>

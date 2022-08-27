@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='311' type='int __pthread_attr_init(pthread_attr_t * attr)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='312' type='int __pthread_attr_init(pthread_attr_t * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='312' c='__pthread_attr_init'/>
+<def f='codebrowser/nptl/pthread_attr_init.c' l='30' ll='49' type='int __pthread_attr_init(pthread_attr_t * attr)'/>
+<use f='codebrowser/nptl/pthread_attr_init.c' l='51' c='pthread_attr_init'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='37' u='c' c='__pthread_getattr_np'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='96' u='c' c='__gai_create_helper_thread'/>
+<use f='codebrowser/resolv/gai_misc.c' l='413' u='c' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_notify.c' l='67' u='c' c='__gai_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_misc.h' l='44' u='c' c='__aio_create_helper_thread'/>
+<use f='codebrowser/rt/aio_misc.c' l='673' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_notify.c' l='69' u='c' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='172' u='c' c='init_mq_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='89' u='c' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='131' u='c' c='__timer_start_helper_thread'/>

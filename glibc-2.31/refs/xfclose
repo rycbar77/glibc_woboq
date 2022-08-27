@@ -1,0 +1,4 @@
+<dec f='codebrowser/support/xstdio.h' l='28' type='void xfclose(FILE * )'/>
+<use f='codebrowser/support/support_ptrace.c' l='38' u='c' c='support_ptrace_scope'/>
+<def f='codebrowser/support/xfclose.c' l='24' ll='33' type='void xfclose(FILE * fp)'/>
+<use f='codebrowser/support/xmemstream.c' l='40' u='c' c='xfclose_memstream'/>

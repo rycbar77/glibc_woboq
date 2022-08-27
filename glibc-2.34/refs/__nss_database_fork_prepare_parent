@@ -1,0 +1,7 @@
+<dec f='codebrowser/nss/nss_database.h' l='80' type='void __nss_database_fork_prepare_parent(struct nss_database_data * data)'/>
+<doc f='codebrowser/nss/nss_database.h' l='79'>/* Called by fork in the parent process, before forking.  */</doc>
+<def f='codebrowser/nss/nss_database.c' l='496' ll='512' type='void __nss_database_fork_prepare_parent(struct nss_database_data * data)'/>
+<dec f='codebrowser/posix/fork.c' l='61' type='void __nss_database_fork_prepare_parent(struct nss_database_data * )'/>
+<use f='codebrowser/posix/fork.c' l='61' c='__nss_database_fork_prepare_parent'/>
+<use f='codebrowser/posix/fork.c' l='61' u='r' c='__libc_fork'/>
+<use f='codebrowser/posix/fork.c' l='61' u='c' c='__libc_fork'/>

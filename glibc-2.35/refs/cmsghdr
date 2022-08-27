@@ -1,0 +1,92 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='277' ll='289'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='307' c='__cmsg_nxthdr'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='308' c='__cmsg_nxthdr'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='313' c='__cmsg_nxthdr'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='314' c='__cmsg_nxthdr'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='316' c='__cmsg_nxthdr'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='318' c='__cmsg_nxthdr'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='320' c='__cmsg_nxthdr'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='327' c='__cmsg_nxthdr'/>
+<use f='codebrowser/inet/netinet/in.h' l='561' c='inet6_option_init'/>
+<use f='codebrowser/inet/netinet/in.h' l='563' c='inet6_option_append'/>
+<use f='codebrowser/inet/netinet/in.h' l='566' c='inet6_option_alloc'/>
+<use f='codebrowser/inet/netinet/in.h' l='569' c='inet6_option_next'/>
+<use f='codebrowser/inet/netinet/in.h' l='572' c='inet6_option_find'/>
+<size>16</size>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='276'>/* Structure used for storage of ancillary data object information.  */</doc>
+<mbr r='cmsghdr::cmsg_len' o='0' t='size_t'/>
+<mbr r='cmsghdr::cmsg_level' o='64' t='int'/>
+<mbr r='cmsghdr::cmsg_type' o='96' t='int'/>
+<mbr r='cmsghdr::__cmsg_data' o='128' t='unsigned char[]'/>
+<use f='codebrowser/inet/inet6_option.c' l='26' c='add_pad'/>
+<use f='codebrowser/inet/inet6_option.c' l='28' macro='1' c='add_pad'/>
+<use f='codebrowser/inet/inet6_option.c' l='75' c='option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='94' macro='1' c='inet6_option_space'/>
+<use f='codebrowser/inet/inet6_option.c' l='106' c='inet6_option_init'/>
+<use f='codebrowser/inet/inet6_option.c' l='113' c='inet6_option_init'/>
+<use f='codebrowser/inet/inet6_option.c' l='113' c='inet6_option_init'/>
+<use f='codebrowser/inet/inet6_option.c' l='118' macro='1' c='inet6_option_init'/>
+<use f='codebrowser/inet/inet6_option.c' l='140' c='inet6_option_append'/>
+<use f='codebrowser/inet/inet6_option.c' l='173' c='option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='181' macro='1' c='option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='194' macro='1' c='option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='199' macro='1' c='option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='203' macro='1' c='option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='203' macro='1' c='option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='204' macro='1' c='option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='217' c='inet6_option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='235' c='inet6_option_next'/>
+<use f='codebrowser/inet/inet6_option.c' l='247' macro='1' c='inet6_option_next'/>
+<use f='codebrowser/inet/inet6_option.c' l='249' macro='1' c='inet6_option_next'/>
+<use f='codebrowser/inet/inet6_option.c' l='291' c='inet6_option_find'/>
+<use f='codebrowser/inet/inet6_option.c' l='303' macro='1' c='inet6_option_find'/>
+<use f='codebrowser/inet/inet6_option.c' l='305' macro='1' c='inet6_option_find'/>
+<size>16</size>
+<use f='codebrowser/nscd/connections.c' l='1013' c='send_ro_fd'/>
+<use f='codebrowser/nscd/connections.c' l='1014' macro='1' c='send_ro_fd'/>
+<use f='codebrowser/nscd/connections.c' l='1019' c='send_ro_fd'/>
+<use f='codebrowser/nscd/connections.c' l='1019' macro='1' c='send_ro_fd'/>
+<use f='codebrowser/nscd/connections.c' l='1019' macro='1' c='send_ro_fd'/>
+<use f='codebrowser/nscd/connections.c' l='1019' macro='1' c='send_ro_fd'/>
+<use f='codebrowser/nscd/connections.c' l='1023' macro='1' c='send_ro_fd'/>
+<size>16</size>
+<use f='codebrowser/nscd/nscd_helper.c' l='284' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='285' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='290' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='290' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='290' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='290' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='294' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='310' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='310' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='310' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='311' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='311' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='311' macro='1' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='312' macro='1' c='__nscd_get_mapping'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='414' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='447' macro='1' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='447' macro='1' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='447' macro='1' c='clntudp_call'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='441' macro='1' c='__msgread'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='454' macro='1' c='__msgread'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='490' c='__msgwrite'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='490' macro='1' c='__msgwrite'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/svc_udp.c' l='179' c='__GI_svcudp_bufcreate'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='263' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='265' macro='1' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='265' macro='1' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='265' macro='1' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='270' c='svcudp_recv'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/svc_unix.c' l='312'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='376' c='__msgwrite'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/cmsg_nxthdr.c' l='23' c='__cmsg_nxthdr'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/cmsg_nxthdr.c' l='24' c='__cmsg_nxthdr'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/cmsg_nxthdr.c' l='26' c='__cmsg_nxthdr'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/cmsg_nxthdr.c' l='30' c='__cmsg_nxthdr'/>
+<size>16</size>

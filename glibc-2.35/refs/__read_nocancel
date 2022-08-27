@@ -1,0 +1,21 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='43' type='ssize_t __read_nocancel(int , void * , size_t )'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='78' type='ssize_t __read_nocancel(int , void * , size_t )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='78' c='__read_nocancel'/>
+<use f='codebrowser/catgets/open_catalog.c' l='239' u='c' c='__open_catalog'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='42'>/* Non cancellable read syscall.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fips-private.h' l='52' u='c' c='fips_enabled_p'/>
+<use f='codebrowser/elf/dl-load.c' l='1645' u='c' c='open_verify'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/malloc-sysdep.h' l='50' u='c' c='check_may_shrink_heap'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='450' u='c' c='_nl_load_domain'/>
+<use f='codebrowser/libio/fileops.c' l='1132' u='c' c='_IO_file_read'/>
+<use f='codebrowser/locale/loadlocale.c' l='241' u='c' c='_nl_load_locale'/>
+<use f='codebrowser/nptl/pthread_getname.c' l='52' u='c' c='__pthread_getname_np'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/gethostid.c' l='83' u='c' c='gethostid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getlogin_r.c' l='45' u='c' c='__getlogin_r_loginuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='74' u='c' c='next_line'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='85' u='c' c='next_line'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c' l='34' u='c' c='__malloc_default_thp_pagesize'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c' l='63' u='c' c='__malloc_thp_mode'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/read_nocancel.c' l='23' ll='27' type='ssize_t __read_nocancel(int fd, void * buf, size_t nbytes)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-sysdep.c' l='94' u='c' c='_dl_discover_osversion'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf.c' l='105' u='c' c='linux_sysconf'/>

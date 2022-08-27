@@ -1,0 +1,20 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='371' type='int __pthread_once(pthread_once_t * __once_control, void (*)(void) __init_routine)'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='496' type='int __pthread_once(pthread_once_t * once_control, void (*)(void) init_routine)'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='618' macro='1' u='r' c='__gconv_load_conf'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='618' macro='1' u='c' c='__gconv_load_conf'/>
+<use f='codebrowser/inet/getnetgrent.c' l='40' macro='1' u='r' c='getnetgrent'/>
+<use f='codebrowser/inet/getnetgrent.c' l='40' macro='1' u='c' c='getnetgrent'/>
+<use f='codebrowser/misc/mntent.c' l='44' macro='1' u='r' c='getmntent'/>
+<use f='codebrowser/misc/mntent.c' l='44' macro='1' u='c' c='getmntent'/>
+<use f='codebrowser/nptl/call_once.c' l='30' u='c' c='call_once'/>
+<def f='codebrowser/nptl/pthread_once.c' l='134' ll='144' type='int __pthread_once(pthread_once_t * once_control, void (*)(void) init_routine)'/>
+<use f='codebrowser/nptl/pthread_once.c' l='145' c='pthread_once'/>
+<use f='codebrowser/resolv/res_hconf.c' l='327' macro='1' u='r' c='_res_hconf_init'/>
+<use f='codebrowser/resolv/res_hconf.c' l='327' macro='1' u='c' c='_res_hconf_init'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='108' macro='1' u='r' c='fmtmsg'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='108' macro='1' u='c' c='fmtmsg'/>
+<use f='codebrowser/string/strsignal.c' l='47' macro='1' u='r' c='strsignal'/>
+<use f='codebrowser/string/strsignal.c' l='47' macro='1' u='c' c='strsignal'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2292' macro='1' u='r' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2292' macro='1' u='c' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/shm-directory.c' l='124' macro='1' u='c' c='__shm_directory'/>

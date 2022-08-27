@@ -1,0 +1,64 @@
+<dec f='codebrowser/sysdeps/generic/math-type-macros-double.h' l='26'/>
+<use f='codebrowser/sysdeps/generic/math-type-macros.h' l='57' u='a'/>
+<use f='codebrowser/math/s_ldexp_template.c' l='21' u='c'/>
+<use f='codebrowser/math/s_ldexp_template.c' l='22' u='c'/>
+<dec f='codebrowser/sysdeps/generic/math-type-macros-float.h' l='25'/>
+<dec f='codebrowser/sysdeps/generic/math-type-macros-float128.h' l='28'/>
+<dec f='codebrowser/sysdeps/generic/math-type-macros-ldouble.h' l='26'/>
+<dec f='codebrowser/stdlib/strtod_nan_double.h' l='19'/>
+<use f='codebrowser/stdlib/strtod_nan_main.c' l='32' u='c'/>
+<use f='codebrowser/stdlib/strtod_nan_main.c' l='43' u='c'/>
+<dec f='codebrowser/stdlib/strtod_nan_float.h' l='19'/>
+<doc f='codebrowser/stdlib/strtod_nan_float.h' l='1'>/* Convert string for NaN payload to corresponding NaN.  For float.
+   Copyright (C) 1997-2018 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;http://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/ieee754/ldbl-96/strtod_nan_ldouble.h' l='19'/>
+<doc f='codebrowser/sysdeps/ieee754/ldbl-96/strtod_nan_ldouble.h' l='1'>/* Convert string for NaN payload to corresponding NaN.  For ldbl-96.
+   Copyright (C) 1997-2018 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;http://www.gnu.org/licenses/&gt;.  */</doc>
+<dec f='codebrowser/sysdeps/ieee754/float128/strtod_nan_float128.h' l='19'/>
+<doc f='codebrowser/sysdeps/ieee754/float128/strtod_nan_float128.h' l='1'>/* Convert string for NaN payload to corresponding NaN.  For _Float128.
+   Copyright (C) 2017-2018 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   &lt;http://www.gnu.org/licenses/&gt;.  */</doc>

@@ -1,0 +1,15 @@
+<def f='codebrowser/iconv/gconv_db.c' l='96' ll='102'/>
+<use f='codebrowser/iconv/gconv_db.c' l='108' c='derivation_compare'/>
+<use f='codebrowser/iconv/gconv_db.c' l='108' c='derivation_compare'/>
+<use f='codebrowser/iconv/gconv_db.c' l='109' c='derivation_compare'/>
+<use f='codebrowser/iconv/gconv_db.c' l='109' c='derivation_compare'/>
+<use f='codebrowser/iconv/gconv_db.c' l='126' c='derivation_lookup'/>
+<use f='codebrowser/iconv/gconv_db.c' l='127' c='derivation_lookup'/>
+<use f='codebrowser/iconv/gconv_db.c' l='147' c='add_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='151' c='add_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='152' c='add_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='175' c='free_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='175' c='free_derivation'/>
+<size>32</size>
+<doc f='codebrowser/iconv/gconv_db.c' l='94'>/* If a specific transformation is used more than once we should not need
+   to start looking for it again.  Instead cache each successful result.  */</doc>

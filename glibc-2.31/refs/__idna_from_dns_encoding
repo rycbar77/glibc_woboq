@@ -1,0 +1,6 @@
+<dec f='codebrowser/inet/net-internal.h' l='40' type='int __idna_from_dns_encoding(const char * name, char ** result)'/>
+<dec f='codebrowser/inet/net-internal.h' l='41' type='int __idna_from_dns_encoding(const char * , char ** )'/>
+<use f='codebrowser/inet/net-internal.h' l='41' c='__idna_from_dns_encoding'/>
+<use f='codebrowser/inet/getnameinfo.c' l='293' u='c' c='gni_host_inet_name'/>
+<def f='codebrowser/inet/idna.c' l='157' ll='181' type='int __idna_from_dns_encoding(const char * name, char ** result)'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1009' u='c' c='gaih_inet'/>

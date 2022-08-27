@@ -1,0 +1,4 @@
+<dec f='include/selinux/selinux.h' l='328' type='int security_set_boolean_list(size_t boolcnt, SELboolean * boollist, int permanent)'/>
+<doc f='include/selinux/selinux.h' l='325'>/* save a list of booleans in a single transaction. &apos;permanent&apos; is no
+ * longer supported, set to 0.
+ */</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/wctype.h' l='23' type='int __iswalnum_l(wint_t , locale_t )'/>
+<dec f='codebrowser/include/wctype.h' l='44' type='int __iswalnum_l(wint_t , locale_t )'/>
+<use f='codebrowser/include/wctype.h' l='44' c='__iswalnum_l'/>
+<def f='codebrowser/wctype/wcfuncs_l.c' l='41' macro='1' type='int __iswalnum_l(wint_t wc, locale_t locale)'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='41' macro='1' c='iswalnum_l'/>

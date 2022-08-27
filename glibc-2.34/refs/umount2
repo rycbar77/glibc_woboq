@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sys/mount.h' l='148' type='int umount2(const char * __special_file, int __flags)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/mount.h' l='27' c='__umount2'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sys/mount.h' l='147'>/* Unmount a filesystem.  Force unmounting if FLAGS is set to MNT_FORCE.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/umount2.c' l='29' macro='1' type='int umount2(const char * , int )'/>

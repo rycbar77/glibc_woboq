@@ -1,0 +1,11 @@
+<dec f='codebrowser/libio/stdio.h' l='199' type='int fclose(FILE * __stream)'/>
+<doc f='codebrowser/libio/stdio.h' l='195'>/* Close STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/elf/readlib.c' l='104' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='122' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='131' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='183' u='c' c='process_file'/>
+<def f='codebrowser/libio/iofclose.c' l='85' macro='1' type='int fclose(_IO_FILE * )'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='161' u='c' c='pthread_getattr_np'/>

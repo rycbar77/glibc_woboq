@@ -1,0 +1,13 @@
+<def f='codebrowser/locale/programs/ld-ctype.c' l='66' ll='71'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='70'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='80'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1701' c='find_translit2'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1861' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1899' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3943' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3967' c='allocate_arrays'/>
+<size>16</size>
+<doc f='codebrowser/locale/programs/ld-ctype.c' l='62'>/* Type to describe a transliteration action.  We have a possibly
+   multiple character from-string and a set of multiple character
+   to-strings.  All are 32bit values since this is what is used in
+   the gconv functions.  */</doc>

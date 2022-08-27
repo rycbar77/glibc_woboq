@@ -1,0 +1,14 @@
+<dec f='codebrowser/posix/regex_internal.h' l='405' type='unsigned int'/>
+<use f='codebrowser/posix/regex_internal.c' l='598' u='w' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='628' u='w' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='677' u='w' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='771' u='w' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='774' u='w' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='796' u='w' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='932' u='r' c='re_string_context_at'/>
+<use f='codebrowser/posix/regex_internal.c' l='946' u='r' c='re_string_context_at'/>
+<use f='codebrowser/posix/regexec.c' l='671' u='w' c='re_search_internal'/>
+<offset>608</offset>
+<doc f='codebrowser/posix/regex_internal.h' l='402'>/* The context of mbs[0].  We store the context independently, since
+     the context of mbs[0] may be different from raw_mbs[0], which is
+     the beginning of the input string.  */</doc>

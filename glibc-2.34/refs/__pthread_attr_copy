@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='685' type='int __pthread_attr_copy(pthread_attr_t * target, const pthread_attr_t * source)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='686' type='int __pthread_attr_copy(pthread_attr_t * , const pthread_attr_t * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='686' c='__pthread_attr_copy'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='682'>/* Make a deep copy of the attribute *SOURCE in *TARGET.  *TARGET is
+   not assumed to have been initialized.  Returns 0 on success, or a
+   positive error code otherwise.  */</doc>
+<def f='codebrowser/nptl/pthread_attr_copy.c' l='23' ll='63' type='int __pthread_attr_copy(pthread_attr_t * target, const pthread_attr_t * source)'/>
+<use f='codebrowser/nptl/pthread_getattr_default_np.c' l='26' u='c' c='___pthread_getattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='61' u='c' c='__pthread_setattr_default_np'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='243' u='c' c='__mq_notify'/>

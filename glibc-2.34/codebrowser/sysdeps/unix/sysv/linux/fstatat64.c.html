@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>fstatat64.c source code [codebrowser/sysdeps/unix/sysv/linux/fstatat64.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/fstatat64.c'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>unix</a>/<a href='..'>sysv</a>/<a href='./'>linux</a>/<a href='fstatat64.c.html'>fstatat64.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Get file status.  Linux version.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2020-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#define <dfn class="macro" id="_M/__fstatat" data-ref="_M/__fstatat">__fstatat</dfn> __redirect___fstatat</u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/fstatat" data-ref="_M/fstatat">fstatat</dfn>   __redirect_fstatat</u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../../../../include/sys/stat.h.html">&lt;sys/stat.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../../../../include/fcntl.h.html">&lt;fcntl.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../../../../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="kernel_stat.h.html">&lt;kernel_stat.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../../../../include/time.h.html">&lt;time.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="kstat_cp.h.html">&lt;kstat_cp.h&gt;</a></u></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="stat_t64_cp.h.html">&lt;stat_t64_cp.h&gt;</a></u></td></tr>
+<tr><th id="29">29</th><td><u>#include <a href="../../../../include/sys/sysmacros.h.html">&lt;sys/sysmacros.h&gt;</a></u></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="31">if</span> <a class="macro" href="x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64 \</u></td></tr>
+<tr><th id="32">32</th><td><u>     &amp;&amp; (<a class="macro" href="../../../x86/bits/wordsize.h.html#4" title="64" data-ref="_M/__WORDSIZE">__WORDSIZE</a> == 32 \</u></td></tr>
+<tr><th id="33">33</th><td><u>     &amp;&amp; (!defined <a class="macro" href="../../../x86/bits/wordsize.h.html#14" data-ref="_M/__SYSCALL_WORDSIZE">__SYSCALL_WORDSIZE</a> || <a class="macro" href="../../../x86/bits/wordsize.h.html#14" title="64" data-ref="_M/__SYSCALL_WORDSIZE">__SYSCALL_WORDSIZE</a> == 32))</u></td></tr>
+<tr><th id="34">34</th><td><i>/* Sanity check to avoid newer 32-bit ABI to support non-LFS calls.  */</i></td></tr>
+<tr><th id="35">35</th><td><b>_Static_assert</b> (<b>sizeof</b> (__off_t) == <b>sizeof</b> (__off64_t),</td></tr>
+<tr><th id="36">36</th><td>                <q>"__blkcnt_t and __blkcnt64_t must match"</q>);</td></tr>
+<tr><th id="37">37</th><td><b>_Static_assert</b> (<b>sizeof</b> (__ino_t) == <b>sizeof</b> (__ino64_t),</td></tr>
+<tr><th id="38">38</th><td>                <q>"__blkcnt_t and __blkcnt64_t must match"</q>);</td></tr>
+<tr><th id="39">39</th><td><b>_Static_assert</b> (<b>sizeof</b> (__blkcnt_t) == <b>sizeof</b> (__blkcnt64_t),</td></tr>
+<tr><th id="40">40</th><td>                <q>"__blkcnt_t and __blkcnt64_t must match"</q>);</td></tr>
+<tr><th id="41">41</th><td><u>#<span data-ppcond="31">endif</span></u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><em>static</em> <b>inline</b> <em>int</em></td></tr>
+<tr><th id="44">44</th><td><dfn class="tu decl def fn" id="fstatat64_time64_statx" title='fstatat64_time64_statx' data-type='int fstatat64_time64_statx(int fd, const char * file, struct stat64 * buf, int flag)' data-ref="fstatat64_time64_statx" data-ref-filename="fstatat64_time64_statx">fstatat64_time64_statx</dfn> (<em>int</em> <dfn class="local col1 decl" id="1fd" title='fd' data-type='int' data-ref="1fd" data-ref-filename="1fd">fd</dfn>, <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="2file" title='file' data-type='const char *' data-ref="2file" data-ref-filename="2file">file</dfn>, <b>struct</b> <a class="macro" href="struct_stat_time64.h.html#23" title="stat64" data-ref="_M/__stat64_t64">__stat64_t64</a> *<dfn class="local col3 decl" id="3buf" title='buf' data-type='struct stat64 *' data-ref="3buf" data-ref-filename="3buf">buf</dfn>,</td></tr>
+<tr><th id="45">45</th><td>			<em>int</em> <dfn class="local col4 decl" id="4flag" title='flag' data-type='int' data-ref="4flag" data-ref-filename="4flag">flag</dfn>)</td></tr>
+<tr><th id="46">46</th><td>{</td></tr>
+<tr><th id="47">47</th><td>  <i>/* 32-bit kABI with default 64-bit time_t, e.g. arc, riscv32.   Also</i></td></tr>
+<tr><th id="48">48</th><td><i>     64-bit time_t support is done through statx syscall.  */</i></td></tr>
+<tr><th id="49">49</th><td>  <b>struct</b> <a class="type" href="../../../../io/bits/types/struct_statx.h.html#statx" title='statx' data-ref="statx" data-ref-filename="statx">statx</a> <dfn class="local col5 decl" id="5tmp" title='tmp' data-type='struct statx' data-ref="5tmp" data-ref-filename="5tmp">tmp</dfn>;</td></tr>
+<tr><th id="50">50</th><td>  <em>int</em> <dfn class="local col6 decl" id="6r" title='r' data-type='int' data-ref="6r" data-ref-filename="6r">r</dfn> = <a class="macro" href="../../sysdep.h.html#57" title="({ unsigned long int resultvar; __typeof__ (((__typeof__ ((&amp;tmp) - (&amp;tmp))) (&amp;tmp))) __arg5 = ((__typeof__ ((&amp;tmp) - (&amp;tmp))) (&amp;tmp)); __typeof__ (((__typeof__ ((0x07ffU) - (0x07ffU))) (0x07ffU))) __arg4 = ((__typeof__ ((0x07ffU) - (0x07ffU))) (0x07ffU)); __typeof__ (((__typeof__ ((0x800 | flag) - (0x800 | flag))) (0x800 | flag))) __arg3 = ((__typeof__ ((0x800 | flag) - (0x800 | flag))) (0x800 | flag)); __typeof__ (((__typeof__ ((file) - (file))) (file))) __arg2 = ((__typeof__ ((file) - (file))) (file)); __typeof__ (((__typeof__ ((fd) - (fd))) (fd))) __arg1 = ((__typeof__ ((fd) - (fd))) (fd)); register __typeof__ (((__typeof__ ((&amp;tmp) - (&amp;tmp))) (&amp;tmp))) _a5 asm (&quot;r8&quot;) = __arg5; register __typeof__ (((__typeof__ ((0x07ffU) - (0x07ffU))) (0x07ffU))) _a4 asm (&quot;r10&quot;) = __arg4; register __typeof__ (((__typeof__ ((0x800 | flag) - (0x800 | flag))) (0x800 | flag))) _a3 asm (&quot;rdx&quot;) = __arg3; register __typeof__ (((__typeof__ ((file) - (file))) (file))) _a2 asm (&quot;rsi&quot;) = __arg2; register __typeof__ (((__typeof__ ((fd) - (fd))) (fd))) _a1 asm (&quot;rdi&quot;) = __arg1; asm volatile ( &quot;syscall\n\t&quot; : &quot;=a&quot; (resultvar) : &quot;0&quot; (332), &quot;r&quot; (_a1), &quot;r&quot; (_a2), &quot;r&quot; (_a3), &quot;r&quot; (_a4), &quot;r&quot; (_a5) : &quot;memory&quot;, &quot;cc&quot;, &quot;r11&quot;, &quot;cx&quot;); (long int) resultvar; })" data-ref="_M/INTERNAL_SYSCALL_CALL">INTERNAL_SYSCALL_CALL</a> (statx, <a class="local col1 ref" href="#1fd" title='fd' data-ref="1fd" data-ref-filename="1fd">fd</a>, <a class="local col2 ref" href="#2file" title='file' data-ref="2file" data-ref-filename="2file">file</a>, <a class="macro" href="../../../../io/fcntl.h.html#157" title="0x800" data-ref="_M/AT_NO_AUTOMOUNT">AT_NO_AUTOMOUNT</a> | <a class="local col4 ref" href="#4flag" title='flag' data-ref="4flag" data-ref-filename="4flag">flag</a>,</td></tr>
+<tr><th id="51">51</th><td>				 <a class="macro" href="../../../../io/bits/statx-generic.h.html#40" title="0x07ffU" data-ref="_M/STATX_BASIC_STATS">STATX_BASIC_STATS</a>, &amp;<a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>);</td></tr>
+<tr><th id="52">52</th><td>  <b>if</b> (<a class="local col6 ref" href="#6r" title='r' data-ref="6r" data-ref-filename="6r">r</a> != <var>0</var>)</td></tr>
+<tr><th id="53">53</th><td>    <b>return</b> <a class="local col6 ref" href="#6r" title='r' data-ref="6r" data-ref-filename="6r">r</a>;</td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td>  *<a class="local col3 ref" href="#3buf" title='buf' data-ref="3buf" data-ref-filename="3buf">buf</a> = (<b>struct</b> <a class="macro" href="struct_stat_time64.h.html#23" title="stat64" data-ref="_M/__stat64_t64">__stat64_t64</a>) {</td></tr>
+<tr><th id="56">56</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_dev" title='stat64::st_dev' data-ref="stat64::st_dev" data-ref-filename="stat64..st_dev">st_dev</a> = <a class="ref fn" href="../../../../include/sys/sysmacros.h.html#44" title='__gnu_dev_makedev' data-ref="__gnu_dev_makedev" data-ref-filename="__gnu_dev_makedev">__gnu_dev_makedev</a> (<a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_dev_major" title='statx::stx_dev_major' data-ref="statx::stx_dev_major" data-ref-filename="statx..stx_dev_major">stx_dev_major</a>, <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_dev_minor" title='statx::stx_dev_minor' data-ref="statx::stx_dev_minor" data-ref-filename="statx..stx_dev_minor">stx_dev_minor</a>),</td></tr>
+<tr><th id="57">57</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_rdev" title='stat64::st_rdev' data-ref="stat64::st_rdev" data-ref-filename="stat64..st_rdev">st_rdev</a> = <a class="ref fn" href="../../../../include/sys/sysmacros.h.html#44" title='__gnu_dev_makedev' data-ref="__gnu_dev_makedev" data-ref-filename="__gnu_dev_makedev">__gnu_dev_makedev</a> (<a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_rdev_major" title='statx::stx_rdev_major' data-ref="statx::stx_rdev_major" data-ref-filename="statx..stx_rdev_major">stx_rdev_major</a>, <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_rdev_minor" title='statx::stx_rdev_minor' data-ref="statx::stx_rdev_minor" data-ref-filename="statx..stx_rdev_minor">stx_rdev_minor</a>),</td></tr>
+<tr><th id="58">58</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_ino" title='stat64::st_ino' data-ref="stat64::st_ino" data-ref-filename="stat64..st_ino">st_ino</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_ino" title='statx::stx_ino' data-ref="statx::stx_ino" data-ref-filename="statx..stx_ino">stx_ino</a>,</td></tr>
+<tr><th id="59">59</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_mode" title='stat64::st_mode' data-ref="stat64::st_mode" data-ref-filename="stat64..st_mode">st_mode</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_mode" title='statx::stx_mode' data-ref="statx::stx_mode" data-ref-filename="statx..stx_mode">stx_mode</a>,</td></tr>
+<tr><th id="60">60</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_nlink" title='stat64::st_nlink' data-ref="stat64::st_nlink" data-ref-filename="stat64..st_nlink">st_nlink</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_nlink" title='statx::stx_nlink' data-ref="statx::stx_nlink" data-ref-filename="statx..stx_nlink">stx_nlink</a>,</td></tr>
+<tr><th id="61">61</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_uid" title='stat64::st_uid' data-ref="stat64::st_uid" data-ref-filename="stat64..st_uid">st_uid</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_uid" title='statx::stx_uid' data-ref="statx::stx_uid" data-ref-filename="statx..stx_uid">stx_uid</a>,</td></tr>
+<tr><th id="62">62</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_gid" title='stat64::st_gid' data-ref="stat64::st_gid" data-ref-filename="stat64..st_gid">st_gid</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_gid" title='statx::stx_gid' data-ref="statx::stx_gid" data-ref-filename="statx..stx_gid">stx_gid</a>,</td></tr>
+<tr><th id="63">63</th><td>    .<a class="macro" href="x86/bits/struct_stat.h.html#77" title="st_atim.tv_sec" data-ref="_M/st_atime">st_atime</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_atime" title='statx::stx_atime' data-ref="statx::stx_atime" data-ref-filename="statx..stx_atime">stx_atime</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx_timestamp.h.html#statx_timestamp::tv_sec" title='statx_timestamp::tv_sec' data-ref="statx_timestamp::tv_sec" data-ref-filename="statx_timestamp..tv_sec">tv_sec</a>,</td></tr>
+<tr><th id="64">64</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_atim" title='stat64::st_atim' data-ref="stat64::st_atim" data-ref-filename="stat64..st_atim">st_atim</a>.<a class="ref field" href="../../../../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_atime" title='statx::stx_atime' data-ref="statx::stx_atime" data-ref-filename="statx..stx_atime">stx_atime</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx_timestamp.h.html#statx_timestamp::tv_nsec" title='statx_timestamp::tv_nsec' data-ref="statx_timestamp::tv_nsec" data-ref-filename="statx_timestamp..tv_nsec">tv_nsec</a>,</td></tr>
+<tr><th id="65">65</th><td>    .<a class="macro" href="x86/bits/struct_stat.h.html#78" title="st_mtim.tv_sec" data-ref="_M/st_mtime">st_mtime</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_mtime" title='statx::stx_mtime' data-ref="statx::stx_mtime" data-ref-filename="statx..stx_mtime">stx_mtime</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx_timestamp.h.html#statx_timestamp::tv_sec" title='statx_timestamp::tv_sec' data-ref="statx_timestamp::tv_sec" data-ref-filename="statx_timestamp..tv_sec">tv_sec</a>,</td></tr>
+<tr><th id="66">66</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_mtim" title='stat64::st_mtim' data-ref="stat64::st_mtim" data-ref-filename="stat64..st_mtim">st_mtim</a>.<a class="ref field" href="../../../../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_mtime" title='statx::stx_mtime' data-ref="statx::stx_mtime" data-ref-filename="statx..stx_mtime">stx_mtime</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx_timestamp.h.html#statx_timestamp::tv_nsec" title='statx_timestamp::tv_nsec' data-ref="statx_timestamp::tv_nsec" data-ref-filename="statx_timestamp..tv_nsec">tv_nsec</a>,</td></tr>
+<tr><th id="67">67</th><td>    .<a class="macro" href="x86/bits/struct_stat.h.html#79" title="st_ctim.tv_sec" data-ref="_M/st_ctime">st_ctime</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_ctime" title='statx::stx_ctime' data-ref="statx::stx_ctime" data-ref-filename="statx..stx_ctime">stx_ctime</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx_timestamp.h.html#statx_timestamp::tv_sec" title='statx_timestamp::tv_sec' data-ref="statx_timestamp::tv_sec" data-ref-filename="statx_timestamp..tv_sec">tv_sec</a>,</td></tr>
+<tr><th id="68">68</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_ctim" title='stat64::st_ctim' data-ref="stat64::st_ctim" data-ref-filename="stat64..st_ctim">st_ctim</a>.<a class="ref field" href="../../../../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_ctime" title='statx::stx_ctime' data-ref="statx::stx_ctime" data-ref-filename="statx..stx_ctime">stx_ctime</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx_timestamp.h.html#statx_timestamp::tv_nsec" title='statx_timestamp::tv_nsec' data-ref="statx_timestamp::tv_nsec" data-ref-filename="statx_timestamp..tv_nsec">tv_nsec</a>,</td></tr>
+<tr><th id="69">69</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_size" title='stat64::st_size' data-ref="stat64::st_size" data-ref-filename="stat64..st_size">st_size</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_size" title='statx::stx_size' data-ref="statx::stx_size" data-ref-filename="statx..stx_size">stx_size</a>,</td></tr>
+<tr><th id="70">70</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_blocks" title='stat64::st_blocks' data-ref="stat64::st_blocks" data-ref-filename="stat64..st_blocks">st_blocks</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_blocks" title='statx::stx_blocks' data-ref="statx::stx_blocks" data-ref-filename="statx..stx_blocks">stx_blocks</a>,</td></tr>
+<tr><th id="71">71</th><td>    .<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_blksize" title='stat64::st_blksize' data-ref="stat64::st_blksize" data-ref-filename="stat64..st_blksize">st_blksize</a> = <a class="local col5 ref" href="#5tmp" title='tmp' data-ref="5tmp" data-ref-filename="5tmp">tmp</a>.<a class="ref field" href="../../../../io/bits/types/struct_statx.h.html#statx::stx_blksize" title='statx::stx_blksize' data-ref="statx::stx_blksize" data-ref-filename="statx..stx_blksize">stx_blksize</a>,</td></tr>
+<tr><th id="72">72</th><td>  };</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td>  <b>return</b> <a class="local col6 ref" href="#6r" title='r' data-ref="6r" data-ref-filename="6r">r</a>;</td></tr>
+<tr><th id="75">75</th><td>}</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td><em>static</em> <b>inline</b> <em>int</em></td></tr>
+<tr><th id="78">78</th><td><dfn class="tu decl def fn" id="fstatat64_time64_stat" title='fstatat64_time64_stat' data-type='int fstatat64_time64_stat(int fd, const char * file, struct stat64 * buf, int flag)' data-ref="fstatat64_time64_stat" data-ref-filename="fstatat64_time64_stat">fstatat64_time64_stat</dfn> (<em>int</em> <dfn class="local col7 decl" id="7fd" title='fd' data-type='int' data-ref="7fd" data-ref-filename="7fd">fd</dfn>, <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="8file" title='file' data-type='const char *' data-ref="8file" data-ref-filename="8file">file</dfn>, <b>struct</b> <a class="macro" href="struct_stat_time64.h.html#23" title="stat64" data-ref="_M/__stat64_t64">__stat64_t64</a> *<dfn class="local col9 decl" id="9buf" title='buf' data-type='struct stat64 *' data-ref="9buf" data-ref-filename="9buf">buf</dfn>,</td></tr>
+<tr><th id="79">79</th><td>		       <em>int</em> <dfn class="local col0 decl" id="10flag" title='flag' data-type='int' data-ref="10flag" data-ref-filename="10flag">flag</dfn>)</td></tr>
+<tr><th id="80">80</th><td>{</td></tr>
+<tr><th id="81">81</th><td>  <em>int</em> <dfn class="local col1 decl" id="11r" title='r' data-type='int' data-ref="11r" data-ref-filename="11r">r</dfn>;</td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><u>#<span data-ppcond="83">if</span> <a class="macro" href="kernel_stat.h.html#20" title="1" data-ref="_M/XSTAT_IS_XSTAT64">XSTAT_IS_XSTAT64</a></u></td></tr>
+<tr><th id="84">84</th><td><u># <span data-ppcond="84">ifdef</span> <a class="macro" href="x86_64/64/arch-syscall.h.html#190" data-ref="_M/__NR_newfstatat">__NR_newfstatat</a></u></td></tr>
+<tr><th id="85">85</th><td>  <i>/* 64-bit kABI, e.g. aarch64, ia64, powerpc64*, s390x, riscv64, and</i></td></tr>
+<tr><th id="86">86</th><td><i>     x86_64.  */</i></td></tr>
+<tr><th id="87">87</th><td>  <a class="local col1 ref" href="#11r" title='r' data-ref="11r" data-ref-filename="11r">r</a> = <a class="macro" href="../../sysdep.h.html#57" title="({ unsigned long int resultvar; __typeof__ (((__typeof__ ((flag) - (flag))) (flag))) __arg4 = ((__typeof__ ((flag) - (flag))) (flag)); __typeof__ (((__typeof__ ((buf) - (buf))) (buf))) __arg3 = ((__typeof__ ((buf) - (buf))) (buf)); __typeof__ (((__typeof__ ((file) - (file))) (file))) __arg2 = ((__typeof__ ((file) - (file))) (file)); __typeof__ (((__typeof__ ((fd) - (fd))) (fd))) __arg1 = ((__typeof__ ((fd) - (fd))) (fd)); register __typeof__ (((__typeof__ ((flag) - (flag))) (flag))) _a4 asm (&quot;r10&quot;) = __arg4; register __typeof__ (((__typeof__ ((buf) - (buf))) (buf))) _a3 asm (&quot;rdx&quot;) = __arg3; register __typeof__ (((__typeof__ ((file) - (file))) (file))) _a2 asm (&quot;rsi&quot;) = __arg2; register __typeof__ (((__typeof__ ((fd) - (fd))) (fd))) _a1 asm (&quot;rdi&quot;) = __arg1; asm volatile ( &quot;syscall\n\t&quot; : &quot;=a&quot; (resultvar) : &quot;0&quot; (262), &quot;r&quot; (_a1), &quot;r&quot; (_a2), &quot;r&quot; (_a3), &quot;r&quot; (_a4) : &quot;memory&quot;, &quot;cc&quot;, &quot;r11&quot;, &quot;cx&quot;); (long int) resultvar; })" data-ref="_M/INTERNAL_SYSCALL_CALL">INTERNAL_SYSCALL_CALL</a> (newfstatat, <a class="local col7 ref" href="#7fd" title='fd' data-ref="7fd" data-ref-filename="7fd">fd</a>, <a class="local col8 ref" href="#8file" title='file' data-ref="8file" data-ref-filename="8file">file</a>, <a class="local col9 ref" href="#9buf" title='buf' data-ref="9buf" data-ref-filename="9buf">buf</a>, <a class="local col0 ref" href="#10flag" title='flag' data-ref="10flag" data-ref-filename="10flag">flag</a>);</td></tr>
+<tr><th id="88">88</th><td><u># <span data-ppcond="84">elif</span> defined __NR_fstatat64</u></td></tr>
+<tr><th id="89">89</th><td><u>#  if STAT64_IS_KERNEL_STAT64</u></td></tr>
+<tr><th id="90">90</th><td>  <i>/* 64-bit kABI outlier, e.g. alpha  */</i></td></tr>
+<tr><th id="91">91</th><td>  r = INTERNAL_SYSCALL_CALL (fstatat64, fd, file, buf, flag);</td></tr>
+<tr><th id="92">92</th><td><u>#  else</u></td></tr>
+<tr><th id="93">93</th><td>  <i>/* 64-bit kABI outlier, e.g. sparc64.  */</i></td></tr>
+<tr><th id="94">94</th><td>  <b>struct</b> kernel_stat64 kst64;</td></tr>
+<tr><th id="95">95</th><td>  r = INTERNAL_SYSCALL_CALL (fstatat64, fd, file, &amp;kst64, flag);</td></tr>
+<tr><th id="96">96</th><td>  <b>if</b> (r == <var>0</var>)</td></tr>
+<tr><th id="97">97</th><td>    __cp_stat64_kstat64 (buf, &amp;kst64);</td></tr>
+<tr><th id="98">98</th><td><u>#  endif</u></td></tr>
+<tr><th id="99">99</th><td><u># <span data-ppcond="84">endif</span></u></td></tr>
+<tr><th id="100">100</th><td><u>#<span data-ppcond="83">else</span></u></td></tr>
+<tr><th id="101">101</th><td><u># ifdef __NR_fstatat64</u></td></tr>
+<tr><th id="102">102</th><td>  <i>/* All kABIs with non-LFS support and with old 32-bit time_t support</i></td></tr>
+<tr><th id="103">103</th><td><i>     e.g. arm, csky, i386, hppa, m68k, microblaze, nios2, sh, powerpc32,</i></td></tr>
+<tr><th id="104">104</th><td><i>     and sparc32.  */</i></td></tr>
+<tr><th id="105">105</th><td>  <b>struct</b> stat64 st64;</td></tr>
+<tr><th id="106">106</th><td>  r = INTERNAL_SYSCALL_CALL (fstatat64, fd, file, &amp;st64, flag);</td></tr>
+<tr><th id="107">107</th><td>  <b>if</b> (r == <var>0</var>)</td></tr>
+<tr><th id="108">108</th><td>    {</td></tr>
+<tr><th id="109">109</th><td>      <i>/* Clear both pad and reserved fields.  */</i></td></tr>
+<tr><th id="110">110</th><td>      memset (buf, <var>0</var>, <b>sizeof</b> (*buf));</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td>      buf-&gt;st_dev = st64.st_dev,</td></tr>
+<tr><th id="113">113</th><td>      buf-&gt;st_ino = st64.st_ino;</td></tr>
+<tr><th id="114">114</th><td>      buf-&gt;st_mode = st64.st_mode;</td></tr>
+<tr><th id="115">115</th><td>      buf-&gt;st_nlink = st64.st_nlink;</td></tr>
+<tr><th id="116">116</th><td>      buf-&gt;st_uid = st64.st_uid;</td></tr>
+<tr><th id="117">117</th><td>      buf-&gt;st_gid = st64.st_gid;</td></tr>
+<tr><th id="118">118</th><td>      buf-&gt;st_rdev = st64.st_rdev;</td></tr>
+<tr><th id="119">119</th><td>      buf-&gt;st_size = st64.st_size;</td></tr>
+<tr><th id="120">120</th><td>      buf-&gt;st_blksize = st64.st_blksize;</td></tr>
+<tr><th id="121">121</th><td>      buf-&gt;st_blocks  = st64.st_blocks;</td></tr>
+<tr><th id="122">122</th><td>      buf-&gt;st_atim = valid_timespec_to_timespec64 (st64.st_atim);</td></tr>
+<tr><th id="123">123</th><td>      buf-&gt;st_mtim = valid_timespec_to_timespec64 (st64.st_mtim);</td></tr>
+<tr><th id="124">124</th><td>      buf-&gt;st_ctim = valid_timespec_to_timespec64 (st64.st_ctim);</td></tr>
+<tr><th id="125">125</th><td>    }</td></tr>
+<tr><th id="126">126</th><td><u># else</u></td></tr>
+<tr><th id="127">127</th><td>  <i>/* 64-bit kabi outlier, e.g. mips64 and mips64-n32.  */</i></td></tr>
+<tr><th id="128">128</th><td>  <b>struct</b> kernel_stat kst;</td></tr>
+<tr><th id="129">129</th><td>  r = INTERNAL_SYSCALL_CALL (newfstatat, fd, file, &amp;kst, flag);</td></tr>
+<tr><th id="130">130</th><td>  <b>if</b> (r == <var>0</var>)</td></tr>
+<tr><th id="131">131</th><td>    __cp_kstat_stat64_t64 (&amp;kst, buf);</td></tr>
+<tr><th id="132">132</th><td><u># endif</u></td></tr>
+<tr><th id="133">133</th><td><u>#<span data-ppcond="83">endif</span></u></td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td>  <b>return</b> <a class="local col1 ref" href="#11r" title='r' data-ref="11r" data-ref-filename="11r">r</a>;</td></tr>
+<tr><th id="136">136</th><td>}</td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td><u>#<span data-ppcond="138">if</span> (<a class="macro" href="../../../x86/bits/wordsize.h.html#4" title="64" data-ref="_M/__WORDSIZE">__WORDSIZE</a> == 32 \</u></td></tr>
+<tr><th id="139">139</th><td><u>     &amp;&amp; (!defined <a class="macro" href="../../../x86/bits/wordsize.h.html#14" data-ref="_M/__SYSCALL_WORDSIZE">__SYSCALL_WORDSIZE</a> || <a class="macro" href="../../../x86/bits/wordsize.h.html#14" title="64" data-ref="_M/__SYSCALL_WORDSIZE">__SYSCALL_WORDSIZE</a> == 32)) \</u></td></tr>
+<tr><th id="140">140</th><td><u>     || defined <span class="macro" data-ref="_M/STAT_HAS_TIME32">STAT_HAS_TIME32</span></u></td></tr>
+<tr><th id="141">141</th><td><u># define FSTATAT_USE_STATX 1</u></td></tr>
+<tr><th id="142">142</th><td><u>#<span data-ppcond="138">else</span></u></td></tr>
+<tr><th id="143">143</th><td><u># define <dfn class="macro" id="_M/FSTATAT_USE_STATX" data-ref="_M/FSTATAT_USE_STATX">FSTATAT_USE_STATX</dfn> 0</u></td></tr>
+<tr><th id="144">144</th><td><u>#<span data-ppcond="138">endif</span></u></td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td><em>int</em></td></tr>
+<tr><th id="147">147</th><td><a class="macro" href="../../../../include/sys/stat.h.html#53" title="__fstatat64" data-ref="_M/__fstatat64_time64">__fstatat64_time64</a> (<em>int</em> <dfn class="local col2 decl" id="12fd" title='fd' data-type='int' data-ref="12fd" data-ref-filename="12fd">fd</dfn>, <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="13file" title='file' data-type='const char *' data-ref="13file" data-ref-filename="13file">file</dfn>, <b>struct</b> <a class="macro" href="struct_stat_time64.h.html#23" title="stat64" data-ref="_M/__stat64_t64">__stat64_t64</a> *<dfn class="local col4 decl" id="14buf" title='buf' data-type='struct stat64 *' data-ref="14buf" data-ref-filename="14buf">buf</dfn>,</td></tr>
+<tr><th id="148">148</th><td>		    <em>int</em> <dfn class="local col5 decl" id="15flag" title='flag' data-type='int' data-ref="15flag" data-ref-filename="15flag">flag</dfn>)</td></tr>
+<tr><th id="149">149</th><td>{</td></tr>
+<tr><th id="150">150</th><td>  <em>int</em> <dfn class="local col6 decl" id="16r" title='r' data-type='int' data-ref="16r" data-ref-filename="16r">r</dfn>;</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><u>#<span data-ppcond="152">if</span> <a class="macro" href="#143" title="0" data-ref="_M/FSTATAT_USE_STATX">FSTATAT_USE_STATX</a></u></td></tr>
+<tr><th id="153">153</th><td>  r = fstatat64_time64_statx (fd, file, buf, flag);</td></tr>
+<tr><th id="154">154</th><td><u># ifndef __ASSUME_STATX</u></td></tr>
+<tr><th id="155">155</th><td>  <b>if</b> (r == -ENOSYS)</td></tr>
+<tr><th id="156">156</th><td>    r = fstatat64_time64_stat (fd, file, buf, flag);</td></tr>
+<tr><th id="157">157</th><td><u># endif</u></td></tr>
+<tr><th id="158">158</th><td><u>#<span data-ppcond="152">else</span></u></td></tr>
+<tr><th id="159">159</th><td>  <a class="local col6 ref" href="#16r" title='r' data-ref="16r" data-ref-filename="16r">r</a> = <a class="tu ref fn" href="#fstatat64_time64_stat" title='fstatat64_time64_stat' data-use='c' data-ref="fstatat64_time64_stat" data-ref-filename="fstatat64_time64_stat">fstatat64_time64_stat</a> (<a class="local col2 ref" href="#12fd" title='fd' data-ref="12fd" data-ref-filename="12fd">fd</a>, <a class="local col3 ref" href="#13file" title='file' data-ref="13file" data-ref-filename="13file">file</a>, <a class="local col4 ref" href="#14buf" title='buf' data-ref="14buf" data-ref-filename="14buf">buf</a>, <a class="local col5 ref" href="#15flag" title='flag' data-ref="15flag" data-ref-filename="15flag">flag</a>);</td></tr>
+<tr><th id="160">160</th><td><u>#<span data-ppcond="152">endif</span></u></td></tr>
+<tr><th id="161">161</th><td></td></tr>
+<tr><th id="162">162</th><td>  <b>return</b> <a class="macro" href="sysdep.h.html#27" title="((unsigned long int) (r) &gt; -4096UL)" data-ref="_M/INTERNAL_SYSCALL_ERROR_P">INTERNAL_SYSCALL_ERROR_P</a> (<a class="local col6 ref" href="#16r" title='r' data-ref="16r" data-ref-filename="16r">r</a>)</td></tr>
+<tr><th id="163">163</th><td>	 ? <a class="macro" href="sysdep.h.html#56" title="({ (__libc_errno = (-r)); -1l; })" data-ref="_M/INLINE_SYSCALL_ERROR_RETURN_VALUE">INLINE_SYSCALL_ERROR_RETURN_VALUE</a> (-<a class="local col6 ref" href="#16r" title='r' data-ref="16r" data-ref-filename="16r">r</a>)</td></tr>
+<tr><th id="164">164</th><td>	 : <var>0</var>;</td></tr>
+<tr><th id="165">165</th><td>}</td></tr>
+<tr><th id="166">166</th><td><u>#<span data-ppcond="166">if</span> <a class="macro" href="x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> != 64</u></td></tr>
+<tr><th id="167">167</th><td>hidden_def (__fstatat64_time64)</td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td><em>int</em></td></tr>
+<tr><th id="170">170</th><td>__fstatat64 (<em>int</em> fd, <em>const</em> <em>char</em> *file, <b>struct</b> stat64 *buf, <em>int</em> flags)</td></tr>
+<tr><th id="171">171</th><td>{</td></tr>
+<tr><th id="172">172</th><td>  <b>struct</b> __stat64_t64 st_t64;</td></tr>
+<tr><th id="173">173</th><td>  <b>return</b> __fstatat64_time64 (fd, file, &amp;st_t64, flags)</td></tr>
+<tr><th id="174">174</th><td>	 ?: __cp_stat64_t64_stat64 (&amp;st_t64, buf);</td></tr>
+<tr><th id="175">175</th><td>}</td></tr>
+<tr><th id="176">176</th><td><u>#<span data-ppcond="166">endif</span></u></td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><u>#undef <a class="macro" href="#19" data-ref="_M/__fstatat">__fstatat</a></u></td></tr>
+<tr><th id="179">179</th><td><u>#undef <a class="macro" href="#20" data-ref="_M/fstatat">fstatat</a></u></td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#611" title="" data-ref="_M/hidden_def">hidden_def</a> (__fstatat64)</td></tr>
+<tr><th id="182">182</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#153" title="extern __typeof (__fstatat64) fstatat64 __attribute__ ((weak, alias (&quot;__fstatat64&quot;))) ;" data-ref="_M/weak_alias">weak_alias</a> (<a class="ref fn" href="#147" title='__fstatat64' data-ref="__fstatat64" data-ref-filename="__fstatat64">__fstatat64</a>, <dfn class="decl def fn" id="fstatat64" title='fstatat64' data-ref="fstatat64" data-ref-filename="fstatat64">fstatat64</dfn>)</td></tr>
+<tr><th id="183">183</th><td></td></tr>
+<tr><th id="184">184</th><td><u>#<span data-ppcond="184">if</span> <a class="macro" href="kernel_stat.h.html#20" title="1" data-ref="_M/XSTAT_IS_XSTAT64">XSTAT_IS_XSTAT64</a></u></td></tr>
+<tr><th id="185">185</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#141" title="extern __typeof (__fstatat64) __fstatat __attribute__ ((alias (&quot;__fstatat64&quot;))) ;" data-ref="_M/strong_alias">strong_alias</a> (<a class="ref fn" href="#147" title='__fstatat64' data-ref="__fstatat64" data-ref-filename="__fstatat64">__fstatat64</a>, <dfn class="decl def fn" id="__fstatat" title='__fstatat' data-ref="__fstatat" data-ref-filename="__fstatat">__fstatat</dfn>)</td></tr>
+<tr><th id="186">186</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#153" title="extern __typeof (__fstatat64) fstatat __attribute__ ((weak, alias (&quot;__fstatat64&quot;))) ;" data-ref="_M/weak_alias">weak_alias</a> (<a class="ref fn" href="#147" title='__fstatat64' data-ref="__fstatat64" data-ref-filename="__fstatat64">__fstatat64</a>, <dfn class="decl def fn" id="fstatat" title='fstatat' data-ref="fstatat" data-ref-filename="fstatat">fstatat</dfn>)</td></tr>
+<tr><th id="187">187</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#141" title="extern __typeof (__fstatat64) __GI___fstatat __attribute__ ((alias (&quot;__fstatat64&quot;))) ;" data-ref="_M/strong_alias">strong_alias</a> (<a class="ref fn" href="#147" title='__fstatat64' data-ref="__fstatat64" data-ref-filename="__fstatat64">__fstatat64</a>, <dfn class="decl def fn" id="__GI___fstatat" title='__GI___fstatat' data-ref="__GI___fstatat" data-ref-filename="__GI___fstatat">__GI___fstatat</dfn>);</td></tr>
+<tr><th id="188">188</th><td><u>#<span data-ppcond="184">endif</span></u></td></tr>
+<tr><th id="189">189</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

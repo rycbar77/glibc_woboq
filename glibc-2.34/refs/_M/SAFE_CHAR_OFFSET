@@ -1,0 +1,11 @@
+<dec f='codebrowser/malloc/malloc-check.c' l='27'/>
+<use f='codebrowser/malloc/malloc-check.c' l='62' u='c'/>
+<use f='codebrowser/malloc/malloc-check.c' l='99' u='c'/>
+<use f='codebrowser/malloc/malloc-check.c' l='101' u='c'/>
+<use f='codebrowser/malloc/malloc-check.c' l='135' u='c'/>
+<use f='codebrowser/malloc/malloc-check.c' l='160' u='c'/>
+<use f='codebrowser/malloc/malloc-check.c' l='168' u='c'/>
+<doc f='codebrowser/malloc/malloc-check.c' l='23'>/* When memory is tagged, the checking data is stored in the user part
+   of the chunk.  We can&apos;t rely on the user not having modified the
+   tags, so fetch the tag at each location before dereferencing
+   it.  */</doc>

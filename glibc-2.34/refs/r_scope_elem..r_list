@@ -1,0 +1,64 @@
+<dec f='codebrowser/include/link.h' l='69' type='struct link_map **'/>
+<offset>0</offset>
+<doc f='codebrowser/include/link.h' l='68'>/* Array of maps for the scope.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='341' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='355' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='459' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='516' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='524' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='527' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='527' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-deps.c' l='213' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='472' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='472' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='486' u='w' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='499' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='514' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='550' u='w' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='552' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='562' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='591' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='600' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='604' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='608' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='611' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-libc.c' l='304' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-libc.c' l='307' u='w' c='free_mem'/>
+<use f='codebrowser/elf/dl-libc.c' l='309' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-load.c' l='1447' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-lookup.c' l='368' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='369' u='r' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='850' u='r' c='_dl_lookup_symbol_x'/>
+<use f='codebrowser/elf/dl-object.c' l='96' u='w' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='100' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-open.c' l='95' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='139' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='153' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='157' u='w' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='177' u='r' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-open.c' l='186' u='r' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-open.c' l='258' u='r' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='323' u='r' c='update_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='363' u='r' c='resize_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-open.c' l='385' u='r' c='update_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-open.c' l='411' u='r' c='update_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-open.c' l='549' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='593' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='595' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='931' u='r' c='_dl_show_scope'/>
+<use f='codebrowser/elf/dl-open.c' l='933' u='r' c='_dl_show_scope'/>
+<use f='codebrowser/elf/dl-support.c' l='92' u='w'/>
+<use f='codebrowser/elf/dl-support.c' l='95' u='w'/>
+<use f='codebrowser/elf/dl-support.c' l='125' u='w'/>
+<use f='codebrowser/elf/setup-vdso.h' l='80' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/dl-version.c' l='45' u='r' c='find_needed'/>
+<use f='codebrowser/elf/dl-version.c' l='46' u='r' c='find_needed'/>
+<use f='codebrowser/elf/rtld.c' l='699' u='r' c='find_needed'/>
+<use f='codebrowser/elf/rtld.c' l='700' u='r' c='find_needed'/>
+<use f='codebrowser/elf/rtld.c' l='1934' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1942' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1954' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1958' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2023' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2253' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2920' u='r' c='print_statistics'/>

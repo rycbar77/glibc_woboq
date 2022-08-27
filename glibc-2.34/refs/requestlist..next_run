@@ -1,0 +1,14 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='79' type='struct requestlist *'/>
+<offset>256</offset>
+<use f='codebrowser/rt/aio_misc.c' l='266' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='268' u='w' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='268' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='272' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='655' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='721' u='w' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='728' u='r' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='729' u='r' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='730' u='r' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='732' u='w' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='732' u='r' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='733' u='w' c='add_request_to_runlist'/>

@@ -1,0 +1,93 @@
+<dec f='codebrowser/include/link.h' l='100' type='Elf64_Addr'/>
+<offset>0</offset>
+<use f='codebrowser/csu/libc-tls.c' l='127' u='r' c='__libc_setup_tls'/>
+<use f='codebrowser/debug/backtracesyms.c' l='62' u='r' c='__backtrace_symbols'/>
+<use f='codebrowser/debug/backtracesymsfd.c' l='57' u='r' c='__backtrace_symbols_fd'/>
+<use f='codebrowser/debug/backtracesymsfd.c' l='78' u='r' c='__backtrace_symbols_fd'/>
+<use f='codebrowser/elf/dl-addr-obj.c' l='67' u='r' c='_dl_addr_inside_object'/>
+<use f='codebrowser/elf/dl-addr.c' l='65' macro='1' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='65' macro='1' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='65' macro='1' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='95' macro='1' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='95' macro='1' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='95' macro='1' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='112' macro='1' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-call-libc-early-init.c' l='39' macro='1' u='r' c='_dl_call_libc_early_init'/>
+<use f='codebrowser/elf/dl-close.c' l='122' u='r' c='call_destructors'/>
+<use f='codebrowser/elf/dl-close.c' l='133' u='r' c='call_destructors'/>
+<use f='codebrowser/sysdeps/x86_64/dl-machine.h' l='87' u='r' c='elf_machine_runtime_setup'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='76' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='78' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/dl-fini.c' l='134' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-fini.c' l='145' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-init.c' l='56' u='r' c='call_init'/>
+<use f='codebrowser/elf/dl-init.c' l='68' u='r' c='call_init'/>
+<use f='codebrowser/elf/dl-init.c' l='100' u='r' c='_dl_init'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='65' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-libc.c' l='175' macro='1' u='r' c='__libc_dlsym_private'/>
+<use f='codebrowser/elf/dl-libc.c' l='192' macro='1' u='r' c='__libc_dlsym'/>
+<use f='codebrowser/elf/dl-libc.c' l='217' macro='1' u='r' c='__libc_dlvsym'/>
+<use f='codebrowser/elf/dl-load.h' l='91' u='r' c='_dl_postprocess_loadcmd'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='64' u='w' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='74' u='r' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='86' u='r' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='94' u='r' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='110' u='r' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='111' u='r' c='_dl_map_segments'/>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='203' u='r' c='_dl_process_pt_note'/>
+<use f='codebrowser/elf/dl-load.c' l='867' u='r' c='_dl_process_pt_gnu_property'/>
+<use f='codebrowser/elf/dl-load.c' l='1293' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1331' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1386' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1419' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1428' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-minimal.c' l='82' macro='1' u='r' c='lookup_malloc_symbol'/>
+<use f='codebrowser/elf/dl-profile.c' l='224' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='226' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-reloc.c' l='221' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='330' u='r' c='_dl_protect_relro'/>
+<use f='codebrowser/elf/dl-reloc.c' l='330' u='r' c='_dl_protect_relro'/>
+<use f='codebrowser/elf/dl-reloc.c' l='333' u='r' c='_dl_protect_relro'/>
+<use f='codebrowser/elf/dl-reloc.c' l='333' u='r' c='_dl_protect_relro'/>
+<use f='codebrowser/elf/dl-runtime.c' l='72' u='r' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='123' macro='1' u='r' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='130' macro='1' u='r' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='271' macro='1' u='r' c='_dl_profile_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='283' macro='1' u='r' c='_dl_profile_fixup'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso.h' l='55' macro='1' u='r' c='dl_vdso_vsym'/>
+<use f='codebrowser/elf/setup-vdso.h' l='51' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='52' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='64' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='64' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='65' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='66' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='67' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/dl-sym.c' l='168' macro='1' u='r' c='do_sym'/>
+<use f='codebrowser/elf/dl-version.c' l='90' u='r' c='match_symbol'/>
+<use f='codebrowser/elf/dl-version.c' l='181' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='254' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='293' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='331' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/rtld.c' l='545' u='w' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='548' u='r' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='559' u='r' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='678' macro='1' u='r' c='lookup_doit'/>
+<use f='codebrowser/elf/rtld.c' l='717' u='r' c='match_version'/>
+<use f='codebrowser/elf/rtld.c' l='1465' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1470' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1479' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1515' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1521' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1577' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1664' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1685' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2036' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2037' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2123' macro='1' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2182' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2264' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2922' u='r' c='print_statistics'/>
+<use f='codebrowser/elf/rtld.c' l='2929' u='r' c='print_statistics'/>
+<use f='codebrowser/elf/rtld_static_init.c' l='54' macro='1' u='r' c='__rtld_static_init'/>
+<use f='codebrowser/sysdeps/nptl/dl-mutex.c' l='45' macro='1' u='r' c='__rtld_mutex_init'/>
+<use f='codebrowser/sysdeps/nptl/dl-mutex.c' l='52' macro='1' u='r' c='__rtld_mutex_init'/>

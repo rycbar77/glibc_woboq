@@ -1,0 +1,13 @@
+<dec f='codebrowser/misc/search.h' l='134' type='void * tfind(const void * __key, void *const * __rootp, __compar_fn_t __compar)'/>
+<doc f='codebrowser/misc/search.h' l='132'>/* Search for an entry matching the given KEY in the tree pointed to
+   by *ROOTP.  If no matching entry is available return NULL.  */</doc>
+<use f='codebrowser/elf/sprof.c' l='1090' u='c' c='read_symbols'/>
+<use f='codebrowser/elf/sprof.c' l='1149' u='c' c='read_symbols'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='810' u='c' c='name_to_module_idx'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='897' u='c' c='generate_name_info'/>
+<use f='codebrowser/locale/programs/locale.c' l='429' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='429' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='67' u='c' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='338' u='c' c='repertoire_complain'/>
+<def f='codebrowser/misc/tsearch.c' l='396' macro='1' type='void * tfind(const void * , void *const * , __compar_fn_t )'/>
+<use f='codebrowser/support/resolv_test.c' l='323' u='c' c='resolv_response_add_name'/>

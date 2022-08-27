@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/file_change_detection.h' l='54' type='_Bool __file_change_detection_for_path(struct file_change_detection * file, const char * path)'/>
+<dec f='codebrowser/include/file_change_detection.h' l='66' type='_Bool __file_change_detection_for_path(struct file_change_detection * , const char * )'/>
+<use f='codebrowser/include/file_change_detection.h' l='66' c='__file_change_detection_for_path'/>
+<def f='codebrowser/io/file_change_detection.c' l='67' ll='94' macro='1' type='_Bool __file_change_detection_for_path(struct file_change_detection * file, const char * path)'/>
+<use f='codebrowser/nss/nss_database.c' l='410' u='c' c='nss_database_check_reload_and_get'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='124' u='c' c='__resolv_conf_get_current'/>

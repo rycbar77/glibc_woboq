@@ -1,0 +1,14 @@
+<dec f='codebrowser/rt/aio.h' l='37' type='int'/>
+<offset>32</offset>
+<doc f='codebrowser/rt/aio.h' l='37'>/* Operation to be performed.  */</doc>
+<use f='codebrowser/rt/aio_misc.c' l='364' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='531' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='534' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='558' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='561' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='584' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='587' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='95' u='r' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='101' u='r' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='143' u='r' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='206' u='r' c='lio_listio_internal'/>

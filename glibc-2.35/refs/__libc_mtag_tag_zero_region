@@ -1,0 +1,3 @@
+<def f='codebrowser/sysdeps/generic/libc-mtag.h' l='48' ll='53' type='void * __libc_mtag_tag_zero_region(void * p, size_t n)'/>
+<use f='codebrowser/malloc/malloc.c' l='470' u='c' c='tag_new_zero_region'/>
+<doc f='codebrowser/sysdeps/generic/libc-mtag.h' l='47'>/* Optimized equivalent to __libc_mtag_tag_region followed by memset to 0.  */</doc>

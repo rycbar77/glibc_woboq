@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/ptsname.c' l='64' ll='68' type='char * ptsname(int fd)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/ptsname.c' l='61'>/* Return the pathname of the pseudo terminal slave associated with
+   the master FD is open on, or NULL on errors.
+   The returned storage is good until the next call to this function.  */</doc>

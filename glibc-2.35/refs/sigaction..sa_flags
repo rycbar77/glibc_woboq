@@ -1,0 +1,26 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/sigaction.h' l='49' type='int'/>
+<offset>1088</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/sigaction.h' l='48'>/* Special flags.  */</doc>
+<use f='codebrowser/malloc/memusage.c' l='311' u='w' c='me'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='79' u='w' c='__pthread_cancel'/>
+<use f='codebrowser/nptl/pthread_create.c' l='80' u='w' c='late_init'/>
+<use f='codebrowser/shadow/lckpwdf.c' l='116' u='w' c='__lckpwdf'/>
+<use f='codebrowser/stdlib/abort.c' l='92' u='w' c='abort'/>
+<use f='codebrowser/support/set_fortify_handler.c' l='29' u='w' c='set_fortify_handler'/>
+<use f='codebrowser/support/support_create_timer.c' l='36' u='w' c='support_create_timer'/>
+<use f='codebrowser/sysdeps/posix/sigignore.c' l='33' u='w' c='sigignore'/>
+<use f='codebrowser/sysdeps/posix/sigintr.c' l='39' u='w' c='siginterrupt'/>
+<use f='codebrowser/sysdeps/posix/sigintr.c' l='44' u='w' c='siginterrupt'/>
+<use f='codebrowser/sysdeps/posix/sigset.c' l='58' u='w' c='sigset'/>
+<use f='codebrowser/sysdeps/posix/sprofil.c' l='340' u='w' c='__sprofil'/>
+<use f='codebrowser/sysdeps/posix/sprofil.c' l='347' u='w' c='__sprofil'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='114' u='w' c='do_system'/>
+<use f='codebrowser/sysdeps/posix/sysv_signal.c' l='50' u='w' c='__sysv_signal'/>
+<use f='codebrowser/sysdeps/posix/sysv_signal.c' l='51' u='w' c='__sysv_signal'/>
+<use f='codebrowser/sysdeps/posix/profil.c' l='110' u='w' c='__profil'/>
+<use f='codebrowser/sysdeps/posix/profil.c' l='115' u='w' c='__profil'/>
+<use f='codebrowser/sysdeps/posix/signal.c' l='44' u='w' c='__bsd_signal'/>
+<use f='codebrowser/login/utmp_file.c' l='90' u='w' c='try_file_lock'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/libc_sigaction.c' l='52' u='r' c='__libc_sigaction'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/libc_sigaction.c' l='53' macro='1' u='r' c='__libc_sigaction'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/libc_sigaction.c' l='67' u='w' c='__libc_sigaction'/>

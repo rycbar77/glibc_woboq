@@ -1,0 +1,6 @@
+<use f='codebrowser/debug/recvfrom_chk.c' l='29' u='c' c='__recvfrom_chk'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='451' u='c' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='335' u='c' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/rtime.c' l='117' u='c' c='__GI_rtime'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='288' u='c' c='svcudp_recv'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/recvfrom.c' l='35' macro='1' type='ssize_t __recvfrom(int , void *restrict , size_t , int , __SOCKADDR_ARG , socklen_t *restrict )'/>

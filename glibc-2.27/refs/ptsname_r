@@ -1,0 +1,5 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='995' type='int ptsname_r(int __fd, char * __buf, size_t __buflen)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='992'>/* Store at most BUFLEN characters of the pathname of the slave pseudo
+   terminal associated with the master FD is open on in BUF.
+   Return 0 on success, otherwise an error number.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/ptsname.c' l='165' macro='1' type='int ptsname_r(int , char * , size_t )'/>

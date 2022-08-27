@@ -1,0 +1,6 @@
+<dec f='codebrowser/support/timespec.h' l='54' type='struct timespec support_timespec_normalize(struct timespec time)'/>
+<def f='codebrowser/support/timespec.c' l='80' ll='92' type='struct timespec support_timespec_normalize(struct timespec time)'/>
+<doc f='codebrowser/support/timespec.c' l='76'>/* Returns time normalized timespec with .tv_nsec &lt; TIMESPEC_HZ
+   and the whole seconds  added to .tv_sec. If an overflow or
+   underflow occurs the values are clamped to its maximum or
+   minimum respectively.  */</doc>

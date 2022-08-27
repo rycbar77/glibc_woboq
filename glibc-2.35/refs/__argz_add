@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/argz.h' l='15' type='error_t __argz_add(char **restrict __argz, size_t *restrict __argz_len, const char *restrict __str)'/>
+<def f='codebrowser/string/argz-append.c' l='43' ll='47' type='error_t __argz_add(char ** argz, size_t * argz_len, const char * str)'/>
+<use f='codebrowser/string/argz-append.c' l='48' c='argz_add'/>
+<doc f='codebrowser/string/argz-append.c' l='41'>/* Add STR to the argz vector in ARGZ &amp; ARGZ_LEN.  This should be moved into
+   argz.c in libshouldbelibc.  */</doc>
+<use f='codebrowser/string/argz-insert.c' l='33' u='c' c='__argz_insert'/>
+<use f='codebrowser/string/argz-replace.c' l='104' u='c' c='__argz_replace'/>
+<use f='codebrowser/string/argz-replace.c' l='114' u='c' c='__argz_replace'/>
+<use f='codebrowser/string/envz.c' l='122' u='c' c='envz_add'/>

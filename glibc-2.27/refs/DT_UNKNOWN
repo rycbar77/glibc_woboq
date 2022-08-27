@@ -1,0 +1,6 @@
+<dec f='codebrowser/dirent/dirent.h' l='99' type='0'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='401' macro='1' u='r' c='generic_getcwd'/>
+<use f='codebrowser/posix/glob.c' l='1349' macro='1' c='glob_in_dir'/>
+<use f='codebrowser/io/fts.c' l='587' macro='1' u='r' c='dirent_not_directory'/>
+<use f='codebrowser/io/ftw.c' l='539' macro='1' u='r' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='574' macro='1' u='r' c='ftw_dir'/>

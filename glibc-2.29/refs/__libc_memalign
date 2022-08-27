@@ -1,0 +1,8 @@
+<dec f='codebrowser/malloc/malloc.c' l='566' type='void * __libc_memalign(size_t , size_t )'/>
+<dec f='codebrowser/malloc/malloc.c' l='567' type='void * __libc_memalign(size_t , size_t )'/>
+<use f='codebrowser/malloc/malloc.c' l='567' c='__libc_memalign'/>
+<use f='codebrowser/malloc/hooks.c' l='49' u='c' c='memalign_hook_ini'/>
+<def f='codebrowser/malloc/malloc.c' l='3260' ll='3265' macro='1' type='void * __libc_memalign(size_t alignment, size_t bytes)'/>
+<use f='codebrowser/malloc/malloc.c' l='3338' c='aligned_alloc'/>
+<use f='codebrowser/malloc/malloc.c' l='5582' c='__memalign'/>
+<use f='codebrowser/malloc/malloc.c' l='5583' c='memalign'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/elf/stringtable.h' l='51' type='size_t'/>
+<use f='codebrowser/elf/cache.c' l='635' u='r' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='710' u='r' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='750' u='r' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='751' u='r' c='save_cache'/>
+<offset>64</offset>
+<use f='codebrowser/elf/stringtable.c' l='155' u='w' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='195' u='a' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='201' u='r' c='stringtable_finalize'/>

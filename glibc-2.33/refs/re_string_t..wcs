@@ -1,0 +1,35 @@
+<dec f='codebrowser/posix/regex_internal.h' l='376' type='wint_t *'/>
+<use f='codebrowser/posix/regex_internal.h' l='807' u='r' c='re_string_char_size_at'/>
+<use f='codebrowser/posix/regex_internal.h' l='818' u='r' c='re_string_wchar_at'/>
+<use f='codebrowser/posix/regex_internal.c' l='153' u='r' c='re_string_realloc_buffers'/>
+<use f='codebrowser/posix/regex_internal.c' l='156' u='w' c='re_string_realloc_buffers'/>
+<use f='codebrowser/posix/regex_internal.c' l='267' u='r' c='build_wcs_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='270' u='r' c='build_wcs_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='313' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='343' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='346' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='355' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='427' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='433' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='458' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='461' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='478' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='637' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='637' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='655' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='667' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='681' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='681' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='783' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='851' macro='1' u='r' c='re_string_peek_byte_case'/>
+<use f='codebrowser/posix/regex_internal.c' l='851' macro='1' u='r' c='re_string_peek_byte_case'/>
+<use f='codebrowser/posix/regex_internal.c' l='894' macro='1' u='r' c='re_string_fetch_byte_case'/>
+<use f='codebrowser/posix/regex_internal.c' l='916' u='r' c='re_string_destruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='941' u='r' c='re_string_context_at'/>
+<use f='codebrowser/posix/regex_internal.c' l='948' u='r' c='re_string_context_at'/>
+<use f='codebrowser/posix/regcomp.c' l='1800' macro='1' u='r' c='peek_token'/>
+<use f='codebrowser/posix/regcomp.c' l='2034' macro='1' u='r' c='peek_token_bracket'/>
+<use f='codebrowser/posix/regcomp.c' l='2265' macro='1' u='r' c='parse_expression'/>
+<use f='codebrowser/posix/regexec.c' l='785' macro='1' u='r' c='re_search_internal'/>
+<offset>128</offset>
+<doc f='codebrowser/posix/regex_internal.h' l='375'>/* Store the wide character string which is corresponding to MBS.  */</doc>

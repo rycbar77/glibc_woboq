@@ -1,0 +1,10 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='990' type='int unlockpt(int __fd)'/>
+<dec f='codebrowser/include/stdlib.h' l='145' type='int unlockpt(int )'/>
+<use f='codebrowser/include/stdlib.h' l='145' c='unlockpt'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='988'>/* Release an internal lock so the slave can be opened.
+   Call after grantpt().  */</doc>
+<use f='codebrowser/login/openpty.c' l='105' u='c' c='__openpty'/>
+<use f='codebrowser/support/support_openpty.c' l='69' u='c' c='support_openpty'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/unlockpt.c' l='26' ll='36' type='int unlockpt(int fd)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/unlockpt.c' l='24'>/* Unlock the slave pseudo terminal associated with the master pseudo
+   terminal specified by FD.  */</doc>

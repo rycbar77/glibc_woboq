@@ -1,0 +1,6 @@
+<dec f='codebrowser/signal/signal.h' l='211' type='int sigismember(const sigset_t * __set, int __signo)'/>
+<dec f='codebrowser/include/signal.h' l='11' type='int sigismember(const sigset_t * , int )'/>
+<use f='codebrowser/include/signal.h' l='11' c='sigismember'/>
+<doc f='codebrowser/signal/signal.h' l='210'>/* Return 1 if SIGNO is in SET, 0 if not.  */</doc>
+<def f='codebrowser/signal/sigismem.c' l='24' ll='34' type='int sigismember(const sigset_t * set, int signo)'/>
+<doc f='codebrowser/signal/sigismem.c' l='23'>/* Return 1 if SIGNO is in SET, 0 if not.  */</doc>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='272' type='int pthread_detach(pthread_t __th)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='268'>/* Indicate that the thread TH is never to be joined with PTHREAD_JOIN.
+   The resources of TH will therefore be freed immediately when it
+   terminates, instead of waiting for another thread to perform PTHREAD_JOIN
+   on it.  */</doc>
+<def f='codebrowser/nptl/pthread_detach.c' l='56' macro='1' type='int pthread_detach(pthread_t )'/>

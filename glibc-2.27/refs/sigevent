@@ -1,0 +1,14 @@
+<use f='codebrowser/time/time.h' l='241' c='timer_create'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/bits/types/sigevent_t.h' l='22' ll='42'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/types/sigevent_t.h' l='22'/>
+<size>64</size>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/types/sigevent_t.h' l='21'>/* Structure to transport application-defined values with signals.  */</doc>
+<mbr r='sigevent::sigev_value' o='0' t='__sigval_t'/>
+<mbr r='sigevent::sigev_signo' o='64' t='int'/>
+<mbr r='sigevent::sigev_notify' o='96' t='int'/>
+<mbr r='sigevent::_sigev_un' o='128' t='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.27/argp/../sysdeps/unix/sysv/linux/bits/types/sigevent_t.h:28:5)'/>
+<use f='codebrowser/resolv/netdb.h' l='691' c='getaddrinfo_a'/>
+<size>64</size>
+<use f='codebrowser/resolv/gai_misc.h' l='36'/>
+<use f='codebrowser/resolv/gai_misc.h' l='94' c='__gai_notify_only'/>
+<size>64</size>

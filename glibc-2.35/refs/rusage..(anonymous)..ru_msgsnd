@@ -1,0 +1,6 @@
+<dec f='codebrowser/resource/bits/types/struct_rusage.h' l='99' type='long'/>
+<use f='codebrowser/include/sys/resource.h' l='108' u='w' c='rusage64_to_rusage'/>
+<use f='codebrowser/include/sys/resource.h' l='108' u='r' c='rusage64_to_rusage'/>
+<offset>0</offset>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='71' u='w' c='rusage32_to_rusage64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='97' u='r' c='rusage64_to_rusage32'/>

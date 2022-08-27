@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/statfs.h' l='26' type='__fsword_t'/>
+<offset>0</offset>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='146' u='r' c='__statfs_link_max'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='209' u='r' c='__statfs_filesize_max'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='258' u='r' c='__statfs_symlinks'/>

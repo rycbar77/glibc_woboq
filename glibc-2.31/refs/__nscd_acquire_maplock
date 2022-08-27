@@ -1,0 +1,5 @@
+<def f='codebrowser/nscd/nscd-client.h' l='370' ll='385' type='_Bool __nscd_acquire_maplock(volatile struct locked_map_ptr * mapptr)'/>
+<doc f='codebrowser/nscd/nscd-client.h' l='368'>/* Try acquiring lock for mapptr, returns true if it succeeds, false
+   if not.  */</doc>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='108' u='c' c='__nscd_get_nl_timestamp'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='407' u='c' c='__nscd_get_map_ref'/>

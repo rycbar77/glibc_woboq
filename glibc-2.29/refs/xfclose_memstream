@@ -1,0 +1,13 @@
+<dec f='codebrowser/support/xmemstream.h' l='45' type='void xfclose_memstream(struct xmemstream * stream)'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='103' u='c' c='support_capture_subprocess'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='104' u='c' c='support_capture_subprocess'/>
+<doc f='codebrowser/support/xmemstream.h' l='41'>/* Closes STREAM-&gt;OUT.  After this function returns, STREAM-&gt;buffer
+   and STREAM-&gt;length denote a memory range which contains the bytes
+   written to the output stream.  The caller should free
+   STREAM-&gt;buffer.  */</doc>
+<use f='codebrowser/support/support_format_addrinfo.c' l='240' u='c' c='support_format_addrinfo'/>
+<use f='codebrowser/support/support_format_dns_packet.c' l='221' u='c' c='support_format_dns_packet'/>
+<use f='codebrowser/support/support_format_hostent.c' l='80' u='c' c='support_format_hostent'/>
+<use f='codebrowser/support/support_format_netent.c' l='51' u='c' c='support_format_netent'/>
+<use f='codebrowser/support/support_quote_blob.c' l='81' u='c' c='support_quote_blob'/>
+<def f='codebrowser/support/xmemstream.c' l='37' ll='42' type='void xfclose_memstream(struct xmemstream * stream)'/>

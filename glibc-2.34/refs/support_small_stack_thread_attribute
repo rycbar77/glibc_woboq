@@ -1,0 +1,4 @@
+<dec f='codebrowser/support/xthread.h' l='93' type='pthread_attr_t * support_small_stack_thread_attribute()'/>
+<doc f='codebrowser/support/xthread.h' l='91'>/* Return a pointer to a thread attribute which requests a small
+   stack.  The caller must not free this pointer.  */</doc>
+<def f='codebrowser/support/support_small_stack_thread_attribute.c' l='40' ll='44' type='pthread_attr_t * support_small_stack_thread_attribute()'/>

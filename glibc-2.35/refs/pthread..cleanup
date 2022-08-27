@@ -1,0 +1,41 @@
+<dec f='codebrowser/nptl/descr.h' l='274' type='struct _pthread_cleanup_buffer *'/>
+<offset>6080</offset>
+<doc f='codebrowser/nptl/descr.h' l='273'>/* List of cleanup buffers.  */</doc>
+<use f='codebrowser/nptl/cleanup.c' l='31' c='___pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='30' c='__pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='32' u='r' c='__pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='32' u='r' c='__pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='32' u='r' c='__pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='32' u='r' c='__pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='32' u='r' c='__pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='43' u='r' c='__pthread_cleanup_pop'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='43' u='r' c='__pthread_cleanup_pop'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='43' u='r' c='__pthread_cleanup_pop'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='43' u='r' c='__pthread_cleanup_pop'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='43' u='r' c='__pthread_cleanup_pop'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='31' c='___pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='27' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='33' u='r' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='33' u='r' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='33' u='r' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='33' u='r' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='33' u='r' c='__libc_cleanup_push_defer'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='42' u='r' c='__libc_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='42' u='r' c='__libc_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='42' u='r' c='__libc_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='42' u='r' c='__libc_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='42' u='r' c='__libc_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/pthread_cleanup_upto.c' l='35' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/pthread_cleanup_upto.c' l='59' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/pthread_cleanup_upto.c' l='59' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/pthread_cleanup_upto.c' l='59' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/pthread_cleanup_upto.c' l='59' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/pthread_cleanup_upto.c' l='59' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/allocatestack.c' l='124' u='w' c='get_cached_stack'/>
+<use f='codebrowser/nptl/unwind.c' l='46' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='89' u='r' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='89' u='r' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='89' u='r' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='89' u='r' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='89' u='r' c='unwind_stop'/>
+<use f='codebrowser/sysdeps/nptl/libc_start_call_main.h' l='52' c='__libc_start_call_main'/>

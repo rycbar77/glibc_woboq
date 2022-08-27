@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/unistd.h' l='704' type='__gid_t getgid()'/>
+<doc f='codebrowser/posix/unistd.h' l='703'>/* Get the real group ID of the calling process.  */</doc>
+<use f='codebrowser/support/support_become_root.c' l='86' u='c' c='support_become_root'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='214' u='c' c='support_capture_subprogram_self_sgid'/>
+<use f='codebrowser/support/test-container.c' l='867' u='c' c='main'/>

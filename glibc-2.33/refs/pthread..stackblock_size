@@ -1,0 +1,29 @@
+<dec f='codebrowser/nptl/descr.h' l='389' type='size_t'/>
+<offset>13504</offset>
+<doc f='codebrowser/nptl/descr.h' l='388'>/* Size of the stackblock area including the guard.  */</doc>
+<use f='codebrowser/nptl/alloca_cutoff.c' l='29' c='__libc_alloca_cutoff'/>
+<use f='codebrowser/nptl/alloca_cutoff.c' l='29' c='__libc_alloca_cutoff'/>
+<use f='codebrowser/nptl/nptl-init.c' l='252' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='252' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='252' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='252' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='252' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/pt-cleanup.c' l='33' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/allocatestack.c' l='177' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='179' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='186' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='186' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='194' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='212' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='218' u='r' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='264' u='r' c='free_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='271' u='r' c='free_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='299' u='r' c='queue_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='319' u='r' c='change_stack_perm'/>
+<use f='codebrowser/nptl/allocatestack.c' l='472' u='w' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='598' u='w' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='914' u='r' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/pthread_create.c' l='564' u='r' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='67' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='70' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/unwind.c' l='53' u='r' c='unwind_stop'/>

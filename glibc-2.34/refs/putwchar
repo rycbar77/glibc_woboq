@@ -1,0 +1,6 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='765' type='wint_t putwchar(wchar_t __wc)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='761'>/* Write a character to stdout.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/putwchar.c' l='21' ll='29' type='wint_t putwchar(wchar_t wc)'/>

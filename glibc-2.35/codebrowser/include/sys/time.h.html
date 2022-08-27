@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>time.h source code [codebrowser/include/sys/time.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/include/sys/time.h'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>include</a>/<a href='./'>sys</a>/<a href='time.h.html'>time.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Time function internal interfaces.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 1997-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_SYS_TIME_H">_SYS_TIME_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u># include <a href="../../time/sys/time.h.html">&lt;time/sys/time.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u># <span data-ppcond="22">ifndef</span> <span class="macro" data-ref="_M/_ISOMAC">_ISOMAC</span></u></td></tr>
+<tr><th id="23">23</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__gettimeofday" title='__gettimeofday' data-ref="__gettimeofday" data-ref-filename="__gettimeofday">__gettimeofday</dfn> (<b>struct</b> <a class="type" href="../../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a> *<dfn class="local col7 decl" id="467__tv" title='__tv' data-type='struct timeval *' data-ref="467__tv" data-ref-filename="467__tv">__tv</dfn>,</td></tr>
+<tr><th id="24">24</th><td>			   <em>void</em> *<dfn class="local col8 decl" id="468__tz" title='__tz' data-type='void *' data-ref="468__tz" data-ref-filename="468__tz">__tz</dfn>);</td></tr>
+<tr><th id="25">25</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__settimezone" title='__settimezone' data-ref="__settimezone" data-ref-filename="__settimezone">__settimezone</dfn> (<em>const</em> <b>struct</b> <a class="type" href="../../time/sys/time.h.html#timezone" title='timezone' data-ref="timezone" data-ref-filename="timezone">timezone</a> *<dfn class="local col9 decl" id="469__tz" title='__tz' data-type='const struct timezone *' data-ref="469__tz" data-ref-filename="469__tz">__tz</dfn>)</td></tr>
+<tr><th id="26">26</th><td>	<a class="macro" href="../libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="27">27</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__adjtime" title='__adjtime' data-ref="__adjtime" data-ref-filename="__adjtime">__adjtime</dfn> (<em>const</em> <b>struct</b> <a class="type" href="../../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a> *<dfn class="local col0 decl" id="470__delta" title='__delta' data-type='const struct timeval *' data-ref="470__delta" data-ref-filename="470__delta">__delta</dfn>,</td></tr>
+<tr><th id="28">28</th><td>		      <b>struct</b> <a class="type" href="../../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a> *<dfn class="local col1 decl" id="471__olddelta" title='__olddelta' data-type='struct timeval *' data-ref="471__olddelta" data-ref-filename="471__olddelta">__olddelta</dfn>);</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#  include <a href="../struct___timeval64.h.html">&lt;struct___timeval64.h&gt;</a></u></td></tr>
+<tr><th id="31">31</th><td><u>#  <span data-ppcond="31">if</span> <a class="macro" href="../../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#26" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="32">32</th><td><u>#   define <dfn class="macro" id="_M/__adjtime64" data-ref="_M/__adjtime64">__adjtime64</dfn> __adjtime</u></td></tr>
+<tr><th id="33">33</th><td><u>#  <span data-ppcond="31">else</span></u></td></tr>
+<tr><th id="34">34</th><td><b>extern</b> <em>int</em> __adjtime64 (<em>const</em> <b>struct</b> __timeval64 *itv,</td></tr>
+<tr><th id="35">35</th><td>                        <b>struct</b> __timeval64 *otv);</td></tr>
+<tr><th id="36">36</th><td>libc_hidden_proto (__adjtime64)</td></tr>
+<tr><th id="37">37</th><td><u>#  <span data-ppcond="31">endif</span></u></td></tr>
+<tr><th id="38">38</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__getitimer" title='__getitimer' data-ref="__getitimer" data-ref-filename="__getitimer">__getitimer</dfn> (<b>enum</b> <a class="type" href="../../time/sys/time.h.html#__itimer_which" title='__itimer_which' data-ref="__itimer_which" data-ref-filename="__itimer_which">__itimer_which</a> <dfn class="local col2 decl" id="472__which" title='__which' data-type='enum __itimer_which' data-ref="472__which" data-ref-filename="472__which">__which</dfn>,</td></tr>
+<tr><th id="39">39</th><td>			<b>struct</b> <a class="type" href="../../time/sys/time.h.html#itimerval" title='itimerval' data-ref="itimerval" data-ref-filename="itimerval">itimerval</a> *<dfn class="local col3 decl" id="473__value" title='__value' data-type='struct itimerval *' data-ref="473__value" data-ref-filename="473__value">__value</dfn>);</td></tr>
+<tr><th id="40">40</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__setitimer" title='__setitimer' data-ref="__setitimer" data-ref-filename="__setitimer">__setitimer</dfn> (<b>enum</b> <a class="type" href="../../time/sys/time.h.html#__itimer_which" title='__itimer_which' data-ref="__itimer_which" data-ref-filename="__itimer_which">__itimer_which</a> <dfn class="local col4 decl" id="474__which" title='__which' data-type='enum __itimer_which' data-ref="474__which" data-ref-filename="474__which">__which</dfn>,</td></tr>
+<tr><th id="41">41</th><td>			<em>const</em> <b>struct</b> <a class="type" href="../../time/sys/time.h.html#itimerval" title='itimerval' data-ref="itimerval" data-ref-filename="itimerval">itimerval</a> *<b>__restrict</b> <dfn class="local col5 decl" id="475__new" title='__new' data-type='const struct itimerval *restrict' data-ref="475__new" data-ref-filename="475__new">__new</dfn>,</td></tr>
+<tr><th id="42">42</th><td>			<b>struct</b> <a class="type" href="../../time/sys/time.h.html#itimerval" title='itimerval' data-ref="itimerval" data-ref-filename="itimerval">itimerval</a> *<b>__restrict</b> <dfn class="local col6 decl" id="476__old" title='__old' data-type='struct itimerval *restrict' data-ref="476__old" data-ref-filename="476__old">__old</dfn>)</td></tr>
+<tr><th id="43">43</th><td>	<a class="macro" href="../libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="44">44</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__utimes" title='__utimes' data-ref="__utimes" data-ref-filename="__utimes">__utimes</dfn> (<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="477__file" title='__file' data-type='const char *' data-ref="477__file" data-ref-filename="477__file">__file</dfn>, <em>const</em> <b>struct</b> <a class="type" href="../../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a> <dfn class="local col8 decl" id="478__tvp" title='__tvp' data-type='const struct timeval *' data-ref="478__tvp" data-ref-filename="478__tvp">__tvp</dfn>[<var>2</var>])</td></tr>
+<tr><th id="45">45</th><td>	<a class="macro" href="../libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="46">46</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__futimes" title='__futimes' data-ref="__futimes" data-ref-filename="__futimes">__futimes</dfn> (<em>int</em> <dfn class="local col9 decl" id="479fd" title='fd' data-type='int' data-ref="479fd" data-ref-filename="479fd">fd</dfn>, <em>const</em> <b>struct</b> <a class="type" href="../../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a> <dfn class="local col0 decl" id="480tvp" title='tvp' data-type='const struct timeval *' data-ref="480tvp" data-ref-filename="480tvp">tvp</dfn>[<var>2</var>]) <a class="macro" href="../libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><u># <span data-ppcond="22">endif</span></u></td></tr>
+<tr><th id="49">49</th><td><u>#<span data-ppcond="19">endif</span></u></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../argp/argp-eexst.c.html'>codebrowser/argp/argp-eexst.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

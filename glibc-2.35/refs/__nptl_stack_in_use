@@ -1,0 +1,4 @@
+<def f='codebrowser/nptl/nptl-stack.h' l='31' ll='35' type='_Bool __nptl_stack_in_use(struct pthread * pd)'/>
+<doc f='codebrowser/nptl/nptl-stack.h' l='30'>/* Check whether the stack is still used or not.  */</doc>
+<use f='codebrowser/nptl/nptl-stack.c' l='69' u='c' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='76' u='c' c='get_cached_stack'/>

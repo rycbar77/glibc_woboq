@@ -1,0 +1,6 @@
+<dec f='include/selinux/selinux.h' l='519' type='int matchpathcon_filespec_add(ino_t ino, int specind, const char * file)'/>
+<doc f='include/selinux/selinux.h' l='514'>/* Maintain an association between an inode and a specification index,
+   and check whether a conflicting specification is already associated
+   with the same inode (e.g. due to multiple hard links).  If so, then
+   use the latter of the two specifications based on their order in the 
+   file contexts configuration.  Return the used specification index. */</doc>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/resolv/resolv-internal.h' l='111' type='struct sockaddr * __res_get_nsaddr(res_state statp, unsigned int n)'/>
+<dec f='codebrowser/resolv/resolv-internal.h' l='112' type='struct sockaddr * __res_get_nsaddr(res_state , unsigned int )'/>
+<use f='codebrowser/resolv/resolv-internal.h' l='112' c='__res_get_nsaddr'/>
+<doc f='codebrowser/resolv/resolv-internal.h' l='110'>/* Returns the name server address for the indicated index.  */</doc>
+<def f='codebrowser/resolv/res_get_nsaddr.c' l='23' ll='38' type='struct sockaddr * __res_get_nsaddr(res_state statp, unsigned int n)'/>
+<use f='codebrowser/resolv/res_isourserver.c' l='104' u='c' c='res_ourserver_p'/>
+<use f='codebrowser/resolv/res_isourserver.c' l='117' u='c' c='res_ourserver_p'/>
+<use f='codebrowser/resolv/res_send.c' l='566' u='c' c='send_vc'/>
+<use f='codebrowser/resolv/res_send.c' l='798' u='c' c='reopen'/>

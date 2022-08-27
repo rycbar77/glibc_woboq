@@ -1,0 +1,8 @@
+<dec f='codebrowser/string/string.h' l='132' type='char * strncat(char *restrict __dest, const char *restrict __src, size_t __n)'/>
+<use f='codebrowser/include/string.h' l='92' c='__strncat'/>
+<doc f='codebrowser/string/string.h' l='131'>/* Append no more than N characters from SRC onto DEST.  */</doc>
+<def f='codebrowser/string/bits/string_fortified.h' l='132' ll='137' macro='1' type='char * strncat(char *restrict __dest, const char *restrict __src, size_t __len)'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='321' c='__strncat_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='323' c='__strncat_sse2_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='325' c='__strncat_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strncat.c' l='29' macro='1' type='char * strncat(char *restrict , const char *restrict , size_t )'/>

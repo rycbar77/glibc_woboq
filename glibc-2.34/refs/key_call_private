@@ -1,0 +1,11 @@
+<use f='codebrowser/include/rpc/rpc.h' l='28'/>
+<def f='codebrowser/sunrpc/key_call.c' l='385' ll='389'/>
+<use f='codebrowser/sunrpc/key_call.c' l='399' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='408' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='410' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='411' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='566' c='__rpc_thread_key_cleanup'/>
+<size>16</size>
+<mbr r='key_call_private::client' o='0' t='CLIENT *'/>
+<mbr r='key_call_private::pid' o='64' t='pid_t'/>
+<mbr r='key_call_private::uid' o='96' t='uid_t'/>

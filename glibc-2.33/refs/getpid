@@ -1,0 +1,13 @@
+<dec f='codebrowser/posix/unistd.h' l='640' type='__pid_t getpid()'/>
+<dec f='codebrowser/include/unistd.h' l='18' type='__pid_t getpid()'/>
+<use f='codebrowser/include/unistd.h' l='18' c='getpid'/>
+<doc f='codebrowser/posix/unistd.h' l='639'>/* Get the process ID of the calling process.  */</doc>
+<use f='codebrowser/elf/sotruss-lib.c' l='79' u='c' c='init'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='250' u='c' c='print_enter'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='337' u='c' c='print_exit'/>
+<use f='codebrowser/support/shell-container.c' l='161' u='c' c='kill_func'/>
+<use f='codebrowser/support/support_test_main.c' l='198' u='c' c='run_test_function'/>
+<use f='codebrowser/support/temp_file.c' l='55' u='c' c='add_temp_file'/>
+<use f='codebrowser/support/temp_file.c' l='117' u='c' c='support_delete_temp_files'/>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='97' u='c' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pthread_sigqueue.c' l='52' u='c' c='pthread_sigqueue'/>

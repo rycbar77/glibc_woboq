@@ -1,0 +1,6 @@
+<def f='codebrowser/elf/get-dynamic-info.h' l='28' ll='173' type='void elf_get_dynamic_info(struct link_map * l, _Bool bootstrap, _Bool static_pie_bootstrap)'/>
+<use f='codebrowser/elf/dl-load.c' l='1271' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-reloc-static-pie.c' l='55' u='c' c='_dl_relocate_static_pie'/>
+<use f='codebrowser/elf/setup-vdso.h' l='67' u='c' c='setup_vdso'/>
+<use f='codebrowser/elf/rtld.c' l='558' u='c' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='1681' u='c' c='dl_main'/>

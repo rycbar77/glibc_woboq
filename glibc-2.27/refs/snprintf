@@ -1,0 +1,7 @@
+<dec f='codebrowser/libio/stdio.h' l='340' type='int snprintf(char *restrict __s, size_t __maxlen, const char *restrict __format)'/>
+<doc f='codebrowser/libio/stdio.h' l='339'>/* Maximum chars of output to write in MAXLEN.  */</doc>
+<use f='codebrowser/elf/cache.c' l='498' u='c' c='add_to_cache'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='91' u='c' c='init'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='250' u='c' c='print_enter'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='337' u='c' c='print_exit'/>
+<def f='codebrowser/stdio-common/snprintf.c' l='39' macro='1' type='int snprintf(char *restrict , size_t , const char *restrict )'/>

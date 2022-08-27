@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/wctype.h' l='26' type='int __iswcntrl_l(wint_t , locale_t )'/>
+<dec f='codebrowser/include/wctype.h' l='47' type='int __iswcntrl_l(wint_t , locale_t )'/>
+<use f='codebrowser/include/wctype.h' l='47' c='__iswcntrl_l'/>
+<def f='codebrowser/wctype/wcfuncs_l.c' l='44' macro='1' type='int __iswcntrl_l(wint_t wc, locale_t locale)'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='44' macro='1' c='iswcntrl_l'/>

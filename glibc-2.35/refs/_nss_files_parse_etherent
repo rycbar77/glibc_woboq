@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/nss_files.h' l='118' type='int _nss_files_parse_etherent(char * , void * , struct parser_data * , size_t , int * )'/>
+<dec f='codebrowser/nss/nss_files/files-parse.c' l='84' macro='1' type='int _nss_files_parse_etherent(char * line, void * result, struct parser_data * data, size_t datalen, int * errnop)'/>
+<use f='codebrowser/nss/nss_db/db-XXX.c' l='287' macro='1' u='c' c='_nss_db_getetherent_r'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='54' macro='1' u='c' c='_nss_db_gethostton_r'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='60' macro='1' u='c' c='_nss_db_getntohost_r'/>
+<doc f='codebrowser/nss/nss_files/files-parse.c' l='83'>/* The parser is defined in a different module.  */</doc>

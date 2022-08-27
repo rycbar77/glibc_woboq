@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/time.h' l='34' type='int __clock_nanosleep(clockid_t , int , const struct timespec * , struct timespec * )'/>
+<dec f='codebrowser/include/time.h' l='35' type='int __clock_nanosleep(clockid_t , int , const struct timespec * , struct timespec * )'/>
+<use f='codebrowser/include/time.h' l='35' c='__clock_nanosleep'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/clock_nanosleep.c' l='30' macro='1' type='int __clock_nanosleep(clockid_t clock_id, int flags, const struct timespec * req, struct timespec * rem)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_nanosleep.c' l='95' c='clock_nanosleep'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/clock_nanosleep.c' l='27'>/* We can simply use the syscall.  The CPU clocks are not supported
+   with this function.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/nanosleep.c' l='25' macro='1' u='c' c='__nanosleep'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/thrd_sleep.c' l='28' macro='1' u='c' c='__thrd_sleep'/>

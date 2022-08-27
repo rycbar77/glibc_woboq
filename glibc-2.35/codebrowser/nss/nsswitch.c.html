@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>nsswitch.c source code [codebrowser/nss/nsswitch.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/nss/nsswitch.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>nss</a>/<a href='nsswitch.c.html'>nsswitch.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Copyright (C) 1996-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="2">2</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="3">3</th><td><i></i></td></tr>
+<tr><th id="4">4</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="5">5</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="6">6</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="7">7</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="8">8</th><td><i></i></td></tr>
+<tr><th id="9">9</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="10">10</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="11">11</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="12">12</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="13">13</th><td><i></i></td></tr>
+<tr><th id="14">14</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="15">15</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="16">16</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><u>#include <a href="../include/ctype.h.html">&lt;ctype.h&gt;</a></u></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../include/dlfcn.h.html">&lt;dlfcn.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../include/netdb.h.html">&lt;netdb.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../sysdeps/nptl/libc-lock.h.html">&lt;libc-lock.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../include/search.h.html">&lt;search.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../include/stdio_ext.h.html">&lt;stdio_ext.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#include <a href="../include/aliases.h.html">&lt;aliases.h&gt;</a></u></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="../include/grp.h.html">&lt;grp.h&gt;</a></u></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="../include/netinet/ether.h.html">&lt;netinet/ether.h&gt;</a></u></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="../include/pwd.h.html">&lt;pwd.h&gt;</a></u></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="../include/shadow.h.html">&lt;shadow.h&gt;</a></u></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="../include/unistd.h.html">&lt;unistd.h&gt;</a></u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#<span data-ppcond="36">if</span> !defined <span class="macro" data-ref="_M/DO_STATIC_NSS">DO_STATIC_NSS</span> || defined <span class="macro" data-ref="_M/SHARED">SHARED</span></u></td></tr>
+<tr><th id="37">37</th><td><u># include <a href="../build/gnu/lib-names.h.html">&lt;gnu/lib-names.h&gt;</a></u></td></tr>
+<tr><th id="38">38</th><td><u>#<span data-ppcond="36">endif</span></u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#include <a href="nsswitch.h.html">"nsswitch.h"</a></u></td></tr>
+<tr><th id="41">41</th><td><u>#include <a href="../nscd/nscd_proto.h.html">"../nscd/nscd_proto.h"</a></u></td></tr>
+<tr><th id="42">42</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="43">43</th><td><u>#include <a href="../build/config.h.html">&lt;config.h&gt;</a></u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><i>/* Declare external database variables.  */</i></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/DEFINE_DATABASE" data-ref="_M/DEFINE_DATABASE">DEFINE_DATABASE</dfn>(name)						      \</u></td></tr>
+<tr><th id="47">47</th><td><u>  nss_action_list __nss_##name##_database attribute_hidden;		      \</u></td></tr>
+<tr><th id="48">48</th><td><u>  weak_extern (__nss_##name##_database)</u></td></tr>
+<tr><th id="49">49</th><td><u>#include <a href="databases.def.html">"databases.def"</a></u></td></tr>
+<tr><th id="50">50</th><td><u>#undef <a class="macro" href="#46" data-ref="_M/DEFINE_DATABASE">DEFINE_DATABASE</a></u></td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><u>#<span data-ppcond="53">ifdef</span> <a class="macro" href="../build/config.h.html#179" data-ref="_M/USE_NSCD">USE_NSCD</a></u></td></tr>
+<tr><th id="54">54</th><td><i>/* Flags whether custom rules for database is set.  */</i></td></tr>
+<tr><th id="55">55</th><td><span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl def" id="__nss_database_custom" title='__nss_database_custom' data-ref="__nss_database_custom" data-ref-filename="__nss_database_custom">__nss_database_custom</dfn>[<a class="enum" href="nsswitch.h.html#NSS_DBSIDX_max" title='NSS_DBSIDX_max' data-ref="NSS_DBSIDX_max" data-ref-filename="NSS_DBSIDX_max">NSS_DBSIDX_max</a>];</td></tr>
+<tr><th id="56">56</th><td><u>#<span data-ppcond="53">endif</span></u></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><i>/*__libc_lock_define_initialized (static, lock)*/</i></td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td><i>/* -1 == not found</i></td></tr>
+<tr><th id="61">61</th><td><i>    0 == function found</i></td></tr>
+<tr><th id="62">62</th><td><i>    1 == finished */</i></td></tr>
+<tr><th id="63">63</th><td><em>int</em></td></tr>
+<tr><th id="64">64</th><td><dfn class="decl def fn" id="__nss_lookup" title='__nss_lookup' data-ref="__nss_lookup" data-ref-filename="__nss_lookup">__nss_lookup</dfn> (<a class="typedef" href="nss_action.h.html#nss_action_list" title='nss_action_list' data-type='struct nss_action *' data-ref="nss_action_list" data-ref-filename="nss_action_list">nss_action_list</a> *<dfn class="local col1 decl" id="1ni" title='ni' data-type='nss_action_list *' data-ref="1ni" data-ref-filename="1ni">ni</dfn>, <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="2fct_name" title='fct_name' data-type='const char *' data-ref="2fct_name" data-ref-filename="2fct_name">fct_name</dfn>, <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="3fct2_name" title='fct2_name' data-type='const char *' data-ref="3fct2_name" data-ref-filename="3fct2_name">fct2_name</dfn>,</td></tr>
+<tr><th id="65">65</th><td>	      <em>void</em> **<dfn class="local col4 decl" id="4fctp" title='fctp' data-type='void **' data-ref="4fctp" data-ref-filename="4fctp">fctp</dfn>)</td></tr>
+<tr><th id="66">66</th><td>{</td></tr>
+<tr><th id="67">67</th><td>  *<a class="local col4 ref" href="#4fctp" title='fctp' data-ref="4fctp" data-ref-filename="4fctp">fctp</a> = <a class="ref fn" href="#__nss_lookup_function" title='__nss_lookup_function' data-ref="__nss_lookup_function" data-ref-filename="__nss_lookup_function">__nss_lookup_function</a> (*<a class="local col1 ref" href="#1ni" title='ni' data-ref="1ni" data-ref-filename="1ni">ni</a>, <a class="local col2 ref" href="#2fct_name" title='fct_name' data-ref="2fct_name" data-ref-filename="2fct_name">fct_name</a>);</td></tr>
+<tr><th id="68">68</th><td>  <b>if</b> (*<a class="local col4 ref" href="#4fctp" title='fctp' data-ref="4fctp" data-ref-filename="4fctp">fctp</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> &amp;&amp; <a class="local col3 ref" href="#3fct2_name" title='fct2_name' data-ref="3fct2_name" data-ref-filename="3fct2_name">fct2_name</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="69">69</th><td>    *<a class="local col4 ref" href="#4fctp" title='fctp' data-ref="4fctp" data-ref-filename="4fctp">fctp</a> = <a class="ref fn" href="#__nss_lookup_function" title='__nss_lookup_function' data-ref="__nss_lookup_function" data-ref-filename="__nss_lookup_function">__nss_lookup_function</a> (*<a class="local col1 ref" href="#1ni" title='ni' data-ref="1ni" data-ref-filename="1ni">ni</a>, <a class="local col3 ref" href="#3fct2_name" title='fct2_name' data-ref="3fct2_name" data-ref-filename="3fct2_name">fct2_name</a>);</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td>  <b>while</b> (*<a class="local col4 ref" href="#4fctp" title='fctp' data-ref="4fctp" data-ref-filename="4fctp">fctp</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span></td></tr>
+<tr><th id="72">72</th><td>	 &amp;&amp; <a class="macro" href="nsswitch.h.html#63" title="nss_action_get (*ni, NSS_STATUS_UNAVAIL)" data-ref="_M/nss_next_action">nss_next_action</a> (*<a class="local col1 ref" href="#1ni" title='ni' data-ref="1ni" data-ref-filename="1ni">ni</a>, <a class="enum" href="nss.h.html#NSS_STATUS_UNAVAIL" title='NSS_STATUS_UNAVAIL' data-ref="NSS_STATUS_UNAVAIL" data-ref-filename="NSS_STATUS_UNAVAIL">NSS_STATUS_UNAVAIL</a>) == <a class="enum" href="nsswitch.h.html#NSS_ACTION_CONTINUE" title='NSS_ACTION_CONTINUE' data-ref="NSS_ACTION_CONTINUE" data-ref-filename="NSS_ACTION_CONTINUE">NSS_ACTION_CONTINUE</a></td></tr>
+<tr><th id="73">73</th><td>	 &amp;&amp; (*<a class="local col1 ref" href="#1ni" title='ni' data-ref="1ni" data-ref-filename="1ni">ni</a>)[<var>1</var>].<a class="ref field" href="nss_action.h.html#nss_action::module" title='nss_action::module' data-ref="nss_action::module" data-ref-filename="nss_action..module">module</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="74">74</th><td>    {</td></tr>
+<tr><th id="75">75</th><td>      ++(*<a class="local col1 ref" href="#1ni" title='ni' data-ref="1ni" data-ref-filename="1ni">ni</a>);</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td>      *<a class="local col4 ref" href="#4fctp" title='fctp' data-ref="4fctp" data-ref-filename="4fctp">fctp</a> = <a class="ref fn" href="#__nss_lookup_function" title='__nss_lookup_function' data-ref="__nss_lookup_function" data-ref-filename="__nss_lookup_function">__nss_lookup_function</a> (*<a class="local col1 ref" href="#1ni" title='ni' data-ref="1ni" data-ref-filename="1ni">ni</a>, <a class="local col2 ref" href="#2fct_name" title='fct_name' data-ref="2fct_name" data-ref-filename="2fct_name">fct_name</a>);</td></tr>
+<tr><th id="78">78</th><td>      <b>if</b> (*<a class="local col4 ref" href="#4fctp" title='fctp' data-ref="4fctp" data-ref-filename="4fctp">fctp</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> &amp;&amp; <a class="local col3 ref" href="#3fct2_name" title='fct2_name' data-ref="3fct2_name" data-ref-filename="3fct2_name">fct2_name</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="79">79</th><td>	*<a class="local col4 ref" href="#4fctp" title='fctp' data-ref="4fctp" data-ref-filename="4fctp">fctp</a> = <a class="ref fn" href="#__nss_lookup_function" title='__nss_lookup_function' data-ref="__nss_lookup_function" data-ref-filename="__nss_lookup_function">__nss_lookup_function</a> (*<a class="local col1 ref" href="#1ni" title='ni' data-ref="1ni" data-ref-filename="1ni">ni</a>, <a class="local col3 ref" href="#3fct2_name" title='fct2_name' data-ref="3fct2_name" data-ref-filename="3fct2_name">fct2_name</a>);</td></tr>
+<tr><th id="80">80</th><td>    }</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td>  <b>return</b> *<a class="local col4 ref" href="#4fctp" title='fctp' data-ref="4fctp" data-ref-filename="4fctp">fctp</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> ? <var>0</var> : (*<a class="local col1 ref" href="#1ni" title='ni' data-ref="1ni" data-ref-filename="1ni">ni</a>)[<var>1</var>].<a class="ref field" href="nss_action.h.html#nss_action::module" title='nss_action::module' data-ref="nss_action::module" data-ref-filename="nss_action..module">module</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> ? <var>1</var> : -<var>1</var>;</td></tr>
+<tr><th id="83">83</th><td>}</td></tr>
+<tr><th id="84">84</th><td><a class="macro" href="../include/libc-symbols.h.html#623" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__nss_lookup)</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><i>/* -1 == not found</i></td></tr>
+<tr><th id="88">88</th><td><i>    0 == adjusted for next function</i></td></tr>
+<tr><th id="89">89</th><td><i>    1 == finished */</i></td></tr>
+<tr><th id="90">90</th><td><em>int</em></td></tr>
+<tr><th id="91">91</th><td><dfn class="decl def fn" id="__nss_next2" title='__nss_next2' data-ref="__nss_next2" data-ref-filename="__nss_next2">__nss_next2</dfn> (<a class="typedef" href="nss_action.h.html#nss_action_list" title='nss_action_list' data-type='struct nss_action *' data-ref="nss_action_list" data-ref-filename="nss_action_list">nss_action_list</a> *<dfn class="local col5 decl" id="5ni" title='ni' data-type='nss_action_list *' data-ref="5ni" data-ref-filename="5ni">ni</dfn>, <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="6fct_name" title='fct_name' data-type='const char *' data-ref="6fct_name" data-ref-filename="6fct_name">fct_name</dfn>, <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="7fct2_name" title='fct2_name' data-type='const char *' data-ref="7fct2_name" data-ref-filename="7fct2_name">fct2_name</dfn>,</td></tr>
+<tr><th id="92">92</th><td>	     <em>void</em> **<dfn class="local col8 decl" id="8fctp" title='fctp' data-type='void **' data-ref="8fctp" data-ref-filename="8fctp">fctp</dfn>, <em>int</em> <dfn class="local col9 decl" id="9status" title='status' data-type='int' data-ref="9status" data-ref-filename="9status">status</dfn>, <em>int</em> <dfn class="local col0 decl" id="10all_values" title='all_values' data-type='int' data-ref="10all_values" data-ref-filename="10all_values">all_values</dfn>)</td></tr>
+<tr><th id="93">93</th><td>{</td></tr>
+<tr><th id="94">94</th><td>  <b>if</b> (<a class="local col0 ref" href="#10all_values" title='all_values' data-ref="10all_values" data-ref-filename="10all_values">all_values</a>)</td></tr>
+<tr><th id="95">95</th><td>    {</td></tr>
+<tr><th id="96">96</th><td>      <b>if</b> (<a class="macro" href="nsswitch.h.html#63" title="nss_action_get (*ni, NSS_STATUS_TRYAGAIN)" data-ref="_M/nss_next_action">nss_next_action</a> (*<a class="local col5 ref" href="#5ni" title='ni' data-ref="5ni" data-ref-filename="5ni">ni</a>, <a class="enum" href="nss.h.html#NSS_STATUS_TRYAGAIN" title='NSS_STATUS_TRYAGAIN' data-ref="NSS_STATUS_TRYAGAIN" data-ref-filename="NSS_STATUS_TRYAGAIN">NSS_STATUS_TRYAGAIN</a>) == <a class="enum" href="nsswitch.h.html#NSS_ACTION_RETURN" title='NSS_ACTION_RETURN' data-ref="NSS_ACTION_RETURN" data-ref-filename="NSS_ACTION_RETURN">NSS_ACTION_RETURN</a></td></tr>
+<tr><th id="97">97</th><td>	  &amp;&amp; <a class="macro" href="nsswitch.h.html#63" title="nss_action_get (*ni, NSS_STATUS_UNAVAIL)" data-ref="_M/nss_next_action">nss_next_action</a> (*<a class="local col5 ref" href="#5ni" title='ni' data-ref="5ni" data-ref-filename="5ni">ni</a>, <a class="enum" href="nss.h.html#NSS_STATUS_UNAVAIL" title='NSS_STATUS_UNAVAIL' data-ref="NSS_STATUS_UNAVAIL" data-ref-filename="NSS_STATUS_UNAVAIL">NSS_STATUS_UNAVAIL</a>) == <a class="enum" href="nsswitch.h.html#NSS_ACTION_RETURN" title='NSS_ACTION_RETURN' data-ref="NSS_ACTION_RETURN" data-ref-filename="NSS_ACTION_RETURN">NSS_ACTION_RETURN</a></td></tr>
+<tr><th id="98">98</th><td>	  &amp;&amp; <a class="macro" href="nsswitch.h.html#63" title="nss_action_get (*ni, NSS_STATUS_NOTFOUND)" data-ref="_M/nss_next_action">nss_next_action</a> (*<a class="local col5 ref" href="#5ni" title='ni' data-ref="5ni" data-ref-filename="5ni">ni</a>, <a class="enum" href="nss.h.html#NSS_STATUS_NOTFOUND" title='NSS_STATUS_NOTFOUND' data-ref="NSS_STATUS_NOTFOUND" data-ref-filename="NSS_STATUS_NOTFOUND">NSS_STATUS_NOTFOUND</a>) == <a class="enum" href="nsswitch.h.html#NSS_ACTION_RETURN" title='NSS_ACTION_RETURN' data-ref="NSS_ACTION_RETURN" data-ref-filename="NSS_ACTION_RETURN">NSS_ACTION_RETURN</a></td></tr>
+<tr><th id="99">99</th><td>	  &amp;&amp; <a class="macro" href="nsswitch.h.html#63" title="nss_action_get (*ni, NSS_STATUS_SUCCESS)" data-ref="_M/nss_next_action">nss_next_action</a> (*<a class="local col5 ref" href="#5ni" title='ni' data-ref="5ni" data-ref-filename="5ni">ni</a>, <a class="enum" href="nss.h.html#NSS_STATUS_SUCCESS" title='NSS_STATUS_SUCCESS' data-ref="NSS_STATUS_SUCCESS" data-ref-filename="NSS_STATUS_SUCCESS">NSS_STATUS_SUCCESS</a>) == <a class="enum" href="nsswitch.h.html#NSS_ACTION_RETURN" title='NSS_ACTION_RETURN' data-ref="NSS_ACTION_RETURN" data-ref-filename="NSS_ACTION_RETURN">NSS_ACTION_RETURN</a>)</td></tr>
+<tr><th id="100">100</th><td>	<b>return</b> <var>1</var>;</td></tr>
+<tr><th id="101">101</th><td>    }</td></tr>
+<tr><th id="102">102</th><td>  <b>else</b></td></tr>
+<tr><th id="103">103</th><td>    {</td></tr>
+<tr><th id="104">104</th><td>      <i>/* This is really only for debugging.  */</i></td></tr>
+<tr><th id="105">105</th><td>      <b>if</b> (<a class="ref fn" href="#105" title='__builtin_expect' data-ref="__builtin_expect" data-ref-filename="__builtin_expect">__builtin_expect</a> (<a class="enum" href="nss.h.html#NSS_STATUS_TRYAGAIN" title='NSS_STATUS_TRYAGAIN' data-ref="NSS_STATUS_TRYAGAIN" data-ref-filename="NSS_STATUS_TRYAGAIN">NSS_STATUS_TRYAGAIN</a> &gt; <a class="local col9 ref" href="#9status" title='status' data-ref="9status" data-ref-filename="9status">status</a></td></tr>
+<tr><th id="106">106</th><td>			    || <a class="local col9 ref" href="#9status" title='status' data-ref="9status" data-ref-filename="9status">status</a> &gt; <a class="enum" href="nss.h.html#NSS_STATUS_RETURN" title='NSS_STATUS_RETURN' data-ref="NSS_STATUS_RETURN" data-ref-filename="NSS_STATUS_RETURN">NSS_STATUS_RETURN</a>, <var>0</var>))</td></tr>
+<tr><th id="107">107</th><td>	 <a class="ref fn" href="../include/stdio.h.html#__libc_fatal" title='__libc_fatal' data-ref="__libc_fatal" data-ref-filename="__libc_fatal">__libc_fatal</a> (<q>"Illegal status in __nss_next.\n"</q>);</td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td>       <b>if</b> (<a class="macro" href="nsswitch.h.html#63" title="nss_action_get (*ni, status)" data-ref="_M/nss_next_action">nss_next_action</a> (*<a class="local col5 ref" href="#5ni" title='ni' data-ref="5ni" data-ref-filename="5ni">ni</a>, <a class="local col9 ref" href="#9status" title='status' data-ref="9status" data-ref-filename="9status">status</a>) == <a class="enum" href="nsswitch.h.html#NSS_ACTION_RETURN" title='NSS_ACTION_RETURN' data-ref="NSS_ACTION_RETURN" data-ref-filename="NSS_ACTION_RETURN">NSS_ACTION_RETURN</a>)</td></tr>
+<tr><th id="110">110</th><td>	 <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="111">111</th><td>    }</td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td>  <b>if</b> ((*<a class="local col5 ref" href="#5ni" title='ni' data-ref="5ni" data-ref-filename="5ni">ni</a>)[<var>1</var>].<a class="ref field" href="nss_action.h.html#nss_action::module" title='nss_action::module' data-ref="nss_action::module" data-ref-filename="nss_action..module">module</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="114">114</th><td>    <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td>  <b>do</b></td></tr>
+<tr><th id="117">117</th><td>    {</td></tr>
+<tr><th id="118">118</th><td>      ++(*<a class="local col5 ref" href="#5ni" title='ni' data-ref="5ni" data-ref-filename="5ni">ni</a>);</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td>      *<a class="local col8 ref" href="#8fctp" title='fctp' data-ref="8fctp" data-ref-filename="8fctp">fctp</a> = <a class="ref fn" href="#__nss_lookup_function" title='__nss_lookup_function' data-ref="__nss_lookup_function" data-ref-filename="__nss_lookup_function">__nss_lookup_function</a> (*<a class="local col5 ref" href="#5ni" title='ni' data-ref="5ni" data-ref-filename="5ni">ni</a>, <a class="local col6 ref" href="#6fct_name" title='fct_name' data-ref="6fct_name" data-ref-filename="6fct_name">fct_name</a>);</td></tr>
+<tr><th id="121">121</th><td>      <b>if</b> (*<a class="local col8 ref" href="#8fctp" title='fctp' data-ref="8fctp" data-ref-filename="8fctp">fctp</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> &amp;&amp; <a class="local col7 ref" href="#7fct2_name" title='fct2_name' data-ref="7fct2_name" data-ref-filename="7fct2_name">fct2_name</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="122">122</th><td>	*<a class="local col8 ref" href="#8fctp" title='fctp' data-ref="8fctp" data-ref-filename="8fctp">fctp</a> = <a class="ref fn" href="#__nss_lookup_function" title='__nss_lookup_function' data-ref="__nss_lookup_function" data-ref-filename="__nss_lookup_function">__nss_lookup_function</a> (*<a class="local col5 ref" href="#5ni" title='ni' data-ref="5ni" data-ref-filename="5ni">ni</a>, <a class="local col7 ref" href="#7fct2_name" title='fct2_name' data-ref="7fct2_name" data-ref-filename="7fct2_name">fct2_name</a>);</td></tr>
+<tr><th id="123">123</th><td>    }</td></tr>
+<tr><th id="124">124</th><td>  <b>while</b> (*<a class="local col8 ref" href="#8fctp" title='fctp' data-ref="8fctp" data-ref-filename="8fctp">fctp</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span></td></tr>
+<tr><th id="125">125</th><td>	 &amp;&amp; <a class="macro" href="nsswitch.h.html#63" title="nss_action_get (*ni, NSS_STATUS_UNAVAIL)" data-ref="_M/nss_next_action">nss_next_action</a> (*<a class="local col5 ref" href="#5ni" title='ni' data-ref="5ni" data-ref-filename="5ni">ni</a>, <a class="enum" href="nss.h.html#NSS_STATUS_UNAVAIL" title='NSS_STATUS_UNAVAIL' data-ref="NSS_STATUS_UNAVAIL" data-ref-filename="NSS_STATUS_UNAVAIL">NSS_STATUS_UNAVAIL</a>) == <a class="enum" href="nsswitch.h.html#NSS_ACTION_CONTINUE" title='NSS_ACTION_CONTINUE' data-ref="NSS_ACTION_CONTINUE" data-ref-filename="NSS_ACTION_CONTINUE">NSS_ACTION_CONTINUE</a></td></tr>
+<tr><th id="126">126</th><td>	 &amp;&amp; (*<a class="local col5 ref" href="#5ni" title='ni' data-ref="5ni" data-ref-filename="5ni">ni</a>)[<var>1</var>].<a class="ref field" href="nss_action.h.html#nss_action::module" title='nss_action::module' data-ref="nss_action::module" data-ref-filename="nss_action..module">module</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td>  <b>return</b> *<a class="local col8 ref" href="#8fctp" title='fctp' data-ref="8fctp" data-ref-filename="8fctp">fctp</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> ? <var>0</var> : -<var>1</var>;</td></tr>
+<tr><th id="129">129</th><td>}</td></tr>
+<tr><th id="130">130</th><td><a class="macro" href="../include/libc-symbols.h.html#623" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__nss_next2)</td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><em>void</em> *</td></tr>
+<tr><th id="133">133</th><td><dfn class="decl def fn" id="__nss_lookup_function" title='__nss_lookup_function' data-ref="__nss_lookup_function" data-ref-filename="__nss_lookup_function">__nss_lookup_function</dfn> (<a class="typedef" href="nss_action.h.html#nss_action_list" title='nss_action_list' data-type='struct nss_action *' data-ref="nss_action_list" data-ref-filename="nss_action_list">nss_action_list</a> <dfn class="local col1 decl" id="11ni" title='ni' data-type='nss_action_list' data-ref="11ni" data-ref-filename="11ni">ni</dfn>, <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="12fct_name" title='fct_name' data-type='const char *' data-ref="12fct_name" data-ref-filename="12fct_name">fct_name</dfn>)</td></tr>
+<tr><th id="134">134</th><td>{</td></tr>
+<tr><th id="135">135</th><td>  <b>if</b> (<a class="local col1 ref" href="#11ni" title='ni' data-ref="11ni" data-ref-filename="11ni">ni</a>-&gt;<a class="ref field" href="nss_action.h.html#nss_action::module" title='nss_action::module' data-ref="nss_action::module" data-ref-filename="nss_action..module">module</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="136">136</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="137">137</th><td>  <b>return</b> <a class="ref fn" href="nss_module.h.html#__nss_module_get_function" title='__nss_module_get_function' data-ref="__nss_module_get_function" data-ref-filename="__nss_module_get_function">__nss_module_get_function</a> (<a class="local col1 ref" href="#11ni" title='ni' data-ref="11ni" data-ref-filename="11ni">ni</a>-&gt;<a class="ref field" href="nss_action.h.html#nss_action::module" title='nss_action::module' data-ref="nss_action::module" data-ref-filename="nss_action..module">module</a>, <a class="local col2 ref" href="#12fct_name" title='fct_name' data-ref="12fct_name" data-ref-filename="12fct_name">fct_name</a>);</td></tr>
+<tr><th id="138">138</th><td>}</td></tr>
+<tr><th id="139">139</th><td><a class="macro" href="../include/libc-symbols.h.html#623" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__nss_lookup_function)</td></tr>
+<tr><th id="140">140</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

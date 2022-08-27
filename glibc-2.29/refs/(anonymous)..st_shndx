@@ -1,0 +1,24 @@
+<dec f='codebrowser/elf/elf.h' l='525' type='Elf32_Section'/>
+<dec f='codebrowser/elf/elf.h' l='533' type='Elf64_Section'/>
+<offset>48</offset>
+<doc f='codebrowser/elf/elf.h' l='525'>/* Section index */</doc>
+<doc f='codebrowser/elf/elf.h' l='533'>/* Section index */</doc>
+<use f='codebrowser/elf/dl-addr.c' l='60' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='62' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='64' macro='1' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='93' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='95' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='96' macro='1' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='113' macro='1' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-libc.c' l='216' macro='1' u='r' c='__libc_dlsym_private'/>
+<use f='codebrowser/elf/dl-libc.c' l='248' macro='1' u='r' c='__libc_dlsym'/>
+<use f='codebrowser/elf/dl-libc.c' l='280' macro='1' u='r' c='__libc_dlvsym'/>
+<use f='codebrowser/elf/dl-lookup.c' l='79' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='82' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-sym.c' l='166' macro='1' u='r' c='do_sym'/>
+<use f='codebrowser/elf/rtld.c' l='617' macro='1' u='r' c='lookup_doit'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso.c' l='44' macro='1' u='r' c='_dl_vdso_vsym'/>
+<use f='codebrowser/elf/dl-runtime.c' l='126' macro='1' u='r' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='133' macro='1' u='r' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='268' macro='1' u='r' c='_dl_profile_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='280' macro='1' u='r' c='_dl_profile_fixup'/>

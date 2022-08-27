@@ -1,0 +1,31 @@
+<def f='codebrowser/malloc/mcheck-impl.c' l='35' ll='43'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='39'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='40'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='47'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='67' c='checkhdr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='110' c='__mcheck_checkptr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='114' c='__mcheck_checkptr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='133' c='unlink_blk'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='152' c='link_blk'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='175' c='free_mcheck'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='175' c='free_mcheck'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='195' c='malloc_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='202' c='malloc_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='209' c='malloc_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='226' c='memalign_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='262' c='memalign_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='263' c='memalign_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='263' c='memalign_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='295' c='realloc_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='306' c='realloc_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='310' c='realloc_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='320' c='realloc_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='327' c='realloc_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='408' c='mcheck_usable_size'/>
+<size>48</size>
+<mbr r='hdr::size' o='0' t='size_t'/>
+<mbr r='hdr::magic' o='64' t='unsigned long'/>
+<mbr r='hdr::prev' o='128' t='struct hdr *'/>
+<mbr r='hdr::next' o='192' t='struct hdr *'/>
+<mbr r='hdr::block' o='256' t='void *'/>
+<mbr r='hdr::magic2' o='320' t='unsigned long'/>

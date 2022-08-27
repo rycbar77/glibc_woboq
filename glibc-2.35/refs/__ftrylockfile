@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/stdio.h' l='169' type='int __ftrylockfile(FILE * __stream)'/>
+<doc f='codebrowser/include/stdio.h' l='167'>/* Try to acquire ownership of STREAM but do not block if it is not
+   possible.  */</doc>
+<def f='codebrowser/stdio-common/ftrylockfile.c' l='23' ll='27' type='int __ftrylockfile(FILE * stream)'/>
+<use f='codebrowser/stdio-common/ftrylockfile.c' l='28' c='ftrylockfile'/>
+<use f='codebrowser/stdio-common/ftrylockfile.c' l='29' c='_IO_ftrylockfile'/>

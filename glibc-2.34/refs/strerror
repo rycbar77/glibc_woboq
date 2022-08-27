@@ -1,0 +1,42 @@
+<dec f='codebrowser/string/string.h' l='403' type='char * strerror(int __errnum)'/>
+<doc f='codebrowser/string/string.h' l='402'>/* Return a string describing the meaning of the `errno&apos; code in ERRNUM.  */</doc>
+<use f='codebrowser/locale/programs/localedef.c' l='547' u='c' c='construct_output_path'/>
+<use f='codebrowser/locale/programs/localedef.c' l='555' u='c' c='construct_output_path'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1358' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1371' u='c' c='add_locales_to_archive'/>
+<def f='codebrowser/string/strerror.c' l='21' ll='25' type='char * strerror(int errnum)'/>
+<use f='codebrowser/support/shell-container.c' l='104' u='c' c='copy_func'/>
+<use f='codebrowser/support/shell-container.c' l='111' u='c' c='copy_func'/>
+<use f='codebrowser/support/shell-container.c' l='119' u='c' c='copy_func'/>
+<use f='codebrowser/support/shell-container.c' l='126' u='c' c='copy_func'/>
+<use f='codebrowser/support/shell-container.c' l='278' u='c' c='run_command_array'/>
+<use f='codebrowser/support/shell-container.c' l='400' u='c' c='run_script'/>
+<use f='codebrowser/support/support_openpty.c' l='44' u='c' c='xptsname'/>
+<use f='codebrowser/support/support_openpty.c' l='64' u='c' c='support_openpty'/>
+<use f='codebrowser/support/support_openpty.c' l='67' u='c' c='support_openpty'/>
+<use f='codebrowser/support/support_openpty.c' l='70' u='c' c='support_openpty'/>
+<use f='codebrowser/support/support_openpty.c' l='83' u='c' c='support_openpty'/>
+<use f='codebrowser/support/support_openpty.c' l='89' u='c' c='support_openpty'/>
+<use f='codebrowser/support/support_openpty.c' l='95' u='c' c='support_openpty'/>
+<use f='codebrowser/support/test-container.c' l='431' u='c' c='copy_one_file'/>
+<use f='codebrowser/support/test-container.c' l='436' u='c' c='copy_one_file'/>
+<use f='codebrowser/support/test-container.c' l='958' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='968' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1080' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1083' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1213' u='c' c='main'/>
+<use f='codebrowser/timezone/zdump.c' l='376' u='c' c='close_file'/>
+<use f='codebrowser/timezone/zic.c' l='467' u='c' c='memcheck'/>
+<use f='codebrowser/timezone/zic.c' l='565' u='c' c='close_file'/>
+<use f='codebrowser/timezone/zic.c' l='605' u='c' c='change_directory'/>
+<use f='codebrowser/timezone/zic.c' l='993' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1001' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1027' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1033' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1040' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1051' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1054' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1194' u='c' c='infile'/>
+<use f='codebrowser/timezone/zic.c' l='1990' u='c' c='writezone'/>
+<use f='codebrowser/timezone/zic.c' l='2006' u='c' c='writezone'/>
+<use f='codebrowser/timezone/zic.c' l='3480' u='c' c='mkdirs'/>

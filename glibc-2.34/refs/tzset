@@ -1,0 +1,5 @@
+<dec f='codebrowser/time/time.h' l='228' type='void tzset()'/>
+<doc f='codebrowser/time/time.h' l='226'>/* Set time conversion information from the TZ environment variable.
+   If TZ is not defined, a locale-dependent default is used.  */</doc>
+<def f='codebrowser/time/tzset.c' l='562' macro='1' type='void tzset()'/>
+<use f='codebrowser/timezone/zdump.c' l='248' u='c' c='zdump_tzalloc'/>

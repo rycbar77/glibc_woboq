@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/siginfo.h' l='164' type='-6'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/siginfo.h' l='164'>/* Sent by tkill.  */</doc>
+<use f='codebrowser/nptl/nptl-init.c' l='199' macro='1' u='r' c='sigcancel_handler'/>
+<use f='codebrowser/nptl/nptl-init.c' l='259' macro='1' u='r' c='sighandler_setxid'/>
+<use f='codebrowser/stdio-common/psiginfo.c' l='156' macro='1' c='psiginfo'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigtimedwait.c' l='60' macro='1' u='r' c='__sigtimedwait'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigwaitinfo.c' l='62' macro='1' u='r' c='__sigwaitinfo'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='127' macro='1' u='r' c='timer_helper_thread'/>

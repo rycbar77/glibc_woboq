@@ -1,0 +1,4 @@
+<def f='codebrowser/malloc/arena.c' l='444' ll='517' type='heap_info * new_heap(size_t size, size_t top_pad)'/>
+<use f='codebrowser/malloc/malloc.c' l='2540' u='c' c='sysmalloc'/>
+<doc f='codebrowser/malloc/arena.c' l='441'>/* Create a new heap.  size is automatically rounded up to a multiple
+   of the page size. */</doc>

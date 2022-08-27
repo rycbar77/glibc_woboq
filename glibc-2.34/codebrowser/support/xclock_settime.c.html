@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>xclock_settime.c source code [codebrowser/support/xclock_settime.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/support/xclock_settime.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>support</a>/<a href='xclock_settime.c.html'>xclock_settime.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* clock_settime with error checking.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="check.h.html">&lt;support/check.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="xtime.h.html">&lt;support/xtime.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><em>void</em></td></tr>
+<tr><th id="24">24</th><td><dfn class="decl def fn" id="xclock_settime" title='xclock_settime' data-ref="xclock_settime" data-ref-filename="xclock_settime">xclock_settime</dfn> (<a class="typedef" href="../time/bits/types/clockid_t.h.html#clockid_t" title='clockid_t' data-type='__clockid_t' data-ref="clockid_t" data-ref-filename="clockid_t">clockid_t</a> <dfn class="local col1 decl" id="1clockid" title='clockid' data-type='clockid_t' data-ref="1clockid" data-ref-filename="1clockid">clockid</dfn>,</td></tr>
+<tr><th id="25">25</th><td>                <em>const</em> <b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a> *<dfn class="local col2 decl" id="2ts" title='ts' data-type='const struct timespec *' data-ref="2ts" data-ref-filename="2ts">ts</dfn>)</td></tr>
+<tr><th id="26">26</th><td>{</td></tr>
+<tr><th id="27">27</th><td>  <b>if</b> (<a class="ref fn" href="../stdlib/stdlib.h.html#getenv" title='getenv' data-ref="getenv" data-ref-filename="getenv">getenv</a> (<a class="macro" href="xtime.h.html#28" title="&quot;GLIBC_TEST_ALLOW_TIME_SETTING&quot;" data-ref="_M/SETTIME_ENV_NAME">SETTIME_ENV_NAME</a>) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="28">28</th><td>    <a class="macro" href="check.h.html#44" title="support_exit_failure_impl (77, &quot;/media/rr/Data/glibc_source/glibc-2.34/support/xclock_settime.c&quot;, 29, &quot;clock_settime is executed only when &quot; &quot;GLIBC_TEST_ALLOW_TIME_SETTING&quot;&quot; is set\n&quot;)" data-ref="_M/FAIL_UNSUPPORTED">FAIL_UNSUPPORTED</a> (<q>"clock_settime is executed only when "</q>\</td></tr>
+<tr><th id="29">29</th><td>                      <a class="macro" href="xtime.h.html#28" title="&quot;GLIBC_TEST_ALLOW_TIME_SETTING&quot;" data-ref="_M/SETTIME_ENV_NAME">SETTIME_ENV_NAME</a><q>" is set\n"</q>);</td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td>  <em>int</em> <dfn class="local col3 decl" id="3ret" title='ret' data-type='int' data-ref="3ret" data-ref-filename="3ret">ret</dfn> = <a class="ref fn" href="../time/time.h.html#clock_settime" title='clock_settime' data-ref="clock_settime" data-ref-filename="clock_settime">clock_settime</a> (<a class="local col1 ref" href="#1clockid" title='clockid' data-ref="1clockid" data-ref-filename="1clockid">clockid</a>, <a class="local col2 ref" href="#2ts" title='ts' data-ref="2ts" data-ref-filename="2ts">ts</a>);</td></tr>
+<tr><th id="32">32</th><td>  <b>if</b> (<a class="local col3 ref" href="#3ret" title='ret' data-ref="3ret" data-ref-filename="3ret">ret</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="33">33</th><td>    <a class="macro" href="check.h.html#39" title="support_exit_failure_impl (1, &quot;/media/rr/Data/glibc_source/glibc-2.34/support/xclock_settime.c&quot;, 33, &quot;clock_settime (%d): %m&quot;, clockid)" data-ref="_M/FAIL_EXIT1">FAIL_EXIT1</a> (<q>"clock_settime (%d): %m"</q>, <a class="local col1 ref" href="#1clockid" title='clockid' data-ref="1clockid" data-ref-filename="1clockid">clockid</a>);</td></tr>
+<tr><th id="34">34</th><td>}</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='338' type='size_t mbsrtowcs(wchar_t *restrict __dst, const char **restrict __src, size_t __len, mbstate_t *restrict __ps)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='336'>/* Write wide character representation of multibyte character string
+   SRC to DST.  */</doc>
+<def f='codebrowser/wcsmbs/mbsrtowcs.c' l='31' macro='1' type='size_t mbsrtowcs(wchar_t *restrict , const char **restrict , size_t , __mbstate_t *restrict )'/>

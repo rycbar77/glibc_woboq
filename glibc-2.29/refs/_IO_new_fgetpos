@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/stdio.h' l='141' type='int _IO_new_fgetpos(_IO_FILE * , _G_fpos_t * )'/>
+<dec f='codebrowser/libio/libioP.h' l='492' type='int _IO_new_fgetpos(FILE * , __fpos_t * )'/>
+<use f='codebrowser/grp/fgetgrent.c' l='40' macro='1' u='c' c='fgetgrent'/>
+<use f='codebrowser/gshadow/fgetsgent.c' l='43' macro='1' u='c' c='fgetsgent'/>
+<def f='codebrowser/libio/iofgetpos.c' l='44' ll='81' type='int _IO_new_fgetpos(FILE * fp, __fpos_t * posp)'/>
+<use f='codebrowser/libio/iofgetpos.c' l='83' c='__new_fgetpos'/>
+<use f='codebrowser/libio/iofgetpos.c' l='84' c='_IO_fgetpos'/>
+<use f='codebrowser/libio/iofgetpos.c' l='88' c='_IO_new_fgetpos64'/>
+<use f='codebrowser/pwd/fgetpwent.c' l='40' macro='1' u='c' c='fgetpwent'/>
+<use f='codebrowser/shadow/fgetspent.c' l='43' macro='1' u='c' c='fgetspent'/>

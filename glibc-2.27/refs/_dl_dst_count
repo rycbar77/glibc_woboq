@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1099' type='size_t _dl_dst_count(const char * name)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1098'>/* Count DSTs.  */</doc>
+<use f='codebrowser/elf/dl-deps.c' l='245' macro='1' u='c' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='288' macro='1' u='c' c='_dl_map_object_deps'/>
+<def f='codebrowser/elf/dl-load.c' l='220' ll='243' type='size_t _dl_dst_count(const char * name)'/>
+<use f='codebrowser/elf/dl-load.c' l='330' macro='1' u='c' c='expand_dynamic_string_token'/>

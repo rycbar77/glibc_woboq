@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='549' type='size_t'/>
+<def f='codebrowser/elf/dl-support.c' l='143' type='size_t'/>
+<use f='codebrowser/elf/dl-support.c' l='313' u='w' c='_dl_aux_init'/>
+<dec f='codebrowser/elf/rtld_static_init.c' l='70' type='typeof (dl-&gt;_dl_minsigstacksize)'/>
+<use f='codebrowser/elf/rtld_static_init.c' l='72' u='r' c='__rtld_static_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf-sigstksz.h' l='24' macro='1' u='r' c='sysconf_sigstksz'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf.c' l='87' macro='1' u='r' c='linux_sysconf'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf.c' l='87' macro='1' u='r' c='linux_sysconf'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf.c' l='88' macro='1' u='r' c='linux_sysconf'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf-pthread_stack_min.h' l='25' macro='1' u='r' c='__get_pthread_stack_min'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/dl-minsigstacksize.h' l='24' macro='1' u='r' c='dl_check_minsigstacksize'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/dl-minsigstacksize.h' l='74' macro='1' u='w' c='dl_check_minsigstacksize'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/dl-minsigstacksize.h' l='81' macro='1' u='w' c='dl_check_minsigstacksize'/>

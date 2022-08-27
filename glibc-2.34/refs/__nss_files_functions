@@ -1,0 +1,4 @@
+<dec f='codebrowser/nss/nss_module.h' l='48' type='void __nss_files_functions(void ** pointers)'/>
+<doc f='codebrowser/nss/nss_module.h' l='47'>/* Locate the nss_files functions, as if by dlopen/dlsym.  */</doc>
+<def f='codebrowser/nss/nss_files_functions.c' l='22' ll='37' type='void __nss_files_functions(void ** pointers)'/>
+<use f='codebrowser/nss/nss_module.c' l='162' u='r' c='module_load_nss_files'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='322' type='void __nptl_create_event()'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='324' type='void __nptl_create_event()'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='324' c='__nptl_create_event'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='321'>/* Event handlers for libthread_db interface.  */</doc>
+<def f='codebrowser/nptl/events.c' l='23' ll='26' type='void __nptl_create_event()'/>
+<use f='codebrowser/nptl/pthread_create.c' l='824' u='c' c='__pthread_create_2_1'/>

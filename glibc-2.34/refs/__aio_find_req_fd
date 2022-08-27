@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='102' type='struct requestlist * __aio_find_req_fd(int fildes)'/>
+<use f='codebrowser/rt/aio_cancel.c' l='72' u='c' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='111' u='c' c='__aio_cancel'/>
+<doc f='codebrowser/sysdeps/generic/aio_misc.h' l='101'>/* Find request entry for given file descriptor.  */</doc>
+<def f='codebrowser/rt/aio_misc.c' l='206' ll='216' type='struct requestlist * __aio_find_req_fd(int fildes)'/>

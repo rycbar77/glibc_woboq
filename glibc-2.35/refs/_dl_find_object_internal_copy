@@ -1,0 +1,5 @@
+<def f='codebrowser/elf/dl-find_object.h' l='50' ll='70' type='void _dl_find_object_internal_copy(const struct dl_find_object_internal * source, struct dl_find_object_internal * copy)'/>
+<doc f='codebrowser/elf/dl-find_object.h' l='48'>/* Create a copy of *SOURCE in *COPY using relaxed MO loads and
+   stores.  */</doc>
+<use f='codebrowser/elf/dl-find_object.c' l='439' u='c' c='_dl_find_object'/>
+<use f='codebrowser/elf/dl-find_object.c' l='750' u='c' c='_dl_find_object_update_1'/>

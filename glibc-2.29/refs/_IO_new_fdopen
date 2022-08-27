@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/stdio.h' l='132' type='_IO_FILE * _IO_new_fdopen(int , const char * )'/>
+<dec f='codebrowser/libio/iolibio.h' l='16' type='FILE * _IO_new_fdopen(int , const char * )'/>
+<def f='codebrowser/libio/iofdopen.c' l='33' ll='162' type='FILE * _IO_new_fdopen(int fd, const char * mode)'/>
+<use f='codebrowser/libio/iofdopen.c' l='165' c='__new_fdopen'/>
+<use f='codebrowser/libio/iofdopen.c' l='166' c='_IO_fdopen'/>
+<use f='codebrowser/stdio-common/perror.c' l='61' macro='1' u='c' c='perror'/>

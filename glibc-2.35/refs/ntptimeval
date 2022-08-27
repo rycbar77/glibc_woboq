@@ -1,0 +1,22 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/sys/timex.h' l='30' ll='41'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sys/timex.h' l='59' c='ntp_gettimex'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sys/timex.h' l='62' c='ntp_gettimex'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='36' c='valid_ntptimeval_to_ntptimeval64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='166' c='valid_ntptimeval_to_ntptimeval64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='36' c='valid_ntptimeval_to_ntptimeval64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='183' c='valid_ntptimeval64_to_ntptimeval'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='36' c='valid_ntptimeval64_to_ntptimeval'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='186' c='valid_ntptimeval64_to_ntptimeval'/>
+<size>72</size>
+<mbr r='ntptimeval::time' o='0' t='struct timeval'/>
+<mbr r='ntptimeval::maxerror' o='128' t='long'/>
+<mbr r='ntptimeval::esterror' o='192' t='long'/>
+<mbr r='ntptimeval::tai' o='256' t='long'/>
+<mbr r='ntptimeval::__glibc_reserved1' o='320' t='long'/>
+<mbr r='ntptimeval::__glibc_reserved2' o='384' t='long'/>
+<mbr r='ntptimeval::__glibc_reserved3' o='448' t='long'/>
+<mbr r='ntptimeval::__glibc_reserved4' o='512' t='long'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettime.c' l='33' macro='1' c='__ntp_gettime'/>
+<size>72</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettimex.c' l='29' macro='1' c='__ntp_gettimex'/>
+<size>72</size>

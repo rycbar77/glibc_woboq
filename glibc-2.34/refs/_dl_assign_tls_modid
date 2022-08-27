@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1175' type='void _dl_assign_tls_modid(struct link_map * l)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1174'>/* Determine next available module ID and set the L l_tls_modid.  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='1501' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/rtld.c' l='1724' u='c' c='dl_main'/>
+<def f='codebrowser/elf/dl-tls.c' l='129' ll='192' type='void _dl_assign_tls_modid(struct link_map * l)'/>

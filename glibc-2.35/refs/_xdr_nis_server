@@ -1,0 +1,9 @@
+<dec f='codebrowser/nis/nis_xdr.h' l='25' type='bool_t _xdr_nis_server(XDR * , nis_server * )'/>
+<use f='codebrowser/nis/nis_callback.c' l='331' u='r' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='341' u='r' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='361' u='r' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='375' u='r' c='__nis_destroy_callback'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='164' u='r' c='__GI_nis_freeservlist'/>
+<def f='codebrowser/nis/nis_xdr.c' l='84' ll='100' type='bool_t _xdr_nis_server(XDR * xdrs, nis_server * objp)'/>
+<use f='codebrowser/nis/nis_xdr.c' l='113' u='r' c='_xdr_directory_obj'/>
+<use f='codebrowser/nis/nis_xdr.c' l='360' u='r' c='__GI__xdr_ib_request'/>

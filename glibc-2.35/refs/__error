@@ -1,0 +1,5 @@
+<dec f='codebrowser/misc/error.c' l='74' type='void __error(int status, int errnum, const char * message)'/>
+<def f='codebrowser/misc/error.c' l='269' ll='276' type='void __error(int status, int errnum, const char * message)'/>
+<use f='codebrowser/misc/error.c' l='358' c='error'/>
+<doc f='codebrowser/misc/error.c' l='72'>/* In GNU libc we want do not want to use the common name &apos;error&apos; directly.
+   Instead make it a weak alias.  */</doc>

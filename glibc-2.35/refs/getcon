@@ -1,0 +1,4 @@
+<dec f='include/selinux/selinux.h' l='33' type='int getcon(char ** con)'/>
+<doc f='include/selinux/selinux.h' l='31'>/* Get current context, and set *con to refer to it.
+   Caller must free via freecon. */</doc>
+<use f='codebrowser/nscd/selinux.c' l='406' u='c' c='nscd_request_avc_has_perm'/>

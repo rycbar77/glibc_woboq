@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/unistd.h' l='186' type='int __tcsetpgrp(int fd, __pid_t pgrp)'/>
+<dec f='codebrowser/include/unistd.h' l='187' type='int __tcsetpgrp(int , __pid_t )'/>
+<use f='codebrowser/include/unistd.h' l='187' c='__tcsetpgrp'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='278' u='c' c='__spawni_child'/>
+<def f='codebrowser/sysdeps/unix/bsd/tcsetpgrp.c' l='24' ll='28' type='int __tcsetpgrp(int fd, pid_t pgrp_id)'/>
+<use f='codebrowser/sysdeps/unix/bsd/tcsetpgrp.c' l='29' c='tcsetpgrp'/>
+<doc f='codebrowser/sysdeps/unix/bsd/tcsetpgrp.c' l='23'>/* Set the foreground process group ID of FD set PGRP_ID.  */</doc>

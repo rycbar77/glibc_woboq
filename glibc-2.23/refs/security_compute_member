@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='246' type='int security_compute_member(const char * scon, const char * tcon, security_class_t tclass, char ** newcon)'/>
+<doc f='include/selinux/selinux.h' l='244'>/* Compute a polyinstantiation member decision and set *newcon to refer to it.
+   Caller must free via freecon. */</doc>

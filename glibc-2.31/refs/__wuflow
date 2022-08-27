@@ -1,0 +1,9 @@
+<dec f='codebrowser/libio/libio.h' l='161' type='wint_t __wuflow(FILE * )'/>
+<dec f='codebrowser/libio/libio.h' l='271' type='wint_t __wuflow(FILE * )'/>
+<use f='codebrowser/libio/libio.h' l='271' c='__wuflow'/>
+<use f='codebrowser/libio/getwc.c' l='39' macro='1' u='c' c='_IO_getwc'/>
+<use f='codebrowser/libio/getwc_u.c' l='36' macro='1' u='c' c='__getwc_unlocked'/>
+<use f='codebrowser/libio/getwchar.c' l='37' macro='1' u='c' c='getwchar'/>
+<use f='codebrowser/libio/getwchar_u.c' l='35' macro='1' u='c' c='getwchar_unlocked'/>
+<use f='codebrowser/libio/iogetwline.c' l='61' u='c' c='_IO_getwline_info'/>
+<def f='codebrowser/libio/wgenops.c' l='222' ll='249' type='wint_t __wuflow(FILE * fp)'/>

@@ -1,0 +1,25 @@
+<def f='codebrowser/locale/locarchive.h' l='51' ll='59'/>
+<use f='codebrowser/locale/loadarchive.c' l='119' c='calculate_head_size'/>
+<use f='codebrowser/locale/loadarchive.c' l='143' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/loadarchive.c' l='273' c='_nl_load_locale_from_archive'/>
+<size>12</size>
+<mbr r='namehashent::hashval' o='0' t='uint32_t'/>
+<mbr r='namehashent::name_offset' o='32' t='uint32_t'/>
+<mbr r='namehashent::locrec_offset' o='64' t='uint32_t'/>
+<use f='codebrowser/locale/programs/locale.c' l='642' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='666' c='write_archive_locales'/>
+<size>12</size>
+<use f='codebrowser/locale/programs/locarchive.c' l='143' c='create_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='339' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='396' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='471' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='704' c='insert_name'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='709' c='insert_name'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='710' c='insert_name'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='772' c='add_alias'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='851' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1532' c='delete_locales_from_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1540' c='delete_locales_from_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1630' c='show_archive_content'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1644' c='show_archive_content'/>
+<size>12</size>

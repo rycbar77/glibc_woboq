@@ -1,0 +1,9 @@
+<dec f='codebrowser/malloc/mcheck.h' l='41' type='int mcheck(void (*)(enum mcheck_status) __abortfunc)'/>
+<dec f='codebrowser/include/mcheck.h' l='7' type='int mcheck(void (*)(enum mcheck_status) )'/>
+<use f='codebrowser/include/mcheck.h' l='7' c='mcheck'/>
+<def f='codebrowser/malloc/mcheck.c' l='372' ll='398' type='int mcheck(void (*)(enum mcheck_status) func)'/>
+<use f='codebrowser/malloc/mcheck.c' l='406' u='c' c='mcheck_pedantic'/>
+<doc f='codebrowser/malloc/mcheck.h' l='37'>/* Activate a standard collection of debugging hooks.  This must be called
+   before `malloc&apos; is ever called.  ABORTFUNC is called with an error code
+   (see enum above) when an inconsistency is detected.  If ABORTFUNC is
+   null, the standard function prints on stderr and then calls `abort&apos;.  */</doc>

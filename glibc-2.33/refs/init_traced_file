@@ -1,0 +1,6 @@
+<def f='codebrowser/nscd/nscd.h' l='93' ll='117' type='void init_traced_file(struct traced_file * file, const char * fname, int crinit)'/>
+<doc f='codebrowser/nscd/nscd.h' l='88'>/* Initialize a `struct traced_file`.  As input we need the name
+   of the file, and if invalidation requires calling res_init.
+   If CRINIT is 1 then res_init will be called after invalidation
+   or if the traced file is changed in any way, otherwise it will
+   not.  */</doc>

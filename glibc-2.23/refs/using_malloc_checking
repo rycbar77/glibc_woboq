@@ -1,0 +1,9 @@
+<def f='codebrowser/malloc/hooks.c' l='53' type='int'/>
+<use f='codebrowser/malloc/hooks.c' l='79' u='w' c='__malloc_check_init'/>
+<use f='codebrowser/malloc/hooks.c' l='117' u='r' c='malloc_check_get_size'/>
+<use f='codebrowser/malloc/hooks.c' l='538' u='r' c='__malloc_get_state'/>
+<use f='codebrowser/malloc/hooks.c' l='642' u='r' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='645' u='r' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/hooks.c' l='651' u='w' c='__malloc_set_state'/>
+<use f='codebrowser/malloc/malloc.c' l='4587' u='r' c='musable'/>
+<doc f='codebrowser/malloc/hooks.c' l='52'>/* Whether we are using malloc checking.  */</doc>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/sys/auxv.h' l='10' type='_Bool __getauxval2(unsigned long type, unsigned long * result)'/>
+<dec f='codebrowser/include/sys/auxv.h' l='11' type='_Bool __getauxval2(unsigned long , unsigned long * )'/>
+<use f='codebrowser/include/sys/auxv.h' l='11' c='__getauxval2'/>
+<def f='codebrowser/misc/getauxval.c' l='23' ll='51' macro='1' type='_Bool __getauxval2(unsigned long type, unsigned long * result)'/>
+<use f='codebrowser/misc/getauxval.c' l='59' u='c' c='__getauxval'/>
+<doc f='codebrowser/include/sys/auxv.h' l='8'>/* Like getauxval, but writes the value to *RESULT and returns true if
+   found, or returns false.  Does not set errno.  */</doc>

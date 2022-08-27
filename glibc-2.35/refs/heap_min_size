@@ -1,0 +1,4 @@
+<def f='codebrowser/malloc/arena.c' l='47' ll='55' type='size_t heap_min_size()'/>
+<use f='codebrowser/malloc/arena.c' l='488' u='c' c='alloc_new_heap'/>
+<doc f='codebrowser/malloc/arena.c' l='44'>/* When huge pages are used to create new arenas, the maximum and minumum
+   size are based on the runtime defined huge page size.  */</doc>

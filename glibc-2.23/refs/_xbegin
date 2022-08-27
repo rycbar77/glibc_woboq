@@ -1,0 +1,7 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/x86/hle.h' l='50' ll='55' type='int _xbegin()'/>
+<use f='codebrowser/nptl/pthread_rwlock_rdlock.c' l='128' macro='1' u='c' c='__pthread_rwlock_rdlock'/>
+<use f='codebrowser/nptl/pthread_rwlock_tryrdlock.c' l='35' macro='1' u='c' c='__pthread_rwlock_tryrdlock'/>
+<use f='codebrowser/nptl/pthread_rwlock_trywrlock.c' l='30' macro='1' u='c' c='__pthread_rwlock_trywrlock'/>
+<use f='codebrowser/nptl/pthread_rwlock_wrlock.c' l='100' macro='1' u='c' c='__pthread_rwlock_wrlock'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-lock.c' l='56' u='c' c='__lll_lock_elision'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-trylock.c' l='44' u='c' c='__lll_trylock_elision'/>

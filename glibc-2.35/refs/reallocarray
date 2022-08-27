@@ -1,0 +1,11 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='563' type='void * reallocarray(void * __ptr, size_t __nmemb, size_t __size)'/>
+<dec f='codebrowser/stdlib/stdlib.h' l='569' type='void * reallocarray(void * __ptr, size_t __nmemb, size_t __size)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='560'>/* __attribute_malloc__ is not used, because if reallocarray returns
+   the same pointer that was passed to it, aliasing needs to be allowed
+   between objects pointed by the old and new pointers.  */</doc>
+<doc f='codebrowser/stdlib/stdlib.h' l='568'>/* Add reallocarray as its own deallocator.  */</doc>
+<dec f='codebrowser/malloc/malloc.h' l='59' type='void * reallocarray(void * __ptr, size_t __nmemb, size_t __size)'/>
+<doc f='codebrowser/malloc/malloc.h' l='56'>/* __attribute_malloc__ is not used, because if reallocarray returns
+   the same pointer that was passed to it, aliasing needs to be allowed
+   between objects pointed by the old and new pointers.  */</doc>
+<def f='codebrowser/malloc/reallocarray.c' l='36' macro='1' type='void * reallocarray(void * , size_t , size_t )'/>

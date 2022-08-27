@@ -1,0 +1,10 @@
+<def f='codebrowser/elf/dl-hwcaps.h' l='120' ll='134' type='uint32_t _dl_hwcaps_subdirs_build_bitmask(int subdirs, int active)'/>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='115'>/* Returns a bitmask that marks the last ACTIVE subdirectories in a
+   _dl_hwcaps_subdirs_active string (containing SUBDIRS directories in
+   total) as active.  Intended for use in _dl_hwcaps_subdirs_active
+   implementations (if a contiguous tail of the list in
+   _dl_hwcaps_subdirs is selected).  */</doc>
+<use f='codebrowser/sysdeps/x86_64/dl-hwcaps-subdirs.c' l='38' u='c' c='_dl_hwcaps_subdirs_active'/>
+<use f='codebrowser/sysdeps/x86_64/dl-hwcaps-subdirs.c' l='43' u='c' c='_dl_hwcaps_subdirs_active'/>
+<use f='codebrowser/sysdeps/x86_64/dl-hwcaps-subdirs.c' l='48' u='c' c='_dl_hwcaps_subdirs_active'/>
+<use f='codebrowser/sysdeps/x86_64/dl-hwcaps-subdirs.c' l='51' u='c' c='_dl_hwcaps_subdirs_active'/>

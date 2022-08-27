@@ -1,0 +1,14 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='186' type='Elf64_Word'/>
+<offset>64</offset>
+<use f='codebrowser/elf/dl-libc.c' l='138' u='w' c='do_dlsym_private'/>
+<use f='codebrowser/elf/dl-libc.c' l='213' u='w' c='__libc_dlvsym'/>
+<use f='codebrowser/elf/dl-lookup-direct.c' l='58' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='115' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='115' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='117' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-minimal.c' l='101' u='w' c='__rtld_malloc_init_real'/>
+<use f='codebrowser/elf/dl-runtime.c' l='91' u='r' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='246' u='r' c='_dl_profile_fixup'/>
+<use f='codebrowser/elf/dl-sym.c' l='185' u='w' c='_dl_vsym'/>
+<use f='codebrowser/elf/dl-version.c' l='304' u='w' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='342' u='w' c='_dl_check_map_versions'/>

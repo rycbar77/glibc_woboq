@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/pthread/threads.h' l='134' type='int mtx_timedlock(mtx_t *restrict __mutex, const struct timespec *restrict __time_point)'/>
+<doc f='codebrowser/sysdeps/pthread/threads.h' l='131'>/* Block the current thread until the mutex pointed by __MUTEX is unlocked
+   or time pointed by __TIME_POINT is reached.  In case the mutex is unlock,
+   the current thread will not be blocked.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/mtx_timedlock.c' l='43' macro='1' type='int mtx_timedlock(mtx_t *restrict , const struct timespec *restrict )'/>

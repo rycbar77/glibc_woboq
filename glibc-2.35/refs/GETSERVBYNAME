@@ -1,0 +1,10 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='69' type='16'/>
+<use f='codebrowser/nscd/cache.c' l='60'/>
+<use f='codebrowser/nscd/cachedumper.c' l='306' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/connections.c' l='97' u='r'/>
+<use f='codebrowser/nscd/connections.c' l='234'/>
+<use f='codebrowser/nscd/connections.c' l='1209' c='handle_request'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='42' u='r' c='__nscd_getservbyname_r'/>
+<use f='codebrowser/nscd/selinux.c' l='64' u='r'/>
+<use f='codebrowser/nscd/servicescache.c' l='331' u='r' c='lookup'/>
+<use f='codebrowser/nscd/servicescache.c' l='398' u='r' c='readdservbyname'/>

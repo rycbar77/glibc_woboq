@@ -1,0 +1,17 @@
+<dec f='codebrowser/elf/elf.h' l='685' type='Elf32_Word'/>
+<dec f='codebrowser/elf/elf.h' l='692' type='Elf64_Word'/>
+<offset>32</offset>
+<doc f='codebrowser/elf/elf.h' l='685'>/* Segment flags */</doc>
+<doc f='codebrowser/elf/elf.h' l='692'>/* Segment flags */</doc>
+<use f='codebrowser/elf/dl-load.c' l='1190' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1236' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-profile.c' l='209' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-reloc.c' l='213' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='224' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='226' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='228' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/setup-vdso.h' l='55' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/dl-support.c' l='403' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/rtld.c' l='1333' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1524' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1552' u='r' c='dl_main'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/sys/random.h' l='6' type='ssize_t __getrandom(void * __buffer, size_t __length, unsigned int __flags)'/>
+<dec f='codebrowser/include/sys/random.h' l='8' type='ssize_t __getrandom(void * , size_t , unsigned int )'/>
+<use f='codebrowser/include/sys/random.h' l='8' c='__getrandom'/>
+<use f='codebrowser/sysdeps/posix/tempname.c' l='85' u='c' c='random_bits'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getrandom.c' l='26' ll='30' type='ssize_t __getrandom(void * buffer, size_t length, unsigned int flags)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getrandom.c' l='32' c='getrandom'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/getrandom.c' l='24'>/* Write up to LENGTH bytes of randomness starting at BUFFER.
+   Return the number of bytes written, or -1 on error.  */</doc>

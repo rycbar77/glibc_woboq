@@ -1,0 +1,10 @@
+<def f='codebrowser/dlfcn/dlvsym.c' l='35' ll='45'/>
+<use f='codebrowser/dlfcn/dlvsym.c' l='51' c='dlvsym_doit'/>
+<use f='codebrowser/dlfcn/dlvsym.c' l='51' c='dlvsym_doit'/>
+<use f='codebrowser/dlfcn/dlvsym.c' l='65' c='__dlvsym'/>
+<size>40</size>
+<mbr r='dlvsym_args::handle' o='0' t='void *'/>
+<mbr r='dlvsym_args::name' o='64' t='const char *'/>
+<mbr r='dlvsym_args::version' o='128' t='const char *'/>
+<mbr r='dlvsym_args::who' o='192' t='void *'/>
+<mbr r='dlvsym_args::sym' o='256' t='void *'/>

@@ -1,0 +1,158 @@
+<dec f='codebrowser/nscd/nscd.h' l='193' type='struct database_dyn[5]'/>
+<doc f='codebrowser/nscd/nscd.h' l='192'>/* Global variables.  */</doc>
+<use f='codebrowser/nscd/cache.c' l='151' u='r' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='341' u='r' c='prune_cache'/>
+<def f='codebrowser/nscd/connections.c' l='112' ll='209' type='struct database_dyn[5]'/>
+<use f='codebrowser/nscd/connections.c' l='219' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='220' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='221' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='222' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='223' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='224' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='225' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='226' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='229' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='230' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='231' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='232' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='233' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='234' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='235' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='236' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='237' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='238' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='239' u='a'/>
+<use f='codebrowser/nscd/connections.c' l='411' u='a' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/connections.c' l='494' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='496' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='497' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='499' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='502' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='520' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='521' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='551' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='565' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='566' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='567' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='568' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='568' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='568' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='570' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='572' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='576' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='579' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='581' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='581' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='583' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='586' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='601' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='604' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='610' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='610' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='612' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='619' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='621' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='624' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='625' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='637' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='649' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='653' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='655' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='658' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='660' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='667' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='670' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='681' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='711' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='712' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='722' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='727' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='729' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='730' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='735' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='736' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='737' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='737' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='737' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='739' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='740' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='743' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='744' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='756' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='760' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='760' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='762' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='763' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='765' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='767' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='768' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='769' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='769' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='770' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='771' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='772' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='772' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='773' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='775' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='776' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='776' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='809' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='835' u='m' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='905' u='m' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='905' u='m' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='927' u='m' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='928' u='m' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='949' u='m' c='invalidate_cache'/>
+<use f='codebrowser/nscd/connections.c' l='978' u='m' c='invalidate_cache'/>
+<use f='codebrowser/nscd/connections.c' l='980' u='m' c='invalidate_cache'/>
+<use f='codebrowser/nscd/connections.c' l='981' u='a' c='invalidate_cache'/>
+<use f='codebrowser/nscd/connections.c' l='982' u='m' c='invalidate_cache'/>
+<use f='codebrowser/nscd/connections.c' l='1256' u='r' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1413' u='m' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1416' u='m' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1417' u='m' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1418' u='m' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1420' u='m' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1422' u='m' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1422' u='m' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1460' u='m' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1462' u='m' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1463' u='m' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1498' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1498' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1500' u='a' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1505' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1515' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1517' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1518' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1519' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1526' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1532' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1533' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1541' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1544' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1545' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1553' u='a' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1564' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1570' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1571' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1573' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1578' u='m' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1821' u='m' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1957' u='m' c='clear_db_cache'/>
+<use f='codebrowser/nscd/connections.c' l='1958' u='m' c='clear_db_cache'/>
+<use f='codebrowser/nscd/connections.c' l='1959' u='m' c='clear_db_cache'/>
+<use f='codebrowser/nscd/connections.c' l='1960' u='m' c='clear_db_cache'/>
+<use f='codebrowser/nscd/connections.c' l='2129' u='m' c='main_loop_poll'/>
+<use f='codebrowser/nscd/connections.c' l='2383' u='m' c='start_threads'/>
+<use f='codebrowser/nscd/connections.c' l='2390' u='m' c='start_threads'/>
+<doc f='codebrowser/nscd/connections.c' l='111'>/* The control data structures for the services.  */</doc>
+<use f='codebrowser/nscd/mem.c' l='427' u='r' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='567' u='r' c='mempool_alloc'/>
+<use f='codebrowser/nscd/nscd.c' l='169' u='r' c='main'/>
+<use f='codebrowser/nscd/nscd.c' l='572' u='m' c='termination_handler'/>
+<use f='codebrowser/nscd/nscd.c' l='572' u='m' c='termination_handler'/>
+<use f='codebrowser/nscd/nscd.c' l='576' u='m' c='termination_handler'/>
+<use f='codebrowser/nscd/nscd.c' l='578' u='m' c='termination_handler'/>
+<use f='codebrowser/nscd/nscd.c' l='580' u='m' c='termination_handler'/>
+<use f='codebrowser/nscd/nscd.c' l='580' u='m' c='termination_handler'/>

@@ -1,0 +1,4 @@
+<def f='codebrowser/resolv/res-name-checking.c' l='184' ll='201' type='int ___res_mailok(const char * dn)'/>
+<use f='codebrowser/resolv/res-name-checking.c' l='202' c='res_mailok'/>
+<doc f='codebrowser/resolv/res-name-checking.c' l='182'>/* SOA RNAMEs and RP RNAMEs can have any byte in their first label,
+   but the rest of the name has to look like a host name.  */</doc>

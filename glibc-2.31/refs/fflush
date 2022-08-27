@@ -1,0 +1,15 @@
+<dec f='codebrowser/libio/stdio.h' l='218' type='int fflush(FILE * __stream)'/>
+<dec f='codebrowser/include/stdio.h' l='203' type='int fflush(FILE * )'/>
+<use f='codebrowser/include/stdio.h' l='203' c='fflush'/>
+<doc f='codebrowser/libio/stdio.h' l='214'>/* Flush STREAM, or all streams if STREAM is NULL.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/iofflush.c' l='47' macro='1' type='int fflush(FILE * )'/>
+<use f='codebrowser/malloc/malloc.c' l='297' u='c' c='__malloc_assert'/>
+<use f='codebrowser/misc/mntent_r.c' l='295' u='c' c='__addmntent'/>
+<use f='codebrowser/support/support_run_diff.c' l='49' u='c' c='support_run_diff'/>
+<use f='codebrowser/support/support_subprocess.c' l='42' u='c' c='support_suprocess_init'/>
+<use f='codebrowser/support/support_subprocess.c' l='43' u='c' c='support_suprocess_init'/>
+<use f='codebrowser/support/xfclose.c' l='29' u='c' c='xfclose'/>
+<use f='codebrowser/timezone/zdump.c' l='339' u='c' c='abbrok'/>

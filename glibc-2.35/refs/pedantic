@@ -1,0 +1,9 @@
+<def f='codebrowser/malloc/mcheck-impl.c' l='50' type='_Bool'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='117' u='w' c='__mcheck_checkptr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='127' u='w' c='__mcheck_checkptr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='171' u='r' c='free_mcheck'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='192' u='r' c='malloc_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='236' u='r' c='memalign_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='303' u='r' c='realloc_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='403' u='w' c='__mcheck_initialize'/>
+<doc f='codebrowser/malloc/mcheck-impl.c' l='49'>/* Nonzero if pedentic checking of all blocks is requested.  */</doc>

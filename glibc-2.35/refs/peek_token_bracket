@@ -1,0 +1,9 @@
+<def f='codebrowser/posix/regcomp.c' l='2018' ll='2100' type='int peek_token_bracket(re_token_t * token, re_string_t * input, reg_syntax_t syntax)'/>
+<use f='codebrowser/posix/regcomp.c' l='3153' u='c' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3168' u='c' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3202' u='c' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3215' u='c' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3244' u='c' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3433' u='c' c='parse_bracket_element'/>
+<doc f='codebrowser/posix/regcomp.c' l='2015'>/* Peek a token from INPUT, and return the length of the token.
+   We must not use this function out of bracket expressions.  */</doc>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/include/sys/stat.h' l='40' type='int __fstatat64(int dirfd, const char * pathname, struct stat64 * buf, int flags)'/>
+<dec f='codebrowser/include/sys/stat.h' l='46' type='int __fstatat64(int , const char * , struct stat64 * , int )'/>
+<use f='codebrowser/include/sys/stat.h' l='46' c='__fstatat64'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='363' macro='1' u='c' c='__getcwd_generic'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/faccessat.c' l='43' u='c' c='__faccessat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fchmodat.c' l='52' u='c' c='fchmodat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstat64.c' l='35' macro='1' u='c' c='__fstat64'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='151' macro='1' type='int __fstatat64(int fd, const char * file, struct stat64 * buf, int flag)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='186' c='fstatat64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='189' c='__fstatat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='190' c='fstatat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='191' c='__GI___fstatat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lstat64.c' l='29' macro='1' u='c' c='__lstat64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/stat64.c' l='29' macro='1' u='c' c='__stat64'/>
+<use f='codebrowser/io/statx_generic.c' l='60' u='c' c='statx_generic'/>

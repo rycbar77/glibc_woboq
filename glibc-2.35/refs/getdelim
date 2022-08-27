@@ -1,0 +1,4 @@
+<dec f='codebrowser/libio/stdio.h' l='635' type='__ssize_t getdelim(char **restrict __lineptr, size_t *restrict __n, int __delimiter, FILE *restrict __stream)'/>
+<def f='codebrowser/libio/iogetdelim.c' l='126' macro='1' type='__ssize_t getdelim(char **restrict , size_t *restrict , int , FILE *restrict )'/>
+<use f='codebrowser/locale/programs/linereader.c' l='83' u='c' c='lr_create'/>
+<use f='codebrowser/locale/programs/linereader.c' l='155' u='c' c='lr_next'/>

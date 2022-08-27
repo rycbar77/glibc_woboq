@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/string.h' l='105' type='char * __basename(const char * __filename)'/>
+<dec f='codebrowser/include/string.h' l='106' type='char * __basename(const char * )'/>
+<use f='codebrowser/include/string.h' l='106' c='__basename'/>
+<def f='codebrowser/string/basename.c' l='21' ll='26' type='char * __basename(const char * filename)'/>
+<use f='codebrowser/string/basename.c' l='28' c='basename'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='83' u='c' c='distinguish_extX'/>

@@ -1,0 +1,18 @@
+<dec f='codebrowser/iconv/iconv.h' l='42' type='size_t iconv(iconv_t __cd, char **restrict __inbuf, size_t *restrict __inbytesleft, char **restrict __outbuf, size_t *restrict __outbytesleft)'/>
+<use f='codebrowser/catgets/gencat.c' l='551' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='553' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='707' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='709' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='759' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='761' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='1181' u='c' c='normalize_line'/>
+<use f='codebrowser/catgets/gencat.c' l='1183' u='c' c='normalize_line'/>
+<use f='codebrowser/catgets/gencat.c' l='1346' u='c' c='open_conversion'/>
+<doc f='codebrowser/iconv/iconv.h' l='39'>/* Convert at most *INBYTESLEFT bytes from *INBUF according to the
+   code conversion algorithm specified by CD and place up to
+   *OUTBYTESLEFT bytes in buffer at *OUTBUF.  */</doc>
+<def f='codebrowser/iconv/iconv.c' l='29' ll='94' type='size_t iconv(iconv_t cd, char ** inbuf, size_t * inbytesleft, char ** outbuf, size_t * outbytesleft)'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='296' u='c' c='convert_charseq'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='312' u='c' c='convert_charseq'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='464' u='c' c='process_block'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='488' u='c' c='process_block'/>

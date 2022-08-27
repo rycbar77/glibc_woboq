@@ -1,0 +1,13 @@
+<def f='codebrowser/malloc/arena.c' l='75' ll='87'/>
+<use f='codebrowser/malloc/arena.c' l='78'/>
+<use f='codebrowser/malloc/arena.c' l='75'/>
+<size>48</size>
+<doc f='codebrowser/malloc/arena.c' l='71'>/* A heap is a single contiguous memory region holding (coalesceable)
+   malloc_chunks.  It is allocated with mmap() and always starts at an
+   address aligned to HEAP_MAX_SIZE.  */</doc>
+<mbr r='_heap_info::ar_ptr' o='0' t='mstate'/>
+<mbr r='_heap_info::prev' o='64' t='struct _heap_info *'/>
+<mbr r='_heap_info::size' o='128' t='size_t'/>
+<mbr r='_heap_info::mprotect_size' o='192' t='size_t'/>
+<mbr r='_heap_info::pagesize' o='256' t='size_t'/>
+<mbr r='_heap_info::pad' o='320' t='char[8]'/>

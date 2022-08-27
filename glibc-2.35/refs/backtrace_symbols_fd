@@ -1,0 +1,4 @@
+<dec f='codebrowser/debug/execinfo.h' l='38' type='void backtrace_symbols_fd(void *const * __array, int __size, int __fd)'/>
+<doc f='codebrowser/debug/execinfo.h' l='36'>/* This function is similar to backtrace_symbols() but it writes the result
+   immediately to a file.  */</doc>
+<def f='codebrowser/debug/backtracesymsfd.c' l='120' macro='1' type='void backtrace_symbols_fd(void *const * , int , int )'/>

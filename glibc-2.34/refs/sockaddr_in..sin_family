@@ -1,0 +1,26 @@
+<dec f='codebrowser/inet/netinet/in.h' l='244' macro='1' type='sa_family_t'/>
+<offset>0</offset>
+<use f='codebrowser/inet/bindresvport.c' l='65' u='w' c='bindresvport'/>
+<use f='codebrowser/inet/bindresvport.c' l='67' u='r' c='bindresvport'/>
+<use f='codebrowser/resolv/resolv_context.h' l='135' u='r' c='__resolv_context_nameserver'/>
+<use f='codebrowser/inet/rcmd.c' l='602' u='w' c='iruserok_af'/>
+<use f='codebrowser/inet/rcmd.c' l='641' u='w' c='__ivaliduser'/>
+<use f='codebrowser/resolv/res_get_nsaddr.c' l='28' u='r' c='__res_get_nsaddr'/>
+<use f='codebrowser/resolv/res_init.c' l='219' u='w' c='allocate_address_v4'/>
+<use f='codebrowser/resolv/res_send.c' l='300' u='r' c='__res_context_send'/>
+<use f='codebrowser/resolv/res_send.c' l='321' u='r' c='__res_context_send'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='260' u='r' c='resolv_conf_matches'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='268' u='r' c='resolv_conf_matches'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='499' u='w' c='update_from_conf'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='443' u='r' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/key_call.c' l='219' u='w' c='__GI_key_gendes'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='57' u='w' c='__get_socket'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='260' u='w' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/rpc_gethostbyname.c' l='68' u='w' c='__libc_rpc_gethostbyname'/>
+<use f='codebrowser/sunrpc/rtime.c' l='92' u='w' c='__GI_rtime'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='171' u='w' c='__GI_svctcp_create'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='142' u='w' c='__GI_svcudp_bufcreate'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='271' u='w' c='rendezvous_request'/>
+<use f='codebrowser/support/resolv_test.c' l='1015' u='w' c='make_server_sockets'/>
+<use f='codebrowser/support/resolv_test.c' l='1066' u='w' c='make_server_sockets_for_address'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2401' u='w' c='getaddrinfo'/>

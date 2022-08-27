@@ -1,0 +1,8 @@
+<def f='codebrowser/elf/dl-hwcaps.h' l='51' ll='57' type='void _dl_hwcaps_split_init(struct dl_hwcaps_split * s, const char * subject)'/>
+<use f='codebrowser/elf/dl-hwcaps.h' l='87' u='c' c='_dl_hwcaps_split_masked_init'/>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='49'>/* Prepare *S to parse SUBJECT, for future _dl_hwcaps_split calls.  If
+   SUBJECT is NULL, it is treated as the empty string.  */</doc>
+<use f='codebrowser/elf/dl-hwcaps.c' l='111' u='c' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='71' u='c' c='_dl_hwcaps_contains'/>
+<use f='codebrowser/elf/dl-usage.c' l='163' u='c' c='print_hwcaps_subdirectories'/>
+<use f='codebrowser/elf/dl-usage.c' l='176' u='c' c='print_hwcaps_subdirectories'/>

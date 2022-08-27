@@ -1,0 +1,6 @@
+<dec f='codebrowser/io/sys/stat.h' l='433' type='int utimensat(int __fd, const char * __path, const struct timespec * __times, int __flags)'/>
+<doc f='codebrowser/io/sys/stat.h' l='431'>/* Set file access and modification times relative to directory file
+   descriptor.  */</doc>
+<use f='codebrowser/support/support_stat_nanoseconds.c' l='40' u='c' c='support_stat_nanoseconds'/>
+<use f='codebrowser/support/support_stat_nanoseconds.c' l='54' u='c' c='support_stat_nanoseconds'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/utimensat.c' l='101' macro='1' type='int utimensat(int , const char * , const struct timespec * , int )'/>

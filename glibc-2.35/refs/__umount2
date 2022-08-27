@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/include/sys/mount.h' l='27' type='int __umount2(const char * , int )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/umount.c' l='24' u='c' c='__umount'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/umount2.c' l='22' ll='26' type='int __umount2(const char * special_file, int flags)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/umount2.c' l='29' c='umount2'/>

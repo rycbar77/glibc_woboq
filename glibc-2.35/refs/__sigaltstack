@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/signal.h' l='57' type='int __sigaltstack(const stack_t * __ss, stack_t * __oss)'/>
+<dec f='codebrowser/include/signal.h' l='59' type='int __sigaltstack(const stack_t * , stack_t * )'/>
+<use f='codebrowser/include/signal.h' l='59' c='__sigaltstack'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigstack.c' l='49' u='c' c='sigstack'/>

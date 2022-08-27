@@ -1,0 +1,8 @@
+<dec f='codebrowser/resolv/gai_misc.h' l='38' type='pid_t'/>
+<offset>192</offset>
+<doc f='codebrowser/resolv/gai_misc.h' l='36'>/* XXX See requestlist, it&apos;s used to work around the broken signal
+       handling in Linux.  */</doc>
+<use f='codebrowser/resolv/gai_notify.c' l='130' u='r' c='__gai_notify'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='58' u='w' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='113' u='w' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='167' u='w' c='__getaddrinfo_a'/>

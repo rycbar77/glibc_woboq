@@ -1,0 +1,7 @@
+<dec f='codebrowser/resolv/res_hconf.h' l='45' type='void _res_hconf_reorder_addrs(struct hostent * hp)'/>
+<def f='codebrowser/resolv/res_hconf.c' l='390' ll='562' type='void _res_hconf_reorder_addrs(struct hostent * hp)'/>
+<doc f='codebrowser/resolv/res_hconf.c' l='384'>/* Reorder addresses returned in a hostent such that the first address
+   is an address on the local subnet, if there is such an address.
+   Otherwise, nothing is changed.
+
+   Note that this function currently only handles IPv4 addresses.  */</doc>

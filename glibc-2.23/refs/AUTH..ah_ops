@@ -1,0 +1,23 @@
+<dec f='codebrowser/sunrpc/rpc/auth.h' l='103' type='struct auth_ops *'/>
+<offset>448</offset>
+<use f='codebrowser/sunrpc/auth_des.c' l='191' u='w' c='__GI_authdes_pk_create'/>
+<use f='codebrowser/sunrpc/auth_none.c' l='82' u='w' c='authnone_create_once'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='116' u='w' c='__GI_authunix_create'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='158' macro='1' u='r' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='186' macro='1' u='r' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='193' macro='1' u='r' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='199' macro='1' u='r' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='254' macro='1' u='r' c='clnttcp_call'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='303' macro='1' u='r' c='clnttcp_call'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='323' macro='1' u='r' c='clnttcp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='314' macro='1' u='r' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='462' macro='1' u='r' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='477' macro='1' u='r' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='233' macro='1' u='r' c='clntunix_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='280' macro='1' u='r' c='clntunix_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='300' macro='1' u='r' c='clntunix_call'/>
+<use f='codebrowser/sunrpc/key_call.c' l='416' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='427' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='439' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='569' macro='1' u='r' c='__rpc_thread_key_cleanup'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='389' macro='1' u='r' c='__GI_clnt_broadcast'/>

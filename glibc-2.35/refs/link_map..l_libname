@@ -1,0 +1,33 @@
+<dec f='codebrowser/include/link.h' l='117' type='struct libname_list *'/>
+<offset>448</offset>
+<use f='codebrowser/elf/dl-close.c' l='704' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-libc.c' l='277' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-libc.c' l='279' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-load.c' l='425' u='r' c='add_name_to_object'/>
+<use f='codebrowser/elf/dl-load.c' l='981' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='982' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-misc.c' l='72' u='r' c='_dl_name_match_p'/>
+<use f='codebrowser/elf/dl-object.c' l='102' u='w' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-open.c' l='83' u='r' c='add_to_global_resize_failure'/>
+<use f='codebrowser/elf/dl-open.c' l='736' u='r' c='dl_open_worker_begin'/>
+<use f='codebrowser/elf/dl-support.c' l='90' u='w'/>
+<use f='codebrowser/elf/setup-vdso.h' l='87' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/rtld.c' l='1192' u='w' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1301' u='r' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1307' u='w' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1310' u='r' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1310' u='r' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1661' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1671' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1671' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1672' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1739' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2067' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2073' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2073' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2141' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2142' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2143' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2147' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2428' u='r' c='dl_main'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='176' u='r' c='la_objopen'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='1003' type='int pthread_cond_destroy(pthread_cond_t * __cond)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='1002'>/* Destroy condition variable COND.  */</doc>
+<def f='codebrowser/nptl/pthread_cond_destroy.c' l='62' macro='1' type='int pthread_cond_destroy(pthread_cond_t * )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='130' c='__gthrw_pthread_cond_destroy'/>

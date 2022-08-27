@@ -1,0 +1,29 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='78' type='struct requestlist *'/>
+<use f='codebrowser/rt/aio_cancel.c' l='85' u='r' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='103' u='w' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='120' u='r' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='121' u='w' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='146' u='r' c='__aio_cancel'/>
+<offset>192</offset>
+<use f='codebrowser/rt/aio_misc.c' l='162' u='w' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='169' u='r' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='179' u='w' c='__aio_free_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='199' u='r' c='__aio_find_req'/>
+<use f='codebrowser/rt/aio_misc.c' l='227' u='w' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='227' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='230' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='242' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='244' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='247' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='249' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='250' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='253' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='383' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='384' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='387' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='390' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='390' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='391' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='416' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='617' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='618' u='r' c='handle_fildes_io'/>

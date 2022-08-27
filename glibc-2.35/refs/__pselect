@@ -1,0 +1,3 @@
+<dec f='codebrowser/include/sys/select.h' l='35' type='int __pselect(int __nfds, fd_set * __readfds, fd_set * __writefds, fd_set * __exceptfds, const struct timespec * __timeout, const __sigset_t * __sigmask)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/pselect.c' l='39' macro='1' type='int __pselect(int nfds, fd_set * readfds, fd_set * writefds, fd_set * exceptfds, const struct timespec * timeout, const sigset_t * sigmask)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pselect.c' l='92' c='pselect'/>

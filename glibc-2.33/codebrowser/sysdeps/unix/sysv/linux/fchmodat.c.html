@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>fchmodat.c source code [codebrowser/sysdeps/unix/sysv/linux/fchmodat.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/fchmodat.c'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>unix</a>/<a href='..'>sysv</a>/<a href='./'>linux</a>/<a href='fchmodat.c.html'>fchmodat.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Change the protections of file relative to open directory.  Linux version.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2006-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../../../../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../../../../include/fcntl.h.html">&lt;fcntl.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="not-cancel.h.html">&lt;not-cancel.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../../../../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../../../../include/sys/stat.h.html">&lt;sys/stat.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../../../../include/sys/types.h.html">&lt;sys/types.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../../../../include/unistd.h.html">&lt;unistd.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><em>int</em></td></tr>
+<tr><th id="29">29</th><td><dfn class="decl def fn" id="fchmodat" title='fchmodat' data-ref="fchmodat" data-ref-filename="fchmodat">fchmodat</dfn> (<em>int</em> <dfn class="local col1 decl" id="1fd" title='fd' data-type='int' data-ref="1fd" data-ref-filename="1fd">fd</dfn>, <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="2file" title='file' data-type='const char *' data-ref="2file" data-ref-filename="2file">file</dfn>, <a class="typedef" href="../../../../io/fcntl.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t" data-ref-filename="mode_t">mode_t</a> <dfn class="local col3 decl" id="3mode" title='mode' data-type='mode_t' data-ref="3mode" data-ref-filename="3mode">mode</dfn>, <em>int</em> <dfn class="local col4 decl" id="4flag" title='flag' data-type='int' data-ref="4flag" data-ref-filename="4flag">flag</dfn>)</td></tr>
+<tr><th id="30">30</th><td>{</td></tr>
+<tr><th id="31">31</th><td>  <b>if</b> (<a class="local col4 ref" href="#4flag" title='flag' data-ref="4flag" data-ref-filename="4flag">flag</a> == <var>0</var>)</td></tr>
+<tr><th id="32">32</th><td>    <b>return</b> <a class="macro" href="sysdep.h.html#42" title="({ long int sc_ret = ({ unsigned long int resultvar; __typeof__ (((__typeof__ ((mode) - (mode))) (mode))) __arg3 = ((__typeof__ ((mode) - (mode))) (mode)); __typeof__ (((__typeof__ ((file) - (file))) (file))) __arg2 = ((__typeof__ ((file) - (file))) (file)); __typeof__ (((__typeof__ ((fd) - (fd))) (fd))) __arg1 = ((__typeof__ ((fd) - (fd))) (fd)); register __typeof__ (((__typeof__ ((mode) - (mode))) (mode))) _a3 asm (&quot;rdx&quot;) = __arg3; register __typeof__ (((__typeof__ ((file) - (file))) (file))) _a2 asm (&quot;rsi&quot;) = __arg2; register __typeof__ (((__typeof__ ((fd) - (fd))) (fd))) _a1 asm (&quot;rdi&quot;) = __arg1; asm volatile ( &quot;syscall\n\t&quot; : &quot;=a&quot; (resultvar) : &quot;0&quot; (268), &quot;r&quot; (_a1), &quot;r&quot; (_a2), &quot;r&quot; (_a3) : &quot;memory&quot;, &quot;cc&quot;, &quot;r11&quot;, &quot;cx&quot;); (long int) resultvar; }); __builtin_expect ((((unsigned long int) (sc_ret) &gt; -4096UL)), 0) ? ({ (__libc_errno = ((-(sc_ret)))); -1L; }) : sc_ret; })" data-ref="_M/INLINE_SYSCALL">INLINE_SYSCALL</a> (fchmodat, <var>3</var>, <a class="local col1 ref" href="#1fd" title='fd' data-ref="1fd" data-ref-filename="1fd">fd</a>, <a class="local col2 ref" href="#2file" title='file' data-ref="2file" data-ref-filename="2file">file</a>, <a class="local col3 ref" href="#3mode" title='mode' data-ref="3mode" data-ref-filename="3mode">mode</a>);</td></tr>
+<tr><th id="33">33</th><td>  <b>else</b> <b>if</b> (<a class="local col4 ref" href="#4flag" title='flag' data-ref="4flag" data-ref-filename="4flag">flag</a> != <a class="macro" href="../../../../io/fcntl.h.html#152" title="0x100" data-ref="_M/AT_SYMLINK_NOFOLLOW">AT_SYMLINK_NOFOLLOW</a>)</td></tr>
+<tr><th id="34">34</th><td>    <b>return</b> <a class="macro" href="sysdep.h.html#56" title="({ (__libc_errno = (22)); -1l; })" data-ref="_M/INLINE_SYSCALL_ERROR_RETURN_VALUE">INLINE_SYSCALL_ERROR_RETURN_VALUE</a> (<a class="macro" href="../../../../../include/asm-generic/errno-base.h.html#26" title="22" data-ref="_M/EINVAL">EINVAL</a>);</td></tr>
+<tr><th id="35">35</th><td>  <b>else</b></td></tr>
+<tr><th id="36">36</th><td>    {</td></tr>
+<tr><th id="37">37</th><td>      <i>/* The kernel system call does not have a mode argument.</i></td></tr>
+<tr><th id="38">38</th><td><i>	 However, we can create an O_PATH descriptor and change that</i></td></tr>
+<tr><th id="39">39</th><td><i>	 via /proc (which does not resolve symbolic links).  */</i></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td>      <em>int</em> <dfn class="local col5 decl" id="5pathfd" title='pathfd' data-type='int' data-ref="5pathfd" data-ref-filename="5pathfd">pathfd</dfn> = <a class="ref fn" href="not-cancel.h.html#__openat_nocancel" title='__openat_nocancel' data-ref="__openat_nocancel" data-ref-filename="__openat_nocancel">__openat_nocancel</a> (<a class="local col1 ref" href="#1fd" title='fd' data-ref="1fd" data-ref-filename="1fd">fd</a>, <a class="local col2 ref" href="#2file" title='file' data-ref="2file" data-ref-filename="2file">file</a>,</td></tr>
+<tr><th id="42">42</th><td>				      <a class="macro" href="bits/fcntl-linux.h.html#150" title="010000000" data-ref="_M/O_PATH">O_PATH</a> | <a class="macro" href="bits/fcntl-linux.h.html#143" title="0400000" data-ref="_M/O_NOFOLLOW">O_NOFOLLOW</a> | <a class="macro" href="bits/fcntl-linux.h.html#144" title="02000000" data-ref="_M/O_CLOEXEC">O_CLOEXEC</a>);</td></tr>
+<tr><th id="43">43</th><td>      <b>if</b> (<a class="local col5 ref" href="#5pathfd" title='pathfd' data-ref="5pathfd" data-ref-filename="5pathfd">pathfd</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="44">44</th><td>	<i>/* This may report errors such as ENFILE and EMFILE.  The</i></td></tr>
+<tr><th id="45">45</th><td><i>	   caller can treat them as temporary if necessary.  */</i></td></tr>
+<tr><th id="46">46</th><td>	<b>return</b> <a class="local col5 ref" href="#5pathfd" title='pathfd' data-ref="5pathfd" data-ref-filename="5pathfd">pathfd</a>;</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td>      <i>/* Use fstatat because fstat does not work on O_PATH descriptors</i></td></tr>
+<tr><th id="49">49</th><td><i>	 before Linux 3.6.  */</i></td></tr>
+<tr><th id="50">50</th><td>      <b>struct</b> <a class="type" href="x86/bits/struct_stat.h.html#stat64" title='stat64' data-ref="stat64" data-ref-filename="stat64">stat64</a> <dfn class="local col6 decl" id="6st" title='st' data-type='struct stat64' data-ref="6st" data-ref-filename="6st">st</dfn>;</td></tr>
+<tr><th id="51">51</th><td>      <b>if</b> (<a class="ref fn" href="../../../../include/sys/stat.h.html#__fstatat64" title='__fstatat64' data-ref="__fstatat64" data-ref-filename="__fstatat64">__fstatat64</a> (<a class="local col5 ref" href="#5pathfd" title='pathfd' data-ref="5pathfd" data-ref-filename="5pathfd">pathfd</a>, <q>""</q>, &amp;<a class="local col6 ref" href="#6st" title='st' data-ref="6st" data-ref-filename="6st">st</a>, <a class="macro" href="../../../../io/fcntl.h.html#159" title="0x1000" data-ref="_M/AT_EMPTY_PATH">AT_EMPTY_PATH</a>) != <var>0</var>)</td></tr>
+<tr><th id="52">52</th><td>	{</td></tr>
+<tr><th id="53">53</th><td>	  <a class="ref fn" href="not-cancel.h.html#__close_nocancel" title='__close_nocancel' data-ref="__close_nocancel" data-ref-filename="__close_nocancel">__close_nocancel</a> (<a class="local col5 ref" href="#5pathfd" title='pathfd' data-ref="5pathfd" data-ref-filename="5pathfd">pathfd</a>);</td></tr>
+<tr><th id="54">54</th><td>	  <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="55">55</th><td>	}</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td>      <i>/* Some Linux versions with some file systems can actually</i></td></tr>
+<tr><th id="58">58</th><td><i>	 change symbolic link permissions via /proc, but this is not</i></td></tr>
+<tr><th id="59">59</th><td><i>	 intentional, and it gives inconsistent results (e.g., error</i></td></tr>
+<tr><th id="60">60</th><td><i>	 return despite mode change).  The expected behavior is that</i></td></tr>
+<tr><th id="61">61</th><td><i>	 symbolic link modes cannot be changed at all, and this check</i></td></tr>
+<tr><th id="62">62</th><td><i>	 enforces that.  */</i></td></tr>
+<tr><th id="63">63</th><td>      <b>if</b> (<a class="macro" href="../../../../io/sys/stat.h.html#133" title="((((st.st_mode)) &amp; 0170000) == (0120000))" data-ref="_M/S_ISLNK">S_ISLNK</a> (<a class="local col6 ref" href="#6st" title='st' data-ref="6st" data-ref-filename="6st">st</a>.<a class="ref field" href="x86/bits/struct_stat.h.html#stat64::st_mode" title='stat64::st_mode' data-ref="stat64::st_mode" data-ref-filename="stat64..st_mode">st_mode</a>))</td></tr>
+<tr><th id="64">64</th><td>	{</td></tr>
+<tr><th id="65">65</th><td>	  <a class="ref fn" href="not-cancel.h.html#__close_nocancel" title='__close_nocancel' data-ref="__close_nocancel" data-ref-filename="__close_nocancel">__close_nocancel</a> (<a class="local col5 ref" href="#5pathfd" title='pathfd' data-ref="5pathfd" data-ref-filename="5pathfd">pathfd</a>);</td></tr>
+<tr><th id="66">66</th><td>	  <a class="macro" href="../../../../include/errno.h.html#35" title="(__libc_errno = (95))" data-ref="_M/__set_errno">__set_errno</a> (<a class="macro" href="../../../../../include/asm-generic/errno.h.html#78" title="95" data-ref="_M/EOPNOTSUPP">EOPNOTSUPP</a>);</td></tr>
+<tr><th id="67">67</th><td>	  <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="68">68</th><td>	}</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td>      <i>/* For most file systems, fchmod does not operate on O_PATH</i></td></tr>
+<tr><th id="71">71</th><td><i>	 descriptors, so go through /proc.  */</i></td></tr>
+<tr><th id="72">72</th><td>      <em>char</em> <dfn class="local col7 decl" id="7buf" title='buf' data-type='char[32]' data-ref="7buf" data-ref-filename="7buf">buf</dfn>[<var>32</var>];</td></tr>
+<tr><th id="73">73</th><td>      <b>if</b> (<a class="ref fn" href="../../../../include/stdio.h.html#__snprintf" title='__snprintf' data-ref="__snprintf" data-ref-filename="__snprintf">__snprintf</a> (<a class="local col7 ref" href="#7buf" title='buf' data-ref="7buf" data-ref-filename="7buf">buf</a>, <b>sizeof</b> (<a class="local col7 ref" href="#7buf" title='buf' data-ref="7buf" data-ref-filename="7buf">buf</a>), <q>"/proc/self/fd/%d"</q>, <a class="local col5 ref" href="#5pathfd" title='pathfd' data-ref="5pathfd" data-ref-filename="5pathfd">pathfd</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="74">74</th><td>	{</td></tr>
+<tr><th id="75">75</th><td>	  <i>/* This also may report strange error codes to the caller</i></td></tr>
+<tr><th id="76">76</th><td><i>	     (although snprintf really should not fail).  */</i></td></tr>
+<tr><th id="77">77</th><td>	  <a class="ref fn" href="not-cancel.h.html#__close_nocancel" title='__close_nocancel' data-ref="__close_nocancel" data-ref-filename="__close_nocancel">__close_nocancel</a> (<a class="local col5 ref" href="#5pathfd" title='pathfd' data-ref="5pathfd" data-ref-filename="5pathfd">pathfd</a>);</td></tr>
+<tr><th id="78">78</th><td>	  <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="79">79</th><td>	}</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td>      <em>int</em> <dfn class="local col8 decl" id="8ret" title='ret' data-type='int' data-ref="8ret" data-ref-filename="8ret">ret</dfn> = <a class="ref fn" href="../../../../include/sys/stat.h.html#__chmod" title='__chmod' data-ref="__chmod" data-ref-filename="__chmod">__chmod</a> (<a class="local col7 ref" href="#7buf" title='buf' data-ref="7buf" data-ref-filename="7buf">buf</a>, <a class="local col3 ref" href="#3mode" title='mode' data-ref="3mode" data-ref-filename="3mode">mode</a>);</td></tr>
+<tr><th id="82">82</th><td>      <b>if</b> (<a class="local col8 ref" href="#8ret" title='ret' data-ref="8ret" data-ref-filename="8ret">ret</a> != <var>0</var>)</td></tr>
+<tr><th id="83">83</th><td>	{</td></tr>
+<tr><th id="84">84</th><td>	  <b>if</b> (<a class="macro" href="../../../../include/errno.h.html#27" title="__libc_errno" data-ref="_M/errno">errno</a> == <a class="macro" href="../../../../../include/asm-generic/errno-base.h.html#6" title="2" data-ref="_M/ENOENT">ENOENT</a>)</td></tr>
+<tr><th id="85">85</th><td>	    <i>/* /proc has not been mounted.  Without /proc, there is no</i></td></tr>
+<tr><th id="86">86</th><td><i>	       way to upgrade the O_PATH descriptor to a full</i></td></tr>
+<tr><th id="87">87</th><td><i>	       descriptor.  It is also not possible to re-open the</i></td></tr>
+<tr><th id="88">88</th><td><i>	       file without O_PATH because the file name may refer to</i></td></tr>
+<tr><th id="89">89</th><td><i>	       another file, and opening that without O_PATH may have</i></td></tr>
+<tr><th id="90">90</th><td><i>	       side effects (such as blocking, device rewinding, or</i></td></tr>
+<tr><th id="91">91</th><td><i>	       releasing POSIX locks).  */</i></td></tr>
+<tr><th id="92">92</th><td>	    <a class="macro" href="../../../../include/errno.h.html#35" title="(__libc_errno = (95))" data-ref="_M/__set_errno">__set_errno</a> (<a class="macro" href="../../../../../include/asm-generic/errno.h.html#78" title="95" data-ref="_M/EOPNOTSUPP">EOPNOTSUPP</a>);</td></tr>
+<tr><th id="93">93</th><td>	}</td></tr>
+<tr><th id="94">94</th><td>      <a class="ref fn" href="not-cancel.h.html#__close_nocancel" title='__close_nocancel' data-ref="__close_nocancel" data-ref-filename="__close_nocancel">__close_nocancel</a> (<a class="local col5 ref" href="#5pathfd" title='pathfd' data-ref="5pathfd" data-ref-filename="5pathfd">pathfd</a>);</td></tr>
+<tr><th id="95">95</th><td>      <b>return</b> <a class="local col8 ref" href="#8ret" title='ret' data-ref="8ret" data-ref-filename="8ret">ret</a>;</td></tr>
+<tr><th id="96">96</th><td>    }</td></tr>
+<tr><th id="97">97</th><td>}</td></tr>
+<tr><th id="98">98</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#626" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (fchmodat)</td></tr>
+<tr><th id="99">99</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.33</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

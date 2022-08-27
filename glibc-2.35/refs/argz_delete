@@ -1,0 +1,8 @@
+<dec f='codebrowser/string/argz.h' l='88' type='void argz_delete(char **restrict __argz, size_t *restrict __argz_len, char *restrict __entry)'/>
+<dec f='codebrowser/include/argz.h' l='39' type='void argz_delete(char **restrict , size_t *restrict , char *restrict )'/>
+<use f='codebrowser/include/argz.h' l='39' c='argz_delete'/>
+<doc f='codebrowser/string/argz.h' l='87'>/* Delete ENTRY from ARGZ &amp; ARGZ_LEN, if it appears there.  */</doc>
+<def f='codebrowser/string/argz-delete.c' l='24' ll='39' type='void argz_delete(char ** argz, size_t * argz_len, char * entry)'/>
+<doc f='codebrowser/string/argz-delete.c' l='23'>/* Delete ENTRY from ARGZ &amp; ARGZ_LEN, if any.  */</doc>
+<use f='codebrowser/string/envz.c' l='81' u='c' c='envz_remove'/>
+<use f='codebrowser/string/envz.c' l='143' u='c' c='envz_merge'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/support/support.h' l='141' type='ssize_t support_copy_file_range(int , off64_t * , int , off64_t * , size_t , unsigned int )'/>
+<use f='codebrowser/support/shell-container.c' l='123' u='c' c='copy_func'/>
+<use f='codebrowser/support/support_copy_file.c' l='32' u='c' c='support_copy_file'/>
+<def f='codebrowser/support/support_copy_file_range.c' l='28' ll='143' type='ssize_t support_copy_file_range(int infd, __off64_t * pinoff, int outfd, __off64_t * poutoff, size_t length, unsigned int flags)'/>
+<use f='codebrowser/support/xcopy_file_range.c' l='27' u='c' c='xcopy_file_range'/>

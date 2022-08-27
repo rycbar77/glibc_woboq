@@ -1,0 +1,23 @@
+<dec f='codebrowser/locale/locarchive.h' l='56' type='uint32_t'/>
+<use f='codebrowser/locale/loadarchive.c' l='287' u='r' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/loadarchive.c' l='292' u='r' c='_nl_load_locale_from_archive'/>
+<offset>32</offset>
+<doc f='codebrowser/locale/locarchive.h' l='55'>/* Offset of the name in the string table.  */</doc>
+<use f='codebrowser/locale/programs/locale.c' l='672' u='r' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='686' u='r' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='511' u='r' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='516' u='r' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='525' u='r' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='723' u='r' c='insert_name'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='727' u='r' c='insert_name'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='745' u='r' c='insert_name'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='777' u='r' c='add_alias'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='791' u='r' c='add_alias'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='791' u='r' c='add_alias'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='803' u='w' c='add_alias'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1077' u='r' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1083' u='w' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1558' u='r' c='delete_locales_from_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1563' u='r' c='delete_locales_from_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1577' u='r' c='delete_locales_from_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1650' u='r' c='show_archive_content'/>

@@ -1,0 +1,156 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='480' type='void * realloc(void * __ptr, size_t __size)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='477'>/* __attribute_malloc__ is not used, because if realloc returns
+   the same pointer that was passed to it, aliasing needs to be allowed
+   between objects pointed by the old and new pointers.  */</doc>
+<use f='codebrowser/argp/argp-fmtstream.c' l='381' u='c' c='__argp_fmtstream_ensure'/>
+<use f='codebrowser/catgets/open_catalog.c' l='62' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='62' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='62' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='62' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='62' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='62' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='62' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='62' u='c' c='__open_catalog'/>
+<use f='codebrowser/catgets/open_catalog.c' l='62' u='c' c='__open_catalog'/>
+<use f='codebrowser/crypt/md5-crypt.c' l='319' u='c' c='__md5_crypt'/>
+<use f='codebrowser/crypt/sha256-crypt.c' l='411' u='c' c='__sha256_crypt'/>
+<use f='codebrowser/crypt/sha512-crypt.c' l='433' u='c' c='__sha512_crypt'/>
+<dec f='codebrowser/malloc/malloc.h' l='49' type='void * realloc(void * __ptr, size_t __size)'/>
+<use f='codebrowser/debug/vasprintf_chk.c' l='77' u='c' c='__vasprintf_chk'/>
+<use f='codebrowser/debug/vasprintf_chk.c' l='88' u='c' c='__vasprintf_chk'/>
+<doc f='codebrowser/malloc/malloc.h' l='46'>/* __attribute_malloc__ is not used, because if realloc returns
+   the same pointer that was passed to it, aliasing needs to be allowed
+   between objects pointed by the old and new pointers.  */</doc>
+<use f='codebrowser/dirent/scandir-tail.c' l='74' u='c' c='__scandir_tail'/>
+<dec f='codebrowser/elf/dl-minimal.c' l='40' type='void * realloc(void * ptr, size_t n)'/>
+<def f='codebrowser/elf/dl-minimal.c' l='132' ll='142' type='void * realloc(void * ptr, size_t n)'/>
+<doc f='codebrowser/elf/dl-minimal.c' l='131'>/* This is only called with the most recent block returned by malloc.  */</doc>
+<use f='codebrowser/elf/dl-object.c' l='184' u='c' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-tls.c' l='429' u='c' c='_dl_resize_dtv'/>
+<use f='codebrowser/grp/fgetgrent.c' l='59' u='c' c='fgetgrent'/>
+<use f='codebrowser/nss/getXXbyYY.c' l='126' u='c' c='getgrgid'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='91' u='c' c='compat_call'/>
+<use f='codebrowser/gshadow/fgetsgent.c' l='62' u='c' c='fgetsgent'/>
+<use f='codebrowser/gshadow/sgetsgent.c' l='56' u='c' c='sgetsgent'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='514' u='c' c='process_fd'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='597' u='c' c='process_fd'/>
+<use f='codebrowser/intl/dcigettext.c' l='1059' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/dcigettext.c' l='1337' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/localealias.c' l='331' u='c' c='read_alias_file'/>
+<use f='codebrowser/intl/localealias.c' l='397' u='c' c='extend_alias_table'/>
+<use f='codebrowser/libidn/iconvme.c' l='119' u='c' c='iconv_string'/>
+<use f='codebrowser/libidn/idna.c' l='120' u='c' c='idna_to_ascii_4i'/>
+<use f='codebrowser/libidn/idna.c' l='296' u='c' c='idna_to_unicode_internal'/>
+<use f='codebrowser/libidn/idna.c' l='507' u='c' c='idna_to_ascii_4z'/>
+<use f='codebrowser/libidn/idna.c' l='636' u='c' c='idna_to_unicode_4z4z'/>
+<use f='codebrowser/libidn/stringprep.c' l='371' u='c' c='stringprep'/>
+<use f='codebrowser/libio/iogetdelim.c' l='102' u='c' c='_IO_getdelim'/>
+<use f='codebrowser/libio/memstream.c' l='130' u='c' c='_IO_mem_finish'/>
+<use f='codebrowser/libio/vasprintf.c' l='70' u='c' c='_IO_vasprintf'/>
+<use f='codebrowser/libio/vasprintf.c' l='81' u='c' c='_IO_vasprintf'/>
+<use f='codebrowser/libio/wmemstream.c' l='131' u='c' c='_IO_wmem_finish'/>
+<use f='codebrowser/locale/programs/xmalloc.c' l='102' u='c' c='xrealloc'/>
+<def f='codebrowser/malloc/malloc.c' l='5225' macro='1' type='void * realloc(void * , size_t )'/>
+<use f='codebrowser/malloc/mcheck.c' l='317' u='c' c='reallochook'/>
+<def f='codebrowser/malloc/memusage.c' l='378' ll='468' type='void * realloc(void * old, size_t len)'/>
+<doc f='codebrowser/malloc/memusage.c' l='376'>/* `realloc&apos; replacement.  We keep track of the memory usage if this is the
+   correct program.  */</doc>
+<use f='codebrowser/malloc/mtrace.c' l='193' u='c' c='tr_reallochook'/>
+<use f='codebrowser/malloc/scratch_buffer_grow_preserve.c' l='42' u='c' c='__libc_scratch_buffer_grow_preserve'/>
+<use f='codebrowser/misc/err.c' l='64' u='c' c='convert_and_print'/>
+<use f='codebrowser/misc/error.c' l='224' u='c' c='error_tail'/>
+<use f='codebrowser/nptl/pthread_attr_setaffinity.c' l='47' u='c' c='__pthread_attr_setaffinity_new'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='161' u='c' c='pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='87' u='c' c='pthread_setattr_default_np'/>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='106' u='c' c='__nscd_getgrouplist'/>
+<use f='codebrowser/nss/digits_dots.c' l='107' u='c' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/getnssent.c' l='41' u='c' c='__nss_getent'/>
+<use f='codebrowser/posix/execl.c' l='47' u='c' c='execl'/>
+<use f='codebrowser/posix/execle.c' l='45' u='c' c='execle'/>
+<use f='codebrowser/posix/execlp.c' l='47' u='c' c='execlp'/>
+<use f='codebrowser/posix/regex_internal.c' l='142' macro='1' u='c' c='re_string_realloc_buffers'/>
+<use f='codebrowser/posix/regex_internal.c' l='148' macro='1' u='c' c='re_string_realloc_buffers'/>
+<use f='codebrowser/posix/regex_internal.c' l='157' macro='1' u='c' c='re_string_realloc_buffers'/>
+<use f='codebrowser/posix/regex_internal.c' l='1062' macro='1' u='c' c='re_node_set_add_intersect'/>
+<use f='codebrowser/posix/regex_internal.c' l='1202' macro='1' u='c' c='re_node_set_merge'/>
+<use f='codebrowser/posix/regex_internal.c' l='1302' macro='1' u='c' c='re_node_set_insert'/>
+<use f='codebrowser/posix/regex_internal.c' l='1341' macro='1' u='c' c='re_node_set_insert_last'/>
+<use f='codebrowser/posix/regex_internal.c' l='1426' macro='1' u='c' c='re_dfa_add_node'/>
+<use f='codebrowser/posix/regex_internal.c' l='1430' macro='1' u='c' c='re_dfa_add_node'/>
+<use f='codebrowser/posix/regex_internal.c' l='1431' macro='1' u='c' c='re_dfa_add_node'/>
+<use f='codebrowser/posix/regex_internal.c' l='1432' macro='1' u='c' c='re_dfa_add_node'/>
+<use f='codebrowser/posix/regex_internal.c' l='1433' macro='1' u='c' c='re_dfa_add_node'/>
+<use f='codebrowser/posix/regex_internal.c' l='1581' macro='1' u='c' c='register_state'/>
+<use f='codebrowser/posix/regcomp.c' l='747' macro='1' u='c' c='re_compile_internal'/>
+<use f='codebrowser/posix/regcomp.c' l='3192' macro='1' u='c' c='parse_bracket_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='3472' macro='1' u='c' c='build_equiv_class'/>
+<use f='codebrowser/posix/regcomp.c' l='3525' macro='1' u='c' c='build_charclass'/>
+<use f='codebrowser/posix/regexec.c' l='512' macro='1' u='c' c='re_copy_regs'/>
+<use f='codebrowser/posix/regexec.c' l='516' macro='1' u='c' c='re_copy_regs'/>
+<use f='codebrowser/posix/regexec.c' l='1352' u='c' c='push_fail_stack'/>
+<use f='codebrowser/posix/regexec.c' l='2894' macro='1' u='c' c='check_arrival'/>
+<use f='codebrowser/posix/regexec.c' l='4105' macro='1' u='c' c='extend_buffers'/>
+<use f='codebrowser/posix/regexec.c' l='4227' macro='1' u='c' c='match_ctx_add_entry'/>
+<use f='codebrowser/posix/regexec.c' l='4302' macro='1' u='c' c='match_ctx_add_subtop'/>
+<use f='codebrowser/posix/regexec.c' l='4329' macro='1' u='c' c='match_ctx_add_sublast'/>
+<use f='codebrowser/posix/spawn_faction_init.c' l='32' u='c' c='__posix_spawn_file_actions_realloc'/>
+<use f='codebrowser/posix/wordexp.c' l='104' u='c' c='w_addchar'/>
+<use f='codebrowser/posix/wordexp.c' l='131' u='c' c='w_addmem'/>
+<use f='codebrowser/posix/wordexp.c' l='182' u='c' c='w_addword'/>
+<use f='codebrowser/pwd/fgetpwent.c' l='59' u='c' c='fgetpwent'/>
+<use f='codebrowser/resolv/gai_misc.c' l='120' u='c' c='get_elem'/>
+<use f='codebrowser/resolv/res_hconf.c' l='484' u='c' c='_res_hconf_reorder_addrs'/>
+<use f='codebrowser/shadow/fgetspent.c' l='62' u='c' c='fgetspent'/>
+<use f='codebrowser/shadow/sgetspent.c' l='56' u='c' c='sgetspent'/>
+<dec f='codebrowser/stdlib/gmp-impl.h' l='86' type='void * realloc(void * , size_t )'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='817' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='822' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='855' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='943' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='948' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='1008' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='1112' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='1117' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='1196' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='1318' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='1324' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='1367' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='2688' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='2696' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='2752' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='2903' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf.c' l='2986' u='c' c='_IO_vfscanf_internal'/>
+<use f='codebrowser/stdlib/canonicalize.c' l='149' u='c' c='__realpath'/>
+<use f='codebrowser/stdlib/setenv.c' l='154' u='c' c='__add_to_environ'/>
+<use f='codebrowser/string/argz-addsep.c' l='35' u='c' c='__argz_add_sep'/>
+<use f='codebrowser/string/argz-append.c' l='29' u='c' c='__argz_append'/>
+<use f='codebrowser/string/argz-insert.c' l='48' u='c' c='__argz_insert'/>
+<use f='codebrowser/string/argz-replace.c' l='31' u='c' c='str_append'/>
+<use f='codebrowser/string/envz.c' l='104' u='c' c='envz_add'/>
+<use f='codebrowser/sunrpc/svc.c' l='123' u='c' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc_run.c' l='67' u='c' c='__GI_svc_run'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='598' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='884' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='190' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='190' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/sprofil.c' l='205' u='c' c='insert'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='127' u='c' c='get_elem'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='232' u='c' c='make_request'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='509' u='c' c='generic_getcwd'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getlogin_r.c' l='71' u='c' c='__getlogin_r_loginuid'/>
+<use f='codebrowser/sysdeps/unix/grantpt.c' l='76' u='c' c='pts_name'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifreq.c' l='53' u='c' c='__ifreq'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifreq.c' l='73' u='c' c='__ifreq'/>
+<use f='codebrowser/io/fts.c' l='970' u='c' c='fts_sort'/>
+<use f='codebrowser/io/fts.c' l='1062' u='c' c='fts_palloc'/>
+<use f='codebrowser/io/ftw.c' l='294' u='c' c='open_dir_stream'/>
+<use f='codebrowser/io/ftw.c' l='315' u='c' c='open_dir_stream'/>
+<use f='codebrowser/io/ftw.c' l='401' u='c' c='process_entry'/>
+<use f='codebrowser/posix/glob.c' l='666' u='c' c='glob'/>
+<use f='codebrowser/posix/glob.c' l='880' u='c' c='glob'/>
+<use f='codebrowser/posix/glob.c' l='978' u='c' c='glob'/>
+<use f='codebrowser/posix/glob.c' l='1129' u='c' c='glob'/>
+<use f='codebrowser/posix/glob.c' l='1232' u='c' c='glob'/>
+<use f='codebrowser/posix/glob.c' l='1662' u='c' c='glob_in_dir'/>
+<use f='codebrowser/time/era.c' l='77' u='c' c='_nl_init_era_entries'/>
+<use f='codebrowser/timezone/zic.c' l='399' u='c' c='erealloc'/>

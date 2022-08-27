@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/fcntl.h' l='21' type='int __fcntl64(int __fd, int __cmd)'/>
+<dec f='codebrowser/include/fcntl.h' l='22' type='int __fcntl64(int , int )'/>
+<use f='codebrowser/include/fcntl.h' l='22' c='__fcntl64'/>
+<use f='codebrowser/io/lockf64.c' l='50' u='c' c='__lockf64'/>
+<use f='codebrowser/io/lockf64.c' l='52' u='c' c='__lockf64'/>
+<use f='codebrowser/io/lockf64.c' l='54' u='c' c='__lockf64'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fcntl64.c' l='54' macro='1' type='int __fcntl64(int , int )'/>

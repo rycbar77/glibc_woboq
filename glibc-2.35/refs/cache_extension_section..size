@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/dl-cache.h' l='243' type='uint32_t'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='331' u='r' c='cache_extension_load'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='341' u='r' c='cache_extension_load'/>
+<use f='codebrowser/elf/cache.c' l='527' u='w' c='write_extensions'/>
+<use f='codebrowser/elf/cache.c' l='535' u='w' c='write_extensions'/>
+<offset>96</offset>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='241'>/* Length in bytes of the extension data.  Specific extensions may
+     have size requirements.  */</doc>

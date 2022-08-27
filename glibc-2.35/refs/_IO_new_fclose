@@ -1,0 +1,47 @@
+<dec f='codebrowser/include/stdio.h' l='193' type='int _IO_new_fclose(FILE * )'/>
+<dec f='codebrowser/libio/iolibio.h' l='11' type='int _IO_new_fclose(FILE * )'/>
+<use f='codebrowser/iconv/gconv_parseconfdir.h' l='108' macro='1' u='c' c='read_conf_file'/>
+<use f='codebrowser/inet/rcmd.c' l='502' macro='1' u='c' c='iruserfopen'/>
+<use f='codebrowser/inet/rcmd.c' l='534' macro='1' u='c' c='ruserok2_sa'/>
+<use f='codebrowser/inet/rcmd.c' l='568' macro='1' u='c' c='ruserok2_sa'/>
+<use f='codebrowser/inet/ruserpass.c' l='205' macro='1' u='c' c='ruserpass'/>
+<use f='codebrowser/inet/ruserpass.c' l='208' macro='1' u='c' c='ruserpass'/>
+<use f='codebrowser/intl/localealias.c' l='384' macro='1' u='c' c='read_alias_file'/>
+<def f='codebrowser/libio/iofclose.c' l='32' ll='76' type='int _IO_new_fclose(FILE * fp)'/>
+<use f='codebrowser/libio/iofclose.c' l='78' c='_IO_fclose'/>
+<use f='codebrowser/libio/iofclose.c' l='79' c='__new_fclose'/>
+<use f='codebrowser/libio/pclose.c' l='38' u='c' c='__new_pclose'/>
+<use f='codebrowser/misc/getpass.c' l='42' macro='1' u='c' c='call_fclose'/>
+<use f='codebrowser/misc/getpass.c' l='121' macro='1' u='c' c='getpass'/>
+<use f='codebrowser/misc/getttyent.c' l='206' macro='1' u='c' c='__endttyent'/>
+<use f='codebrowser/misc/getusershell.c' l='111' macro='1' u='c' c='initshells'/>
+<use f='codebrowser/misc/getusershell.c' l='141' macro='1' u='c' c='initshells'/>
+<use f='codebrowser/misc/mntent_r.c' l='61' macro='1' u='c' c='__endmntent'/>
+<use f='codebrowser/misc/syslog.c' l='233' macro='1' u='c' c='__vsyslog_internal'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='165' macro='1' u='c' c='__pthread_getattr_np'/>
+<use f='codebrowser/nss/nss_database.c' l='381' macro='1' u='c' c='nss_database_reload'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='196' macro='1' u='c' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='208' macro='1' u='c' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='236' macro='1' u='c' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='246' macro='1' u='c' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='384' macro='1' u='c' c='_nss_files_getaliasbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='104' macro='1' u='c' c='_nss_files_gethostbyaddr_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='351' macro='1' u='c' c='_nss_files_gethostbyname3_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='480' macro='1' u='c' c='_nss_files_gethostbyname4_r'/>
+<use f='codebrowser/nss/nss_files/files-initgroups.c' l='126' macro='1' u='c' c='_nss_files_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='144' macro='1' u='c' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='79' macro='1' u='c' c='_nss_files_getnetbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='83' macro='1' u='c' c='_nss_files_getnetbyaddr_r'/>
+<use f='codebrowser/nss/nss_files_data.c' l='154' macro='1' u='c' c='__nss_files_data_endent'/>
+<use f='codebrowser/nss/nss_files_fopen.c' l='40' macro='1' u='c' c='__nss_files_fopen'/>
+<use f='codebrowser/resolv/res_context_hostalias.c' l='125' macro='1' u='c' c='__res_context_hostalias'/>
+<use f='codebrowser/resolv/res_context_hostalias.c' l='129' macro='1' u='c' c='__res_context_hostalias'/>
+<use f='codebrowser/resolv/res_init.c' l='606' macro='1' u='c' c='__resolv_conf_load'/>
+<use f='codebrowser/stdio-common/perror.c' l='80' macro='1' u='c' c='perror'/>
+<use f='codebrowser/stdio-common/psiginfo.c' l='201' macro='1' u='c' c='psiginfo'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readonly-area.c' l='96' macro='1' u='c' c='__readonly_area'/>
+<use f='codebrowser/time/getdate.c' l='165' macro='1' u='c' c='__getdate_r'/>
+<use f='codebrowser/time/getdate.c' l='210' macro='1' u='c' c='__getdate_r'/>
+<use f='codebrowser/time/getdate.c' l='215' macro='1' u='c' c='__getdate_r'/>
+<use f='codebrowser/time/tzfile.c' l='404' macro='1' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='479' macro='1' u='c' c='__tzfile_read'/>

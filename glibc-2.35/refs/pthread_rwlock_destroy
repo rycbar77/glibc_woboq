@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='972' type='int pthread_rwlock_destroy(pthread_rwlock_t * __rwlock)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='971'>/* Destroy read-write lock RWLOCK.  */</doc>
+<def f='codebrowser/nptl/pthread_rwlock_destroy.c' l='30' macro='1' type='int pthread_rwlock_destroy(pthread_rwlock_t * )'/>
+<use f='codebrowser/support/xpthread_rwlock_destroy.c' l='25' u='c' c='xpthread_rwlock_destroy'/>

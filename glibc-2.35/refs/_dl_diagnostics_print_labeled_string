@@ -1,0 +1,16 @@
+<dec f='codebrowser/elf/dl-diagnostics.h' l='30' type='void _dl_diagnostics_print_labeled_string(const char * label, const char * s)'/>
+<def f='codebrowser/elf/dl-diagnostics.c' l='90' ll='96' type='void _dl_diagnostics_print_labeled_string(const char * label, const char * s)'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='206' u='c' c='print_paths'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='207' u='c' c='print_paths'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='208' u='c' c='print_paths'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='227' u='c' c='print_version'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='228' u='c' c='print_version'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='238' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='242' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='248' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='249' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='254' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='255' u='c' c='_dl_print_diagnostics'/>
+<doc f='codebrowser/elf/dl-diagnostics.h' l='28'>/* Like _dl_diagnostics_print_string, but add a LABEL= prefix, and a
+   newline character as a suffix.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='53' u='c' c='print_utsname_entry'/>

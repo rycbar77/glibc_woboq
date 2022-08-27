@@ -1,0 +1,4 @@
+<dec f='codebrowser/inet/netinet/ether.h' l='36' type='struct ether_addr * ether_aton(const char * __asc)'/>
+<doc f='codebrowser/inet/netinet/ether.h' l='35'>/* Convert ASCII string S to 48 bit Ethernet address.  */</doc>
+<def f='codebrowser/inet/ether_aton.c' l='21' ll='27' type='struct ether_addr * ether_aton(const char * asc)'/>
+<use f='codebrowser/nss/getent.c' l='158' u='c' c='ethers_keys'/>

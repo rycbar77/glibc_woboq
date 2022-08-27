@@ -1,0 +1,19 @@
+<def f='codebrowser/nss/nss_database.h' l='72' ll='78'/>
+<use f='codebrowser/nss/nss_database.h' l='81' c='__nss_database_fork_prepare_parent'/>
+<use f='codebrowser/nss/nss_database.h' l='85' c='__nss_database_fork_subprocess'/>
+<size>168</size>
+<doc f='codebrowser/nss/nss_database.h' l='71'>/* Internal type.  Exposed only for fork handling purposes.  */</doc>
+<mbr r='nss_database_data::nsswitch_conf' o='0' t='struct file_change_detection'/>
+<mbr r='nss_database_data::services' o='384' t='nss_action_list[14]'/>
+<mbr r='nss_database_data::reload_disabled' o='1280' t='int'/>
+<mbr r='nss_database_data::initialized' o='1312' t='_Bool'/>
+<use f='codebrowser/nss/nss_database.c' l='34'/>
+<use f='codebrowser/nss/nss_database.c' l='206' c='process_line'/>
+<use f='codebrowser/nss/nss_database.c' l='273' c='nss_database_reload_1'/>
+<use f='codebrowser/nss/nss_database.c' l='301' c='nss_database_reload'/>
+<use f='codebrowser/nss/nss_database.c' l='415' c='nss_database_check_reload_and_get'/>
+<use f='codebrowser/nss/nss_database.c' l='465' c='__nss_database_fork_prepare_parent'/>
+<use f='codebrowser/nss/nss_database.c' l='483' c='__nss_database_fork_subprocess'/>
+<size>168</size>
+<use f='codebrowser/sysdeps/nptl/fork.c' l='61' c='__libc_fork'/>
+<size>168</size>

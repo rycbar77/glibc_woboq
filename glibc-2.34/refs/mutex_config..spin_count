@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthread_mutex_conf.h' l='26' type='int'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='55' u='r' c='max_adaptive_count'/>
+<offset>0</offset>
+<use f='codebrowser/nptl/pthread_mutex_conf.c' l='32' u='w'/>
+<use f='codebrowser/nptl/pthread_mutex_conf.c' l='39' u='w' c='_dl_tunable_set_mutex_spin_count'/>

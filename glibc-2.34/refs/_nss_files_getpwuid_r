@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/nss_files.h' l='138' macro='1' type='enum nss_status _nss_files_getpwuid_r(__uid_t , struct passwd * , char * , size_t , int * )'/>
+<dec f='codebrowser/nss/function.def' l='59' macro='1' type='enum nss_status _nss_files_getpwuid_r(__uid_t , struct passwd * , char * , size_t , int * )'/>
+<use f='codebrowser/nss/function.def' l='59' macro='1' c='_nss_files_getpwuid_r'/>
+<dec f='codebrowser/include/pwd.h' l='43' macro='1' type='enum nss_status _nss_files_getpwuid_r(uid_t uid, struct passwd * pwd, char * buffer, size_t buflen, int * errnop)'/>
+<def f='codebrowser/nss/nss_files/files-pwd.c' l='40' macro='1' type='enum nss_status _nss_files_getpwuid_r(uid_t uid, struct passwd * result, char * buffer, size_t buflen, int * errnop)'/>

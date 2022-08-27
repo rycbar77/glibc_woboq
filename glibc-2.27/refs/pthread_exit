@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='243' type='void pthread_exit(void * __retval)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='239'>/* Terminate calling thread.
+
+   The registered cleanup handlers are called via exception handling
+   so we cannot mark this function with __THROW.*/</doc>
+<def f='codebrowser/nptl/forward.c' l='175' macro='1' type='void pthread_exit(void * )'/>
+<def f='codebrowser/nptl/pthread_exit.c' l='30' macro='1' type='void pthread_exit(void * )'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/utmp.h' l='7' type='void __updwtmp(const char * __wtmp_file, const struct utmp * __utmp)'/>
+<dec f='codebrowser/include/utmp.h' l='8' type='void __updwtmp(const char * , const struct utmp * )'/>
+<use f='codebrowser/include/utmp.h' l='8' c='__updwtmp'/>
+<doc f='codebrowser/include/utmp.h' l='6'>/* Now define the internal interfaces.  */</doc>
+<use f='codebrowser/login/login.c' l='137' u='c' c='__login'/>
+<use f='codebrowser/login/logwtmp.c' l='43' u='c' c='__logwtmp'/>
+<use f='codebrowser/login/updwtmpx.c' l='24' u='c' c='updwtmpx'/>
+<def f='codebrowser/login/updwtmp.c' l='26' ll='32' type='void __updwtmp(const char * wtmp_file, const struct utmp * utmp)'/>
+<use f='codebrowser/login/updwtmp.c' l='34' c='updwtmp'/>

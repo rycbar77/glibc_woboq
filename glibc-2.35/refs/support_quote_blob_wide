@@ -1,0 +1,5 @@
+<dec f='codebrowser/support/support.h' l='81' type='char * support_quote_blob_wide(const void * blob, size_t length)'/>
+<doc f='codebrowser/support/support.h' l='77'>/* Quote the contents of the wide character array starting at BLOB, of
+   LENGTH wide characters, in such a way that the result string can be
+   included in a C wide string literal (in single/double quotes,
+   without putting the quotes into the result).  */</doc>

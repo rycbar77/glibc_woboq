@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/file_change_detection.h' l='47' type='void __file_change_detection_for_stat(struct file_change_detection * file, const struct stat64 * st)'/>
+<dec f='codebrowser/include/file_change_detection.h' l='65' type='void __file_change_detection_for_stat(struct file_change_detection * , const struct stat64 * )'/>
+<use f='codebrowser/include/file_change_detection.h' l='65' c='__file_change_detection_for_stat'/>
+<doc f='codebrowser/include/file_change_detection.h' l='45'>/* Extract file change information to *FILE from the stat buffer
+   *ST.  */</doc>
+<def f='codebrowser/io/file_change_detection.c' l='45' ll='62' type='void __file_change_detection_for_stat(struct file_change_detection * file, const struct stat64 * st)'/>
+<use f='codebrowser/io/file_change_detection.c' l='89' u='c' c='__file_change_detection_for_path'/>
+<use f='codebrowser/io/file_change_detection.c' l='113' u='c' c='__file_change_detection_for_fp'/>

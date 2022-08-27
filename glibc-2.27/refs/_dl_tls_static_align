@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='413' type='size_t'/>
+<def f='codebrowser/csu/libc-tls.c' l='61' type='size_t'/>
+<use f='codebrowser/csu/libc-tls.c' l='100' macro='1' u='w' c='init_static_tls'/>
+<doc f='codebrowser/csu/libc-tls.c' l='60'>/* Alignment requirement of the static TLS block.  */</doc>
+<use f='codebrowser/elf/dl-reloc.c' l='53' macro='1' u='r' c='_dl_try_allocate_static_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='310' macro='1' u='r' c='_dl_get_tls_static_info'/>
+<use f='codebrowser/elf/dl-tls.c' l='345' macro='1' u='r' c='_dl_allocate_tls_storage'/>

@@ -1,0 +1,55 @@
+<dec f='codebrowser/include/string.h' l='27' type='char * __strdup(const char * __string)'/>
+<dec f='codebrowser/string/bits/string2.h' l='1278' type='char * __strdup(const char * __string)'/>
+<use f='codebrowser/elf/dl-cache.c' l='305' macro='1' u='c' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-load.c' l='376' macro='1' u='c' c='expand_dynamic_string_token'/>
+<use f='codebrowser/elf/dl-load.c' l='585' macro='1' u='c' c='decompose_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='2172' macro='1' u='c' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2206' macro='1' u='c' c='_dl_map_object'/>
+<use f='codebrowser/iconv/gconv_db.c' l='266' macro='1' u='c' c='gen_steps'/>
+<use f='codebrowser/iconv/gconv_db.c' l='279' macro='1' u='c' c='gen_steps'/>
+<use f='codebrowser/inet/getnameinfo.c' l='105' macro='1' u='c' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='115' macro='1' u='c' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='135' macro='1' u='c' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='158' macro='1' u='c' c='nrl_domainname'/>
+<use f='codebrowser/inet/rcmd.c' l='156' macro='1' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rexec.c' l='80' macro='1' u='c' c='rexec_af'/>
+<use f='codebrowser/intl/bindtextdom.c' l='131' macro='1' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/bindtextdom.c' l='169' macro='1' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/bindtextdom.c' l='225' macro='1' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/bindtextdom.c' l='254' macro='1' u='c' c='set_binding_values'/>
+<use f='codebrowser/intl/dcigettext.c' l='1075' macro='1' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/intl/finddomain.c' l='128' macro='1' u='c' c='_nl_find_domain'/>
+<use f='codebrowser/intl/textdomain.c' l='94' macro='1' u='c' c='__textdomain'/>
+<use f='codebrowser/io/getdirname.c' l='40' macro='1' u='c' c='get_current_dir_name'/>
+<use f='codebrowser/libidn/iconvme.c' l='85' macro='1' u='c' c='iconv_string'/>
+<use f='codebrowser/locale/loadarchive.c' l='465' macro='1' u='c' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/setlocale.c' l='286' macro='1' u='c' c='setlocale'/>
+<use f='codebrowser/locale/setlocale.c' l='369' macro='1' u='c' c='setlocale'/>
+<use f='codebrowser/locale/setlocale.c' l='434' macro='1' u='c' c='setlocale'/>
+<use f='codebrowser/login/utmpname.c' l='58' macro='1' u='c' c='__utmpname'/>
+<use f='codebrowser/nss/rewrite_field.c' l='38' macro='1' u='c' c='__nss_rewrite_field'/>
+<use f='codebrowser/posix/spawn_faction_addopen.c' l='40' macro='1' u='c' c='posix_spawn_file_actions_addopen'/>
+<use f='codebrowser/posix/wordexp.c' l='175' macro='1' u='c' c='w_addword'/>
+<use f='codebrowser/posix/wordexp.c' l='426' macro='1' u='c' c='do_parse_glob'/>
+<use f='codebrowser/posix/wordexp.c' l='1532' macro='1' u='c' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1733' macro='1' u='c' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1761' macro='1' u='c' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1873' macro='1' u='c' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1887' macro='1' u='c' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1917' macro='1' u='c' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1967' macro='1' u='c' c='parse_param'/>
+<use f='codebrowser/resolv/res_debug.c' l='980' macro='1' u='c' c='__loc_ntoa'/>
+<use f='codebrowser/resolv/res_debug.c' l='982' macro='1' u='c' c='__loc_ntoa'/>
+<use f='codebrowser/resolv/res_debug.c' l='984' macro='1' u='c' c='__loc_ntoa'/>
+<use f='codebrowser/stdio-common/tempnam.c' l='39' macro='1' u='c' c='tempnam'/>
+<def f='codebrowser/string/strdup.c' l='38' ll='48' type='char * __strdup(const char * s)'/>
+<use f='codebrowser/string/strdup.c' l='53' c='strdup'/>
+<doc f='codebrowser/string/strdup.c' l='37'>/* Duplicate S, returning an identical malloc&apos;d string.  */</doc>
+<use f='codebrowser/sunrpc/svc_simple.c' l='90' macro='1' u='c' c='__registerrpc'/>
+<use f='codebrowser/sunrpc/svc_simple.c' l='106' macro='1' u='c' c='__registerrpc'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1186' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/debug/segfault.c' l='208' macro='1' u='c' c='install_handler'/>
+<use f='codebrowser/posix/glob.c' l='996' macro='1' u='c' c='glob'/>
+<use f='codebrowser/posix/glob.c' l='1136' macro='1' u='c' c='glob'/>
+<use f='codebrowser/time/tzset.c' l='438' macro='1' u='c' c='tzset_internal'/>
+<use f='codebrowser/timezone/zic.c' l='405' macro='1' u='c' c='ecpyalloc'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthread_mutex_conf.h' l='29' type='struct mutex_config'/>
+<dec f='codebrowser/sysdeps/nptl/pthread_mutex_conf.h' l='30' type='typeof (__mutex_aconf)'/>
+<use f='codebrowser/sysdeps/nptl/pthread_mutex_conf.h' l='30'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='54' u='m' c='max_adaptive_count'/>
+<def f='codebrowser/nptl/pthread_mutex_conf.c' l='28' ll='33' type='struct mutex_config'/>
+<use f='codebrowser/nptl/pthread_mutex_conf.c' l='39' u='m' c='_dl_tunable_set_mutex_spin_count'/>

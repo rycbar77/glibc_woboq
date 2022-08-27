@@ -1,0 +1,10 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='579' type='int __pthread_attr_setsigmask_internal(pthread_attr_t * attr, const sigset_t * sigmask)'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='581' type='int __pthread_attr_setsigmask_internal(pthread_attr_t * , const sigset_t * )'/>
+<use f='codebrowser/nptl/pthreadP.h' l='581' c='__pthread_attr_setsigmask_internal'/>
+<doc f='codebrowser/nptl/pthreadP.h' l='576'>/* Special internal version of pthread_attr_setsigmask_np which does
+   not filter out internal signals from *SIGMASK.  This can be used to
+   launch threads with internal signals blocked.  */</doc>
+<use f='codebrowser/nptl/pthread_attr_copy.c' l='48' u='c' c='__pthread_attr_copy'/>
+<use f='codebrowser/nptl/pthread_attr_setsigmask.c' l='25' u='c' c='pthread_attr_setsigmask_np'/>
+<def f='codebrowser/nptl/pthread_attr_setsigmask_internal.c' l='22' ll='44' type='int __pthread_attr_setsigmask_internal(pthread_attr_t * attr, const sigset_t * sigmask)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='143' u='c' c='__start_helper_thread'/>

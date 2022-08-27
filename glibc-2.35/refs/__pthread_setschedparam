@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='340' type='int __pthread_setschedparam(pthread_t thread_id, int policy, const struct sched_param * param)'/>
+<def f='codebrowser/nptl/pthread_setschedparam.c' l='25' ll='70' type='int __pthread_setschedparam(pthread_t threadid, int policy, const struct sched_param * param)'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='71' c='pthread_setschedparam'/>
+<use f='codebrowser/rt/aio_misc.c' l='526' u='c' c='handle_fildes_io'/>

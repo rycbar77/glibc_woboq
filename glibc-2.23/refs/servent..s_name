@@ -1,0 +1,9 @@
+<dec f='codebrowser/resolv/netdb.h' l='259' type='char *'/>
+<offset>0</offset>
+<doc f='codebrowser/resolv/netdb.h' l='259'>/* Official service name.  */</doc>
+<use f='codebrowser/inet/getnameinfo.c' l='445' u='r' c='getnameinfo'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='232' u='w' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='242' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='279' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='331' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nss/getent.c' l='715' u='r' c='print_services'/>

@@ -1,0 +1,38 @@
+<use f='codebrowser/nss/nss.h' l='152'/>
+<use f='codebrowser/nss/nss.h' l='154'/>
+<use f='codebrowser/nss/nss.h' l='156'/>
+<def f='codebrowser/inet/rpc/netdb.h' l='46' ll='51'/>
+<use f='codebrowser/inet/rpc/netdb.h' l='55' c='getrpcbyname'/>
+<use f='codebrowser/inet/rpc/netdb.h' l='56' c='getrpcbynumber'/>
+<use f='codebrowser/inet/rpc/netdb.h' l='57' c='getrpcent'/>
+<use f='codebrowser/inet/rpc/netdb.h' l='60' c='getrpcbyname_r'/>
+<use f='codebrowser/inet/rpc/netdb.h' l='62' c='getrpcbyname_r'/>
+<use f='codebrowser/inet/rpc/netdb.h' l='64' c='getrpcbynumber_r'/>
+<use f='codebrowser/inet/rpc/netdb.h' l='66' c='getrpcbynumber_r'/>
+<use f='codebrowser/inet/rpc/netdb.h' l='68' c='getrpcent_r'/>
+<use f='codebrowser/inet/rpc/netdb.h' l='69' c='getrpcent_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='6' c='__getrpcbyname_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='8' c='__getrpcbyname_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='10' c='__old_getrpcbyname_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='12' c='__old_getrpcbyname_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='14' c='__getrpcbynumber_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='16' c='__getrpcbynumber_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='17' c='__old_getrpcbynumber_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='19' c='__old_getrpcbynumber_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='21' c='__getrpcent_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='22' c='__getrpcent_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='24' c='__old_getrpcent_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='25' c='__old_getrpcent_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='31' c='_nss_files_getrpcent_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='34' c='_nss_files_getrpcbyname_r'/>
+<use f='codebrowser/include/rpc/netdb.h' l='37' c='_nss_files_getrpcbynumber_r'/>
+<size>24</size>
+<mbr r='rpcent::r_name' o='0' t='char *'/>
+<mbr r='rpcent::r_aliases' o='64' t='char **'/>
+<mbr r='rpcent::r_number' o='128' t='int'/>
+<use f='codebrowser/nss/nss_files/files-rpc.c' l='22' c='_nss_db_getrpcbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-rpc.c' l='22' c='_nss_db_getrpcbynumber_r'/>
+<size>24</size>
+<use f='codebrowser/nss/getent.c' l='703' c='print_rpc'/>
+<use f='codebrowser/nss/getent.c' l='720' c='rpc_keys'/>
+<size>24</size>

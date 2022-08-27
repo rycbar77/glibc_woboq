@@ -1,0 +1,7 @@
+<dec f='codebrowser/inet/netinet/in.h' l='233' type='const struct in6_addr'/>
+<dec f='codebrowser/include/netinet/in.h' l='7' type='typeof (in6addr_loopback)'/>
+<use f='codebrowser/include/netinet/in.h' l='7'/>
+<use f='codebrowser/include/netinet/in.h' l='8'/>
+<doc f='codebrowser/inet/netinet/in.h' l='233'>/* ::1 */</doc>
+<def f='codebrowser/inet/in6_addr.c' l='29' macro='1' type='typeof (__in6addr_loopback)'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='955' u='a' c='gaih_inet'/>

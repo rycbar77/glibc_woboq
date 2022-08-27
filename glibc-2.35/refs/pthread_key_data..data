@@ -1,0 +1,9 @@
+<dec f='codebrowser/nptl/descr.h' l='308' type='void *'/>
+<offset>64</offset>
+<doc f='codebrowser/nptl/descr.h' l='307'>/* Data pointer.  */</doc>
+<use f='codebrowser/nptl/nptl_deallocate_tsd.c' l='54' u='r' c='__nptl_deallocate_tsd'/>
+<use f='codebrowser/nptl/nptl_deallocate_tsd.c' l='59' u='w' c='__nptl_deallocate_tsd'/>
+<use f='codebrowser/nptl_db/structs.def' l='91' u='r'/>
+<use f='codebrowser/nptl/pthread_getspecific.c' l='54' u='r' c='___pthread_getspecific'/>
+<use f='codebrowser/nptl/pthread_getspecific.c' l='60' u='w' c='___pthread_getspecific'/>
+<use f='codebrowser/nptl/pthread_setspecific.c' l='87' u='w' c='___pthread_setspecific'/>

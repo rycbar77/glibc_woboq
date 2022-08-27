@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='930' type='int pthread_mutexattr_getrobust(const pthread_mutexattr_t * __attr, int * __robustness)'/>
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='935' type='int pthread_mutexattr_getrobust_np(pthread_mutexattr_t * , int * )'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='929'>/* Get the robustness flag of the mutex attribute ATTR.  */</doc>
+<def f='codebrowser/nptl/pthread_mutexattr_getrobust.c' l='34' macro='1' type='int pthread_mutexattr_getrobust(const pthread_mutexattr_t * , int * )'/>

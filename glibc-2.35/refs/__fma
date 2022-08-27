@@ -1,0 +1,10 @@
+<dec f='codebrowser/math/bits/mathcalls.h' l='340' macro='1' type='double __fma(double __x, double __y, double __z)'/>
+<use f='codebrowser/sysdeps/x86/fpu/s_ffma.c' l='47' macro='1' u='c' c='__ffma'/>
+<def f='codebrowser/sysdeps/x86_64/fpu/multiarch/s_fma.c' l='49' macro='1' type='double __fma(double , double , double )'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/s_fma.c' l='49' c='__fma'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/s_fma.c' l='49' c='__fma_ifunc'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/s_fma.c' l='49' c='__fma_ifunc'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/s_fma.c' l='52' c='fma'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/s_fma.c' l='52' c='fmaf64'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/s_fma.c' l='52' c='fmaf32x'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/s_fma.c' l='53' c='f32xfmaf64'/>

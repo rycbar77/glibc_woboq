@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='396' type='__rtld_lock_recursive_t'/>
+<use f='codebrowser/elf/dl-close.c' l='512' macro='1' u='m' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='753' macro='1' u='m' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='779' macro='1' u='m' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='784' macro='1' u='m' c='dl_open_worker'/>
+<def f='codebrowser/elf/dl-support.c' l='240' macro='1' type='__rtld_lock_recursive_t'/>
+<use f='codebrowser/posix/fork.c' l='103' macro='1' u='w' c='__libc_fork'/>
+<use f='codebrowser/elf/dl-tls.c' l='539' macro='1' u='m' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='620' macro='1' u='m' c='_dl_allocate_tls_init'/>

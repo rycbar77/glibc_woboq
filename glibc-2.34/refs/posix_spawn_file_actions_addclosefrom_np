@@ -1,0 +1,4 @@
+<dec f='codebrowser/posix/spawn.h' l='220' type='int posix_spawn_file_actions_addclosefrom_np(posix_spawn_file_actions_t * , int __from)'/>
+<doc f='codebrowser/posix/spawn.h' l='217'>/* Add an action to close all file descriptor greater than or equal to FROM
+   during spawn.  This affects the subsequent file actions.  */</doc>
+<def f='codebrowser/posix/spawn_faction_addclosefrom.c' l='53' macro='1' type='int posix_spawn_file_actions_addclosefrom_np(posix_spawn_file_actions_t * , int )'/>

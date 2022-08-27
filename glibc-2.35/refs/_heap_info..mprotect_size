@@ -1,0 +1,11 @@
+<dec f='codebrowser/malloc/arena.c' l='80' type='size_t'/>
+<use f='codebrowser/malloc/arena.c' l='555' u='w' c='alloc_new_heap'/>
+<use f='codebrowser/malloc/arena.c' l='594' u='r' c='grow_heap'/>
+<use f='codebrowser/malloc/arena.c' l='596' u='r' c='grow_heap'/>
+<use f='codebrowser/malloc/arena.c' l='597' u='r' c='grow_heap'/>
+<use f='codebrowser/malloc/arena.c' l='601' u='w' c='grow_heap'/>
+<use f='codebrowser/malloc/arena.c' l='628' u='w' c='shrink_heap'/>
+<use f='codebrowser/malloc/malloc.c' l='5826' u='r' c='__malloc_info'/>
+<offset>192</offset>
+<doc f='codebrowser/malloc/arena.c' l='80'>/* Size in bytes that has been mprotected
+                           PROT_READ|PROT_WRITE.  */</doc>

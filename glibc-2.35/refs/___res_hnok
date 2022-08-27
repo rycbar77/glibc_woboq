@@ -1,0 +1,6 @@
+<def f='codebrowser/resolv/res-name-checking.c' l='144' ll='153' type='int ___res_hnok(const char * dn)'/>
+<use f='codebrowser/resolv/res-name-checking.c' l='154' c='res_hnok'/>
+<use f='codebrowser/resolv/res-name-checking.c' l='155' c='__libc_res_hnok'/>
+<doc f='codebrowser/resolv/res-name-checking.c' l='141'>/* Return 1 if res_hnok is a valid host name.  Labels must only
+   contain [0-9a-zA-Z_-] characters, and the name must not start with
+   a &apos;-&apos;.  The latter is to avoid confusion with program options.  */</doc>

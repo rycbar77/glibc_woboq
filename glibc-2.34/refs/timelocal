@@ -1,0 +1,5 @@
+<dec f='codebrowser/time/time.h' l='251' type='time_t timelocal(struct tm * __tp)'/>
+<dec f='codebrowser/include/time.h' l='21' type='time_t timelocal(struct tm * )'/>
+<use f='codebrowser/include/time.h' l='21' c='timelocal'/>
+<doc f='codebrowser/time/time.h' l='250'>/* Another name for `mktime&apos;.  */</doc>
+<def f='codebrowser/time/mktime.c' l='564' macro='1' type='time_t timelocal(struct tm * )'/>

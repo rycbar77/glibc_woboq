@@ -1,0 +1,6 @@
+<dec f='codebrowser/stdlib/strtol.c' l='90' macro='1' type='long ____strtol_l_internal(const char * , char ** , int , int , locale_t )'/>
+<use f='codebrowser/stdlib/strtol.c' l='98' macro='1' u='c' c='__strtol_internal'/>
+<use f='codebrowser/stdlib/strtol.c' l='106' macro='1' u='c' c='__strtol'/>
+<def f='codebrowser/stdlib/strtol_l.c' l='224' macro='1' type='long ____strtol_l_internal(const char * nptr, char ** endptr, int base, int group, locale_t loc)'/>
+<use f='codebrowser/stdlib/strtol_l.c' l='547' macro='1' u='c' c='__strtol_l'/>
+<use f='codebrowser/sysdeps/wordsize-64/strtol_l.c' l='11' c='____strtoll_l_internal'/>

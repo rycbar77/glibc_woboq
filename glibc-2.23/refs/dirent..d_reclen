@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/dirent.h' l='31' type='unsigned short'/>
+<offset>128</offset>
+<use f='codebrowser/dirent/scandir-tail.c' l='80' macro='1' u='r' c='__scandir_tail'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getdents.c' l='227' u='w' c='__getdents'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getdents.c' l='290' u='w' c='__getdents'/>
+<use f='codebrowser/sysdeps/posix/readdir.c' l='89' u='r' c='__readdir'/>
+<use f='codebrowser/sysdeps/posix/readdir_r.c' l='89' u='r' c='__readdir_r'/>
+<use f='codebrowser/sysdeps/posix/readdir_r.c' l='137' u='w' c='__readdir_r'/>

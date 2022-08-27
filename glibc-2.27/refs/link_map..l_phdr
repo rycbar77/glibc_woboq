@@ -1,0 +1,28 @@
+<dec f='codebrowser/include/link.h' l='132' type='const Elf64_Phdr *'/>
+<offset>5376</offset>
+<doc f='codebrowser/include/link.h' l='132'>/* Pointer to program header table in core.  */</doc>
+<use f='codebrowser/elf/dl-addr-obj.c' l='70' u='r' c='_dl_addr_inside_object'/>
+<use f='codebrowser/elf/dl-addr-obj.c' l='71' u='r' c='_dl_addr_inside_object'/>
+<use f='codebrowser/elf/dl-addr-obj.c' l='71' u='r' c='_dl_addr_inside_object'/>
+<use f='codebrowser/elf/dl-close.c' l='742' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='63' u='r' c='_dl_important_hwcaps'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='67' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-load.h' l='93' u='r' c='_dl_postprocess_loadcmd'/>
+<use f='codebrowser/elf/dl-load.h' l='98' u='w' c='_dl_postprocess_loadcmd'/>
+<use f='codebrowser/elf/dl-load.c' l='1006' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1157' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1163' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1176' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1182' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1182' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1267' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-profile.c' l='206' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='207' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-reloc.c' l='192' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='192' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/setup-vdso.h' l='38' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='43' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/dl-support.c' l='311' u='w' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/rtld.c' l='1072' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1109' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1367' u='w' c='dl_main'/>

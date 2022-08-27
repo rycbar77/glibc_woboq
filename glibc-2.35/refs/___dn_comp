@@ -1,0 +1,5 @@
+<def f='codebrowser/resolv/dn_comp.c' l='91' ll='98' type='int ___dn_comp(const char * src, unsigned char * dst, int dstsiz, unsigned char ** dnptrs, unsigned char ** lastdnptr)'/>
+<use f='codebrowser/resolv/dn_comp.c' l='99' c='dn_comp'/>
+<doc f='codebrowser/resolv/dn_comp.c' l='88'>/* Packs domain name SRC in presentation form into DST.  Returns the
+   size of the compressed name or -1.  DSTSIZ is the size of the array
+   pointed to by COMPDN.  */</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/sys/utsname.h' l='5' type='int __uname(struct utsname * __name)'/>
+<dec f='codebrowser/include/sys/utsname.h' l='8' type='int __uname(struct utsname * )'/>
+<use f='codebrowser/include/sys/utsname.h' l='8' c='__uname'/>
+<use f='codebrowser/sysdeps/posix/gethostname.c' l='32' u='c' c='__gethostname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-sysdep.c' l='88' u='c' c='_dl_discover_osversion'/>

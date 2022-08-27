@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/link.h' l='317' type='size_t'/>
+<offset>8640</offset>
+<doc f='codebrowser/include/link.h' l='316'>/* Size of the initialization image.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='205' u='w' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/dl-load.c' l='1186' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/rtld.c' l='1262' u='w' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/dl-tls.c' l='586' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='586' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='609' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='610' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='1085' u='r' c='init_one_static_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='1086' u='r' c='init_one_static_tls'/>

@@ -1,0 +1,13 @@
+<def f='codebrowser/sysdeps/generic/dl-cache.h' l='248' ll='256'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='312' c='cache_extension_load'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='316' c='cache_extension_load'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='323' c='cache_extension_load'/>
+<use f='codebrowser/elf/cache.c' l='483'/>
+<use f='codebrowser/elf/cache.c' l='517' c='write_extensions'/>
+<use f='codebrowser/elf/cache.c' l='543' c='write_extensions'/>
+<size>8</size>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='246'>/* The extension directory in the cache.  An array of struct
+   cache_extension_section entries.  */</doc>
+<mbr r='cache_extension::magic' o='0' t='uint32_t'/>
+<mbr r='cache_extension::count' o='32' t='uint32_t'/>
+<mbr r='cache_extension::sections' o='64' t='struct cache_extension_section[]'/>

@@ -1,0 +1,30 @@
+<dec f='codebrowser/pwd/pwd.h' l='58' type='char *'/>
+<offset>320</offset>
+<doc f='codebrowser/pwd/pwd.h' l='58'>/* Shell program.  */</doc>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='161' u='w' c='nscd_getpw_r'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='198' u='r' c='nscd_getpw_r'/>
+<use f='codebrowser/nscd/pwdcache.c' l='173' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='241' u='r' c='cache_addpw'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='110' u='r' c='give_pwd_free'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='129' u='r' c='pwd_need_buflen'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='130' u='r' c='pwd_need_buflen'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='185' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='185' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='188' u='w' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='188' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='189' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='190' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='190' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='191' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='191' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='194' u='w' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='195' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='195' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='196' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='197' u='r' c='copy_pwd_changes'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='45' u='w' c='_nss_files_parse_pwent'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='62' u='w' c='_nss_files_parse_pwent'/>
+<use f='codebrowser/pwd/getpw.c' l='55' u='r' c='__getpw'/>
+<use f='codebrowser/pwd/putpwent.c' l='37' u='r' c='putpwent'/>
+<use f='codebrowser/pwd/putpwent.c' l='53' u='r' c='putpwent'/>
+<use f='codebrowser/pwd/putpwent.c' l='59' u='r' c='putpwent'/>

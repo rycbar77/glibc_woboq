@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='426' type='int pthread_getschedparam(pthread_t __target_thread, int *restrict __policy, struct sched_param *restrict __param)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='425'>/* Return in *POLICY and *PARAM the scheduling parameters for TARGET_THREAD. */</doc>
+<def f='codebrowser/nptl/pthread_getschedparam.c' l='73' macro='1' type='int pthread_getschedparam(pthread_t , int * , struct sched_param * )'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='322' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='488' u='c' c='handle_fildes_io'/>

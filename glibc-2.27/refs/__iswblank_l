@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/wctype.h' l='25' type='int __iswblank_l(wint_t , locale_t )'/>
+<dec f='codebrowser/include/wctype.h' l='46' type='int __iswblank_l(wint_t , locale_t )'/>
+<use f='codebrowser/include/wctype.h' l='46' c='__iswblank_l'/>
+<def f='codebrowser/wctype/wcfuncs_l.c' l='43' macro='1' type='int __iswblank_l(wint_t wc, locale_t locale)'/>
+<use f='codebrowser/wctype/wcfuncs_l.c' l='43' macro='1' c='iswblank_l'/>

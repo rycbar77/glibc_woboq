@@ -1,0 +1,12 @@
+<dec f='codebrowser/resolv/bits/types/res_state.h' l='14' type='int'/>
+<offset>0</offset>
+<doc f='codebrowser/resolv/bits/types/res_state.h' l='14'>/* retransmition time interval */</doc>
+<use f='codebrowser/resolv/res_init.c' l='169' u='r' c='has_preinit_values'/>
+<use f='codebrowser/resolv/res_init.c' l='169' u='r' c='has_preinit_values'/>
+<use f='codebrowser/resolv/res_init.c' l='187' u='r' c='resolv_conf_parser_init'/>
+<use f='codebrowser/resolv/res_libc.c' l='66' u='r' c='__res_init'/>
+<use f='codebrowser/resolv/res_libc.c' l='67' u='w' c='__res_init'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='495' u='w' c='update_from_conf'/>
+<use f='codebrowser/resolv/resolv_context.c' l='63' u='r' c='replicated_configuration_matches'/>
+<use f='codebrowser/resolv/resolv_context.c' l='113' u='r' c='maybe_init'/>
+<use f='codebrowser/resolv/resolv_context.c' l='114' u='w' c='maybe_init'/>

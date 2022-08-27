@@ -1,0 +1,5 @@
+<def f='codebrowser/elf/dl-minimal.c' l='137' ll='142' type='int __sigjmp_save(struct __jmp_buf_tag * env, int savemask)'/>
+<def f='codebrowser/setjmp/sigjmp.c' l='26' ll='34' type='int __sigjmp_save(struct __jmp_buf_tag * env, int savemask)'/>
+<doc f='codebrowser/setjmp/sigjmp.c' l='22'>/* This function is called by the `sigsetjmp&apos; macro
+   before doing a `__setjmp&apos; on ENV[0].__jmpbuf.
+   Always return zero.  */</doc>

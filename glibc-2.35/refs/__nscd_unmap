@@ -1,0 +1,13 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='406' type='void __nscd_unmap(struct mapped_database * mapped)'/>
+<use f='codebrowser/nscd/nscd-client.h' l='425' u='c' c='__nscd_drop_map_ref'/>
+<doc f='codebrowser/nscd/nscd-client.h' l='405'>/* Unmap database.  */</doc>
+<use f='codebrowser/nscd/nscd_getai.c' l='202' u='c' c='__nscd_getai'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='316' u='c' c='nscd_getgr_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='444' u='c' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='229' u='c' c='nscd_getpw_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='369' u='c' c='nscd_getserv_r'/>
+<def f='codebrowser/nscd/nscd_helper.c' l='245' ll='251' type='void __nscd_unmap(struct mapped_database * mapped)'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='394' u='c' c='__nscd_get_mapping'/>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='170' u='c' c='__nscd_getgrouplist'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='152' u='c' c='__nscd_setnetgrent'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='276' u='c' c='__nscd_innetgr'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/register-atfork.h' l='27' type='void (*)(void)'/>
+<offset>128</offset>
+<use f='codebrowser/posix/register-atfork.c' l='51' u='w' c='__register_atfork'/>
+<use f='codebrowser/posix/register-atfork.c' l='130' u='r' c='__run_fork_handlers'/>
+<use f='codebrowser/posix/register-atfork.c' l='131' u='r' c='__run_fork_handlers'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/include/link.h' l='173' type='unsigned int'/>
+<offset>6336</offset>
+<doc f='codebrowser/include/link.h' l='173'>/* Reference count for dlopen/dlclose.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='138' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='145' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='148' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='154' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='199' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='859' u='r' c='_dl_close'/>
+<use f='codebrowser/elf/dl-fini.c' l='86' u='w' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-fini.c' l='169' u='w' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-open.c' l='542' u='w' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='550' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='793' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/rtld.c' l='1472' u='w' c='dl_main'/>

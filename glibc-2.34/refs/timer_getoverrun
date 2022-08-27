@@ -1,0 +1,4 @@
+<dec f='codebrowser/time/time.h' l='364' type='int timer_getoverrun(timer_t __timerid)'/>
+<doc f='codebrowser/time/time.h' l='363'>/* Get expiration overrun for timer TIMERID.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='51' c='__timer_getoverrun'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/timer_getoverr.c' l='31' macro='1' type='int timer_getoverrun(timer_t )'/>

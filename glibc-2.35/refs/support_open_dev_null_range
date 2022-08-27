@@ -1,0 +1,7 @@
+<dec f='codebrowser/support/support.h' l='229' type='int support_open_dev_null_range(int num, int flags, mode_t mode)'/>
+<doc f='codebrowser/support/support.h' l='224'>/* Create a range of NUM opened &apos;/dev/null&apos; file descriptors using FLAGS and
+   MODE.  The function takes care of restarting the open range if a file
+   descriptor is found within the specified range and also increases
+   RLIMIT_NOFILE if required.
+   The returned value is the lowest file descriptor number.  */</doc>
+<def f='codebrowser/support/support-open-dev-null-range.c' l='102' ll='134' type='int support_open_dev_null_range(int num, int flags, mode_t mode)'/>

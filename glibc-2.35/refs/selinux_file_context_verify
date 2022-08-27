@@ -1,0 +1,5 @@
+<dec f='include/selinux/selinux.h' l='727' type='int selinux_file_context_verify(const char * path, mode_t mode)'/>
+<doc f='include/selinux/selinux.h' l='723'>/* 
+ * Verify the context of the file &apos;path&apos; against policy.
+ * Return 1 if match, 0 if not and -1 on error.
+ */</doc>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/nscd/nscd.h' l='277' type='struct datahead * cache_search(request_type , const void * key, size_t len, struct database_dyn * table, uid_t owner)'/>
+<doc f='codebrowser/nscd/nscd.h' l='276'>/* cache.c */</doc>
+<def f='codebrowser/nscd/cache.c' l='72' ll='124' type='struct datahead * cache_search(request_type type, const void * key, size_t len, struct database_dyn * table, uid_t owner)'/>
+<doc f='codebrowser/nscd/cache.c' l='67'>/* Search the cache for a matching entry and return it when found.  If
+   this fails search the negative cache and return (void *) -1 if this
+   search was successful.  Otherwise return NULL.
+
+   This function must be called with the read-lock held.  */</doc>
+<use f='codebrowser/nscd/connections.c' l='1137' u='c' c='handle_request'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='476' u='c' c='addinnetgrX'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='520' type='fpu_control_t'/>
+<def f='codebrowser/elf/dl-support.c' l='166' type='fpu_control_t'/>
+<use f='codebrowser/elf/dl-support.c' l='258' macro='1' u='w' c='_dl_aux_init'/>
+<doc f='codebrowser/elf/dl-support.c' l='165'>/* The value of the FPU control word the kernel will preset in hardware.  */</doc>
+<use f='codebrowser/csu/init-first.c' l='62' macro='1' u='r' c='__libc_init_first'/>

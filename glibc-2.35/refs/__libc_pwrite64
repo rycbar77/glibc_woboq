@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/unistd.h' l='64' type='ssize_t __libc_pwrite64(int __fd, const void * __buf, size_t __n, __off64_t __offset)'/>
+<use f='codebrowser/sysdeps/posix/posix_fallocate64.c' l='117' u='c' c='internal_fallocate64'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/pwrite64.c' l='22' ll='26' type='ssize_t __libc_pwrite64(int fd, const void * buf, size_t count, off64_t offset)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pwrite64.c' l='28' c='__pwrite64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pwrite64.c' l='30' c='pwrite64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pwrite64.c' l='33' c='__libc_pwrite'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pwrite64.c' l='34' c='__pwrite'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pwrite64.c' l='35' c='pwrite'/>

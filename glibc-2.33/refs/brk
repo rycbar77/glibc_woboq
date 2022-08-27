@@ -1,0 +1,4 @@
+<dec f='codebrowser/posix/unistd.h' l='1049' type='int brk(void * __addr)'/>
+<doc f='codebrowser/posix/unistd.h' l='1047'>/* Set the end of accessible data space (aka &quot;the break&quot;) to ADDR.
+   Returns zero on success and -1 for errors (with errno set).  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/brk.c' l='45' macro='1' type='int brk(void * )'/>

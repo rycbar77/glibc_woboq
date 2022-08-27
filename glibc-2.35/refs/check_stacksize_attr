@@ -1,0 +1,6 @@
+<def f='codebrowser/sysdeps/nptl/pthreadP.h' l='713' ll='720' type='int check_stacksize_attr(size_t st)'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='711'>/* Returns 0 if ST is a valid stack size for a thread stack and EINVAL
+   otherwise.  */</doc>
+<use f='codebrowser/nptl/pthread_attr_setstack.c' l='38' u='c' c='__pthread_attr_setstack'/>
+<use f='codebrowser/nptl/pthread_attr_setstacksize.c' l='36' u='c' c='__pthread_attr_setstacksize'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='51' u='c' c='__pthread_setattr_default_np'/>

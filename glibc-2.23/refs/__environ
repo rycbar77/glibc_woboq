@@ -1,0 +1,34 @@
+<dec f='codebrowser/posix/unistd.h' l='546' type='char **'/>
+<doc f='codebrowser/posix/unistd.h' l='545'>/* NULL-terminated array of &quot;NAME=VALUE&quot; environment variables.  */</doc>
+<dec f='codebrowser/elf/dl-environ.c' l='54' type='char **'/>
+<use f='codebrowser/elf/dl-environ.c' l='61' u='r' c='unsetenv'/>
+<doc f='codebrowser/elf/dl-environ.c' l='53'>/* In ld.so __environ is not exported.  */</doc>
+<dec f='codebrowser/elf/dl-libc.c' l='27' type='char **'/>
+<use f='codebrowser/elf/dl-libc.c' l='89' u='r' c='do_dlopen'/>
+<use f='codebrowser/elf/rtld.c' l='495' u='r' c='dlmopen_doit'/>
+<def f='codebrowser/posix/environ.c' l='7' type='char **'/>
+<use f='codebrowser/posix/environ.c' l='8'/>
+<use f='codebrowser/posix/environ.c' l='12'/>
+<doc f='codebrowser/posix/environ.c' l='6'>/* This must be initialized; we cannot have a weak alias into bss.  */</doc>
+<use f='codebrowser/posix/execl.c' l='67' u='r' c='execl'/>
+<use f='codebrowser/posix/execv.c' l='25' u='r' c='execv'/>
+<use f='codebrowser/posix/execvp.c' l='26' u='r' c='execvp'/>
+<use f='codebrowser/posix/wordexp.c' l='876' u='r' c='exec_comm_child'/>
+<use f='codebrowser/stdlib/getenv.c' l='39' u='r' c='getenv'/>
+<use f='codebrowser/stdlib/getenv.c' l='52' u='r' c='getenv'/>
+<use f='codebrowser/stdlib/getenv.c' l='75' u='r' c='getenv'/>
+<use f='codebrowser/stdlib/setenv.c' l='137' u='r' c='__add_to_environ'/>
+<use f='codebrowser/stdlib/setenv.c' l='162' u='r' c='__add_to_environ'/>
+<use f='codebrowser/stdlib/setenv.c' l='163' u='r' c='__add_to_environ'/>
+<use f='codebrowser/stdlib/setenv.c' l='170' u='w' c='__add_to_environ'/>
+<use f='codebrowser/stdlib/setenv.c' l='278' u='r' c='__unsetenv'/>
+<use f='codebrowser/stdlib/setenv.c' l='307' u='r' c='__clearenv'/>
+<use f='codebrowser/stdlib/setenv.c' l='307' u='r' c='__clearenv'/>
+<use f='codebrowser/stdlib/setenv.c' l='310' u='r' c='__clearenv'/>
+<use f='codebrowser/stdlib/setenv.c' l='315' u='w' c='__clearenv'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='136' u='r' c='do_system'/>
+<use f='codebrowser/csu/init-first.c' l='72' u='w' c='__libc_init_first'/>
+<use f='codebrowser/csu/libc-start.c' l='143' u='w' c='generic_start_main'/>
+<use f='codebrowser/csu/libc-start.c' l='225' u='r' c='generic_start_main'/>
+<use f='codebrowser/csu/libc-start.c' l='245' u='r' c='generic_start_main'/>
+<use f='codebrowser/csu/libc-start.c' l='289' u='r' c='generic_start_main'/>

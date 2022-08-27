@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/pthread/sem_routines.h' l='22' type='sem_t * __sem_check_add_mapping(const char * name, int fd, sem_t * existing)'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='81' u='c' c='__sem_open'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='192' u='c' c='__sem_open'/>
+<def f='codebrowser/sysdeps/pthread/sem_routines.c' l='69' ll='144' type='sem_t * __sem_check_add_mapping(const char * name, int fd, sem_t * existing)'/>
+<doc f='codebrowser/sysdeps/pthread/sem_routines.c' l='68'>/* Search for existing mapping and if possible add the one provided.  */</doc>

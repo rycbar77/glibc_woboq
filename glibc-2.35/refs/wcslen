@@ -1,0 +1,18 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='223' type='unsigned long wcslen(const wchar_t * __s)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='222'>/* Return the number of wide characters in S.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='750' u='c' c='read_input_file'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='355' u='c' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='917' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1929' u='c' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3944' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3948' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3972' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3981' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/locfile.c' l='623' u='c' c='add_locale_wstring'/>
+<use f='include/c++/11/bits/char_traits.h' l='523' u='c' c='_ZNSt11char_traitsIwE6lengthEPKw'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='691' c='__wcslen_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='695' c='__wcslen_avx2_rtm'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='700' c='__wcslen_evex'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='705' c='__wcslen_sse4_1'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='708' c='__wcslen_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/wcslen.c' l='30' macro='1' type='unsigned long wcslen(const wchar_t * )'/>

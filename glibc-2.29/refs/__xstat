@@ -1,0 +1,12 @@
+<use f='codebrowser/io/stat.c' l='51' u='c' c='__stat'/>
+<use f='codebrowser/support/test-container.c' l='143' macro='1' u='c' c='maybe_xmkdir'/>
+<use f='codebrowser/support/test-container.c' l='801' macro='1' u='c' c='main'/>
+<use f='codebrowser/support/xmkdirp.c' l='40' macro='1' u='c' c='xmkdirp'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fexecve.c' l='64' macro='1' u='c' c='fexecve'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/xstat.c' l='31' ll='39' type='int __xstat(int vers, const char * name, struct stat * buf)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/xstat.c' l='41' c='_xstat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/xstat.c' l='43' c='__xstat64'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/xstat.c' l='30'>/* Get information about the file NAME in BUF.  */</doc>
+<use f='codebrowser/io/fts.c' l='898' macro='1' u='c' c='fts_stat'/>
+<use f='codebrowser/io/ftw.c' l='141' u='c' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='141' u='c' c='ftw_startup'/>

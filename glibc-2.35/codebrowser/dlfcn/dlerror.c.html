@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dlerror.c source code [codebrowser/dlfcn/dlerror.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/dlfcn/dlerror.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>dlfcn</a>/<a href='dlerror.c.html'>dlerror.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Return error detail for failing &lt;dlfcn.h&gt; functions.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 1995-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../include/dlfcn.h.html">&lt;dlfcn.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../include/libintl.h.html">&lt;libintl.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include &lt;stdbool.h&gt;</u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../sysdeps/nptl/libc-lock.h.html">&lt;libc-lock.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/ldsodefs.h.html">&lt;ldsodefs.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="../include/libc-symbols.h.html">&lt;libc-symbols.h&gt;</a></u></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="../include/assert.h.html">&lt;assert.h&gt;</a></u></td></tr>
+<tr><th id="29">29</th><td><u>#include <a href="dlerror.h.html">&lt;dlerror.h&gt;</a></u></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><em>char</em> *</td></tr>
+<tr><th id="32">32</th><td><dfn class="decl def fn" id="__dlerror" title='__dlerror' data-ref="__dlerror" data-ref-filename="__dlerror">__dlerror</dfn> (<em>void</em>)</td></tr>
+<tr><th id="33">33</th><td>{</td></tr>
+<tr><th id="34">34</th><td><u># <span data-ppcond="34">ifdef</span> <span class="macro" data-ref="_M/SHARED">SHARED</span></u></td></tr>
+<tr><th id="35">35</th><td>  <b>if</b> (!rtld_active ())</td></tr>
+<tr><th id="36">36</th><td>    <b>return</b> GLRO (dl_dlfcn_hook)-&gt;dlerror ();</td></tr>
+<tr><th id="37">37</th><td><u># <span data-ppcond="34">endif</span></u></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td>  <b>struct</b> <a class="type" href="dlerror.h.html#dl_action_result" title='dl_action_result' data-ref="dl_action_result" data-ref-filename="dl_action_result">dl_action_result</a> *<dfn class="local col3 decl" id="3result" title='result' data-type='struct dl_action_result *' data-ref="3result" data-ref-filename="3result">result</dfn> = <a class="ref" href="dlerror.h.html#__libc_dlerror_result" title='__libc_dlerror_result' data-ref="__libc_dlerror_result" data-ref-filename="__libc_dlerror_result">__libc_dlerror_result</a>;</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td>  <i>/* No libdl function has been called.  No error is possible.  */</i></td></tr>
+<tr><th id="42">42</th><td>  <b>if</b> (<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="43">43</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td>  <i>/* For an early malloc failure, clear the error flag and return the</i></td></tr>
+<tr><th id="46">46</th><td><i>     error message.  This marks the error as delivered.  */</i></td></tr>
+<tr><th id="47">47</th><td>  <b>if</b> (<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a> == <a class="ref" href="dlerror.h.html#dl_action_result_malloc_failed" title='dl_action_result_malloc_failed' data-ref="dl_action_result_malloc_failed" data-ref-filename="dl_action_result_malloc_failed">dl_action_result_malloc_failed</a>)</td></tr>
+<tr><th id="48">48</th><td>    {</td></tr>
+<tr><th id="49">49</th><td>      <a class="ref" href="dlerror.h.html#__libc_dlerror_result" title='__libc_dlerror_result' data-ref="__libc_dlerror_result" data-ref-filename="__libc_dlerror_result">__libc_dlerror_result</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="50">50</th><td>      <b>return</b> (<em>char</em> *) <q>"out of memory"</q>;</td></tr>
+<tr><th id="51">51</th><td>    }</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td>  <i>/* Placeholder object.  This can be observed in a recursive call,</i></td></tr>
+<tr><th id="54">54</th><td><i>     e.g. from an ELF constructor.  */</i></td></tr>
+<tr><th id="55">55</th><td>  <b>if</b> (<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring" title='dl_action_result::errstring' data-ref="dl_action_result::errstring" data-ref-filename="dl_action_result..errstring">errstring</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="56">56</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td>  <i>/* If we have already reported the error, we can free the result and</i></td></tr>
+<tr><th id="59">59</th><td><i>     return NULL.  See __libc_dlerror_result_free.  */</i></td></tr>
+<tr><th id="60">60</th><td>  <b>if</b> (<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::returned" title='dl_action_result::returned' data-ref="dl_action_result::returned" data-ref-filename="dl_action_result..returned">returned</a>)</td></tr>
+<tr><th id="61">61</th><td>    {</td></tr>
+<tr><th id="62">62</th><td>      <a class="ref" href="dlerror.h.html#__libc_dlerror_result" title='__libc_dlerror_result' data-ref="__libc_dlerror_result" data-ref-filename="__libc_dlerror_result">__libc_dlerror_result</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="63">63</th><td>      <a class="ref fn" href="dlerror.h.html#dl_action_result_errstring_free" title='dl_action_result_errstring_free' data-ref="dl_action_result_errstring_free" data-ref-filename="dl_action_result_errstring_free">dl_action_result_errstring_free</a> (<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>);</td></tr>
+<tr><th id="64">64</th><td>      <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>);</td></tr>
+<tr><th id="65">65</th><td>      <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="66">66</th><td>    }</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td>  <a class="macro" href="../assert/assert.h.html#104" title="((void) sizeof ((result-&gt;errstring != ((void*)0)) ? 1 : 0), __extension__ ({ if (result-&gt;errstring != ((void*)0)) ; else __assert_fail (&quot;result-&gt;errstring != NULL&quot;, &quot;/media/rr/Data/glibc_source/glibc-2.35/dlfcn/dlerror.c&quot;, 68, __extension__ __PRETTY_FUNCTION__); }))" data-ref="_M/assert">assert</a> (<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring" title='dl_action_result::errstring' data-ref="dl_action_result::errstring" data-ref-filename="dl_action_result..errstring">errstring</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td>  <i>/* Create the combined error message.  */</i></td></tr>
+<tr><th id="71">71</th><td>  <em>char</em> *<dfn class="local col4 decl" id="4buf" title='buf' data-type='char *' data-ref="4buf" data-ref-filename="4buf">buf</dfn>;</td></tr>
+<tr><th id="72">72</th><td>  <em>int</em> <dfn class="local col5 decl" id="5n" title='n' data-type='int' data-ref="5n" data-ref-filename="5n">n</dfn>;</td></tr>
+<tr><th id="73">73</th><td>  <b>if</b> (<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errcode" title='dl_action_result::errcode' data-ref="dl_action_result::errcode" data-ref-filename="dl_action_result..errcode">errcode</a> == <var>0</var>)</td></tr>
+<tr><th id="74">74</th><td>    <a class="local col5 ref" href="#5n" title='n' data-ref="5n" data-ref-filename="5n">n</a> = <a class="ref fn" href="../libio/stdio.h.html#__asprintf" title='__asprintf' data-ref="__asprintf" data-ref-filename="__asprintf">__asprintf</a> (&amp;<a class="local col4 ref" href="#4buf" title='buf' data-ref="4buf" data-ref-filename="4buf">buf</a>, <q>"%s%s%s"</q>,</td></tr>
+<tr><th id="75">75</th><td>		    <a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::objname" title='dl_action_result::objname' data-ref="dl_action_result::objname" data-ref-filename="dl_action_result..objname">objname</a>,</td></tr>
+<tr><th id="76">76</th><td>		    <a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::objname" title='dl_action_result::objname' data-ref="dl_action_result::objname" data-ref-filename="dl_action_result..objname">objname</a>[<var>0</var>] == <kbd>'\0'</kbd> ? <q>""</q> : <q>": "</q>,</td></tr>
+<tr><th id="77">77</th><td>		    <a class="macro" href="../include/libintl.h.html#48" title="__dcgettext (_libc_intl_domainname, result-&gt;errstring, 5)" data-ref="_M/_">_</a>(<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring" title='dl_action_result::errstring' data-ref="dl_action_result::errstring" data-ref-filename="dl_action_result..errstring">errstring</a>));</td></tr>
+<tr><th id="78">78</th><td>  <b>else</b></td></tr>
+<tr><th id="79">79</th><td>    {</td></tr>
+<tr><th id="80">80</th><td>      <a class="macro" href="../include/errno.h.html#35" title="(__libc_errno = (result-&gt;errcode))" data-ref="_M/__set_errno">__set_errno</a> (<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errcode" title='dl_action_result::errcode' data-ref="dl_action_result::errcode" data-ref-filename="dl_action_result..errcode">errcode</a>);</td></tr>
+<tr><th id="81">81</th><td>      <a class="local col5 ref" href="#5n" title='n' data-ref="5n" data-ref-filename="5n">n</a> = <a class="ref fn" href="../libio/stdio.h.html#__asprintf" title='__asprintf' data-ref="__asprintf" data-ref-filename="__asprintf">__asprintf</a> (&amp;<a class="local col4 ref" href="#4buf" title='buf' data-ref="4buf" data-ref-filename="4buf">buf</a>, <q>"%s%s%s: %m"</q>,</td></tr>
+<tr><th id="82">82</th><td>		      <a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::objname" title='dl_action_result::objname' data-ref="dl_action_result::objname" data-ref-filename="dl_action_result..objname">objname</a>,</td></tr>
+<tr><th id="83">83</th><td>		      <a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::objname" title='dl_action_result::objname' data-ref="dl_action_result::objname" data-ref-filename="dl_action_result..objname">objname</a>[<var>0</var>] == <kbd>'\0'</kbd> ? <q>""</q> : <q>": "</q>,</td></tr>
+<tr><th id="84">84</th><td>		      <a class="macro" href="../include/libintl.h.html#48" title="__dcgettext (_libc_intl_domainname, result-&gt;errstring, 5)" data-ref="_M/_">_</a>(<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring" title='dl_action_result::errstring' data-ref="dl_action_result::errstring" data-ref-filename="dl_action_result..errstring">errstring</a>));</td></tr>
+<tr><th id="85">85</th><td>      <i>/* Set errno again in case asprintf clobbered it.  */</i></td></tr>
+<tr><th id="86">86</th><td>      <a class="macro" href="../include/errno.h.html#35" title="(__libc_errno = (result-&gt;errcode))" data-ref="_M/__set_errno">__set_errno</a> (<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errcode" title='dl_action_result::errcode' data-ref="dl_action_result::errcode" data-ref-filename="dl_action_result..errcode">errcode</a>);</td></tr>
+<tr><th id="87">87</th><td>    }</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td>  <i>/* Mark the error as delivered.  */</i></td></tr>
+<tr><th id="90">90</th><td>  <a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::returned" title='dl_action_result::returned' data-ref="dl_action_result::returned" data-ref-filename="dl_action_result..returned">returned</a> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td>  <b>if</b> (<a class="local col5 ref" href="#5n" title='n' data-ref="5n" data-ref-filename="5n">n</a> &gt;= <var>0</var>)</td></tr>
+<tr><th id="93">93</th><td>    {</td></tr>
+<tr><th id="94">94</th><td>      <i>/* Replace the error string with the newly allocated one.  */</i></td></tr>
+<tr><th id="95">95</th><td>      <a class="ref fn" href="dlerror.h.html#dl_action_result_errstring_free" title='dl_action_result_errstring_free' data-ref="dl_action_result_errstring_free" data-ref-filename="dl_action_result_errstring_free">dl_action_result_errstring_free</a> (<a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>);</td></tr>
+<tr><th id="96">96</th><td>      <a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring" title='dl_action_result::errstring' data-ref="dl_action_result::errstring" data-ref-filename="dl_action_result..errstring">errstring</a> = <a class="local col4 ref" href="#4buf" title='buf' data-ref="4buf" data-ref-filename="4buf">buf</a>;</td></tr>
+<tr><th id="97">97</th><td>      <a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring_source" title='dl_action_result::errstring_source' data-ref="dl_action_result::errstring_source" data-ref-filename="dl_action_result..errstring_source">errstring_source</a> = <a class="enum" href="dlerror.h.html#dl_action_result_errstring_local" title='dl_action_result_errstring_local' data-ref="dl_action_result_errstring_local" data-ref-filename="dl_action_result_errstring_local">dl_action_result_errstring_local</a>;</td></tr>
+<tr><th id="98">98</th><td>      <b>return</b> <a class="local col4 ref" href="#4buf" title='buf' data-ref="4buf" data-ref-filename="4buf">buf</a>;</td></tr>
+<tr><th id="99">99</th><td>    }</td></tr>
+<tr><th id="100">100</th><td>  <b>else</b></td></tr>
+<tr><th id="101">101</th><td>    <i>/* We could not create the combined error message, so use the</i></td></tr>
+<tr><th id="102">102</th><td><i>       existing string as a fallback.  */</i></td></tr>
+<tr><th id="103">103</th><td>    <b>return</b> <a class="local col3 ref" href="#3result" title='result' data-ref="3result" data-ref-filename="3result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring" title='dl_action_result::errstring' data-ref="dl_action_result::errstring" data-ref-filename="dl_action_result..errstring">errstring</a>;</td></tr>
+<tr><th id="104">104</th><td>}</td></tr>
+<tr><th id="105">105</th><td><a class="macro" href="../include/shlib-compat.h.html#116" title="extern __typeof (__dlerror) dlerror __attribute__ ((weak, alias (&quot;__dlerror&quot;))) ;" data-ref="_M/versioned_symbol">versioned_symbol</a> (libc, <a class="ref fn" href="#__dlerror" title='__dlerror' data-ref="__dlerror" data-ref-filename="__dlerror">__dlerror</a>, <dfn class="decl def fn" id="dlerror" title='dlerror' data-ref="dlerror" data-ref-filename="dlerror">dlerror</dfn>, GLIBC_2_34);</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td><u>#<span data-ppcond="107">if</span> <a class="macro" href="../include/shlib-compat.h.html#113" title="0" data-ref="_M/OTHER_SHLIB_COMPAT">OTHER_SHLIB_COMPAT</a> (libdl, GLIBC_2_0, GLIBC_2_34)</u></td></tr>
+<tr><th id="108">108</th><td>compat_symbol (libdl, __dlerror, dlerror, GLIBC_2_0);</td></tr>
+<tr><th id="109">109</th><td><u>#<span data-ppcond="107">endif</span></u></td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td><em>int</em></td></tr>
+<tr><th id="112">112</th><td><dfn class="decl def fn" id="_dlerror_run" title='_dlerror_run' data-ref="_dlerror_run" data-ref-filename="_dlerror_run">_dlerror_run</dfn> (<em>void</em> (*<dfn class="local col6 decl" id="6operate" title='operate' data-type='void (*)(void *)' data-ref="6operate" data-ref-filename="6operate">operate</dfn>) (<em>void</em> *), <em>void</em> *<dfn class="local col7 decl" id="7args" title='args' data-type='void *' data-ref="7args" data-ref-filename="7args">args</dfn>)</td></tr>
+<tr><th id="113">113</th><td>{</td></tr>
+<tr><th id="114">114</th><td>  <b>struct</b> <a class="type" href="dlerror.h.html#dl_action_result" title='dl_action_result' data-ref="dl_action_result" data-ref-filename="dl_action_result">dl_action_result</a> *<dfn class="local col8 decl" id="8result" title='result' data-type='struct dl_action_result *' data-ref="8result" data-ref-filename="8result">result</dfn> = <a class="ref" href="dlerror.h.html#__libc_dlerror_result" title='__libc_dlerror_result' data-ref="__libc_dlerror_result" data-ref-filename="__libc_dlerror_result">__libc_dlerror_result</a>;</td></tr>
+<tr><th id="115">115</th><td>  <b>if</b> (<a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="116">116</th><td>    {</td></tr>
+<tr><th id="117">117</th><td>      <b>if</b> (<a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a> == <a class="ref" href="dlerror.h.html#dl_action_result_malloc_failed" title='dl_action_result_malloc_failed' data-ref="dl_action_result_malloc_failed" data-ref-filename="dl_action_result_malloc_failed">dl_action_result_malloc_failed</a>)</td></tr>
+<tr><th id="118">118</th><td>	{</td></tr>
+<tr><th id="119">119</th><td>	  <i>/* Clear the previous error.  */</i></td></tr>
+<tr><th id="120">120</th><td>	  <a class="ref" href="dlerror.h.html#__libc_dlerror_result" title='__libc_dlerror_result' data-ref="__libc_dlerror_result" data-ref-filename="__libc_dlerror_result">__libc_dlerror_result</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="121">121</th><td>	  <a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="122">122</th><td>	}</td></tr>
+<tr><th id="123">123</th><td>      <b>else</b></td></tr>
+<tr><th id="124">124</th><td>	{</td></tr>
+<tr><th id="125">125</th><td>	  <i>/* There is an existing object.  Free its error string, but</i></td></tr>
+<tr><th id="126">126</th><td><i>	     keep the object.  */</i></td></tr>
+<tr><th id="127">127</th><td>	  <a class="ref fn" href="dlerror.h.html#dl_action_result_errstring_free" title='dl_action_result_errstring_free' data-ref="dl_action_result_errstring_free" data-ref-filename="dl_action_result_errstring_free">dl_action_result_errstring_free</a> (<a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>);</td></tr>
+<tr><th id="128">128</th><td>	  <i>/* Mark the object as not containing an error.  This ensures</i></td></tr>
+<tr><th id="129">129</th><td><i>	     that call to dlerror from, for example, an ELF</i></td></tr>
+<tr><th id="130">130</th><td><i>	     constructor will not notice this result object.  */</i></td></tr>
+<tr><th id="131">131</th><td>	  <a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring" title='dl_action_result::errstring' data-ref="dl_action_result::errstring" data-ref-filename="dl_action_result..errstring">errstring</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="132">132</th><td>	}</td></tr>
+<tr><th id="133">133</th><td>    }</td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td>  <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="9objname" title='objname' data-type='const char *' data-ref="9objname" data-ref-filename="9objname">objname</dfn>;</td></tr>
+<tr><th id="136">136</th><td>  <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="10errstring" title='errstring' data-type='const char *' data-ref="10errstring" data-ref-filename="10errstring">errstring</dfn>;</td></tr>
+<tr><th id="137">137</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col1 decl" id="11malloced" title='malloced' data-type='_Bool' data-ref="11malloced" data-ref-filename="11malloced">malloced</dfn>;</td></tr>
+<tr><th id="138">138</th><td>  <em>int</em> <dfn class="local col2 decl" id="12errcode" title='errcode' data-type='int' data-ref="12errcode" data-ref-filename="12errcode">errcode</dfn> = <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#540" title="_dl_catch_error" data-ref="_M/GLRO">GLRO</a> (dl_catch_error) (&amp;<a class="local col9 ref" href="#9objname" title='objname' data-ref="9objname" data-ref-filename="9objname">objname</a>, &amp;<a class="local col0 ref" href="#10errstring" title='errstring' data-ref="10errstring" data-ref-filename="10errstring">errstring</a>, &amp;<a class="local col1 ref" href="#11malloced" title='malloced' data-ref="11malloced" data-ref-filename="11malloced">malloced</a>,</td></tr>
+<tr><th id="139">139</th><td>				       <a class="local col6 ref" href="#6operate" title='operate' data-ref="6operate" data-ref-filename="6operate">operate</a>, <a class="local col7 ref" href="#7args" title='args' data-ref="7args" data-ref-filename="7args">args</a>);</td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td>  <i>/* ELF constructors or destructors may have indirectly altered the</i></td></tr>
+<tr><th id="142">142</th><td><i>     value of __libc_dlerror_result, therefore reload it.  */</i></td></tr>
+<tr><th id="143">143</th><td>  <a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a> = <a class="ref" href="dlerror.h.html#__libc_dlerror_result" title='__libc_dlerror_result' data-ref="__libc_dlerror_result" data-ref-filename="__libc_dlerror_result">__libc_dlerror_result</a>;</td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td>  <b>if</b> (<a class="local col0 ref" href="#10errstring" title='errstring' data-ref="10errstring" data-ref-filename="10errstring">errstring</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="146">146</th><td>    {</td></tr>
+<tr><th id="147">147</th><td>      <i>/* There is no error.  We no longer need the result object if it</i></td></tr>
+<tr><th id="148">148</th><td><i>	 does not contain an error.  However, a recursive call may</i></td></tr>
+<tr><th id="149">149</th><td><i>	 have added an error even if this call did not cause it.  Keep</i></td></tr>
+<tr><th id="150">150</th><td><i>	 the other error.  */</i></td></tr>
+<tr><th id="151">151</th><td>      <b>if</b> (<a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> &amp;&amp; <a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring" title='dl_action_result::errstring' data-ref="dl_action_result::errstring" data-ref-filename="dl_action_result..errstring">errstring</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="152">152</th><td>	{</td></tr>
+<tr><th id="153">153</th><td>	  <a class="ref" href="dlerror.h.html#__libc_dlerror_result" title='__libc_dlerror_result' data-ref="__libc_dlerror_result" data-ref-filename="__libc_dlerror_result">__libc_dlerror_result</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="154">154</th><td>	  <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>);</td></tr>
+<tr><th id="155">155</th><td>	}</td></tr>
+<tr><th id="156">156</th><td>      <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="157">157</th><td>    }</td></tr>
+<tr><th id="158">158</th><td>  <b>else</b></td></tr>
+<tr><th id="159">159</th><td>    {</td></tr>
+<tr><th id="160">160</th><td>      <i>/* A new error occurred.  Check if a result object has to be</i></td></tr>
+<tr><th id="161">161</th><td><i>	 allocated.  */</i></td></tr>
+<tr><th id="162">162</th><td>      <b>if</b> (<a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> || <a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a> == <a class="ref" href="dlerror.h.html#dl_action_result_malloc_failed" title='dl_action_result_malloc_failed' data-ref="dl_action_result_malloc_failed" data-ref-filename="dl_action_result_malloc_failed">dl_action_result_malloc_failed</a>)</td></tr>
+<tr><th id="163">163</th><td>	{</td></tr>
+<tr><th id="164">164</th><td>	  <i>/* Allocating storage for the error message after the fact</i></td></tr>
+<tr><th id="165">165</th><td><i>	     is not ideal.  But this avoids an infinite recursion in</i></td></tr>
+<tr><th id="166">166</th><td><i>	     case malloc itself calls libdl functions (without</i></td></tr>
+<tr><th id="167">167</th><td><i>	     triggering errors).  */</i></td></tr>
+<tr><th id="168">168</th><td>	  <a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a> = <a class="ref fn" href="../stdlib/stdlib.h.html#malloc" title='malloc' data-ref="malloc" data-ref-filename="malloc">malloc</a> (<b>sizeof</b> (*<a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>));</td></tr>
+<tr><th id="169">169</th><td>	  <b>if</b> (<a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="170">170</th><td>	    {</td></tr>
+<tr><th id="171">171</th><td>	      <i>/* Assume that the dlfcn failure was due to a malloc</i></td></tr>
+<tr><th id="172">172</th><td><i>		 failure, too.  */</i></td></tr>
+<tr><th id="173">173</th><td>	      <b>if</b> (<a class="local col1 ref" href="#11malloced" title='malloced' data-ref="11malloced" data-ref-filename="11malloced">malloced</a>)</td></tr>
+<tr><th id="174">174</th><td>		<a class="ref fn" href="dlerror.h.html#dl_error_free" title='dl_error_free' data-ref="dl_error_free" data-ref-filename="dl_error_free">dl_error_free</a> ((<em>char</em> *) <a class="local col0 ref" href="#10errstring" title='errstring' data-ref="10errstring" data-ref-filename="10errstring">errstring</a>);</td></tr>
+<tr><th id="175">175</th><td>	      <a class="ref" href="dlerror.h.html#__libc_dlerror_result" title='__libc_dlerror_result' data-ref="__libc_dlerror_result" data-ref-filename="__libc_dlerror_result">__libc_dlerror_result</a> = <a class="ref" href="dlerror.h.html#dl_action_result_malloc_failed" title='dl_action_result_malloc_failed' data-ref="dl_action_result_malloc_failed" data-ref-filename="dl_action_result_malloc_failed">dl_action_result_malloc_failed</a>;</td></tr>
+<tr><th id="176">176</th><td>	      <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="177">177</th><td>	    }</td></tr>
+<tr><th id="178">178</th><td>	  <a class="ref" href="dlerror.h.html#__libc_dlerror_result" title='__libc_dlerror_result' data-ref="__libc_dlerror_result" data-ref-filename="__libc_dlerror_result">__libc_dlerror_result</a> = <a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>;</td></tr>
+<tr><th id="179">179</th><td>	}</td></tr>
+<tr><th id="180">180</th><td>      <b>else</b></td></tr>
+<tr><th id="181">181</th><td>	<i>/* Deallocate the existing error message from a recursive</i></td></tr>
+<tr><th id="182">182</th><td><i>	   call, but reuse the result object.  */</i></td></tr>
+<tr><th id="183">183</th><td>	<a class="ref fn" href="dlerror.h.html#dl_action_result_errstring_free" title='dl_action_result_errstring_free' data-ref="dl_action_result_errstring_free" data-ref-filename="dl_action_result_errstring_free">dl_action_result_errstring_free</a> (<a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>);</td></tr>
+<tr><th id="184">184</th><td></td></tr>
+<tr><th id="185">185</th><td>      <a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errcode" title='dl_action_result::errcode' data-ref="dl_action_result::errcode" data-ref-filename="dl_action_result..errcode">errcode</a> = <a class="local col2 ref" href="#12errcode" title='errcode' data-ref="12errcode" data-ref-filename="12errcode">errcode</a>;</td></tr>
+<tr><th id="186">186</th><td>      <a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::objname" title='dl_action_result::objname' data-ref="dl_action_result::objname" data-ref-filename="dl_action_result..objname">objname</a> = <a class="local col9 ref" href="#9objname" title='objname' data-ref="9objname" data-ref-filename="9objname">objname</a>;</td></tr>
+<tr><th id="187">187</th><td>      <a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring" title='dl_action_result::errstring' data-ref="dl_action_result::errstring" data-ref-filename="dl_action_result..errstring">errstring</a> = (<em>char</em> *) <a class="local col0 ref" href="#10errstring" title='errstring' data-ref="10errstring" data-ref-filename="10errstring">errstring</a>;</td></tr>
+<tr><th id="188">188</th><td>      <a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::returned" title='dl_action_result::returned' data-ref="dl_action_result::returned" data-ref-filename="dl_action_result..returned">returned</a> = <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="189">189</th><td>      <i>/* In case of an error, the malloced flag indicates whether the</i></td></tr>
+<tr><th id="190">190</th><td><i>	 error string is constant or not.  */</i></td></tr>
+<tr><th id="191">191</th><td>      <b>if</b> (<a class="local col1 ref" href="#11malloced" title='malloced' data-ref="11malloced" data-ref-filename="11malloced">malloced</a>)</td></tr>
+<tr><th id="192">192</th><td>	<a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring_source" title='dl_action_result::errstring_source' data-ref="dl_action_result::errstring_source" data-ref-filename="dl_action_result..errstring_source">errstring_source</a> = <a class="enum" href="dlerror.h.html#dl_action_result_errstring_rtld" title='dl_action_result_errstring_rtld' data-ref="dl_action_result_errstring_rtld" data-ref-filename="dl_action_result_errstring_rtld">dl_action_result_errstring_rtld</a>;</td></tr>
+<tr><th id="193">193</th><td>      <b>else</b></td></tr>
+<tr><th id="194">194</th><td>	<a class="local col8 ref" href="#8result" title='result' data-ref="8result" data-ref-filename="8result">result</a>-&gt;<a class="ref field" href="dlerror.h.html#dl_action_result::errstring_source" title='dl_action_result::errstring_source' data-ref="dl_action_result::errstring_source" data-ref-filename="dl_action_result..errstring_source">errstring_source</a> = <a class="enum" href="dlerror.h.html#dl_action_result_errstring_constant" title='dl_action_result_errstring_constant' data-ref="dl_action_result_errstring_constant" data-ref-filename="dl_action_result_errstring_constant">dl_action_result_errstring_constant</a>;</td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td>      <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="197">197</th><td>    }</td></tr>
+<tr><th id="198">198</th><td>}</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

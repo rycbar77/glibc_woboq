@@ -1,0 +1,27 @@
+<dec f='codebrowser/misc/sys/mman.h' l='76' type='int munmap(void * __addr, size_t __len)'/>
+<doc f='codebrowser/misc/sys/mman.h' l='74'>/* Deallocate any mapping for the region starting at ADDR and extending LEN
+   bytes.  Returns 0 if successful, -1 for errors (and sets errno).  */</doc>
+<use f='codebrowser/elf/cache.c' l='244' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='723' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/readlib.c' l='182' u='c' c='process_file'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='195' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='204' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='318' u='c' c='main'/>
+<use f='codebrowser/locale/programs/locale.c' l='492' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='507' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='724' u='c' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='363' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='365' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='688' u='c' c='close_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='690' u='c' c='close_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1504' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1515' u='c' c='add_locales_to_archive'/>
+<def f='codebrowser/malloc/memusage.c' l='748' ll='784' type='int munmap(void * start, size_t len)'/>
+<doc f='codebrowser/malloc/memusage.c' l='747'>/* `munmap&apos; replacement.  */</doc>
+<use f='codebrowser/nptl/allocatestack.c' l='288' u='c' c='__free_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='585' u='c' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='615' u='c' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='658' u='c' c='allocate_stack'/>
+<use f='codebrowser/nptl/sem_close.c' l='63' u='c' c='sem_close'/>
+<use f='codebrowser/nptl/sem_open.c' l='131' u='c' c='check_add_mapping'/>
+<use f='codebrowser/nptl/sem_open.c' l='266' u='c' c='sem_open'/>

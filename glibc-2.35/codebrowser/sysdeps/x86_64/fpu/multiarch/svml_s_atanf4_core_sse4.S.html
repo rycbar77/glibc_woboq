@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>svml_s_atanf4_core_sse4.S source code [codebrowser/sysdeps/x86_64/fpu/multiarch/svml_s_atanf4_core_sse4.S] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/fpu/multiarch/svml_s_atanf4_core_sse4.S'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>x86_64</a>/<a href='..'>fpu</a>/<a href='./'>multiarch</a>/<a href='svml_s_atanf4_core_sse4.S.html'>svml_s_atanf4_core_sse4.S</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Function atanf vectorized with SSE4.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/*</i></td></tr>
+<tr><th id="20">20</th><td><i> * ALGORITHM DESCRIPTION:</i></td></tr>
+<tr><th id="21">21</th><td><i> *</i></td></tr>
+<tr><th id="22">22</th><td><i> *      For    0.0    &lt;= x &lt;=  7.0/16.0: atan(x) = atan(0.0) + atan(s), where s=(x-0.0)/(1.0+0.0*x)</i></td></tr>
+<tr><th id="23">23</th><td><i> *      For  7.0/16.0 &lt;= x &lt;= 11.0/16.0: atan(x) = atan(0.5) + atan(s), where s=(x-0.5)/(1.0+0.5*x)</i></td></tr>
+<tr><th id="24">24</th><td><i> *      For 11.0/16.0 &lt;= x &lt;= 19.0/16.0: atan(x) = atan(1.0) + atan(s), where s=(x-1.0)/(1.0+1.0*x)</i></td></tr>
+<tr><th id="25">25</th><td><i> *      For 19.0/16.0 &lt;= x &lt;= 39.0/16.0: atan(x) = atan(1.5) + atan(s), where s=(x-1.5)/(1.0+1.5*x)</i></td></tr>
+<tr><th id="26">26</th><td><i> *      For 39.0/16.0 &lt;= x &lt;=    inf   : atan(x) = atan(inf) + atan(s), where s=-1.0/x</i></td></tr>
+<tr><th id="27">27</th><td><i> *      Where atan(s) ~= s+s^3*Poly11(s^2) on interval |s|&lt;7.0/0.16.</i></td></tr>
+<tr><th id="28">28</th><td><i> *</i></td></tr>
+<tr><th id="29">29</th><td><i> */</i></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><i>/* Offsets for data table __svml_satan_data_internal</i></td></tr>
+<tr><th id="32">32</th><td><i> */</i></td></tr>
+<tr><th id="33">33</th><td><u>#define <dfn class="macro" id="_M/_sSIGN_MASK" data-ref="_M/_sSIGN_MASK">_sSIGN_MASK</dfn>                   	0</u></td></tr>
+<tr><th id="34">34</th><td><u>#define <dfn class="macro" id="_M/_sABS_MASK" data-ref="_M/_sABS_MASK">_sABS_MASK</dfn>                    	<span class='error' title="expected identifier or &apos;(&apos;">16</span></u></td></tr>
+<tr><th id="35">35</th><td><u>#define <dfn class="macro" id="_M/_sONE" data-ref="_M/_sONE">_sONE</dfn>                         	32</u></td></tr>
+<tr><th id="36">36</th><td><u>#define <dfn class="macro" id="_M/_sPIO2" data-ref="_M/_sPIO2">_sPIO2</dfn>                        	48</u></td></tr>
+<tr><th id="37">37</th><td><u>#define <dfn class="macro" id="_M/_sPC8" data-ref="_M/_sPC8">_sPC8</dfn>                         	64</u></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/_sPC7" data-ref="_M/_sPC7">_sPC7</dfn>                         	80</u></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/_sPC6" data-ref="_M/_sPC6">_sPC6</dfn>                         	96</u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/_sPC5" data-ref="_M/_sPC5">_sPC5</dfn>                         	112</u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/_sPC4" data-ref="_M/_sPC4">_sPC4</dfn>                         	128</u></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/_sPC3" data-ref="_M/_sPC3">_sPC3</dfn>                         	144</u></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/_sPC2" data-ref="_M/_sPC2">_sPC2</dfn>                         	160</u></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/_sPC1" data-ref="_M/_sPC1">_sPC1</dfn>                         	176</u></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/_sPC0" data-ref="_M/_sPC0">_sPC0</dfn>                         	192</u></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><u>#include <a href="../../../unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td>        .text</td></tr>
+<tr><th id="50">50</th><td>	.section .text.sse4,<q>"ax"</q>,@progbits</td></tr>
+<tr><th id="51">51</th><td><a class="macro" href="../../../x86/sysdep.h.html#91" title=".globl _ZGVbN4v_atanf_sse4; .type _ZGVbN4v_atanf_sse4,@function; .align 1&lt;&lt;4; _ZGVbN4v_atanf_sse4: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a>(<span class='warning' title="type specifier missing, defaults to &apos;int&apos;"><dfn class="decl def" id="_ZGVbN4v_atanf_sse4" title='_ZGVbN4v_atanf_sse4' data-ref="_ZGVbN4v_atanf_sse4" data-ref-filename="_ZGVbN4v_atanf_sse4">_ZGVbN4v_atanf_sse4</dfn></span>)</td></tr>
+<tr><th id="52">52</th><td><i>/*</i></td></tr>
+<tr><th id="53">53</th><td><i> * To use minps\maxps operations for argument reduction</i></td></tr>
+<tr><th id="54">54</th><td><i> * uncomment _AT_USEMINMAX_ definition</i></td></tr>
+<tr><th id="55">55</th><td><i> *  Declarations</i></td></tr>
+<tr><th id="56">56</th><td><i> * Variables</i></td></tr>
+<tr><th id="57">57</th><td><i> * Constants</i></td></tr>
+<tr><th id="58">58</th><td><i> */</i></td></tr>
+<tr><th id="59">59</th><td>        <span class='error' title="unknown type name &apos;movups&apos;">movups</span>    <a class="macro" href="#34" title="16" data-ref="_M/_sABS_MASK">_sABS_MASK</a>+__svml_satan_data_internal(%rip), %xmm2</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><i>/*</i></td></tr>
+<tr><th id="62">62</th><td><i> * 1) If x&gt;1,      then r=-1/x, PIO2=Pi/2</i></td></tr>
+<tr><th id="63">63</th><td><i> * 2) If -1&lt;=x&lt;=1, then r=x,    PIO2=0</i></td></tr>
+<tr><th id="64">64</th><td><i> * 3) If x&lt;-1,     then r=-1/x, PIO2=-Pi/2</i></td></tr>
+<tr><th id="65">65</th><td><i> */</i></td></tr>
+<tr><th id="66">66</th><td>        movups    <a class="macro" href="#35" title="32" data-ref="_M/_sONE">_sONE</a>+__svml_satan_data_internal(%rip), %xmm1</td></tr>
+<tr><th id="67">67</th><td>        andps     %xmm0, %xmm2</td></tr>
+<tr><th id="68">68</th><td>        movaps    %xmm2, %xmm9</td></tr>
+<tr><th id="69">69</th><td>        movaps    %xmm1, %xmm3</td></tr>
+<tr><th id="70">70</th><td>        cmpleps   %xmm1, %xmm9</td></tr>
+<tr><th id="71">71</th><td>        maxps     %xmm2, %xmm3</td></tr>
+<tr><th id="72">72</th><td>        minps     %xmm2, %xmm1</td></tr>
+<tr><th id="73">73</th><td>        divps     %xmm3, %xmm1</td></tr>
+<tr><th id="74">74</th><td>        movups    __svml_satan_data_internal(%rip), %xmm4</td></tr>
+<tr><th id="75">75</th><td>        movaps    %xmm9, %xmm10</td></tr>
+<tr><th id="76">76</th><td>        andps     %xmm4, %xmm0</td></tr>
+<tr><th id="77">77</th><td>        andnps    %xmm4, %xmm9</td></tr>
+<tr><th id="78">78</th><td>        pxor      %xmm0, %xmm9</td></tr>
+<tr><th id="79">79</th><td>        pxor      %xmm1, %xmm9</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><i>/* Polynomial. */</i></td></tr>
+<tr><th id="82">82</th><td>        movaps    %xmm9, %xmm8</td></tr>
+<tr><th id="83">83</th><td>        mulps     %xmm9, %xmm8</td></tr>
+<tr><th id="84">84</th><td>        movaps    %xmm8, %xmm7</td></tr>
+<tr><th id="85">85</th><td>        mulps     %xmm8, %xmm7</td></tr>
+<tr><th id="86">86</th><td>        movups    <a class="macro" href="#37" title="64" data-ref="_M/_sPC8">_sPC8</a>+__svml_satan_data_internal(%rip), %xmm6</td></tr>
+<tr><th id="87">87</th><td>        mulps     %xmm7, %xmm6</td></tr>
+<tr><th id="88">88</th><td>        movups    <a class="macro" href="#38" title="80" data-ref="_M/_sPC7">_sPC7</a>+__svml_satan_data_internal(%rip), %xmm5</td></tr>
+<tr><th id="89">89</th><td>        mulps     %xmm7, %xmm5</td></tr>
+<tr><th id="90">90</th><td>        addps     <a class="macro" href="#39" title="96" data-ref="_M/_sPC6">_sPC6</a>+__svml_satan_data_internal(%rip), %xmm6</td></tr>
+<tr><th id="91">91</th><td>        mulps     %xmm7, %xmm6</td></tr>
+<tr><th id="92">92</th><td>        addps     <a class="macro" href="#40" title="112" data-ref="_M/_sPC5">_sPC5</a>+__svml_satan_data_internal(%rip), %xmm5</td></tr>
+<tr><th id="93">93</th><td>        mulps     %xmm7, %xmm5</td></tr>
+<tr><th id="94">94</th><td>        addps     <a class="macro" href="#41" title="128" data-ref="_M/_sPC4">_sPC4</a>+__svml_satan_data_internal(%rip), %xmm6</td></tr>
+<tr><th id="95">95</th><td>        mulps     %xmm7, %xmm6</td></tr>
+<tr><th id="96">96</th><td>        addps     <a class="macro" href="#42" title="144" data-ref="_M/_sPC3">_sPC3</a>+__svml_satan_data_internal(%rip), %xmm5</td></tr>
+<tr><th id="97">97</th><td>        mulps     %xmm5, %xmm7</td></tr>
+<tr><th id="98">98</th><td>        addps     <a class="macro" href="#43" title="160" data-ref="_M/_sPC2">_sPC2</a>+__svml_satan_data_internal(%rip), %xmm6</td></tr>
+<tr><th id="99">99</th><td>        mulps     %xmm8, %xmm6</td></tr>
+<tr><th id="100">100</th><td>        addps     <a class="macro" href="#44" title="176" data-ref="_M/_sPC1">_sPC1</a>+__svml_satan_data_internal(%rip), %xmm7</td></tr>
+<tr><th id="101">101</th><td>        andnps    <a class="macro" href="#36" title="48" data-ref="_M/_sPIO2">_sPIO2</a>+__svml_satan_data_internal(%rip), %xmm10</td></tr>
+<tr><th id="102">102</th><td>        addps     %xmm6, %xmm7</td></tr>
+<tr><th id="103">103</th><td>        mulps     %xmm7, %xmm8</td></tr>
+<tr><th id="104">104</th><td>        pxor      %xmm0, %xmm10</td></tr>
+<tr><th id="105">105</th><td>        addps     <a class="macro" href="#45" title="192" data-ref="_M/_sPC0">_sPC0</a>+__svml_satan_data_internal(%rip), %xmm8</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td><i>/* Reconstruction. */</i></td></tr>
+<tr><th id="108">108</th><td>        mulps     %xmm8, %xmm9</td></tr>
+<tr><th id="109">109</th><td>        addps     %xmm9, %xmm10</td></tr>
+<tr><th id="110">110</th><td>        movaps    %xmm10, %xmm0</td></tr>
+<tr><th id="111">111</th><td>        ret</td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td><a class="macro" href="../../../x86/sysdep.h.html#94" title=".cfi_endproc; .size _ZGVbN4v_atanf_sse4,.-_ZGVbN4v_atanf_sse4;" data-ref="_M/END">END</a>(_ZGVbN4v_atanf_sse4)</td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td>        <span class='error' title="expected identifier or &apos;(&apos;">.</span>section .rodata, <q>"a"</q></td></tr>
+<tr><th id="116">116</th><td>        .align <var>16</var></td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td><u>#<span data-ppcond="118">ifdef</span> <span class="macro" data-ref="_M/__svml_satan_data_internal_typedef">__svml_satan_data_internal_typedef</span></u></td></tr>
+<tr><th id="119">119</th><td><b>typedef</b> <em>unsigned</em> <em>int</em> VUINT32;</td></tr>
+<tr><th id="120">120</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="121">121</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sSIGN_MASK[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="122">122</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sABS_MASK[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="123">123</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sONE[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="124">124</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sPIO2[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="125">125</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sPC8[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="126">126</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sPC7[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="127">127</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sPC6[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="128">128</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sPC5[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="129">129</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sPC4[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="130">130</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sPC3[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="131">131</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sPC2[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="132">132</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sPC1[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="133">133</th><td>        __declspec(align(<var>16</var>)) VUINT32 _sPC0[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="134">134</th><td>} __svml_satan_data_internal;</td></tr>
+<tr><th id="135">135</th><td><u>#<span data-ppcond="118">endif</span></u></td></tr>
+<tr><th id="136">136</th><td>__svml_satan_data_internal:</td></tr>
+<tr><th id="137">137</th><td>        .<em>long</em> <var>0x80000000</var>, <var>0x80000000</var>, <var>0x80000000</var>, <var>0x80000000</var> <i>//_sSIGN_MASK</i></td></tr>
+<tr><th id="138">138</th><td>        .align <var>16</var></td></tr>
+<tr><th id="139">139</th><td>        .<em>long</em> <var>0x7FFFFFFF</var>, <var>0x7FFFFFFF</var>, <var>0x7FFFFFFF</var>, <var>0x7FFFFFFF</var> <i>//_sABS_MASK</i></td></tr>
+<tr><th id="140">140</th><td>        .align <var>16</var></td></tr>
+<tr><th id="141">141</th><td>        .<em>long</em> <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var> <i>//_sONE</i></td></tr>
+<tr><th id="142">142</th><td>        .align <var>16</var></td></tr>
+<tr><th id="143">143</th><td>        .<em>long</em> <var>0x3FC90FDB</var>, <var>0x3FC90FDB</var>, <var>0x3FC90FDB</var>, <var>0x3FC90FDB</var> <i>//_sPIO2</i></td></tr>
+<tr><th id="144">144</th><td>        .align <var>16</var></td></tr>
+<tr><th id="145">145</th><td>        .<em>long</em> <var>0x3B322CC0</var>, <var>0x3B322CC0</var>, <var>0x3B322CC0</var>, <var>0x3B322CC0</var> <i>//_sPC8</i></td></tr>
+<tr><th id="146">146</th><td>        .align <var>16</var></td></tr>
+<tr><th id="147">147</th><td>        .<em>long</em> <var>0xBC7F2631</var>, <var>0xBC7F2631</var>, <var>0xBC7F2631</var>, <var>0xBC7F2631</var> <i>//_sPC7</i></td></tr>
+<tr><th id="148">148</th><td>        .align <var>16</var></td></tr>
+<tr><th id="149">149</th><td>        .<em>long</em> <var>0x3D2BC384</var>, <var>0x3D2BC384</var>, <var>0x3D2BC384</var>, <var>0x3D2BC384</var> <i>//_sPC6</i></td></tr>
+<tr><th id="150">150</th><td>        .align <var>16</var></td></tr>
+<tr><th id="151">151</th><td>        .<em>long</em> <var>0xBD987629</var>, <var>0xBD987629</var>, <var>0xBD987629</var>, <var>0xBD987629</var> <i>//_sPC5</i></td></tr>
+<tr><th id="152">152</th><td>        .align <var>16</var></td></tr>
+<tr><th id="153">153</th><td>        .<em>long</em> <var>0x3DD96474</var>, <var>0x3DD96474</var>, <var>0x3DD96474</var>, <var>0x3DD96474</var> <i>//_sPC4</i></td></tr>
+<tr><th id="154">154</th><td>        .align <var>16</var></td></tr>
+<tr><th id="155">155</th><td>        .<em>long</em> <var>0xBE1161F8</var>, <var>0xBE1161F8</var>, <var>0xBE1161F8</var>, <var>0xBE1161F8</var> <i>//_sPC3</i></td></tr>
+<tr><th id="156">156</th><td>        .align <var>16</var></td></tr>
+<tr><th id="157">157</th><td>        .<em>long</em> <var>0x3E4CB79F</var>, <var>0x3E4CB79F</var>, <var>0x3E4CB79F</var>, <var>0x3E4CB79F</var> <i>//_sPC2</i></td></tr>
+<tr><th id="158">158</th><td>        .align <var>16</var></td></tr>
+<tr><th id="159">159</th><td>        .<em>long</em> <var>0xBEAAAA49</var>, <var>0xBEAAAA49</var>, <var>0xBEAAAA49</var>, <var>0xBEAAAA49</var> <i>//_sPC1</i></td></tr>
+<tr><th id="160">160</th><td>        .align <var>16</var></td></tr>
+<tr><th id="161">161</th><td>        .<em>long</em> <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var> <i>//_sPC0</i></td></tr>
+<tr><th id="162">162</th><td>        .align <var>16</var></td></tr>
+<tr><th id="163">163</th><td>        .type	__svml_satan_data_internal,@object</td></tr>
+<tr><th id="164">164</th><td>        .size	__svml_satan_data_internal,.-__svml_satan_data_internal</td></tr>
+<tr><th id="165">165</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

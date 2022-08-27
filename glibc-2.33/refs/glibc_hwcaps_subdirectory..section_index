@@ -1,0 +1,10 @@
+<dec f='codebrowser/elf/cache.c' l='58' type='uint32_t'/>
+<use f='codebrowser/elf/cache.c' l='83' u='w' c='new_glibc_hwcaps_subdirectory'/>
+<use f='codebrowser/elf/cache.c' l='138' u='w' c='assign_glibc_hwcaps_indices'/>
+<use f='codebrowser/elf/cache.c' l='505' u='r' c='write_extensions'/>
+<use f='codebrowser/elf/cache.c' l='563' u='r' c='compute_hwcap_value'/>
+<offset>128</offset>
+<doc f='codebrowser/elf/cache.c' l='54'>/* Array index in the cache_extension_tag_glibc_hwcaps section in
+     the stored cached file.  This is computed after all the
+     subdirectories have been processed, so that subdirectory names in
+     the extension section can be sorted.  */</doc>

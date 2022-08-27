@@ -1,0 +1,33 @@
+<def f='codebrowser/elf/dl-find_object.h' l='34' ll='46'/>
+<use f='codebrowser/elf/dl-find_object.h' l='51' c='_dl_find_object_internal_copy'/>
+<use f='codebrowser/elf/dl-find_object.h' l='52' c='_dl_find_object_internal_copy'/>
+<use f='codebrowser/elf/dl-find_object.h' l='73' c='_dl_find_object_to_external'/>
+<use f='codebrowser/elf/dl-find_object.h' l='93' c='_dl_find_object_from_map'/>
+<size>32</size>
+<doc f='codebrowser/elf/dl-find_object.h' l='29'>/* Internal version of struct dl_find_object.  Does not include the
+   (yet unused) flags member.  We need to make a copy of data also in
+   struct link_map to support non-contiguous mappings, and to support
+   software transactional memory (the link map is not covered by
+   transactions).  */</doc>
+<mbr r='dl_find_object_internal::map_start' o='0' t='uintptr_t'/>
+<mbr r='dl_find_object_internal::map_end' o='64' t='uintptr_t'/>
+<mbr r='dl_find_object_internal::map' o='128' t='struct link_map *'/>
+<mbr r='dl_find_object_internal::eh_frame' o='192' t='void *'/>
+<use f='codebrowser/elf/dl-find_object.c' l='46' c='_dl_find_object_slow'/>
+<use f='codebrowser/elf/dl-find_object.c' l='62'/>
+<use f='codebrowser/elf/dl-find_object.c' l='72'/>
+<use f='codebrowser/elf/dl-find_object.c' l='121'/>
+<use f='codebrowser/elf/dl-find_object.c' l='318' c='_dlfo_lookup'/>
+<use f='codebrowser/elf/dl-find_object.c' l='319' c='_dlfo_lookup'/>
+<use f='codebrowser/elf/dl-find_object.c' l='321' c='_dlfo_lookup'/>
+<use f='codebrowser/elf/dl-find_object.c' l='324' c='_dlfo_lookup'/>
+<use f='codebrowser/elf/dl-find_object.c' l='328' c='_dlfo_lookup'/>
+<use f='codebrowser/elf/dl-find_object.c' l='382' c='_dl_find_object'/>
+<use f='codebrowser/elf/dl-find_object.c' l='431' c='_dl_find_object'/>
+<use f='codebrowser/elf/dl-find_object.c' l='438' c='_dl_find_object'/>
+<use f='codebrowser/elf/dl-find_object.c' l='480' c='_dlfo_process_initial'/>
+<use f='codebrowser/elf/dl-find_object.c' l='535' c='_dlfo_sort_mappings'/>
+<use f='codebrowser/elf/dl-find_object.c' l='553' c='_dlfo_sort_mappings'/>
+<use f='codebrowser/elf/dl-find_object.c' l='740' c='_dl_find_object_update_1'/>
+<use f='codebrowser/elf/dl-find_object.c' l='826' c='_dl_find_object_dlclose'/>
+<size>32</size>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='514' type='int __pthread_detach(pthread_t th)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='515' type='int __pthread_detach(pthread_t )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='515' c='__pthread_detach'/>
+<def f='codebrowser/nptl/pthread_detach.c' l='59' macro='1' type='int __pthread_detach(pthread_t )'/>
+<use f='codebrowser/sysdeps/pthread/thrd_detach.c' l='27' u='c' c='__thrd_detach'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='96' u='c' c='notification_function'/>

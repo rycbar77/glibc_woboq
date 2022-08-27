@@ -1,0 +1,9 @@
+<dec f='codebrowser/nis/rpcsvc/yp.h' l='89' type='char *'/>
+<use f='codebrowser/nis/yp_xdr.c' l='90' u='a' c='xdr_valdat'/>
+<use f='codebrowser/nis/yp_xdr.c' l='299' u='w' c='xdr_ypall'/>
+<use f='codebrowser/nis/yp_xdr.c' l='323' u='r' c='xdr_ypall'/>
+<offset>64</offset>
+<use f='codebrowser/nis/ypclnt.c' l='472' u='r' c='__GI_yp_match'/>
+<use f='codebrowser/nis/ypclnt.c' l='521' u='r' c='__GI_yp_first'/>
+<use f='codebrowser/nis/ypclnt.c' l='578' u='r' c='__GI_yp_next'/>
+<use f='codebrowser/nis/ypclnt.c' l='700' u='r' c='__xdr_ypresp_all'/>

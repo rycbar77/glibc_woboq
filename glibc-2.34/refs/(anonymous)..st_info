@@ -1,0 +1,21 @@
+<dec f='codebrowser/elf/elf.h' l='522' type='unsigned char'/>
+<dec f='codebrowser/elf/elf.h' l='530' type='unsigned char'/>
+<offset>32</offset>
+<doc f='codebrowser/elf/elf.h' l='522'>/* Symbol type and binding */</doc>
+<doc f='codebrowser/elf/elf.h' l='530'>/* Symbol type and binding */</doc>
+<use f='codebrowser/elf/dl-addr.c' l='64' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='88' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='89' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='91' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-lookup-direct.c' l='35' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='70' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='530' u='r' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='862' u='r' c='_dl_lookup_symbol_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='906' u='r' c='_dl_lookup_symbol_x'/>
+<use f='codebrowser/elf/dl-sym-post.h' l='41' u='r' c='_dl_sym_post'/>
+<use f='codebrowser/elf/dl-minimal.c' l='81' u='r' c='lookup_malloc_symbol'/>
+<use f='codebrowser/elf/dl-minimal.c' l='81' u='r' c='lookup_malloc_symbol'/>
+<use f='codebrowser/elf/dl-runtime.c' l='138' u='r' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='275' u='r' c='_dl_profile_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='285' u='r' c='_dl_profile_fixup'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso.h' l='46' u='w' c='dl_vdso_vsym'/>

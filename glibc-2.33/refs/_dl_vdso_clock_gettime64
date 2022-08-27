@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso-setup.c' l='49' type='int (*)(clockid_t, struct timespec *)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso-setup.h' l='30' macro='1' u='w' c='setup_vdso_pointers'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_gettime.c' l='41' macro='1' c='__clock_gettime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_gettime.c' l='41' macro='1' u='r' c='__clock_gettime'/>

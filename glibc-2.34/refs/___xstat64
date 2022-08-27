@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/xstat64.c' l='33' ll='81' type='int ___xstat64(int vers, const char * name, struct stat64 * buf)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/xstat64.c' l='84' c='__xstat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/xstat64.c' l='92' c='__xstat64'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/xstat64.c' l='31'>/* Get information about the file NAME in BUF.  */</doc>

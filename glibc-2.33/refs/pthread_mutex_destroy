@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='763' type='int pthread_mutex_destroy(pthread_mutex_t * __mutex)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='762'>/* Destroy a mutex.  */</doc>
+<def f='codebrowser/nptl/forward.c' l='111' macro='1' type='int pthread_mutex_destroy(pthread_mutex_t * mutex)'/>
+<def f='codebrowser/nptl/pthread_mutex_destroy.c' l='44' macro='1' type='int pthread_mutex_destroy(pthread_mutex_t * )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='123' c='__gthrw_pthread_mutex_destroy'/>
+<use f='codebrowser/support/xpthread_mutex_destroy.c' l='25' u='c' c='xpthread_mutex_destroy'/>

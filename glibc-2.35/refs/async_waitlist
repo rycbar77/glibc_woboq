@@ -1,0 +1,15 @@
+<def f='codebrowser/resolv/getaddrinfo_a.c' l='28' ll='33'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='145' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='147' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='148' c='__getaddrinfo_a'/>
+<size>72</size>
+<doc f='codebrowser/resolv/getaddrinfo_a.c' l='27'>/* We need this special structure to handle asynchronous I/O.  */</doc>
+<def f='codebrowser/rt/lio_listio-common.c' l='52' ll='57'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='186' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='188' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='189' c='lio_listio_internal'/>
+<size>72</size>
+<doc f='codebrowser/rt/lio_listio-common.c' l='51'>/* We need this special structure to handle asynchronous I/O.  */</doc>
+<mbr r='async_waitlist::counter' o='0' t='unsigned int'/>
+<mbr r='async_waitlist::sigev' o='64' t='struct sigevent'/>
+<mbr r='async_waitlist::list' o='576' t='struct waitlist[0]'/>

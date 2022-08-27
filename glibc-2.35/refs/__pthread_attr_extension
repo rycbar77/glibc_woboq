@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='672' type='int __pthread_attr_extension(struct pthread_attr * attr)'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='669'>/* Allocates the extension space for ATTR.  Returns an error code on
+   memory allocation failure, zero on success.  If ATTR already has an
+   extension space, this function does nothing.  */</doc>
+<def f='codebrowser/nptl/pthread_attr_extension.c' l='23' ll='32' type='int __pthread_attr_extension(struct pthread_attr * attr)'/>
+<use f='codebrowser/nptl/pthread_attr_setaffinity.c' l='45' u='c' c='__pthread_attr_setaffinity_np'/>
+<use f='codebrowser/nptl/pthread_attr_setsigmask_internal.c' l='36' u='c' c='__pthread_attr_setsigmask_internal'/>

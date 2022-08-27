@@ -1,0 +1,36 @@
+<dec f='codebrowser/resolv/netdb.h' l='100' type='char *'/>
+<offset>0</offset>
+<doc f='codebrowser/resolv/netdb.h' l='100'>/* Official name of host.  */</doc>
+<use f='codebrowser/inet/getnameinfo.c' l='119' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='149' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='172' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='283' u='r' c='gni_host_inet_name'/>
+<use f='codebrowser/inet/getnameinfo.c' l='284' u='r' c='gni_host_inet_name'/>
+<use f='codebrowser/inet/getnameinfo.c' l='293' u='r' c='gni_host_inet_name'/>
+<use f='codebrowser/inet/getnameinfo.c' l='301' u='r' c='gni_host_inet_name'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='276' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='300' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='351' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='404' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nss/digits_dots.c' l='178' u='w' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nss/digits_dots.c' l='270' u='w' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='94' u='w' c='parse_line'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='181' u='r' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='236' u='r' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='237' u='r' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='343' u='r' c='_nss_files_gethostbyname3_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='355' u='r' c='_nss_files_gethostbyname3_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='410' u='r' c='_nss_files_gethostbyname4_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='459' u='r' c='_nss_files_gethostbyname4_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='662' u='w' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='733' u='w' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='739' u='r' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='833' u='w' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='904' u='w' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='909' u='r' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='939' u='w' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='984' u='r' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='991' u='w' c='getanswer_r'/>
+<use f='codebrowser/resolv/res_hconf.c' l='568' u='r' c='_res_hconf_trim_domains'/>
+<use f='codebrowser/support/support_format_hostent.c' l='60' u='r' c='support_format_hostent'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='235' u='r' c='convert_hostent_to_gaih_addrtuple'/>

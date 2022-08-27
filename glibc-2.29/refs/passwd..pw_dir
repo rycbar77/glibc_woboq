@@ -1,0 +1,20 @@
+<dec f='codebrowser/pwd/pwd.h' l='57' type='char *'/>
+<offset>256</offset>
+<doc f='codebrowser/pwd/pwd.h' l='57'>/* Home directory.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='552' u='r' c='ruserok2_sa'/>
+<use f='codebrowser/inet/rcmd.c' l='554' u='r' c='ruserok2_sa'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='159' u='w' c='nscd_getpw_r'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='198' u='r' c='nscd_getpw_r'/>
+<use f='codebrowser/posix/wordexp.c' l='330' u='r' c='parse_tilde'/>
+<use f='codebrowser/posix/wordexp.c' l='332' u='r' c='parse_tilde'/>
+<use f='codebrowser/posix/wordexp.c' l='366' u='r' c='parse_tilde'/>
+<use f='codebrowser/posix/wordexp.c' l='367' u='r' c='parse_tilde'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='47' u='w' c='_nss_files_parse_pwent'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='64' u='w' c='_nss_files_parse_pwent'/>
+<use f='codebrowser/pwd/getpw.c' l='55' u='r' c='__getpw'/>
+<use f='codebrowser/pwd/putpwent.c' l='35' u='r' c='putpwent'/>
+<use f='codebrowser/pwd/putpwent.c' l='52' u='r' c='putpwent'/>
+<use f='codebrowser/pwd/putpwent.c' l='58' u='r' c='putpwent'/>
+<use f='codebrowser/posix/glob.c' l='663' u='r' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='828' u='r' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='850' u='r' c='__glob_lstat_compat'/>

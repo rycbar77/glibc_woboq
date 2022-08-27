@@ -1,0 +1,14 @@
+<dec f='codebrowser/elf/dl-static-tls.h' l='48' type='int _dl_try_allocate_static_tls(struct link_map * map, _Bool optional)'/>
+<def f='codebrowser/elf/dl-reloc.c' l='50' ll='127' type='int _dl_try_allocate_static_tls(struct link_map * map, _Bool optional)'/>
+<use f='codebrowser/elf/dl-reloc.c' l='137' u='c' c='_dl_allocate_static_tls'/>
+<doc f='codebrowser/elf/dl-reloc.c' l='39'>/* We are trying to perform a static TLS relocation in MAP, but it was
+   dynamically loaded.  This can only work if there is enough surplus in
+   the static TLS area already allocated for each running thread.  If this
+   object&apos;s TLS segment is too big to fit, we fail with -1.  If it fits,
+   we set MAP-&gt;l_tls_offset and return 0.
+   A portion of the surplus static TLS can be optionally used to optimize
+   dynamic TLS access (with TLSDESC or powerpc TLS optimizations).
+   If OPTIONAL is true then TLS is allocated for such optimization and
+   the caller must have a fallback in case the optional portion of surplus
+   TLS runs out.  If OPTIONAL is false then the entire surplus TLS area is
+   considered and the allocation only fails if that runs out.  */</doc>

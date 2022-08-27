@@ -1,0 +1,4 @@
+<dec f='codebrowser/time/time.h' l='339' type='int clock_getres(clockid_t __clock_id, struct timespec * __res)'/>
+<use f='codebrowser/include/time.h' l='22' c='__clock_getres'/>
+<doc f='codebrowser/time/time.h' l='338'>/* Get resolution of clock CLOCK_ID.  */</doc>
+<def f='codebrowser/sysdeps/posix/clock_getres.c' l='118' macro='1' type='int clock_getres(clockid_t , struct timespec * )'/>

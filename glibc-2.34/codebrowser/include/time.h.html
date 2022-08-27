@@ -1,0 +1,553 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>time.h source code [codebrowser/include/time.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="__timeval32 "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/include/time.h'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>include</a>/<a href='time.h.html'>time.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/_TIME_H">_TIME_H</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#include <a href="../time/time.h.html">&lt;time/time.h&gt;</a></u></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#<span data-ppcond="4">ifndef</span> <span class="macro" data-ref="_M/_ISOMAC">_ISOMAC</span></u></td></tr>
+<tr><th id="5">5</th><td><u># include <a href="bits/types/struct_timeval.h.html">&lt;bits/types/struct_timeval.h&gt;</a></u></td></tr>
+<tr><th id="6">6</th><td><u># include <a href="struct___timespec64.h.html">&lt;struct___timespec64.h&gt;</a></u></td></tr>
+<tr><th id="7">7</th><td><u># include <a href="struct___timeval64.h.html">&lt;struct___timeval64.h&gt;</a></u></td></tr>
+<tr><th id="8">8</th><td><u># include <a href="bits/types/locale_t.h.html">&lt;bits/types/locale_t.h&gt;</a></u></td></tr>
+<tr><th id="9">9</th><td><u># include &lt;stdbool.h&gt;</u></td></tr>
+<tr><th id="10">10</th><td><u># include <a href="../time/mktime-internal.h.html">&lt;time/mktime-internal.h&gt;</a></u></td></tr>
+<tr><th id="11">11</th><td><u># include <a href="sys/time.h.html">&lt;sys/time.h&gt;</a></u></td></tr>
+<tr><th id="12">12</th><td><u># include <a href="../sysdeps/unix/sysv/linux/time-clockid.h.html">&lt;time-clockid.h&gt;</a></u></td></tr>
+<tr><th id="13">13</th><td><u># include <a href="sys/time.h.html">&lt;sys/time.h&gt;</a></u></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><b>extern</b> <b>__typeof</b> (<a class="ref fn" href="../time/time.h.html#strftime_l" title='strftime_l' data-ref="strftime_l" data-ref-filename="strftime_l">strftime_l</a>) <dfn class="decl fn" id="__strftime_l" title='__strftime_l' data-ref="__strftime_l" data-ref-filename="__strftime_l">__strftime_l</dfn>;</td></tr>
+<tr><th id="16">16</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (__strftime_l) __strftime_l __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__strftime_l" title='__strftime_l' data-ref="__strftime_l" data-ref-filename="__strftime_l"><a class="ref fn" href="#__strftime_l" title='__strftime_l' data-ref="__strftime_l" data-ref-filename="__strftime_l">__strftime_l</a></a>)</td></tr>
+<tr><th id="17">17</th><td><b>extern</b> <b>__typeof</b> (<a class="ref fn" href="../time/time.h.html#strptime_l" title='strptime_l' data-ref="strptime_l" data-ref-filename="strptime_l">strptime_l</a>) <dfn class="decl fn" id="__strptime_l" title='__strptime_l' data-ref="__strptime_l" data-ref-filename="__strptime_l">__strptime_l</dfn>;</td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (asctime) asctime __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="../time/time.h.html#asctime" title='asctime' data-ref="asctime" data-ref-filename="asctime" id="asctime"><a class="ref fn" href="../time/time.h.html#asctime" title='asctime' data-ref="asctime" data-ref-filename="asctime">asctime</a></a>)</td></tr>
+<tr><th id="20">20</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (mktime) mktime __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="../time/time.h.html#mktime" title='mktime' data-ref="mktime" data-ref-filename="mktime" id="mktime"><a class="ref fn" href="../time/time.h.html#mktime" title='mktime' data-ref="mktime" data-ref-filename="mktime">mktime</a></a>)</td></tr>
+<tr><th id="21">21</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (timelocal) timelocal __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="../time/time.h.html#timelocal" title='timelocal' data-ref="timelocal" data-ref-filename="timelocal" id="timelocal"><a class="ref fn" href="../time/time.h.html#timelocal" title='timelocal' data-ref="timelocal" data-ref-filename="timelocal">timelocal</a></a>)</td></tr>
+<tr><th id="22">22</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (localtime) localtime __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="../time/time.h.html#localtime" title='localtime' data-ref="localtime" data-ref-filename="localtime" id="localtime"><a class="ref fn" href="../time/time.h.html#localtime" title='localtime' data-ref="localtime" data-ref-filename="localtime">localtime</a></a>)</td></tr>
+<tr><th id="23">23</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (strftime) strftime __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="../time/time.h.html#strftime" title='strftime' data-ref="strftime" data-ref-filename="strftime" id="strftime"><a class="ref fn" href="../time/time.h.html#strftime" title='strftime' data-ref="strftime" data-ref-filename="strftime">strftime</a></a>)</td></tr>
+<tr><th id="24">24</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (strptime) strptime __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="../time/time.h.html#strptime" title='strptime' data-ref="strptime" data-ref-filename="strptime" id="strptime"><a class="ref fn" href="../time/time.h.html#strptime" title='strptime' data-ref="strptime" data-ref-filename="strptime">strptime</a></a>)</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><b>extern</b> <b>__typeof</b> (<a class="ref fn" href="../time/time.h.html#clock_gettime" title='clock_gettime' data-ref="clock_gettime" data-ref-filename="clock_gettime">clock_gettime</a>) <dfn class="decl fn" id="__clock_gettime" title='__clock_gettime' data-ref="__clock_gettime" data-ref-filename="__clock_gettime">__clock_gettime</dfn>;</td></tr>
+<tr><th id="27">27</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (__clock_gettime) __clock_gettime __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__clock_gettime" title='__clock_gettime' data-ref="__clock_gettime" data-ref-filename="__clock_gettime"><a class="ref fn" href="#__clock_gettime" title='__clock_gettime' data-ref="__clock_gettime" data-ref-filename="__clock_gettime">__clock_gettime</a></a>)</td></tr>
+<tr><th id="28">28</th><td><b>extern</b> <b>__typeof</b> (<a class="ref fn" href="../time/time.h.html#clock_settime" title='clock_settime' data-ref="clock_settime" data-ref-filename="clock_settime">clock_settime</a>) <dfn class="decl fn" id="__clock_settime" title='__clock_settime' data-ref="__clock_settime" data-ref-filename="__clock_settime">__clock_settime</dfn>;</td></tr>
+<tr><th id="29">29</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (__clock_settime) __clock_settime __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__clock_settime" title='__clock_settime' data-ref="__clock_settime" data-ref-filename="__clock_settime"><a class="ref fn" href="#__clock_settime" title='__clock_settime' data-ref="__clock_settime" data-ref-filename="__clock_settime">__clock_settime</a></a>)</td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><b>extern</b> <b>__typeof</b> (<a class="ref fn" href="../time/time.h.html#clock_getres" title='clock_getres' data-ref="clock_getres" data-ref-filename="clock_getres">clock_getres</a>) <dfn class="decl fn" id="__clock_getres" title='__clock_getres' data-ref="__clock_getres" data-ref-filename="__clock_getres">__clock_getres</dfn>;</td></tr>
+<tr><th id="32">32</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (__clock_getres) __clock_getres __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__clock_getres" title='__clock_getres' data-ref="__clock_getres" data-ref-filename="__clock_getres"><a class="ref fn" href="#__clock_getres" title='__clock_getres' data-ref="__clock_getres" data-ref-filename="__clock_getres">__clock_getres</a></a>)</td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><b>extern</b> <b>__typeof</b> (<a class="ref fn" href="../time/time.h.html#clock_nanosleep" title='clock_nanosleep' data-ref="clock_nanosleep" data-ref-filename="clock_nanosleep">clock_nanosleep</a>) <dfn class="decl fn" id="__clock_nanosleep" title='__clock_nanosleep' data-ref="__clock_nanosleep" data-ref-filename="__clock_nanosleep">__clock_nanosleep</dfn>;</td></tr>
+<tr><th id="35">35</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (__clock_nanosleep) __clock_nanosleep __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__clock_nanosleep" title='__clock_nanosleep' data-ref="__clock_nanosleep" data-ref-filename="__clock_nanosleep"><a class="ref fn" href="#__clock_nanosleep" title='__clock_nanosleep' data-ref="__clock_nanosleep" data-ref-filename="__clock_nanosleep">__clock_nanosleep</a></a>);</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="37">ifdef</span> <span class="macro" data-ref="_M/__linux__">__linux__</span></u></td></tr>
+<tr><th id="38">38</th><td><b>extern</b> <b>__typeof</b> (<a class="ref fn" href="../sysdeps/unix/sysv/linux/bits/time.h.html#clock_adjtime" title='clock_adjtime' data-ref="clock_adjtime" data-ref-filename="clock_adjtime">clock_adjtime</a>) <dfn class="decl fn" id="__clock_adjtime" title='__clock_adjtime' data-ref="__clock_adjtime" data-ref-filename="__clock_adjtime">__clock_adjtime</dfn>;</td></tr>
+<tr><th id="39">39</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (__clock_adjtime) __clock_adjtime __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__clock_adjtime" title='__clock_adjtime' data-ref="__clock_adjtime" data-ref-filename="__clock_adjtime"><a class="ref fn" href="#__clock_adjtime" title='__clock_adjtime' data-ref="__clock_adjtime" data-ref-filename="__clock_adjtime">__clock_adjtime</a></a>);</td></tr>
+<tr><th id="40">40</th><td><u>#<span data-ppcond="37">endif</span></u></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><i>/* Now define the internal interfaces.  */</i></td></tr>
+<tr><th id="43">43</th><td><b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm" id="tm">tm</a>;</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><i>/* Defined in mktime.c.  */</i></td></tr>
+<tr><th id="46">46</th><td><b>extern</b> <em>const</em> <em>unsigned</em> <em>short</em> <em>int</em> <dfn class="decl" id="__mon_yday" title='__mon_yday' data-ref="__mon_yday" data-ref-filename="__mon_yday">__mon_yday</dfn>[<var>2</var>][<var>13</var>] <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><i>/* Defined in localtime.c.  */</i></td></tr>
+<tr><th id="49">49</th><td><b>extern</b> <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> <dfn class="decl" id="_tmbuf" title='_tmbuf' data-ref="_tmbuf" data-ref-filename="_tmbuf">_tmbuf</dfn> <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><i>/* Defined in tzset.c.  */</i></td></tr>
+<tr><th id="52">52</th><td><b>extern</b> <em>char</em> *<dfn class="decl fn" id="__tzstring" title='__tzstring' data-ref="__tzstring" data-ref-filename="__tzstring">__tzstring</dfn> (<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="481string" title='string' data-type='const char *' data-ref="481string" data-ref-filename="481string">string</dfn>) <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><b>extern</b> <em>int</em> <dfn class="decl" id="__use_tzfile" title='__use_tzfile' data-ref="__use_tzfile" data-ref-filename="__use_tzfile">__use_tzfile</dfn> <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><b>extern</b> <em>void</em> <dfn class="decl fn" id="__tzfile_read" title='__tzfile_read' data-ref="__tzfile_read" data-ref-filename="__tzfile_read">__tzfile_read</dfn> (<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="482file" title='file' data-type='const char *' data-ref="482file" data-ref-filename="482file">file</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col3 decl" id="483extra" title='extra' data-type='size_t' data-ref="483extra" data-ref-filename="483extra">extra</dfn>,</td></tr>
+<tr><th id="57">57</th><td>			   <em>char</em> **<dfn class="local col4 decl" id="484extrap" title='extrap' data-type='char **' data-ref="484extrap" data-ref-filename="484extrap">extrap</dfn>) <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="58">58</th><td><b>extern</b> <em>void</em> <dfn class="decl fn" id="__tzfile_compute" title='__tzfile_compute' data-ref="__tzfile_compute" data-ref-filename="__tzfile_compute">__tzfile_compute</dfn> (<a class="macro" href="../time/mktime-internal.h.html#46" title="time_t" data-ref="_M/__time64_t">__time64_t</a> <dfn class="local col5 decl" id="485timer" title='timer' data-type='time_t' data-ref="485timer" data-ref-filename="485timer">timer</dfn>, <em>int</em> <dfn class="local col6 decl" id="486use_localtime" title='use_localtime' data-type='int' data-ref="486use_localtime" data-ref-filename="486use_localtime">use_localtime</dfn>,</td></tr>
+<tr><th id="59">59</th><td>			      <em>long</em> <em>int</em> *<dfn class="local col7 decl" id="487leap_correct" title='leap_correct' data-type='long *' data-ref="487leap_correct" data-ref-filename="487leap_correct">leap_correct</dfn>, <em>int</em> *<dfn class="local col8 decl" id="488leap_hit" title='leap_hit' data-type='int *' data-ref="488leap_hit" data-ref-filename="488leap_hit">leap_hit</dfn>,</td></tr>
+<tr><th id="60">60</th><td>			      <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<dfn class="local col9 decl" id="489tp" title='tp' data-type='struct tm *' data-ref="489tp" data-ref-filename="489tp">tp</dfn>) <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="61">61</th><td><b>extern</b> <em>void</em> <dfn class="decl fn" id="__tzfile_default" title='__tzfile_default' data-ref="__tzfile_default" data-ref-filename="__tzfile_default">__tzfile_default</dfn> (<em>const</em> <em>char</em> *<dfn class="local col0 decl" id="490std" title='std' data-type='const char *' data-ref="490std" data-ref-filename="490std">std</dfn>, <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="491dst" title='dst' data-type='const char *' data-ref="491dst" data-ref-filename="491dst">dst</dfn>,</td></tr>
+<tr><th id="62">62</th><td>			      <em>int</em> <dfn class="local col2 decl" id="492stdoff" title='stdoff' data-type='int' data-ref="492stdoff" data-ref-filename="492stdoff">stdoff</dfn>, <em>int</em> <dfn class="local col3 decl" id="493dstoff" title='dstoff' data-type='int' data-ref="493dstoff" data-ref-filename="493dstoff">dstoff</dfn>)</td></tr>
+<tr><th id="63">63</th><td>  <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="64">64</th><td><b>extern</b> <em>void</em> <dfn class="decl fn" id="__tzset_parse_tz" title='__tzset_parse_tz' data-ref="__tzset_parse_tz" data-ref-filename="__tzset_parse_tz">__tzset_parse_tz</dfn> (<em>const</em> <em>char</em> *<dfn class="local col4 decl" id="494tz" title='tz' data-type='const char *' data-ref="494tz" data-ref-filename="494tz">tz</dfn>) <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="65">65</th><td><b>extern</b> <em>void</em> <dfn class="decl fn" id="__tz_compute" title='__tz_compute' data-ref="__tz_compute" data-ref-filename="__tz_compute">__tz_compute</dfn> (<a class="macro" href="../time/mktime-internal.h.html#46" title="time_t" data-ref="_M/__time64_t">__time64_t</a> <dfn class="local col5 decl" id="495timer" title='timer' data-type='time_t' data-ref="495timer" data-ref-filename="495timer">timer</dfn>, <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<dfn class="local col6 decl" id="496tm" title='tm' data-type='struct tm *' data-ref="496tm" data-ref-filename="496tm">tm</dfn>, <em>int</em> <dfn class="local col7 decl" id="497use_localtime" title='use_localtime' data-type='int' data-ref="497use_localtime" data-ref-filename="497use_localtime">use_localtime</dfn>)</td></tr>
+<tr><th id="66">66</th><td>  <a class="macro" href="../misc/sys/cdefs.h.html#78" title="__attribute__ ((__nothrow__ ))" data-ref="_M/__THROW">__THROW</a> <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><u>#<span data-ppcond="69">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="70">70</th><td><u># define <dfn class="macro" id="_M/__itimerspec64" data-ref="_M/__itimerspec64">__itimerspec64</dfn> itimerspec</u></td></tr>
+<tr><th id="71">71</th><td><u>#<span data-ppcond="69">else</span></u></td></tr>
+<tr><th id="72">72</th><td><i>/* The glibc's internal representation of the struct itimerspec.  */</i></td></tr>
+<tr><th id="73">73</th><td><b>struct</b> __itimerspec64</td></tr>
+<tr><th id="74">74</th><td>{</td></tr>
+<tr><th id="75">75</th><td>  <b>struct</b> __timespec64 it_interval;</td></tr>
+<tr><th id="76">76</th><td>  <b>struct</b> __timespec64 it_value;</td></tr>
+<tr><th id="77">77</th><td>};</td></tr>
+<tr><th id="78">78</th><td><u>#<span data-ppcond="69">endif</span></u></td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><u>#<span data-ppcond="80">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="81">81</th><td><u># define <dfn class="macro" id="_M/__utimbuf64" data-ref="_M/__utimbuf64">__utimbuf64</dfn> utimbuf</u></td></tr>
+<tr><th id="82">82</th><td><u># define <dfn class="macro" id="_M/__itimerval64" data-ref="_M/__itimerval64">__itimerval64</dfn> itimerval</u></td></tr>
+<tr><th id="83">83</th><td><u>#<span data-ppcond="80">else</span></u></td></tr>
+<tr><th id="84">84</th><td><i>/* The glibc Y2038-proof struct __utimbuf64 structure for file's access</i></td></tr>
+<tr><th id="85">85</th><td><i>   and modification time values.  */</i></td></tr>
+<tr><th id="86">86</th><td><b>struct</b> __utimbuf64</td></tr>
+<tr><th id="87">87</th><td>{</td></tr>
+<tr><th id="88">88</th><td>  __time64_t actime;		<i>/* Access time.  */</i></td></tr>
+<tr><th id="89">89</th><td>  __time64_t modtime;		<i>/* Modification time.  */</i></td></tr>
+<tr><th id="90">90</th><td>};</td></tr>
+<tr><th id="91">91</th><td><i>/* The glibc's internal representation of the struct itimerval.  */</i></td></tr>
+<tr><th id="92">92</th><td><b>struct</b> __itimerval64</td></tr>
+<tr><th id="93">93</th><td>{</td></tr>
+<tr><th id="94">94</th><td>  <b>struct</b> __timeval64 it_interval;</td></tr>
+<tr><th id="95">95</th><td>  <b>struct</b> __timeval64 it_value;</td></tr>
+<tr><th id="96">96</th><td>};</td></tr>
+<tr><th id="97">97</th><td><u>#<span data-ppcond="80">endif</span></u></td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><u>#<span data-ppcond="99">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="100">100</th><td><u># define <dfn class="macro" id="_M/__getitimer64" data-ref="_M/__getitimer64">__getitimer64</dfn> __getitimer</u></td></tr>
+<tr><th id="101">101</th><td><u># define <dfn class="macro" id="_M/__setitimer64" data-ref="_M/__setitimer64">__setitimer64</dfn> __setitimer</u></td></tr>
+<tr><th id="102">102</th><td><u>#<span data-ppcond="99">else</span></u></td></tr>
+<tr><th id="103">103</th><td><b>extern</b> <em>int</em> __getitimer64 (<b>enum</b> __itimer_which __which,</td></tr>
+<tr><th id="104">104</th><td>                          <b>struct</b> __itimerval64 *__value);</td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td>libc_hidden_proto (__getitimer64)</td></tr>
+<tr><th id="107">107</th><td><b>extern</b> <em>int</em> __setitimer64 (<b>enum</b> __itimer_which __which,</td></tr>
+<tr><th id="108">108</th><td>                          <em>const</em> <b>struct</b> __itimerval64 *<b>__restrict</b> __new,</td></tr>
+<tr><th id="109">109</th><td>                          <b>struct</b> __itimerval64 *<b>__restrict</b> __old);</td></tr>
+<tr><th id="110">110</th><td>libc_hidden_proto (__setitimer64)</td></tr>
+<tr><th id="111">111</th><td><u>#<span data-ppcond="99">endif</span></u></td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td><u>#<span data-ppcond="113">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="114">114</th><td><u># define <dfn class="macro" id="_M/__ctime64" data-ref="_M/__ctime64">__ctime64</dfn> ctime</u></td></tr>
+<tr><th id="115">115</th><td><u>#<span data-ppcond="113">else</span></u></td></tr>
+<tr><th id="116">116</th><td><b>extern</b> <em>char</em> *__ctime64 (<em>const</em> __time64_t *__timer) __THROW;</td></tr>
+<tr><th id="117">117</th><td>libc_hidden_proto (__ctime64)</td></tr>
+<tr><th id="118">118</th><td><u>#<span data-ppcond="113">endif</span></u></td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><u>#<span data-ppcond="120">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="121">121</th><td><u># define <dfn class="macro" id="_M/__ctime64_r" data-ref="_M/__ctime64_r">__ctime64_r</dfn> ctime_r</u></td></tr>
+<tr><th id="122">122</th><td><u>#<span data-ppcond="120">else</span></u></td></tr>
+<tr><th id="123">123</th><td><b>extern</b> <em>char</em> *__ctime64_r (<em>const</em> __time64_t *<b>__restrict</b> __timer,</td></tr>
+<tr><th id="124">124</th><td>		          <em>char</em> *<b>__restrict</b> __buf) __THROW;</td></tr>
+<tr><th id="125">125</th><td>libc_hidden_proto (__ctime64_r)</td></tr>
+<tr><th id="126">126</th><td><u>#<span data-ppcond="120">endif</span></u></td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td><u>#<span data-ppcond="128">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="129">129</th><td><u># define <dfn class="macro" id="_M/__localtime64" data-ref="_M/__localtime64">__localtime64</dfn> localtime</u></td></tr>
+<tr><th id="130">130</th><td><u>#<span data-ppcond="128">else</span></u></td></tr>
+<tr><th id="131">131</th><td><b>extern</b> <b>struct</b> tm *__localtime64 (<em>const</em> __time64_t *__timer);</td></tr>
+<tr><th id="132">132</th><td>libc_hidden_proto (__localtime64)</td></tr>
+<tr><th id="133">133</th><td><u>#<span data-ppcond="128">endif</span></u></td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td><b>extern</b> <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<dfn class="decl fn" id="__localtime_r" title='__localtime_r' data-ref="__localtime_r" data-ref-filename="__localtime_r">__localtime_r</dfn> (<em>const</em> <a class="typedef" href="../time/bits/types/time_t.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t" data-ref-filename="time_t">time_t</a> *<dfn class="local col8 decl" id="498__timer" title='__timer' data-type='const time_t *' data-ref="498__timer" data-ref-filename="498__timer">__timer</dfn>,</td></tr>
+<tr><th id="136">136</th><td>				 <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<dfn class="local col9 decl" id="499__tp" title='__tp' data-type='struct tm *' data-ref="499__tp" data-ref-filename="499__tp">__tp</dfn>) <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="137">137</th><td><u>#<span data-ppcond="137">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> != 64</u></td></tr>
+<tr><th id="138">138</th><td><b>extern</b> <b>struct</b> tm *__localtime64_r (<em>const</em> __time64_t *__timer,</td></tr>
+<tr><th id="139">139</th><td>				   <b>struct</b> tm *__tp);</td></tr>
+<tr><th id="140">140</th><td>libc_hidden_proto (__localtime64_r)</td></tr>
+<tr><th id="141">141</th><td></td></tr>
+<tr><th id="142">142</th><td><b>extern</b> __time64_t __mktime64 (<b>struct</b> tm *__tp) __THROW;</td></tr>
+<tr><th id="143">143</th><td>libc_hidden_proto (__mktime64)</td></tr>
+<tr><th id="144">144</th><td><u>#<span data-ppcond="137">endif</span></u></td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td><b>extern</b> <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<dfn class="decl fn" id="__gmtime_r" title='__gmtime_r' data-ref="__gmtime_r" data-ref-filename="__gmtime_r">__gmtime_r</dfn> (<em>const</em> <a class="typedef" href="../time/bits/types/time_t.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t" data-ref-filename="time_t">time_t</a> *<b>__restrict</b> <dfn class="local col0 decl" id="500__timer" title='__timer' data-type='const time_t *restrict' data-ref="500__timer" data-ref-filename="500__timer">__timer</dfn>,</td></tr>
+<tr><th id="147">147</th><td>			      <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<b>__restrict</b> <dfn class="local col1 decl" id="501__tp" title='__tp' data-type='struct tm *restrict' data-ref="501__tp" data-ref-filename="501__tp">__tp</dfn>);</td></tr>
+<tr><th id="148">148</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (__gmtime_r) __gmtime_r __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__gmtime_r" title='__gmtime_r' data-ref="__gmtime_r" data-ref-filename="__gmtime_r"><a class="ref fn" href="#__gmtime_r" title='__gmtime_r' data-ref="__gmtime_r" data-ref-filename="__gmtime_r">__gmtime_r</a></a>)</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td><u>#<span data-ppcond="150">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="151">151</th><td><u># define <dfn class="macro" id="_M/__gmtime64" data-ref="_M/__gmtime64">__gmtime64</dfn> gmtime</u></td></tr>
+<tr><th id="152">152</th><td><u>#<span data-ppcond="150">else</span></u></td></tr>
+<tr><th id="153">153</th><td><b>extern</b> <b>struct</b> tm *__gmtime64 (<em>const</em> __time64_t *__timer);</td></tr>
+<tr><th id="154">154</th><td>libc_hidden_proto (__gmtime64)</td></tr>
+<tr><th id="155">155</th><td></td></tr>
+<tr><th id="156">156</th><td><b>extern</b> <b>struct</b> tm *__gmtime64_r (<em>const</em> __time64_t *<b>__restrict</b> __timer,</td></tr>
+<tr><th id="157">157</th><td>				<b>struct</b> tm *<b>__restrict</b> __tp);</td></tr>
+<tr><th id="158">158</th><td>libc_hidden_proto (__gmtime64_r)</td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td><b>extern</b> __time64_t __timegm64 (<b>struct</b> tm *__tp) __THROW;</td></tr>
+<tr><th id="161">161</th><td>libc_hidden_proto (__timegm64)</td></tr>
+<tr><th id="162">162</th><td><u>#<span data-ppcond="150">endif</span></u></td></tr>
+<tr><th id="163">163</th><td></td></tr>
+<tr><th id="164">164</th><td><u>#<span data-ppcond="164">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="165">165</th><td><u># define <dfn class="macro" id="_M/__clock_settime64" data-ref="_M/__clock_settime64">__clock_settime64</dfn> __clock_settime</u></td></tr>
+<tr><th id="166">166</th><td><u>#<span data-ppcond="164">else</span></u></td></tr>
+<tr><th id="167">167</th><td><b>extern</b> <em>int</em> __clock_settime64 (clockid_t clock_id,</td></tr>
+<tr><th id="168">168</th><td>                              <em>const</em> <b>struct</b> __timespec64 *tp);</td></tr>
+<tr><th id="169">169</th><td>libc_hidden_proto (__clock_settime64)</td></tr>
+<tr><th id="170">170</th><td><u>#<span data-ppcond="164">endif</span></u></td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td><u>#<span data-ppcond="172">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="173">173</th><td><u># define <dfn class="macro" id="_M/__clock_getres64" data-ref="_M/__clock_getres64">__clock_getres64</dfn> __clock_getres</u></td></tr>
+<tr><th id="174">174</th><td><u>#<span data-ppcond="172">else</span></u></td></tr>
+<tr><th id="175">175</th><td><b>extern</b> <em>int</em> __clock_getres64 (clockid_t clock_id,</td></tr>
+<tr><th id="176">176</th><td>                             <b>struct</b> __timespec64 *tp);</td></tr>
+<tr><th id="177">177</th><td>libc_hidden_proto (__clock_getres64);</td></tr>
+<tr><th id="178">178</th><td><u>#<span data-ppcond="172">endif</span></u></td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td><u>#<span data-ppcond="180">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="181">181</th><td><u># define <dfn class="macro" id="_M/__utime64" data-ref="_M/__utime64">__utime64</dfn> __utime</u></td></tr>
+<tr><th id="182">182</th><td><u># define <dfn class="macro" id="_M/__utimes64" data-ref="_M/__utimes64">__utimes64</dfn> __utimes</u></td></tr>
+<tr><th id="183">183</th><td><u># define <dfn class="macro" id="_M/__utimensat64" data-ref="_M/__utimensat64">__utimensat64</dfn> __utimensat</u></td></tr>
+<tr><th id="184">184</th><td><u>#<span data-ppcond="180">else</span></u></td></tr>
+<tr><th id="185">185</th><td><b>extern</b> <em>int</em> __utime64 (<em>const</em> <em>char</em> *file, <em>const</em> <b>struct</b> __utimbuf64 *times);</td></tr>
+<tr><th id="186">186</th><td>libc_hidden_proto (__utime64)</td></tr>
+<tr><th id="187">187</th><td><b>extern</b> <em>int</em> __utimes64 (<em>const</em> <em>char</em> *file, <em>const</em> <b>struct</b> __timeval64 tvp[<var>2</var>]);</td></tr>
+<tr><th id="188">188</th><td>libc_hidden_proto (__utimes64)</td></tr>
+<tr><th id="189">189</th><td><b>extern</b> <em>int</em> __utimensat64 (<em>int</em> fd, <em>const</em> <em>char</em> *file,</td></tr>
+<tr><th id="190">190</th><td>                          <em>const</em> <b>struct</b> __timespec64 tsp[<var>2</var>], <em>int</em> flags);</td></tr>
+<tr><th id="191">191</th><td>libc_hidden_proto (__utimensat64);</td></tr>
+<tr><th id="192">192</th><td><u>#<span data-ppcond="180">endif</span></u></td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__utimensat64_helper" title='__utimensat64_helper' data-ref="__utimensat64_helper" data-ref-filename="__utimensat64_helper">__utimensat64_helper</dfn> (<em>int</em> <dfn class="local col2 decl" id="502fd" title='fd' data-type='int' data-ref="502fd" data-ref-filename="502fd">fd</dfn>, <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="503file" title='file' data-type='const char *' data-ref="503file" data-ref-filename="503file">file</dfn>,</td></tr>
+<tr><th id="195">195</th><td>                                 <em>const</em> <b>struct</b> <a class="macro" href="struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a> <dfn class="local col4 decl" id="504tsp" title='tsp' data-type='const struct timespec *' data-ref="504tsp" data-ref-filename="504tsp">tsp</dfn>[<var>2</var>], <em>int</em> <dfn class="local col5 decl" id="505flags" title='flags' data-type='int' data-ref="505flags" data-ref-filename="505flags">flags</dfn>);</td></tr>
+<tr><th id="196">196</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (__utimensat64_helper) __utimensat64_helper __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__utimensat64_helper" title='__utimensat64_helper' data-ref="__utimensat64_helper" data-ref-filename="__utimensat64_helper"><a class="ref fn" href="#__utimensat64_helper" title='__utimensat64_helper' data-ref="__utimensat64_helper" data-ref-filename="__utimensat64_helper">__utimensat64_helper</a></a>);</td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td><u>#<span data-ppcond="198">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="199">199</th><td><u># define <dfn class="macro" id="_M/__futimes64" data-ref="_M/__futimes64">__futimes64</dfn> __futimes</u></td></tr>
+<tr><th id="200">200</th><td><u># define <dfn class="macro" id="_M/__futimesat64" data-ref="_M/__futimesat64">__futimesat64</dfn> __futimesat</u></td></tr>
+<tr><th id="201">201</th><td><u># define <dfn class="macro" id="_M/__lutimes64" data-ref="_M/__lutimes64">__lutimes64</dfn> __lutimes</u></td></tr>
+<tr><th id="202">202</th><td><u># define <dfn class="macro" id="_M/__futimens64" data-ref="_M/__futimens64">__futimens64</dfn> __futimens</u></td></tr>
+<tr><th id="203">203</th><td><u>#<span data-ppcond="198">else</span></u></td></tr>
+<tr><th id="204">204</th><td><b>extern</b> <em>int</em> __futimes64 (<em>int</em> fd, <em>const</em> <b>struct</b> __timeval64 tvp64[<var>2</var>]);</td></tr>
+<tr><th id="205">205</th><td>libc_hidden_proto (__futimes64);</td></tr>
+<tr><th id="206">206</th><td><b>extern</b> <em>int</em> __futimesat64 (<em>int</em> fd, <em>const</em> <em>char</em> *file,</td></tr>
+<tr><th id="207">207</th><td>                          <em>const</em> <b>struct</b> __timeval64 tvp[<var>2</var>]);</td></tr>
+<tr><th id="208">208</th><td>libc_hidden_proto (__futimesat64);</td></tr>
+<tr><th id="209">209</th><td><b>extern</b> <em>int</em> __lutimes64 (<em>const</em> <em>char</em> *file, <em>const</em> <b>struct</b> __timeval64 tvp64[<var>2</var>]);</td></tr>
+<tr><th id="210">210</th><td>libc_hidden_proto (__lutimes64);</td></tr>
+<tr><th id="211">211</th><td><b>extern</b> <em>int</em> __futimens64 (<em>int</em> fd, <em>const</em> <b>struct</b> __timespec64 tsp[<var>2</var>]);</td></tr>
+<tr><th id="212">212</th><td>libc_hidden_proto (__futimens64);</td></tr>
+<tr><th id="213">213</th><td><u>#<span data-ppcond="198">endif</span></u></td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td><u>#<span data-ppcond="215">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="216">216</th><td><u># define <dfn class="macro" id="_M/__timer_gettime64" data-ref="_M/__timer_gettime64">__timer_gettime64</dfn> __timer_gettime</u></td></tr>
+<tr><th id="217">217</th><td><u># define <dfn class="macro" id="_M/__timerfd_gettime64" data-ref="_M/__timerfd_gettime64">__timerfd_gettime64</dfn> __timerfd_gettime</u></td></tr>
+<tr><th id="218">218</th><td><u>#<span data-ppcond="215">else</span></u></td></tr>
+<tr><th id="219">219</th><td><b>extern</b> <em>int</em> __timer_gettime64 (timer_t timerid, <b>struct</b> __itimerspec64 *value);</td></tr>
+<tr><th id="220">220</th><td><b>extern</b> <em>int</em> __timerfd_gettime64 (<em>int</em> fd, <b>struct</b> __itimerspec64 *value);</td></tr>
+<tr><th id="221">221</th><td><u># if PTHREAD_IN_LIBC</u></td></tr>
+<tr><th id="222">222</th><td>libc_hidden_proto (__timer_gettime64)</td></tr>
+<tr><th id="223">223</th><td><u># else</u></td></tr>
+<tr><th id="224">224</th><td>librt_hidden_proto (__timer_gettime64)</td></tr>
+<tr><th id="225">225</th><td><u># endif</u></td></tr>
+<tr><th id="226">226</th><td>libc_hidden_proto (__timerfd_gettime64);</td></tr>
+<tr><th id="227">227</th><td><u>#<span data-ppcond="215">endif</span></u></td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td><u>#<span data-ppcond="229">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="230">230</th><td><u># define <dfn class="macro" id="_M/__timer_settime64" data-ref="_M/__timer_settime64">__timer_settime64</dfn> __timer_settime</u></td></tr>
+<tr><th id="231">231</th><td><u># define <dfn class="macro" id="_M/__timerfd_settime64" data-ref="_M/__timerfd_settime64">__timerfd_settime64</dfn> __timerfd_settime</u></td></tr>
+<tr><th id="232">232</th><td><u>#<span data-ppcond="229">else</span></u></td></tr>
+<tr><th id="233">233</th><td><b>extern</b> <em>int</em> __timer_settime64 (timer_t timerid, <em>int</em> flags,</td></tr>
+<tr><th id="234">234</th><td>                              <em>const</em> <b>struct</b> __itimerspec64 *value,</td></tr>
+<tr><th id="235">235</th><td>                              <b>struct</b> __itimerspec64 *ovalue);</td></tr>
+<tr><th id="236">236</th><td><b>extern</b> <em>int</em> __timerfd_settime64 (<em>int</em> fd, <em>int</em> flags,</td></tr>
+<tr><th id="237">237</th><td>                                <em>const</em> <b>struct</b> __itimerspec64 *value,</td></tr>
+<tr><th id="238">238</th><td>                                <b>struct</b> __itimerspec64 *ovalue);</td></tr>
+<tr><th id="239">239</th><td><u># if PTHREAD_IN_LIBC</u></td></tr>
+<tr><th id="240">240</th><td>libc_hidden_proto (__timer_settime64)</td></tr>
+<tr><th id="241">241</th><td><u>#else</u></td></tr>
+<tr><th id="242">242</th><td>librt_hidden_proto (__timer_settime64)</td></tr>
+<tr><th id="243">243</th><td><u>#endif</u></td></tr>
+<tr><th id="244">244</th><td>libc_hidden_proto (__timerfd_settime64);</td></tr>
+<tr><th id="245">245</th><td><u>#<span data-ppcond="229">endif</span></u></td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td><u>#<span data-ppcond="247">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="248">248</th><td><u># define <dfn class="macro" id="_M/__sched_rr_get_interval64" data-ref="_M/__sched_rr_get_interval64">__sched_rr_get_interval64</dfn> __sched_rr_get_interval</u></td></tr>
+<tr><th id="249">249</th><td><u>#<span data-ppcond="247">else</span></u></td></tr>
+<tr><th id="250">250</th><td><b>extern</b> <em>int</em> __sched_rr_get_interval64 (pid_t pid, <b>struct</b> __timespec64 *tp);</td></tr>
+<tr><th id="251">251</th><td>libc_hidden_proto (__sched_rr_get_interval64);</td></tr>
+<tr><th id="252">252</th><td><u>#<span data-ppcond="247">endif</span></u></td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td><u>#<span data-ppcond="254">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="255">255</th><td><u># define <dfn class="macro" id="_M/__settimeofday64" data-ref="_M/__settimeofday64">__settimeofday64</dfn> __settimeofday</u></td></tr>
+<tr><th id="256">256</th><td><u># define <dfn class="macro" id="_M/__gettimeofday64" data-ref="_M/__gettimeofday64">__gettimeofday64</dfn> __gettimeofday</u></td></tr>
+<tr><th id="257">257</th><td><u>#<span data-ppcond="254">else</span></u></td></tr>
+<tr><th id="258">258</th><td><b>extern</b> <em>int</em> __settimeofday64 (<em>const</em> <b>struct</b> __timeval64 *tv,</td></tr>
+<tr><th id="259">259</th><td>                             <em>const</em> <b>struct</b> timezone *tz);</td></tr>
+<tr><th id="260">260</th><td>libc_hidden_proto (__settimeofday64)</td></tr>
+<tr><th id="261">261</th><td><b>extern</b> <em>int</em> __gettimeofday64 (<b>struct</b> __timeval64 *<b>restrict</b> tv,</td></tr>
+<tr><th id="262">262</th><td>                             <em>void</em> *<b>restrict</b> tz);</td></tr>
+<tr><th id="263">263</th><td>libc_hidden_proto (__gettimeofday64)</td></tr>
+<tr><th id="264">264</th><td><u>#<span data-ppcond="254">endif</span></u></td></tr>
+<tr><th id="265">265</th><td></td></tr>
+<tr><th id="266">266</th><td><i>/* Compute the `struct tm' representation of T,</i></td></tr>
+<tr><th id="267">267</th><td><i>   offset OFFSET seconds east of UTC,</i></td></tr>
+<tr><th id="268">268</th><td><i>   and store year, yday, mon, mday, wday, hour, min, sec into *TP.</i></td></tr>
+<tr><th id="269">269</th><td><i>   Return nonzero if successful.  */</i></td></tr>
+<tr><th id="270">270</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__offtime" title='__offtime' data-ref="__offtime" data-ref-filename="__offtime">__offtime</dfn> (<a class="macro" href="../time/mktime-internal.h.html#46" title="time_t" data-ref="_M/__time64_t">__time64_t</a> <dfn class="local col6 decl" id="506__timer" title='__timer' data-type='time_t' data-ref="506__timer" data-ref-filename="506__timer">__timer</dfn>,</td></tr>
+<tr><th id="271">271</th><td>		      <em>long</em> <em>int</em> <dfn class="local col7 decl" id="507__offset" title='__offset' data-type='long' data-ref="507__offset" data-ref-filename="507__offset">__offset</dfn>,</td></tr>
+<tr><th id="272">272</th><td>		      <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<dfn class="local col8 decl" id="508__tp" title='__tp' data-type='struct tm *' data-ref="508__tp" data-ref-filename="508__tp">__tp</dfn>) <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="273">273</th><td></td></tr>
+<tr><th id="274">274</th><td><b>extern</b> <em>char</em> *<dfn class="decl fn" id="__asctime_r" title='__asctime_r' data-ref="__asctime_r" data-ref-filename="__asctime_r">__asctime_r</dfn> (<em>const</em> <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<dfn class="local col9 decl" id="509__tp" title='__tp' data-type='const struct tm *' data-ref="509__tp" data-ref-filename="509__tp">__tp</dfn>, <em>char</em> *<dfn class="local col0 decl" id="510__buf" title='__buf' data-type='char *' data-ref="510__buf" data-ref-filename="510__buf">__buf</dfn>)</td></tr>
+<tr><th id="275">275</th><td>  <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="276">276</th><td><b>extern</b> <em>void</em> <dfn class="decl fn" id="__tzset" title='__tzset' data-ref="__tzset" data-ref-filename="__tzset">__tzset</dfn> (<em>void</em>) <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="277">277</th><td></td></tr>
+<tr><th id="278">278</th><td><i>/* Prototype for the internal function to get information based on TZ.  */</i></td></tr>
+<tr><th id="279">279</th><td><b>extern</b> <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<dfn class="decl fn" id="__tz_convert" title='__tz_convert' data-ref="__tz_convert" data-ref-filename="__tz_convert">__tz_convert</dfn> (<a class="macro" href="../time/mktime-internal.h.html#46" title="time_t" data-ref="_M/__time64_t">__time64_t</a> <dfn class="local col1 decl" id="511timer" title='timer' data-type='time_t' data-ref="511timer" data-ref-filename="511timer">timer</dfn>, <em>int</em> <dfn class="local col2 decl" id="512use_localtime" title='use_localtime' data-type='int' data-ref="512use_localtime" data-ref-filename="512use_localtime">use_localtime</dfn>,</td></tr>
+<tr><th id="280">280</th><td>				<b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<dfn class="local col3 decl" id="513tp" title='tp' data-type='struct tm *' data-ref="513tp" data-ref-filename="513tp">tp</dfn>) <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="281">281</th><td></td></tr>
+<tr><th id="282">282</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__nanosleep" title='__nanosleep' data-ref="__nanosleep" data-ref-filename="__nanosleep">__nanosleep</dfn> (<em>const</em> <b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a> *<dfn class="local col4 decl" id="514__requested_time" title='__requested_time' data-type='const struct timespec *' data-ref="514__requested_time" data-ref-filename="514__requested_time">__requested_time</dfn>,</td></tr>
+<tr><th id="283">283</th><td>			<b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a> *<dfn class="local col5 decl" id="515__remaining" title='__remaining' data-type='struct timespec *' data-ref="515__remaining" data-ref-filename="515__remaining">__remaining</dfn>);</td></tr>
+<tr><th id="284">284</th><td><a class="macro" href="libc-symbols.h.html#597" title="extern __typeof (__nanosleep) __nanosleep __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/hidden_proto">hidden_proto</a> (<a class="decl fn" href="#__nanosleep" title='__nanosleep' data-ref="__nanosleep" data-ref-filename="__nanosleep"><a class="ref fn" href="#__nanosleep" title='__nanosleep' data-ref="__nanosleep" data-ref-filename="__nanosleep">__nanosleep</a></a>)</td></tr>
+<tr><th id="285">285</th><td><u>#<span data-ppcond="285">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="286">286</th><td><u># define <dfn class="macro" id="_M/__nanosleep64" data-ref="_M/__nanosleep64">__nanosleep64</dfn> __nanosleep</u></td></tr>
+<tr><th id="287">287</th><td><u>#<span data-ppcond="285">else</span></u></td></tr>
+<tr><th id="288">288</th><td><b>extern</b> <em>int</em> __nanosleep64 (<em>const</em> <b>struct</b> __timespec64 *__requested_time,</td></tr>
+<tr><th id="289">289</th><td>			  <b>struct</b> __timespec64 *__remaining);</td></tr>
+<tr><th id="290">290</th><td>hidden_proto (__nanosleep64)</td></tr>
+<tr><th id="291">291</th><td><u>#<span data-ppcond="285">endif</span></u></td></tr>
+<tr><th id="292">292</th><td></td></tr>
+<tr><th id="293">293</th><td></td></tr>
+<tr><th id="294">294</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__getdate_r" title='__getdate_r' data-ref="__getdate_r" data-ref-filename="__getdate_r">__getdate_r</dfn> (<em>const</em> <em>char</em> *<dfn class="local col6 decl" id="516__string" title='__string' data-type='const char *' data-ref="516__string" data-ref-filename="516__string">__string</dfn>, <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<dfn class="local col7 decl" id="517__resbufp" title='__resbufp' data-type='struct tm *' data-ref="517__resbufp" data-ref-filename="517__resbufp">__resbufp</dfn>);</td></tr>
+<tr><th id="295">295</th><td><a class="macro" href="libc-symbols.h.html#621" title="extern __typeof (__getdate_r) __getdate_r __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__getdate_r" title='__getdate_r' data-ref="__getdate_r" data-ref-filename="__getdate_r"><a class="ref fn" href="#__getdate_r" title='__getdate_r' data-ref="__getdate_r" data-ref-filename="__getdate_r">__getdate_r</a></a>);</td></tr>
+<tr><th id="296">296</th><td></td></tr>
+<tr><th id="297">297</th><td></td></tr>
+<tr><th id="298">298</th><td><i>/* Determine CLK_TCK value.  */</i></td></tr>
+<tr><th id="299">299</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__getclktck" title='__getclktck' data-ref="__getclktck" data-ref-filename="__getclktck">__getclktck</dfn> (<em>void</em>) <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="300">300</th><td></td></tr>
+<tr><th id="301">301</th><td></td></tr>
+<tr><th id="302">302</th><td><i>/* strptime support.  */</i></td></tr>
+<tr><th id="303">303</th><td><b>extern</b> <em>char</em> * <dfn class="decl fn" id="__strptime_internal" title='__strptime_internal' data-ref="__strptime_internal" data-ref-filename="__strptime_internal">__strptime_internal</dfn> (<em>const</em> <em>char</em> *<dfn class="local col8 decl" id="518rp" title='rp' data-type='const char *' data-ref="518rp" data-ref-filename="518rp">rp</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="519fmt" title='fmt' data-type='const char *' data-ref="519fmt" data-ref-filename="519fmt">fmt</dfn>,</td></tr>
+<tr><th id="304">304</th><td>				   <b>struct</b> <a class="type" href="../time/bits/types/struct_tm.h.html#tm" title='tm' data-ref="tm" data-ref-filename="tm">tm</a> *<dfn class="local col0 decl" id="520tm" title='tm' data-type='struct tm *' data-ref="520tm" data-ref-filename="520tm">tm</dfn>, <em>void</em> *<dfn class="local col1 decl" id="521statep" title='statep' data-type='void *' data-ref="521statep" data-ref-filename="521statep">statep</dfn>,</td></tr>
+<tr><th id="305">305</th><td>				   <a class="typedef" href="../locale/bits/types/locale_t.h.html#locale_t" title='locale_t' data-type='__locale_t' data-ref="locale_t" data-ref-filename="locale_t">locale_t</a> <dfn class="local col2 decl" id="522locparam" title='locparam' data-type='locale_t' data-ref="522locparam" data-ref-filename="522locparam">locparam</dfn>) <a class="macro" href="libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="306">306</th><td></td></tr>
+<tr><th id="307">307</th><td><u>#<span data-ppcond="307">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="308">308</th><td><u># define <dfn class="macro" id="_M/__difftime64" data-ref="_M/__difftime64">__difftime64</dfn> __difftime</u></td></tr>
+<tr><th id="309">309</th><td><u>#<span data-ppcond="307">else</span></u></td></tr>
+<tr><th id="310">310</th><td><b>extern</b> <em>double</em> __difftime64 (__time64_t time1, __time64_t time0);</td></tr>
+<tr><th id="311">311</th><td>libc_hidden_proto (__difftime64)</td></tr>
+<tr><th id="312">312</th><td><u>#<span data-ppcond="307">endif</span></u></td></tr>
+<tr><th id="313">313</th><td></td></tr>
+<tr><th id="314">314</th><td><b>extern</b> <em>double</em> <dfn class="decl fn" id="__difftime" title='__difftime' data-ref="__difftime" data-ref-filename="__difftime">__difftime</dfn> (<a class="typedef" href="../time/bits/types/time_t.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t" data-ref-filename="time_t">time_t</a> <dfn class="local col3 decl" id="523time1" title='time1' data-type='time_t' data-ref="523time1" data-ref-filename="523time1">time1</dfn>, <a class="typedef" href="../time/bits/types/time_t.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t" data-ref-filename="time_t">time_t</a> <dfn class="local col4 decl" id="524time0" title='time0' data-type='time_t' data-ref="524time0" data-ref-filename="524time0">time0</dfn>);</td></tr>
+<tr><th id="315">315</th><td></td></tr>
+<tr><th id="316">316</th><td><u>#<span data-ppcond="316">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="317">317</th><td><u># define <dfn class="macro" id="_M/__clock_nanosleep_time64" data-ref="_M/__clock_nanosleep_time64">__clock_nanosleep_time64</dfn> __clock_nanosleep</u></td></tr>
+<tr><th id="318">318</th><td><u># define <dfn class="macro" id="_M/__clock_gettime64" data-ref="_M/__clock_gettime64">__clock_gettime64</dfn> <a class="ref fn" href="#__clock_gettime" title='__clock_gettime' data-ref="__clock_gettime" data-ref-filename="__clock_gettime">__clock_gettime</a></u></td></tr>
+<tr><th id="319">319</th><td><u># define <dfn class="macro" id="_M/__timespec_get64" data-ref="_M/__timespec_get64">__timespec_get64</dfn> __timespec_get</u></td></tr>
+<tr><th id="320">320</th><td><u># define <dfn class="macro" id="_M/__timespec_getres64" data-ref="_M/__timespec_getres64">__timespec_getres64</dfn> __timespec_getres</u></td></tr>
+<tr><th id="321">321</th><td><u>#<span data-ppcond="316">else</span></u></td></tr>
+<tr><th id="322">322</th><td><b>extern</b> <em>int</em> __clock_nanosleep_time64 (clockid_t clock_id,</td></tr>
+<tr><th id="323">323</th><td>                                     <em>int</em> flags, <em>const</em> <b>struct</b> __timespec64 *req,</td></tr>
+<tr><th id="324">324</th><td>                                     <b>struct</b> __timespec64 *rem);</td></tr>
+<tr><th id="325">325</th><td>libc_hidden_proto (__clock_nanosleep_time64)</td></tr>
+<tr><th id="326">326</th><td><b>extern</b> <em>int</em> __clock_gettime64 (clockid_t clock_id, <b>struct</b> __timespec64 *tp);</td></tr>
+<tr><th id="327">327</th><td>libc_hidden_proto (__clock_gettime64)</td></tr>
+<tr><th id="328">328</th><td><b>extern</b> <em>int</em> __timespec_get64 (<b>struct</b> __timespec64 *ts, <em>int</em> base);</td></tr>
+<tr><th id="329">329</th><td>libc_hidden_proto (__timespec_get64)</td></tr>
+<tr><th id="330">330</th><td><b>extern</b> <em>int</em> __timespec_getres64 (<b>struct</b> __timespec64 *ts, <em>int</em> base);</td></tr>
+<tr><th id="331">331</th><td>libc_hidden_proto (__timespec_getres64)</td></tr>
+<tr><th id="332">332</th><td><u>#<span data-ppcond="316">endif</span></u></td></tr>
+<tr><th id="333">333</th><td></td></tr>
+<tr><th id="334">334</th><td><u>#<span data-ppcond="334">if</span> <a class="macro" href="../sysdeps/unix/sysv/linux/x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> == 64</u></td></tr>
+<tr><th id="335">335</th><td><u># define <dfn class="macro" id="_M/__time64" data-ref="_M/__time64">__time64</dfn> __time</u></td></tr>
+<tr><th id="336">336</th><td><u>#<span data-ppcond="334">else</span></u></td></tr>
+<tr><th id="337">337</th><td><b>extern</b> __time64_t __time64 (__time64_t *timer);</td></tr>
+<tr><th id="338">338</th><td>libc_hidden_proto (__time64)</td></tr>
+<tr><th id="339">339</th><td><u>#<span data-ppcond="334">endif</span></u></td></tr>
+<tr><th id="340">340</th><td></td></tr>
+<tr><th id="341">341</th><td><i>/* Use in the clock_* functions.  Size of the field representing the</i></td></tr>
+<tr><th id="342">342</th><td><i>   actual clock ID.  */</i></td></tr>
+<tr><th id="343">343</th><td><u>#define <dfn class="macro" id="_M/CLOCK_IDFIELD_SIZE" data-ref="_M/CLOCK_IDFIELD_SIZE">CLOCK_IDFIELD_SIZE</dfn>	3</u></td></tr>
+<tr><th id="344">344</th><td></td></tr>
+<tr><th id="345">345</th><td><i>/* Check whether T fits in time_t.  */</i></td></tr>
+<tr><th id="346">346</th><td><em>static</em> <b>inline</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span></td></tr>
+<tr><th id="347">347</th><td><dfn class="decl def fn" id="in_time_t_range" title='in_time_t_range' data-ref="in_time_t_range" data-ref-filename="in_time_t_range">in_time_t_range</dfn> (<a class="macro" href="../time/mktime-internal.h.html#46" title="time_t" data-ref="_M/__time64_t">__time64_t</a> <dfn class="local col5 decl" id="525t" title='t' data-type='time_t' data-ref="525t" data-ref-filename="525t">t</dfn>)</td></tr>
+<tr><th id="348">348</th><td>{</td></tr>
+<tr><th id="349">349</th><td>  <a class="typedef" href="../time/bits/types/time_t.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t" data-ref-filename="time_t">time_t</a> <dfn class="local col6 decl" id="526s" title='s' data-type='time_t' data-ref="526s" data-ref-filename="526s">s</dfn> = <a class="local col5 ref" href="#525t" title='t' data-ref="525t" data-ref-filename="525t">t</a>;</td></tr>
+<tr><th id="350">350</th><td>  <b>return</b> <a class="local col6 ref" href="#526s" title='s' data-ref="526s" data-ref-filename="526s">s</a> == <a class="local col5 ref" href="#525t" title='t' data-ref="525t" data-ref-filename="525t">t</a>;</td></tr>
+<tr><th id="351">351</th><td>}</td></tr>
+<tr><th id="352">352</th><td></td></tr>
+<tr><th id="353">353</th><td><i>/* Convert a known valid struct timeval into a struct __timespec64.  */</i></td></tr>
+<tr><th id="354">354</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="macro" href="struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a></td></tr>
+<tr><th id="355">355</th><td><dfn class="decl def fn" id="valid_timeval_to_timespec64" title='valid_timeval_to_timespec64' data-ref="valid_timeval_to_timespec64" data-ref-filename="valid_timeval_to_timespec64">valid_timeval_to_timespec64</dfn> (<em>const</em> <b>struct</b> <a class="type" href="../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a> <dfn class="local col7 decl" id="527tv" title='tv' data-type='const struct timeval' data-ref="527tv" data-ref-filename="527tv">tv</dfn>)</td></tr>
+<tr><th id="356">356</th><td>{</td></tr>
+<tr><th id="357">357</th><td>  <b>struct</b> <a class="macro" href="struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a> <dfn class="local col8 decl" id="528ts64" title='ts64' data-type='struct timespec' data-ref="528ts64" data-ref-filename="528ts64">ts64</dfn>;</td></tr>
+<tr><th id="358">358</th><td></td></tr>
+<tr><th id="359">359</th><td>  <a class="local col8 ref" href="#528ts64" title='ts64' data-ref="528ts64" data-ref-filename="528ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a> = <a class="local col7 ref" href="#527tv" title='tv' data-ref="527tv" data-ref-filename="527tv">tv</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec" data-ref-filename="timeval..tv_sec">tv_sec</a>;</td></tr>
+<tr><th id="360">360</th><td>  <a class="local col8 ref" href="#528ts64" title='ts64' data-ref="528ts64" data-ref-filename="528ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> = <a class="local col7 ref" href="#527tv" title='tv' data-ref="527tv" data-ref-filename="527tv">tv</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec" data-ref-filename="timeval..tv_usec">tv_usec</a> * <var>1000</var>;</td></tr>
+<tr><th id="361">361</th><td></td></tr>
+<tr><th id="362">362</th><td>  <b>return</b> <a class="local col8 ref" href="#528ts64" title='ts64' data-ref="528ts64" data-ref-filename="528ts64">ts64</a>;</td></tr>
+<tr><th id="363">363</th><td>}</td></tr>
+<tr><th id="364">364</th><td></td></tr>
+<tr><th id="365">365</th><td><i>/* Convert a known valid struct timeval into a struct __timeval64.  */</i></td></tr>
+<tr><th id="366">366</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="macro" href="struct___timeval64.h.html#5" title="timeval" data-ref="_M/__timeval64">__timeval64</a></td></tr>
+<tr><th id="367">367</th><td><dfn class="decl def fn" id="valid_timeval_to_timeval64" title='valid_timeval_to_timeval64' data-ref="valid_timeval_to_timeval64" data-ref-filename="valid_timeval_to_timeval64">valid_timeval_to_timeval64</dfn> (<em>const</em> <b>struct</b> <a class="type" href="../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a> <dfn class="local col9 decl" id="529tv" title='tv' data-type='const struct timeval' data-ref="529tv" data-ref-filename="529tv">tv</dfn>)</td></tr>
+<tr><th id="368">368</th><td>{</td></tr>
+<tr><th id="369">369</th><td>  <b>struct</b> <a class="macro" href="struct___timeval64.h.html#5" title="timeval" data-ref="_M/__timeval64">__timeval64</a> <dfn class="local col0 decl" id="530tv64" title='tv64' data-type='struct timeval' data-ref="530tv64" data-ref-filename="530tv64">tv64</dfn>;</td></tr>
+<tr><th id="370">370</th><td></td></tr>
+<tr><th id="371">371</th><td>  <a class="local col0 ref" href="#530tv64" title='tv64' data-ref="530tv64" data-ref-filename="530tv64">tv64</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec" data-ref-filename="timeval..tv_sec">tv_sec</a> = <a class="local col9 ref" href="#529tv" title='tv' data-ref="529tv" data-ref-filename="529tv">tv</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec" data-ref-filename="timeval..tv_sec">tv_sec</a>;</td></tr>
+<tr><th id="372">372</th><td>  <a class="local col0 ref" href="#530tv64" title='tv64' data-ref="530tv64" data-ref-filename="530tv64">tv64</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec" data-ref-filename="timeval..tv_usec">tv_usec</a> = <a class="local col9 ref" href="#529tv" title='tv' data-ref="529tv" data-ref-filename="529tv">tv</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec" data-ref-filename="timeval..tv_usec">tv_usec</a>;</td></tr>
+<tr><th id="373">373</th><td></td></tr>
+<tr><th id="374">374</th><td>  <b>return</b> <a class="local col0 ref" href="#530tv64" title='tv64' data-ref="530tv64" data-ref-filename="530tv64">tv64</a>;</td></tr>
+<tr><th id="375">375</th><td>}</td></tr>
+<tr><th id="376">376</th><td></td></tr>
+<tr><th id="377">377</th><td><i>/* Convert a valid and within range of struct timeval, struct</i></td></tr>
+<tr><th id="378">378</th><td><i>   __timeval64 into a struct timeval.  */</i></td></tr>
+<tr><th id="379">379</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="type" href="../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a></td></tr>
+<tr><th id="380">380</th><td><dfn class="decl def fn" id="valid_timeval64_to_timeval" title='valid_timeval64_to_timeval' data-ref="valid_timeval64_to_timeval" data-ref-filename="valid_timeval64_to_timeval">valid_timeval64_to_timeval</dfn> (<em>const</em> <b>struct</b> <a class="macro" href="struct___timeval64.h.html#5" title="timeval" data-ref="_M/__timeval64">__timeval64</a> <dfn class="local col1 decl" id="531tv64" title='tv64' data-type='const struct timeval' data-ref="531tv64" data-ref-filename="531tv64">tv64</dfn>)</td></tr>
+<tr><th id="381">381</th><td>{</td></tr>
+<tr><th id="382">382</th><td>  <b>struct</b> <a class="type" href="../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a> <dfn class="local col2 decl" id="532tv" title='tv' data-type='struct timeval' data-ref="532tv" data-ref-filename="532tv">tv</dfn>;</td></tr>
+<tr><th id="383">383</th><td></td></tr>
+<tr><th id="384">384</th><td>  <a class="local col2 ref" href="#532tv" title='tv' data-ref="532tv" data-ref-filename="532tv">tv</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec" data-ref-filename="timeval..tv_sec">tv_sec</a> = (<a class="typedef" href="../time/bits/types/time_t.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t" data-ref-filename="time_t">time_t</a>) <a class="local col1 ref" href="#531tv64" title='tv64' data-ref="531tv64" data-ref-filename="531tv64">tv64</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec" data-ref-filename="timeval..tv_sec">tv_sec</a>;</td></tr>
+<tr><th id="385">385</th><td>  <a class="local col2 ref" href="#532tv" title='tv' data-ref="532tv" data-ref-filename="532tv">tv</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec" data-ref-filename="timeval..tv_usec">tv_usec</a> = (<a class="typedef" href="../time/sys/time.h.html#suseconds_t" title='suseconds_t' data-type='__suseconds_t' data-ref="suseconds_t" data-ref-filename="suseconds_t">suseconds_t</a>) <a class="local col1 ref" href="#531tv64" title='tv64' data-ref="531tv64" data-ref-filename="531tv64">tv64</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec" data-ref-filename="timeval..tv_usec">tv_usec</a>;</td></tr>
+<tr><th id="386">386</th><td></td></tr>
+<tr><th id="387">387</th><td>  <b>return</b> <a class="local col2 ref" href="#532tv" title='tv' data-ref="532tv" data-ref-filename="532tv">tv</a>;</td></tr>
+<tr><th id="388">388</th><td>}</td></tr>
+<tr><th id="389">389</th><td></td></tr>
+<tr><th id="390">390</th><td><i>/* Convert a struct __timeval64 into a struct __timespec64.  */</i></td></tr>
+<tr><th id="391">391</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="macro" href="struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a></td></tr>
+<tr><th id="392">392</th><td><dfn class="decl def fn" id="timeval64_to_timespec64" title='timeval64_to_timespec64' data-ref="timeval64_to_timespec64" data-ref-filename="timeval64_to_timespec64">timeval64_to_timespec64</dfn> (<em>const</em> <b>struct</b> <a class="macro" href="struct___timeval64.h.html#5" title="timeval" data-ref="_M/__timeval64">__timeval64</a> <dfn class="local col3 decl" id="533tv64" title='tv64' data-type='const struct timeval' data-ref="533tv64" data-ref-filename="533tv64">tv64</dfn>)</td></tr>
+<tr><th id="393">393</th><td>{</td></tr>
+<tr><th id="394">394</th><td>  <b>struct</b> <a class="macro" href="struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a> <dfn class="local col4 decl" id="534ts64" title='ts64' data-type='struct timespec' data-ref="534ts64" data-ref-filename="534ts64">ts64</dfn>;</td></tr>
+<tr><th id="395">395</th><td></td></tr>
+<tr><th id="396">396</th><td>  <a class="local col4 ref" href="#534ts64" title='ts64' data-ref="534ts64" data-ref-filename="534ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a> = <a class="local col3 ref" href="#533tv64" title='tv64' data-ref="533tv64" data-ref-filename="533tv64">tv64</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec" data-ref-filename="timeval..tv_sec">tv_sec</a>;</td></tr>
+<tr><th id="397">397</th><td>  <a class="local col4 ref" href="#534ts64" title='ts64' data-ref="534ts64" data-ref-filename="534ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> = <a class="local col3 ref" href="#533tv64" title='tv64' data-ref="533tv64" data-ref-filename="533tv64">tv64</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec" data-ref-filename="timeval..tv_usec">tv_usec</a> * <var>1000</var>;</td></tr>
+<tr><th id="398">398</th><td></td></tr>
+<tr><th id="399">399</th><td>  <b>return</b> <a class="local col4 ref" href="#534ts64" title='ts64' data-ref="534ts64" data-ref-filename="534ts64">ts64</a>;</td></tr>
+<tr><th id="400">400</th><td>}</td></tr>
+<tr><th id="401">401</th><td></td></tr>
+<tr><th id="402">402</th><td><i>/* Convert a known valid struct timespec into a struct __timespec64.  */</i></td></tr>
+<tr><th id="403">403</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="macro" href="struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a></td></tr>
+<tr><th id="404">404</th><td><dfn class="decl def fn" id="valid_timespec_to_timespec64" title='valid_timespec_to_timespec64' data-ref="valid_timespec_to_timespec64" data-ref-filename="valid_timespec_to_timespec64">valid_timespec_to_timespec64</dfn> (<em>const</em> <b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a> <dfn class="local col5 decl" id="535ts" title='ts' data-type='const struct timespec' data-ref="535ts" data-ref-filename="535ts">ts</dfn>)</td></tr>
+<tr><th id="405">405</th><td>{</td></tr>
+<tr><th id="406">406</th><td>  <b>struct</b> <a class="macro" href="struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a> <dfn class="local col6 decl" id="536ts64" title='ts64' data-type='struct timespec' data-ref="536ts64" data-ref-filename="536ts64">ts64</dfn>;</td></tr>
+<tr><th id="407">407</th><td></td></tr>
+<tr><th id="408">408</th><td>  <a class="local col6 ref" href="#536ts64" title='ts64' data-ref="536ts64" data-ref-filename="536ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a> = <a class="local col5 ref" href="#535ts" title='ts' data-ref="535ts" data-ref-filename="535ts">ts</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a>;</td></tr>
+<tr><th id="409">409</th><td>  <a class="local col6 ref" href="#536ts64" title='ts64' data-ref="536ts64" data-ref-filename="536ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> = <a class="local col5 ref" href="#535ts" title='ts' data-ref="535ts" data-ref-filename="535ts">ts</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a>;</td></tr>
+<tr><th id="410">410</th><td></td></tr>
+<tr><th id="411">411</th><td>  <b>return</b> <a class="local col6 ref" href="#536ts64" title='ts64' data-ref="536ts64" data-ref-filename="536ts64">ts64</a>;</td></tr>
+<tr><th id="412">412</th><td>}</td></tr>
+<tr><th id="413">413</th><td></td></tr>
+<tr><th id="414">414</th><td><i>/* Convert a valid and within range of struct timespec, struct</i></td></tr>
+<tr><th id="415">415</th><td><i>   __timespec64 into a struct timespec.  */</i></td></tr>
+<tr><th id="416">416</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a></td></tr>
+<tr><th id="417">417</th><td><dfn class="decl def fn" id="valid_timespec64_to_timespec" title='valid_timespec64_to_timespec' data-ref="valid_timespec64_to_timespec" data-ref-filename="valid_timespec64_to_timespec">valid_timespec64_to_timespec</dfn> (<em>const</em> <b>struct</b> <a class="macro" href="struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a> <dfn class="local col7 decl" id="537ts64" title='ts64' data-type='const struct timespec' data-ref="537ts64" data-ref-filename="537ts64">ts64</dfn>)</td></tr>
+<tr><th id="418">418</th><td>{</td></tr>
+<tr><th id="419">419</th><td>  <b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a> <dfn class="local col8 decl" id="538ts" title='ts' data-type='struct timespec' data-ref="538ts" data-ref-filename="538ts">ts</dfn>;</td></tr>
+<tr><th id="420">420</th><td></td></tr>
+<tr><th id="421">421</th><td>  <a class="local col8 ref" href="#538ts" title='ts' data-ref="538ts" data-ref-filename="538ts">ts</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a> = (<a class="typedef" href="../time/bits/types/time_t.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t" data-ref-filename="time_t">time_t</a>) <a class="local col7 ref" href="#537ts64" title='ts64' data-ref="537ts64" data-ref-filename="537ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a>;</td></tr>
+<tr><th id="422">422</th><td>  <a class="local col8 ref" href="#538ts" title='ts' data-ref="538ts" data-ref-filename="538ts">ts</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> = <a class="local col7 ref" href="#537ts64" title='ts64' data-ref="537ts64" data-ref-filename="537ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a>;</td></tr>
+<tr><th id="423">423</th><td></td></tr>
+<tr><th id="424">424</th><td>  <b>return</b> <a class="local col8 ref" href="#538ts" title='ts' data-ref="538ts" data-ref-filename="538ts">ts</a>;</td></tr>
+<tr><th id="425">425</th><td>}</td></tr>
+<tr><th id="426">426</th><td></td></tr>
+<tr><th id="427">427</th><td><i>/* Convert a valid and within range of struct timeval struct</i></td></tr>
+<tr><th id="428">428</th><td><i>   __timespec64 into a struct timeval.  */</i></td></tr>
+<tr><th id="429">429</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="type" href="../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a></td></tr>
+<tr><th id="430">430</th><td><dfn class="decl def fn" id="valid_timespec64_to_timeval" title='valid_timespec64_to_timeval' data-ref="valid_timespec64_to_timeval" data-ref-filename="valid_timespec64_to_timeval">valid_timespec64_to_timeval</dfn> (<em>const</em> <b>struct</b> <a class="macro" href="struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a> <dfn class="local col9 decl" id="539ts64" title='ts64' data-type='const struct timespec' data-ref="539ts64" data-ref-filename="539ts64">ts64</dfn>)</td></tr>
+<tr><th id="431">431</th><td>{</td></tr>
+<tr><th id="432">432</th><td>  <b>struct</b> <a class="type" href="../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a> <dfn class="local col0 decl" id="540tv" title='tv' data-type='struct timeval' data-ref="540tv" data-ref-filename="540tv">tv</dfn>;</td></tr>
+<tr><th id="433">433</th><td></td></tr>
+<tr><th id="434">434</th><td>  <a class="local col0 ref" href="#540tv" title='tv' data-ref="540tv" data-ref-filename="540tv">tv</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec" data-ref-filename="timeval..tv_sec">tv_sec</a> = (<a class="typedef" href="../time/bits/types/time_t.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t" data-ref-filename="time_t">time_t</a>) <a class="local col9 ref" href="#539ts64" title='ts64' data-ref="539ts64" data-ref-filename="539ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a>;</td></tr>
+<tr><th id="435">435</th><td>  <a class="local col0 ref" href="#540tv" title='tv' data-ref="540tv" data-ref-filename="540tv">tv</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec" data-ref-filename="timeval..tv_usec">tv_usec</a> = <a class="local col9 ref" href="#539ts64" title='ts64' data-ref="539ts64" data-ref-filename="539ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> / <var>1000</var>;</td></tr>
+<tr><th id="436">436</th><td></td></tr>
+<tr><th id="437">437</th><td>  <b>return</b> <a class="local col0 ref" href="#540tv" title='tv' data-ref="540tv" data-ref-filename="540tv">tv</a>;</td></tr>
+<tr><th id="438">438</th><td>}</td></tr>
+<tr><th id="439">439</th><td></td></tr>
+<tr><th id="440">440</th><td><i>/* Convert a struct __timespec64 into a struct __timeval64.  */</i></td></tr>
+<tr><th id="441">441</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="macro" href="struct___timeval64.h.html#5" title="timeval" data-ref="_M/__timeval64">__timeval64</a></td></tr>
+<tr><th id="442">442</th><td><dfn class="decl def fn" id="timespec64_to_timeval64" title='timespec64_to_timeval64' data-ref="timespec64_to_timeval64" data-ref-filename="timespec64_to_timeval64">timespec64_to_timeval64</dfn> (<em>const</em> <b>struct</b> <a class="macro" href="struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a> <dfn class="local col1 decl" id="541ts64" title='ts64' data-type='const struct timespec' data-ref="541ts64" data-ref-filename="541ts64">ts64</dfn>)</td></tr>
+<tr><th id="443">443</th><td>{</td></tr>
+<tr><th id="444">444</th><td>  <b>struct</b> <a class="macro" href="struct___timeval64.h.html#5" title="timeval" data-ref="_M/__timeval64">__timeval64</a> <dfn class="local col2 decl" id="542tv64" title='tv64' data-type='struct timeval' data-ref="542tv64" data-ref-filename="542tv64">tv64</dfn>;</td></tr>
+<tr><th id="445">445</th><td></td></tr>
+<tr><th id="446">446</th><td>  <a class="local col2 ref" href="#542tv64" title='tv64' data-ref="542tv64" data-ref-filename="542tv64">tv64</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec" data-ref-filename="timeval..tv_sec">tv_sec</a> = <a class="local col1 ref" href="#541ts64" title='ts64' data-ref="541ts64" data-ref-filename="541ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a>;</td></tr>
+<tr><th id="447">447</th><td>  <a class="local col2 ref" href="#542tv64" title='tv64' data-ref="542tv64" data-ref-filename="542tv64">tv64</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec" data-ref-filename="timeval..tv_usec">tv_usec</a> = <a class="local col1 ref" href="#541ts64" title='ts64' data-ref="541ts64" data-ref-filename="541ts64">ts64</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> / <var>1000</var>;</td></tr>
+<tr><th id="448">448</th><td></td></tr>
+<tr><th id="449">449</th><td>  <b>return</b> <a class="local col2 ref" href="#542tv64" title='tv64' data-ref="542tv64" data-ref-filename="542tv64">tv64</a>;</td></tr>
+<tr><th id="450">450</th><td>}</td></tr>
+<tr><th id="451">451</th><td></td></tr>
+<tr><th id="452">452</th><td><i>/* A version of 'struct timeval' with 32-bit time_t</i></td></tr>
+<tr><th id="453">453</th><td><i>   and suseconds_t.  */</i></td></tr>
+<tr><th id="454">454</th><td><b>struct</b> <dfn class="type def" id="__timeval32" title='__timeval32' data-ref="__timeval32" data-ref-filename="__timeval32">__timeval32</dfn></td></tr>
+<tr><th id="455">455</th><td>{</td></tr>
+<tr><th id="456">456</th><td>  <a class="typedef" href="../posix/bits/types.h.html#__int32_t" title='__int32_t' data-type='int' data-ref="__int32_t" data-ref-filename="__int32_t">__int32_t</a> <dfn class="decl field" id="__timeval32::tv_sec" title='__timeval32::tv_sec' data-ref="__timeval32::tv_sec" data-ref-filename="__timeval32..tv_sec">tv_sec</dfn>;         <i>/* Seconds.  */</i></td></tr>
+<tr><th id="457">457</th><td>  <a class="typedef" href="../posix/bits/types.h.html#__int32_t" title='__int32_t' data-type='int' data-ref="__int32_t" data-ref-filename="__int32_t">__int32_t</a> <dfn class="decl field" id="__timeval32::tv_usec" title='__timeval32::tv_usec' data-ref="__timeval32::tv_usec" data-ref-filename="__timeval32..tv_usec">tv_usec</dfn>;        <i>/* Microseconds.  */</i></td></tr>
+<tr><th id="458">458</th><td>};</td></tr>
+<tr><th id="459">459</th><td></td></tr>
+<tr><th id="460">460</th><td><i>/* Conversion functions for converting to/from __timeval32  */</i></td></tr>
+<tr><th id="461">461</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="macro" href="struct___timeval64.h.html#5" title="timeval" data-ref="_M/__timeval64">__timeval64</a></td></tr>
+<tr><th id="462">462</th><td><dfn class="decl def fn" id="valid_timeval32_to_timeval64" title='valid_timeval32_to_timeval64' data-ref="valid_timeval32_to_timeval64" data-ref-filename="valid_timeval32_to_timeval64">valid_timeval32_to_timeval64</dfn> (<em>const</em> <b>struct</b> <a class="type" href="#__timeval32" title='__timeval32' data-ref="__timeval32" data-ref-filename="__timeval32">__timeval32</a> <dfn class="local col3 decl" id="543tv" title='tv' data-type='const struct __timeval32' data-ref="543tv" data-ref-filename="543tv">tv</dfn>)</td></tr>
+<tr><th id="463">463</th><td>{</td></tr>
+<tr><th id="464">464</th><td>  <b>return</b> (<b>struct</b> <a class="macro" href="struct___timeval64.h.html#5" title="timeval" data-ref="_M/__timeval64">__timeval64</a>) { <a class="local col3 ref" href="#543tv" title='tv' data-ref="543tv" data-ref-filename="543tv">tv</a>.<a class="ref field" href="#__timeval32::tv_sec" title='__timeval32::tv_sec' data-ref="__timeval32::tv_sec" data-ref-filename="__timeval32..tv_sec">tv_sec</a>, <a class="local col3 ref" href="#543tv" title='tv' data-ref="543tv" data-ref-filename="543tv">tv</a>.<a class="ref field" href="#__timeval32::tv_usec" title='__timeval32::tv_usec' data-ref="__timeval32::tv_usec" data-ref-filename="__timeval32..tv_usec">tv_usec</a> };</td></tr>
+<tr><th id="465">465</th><td>}</td></tr>
+<tr><th id="466">466</th><td></td></tr>
+<tr><th id="467">467</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="type" href="#__timeval32" title='__timeval32' data-ref="__timeval32" data-ref-filename="__timeval32">__timeval32</a></td></tr>
+<tr><th id="468">468</th><td><dfn class="decl def fn" id="valid_timeval64_to_timeval32" title='valid_timeval64_to_timeval32' data-ref="valid_timeval64_to_timeval32" data-ref-filename="valid_timeval64_to_timeval32">valid_timeval64_to_timeval32</dfn> (<em>const</em> <b>struct</b> <a class="macro" href="struct___timeval64.h.html#5" title="timeval" data-ref="_M/__timeval64">__timeval64</a> <dfn class="local col4 decl" id="544tv64" title='tv64' data-type='const struct timeval' data-ref="544tv64" data-ref-filename="544tv64">tv64</dfn>)</td></tr>
+<tr><th id="469">469</th><td>{</td></tr>
+<tr><th id="470">470</th><td>  <b>return</b> (<b>struct</b> <a class="type" href="#__timeval32" title='__timeval32' data-ref="__timeval32" data-ref-filename="__timeval32">__timeval32</a>) { <a class="local col4 ref" href="#544tv64" title='tv64' data-ref="544tv64" data-ref-filename="544tv64">tv64</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec" data-ref-filename="timeval..tv_sec">tv_sec</a>, <a class="local col4 ref" href="#544tv64" title='tv64' data-ref="544tv64" data-ref-filename="544tv64">tv64</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec" data-ref-filename="timeval..tv_usec">tv_usec</a> };</td></tr>
+<tr><th id="471">471</th><td>}</td></tr>
+<tr><th id="472">472</th><td></td></tr>
+<tr><th id="473">473</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="type" href="../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a></td></tr>
+<tr><th id="474">474</th><td><dfn class="decl def fn" id="valid_timeval32_to_timeval" title='valid_timeval32_to_timeval' data-ref="valid_timeval32_to_timeval" data-ref-filename="valid_timeval32_to_timeval">valid_timeval32_to_timeval</dfn> (<em>const</em> <b>struct</b> <a class="type" href="#__timeval32" title='__timeval32' data-ref="__timeval32" data-ref-filename="__timeval32">__timeval32</a> <dfn class="local col5 decl" id="545tv" title='tv' data-type='const struct __timeval32' data-ref="545tv" data-ref-filename="545tv">tv</dfn>)</td></tr>
+<tr><th id="475">475</th><td>{</td></tr>
+<tr><th id="476">476</th><td>  <b>return</b> (<b>struct</b> <a class="type" href="../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a>) { <a class="local col5 ref" href="#545tv" title='tv' data-ref="545tv" data-ref-filename="545tv">tv</a>.<a class="ref field" href="#__timeval32::tv_sec" title='__timeval32::tv_sec' data-ref="__timeval32::tv_sec" data-ref-filename="__timeval32..tv_sec">tv_sec</a>, <a class="local col5 ref" href="#545tv" title='tv' data-ref="545tv" data-ref-filename="545tv">tv</a>.<a class="ref field" href="#__timeval32::tv_usec" title='__timeval32::tv_usec' data-ref="__timeval32::tv_usec" data-ref-filename="__timeval32..tv_usec">tv_usec</a> };</td></tr>
+<tr><th id="477">477</th><td>}</td></tr>
+<tr><th id="478">478</th><td></td></tr>
+<tr><th id="479">479</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="type" href="#__timeval32" title='__timeval32' data-ref="__timeval32" data-ref-filename="__timeval32">__timeval32</a></td></tr>
+<tr><th id="480">480</th><td><dfn class="decl def fn" id="valid_timeval_to_timeval32" title='valid_timeval_to_timeval32' data-ref="valid_timeval_to_timeval32" data-ref-filename="valid_timeval_to_timeval32">valid_timeval_to_timeval32</dfn> (<em>const</em> <b>struct</b> <a class="type" href="../time/bits/types/struct_timeval.h.html#timeval" title='timeval' data-ref="timeval" data-ref-filename="timeval">timeval</a> <dfn class="local col6 decl" id="546tv" title='tv' data-type='const struct timeval' data-ref="546tv" data-ref-filename="546tv">tv</dfn>)</td></tr>
+<tr><th id="481">481</th><td>{</td></tr>
+<tr><th id="482">482</th><td>  <b>return</b> (<b>struct</b> <a class="type" href="#__timeval32" title='__timeval32' data-ref="__timeval32" data-ref-filename="__timeval32">__timeval32</a>) { <a class="local col6 ref" href="#546tv" title='tv' data-ref="546tv" data-ref-filename="546tv">tv</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec" data-ref-filename="timeval..tv_sec">tv_sec</a>, <a class="local col6 ref" href="#546tv" title='tv' data-ref="546tv" data-ref-filename="546tv">tv</a>.<a class="ref field" href="../time/bits/types/struct_timeval.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec" data-ref-filename="timeval..tv_usec">tv_usec</a> };</td></tr>
+<tr><th id="483">483</th><td>}</td></tr>
+<tr><th id="484">484</th><td></td></tr>
+<tr><th id="485">485</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a></td></tr>
+<tr><th id="486">486</th><td><dfn class="decl def fn" id="valid_timeval32_to_timespec" title='valid_timeval32_to_timespec' data-ref="valid_timeval32_to_timespec" data-ref-filename="valid_timeval32_to_timespec">valid_timeval32_to_timespec</dfn> (<em>const</em> <b>struct</b> <a class="type" href="#__timeval32" title='__timeval32' data-ref="__timeval32" data-ref-filename="__timeval32">__timeval32</a> <dfn class="local col7 decl" id="547tv" title='tv' data-type='const struct __timeval32' data-ref="547tv" data-ref-filename="547tv">tv</dfn>)</td></tr>
+<tr><th id="487">487</th><td>{</td></tr>
+<tr><th id="488">488</th><td>  <b>return</b> (<b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a>) { <a class="local col7 ref" href="#547tv" title='tv' data-ref="547tv" data-ref-filename="547tv">tv</a>.<a class="ref field" href="#__timeval32::tv_sec" title='__timeval32::tv_sec' data-ref="__timeval32::tv_sec" data-ref-filename="__timeval32..tv_sec">tv_sec</a>, <a class="local col7 ref" href="#547tv" title='tv' data-ref="547tv" data-ref-filename="547tv">tv</a>.<a class="ref field" href="#__timeval32::tv_usec" title='__timeval32::tv_usec' data-ref="__timeval32::tv_usec" data-ref-filename="__timeval32..tv_usec">tv_usec</a> * <var>1000</var> };</td></tr>
+<tr><th id="489">489</th><td>}</td></tr>
+<tr><th id="490">490</th><td></td></tr>
+<tr><th id="491">491</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="type" href="#__timeval32" title='__timeval32' data-ref="__timeval32" data-ref-filename="__timeval32">__timeval32</a></td></tr>
+<tr><th id="492">492</th><td><dfn class="decl def fn" id="valid_timespec_to_timeval32" title='valid_timespec_to_timeval32' data-ref="valid_timespec_to_timeval32" data-ref-filename="valid_timespec_to_timeval32">valid_timespec_to_timeval32</dfn> (<em>const</em> <b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a> <dfn class="local col8 decl" id="548ts" title='ts' data-type='const struct timespec' data-ref="548ts" data-ref-filename="548ts">ts</dfn>)</td></tr>
+<tr><th id="493">493</th><td>{</td></tr>
+<tr><th id="494">494</th><td>  <b>return</b> (<b>struct</b> <a class="type" href="#__timeval32" title='__timeval32' data-ref="__timeval32" data-ref-filename="__timeval32">__timeval32</a>) { (<a class="typedef" href="../time/bits/types/time_t.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t" data-ref-filename="time_t">time_t</a>) <a class="local col8 ref" href="#548ts" title='ts' data-ref="548ts" data-ref-filename="548ts">ts</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a>, <a class="local col8 ref" href="#548ts" title='ts' data-ref="548ts" data-ref-filename="548ts">ts</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> / <var>1000</var> };</td></tr>
+<tr><th id="495">495</th><td>}</td></tr>
+<tr><th id="496">496</th><td></td></tr>
+<tr><th id="497">497</th><td><em>static</em> <b>inline</b> <b>struct</b> <a class="macro" href="struct___timeval64.h.html#5" title="timeval" data-ref="_M/__timeval64">__timeval64</a></td></tr>
+<tr><th id="498">498</th><td><dfn class="decl def fn" id="valid_timespec_to_timeval64" title='valid_timespec_to_timeval64' data-ref="valid_timespec_to_timeval64" data-ref-filename="valid_timespec_to_timeval64">valid_timespec_to_timeval64</dfn> (<em>const</em> <b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a> <dfn class="local col9 decl" id="549ts" title='ts' data-type='const struct timespec' data-ref="549ts" data-ref-filename="549ts">ts</dfn>)</td></tr>
+<tr><th id="499">499</th><td>{</td></tr>
+<tr><th id="500">500</th><td>  <b>return</b> (<b>struct</b> <a class="macro" href="struct___timeval64.h.html#5" title="timeval" data-ref="_M/__timeval64">__timeval64</a>) { (<a class="typedef" href="../time/bits/types/time_t.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t" data-ref-filename="time_t">time_t</a>) <a class="local col9 ref" href="#549ts" title='ts' data-ref="549ts" data-ref-filename="549ts">ts</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a>, <a class="local col9 ref" href="#549ts" title='ts' data-ref="549ts" data-ref-filename="549ts">ts</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> / <var>1000</var> };</td></tr>
+<tr><th id="501">501</th><td>}</td></tr>
+<tr><th id="502">502</th><td></td></tr>
+<tr><th id="503">503</th><td><i>/* Check if a value is in the valid nanoseconds range. Return true if</i></td></tr>
+<tr><th id="504">504</th><td><i>   it is, false otherwise.  */</i></td></tr>
+<tr><th id="505">505</th><td><em>static</em> <b>inline</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span></td></tr>
+<tr><th id="506">506</th><td><dfn class="decl def fn" id="valid_nanoseconds" title='valid_nanoseconds' data-ref="valid_nanoseconds" data-ref-filename="valid_nanoseconds">valid_nanoseconds</dfn> (<a class="typedef" href="../posix/bits/types.h.html#__syscall_slong_t" title='__syscall_slong_t' data-type='long' data-ref="__syscall_slong_t" data-ref-filename="__syscall_slong_t">__syscall_slong_t</a> <dfn class="local col0 decl" id="550ns" title='ns' data-type='__syscall_slong_t' data-ref="550ns" data-ref-filename="550ns">ns</dfn>)</td></tr>
+<tr><th id="507">507</th><td>{</td></tr>
+<tr><th id="508">508</th><td>  <b>return</b> <a class="macro" href="../misc/sys/cdefs.h.html#451" title="__builtin_expect ((0 &lt;= ns &amp;&amp; ns &lt; 1000000000), 1)" data-ref="_M/__glibc_likely">__glibc_likely</a> (<var>0</var> &lt;= <a class="local col0 ref" href="#550ns" title='ns' data-ref="550ns" data-ref-filename="550ns">ns</a> &amp;&amp; <a class="local col0 ref" href="#550ns" title='ns' data-ref="550ns" data-ref-filename="550ns">ns</a> &lt; <var>1000000000</var>);</td></tr>
+<tr><th id="509">509</th><td>}</td></tr>
+<tr><th id="510">510</th><td></td></tr>
+<tr><th id="511">511</th><td><i>/* Helper function to get time in seconds, similar to time.  */</i></td></tr>
+<tr><th id="512">512</th><td><em>static</em> <b>inline</b> <a class="typedef" href="../time/bits/types/time_t.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t" data-ref-filename="time_t">time_t</a></td></tr>
+<tr><th id="513">513</th><td><dfn class="decl def fn" id="time_now" title='time_now' data-ref="time_now" data-ref-filename="time_now">time_now</dfn> (<em>void</em>)</td></tr>
+<tr><th id="514">514</th><td>{</td></tr>
+<tr><th id="515">515</th><td>  <b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a> <dfn class="local col1 decl" id="551ts" title='ts' data-type='struct timespec' data-ref="551ts" data-ref-filename="551ts">ts</dfn>;</td></tr>
+<tr><th id="516">516</th><td>  <a class="ref fn" href="#__clock_gettime" title='__clock_gettime' data-ref="__clock_gettime" data-ref-filename="__clock_gettime">__clock_gettime</a> (<a class="macro" href="../sysdeps/unix/sysv/linux/time-clockid.h.html#22" title="5" data-ref="_M/TIME_CLOCK_GETTIME_CLOCKID">TIME_CLOCK_GETTIME_CLOCKID</a>, &amp;<a class="local col1 ref" href="#551ts" title='ts' data-ref="551ts" data-ref-filename="551ts">ts</a>);</td></tr>
+<tr><th id="517">517</th><td>  <b>return</b> <a class="local col1 ref" href="#551ts" title='ts' data-ref="551ts" data-ref-filename="551ts">ts</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a>;</td></tr>
+<tr><th id="518">518</th><td>}</td></tr>
+<tr><th id="519">519</th><td></td></tr>
+<tr><th id="520">520</th><td><em>static</em> <b>inline</b> <a class="macro" href="../time/mktime-internal.h.html#46" title="time_t" data-ref="_M/__time64_t">__time64_t</a></td></tr>
+<tr><th id="521">521</th><td><dfn class="decl def fn" id="time64_now" title='time64_now' data-ref="time64_now" data-ref-filename="time64_now">time64_now</dfn> (<em>void</em>)</td></tr>
+<tr><th id="522">522</th><td>{</td></tr>
+<tr><th id="523">523</th><td>  <b>struct</b> <a class="macro" href="struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a> <dfn class="local col2 decl" id="552ts" title='ts' data-type='struct timespec' data-ref="552ts" data-ref-filename="552ts">ts</dfn>;</td></tr>
+<tr><th id="524">524</th><td>  <a class="macro" href="#318" title="__clock_gettime" data-ref="_M/__clock_gettime64">__clock_gettime64</a> (<a class="macro" href="../sysdeps/unix/sysv/linux/time-clockid.h.html#22" title="5" data-ref="_M/TIME_CLOCK_GETTIME_CLOCKID">TIME_CLOCK_GETTIME_CLOCKID</a>, &amp;<a class="local col2 ref" href="#552ts" title='ts' data-ref="552ts" data-ref-filename="552ts">ts</a>);</td></tr>
+<tr><th id="525">525</th><td>  <b>return</b> <a class="local col2 ref" href="#552ts" title='ts' data-ref="552ts" data-ref-filename="552ts">ts</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a>;</td></tr>
+<tr><th id="526">526</th><td>}</td></tr>
+<tr><th id="527">527</th><td></td></tr>
+<tr><th id="528">528</th><td><u>#define <dfn class="macro" id="_M/NSEC_PER_SEC" data-ref="_M/NSEC_PER_SEC">NSEC_PER_SEC</dfn>    1000000000L  /* Nanoseconds per second.  */</u></td></tr>
+<tr><th id="529">529</th><td><u>#define <dfn class="macro" id="_M/USEC_PER_SEC" data-ref="_M/USEC_PER_SEC">USEC_PER_SEC</dfn>    1000000L     /* Microseconds per second.  */</u></td></tr>
+<tr><th id="530">530</th><td><u>#define <dfn class="macro" id="_M/NSEC_PER_USEC" data-ref="_M/NSEC_PER_USEC">NSEC_PER_USEC</dfn>   1000L        /* Nanoseconds per microsecond.  */</u></td></tr>
+<tr><th id="531">531</th><td></td></tr>
+<tr><th id="532">532</th><td><u>#<span data-ppcond="4">endif</span></u></td></tr>
+<tr><th id="533">533</th><td></td></tr>
+<tr><th id="534">534</th><td><u>#<span data-ppcond="1">endif</span></u></td></tr>
+<tr><th id="535">535</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../argp/argp-eexst.c.html'>codebrowser/argp/argp-eexst.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

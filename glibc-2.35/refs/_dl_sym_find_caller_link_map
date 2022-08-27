@@ -1,0 +1,5 @@
+<def f='codebrowser/elf/dl-sym-post.h' l='21' ll='31' type='struct link_map * _dl_sym_find_caller_link_map(Elf64_Addr caller)'/>
+<use f='codebrowser/elf/dl-sym-post.h' l='56' u='c' c='_dl_sym_post'/>
+<doc f='codebrowser/elf/dl-sym-post.h' l='20'>/* Return the link map containing the caller address.  */</doc>
+<use f='codebrowser/elf/dl-sym.c' l='97' u='c' c='do_sym'/>
+<use f='codebrowser/elf/dl-sym.c' l='131' u='c' c='do_sym'/>

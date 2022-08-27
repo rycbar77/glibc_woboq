@@ -1,0 +1,5 @@
+<dec f='codebrowser/timezone/private.h' l='138'/>
+<use f='codebrowser/timezone/private.h' l='149' u='w'/>
+<doc f='codebrowser/timezone/private.h' l='135'>/* Avoid clashes with NetBSD by renaming NetBSD&apos;s declarations.
+   If defining the &apos;timezone&apos; variable, avoid a clash with FreeBSD&apos;s
+   &apos;timezone&apos; function by renaming its declaration.  */</doc>

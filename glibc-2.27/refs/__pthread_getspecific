@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='371' type='void * __pthread_getspecific(pthread_key_t __key)'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='74' macro='1' c='__dlerror'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='74' macro='1' u='r' c='__dlerror'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='137' macro='1' c='_dlerror_run'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='137' macro='1' u='r' c='_dlerror_run'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='492' type='void * __pthread_getspecific(pthread_key_t key)'/>
+<def f='codebrowser/nptl/pthread_getspecific.c' l='23' ll='65' type='void * __pthread_getspecific(pthread_key_t key)'/>
+<use f='codebrowser/nptl/pthread_getspecific.c' l='66' c='pthread_getspecific'/>
+<use f='codebrowser/string/strsignal.c' l='111' macro='1' c='getbuffer'/>
+<use f='codebrowser/string/strsignal.c' l='111' macro='1' u='r' c='getbuffer'/>

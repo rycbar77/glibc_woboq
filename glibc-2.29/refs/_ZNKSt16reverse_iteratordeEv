@@ -1,0 +1,11 @@
+<def f='include/c++/11/bits/stl_iterator.h' l='240' ll='245' type='std::reverse_iterator::reference std::reverse_iterator::operator*() const'/>
+<doc f='include/c++/11/bits/stl_iterator.h' l='230'>/**
+       *  @return  A reference to the value at @c --current
+       *
+       *  This requires that @c --current is dereferenceable.
+       *
+       *  @warning This implementation requires that for an iterator of the
+       *           underlying iterator type, @c x, a reference obtained by
+       *           @c *x remains valid after @c x has been modified or
+       *           destroyed. This is a bug: http://gcc.gnu.org/PR51823
+      */</doc>

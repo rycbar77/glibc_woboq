@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/dlfcn.h' l='129' type='void * __dlsym(void * handle, const char * name, void * dl_caller)'/>
+<def f='codebrowser/dlfcn/dlsym.c' l='78' ll='82' type='void * __dlsym(void * handle, const char * name, void * dl_caller)'/>
+<use f='codebrowser/dlfcn/dlsym.c' l='87' u='c' c='___dlsym'/>
+<doc f='codebrowser/dlfcn/dlsym.c' l='77'>/* Also used with _dlfcn_hook.  */</doc>
+<use f='codebrowser/elf/rtld_static_init.c' l='32' u='r'/>

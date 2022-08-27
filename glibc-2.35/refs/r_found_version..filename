@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='197' type='const char *'/>
+<offset>128</offset>
+<use f='codebrowser/elf/dl-libc.c' l='138' u='w' c='do_dlsym_private'/>
+<use f='codebrowser/elf/dl-libc.c' l='213' u='w' c='__libc_dlvsym'/>
+<use f='codebrowser/elf/dl-lookup.c' l='106' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='107' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='106' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='107' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-minimal.c' l='89' u='w' c='__rtld_malloc_init_real'/>
+<use f='codebrowser/elf/dl-sym.c' l='187' u='w' c='_dl_vsym'/>
+<use f='codebrowser/elf/dl-version.c' l='306' u='w' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='343' u='w' c='_dl_check_map_versions'/>

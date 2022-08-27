@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='348' type='uint32_t'/>
+<offset>0</offset>
+<use f='codebrowser/elf/dl-close.c' l='684' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-lookup.c' l='178' u='w' c='enter_unique_sym'/>
+<use f='codebrowser/elf/dl-lookup.c' l='233' u='r' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='280' u='r' c='do_lookup_unique'/>

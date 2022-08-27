@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='552' type='const char *'/>
+<use f='codebrowser/elf/dl-load.c' l='568' macro='1' u='r' c='decompose_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='571' macro='1' u='r' c='decompose_rpath'/>
+<def f='codebrowser/elf/dl-support.c' l='59' type='const char *'/>
+<doc f='codebrowser/elf/dl-support.c' l='57'>/* Names of shared object for which the RUNPATHs and RPATHs should be
+   ignored.  */</doc>

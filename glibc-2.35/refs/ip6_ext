@@ -1,0 +1,16 @@
+<def f='codebrowser/inet/netinet/ip6.h' l='50' ll='54'/>
+<size>2</size>
+<doc f='codebrowser/inet/netinet/ip6.h' l='49'>/* Generic extension header.  */</doc>
+<mbr r='ip6_ext::ip6e_nxt' o='0' t='uint8_t'/>
+<mbr r='ip6_ext::ip6e_len' o='8' t='uint8_t'/>
+<use f='codebrowser/inet/inet6_option.c' l='92' c='inet6_option_space'/>
+<use f='codebrowser/inet/inet6_option.c' l='186' c='option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='187' c='option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='209' c='option_alloc'/>
+<use f='codebrowser/inet/inet6_option.c' l='244' c='inet6_option_next'/>
+<use f='codebrowser/inet/inet6_option.c' l='244' c='inet6_option_next'/>
+<use f='codebrowser/inet/inet6_option.c' l='247' c='inet6_option_next'/>
+<use f='codebrowser/inet/inet6_option.c' l='300' c='inet6_option_find'/>
+<use f='codebrowser/inet/inet6_option.c' l='300' c='inet6_option_find'/>
+<use f='codebrowser/inet/inet6_option.c' l='303' c='inet6_option_find'/>
+<size>2</size>

@@ -1,0 +1,6 @@
+<use f='codebrowser/io/fstatat.c' l='51' u='c' c='fstatat'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/fxstatat.c' l='34' ll='44' type='int __fxstatat(int vers, int fd, const char * file, struct stat * st, int flag)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/fxstatat.c' l='47' c='__fxstatat64'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/fxstatat.c' l='33'>/* Get information about the file NAME relative to FD in ST.  */</doc>
+<use f='codebrowser/io/ftw.c' l='142' u='c' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='142' u='c' c='process_entry'/>

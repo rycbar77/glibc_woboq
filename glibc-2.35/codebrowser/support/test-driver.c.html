@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>test-driver.c source code [codebrowser/support/test-driver.c] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="main "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/support/test-driver.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>support</a>/<a href='test-driver.c.html'>test-driver.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Main function for test programs.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2016-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/* This file should be included from test cases.  It will define a</i></td></tr>
+<tr><th id="20">20</th><td><i>   main function which provides the test wrapper.</i></td></tr>
+<tr><th id="21">21</th><td><i></i></td></tr>
+<tr><th id="22">22</th><td><i>   It assumes that the test case defines a function</i></td></tr>
+<tr><th id="23">23</th><td><i></i></td></tr>
+<tr><th id="24">24</th><td><i>     int do_test (void);</i></td></tr>
+<tr><th id="25">25</th><td><i></i></td></tr>
+<tr><th id="26">26</th><td><i>   and arranges for that function being called under the test wrapper.</i></td></tr>
+<tr><th id="27">27</th><td><i>   The do_test function should return 0 to indicate a passing test, 1</i></td></tr>
+<tr><th id="28">28</th><td><i>   to indicate a failing test, or 77 to indicate an unsupported test.</i></td></tr>
+<tr><th id="29">29</th><td><i>   Other result values could be used to indicate a failing test, but</i></td></tr>
+<tr><th id="30">30</th><td><i>   the result of the expression is passed to exit and exit only</i></td></tr>
+<tr><th id="31">31</th><td><i>   returns the lower 8 bits of its input.  A non-zero return with some</i></td></tr>
+<tr><th id="32">32</th><td><i>   values could cause a test to incorrectly be considered passing when</i></td></tr>
+<tr><th id="33">33</th><td><i>   it really failed.  For this reason, the function should always</i></td></tr>
+<tr><th id="34">34</th><td><i>   return 0 (EXIT_SUCCESS), 1 (EXIT_FAILURE), or 77</i></td></tr>
+<tr><th id="35">35</th><td><i>   (EXIT_UNSUPPORTED).</i></td></tr>
+<tr><th id="36">36</th><td><i></i></td></tr>
+<tr><th id="37">37</th><td><i>   The test function may print out diagnostic or warning messages as well</i></td></tr>
+<tr><th id="38">38</th><td><i>   as messages about failures.  These messages should be printed to stdout</i></td></tr>
+<tr><th id="39">39</th><td><i>   and not stderr so that the output is properly ordered with respect to</i></td></tr>
+<tr><th id="40">40</th><td><i>   the rest of the glibc testsuite run output.</i></td></tr>
+<tr><th id="41">41</th><td><i></i></td></tr>
+<tr><th id="42">42</th><td><i>   Several preprocessors macros can be defined before including this</i></td></tr>
+<tr><th id="43">43</th><td><i>   file.</i></td></tr>
+<tr><th id="44">44</th><td><i></i></td></tr>
+<tr><th id="45">45</th><td><i>   The name of the do_test function can be changed with the</i></td></tr>
+<tr><th id="46">46</th><td><i>   TEST_FUNCTION macro.  It must expand to the desired function name.</i></td></tr>
+<tr><th id="47">47</th><td><i></i></td></tr>
+<tr><th id="48">48</th><td><i>   If the test case needs access to command line parameters, it must</i></td></tr>
+<tr><th id="49">49</th><td><i>   define the TEST_FUNCTION_ARGV macro with the name of the test</i></td></tr>
+<tr><th id="50">50</th><td><i>   function.  It must have the following type:</i></td></tr>
+<tr><th id="51">51</th><td><i></i></td></tr>
+<tr><th id="52">52</th><td><i>     int TEST_FUNCTION_ARGV (int argc, char **argv);</i></td></tr>
+<tr><th id="53">53</th><td><i></i></td></tr>
+<tr><th id="54">54</th><td><i>   This overrides the do_test default function and is incompatible</i></td></tr>
+<tr><th id="55">55</th><td><i>   with the TEST_FUNCTION macro.</i></td></tr>
+<tr><th id="56">56</th><td><i></i></td></tr>
+<tr><th id="57">57</th><td><i>   If PREPARE is defined, it must expand to the name of a function of</i></td></tr>
+<tr><th id="58">58</th><td><i>   the type</i></td></tr>
+<tr><th id="59">59</th><td><i></i></td></tr>
+<tr><th id="60">60</th><td><i>     void PREPARE (int argc, char **);</i></td></tr>
+<tr><th id="61">61</th><td><i></i></td></tr>
+<tr><th id="62">62</th><td><i>   This function will be called early, after parsing the command line,</i></td></tr>
+<tr><th id="63">63</th><td><i>   but before running the test, in the parent process which acts as</i></td></tr>
+<tr><th id="64">64</th><td><i>   the test supervisor.</i></td></tr>
+<tr><th id="65">65</th><td><i></i></td></tr>
+<tr><th id="66">66</th><td><i>   If CLEANUP_HANDLER is defined, it must expand to the name of a</i></td></tr>
+<tr><th id="67">67</th><td><i>   function of the type</i></td></tr>
+<tr><th id="68">68</th><td><i></i></td></tr>
+<tr><th id="69">69</th><td><i>     void CLEANUP_HANDLER (void);</i></td></tr>
+<tr><th id="70">70</th><td><i></i></td></tr>
+<tr><th id="71">71</th><td><i>   This function will be called from the timeout (SIGALRM) signal</i></td></tr>
+<tr><th id="72">72</th><td><i>   handler.</i></td></tr>
+<tr><th id="73">73</th><td><i></i></td></tr>
+<tr><th id="74">74</th><td><i>   If EXPECTED_SIGNAL is defined, it must expanded to a constant which</i></td></tr>
+<tr><th id="75">75</th><td><i>   denotes the expected signal number.</i></td></tr>
+<tr><th id="76">76</th><td><i></i></td></tr>
+<tr><th id="77">77</th><td><i>   If EXPECTED_STATUS is defined, it must expand to the expected exit</i></td></tr>
+<tr><th id="78">78</th><td><i>   status.</i></td></tr>
+<tr><th id="79">79</th><td><i></i></td></tr>
+<tr><th id="80">80</th><td><i>   If TIMEOUT is defined, it must be positive constant.  It overrides</i></td></tr>
+<tr><th id="81">81</th><td><i>   the default test timeout and is measured in seconds.</i></td></tr>
+<tr><th id="82">82</th><td><i></i></td></tr>
+<tr><th id="83">83</th><td><i>   If TEST_NO_MALLOPT is defined, the test wrapper will not call</i></td></tr>
+<tr><th id="84">84</th><td><i>   mallopt.</i></td></tr>
+<tr><th id="85">85</th><td><i></i></td></tr>
+<tr><th id="86">86</th><td><i>   Custom command line handling can be implemented by defining the</i></td></tr>
+<tr><th id="87">87</th><td><i>   CMDLINE_OPTION macro (after including the &lt;getopt.h&gt; header; this</i></td></tr>
+<tr><th id="88">88</th><td><i>   requires _GNU_SOURCE to be defined).  This macro must expand to a</i></td></tr>
+<tr><th id="89">89</th><td><i>   to a comma-separated list of braced initializers for struct option</i></td></tr>
+<tr><th id="90">90</th><td><i>   from &lt;getopt.h&gt;, with a trailing comma.  CMDLINE_PROCESS can be</i></td></tr>
+<tr><th id="91">91</th><td><i>   defined as the name of a function which is called to process these</i></td></tr>
+<tr><th id="92">92</th><td><i>   options.  The function is passed the option character/number and</i></td></tr>
+<tr><th id="93">93</th><td><i>   has this type:</i></td></tr>
+<tr><th id="94">94</th><td><i></i></td></tr>
+<tr><th id="95">95</th><td><i>     void CMDLINE_PROCESS (int);</i></td></tr>
+<tr><th id="96">96</th><td><i></i></td></tr>
+<tr><th id="97">97</th><td><i>   If the program also to process custom default short command line</i></td></tr>
+<tr><th id="98">98</th><td><i>   argument (similar to getopt) it must define CMDLINE_OPTSTRING</i></td></tr>
+<tr><th id="99">99</th><td><i>   with the expected options (for instance "vb").</i></td></tr>
+<tr><th id="100">100</th><td><i>*/</i></td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><u>#include <a href="test-driver.h.html">&lt;support/test-driver.h&gt;</a></u></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><u>#include <a href="../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><em>int</em></td></tr>
+<tr><th id="107">107</th><td><dfn class="decl def fn" id="main" title='main' data-ref="main" data-ref-filename="main">main</dfn> (<em>int</em> <dfn class="local col1 decl" id="1argc" title='argc' data-type='int' data-ref="1argc" data-ref-filename="1argc">argc</dfn>, <em>char</em> **<dfn class="local col2 decl" id="2argv" title='argv' data-type='char **' data-ref="2argv" data-ref-filename="2argv">argv</dfn>)</td></tr>
+<tr><th id="108">108</th><td>{</td></tr>
+<tr><th id="109">109</th><td>  <b>struct</b> <a class="type" href="test-driver.h.html#test_config" title='test_config' data-ref="test_config" data-ref-filename="test_config">test_config</a> <dfn class="local col3 decl" id="3test_config" title='test_config' data-type='struct test_config' data-ref="3test_config" data-ref-filename="3test_config">test_config</dfn>;</td></tr>
+<tr><th id="110">110</th><td>  <a class="ref fn" href="../string/string.h.html#memset" title='memset' data-ref="memset" data-ref-filename="memset">memset</a> (&amp;<a class="local col3 ref" href="#3test_config" title='test_config' data-ref="3test_config" data-ref-filename="3test_config">test_config</a>, <var>0</var>, <b>sizeof</b> (<a class="local col3 ref" href="#3test_config" title='test_config' data-ref="3test_config" data-ref-filename="3test_config">test_config</a>));</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><u>#<span data-ppcond="112">ifdef</span> <span class="macro" data-ref="_M/PREPARE">PREPARE</span></u></td></tr>
+<tr><th id="113">113</th><td>  test_config.prepare_function = (PREPARE);</td></tr>
+<tr><th id="114">114</th><td><u>#<span data-ppcond="112">endif</span></u></td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td><u>#<span data-ppcond="116">if</span> defined (<span class="macro" data-ref="_M/TEST_FUNCTION">TEST_FUNCTION</span>) &amp;&amp; defined (<span class="macro" data-ref="_M/TEST_FUNCTON_ARGV">TEST_FUNCTON_ARGV</span>)</u></td></tr>
+<tr><th id="117">117</th><td><u># error TEST_FUNCTION and TEST_FUNCTION_ARGV cannot be defined at the same time</u></td></tr>
+<tr><th id="118">118</th><td><u>#<span data-ppcond="116">endif</span></u></td></tr>
+<tr><th id="119">119</th><td><u>#<span data-ppcond="119">ifdef</span> <a class="macro" href="test-run-command.c.html#21" data-ref="_M/RUN_COMMAND_MODE">RUN_COMMAND_MODE</a></u></td></tr>
+<tr><th id="120">120</th><td>  <a class="local col3 ref" href="#3test_config" title='test_config' data-ref="3test_config" data-ref-filename="3test_config">test_config</a>.<a class="ref field" href="test-driver.h.html#test_config::run_command_mode" title='test_config::run_command_mode' data-ref="test_config::run_command_mode" data-ref-filename="test_config..run_command_mode">run_command_mode</a> = <var>1</var>;</td></tr>
+<tr><th id="121">121</th><td><u>#<span data-ppcond="119">elif</span> defined (TEST_FUNCTION)</u></td></tr>
+<tr><th id="122">122</th><td>  test_config.test_function = TEST_FUNCTION;</td></tr>
+<tr><th id="123">123</th><td><u>#elif defined (TEST_FUNCTION_ARGV)</u></td></tr>
+<tr><th id="124">124</th><td>  test_config.test_function_argv = TEST_FUNCTION_ARGV;</td></tr>
+<tr><th id="125">125</th><td><u>#else</u></td></tr>
+<tr><th id="126">126</th><td>  test_config.test_function = do_test;</td></tr>
+<tr><th id="127">127</th><td><u>#<span data-ppcond="119">endif</span></u></td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><u>#<span data-ppcond="129">ifdef</span> <span class="macro" data-ref="_M/CLEANUP_HANDLER">CLEANUP_HANDLER</span></u></td></tr>
+<tr><th id="130">130</th><td>  test_config.cleanup_function = CLEANUP_HANDLER;</td></tr>
+<tr><th id="131">131</th><td><u>#<span data-ppcond="129">endif</span></u></td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td><u>#<span data-ppcond="133">ifdef</span> <span class="macro" data-ref="_M/EXPECTED_SIGNAL">EXPECTED_SIGNAL</span></u></td></tr>
+<tr><th id="134">134</th><td>  test_config.expected_signal = (EXPECTED_SIGNAL);</td></tr>
+<tr><th id="135">135</th><td><u>#<span data-ppcond="133">endif</span></u></td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td><u>#<span data-ppcond="137">ifdef</span> <span class="macro" data-ref="_M/EXPECTED_STATUS">EXPECTED_STATUS</span></u></td></tr>
+<tr><th id="138">138</th><td>  test_config.expected_status = (EXPECTED_STATUS);</td></tr>
+<tr><th id="139">139</th><td><u>#<span data-ppcond="137">endif</span></u></td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td><u>#<span data-ppcond="141">ifdef</span> <span class="macro" data-ref="_M/TEST_NO_MALLOPT">TEST_NO_MALLOPT</span></u></td></tr>
+<tr><th id="142">142</th><td>  test_config.no_mallopt = <var>1</var>;</td></tr>
+<tr><th id="143">143</th><td><u>#<span data-ppcond="141">endif</span></u></td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td><u>#<span data-ppcond="145">ifdef</span> <span class="macro" data-ref="_M/TEST_NO_SETVBUF">TEST_NO_SETVBUF</span></u></td></tr>
+<tr><th id="146">146</th><td>  test_config.no_setvbuf = <var>1</var>;</td></tr>
+<tr><th id="147">147</th><td><u>#<span data-ppcond="145">endif</span></u></td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><u>#<span data-ppcond="149">ifdef</span> <span class="macro" data-ref="_M/TIMEOUT">TIMEOUT</span></u></td></tr>
+<tr><th id="150">150</th><td>  test_config.timeout = TIMEOUT;</td></tr>
+<tr><th id="151">151</th><td><u>#<span data-ppcond="149">endif</span></u></td></tr>
+<tr><th id="152">152</th><td></td></tr>
+<tr><th id="153">153</th><td><u>#<span data-ppcond="153">ifdef</span> <span class="macro" data-ref="_M/CMDLINE_OPTIONS">CMDLINE_OPTIONS</span></u></td></tr>
+<tr><th id="154">154</th><td>  <b>struct</b> option options[] =</td></tr>
+<tr><th id="155">155</th><td>    {</td></tr>
+<tr><th id="156">156</th><td>      CMDLINE_OPTIONS</td></tr>
+<tr><th id="157">157</th><td>      TEST_DEFAULT_OPTIONS</td></tr>
+<tr><th id="158">158</th><td>    };</td></tr>
+<tr><th id="159">159</th><td>  test_config.options = &amp;options;</td></tr>
+<tr><th id="160">160</th><td><u>#<span data-ppcond="153">endif</span></u></td></tr>
+<tr><th id="161">161</th><td><u>#<span data-ppcond="161">ifdef</span> <span class="macro" data-ref="_M/CMDLINE_PROCESS">CMDLINE_PROCESS</span></u></td></tr>
+<tr><th id="162">162</th><td>  test_config.cmdline_function = CMDLINE_PROCESS;</td></tr>
+<tr><th id="163">163</th><td><u>#<span data-ppcond="161">endif</span></u></td></tr>
+<tr><th id="164">164</th><td><u>#<span data-ppcond="164">ifdef</span> <span class="macro" data-ref="_M/CMDLINE_OPTSTRING">CMDLINE_OPTSTRING</span></u></td></tr>
+<tr><th id="165">165</th><td>  test_config.optstring = <q>"+"</q> CMDLINE_OPTSTRING;</td></tr>
+<tr><th id="166">166</th><td><u>#<span data-ppcond="164">else</span></u></td></tr>
+<tr><th id="167">167</th><td>  <a class="local col3 ref" href="#3test_config" title='test_config' data-ref="3test_config" data-ref-filename="3test_config">test_config</a>.<a class="ref field" href="test-driver.h.html#test_config::optstring" title='test_config::optstring' data-ref="test_config::optstring" data-ref-filename="test_config..optstring">optstring</a> = <q>"+"</q>;</td></tr>
+<tr><th id="168">168</th><td><u>#<span data-ppcond="164">endif</span></u></td></tr>
+<tr><th id="169">169</th><td></td></tr>
+<tr><th id="170">170</th><td>  <b>return</b> <a class="ref fn" href="test-driver.h.html#support_test_main" title='support_test_main' data-ref="support_test_main" data-ref-filename="support_test_main">support_test_main</a> (<a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc" data-ref-filename="1argc">argc</a>, <a class="local col2 ref" href="#2argv" title='argv' data-ref="2argv" data-ref-filename="2argv">argv</a>, &amp;<a class="local col3 ref" href="#3test_config" title='test_config' data-ref="3test_config" data-ref-filename="3test_config">test_config</a>);</td></tr>
+<tr><th id="171">171</th><td>}</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='test-run-command.c.html'>codebrowser/support/test-run-command.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dl-diagnostics-kernel.c source code [codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>unix</a>/<a href='..'>sysv</a>/<a href='./'>linux</a>/<a href='dl-diagnostics-kernel.c.html'>dl-diagnostics-kernel.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Print kernel diagnostics data in ld.so.  Linux version.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../../../../elf/dl-diagnostics.h.html">&lt;dl-diagnostics.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="ldsodefs.h.html">&lt;ldsodefs.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../../../../include/sys/utsname.h.html">&lt;sys/utsname.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><i  data-doc="print_auxv">/* Dump the auxiliary vector to standard output.  */</i></td></tr>
+<tr><th id="24">24</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="25">25</th><td><dfn class="tu decl def fn" id="print_auxv" title='print_auxv' data-type='void print_auxv()' data-ref="print_auxv" data-ref-filename="print_auxv">print_auxv</dfn> (<em>void</em>)</td></tr>
+<tr><th id="26">26</th><td>{</td></tr>
+<tr><th id="27">27</th><td>  <i>/* See _dl_show_auxv.  The code below follows the general output</i></td></tr>
+<tr><th id="28">28</th><td><i>     format for diagnostic dumps.  */</i></td></tr>
+<tr><th id="29">29</th><td>  <em>unsigned</em> <em>int</em> <dfn class="local col1 decl" id="1index" title='index' data-type='unsigned int' data-ref="1index" data-ref-filename="1index">index</dfn> = <var>0</var>;</td></tr>
+<tr><th id="30">30</th><td>  <b>for</b> (<a class="macro" href="../../../../elf/link.h.html#30" title="Elf64_auxv_t" data-ref="_M/ElfW">ElfW</a>(auxv_t) *<dfn class="local col2 decl" id="2av" title='av' data-type='Elf64_auxv_t *' data-ref="2av" data-ref-filename="2av">av</dfn> = <a class="macro" href="../../../generic/ldsodefs.h.html#515" title="_rtld_local_ro._dl_auxv" data-ref="_M/GLRO">GLRO</a>(dl_auxv); <a class="local col2 ref" href="#2av" title='av' data-ref="2av" data-ref-filename="2av">av</a>-&gt;<a class="ref field" href="../../../../elf/elf.h.html#(anonymous)::a_type" title='(anonymous struct)::a_type' data-ref="(anonymous)::a_type" data-ref-filename="(anonymous)..a_type">a_type</a> != <a class="macro" href="../../../../elf/elf.h.html#1164" title="0" data-ref="_M/AT_NULL">AT_NULL</a>; ++<a class="local col2 ref" href="#2av" title='av' data-ref="2av" data-ref-filename="2av">av</a>)</td></tr>
+<tr><th id="31">31</th><td>    {</td></tr>
+<tr><th id="32">32</th><td>      <a class="ref fn" href="../../../generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"auxv[0x%x].a_type=0x%lx\n"</q></td></tr>
+<tr><th id="33">33</th><td>                  <q>"auxv[0x%x].a_val="</q>,</td></tr>
+<tr><th id="34">34</th><td>                  <a class="local col1 ref" href="#1index" title='index' data-ref="1index" data-ref-filename="1index">index</a>, (<em>unsigned</em> <em>long</em> <em>int</em>) <a class="local col2 ref" href="#2av" title='av' data-ref="2av" data-ref-filename="2av">av</a>-&gt;<a class="ref field" href="../../../../elf/elf.h.html#(anonymous)::a_type" title='(anonymous struct)::a_type' data-ref="(anonymous)::a_type" data-ref-filename="(anonymous)..a_type">a_type</a>, <a class="local col1 ref" href="#1index" title='index' data-ref="1index" data-ref-filename="1index">index</a>);</td></tr>
+<tr><th id="35">35</th><td>      <b>if</b> (<a class="local col2 ref" href="#2av" title='av' data-ref="2av" data-ref-filename="2av">av</a>-&gt;<a class="ref field" href="../../../../elf/elf.h.html#(anonymous)::a_type" title='(anonymous struct)::a_type' data-ref="(anonymous)::a_type" data-ref-filename="(anonymous)..a_type">a_type</a> == <a class="macro" href="../../../../elf/elf.h.html#1208" title="31" data-ref="_M/AT_EXECFN">AT_EXECFN</a></td></tr>
+<tr><th id="36">36</th><td>          || <a class="local col2 ref" href="#2av" title='av' data-ref="2av" data-ref-filename="2av">av</a>-&gt;<a class="ref field" href="../../../../elf/elf.h.html#(anonymous)::a_type" title='(anonymous struct)::a_type' data-ref="(anonymous)::a_type" data-ref-filename="(anonymous)..a_type">a_type</a> == <a class="macro" href="../../../../elf/elf.h.html#1182" title="15" data-ref="_M/AT_PLATFORM">AT_PLATFORM</a></td></tr>
+<tr><th id="37">37</th><td>          || <a class="local col2 ref" href="#2av" title='av' data-ref="2av" data-ref-filename="2av">av</a>-&gt;<a class="ref field" href="../../../../elf/elf.h.html#(anonymous)::a_type" title='(anonymous struct)::a_type' data-ref="(anonymous)::a_type" data-ref-filename="(anonymous)..a_type">a_type</a> == <a class="macro" href="../../../../elf/elf.h.html#1201" title="24" data-ref="_M/AT_BASE_PLATFORM">AT_BASE_PLATFORM</a>)</td></tr>
+<tr><th id="38">38</th><td>        <i>/* The address of the strings is not useful at all, so print</i></td></tr>
+<tr><th id="39">39</th><td><i>           the strings themselvs.  */</i></td></tr>
+<tr><th id="40">40</th><td>        <a class="ref fn" href="../../../../elf/dl-diagnostics.h.html#_dl_diagnostics_print_string" title='_dl_diagnostics_print_string' data-ref="_dl_diagnostics_print_string" data-ref-filename="_dl_diagnostics_print_string">_dl_diagnostics_print_string</a> ((<em>const</em> <em>char</em> *) <a class="local col2 ref" href="#2av" title='av' data-ref="2av" data-ref-filename="2av">av</a>-&gt;<a class="ref field" href="../../../../elf/elf.h.html#(anonymous)::a_un" title='(anonymous struct)::a_un' data-ref="(anonymous)::a_un" data-ref-filename="(anonymous)..a_un">a_un</a>.<a class="ref field" href="../../../../elf/elf.h.html#(anonymousstruct)::(anonymous)::a_val" title='(anonymous struct)::(anonymous union)::a_val' data-ref="(anonymousstruct)::(anonymous)::a_val" data-ref-filename="(anonymousstruct)..(anonymous)..a_val">a_val</a>);</td></tr>
+<tr><th id="41">41</th><td>      <b>else</b></td></tr>
+<tr><th id="42">42</th><td>        <a class="ref fn" href="../../../generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"0x%lx"</q>, (<em>unsigned</em> <em>long</em> <em>int</em>) <a class="local col2 ref" href="#2av" title='av' data-ref="2av" data-ref-filename="2av">av</a>-&gt;<a class="ref field" href="../../../../elf/elf.h.html#(anonymous)::a_un" title='(anonymous struct)::a_un' data-ref="(anonymous)::a_un" data-ref-filename="(anonymous)..a_un">a_un</a>.<a class="ref field" href="../../../../elf/elf.h.html#(anonymousstruct)::(anonymous)::a_val" title='(anonymous struct)::(anonymous union)::a_val' data-ref="(anonymousstruct)::(anonymous)::a_val" data-ref-filename="(anonymousstruct)..(anonymous)..a_val">a_val</a>);</td></tr>
+<tr><th id="43">43</th><td>      <a class="ref fn" href="../../../generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"\n"</q>);</td></tr>
+<tr><th id="44">44</th><td>      ++<a class="local col1 ref" href="#1index" title='index' data-ref="1index" data-ref-filename="1index">index</a>;</td></tr>
+<tr><th id="45">45</th><td>    }</td></tr>
+<tr><th id="46">46</th><td>}</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><i  data-doc="print_utsname_entry">/* Print one uname entry.  */</i></td></tr>
+<tr><th id="49">49</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="50">50</th><td><dfn class="tu decl def fn" id="print_utsname_entry" title='print_utsname_entry' data-type='void print_utsname_entry(const char * field, const char * value)' data-ref="print_utsname_entry" data-ref-filename="print_utsname_entry">print_utsname_entry</dfn> (<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="3field" title='field' data-type='const char *' data-ref="3field" data-ref-filename="3field">field</dfn>, <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="4value" title='value' data-type='const char *' data-ref="4value" data-ref-filename="4value">value</dfn>)</td></tr>
+<tr><th id="51">51</th><td>{</td></tr>
+<tr><th id="52">52</th><td>  <a class="ref fn" href="../../../generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"uname."</q>);</td></tr>
+<tr><th id="53">53</th><td>  <a class="ref fn" href="../../../../elf/dl-diagnostics.h.html#_dl_diagnostics_print_labeled_string" title='_dl_diagnostics_print_labeled_string' data-ref="_dl_diagnostics_print_labeled_string" data-ref-filename="_dl_diagnostics_print_labeled_string">_dl_diagnostics_print_labeled_string</a> (<a class="local col3 ref" href="#3field" title='field' data-ref="3field" data-ref-filename="3field">field</a>, <a class="local col4 ref" href="#4value" title='value' data-ref="4value" data-ref-filename="4value">value</a>);</td></tr>
+<tr><th id="54">54</th><td>}</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><i  data-doc="print_uname">/* Print information from uname, including the kernel version.  */</i></td></tr>
+<tr><th id="57">57</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="58">58</th><td><dfn class="tu decl def fn" id="print_uname" title='print_uname' data-type='void print_uname()' data-ref="print_uname" data-ref-filename="print_uname">print_uname</dfn> (<em>void</em>)</td></tr>
+<tr><th id="59">59</th><td>{</td></tr>
+<tr><th id="60">60</th><td>  <b>struct</b> <a class="type" href="../../../../posix/sys/utsname.h.html#utsname" title='utsname' data-ref="utsname" data-ref-filename="utsname">utsname</a> <dfn class="local col5 decl" id="5uts" title='uts' data-type='struct utsname' data-ref="5uts" data-ref-filename="5uts">uts</dfn>;</td></tr>
+<tr><th id="61">61</th><td>  <b>if</b> (<a class="ref fn" href="../../../../include/sys/utsname.h.html#__uname" title='__uname' data-ref="__uname" data-ref-filename="__uname">__uname</a> (&amp;<a class="local col5 ref" href="#5uts" title='uts' data-ref="5uts" data-ref-filename="5uts">uts</a>) == <var>0</var>)</td></tr>
+<tr><th id="62">62</th><td>    {</td></tr>
+<tr><th id="63">63</th><td>      <a class="tu ref fn" href="#print_utsname_entry" title='print_utsname_entry' data-use='c' data-ref="print_utsname_entry" data-ref-filename="print_utsname_entry">print_utsname_entry</a> (<q>"sysname"</q>, <a class="local col5 ref" href="#5uts" title='uts' data-ref="5uts" data-ref-filename="5uts">uts</a>.<a class="ref field" href="../../../../posix/sys/utsname.h.html#utsname::sysname" title='utsname::sysname' data-ref="utsname::sysname" data-ref-filename="utsname..sysname">sysname</a>);</td></tr>
+<tr><th id="64">64</th><td>      <a class="tu ref fn" href="#print_utsname_entry" title='print_utsname_entry' data-use='c' data-ref="print_utsname_entry" data-ref-filename="print_utsname_entry">print_utsname_entry</a> (<q>"nodename"</q>, <a class="local col5 ref" href="#5uts" title='uts' data-ref="5uts" data-ref-filename="5uts">uts</a>.<a class="ref field" href="../../../../posix/sys/utsname.h.html#utsname::nodename" title='utsname::nodename' data-ref="utsname::nodename" data-ref-filename="utsname..nodename">nodename</a>);</td></tr>
+<tr><th id="65">65</th><td>      <a class="tu ref fn" href="#print_utsname_entry" title='print_utsname_entry' data-use='c' data-ref="print_utsname_entry" data-ref-filename="print_utsname_entry">print_utsname_entry</a> (<q>"release"</q>, <a class="local col5 ref" href="#5uts" title='uts' data-ref="5uts" data-ref-filename="5uts">uts</a>.<a class="ref field" href="../../../../posix/sys/utsname.h.html#utsname::release" title='utsname::release' data-ref="utsname::release" data-ref-filename="utsname..release">release</a>);</td></tr>
+<tr><th id="66">66</th><td>      <a class="tu ref fn" href="#print_utsname_entry" title='print_utsname_entry' data-use='c' data-ref="print_utsname_entry" data-ref-filename="print_utsname_entry">print_utsname_entry</a> (<q>"version"</q>, <a class="local col5 ref" href="#5uts" title='uts' data-ref="5uts" data-ref-filename="5uts">uts</a>.<a class="ref field" href="../../../../posix/sys/utsname.h.html#utsname::version" title='utsname::version' data-ref="utsname::version" data-ref-filename="utsname..version">version</a>);</td></tr>
+<tr><th id="67">67</th><td>      <a class="tu ref fn" href="#print_utsname_entry" title='print_utsname_entry' data-use='c' data-ref="print_utsname_entry" data-ref-filename="print_utsname_entry">print_utsname_entry</a> (<q>"machine"</q>, <a class="local col5 ref" href="#5uts" title='uts' data-ref="5uts" data-ref-filename="5uts">uts</a>.<a class="ref field" href="../../../../posix/sys/utsname.h.html#utsname::machine" title='utsname::machine' data-ref="utsname::machine" data-ref-filename="utsname..machine">machine</a>);</td></tr>
+<tr><th id="68">68</th><td>      <a class="tu ref fn" href="#print_utsname_entry" title='print_utsname_entry' data-use='c' data-ref="print_utsname_entry" data-ref-filename="print_utsname_entry">print_utsname_entry</a> (<q>"domainname"</q>, <a class="local col5 ref" href="#5uts" title='uts' data-ref="5uts" data-ref-filename="5uts">uts</a>.<a class="ref field" href="../../../../posix/sys/utsname.h.html#utsname::domainname" title='utsname::domainname' data-ref="utsname::domainname" data-ref-filename="utsname..domainname">domainname</a>);</td></tr>
+<tr><th id="69">69</th><td>    }</td></tr>
+<tr><th id="70">70</th><td>}</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><em>void</em></td></tr>
+<tr><th id="73">73</th><td><dfn class="decl def fn" id="_dl_diagnostics_kernel" title='_dl_diagnostics_kernel' data-ref="_dl_diagnostics_kernel" data-ref-filename="_dl_diagnostics_kernel">_dl_diagnostics_kernel</dfn> (<em>void</em>)</td></tr>
+<tr><th id="74">74</th><td>{</td></tr>
+<tr><th id="75">75</th><td>  <a class="tu ref fn" href="#print_auxv" title='print_auxv' data-use='c' data-ref="print_auxv" data-ref-filename="print_auxv">print_auxv</a> ();</td></tr>
+<tr><th id="76">76</th><td>  <a class="tu ref fn" href="#print_uname" title='print_uname' data-use='c' data-ref="print_uname" data-ref-filename="print_uname">print_uname</a> ();</td></tr>
+<tr><th id="77">77</th><td>}</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

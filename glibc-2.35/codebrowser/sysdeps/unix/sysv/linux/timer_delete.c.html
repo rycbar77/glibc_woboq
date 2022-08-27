@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>timer_delete.c source code [codebrowser/sysdeps/unix/sysv/linux/timer_delete.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/timer_delete.c'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>unix</a>/<a href='..'>sysv</a>/<a href='./'>linux</a>/<a href='timer_delete.c.html'>timer_delete.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Copyright (C) 2003-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="2">2</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="3">3</th><td><i></i></td></tr>
+<tr><th id="4">4</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="5">5</th><td><i>   modify it under the terms of the GNU Lesser General Public License as</i></td></tr>
+<tr><th id="6">6</th><td><i>   published by the Free Software Foundation; either version 2.1 of the</i></td></tr>
+<tr><th id="7">7</th><td><i>   License, or (at your option) any later version.</i></td></tr>
+<tr><th id="8">8</th><td><i></i></td></tr>
+<tr><th id="9">9</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="10">10</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="11">11</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="12">12</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="13">13</th><td><i></i></td></tr>
+<tr><th id="14">14</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="15">15</th><td><i>   License along with the GNU C Library; see the file COPYING.LIB.  If</i></td></tr>
+<tr><th id="16">16</th><td><i>   not, see &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><u>#include <a href="../../../../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../../../../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../../../../include/time.h.html">&lt;time.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="kernel-posix-timers.h.html">"kernel-posix-timers.h"</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../../../nptl/pthreadP.h.html">&lt;pthreadP.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../../../../include/shlib-compat.h.html">&lt;shlib-compat.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><em>int</em></td></tr>
+<tr><th id="27">27</th><td><dfn class="decl def fn" id="___timer_delete" title='___timer_delete' data-ref="___timer_delete" data-ref-filename="___timer_delete">___timer_delete</dfn> (<a class="typedef" href="../../../../time/bits/types/timer_t.h.html#timer_t" title='timer_t' data-type='__timer_t' data-ref="timer_t" data-ref-filename="timer_t">timer_t</a> <dfn class="local col1 decl" id="1timerid" title='timerid' data-type='timer_t' data-ref="1timerid" data-ref-filename="1timerid">timerid</dfn>)</td></tr>
+<tr><th id="28">28</th><td>{</td></tr>
+<tr><th id="29">29</th><td>  <a class="typedef" href="kernel-posix-timers.h.html#kernel_timer_t" title='kernel_timer_t' data-type='int' data-ref="kernel_timer_t" data-ref-filename="kernel_timer_t">kernel_timer_t</a> <dfn class="local col2 decl" id="2ktimerid" title='ktimerid' data-type='kernel_timer_t' data-ref="2ktimerid" data-ref-filename="2ktimerid">ktimerid</dfn> = <a class="ref fn" href="kernel-posix-timers.h.html#timerid_to_kernel_timer" title='timerid_to_kernel_timer' data-ref="timerid_to_kernel_timer" data-ref-filename="timerid_to_kernel_timer">timerid_to_kernel_timer</a> (<a class="local col1 ref" href="#1timerid" title='timerid' data-ref="1timerid" data-ref-filename="1timerid">timerid</a>);</td></tr>
+<tr><th id="30">30</th><td>  <em>int</em> <dfn class="local col3 decl" id="3res" title='res' data-type='int' data-ref="3res" data-ref-filename="3res">res</dfn> = <a class="macro" href="../../sysdep.h.html#108" title="({ long int sc_ret = ({ unsigned long int resultvar; __typeof__ (((__typeof__ ((ktimerid) - (ktimerid))) (ktimerid))) __arg1 = ((__typeof__ ((ktimerid) - (ktimerid))) (ktimerid)); register __typeof__ (((__typeof__ ((ktimerid) - (ktimerid))) (ktimerid))) _a1 asm (&quot;rdi&quot;) = __arg1; asm volatile ( &quot;syscall\n\t&quot; : &quot;=a&quot; (resultvar) : &quot;0&quot; (226), &quot;r&quot; (_a1) : &quot;memory&quot;, &quot;cc&quot;, &quot;r11&quot;, &quot;cx&quot;); (long int) resultvar; }); __builtin_expect ((((unsigned long int) (sc_ret) &gt; -4096UL)), 0) ? ({ (__libc_errno = ((-(sc_ret)))); -1L; }) : sc_ret; })" data-ref="_M/INLINE_SYSCALL_CALL">INLINE_SYSCALL_CALL</a> (timer_delete, <a class="local col2 ref" href="#2ktimerid" title='ktimerid' data-ref="2ktimerid" data-ref-filename="2ktimerid">ktimerid</a>);</td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td>  <b>if</b> (<a class="local col3 ref" href="#3res" title='res' data-ref="3res" data-ref-filename="3res">res</a> == <var>0</var>)</td></tr>
+<tr><th id="33">33</th><td>    {</td></tr>
+<tr><th id="34">34</th><td>      <b>if</b> (<a class="ref fn" href="kernel-posix-timers.h.html#timer_is_sigev_thread" title='timer_is_sigev_thread' data-ref="timer_is_sigev_thread" data-ref-filename="timer_is_sigev_thread">timer_is_sigev_thread</a> (<a class="local col1 ref" href="#1timerid" title='timerid' data-ref="1timerid" data-ref-filename="1timerid">timerid</a>))</td></tr>
+<tr><th id="35">35</th><td>	{</td></tr>
+<tr><th id="36">36</th><td>	  <b>struct</b> <a class="type" href="kernel-posix-timers.h.html#timer" title='timer' data-ref="timer" data-ref-filename="timer">timer</a> *<dfn class="local col4 decl" id="4kt" title='kt' data-type='struct timer *' data-ref="4kt" data-ref-filename="4kt">kt</dfn> = <a class="ref fn" href="kernel-posix-timers.h.html#timerid_to_timer" title='timerid_to_timer' data-ref="timerid_to_timer" data-ref-filename="timerid_to_timer">timerid_to_timer</a> (<a class="local col1 ref" href="#1timerid" title='timerid' data-ref="1timerid" data-ref-filename="1timerid">timerid</a>);</td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td>	  <i>/* Remove the timer from the list.  */</i></td></tr>
+<tr><th id="39">39</th><td>	  <a class="ref fn" href="../../../nptl/pthreadP.h.html#__pthread_mutex_lock" title='__pthread_mutex_lock' data-ref="__pthread_mutex_lock" data-ref-filename="__pthread_mutex_lock">__pthread_mutex_lock</a> (&amp;<a class="ref" href="kernel-posix-timers.h.html#__timer_active_sigev_thread_lock" title='__timer_active_sigev_thread_lock' data-ref="__timer_active_sigev_thread_lock" data-ref-filename="__timer_active_sigev_thread_lock">__timer_active_sigev_thread_lock</a>);</td></tr>
+<tr><th id="40">40</th><td>	  <b>if</b> (<a class="ref" href="kernel-posix-timers.h.html#__timer_active_sigev_thread" title='__timer_active_sigev_thread' data-ref="__timer_active_sigev_thread" data-ref-filename="__timer_active_sigev_thread">__timer_active_sigev_thread</a> == <a class="local col4 ref" href="#4kt" title='kt' data-ref="4kt" data-ref-filename="4kt">kt</a>)</td></tr>
+<tr><th id="41">41</th><td>	    <a class="ref" href="kernel-posix-timers.h.html#__timer_active_sigev_thread" title='__timer_active_sigev_thread' data-ref="__timer_active_sigev_thread" data-ref-filename="__timer_active_sigev_thread">__timer_active_sigev_thread</a> = <a class="local col4 ref" href="#4kt" title='kt' data-ref="4kt" data-ref-filename="4kt">kt</a>-&gt;<a class="ref field" href="kernel-posix-timers.h.html#timer::next" title='timer::next' data-ref="timer::next" data-ref-filename="timer..next">next</a>;</td></tr>
+<tr><th id="42">42</th><td>	  <b>else</b></td></tr>
+<tr><th id="43">43</th><td>	    {</td></tr>
+<tr><th id="44">44</th><td>	      <b>struct</b> <a class="type" href="kernel-posix-timers.h.html#timer" title='timer' data-ref="timer" data-ref-filename="timer">timer</a> *<dfn class="local col5 decl" id="5prevp" title='prevp' data-type='struct timer *' data-ref="5prevp" data-ref-filename="5prevp">prevp</dfn> = <a class="ref" href="kernel-posix-timers.h.html#__timer_active_sigev_thread" title='__timer_active_sigev_thread' data-ref="__timer_active_sigev_thread" data-ref-filename="__timer_active_sigev_thread">__timer_active_sigev_thread</a>;</td></tr>
+<tr><th id="45">45</th><td>	      <b>while</b> (<a class="local col5 ref" href="#5prevp" title='prevp' data-ref="5prevp" data-ref-filename="5prevp">prevp</a>-&gt;<a class="ref field" href="kernel-posix-timers.h.html#timer::next" title='timer::next' data-ref="timer::next" data-ref-filename="timer..next">next</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="46">46</th><td>		<b>if</b> (<a class="local col5 ref" href="#5prevp" title='prevp' data-ref="5prevp" data-ref-filename="5prevp">prevp</a>-&gt;<a class="ref field" href="kernel-posix-timers.h.html#timer::next" title='timer::next' data-ref="timer::next" data-ref-filename="timer..next">next</a> == <a class="local col4 ref" href="#4kt" title='kt' data-ref="4kt" data-ref-filename="4kt">kt</a>)</td></tr>
+<tr><th id="47">47</th><td>		  {</td></tr>
+<tr><th id="48">48</th><td>		    <a class="local col5 ref" href="#5prevp" title='prevp' data-ref="5prevp" data-ref-filename="5prevp">prevp</a>-&gt;<a class="ref field" href="kernel-posix-timers.h.html#timer::next" title='timer::next' data-ref="timer::next" data-ref-filename="timer..next">next</a> = <a class="local col4 ref" href="#4kt" title='kt' data-ref="4kt" data-ref-filename="4kt">kt</a>-&gt;<a class="ref field" href="kernel-posix-timers.h.html#timer::next" title='timer::next' data-ref="timer::next" data-ref-filename="timer..next">next</a>;</td></tr>
+<tr><th id="49">49</th><td>		    <b>break</b>;</td></tr>
+<tr><th id="50">50</th><td>		  }</td></tr>
+<tr><th id="51">51</th><td>		<b>else</b></td></tr>
+<tr><th id="52">52</th><td>		  <a class="local col5 ref" href="#5prevp" title='prevp' data-ref="5prevp" data-ref-filename="5prevp">prevp</a> = <a class="local col5 ref" href="#5prevp" title='prevp' data-ref="5prevp" data-ref-filename="5prevp">prevp</a>-&gt;<a class="ref field" href="kernel-posix-timers.h.html#timer::next" title='timer::next' data-ref="timer::next" data-ref-filename="timer..next">next</a>;</td></tr>
+<tr><th id="53">53</th><td>	    }</td></tr>
+<tr><th id="54">54</th><td>	  <a class="ref fn" href="../../../nptl/pthreadP.h.html#__pthread_mutex_unlock" title='__pthread_mutex_unlock' data-ref="__pthread_mutex_unlock" data-ref-filename="__pthread_mutex_unlock">__pthread_mutex_unlock</a> (&amp;<a class="ref" href="kernel-posix-timers.h.html#__timer_active_sigev_thread_lock" title='__timer_active_sigev_thread_lock' data-ref="__timer_active_sigev_thread_lock" data-ref-filename="__timer_active_sigev_thread_lock">__timer_active_sigev_thread_lock</a>);</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td>	  <a class="ref fn" href="../../../../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col4 ref" href="#4kt" title='kt' data-ref="4kt" data-ref-filename="4kt">kt</a>);</td></tr>
+<tr><th id="57">57</th><td>	}</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td>      <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="60">60</th><td>    }</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td>  <i>/* The kernel timer is not known or something else bad happened.</i></td></tr>
+<tr><th id="63">63</th><td><i>     Return the error.  */</i></td></tr>
+<tr><th id="64">64</th><td>  <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="65">65</th><td>}</td></tr>
+<tr><th id="66">66</th><td><a class="macro" href="../../../../include/shlib-compat.h.html#116" title="extern __typeof (___timer_delete) timer_delete __attribute__ ((weak, alias (&quot;___timer_delete&quot;))) ;" data-ref="_M/versioned_symbol">versioned_symbol</a> (libc, <a class="ref fn" href="#___timer_delete" title='___timer_delete' data-ref="___timer_delete" data-ref-filename="___timer_delete">___timer_delete</a>, <dfn class="decl def fn" id="timer_delete" title='timer_delete' data-ref="timer_delete" data-ref-filename="timer_delete">timer_delete</dfn>, GLIBC_2_34);</td></tr>
+<tr><th id="67">67</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#626" title="" data-ref="_M/libc_hidden_ver">libc_hidden_ver</a> (___timer_delete, __timer_delete)</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><u>#<span data-ppcond="69">if</span> <a class="macro" href="x86_64/64/timer_t_was_int_compat.h.html#19" title="1" data-ref="_M/TIMER_T_WAS_INT_COMPAT">TIMER_T_WAS_INT_COMPAT</a></u></td></tr>
+<tr><th id="70">70</th><td><u># <span data-ppcond="70">if</span> <a class="macro" href="../../../../include/shlib-compat.h.html#113" title="0" data-ref="_M/OTHER_SHLIB_COMPAT">OTHER_SHLIB_COMPAT</a> (librt, GLIBC_2_3_3, GLIBC_2_34)</u></td></tr>
+<tr><th id="71">71</th><td>compat_symbol (librt, ___timer_delete, timer_delete, GLIBC_2_3_3);</td></tr>
+<tr><th id="72">72</th><td><u>#<span data-ppcond="70">endif</span></u></td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><u># <span data-ppcond="74">if</span> <a class="macro" href="../../../../include/shlib-compat.h.html#113" title="0" data-ref="_M/OTHER_SHLIB_COMPAT">OTHER_SHLIB_COMPAT</a> (librt, GLIBC_2_2, GLIBC_2_3_3)</u></td></tr>
+<tr><th id="75">75</th><td><em>int</em></td></tr>
+<tr><th id="76">76</th><td>__timer_delete_old (<em>int</em> timerid)</td></tr>
+<tr><th id="77">77</th><td>{</td></tr>
+<tr><th id="78">78</th><td>  <em>int</em> res = __timer_delete (__timer_compat_list[timerid]);</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td>  <b>if</b> (res == <var>0</var>)</td></tr>
+<tr><th id="81">81</th><td>    <i>/* Successful timer deletion, now free the index.  We only need to</i></td></tr>
+<tr><th id="82">82</th><td><i>       store a word and that better be atomic.  */</i></td></tr>
+<tr><th id="83">83</th><td>    __timer_compat_list[timerid] = NULL;</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td>  <b>return</b> res;</td></tr>
+<tr><th id="86">86</th><td>}</td></tr>
+<tr><th id="87">87</th><td>compat_symbol (librt, __timer_delete_old, timer_delete, GLIBC_2_2);</td></tr>
+<tr><th id="88">88</th><td><u># <span data-ppcond="74">endif</span> /* OTHER_SHLIB_COMPAT */</u></td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><u>#<span data-ppcond="69">else</span> /* !TIMER_T_WAS_INT_COMPAT */</u></td></tr>
+<tr><th id="91">91</th><td><i>/* The transition from int to timer_t did not change ABI because the</i></td></tr>
+<tr><th id="92">92</th><td><i>   type sizes are the same.  */</i></td></tr>
+<tr><th id="93">93</th><td><u># if OTHER_SHLIB_COMPAT (librt, GLIBC_2_2, GLIBC_2_34)</u></td></tr>
+<tr><th id="94">94</th><td>compat_symbol (librt, ___timer_delete, timer_delete, GLIBC_2_2);</td></tr>
+<tr><th id="95">95</th><td><u># endif</u></td></tr>
+<tr><th id="96">96</th><td><u>#<span data-ppcond="69">endif</span> /* !TIMER_T_WAS_INT_COMPAT */</u></td></tr>
+<tr><th id="97">97</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,33 @@
+<def f='codebrowser/sysdeps/generic/dl-cache.h' l='157' ll='182'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='183'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='190' c='cache_file_new_matches_endian'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='299' c='cache_extension_load'/>
+<use f='codebrowser/elf/cache.c' l='294' c='check_new_cache'/>
+<use f='codebrowser/elf/cache.c' l='340' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='347' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='365' macro='1' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='365' macro='1' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='373' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='376' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='617' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='623' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='628' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='640' macro='1' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='640' macro='1' c='save_cache'/>
+<size>48</size>
+<mbr r='cache_file_new::magic' o='0' t='char[17]'/>
+<mbr r='cache_file_new::version' o='136' t='char[3]'/>
+<mbr r='cache_file_new::nlibs' o='160' t='uint32_t'/>
+<mbr r='cache_file_new::len_strings' o='192' t='uint32_t'/>
+<mbr r='cache_file_new::flags' o='224' t='uint8_t'/>
+<mbr r='cache_file_new::padding_unsed' o='232' t='uint8_t[3]'/>
+<mbr r='cache_file_new::extension_offset' o='256' t='uint32_t'/>
+<mbr r='cache_file_new::unused' o='288' t='uint32_t[3]'/>
+<mbr r='cache_file_new::libs' o='384' t='struct file_entry_new[0]'/>
+<use f='codebrowser/elf/dl-cache.c' l='36'/>
+<use f='codebrowser/elf/dl-cache.c' l='431' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-cache.c' l='452' macro='1' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-cache.c' l='452' macro='1' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-cache.c' l='455' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-cache.c' l='456' c='_dl_load_cache_lookup'/>
+<size>48</size>

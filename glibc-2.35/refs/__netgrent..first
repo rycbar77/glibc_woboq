@@ -1,0 +1,10 @@
+<dec f='codebrowser/inet/netgroup.h' l='60' type='int'/>
+<offset>448</offset>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='117' u='w' c='__nscd_setnetgrent'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='136' u='w' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='220' u='w' c='_nss_netgroup_parseline'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='225' u='r' c='_nss_netgroup_parseline'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='232' u='r' c='_nss_netgroup_parseline'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='238' u='r' c='_nss_netgroup_parseline'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='244' u='r' c='_nss_netgroup_parseline'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='274' u='w' c='_nss_netgroup_parseline'/>

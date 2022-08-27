@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='345' type='gid_t'/>
+<offset>64</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='345'>/* GID of sending process.  */</doc>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='499' u='w' c='__msgwrite'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='380' u='w' c='__msgwrite'/>

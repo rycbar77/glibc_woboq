@@ -1,0 +1,8 @@
+<dec f='codebrowser/resolv/resolv-internal.h' l='75' type='int __res_context_send(struct resolv_context * , const unsigned char * , int , const unsigned char * , int , unsigned char * , int , unsigned char ** , unsigned char ** , int * , int * , int * )'/>
+<dec f='codebrowser/resolv/resolv-internal.h' l='79' type='int __res_context_send(struct resolv_context * , const unsigned char * , int , const unsigned char * , int , unsigned char * , int , unsigned char ** , unsigned char ** , int * , int * , int * )'/>
+<use f='codebrowser/resolv/resolv-internal.h' l='79' c='__res_context_send'/>
+<doc f='codebrowser/resolv/resolv-internal.h' l='73'>/* Internal function used to implement the query and search
+   functions.  */</doc>
+<use f='codebrowser/resolv/res_query.c' l='208' u='c' c='__res_context_query'/>
+<def f='codebrowser/resolv/res_send.c' l='251' ll='427' type='int __res_context_send(struct resolv_context * ctx, const unsigned char * buf, int buflen, const unsigned char * buf2, int buflen2, unsigned char * ans, int anssiz, unsigned char ** ansp, unsigned char ** ansp2, int * nansp2, int * resplen2, int * ansp2_malloced)'/>
+<use f='codebrowser/resolv/res_send.c' l='441' u='c' c='context_send_common'/>

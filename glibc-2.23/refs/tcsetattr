@@ -1,0 +1,7 @@
+<dec f='codebrowser/termios/termios.h' l='70' type='int tcsetattr(int __fd, int __optional_actions, const struct termios * __termios_p)'/>
+<use f='codebrowser/misc/getpass.c' l='86' u='c' c='getpass'/>
+<use f='codebrowser/misc/getpass.c' l='113' u='c' c='getpass'/>
+<doc f='codebrowser/termios/termios.h' l='68'>/* Set the state of FD to *TERMIOS_P.
+   Values for OPTIONAL_ACTIONS (TCSA*) are in &lt;bits/termios.h&gt;.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/tcsetattr.c' l='43' ll='79' type='int tcsetattr(int fd, int optional_actions, const struct termios * termios_p)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/tcsetattr.c' l='42'>/* Set the state of FD to *TERMIOS_P.  */</doc>

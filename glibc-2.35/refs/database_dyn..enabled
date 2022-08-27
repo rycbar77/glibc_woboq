@@ -1,0 +1,21 @@
+<dec f='codebrowser/nscd/nscd.h' l='134' type='int'/>
+<offset>1536</offset>
+<use f='codebrowser/nscd/connections.c' l='118' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='137' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='156' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='175' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='194' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='494' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='809' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='905' u='r' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='978' u='r' c='invalidate_cache'/>
+<use f='codebrowser/nscd/connections.c' l='1110' u='r' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1413' u='r' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1460' u='r' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1498' u='r' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1498' u='r' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='2390' u='r' c='start_threads'/>
+<use f='codebrowser/nscd/nscd.c' l='572' u='r' c='termination_handler'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='148' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='150' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='127' u='r' c='send_stats'/>

@@ -1,0 +1,7 @@
+<def f='codebrowser/posix/regcomp.c' l='2840' ll='2862' type='int32_t seek_collating_symbol_entry(const unsigned char * name, size_t name_len, const int32_t * symb_table, int32_t table_size, const unsigned char * extra)'/>
+<use f='codebrowser/posix/regcomp.c' l='2898' u='c' c='lookup_collation_sequence_value'/>
+<use f='codebrowser/posix/regcomp.c' l='3040' u='c' c='build_collating_symbol'/>
+<doc f='codebrowser/posix/regcomp.c' l='2835'>/* Local function for parse_bracket_exp used in _LIBC environment.
+   Seek the collating symbol entry corresponding to NAME.
+   Return the index of the symbol in the SYMB_TABLE,
+   or -1 if not found.  */</doc>

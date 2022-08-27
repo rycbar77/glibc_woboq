@@ -1,0 +1,29 @@
+<dec f='codebrowser/elf/dl-tunables.h' l='38' type='int64_t'/>
+<offset>0</offset>
+<use f='codebrowser/elf/dl-tunables.c' l='103' u='w' c='do_tunable_update_val'/>
+<use f='codebrowser/elf/dl-tunables.c' l='103' u='w' c='do_tunable_update_val'/>
+<use f='codebrowser/elf/dl-tunables.c' l='103' u='w' c='do_tunable_update_val'/>
+<use f='codebrowser/elf/dl-tunables.c' l='422' u='r' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='428' u='r' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='434' u='r' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='459' u='r' c='__tunable_get_val'/>
+<use f='codebrowser/elf/dl-tunables.c' l='464' u='r' c='__tunable_get_val'/>
+<use f='codebrowser/elf/dl-tunables.c' l='469' u='r' c='__tunable_get_val'/>
+<use f='codebrowser/malloc/arena.c' l='213' u='r' c='_dl_tunable_set_mallopt_check'/>
+<use f='codebrowser/malloc/arena.c' l='223' u='r' c='_dl_tunable_set_mmap_threshold'/>
+<use f='codebrowser/malloc/arena.c' l='223' u='r' c='_dl_tunable_set_mmaps_max'/>
+<use f='codebrowser/malloc/arena.c' l='223' u='r' c='_dl_tunable_set_top_pad'/>
+<use f='codebrowser/malloc/arena.c' l='223' u='r' c='_dl_tunable_set_perturb_byte'/>
+<use f='codebrowser/malloc/arena.c' l='223' u='r' c='_dl_tunable_set_trim_threshold'/>
+<use f='codebrowser/malloc/arena.c' l='223' u='r' c='_dl_tunable_set_arena_max'/>
+<use f='codebrowser/malloc/arena.c' l='223' u='r' c='_dl_tunable_set_arena_test'/>
+<use f='codebrowser/malloc/arena.c' l='223' u='r' c='_dl_tunable_set_tcache_max'/>
+<use f='codebrowser/malloc/arena.c' l='223' u='r' c='_dl_tunable_set_tcache_count'/>
+<use f='codebrowser/malloc/arena.c' l='223' u='r' c='_dl_tunable_set_tcache_unsorted_limit'/>
+<use f='codebrowser/malloc/arena.c' l='223' u='r' c='_dl_tunable_set_mxfast'/>
+<use f='codebrowser/nptl/pthread_mutex_conf.c' l='37' u='r' c='_dl_tunable_set_mutex_spin_count'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='76' u='r' c='_dl_tunable_set_elision_enable'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='89' u='r' c='_dl_tunable_set_elision_skip_lock_busy'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='89' u='r' c='_dl_tunable_set_elision_skip_lock_internal_abort'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='89' u='r' c='_dl_tunable_set_elision_retry_try_xbegin'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='89' u='r' c='_dl_tunable_set_elision_skip_trylock_internal_abort'/>

@@ -1,0 +1,20 @@
+<dec f='codebrowser/libio/libioP.h' l='303' type='_IO_xsputn_t'/>
+<offset>448</offset>
+<doc f='codebrowser/libio/libioP.h' l='302'>/* showmany */</doc>
+<use f='codebrowser/libio/iofputs.c' l='38' macro='1' u='r' c='_IO_fputs'/>
+<use f='codebrowser/libio/iofputs_u.c' l='37' macro='1' u='r' c='__fputs_unlocked'/>
+<use f='codebrowser/libio/iofputws.c' l='38' macro='1' u='r' c='fputws'/>
+<use f='codebrowser/libio/iofputws_u.c' l='38' macro='1' u='r' c='fputws_unlocked'/>
+<use f='codebrowser/libio/iofwrite.c' l='39' macro='1' u='r' c='_IO_fwrite'/>
+<use f='codebrowser/libio/iofwrite_u.c' l='42' macro='1' u='r' c='fwrite_unlocked'/>
+<use f='codebrowser/libio/iopadn.c' l='56' macro='1' u='r' c='_IO_padn'/>
+<use f='codebrowser/libio/iopadn.c' l='64' macro='1' u='r' c='_IO_padn'/>
+<use f='codebrowser/libio/ioputs.c' l='40' macro='1' u='r' c='_IO_puts'/>
+<use f='codebrowser/libio/iowpadn.c' l='62' macro='1' u='r' c='_IO_wpadn'/>
+<use f='codebrowser/libio/iowpadn.c' l='70' macro='1' u='r' c='_IO_wpadn'/>
+<use f='codebrowser/stdio-common/printf_fp.c' l='418' macro='1' u='r' c='__printf_fp_l'/>
+<use f='codebrowser/stdio-common/printf_fp.c' l='1254' macro='1' u='r' c='__printf_fp_l'/>
+<use f='codebrowser/stdio-common/printf_size.c' l='174' macro='1' u='r' c='__printf_size'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='239' macro='1' u='r' c='outstring_func'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='2169' macro='1' u='r' c='_IO_helper_overflow'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='2279' macro='1' u='r' c='buffered_vfprintf'/>

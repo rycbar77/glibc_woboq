@@ -1,0 +1,7 @@
+<def f='codebrowser/sysdeps/nptl/pthreadP.h' l='271' ll='282' type='void __do_cancel()'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='270'>/* Called when a thread reacts on a cancellation request.  */</doc>
+<use f='codebrowser/nptl/cancellation.c' l='45' u='c' c='__pthread_enable_asynccancel'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='56' u='c' c='sigcancel_handler'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='113' u='c' c='__pthread_cancel'/>
+<use f='codebrowser/nptl/pthread_exit.c' l='36' u='c' c='__pthread_exit'/>
+<use f='codebrowser/nptl/pthread_testcancel.c' l='33' u='c' c='___pthread_testcancel'/>

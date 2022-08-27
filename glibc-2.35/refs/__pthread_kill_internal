@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='518' type='int __pthread_kill_internal(pthread_t threadid, int signo)'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='117' u='c' c='__pthread_cancel'/>
+<def f='codebrowser/nptl/pthread_kill.c' l='72' ll='79' type='int __pthread_kill_internal(pthread_t threadid, int signo)'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='89' u='c' c='__pthread_kill'/>

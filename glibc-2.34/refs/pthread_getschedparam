@@ -1,0 +1,3 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='446' type='int pthread_getschedparam(pthread_t __target_thread, int *restrict __policy, struct sched_param *restrict __param)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='445'>/* Return in *POLICY and *PARAM the scheduling parameters for TARGET_THREAD. */</doc>
+<def f='codebrowser/nptl/pthread_getschedparam.c' l='74' macro='1' type='int pthread_getschedparam(pthread_t , int * , struct sched_param * )'/>

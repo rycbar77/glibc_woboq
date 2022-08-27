@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='790' type='int pthread_mutex_trylock(pthread_mutex_t * __mutex)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='789'>/* Try locking a mutex.  */</doc>
+<def f='codebrowser/nptl/pthread_mutex_trylock.c' l='452' macro='1' type='int pthread_mutex_trylock(pthread_mutex_t * )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='758' u='c' c='__gthread_mutex_trylock'/>

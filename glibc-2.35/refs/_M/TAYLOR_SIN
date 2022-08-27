@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='60'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='129' u='c'/>
+<doc f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='53'>/* The computed polynomial is a variation of the Taylor series expansion for
+   sin(x):
+
+   x - x^3/3! + x^5/5! - x^7/7! + x^9/9! - dx*x^2/2 + dx
+
+   The constants s1, s2, s3, etc. are pre-computed values of 1/3!, 1/5! and so
+   on.  The result is returned to LHS.  */</doc>

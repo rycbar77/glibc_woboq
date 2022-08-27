@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dl-usage.c source code [codebrowser/elf/dl-usage.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/elf/dl-usage.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>elf</a>/<a href='dl-usage.c.html'>dl-usage.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Print usage information and help for ld.so.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 1995-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/x86_64/dl-cache.h.html">&lt;dl-cache.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="dl-main.h.html">&lt;dl-main.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/ldsodefs.h.html">&lt;ldsodefs.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../include/unistd.h.html">&lt;unistd.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../version.h.html">"version.h"</a></u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/x86_64/dl-procinfo.h.html">&lt;dl-procinfo.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="dl-hwcaps.h.html">&lt;dl-hwcaps.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><em>void</em></td></tr>
+<tr><th id="29">29</th><td><dfn class="decl def fn" id="_dl_usage" title='_dl_usage' data-ref="_dl_usage" data-ref-filename="_dl_usage">_dl_usage</dfn> (<em>const</em> <em>char</em> *<dfn class="local col6 decl" id="6argv0" title='argv0' data-type='const char *' data-ref="6argv0" data-ref-filename="6argv0">argv0</dfn>, <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="7wrong_option" title='wrong_option' data-type='const char *' data-ref="7wrong_option" data-ref-filename="7wrong_option">wrong_option</dfn>)</td></tr>
+<tr><th id="30">30</th><td>{</td></tr>
+<tr><th id="31">31</th><td>  <b>if</b> (<a class="local col7 ref" href="#7wrong_option" title='wrong_option' data-ref="7wrong_option" data-ref-filename="7wrong_option">wrong_option</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="32">32</th><td>    <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_error_printf" title='_dl_error_printf' data-ref="_dl_error_printf" data-ref-filename="_dl_error_printf">_dl_error_printf</a> (<q>"%s: unrecognized option '%s'\n"</q>, <a class="local col6 ref" href="#6argv0" title='argv0' data-ref="6argv0" data-ref-filename="6argv0">argv0</a>, <a class="local col7 ref" href="#7wrong_option" title='wrong_option' data-ref="7wrong_option" data-ref-filename="7wrong_option">wrong_option</a>);</td></tr>
+<tr><th id="33">33</th><td>  <b>else</b></td></tr>
+<tr><th id="34">34</th><td>    <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_error_printf" title='_dl_error_printf' data-ref="_dl_error_printf" data-ref-filename="_dl_error_printf">_dl_error_printf</a> (<q>"%s: missing program name\n"</q>, <a class="local col6 ref" href="#6argv0" title='argv0' data-ref="6argv0" data-ref-filename="6argv0">argv0</a>);</td></tr>
+<tr><th id="35">35</th><td>  <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_error_printf" title='_dl_error_printf' data-ref="_dl_error_printf" data-ref-filename="_dl_error_printf">_dl_error_printf</a> (<q>"Try '%s --help' for more information.\n"</q>, <a class="local col6 ref" href="#6argv0" title='argv0' data-ref="6argv0" data-ref-filename="6argv0">argv0</a>);</td></tr>
+<tr><th id="36">36</th><td>  <a class="ref fn" href="../posix/unistd.h.html#__GI__exit" title='_exit' data-ref="__GI__exit" data-ref-filename="__GI__exit">_exit</a> (<a class="macro" href="../stdlib/stdlib.h.html#91" title="1" data-ref="_M/EXIT_FAILURE">EXIT_FAILURE</a>);</td></tr>
+<tr><th id="37">37</th><td>}</td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><em>void</em></td></tr>
+<tr><th id="40">40</th><td><dfn class="decl def fn" id="_dl_version" title='_dl_version' data-ref="_dl_version" data-ref-filename="_dl_version">_dl_version</dfn> (<em>void</em>)</td></tr>
+<tr><th id="41">41</th><td>{</td></tr>
+<tr><th id="42">42</th><td>  <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"\</q></td></tr>
+<tr><th id="43">43</th><td><q>ld.so "</q> <a class="macro" href="../build/config.h.html#168" title="&quot;(GNU libc) &quot;" data-ref="_M/PKGVERSION">PKGVERSION</a> <a class="macro" href="../version.h.html#3" title="&quot;release&quot;" data-ref="_M/RELEASE">RELEASE</a> <q>" release version "</q> <a class="macro" href="../version.h.html#4" title="&quot;2.33&quot;" data-ref="_M/VERSION">VERSION</a> <q>".\n\</q></td></tr>
+<tr><th id="44">44</th><td><q>Copyright (C) 2021 Free Software Foundation, Inc.\n\</q></td></tr>
+<tr><th id="45">45</th><td><q>This is free software; see the source for copying conditions.\n\</q></td></tr>
+<tr><th id="46">46</th><td><q>There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A\n\</q></td></tr>
+<tr><th id="47">47</th><td><q>PARTICULAR PURPOSE.\n\</q></td></tr>
+<tr><th id="48">48</th><td><q>"</q>);</td></tr>
+<tr><th id="49">49</th><td>  <a class="ref fn" href="../posix/unistd.h.html#__GI__exit" title='_exit' data-ref="__GI__exit" data-ref-filename="__GI__exit">_exit</a> (<a class="macro" href="../stdlib/stdlib.h.html#92" title="0" data-ref="_M/EXIT_SUCCESS">EXIT_SUCCESS</a>);</td></tr>
+<tr><th id="50">50</th><td>}</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td><i  data-doc="print_search_path_for_help_1">/* Print part of the library search path (from a single source).  */</i></td></tr>
+<tr><th id="53">53</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="54">54</th><td><dfn class="tu decl def fn" id="print_search_path_for_help_1" title='print_search_path_for_help_1' data-type='void print_search_path_for_help_1(struct r_search_path_elem ** list)' data-ref="print_search_path_for_help_1" data-ref-filename="print_search_path_for_help_1">print_search_path_for_help_1</dfn> (<b>struct</b> <a class="type" href="../sysdeps/generic/ldsodefs.h.html#r_search_path_elem" title='r_search_path_elem' data-ref="r_search_path_elem" data-ref-filename="r_search_path_elem">r_search_path_elem</a> **<dfn class="local col8 decl" id="8list" title='list' data-type='struct r_search_path_elem **' data-ref="8list" data-ref-filename="8list">list</dfn>)</td></tr>
+<tr><th id="55">55</th><td>{</td></tr>
+<tr><th id="56">56</th><td>  <b>if</b> (<a class="local col8 ref" href="#8list" title='list' data-ref="8list" data-ref-filename="8list">list</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> || <a class="local col8 ref" href="#8list" title='list' data-ref="8list" data-ref-filename="8list">list</a> == (<em>void</em> *) -<var>1</var>)</td></tr>
+<tr><th id="57">57</th><td>    <i>/* Path is missing or marked as inactive.  */</i></td></tr>
+<tr><th id="58">58</th><td>    <b>return</b>;</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td>  <b>for</b> (; *<a class="local col8 ref" href="#8list" title='list' data-ref="8list" data-ref-filename="8list">list</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>; ++<a class="local col8 ref" href="#8list" title='list' data-ref="8list" data-ref-filename="8list">list</a>)</td></tr>
+<tr><th id="61">61</th><td>    {</td></tr>
+<tr><th id="62">62</th><td>      <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_write" title='_dl_write' data-ref="_dl_write" data-ref-filename="_dl_write">_dl_write</a> (<a class="macro" href="../posix/unistd.h.html#211" title="1" data-ref="_M/STDOUT_FILENO">STDOUT_FILENO</a>, <q>"  "</q>, <var>2</var>);</td></tr>
+<tr><th id="63">63</th><td>      <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="9name" title='name' data-type='const char *' data-ref="9name" data-ref-filename="9name">name</dfn> = (*<a class="local col8 ref" href="#8list" title='list' data-ref="8list" data-ref-filename="8list">list</a>)-&gt;<a class="ref field" href="../sysdeps/generic/ldsodefs.h.html#r_search_path_elem::dirname" title='r_search_path_elem::dirname' data-ref="r_search_path_elem::dirname" data-ref-filename="r_search_path_elem..dirname">dirname</a>;</td></tr>
+<tr><th id="64">64</th><td>      <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col0 decl" id="10namelen" title='namelen' data-type='size_t' data-ref="10namelen" data-ref-filename="10namelen">namelen</dfn> = (*<a class="local col8 ref" href="#8list" title='list' data-ref="8list" data-ref-filename="8list">list</a>)-&gt;<a class="ref field" href="../sysdeps/generic/ldsodefs.h.html#r_search_path_elem::dirnamelen" title='r_search_path_elem::dirnamelen' data-ref="r_search_path_elem::dirnamelen" data-ref-filename="r_search_path_elem..dirnamelen">dirnamelen</a>;</td></tr>
+<tr><th id="65">65</th><td>      <b>if</b> (<a class="local col0 ref" href="#10namelen" title='namelen' data-ref="10namelen" data-ref-filename="10namelen">namelen</a> == <var>0</var>)</td></tr>
+<tr><th id="66">66</th><td>        {</td></tr>
+<tr><th id="67">67</th><td>          <i>/* The empty string denotes the current directory.  */</i></td></tr>
+<tr><th id="68">68</th><td>          <a class="local col9 ref" href="#9name" title='name' data-ref="9name" data-ref-filename="9name">name</a> = <q>"."</q>;</td></tr>
+<tr><th id="69">69</th><td>          <a class="local col0 ref" href="#10namelen" title='namelen' data-ref="10namelen" data-ref-filename="10namelen">namelen</a> = <var>1</var>;</td></tr>
+<tr><th id="70">70</th><td>        }</td></tr>
+<tr><th id="71">71</th><td>      <b>else</b> <b>if</b> (<a class="local col0 ref" href="#10namelen" title='namelen' data-ref="10namelen" data-ref-filename="10namelen">namelen</a> &gt; <var>1</var>)</td></tr>
+<tr><th id="72">72</th><td>        <i>/* Remove the trailing slash.  */</i></td></tr>
+<tr><th id="73">73</th><td>        --<a class="local col0 ref" href="#10namelen" title='namelen' data-ref="10namelen" data-ref-filename="10namelen">namelen</a>;</td></tr>
+<tr><th id="74">74</th><td>      <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_write" title='_dl_write' data-ref="_dl_write" data-ref-filename="_dl_write">_dl_write</a> (<a class="macro" href="../posix/unistd.h.html#211" title="1" data-ref="_M/STDOUT_FILENO">STDOUT_FILENO</a>, <a class="local col9 ref" href="#9name" title='name' data-ref="9name" data-ref-filename="9name">name</a>, <a class="local col0 ref" href="#10namelen" title='namelen' data-ref="10namelen" data-ref-filename="10namelen">namelen</a>);</td></tr>
+<tr><th id="75">75</th><td>      <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>" (%s)\n"</q>, (*<a class="local col8 ref" href="#8list" title='list' data-ref="8list" data-ref-filename="8list">list</a>)-&gt;<a class="ref field" href="../sysdeps/generic/ldsodefs.h.html#r_search_path_elem::what" title='r_search_path_elem::what' data-ref="r_search_path_elem::what" data-ref-filename="r_search_path_elem..what">what</a>);</td></tr>
+<tr><th id="76">76</th><td>    }</td></tr>
+<tr><th id="77">77</th><td>}</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><i  data-doc="print_search_path_for_help">/* Prints the library search path.  See _dl_init_paths in dl-load.c</i></td></tr>
+<tr><th id="80">80</th><td><i  data-doc="print_search_path_for_help">   how this information is populated.  */</i></td></tr>
+<tr><th id="81">81</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="82">82</th><td><dfn class="tu decl def fn" id="print_search_path_for_help" title='print_search_path_for_help' data-type='void print_search_path_for_help(struct dl_main_state * state)' data-ref="print_search_path_for_help" data-ref-filename="print_search_path_for_help">print_search_path_for_help</dfn> (<b>struct</b> <a class="type" href="dl-main.h.html#dl_main_state" title='dl_main_state' data-ref="dl_main_state" data-ref-filename="dl_main_state">dl_main_state</a> *<dfn class="local col1 decl" id="11state" title='state' data-type='struct dl_main_state *' data-ref="11state" data-ref-filename="11state">state</dfn>)</td></tr>
+<tr><th id="83">83</th><td>{</td></tr>
+<tr><th id="84">84</th><td>  <b>if</b> (<a class="ref" href="../include/link.h.html#__rtld_search_dirs" title='__rtld_search_dirs' data-ref="__rtld_search_dirs" data-ref-filename="__rtld_search_dirs">__rtld_search_dirs</a>.<a class="ref field" href="../include/link.h.html#r_search_path_struct::dirs" title='r_search_path_struct::dirs' data-ref="r_search_path_struct::dirs" data-ref-filename="r_search_path_struct..dirs">dirs</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="85">85</th><td>    <i>/* The run-time search paths have not yet been initialized.  */</i></td></tr>
+<tr><th id="86">86</th><td>    <a class="ref fn" href="dl-main.h.html#call_init_paths" title='call_init_paths' data-ref="call_init_paths" data-ref-filename="call_init_paths">call_init_paths</a> (<a class="local col1 ref" href="#11state" title='state' data-ref="11state" data-ref-filename="11state">state</a>);</td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td>  <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"\nShared library search path:\n"</q>);</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td>  <i>/* The print order should reflect the processing in</i></td></tr>
+<tr><th id="91">91</th><td><i>     _dl_map_object.  */</i></td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td>  <b>struct</b> <a class="type" href="../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col2 decl" id="12map" title='map' data-type='struct link_map *' data-ref="12map" data-ref-filename="12map">map</dfn> = <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#305" title="_rtld_local._dl_ns" data-ref="_M/GL">GL</a>(dl_ns)[<a class="macro" href="../dlfcn/dlfcn.h.html#47" title="0" data-ref="_M/LM_ID_BASE">LM_ID_BASE</a>].<a class="ref field" href="../sysdeps/generic/ldsodefs.h.html#link_namespaces::_ns_loaded" title='link_namespaces::_ns_loaded' data-ref="link_namespaces::_ns_loaded" data-ref-filename="link_namespaces.._ns_loaded">_ns_loaded</a>;</td></tr>
+<tr><th id="94">94</th><td>  <b>if</b> (<a class="local col2 ref" href="#12map" title='map' data-ref="12map" data-ref-filename="12map">map</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="95">95</th><td>    <a class="tu ref fn" href="#print_search_path_for_help_1" title='print_search_path_for_help_1' data-use='c' data-ref="print_search_path_for_help_1" data-ref-filename="print_search_path_for_help_1">print_search_path_for_help_1</a> (<a class="local col2 ref" href="#12map" title='map' data-ref="12map" data-ref-filename="12map">map</a>-&gt;<a class="ref field" href="../include/link.h.html#link_map::l_rpath_dirs" title='link_map::l_rpath_dirs' data-ref="link_map::l_rpath_dirs" data-ref-filename="link_map..l_rpath_dirs">l_rpath_dirs</a>.<a class="ref field" href="../include/link.h.html#r_search_path_struct::dirs" title='r_search_path_struct::dirs' data-ref="r_search_path_struct::dirs" data-ref-filename="r_search_path_struct..dirs">dirs</a>);</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td>  <a class="tu ref fn" href="#print_search_path_for_help_1" title='print_search_path_for_help_1' data-use='c' data-ref="print_search_path_for_help_1" data-ref-filename="print_search_path_for_help_1">print_search_path_for_help_1</a> (<a class="ref" href="../include/link.h.html#__rtld_env_path_list" title='__rtld_env_path_list' data-ref="__rtld_env_path_list" data-ref-filename="__rtld_env_path_list">__rtld_env_path_list</a>.<a class="ref field" href="../include/link.h.html#r_search_path_struct::dirs" title='r_search_path_struct::dirs' data-ref="r_search_path_struct::dirs" data-ref-filename="r_search_path_struct..dirs">dirs</a>);</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td>  <b>if</b> (<a class="local col2 ref" href="#12map" title='map' data-ref="12map" data-ref-filename="12map">map</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="100">100</th><td>    <a class="tu ref fn" href="#print_search_path_for_help_1" title='print_search_path_for_help_1' data-use='c' data-ref="print_search_path_for_help_1" data-ref-filename="print_search_path_for_help_1">print_search_path_for_help_1</a> (<a class="local col2 ref" href="#12map" title='map' data-ref="12map" data-ref-filename="12map">map</a>-&gt;<a class="ref field" href="../include/link.h.html#link_map::l_runpath_dirs" title='link_map::l_runpath_dirs' data-ref="link_map::l_runpath_dirs" data-ref-filename="link_map..l_runpath_dirs">l_runpath_dirs</a>.<a class="ref field" href="../include/link.h.html#r_search_path_struct::dirs" title='r_search_path_struct::dirs' data-ref="r_search_path_struct::dirs" data-ref-filename="r_search_path_struct..dirs">dirs</a>);</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td>  <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"  (libraries located via %s)\n"</q>, <a class="macro" href="../sysdeps/generic/dl-cache.h.html#38" title="&quot;/media/rr/Data/glibc_source/install/etc&quot; &quot;/ld.so.cache&quot;" data-ref="_M/LD_SO_CACHE">LD_SO_CACHE</a>);</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td>  <a class="tu ref fn" href="#print_search_path_for_help_1" title='print_search_path_for_help_1' data-use='c' data-ref="print_search_path_for_help_1" data-ref-filename="print_search_path_for_help_1">print_search_path_for_help_1</a> (<a class="ref" href="../include/link.h.html#__rtld_search_dirs" title='__rtld_search_dirs' data-ref="__rtld_search_dirs" data-ref-filename="__rtld_search_dirs">__rtld_search_dirs</a>.<a class="ref field" href="../include/link.h.html#r_search_path_struct::dirs" title='r_search_path_struct::dirs' data-ref="r_search_path_struct::dirs" data-ref-filename="r_search_path_struct..dirs">dirs</a>);</td></tr>
+<tr><th id="105">105</th><td>}</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td><i  data-doc="print_hwcap_1">/* Helper function for printing flags associated with a HWCAP name.  */</i></td></tr>
+<tr><th id="108">108</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="109">109</th><td><dfn class="tu decl def fn" id="print_hwcap_1" title='print_hwcap_1' data-type='void print_hwcap_1(_Bool * first, _Bool active, const char * label)' data-ref="print_hwcap_1" data-ref-filename="print_hwcap_1">print_hwcap_1</dfn> (<span class="macro" title="_Bool" data-ref="_M/bool">bool</span> *<dfn class="local col3 decl" id="13first" title='first' data-type='_Bool *' data-ref="13first" data-ref-filename="13first">first</dfn>, <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col4 decl" id="14active" title='active' data-type='_Bool' data-ref="14active" data-ref-filename="14active">active</dfn>, <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="15label" title='label' data-type='const char *' data-ref="15label" data-ref-filename="15label">label</dfn>)</td></tr>
+<tr><th id="110">110</th><td>{</td></tr>
+<tr><th id="111">111</th><td>  <b>if</b> (<a class="local col4 ref" href="#14active" title='active' data-ref="14active" data-ref-filename="14active">active</a>)</td></tr>
+<tr><th id="112">112</th><td>    {</td></tr>
+<tr><th id="113">113</th><td>      <b>if</b> (*<a class="local col3 ref" href="#13first" title='first' data-ref="13first" data-ref-filename="13first">first</a>)</td></tr>
+<tr><th id="114">114</th><td>        {</td></tr>
+<tr><th id="115">115</th><td>          <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>" ("</q>);</td></tr>
+<tr><th id="116">116</th><td>          *<a class="local col3 ref" href="#13first" title='first' data-ref="13first" data-ref-filename="13first">first</a> = <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="117">117</th><td>        }</td></tr>
+<tr><th id="118">118</th><td>      <b>else</b></td></tr>
+<tr><th id="119">119</th><td>        <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>", "</q>);</td></tr>
+<tr><th id="120">120</th><td>      <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"%s"</q>, <a class="local col5 ref" href="#15label" title='label' data-ref="15label" data-ref-filename="15label">label</a>);</td></tr>
+<tr><th id="121">121</th><td>    }</td></tr>
+<tr><th id="122">122</th><td>}</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><i  data-doc="print_hwcap_1_finish">/* Called after a series of print_hwcap_1 calls to emit the line</i></td></tr>
+<tr><th id="125">125</th><td><i  data-doc="print_hwcap_1_finish">   terminator.  */</i></td></tr>
+<tr><th id="126">126</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="127">127</th><td><dfn class="tu decl def fn" id="print_hwcap_1_finish" title='print_hwcap_1_finish' data-type='void print_hwcap_1_finish(_Bool * first)' data-ref="print_hwcap_1_finish" data-ref-filename="print_hwcap_1_finish">print_hwcap_1_finish</dfn> (<span class="macro" title="_Bool" data-ref="_M/bool">bool</span> *<dfn class="local col6 decl" id="16first" title='first' data-type='_Bool *' data-ref="16first" data-ref-filename="16first">first</dfn>)</td></tr>
+<tr><th id="128">128</th><td>{</td></tr>
+<tr><th id="129">129</th><td>  <b>if</b> (*<a class="local col6 ref" href="#16first" title='first' data-ref="16first" data-ref-filename="16first">first</a>)</td></tr>
+<tr><th id="130">130</th><td>    <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"\n"</q>);</td></tr>
+<tr><th id="131">131</th><td>  <b>else</b></td></tr>
+<tr><th id="132">132</th><td>    <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>")\n"</q>);</td></tr>
+<tr><th id="133">133</th><td>}</td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td><i  data-doc="print_hwcaps_subdirectories_header">/* Print the header for print_hwcaps_subdirectories.  */</i></td></tr>
+<tr><th id="136">136</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="137">137</th><td><dfn class="tu decl def fn" id="print_hwcaps_subdirectories_header" title='print_hwcaps_subdirectories_header' data-type='void print_hwcaps_subdirectories_header(_Bool * nothing_printed)' data-ref="print_hwcaps_subdirectories_header" data-ref-filename="print_hwcaps_subdirectories_header">print_hwcaps_subdirectories_header</dfn> (<span class="macro" title="_Bool" data-ref="_M/bool">bool</span> *<dfn class="local col7 decl" id="17nothing_printed" title='nothing_printed' data-type='_Bool *' data-ref="17nothing_printed" data-ref-filename="17nothing_printed">nothing_printed</dfn>)</td></tr>
+<tr><th id="138">138</th><td>{</td></tr>
+<tr><th id="139">139</th><td>  <b>if</b> (*<a class="local col7 ref" href="#17nothing_printed" title='nothing_printed' data-ref="17nothing_printed" data-ref-filename="17nothing_printed">nothing_printed</a>)</td></tr>
+<tr><th id="140">140</th><td>    {</td></tr>
+<tr><th id="141">141</th><td>      <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"\n\</q></td></tr>
+<tr><th id="142">142</th><td><q>Subdirectories of glibc-hwcaps directories, in priority order:\n"</q>);</td></tr>
+<tr><th id="143">143</th><td>      *<a class="local col7 ref" href="#17nothing_printed" title='nothing_printed' data-ref="17nothing_printed" data-ref-filename="17nothing_printed">nothing_printed</a> = <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="144">144</th><td>    }</td></tr>
+<tr><th id="145">145</th><td>}</td></tr>
+<tr><th id="146">146</th><td></td></tr>
+<tr><th id="147">147</th><td><i  data-doc="print_hwcaps_subdirectories_name">/* Print the HWCAP name itself, indented.  */</i></td></tr>
+<tr><th id="148">148</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="149">149</th><td><dfn class="tu decl def fn" id="print_hwcaps_subdirectories_name" title='print_hwcaps_subdirectories_name' data-type='void print_hwcaps_subdirectories_name(const struct dl_hwcaps_split * split)' data-ref="print_hwcaps_subdirectories_name" data-ref-filename="print_hwcaps_subdirectories_name">print_hwcaps_subdirectories_name</dfn> (<em>const</em> <b>struct</b> <a class="type" href="dl-hwcaps.h.html#dl_hwcaps_split" title='dl_hwcaps_split' data-ref="dl_hwcaps_split" data-ref-filename="dl_hwcaps_split">dl_hwcaps_split</a> *<dfn class="local col8 decl" id="18split" title='split' data-type='const struct dl_hwcaps_split *' data-ref="18split" data-ref-filename="18split">split</dfn>)</td></tr>
+<tr><th id="150">150</th><td>{</td></tr>
+<tr><th id="151">151</th><td>  <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_write" title='_dl_write' data-ref="_dl_write" data-ref-filename="_dl_write">_dl_write</a> (<a class="macro" href="../posix/unistd.h.html#211" title="1" data-ref="_M/STDOUT_FILENO">STDOUT_FILENO</a>, <q>"  "</q>, <var>2</var>);</td></tr>
+<tr><th id="152">152</th><td>  <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_write" title='_dl_write' data-ref="_dl_write" data-ref-filename="_dl_write">_dl_write</a> (<a class="macro" href="../posix/unistd.h.html#211" title="1" data-ref="_M/STDOUT_FILENO">STDOUT_FILENO</a>, <a class="local col8 ref" href="#18split" title='split' data-ref="18split" data-ref-filename="18split">split</a>-&gt;<a class="ref field" href="dl-hwcaps.h.html#dl_hwcaps_split::segment" title='dl_hwcaps_split::segment' data-ref="dl_hwcaps_split::segment" data-ref-filename="dl_hwcaps_split..segment">segment</a>, <a class="local col8 ref" href="#18split" title='split' data-ref="18split" data-ref-filename="18split">split</a>-&gt;<a class="ref field" href="dl-hwcaps.h.html#dl_hwcaps_split::length" title='dl_hwcaps_split::length' data-ref="dl_hwcaps_split::length" data-ref-filename="dl_hwcaps_split..length">length</a>);</td></tr>
+<tr><th id="153">153</th><td>}</td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><i  data-doc="print_hwcaps_subdirectories">/* Print the list of recognized glibc-hwcaps subdirectories.  */</i></td></tr>
+<tr><th id="156">156</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="157">157</th><td><dfn class="tu decl def fn" id="print_hwcaps_subdirectories" title='print_hwcaps_subdirectories' data-type='void print_hwcaps_subdirectories(const struct dl_main_state * state)' data-ref="print_hwcaps_subdirectories" data-ref-filename="print_hwcaps_subdirectories">print_hwcaps_subdirectories</dfn> (<em>const</em> <b>struct</b> <a class="type" href="dl-main.h.html#dl_main_state" title='dl_main_state' data-ref="dl_main_state" data-ref-filename="dl_main_state">dl_main_state</a> *<dfn class="local col9 decl" id="19state" title='state' data-type='const struct dl_main_state *' data-ref="19state" data-ref-filename="19state">state</dfn>)</td></tr>
+<tr><th id="158">158</th><td>{</td></tr>
+<tr><th id="159">159</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col0 decl" id="20nothing_printed" title='nothing_printed' data-type='_Bool' data-ref="20nothing_printed" data-ref-filename="20nothing_printed">nothing_printed</dfn> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="160">160</th><td>  <b>struct</b> <a class="type" href="dl-hwcaps.h.html#dl_hwcaps_split" title='dl_hwcaps_split' data-ref="dl_hwcaps_split" data-ref-filename="dl_hwcaps_split">dl_hwcaps_split</a> <dfn class="local col1 decl" id="21split" title='split' data-type='struct dl_hwcaps_split' data-ref="21split" data-ref-filename="21split">split</dfn>;</td></tr>
+<tr><th id="161">161</th><td></td></tr>
+<tr><th id="162">162</th><td>  <i>/* The prepended glibc-hwcaps subdirectories.  */</i></td></tr>
+<tr><th id="163">163</th><td>  <a class="ref fn" href="dl-hwcaps.h.html#_dl_hwcaps_split_init" title='_dl_hwcaps_split_init' data-ref="_dl_hwcaps_split_init" data-ref-filename="_dl_hwcaps_split_init">_dl_hwcaps_split_init</a> (&amp;<a class="local col1 ref" href="#21split" title='split' data-ref="21split" data-ref-filename="21split">split</a>, <a class="local col9 ref" href="#19state" title='state' data-ref="19state" data-ref-filename="19state">state</a>-&gt;<a class="ref field" href="dl-main.h.html#dl_main_state::glibc_hwcaps_prepend" title='dl_main_state::glibc_hwcaps_prepend' data-ref="dl_main_state::glibc_hwcaps_prepend" data-ref-filename="dl_main_state..glibc_hwcaps_prepend">glibc_hwcaps_prepend</a>);</td></tr>
+<tr><th id="164">164</th><td>  <b>while</b> (<a class="ref fn" href="dl-hwcaps.h.html#_dl_hwcaps_split" title='_dl_hwcaps_split' data-ref="_dl_hwcaps_split" data-ref-filename="_dl_hwcaps_split">_dl_hwcaps_split</a> (&amp;<a class="local col1 ref" href="#21split" title='split' data-ref="21split" data-ref-filename="21split">split</a>))</td></tr>
+<tr><th id="165">165</th><td>    {</td></tr>
+<tr><th id="166">166</th><td>      <a class="tu ref fn" href="#print_hwcaps_subdirectories_header" title='print_hwcaps_subdirectories_header' data-use='c' data-ref="print_hwcaps_subdirectories_header" data-ref-filename="print_hwcaps_subdirectories_header">print_hwcaps_subdirectories_header</a> (&amp;<a class="local col0 ref" href="#20nothing_printed" title='nothing_printed' data-ref="20nothing_printed" data-ref-filename="20nothing_printed">nothing_printed</a>);</td></tr>
+<tr><th id="167">167</th><td>      <a class="tu ref fn" href="#print_hwcaps_subdirectories_name" title='print_hwcaps_subdirectories_name' data-use='c' data-ref="print_hwcaps_subdirectories_name" data-ref-filename="print_hwcaps_subdirectories_name">print_hwcaps_subdirectories_name</a> (&amp;<a class="local col1 ref" href="#21split" title='split' data-ref="21split" data-ref-filename="21split">split</a>);</td></tr>
+<tr><th id="168">168</th><td>      <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col2 decl" id="22first" title='first' data-type='_Bool' data-ref="22first" data-ref-filename="22first">first</dfn> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="169">169</th><td>      <a class="tu ref fn" href="#print_hwcap_1" title='print_hwcap_1' data-use='c' data-ref="print_hwcap_1" data-ref-filename="print_hwcap_1">print_hwcap_1</a> (&amp;<a class="local col2 ref" href="#22first" title='first' data-ref="22first" data-ref-filename="22first">first</a>, <span class="macro" title="1" data-ref="_M/true">true</span>, <q>"searched"</q>);</td></tr>
+<tr><th id="170">170</th><td>      <a class="tu ref fn" href="#print_hwcap_1_finish" title='print_hwcap_1_finish' data-use='c' data-ref="print_hwcap_1_finish" data-ref-filename="print_hwcap_1_finish">print_hwcap_1_finish</a> (&amp;<a class="local col2 ref" href="#22first" title='first' data-ref="22first" data-ref-filename="22first">first</a>);</td></tr>
+<tr><th id="171">171</th><td>    }</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td>  <i>/* The built-in glibc-hwcaps subdirectories.  Do the filtering</i></td></tr>
+<tr><th id="174">174</th><td><i>     manually, so that more precise diagnostics are possible.  */</i></td></tr>
+<tr><th id="175">175</th><td>  <a class="typedef" href="../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="local col3 decl" id="23mask" title='mask' data-type='uint32_t' data-ref="23mask" data-ref-filename="23mask">mask</dfn> = <a class="ref fn" href="dl-hwcaps.h.html#_dl_hwcaps_subdirs_active" title='_dl_hwcaps_subdirs_active' data-ref="_dl_hwcaps_subdirs_active" data-ref-filename="_dl_hwcaps_subdirs_active">_dl_hwcaps_subdirs_active</a> ();</td></tr>
+<tr><th id="176">176</th><td>  <a class="ref fn" href="dl-hwcaps.h.html#_dl_hwcaps_split_init" title='_dl_hwcaps_split_init' data-ref="_dl_hwcaps_split_init" data-ref-filename="_dl_hwcaps_split_init">_dl_hwcaps_split_init</a> (&amp;<a class="local col1 ref" href="#21split" title='split' data-ref="21split" data-ref-filename="21split">split</a>, <a class="ref" href="dl-hwcaps.h.html#_dl_hwcaps_subdirs" title='_dl_hwcaps_subdirs' data-ref="_dl_hwcaps_subdirs" data-ref-filename="_dl_hwcaps_subdirs">_dl_hwcaps_subdirs</a>);</td></tr>
+<tr><th id="177">177</th><td>  <b>while</b> (<a class="ref fn" href="dl-hwcaps.h.html#_dl_hwcaps_split" title='_dl_hwcaps_split' data-ref="_dl_hwcaps_split" data-ref-filename="_dl_hwcaps_split">_dl_hwcaps_split</a> (&amp;<a class="local col1 ref" href="#21split" title='split' data-ref="21split" data-ref-filename="21split">split</a>))</td></tr>
+<tr><th id="178">178</th><td>    {</td></tr>
+<tr><th id="179">179</th><td>      <a class="tu ref fn" href="#print_hwcaps_subdirectories_header" title='print_hwcaps_subdirectories_header' data-use='c' data-ref="print_hwcaps_subdirectories_header" data-ref-filename="print_hwcaps_subdirectories_header">print_hwcaps_subdirectories_header</a> (&amp;<a class="local col0 ref" href="#20nothing_printed" title='nothing_printed' data-ref="20nothing_printed" data-ref-filename="20nothing_printed">nothing_printed</a>);</td></tr>
+<tr><th id="180">180</th><td>      <a class="tu ref fn" href="#print_hwcaps_subdirectories_name" title='print_hwcaps_subdirectories_name' data-use='c' data-ref="print_hwcaps_subdirectories_name" data-ref-filename="print_hwcaps_subdirectories_name">print_hwcaps_subdirectories_name</a> (&amp;<a class="local col1 ref" href="#21split" title='split' data-ref="21split" data-ref-filename="21split">split</a>);</td></tr>
+<tr><th id="181">181</th><td>      <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col4 decl" id="24first" title='first' data-type='_Bool' data-ref="24first" data-ref-filename="24first">first</dfn> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="182">182</th><td>      <a class="tu ref fn" href="#print_hwcap_1" title='print_hwcap_1' data-use='c' data-ref="print_hwcap_1" data-ref-filename="print_hwcap_1">print_hwcap_1</a> (&amp;<a class="local col4 ref" href="#24first" title='first' data-ref="24first" data-ref-filename="24first">first</a>, <a class="local col3 ref" href="#23mask" title='mask' data-ref="23mask" data-ref-filename="23mask">mask</a> &amp; <var>1</var>, <q>"supported"</q>);</td></tr>
+<tr><th id="183">183</th><td>      <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col5 decl" id="25listed" title='listed' data-type='_Bool' data-ref="25listed" data-ref-filename="25listed">listed</dfn> = <a class="ref fn" href="dl-hwcaps.h.html#_dl_hwcaps_contains" title='_dl_hwcaps_contains' data-ref="_dl_hwcaps_contains" data-ref-filename="_dl_hwcaps_contains">_dl_hwcaps_contains</a> (<a class="local col9 ref" href="#19state" title='state' data-ref="19state" data-ref-filename="19state">state</a>-&gt;<a class="ref field" href="dl-main.h.html#dl_main_state::glibc_hwcaps_mask" title='dl_main_state::glibc_hwcaps_mask' data-ref="dl_main_state::glibc_hwcaps_mask" data-ref-filename="dl_main_state..glibc_hwcaps_mask">glibc_hwcaps_mask</a>,</td></tr>
+<tr><th id="184">184</th><td>                                         <a class="local col1 ref" href="#21split" title='split' data-ref="21split" data-ref-filename="21split">split</a>.<a class="ref field" href="dl-hwcaps.h.html#dl_hwcaps_split::segment" title='dl_hwcaps_split::segment' data-ref="dl_hwcaps_split::segment" data-ref-filename="dl_hwcaps_split..segment">segment</a>, <a class="local col1 ref" href="#21split" title='split' data-ref="21split" data-ref-filename="21split">split</a>.<a class="ref field" href="dl-hwcaps.h.html#dl_hwcaps_split::length" title='dl_hwcaps_split::length' data-ref="dl_hwcaps_split::length" data-ref-filename="dl_hwcaps_split..length">length</a>);</td></tr>
+<tr><th id="185">185</th><td>      <a class="tu ref fn" href="#print_hwcap_1" title='print_hwcap_1' data-use='c' data-ref="print_hwcap_1" data-ref-filename="print_hwcap_1">print_hwcap_1</a> (&amp;<a class="local col4 ref" href="#24first" title='first' data-ref="24first" data-ref-filename="24first">first</a>, !<a class="local col5 ref" href="#25listed" title='listed' data-ref="25listed" data-ref-filename="25listed">listed</a>, <q>"masked"</q>);</td></tr>
+<tr><th id="186">186</th><td>      <a class="tu ref fn" href="#print_hwcap_1" title='print_hwcap_1' data-use='c' data-ref="print_hwcap_1" data-ref-filename="print_hwcap_1">print_hwcap_1</a> (&amp;<a class="local col4 ref" href="#24first" title='first' data-ref="24first" data-ref-filename="24first">first</a>, (<a class="local col3 ref" href="#23mask" title='mask' data-ref="23mask" data-ref-filename="23mask">mask</a> &amp; <var>1</var>) &amp;&amp; <a class="local col5 ref" href="#25listed" title='listed' data-ref="25listed" data-ref-filename="25listed">listed</a>, <q>"searched"</q>);</td></tr>
+<tr><th id="187">187</th><td>      <a class="tu ref fn" href="#print_hwcap_1_finish" title='print_hwcap_1_finish' data-use='c' data-ref="print_hwcap_1_finish" data-ref-filename="print_hwcap_1_finish">print_hwcap_1_finish</a> (&amp;<a class="local col4 ref" href="#24first" title='first' data-ref="24first" data-ref-filename="24first">first</a>);</td></tr>
+<tr><th id="188">188</th><td>      <a class="local col3 ref" href="#23mask" title='mask' data-ref="23mask" data-ref-filename="23mask">mask</a> &gt;&gt;= <var>1</var>;</td></tr>
+<tr><th id="189">189</th><td>    }</td></tr>
+<tr><th id="190">190</th><td></td></tr>
+<tr><th id="191">191</th><td>  <b>if</b> (<a class="local col0 ref" href="#20nothing_printed" title='nothing_printed' data-ref="20nothing_printed" data-ref-filename="20nothing_printed">nothing_printed</a>)</td></tr>
+<tr><th id="192">192</th><td>    <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"\n\</q></td></tr>
+<tr><th id="193">193</th><td><q>No subdirectories of glibc-hwcaps directories are searched.\n"</q>);</td></tr>
+<tr><th id="194">194</th><td>}</td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td><i  data-doc="print_legacy_hwcap_directories">/* Write a list of hwcap subdirectories to standard output.  See</i></td></tr>
+<tr><th id="197">197</th><td><i  data-doc="print_legacy_hwcap_directories"> _dl_important_hwcaps in dl-hwcaps.c.  */</i></td></tr>
+<tr><th id="198">198</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="199">199</th><td><dfn class="tu decl def fn" id="print_legacy_hwcap_directories" title='print_legacy_hwcap_directories' data-type='void print_legacy_hwcap_directories()' data-ref="print_legacy_hwcap_directories" data-ref-filename="print_legacy_hwcap_directories">print_legacy_hwcap_directories</dfn> (<em>void</em>)</td></tr>
+<tr><th id="200">200</th><td>{</td></tr>
+<tr><th id="201">201</th><td>  <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"\n\</q></td></tr>
+<tr><th id="202">202</th><td><q>Legacy HWCAP subdirectories under library search path directories:\n"</q>);</td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td>  <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="26platform" title='platform' data-type='const char *' data-ref="26platform" data-ref-filename="26platform">platform</dfn> = <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#506" title="_rtld_local_ro._dl_platform" data-ref="_M/GLRO">GLRO</a> (dl_platform);</td></tr>
+<tr><th id="205">205</th><td>  <b>if</b> (<a class="local col6 ref" href="#26platform" title='platform' data-ref="26platform" data-ref-filename="26platform">platform</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="206">206</th><td>    <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"  %s (AT_PLATFORM; supported, searched)\n"</q>, <a class="local col6 ref" href="#26platform" title='platform' data-ref="26platform" data-ref-filename="26platform">platform</a>);</td></tr>
+<tr><th id="207">207</th><td></td></tr>
+<tr><th id="208">208</th><td>  <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"  tls (supported, searched)\n"</q>);</td></tr>
+<tr><th id="209">209</th><td></td></tr>
+<tr><th id="210">210</th><td>  <a class="typedef" href="../bits/stdint-uintn.h.html#uint64_t" title='uint64_t' data-type='__uint64_t' data-ref="uint64_t" data-ref-filename="uint64_t">uint64_t</a> <dfn class="local col7 decl" id="27hwcap_mask" title='hwcap_mask' data-type='uint64_t' data-ref="27hwcap_mask" data-ref-filename="27hwcap_mask">hwcap_mask</dfn> = <a class="macro" href="dl-hwcaps.h.html#28" title="({ tunable_id_t id = glibc_cpu_hwcap_mask; uint64_t ret; __tunable_get_val (id, &amp;ret, ((void*)0)); ret; })" data-ref="_M/GET_HWCAP_MASK">GET_HWCAP_MASK</a>();</td></tr>
+<tr><th id="211">211</th><td>  <a class="typedef" href="../bits/stdint-uintn.h.html#uint64_t" title='uint64_t' data-type='__uint64_t' data-ref="uint64_t" data-ref-filename="uint64_t">uint64_t</a> <dfn class="local col8 decl" id="28searched" title='searched' data-type='uint64_t' data-ref="28searched" data-ref-filename="28searched">searched</dfn> = <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#506" title="_rtld_local_ro._dl_hwcap" data-ref="_M/GLRO">GLRO</a> (dl_hwcap) &amp; <a class="local col7 ref" href="#27hwcap_mask" title='hwcap_mask' data-ref="27hwcap_mask" data-ref-filename="27hwcap_mask">hwcap_mask</a>;</td></tr>
+<tr><th id="212">212</th><td>  <b>for</b> (<em>int</em> <dfn class="local col9 decl" id="29n" title='n' data-type='int' data-ref="29n" data-ref-filename="29n">n</dfn> = <var>63</var>; <a class="local col9 ref" href="#29n" title='n' data-ref="29n" data-ref-filename="29n">n</a> &gt;= <var>0</var>; --<a class="local col9 ref" href="#29n" title='n' data-ref="29n" data-ref-filename="29n">n</a>)</td></tr>
+<tr><th id="213">213</th><td>    {</td></tr>
+<tr><th id="214">214</th><td>      <a class="typedef" href="../bits/stdint-uintn.h.html#uint64_t" title='uint64_t' data-type='__uint64_t' data-ref="uint64_t" data-ref-filename="uint64_t">uint64_t</a> <dfn class="local col0 decl" id="30bit" title='bit' data-type='uint64_t' data-ref="30bit" data-ref-filename="30bit">bit</dfn> = <var>1ULL</var> &lt;&lt; <a class="local col9 ref" href="#29n" title='n' data-ref="29n" data-ref-filename="29n">n</a>;</td></tr>
+<tr><th id="215">215</th><td>      <b>if</b> (<a class="macro" href="../sysdeps/x86/dl-hwcap.h.html#36" title="(HWCAP_X86_64 | HWCAP_X86_AVX512_1)" data-ref="_M/HWCAP_IMPORTANT">HWCAP_IMPORTANT</a> &amp; <a class="local col0 ref" href="#30bit" title='bit' data-ref="30bit" data-ref-filename="30bit">bit</a>)</td></tr>
+<tr><th id="216">216</th><td>        {</td></tr>
+<tr><th id="217">217</th><td>          <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"  %s"</q>, <a class="ref fn" href="../sysdeps/x86/dl-hwcap.h.html#_dl_hwcap_string" title='_dl_hwcap_string' data-ref="_dl_hwcap_string" data-ref-filename="_dl_hwcap_string">_dl_hwcap_string</a> (<a class="local col9 ref" href="#29n" title='n' data-ref="29n" data-ref-filename="29n">n</a>));</td></tr>
+<tr><th id="218">218</th><td>          <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col1 decl" id="31first" title='first' data-type='_Bool' data-ref="31first" data-ref-filename="31first">first</dfn> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="219">219</th><td>          <a class="tu ref fn" href="#print_hwcap_1" title='print_hwcap_1' data-use='c' data-ref="print_hwcap_1" data-ref-filename="print_hwcap_1">print_hwcap_1</a> (&amp;<a class="local col1 ref" href="#31first" title='first' data-ref="31first" data-ref-filename="31first">first</a>, <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#506" title="_rtld_local_ro._dl_hwcap" data-ref="_M/GLRO">GLRO</a> (dl_hwcap) &amp; <a class="local col0 ref" href="#30bit" title='bit' data-ref="30bit" data-ref-filename="30bit">bit</a>, <q>"supported"</q>);</td></tr>
+<tr><th id="220">220</th><td>          <a class="tu ref fn" href="#print_hwcap_1" title='print_hwcap_1' data-use='c' data-ref="print_hwcap_1" data-ref-filename="print_hwcap_1">print_hwcap_1</a> (&amp;<a class="local col1 ref" href="#31first" title='first' data-ref="31first" data-ref-filename="31first">first</a>, !(<a class="local col7 ref" href="#27hwcap_mask" title='hwcap_mask' data-ref="27hwcap_mask" data-ref-filename="27hwcap_mask">hwcap_mask</a> &amp; <a class="local col0 ref" href="#30bit" title='bit' data-ref="30bit" data-ref-filename="30bit">bit</a>), <q>"masked"</q>);</td></tr>
+<tr><th id="221">221</th><td>          <a class="tu ref fn" href="#print_hwcap_1" title='print_hwcap_1' data-use='c' data-ref="print_hwcap_1" data-ref-filename="print_hwcap_1">print_hwcap_1</a> (&amp;<a class="local col1 ref" href="#31first" title='first' data-ref="31first" data-ref-filename="31first">first</a>, <a class="local col8 ref" href="#28searched" title='searched' data-ref="28searched" data-ref-filename="28searched">searched</a> &amp; <a class="local col0 ref" href="#30bit" title='bit' data-ref="30bit" data-ref-filename="30bit">bit</a>, <q>"searched"</q>);</td></tr>
+<tr><th id="222">222</th><td>          <a class="tu ref fn" href="#print_hwcap_1_finish" title='print_hwcap_1_finish' data-use='c' data-ref="print_hwcap_1_finish" data-ref-filename="print_hwcap_1_finish">print_hwcap_1_finish</a> (&amp;<a class="local col1 ref" href="#31first" title='first' data-ref="31first" data-ref-filename="31first">first</a>);</td></tr>
+<tr><th id="223">223</th><td>        }</td></tr>
+<tr><th id="224">224</th><td>    }</td></tr>
+<tr><th id="225">225</th><td>}</td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td><em>void</em></td></tr>
+<tr><th id="228">228</th><td><dfn class="decl def fn" id="_dl_help" title='_dl_help' data-ref="_dl_help" data-ref-filename="_dl_help">_dl_help</dfn> (<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="32argv0" title='argv0' data-type='const char *' data-ref="32argv0" data-ref-filename="32argv0">argv0</dfn>, <b>struct</b> <a class="type" href="dl-main.h.html#dl_main_state" title='dl_main_state' data-ref="dl_main_state" data-ref-filename="dl_main_state">dl_main_state</a> *<dfn class="local col3 decl" id="33state" title='state' data-type='struct dl_main_state *' data-ref="33state" data-ref-filename="33state">state</dfn>)</td></tr>
+<tr><th id="229">229</th><td>{</td></tr>
+<tr><th id="230">230</th><td>  <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_printf" title='_dl_printf' data-ref="_dl_printf" data-ref-filename="_dl_printf">_dl_printf</a> (<q>"\</q></td></tr>
+<tr><th id="231">231</th><td><q>Usage: %s [OPTION]... EXECUTABLE-FILE [ARGS-FOR-PROGRAM...]\n\</q></td></tr>
+<tr><th id="232">232</th><td><q>You have invoked 'ld.so', the program interpreter for dynamically-linked\n\</q></td></tr>
+<tr><th id="233">233</th><td><q>ELF programs.  Usually, the program interpreter is invoked automatically\n\</q></td></tr>
+<tr><th id="234">234</th><td><q>when a dynamically-linked executable is started.\n\</q></td></tr>
+<tr><th id="235">235</th><td><q>\n\</q></td></tr>
+<tr><th id="236">236</th><td><q>You may invoke the program interpreter program directly from the command\n\</q></td></tr>
+<tr><th id="237">237</th><td><q>line to load and run an ELF executable file; this is like executing that\n\</q></td></tr>
+<tr><th id="238">238</th><td><q>file itself, but always uses the program interpreter you invoked,\n\</q></td></tr>
+<tr><th id="239">239</th><td><q>instead of the program interpreter specified in the executable file you\n\</q></td></tr>
+<tr><th id="240">240</th><td><q>run.  Invoking the program interpreter directly provides access to\n\</q></td></tr>
+<tr><th id="241">241</th><td><q>additional diagnostics, and changing the dynamic linker behavior without\n\</q></td></tr>
+<tr><th id="242">242</th><td><q>setting environment variables (which would be inherited by subprocesses).\n\</q></td></tr>
+<tr><th id="243">243</th><td><q>\n\</q></td></tr>
+<tr><th id="244">244</th><td><q>  --list                list all dependencies and how they are resolved\n\</q></td></tr>
+<tr><th id="245">245</th><td><q>  --verify              verify that given object really is a dynamically linked\n\</q></td></tr>
+<tr><th id="246">246</th><td><q>                        object we can handle\n\</q></td></tr>
+<tr><th id="247">247</th><td><q>  --inhibit-cache       Do not use "</q> <a class="macro" href="../sysdeps/generic/dl-cache.h.html#38" title="&quot;/media/rr/Data/glibc_source/install/etc&quot; &quot;/ld.so.cache&quot;" data-ref="_M/LD_SO_CACHE">LD_SO_CACHE</a> <q>"\n\</q></td></tr>
+<tr><th id="248">248</th><td><q>  --library-path PATH   use given PATH instead of content of the environment\n\</q></td></tr>
+<tr><th id="249">249</th><td><q>                        variable LD_LIBRARY_PATH\n\</q></td></tr>
+<tr><th id="250">250</th><td><q>  --glibc-hwcaps-prepend LIST\n\</q></td></tr>
+<tr><th id="251">251</th><td><q>                        search glibc-hwcaps subdirectories in LIST\n\</q></td></tr>
+<tr><th id="252">252</th><td><q>  --glibc-hwcaps-mask LIST\n\</q></td></tr>
+<tr><th id="253">253</th><td><q>                        only search built-in subdirectories if in LIST\n\</q></td></tr>
+<tr><th id="254">254</th><td><q>  --inhibit-rpath LIST  ignore RUNPATH and RPATH information in object names\n\</q></td></tr>
+<tr><th id="255">255</th><td><q>                        in LIST\n\</q></td></tr>
+<tr><th id="256">256</th><td><q>  --audit LIST          use objects named in LIST as auditors\n\</q></td></tr>
+<tr><th id="257">257</th><td><q>  --preload LIST        preload objects named in LIST\n\</q></td></tr>
+<tr><th id="258">258</th><td><q>  --argv0 STRING        set argv[0] to STRING before running\n"</q></td></tr>
+<tr><th id="259">259</th><td><u>#<span data-ppcond="259">if</span> <a class="macro" href="../build/config.h.html#261" title="1" data-ref="_M/HAVE_TUNABLES">HAVE_TUNABLES</a></u></td></tr>
+<tr><th id="260">260</th><td><q>"\</q></td></tr>
+<tr><th id="261">261</th><td><q>  --list-tunables       list all tunables with minimum and maximum values\n"</q></td></tr>
+<tr><th id="262">262</th><td><u>#<span data-ppcond="259">endif</span></u></td></tr>
+<tr><th id="263">263</th><td><q>"\</q></td></tr>
+<tr><th id="264">264</th><td><q>  --help                display this help and exit\n\</q></td></tr>
+<tr><th id="265">265</th><td><q>  --version             output version information and exit\n\</q></td></tr>
+<tr><th id="266">266</th><td><q>\n\</q></td></tr>
+<tr><th id="267">267</th><td><q>This program interpreter self-identifies as: "</q> <span class="macro" title="&quot;/media/rr/Data/glibc_source/install/lib/ld-linux-x86-64.so.2&quot;" data-ref="_M/RTLD">RTLD</span> <q>"\n\</q></td></tr>
+<tr><th id="268">268</th><td><q>"</q>,</td></tr>
+<tr><th id="269">269</th><td>              <a class="local col2 ref" href="#32argv0" title='argv0' data-ref="32argv0" data-ref-filename="32argv0">argv0</a>);</td></tr>
+<tr><th id="270">270</th><td>  <a class="tu ref fn" href="#print_search_path_for_help" title='print_search_path_for_help' data-use='c' data-ref="print_search_path_for_help" data-ref-filename="print_search_path_for_help">print_search_path_for_help</a> (<a class="local col3 ref" href="#33state" title='state' data-ref="33state" data-ref-filename="33state">state</a>);</td></tr>
+<tr><th id="271">271</th><td>  <a class="tu ref fn" href="#print_hwcaps_subdirectories" title='print_hwcaps_subdirectories' data-use='c' data-ref="print_hwcaps_subdirectories" data-ref-filename="print_hwcaps_subdirectories">print_hwcaps_subdirectories</a> (<a class="local col3 ref" href="#33state" title='state' data-ref="33state" data-ref-filename="33state">state</a>);</td></tr>
+<tr><th id="272">272</th><td>  <a class="tu ref fn" href="#print_legacy_hwcap_directories" title='print_legacy_hwcap_directories' data-use='c' data-ref="print_legacy_hwcap_directories" data-ref-filename="print_legacy_hwcap_directories">print_legacy_hwcap_directories</a> ();</td></tr>
+<tr><th id="273">273</th><td>  <a class="ref fn" href="../posix/unistd.h.html#__GI__exit" title='_exit' data-ref="__GI__exit" data-ref-filename="__GI__exit">_exit</a> (<a class="macro" href="../stdlib/stdlib.h.html#92" title="0" data-ref="_M/EXIT_SUCCESS">EXIT_SUCCESS</a>);</td></tr>
+<tr><th id="274">274</th><td>}</td></tr>
+<tr><th id="275">275</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.33</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

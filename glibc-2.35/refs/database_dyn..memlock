@@ -1,0 +1,7 @@
+<dec f='codebrowser/nscd/nscd.h' l='156' type='pthread_mutex_t'/>
+<offset>2432</offset>
+<use f='codebrowser/nscd/connections.c' l='497' u='a' c='nscd_init'/>
+<use f='codebrowser/nscd/mem.c' l='113' u='a' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='497' u='a' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='520' u='a' c='mempool_alloc'/>
+<use f='codebrowser/nscd/mem.c' l='585' u='a' c='mempool_alloc'/>

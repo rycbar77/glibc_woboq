@@ -1,0 +1,7 @@
+<dec f='codebrowser/inet/netgroup.h' l='77' type='int __internal_getnetgrent_r(char ** hostp, char ** userp, char ** domainp, struct __netgrent * datap, char * buffer, size_t buflen, int * errnop)'/>
+<def f='codebrowser/inet/getnetgrent_r.c' l='230' ll='335' type='int __internal_getnetgrent_r(char ** hostp, char ** userp, char ** domainp, struct __netgrent * datap, char * buffer, size_t buflen, int * errnop)'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='347' u='c' c='__getnetgrent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='339' u='c' c='getpwent_next_nss_netgr'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='542' u='c' c='getpwent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='297' u='c' c='getspent_next_nss_netgr'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='494' u='c' c='getspent_next_file'/>

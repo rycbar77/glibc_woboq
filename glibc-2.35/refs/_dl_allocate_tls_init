@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1285' type='void * _dl_allocate_tls_init(void * , _Bool )'/>
+<use f='codebrowser/nptl/allocatestack.c' l='141' u='c' c='get_cached_stack'/>
+<def f='codebrowser/elf/dl-tls.c' l='526' ll='626' type='void * _dl_allocate_tls_init(void * result, _Bool init_tls)'/>
+<use f='codebrowser/elf/dl-tls.c' l='632' u='c' c='_dl_allocate_tls'/>
+<doc f='codebrowser/elf/dl-tls.c' l='522'>/* Allocate initial TLS.  RESULT should be a non-NULL pointer to storage
+   for the TLS space.  The DTV may be resized, and so this function may
+   call malloc to allocate that space.  The loader&apos;s GL(dl_load_tls_lock)
+   is taken when manipulating global TLS-related data in the loader.  */</doc>

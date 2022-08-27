@@ -1,0 +1,8 @@
+<dec f='codebrowser/libio/iolibio.h' l='17' type='int _IO_fflush(_IO_FILE * )'/>
+<dec f='codebrowser/libio/iolibio.h' l='18' type='int _IO_fflush(_IO_FILE * )'/>
+<use f='codebrowser/libio/iolibio.h' l='18' c='_IO_fflush'/>
+<use f='codebrowser/assert/assert.c' l='33' u='c' c='__assert_fail_base'/>
+<def f='codebrowser/libio/iofflush.c' l='30' ll='44' type='int _IO_fflush(_IO_FILE * fp)'/>
+<use f='codebrowser/libio/iofflush.c' l='47' c='fflush'/>
+<use f='codebrowser/misc/error.c' l='84' u='c' c='flush_stdout'/>
+<use f='codebrowser/misc/error.c' l='84' u='c' c='error_tail'/>

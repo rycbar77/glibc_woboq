@@ -1,0 +1,11 @@
+<dec f='codebrowser/nscd/nscd.h' l='80' type='char[4096]'/>
+<use f='codebrowser/nscd/nscd.h' l='103' u='w' c='init_traced_file'/>
+<use f='codebrowser/nscd/nscd.h' l='108' u='r' c='init_traced_file'/>
+<use f='codebrowser/nscd/nscd.h' l='110' u='r' c='init_traced_file'/>
+<use f='codebrowser/nscd/nscd.h' l='111' u='w' c='init_traced_file'/>
+<offset>224</offset>
+<doc f='codebrowser/nscd/nscd.h' l='79'>/* The parent directory is used to scan for creation/deletion.  */</doc>
+<use f='codebrowser/nscd/connections.c' l='873' u='r' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='882' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='1890' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1893' c='inotify_check_files'/>

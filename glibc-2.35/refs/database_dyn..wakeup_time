@@ -1,0 +1,11 @@
+<dec f='codebrowser/nscd/nscd.h' l='132' type='time_t'/>
+<offset>1472</offset>
+<use f='codebrowser/nscd/cache.c' l='219' u='r' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='223' u='w' c='cache_add'/>
+<use f='codebrowser/nscd/connections.c' l='1515' u='w' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1532' u='r' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1541' u='w' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1570' u='r' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1571' u='w' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1573' u='r' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1578' u='r' c='nscd_run_prune'/>

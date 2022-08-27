@@ -1,0 +1,363 @@
+<use f='codebrowser/libio/stdio.h' l='853' c='obstack_printf'/>
+<use f='codebrowser/libio/stdio.h' l='856' c='obstack_vprintf'/>
+<use f='codebrowser/include/stdio.h' l='79' c='__obstack_printf_chk'/>
+<use f='codebrowser/include/stdio.h' l='81' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/libio/libioP.h' l='680' c='__obstack_vprintf_internal'/>
+<def f='codebrowser/malloc/obstack.h' l='153' ll='180'/>
+<use f='codebrowser/malloc/obstack.h' l='184' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.h' l='185' c='_obstack_begin'/>
+<use f='codebrowser/malloc/obstack.h' l='187' c='_obstack_begin_1'/>
+<use f='codebrowser/malloc/obstack.h' l='190' c='_obstack_memory_used'/>
+<use f='codebrowser/malloc/obstack.h' l='197' c='obstack_free'/>
+<use f='codebrowser/catgets/gencat.c' l='86'/>
+<use f='codebrowser/catgets/gencat.c' l='351' macro='1' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='355' macro='1' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='356' macro='1' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='743' macro='1' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='752' macro='1' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='753' macro='1' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='771' macro='1' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='772' macro='1' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='825' macro='1' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='851' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='956' macro='1' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='960' macro='1' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='968' macro='1' c='write_out'/>
+<use f='codebrowser/catgets/gencat.c' l='969' macro='1' c='write_out'/>
+<size>88</size>
+<doc f='codebrowser/malloc/obstack.h' l='153'>/* control current object in current chunk */</doc>
+<mbr r='obstack::chunk_size' o='0' t='long'/>
+<mbr r='obstack::chunk' o='64' t='struct _obstack_chunk *'/>
+<mbr r='obstack::object_base' o='128' t='char *'/>
+<mbr r='obstack::next_free' o='192' t='char *'/>
+<mbr r='obstack::chunk_limit' o='256' t='char *'/>
+<mbr r='obstack::temp' o='320' t='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.35/argp/../malloc/obstack.h:160:3)'/>
+<mbr r='obstack::alignment_mask' o='384' t='int'/>
+<mbr r='obstack::chunkfun' o='448' t='struct _obstack_chunk *(*)(void *, long)'/>
+<mbr r='obstack::freefun' o='512' t='void (*)(void *, struct _obstack_chunk *)'/>
+<mbr r='obstack::extra_arg' o='576' t='void *'/>
+<mbr r='obstack::use_extra_arg' o='640' t='unsigned int'/>
+<mbr r='obstack::maybe_empty_object' o='641' t='unsigned int'/>
+<mbr r='obstack::alloc_failed' o='642' t='unsigned int'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='24' c='__obstack_printf_chk'/>
+<use f='codebrowser/debug/vobprintf_chk.c' l='23' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/elf/sprof.c' l='149'/>
+<use f='codebrowser/elf/sprof.c' l='192'/>
+<use f='codebrowser/elf/sprof.c' l='193'/>
+<use f='codebrowser/elf/sprof.c' l='1076' macro='1' c='read_symbols'/>
+<use f='codebrowser/elf/sprof.c' l='1076' macro='1' c='read_symbols'/>
+<use f='codebrowser/elf/sprof.c' l='1076' macro='1' c='read_symbols'/>
+<use f='codebrowser/elf/sprof.c' l='1108' macro='1' c='read_symbols'/>
+<use f='codebrowser/elf/sprof.c' l='1134' macro='1' c='read_symbols'/>
+<use f='codebrowser/elf/sprof.c' l='1134' macro='1' c='read_symbols'/>
+<use f='codebrowser/elf/sprof.c' l='1134' macro='1' c='read_symbols'/>
+<use f='codebrowser/elf/sprof.c' l='1167' macro='1' c='read_symbols'/>
+<use f='codebrowser/elf/sprof.c' l='1214' macro='1' c='add_arcs'/>
+<use f='codebrowser/elf/sprof.c' l='1214' macro='1' c='add_arcs'/>
+<use f='codebrowser/elf/sprof.c' l='1214' macro='1' c='add_arcs'/>
+<use f='codebrowser/elf/sprof.c' l='1247' macro='1' c='add_arcs'/>
+<use f='codebrowser/elf/sprof.c' l='1247' macro='1' c='add_arcs'/>
+<use f='codebrowser/elf/sprof.c' l='1247' macro='1' c='add_arcs'/>
+<size>88</size>
+<use f='codebrowser/locale/programs/simple-hash.h' l='30'/>
+<use f='codebrowser/locale/programs/charmap.h' l='48'/>
+<use f='codebrowser/locale/programs/repertoire.h' l='29'/>
+<size>88</size>
+<use f='codebrowser/libio/obprintf.c' l='34'/>
+<use f='codebrowser/libio/obprintf.c' l='41' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='47' macro='1' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='52' macro='1' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='64' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='75' macro='1' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='80' macro='1' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='119' c='__obstack_vprintf_internal'/>
+<use f='codebrowser/libio/obprintf.c' l='136' macro='1' c='__obstack_vprintf_internal'/>
+<use f='codebrowser/libio/obprintf.c' l='137' macro='1' c='__obstack_vprintf_internal'/>
+<use f='codebrowser/libio/obprintf.c' l='145' macro='1' c='__obstack_vprintf_internal'/>
+<use f='codebrowser/libio/obprintf.c' l='148' macro='1' c='__obstack_vprintf_internal'/>
+<use f='codebrowser/libio/obprintf.c' l='160' macro='1' c='__obstack_vprintf_internal'/>
+<use f='codebrowser/libio/obprintf.c' l='160' macro='1' c='__obstack_vprintf_internal'/>
+<use f='codebrowser/libio/obprintf.c' l='178' c='__obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='185' c='__obstack_printf'/>
+<size>88</size>
+<use f='codebrowser/locale/programs/charmap.c' l='387' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='387' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='387' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='391' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='391' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='391' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='512' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='515' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='515' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='515' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='522' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='523' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='598' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='598' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='598' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='605' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='606' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='690' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='693' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='693' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='693' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='700' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='701' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='748' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='748' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='748' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='755' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='756' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='788' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='791' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='791' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='791' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='798' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='799' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='828' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='828' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='828' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='835' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='836' macro='1' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='904' macro='1' c='new_width'/>
+<use f='codebrowser/locale/programs/charmap.c' l='904' macro='1' c='new_width'/>
+<use f='codebrowser/locale/programs/charmap.c' l='904' macro='1' c='new_width'/>
+<use f='codebrowser/locale/programs/charmap.c' l='940' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='952' macro='1' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='952' macro='1' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='952' macro='1' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='1043' macro='1' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='1044' macro='1' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='1046' macro='1' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='1046' macro='1' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='1046' macro='1' c='charmap_new_char'/>
+<size>88</size>
+<use f='codebrowser/locale/programs/locfile.h' l='34'/>
+<use f='codebrowser/locale/programs/locfile.h' l='102' c='maybe_swap_uint32_obstack'/>
+<use f='codebrowser/locale/programs/locfile.h' l='114' c='add_locale_raw_obstack'/>
+<size>88</size>
+<use f='codebrowser/locale/programs/ld-collate.c' l='44' c='obstack_int32_grow'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='46' macro='1' c='obstack_int32_grow'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='46' macro='1' c='obstack_int32_grow'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='49' macro='1' c='obstack_int32_grow'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='49' macro='1' c='obstack_int32_grow'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='51' macro='1' c='obstack_int32_grow'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='56' c='obstack_int32_grow_fast'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='58' macro='1' c='obstack_int32_grow_fast'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='58' macro='1' c='obstack_int32_grow_fast'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='61' macro='1' c='obstack_int32_grow_fast'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='63' macro='1' c='obstack_int32_grow_fast'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='241'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='321' macro='1' c='make_seclist_elem'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='321' macro='1' c='make_seclist_elem'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='321' macro='1' c='make_seclist_elem'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='339' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='339' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='339' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='341' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='341' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='341' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='345' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='345' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='345' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='360' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='361' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='362' macro='1' c='new_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='405' macro='1' c='new_symbol'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='405' macro='1' c='new_symbol'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='405' macro='1' c='new_symbol'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='407' macro='1' c='new_symbol'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='407' macro='1' c='new_symbol'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='407' macro='1' c='new_symbol'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='731' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='731' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='731' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='747' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='747' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='747' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='775' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='775' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='775' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='870' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='870' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='870' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='893' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='893' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='893' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='928' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='928' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='928' macro='1' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1044' macro='1' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1044' macro='1' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1044' macro='1' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1053' macro='1' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1053' macro='1' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1053' macro='1' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1265' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1265' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1265' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1273' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1273' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1273' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1431' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1431' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1431' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1440' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1442' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1444' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1465' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1465' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1465' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1473' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1473' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1473' macro='1' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1658' macro='1' c='collate_finish'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1658' macro='1' c='collate_finish'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1658' macro='1' c='collate_finish'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1839' macro='1' c='collate_finish'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1839' macro='1' c='collate_finish'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1839' macro='1' c='collate_finish'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1898' c='output_weight'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1911' macro='1' c='output_weight'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1927' macro='1' c='output_weight'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1928' macro='1' c='output_weight'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1936' c='output_weightwc'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1949' macro='1' c='output_weightwc'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1965' macro='1' c='output_weightwc'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1975'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1976'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1977'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1999' macro='1' c='add_to_tablewc'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2027' macro='1' c='add_to_tablewc'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2032' macro='1' c='add_to_tablewc'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2088' macro='1' c='add_to_tablewc'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2116' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2117' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2118' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2172' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2182' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2229' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2229' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2231' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2256' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2256' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2257' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2262' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2315' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2315' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2316' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2327' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2336' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2336' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2343' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2352' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2358' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2359' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2437' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2437' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2437' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2472' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2475' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2476' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2479' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2480' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2484' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2495' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2514' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2515' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2516' macro='1' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2961' macro='1' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2961' macro='1' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2961' macro='1' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3210' macro='1' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3210' macro='1' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3210' macro='1' c='collate_read'/>
+<size>88</size>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='242'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='766' macro='1' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='766' macro='1' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='766' macro='1' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='786' macro='1' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='786' macro='1' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='786' macro='1' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='828' macro='1' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='828' macro='1' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='828' macro='1' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1296' macro='1' c='get_character'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1296' macro='1' c='get_character'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1296' macro='1' c='get_character'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1501' macro='1' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1501' macro='1' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1501' macro='1' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1862' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1870' macro='1' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1870' macro='1' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1870' macro='1' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1896' macro='1' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1897' macro='1' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1899' macro='1' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1899' macro='1' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1899' macro='1' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1921' macro='1' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1929' macro='1' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1982' macro='1' c='read_translit_ignore_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1982' macro='1' c='read_translit_ignore_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1982' macro='1' c='read_translit_ignore_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3326' macro='1' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3326' macro='1' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3326' macro='1' c='set_class_defaults'/>
+<size>88</size>
+<use f='codebrowser/locale/programs/locfile.c' l='558' macro='1' c='record_offset'/>
+<use f='codebrowser/locale/programs/locfile.c' l='581' macro='1' c='align_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='582' macro='1' c='align_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='598' macro='1' c='add_locale_raw_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='604' c='add_locale_raw_obstack'/>
+<use f='codebrowser/locale/programs/locfile.c' l='606' macro='1' c='add_locale_raw_obstack'/>
+<use f='codebrowser/locale/programs/locfile.c' l='608' macro='1' c='add_locale_raw_obstack'/>
+<use f='codebrowser/locale/programs/locfile.c' l='608' macro='1' c='add_locale_raw_obstack'/>
+<use f='codebrowser/locale/programs/locfile.c' l='616' macro='1' c='add_locale_string'/>
+<use f='codebrowser/locale/programs/locfile.c' l='633' macro='1' c='add_locale_uint32'/>
+<use f='codebrowser/locale/programs/locfile.c' l='644' macro='1' c='add_locale_uint32_array'/>
+<use f='codebrowser/locale/programs/locfile.c' l='653' macro='1' c='add_locale_char'/>
+<use f='codebrowser/locale/programs/locfile.c' l='716' macro='1' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='717' macro='1' c='write_locale_data'/>
+<size>88</size>
+<use f='codebrowser/locale/programs/repertoire.c' l='41' c='repertoire_new_char'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='237' macro='1' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='239' macro='1' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='239' macro='1' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='239' macro='1' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='302' macro='1' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='302' macro='1' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='302' macro='1' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='385' c='repertoire_new_char'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='402' macro='1' c='repertoire_new_char'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='402' macro='1' c='repertoire_new_char'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='402' macro='1' c='repertoire_new_char'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='464' macro='1' c='repertoire_new_char'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='471' macro='1' c='repertoire_new_char'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='471' macro='1' c='repertoire_new_char'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='471' macro='1' c='repertoire_new_char'/>
+<size>88</size>
+<use f='codebrowser/locale/programs/simple-hash.c' l='91' macro='1' c='delete_hash'/>
+<use f='codebrowser/locale/programs/simple-hash.c' l='109' macro='1' c='insert_entry'/>
+<use f='codebrowser/locale/programs/simple-hash.c' l='109' macro='1' c='insert_entry'/>
+<use f='codebrowser/locale/programs/simple-hash.c' l='109' macro='1' c='insert_entry'/>
+<size>88</size>
+<use f='codebrowser/malloc/obstack.c' l='144' c='_obstack_begin'/>
+<use f='codebrowser/malloc/obstack.c' l='191' c='_obstack_begin_1'/>
+<use f='codebrowser/malloc/obstack.c' l='245' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='319' c='_obstack_allocated_p'/>
+<use f='codebrowser/malloc/obstack.c' l='322' c='_obstack_allocated_p'/>
+<use f='codebrowser/malloc/obstack.c' l='345' c='obstack_free'/>
+<use f='codebrowser/malloc/obstack.c' l='381' c='_obstack_memory_used'/>
+<size>88</size>
+<use f='codebrowser/libio/bits/stdio2.h' l='172' c='__obstack_printf_chk'/>
+<use f='codebrowser/libio/bits/stdio2.h' l='176' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/libio/bits/stdio2.h' l='222' c='obstack_vprintf'/>
+<use f='codebrowser/nscd/mem.c' l='204' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='344' macro='1' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='344' macro='1' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='344' macro='1' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='505' macro='1' c='gc'/>
+<size>88</size>

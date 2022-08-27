@@ -1,0 +1,21 @@
+<dec f='codebrowser/inet/netgroup.h' l='63' type='struct name_list *'/>
+<offset>576</offset>
+<use f='codebrowser/inet/getnetgrent_r.c' l='94' u='r' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='96' u='r' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='97' u='w' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='97' u='r' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='302' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='307' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='309' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='310' u='w' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='310' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='336' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='352' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='354' u='w' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='459' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='477' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='479' u='w' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='516' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='518' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='519' u='w' c='innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='121' u='w' c='__nscd_setnetgrent'/>

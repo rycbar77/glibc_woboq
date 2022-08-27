@@ -1,0 +1,5 @@
+<dec f='codebrowser/resolv/res_hconf.h' l='48' type='void _res_hconf_init()'/>
+<def f='codebrowser/resolv/res_hconf.c' l='321' ll='327' type='void _res_hconf_init()'/>
+<doc f='codebrowser/resolv/res_hconf.c' l='319'>/* Initialize hconf datastructure by reading host.conf file and
+   environment variables.  */</doc>
+<use f='codebrowser/resolv/res_init.c' l='557' u='c' c='__resolv_conf_load'/>

@@ -1,0 +1,14 @@
+<def f='codebrowser/include/register-atfork.h' l='23' ll='29'/>
+<size>32</size>
+<doc f='codebrowser/include/register-atfork.h' l='22'>/* Elements of the fork handler lists.  */</doc>
+<mbr r='fork_handler::prepare_handler' o='0' t='void (*)(void)'/>
+<mbr r='fork_handler::parent_handler' o='64' t='void (*)(void)'/>
+<mbr r='fork_handler::child_handler' o='128' t='void (*)(void)'/>
+<mbr r='fork_handler::dso_handle' o='192' t='void *'/>
+<use f='codebrowser/posix/register-atfork.c' l='46' c='__register_atfork'/>
+<use f='codebrowser/posix/register-atfork.c' l='62' c='fork_handler_list_find'/>
+<use f='codebrowser/posix/register-atfork.c' l='68' c='fork_handler_list_find'/>
+<use f='codebrowser/posix/register-atfork.c' l='80' c='__unregister_atfork'/>
+<use f='codebrowser/posix/register-atfork.c' l='88' c='__unregister_atfork'/>
+<use f='codebrowser/posix/register-atfork.c' l='110' c='__run_fork_handlers'/>
+<size>32</size>

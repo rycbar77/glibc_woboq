@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='1302' type='int pthread_key_delete(pthread_key_t __key)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='1301'>/* Destroy KEY.  */</doc>
+<def f='codebrowser/nptl/pthread_key_delete.c' l='42' macro='1' type='int pthread_key_delete(pthread_key_t )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='714' u='c' c='__gthread_key_delete'/>
+<use f='codebrowser/support/xpthread_key_delete.c' l='23' u='c' c='xpthread_key_delete'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/elf/dl-hwcaps.h' l='99' type='_Bool _dl_hwcaps_contains(const char * hwcaps, const char * name, size_t name_length)'/>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='96'>/* Returns true if the colon-separated HWCAP list HWCAPS contains the
+   capability NAME (with length NAME_LENGTH).  If HWCAPS is NULL, the
+   function returns true.  */</doc>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='58' u='c' c='_dl_hwcaps_split_masked'/>
+<def f='codebrowser/elf/dl-hwcaps_split.c' l='64' ll='77' type='_Bool _dl_hwcaps_contains(const char * hwcaps, const char * name, size_t name_length)'/>
+<use f='codebrowser/elf/dl-usage.c' l='183' u='c' c='print_hwcaps_subdirectories'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/math/math-narrow.h' l='359'/>
+<doc f='codebrowser/math/math-narrow.h' l='356'>/* Implement narrowing fused multiply-add using round-to-odd.  The
+   arguments are X, Y and Z, the return type is TYPE and UNION,
+   MANTISSA, SUFFIX and CLEAR_UNDERFLOW are as for ROUND_TO_ODD.  */</doc>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_ffmal.c' l='31' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_dfmal.c' l='35' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_dfmal.c' l='31' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_ffmal.c' l='29' u='c'/>
+<use f='codebrowser/sysdeps/x86/fpu/s_ffma.c' l='47' u='c'/>

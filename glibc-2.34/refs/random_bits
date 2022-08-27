@@ -1,0 +1,9 @@
+<def f='codebrowser/include/random-bits.h' l='30' ll='39' type='uint32_t random_bits()'/>
+<doc f='codebrowser/include/random-bits.h' l='25'>/* Provides fast pseudo-random bits through clock_gettime.  It has unspecified
+   starting time, nano-second accuracy, its randomness is significantly better
+   than gettimeofday, and for mostly architectures it is implemented through
+   vDSO instead of a syscall.  Since the source is a system clock, the upper
+   bits will have less entropy. */</doc>
+<use f='codebrowser/resolv/res_mkquery.c' l='119' u='c' c='__res_context_mkquery'/>
+<use f='codebrowser/resolv/res_send.c' l='214' u='c' c='nameserver_offset'/>
+<use f='codebrowser/string/strfry.c' l='33' u='c' c='strfry'/>

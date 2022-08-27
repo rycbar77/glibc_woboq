@@ -1,0 +1,19 @@
+<dec f='codebrowser/pwd/pwd.h' l='54' type='__uid_t'/>
+<use f='codebrowser/nss/nss_files/files-pwd.c' l='42' u='r' c='_nss_db_getpwuid_r'/>
+<offset>128</offset>
+<doc f='codebrowser/pwd/pwd.h' l='54'>/* User ID.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='562' u='r' c='ruserok2_sa'/>
+<use f='codebrowser/inet/rcmd.c' l='563' u='r' c='ruserok2_sa'/>
+<use f='codebrowser/nscd/connections.c' l='2467' u='r' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='208' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='144' u='w' c='nscd_getpw_r'/>
+<use f='codebrowser/nscd/pwdcache.c' l='176' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='182' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='228' u='r' c='cache_addpw'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='936' u='r' c='internal_getpwuid_r'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='41' u='w' c='_nss_files_parse_pwent'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='52' u='w' c='_nss_files_parse_pwent'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='52' u='w' c='_nss_files_parse_pwent'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='57' u='w' c='_nss_files_parse_pwent'/>
+<use f='codebrowser/pwd/getpw.c' l='54' u='r' c='__getpw'/>
+<use f='codebrowser/pwd/putpwent.c' l='57' u='r' c='putpwent'/>

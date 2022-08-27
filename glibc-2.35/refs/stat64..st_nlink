@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='111' type='__nlink_t'/>
+<offset>128</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='111'>/* Link count.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='493' u='r' c='iruserfopen'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='60' u='w' c='fstatat64_time64_statx'/>
+<use f='codebrowser/io/statx_generic.c' l='71' u='r' c='statx_generic'/>

@@ -1,0 +1,12 @@
+<def f='include/selinux/avc.h' l='130' ll='137'/>
+<use f='include/selinux/avc.h' l='200' c='avc_init'/>
+<size>16</size>
+<doc f='include/selinux/avc.h' l='123'>/* These structures are passed by reference to avc_init().  Passing
+ * a NULL reference will cause the AVC to use a default.  The default
+ * memory callbacks are malloc() and free().  The default logging method
+ * is to print on stderr.  If no thread callbacks are passed, a separate
+ * listening thread won&apos;t be started for kernel policy change messages.
+ * If no locking callbacks are passed, no locking will take place.
+ */</doc>
+<mbr r='avc_memory_callback::func_malloc' o='0' t='void *(*)(size_t)'/>
+<mbr r='avc_memory_callback::func_free' o='64' t='void (*)(void *)'/>

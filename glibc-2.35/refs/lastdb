@@ -1,0 +1,35 @@
+<dec f='codebrowser/nscd/nscd.h' l='40' type='5'/>
+<use f='codebrowser/nscd/nscd.h' l='193'/>
+<use f='codebrowser/nscd/nscd.h' l='194'/>
+<use f='codebrowser/nscd/nscd.h' l='270' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd.h' l='273' c='send_stats'/>
+<use f='codebrowser/nscd/connections.c' l='112'/>
+<use f='codebrowser/nscd/connections.c' l='493' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='946' u='r' c='invalidate_cache'/>
+<use f='codebrowser/nscd/connections.c' l='971' u='r' c='invalidate_cache'/>
+<use f='codebrowser/nscd/connections.c' l='1411' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1412' u='r' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1459' u='r' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1819' u='r' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1954' u='r' c='clear_db_cache'/>
+<use f='codebrowser/nscd/connections.c' l='1967' c='handle_inotify_events'/>
+<use f='codebrowser/nscd/connections.c' l='2371' u='r' c='start_threads'/>
+<use f='codebrowser/nscd/connections.c' l='2371' u='r' c='start_threads'/>
+<use f='codebrowser/nscd/connections.c' l='2380' u='r' c='start_threads'/>
+<use f='codebrowser/nscd/nscd.c' l='443' u='r' c='parse_opt'/>
+<use f='codebrowser/nscd/nscd.c' l='447' u='r' c='parse_opt'/>
+<use f='codebrowser/nscd/nscd.c' l='485' u='r' c='more_help'/>
+<use f='codebrowser/nscd/nscd.c' l='570' u='r' c='termination_handler'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='36'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='49' u='r' c='find_db'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='58' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='181' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='181' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='185' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='185' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='296' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='98'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='106' c='send_stats'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='122' u='r' c='send_stats'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='124' u='r' c='send_stats'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='266' u='r' c='receive_print_stats'/>

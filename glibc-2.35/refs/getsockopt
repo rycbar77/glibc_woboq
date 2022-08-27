@@ -1,0 +1,4 @@
+<dec f='codebrowser/socket/sys/socket.h' l='255' type='int getsockopt(int __fd, int __level, int __optname, void *restrict __optval, socklen_t *restrict __optlen)'/>
+<use f='codebrowser/nscd/connections.c' l='1234' u='c' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1656' u='c' c='nscd_run_worker'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getsockopt.c' l='103' macro='1' type='int getsockopt(int , int , int , void *restrict , socklen_t *restrict )'/>

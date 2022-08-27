@@ -1,0 +1,26 @@
+<dec f='codebrowser/misc/search.h' l='121' type='1'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='634' u='r' c='insert_print_list'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='644' u='r' c='do_print_human'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='686' u='r' c='do_print'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='483' u='r' c='append_alias'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='685' u='r' c='append_module'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='976' u='r' c='name_insert'/>
+<use f='codebrowser/locale/programs/locale.c' l='306' u='r' c='print_names'/>
+<use f='codebrowser/misc/tsearch.c' l='698' c='trecurse'/>
+<use f='codebrowser/misc/tsearch.c' l='737' c='trecurse_r'/>
+<dec f='codebrowser/posix/regcomp.c' l='42' type='reg_errcode_t postorder(bin_tree_t * root, reg_errcode_t ((*)(void *, bin_tree_t *)) fn, void * extra)'/>
+<use f='codebrowser/posix/regcomp.c' l='1194' u='c' c='analyze'/>
+<use f='codebrowser/posix/regcomp.c' l='1197' u='c' c='analyze'/>
+<def f='codebrowser/posix/regcomp.c' l='1225' ll='1255' type='reg_errcode_t postorder(bin_tree_t * root, reg_errcode_t ((*)(void *, bin_tree_t *)) fn, void * extra)'/>
+<use f='codebrowser/posix/regcomp.c' l='2175' u='c' c='parse_reg_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='2218' u='c' c='parse_branch'/>
+<use f='codebrowser/posix/regcomp.c' l='2226' u='c' c='parse_branch'/>
+<use f='codebrowser/posix/regcomp.c' l='2227' u='c' c='parse_branch'/>
+<use f='codebrowser/posix/regcomp.c' l='2454' u='c' c='parse_expression'/>
+<use f='codebrowser/posix/regcomp.c' l='2464' u='c' c='parse_expression'/>
+<use f='codebrowser/posix/regcomp.c' l='2501' u='c' c='parse_sub_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='2600' u='c' c='parse_dup_op'/>
+<use f='codebrowser/posix/regcomp.c' l='2631' u='c' c='parse_dup_op'/>
+<doc f='codebrowser/posix/regcomp.c' l='1222'>/* Our parse trees are very unbalanced, so we cannot use a stack to
+   implement parse tree visits.  Instead, we use parent pointers and
+   some hairy code in these two functions.  */</doc>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/math_private.h' l='158'/>
+<doc f='codebrowser/sysdeps/generic/math_private.h' l='156'>/* We need to guarantee an expansion of name when building
+   ldbl-128 files as another type (e.g _Float128).  */</doc>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_finitel.c' l='34' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/s_isinfl.c' l='26' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/float128/s_isnanf128.c' l='8' u='w'/>

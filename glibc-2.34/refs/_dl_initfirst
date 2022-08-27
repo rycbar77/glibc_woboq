@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='380' type='struct link_map *'/>
+<use f='codebrowser/elf/dl-close.c' l='765' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='766' macro='1' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-init.c' l='82' macro='1' u='r' c='_dl_init'/>
+<use f='codebrowser/elf/dl-init.c' l='84' macro='1' u='r' c='_dl_init'/>
+<use f='codebrowser/elf/dl-init.c' l='85' macro='1' u='w' c='_dl_init'/>
+<use f='codebrowser/elf/dl-load.c' l='1460' macro='1' u='w' c='_dl_map_object_from_fd'/>
+<def f='codebrowser/elf/dl-support.c' l='156' type='struct link_map *'/>
+<doc f='codebrowser/elf/dl-support.c' l='155'>/* The object to be initialized first.  */</doc>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/math/bits/mathcalls.h' l='283' macro='1' type='int __ilogb(double __x)'/>
+<use f='codebrowser/math/s_significand_template.c' l='31' u='c' c='__significand'/>
+<def f='codebrowser/math/w_ilogb_template.c' l='26' ll='38' type='int __ilogb(double x)'/>
+<use f='codebrowser/math/w_ilogb_template.c' l='39' c='ilogb'/>
+<use f='codebrowser/math/w_ilogb_template.c' l='39' c='ilogbf64'/>
+<use f='codebrowser/math/w_ilogb_template.c' l='39' c='ilogbf32x'/>
+<doc f='codebrowser/math/w_ilogb_template.c' l='25'>/* wrapper ilogb */</doc>

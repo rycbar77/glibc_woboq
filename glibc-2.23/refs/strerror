@@ -1,0 +1,18 @@
+<dec f='codebrowser/string/string.h' l='408' type='char * strerror(int __errnum)'/>
+<doc f='codebrowser/string/string.h' l='407'>/* Return a string describing the meaning of the `errno&apos; code in ERRNUM.  */</doc>
+<use f='codebrowser/locale/programs/locarchive.c' l='1358' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1371' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/resolv/res_debug.c' l='167' u='c' c='do_section'/>
+<use f='codebrowser/resolv/res_debug.c' l='198' u='c' c='do_section'/>
+<use f='codebrowser/resolv/res_debug.c' l='221' u='c' c='res_pquery'/>
+<def f='codebrowser/string/strerror.c' l='28' ll='43' type='char * strerror(int errnum)'/>
+<use f='codebrowser/timezone/zdump.c' l='542' u='c' c='close_file'/>
+<use f='codebrowser/timezone/zic.c' l='386' u='c' c='memcheck'/>
+<use f='codebrowser/timezone/zic.c' l='484' u='c' c='close_file'/>
+<use f='codebrowser/timezone/zic.c' l='756' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='800' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='808' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='986' u='c' c='infile'/>
+<use f='codebrowser/timezone/zic.c' l='1689' u='c' c='writezone'/>
+<use f='codebrowser/timezone/zic.c' l='1699' u='c' c='writezone'/>
+<use f='codebrowser/timezone/zic.c' l='3003' u='c' c='mkdirs'/>

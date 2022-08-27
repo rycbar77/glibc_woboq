@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/dl-cache.h' l='239' type='uint32_t'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='330' u='r' c='cache_extension_load'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='340' u='r' c='cache_extension_load'/>
+<use f='codebrowser/elf/cache.c' l='527' u='w' c='write_extensions'/>
+<use f='codebrowser/elf/cache.c' l='535' u='w' c='write_extensions'/>
+<offset>64</offset>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='237'>/* Offset from the start of the file for the data in this extension
+     section.  Specific extensions can have alignment constraints.  */</doc>

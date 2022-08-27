@@ -1,0 +1,161 @@
+<dec f='codebrowser/wcsmbs/bits/types/__mbstate_t.h' l='15' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/iconv/gconv_simple.c' l='177' u='r' c='internal_ucs4_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='185' u='w' c='internal_ucs4_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='186' u='w' c='internal_ucs4_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='209' u='w' c='internal_ucs4_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_internal_ucs4'/>
+<use f='codebrowser/iconv/skeleton.c' l='804' u='w' c='__gconv_transform_internal_ucs4'/>
+<use f='codebrowser/iconv/skeleton.c' l='805' u='w' c='__gconv_transform_internal_ucs4'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='375' u='r' c='ucs4_internal_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='383' u='w' c='ucs4_internal_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='384' u='w' c='ucs4_internal_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='398' u='r' c='ucs4_internal_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='420' u='w' c='ucs4_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_ucs4_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='804' u='w' c='__gconv_transform_ucs4_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='805' u='w' c='__gconv_transform_ucs4_internal'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='548' u='r' c='internal_ucs4le_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='556' u='w' c='internal_ucs4le_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='557' u='w' c='internal_ucs4le_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='580' u='w' c='internal_ucs4le_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_internal_ucs4le'/>
+<use f='codebrowser/iconv/skeleton.c' l='804' u='w' c='__gconv_transform_internal_ucs4le'/>
+<use f='codebrowser/iconv/skeleton.c' l='805' u='w' c='__gconv_transform_internal_ucs4le'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='752' u='r' c='ucs4le_internal_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='760' u='w' c='ucs4le_internal_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='761' u='w' c='ucs4le_internal_loop_single'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='794' u='w' c='ucs4le_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_ucs4le_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='804' u='w' c='__gconv_transform_ucs4le_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='805' u='w' c='__gconv_transform_ucs4le_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_ascii_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='804' u='w' c='__gconv_transform_ascii_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='805' u='w' c='__gconv_transform_ascii_internal'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='395' u='r' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='466' u='r' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='475' u='w' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='484' u='r' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='w' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='r' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_internal_ascii'/>
+<use f='codebrowser/iconv/skeleton.c' l='804' u='w' c='__gconv_transform_internal_ascii'/>
+<use f='codebrowser/iconv/skeleton.c' l='805' u='w' c='__gconv_transform_internal_ascii'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='395' u='r' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='466' u='r' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='475' u='w' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='484' u='r' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='w' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='r' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_internal_utf8'/>
+<use f='codebrowser/iconv/skeleton.c' l='804' u='w' c='__gconv_transform_internal_utf8'/>
+<use f='codebrowser/iconv/skeleton.c' l='805' u='w' c='__gconv_transform_internal_utf8'/>
+<use f='codebrowser/iconv/loop.c' l='391' macro='1' u='r' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='391' macro='1' u='r' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='418' macro='1' u='w' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='418' macro='1' u='w' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='466' u='r' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='473' macro='1' u='w' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='484' u='r' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='488' macro='1' u='w' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='488' macro='1' u='w' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_utf8_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='793' macro='1' u='w' c='__gconv_transform_utf8_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='793' macro='1' u='w' c='__gconv_transform_utf8_internal'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='395' u='r' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='466' u='r' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='475' u='w' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='484' u='r' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='w' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='r' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_ucs2_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='804' u='w' c='__gconv_transform_ucs2_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='805' u='w' c='__gconv_transform_ucs2_internal'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='395' u='r' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='466' u='r' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='475' u='w' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='484' u='r' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='w' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='r' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_internal_ucs2'/>
+<use f='codebrowser/iconv/skeleton.c' l='804' u='w' c='__gconv_transform_internal_ucs2'/>
+<use f='codebrowser/iconv/skeleton.c' l='805' u='w' c='__gconv_transform_internal_ucs2'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='395' u='r' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='466' u='r' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='475' u='w' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='484' u='r' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='w' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='r' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_ucs2reverse_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='804' u='w' c='__gconv_transform_ucs2reverse_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='805' u='w' c='__gconv_transform_ucs2reverse_internal'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='394' u='r' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='395' u='r' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='464' u='r' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='466' u='r' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='475' u='w' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='484' u='r' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='492' u='r' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='w' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='494' u='r' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='558' u='r' c='__gconv_transform_internal_ucs2reverse'/>
+<use f='codebrowser/iconv/skeleton.c' l='804' u='w' c='__gconv_transform_internal_ucs2reverse'/>
+<use f='codebrowser/iconv/skeleton.c' l='805' u='w' c='__gconv_transform_internal_ucs2reverse'/>
+<use f='codebrowser/posix/fnmatch.c' l='247' macro='1' u='r' c='fnmatch_convert_to_wide'/>
+<use f='codebrowser/posix/fnmatch.c' l='247' macro='1' u='r' c='fnmatch_convert_to_wide'/>
+<use f='codebrowser/posix/regex_internal.c' l='305' macro='1' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/wcsmbs/c16rtomb.c' l='36' u='w' c='c16rtomb'/>
+<use f='codebrowser/wcsmbs/c16rtomb.c' l='41' u='r' c='c16rtomb'/>
+<use f='codebrowser/wcsmbs/c16rtomb.c' l='45' u='w' c='c16rtomb'/>
+<use f='codebrowser/wcsmbs/c16rtomb.c' l='60' u='w' c='c16rtomb'/>
+<use f='codebrowser/wcsmbs/mbrtoc16.c' l='46' u='r' c='mbrtoc16'/>
+<use f='codebrowser/wcsmbs/mbrtoc16.c' l='49' u='w' c='mbrtoc16'/>
+<use f='codebrowser/wcsmbs/mbrtoc16.c' l='129' macro='1' u='r' c='mbrtoc16'/>
+<use f='codebrowser/wcsmbs/mbrtoc16.c' l='129' macro='1' u='r' c='mbrtoc16'/>
+<use f='codebrowser/wcsmbs/mbrtoc16.c' l='139' u='w' c='mbrtoc16'/>
+<use f='codebrowser/wcsmbs/mbrtowc.c' l='104' macro='1' u='r' c='__mbrtowc'/>
+<use f='codebrowser/wcsmbs/mbrtowc.c' l='104' macro='1' u='r' c='__mbrtowc'/>
+<use f='codebrowser/wcsmbs/mbsinit.c' l='35' u='r' c='__mbsinit'/>
+<use f='codebrowser/wcsmbs/mbsnrtowcs.c' l='120' macro='1' u='r' c='__mbsnrtowcs'/>
+<use f='codebrowser/wcsmbs/mbsnrtowcs.c' l='120' macro='1' u='r' c='__mbsnrtowcs'/>
+<use f='codebrowser/wcsmbs/mbsrtowcs_l.c' l='141' macro='1' u='r' c='__mbsrtowcs_l'/>
+<use f='codebrowser/wcsmbs/mbsrtowcs_l.c' l='141' macro='1' u='r' c='__mbsrtowcs_l'/>
+<use f='codebrowser/wcsmbs/wcsnrtombs.c' l='125' macro='1' u='r' c='__wcsnrtombs'/>
+<use f='codebrowser/wcsmbs/wcsnrtombs.c' l='125' macro='1' u='r' c='__wcsnrtombs'/>
+<use f='codebrowser/wcsmbs/wcsrtombs.c' l='122' macro='1' u='r' c='__wcsrtombs'/>
+<use f='codebrowser/wcsmbs/wcsrtombs.c' l='122' macro='1' u='r' c='__wcsrtombs'/>

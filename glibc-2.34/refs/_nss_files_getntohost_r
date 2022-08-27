@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/nss_files.h' l='138' macro='1' type='enum nss_status _nss_files_getntohost_r(const struct ether_addr * , struct etherent * , char * , size_t , int * )'/>
+<dec f='codebrowser/nss/function.def' l='52' macro='1' type='enum nss_status _nss_files_getntohost_r(const struct ether_addr * , struct etherent * , char * , size_t , int * )'/>
+<use f='codebrowser/nss/function.def' l='52' macro='1' c='_nss_files_getntohost_r'/>
+<dec f='codebrowser/include/netinet/ether.h' l='32' macro='1' type='enum nss_status _nss_files_getntohost_r(const struct ether_addr * addr, struct etherent * eth, char * buffer, size_t buflen, int * errnop)'/>
+<def f='codebrowser/nss/nss_files/files-ethers.c' l='60' macro='1' type='enum nss_status _nss_files_getntohost_r(const struct ether_addr * addr, struct etherent * result, char * buffer, size_t buflen, int * errnop)'/>

@@ -1,0 +1,23 @@
+<dec f='codebrowser/include/unistd.h' l='172' type='ssize_t __read(int __fd, void * __buf, size_t __nbytes)'/>
+<dec f='codebrowser/include/unistd.h' l='173' type='ssize_t __read(int , void * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='173' c='__read'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='43' c='__read_nocancel'/>
+<dec f='codebrowser/sysdeps/generic/dl-unistd.h' l='29' type='ssize_t __read(int , void * , size_t )'/>
+<use f='codebrowser/sysdeps/generic/dl-unistd.h' l='29' c='__read'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='92' u='c' c='__gconv_load_cache'/>
+<use f='codebrowser/inet/rcmd.c' l='322' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='338' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rexec.c' l='169' u='c' c='rexec_af'/>
+<use f='codebrowser/inet/rexec.c' l='174' u='c' c='rexec_af'/>
+<use f='codebrowser/libio/fileops.c' l='1133' u='c' c='_IO_file_read'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='92' u='c' c='__readall'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='551' u='c' c='__nscd_open_socket'/>
+<use f='codebrowser/posix/wordexp.c' l='922' u='c' c='exec_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='932' u='c' c='exec_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='957' u='c' c='exec_comm'/>
+<use f='codebrowser/posix/wordexp.c' l='967' u='c' c='exec_comm'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='496' u='c' c='readtcp'/>
+<use f='codebrowser/sunrpc/rtime.c' l='130' u='c' c='__GI_rtime'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='349' u='c' c='readtcp'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/eventfd_read.c' l='26' u='c' c='eventfd_read'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/read.c' l='31' macro='1' type='ssize_t __read(int , void * , size_t )'/>

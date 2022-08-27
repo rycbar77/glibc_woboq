@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1131' type='size_t _dl_next_tls_modid()'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1130'>/* Determine next available module ID.  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='1480' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/rtld.c' l='1739' u='c' c='dl_main'/>
+<def f='codebrowser/elf/dl-tls.c' l='125' ll='182' type='size_t _dl_next_tls_modid()'/>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/string/string.h' l='152' type='char * strncat(char *restrict __dest, const char *restrict __src, size_t __n)'/>
+<use f='codebrowser/include/string.h' l='98' c='__strncat'/>
+<doc f='codebrowser/string/string.h' l='151'>/* Append no more than N characters from SRC onto DEST.  */</doc>
+<def f='codebrowser/string/bits/string_fortified.h' l='134' ll='140' macro='1' type='char * strncat(char *restrict __dest, const char *restrict __src, size_t __len)'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='565' c='__strncat_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='567' c='__strncat_avx2_rtm'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='571' c='__strncat_evex'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='575' c='__strncat_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='577' c='__strncat_sse2_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='579' c='__strncat_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strncat.c' l='29' macro='1' type='char * strncat(char *restrict , const char *restrict , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strncat.c' l='30' c='__strncat'/>

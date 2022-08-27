@@ -1,0 +1,17 @@
+<dec f='codebrowser/include/link.h' l='83' type='struct r_search_path_struct'/>
+<doc f='codebrowser/include/link.h' l='82'>/* Search path information computed by _dl_init_paths.  */</doc>
+<def f='codebrowser/elf/dl-load.c' l='461' type='struct r_search_path_struct'/>
+<use f='codebrowser/elf/dl-load.c' l='723' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='725' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='736' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='738' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='739' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='745' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='746' u='m' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='2023' u='a' c='open_path'/>
+<use f='codebrowser/elf/dl-load.c' l='2261' u='m' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2262' u='a' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2442' u='a' c='_dl_rtld_di_serinfo'/>
+<doc f='codebrowser/elf/dl-load.c' l='460'>/* Standard search directories.  */</doc>
+<use f='codebrowser/elf/dl-usage.c' l='84' u='m' c='print_search_path_for_help'/>
+<use f='codebrowser/elf/dl-usage.c' l='104' u='m' c='print_search_path_for_help'/>

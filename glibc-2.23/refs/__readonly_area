@@ -1,0 +1,7 @@
+<dec f='codebrowser/stdio-common/vfprintf.c' l='894' type='int __readonly_area(const void * , size_t )'/>
+<use f='codebrowser/stdio-common/vfprintf.c' l='897' u='c' c='_IO_vfprintf_internal'/>
+<dec f='codebrowser/stdio-common/vfprintf.c' l='894' type='int __readonly_area(const void * , size_t )'/>
+<use f='codebrowser/stdio-common/vfprintf.c' l='897' u='c' c='printf_positional'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/readonly-area.c' l='29' ll='102' type='int __readonly_area(const char * ptr, size_t size)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/readonly-area.c' l='26'>/* Return 1 if the whole area PTR .. PTR+SIZE is not writable.
+   Return -1 if it is writable.  */</doc>

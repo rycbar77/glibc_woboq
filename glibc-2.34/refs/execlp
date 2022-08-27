@@ -1,0 +1,12 @@
+<dec f='codebrowser/posix/unistd.h' l='606' type='int execlp(const char * __file, const char * __arg)'/>
+<dec f='codebrowser/include/unistd.h' l='16' type='int execlp(const char * , const char * )'/>
+<use f='codebrowser/include/unistd.h' l='16' c='execlp'/>
+<doc f='codebrowser/posix/unistd.h' l='603'>/* Execute FILE, searching in the `PATH&apos; environment variable if
+   it contains no slashes, with all arguments after FILE until a
+   NULL pointer and environment from `environ&apos;.  */</doc>
+<def f='codebrowser/posix/execlp.c' l='27' ll='57' type='int execlp(const char * file, const char * arg)'/>
+<doc f='codebrowser/posix/execlp.c' l='24'>/* Execute FILE, searching in the `PATH&apos; environment variable if
+   it contains no slashes, with all arguments after FILE until a
+   NULL pointer and environment from `environ&apos;.  */</doc>
+<use f='codebrowser/support/support_run_diff.c' l='57' u='c' c='support_run_diff'/>
+<use f='codebrowser/support/test-container.c' l='392' u='c' c='recursive_remove'/>

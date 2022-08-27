@@ -1,0 +1,12 @@
+<dec f='codebrowser/libio/stdio.h' l='390' type='int vasprintf(char **restrict __ptr, const char *restrict __f, struct __va_list_tag * __arg)'/>
+<doc f='codebrowser/libio/stdio.h' l='388'>/* Write formatted output to a string dynamically allocated with `malloc&apos;.
+   Store the address of the string in *PTR.  */</doc>
+<def f='codebrowser/libio/vasprintf.c' l='92' macro='1' type='int vasprintf(char ** , const char * , struct __va_list_tag * )'/>
+<use f='codebrowser/locale/programs/linereader.h' l='110' u='c' c='lr_error'/>
+<use f='codebrowser/locale/programs/record-status.c' l='114' u='c' c='record_verbose'/>
+<use f='codebrowser/locale/programs/record-status.c' l='148' u='c' c='record_warning'/>
+<use f='codebrowser/locale/programs/record-status.c' l='185' u='c' c='record_error'/>
+<use f='codebrowser/locale/programs/record-status.c' l='218' u='c' c='record_error_at_line'/>
+<use f='codebrowser/locale/programs/xasprintf.c' l='30' u='c' c='xasprintf'/>
+<def f='codebrowser/libio/bits/stdio2.h' l='214' ll='219' macro='1' type='int vasprintf(char **restrict __ptr, const char *restrict __fmt, struct __va_list_tag * __ap)'/>
+<use f='codebrowser/support/xasprintf.c' l='32' u='c' c='xasprintf'/>

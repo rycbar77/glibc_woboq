@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='273' type='void * __memset_avx2_unaligned_rtm(void * , int , unsigned long )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='273' u='r' c='__libc_ifunc_impl_list'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S' l='125' macro='1' type='int'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memset.h' l='30' macro='1' type='void * __memset_avx2_unaligned_rtm(void * , int , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memset.h' l='86' macro='1' u='r' c='memset_ifunc_selector'/>

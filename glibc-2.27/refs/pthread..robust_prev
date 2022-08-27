@@ -1,0 +1,5 @@
+<dec f='codebrowser/nptl/descr.h' l='173' type='void *'/>
+<offset>5824</offset>
+<use f='codebrowser/nptl/nptl-init.c' l='300' u='w' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/allocatestack.c' l='761' u='w' c='allocate_stack'/>
+<use f='codebrowser/sysdeps/nptl/fork.c' l='170' u='w' c='__libc_fork'/>

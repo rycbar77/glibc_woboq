@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dl-debug.h source code [codebrowser/sysdeps/generic/dl-debug.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/generic/dl-debug.h'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>sysdeps</a>/<a href='./'>generic</a>/<a href='dl-debug.h.html'>dl-debug.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Debugging support.  Generic version.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_DL_DEBUG_H">_DL_DEBUG_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/_DL_DEBUG_H" data-ref="_M/_DL_DEBUG_H">_DL_DEBUG_H</dfn></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><i>/* There is a DT_DEBUG entry in the dynamic section.  Fill it in with the</i></td></tr>
+<tr><th id="23">23</th><td><i>   run-time address of the r_debug structure  */</i></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>static</em> <b>inline</b> <em>void</em></td></tr>
+<tr><th id="26">26</th><td><b>__attribute</b> ((always_inline))</td></tr>
+<tr><th id="27">27</th><td><dfn class="decl def fn" id="elf_setup_debug_entry" title='elf_setup_debug_entry' data-ref="elf_setup_debug_entry" data-ref-filename="elf_setup_debug_entry">elf_setup_debug_entry</dfn> (<b>struct</b> <a class="type" href="../../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col1 decl" id="1l" title='l' data-type='struct link_map *' data-ref="1l" data-ref-filename="1l">l</dfn>, <b>struct</b> <a class="type" href="../../elf/link.h.html#r_debug" title='r_debug' data-ref="r_debug" data-ref-filename="r_debug">r_debug</a> *<dfn class="local col2 decl" id="2r" title='r' data-type='struct r_debug *' data-ref="2r" data-ref-filename="2r">r</dfn>)</td></tr>
+<tr><th id="28">28</th><td>{</td></tr>
+<tr><th id="29">29</th><td>  <b>if</b> (<a class="local col1 ref" href="#1l" title='l' data-ref="1l" data-ref-filename="1l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_info" title='link_map::l_info' data-ref="link_map::l_info" data-ref-filename="link_map..l_info">l_info</a>[<a class="macro" href="../../elf/elf.h.html#876" title="21" data-ref="_M/DT_DEBUG">DT_DEBUG</a>] != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="30">30</th><td>    <a class="local col1 ref" href="#1l" title='l' data-ref="1l" data-ref-filename="1l">l</a>-&gt;<a class="ref field" href="../../include/link.h.html#link_map::l_info" title='link_map::l_info' data-ref="link_map::l_info" data-ref-filename="link_map..l_info">l_info</a>[<a class="macro" href="../../elf/elf.h.html#876" title="21" data-ref="_M/DT_DEBUG">DT_DEBUG</a>]-&gt;<a class="ref field" href="../../elf/elf.h.html#(anonymous)::d_un" title='(anonymous struct)::d_un' data-ref="(anonymous)::d_un" data-ref-filename="(anonymous)..d_un">d_un</a>.<a class="ref field" href="../../elf/elf.h.html#(anonymousstruct)::(anonymous)::d_ptr" title='(anonymous struct)::(anonymous union)::d_ptr' data-ref="(anonymousstruct)::(anonymous)::d_ptr" data-ref-filename="(anonymousstruct)..(anonymous)..d_ptr">d_ptr</a> = (<a class="macro" href="../../elf/link.h.html#30" title="Elf64_Addr" data-ref="_M/ElfW">ElfW</a>(Addr)) <a class="local col2 ref" href="#2r" title='r' data-ref="2r" data-ref-filename="2r">r</a>;</td></tr>
+<tr><th id="31">31</th><td>}</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="19">endif</span> /* _DL_DEBUG_H */</u></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../elf/dl-reloc-static-pie.c.html'>codebrowser/elf/dl-reloc-static-pie.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

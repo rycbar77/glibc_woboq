@@ -1,0 +1,23 @@
+<def f='codebrowser/malloc/dynarray-skeleton.c' l='126' macro='1'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='177' macro='1' c='nameserver_list_free__array__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='193' macro='1' c='nameserver_list_init'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='203' macro='1' c='nameserver_list_free'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='214' macro='1' c='nameserver_list_has_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='223' macro='1' c='nameserver_list_mark_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='237' macro='1' c='nameserver_list_size'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='246' macro='1' c='nameserver_list_at'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='258' macro='1' c='nameserver_list_begin'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='268' macro='1' c='nameserver_list_end'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='275' macro='1' c='nameserver_list_add__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='295' macro='1' c='nameserver_list_add'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='316' macro='1' c='nameserver_list_emplace__tail__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='331' macro='1' c='nameserver_list_emplace__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='354' macro='1' c='nameserver_list_emplace'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='373' macro='1' c='nameserver_list_resize'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='418' macro='1' c='nameserver_list_remove_last'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='435' macro='1' c='nameserver_list_clear'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='484' macro='1' c='nameserver_list_finalize'/>
+<use f='codebrowser/resolv/res_init.c' l='152'/>
+<size>48</size>
+<doc f='codebrowser/malloc/dynarray-skeleton.c' l='125'>/* All fields of this struct are private to the implementation.  */</doc>
+<mbr r='nameserver_list::scratch' o='192' t='const struct sockaddr *[3]'/>

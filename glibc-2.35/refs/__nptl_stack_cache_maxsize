@@ -1,0 +1,6 @@
+<dec f='codebrowser/nptl/nptl-stack.h' l='28' type='size_t'/>
+<doc f='codebrowser/nptl/nptl-stack.h' l='27'>/* Maximum size of the cache, in bytes.  40 MiB by default.  */</doc>
+<def f='codebrowser/nptl/nptl-stack.c' l='23' type='size_t'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='105' u='r' c='queue_stack'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='106' u='r' c='queue_stack'/>
+<use f='codebrowser/nptl/pthread_mutex_conf.c' l='45' u='w' c='_dl_tunable_set_stack_cache_size'/>

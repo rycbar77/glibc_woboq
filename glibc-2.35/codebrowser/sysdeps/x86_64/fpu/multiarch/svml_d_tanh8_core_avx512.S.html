@@ -1,0 +1,490 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>svml_d_tanh8_core_avx512.S source code [codebrowser/sysdeps/x86_64/fpu/multiarch/svml_d_tanh8_core_avx512.S] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/fpu/multiarch/svml_d_tanh8_core_avx512.S'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>x86_64</a>/<a href='..'>fpu</a>/<a href='./'>multiarch</a>/<a href='svml_d_tanh8_core_avx512.S.html'>svml_d_tanh8_core_avx512.S</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Function tanh vectorized with AVX-512.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/*</i></td></tr>
+<tr><th id="20">20</th><td><i> * ALGORITHM DESCRIPTION:</i></td></tr>
+<tr><th id="21">21</th><td><i> *</i></td></tr>
+<tr><th id="22">22</th><td><i> *   NOTE: Since the hyperbolic tangent function is odd</i></td></tr>
+<tr><th id="23">23</th><td><i> *         (tanh(x) = -tanh(-x)), below algorithm deals with the absolute</i></td></tr>
+<tr><th id="24">24</th><td><i> *         value of the argument |x|: tanh(x) = sign(x) * tanh(|x|)</i></td></tr>
+<tr><th id="25">25</th><td><i> *</i></td></tr>
+<tr><th id="26">26</th><td><i> *   We use a table lookup method to compute tanh(|x|).</i></td></tr>
+<tr><th id="27">27</th><td><i> *   The basic idea is to split the input range into a number of subintervals</i></td></tr>
+<tr><th id="28">28</th><td><i> *   and to approximate tanh(.) with a polynomial on each of them.</i></td></tr>
+<tr><th id="29">29</th><td><i> *</i></td></tr>
+<tr><th id="30">30</th><td><i> *   IEEE SPECIAL CONDITIONS:</i></td></tr>
+<tr><th id="31">31</th><td><i> *   x = [+,-]0, r = [+,-]0</i></td></tr>
+<tr><th id="32">32</th><td><i> *   x = +Inf,   r = +1</i></td></tr>
+<tr><th id="33">33</th><td><i> *   x = -Inf,   r = -1</i></td></tr>
+<tr><th id="34">34</th><td><i> *   x = QNaN,   r = QNaN</i></td></tr>
+<tr><th id="35">35</th><td><i> *   x = SNaN,   r = QNaN</i></td></tr>
+<tr><th id="36">36</th><td><i> *</i></td></tr>
+<tr><th id="37">37</th><td><i> *</i></td></tr>
+<tr><th id="38">38</th><td><i> *   ALGORITHM DETAILS</i></td></tr>
+<tr><th id="39">39</th><td><i> *   We handle special values in a callout function, aside from main path</i></td></tr>
+<tr><th id="40">40</th><td><i> *   computations. "Special" for this algorithm are:</i></td></tr>
+<tr><th id="41">41</th><td><i> *   INF, NAN, |x| &gt; HUGE_THRESHOLD</i></td></tr>
+<tr><th id="42">42</th><td><i> *</i></td></tr>
+<tr><th id="43">43</th><td><i> *</i></td></tr>
+<tr><th id="44">44</th><td><i> *   Main path computations are organized as follows:</i></td></tr>
+<tr><th id="45">45</th><td><i> *   Actually we split the interval [0, SATURATION_THRESHOLD)</i></td></tr>
+<tr><th id="46">46</th><td><i> *   into a number of subintervals.  On each subinterval we approximate tanh(.)</i></td></tr>
+<tr><th id="47">47</th><td><i> *   with a minimax polynomial of pre-defined degree. Polynomial coefficients</i></td></tr>
+<tr><th id="48">48</th><td><i> *   are computed beforehand and stored in table. We also use</i></td></tr>
+<tr><th id="49">49</th><td><i> *</i></td></tr>
+<tr><th id="50">50</th><td><i> *       y := |x| + B,</i></td></tr>
+<tr><th id="51">51</th><td><i> *</i></td></tr>
+<tr><th id="52">52</th><td><i> *   here B depends on subinterval and is used to make argument</i></td></tr>
+<tr><th id="53">53</th><td><i> *   closer to zero.</i></td></tr>
+<tr><th id="54">54</th><td><i> *   We also add large fake interval [SATURATION_THRESHOLD, HUGE_THRESHOLD],</i></td></tr>
+<tr><th id="55">55</th><td><i> *   where 1.0 + 0.0*y + 0.0*y^2 ... coefficients are stored - just to</i></td></tr>
+<tr><th id="56">56</th><td><i> *   preserve main path computation logic but return 1.0 for all arguments.</i></td></tr>
+<tr><th id="57">57</th><td><i> *</i></td></tr>
+<tr><th id="58">58</th><td><i> *   Hence reconstruction looks as follows:</i></td></tr>
+<tr><th id="59">59</th><td><i> *   we extract proper polynomial and range reduction coefficients</i></td></tr>
+<tr><th id="60">60</th><td><i> *        (Pj and B), corresponding to subinterval, to which |x| belongs,</i></td></tr>
+<tr><th id="61">61</th><td><i> *        and return</i></td></tr>
+<tr><th id="62">62</th><td><i> *</i></td></tr>
+<tr><th id="63">63</th><td><i> *       r := sign(x) * (P0 + P1 * y + ... + Pn * y^n)</i></td></tr>
+<tr><th id="64">64</th><td><i> *</i></td></tr>
+<tr><th id="65">65</th><td><i> *   NOTE: we use multiprecision technique to multiply and sum the first</i></td></tr>
+<tr><th id="66">66</th><td><i> *         K terms of the polynomial. So Pj, j = 0..K are stored in</i></td></tr>
+<tr><th id="67">67</th><td><i> *         table each as a pair of target precision numbers (Pj and PLj) to</i></td></tr>
+<tr><th id="68">68</th><td><i> *         achieve wider than target precision.</i></td></tr>
+<tr><th id="69">69</th><td><i> *</i></td></tr>
+<tr><th id="70">70</th><td><i> *</i></td></tr>
+<tr><th id="71">71</th><td><i> */</i></td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><i>/* Offsets for data table __svml_dtanh_data_internal</i></td></tr>
+<tr><th id="74">74</th><td><i> */</i></td></tr>
+<tr><th id="75">75</th><td><u>#define <dfn class="macro" id="_M/_dC" data-ref="_M/_dC">_dC</dfn>                           	0</u></td></tr>
+<tr><th id="76">76</th><td><u>#define <dfn class="macro" id="_M/_dP0" data-ref="_M/_dP0">_dP0</dfn>                          	128</u></td></tr>
+<tr><th id="77">77</th><td><u>#define <dfn class="macro" id="_M/_dP1" data-ref="_M/_dP1">_dP1</dfn>                          	256</u></td></tr>
+<tr><th id="78">78</th><td><u>#define <dfn class="macro" id="_M/_dP2" data-ref="_M/_dP2">_dP2</dfn>                          	384</u></td></tr>
+<tr><th id="79">79</th><td><u>#define <dfn class="macro" id="_M/_dP3" data-ref="_M/_dP3">_dP3</dfn>                          	512</u></td></tr>
+<tr><th id="80">80</th><td><u>#define <dfn class="macro" id="_M/_dP4" data-ref="_M/_dP4">_dP4</dfn>                          	640</u></td></tr>
+<tr><th id="81">81</th><td><u>#define <dfn class="macro" id="_M/_dP5" data-ref="_M/_dP5">_dP5</dfn>                          	768</u></td></tr>
+<tr><th id="82">82</th><td><u>#define <dfn class="macro" id="_M/_dP6" data-ref="_M/_dP6">_dP6</dfn>                          	896</u></td></tr>
+<tr><th id="83">83</th><td><u>#define <dfn class="macro" id="_M/_dP7" data-ref="_M/_dP7">_dP7</dfn>                          	1024</u></td></tr>
+<tr><th id="84">84</th><td><u>#define <dfn class="macro" id="_M/_dP8" data-ref="_M/_dP8">_dP8</dfn>                          	1152</u></td></tr>
+<tr><th id="85">85</th><td><u>#define <dfn class="macro" id="_M/_dP9" data-ref="_M/_dP9">_dP9</dfn>                          	1280</u></td></tr>
+<tr><th id="86">86</th><td><u>#define <dfn class="macro" id="_M/_dP10" data-ref="_M/_dP10">_dP10</dfn>                         	1408</u></td></tr>
+<tr><th id="87">87</th><td><u>#define <dfn class="macro" id="_M/_dP11" data-ref="_M/_dP11">_dP11</dfn>                         	1536</u></td></tr>
+<tr><th id="88">88</th><td><u>#define <dfn class="macro" id="_M/_dP12" data-ref="_M/_dP12">_dP12</dfn>                         	1664</u></td></tr>
+<tr><th id="89">89</th><td><u>#define <dfn class="macro" id="_M/_dP13" data-ref="_M/_dP13">_dP13</dfn>                         	1792</u></td></tr>
+<tr><th id="90">90</th><td><u>#define <dfn class="macro" id="_M/_dP14" data-ref="_M/_dP14">_dP14</dfn>                         	1920</u></td></tr>
+<tr><th id="91">91</th><td><u>#define <dfn class="macro" id="_M/_dP15" data-ref="_M/_dP15">_dP15</dfn>                         	2048</u></td></tr>
+<tr><th id="92">92</th><td><u>#define <dfn class="macro" id="_M/_dP16" data-ref="_M/_dP16">_dP16</dfn>                         	2176</u></td></tr>
+<tr><th id="93">93</th><td><u>#define <dfn class="macro" id="_M/_dP17" data-ref="_M/_dP17">_dP17</dfn>                         	2304</u></td></tr>
+<tr><th id="94">94</th><td><u>#define <dfn class="macro" id="_M/_iExpMantMask_UISA" data-ref="_M/_iExpMantMask_UISA">_iExpMantMask_UISA</dfn>            	2432</u></td></tr>
+<tr><th id="95">95</th><td><u>#define <dfn class="macro" id="_M/_iMinIdxOfsMask_UISA" data-ref="_M/_iMinIdxOfsMask_UISA">_iMinIdxOfsMask_UISA</dfn>          	2496</u></td></tr>
+<tr><th id="96">96</th><td><u>#define <dfn class="macro" id="_M/_iMaxIdxMask_UISA" data-ref="_M/_iMaxIdxMask_UISA">_iMaxIdxMask_UISA</dfn>             	2560</u></td></tr>
+<tr><th id="97">97</th><td><u>#define <dfn class="macro" id="_M/_dbSignMask" data-ref="_M/_dbSignMask">_dbSignMask</dfn>                   	2624</u></td></tr>
+<tr><th id="98">98</th><td><u>#define <dfn class="macro" id="_M/_dbAbsMask" data-ref="_M/_dbAbsMask">_dbAbsMask</dfn>                    	2688</u></td></tr>
+<tr><th id="99">99</th><td><u>#define <dfn class="macro" id="_M/_iExpMantMask" data-ref="_M/_iExpMantMask">_iExpMantMask</dfn>                 	2752</u></td></tr>
+<tr><th id="100">100</th><td><u>#define <dfn class="macro" id="_M/_iExpMask" data-ref="_M/_iExpMask">_iExpMask</dfn>                     	2816</u></td></tr>
+<tr><th id="101">101</th><td><u>#define <dfn class="macro" id="_M/_iMinIdxOfsMask" data-ref="_M/_iMinIdxOfsMask">_iMinIdxOfsMask</dfn>               	2880</u></td></tr>
+<tr><th id="102">102</th><td><u>#define <dfn class="macro" id="_M/_iMaxIdxMask" data-ref="_M/_iMaxIdxMask">_iMaxIdxMask</dfn>                  	2944</u></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><u>#include <a href="../../../unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td>        .text</td></tr>
+<tr><th id="107">107</th><td>	.section .text.evex512,<q>"ax"</q>,@progbits</td></tr>
+<tr><th id="108">108</th><td><a class="macro" href="../../../x86/sysdep.h.html#91" title=".globl _ZGVeN8v_tanh_skx; .type _ZGVeN8v_tanh_skx,@function; .align 1&lt;&lt;4; _ZGVeN8v_tanh_skx: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a>(<span class='warning' title="type specifier missing, defaults to &apos;int&apos;"><dfn class="decl def" id="_ZGVeN8v_tanh_skx" title='_ZGVeN8v_tanh_skx' data-ref="_ZGVeN8v_tanh_skx" data-ref-filename="_ZGVeN8v_tanh_skx">_ZGVeN8v_tanh_skx</dfn></span>)</td></tr>
+<tr><th id="109">109</th><td>        <span class='error' title="unknown type name &apos;pushq&apos;">pushq</span>     <span class='error' title="expected identifier or &apos;(&apos;">%</span>rbp</td></tr>
+<tr><th id="110">110</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#44" title=".cfi_def_cfa_offset 16" data-ref="_M/cfi_def_cfa_offset">cfi_def_cfa_offset</a>(<var>16</var>)</td></tr>
+<tr><th id="111">111</th><td>        movq      %rsp, %rbp</td></tr>
+<tr><th id="112">112</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 6, 16" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>6</var>, <var>16</var>)</td></tr>
+<tr><th id="113">113</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 6, -16" data-ref="_M/cfi_offset">cfi_offset</a>(<var>6</var>, -<var>16</var>)</td></tr>
+<tr><th id="114">114</th><td>        andq      $-<var>64</var>, %rsp</td></tr>
+<tr><th id="115">115</th><td>        subq      $<var>320</var>, %rsp</td></tr>
+<tr><th id="116">116</th><td>        vpsrlq    $<var>32</var>, %zmm0, %zmm4</td></tr>
+<tr><th id="117">117</th><td>        vmovups   %zmm0, (%rsp)</td></tr>
+<tr><th id="118">118</th><td>        vmovups   __svml_dtanh_data_internal(%rip), %zmm14</td></tr>
+<tr><th id="119">119</th><td>        vmovups   <a class="macro" href="#76" title="128" data-ref="_M/_dP0">_dP0</a>+__svml_dtanh_data_internal(%rip), %zmm15</td></tr>
+<tr><th id="120">120</th><td>        vpmovqd   %zmm4, %ymm5</td></tr>
+<tr><th id="121">121</th><td></td></tr>
+<tr><th id="122">122</th><td><i>/*  Constant loading  */</i></td></tr>
+<tr><th id="123">123</th><td>        vandpd    <a class="macro" href="#98" title="2688" data-ref="_M/_dbAbsMask">_dbAbsMask</a>+__svml_dtanh_data_internal(%rip), %zmm0, %zmm13</td></tr>
+<tr><th id="124">124</th><td>        vandpd    <a class="macro" href="#97" title="2624" data-ref="_M/_dbSignMask">_dbSignMask</a>+__svml_dtanh_data_internal(%rip), %zmm0, %zmm3</td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td><i>/* Here huge arguments, INF and NaNs are filtered out to callout. */</i></td></tr>
+<tr><th id="127">127</th><td>        vpand     <a class="macro" href="#94" title="2432" data-ref="_M/_iExpMantMask_UISA">_iExpMantMask_UISA</a>+__svml_dtanh_data_internal(%rip), %ymm5, %ymm7</td></tr>
+<tr><th id="128">128</th><td>        vmovups   <a class="macro" href="#78" title="384" data-ref="_M/_dP2">_dP2</a>+__svml_dtanh_data_internal(%rip), %zmm0</td></tr>
+<tr><th id="129">129</th><td>        vmovups   <a class="macro" href="#92" title="2176" data-ref="_M/_dP16">_dP16</a>+__svml_dtanh_data_internal(%rip), %zmm4</td></tr>
+<tr><th id="130">130</th><td>        vmovups   <a class="macro" href="#91" title="2048" data-ref="_M/_dP15">_dP15</a>+__svml_dtanh_data_internal(%rip), %zmm5</td></tr>
+<tr><th id="131">131</th><td>        vmovups   %zmm3, <var>64</var>(%rsp)</td></tr>
+<tr><th id="132">132</th><td>        vmovups   <a class="macro" href="#79" title="512" data-ref="_M/_dP3">_dP3</a>+__svml_dtanh_data_internal(%rip), %zmm3</td></tr>
+<tr><th id="133">133</th><td>        vpsubd    <a class="macro" href="#95" title="2496" data-ref="_M/_iMinIdxOfsMask_UISA">_iMinIdxOfsMask_UISA</a>+__svml_dtanh_data_internal(%rip), %ymm7, %ymm8</td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td><i>/* if VMIN, VMAX is defined for I type */</i></td></tr>
+<tr><th id="136">136</th><td>        vxorps    %ymm9, %ymm9, %ymm9</td></tr>
+<tr><th id="137">137</th><td>        vpmaxsd   %ymm9, %ymm8, %ymm10</td></tr>
+<tr><th id="138">138</th><td>        vpminsd   <a class="macro" href="#96" title="2560" data-ref="_M/_iMaxIdxMask_UISA">_iMaxIdxMask_UISA</a>+__svml_dtanh_data_internal(%rip), %ymm10, %ymm11</td></tr>
+<tr><th id="139">139</th><td>        vpsrld    $<var>19</var>, %ymm11, %ymm12</td></tr>
+<tr><th id="140">140</th><td>        vmovups   <a class="macro" href="#88" title="1664" data-ref="_M/_dP12">_dP12</a>+__svml_dtanh_data_internal(%rip), %zmm8</td></tr>
+<tr><th id="141">141</th><td>        vmovups   <a class="macro" href="#87" title="1536" data-ref="_M/_dP11">_dP11</a>+__svml_dtanh_data_internal(%rip), %zmm9</td></tr>
+<tr><th id="142">142</th><td>        vmovups   <a class="macro" href="#86" title="1408" data-ref="_M/_dP10">_dP10</a>+__svml_dtanh_data_internal(%rip), %zmm10</td></tr>
+<tr><th id="143">143</th><td>        vmovups   <a class="macro" href="#85" title="1280" data-ref="_M/_dP9">_dP9</a>+__svml_dtanh_data_internal(%rip), %zmm11</td></tr>
+<tr><th id="144">144</th><td>        vpmovzxdq %ymm12, %zmm2</td></tr>
+<tr><th id="145">145</th><td>        vmovups   <a class="macro" href="#84" title="1152" data-ref="_M/_dP8">_dP8</a>+__svml_dtanh_data_internal(%rip), %zmm12</td></tr>
+<tr><th id="146">146</th><td>        vpermt2pd <a class="macro" href="#78" title="384" data-ref="_M/_dP2">_dP2</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm0</td></tr>
+<tr><th id="147">147</th><td>        vpermt2pd <a class="macro" href="#75" title="0" data-ref="_M/_dC">_dC</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm14</td></tr>
+<tr><th id="148">148</th><td>        vpermt2pd <a class="macro" href="#92" title="2176" data-ref="_M/_dP16">_dP16</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm4</td></tr>
+<tr><th id="149">149</th><td>        vpermt2pd <a class="macro" href="#91" title="2048" data-ref="_M/_dP15">_dP15</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm5</td></tr>
+<tr><th id="150">150</th><td>        vsubpd    {rn-sae}, %zmm14, %zmm13, %zmm1</td></tr>
+<tr><th id="151">151</th><td>        vpermt2pd <a class="macro" href="#88" title="1664" data-ref="_M/_dP12">_dP12</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm8</td></tr>
+<tr><th id="152">152</th><td>        vpermt2pd <a class="macro" href="#87" title="1536" data-ref="_M/_dP11">_dP11</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm9</td></tr>
+<tr><th id="153">153</th><td>        vpermt2pd <a class="macro" href="#86" title="1408" data-ref="_M/_dP10">_dP10</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm10</td></tr>
+<tr><th id="154">154</th><td>        vpermt2pd <a class="macro" href="#85" title="1280" data-ref="_M/_dP9">_dP9</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm11</td></tr>
+<tr><th id="155">155</th><td>        vpermt2pd <a class="macro" href="#84" title="1152" data-ref="_M/_dP8">_dP8</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm12</td></tr>
+<tr><th id="156">156</th><td>        vpermt2pd <a class="macro" href="#79" title="512" data-ref="_M/_dP3">_dP3</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm3</td></tr>
+<tr><th id="157">157</th><td>        vpermt2pd <a class="macro" href="#76" title="128" data-ref="_M/_dP0">_dP0</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm15</td></tr>
+<tr><th id="158">158</th><td>        vmovups   %zmm0, <var>192</var>(%rsp)</td></tr>
+<tr><th id="159">159</th><td>        vmovups   <a class="macro" href="#93" title="2304" data-ref="_M/_dP17">_dP17</a>+__svml_dtanh_data_internal(%rip), %zmm0</td></tr>
+<tr><th id="160">160</th><td>        vmovups   <a class="macro" href="#83" title="1024" data-ref="_M/_dP7">_dP7</a>+__svml_dtanh_data_internal(%rip), %zmm13</td></tr>
+<tr><th id="161">161</th><td>        vmovups   <a class="macro" href="#82" title="896" data-ref="_M/_dP6">_dP6</a>+__svml_dtanh_data_internal(%rip), %zmm14</td></tr>
+<tr><th id="162">162</th><td>        vmovups   %zmm3, <var>256</var>(%rsp)</td></tr>
+<tr><th id="163">163</th><td>        vmovups   <a class="macro" href="#81" title="768" data-ref="_M/_dP5">_dP5</a>+__svml_dtanh_data_internal(%rip), %zmm3</td></tr>
+<tr><th id="164">164</th><td>        vmovups   %zmm15, <var>128</var>(%rsp)</td></tr>
+<tr><th id="165">165</th><td>        vmovups   <a class="macro" href="#80" title="640" data-ref="_M/_dP4">_dP4</a>+__svml_dtanh_data_internal(%rip), %zmm15</td></tr>
+<tr><th id="166">166</th><td>        vpermt2pd <a class="macro" href="#93" title="2304" data-ref="_M/_dP17">_dP17</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm0</td></tr>
+<tr><th id="167">167</th><td>        vpermt2pd <a class="macro" href="#83" title="1024" data-ref="_M/_dP7">_dP7</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm13</td></tr>
+<tr><th id="168">168</th><td>        vpermt2pd <a class="macro" href="#82" title="896" data-ref="_M/_dP6">_dP6</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm14</td></tr>
+<tr><th id="169">169</th><td>        vpermt2pd <a class="macro" href="#81" title="768" data-ref="_M/_dP5">_dP5</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm3</td></tr>
+<tr><th id="170">170</th><td>        vpermt2pd <a class="macro" href="#80" title="640" data-ref="_M/_dP4">_dP4</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm15</td></tr>
+<tr><th id="171">171</th><td>        vfmadd213pd {rn-sae}, %zmm4, %zmm1, %zmm0</td></tr>
+<tr><th id="172">172</th><td>        vpcmpgtd  <a class="macro" href="#100" title="2816" data-ref="_M/_iExpMask">_iExpMask</a>+__svml_dtanh_data_internal(%rip), %ymm7, %ymm6</td></tr>
+<tr><th id="173">173</th><td>        vmovmskps %ymm6, %edx</td></tr>
+<tr><th id="174">174</th><td>        vmovups   <a class="macro" href="#90" title="1920" data-ref="_M/_dP14">_dP14</a>+__svml_dtanh_data_internal(%rip), %zmm6</td></tr>
+<tr><th id="175">175</th><td>        vfmadd213pd {rn-sae}, %zmm5, %zmm1, %zmm0</td></tr>
+<tr><th id="176">176</th><td>        vmovups   <a class="macro" href="#89" title="1792" data-ref="_M/_dP13">_dP13</a>+__svml_dtanh_data_internal(%rip), %zmm7</td></tr>
+<tr><th id="177">177</th><td>        vpermt2pd <a class="macro" href="#90" title="1920" data-ref="_M/_dP14">_dP14</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm6</td></tr>
+<tr><th id="178">178</th><td>        vpermt2pd <a class="macro" href="#89" title="1792" data-ref="_M/_dP13">_dP13</a>+<var>64</var>+__svml_dtanh_data_internal(%rip), %zmm2, %zmm7</td></tr>
+<tr><th id="179">179</th><td>        vfmadd213pd {rn-sae}, %zmm6, %zmm1, %zmm0</td></tr>
+<tr><th id="180">180</th><td>        vmovups   <var>256</var>(%rsp), %zmm2</td></tr>
+<tr><th id="181">181</th><td>        vfmadd213pd {rn-sae}, %zmm7, %zmm1, %zmm0</td></tr>
+<tr><th id="182">182</th><td>        vfmadd213pd {rn-sae}, %zmm8, %zmm1, %zmm0</td></tr>
+<tr><th id="183">183</th><td>        vfmadd213pd {rn-sae}, %zmm9, %zmm1, %zmm0</td></tr>
+<tr><th id="184">184</th><td>        vfmadd213pd {rn-sae}, %zmm10, %zmm1, %zmm0</td></tr>
+<tr><th id="185">185</th><td>        vfmadd213pd {rn-sae}, %zmm11, %zmm1, %zmm0</td></tr>
+<tr><th id="186">186</th><td>        vfmadd213pd {rn-sae}, %zmm12, %zmm1, %zmm0</td></tr>
+<tr><th id="187">187</th><td>        vfmadd213pd {rn-sae}, %zmm13, %zmm1, %zmm0</td></tr>
+<tr><th id="188">188</th><td>        vfmadd213pd {rn-sae}, %zmm14, %zmm1, %zmm0</td></tr>
+<tr><th id="189">189</th><td>        vfmadd213pd {rn-sae}, %zmm3, %zmm1, %zmm0</td></tr>
+<tr><th id="190">190</th><td>        vmovups   <var>128</var>(%rsp), %zmm3</td></tr>
+<tr><th id="191">191</th><td>        vfmadd213pd {rn-sae}, %zmm15, %zmm1, %zmm0</td></tr>
+<tr><th id="192">192</th><td>        vfmadd213pd {rn-sae}, %zmm2, %zmm1, %zmm0</td></tr>
+<tr><th id="193">193</th><td>        vmovups   <var>192</var>(%rsp), %zmm2</td></tr>
+<tr><th id="194">194</th><td>        vfmadd213pd {rn-sae}, %zmm2, %zmm1, %zmm0</td></tr>
+<tr><th id="195">195</th><td>        vfmadd213pd {rn-sae}, %zmm3, %zmm1, %zmm0</td></tr>
+<tr><th id="196">196</th><td>        vorpd     <var>64</var>(%rsp), %zmm0, %zmm0</td></tr>
+<tr><th id="197">197</th><td>        testl     %edx, %edx</td></tr>
+<tr><th id="198">198</th><td></td></tr>
+<tr><th id="199">199</th><td><i>/* Go to special inputs processing branch */</i></td></tr>
+<tr><th id="200">200</th><td>        jne       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH)</td></tr>
+<tr><th id="201">201</th><td>                                <u># LOE rbx r12 r13 r14 r15 edx zmm0</u></td></tr>
+<tr><th id="202">202</th><td></td></tr>
+<tr><th id="203">203</th><td><i>/* Restore registers</i></td></tr>
+<tr><th id="204">204</th><td><i> * and exit the function</i></td></tr>
+<tr><th id="205">205</th><td><i> */</i></td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT):</td></tr>
+<tr><th id="208">208</th><td>        movq      %rbp, %rsp</td></tr>
+<tr><th id="209">209</th><td>        popq      %rbp</td></tr>
+<tr><th id="210">210</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 7, 8" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>7</var>, <var>8</var>)</td></tr>
+<tr><th id="211">211</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 6" data-ref="_M/cfi_restore">cfi_restore</a>(<var>6</var>)</td></tr>
+<tr><th id="212">212</th><td>        ret</td></tr>
+<tr><th id="213">213</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 6, 16" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>6</var>, <var>16</var>)</td></tr>
+<tr><th id="214">214</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 6, -16" data-ref="_M/cfi_offset">cfi_offset</a>(<var>6</var>, -<var>16</var>)</td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td><i>/* Branch to process</i></td></tr>
+<tr><th id="217">217</th><td><i> * special inputs</i></td></tr>
+<tr><th id="218">218</th><td><i> */</i></td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH):</td></tr>
+<tr><th id="221">221</th><td>        vmovups   (%rsp), %zmm1</td></tr>
+<tr><th id="222">222</th><td>        vmovups   %zmm0, <var>128</var>(%rsp)</td></tr>
+<tr><th id="223">223</th><td>        vmovups   %zmm1, <var>64</var>(%rsp)</td></tr>
+<tr><th id="224">224</th><td>                                <u># LOE rbx r12 r13 r14 r15 edx zmm0</u></td></tr>
+<tr><th id="225">225</th><td></td></tr>
+<tr><th id="226">226</th><td>        xorl      %eax, %eax</td></tr>
+<tr><th id="227">227</th><td>                                <u># LOE rbx r12 r13 r14 r15 eax edx</u></td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td>        vzeroupper</td></tr>
+<tr><th id="230">230</th><td>        movq      %r12, <var>16</var>(%rsp)</td></tr>
+<tr><th id="231">231</th><td>        <i>/*  DW_CFA_expression: r12 (r12) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -304; DW_OP_plus)  */</i></td></tr>
+<tr><th id="232">232</th><td>        .cfi_escape <var>0x10</var>, <var>0x0c</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xd0</var>, <var>0xfe</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="233">233</th><td>        movl      %eax, %r12d</td></tr>
+<tr><th id="234">234</th><td>        movq      %r13, <var>8</var>(%rsp)</td></tr>
+<tr><th id="235">235</th><td>        <i>/*  DW_CFA_expression: r13 (r13) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -312; DW_OP_plus)  */</i></td></tr>
+<tr><th id="236">236</th><td>        .cfi_escape <var>0x10</var>, <var>0x0d</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xc8</var>, <var>0xfe</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="237">237</th><td>        movl      %edx, %r13d</td></tr>
+<tr><th id="238">238</th><td>        movq      %r14, (%rsp)</td></tr>
+<tr><th id="239">239</th><td>        <i>/*  DW_CFA_expression: r14 (r14) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -320; DW_OP_plus)  */</i></td></tr>
+<tr><th id="240">240</th><td>        .cfi_escape <var>0x10</var>, <var>0x0e</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xfe</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="241">241</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="242">242</th><td></td></tr>
+<tr><th id="243">243</th><td><i>/* Range mask</i></td></tr>
+<tr><th id="244">244</th><td><i> * bits check</i></td></tr>
+<tr><th id="245">245</th><td><i> */</i></td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK):</td></tr>
+<tr><th id="248">248</th><td>        btl       %r12d, %r13d</td></tr>
+<tr><th id="249">249</th><td></td></tr>
+<tr><th id="250">250</th><td><i>/* Call scalar math function */</i></td></tr>
+<tr><th id="251">251</th><td>        jc        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL)</td></tr>
+<tr><th id="252">252</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td><i>/* Special inputs</i></td></tr>
+<tr><th id="255">255</th><td><i> * processing loop</i></td></tr>
+<tr><th id="256">256</th><td><i> */</i></td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP):</td></tr>
+<tr><th id="259">259</th><td>        incl      %r12d</td></tr>
+<tr><th id="260">260</th><td>        cmpl      $<var>8</var>, %r12d</td></tr>
+<tr><th id="261">261</th><td></td></tr>
+<tr><th id="262">262</th><td><i>/* Check bits in range mask */</i></td></tr>
+<tr><th id="263">263</th><td>        jl        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK)</td></tr>
+<tr><th id="264">264</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="265">265</th><td></td></tr>
+<tr><th id="266">266</th><td>        movq      <var>16</var>(%rsp), %r12</td></tr>
+<tr><th id="267">267</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 12" data-ref="_M/cfi_restore">cfi_restore</a>(<var>12</var>)</td></tr>
+<tr><th id="268">268</th><td>        movq      <var>8</var>(%rsp), %r13</td></tr>
+<tr><th id="269">269</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 13" data-ref="_M/cfi_restore">cfi_restore</a>(<var>13</var>)</td></tr>
+<tr><th id="270">270</th><td>        movq      (%rsp), %r14</td></tr>
+<tr><th id="271">271</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 14" data-ref="_M/cfi_restore">cfi_restore</a>(<var>14</var>)</td></tr>
+<tr><th id="272">272</th><td>        vmovups   <var>128</var>(%rsp), %zmm0</td></tr>
+<tr><th id="273">273</th><td></td></tr>
+<tr><th id="274">274</th><td><i>/* Go to exit */</i></td></tr>
+<tr><th id="275">275</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT)</td></tr>
+<tr><th id="276">276</th><td>        <i>/*  DW_CFA_expression: r12 (r12) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -304; DW_OP_plus)  */</i></td></tr>
+<tr><th id="277">277</th><td>        .cfi_escape <var>0x10</var>, <var>0x0c</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xd0</var>, <var>0xfe</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="278">278</th><td>        <i>/*  DW_CFA_expression: r13 (r13) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -312; DW_OP_plus)  */</i></td></tr>
+<tr><th id="279">279</th><td>        .cfi_escape <var>0x10</var>, <var>0x0d</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xc8</var>, <var>0xfe</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="280">280</th><td>        <i>/*  DW_CFA_expression: r14 (r14) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -320; DW_OP_plus)  */</i></td></tr>
+<tr><th id="281">281</th><td>        .cfi_escape <var>0x10</var>, <var>0x0e</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xfe</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="282">282</th><td>                                <u># LOE rbx r12 r13 r14 r15 zmm0</u></td></tr>
+<tr><th id="283">283</th><td></td></tr>
+<tr><th id="284">284</th><td><i>/* Scalar math fucntion call</i></td></tr>
+<tr><th id="285">285</th><td><i> * to process special input</i></td></tr>
+<tr><th id="286">286</th><td><i> */</i></td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL):</td></tr>
+<tr><th id="289">289</th><td>        movl      %r12d, %r14d</td></tr>
+<tr><th id="290">290</th><td>        movsd     <var>64</var>(%rsp,%r14,<var>8</var>), %xmm0</td></tr>
+<tr><th id="291">291</th><td>        call      tanh@PLT</td></tr>
+<tr><th id="292">292</th><td>                                <u># LOE rbx r14 r15 r12d r13d xmm0</u></td></tr>
+<tr><th id="293">293</th><td></td></tr>
+<tr><th id="294">294</th><td>        movsd     %xmm0, <var>128</var>(%rsp,%r14,<var>8</var>)</td></tr>
+<tr><th id="295">295</th><td></td></tr>
+<tr><th id="296">296</th><td><i>/* Process special inputs in loop */</i></td></tr>
+<tr><th id="297">297</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP)</td></tr>
+<tr><th id="298">298</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="299">299</th><td><a class="macro" href="../../../x86/sysdep.h.html#94" title=".cfi_endproc; .size _ZGVeN8v_tanh_skx,.-_ZGVeN8v_tanh_skx;" data-ref="_M/END">END</a>(_ZGVeN8v_tanh_skx)</td></tr>
+<tr><th id="300">300</th><td></td></tr>
+<tr><th id="301">301</th><td>        <span class='error' title="expected identifier or &apos;(&apos;">.</span>section .rodata, <q>"a"</q></td></tr>
+<tr><th id="302">302</th><td>        .align <var>64</var></td></tr>
+<tr><th id="303">303</th><td></td></tr>
+<tr><th id="304">304</th><td><u>#<span data-ppcond="304">ifdef</span> <span class="macro" data-ref="_M/__svml_dtanh_data_internal_typedef">__svml_dtanh_data_internal_typedef</span></u></td></tr>
+<tr><th id="305">305</th><td><b>typedef</b> <em>unsigned</em> <em>int</em> VUINT32;</td></tr>
+<tr><th id="306">306</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="307">307</th><td>{</td></tr>
+<tr><th id="308">308</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dC[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="309">309</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP0[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="310">310</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP1[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="311">311</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP2[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="312">312</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP3[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="313">313</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP4[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="314">314</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP5[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="315">315</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP6[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="316">316</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP7[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="317">317</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP8[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="318">318</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP9[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="319">319</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP10[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="320">320</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP11[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="321">321</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP12[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="322">322</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP13[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="323">323</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP14[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="324">324</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP15[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="325">325</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP16[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="326">326</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dP17[<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="327">327</th><td>        __declspec(align(<var>64</var>)) VUINT32 _iExpMantMask_UISA[<var>16</var>][<var>1</var>];</td></tr>
+<tr><th id="328">328</th><td>        __declspec(align(<var>64</var>)) VUINT32 _iMinIdxOfsMask_UISA[<var>16</var>][<var>1</var>];</td></tr>
+<tr><th id="329">329</th><td>        __declspec(align(<var>64</var>)) VUINT32 _iMaxIdxMask_UISA[<var>16</var>][<var>1</var>];</td></tr>
+<tr><th id="330">330</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dbSignMask[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="331">331</th><td>        __declspec(align(<var>64</var>)) VUINT32 _dbAbsMask[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="332">332</th><td>        __declspec(align(<var>64</var>)) VUINT32 _iExpMantMask[<var>16</var>][<var>1</var>];</td></tr>
+<tr><th id="333">333</th><td>        __declspec(align(<var>64</var>)) VUINT32 _iExpMask[<var>16</var>][<var>1</var>];</td></tr>
+<tr><th id="334">334</th><td>        __declspec(align(<var>64</var>)) VUINT32 _iMinIdxOfsMask[<var>16</var>][<var>1</var>];</td></tr>
+<tr><th id="335">335</th><td>        __declspec(align(<var>64</var>)) VUINT32 _iMaxIdxMask[<var>16</var>][<var>1</var>];</td></tr>
+<tr><th id="336">336</th><td>} __svml_dtanh_data_internal;</td></tr>
+<tr><th id="337">337</th><td><u>#<span data-ppcond="304">endif</span></u></td></tr>
+<tr><th id="338">338</th><td>__svml_dtanh_data_internal:</td></tr>
+<tr><th id="339">339</th><td>        <i>/*== _dC ==*/</i></td></tr>
+<tr><th id="340">340</th><td>        .quad <var>0x0000000000000000</var>, <var>0x3fcc000000000000</var>, <var>0x3fd4000000000000</var>, <var>0x3fdc000000000000</var></td></tr>
+<tr><th id="341">341</th><td>        .quad <var>0x3fe4000000000000</var>, <var>0x3fec000000000000</var>, <var>0x3ff4000000000000</var>, <var>0x3ffc000000000000</var></td></tr>
+<tr><th id="342">342</th><td>        .quad <var>0x4004000000000000</var>, <var>0x400c000000000000</var>, <var>0x4014000000000000</var>, <var>0x401c000000000000</var></td></tr>
+<tr><th id="343">343</th><td>        .quad <var>0x4024000000000000</var>, <var>0x402c000000000000</var>, <var>0x4034000000000000</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="344">344</th><td>        <i>/*== p0 ==*/</i></td></tr>
+<tr><th id="345">345</th><td>        .align <var>64</var></td></tr>
+<tr><th id="346">346</th><td>        .quad <var>0x0000000000000000</var>, <var>0x3fcb8fd0416a7c92</var>, <var>0x3fd35f98a0ea650e</var>, <var>0x3fda5729ee488037</var></td></tr>
+<tr><th id="347">347</th><td>        .quad <var>0x3fe1bf47eabb8f95</var>, <var>0x3fe686650b8c2015</var>, <var>0x3feb2523bb6b2dee</var>, <var>0x3fee1fbf97e33527</var></td></tr>
+<tr><th id="348">348</th><td>        .quad <var>0x3fef9258260a71c2</var>, <var>0x3feff112c63a9077</var>, <var>0x3fefff419668df11</var>, <var>0x3feffffc832750f2</var></td></tr>
+<tr><th id="349">349</th><td>        .quad <var>0x3feffffffdc96f35</var>, <var>0x3fefffffffffcf58</var>, <var>0x3ff0000000000000</var>, <var>0x3ff0000000000000</var></td></tr>
+<tr><th id="350">350</th><td>        <i>/*== p1 ==*/</i></td></tr>
+<tr><th id="351">351</th><td>        .align <var>64</var></td></tr>
+<tr><th id="352">352</th><td>        .quad <var>0x0000000000000000</var>, <var>0x3c65e23ebcd3bcbe</var>, <var>0xbc4c600bac3adf00</var>, <var>0x3c6c44091785d040</var></td></tr>
+<tr><th id="353">353</th><td>        .quad <var>0x3c8221d7a6e3674b</var>, <var>0x3c69f89d2cf6b85c</var>, <var>0x3c73b3e9ec0b8f1c</var>, <var>0xbc7f8d4b0428aada</var></td></tr>
+<tr><th id="354">354</th><td>        .quad <var>0xbc7c52d880cf43c0</var>, <var>0x3c7dd36e37096480</var>, <var>0x3c7b4f6380c442ca</var>, <var>0xbc729755de470096</var></td></tr>
+<tr><th id="355">355</th><td>        .quad <var>0x3c84cf852845efbd</var>, <var>0x3c6fc4fb440a5378</var>, <var>0xbc63981083b55870</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="356">356</th><td>        <i>/*== p2 ==*/</i></td></tr>
+<tr><th id="357">357</th><td>        .align <var>64</var></td></tr>
+<tr><th id="358">358</th><td>        .quad <var>0x3ff0000000000000</var>, <var>0x3fee842ca3f08532</var>, <var>0x3fed11574af58f1b</var>, <var>0x3fea945b9c24e4f9</var></td></tr>
+<tr><th id="359">359</th><td>        .quad <var>0x3fe6284c3374f815</var>, <var>0x3fe02500a09f8d6e</var>, <var>0x3fd1f25131e3a8c0</var>, <var>0x3fbd22ca1c24a139</var></td></tr>
+<tr><th id="360">360</th><td>        .quad <var>0x3f9b3afe1fba5c76</var>, <var>0x3f6dd37d19b22b21</var>, <var>0x3f27ccec13a9ef96</var>, <var>0x3ecbe6c3f33250ae</var></td></tr>
+<tr><th id="361">361</th><td>        .quad <var>0x3e41b4865394f75f</var>, <var>0x3d8853f01bda5f28</var>, <var>0x3c73953c0197ef58</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="362">362</th><td>        <i>/*== p3 ==*/</i></td></tr>
+<tr><th id="363">363</th><td>        .align <var>64</var></td></tr>
+<tr><th id="364">364</th><td>        .quad <var>0xbbf0b3ea3fdfaa19</var>, <var>0xbfca48aaeb53bc21</var>, <var>0xbfd19921f4329916</var>, <var>0xbfd5e0f09bef8011</var></td></tr>
+<tr><th id="365">365</th><td>        .quad <var>0xbfd893b59c35c882</var>, <var>0xbfd6ba7cb7576538</var>, <var>0xbfce7291743d7555</var>, <var>0xbfbb6d85a01efb80</var></td></tr>
+<tr><th id="366">366</th><td>        .quad <var>0xbf9addae58c7141a</var>, <var>0xbf6dc59376c7aa19</var>, <var>0xbf27cc5e74677410</var>, <var>0xbecbe6c0e8b4cc87</var></td></tr>
+<tr><th id="367">367</th><td>        .quad <var>0xbe41b486526b0565</var>, <var>0xbd8853f01bef63a4</var>, <var>0xbc73955be519be31</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="368">368</th><td>        <i>/*== p4 ==*/</i></td></tr>
+<tr><th id="369">369</th><td>        .align <var>64</var></td></tr>
+<tr><th id="370">370</th><td>        .quad <var>0xbfd5555555555555</var>, <var>0xbfd183afc292ba11</var>, <var>0xbfcc1a4b039c9bfa</var>, <var>0xbfc16e1e6d8d0be6</var></td></tr>
+<tr><th id="371">371</th><td>        .quad <var>0xbf92426c751e48a2</var>, <var>0x3fb4f152b2bad124</var>, <var>0x3fbbba40cbef72be</var>, <var>0x3fb01ba038be6a3d</var></td></tr>
+<tr><th id="372">372</th><td>        .quad <var>0x3f916df44871efc8</var>, <var>0x3f63c6869dfc8870</var>, <var>0x3f1fb9aef915d828</var>, <var>0x3ec299d1e27c6e11</var></td></tr>
+<tr><th id="373">373</th><td>        .quad <var>0x3e379b5ddcca334c</var>, <var>0x3d8037f57bc62c9a</var>, <var>0x3c6a2d4b50a2cff7</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="374">374</th><td>        <i>/*== p5 ==*/</i></td></tr>
+<tr><th id="375">375</th><td>        .align <var>64</var></td></tr>
+<tr><th id="376">376</th><td>        .quad <var>0xbce6863ee44ed636</var>, <var>0x3fc04dcd0476c75e</var>, <var>0x3fc43d3449a80f08</var>, <var>0x3fc5c26f3699b7e7</var></td></tr>
+<tr><th id="377">377</th><td>        .quad <var>0x3fc1a686f6ab2533</var>, <var>0x3faf203c316ce730</var>, <var>0xbf89c7a02788557c</var>, <var>0xbf98157e26e0d541</var></td></tr>
+<tr><th id="378">378</th><td>        .quad <var>0xbf807b55c1c7d278</var>, <var>0xbf53a18d5843190f</var>, <var>0xbf0fb6bbc89b1a5b</var>, <var>0xbeb299c9c684a963</var></td></tr>
+<tr><th id="379">379</th><td>        .quad <var>0xbe279b5dd4fb3d01</var>, <var>0xbd7037f57ae72aa6</var>, <var>0xbc5a2ca2bba78e86</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="380">380</th><td>        <i>/*== p6 ==*/</i></td></tr>
+<tr><th id="381">381</th><td>        .align <var>64</var></td></tr>
+<tr><th id="382">382</th><td>        .quad <var>0x3fc1111111112ab5</var>, <var>0x3fb5c19efdfc08ad</var>, <var>0x3fa74c98dc34fbac</var>, <var>0xbf790d6a8eff0a77</var></td></tr>
+<tr><th id="383">383</th><td>        .quad <var>0xbfac3c021789a786</var>, <var>0xbfae2196b7326859</var>, <var>0xbf93a7a011ff8c2a</var>, <var>0x3f6e4709c7e8430e</var></td></tr>
+<tr><th id="384">384</th><td>        .quad <var>0x3f67682afa611151</var>, <var>0x3f3ef2ee77717cbf</var>, <var>0x3ef95a4482f180b7</var>, <var>0x3e9dc2c27da3b603</var></td></tr>
+<tr><th id="385">385</th><td>        .quad <var>0x3e12e2afd9f7433e</var>, <var>0x3d59f320348679ba</var>, <var>0x3c44b61d9bbcc940</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="386">386</th><td>        <i>/*== p7 ==*/</i></td></tr>
+<tr><th id="387">387</th><td>        .align <var>64</var></td></tr>
+<tr><th id="388">388</th><td>        .quad <var>0xbda1ea19ddddb3b4</var>, <var>0xbfb0b8df995ce4df</var>, <var>0xbfb2955cf41e8164</var>, <var>0xbfaf9d05c309f7c6</var></td></tr>
+<tr><th id="389">389</th><td>        .quad <var>0xbf987d27ccff4291</var>, <var>0x3f8b2ca62572b098</var>, <var>0x3f8f1cf6c7f5b00a</var>, <var>0x3f60379811e43dd5</var></td></tr>
+<tr><th id="390">390</th><td>        .quad <var>0xbf4793826f78537e</var>, <var>0xbf2405695e36240f</var>, <var>0xbee0e08de39ce756</var>, <var>0xbe83d709ba5f714e</var></td></tr>
+<tr><th id="391">391</th><td>        .quad <var>0xbdf92e3fc5ee63e0</var>, <var>0xbd414cc030f2110e</var>, <var>0xbc2ba022e8d82a87</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="392">392</th><td>        <i>/*== p8 ==*/</i></td></tr>
+<tr><th id="393">393</th><td>        .align <var>64</var></td></tr>
+<tr><th id="394">394</th><td>        .quad <var>0xbfaba1ba1990520b</var>, <var>0xbf96e37bba52f6fc</var>, <var>0x3ecff7df18455399</var>, <var>0x3f97362834d33a4e</var></td></tr>
+<tr><th id="395">395</th><td>        .quad <var>0x3f9e7f8380184b45</var>, <var>0x3f869543e7c420d4</var>, <var>0xbf7326bd4914222a</var>, <var>0xbf5fc15b0a9d98fa</var></td></tr>
+<tr><th id="396">396</th><td>        .quad <var>0x3f14cffcfa69fbb6</var>, <var>0x3f057e48e5b79d10</var>, <var>0x3ec33b66d7d77264</var>, <var>0x3e66ac4e578b9b10</var></td></tr>
+<tr><th id="397">397</th><td>        .quad <var>0x3ddcc74b8d3d5c42</var>, <var>0x3d23c589137f92b4</var>, <var>0x3c107f8e2c8707a1</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="398">398</th><td>        <i>/*== p9 ==*/</i></td></tr>
+<tr><th id="399">399</th><td>        .align <var>64</var></td></tr>
+<tr><th id="400">400</th><td>        .quad <var>0xbe351ca7f096011f</var>, <var>0x3f9eaaf3320c3851</var>, <var>0x3f9cf823fe761fc1</var>, <var>0x3f9022271754ff1f</var></td></tr>
+<tr><th id="401">401</th><td>        .quad <var>0xbf731fe77c9c60af</var>, <var>0xbf84a6046865ec7d</var>, <var>0xbf4ca3f1f2b9192b</var>, <var>0x3f4c77dee0afd227</var></td></tr>
+<tr><th id="402">402</th><td>        .quad <var>0x3f04055bce68597a</var>, <var>0xbee2bf0cb4a71647</var>, <var>0xbea31eaafe73efd5</var>, <var>0xbe46abb02c4368ed</var></td></tr>
+<tr><th id="403">403</th><td>        .quad <var>0xbdbcc749ca8079dd</var>, <var>0xbd03c5883836b9d2</var>, <var>0xbbf07a5416264aec</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="404">404</th><td>        <i>/*== p10 ==*/</i></td></tr>
+<tr><th id="405">405</th><td>        .align <var>64</var></td></tr>
+<tr><th id="406">406</th><td>        .quad <var>0x3f9664f94e6ac14e</var>, <var>0xbf94d3343bae39dd</var>, <var>0xbf7bc748e60df843</var>, <var>0xbf8c89372b43ba85</var></td></tr>
+<tr><th id="407">407</th><td>        .quad <var>0xbf8129a092de747a</var>, <var>0x3f60c85b4d538746</var>, <var>0x3f5be9392199ec18</var>, <var>0xbf2a0c68a4489f10</var></td></tr>
+<tr><th id="408">408</th><td>        .quad <var>0xbf00462601dc2faa</var>, <var>0x3eb7b6a219dea9f4</var>, <var>0x3e80cbcc8d4c5c8a</var>, <var>0x3e2425bb231a5e29</var></td></tr>
+<tr><th id="409">409</th><td>        .quad <var>0x3d9992a4beac8662</var>, <var>0x3ce191ba5ed3fb67</var>, <var>0x3bc892450bad44c4</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="410">410</th><td>        <i>/*== p11 ==*/</i></td></tr>
+<tr><th id="411">411</th><td>        .align <var>64</var></td></tr>
+<tr><th id="412">412</th><td>        .quad <var>0xbea8c4c1fd7852fe</var>, <var>0xbfccce16b1046f13</var>, <var>0xbf81a16f224bb7b6</var>, <var>0xbf62cbf00406bc09</var></td></tr>
+<tr><th id="413">413</th><td>        .quad <var>0x3f75b29bb02cf69b</var>, <var>0x3f607df0f9f90c17</var>, <var>0xbf4b852a6e0758d5</var>, <var>0xbf0078c63d1b8445</var></td></tr>
+<tr><th id="414">414</th><td>        .quad <var>0x3eec12eadd55be7a</var>, <var>0xbe6fa600f593181b</var>, <var>0xbe5a3c935dce3f7d</var>, <var>0xbe001c6d95e3ae96</var></td></tr>
+<tr><th id="415">415</th><td>        .quad <var>0xbd74755a00ea1fd3</var>, <var>0xbcbc1c6c063bb7ac</var>, <var>0xbba3be9a4460fe00</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="416">416</th><td>        <i>/*== p12 ==*/</i></td></tr>
+<tr><th id="417">417</th><td>        .align <var>64</var></td></tr>
+<tr><th id="418">418</th><td>        .quad <var>0xbf822404577aa9dd</var>, <var>0x403d8b07f7a82aa3</var>, <var>0xbf9f44ab92fbab0a</var>, <var>0x3fb2eac604473d6a</var></td></tr>
+<tr><th id="419">419</th><td>        .quad <var>0x3f45f87d903aaac8</var>, <var>0xbf5e104671036300</var>, <var>0x3f19bc98ddf0f340</var>, <var>0x3f0d4304bc9246e8</var></td></tr>
+<tr><th id="420">420</th><td>        .quad <var>0xbed13c415f7b9d41</var>, <var>0xbe722b8d9720cdb0</var>, <var>0x3e322666d739bec0</var>, <var>0x3dd76a553d7e7918</var></td></tr>
+<tr><th id="421">421</th><td>        .quad <var>0x3d4de0fa59416a39</var>, <var>0x3c948716cf3681b4</var>, <var>0x3b873f9f2d2fda99</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="422">422</th><td>        <i>/*== p13 ==*/</i></td></tr>
+<tr><th id="423">423</th><td>        .align <var>64</var></td></tr>
+<tr><th id="424">424</th><td>        .quad <var>0xbefdd99a221ed573</var>, <var>0x4070593a3735bab4</var>, <var>0xbfccab654e44835e</var>, <var>0x3fd13ed80037dbac</var></td></tr>
+<tr><th id="425">425</th><td>        .quad <var>0xbf6045b9076cc487</var>, <var>0x3f2085ee7e8ac170</var>, <var>0x3f23524622610430</var>, <var>0xbeff12a6626911b4</var></td></tr>
+<tr><th id="426">426</th><td>        .quad <var>0x3eab9008bca408af</var>, <var>0x3e634df71865f620</var>, <var>0xbe05bb1bcf83ca73</var>, <var>0xbdaf2ac143fb6762</var></td></tr>
+<tr><th id="427">427</th><td>        .quad <var>0xbd23eae52a3dbf57</var>, <var>0xbc6b5e3e9ca0955e</var>, <var>0xbb5eca68e2c1ba2e</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="428">428</th><td>        <i>/*== p14 ==*/</i></td></tr>
+<tr><th id="429">429</th><td>        .align <var>64</var></td></tr>
+<tr><th id="430">430</th><td>        .quad <var>0x3f6e3be689423841</var>, <var>0xc0d263511f5baac1</var>, <var>0x40169f73b15ebe5c</var>, <var>0xc025c1dd41cd6cb5</var></td></tr>
+<tr><th id="431">431</th><td>        .quad <var>0xbf58fd89fe05e0d1</var>, <var>0x3f73f7af01d5af7a</var>, <var>0xbf1e40bdead17e6b</var>, <var>0x3ee224cd6c4513e5</var></td></tr>
+<tr><th id="432">432</th><td>        .quad <var>0xbe24b645e68eeaa3</var>, <var>0xbe4abfebfb72bc83</var>, <var>0x3dd51c38f8695ed3</var>, <var>0x3d8313ac38c6832b</var></td></tr>
+<tr><th id="433">433</th><td>        .quad <var>0x3cf7787935626685</var>, <var>0x3c401ffc49c6bc29</var>, <var>0xbabf0b21acfa52ab</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="434">434</th><td>        <i>/*== p15 ==*/</i></td></tr>
+<tr><th id="435">435</th><td>        .align <var>64</var></td></tr>
+<tr><th id="436">436</th><td>        .quad <var>0xbf2a1306713a4f3a</var>, <var>0xc1045e509116b066</var>, <var>0x4041fab9250984ce</var>, <var>0xc0458d090ec3de95</var></td></tr>
+<tr><th id="437">437</th><td>        .quad <var>0xbf74949d60113d63</var>, <var>0x3f7c9fd6200d0ade</var>, <var>0x3f02cd40e0ad0a9f</var>, <var>0xbe858ab8e019f311</var></td></tr>
+<tr><th id="438">438</th><td>        .quad <var>0xbe792fa6323b7cf8</var>, <var>0x3e2df04d67876402</var>, <var>0xbd95c72be95e4d2c</var>, <var>0xbd55a89c30203106</var></td></tr>
+<tr><th id="439">439</th><td>        .quad <var>0xbccad6b3bb9eff65</var>, <var>0xbc12705ccd3dd884</var>, <var>0xba8e0a4c47ae75f5</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="440">440</th><td>        <i>/*== p16 ==*/</i></td></tr>
+<tr><th id="441">441</th><td>        .align <var>64</var></td></tr>
+<tr><th id="442">442</th><td>        .quad <var>0xbf55d7e76dc56871</var>, <var>0x41528c38809c90c7</var>, <var>0xc076d57fb5190b02</var>, <var>0x4085f09f888f8ada</var></td></tr>
+<tr><th id="443">443</th><td>        .quad <var>0x3fa246332a2fcba5</var>, <var>0xbfb29d851a896fcd</var>, <var>0x3ed9065ae369b212</var>, <var>0xbeb8e1ba4c98a030</var></td></tr>
+<tr><th id="444">444</th><td>        .quad <var>0x3e6ffd0766ad4016</var>, <var>0xbe0c63c29f505f5b</var>, <var>0xbd7fab216b9e0e49</var>, <var>0x3d2826b62056aa27</var></td></tr>
+<tr><th id="445">445</th><td>        .quad <var>0x3ca313e31762f523</var>, <var>0x3bea37aa21895319</var>, <var>0x3ae5c7f1fd871496</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="446">446</th><td>        <i>/*== p17 ==*/</i></td></tr>
+<tr><th id="447">447</th><td>        .align <var>64</var></td></tr>
+<tr><th id="448">448</th><td>        .quad <var>0x3f35e67ab76a26e7</var>, <var>0x41848ee0627d8206</var>, <var>0xc0a216d618b489ec</var>, <var>0x40a5b89107c8af4f</var></td></tr>
+<tr><th id="449">449</th><td>        .quad <var>0x3fb69d8374520eda</var>, <var>0xbfbded519f981716</var>, <var>0xbef02d288b5b3371</var>, <var>0x3eb290981209c1a6</var></td></tr>
+<tr><th id="450">450</th><td>        .quad <var>0xbe567e924bf5ff6e</var>, <var>0x3de3f7f7de6b0eb6</var>, <var>0x3d69ed18bae3ebbc</var>, <var>0xbcf7534c4f3dfa71</var></td></tr>
+<tr><th id="451">451</th><td>        .quad <var>0xbc730b73f1eaff20</var>, <var>0xbbba2cff8135d462</var>, <var>0xbab5a71b5f7d9035</var>, <var>0x0000000000000000</var></td></tr>
+<tr><th id="452">452</th><td>        .align <var>64</var></td></tr>
+<tr><th id="453">453</th><td>        .<em>long</em> <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>, <var>0x7ff80000</var>           <i>/* _iExpMantMask_UISA     */</i></td></tr>
+<tr><th id="454">454</th><td>        .align <var>64</var></td></tr>
+<tr><th id="455">455</th><td>        .<em>long</em> <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>, <var>0x3fc00000</var>           <i>/* _iMinIdxOfsMask_UISA   */</i></td></tr>
+<tr><th id="456">456</th><td>        .align <var>64</var></td></tr>
+<tr><th id="457">457</th><td>        .<em>long</em> <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>, <var>0x00780000</var>           <i>/* _iMaxIdxMask_UISA      */</i></td></tr>
+<tr><th id="458">458</th><td>        .align <var>64</var></td></tr>
+<tr><th id="459">459</th><td>        .quad <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>   <i>/* _dbSignMask       */</i></td></tr>
+<tr><th id="460">460</th><td>        .align <var>64</var></td></tr>
+<tr><th id="461">461</th><td>        .quad <var>0x7fffffffffffffff</var>, <var>0x7fffffffffffffff</var>, <var>0x7fffffffffffffff</var>, <var>0x7fffffffffffffff</var>, <var>0x7fffffffffffffff</var>, <var>0x7fffffffffffffff</var>, <var>0x7fffffffffffffff</var>, <var>0x7fffffffffffffff</var>   <i>/* _dbAbsMask        */</i></td></tr>
+<tr><th id="462">462</th><td>        .align <var>64</var></td></tr>
+<tr><th id="463">463</th><td>        .<em>long</em> <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>           <i>/* _iExpMantMask     */</i></td></tr>
+<tr><th id="464">464</th><td>        .align <var>64</var></td></tr>
+<tr><th id="465">465</th><td>        .<em>long</em> <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>           <i>/* _iExpMask         */</i></td></tr>
+<tr><th id="466">466</th><td>        .align <var>64</var></td></tr>
+<tr><th id="467">467</th><td>        .<em>long</em> <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>           <i>/* _iMinIdxOfsMask   */</i></td></tr>
+<tr><th id="468">468</th><td>        .align <var>64</var></td></tr>
+<tr><th id="469">469</th><td>        .<em>long</em> <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>           <i>/* _iMaxIdxMask      */</i></td></tr>
+<tr><th id="470">470</th><td>        .align <var>64</var></td></tr>
+<tr><th id="471">471</th><td>        .type	__svml_dtanh_data_internal,@object</td></tr>
+<tr><th id="472">472</th><td>        .size	__svml_dtanh_data_internal,.-__svml_dtanh_data_internal</td></tr>
+<tr><th id="473">473</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/ifaddrs.h' l='12' type='int __getifaddrs(struct ifaddrs ** __ifap)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='831' ll='841' type='int __getifaddrs(struct ifaddrs ** ifap)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='842' c='getifaddrs'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='828'>/* Create a linked list of `struct ifaddrs&apos; structures, one for each
+   network interface on the host machine.  If successful, store the
+   list in *IFAP and return 0.  On errors, return -1 and set `errno&apos;.  */</doc>

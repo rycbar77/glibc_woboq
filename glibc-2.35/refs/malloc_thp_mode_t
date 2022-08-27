@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/generic/malloc-hugepages.h' l='27' ll='33'/>
+<use f='codebrowser/sysdeps/generic/malloc-hugepages.h' l='35' c='__malloc_thp_mode'/>
+<use f='codebrowser/malloc/malloc.c' l='5434' c='do_set_hugetlb'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c' l='50' c='__malloc_thp_mode'/>

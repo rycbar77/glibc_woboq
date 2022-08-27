@@ -1,0 +1,11 @@
+<dec f='codebrowser/malloc/obstack.h' l='156' type='struct _obstack_chunk *'/>
+<offset>64</offset>
+<doc f='codebrowser/malloc/obstack.h' l='156'>/* address of current struct obstack_chunk */</doc>
+<use f='codebrowser/malloc/obstack.c' l='176' u='w' c='_obstack_begin'/>
+<use f='codebrowser/malloc/obstack.c' l='224' u='w' c='_obstack_begin_1'/>
+<use f='codebrowser/malloc/obstack.c' l='247' u='r' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='264' u='w' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='327' u='r' c='_obstack_allocated_p'/>
+<use f='codebrowser/malloc/obstack.c' l='350' u='r' c='obstack_free'/>
+<use f='codebrowser/malloc/obstack.c' l='367' u='w' c='obstack_free'/>
+<use f='codebrowser/malloc/obstack.c' l='386' u='r' c='_obstack_memory_used'/>

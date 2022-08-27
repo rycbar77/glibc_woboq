@@ -1,0 +1,81 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='598' type='void abort()'/>
+<dec f='codebrowser/include/stdlib.h' l='39' type='void abort()'/>
+<use f='codebrowser/include/stdlib.h' l='39' c='abort'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='597'>/* Abort execution and generate a core-dump.  */</doc>
+<use f='codebrowser/assert/assert.c' l='92' u='c' c='__assert_fail_base'/>
+<use f='codebrowser/csu/init-first.c' l='85' u='c' c='_dl_start'/>
+<use f='codebrowser/elf/cache.c' l='979' u='c' c='insert_to_aux_cache'/>
+<use f='codebrowser/elf/dl-profile.c' l='273' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='302' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/elf/ldconfig.c' l='1349' u='c' c='parse_conf_include'/>
+<use f='codebrowser/elf/sprof.c' l='547' u='c' c='load_shobj'/>
+<use f='codebrowser/elf/sprof.c' l='859' u='c' c='load_profdata'/>
+<use f='codebrowser/elf/sprof.c' l='880' u='c' c='load_profdata'/>
+<use f='codebrowser/elf/sprof.c' l='1177' u='c' c='read_symbols'/>
+<use f='codebrowser/sysdeps/posix/libc_fatal.c' l='155' u='c' c='__libc_message'/>
+<use f='codebrowser/elf/static-stubs.c' l='33' u='c' c='_Unwind_Resume'/>
+<use f='codebrowser/elf/static-stubs.c' l='45' u='c' c='__gcc_personality_v0'/>
+<use f='codebrowser/gmon/gmon.c' l='231' u='c' c='write_hist'/>
+<use f='codebrowser/gmon/gmon.c' l='394' u='c' c='write_gmon'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='812' u='c' c='name_to_module_idx'/>
+<use f='codebrowser/iconv/strtab.c' l='118' u='c' c='morememory'/>
+<use f='codebrowser/iconvdata/utf-7.c' l='108' u='c' c='base64'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='509' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='525' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='541' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='557' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='576' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='592' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='608' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='624' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='644' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='660' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='676' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='692' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='710' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='727' u='c' c='get_sysdep_segment_value'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='1177' u='c' c='_nl_load_domain'/>
+<use f='codebrowser/libio/ioseekoff.c' l='51' u='c' c='_IO_seekoff_unlocked'/>
+<use f='codebrowser/locale/nl_langinfo_l.c' l='55' u='c' c='__nl_langinfo_l'/>
+<use f='codebrowser/locale/programs/linereader.h' l='112' u='c' c='lr_error'/>
+<use f='codebrowser/locale/programs/3level.h' l='310' u='c' c='add_locale_collidx_table'/>
+<use f='codebrowser/locale/programs/3level.h' l='310' u='c' c='add_locale_collseq_table'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2383' u='c' c='collate_output'/>
+<use f='codebrowser/locale/programs/record-status.c' l='116' u='c' c='record_verbose'/>
+<use f='codebrowser/locale/programs/record-status.c' l='150' u='c' c='record_warning'/>
+<use f='codebrowser/locale/programs/record-status.c' l='187' u='c' c='record_error'/>
+<use f='codebrowser/locale/programs/record-status.c' l='220' u='c' c='record_error_at_line'/>
+<use f='codebrowser/malloc/malloc.c' l='3853' macro='1' u='c' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4553' macro='1' u='c' c='_int_free'/>
+<use f='codebrowser/malloc/memusage.c' l='152' macro='1' u='c' c='update_data'/>
+<use f='codebrowser/malloc/memusage.c' l='175' macro='1' u='c' c='update_data'/>
+<use f='codebrowser/malloc/memusage.c' l='178' macro='1' u='c' c='update_data'/>
+<use f='codebrowser/malloc/memusage.c' l='191' macro='1' u='c' c='update_data'/>
+<use f='codebrowser/malloc/obstack.c' l='371' u='c' c='obstack_free'/>
+<use f='codebrowser/nis/nis_ping.c' l='34' u='c' c='__GI_nis_ping'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='83' u='c' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='43' u='c' c='setxid_error'/>
+<use f='codebrowser/nptl/unwind.c' l='134' u='c' c='__pthread_unwind'/>
+<use f='codebrowser/nptl_db/td_ta_map_lwp2thr.c' l='86' u='c' c='__td_ta_lookup_th_unique'/>
+<use f='codebrowser/nscd/nscd.h' l='109' u='c' c='init_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='1510' u='c' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1582' u='c' c='nscd_run_prune'/>
+<use f='codebrowser/posix/regcomp.c' l='531' u='c' c='__regerror'/>
+<use f='codebrowser/posix/regcomp.c' l='1139' u='c' c='optimize_utf8'/>
+<use f='codebrowser/resolv/base64.c' l='57' u='c' c='__b64_ntop'/>
+<use f='codebrowser/resolv/base64.c' l='57' u='c' c='__b64_ntop'/>
+<use f='codebrowser/resolv/base64.c' l='57' u='c' c='__b64_ntop'/>
+<use f='codebrowser/resolv/base64.c' l='57' u='c' c='__b64_ntop'/>
+<use f='codebrowser/resolv/base64.c' l='57' u='c' c='__b64_ntop'/>
+<use f='codebrowser/resolv/base64.c' l='57' u='c' c='__b64_ntop'/>
+<use f='codebrowser/resolv/base64.c' l='57' u='c' c='__b64_ntop'/>
+<use f='codebrowser/resolv/base64.c' l='254' u='c' c='__b64_pton'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='964' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/res_send.c' l='1291' u='c' c='send_dg'/>
+<use f='codebrowser/sysdeps/generic/get-rounding-mode.h' l='118' u='c' c='get_rounding_mode'/>
+<use f='codebrowser/include/rounding-mode.h' l='61' u='c' c='round_away'/>
+<def f='codebrowser/stdlib/abort.c' l='47' ll='122' type='void abort()'/>
+<doc f='codebrowser/stdlib/abort.c' l='46'>/* Cause an abnormal program termination with core-dump.  */</doc>
+<use f='codebrowser/stdlib/strfrom-skeleton.c' l='73' u='c' c='strfromd'/>
+<use f='codebrowser/stdlib/strfrom-skeleton.c' l='105' u='c' c='strfromd'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='729' u='c' c='getifaddrs_internal'/>

@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='286' type='int security_get_initial_context(const char * name, char ** con)'/>
+<doc f='include/selinux/selinux.h' l='284'>/* Get the context of an initial kernel security identifier by name.  
+   Caller must free via freecon */</doc>

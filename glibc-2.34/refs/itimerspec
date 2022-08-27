@@ -1,0 +1,20 @@
+<def f='codebrowser/time/bits/types/struct_itimerspec.h' l='8' ll='12'/>
+<use f='codebrowser/time/time.h' l='341' c='timer_settime'/>
+<use f='codebrowser/time/time.h' l='342' c='timer_settime'/>
+<use f='codebrowser/time/time.h' l='345' c='timer_gettime'/>
+<size>32</size>
+<doc f='codebrowser/time/bits/types/struct_itimerspec.h' l='7'>/* POSIX.1b structure for timer start values and intervals.  */</doc>
+<mbr r='itimerspec::it_interval' o='0' t='struct timespec'/>
+<mbr r='itimerspec::it_value' o='128' t='struct timespec'/>
+<use f='codebrowser/support/support_create_timer.c' l='49' c='support_create_timer'/>
+<size>32</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_gettime.c' l='88' c='___timer_gettime_new'/>
+<size>32</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_settime.c' l='115' c='___timer_settime_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_settime.c' l='116' c='___timer_settime_new'/>
+<size>32</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timerfd_gettime.c' l='26' macro='1' c='__timerfd_gettime'/>
+<size>32</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timerfd_settime.c' l='26' macro='1' c='__timerfd_settime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timerfd_settime.c' l='27' macro='1' c='__timerfd_settime'/>
+<size>32</size>

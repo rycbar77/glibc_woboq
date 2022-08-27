@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>nss_readline.c source code [codebrowser/nss/nss_readline.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/nss/nss_readline.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>nss</a>/<a href='nss_readline.c.html'>nss_readline.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Read a line from an nss_files database file.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2020-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../include/nss_files.h.html">&lt;nss_files.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../include/ctype.h.html">&lt;ctype.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>int</em></td></tr>
+<tr><th id="26">26</th><td><dfn class="decl def fn" id="__nss_readline" title='__nss_readline' data-ref="__nss_readline" data-ref-filename="__nss_readline">__nss_readline</dfn> (<a class="typedef" href="../libio/bits/types/FILE.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE" data-ref-filename="FILE">FILE</a> *<dfn class="local col1 decl" id="1fp" title='fp' data-type='FILE *' data-ref="1fp" data-ref-filename="1fp">fp</dfn>, <em>char</em> *<dfn class="local col2 decl" id="2buf" title='buf' data-type='char *' data-ref="2buf" data-ref-filename="2buf">buf</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col3 decl" id="3len" title='len' data-type='size_t' data-ref="3len" data-ref-filename="3len">len</dfn>, <a class="typedef" href="../posix/sys/types.h.html#off64_t" title='off64_t' data-type='__off64_t' data-ref="off64_t" data-ref-filename="off64_t">off64_t</a> *<dfn class="local col4 decl" id="4poffset" title='poffset' data-type='off64_t *' data-ref="4poffset" data-ref-filename="4poffset">poffset</dfn>)</td></tr>
+<tr><th id="27">27</th><td>{</td></tr>
+<tr><th id="28">28</th><td>  <i>/* We need space for at least one character, the line terminator,</i></td></tr>
+<tr><th id="29">29</th><td><i>     and the NUL byte.  */</i></td></tr>
+<tr><th id="30">30</th><td>  <b>if</b> (<a class="local col3 ref" href="#3len" title='len' data-ref="3len" data-ref-filename="3len">len</a> &lt; <var>3</var>)</td></tr>
+<tr><th id="31">31</th><td>    {</td></tr>
+<tr><th id="32">32</th><td>      *<a class="local col4 ref" href="#4poffset" title='poffset' data-ref="4poffset" data-ref-filename="4poffset">poffset</a> = -<var>1</var>;</td></tr>
+<tr><th id="33">33</th><td>      <a class="macro" href="../include/errno.h.html#35" title="(__libc_errno = (34))" data-ref="_M/__set_errno">__set_errno</a> (<a class="macro" href="../../include/asm-generic/errno-base.h.html#38" title="34" data-ref="_M/ERANGE">ERANGE</a>);</td></tr>
+<tr><th id="34">34</th><td>      <b>return</b> <a class="macro" href="../../include/asm-generic/errno-base.h.html#38" title="34" data-ref="_M/ERANGE">ERANGE</a>;</td></tr>
+<tr><th id="35">35</th><td>    }</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td>  <b>while</b> (<span class="macro" title="1" data-ref="_M/true">true</span>)</td></tr>
+<tr><th id="38">38</th><td>    {</td></tr>
+<tr><th id="39">39</th><td>      <i>/* Keep original offset for retries.  */</i></td></tr>
+<tr><th id="40">40</th><td>      *<a class="local col4 ref" href="#4poffset" title='poffset' data-ref="4poffset" data-ref-filename="4poffset">poffset</a> = <a class="ref fn" href="../include/stdio.h.html#__ftello64" title='__ftello64' data-ref="__ftello64" data-ref-filename="__ftello64">__ftello64</a> (<a class="local col1 ref" href="#1fp" title='fp' data-ref="1fp" data-ref-filename="1fp">fp</a>);</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td>      <a class="local col2 ref" href="#2buf" title='buf' data-ref="2buf" data-ref-filename="2buf">buf</a>[<a class="local col3 ref" href="#3len" title='len' data-ref="3len" data-ref-filename="3len">len</a> - <var>1</var>] = <kbd>'\xff'</kbd>;        <i>/* Marker to recognize truncation.  */</i></td></tr>
+<tr><th id="43">43</th><td>      <b>if</b> (<a class="ref fn" href="../include/stdio.h.html#__fgets_unlocked" title='__fgets_unlocked' data-ref="__fgets_unlocked" data-ref-filename="__fgets_unlocked">__fgets_unlocked</a> (<a class="local col2 ref" href="#2buf" title='buf' data-ref="2buf" data-ref-filename="2buf">buf</a>, <a class="local col3 ref" href="#3len" title='len' data-ref="3len" data-ref-filename="3len">len</a>, <a class="local col1 ref" href="#1fp" title='fp' data-ref="1fp" data-ref-filename="1fp">fp</a>) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="44">44</th><td>        {</td></tr>
+<tr><th id="45">45</th><td>          <b>if</b> (<a class="ref fn" href="../include/stdio.h.html#__feof_unlocked" title='__feof_unlocked' data-ref="__feof_unlocked" data-ref-filename="__feof_unlocked">__feof_unlocked</a> (<a class="local col1 ref" href="#1fp" title='fp' data-ref="1fp" data-ref-filename="1fp">fp</a>))</td></tr>
+<tr><th id="46">46</th><td>            {</td></tr>
+<tr><th id="47">47</th><td>              <a class="macro" href="../include/errno.h.html#35" title="(__libc_errno = (2))" data-ref="_M/__set_errno">__set_errno</a> (<a class="macro" href="../../include/asm-generic/errno-base.h.html#6" title="2" data-ref="_M/ENOENT">ENOENT</a>);</td></tr>
+<tr><th id="48">48</th><td>              <b>return</b> <a class="macro" href="../../include/asm-generic/errno-base.h.html#6" title="2" data-ref="_M/ENOENT">ENOENT</a>;</td></tr>
+<tr><th id="49">49</th><td>            }</td></tr>
+<tr><th id="50">50</th><td>          <b>else</b></td></tr>
+<tr><th id="51">51</th><td>            {</td></tr>
+<tr><th id="52">52</th><td>              <i>/* Any other error.  Do not return ERANGE in this case</i></td></tr>
+<tr><th id="53">53</th><td><i>                 because the caller would retry.  */</i></td></tr>
+<tr><th id="54">54</th><td>              <b>if</b> (<a class="macro" href="../include/errno.h.html#27" title="__libc_errno" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#38" title="34" data-ref="_M/ERANGE">ERANGE</a>)</td></tr>
+<tr><th id="55">55</th><td>                <a class="macro" href="../include/errno.h.html#35" title="(__libc_errno = (22))" data-ref="_M/__set_errno">__set_errno</a> (<a class="macro" href="../../include/asm-generic/errno-base.h.html#26" title="22" data-ref="_M/EINVAL">EINVAL</a>);</td></tr>
+<tr><th id="56">56</th><td>              <b>return</b> <a class="macro" href="../include/errno.h.html#27" title="__libc_errno" data-ref="_M/errno">errno</a>;</td></tr>
+<tr><th id="57">57</th><td>            }</td></tr>
+<tr><th id="58">58</th><td>        }</td></tr>
+<tr><th id="59">59</th><td>      <b>else</b> <b>if</b> (<a class="local col2 ref" href="#2buf" title='buf' data-ref="2buf" data-ref-filename="2buf">buf</a>[<a class="local col3 ref" href="#3len" title='len' data-ref="3len" data-ref-filename="3len">len</a> - <var>1</var>] != <kbd>'\xff'</kbd>)</td></tr>
+<tr><th id="60">60</th><td>        <i>/* The buffer is too small.  Arrange for re-reading the same</i></td></tr>
+<tr><th id="61">61</th><td><i>           line on the next call.  */</i></td></tr>
+<tr><th id="62">62</th><td>        <b>return</b> <a class="ref fn" href="#__nss_readline_seek" title='__nss_readline_seek' data-ref="__nss_readline_seek" data-ref-filename="__nss_readline_seek">__nss_readline_seek</a> (<a class="local col1 ref" href="#1fp" title='fp' data-ref="1fp" data-ref-filename="1fp">fp</a>, *<a class="local col4 ref" href="#4poffset" title='poffset' data-ref="4poffset" data-ref-filename="4poffset">poffset</a>);</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td>      <i>/* __fgets_unlocked succeeded.  */</i></td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td>      <i>/* Remove leading whitespace.  */</i></td></tr>
+<tr><th id="67">67</th><td>      <em>char</em> *<dfn class="local col5 decl" id="5p" title='p' data-type='char *' data-ref="5p" data-ref-filename="5p">p</dfn> = <a class="local col2 ref" href="#2buf" title='buf' data-ref="2buf" data-ref-filename="2buf">buf</a>;</td></tr>
+<tr><th id="68">68</th><td>      <b>while</b> (<a class="macro" href="../ctype/ctype.h.html#197" title="((*__ctype_b_loc ())[(int) ((*p))] &amp; (unsigned short int) _ISspace)" data-ref="_M/isspace">isspace</a> (*<a class="local col5 ref" href="#5p" title='p' data-ref="5p" data-ref-filename="5p">p</a>))</td></tr>
+<tr><th id="69">69</th><td>        ++<a class="local col5 ref" href="#5p" title='p' data-ref="5p" data-ref-filename="5p">p</a>;</td></tr>
+<tr><th id="70">70</th><td>      <b>if</b> (*<a class="local col5 ref" href="#5p" title='p' data-ref="5p" data-ref-filename="5p">p</a> == <kbd>'\0'</kbd> || *<a class="local col5 ref" href="#5p" title='p' data-ref="5p" data-ref-filename="5p">p</a> == <kbd>'#'</kbd>)</td></tr>
+<tr><th id="71">71</th><td>        <i>/* Skip empty lines and comments.  */</i></td></tr>
+<tr><th id="72">72</th><td>        <b>continue</b>;</td></tr>
+<tr><th id="73">73</th><td>      <b>if</b> (<a class="local col5 ref" href="#5p" title='p' data-ref="5p" data-ref-filename="5p">p</a> != <a class="local col2 ref" href="#2buf" title='buf' data-ref="2buf" data-ref-filename="2buf">buf</a>)</td></tr>
+<tr><th id="74">74</th><td>        <a class="ref fn" href="../string/string.h.html#memmove" title='memmove' data-ref="memmove" data-ref-filename="memmove">memmove</a> (<a class="local col2 ref" href="#2buf" title='buf' data-ref="2buf" data-ref-filename="2buf">buf</a>, <a class="local col5 ref" href="#5p" title='p' data-ref="5p" data-ref-filename="5p">p</a>, <a class="ref fn" href="../string/string.h.html#strlen" title='strlen' data-ref="strlen" data-ref-filename="strlen">strlen</a> (<a class="local col5 ref" href="#5p" title='p' data-ref="5p" data-ref-filename="5p">p</a>));</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td>      <i>/* Return line to the caller.  */</i></td></tr>
+<tr><th id="77">77</th><td>      <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="78">78</th><td>    }</td></tr>
+<tr><th id="79">79</th><td>}</td></tr>
+<tr><th id="80">80</th><td><a class="macro" href="../include/libc-symbols.h.html#623" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__nss_readline)</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><em>int</em></td></tr>
+<tr><th id="83">83</th><td><dfn class="decl def fn" id="__nss_readline_seek" title='__nss_readline_seek' data-ref="__nss_readline_seek" data-ref-filename="__nss_readline_seek">__nss_readline_seek</dfn> (<a class="typedef" href="../libio/bits/types/FILE.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE" data-ref-filename="FILE">FILE</a> *<dfn class="local col6 decl" id="6fp" title='fp' data-type='FILE *' data-ref="6fp" data-ref-filename="6fp">fp</dfn>, <a class="typedef" href="../posix/sys/types.h.html#off64_t" title='off64_t' data-type='__off64_t' data-ref="off64_t" data-ref-filename="off64_t">off64_t</a> <dfn class="local col7 decl" id="7offset" title='offset' data-type='off64_t' data-ref="7offset" data-ref-filename="7offset">offset</dfn>)</td></tr>
+<tr><th id="84">84</th><td>{</td></tr>
+<tr><th id="85">85</th><td>  <b>if</b> (<a class="local col7 ref" href="#7offset" title='offset' data-ref="7offset" data-ref-filename="7offset">offset</a> &lt; <var>0</var> <i>/* __ftello64 failed.  */</i></td></tr>
+<tr><th id="86">86</th><td>      || <a class="ref fn" href="../include/stdio.h.html#__fseeko64" title='__fseeko64' data-ref="__fseeko64" data-ref-filename="__fseeko64">__fseeko64</a> (<a class="local col6 ref" href="#6fp" title='fp' data-ref="6fp" data-ref-filename="6fp">fp</a>, <a class="local col7 ref" href="#7offset" title='offset' data-ref="7offset" data-ref-filename="7offset">offset</a>, <a class="macro" href="../libio/stdio.h.html#109" title="0" data-ref="_M/SEEK_SET">SEEK_SET</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="87">87</th><td>    {</td></tr>
+<tr><th id="88">88</th><td>      <i>/* Without seeking support, it is not possible to</i></td></tr>
+<tr><th id="89">89</th><td><i>         re-read the same line, so this is a hard failure.  */</i></td></tr>
+<tr><th id="90">90</th><td>      <a class="ref fn" href="../include/stdio.h.html#fseterr_unlocked" title='fseterr_unlocked' data-ref="fseterr_unlocked" data-ref-filename="fseterr_unlocked">fseterr_unlocked</a> (<a class="local col6 ref" href="#6fp" title='fp' data-ref="6fp" data-ref-filename="6fp">fp</a>);</td></tr>
+<tr><th id="91">91</th><td>      <a class="macro" href="../include/errno.h.html#35" title="(__libc_errno = (29))" data-ref="_M/__set_errno">__set_errno</a> (<a class="macro" href="../../include/asm-generic/errno-base.h.html#33" title="29" data-ref="_M/ESPIPE">ESPIPE</a>);</td></tr>
+<tr><th id="92">92</th><td>      <b>return</b> <a class="macro" href="../../include/asm-generic/errno-base.h.html#33" title="29" data-ref="_M/ESPIPE">ESPIPE</a>;</td></tr>
+<tr><th id="93">93</th><td>    }</td></tr>
+<tr><th id="94">94</th><td>  <b>else</b></td></tr>
+<tr><th id="95">95</th><td>    {</td></tr>
+<tr><th id="96">96</th><td>      <a class="macro" href="../include/errno.h.html#35" title="(__libc_errno = (34))" data-ref="_M/__set_errno">__set_errno</a> (<a class="macro" href="../../include/asm-generic/errno-base.h.html#38" title="34" data-ref="_M/ERANGE">ERANGE</a>);</td></tr>
+<tr><th id="97">97</th><td>      <b>return</b> <a class="macro" href="../../include/asm-generic/errno-base.h.html#38" title="34" data-ref="_M/ERANGE">ERANGE</a>;</td></tr>
+<tr><th id="98">98</th><td>    }</td></tr>
+<tr><th id="99">99</th><td>}</td></tr>
+<tr><th id="100">100</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

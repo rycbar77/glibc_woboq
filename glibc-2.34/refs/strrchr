@@ -1,0 +1,25 @@
+<dec f='codebrowser/string/string.h' l='257' type='char * strrchr(const char * __s, int __c)'/>
+<dec f='codebrowser/include/string.h' l='149' type='char * strrchr(const char * , int )'/>
+<use f='codebrowser/include/string.h' l='149' c='strrchr'/>
+<use f='codebrowser/argp/argp-parse.c' l='132' u='c' c='argp_default_parser'/>
+<use f='codebrowser/argp/argp-parse.c' l='570' u='c' c='parser_init'/>
+<use f='codebrowser/locale/findlocale.c' l='306' u='c' c='_nl_find_locale'/>
+<use f='codebrowser/misc/dirname.c' l='31' u='c' c='dirname'/>
+<use f='codebrowser/misc/init-misc.c' l='33' u='c' c='__init_misc'/>
+<use f='codebrowser/misc/ttyslot.c' l='59' u='c' c='ttyslot'/>
+<use f='codebrowser/nscd/nscd.h' l='105' u='c' c='init_traced_file'/>
+<use f='codebrowser/stdlib/xpg_basename.c' l='34' u='c' c='__xpg_basename'/>
+<use f='codebrowser/string/basename.c' l='24' u='c' c='__basename'/>
+<use f='codebrowser/support/test-container.c' l='832' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='840' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='841' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='933' u='c' c='main'/>
+<use f='codebrowser/support/xmkdirp.c' l='48' u='c' c='xmkdirp'/>
+<use f='codebrowser/posix/glob.c' l='488' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/io/fts.c' l='248' u='c' c='fts_load'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='460' c='__strrchr_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='463' c='__strrchr_avx2_rtm'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='467' c='__strrchr_evex'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='471' c='__strrchr_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strrchr.c' l='28' macro='1' type='char * strrchr(const char * , int )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strrchr.c' l='29' c='rindex'/>

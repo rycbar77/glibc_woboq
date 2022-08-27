@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/pthread/threads.h' l='110' type='int thrd_detach(thrd_t __thr)'/>
+<doc f='codebrowser/sysdeps/pthread/threads.h' l='108'>/* Detach the thread identified by __THR from the current environment
+   (it does not allow join or wait for it).  */</doc>
+<def f='codebrowser/sysdeps/pthread/thrd_detach.c' l='31' macro='1' type='int thrd_detach(thrd_t )'/>

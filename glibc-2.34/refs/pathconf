@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/unistd.h' l='634' type='long pathconf(const char * __path, int __name)'/>
+<doc f='codebrowser/posix/unistd.h' l='633'>/* Get file-specific configuration information about PATH.  */</doc>
+<use f='codebrowser/posix/getconf.c' l='436' u='c' c='print_all'/>
+<use f='codebrowser/posix/getconf.c' l='663' u='c' c='main'/>
+<def f='codebrowser/sysdeps/posix/pathconf.c' l='224' macro='1' type='long pathconf(const char * , int )'/>

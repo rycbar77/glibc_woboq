@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/link.h' l='213' type='unsigned int'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='80' u='r' c='dl_relocate_ld'/>
+<offset>6389</offset>
+<doc f='codebrowser/include/link.h' l='213'>/* Nonzero if dynamic section is readonly.  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='1126' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-reloc-static-pie.c' l='51' u='w' c='_dl_relocate_static_pie'/>
+<use f='codebrowser/elf/setup-vdso.h' l='46' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/rtld.c' l='557' u='w' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='1180' u='w' c='rtld_setup_main_map'/>

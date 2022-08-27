@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='172' type='1'/>
+<use f='codebrowser/assert/assert.c' l='53' macro='1' u='r' c='__assert_fail_base'/>
+<use f='codebrowser/libio/iopopen.c' l='285' macro='1' u='r' c='_IO_new_proc_close'/>
+<use f='codebrowser/misc/error.c' l='243' macro='1' u='r' c='__error_internal'/>
+<use f='codebrowser/misc/error.c' l='309' macro='1' u='r' c='__error_at_line_internal'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='48' macro='1' u='r' c='sigcancel_handler'/>
+<use f='codebrowser/nptl/pthread_setcancelstate.c' l='29' macro='1' u='r' c='__pthread_setcancelstate'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='94' macro='1' u='r' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='122' macro='1' u='r' c='__getaddrinfo_a'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='128' macro='1' u='r' c='fmtmsg'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='85' macro='1' u='r' c='cancel_handler'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='60' macro='1' u='r' c='__sem_open'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='347' macro='1' u='r' c='__spawnix'/>

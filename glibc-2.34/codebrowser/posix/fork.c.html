@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>fork.c source code [codebrowser/posix/fork.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/posix/fork.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>posix</a>/<a href='fork.c.html'>fork.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* fork - create a child process.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 1991-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../sysdeps/nptl/fork.h.html">&lt;fork.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../libio/libioP.h.html">&lt;libio/libioP.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/ldsodefs.h.html">&lt;ldsodefs.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../malloc/malloc-internal.h.html">&lt;malloc/malloc-internal.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../nss/nss_database.h.html">&lt;nss/nss_database.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../include/register-atfork.h.html">&lt;register-atfork.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../sysdeps/nptl/stdio-lock.h.html">&lt;stdio-lock.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../include/sys/single_threaded.h.html">&lt;sys/single_threaded.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="../sysdeps/generic/unwind-link.h.html">&lt;unwind-link.h&gt;</a></u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="30">30</th><td><dfn class="tu decl def fn" id="fresetlockfiles" title='fresetlockfiles' data-type='void fresetlockfiles()' data-ref="fresetlockfiles" data-ref-filename="fresetlockfiles">fresetlockfiles</dfn> (<em>void</em>)</td></tr>
+<tr><th id="31">31</th><td>{</td></tr>
+<tr><th id="32">32</th><td>  <a class="typedef" href="../libio/libioP.h.html#_IO_ITER" title='_IO_ITER' data-type='FILE *' data-ref="_IO_ITER" data-ref-filename="_IO_ITER">_IO_ITER</a> <dfn class="local col9 decl" id="49i" title='i' data-type='_IO_ITER' data-ref="49i" data-ref-filename="49i">i</dfn>;</td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td>  <b>for</b> (<a class="local col9 ref" href="#49i" title='i' data-ref="49i" data-ref-filename="49i">i</a> = <a class="ref fn" href="../libio/libioP.h.html#_IO_iter_begin" title='_IO_iter_begin' data-ref="_IO_iter_begin" data-ref-filename="_IO_iter_begin">_IO_iter_begin</a>(); <a class="local col9 ref" href="#49i" title='i' data-ref="49i" data-ref-filename="49i">i</a> != <a class="ref fn" href="../libio/libioP.h.html#_IO_iter_end" title='_IO_iter_end' data-ref="_IO_iter_end" data-ref-filename="_IO_iter_end">_IO_iter_end</a>(); <a class="local col9 ref" href="#49i" title='i' data-ref="49i" data-ref-filename="49i">i</a> = <a class="ref fn" href="../libio/libioP.h.html#_IO_iter_next" title='_IO_iter_next' data-ref="_IO_iter_next" data-ref-filename="_IO_iter_next">_IO_iter_next</a>(<a class="local col9 ref" href="#49i" title='i' data-ref="49i" data-ref-filename="49i">i</a>))</td></tr>
+<tr><th id="35">35</th><td>    <b>if</b> ((<a class="ref fn" href="../libio/libioP.h.html#_IO_iter_file" title='_IO_iter_file' data-ref="_IO_iter_file" data-ref-filename="_IO_iter_file">_IO_iter_file</a> (<a class="local col9 ref" href="#49i" title='i' data-ref="49i" data-ref-filename="49i">i</a>)-&gt;<a class="ref field" href="../libio/bits/types/struct_FILE.h.html#_IO_FILE::_flags" title='_IO_FILE::_flags' data-ref="_IO_FILE::_flags" data-ref-filename="_IO_FILE.._flags">_flags</a> &amp; <a class="macro" href="../libio/libio.h.html#84" title="0x8000" data-ref="_M/_IO_USER_LOCK">_IO_USER_LOCK</a>) == <var>0</var>)</td></tr>
+<tr><th id="36">36</th><td>      <a class="macro" href="../sysdeps/nptl/stdio-lock.h.html#31" title="((void) ((*((_IO_lock_t *) _IO_iter_file(i)-&gt;_lock)) = (_IO_lock_t) { (0), 0, ((void*)0) }))" data-ref="_M/_IO_lock_init">_IO_lock_init</a> (*((<a class="typedef" href="../sysdeps/nptl/stdio-lock.h.html#_IO_lock_t" title='_IO_lock_t' data-type='struct _IO_lock_t' data-ref="_IO_lock_t" data-ref-filename="_IO_lock_t">_IO_lock_t</a> *) <a class="ref fn" href="../libio/libioP.h.html#_IO_iter_file" title='_IO_iter_file' data-ref="_IO_iter_file" data-ref-filename="_IO_iter_file">_IO_iter_file</a>(<a class="local col9 ref" href="#49i" title='i' data-ref="49i" data-ref-filename="49i">i</a>)-&gt;<a class="ref field" href="../libio/bits/types/struct_FILE.h.html#_IO_FILE::_lock" title='_IO_FILE::_lock' data-ref="_IO_FILE::_lock" data-ref-filename="_IO_FILE.._lock">_lock</a>));</td></tr>
+<tr><th id="37">37</th><td>}</td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><a class="typedef" href="sched.h.html#pid_t" title='pid_t' data-type='__pid_t' data-ref="pid_t" data-ref-filename="pid_t">pid_t</a></td></tr>
+<tr><th id="40">40</th><td><dfn class="decl def fn" id="__libc_fork" title='__libc_fork' data-ref="__libc_fork" data-ref-filename="__libc_fork">__libc_fork</dfn> (<em>void</em>)</td></tr>
+<tr><th id="41">41</th><td>{</td></tr>
+<tr><th id="42">42</th><td>  <i>/* Determine if we are running multiple threads.  We skip some fork</i></td></tr>
+<tr><th id="43">43</th><td><i>     handlers in the single-thread case, to make fork safer to use in</i></td></tr>
+<tr><th id="44">44</th><td><i>     signal handlers.  Although POSIX has dropped async-signal-safe</i></td></tr>
+<tr><th id="45">45</th><td><i>     requirement for fork (Austin Group tracker issue #62) this is</i></td></tr>
+<tr><th id="46">46</th><td><i>     best effort to make is async-signal-safe at least for single-thread</i></td></tr>
+<tr><th id="47">47</th><td><i>     case.  */</i></td></tr>
+<tr><th id="48">48</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col0 decl" id="50multiple_threads" title='multiple_threads' data-type='_Bool' data-ref="50multiple_threads" data-ref-filename="50multiple_threads">multiple_threads</dfn> = <a class="ref" href="../misc/sys/single_threaded.h.html#__libc_single_threaded" title='__libc_single_threaded' data-ref="__libc_single_threaded" data-ref-filename="__libc_single_threaded">__libc_single_threaded</a> == <var>0</var>;</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td>  <a class="ref fn" href="../include/register-atfork.h.html#__run_fork_handlers" title='__run_fork_handlers' data-ref="__run_fork_handlers" data-ref-filename="__run_fork_handlers">__run_fork_handlers</a> (<a class="enum" href="../include/register-atfork.h.html#atfork_run_prepare" title='atfork_run_prepare' data-ref="atfork_run_prepare" data-ref-filename="atfork_run_prepare">atfork_run_prepare</a>, <a class="local col0 ref" href="#50multiple_threads" title='multiple_threads' data-ref="50multiple_threads" data-ref-filename="50multiple_threads">multiple_threads</a>);</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td>  <b>struct</b> <a class="type" href="../nss/nss_database.h.html#nss_database_data" title='nss_database_data' data-ref="nss_database_data" data-ref-filename="nss_database_data">nss_database_data</a> <dfn class="local col1 decl" id="51nss_database_data" title='nss_database_data' data-type='struct nss_database_data' data-ref="51nss_database_data" data-ref-filename="51nss_database_data">nss_database_data</dfn>;</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td>  <i>/* If we are not running multiple threads, we do not have to</i></td></tr>
+<tr><th id="55">55</th><td><i>     preserve lock state.  If fork runs from a signal handler, only</i></td></tr>
+<tr><th id="56">56</th><td><i>     async-signal-safe functions can be used in the child.  These data</i></td></tr>
+<tr><th id="57">57</th><td><i>     structures are only used by unsafe functions, so their state does</i></td></tr>
+<tr><th id="58">58</th><td><i>     not matter if fork was called from a signal handler.  */</i></td></tr>
+<tr><th id="59">59</th><td>  <b>if</b> (<a class="local col0 ref" href="#50multiple_threads" title='multiple_threads' data-ref="50multiple_threads" data-ref-filename="50multiple_threads">multiple_threads</a>)</td></tr>
+<tr><th id="60">60</th><td>    {</td></tr>
+<tr><th id="61">61</th><td>      <a class="macro" href="../include/libc-symbols.h.html#179" title="({ extern __typeof__ (__nss_database_fork_prepare_parent) __nss_database_fork_prepare_parent __attribute__ ((weak)); (__nss_database_fork_prepare_parent != ((void*)0) ? __nss_database_fork_prepare_parent (&amp;nss_database_data) : (void)0); })" data-ref="_M/call_function_static_weak">call_function_static_weak</a> (<a class="decl fn" href="../nss/nss_database.h.html#__nss_database_fork_prepare_parent" title='__nss_database_fork_prepare_parent' data-ref="__nss_database_fork_prepare_parent" data-ref-filename="__nss_database_fork_prepare_parent" id="__nss_database_fork_prepare_parent"><a class="ref fn" href="../nss/nss_database.h.html#__nss_database_fork_prepare_parent" title='__nss_database_fork_prepare_parent' data-ref="__nss_database_fork_prepare_parent" data-ref-filename="__nss_database_fork_prepare_parent"><a class="ref fn" href="../nss/nss_database.h.html#__nss_database_fork_prepare_parent" title='__nss_database_fork_prepare_parent' data-ref="__nss_database_fork_prepare_parent" data-ref-filename="__nss_database_fork_prepare_parent"><a class="ref fn" href="../nss/nss_database.h.html#__nss_database_fork_prepare_parent" title='__nss_database_fork_prepare_parent' data-ref="__nss_database_fork_prepare_parent" data-ref-filename="__nss_database_fork_prepare_parent">__nss_database_fork_prepare_parent</a></a></a></a>,</td></tr>
+<tr><th id="62">62</th><td>				 &amp;<a class="local col1 ref" href="#51nss_database_data" title='nss_database_data' data-ref="51nss_database_data" data-ref-filename="51nss_database_data">nss_database_data</a>);</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td>      <a class="ref fn" href="../libio/libioP.h.html#_IO_list_lock" title='_IO_list_lock' data-ref="_IO_list_lock" data-ref-filename="_IO_list_lock">_IO_list_lock</a> ();</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td>      <i>/* Acquire malloc locks.  This needs to come last because fork</i></td></tr>
+<tr><th id="67">67</th><td><i>	 handlers may use malloc, and the libio list lock has an</i></td></tr>
+<tr><th id="68">68</th><td><i>	 indirect malloc dependency as well (via the getdelim</i></td></tr>
+<tr><th id="69">69</th><td><i>	 function).  */</i></td></tr>
+<tr><th id="70">70</th><td>      <a class="macro" href="../include/libc-symbols.h.html#179" title="({ extern __typeof__ (__malloc_fork_lock_parent) __malloc_fork_lock_parent __attribute__ ((weak)); (__malloc_fork_lock_parent != ((void*)0) ? __malloc_fork_lock_parent () : (void)0); })" data-ref="_M/call_function_static_weak">call_function_static_weak</a> (<a class="decl fn" href="../malloc/malloc-internal.h.html#__malloc_fork_lock_parent" title='__malloc_fork_lock_parent' data-ref="__malloc_fork_lock_parent" data-ref-filename="__malloc_fork_lock_parent" id="__malloc_fork_lock_parent"><a class="ref fn" href="../malloc/malloc-internal.h.html#__malloc_fork_lock_parent" title='__malloc_fork_lock_parent' data-ref="__malloc_fork_lock_parent" data-ref-filename="__malloc_fork_lock_parent"><a class="ref fn" href="../malloc/malloc-internal.h.html#__malloc_fork_lock_parent" title='__malloc_fork_lock_parent' data-ref="__malloc_fork_lock_parent" data-ref-filename="__malloc_fork_lock_parent"><a class="ref fn" href="../malloc/malloc-internal.h.html#__malloc_fork_lock_parent" title='__malloc_fork_lock_parent' data-ref="__malloc_fork_lock_parent" data-ref-filename="__malloc_fork_lock_parent">__malloc_fork_lock_parent</a></a></a></a>);</td></tr>
+<tr><th id="71">71</th><td>    }</td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td>  <a class="typedef" href="sched.h.html#pid_t" title='pid_t' data-type='__pid_t' data-ref="pid_t" data-ref-filename="pid_t">pid_t</a> <dfn class="local col2 decl" id="52pid" title='pid' data-type='pid_t' data-ref="52pid" data-ref-filename="52pid">pid</dfn> = <a class="ref fn" href="unistd.h.html#_Fork" title='_Fork' data-ref="_Fork" data-ref-filename="_Fork">_Fork</a> ();</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td>  <b>if</b> (<a class="local col2 ref" href="#52pid" title='pid' data-ref="52pid" data-ref-filename="52pid">pid</a> == <var>0</var>)</td></tr>
+<tr><th id="76">76</th><td>    {</td></tr>
+<tr><th id="77">77</th><td>      <a class="ref fn" href="../sysdeps/nptl/fork.h.html#fork_system_setup" title='fork_system_setup' data-ref="fork_system_setup" data-ref-filename="fork_system_setup">fork_system_setup</a> ();</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td>      <i>/* Reset the lock state in the multi-threaded case.  */</i></td></tr>
+<tr><th id="80">80</th><td>      <b>if</b> (<a class="local col0 ref" href="#50multiple_threads" title='multiple_threads' data-ref="50multiple_threads" data-ref-filename="50multiple_threads">multiple_threads</a>)</td></tr>
+<tr><th id="81">81</th><td>	{</td></tr>
+<tr><th id="82">82</th><td>	  <a class="ref fn" href="../sysdeps/generic/unwind-link.h.html#__libc_unwind_link_after_fork" title='__libc_unwind_link_after_fork' data-ref="__libc_unwind_link_after_fork" data-ref-filename="__libc_unwind_link_after_fork">__libc_unwind_link_after_fork</a> ();</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td>	  <a class="ref fn" href="../sysdeps/nptl/fork.h.html#fork_system_setup_after_fork" title='fork_system_setup_after_fork' data-ref="fork_system_setup_after_fork" data-ref-filename="fork_system_setup_after_fork">fork_system_setup_after_fork</a> ();</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td>	  <i>/* Release malloc locks.  */</i></td></tr>
+<tr><th id="87">87</th><td>	  <a class="macro" href="../include/libc-symbols.h.html#179" title="({ extern __typeof__ (__malloc_fork_unlock_child) __malloc_fork_unlock_child __attribute__ ((weak)); (__malloc_fork_unlock_child != ((void*)0) ? __malloc_fork_unlock_child () : (void)0); })" data-ref="_M/call_function_static_weak">call_function_static_weak</a> (<a class="decl fn" href="../malloc/malloc-internal.h.html#__malloc_fork_unlock_child" title='__malloc_fork_unlock_child' data-ref="__malloc_fork_unlock_child" data-ref-filename="__malloc_fork_unlock_child" id="__malloc_fork_unlock_child"><a class="ref fn" href="../malloc/malloc-internal.h.html#__malloc_fork_unlock_child" title='__malloc_fork_unlock_child' data-ref="__malloc_fork_unlock_child" data-ref-filename="__malloc_fork_unlock_child"><a class="ref fn" href="../malloc/malloc-internal.h.html#__malloc_fork_unlock_child" title='__malloc_fork_unlock_child' data-ref="__malloc_fork_unlock_child" data-ref-filename="__malloc_fork_unlock_child"><a class="ref fn" href="../malloc/malloc-internal.h.html#__malloc_fork_unlock_child" title='__malloc_fork_unlock_child' data-ref="__malloc_fork_unlock_child" data-ref-filename="__malloc_fork_unlock_child">__malloc_fork_unlock_child</a></a></a></a>);</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td>	  <i>/* Reset the file list.  These are recursive mutexes.  */</i></td></tr>
+<tr><th id="90">90</th><td>	  <a class="tu ref fn" href="#fresetlockfiles" title='fresetlockfiles' data-use='c' data-ref="fresetlockfiles" data-ref-filename="fresetlockfiles">fresetlockfiles</a> ();</td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td>	  <i>/* Reset locks in the I/O code.  */</i></td></tr>
+<tr><th id="93">93</th><td>	  <a class="ref fn" href="../libio/libioP.h.html#_IO_list_resetlock" title='_IO_list_resetlock' data-ref="_IO_list_resetlock" data-ref-filename="_IO_list_resetlock">_IO_list_resetlock</a> ();</td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td>	  <a class="macro" href="../include/libc-symbols.h.html#179" title="({ extern __typeof__ (__nss_database_fork_subprocess) __nss_database_fork_subprocess __attribute__ ((weak)); (__nss_database_fork_subprocess != ((void*)0) ? __nss_database_fork_subprocess (&amp;nss_database_data) : (void)0); })" data-ref="_M/call_function_static_weak">call_function_static_weak</a> (<a class="decl fn" href="../nss/nss_database.h.html#__nss_database_fork_subprocess" title='__nss_database_fork_subprocess' data-ref="__nss_database_fork_subprocess" data-ref-filename="__nss_database_fork_subprocess" id="__nss_database_fork_subprocess"><a class="ref fn" href="../nss/nss_database.h.html#__nss_database_fork_subprocess" title='__nss_database_fork_subprocess' data-ref="__nss_database_fork_subprocess" data-ref-filename="__nss_database_fork_subprocess"><a class="ref fn" href="../nss/nss_database.h.html#__nss_database_fork_subprocess" title='__nss_database_fork_subprocess' data-ref="__nss_database_fork_subprocess" data-ref-filename="__nss_database_fork_subprocess"><a class="ref fn" href="../nss/nss_database.h.html#__nss_database_fork_subprocess" title='__nss_database_fork_subprocess' data-ref="__nss_database_fork_subprocess" data-ref-filename="__nss_database_fork_subprocess">__nss_database_fork_subprocess</a></a></a></a>,</td></tr>
+<tr><th id="96">96</th><td>				     &amp;<a class="local col1 ref" href="#51nss_database_data" title='nss_database_data' data-ref="51nss_database_data" data-ref-filename="51nss_database_data">nss_database_data</a>);</td></tr>
+<tr><th id="97">97</th><td>	}</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td>      <i>/* Reset the lock the dynamic loader uses to protect its data.  */</i></td></tr>
+<tr><th id="100">100</th><td>      <a class="macro" href="../sysdeps/nptl/libc-lockP.h.html#75" title="(void) ((_dl_load_lock) = (__rtld_lock_recursive_t) {{ { 0, 0, 0, 0, PTHREAD_MUTEX_RECURSIVE_NP, 0, 0, { 0, 0 } } }})" data-ref="_M/__rtld_lock_initialize">__rtld_lock_initialize</a> (<a class="macro" href="../sysdeps/generic/ldsodefs.h.html#299" title="_dl_load_lock" data-ref="_M/GL">GL</a>(dl_load_lock));</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td>      <a class="ref fn" href="../sysdeps/nptl/fork.h.html#reclaim_stacks" title='reclaim_stacks' data-ref="reclaim_stacks" data-ref-filename="reclaim_stacks">reclaim_stacks</a> ();</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td>      <i>/* Run the handlers registered for the child.  */</i></td></tr>
+<tr><th id="105">105</th><td>      <a class="ref fn" href="../include/register-atfork.h.html#__run_fork_handlers" title='__run_fork_handlers' data-ref="__run_fork_handlers" data-ref-filename="__run_fork_handlers">__run_fork_handlers</a> (<a class="enum" href="../include/register-atfork.h.html#atfork_run_child" title='atfork_run_child' data-ref="atfork_run_child" data-ref-filename="atfork_run_child">atfork_run_child</a>, <a class="local col0 ref" href="#50multiple_threads" title='multiple_threads' data-ref="50multiple_threads" data-ref-filename="50multiple_threads">multiple_threads</a>);</td></tr>
+<tr><th id="106">106</th><td>    }</td></tr>
+<tr><th id="107">107</th><td>  <b>else</b></td></tr>
+<tr><th id="108">108</th><td>    {</td></tr>
+<tr><th id="109">109</th><td>      <i>/* If _Fork failed, preserve its errno value.  */</i></td></tr>
+<tr><th id="110">110</th><td>      <em>int</em> <dfn class="local col3 decl" id="53save_errno" title='save_errno' data-type='int' data-ref="53save_errno" data-ref-filename="53save_errno">save_errno</dfn> = <a class="macro" href="../include/errno.h.html#27" title="__libc_errno" data-ref="_M/errno">errno</a>;</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td>      <i>/* Release acquired locks in the multi-threaded case.  */</i></td></tr>
+<tr><th id="113">113</th><td>      <b>if</b> (<a class="local col0 ref" href="#50multiple_threads" title='multiple_threads' data-ref="50multiple_threads" data-ref-filename="50multiple_threads">multiple_threads</a>)</td></tr>
+<tr><th id="114">114</th><td>	{</td></tr>
+<tr><th id="115">115</th><td>	  <i>/* Release malloc locks, parent process variant.  */</i></td></tr>
+<tr><th id="116">116</th><td>	  <a class="macro" href="../include/libc-symbols.h.html#179" title="({ extern __typeof__ (__malloc_fork_unlock_parent) __malloc_fork_unlock_parent __attribute__ ((weak)); (__malloc_fork_unlock_parent != ((void*)0) ? __malloc_fork_unlock_parent () : (void)0); })" data-ref="_M/call_function_static_weak">call_function_static_weak</a> (<a class="decl fn" href="../malloc/malloc-internal.h.html#__malloc_fork_unlock_parent" title='__malloc_fork_unlock_parent' data-ref="__malloc_fork_unlock_parent" data-ref-filename="__malloc_fork_unlock_parent" id="__malloc_fork_unlock_parent"><a class="ref fn" href="../malloc/malloc-internal.h.html#__malloc_fork_unlock_parent" title='__malloc_fork_unlock_parent' data-ref="__malloc_fork_unlock_parent" data-ref-filename="__malloc_fork_unlock_parent"><a class="ref fn" href="../malloc/malloc-internal.h.html#__malloc_fork_unlock_parent" title='__malloc_fork_unlock_parent' data-ref="__malloc_fork_unlock_parent" data-ref-filename="__malloc_fork_unlock_parent"><a class="ref fn" href="../malloc/malloc-internal.h.html#__malloc_fork_unlock_parent" title='__malloc_fork_unlock_parent' data-ref="__malloc_fork_unlock_parent" data-ref-filename="__malloc_fork_unlock_parent">__malloc_fork_unlock_parent</a></a></a></a>);</td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td>	  <i>/* We execute this even if the 'fork' call failed.  */</i></td></tr>
+<tr><th id="119">119</th><td>	  <a class="ref fn" href="../libio/libioP.h.html#_IO_list_unlock" title='_IO_list_unlock' data-ref="_IO_list_unlock" data-ref-filename="_IO_list_unlock">_IO_list_unlock</a> ();</td></tr>
+<tr><th id="120">120</th><td>	}</td></tr>
+<tr><th id="121">121</th><td></td></tr>
+<tr><th id="122">122</th><td>      <i>/* Run the handlers registered for the parent.  */</i></td></tr>
+<tr><th id="123">123</th><td>      <a class="ref fn" href="../include/register-atfork.h.html#__run_fork_handlers" title='__run_fork_handlers' data-ref="__run_fork_handlers" data-ref-filename="__run_fork_handlers">__run_fork_handlers</a> (<a class="enum" href="../include/register-atfork.h.html#atfork_run_parent" title='atfork_run_parent' data-ref="atfork_run_parent" data-ref-filename="atfork_run_parent">atfork_run_parent</a>, <a class="local col0 ref" href="#50multiple_threads" title='multiple_threads' data-ref="50multiple_threads" data-ref-filename="50multiple_threads">multiple_threads</a>);</td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td>      <b>if</b> (<a class="local col2 ref" href="#52pid" title='pid' data-ref="52pid" data-ref-filename="52pid">pid</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="126">126</th><td>	<a class="macro" href="../include/errno.h.html#35" title="(__libc_errno = (save_errno))" data-ref="_M/__set_errno">__set_errno</a> (<a class="local col3 ref" href="#53save_errno" title='save_errno' data-ref="53save_errno" data-ref-filename="53save_errno">save_errno</a>);</td></tr>
+<tr><th id="127">127</th><td>    }</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td>  <b>return</b> <a class="local col2 ref" href="#52pid" title='pid' data-ref="52pid" data-ref-filename="52pid">pid</a>;</td></tr>
+<tr><th id="130">130</th><td>}</td></tr>
+<tr><th id="131">131</th><td><a class="macro" href="../include/libc-symbols.h.html#153" title="extern __typeof (__libc_fork) __fork __attribute__ ((weak, alias (&quot;__libc_fork&quot;))) ;" data-ref="_M/weak_alias">weak_alias</a> (<a class="ref fn" href="#__libc_fork" title='__libc_fork' data-ref="__libc_fork" data-ref-filename="__libc_fork">__libc_fork</a>, <dfn class="decl def fn" id="__fork" title='__fork' data-ref="__fork" data-ref-filename="__fork">__fork</dfn>)</td></tr>
+<tr><th id="132">132</th><td><a class="macro" href="../include/libc-symbols.h.html#623" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__fork)</td></tr>
+<tr><th id="133">133</th><td><a class="macro" href="../include/libc-symbols.h.html#153" title="extern __typeof (__libc_fork) fork __attribute__ ((weak, alias (&quot;__libc_fork&quot;))) ;" data-ref="_M/weak_alias">weak_alias</a> (<a class="ref fn" href="#__libc_fork" title='__libc_fork' data-ref="__libc_fork" data-ref-filename="__libc_fork">__libc_fork</a>, <dfn class="decl def fn" id="fork" title='fork' data-ref="fork" data-ref-filename="fork">fork</dfn>)</td></tr>
+<tr><th id="134">134</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

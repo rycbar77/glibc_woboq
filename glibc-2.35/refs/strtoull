@@ -1,0 +1,5 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='206' type='unsigned long long strtoull(const char *restrict __nptr, char **restrict __endptr, int __base)'/>
+<dec f='codebrowser/include/stdlib.h' l='232' type='unsigned long long strtoull(const char * , char ** , int )'/>
+<use f='codebrowser/include/stdlib.h' l='232' c='strtoull'/>
+<use f='include/c++/11/bits/basic_string.h' l='6640' u='a' c='_ZNSt7__cxx116stoullERKNS_12basic_stringIcSt11char_traitsIcESaIcEEEPmi'/>
+<def f='codebrowser/sysdeps/wordsize-64/strtoul.c' l='13' macro='1' type='unsigned long strtoull(const char * , char ** , int )'/>

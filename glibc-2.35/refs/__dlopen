@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/dlfcn.h' l='125' type='void * __dlopen(const char * file, int mode, void * caller)'/>
+<doc f='codebrowser/include/dlfcn.h' l='121'>/* Note: These prototypes are for initializing _dlfcn_hook in static
+   builds; see __rtld_static_init.  Internal calls in glibc should use
+   the __libc_dl* functions defined in elf/dl-libc.c instead.  */</doc>
+<def f='codebrowser/dlfcn/dlopen.c' l='90' ll='94' type='void * __dlopen(const char * file, int mode, void * dl_caller)'/>
+<use f='codebrowser/dlfcn/dlopen.c' l='99' u='c' c='___dlopen'/>
+<doc f='codebrowser/dlfcn/dlopen.c' l='89'>/* Also used with _dlfcn_hook.  */</doc>
+<use f='codebrowser/elf/rtld_static_init.c' l='30' u='r'/>
+<use f='codebrowser/libio/vtables.c' l='68' u='r' c='_IO_vtable_check'/>

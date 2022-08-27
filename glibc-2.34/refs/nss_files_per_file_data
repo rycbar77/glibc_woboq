@@ -1,0 +1,20 @@
+<def f='codebrowser/include/nss_files.h' l='56' ll='64'/>
+<use f='codebrowser/include/nss_files.h' l='90' c='__nss_files_data_open'/>
+<use f='codebrowser/include/nss_files.h' l='98' c='__nss_files_data_put'/>
+<size>16</size>
+<doc f='codebrowser/include/nss_files.h' l='54'>/* Per-file data.  Used by the *ent functions that need to preserve
+   state across calls.  */</doc>
+<mbr r='nss_files_per_file_data::stream' o='0' t='FILE *'/>
+<mbr r='nss_files_per_file_data::lock' o='64' t='__libc_lock_t'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='340' c='_nss_files_getaliasent_r'/>
+<size>16</size>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='170' c='_nss_files_getetherent_r'/>
+<size>16</size>
+<use f='codebrowser/nss/nss_files_data.c' l='30'/>
+<use f='codebrowser/nss/nss_files_data.c' l='51' c='__nss_files_data_get'/>
+<use f='codebrowser/nss/nss_files_data.c' l='76' c='__nss_files_data_internal_open'/>
+<use f='codebrowser/nss/nss_files_data.c' l='94' c='__nss_files_data_open'/>
+<use f='codebrowser/nss/nss_files_data.c' l='118' c='__nss_files_data_put'/>
+<use f='codebrowser/nss/nss_files_data.c' l='127' c='__nss_files_data_setent'/>
+<use f='codebrowser/nss/nss_files_data.c' l='150' c='__nss_files_data_endent'/>
+<size>16</size>

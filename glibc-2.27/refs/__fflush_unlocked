@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/stdio.h' l='166' type='int __fflush_unlocked(FILE * )'/>
+<dec f='codebrowser/include/stdio.h' l='167' type='int __fflush_unlocked(FILE * )'/>
+<use f='codebrowser/include/stdio.h' l='167' c='__fflush_unlocked'/>
+<def f='codebrowser/libio/iofflush_u.c' l='30' ll='40' type='int __fflush_unlocked(_IO_FILE * fp)'/>
+<use f='codebrowser/libio/iofflush_u.c' l='42' c='fflush_unlocked'/>
+<use f='codebrowser/misc/getpass.c' l='93' u='c' c='getpass'/>

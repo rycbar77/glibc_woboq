@@ -1,0 +1,34 @@
+<dec f='codebrowser/inet/netgroup.h' l='63' type='struct name_list *'/>
+<offset>576</offset>
+<use f='codebrowser/inet/getnetgrent_r.c' l='62' u='r' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='64' u='r' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='65' u='w' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='65' u='r' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='266' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='271' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='273' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='274' u='w' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='274' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='300' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='316' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='318' u='w' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='423' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='441' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='443' u='w' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='480' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='482' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='483' u='w' c='innetgr'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='158' u='w' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='160' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='163' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='164' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='165' u='w' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='167' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='275' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='283' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='307' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='308' u='w' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='311' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='312' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='313' u='w' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='120' u='w' c='__nscd_setnetgrent'/>

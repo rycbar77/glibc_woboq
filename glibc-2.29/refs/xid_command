@@ -1,0 +1,32 @@
+<use f='codebrowser/sysdeps/nptl/pthread-functions.h' l='96'/>
+<size>40</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='89'/>
+<use f='codebrowser/nptl/pthreadP.h' l='595' c='__nptl_setxid_error'/>
+<use f='codebrowser/nptl/pthreadP.h' l='597' c='__nptl_setxid'/>
+<size>40</size>
+<use f='codebrowser/nptl/nptl-init.c' l='213'/>
+<size>40</size>
+<use f='codebrowser/nptl/allocatestack.c' l='1015' c='setxid_mark_thread'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1052' c='setxid_unmark_thread'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1072' c='setxid_signal_thread'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1098' c='__nptl_setxid_error'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1119' c='__nptl_setxid'/>
+<size>40</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setegid.c' l='34' macro='1' c='setegid'/>
+<size>40</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/seteuid.c' l='34' macro='1' c='seteuid'/>
+<size>40</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgid.c' l='29' macro='1' c='__setgid'/>
+<size>40</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgroups.c' l='33' macro='1' c='setgroups'/>
+<size>40</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setregid.c' l='29' macro='1' c='__setregid'/>
+<size>40</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresgid.c' l='29' macro='1' c='__setresgid'/>
+<size>40</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresuid.c' l='29' macro='1' c='__setresuid'/>
+<size>40</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setreuid.c' l='29' macro='1' c='__setreuid'/>
+<size>40</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setuid.c' l='28' macro='1' c='__setuid'/>
+<size>40</size>

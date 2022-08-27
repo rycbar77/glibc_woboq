@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/_itoa.h' l='91' type='char * _fitoa_word(unsigned long value, char * buf, unsigned int base, int upper_case)'/>
+<doc f='codebrowser/sysdeps/generic/_itoa.h' l='89'>/* Similar to the _itoa functions, but output starts at buf and pointer
+   after the last written character is returned.  */</doc>
+<use f='codebrowser/misc/fd_to_filename.c' l='32' u='c' c='__fd_to_filename'/>
+<def f='codebrowser/stdio-common/_itoa.c' l='456' ll='465' type='char * _fitoa_word(unsigned long value, char * buf, unsigned int base, int upper_case)'/>

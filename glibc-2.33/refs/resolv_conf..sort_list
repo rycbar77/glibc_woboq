@@ -1,0 +1,12 @@
+<dec f='codebrowser/resolv/resolv_conf.h' l='51' type='const struct resolv_sortlist_entry *'/>
+<use f='codebrowser/resolv/resolv_context.h' l='160' u='r' c='__resolv_context_sort_entry'/>
+<offset>320</offset>
+<doc f='codebrowser/resolv/resolv_conf.h' l='50'>/* IPv4 address preference rules.  */</doc>
+<use f='codebrowser/resolv/res_init.c' l='597' u='w' c='__resolv_conf_load'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='329' u='r' c='resolv_conf_matches'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='330' u='r' c='resolv_conf_matches'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='396' u='r' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='447' u='w' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='449' u='r' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='543' u='r' c='update_from_conf'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='544' u='r' c='update_from_conf'/>

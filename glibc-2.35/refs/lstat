@@ -1,0 +1,4 @@
+<dec f='codebrowser/io/sys/stat.h' l='313' type='int lstat(const char *restrict __file, struct stat *restrict __buf)'/>
+<doc f='codebrowser/io/sys/stat.h' l='311'>/* Get file attributes about FILE and put them in BUF.
+   If FILE is a symbolic link, do not follow it.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/lstat64.c' l='50' macro='1' type='int lstat(const char * , struct stat64 * )'/>

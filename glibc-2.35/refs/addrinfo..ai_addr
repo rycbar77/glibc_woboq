@@ -1,0 +1,31 @@
+<dec f='codebrowser/resolv/netdb.h' l='572' type='struct sockaddr *'/>
+<offset>192</offset>
+<doc f='codebrowser/resolv/netdb.h' l='572'>/* Socket address for socket.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='185' u='r' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='198' u='r' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='212' u='r' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='450' u='r' c='ruserok_af'/>
+<use f='codebrowser/inet/rcmd.c' l='690' u='r' c='__checkhost_sa'/>
+<use f='codebrowser/inet/rexec.c' l='95' u='r' c='rexec_af'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='151' u='w'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1052' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1061' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1070' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1081' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1393' u='r' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1396' u='r' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1436' u='r' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1440' u='r' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1452' u='r' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1454' u='r' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1547' u='r' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1558' u='r' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1578' u='r' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1580' u='r' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2308' u='r' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2308' u='r' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2346' u='r' c='getaddrinfo'/>
+<use f='codebrowser/nss/getent.c' l='399' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='410' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='177' u='r' c='format_ai_one'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='184' u='r' c='format_ai_one'/>

@@ -1,0 +1,26 @@
+<def f='codebrowser/support/resolv_test.h' l='44' ll='54'/>
+<use f='codebrowser/support/resolv_test.h' l='57' c='resolv_response_context_duplicate'/>
+<use f='codebrowser/support/resolv_test.h' l='58' c='resolv_response_context_duplicate'/>
+<use f='codebrowser/support/resolv_test.h' l='62' c='resolv_response_context_free'/>
+<use f='codebrowser/support/resolv_test.h' l='87'/>
+<use f='codebrowser/support/resolv_test.h' l='219' c='resolv_response_send_udp'/>
+<use f='codebrowser/support/resolv_response_context_duplicate.c' l='23' c='resolv_response_context_duplicate'/>
+<use f='codebrowser/support/resolv_response_context_duplicate.c' l='24' c='resolv_response_context_duplicate'/>
+<use f='codebrowser/support/resolv_response_context_duplicate.c' l='26' c='resolv_response_context_duplicate'/>
+<size>56</size>
+<doc f='codebrowser/support/resolv_test.h' l='42'>/* This struct provides context information when the response callback
+   specified in struct resolv_redirect_config is invoked. */</doc>
+<mbr r='resolv_response_context::test' o='0' t='struct resolv_test *'/>
+<mbr r='resolv_response_context::client_address' o='64' t='void *'/>
+<mbr r='resolv_response_context::client_address_length' o='128' t='size_t'/>
+<mbr r='resolv_response_context::query_buffer' o='192' t='unsigned char *'/>
+<mbr r='resolv_response_context::query_length' o='256' t='size_t'/>
+<mbr r='resolv_response_context::server_index' o='320' t='int'/>
+<mbr r='resolv_response_context::tcp' o='352' t='_Bool'/>
+<mbr r='resolv_response_context::edns' o='368' t='struct resolv_edns_info'/>
+<use f='codebrowser/support/resolv_response_context_free.c' l='23' c='resolv_response_context_free'/>
+<size>56</size>
+<use f='codebrowser/support/resolv_test.c' l='664' c='server_thread_udp_process_one'/>
+<use f='codebrowser/support/resolv_test.c' l='710' c='resolv_response_send_udp'/>
+<use f='codebrowser/support/resolv_test.c' l='912' c='server_thread_tcp_client'/>
+<size>56</size>

@@ -1,0 +1,25 @@
+<use f='codebrowser/support/resolv_test.h' l='46'/>
+<use f='codebrowser/support/resolv_test.h' l='130' c='resolv_test_start'/>
+<use f='codebrowser/support/resolv_test.h' l='134' c='resolv_test_end'/>
+<def f='codebrowser/support/resolv_test.c' l='572' ll='586'/>
+<use f='codebrowser/support/resolv_test.c' l='589'/>
+<use f='codebrowser/support/resolv_test.c' l='595'/>
+<use f='codebrowser/support/resolv_test.c' l='614' c='start_server_thread'/>
+<use f='codebrowser/support/resolv_test.c' l='630' c='server_thread_udp_process_one'/>
+<use f='codebrowser/support/resolv_test.c' l='731' c='server_thread_udp'/>
+<use f='codebrowser/support/resolv_test.c' l='742' c='server_thread_udp_single'/>
+<use f='codebrowser/support/resolv_test.c' l='786' c='start_server_thread_udp_single'/>
+<use f='codebrowser/support/resolv_test.c' l='795'/>
+<use f='codebrowser/support/resolv_test.c' l='968' c='server_thread_tcp'/>
+<use f='codebrowser/support/resolv_test.c' l='1122' c='resolv_test_start'/>
+<use f='codebrowser/support/resolv_test.c' l='1129' c='resolv_test_start'/>
+<use f='codebrowser/support/resolv_test.c' l='1130' c='resolv_test_start'/>
+<use f='codebrowser/support/resolv_test.c' l='1229' c='resolv_test_end'/>
+<size>288</size>
+<doc f='codebrowser/support/resolv_test.c' l='570'>/* Main struct for keeping track of libresolv redirection and
+   testing.  */</doc>
+<mbr r='resolv_test::lock' o='0' t='pthread_mutex_t'/>
+<mbr r='resolv_test::servers' o='320' t='struct resolv_test_server[3]'/>
+<mbr r='resolv_test::thread_udp_single' o='1472' t='pthread_t'/>
+<mbr r='resolv_test::config' o='1536' t='struct resolv_redirect_config'/>
+<mbr r='resolv_test::termination_requested' o='2240' t='_Bool'/>

@@ -1,0 +1,9 @@
+<dec f='include/selinux/selinux.h' l='474' type='int matchpathcon_init(const char * path)'/>
+<doc f='include/selinux/selinux.h' l='466'>/* Load the file contexts configuration specified by &apos;path&apos;
+   into memory for use by subsequent matchpathcon calls.  
+   If &apos;path&apos; is NULL, then load the active file contexts configuration,
+   i.e. the path returned by selinux_file_context_path().
+   Unless the MATCHPATHCON_BASEONLY flag has been set, this
+   function also checks for a &apos;path&apos;.homedirs file and 
+   a &apos;path&apos;.local file and loads additional specifications 
+   from them if present. */</doc>

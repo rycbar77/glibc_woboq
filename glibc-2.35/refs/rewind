@@ -1,0 +1,17 @@
+<dec f='codebrowser/libio/stdio.h' l='723' type='void rewind(FILE * __stream)'/>
+<dec f='codebrowser/include/stdio.h' l='220' type='void rewind(FILE * )'/>
+<use f='codebrowser/include/stdio.h' l='220' c='rewind'/>
+<doc f='codebrowser/libio/stdio.h' l='719'>/* Rewind to the beginning of STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/rewind.c' l='30' ll='38' type='void rewind(FILE * fp)'/>
+<use f='codebrowser/misc/fstab.c' l='131' u='c' c='fstab_init'/>
+<use f='codebrowser/misc/getttyent.c' l='188' u='c' c='__setttyent'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='117' u='c' c='internal_setgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='232' u='c' c='internal_setpwent'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='187' u='c' c='internal_setspent'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='51' u='c' c='internal_setent'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='82' u='c' c='internal_setent'/>
+<use f='codebrowser/nss/nss_files_data.c' l='135' u='c' c='__nss_files_data_setent'/>
+<use f='codebrowser/support/support_process_state.c' l='80' u='c' c='support_process_state_wait'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='205' type='const char *'/>
+<offset>128</offset>
+<use f='codebrowser/elf/dl-load.c' l='537' u='w' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='541' u='w' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='741' u='w' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='1890' u='r' c='open_path'/>

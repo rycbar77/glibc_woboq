@@ -1,0 +1,12 @@
+<dec f='codebrowser/malloc/malloc.c' l='1988' type='int systrim(size_t , mstate )'/>
+<def f='codebrowser/malloc/malloc.c' l='2976' ll='3040' type='int systrim(size_t pad, mstate av)'/>
+<use f='codebrowser/malloc/malloc.c' l='4680' u='c' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='5087' u='c' c='mtrim'/>
+<doc f='codebrowser/malloc/malloc.c' l='2967'>/*
+   systrim is an inverse of sorts to sysmalloc.  It gives memory back
+   to the system (via negative arguments to sbrk) if there is unused
+   memory at the `high&apos; end of the malloc pool. It is called
+   automatically by free() when top space exceeds the trim
+   threshold. It is also called by the public malloc_trim routine.  It
+   returns 1 if it actually released any memory, else 0.
+ */</doc>

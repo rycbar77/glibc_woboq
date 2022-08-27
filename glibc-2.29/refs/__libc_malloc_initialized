@@ -1,0 +1,18 @@
+<dec f='codebrowser/include/malloc.h' l='8' type='int'/>
+<def f='codebrowser/malloc/arena.c' l='100' macro='1' type='int'/>
+<use f='codebrowser/malloc/arena.c' l='146' macro='1' u='r' c='__malloc_fork_lock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='166' macro='1' u='r' c='__malloc_fork_unlock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='182' macro='1' u='r' c='__malloc_fork_unlock_child'/>
+<use f='codebrowser/malloc/arena.c' l='291' macro='1' u='r' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='294' macro='1' u='w' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='399' macro='1' u='w' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/malloc.c' l='3344' macro='1' u='r' c='__libc_valloc'/>
+<use f='codebrowser/malloc/malloc.c' l='3355' macro='1' u='r' c='__libc_pvalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4827' macro='1' u='r' c='__malloc_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='4953' macro='1' u='r' c='__libc_mallinfo'/>
+<use f='codebrowser/malloc/malloc.c' l='4982' macro='1' u='r' c='__malloc_stats'/>
+<use f='codebrowser/malloc/malloc.c' l='5144' macro='1' u='r' c='__libc_mallopt'/>
+<use f='codebrowser/malloc/malloc.c' l='5403' macro='1' u='r' c='__malloc_info'/>
+<doc f='codebrowser/include/malloc.h' l='9'>/* Nonzero if the malloc is already initialized.  */</doc>
+<doc f='codebrowser/malloc/arena.c' l='99'>/* Already initialized? */</doc>
+<use f='codebrowser/malloc/mcheck.c' l='378' macro='1' u='r' c='mcheck'/>

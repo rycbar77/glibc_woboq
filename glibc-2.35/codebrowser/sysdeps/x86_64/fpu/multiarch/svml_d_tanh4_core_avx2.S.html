@@ -1,0 +1,1297 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>svml_d_tanh4_core_avx2.S source code [codebrowser/sysdeps/x86_64/fpu/multiarch/svml_d_tanh4_core_avx2.S] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/fpu/multiarch/svml_d_tanh4_core_avx2.S'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>x86_64</a>/<a href='..'>fpu</a>/<a href='./'>multiarch</a>/<a href='svml_d_tanh4_core_avx2.S.html'>svml_d_tanh4_core_avx2.S</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Function tanh vectorized with AVX2.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/*</i></td></tr>
+<tr><th id="20">20</th><td><i> * ALGORITHM DESCRIPTION:</i></td></tr>
+<tr><th id="21">21</th><td><i> *</i></td></tr>
+<tr><th id="22">22</th><td><i> *   NOTE: Since the hyperbolic tangent function is odd</i></td></tr>
+<tr><th id="23">23</th><td><i> *         (tanh(x) = -tanh(-x)), below algorithm deals with the absolute</i></td></tr>
+<tr><th id="24">24</th><td><i> *         value of the argument |x|: tanh(x) = sign(x) * tanh(|x|)</i></td></tr>
+<tr><th id="25">25</th><td><i> *</i></td></tr>
+<tr><th id="26">26</th><td><i> *   We use a table lookup method to compute tanh(|x|).</i></td></tr>
+<tr><th id="27">27</th><td><i> *   The basic idea is to split the input range into a number of subintervals</i></td></tr>
+<tr><th id="28">28</th><td><i> *   and to approximate tanh(.) with a polynomial on each of them.</i></td></tr>
+<tr><th id="29">29</th><td><i> *</i></td></tr>
+<tr><th id="30">30</th><td><i> *   IEEE SPECIAL CONDITIONS:</i></td></tr>
+<tr><th id="31">31</th><td><i> *   x = [+,-]0, r = [+,-]0</i></td></tr>
+<tr><th id="32">32</th><td><i> *   x = +Inf,   r = +1</i></td></tr>
+<tr><th id="33">33</th><td><i> *   x = -Inf,   r = -1</i></td></tr>
+<tr><th id="34">34</th><td><i> *   x = QNaN,   r = QNaN</i></td></tr>
+<tr><th id="35">35</th><td><i> *   x = SNaN,   r = QNaN</i></td></tr>
+<tr><th id="36">36</th><td><i> *</i></td></tr>
+<tr><th id="37">37</th><td><i> *</i></td></tr>
+<tr><th id="38">38</th><td><i> *   ALGORITHM DETAILS</i></td></tr>
+<tr><th id="39">39</th><td><i> *   We handle special values in a callout function, aside from main path</i></td></tr>
+<tr><th id="40">40</th><td><i> *   computations. "Special" for this algorithm are:</i></td></tr>
+<tr><th id="41">41</th><td><i> *   INF, NAN, |x| &gt; HUGE_THRESHOLD</i></td></tr>
+<tr><th id="42">42</th><td><i> *</i></td></tr>
+<tr><th id="43">43</th><td><i> *</i></td></tr>
+<tr><th id="44">44</th><td><i> *   Main path computations are organized as follows:</i></td></tr>
+<tr><th id="45">45</th><td><i> *   Actually we split the interval [0, SATURATION_THRESHOLD)</i></td></tr>
+<tr><th id="46">46</th><td><i> *   into a number of subintervals.  On each subinterval we approximate tanh(.)</i></td></tr>
+<tr><th id="47">47</th><td><i> *   with a minimax polynomial of pre-defined degree. Polynomial coefficients</i></td></tr>
+<tr><th id="48">48</th><td><i> *   are computed beforehand and stored in table. We also use</i></td></tr>
+<tr><th id="49">49</th><td><i> *</i></td></tr>
+<tr><th id="50">50</th><td><i> *       y := |x| + B,</i></td></tr>
+<tr><th id="51">51</th><td><i> *</i></td></tr>
+<tr><th id="52">52</th><td><i> *   here B depends on subinterval and is used to make argument</i></td></tr>
+<tr><th id="53">53</th><td><i> *   closer to zero.</i></td></tr>
+<tr><th id="54">54</th><td><i> *   We also add large fake interval [SATURATION_THRESHOLD, HUGE_THRESHOLD],</i></td></tr>
+<tr><th id="55">55</th><td><i> *   where 1.0 + 0.0*y + 0.0*y^2 ... coefficients are stored - just to</i></td></tr>
+<tr><th id="56">56</th><td><i> *   preserve main path computation logic but return 1.0 for all arguments.</i></td></tr>
+<tr><th id="57">57</th><td><i> *</i></td></tr>
+<tr><th id="58">58</th><td><i> *   Hence reconstruction looks as follows:</i></td></tr>
+<tr><th id="59">59</th><td><i> *   we extract proper polynomial and range reduction coefficients</i></td></tr>
+<tr><th id="60">60</th><td><i> *        (Pj and B), corresponding to subinterval, to which |x| belongs,</i></td></tr>
+<tr><th id="61">61</th><td><i> *        and return</i></td></tr>
+<tr><th id="62">62</th><td><i> *</i></td></tr>
+<tr><th id="63">63</th><td><i> *       r := sign(x) * (P0 + P1 * y + ... + Pn * y^n)</i></td></tr>
+<tr><th id="64">64</th><td><i> *</i></td></tr>
+<tr><th id="65">65</th><td><i> *   NOTE: we use multiprecision technique to multiply and sum the first</i></td></tr>
+<tr><th id="66">66</th><td><i> *         K terms of the polynomial. So Pj, j = 0..K are stored in</i></td></tr>
+<tr><th id="67">67</th><td><i> *         table each as a pair of target precision numbers (Pj and PLj) to</i></td></tr>
+<tr><th id="68">68</th><td><i> *         achieve wider than target precision.</i></td></tr>
+<tr><th id="69">69</th><td><i> *</i></td></tr>
+<tr><th id="70">70</th><td><i> *</i></td></tr>
+<tr><th id="71">71</th><td><i> */</i></td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><i>/* Offsets for data table __svml_dtanh_data_internal</i></td></tr>
+<tr><th id="74">74</th><td><i> */</i></td></tr>
+<tr><th id="75">75</th><td><u>#define <dfn class="macro" id="_M/_dbP" data-ref="_M/_dbP">_dbP</dfn>                          	0</u></td></tr>
+<tr><th id="76">76</th><td><u>#define <dfn class="macro" id="_M/_dbSignMask" data-ref="_M/_dbSignMask">_dbSignMask</dfn>                   	7680</u></td></tr>
+<tr><th id="77">77</th><td><u>#define <dfn class="macro" id="_M/_dbAbsMask" data-ref="_M/_dbAbsMask">_dbAbsMask</dfn>                    	7712</u></td></tr>
+<tr><th id="78">78</th><td><u>#define <dfn class="macro" id="_M/_iExpMantMask" data-ref="_M/_iExpMantMask">_iExpMantMask</dfn>                 	7744</u></td></tr>
+<tr><th id="79">79</th><td><u>#define <dfn class="macro" id="_M/_iExpMask" data-ref="_M/_iExpMask">_iExpMask</dfn>                     	7776</u></td></tr>
+<tr><th id="80">80</th><td><u>#define <dfn class="macro" id="_M/_iMinIdxOfsMask" data-ref="_M/_iMinIdxOfsMask">_iMinIdxOfsMask</dfn>               	7808</u></td></tr>
+<tr><th id="81">81</th><td><u>#define <dfn class="macro" id="_M/_iMaxIdxMask" data-ref="_M/_iMaxIdxMask">_iMaxIdxMask</dfn>                  	7840</u></td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><u>#include <a href="../../../unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td>        .text</td></tr>
+<tr><th id="86">86</th><td>	.section .text.avx2,<q>"ax"</q>,@progbits</td></tr>
+<tr><th id="87">87</th><td><a class="macro" href="../../../x86/sysdep.h.html#91" title=".globl _ZGVdN4v_tanh_avx2; .type _ZGVdN4v_tanh_avx2,@function; .align 1&lt;&lt;4; _ZGVdN4v_tanh_avx2: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a>(<span class='warning' title="type specifier missing, defaults to &apos;int&apos;"><dfn class="decl def" id="_ZGVdN4v_tanh_avx2" title='_ZGVdN4v_tanh_avx2' data-ref="_ZGVdN4v_tanh_avx2" data-ref-filename="_ZGVdN4v_tanh_avx2">_ZGVdN4v_tanh_avx2</dfn></span>)</td></tr>
+<tr><th id="88">88</th><td>        <span class='error' title="unknown type name &apos;pushq&apos;">pushq</span>     <span class='error' title="expected identifier or &apos;(&apos;">%</span>rbp</td></tr>
+<tr><th id="89">89</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#44" title=".cfi_def_cfa_offset 16" data-ref="_M/cfi_def_cfa_offset">cfi_def_cfa_offset</a>(<var>16</var>)</td></tr>
+<tr><th id="90">90</th><td>        movq      %rsp, %rbp</td></tr>
+<tr><th id="91">91</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 6, 16" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>6</var>, <var>16</var>)</td></tr>
+<tr><th id="92">92</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 6, -16" data-ref="_M/cfi_offset">cfi_offset</a>(<var>6</var>, -<var>16</var>)</td></tr>
+<tr><th id="93">93</th><td>        andq      $-<var>32</var>, %rsp</td></tr>
+<tr><th id="94">94</th><td>        subq      $<var>96</var>, %rsp</td></tr>
+<tr><th id="95">95</th><td>        lea       <a class="macro" href="#75" title="0" data-ref="_M/_dbP">_dbP</a>+<var>96</var>+__svml_dtanh_data_internal(%rip), %r8</td></tr>
+<tr><th id="96">96</th><td>        vmovupd   %ymm0, (%rsp)</td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td><i>/* if VMIN, VMAX is defined for I type */</i></td></tr>
+<tr><th id="99">99</th><td>        vpxor     %xmm11, %xmm11, %xmm11</td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td><i>/*  Constant loading  */</i></td></tr>
+<tr><th id="102">102</th><td>        vmovups   <a class="macro" href="#81" title="7840" data-ref="_M/_iMaxIdxMask">_iMaxIdxMask</a>+__svml_dtanh_data_internal(%rip), %xmm8</td></tr>
+<tr><th id="103">103</th><td>        vandpd    <a class="macro" href="#77" title="7712" data-ref="_M/_dbAbsMask">_dbAbsMask</a>+__svml_dtanh_data_internal(%rip), %ymm0, %ymm1</td></tr>
+<tr><th id="104">104</th><td>        vandpd    <a class="macro" href="#76" title="7680" data-ref="_M/_dbSignMask">_dbSignMask</a>+__svml_dtanh_data_internal(%rip), %ymm0, %ymm2</td></tr>
+<tr><th id="105">105</th><td>        vextractf128 $<var>1</var>, %ymm0, %xmm15</td></tr>
+<tr><th id="106">106</th><td>        vshufps   $<var>221</var>, %xmm15, %xmm0, %xmm14</td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td><i>/* Here huge arguments, INF and NaNs are filtered out to callout. */</i></td></tr>
+<tr><th id="109">109</th><td>        vpand     <a class="macro" href="#78" title="7744" data-ref="_M/_iExpMantMask">_iExpMantMask</a>+__svml_dtanh_data_internal(%rip), %xmm14, %xmm12</td></tr>
+<tr><th id="110">110</th><td>        vpsubd    <a class="macro" href="#80" title="7808" data-ref="_M/_iMinIdxOfsMask">_iMinIdxOfsMask</a>+__svml_dtanh_data_internal(%rip), %xmm12, %xmm9</td></tr>
+<tr><th id="111">111</th><td>        vpcmpgtd  %xmm11, %xmm9, %xmm10</td></tr>
+<tr><th id="112">112</th><td>        vpcmpgtd  %xmm8, %xmm9, %xmm0</td></tr>
+<tr><th id="113">113</th><td>        vpand     %xmm10, %xmm9, %xmm7</td></tr>
+<tr><th id="114">114</th><td>        blendvps  %xmm0, %xmm8, %xmm7</td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td><i>/*</i></td></tr>
+<tr><th id="117">117</th><td><i> * VSHRIMM( I, iIndex, = iIndex, (17 - 4) );</i></td></tr>
+<tr><th id="118">118</th><td><i> * VGATHER_MATRIX( L2D, p, TAB._dbP, iIndex, 0, T_ITEM_SIZE, T_ITEM_GRAN, 13, 0, 0 );</i></td></tr>
+<tr><th id="119">119</th><td><i> */</i></td></tr>
+<tr><th id="120">120</th><td>        vpsrld    $<var>10</var>, %xmm7, %xmm6</td></tr>
+<tr><th id="121">121</th><td>        vmovd     %xmm6, %edx</td></tr>
+<tr><th id="122">122</th><td>        vpcmpgtd  <a class="macro" href="#79" title="7776" data-ref="_M/_iExpMask">_iExpMask</a>+__svml_dtanh_data_internal(%rip), %xmm12, %xmm13</td></tr>
+<tr><th id="123">123</th><td>        vmovmskps %xmm13, %eax</td></tr>
+<tr><th id="124">124</th><td>        vpextrd   $<var>1</var>, %xmm6, %ecx</td></tr>
+<tr><th id="125">125</th><td>        movslq    %edx, %rdx</td></tr>
+<tr><th id="126">126</th><td>        movslq    %ecx, %rcx</td></tr>
+<tr><th id="127">127</th><td>        vpextrd   $<var>2</var>, %xmm6, %esi</td></tr>
+<tr><th id="128">128</th><td>        vpextrd   $<var>3</var>, %xmm6, %edi</td></tr>
+<tr><th id="129">129</th><td>        movslq    %esi, %rsi</td></tr>
+<tr><th id="130">130</th><td>        movslq    %edi, %rdi</td></tr>
+<tr><th id="131">131</th><td>        vmovupd   -<var>96</var>(%rdx,%r8), %xmm3</td></tr>
+<tr><th id="132">132</th><td>        vmovupd   -<var>96</var>(%rcx,%r8), %xmm4</td></tr>
+<tr><th id="133">133</th><td>        vmovupd   -<var>80</var>(%rcx,%r8), %xmm13</td></tr>
+<tr><th id="134">134</th><td>        vmovupd   -<var>64</var>(%rcx,%r8), %xmm9</td></tr>
+<tr><th id="135">135</th><td>        vmovupd   -<var>80</var>(%rdx,%r8), %xmm14</td></tr>
+<tr><th id="136">136</th><td>        vmovupd   -<var>64</var>(%rdx,%r8), %xmm10</td></tr>
+<tr><th id="137">137</th><td>        vmovupd   -<var>48</var>(%rdx,%r8), %xmm6</td></tr>
+<tr><th id="138">138</th><td>        vinsertf128 $<var>1</var>, -<var>96</var>(%rsi,%r8), %ymm3, %ymm0</td></tr>
+<tr><th id="139">139</th><td>        vinsertf128 $<var>1</var>, -<var>96</var>(%rdi,%r8), %ymm4, %ymm15</td></tr>
+<tr><th id="140">140</th><td>        vmovupd   -<var>48</var>(%rcx,%r8), %xmm3</td></tr>
+<tr><th id="141">141</th><td>        vunpckhpd %ymm15, %ymm0, %ymm0</td></tr>
+<tr><th id="142">142</th><td>        vinsertf128 $<var>1</var>, -<var>80</var>(%rsi,%r8), %ymm14, %ymm12</td></tr>
+<tr><th id="143">143</th><td>        vinsertf128 $<var>1</var>, -<var>64</var>(%rsi,%r8), %ymm10, %ymm8</td></tr>
+<tr><th id="144">144</th><td>        vinsertf128 $<var>1</var>, -<var>80</var>(%rdi,%r8), %ymm13, %ymm11</td></tr>
+<tr><th id="145">145</th><td>        vinsertf128 $<var>1</var>, -<var>64</var>(%rdi,%r8), %ymm9, %ymm7</td></tr>
+<tr><th id="146">146</th><td>        vunpcklpd %ymm11, %ymm12, %ymm15</td></tr>
+<tr><th id="147">147</th><td>        vunpckhpd %ymm11, %ymm12, %ymm14</td></tr>
+<tr><th id="148">148</th><td>        vunpcklpd %ymm7, %ymm8, %ymm13</td></tr>
+<tr><th id="149">149</th><td>        vunpckhpd %ymm7, %ymm8, %ymm12</td></tr>
+<tr><th id="150">150</th><td>        vmovupd   -<var>32</var>(%rdx,%r8), %xmm9</td></tr>
+<tr><th id="151">151</th><td>        vmovupd   -<var>32</var>(%rcx,%r8), %xmm8</td></tr>
+<tr><th id="152">152</th><td>        vinsertf128 $<var>1</var>, -<var>48</var>(%rsi,%r8), %ymm6, %ymm4</td></tr>
+<tr><th id="153">153</th><td>        vinsertf128 $<var>1</var>, -<var>48</var>(%rdi,%r8), %ymm3, %ymm5</td></tr>
+<tr><th id="154">154</th><td>        vunpcklpd %ymm5, %ymm4, %ymm11</td></tr>
+<tr><th id="155">155</th><td>        vunpckhpd %ymm5, %ymm4, %ymm10</td></tr>
+<tr><th id="156">156</th><td>        vmovupd   -<var>16</var>(%rdx,%r8), %xmm3</td></tr>
+<tr><th id="157">157</th><td>        vmovupd   -<var>16</var>(%rcx,%r8), %xmm4</td></tr>
+<tr><th id="158">158</th><td>        vinsertf128 $<var>1</var>, -<var>32</var>(%rsi,%r8), %ymm9, %ymm7</td></tr>
+<tr><th id="159">159</th><td>        vinsertf128 $<var>1</var>, -<var>32</var>(%rdi,%r8), %ymm8, %ymm6</td></tr>
+<tr><th id="160">160</th><td>        vunpcklpd %ymm6, %ymm7, %ymm9</td></tr>
+<tr><th id="161">161</th><td>        vunpckhpd %ymm6, %ymm7, %ymm8</td></tr>
+<tr><th id="162">162</th><td>        vinsertf128 $<var>1</var>, -<var>16</var>(%rsi,%r8), %ymm3, %ymm5</td></tr>
+<tr><th id="163">163</th><td>        vinsertf128 $<var>1</var>, -<var>16</var>(%rdi,%r8), %ymm4, %ymm6</td></tr>
+<tr><th id="164">164</th><td>        vunpcklpd %ymm6, %ymm5, %ymm7</td></tr>
+<tr><th id="165">165</th><td>        vunpckhpd %ymm6, %ymm5, %ymm6</td></tr>
+<tr><th id="166">166</th><td>        vmovupd   (%rdx,%r8), %xmm3</td></tr>
+<tr><th id="167">167</th><td>        vmovupd   (%rcx,%r8), %xmm5</td></tr>
+<tr><th id="168">168</th><td>        vinsertf128 $<var>1</var>, (%rsi,%r8), %ymm3, %ymm4</td></tr>
+<tr><th id="169">169</th><td>        vinsertf128 $<var>1</var>, (%rdi,%r8), %ymm5, %ymm5</td></tr>
+<tr><th id="170">170</th><td>        vunpcklpd %ymm5, %ymm4, %ymm3</td></tr>
+<tr><th id="171">171</th><td>        vaddpd    %ymm3, %ymm1, %ymm1</td></tr>
+<tr><th id="172">172</th><td>        vfmadd213pd %ymm7, %ymm1, %ymm6</td></tr>
+<tr><th id="173">173</th><td>        vfmadd213pd %ymm8, %ymm1, %ymm6</td></tr>
+<tr><th id="174">174</th><td>        vfmadd213pd %ymm9, %ymm1, %ymm6</td></tr>
+<tr><th id="175">175</th><td>        vfmadd213pd %ymm10, %ymm1, %ymm6</td></tr>
+<tr><th id="176">176</th><td>        vfmadd213pd %ymm11, %ymm1, %ymm6</td></tr>
+<tr><th id="177">177</th><td>        vfmadd213pd %ymm12, %ymm1, %ymm6</td></tr>
+<tr><th id="178">178</th><td>        vfmadd213pd %ymm13, %ymm1, %ymm6</td></tr>
+<tr><th id="179">179</th><td>        vfmadd213pd %ymm14, %ymm1, %ymm6</td></tr>
+<tr><th id="180">180</th><td>        vfmadd213pd %ymm15, %ymm1, %ymm6</td></tr>
+<tr><th id="181">181</th><td>        vfmadd213pd %ymm0, %ymm1, %ymm6</td></tr>
+<tr><th id="182">182</th><td>        vorpd     %ymm2, %ymm6, %ymm0</td></tr>
+<tr><th id="183">183</th><td>        testl     %eax, %eax</td></tr>
+<tr><th id="184">184</th><td></td></tr>
+<tr><th id="185">185</th><td><i>/* Go to special inputs processing branch */</i></td></tr>
+<tr><th id="186">186</th><td>        jne       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH)</td></tr>
+<tr><th id="187">187</th><td>                                <u># LOE rbx r12 r13 r14 r15 eax ymm0</u></td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td><i>/* Restore registers</i></td></tr>
+<tr><th id="190">190</th><td><i> * and exit the function</i></td></tr>
+<tr><th id="191">191</th><td><i> */</i></td></tr>
+<tr><th id="192">192</th><td></td></tr>
+<tr><th id="193">193</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT):</td></tr>
+<tr><th id="194">194</th><td>        movq      %rbp, %rsp</td></tr>
+<tr><th id="195">195</th><td>        popq      %rbp</td></tr>
+<tr><th id="196">196</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 7, 8" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>7</var>, <var>8</var>)</td></tr>
+<tr><th id="197">197</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 6" data-ref="_M/cfi_restore">cfi_restore</a>(<var>6</var>)</td></tr>
+<tr><th id="198">198</th><td>        ret</td></tr>
+<tr><th id="199">199</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 6, 16" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>6</var>, <var>16</var>)</td></tr>
+<tr><th id="200">200</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 6, -16" data-ref="_M/cfi_offset">cfi_offset</a>(<var>6</var>, -<var>16</var>)</td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td><i>/* Branch to process</i></td></tr>
+<tr><th id="203">203</th><td><i> * special inputs</i></td></tr>
+<tr><th id="204">204</th><td><i> */</i></td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH):</td></tr>
+<tr><th id="207">207</th><td>        vmovupd   (%rsp), %ymm1</td></tr>
+<tr><th id="208">208</th><td>        vmovupd   %ymm0, <var>64</var>(%rsp)</td></tr>
+<tr><th id="209">209</th><td>        vmovupd   %ymm1, <var>32</var>(%rsp)</td></tr>
+<tr><th id="210">210</th><td>                                <u># LOE rbx r12 r13 r14 r15 eax ymm0</u></td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td>        xorl      %edx, %edx</td></tr>
+<tr><th id="213">213</th><td>                                <u># LOE rbx r12 r13 r14 r15 eax edx</u></td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td>        vzeroupper</td></tr>
+<tr><th id="216">216</th><td>        movq      %r12, <var>16</var>(%rsp)</td></tr>
+<tr><th id="217">217</th><td>        <i>/*  DW_CFA_expression: r12 (r12) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -80; DW_OP_plus)  */</i></td></tr>
+<tr><th id="218">218</th><td>        .cfi_escape <var>0x10</var>, <var>0x0c</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xb0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="219">219</th><td>        movl      %edx, %r12d</td></tr>
+<tr><th id="220">220</th><td>        movq      %r13, <var>8</var>(%rsp)</td></tr>
+<tr><th id="221">221</th><td>        <i>/*  DW_CFA_expression: r13 (r13) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -88; DW_OP_plus)  */</i></td></tr>
+<tr><th id="222">222</th><td>        .cfi_escape <var>0x10</var>, <var>0x0d</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa8</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="223">223</th><td>        movl      %eax, %r13d</td></tr>
+<tr><th id="224">224</th><td>        movq      %r14, (%rsp)</td></tr>
+<tr><th id="225">225</th><td>        <i>/*  DW_CFA_expression: r14 (r14) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -96; DW_OP_plus)  */</i></td></tr>
+<tr><th id="226">226</th><td>        .cfi_escape <var>0x10</var>, <var>0x0e</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="227">227</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td><i>/* Range mask</i></td></tr>
+<tr><th id="230">230</th><td><i> * bits check</i></td></tr>
+<tr><th id="231">231</th><td><i> */</i></td></tr>
+<tr><th id="232">232</th><td></td></tr>
+<tr><th id="233">233</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK):</td></tr>
+<tr><th id="234">234</th><td>        btl       %r12d, %r13d</td></tr>
+<tr><th id="235">235</th><td></td></tr>
+<tr><th id="236">236</th><td><i>/* Call scalar math function */</i></td></tr>
+<tr><th id="237">237</th><td>        jc        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL)</td></tr>
+<tr><th id="238">238</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td><i>/* Special inputs</i></td></tr>
+<tr><th id="241">241</th><td><i> * processing loop</i></td></tr>
+<tr><th id="242">242</th><td><i> */</i></td></tr>
+<tr><th id="243">243</th><td></td></tr>
+<tr><th id="244">244</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP):</td></tr>
+<tr><th id="245">245</th><td>        incl      %r12d</td></tr>
+<tr><th id="246">246</th><td>        cmpl      $<var>4</var>, %r12d</td></tr>
+<tr><th id="247">247</th><td></td></tr>
+<tr><th id="248">248</th><td><i>/* Check bits in range mask */</i></td></tr>
+<tr><th id="249">249</th><td>        jl        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK)</td></tr>
+<tr><th id="250">250</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="251">251</th><td></td></tr>
+<tr><th id="252">252</th><td>        movq      <var>16</var>(%rsp), %r12</td></tr>
+<tr><th id="253">253</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 12" data-ref="_M/cfi_restore">cfi_restore</a>(<var>12</var>)</td></tr>
+<tr><th id="254">254</th><td>        movq      <var>8</var>(%rsp), %r13</td></tr>
+<tr><th id="255">255</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 13" data-ref="_M/cfi_restore">cfi_restore</a>(<var>13</var>)</td></tr>
+<tr><th id="256">256</th><td>        movq      (%rsp), %r14</td></tr>
+<tr><th id="257">257</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 14" data-ref="_M/cfi_restore">cfi_restore</a>(<var>14</var>)</td></tr>
+<tr><th id="258">258</th><td>        vmovupd   <var>64</var>(%rsp), %ymm0</td></tr>
+<tr><th id="259">259</th><td></td></tr>
+<tr><th id="260">260</th><td><i>/* Go to exit */</i></td></tr>
+<tr><th id="261">261</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT)</td></tr>
+<tr><th id="262">262</th><td>        <i>/*  DW_CFA_expression: r12 (r12) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -80; DW_OP_plus)  */</i></td></tr>
+<tr><th id="263">263</th><td>        .cfi_escape <var>0x10</var>, <var>0x0c</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xb0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="264">264</th><td>        <i>/*  DW_CFA_expression: r13 (r13) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -88; DW_OP_plus)  */</i></td></tr>
+<tr><th id="265">265</th><td>        .cfi_escape <var>0x10</var>, <var>0x0d</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa8</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="266">266</th><td>        <i>/*  DW_CFA_expression: r14 (r14) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -96; DW_OP_plus)  */</i></td></tr>
+<tr><th id="267">267</th><td>        .cfi_escape <var>0x10</var>, <var>0x0e</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="268">268</th><td>                                <u># LOE rbx r12 r13 r14 r15 ymm0</u></td></tr>
+<tr><th id="269">269</th><td></td></tr>
+<tr><th id="270">270</th><td><i>/* Scalar math fucntion call</i></td></tr>
+<tr><th id="271">271</th><td><i> * to process special input</i></td></tr>
+<tr><th id="272">272</th><td><i> */</i></td></tr>
+<tr><th id="273">273</th><td></td></tr>
+<tr><th id="274">274</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL):</td></tr>
+<tr><th id="275">275</th><td>        movl      %r12d, %r14d</td></tr>
+<tr><th id="276">276</th><td>        movsd     <var>32</var>(%rsp,%r14,<var>8</var>), %xmm0</td></tr>
+<tr><th id="277">277</th><td>        call      tanh@PLT</td></tr>
+<tr><th id="278">278</th><td>                                <u># LOE rbx r14 r15 r12d r13d xmm0</u></td></tr>
+<tr><th id="279">279</th><td></td></tr>
+<tr><th id="280">280</th><td>        movsd     %xmm0, <var>64</var>(%rsp,%r14,<var>8</var>)</td></tr>
+<tr><th id="281">281</th><td></td></tr>
+<tr><th id="282">282</th><td><i>/* Process special inputs in loop */</i></td></tr>
+<tr><th id="283">283</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP)</td></tr>
+<tr><th id="284">284</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="285">285</th><td><a class="macro" href="../../../x86/sysdep.h.html#94" title=".cfi_endproc; .size _ZGVdN4v_tanh_avx2,.-_ZGVdN4v_tanh_avx2;" data-ref="_M/END">END</a>(_ZGVdN4v_tanh_avx2)</td></tr>
+<tr><th id="286">286</th><td></td></tr>
+<tr><th id="287">287</th><td>        <span class='error' title="expected identifier or &apos;(&apos;">.</span>section .rodata, <q>"a"</q></td></tr>
+<tr><th id="288">288</th><td>        .align <var>32</var></td></tr>
+<tr><th id="289">289</th><td></td></tr>
+<tr><th id="290">290</th><td><u>#<span data-ppcond="290">ifdef</span> <span class="macro" data-ref="_M/__svml_dtanh_data_internal_typedef">__svml_dtanh_data_internal_typedef</span></u></td></tr>
+<tr><th id="291">291</th><td><b>typedef</b> <em>unsigned</em> <em>int</em> VUINT32;</td></tr>
+<tr><th id="292">292</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="293">293</th><td>{</td></tr>
+<tr><th id="294">294</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dbP[<var>60</var>*<var>16</var>][<var>2</var>];</td></tr>
+<tr><th id="295">295</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dbSignMask[<var>4</var>][<var>2</var>];</td></tr>
+<tr><th id="296">296</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dbAbsMask[<var>4</var>][<var>2</var>];</td></tr>
+<tr><th id="297">297</th><td>        __declspec(align(<var>32</var>)) VUINT32 _iExpMantMask[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="298">298</th><td>        __declspec(align(<var>32</var>)) VUINT32 _iExpMask[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="299">299</th><td>        __declspec(align(<var>32</var>)) VUINT32 _iMinIdxOfsMask[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="300">300</th><td>        __declspec(align(<var>32</var>)) VUINT32 _iMaxIdxMask[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="301">301</th><td>} __svml_dtanh_data_internal;</td></tr>
+<tr><th id="302">302</th><td><u>#<span data-ppcond="290">endif</span></u></td></tr>
+<tr><th id="303">303</th><td>__svml_dtanh_data_internal:</td></tr>
+<tr><th id="304">304</th><td>        <i>/* Polynomial coefficients */</i></td></tr>
+<tr><th id="305">305</th><td>        .quad <var>0x0000000000000000</var>   <i>/* PL0 = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="306">306</th><td>        .quad <var>0x0000000000000000</var>   <i>/* PH0 = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="307">307</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* P1  = +1.000000000000000014103e+00 */</i></td></tr>
+<tr><th id="308">308</th><td>        .quad <var>0xBD197DEAD79668D3</var>   <i>/* P2  = -2.264132406596103056796e-14 */</i></td></tr>
+<tr><th id="309">309</th><td>        .quad <var>0xBFD555555553AF3C</var>   <i>/* P3  = -3.333333333273349741024e-01 */</i></td></tr>
+<tr><th id="310">310</th><td>        .quad <var>0xBE052F7CCA134846</var>   <i>/* P4  = -6.165791385711493738399e-10 */</i></td></tr>
+<tr><th id="311">311</th><td>        .quad <var>0x3FC11111563849D6</var>   <i>/* P5  = +1.333333655353061107201e-01 */</i></td></tr>
+<tr><th id="312">312</th><td>        .quad <var>0xBEB038623673FFB2</var>   <i>/* P6  = -9.668021563879858950855e-07 */</i></td></tr>
+<tr><th id="313">313</th><td>        .quad <var>0xBFAB9F685E64022E</var>   <i>/* P7  = -5.395055916051593179252e-02 */</i></td></tr>
+<tr><th id="314">314</th><td>        .quad <var>0xBF2A54E2B28F2207</var>   <i>/* P8  = -2.008940439550829012647e-04 */</i></td></tr>
+<tr><th id="315">315</th><td>        .quad <var>0x3F97CFB9328A230E</var>   <i>/* P9  = +2.325333949059698582189e-02 */</i></td></tr>
+<tr><th id="316">316</th><td>        .quad <var>0xBF75CA6D61723E02</var>   <i>/* P10 = -5.320002811586290441790e-03 */</i></td></tr>
+<tr><th id="317">317</th><td>        .quad <var>0x0000000000000000</var>   <i>/* B = +0        */</i></td></tr>
+<tr><th id="318">318</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1.0      */</i></td></tr>
+<tr><th id="319">319</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="320">320</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="321">321</th><td>        .quad <var>0x3C3708A564FAD29A</var>   <i>/* PL0 = +1.248663375337163807466e-18 */</i></td></tr>
+<tr><th id="322">322</th><td>        .quad <var>0x3FC0E6973998DA48</var>   <i>/* PH0 = +1.320370703922029154143e-01 */</i></td></tr>
+<tr><th id="323">323</th><td>        .quad <var>0x3FEF712EB25C0888</var>   <i>/* P1  = +9.825662120422444519229e-01 */</i></td></tr>
+<tr><th id="324">324</th><td>        .quad <var>0xBFC09B296F7C1EA9</var>   <i>/* P2  = -1.297351641044220078331e-01 */</i></td></tr>
+<tr><th id="325">325</th><td>        .quad <var>0xBFD3DD77541EDDA7</var>   <i>/* P3  = -3.103922196855485849143e-01 */</i></td></tr>
+<tr><th id="326">326</th><td>        .quad <var>0x3FB58FFCF4309615</var>   <i>/* P4  = +8.422833406128689275566e-02 */</i></td></tr>
+<tr><th id="327">327</th><td>        .quad <var>0x3FBD3ABE845DCF49</var>   <i>/* P5  = +1.141776154670967208833e-01 */</i></td></tr>
+<tr><th id="328">328</th><td>        .quad <var>0xBFA791DF538C37FA</var>   <i>/* P6  = -4.603479285115947936529e-02 */</i></td></tr>
+<tr><th id="329">329</th><td>        .quad <var>0xBFA4F872F69CD6E8</var>   <i>/* P7  = -4.095801601799370195284e-02 */</i></td></tr>
+<tr><th id="330">330</th><td>        .quad <var>0x3F9772E49EF6412B</var>   <i>/* P8  = +2.289921970583567527179e-02 */</i></td></tr>
+<tr><th id="331">331</th><td>        .quad <var>0x3F8CBC0807393909</var>   <i>/* P9  = +1.403051635784581776625e-02 */</i></td></tr>
+<tr><th id="332">332</th><td>        .quad <var>0xBF85F06A30F93319</var>   <i>/* P10 = -1.071246110873285040939e-02 */</i></td></tr>
+<tr><th id="333">333</th><td>        .quad <var>0xBFC1000000000000</var>   <i>/* B = -.132813 */</i></td></tr>
+<tr><th id="334">334</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="335">335</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="336">336</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="337">337</th><td>        .quad <var>0x3C6004EE5739DEAC</var>   <i>/* PL0 = +6.947247374112211856530e-18 */</i></td></tr>
+<tr><th id="338">338</th><td>        .quad <var>0x3FC2DC968E6E0D62</var>   <i>/* PH0 = +1.473568149050193398786e-01 */</i></td></tr>
+<tr><th id="339">339</th><td>        .quad <var>0x3FEF4E1E606D96DF</var>   <i>/* P1  = +9.782859691010478680677e-01 */</i></td></tr>
+<tr><th id="340">340</th><td>        .quad <var>0xBFC273BD70994AB9</var>   <i>/* P2  = -1.441571044730005866646e-01 */</i></td></tr>
+<tr><th id="341">341</th><td>        .quad <var>0xBFD382B548270D2C</var>   <i>/* P3  = -3.048527912726111386771e-01 */</i></td></tr>
+<tr><th id="342">342</th><td>        .quad <var>0x3FB7CD2D582A6B29</var>   <i>/* P4  = +9.297450449450351894400e-02 */</i></td></tr>
+<tr><th id="343">343</th><td>        .quad <var>0x3FBC1278CCCBF0DB</var>   <i>/* P5  = +1.096568584434324642303e-01 */</i></td></tr>
+<tr><th id="344">344</th><td>        .quad <var>0xBFA9C7F5115B86A1</var>   <i>/* P6  = -5.035367810138536095866e-02 */</i></td></tr>
+<tr><th id="345">345</th><td>        .quad <var>0xBFA371C21BAF618E</var>   <i>/* P7  = -3.797728145554222910481e-02 */</i></td></tr>
+<tr><th id="346">346</th><td>        .quad <var>0x3F9958943F68417E</var>   <i>/* P8  = +2.475196492201935923783e-02 */</i></td></tr>
+<tr><th id="347">347</th><td>        .quad <var>0x3F8930D5CFFD4152</var>   <i>/* P9  = +1.230017701132682667572e-02 */</i></td></tr>
+<tr><th id="348">348</th><td>        .quad <var>0xBF875CF7ADD31B76</var>   <i>/* P10 = -1.140779017658897660092e-02 */</i></td></tr>
+<tr><th id="349">349</th><td>        .quad <var>0xBFC3000000000000</var>   <i>/* B = -.148438 */</i></td></tr>
+<tr><th id="350">350</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="351">351</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="352">352</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="353">353</th><td>        .quad <var>0x3C7EABE24E052A1F</var>   <i>/* PL0 = +2.660321779421749543501e-17 */</i></td></tr>
+<tr><th id="354">354</th><td>        .quad <var>0x3FC4D04783618C71</var>   <i>/* PH0 = +1.626061812886266111366e-01 */</i></td></tr>
+<tr><th id="355">355</th><td>        .quad <var>0x3FEF2765AF97A4B3</var>   <i>/* P1  = +9.735592298067302883212e-01 */</i></td></tr>
+<tr><th id="356">356</th><td>        .quad <var>0xBFC443654205FEA5</var>   <i>/* P2  = -1.583067486171689074207e-01 */</i></td></tr>
+<tr><th id="357">357</th><td>        .quad <var>0xBFD31F2E208A5B97</var>   <i>/* P3  = -2.987780874040536844467e-01 */</i></td></tr>
+<tr><th id="358">358</th><td>        .quad <var>0x3FB9F235BD339878</var>   <i>/* P4  = +1.013520800512156573576e-01 */</i></td></tr>
+<tr><th id="359">359</th><td>        .quad <var>0x3FBAD0B0DFCCA141</var>   <i>/* P5  = +1.047468706498238100104e-01 */</i></td></tr>
+<tr><th id="360">360</th><td>        .quad <var>0xBFABD1B9600E608E</var>   <i>/* P6  = -5.433444306908184548967e-02 */</i></td></tr>
+<tr><th id="361">361</th><td>        .quad <var>0xBFA1CEBEAF07DB58</var>   <i>/* P7  = -3.478046309094534453598e-02 */</i></td></tr>
+<tr><th id="362">362</th><td>        .quad <var>0x3F9AFC9FB1D8EFD2</var>   <i>/* P8  = +2.635430834764902126383e-02 */</i></td></tr>
+<tr><th id="363">363</th><td>        .quad <var>0x3F8573444F1AB502</var>   <i>/* P9  = +1.047376028449287564018e-02 */</i></td></tr>
+<tr><th id="364">364</th><td>        .quad <var>0xBF8874FBC8F24406</var>   <i>/* P10 = -1.194187838544459322219e-02 */</i></td></tr>
+<tr><th id="365">365</th><td>        .quad <var>0xBFC5000000000000</var>   <i>/* B = -.164063 */</i></td></tr>
+<tr><th id="366">366</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="367">367</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="368">368</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="369">369</th><td>        .quad <var>0x3C7FB199D361A790</var>   <i>/* PL0 = +2.748994907060158996213e-17 */</i></td></tr>
+<tr><th id="370">370</th><td>        .quad <var>0x3FC6C170259E21F7</var>   <i>/* PH0 = +1.777782615356639783766e-01 */</i></td></tr>
+<tr><th id="371">371</th><td>        .quad <var>0x3FEEFD17479F7C65</var>   <i>/* P1  = +9.683948897253570478266e-01 */</i></td></tr>
+<tr><th id="372">372</th><td>        .quad <var>0xBFC609530FE4DF8D</var>   <i>/* P2  = -1.721595599753950294577e-01 */</i></td></tr>
+<tr><th id="373">373</th><td>        .quad <var>0xBFD2B3465D71B4DE</var>   <i>/* P3  = -2.921920692959484052676e-01 */</i></td></tr>
+<tr><th id="374">374</th><td>        .quad <var>0x3FBBFD2D34AC509B</var>   <i>/* P4  = +1.093319181057403192166e-01 */</i></td></tr>
+<tr><th id="375">375</th><td>        .quad <var>0x3FB9778C3C16A0FE</var>   <i>/* P5  = +9.948040453912551395183e-02 */</i></td></tr>
+<tr><th id="376">376</th><td>        .quad <var>0xBFADAC4D9E63C665</var>   <i>/* P6  = -5.795519407719210697372e-02 */</i></td></tr>
+<tr><th id="377">377</th><td>        .quad <var>0xBFA0139CCAD02D60</var>   <i>/* P7  = -3.139963126894929339124e-02 */</i></td></tr>
+<tr><th id="378">378</th><td>        .quad <var>0x3F9C5BF43BA6F19D</var>   <i>/* P8  = +2.769452680671379432854e-02 */</i></td></tr>
+<tr><th id="379">379</th><td>        .quad <var>0x3F8190B703350341</var>   <i>/* P9  = +8.576803002712575184772e-03 */</i></td></tr>
+<tr><th id="380">380</th><td>        .quad <var>0xBF8936606782858A</var>   <i>/* P10 = -1.231074634444230850234e-02 */</i></td></tr>
+<tr><th id="381">381</th><td>        .quad <var>0xBFC7000000000000</var>   <i>/* B = -.179688 */</i></td></tr>
+<tr><th id="382">382</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="383">383</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="384">384</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="385">385</th><td>        .quad <var>0x3C6A917CA3624D50</var>   <i>/* PL0 = +1.152216693509785660691e-17 */</i></td></tr>
+<tr><th id="386">386</th><td>        .quad <var>0x3FC8AFD7B974FABB</var>   <i>/* PH0 = +1.928662925292508878439e-01 */</i></td></tr>
+<tr><th id="387">387</th><td>        .quad <var>0x3FEECF47624A5D03</var>   <i>/* P1  = +9.628025932060214187231e-01 */</i></td></tr>
+<tr><th id="388">388</th><td>        .quad <var>0xBFC7C4C2CB4FDE4D</var>   <i>/* P2  = -1.856921665891938814679e-01 */</i></td></tr>
+<tr><th id="389">389</th><td>        .quad <var>0xBFD23F69CB2C1F9D</var>   <i>/* P3  = -2.851204380135586155453e-01 */</i></td></tr>
+<tr><th id="390">390</th><td>        .quad <var>0x3FBDEC5703A03814</var>   <i>/* P4  = +1.168875106670557712458e-01 */</i></td></tr>
+<tr><th id="391">391</th><td>        .quad <var>0x3FB8095003D0CF15</var>   <i>/* P5  = +9.389209836154706616487e-02 */</i></td></tr>
+<tr><th id="392">392</th><td>        .quad <var>0xBFAF554B47B10CBB</var>   <i>/* P6  = -6.119761705533607365968e-02 */</i></td></tr>
+<tr><th id="393">393</th><td>        .quad <var>0xBF9C89743FE7BC1B</var>   <i>/* P7  = -2.786809577986213853937e-02 */</i></td></tr>
+<tr><th id="394">394</th><td>        .quad <var>0x3F9D74725B746E7C</var>   <i>/* P8  = +2.876452143855921824991e-02 */</i></td></tr>
+<tr><th id="395">395</th><td>        .quad <var>0x3F7B2D8AFB70B88C</var>   <i>/* P9  = +6.635229968237631511880e-03 */</i></td></tr>
+<tr><th id="396">396</th><td>        .quad <var>0xBF89A0A2883EF6CB</var>   <i>/* P10 = -1.251341799058582545252e-02 */</i></td></tr>
+<tr><th id="397">397</th><td>        .quad <var>0xBFC9000000000000</var>   <i>/* B = -.195313 */</i></td></tr>
+<tr><th id="398">398</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="399">399</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="400">400</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="401">401</th><td>        .quad <var>0x3C7608279E8609CB</var>   <i>/* PL0 = +1.910958764623660748269e-17 */</i></td></tr>
+<tr><th id="402">402</th><td>        .quad <var>0x3FCA9B46D2DDC5E3</var>   <i>/* PH0 = +2.078636674519166172015e-01 */</i></td></tr>
+<tr><th id="403">403</th><td>        .quad <var>0x3FEE9E0BB72A01A1</var>   <i>/* P1  = +9.567926957534390123919e-01 */</i></td></tr>
+<tr><th id="404">404</th><td>        .quad <var>0xBFC974FAD10C5330</var>   <i>/* P2  = -1.988824387305156976885e-01 */</i></td></tr>
+<tr><th id="405">405</th><td>        .quad <var>0xBFD1C40ACCBA4044</var>   <i>/* P3  = -2.775904654781735703430e-01 */</i></td></tr>
+<tr><th id="406">406</th><td>        .quad <var>0x3FBFBE24E2987853</var>   <i>/* P4  = +1.239951184474830487522e-01 */</i></td></tr>
+<tr><th id="407">407</th><td>        .quad <var>0x3FB6885B4345E47F</var>   <i>/* P5  = +8.801813499839460539687e-02 */</i></td></tr>
+<tr><th id="408">408</th><td>        .quad <var>0xBFB06563D5670584</var>   <i>/* P6  = -6.404708824176991770896e-02 */</i></td></tr>
+<tr><th id="409">409</th><td>        .quad <var>0xBF98CD1D620DF6E2</var>   <i>/* P7  = -2.421995078065365147772e-02 */</i></td></tr>
+<tr><th id="410">410</th><td>        .quad <var>0x3F9E44EF3E844D21</var>   <i>/* P8  = +2.955983943054463683119e-02 */</i></td></tr>
+<tr><th id="411">411</th><td>        .quad <var>0x3F7325FA0148CAAE</var>   <i>/* P9  = +4.674889165971292322643e-03 */</i></td></tr>
+<tr><th id="412">412</th><td>        .quad <var>0xBF89B4C8556C2D92</var>   <i>/* P10 = -1.255184660614964011319e-02 */</i></td></tr>
+<tr><th id="413">413</th><td>        .quad <var>0xBFCB000000000000</var>   <i>/* B = -.210938 */</i></td></tr>
+<tr><th id="414">414</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="415">415</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="416">416</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="417">417</th><td>        .quad <var>0x3C6F19DAA20F51D5</var>   <i>/* PL0 = +1.348790537832000351176e-17 */</i></td></tr>
+<tr><th id="418">418</th><td>        .quad <var>0x3FCC83876CA98E15</var>   <i>/* PH0 = +2.227639465883021474557e-01 */</i></td></tr>
+<tr><th id="419">419</th><td>        .quad <var>0x3FEE697B662D07CD</var>   <i>/* P1  = +9.503762241004040620296e-01 */</i></td></tr>
+<tr><th id="420">420</th><td>        .quad <var>0xBFCB194C7ED76ACF</var>   <i>/* P2  = -2.117095584242946953999e-01 */</i></td></tr>
+<tr><th id="421">421</th><td>        .quad <var>0xBFD141A19E419762</var>   <i>/* P3  = -2.696308179350720680191e-01 */</i></td></tr>
+<tr><th id="422">422</th><td>        .quad <var>0x3FC0B89C64BC7B98</var>   <i>/* P4  = +1.306338779331468503007e-01 */</i></td></tr>
+<tr><th id="423">423</th><td>        .quad <var>0x3FB4F721150BBFC5</var>   <i>/* P5  = +8.189589275184434216748e-02 */</i></td></tr>
+<tr><th id="424">424</th><td>        .quad <var>0xBFB105AAFAB87898</var>   <i>/* P6  = -6.649273511036069461061e-02 */</i></td></tr>
+<tr><th id="425">425</th><td>        .quad <var>0xBF94FB3B31248C01</var>   <i>/* P7  = -2.048962104266749732921e-02 */</i></td></tr>
+<tr><th id="426">426</th><td>        .quad <var>0x3F9ECD31E588709C</var>   <i>/* P8  = +3.007963145692880855964e-02 */</i></td></tr>
+<tr><th id="427">427</th><td>        .quad <var>0x3F664A91A335C105</var>   <i>/* P9  = +2.721104095762541127495e-03 */</i></td></tr>
+<tr><th id="428">428</th><td>        .quad <var>0xBF89754E32E1E26E</var>   <i>/* P10 = -1.243077366619723806134e-02 */</i></td></tr>
+<tr><th id="429">429</th><td>        .quad <var>0xBFCD000000000000</var>   <i>/* B = -.226563 */</i></td></tr>
+<tr><th id="430">430</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="431">431</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="432">432</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="433">433</th><td>        .quad <var>0x3C6AC6C889D8111D</var>   <i>/* PL0 = +1.161245469312620769170e-17 */</i></td></tr>
+<tr><th id="434">434</th><td>        .quad <var>0x3FCE6864FE55A3D0</var>   <i>/* PH0 = +2.375608674877001114112e-01 */</i></td></tr>
+<tr><th id="435">435</th><td>        .quad <var>0x3FEE31AEE116B82B</var>   <i>/* P1  = +9.435648342384913826391e-01 */</i></td></tr>
+<tr><th id="436">436</th><td>        .quad <var>0xBFCCB114B69E808B</var>   <i>/* P2  = -2.241540805525839833707e-01 */</i></td></tr>
+<tr><th id="437">437</th><td>        .quad <var>0xBFD0B8AB913BA99D</var>   <i>/* P3  = -2.612713735858507980441e-01 */</i></td></tr>
+<tr><th id="438">438</th><td>        .quad <var>0x3FC1823322BED48A</var>   <i>/* P4  = +1.367858810096190233514e-01 */</i></td></tr>
+<tr><th id="439">439</th><td>        .quad <var>0x3FB35822B7929893</var>   <i>/* P5  = +7.556359273675842651653e-02 */</i></td></tr>
+<tr><th id="440">440</th><td>        .quad <var>0xBFB18B03CC78D2DA</var>   <i>/* P6  = -6.852744810096158580830e-02 */</i></td></tr>
+<tr><th id="441">441</th><td>        .quad <var>0xBF911CCC3C8D5E5D</var>   <i>/* P7  = -1.671141738492420009734e-02 */</i></td></tr>
+<tr><th id="442">442</th><td>        .quad <var>0x3F9F0DEC2D99B12F</var>   <i>/* P8  = +3.032654789278515819797e-02 */</i></td></tr>
+<tr><th id="443">443</th><td>        .quad <var>0x3F4A28398B4EBD98</var>   <i>/* P9  = +7.982521989244205404918e-04 */</i></td></tr>
+<tr><th id="444">444</th><td>        .quad <var>0xBF88E60CB2FAB9A4</var>   <i>/* P10 = -1.215753480150000985458e-02 */</i></td></tr>
+<tr><th id="445">445</th><td>        .quad <var>0xBFCF000000000000</var>   <i>/* B = -.242188 */</i></td></tr>
+<tr><th id="446">446</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="447">447</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="448">448</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="449">449</th><td>        .quad <var>0x3C89D2B6774FB61D</var>   <i>/* PL0 = +4.479593208720169247958e-17 */</i></td></tr>
+<tr><th id="450">450</th><td>        .quad <var>0x3FD09C744F539BE4</var>   <i>/* PH0 = +2.595492148088267558848e-01 */</i></td></tr>
+<tr><th id="451">451</th><td>        .quad <var>0x3FEDD823B0400D42</var>   <i>/* P1  = +9.326342050921214825882e-01 */</i></td></tr>
+<tr><th id="452">452</th><td>        .quad <var>0xBFCEFBF7FF305FCC</var>   <i>/* P2  = -2.420644756355144687086e-01 */</i></td></tr>
+<tr><th id="453">453</th><td>        .quad <var>0xBFCFC01DC4F24A41</var>   <i>/* P3  = -2.480504237797323303990e-01 */</i></td></tr>
+<tr><th id="454">454</th><td>        .quad <var>0x3FC291A2C26D5548</var>   <i>/* P4  = +1.450694512701977626753e-01 */</i></td></tr>
+<tr><th id="455">455</th><td>        .quad <var>0x3FB0D562E672D188</var>   <i>/* P5  = +6.575601698097532991976e-02 */</i></td></tr>
+<tr><th id="456">456</th><td>        .quad <var>0xBFB2201ECC119E06</var>   <i>/* P6  = -7.080261690281738261872e-02 */</i></td></tr>
+<tr><th id="457">457</th><td>        .quad <var>0xBF8695D50F778D31</var>   <i>/* P7  = -1.102796987010509974642e-02 */</i></td></tr>
+<tr><th id="458">458</th><td>        .quad <var>0x3F9EEC8CFBC031A0</var>   <i>/* P8  = +3.019924437107734972427e-02 */</i></td></tr>
+<tr><th id="459">459</th><td>        .quad <var>0xBF6030F0A4D3660A</var>   <i>/* P9  = -1.976461417694923328722e-03 */</i></td></tr>
+<tr><th id="460">460</th><td>        .quad <var>0xBF87845288A4AEF5</var>   <i>/* P10 = -1.148285369398347838494e-02 */</i></td></tr>
+<tr><th id="461">461</th><td>        .quad <var>0xBFD1000000000000</var>   <i>/* B = -.265625 */</i></td></tr>
+<tr><th id="462">462</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="463">463</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="464">464</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="465">465</th><td>        .quad <var>0x3C8B6AAB614D1C8D</var>   <i>/* PL0 = +4.756035418366735312727e-17 */</i></td></tr>
+<tr><th id="466">466</th><td>        .quad <var>0x3FD275F7E1CF7F63</var>   <i>/* PH0 = +2.884502129727392616410e-01 */</i></td></tr>
+<tr><th id="467">467</th><td>        .quad <var>0x3FED56658F74C9CC</var>   <i>/* P1  = +9.167964746359813351341e-01 */</i></td></tr>
+<tr><th id="468">468</th><td>        .quad <var>0xBFD0ECC045EBD596</var>   <i>/* P2  = -2.644501383614054083635e-01 */</i></td></tr>
+<tr><th id="469">469</th><td>        .quad <var>0xBFCD5A4BDE179180</var>   <i>/* P3  = -2.293181261476426808811e-01 */</i></td></tr>
+<tr><th id="470">470</th><td>        .quad <var>0x3FC3C00047D34767</var>   <i>/* P4  = +1.542969084462655120552e-01 */</i></td></tr>
+<tr><th id="471">471</th><td>        .quad <var>0x3FAAC7CE84FD609F</var>   <i>/* P5  = +5.230565427217581251974e-02 */</i></td></tr>
+<tr><th id="472">472</th><td>        .quad <var>0xBFB288948D2E8B43</var>   <i>/* P6  = -7.239654967137902384931e-02 */</i></td></tr>
+<tr><th id="473">473</th><td>        .quad <var>0xBF6D6605AAD5A1C0</var>   <i>/* P7  = -3.588687008847041164896e-03 */</i></td></tr>
+<tr><th id="474">474</th><td>        .quad <var>0x3F9DDB0790848E97</var>   <i>/* P8  = +2.915584392134337382866e-02 */</i></td></tr>
+<tr><th id="475">475</th><td>        .quad <var>0xBF75FDE291BAD5B4</var>   <i>/* P9  = -5.369076763306269573660e-03 */</i></td></tr>
+<tr><th id="476">476</th><td>        .quad <var>0xBF84CEA5C52E0A78</var>   <i>/* P10 = -1.015977390284671071888e-02 */</i></td></tr>
+<tr><th id="477">477</th><td>        .quad <var>0xBFD3000000000000</var>   <i>/* B = -.296875 */</i></td></tr>
+<tr><th id="478">478</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="479">479</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="480">480</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="481">481</th><td>        .quad <var>0x3C7139A81C8A6ECF</var>   <i>/* PL0 = +1.494049799478574591322e-17 */</i></td></tr>
+<tr><th id="482">482</th><td>        .quad <var>0x3FD4470650036407</var>   <i>/* PH0 = +3.168350011233659890841e-01 */</i></td></tr>
+<tr><th id="483">483</th><td>        .quad <var>0x3FECC9A69DFDDD48</var>   <i>/* P1  = +8.996155820631566629678e-01 */</i></td></tr>
+<tr><th id="484">484</th><td>        .quad <var>0xBFD23DED3A37A09F</var>   <i>/* P2  = -2.850297039535778028925e-01 */</i></td></tr>
+<tr><th id="485">485</th><td>        .quad <var>0xBFCAD302395D51C1</var>   <i>/* P3  = -2.095644741153943890185e-01 */</i></td></tr>
+<tr><th id="486">486</th><td>        .quad <var>0x3FC4A8FE3F309C22</var>   <i>/* P4  = +1.614072617096278705115e-01 */</i></td></tr>
+<tr><th id="487">487</th><td>        .quad <var>0x3FA3D161188AA436</var>   <i>/* P5  = +3.870681213931741151586e-02 */</i></td></tr>
+<tr><th id="488">488</th><td>        .quad <var>0xBFB288CFE5494E98</var>   <i>/* P6  = -7.240008685885823969403e-02 */</i></td></tr>
+<tr><th id="489">489</th><td>        .quad <var>0x3F6C7903EED8D334</var>   <i>/* P7  = +3.475673371918475361081e-03 */</i></td></tr>
+<tr><th id="490">490</th><td>        .quad <var>0x3F9BE023CDFB02F6</var>   <i>/* P8  = +2.722221321778569498033e-02 */</i></td></tr>
+<tr><th id="491">491</th><td>        .quad <var>0xBF80F8296F2C3A95</var>   <i>/* P9  = -8.285831170295390358336e-03 */</i></td></tr>
+<tr><th id="492">492</th><td>        .quad <var>0xBF8152DF4790049B</var>   <i>/* P10 = -8.458847400108650973189e-03 */</i></td></tr>
+<tr><th id="493">493</th><td>        .quad <var>0xBFD5000000000000</var>   <i>/* B = -.328125 */</i></td></tr>
+<tr><th id="494">494</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="495">495</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="496">496</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="497">497</th><td>        .quad <var>0x3C7751FE0FEE8335</var>   <i>/* PL0 = +2.022712113430213599928e-17 */</i></td></tr>
+<tr><th id="498">498</th><td>        .quad <var>0x3FD60EF7120502A9</var>   <i>/* PH0 = +3.446633983585721261456e-01 */</i></td></tr>
+<tr><th id="499">499</th><td>        .quad <var>0x3FEC32D951E56E6F</var>   <i>/* P1  = +8.812071418319202070776e-01 */</i></td></tr>
+<tr><th id="500">500</th><td>        .quad <var>0xBFD370255FC004F8</var>   <i>/* P2  = -3.037198481616338996824e-01 */</i></td></tr>
+<tr><th id="501">501</th><td>        .quad <var>0xBFC832F0EBC6BB41</var>   <i>/* P3  = -1.890545989276351359107e-01 */</i></td></tr>
+<tr><th id="502">502</th><td>        .quad <var>0x3FC54C99A0FF432F</var>   <i>/* P4  = +1.664001499289269127540e-01 */</i></td></tr>
+<tr><th id="503">503</th><td>        .quad <var>0x3F99DAC0CC283C18</var>   <i>/* P5  = +2.524853941036661688369e-02 */</i></td></tr>
+<tr><th id="504">504</th><td>        .quad <var>0xBFB227B3896A026D</var>   <i>/* P6  = -7.091829399906553280461e-02 */</i></td></tr>
+<tr><th id="505">505</th><td>        .quad <var>0x3F84663364E1FB19</var>   <i>/* P7  = +9.960557476231411602383e-03 */</i></td></tr>
+<tr><th id="506">506</th><td>        .quad <var>0x3F9922D70DE07C57</var>   <i>/* P8  = +2.454696676442965935283e-02 */</i></td></tr>
+<tr><th id="507">507</th><td>        .quad <var>0xBF85C4A4EB6F86BC</var>   <i>/* P9  = -1.062897532932837635222e-02 */</i></td></tr>
+<tr><th id="508">508</th><td>        .quad <var>0xBF7AAB61214FFE17</var>   <i>/* P10 = -6.511096396024671890972e-03 */</i></td></tr>
+<tr><th id="509">509</th><td>        .quad <var>0xBFD7000000000000</var>   <i>/* B = -.359375 */</i></td></tr>
+<tr><th id="510">510</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="511">511</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="512">512</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="513">513</th><td>        .quad <var>0x3BFE67F266843B2C</var>   <i>/* PL0 = +1.030196791298162288777e-19 */</i></td></tr>
+<tr><th id="514">514</th><td>        .quad <var>0x3FD7CD3115FC0F16</var>   <i>/* PH0 = +3.718989100163850869407e-01 */</i></td></tr>
+<tr><th id="515">515</th><td>        .quad <var>0x3FEB92F96CCC2C5B</var>   <i>/* P1  = +8.616912007286247079761e-01 */</i></td></tr>
+<tr><th id="516">516</th><td>        .quad <var>0xBFD4827320135092</var>   <i>/* P2  = -3.204620183216856200247e-01 */</i></td></tr>
+<tr><th id="517">517</th><td>        .quad <var>0xBFC582B15550168A</var>   <i>/* P3  = -1.680509249273891977521e-01 */</i></td></tr>
+<tr><th id="518">518</th><td>        .quad <var>0x3FC5AC3B9A2E4C31</var>   <i>/* P4  = +1.693186285816366254244e-01 */</i></td></tr>
+<tr><th id="519">519</th><td>        .quad <var>0x3F88FA599FCADAFB</var>   <i>/* P5  = +1.219625491044728129762e-02 */</i></td></tr>
+<tr><th id="520">520</th><td>        .quad <var>0xBFB16EC8F5CA169E</var>   <i>/* P6  = -6.809669495313605642174e-02 */</i></td></tr>
+<tr><th id="521">521</th><td>        .quad <var>0x3F90140EFC748BBE</var>   <i>/* P7  = +1.570151725639922719844e-02 */</i></td></tr>
+<tr><th id="522">522</th><td>        .quad <var>0x3F95CFC49C1A28DC</var>   <i>/* P8  = +2.130038454792147768770e-02 */</i></td></tr>
+<tr><th id="523">523</th><td>        .quad <var>0xBF8946ED8B1BF454</var>   <i>/* P9  = -1.234231549050882816697e-02 */</i></td></tr>
+<tr><th id="524">524</th><td>        .quad <var>0xBF7239E55C1DD50F</var>   <i>/* P10 = -4.449745117985472755606e-03 */</i></td></tr>
+<tr><th id="525">525</th><td>        .quad <var>0xBFD9000000000000</var>   <i>/* B = -.390625 */</i></td></tr>
+<tr><th id="526">526</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="527">527</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="528">528</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="529">529</th><td>        .quad <var>0x3C6412330191189C</var>   <i>/* PL0 = +8.704448096175471149661e-18 */</i></td></tr>
+<tr><th id="530">530</th><td>        .quad <var>0x3FD9812B3B03F0A5</var>   <i>/* PH0 = +3.985088421175169703936e-01 */</i></td></tr>
+<tr><th id="531">531</th><td>        .quad <var>0x3FEAEB08C3C0E84D</var>   <i>/* P1  = +8.411907027541559254748e-01 */</i></td></tr>
+<tr><th id="532">532</th><td>        .quad <var>0xBFD57446B1BC46CF</var>   <i>/* P2  = -3.352219329545790787820e-01 */</i></td></tr>
+<tr><th id="533">533</th><td>        .quad <var>0xBFC2CA9ABC0444AD</var>   <i>/* P3  = -1.468079965639267634401e-01 */</i></td></tr>
+<tr><th id="534">534</th><td>        .quad <var>0x3FC5CA95F9460D18</var>   <i>/* P4  = +1.702449290424759093710e-01 */</i></td></tr>
+<tr><th id="535">535</th><td>        .quad <var>0xBF2C2DAA35DD05C3</var>   <i>/* P5  = -2.149839664813813012186e-04 */</i></td></tr>
+<tr><th id="536">536</th><td>        .quad <var>0xBFB069A516EEB75D</var>   <i>/* P6  = -6.411201295733578195472e-02 */</i></td></tr>
+<tr><th id="537">537</th><td>        .quad <var>0x3F9512716416FDC7</var>   <i>/* P7  = +2.057816670798986720058e-02 */</i></td></tr>
+<tr><th id="538">538</th><td>        .quad <var>0x3F921630CB1319A3</var>   <i>/* P8  = +1.766277541607908852593e-02 */</i></td></tr>
+<tr><th id="539">539</th><td>        .quad <var>0xBF8B76DA2EC99526</var>   <i>/* P9  = -1.341028647693549562145e-02 */</i></td></tr>
+<tr><th id="540">540</th><td>        .quad <var>0xBF63A97474A161E4</var>   <i>/* P10 = -2.400138332671485493040e-03 */</i></td></tr>
+<tr><th id="541">541</th><td>        .quad <var>0xBFDB000000000000</var>   <i>/* B = -.421875 */</i></td></tr>
+<tr><th id="542">542</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="543">543</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="544">544</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="545">545</th><td>        .quad <var>0x3C89B79F5783381C</var>   <i>/* PL0 = +4.461236087774530799537e-17 */</i></td></tr>
+<tr><th id="546">546</th><td>        .quad <var>0x3FDB2A6C993B829D</var>   <i>/* PH0 = +4.244643684778937609003e-01 */</i></td></tr>
+<tr><th id="547">547</th><td>        .quad <var>0x3FEA3C0C1FBA328C</var>   <i>/* P1  = +8.198299998926627915155e-01 */</i></td></tr>
+<tr><th id="548">548</th><td>        .quad <var>0xBFD6457212F78DE0</var>   <i>/* P2  = -3.479886231636708581604e-01 */</i></td></tr>
+<tr><th id="549">549</th><td>        .quad <var>0xBFC0129BDA380A66</var>   <i>/* P3  = -1.255678954622282824818e-01 */</i></td></tr>
+<tr><th id="550">550</th><td>        .quad <var>0x3FC5AB77F388FBDE</var>   <i>/* P4  = +1.692953051696965507089e-01 */</i></td></tr>
+<tr><th id="551">551</th><td>        .quad <var>0xBF8822F3A6CADB7C</var>   <i>/* P5  = -1.178541519889874597783e-02 */</i></td></tr>
+<tr><th id="552">552</th><td>        .quad <var>0xBFAE4A876370A4BD</var>   <i>/* P6  = -5.916236008517603590739e-02 */</i></td></tr>
+<tr><th id="553">553</th><td>        .quad <var>0x3F991A89BC3B7710</var>   <i>/* P7  = +2.451529704455085335710e-02 */</i></td></tr>
+<tr><th id="554">554</th><td>        .quad <var>0x3F8C4A4328204D4B</var>   <i>/* P8  = +1.381351915555364098800e-02 */</i></td></tr>
+<tr><th id="555">555</th><td>        .quad <var>0xBF8C5F921D01EC0B</var>   <i>/* P9  = -1.385416174911393178490e-02 */</i></td></tr>
+<tr><th id="556">556</th><td>        .quad <var>0xBF3EE844C5B79FB8</var>   <i>/* P10 = -4.716079617694784908234e-04 */</i></td></tr>
+<tr><th id="557">557</th><td>        .quad <var>0xBFDD000000000000</var>   <i>/* B = -.453125 */</i></td></tr>
+<tr><th id="558">558</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="559">559</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="560">560</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="561">561</th><td>        .quad <var>0x3C73FA437AD7AD87</var>   <i>/* PL0 = +1.732779905745858845932e-17 */</i></td></tr>
+<tr><th id="562">562</th><td>        .quad <var>0x3FDCC88C9902CF45</var>   <i>/* PH0 = +4.497405523536495697279e-01 */</i></td></tr>
+<tr><th id="563">563</th><td>        .quad <var>0x3FE9870845162D1D</var>   <i>/* P1  = +7.977334355686341748810e-01 */</i></td></tr>
+<tr><th id="564">564</th><td>        .quad <var>0xBFD6F62358F73DA8</var>   <i>/* P2  = -3.587730759436120677668e-01 */</i></td></tr>
+<tr><th id="565">565</th><td>        .quad <var>0xBFBAC4345D675FE1</var>   <i>/* P3  = -1.045563438450467661101e-01 */</i></td></tr>
+<tr><th id="566">566</th><td>        .quad <var>0x3FC5539DA8287019</var>   <i>/* P4  = +1.666142531474868131862e-01 */</i></td></tr>
+<tr><th id="567">567</th><td>        .quad <var>0xBF96E3E0DC04A09F</var>   <i>/* P5  = -2.235366194614185212822e-02 */</i></td></tr>
+<tr><th id="568">568</th><td>        .quad <var>0xBFAB5EC7147C207D</var>   <i>/* P6  = -5.345747113284546871398e-02 */</i></td></tr>
+<tr><th id="569">569</th><td>        .quad <var>0x3F9C24166FFA7A58</var>   <i>/* P7  = +2.748141344511120915667e-02 */</i></td></tr>
+<tr><th id="570">570</th><td>        .quad <var>0x3F8451B907819844</var>   <i>/* P8  = +9.921498815128277696693e-03 */</i></td></tr>
+<tr><th id="571">571</th><td>        .quad <var>0xBF8C1C6D19191FCB</var>   <i>/* P9  = -1.372609360545586670239e-02 */</i></td></tr>
+<tr><th id="572">572</th><td>        .quad <var>0x3F547372DF72E35A</var>   <i>/* P10 = +1.248228245272117756098e-03 */</i></td></tr>
+<tr><th id="573">573</th><td>        .quad <var>0xBFDF000000000000</var>   <i>/* B = -.484375 */</i></td></tr>
+<tr><th id="574">574</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="575">575</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="576">576</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="577">577</th><td>        .quad <var>0x3C848FE06EE49950</var>   <i>/* PL0 = +3.566941590788961528958e-17 */</i></td></tr>
+<tr><th id="578">578</th><td>        .quad <var>0x3FDF20211A36475D</var>   <i>/* PH0 = +4.863360172249622803697e-01 */</i></td></tr>
+<tr><th id="579">579</th><td>        .quad <var>0x3FE86E67E6B80AC2</var>   <i>/* P1  = +7.634772783497611574659e-01 */</i></td></tr>
+<tr><th id="580">580</th><td>        .quad <var>0xBFD7C37C55474D9B</var>   <i>/* P2  = -3.713064987943767913461e-01 */</i></td></tr>
+<tr><th id="581">581</th><td>        .quad <var>0xBFB2EBF15F3CB036</var>   <i>/* P3  = -7.391270232318521952684e-02 */</i></td></tr>
+<tr><th id="582">582</th><td>        .quad <var>0x3FC4718C8EF6E3AA</var>   <i>/* P4  = +1.597152422016539530950e-01 */</i></td></tr>
+<tr><th id="583">583</th><td>        .quad <var>0xBFA277F8394E9B07</var>   <i>/* P5  = -3.607154559658991932071e-02 */</i></td></tr>
+<tr><th id="584">584</th><td>        .quad <var>0xBFA680312AB207E3</var>   <i>/* P6  = -4.394677778419955009224e-02 */</i></td></tr>
+<tr><th id="585">585</th><td>        .quad <var>0x3F9EDC9A8B57E286</var>   <i>/* P7  = +3.013841128810892143223e-02 */</i></td></tr>
+<tr><th id="586">586</th><td>        .quad <var>0x3F71B8C5E648EAF6</var>   <i>/* P8  = +4.326603932492947851719e-03 */</i></td></tr>
+<tr><th id="587">587</th><td>        .quad <var>0xBF89DB218356730C</var>   <i>/* P9  = -1.262499029217558458029e-02 */</i></td></tr>
+<tr><th id="588">588</th><td>        .quad <var>0x3F6B05728E6EBC8E</var>   <i>/* P10 = +3.298496001171330815865e-03 */</i></td></tr>
+<tr><th id="589">589</th><td>        .quad <var>0xBFE1000000000000</var>   <i>/* B = -.53125  */</i></td></tr>
+<tr><th id="590">590</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="591">591</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="592">592</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="593">593</th><td>        .quad <var>0x3C8429831EDD94DE</var>   <i>/* PL0 = +3.497576705878673192147e-17 */</i></td></tr>
+<tr><th id="594">594</th><td>        .quad <var>0x3FE10AF47E0BF610</var>   <i>/* PH0 = +5.325872861719194162333e-01 */</i></td></tr>
+<tr><th id="595">595</th><td>        .quad <var>0x3FE6EC5879F87EEE</var>   <i>/* P1  = +7.163507826080299761242e-01 */</i></td></tr>
+<tr><th id="596">596</th><td>        .quad <var>0xBFD86AD001BFE200</var>   <i>/* P2  = -3.815193192563413204129e-01 */</i></td></tr>
+<tr><th id="597">597</th><td>        .quad <var>0xBFA239045B661385</var>   <i>/* P3  = -3.559125533778398983564e-02 */</i></td></tr>
+<tr><th id="598">598</th><td>        .quad <var>0x3FC2B4572D9CC147</var>   <i>/* P4  = +1.461285565105845078038e-01 */</i></td></tr>
+<tr><th id="599">599</th><td>        .quad <var>0xBFA99F4F01740705</var>   <i>/* P5  = -5.004355328311586406115e-02 */</i></td></tr>
+<tr><th id="600">600</th><td>        .quad <var>0xBF9F449C484F4879</var>   <i>/* P6  = -3.053516570418721511214e-02 */</i></td></tr>
+<tr><th id="601">601</th><td>        .quad <var>0x3F9F5F42169D7DDE</var>   <i>/* P7  = +3.063681853325116830798e-02 */</i></td></tr>
+<tr><th id="602">602</th><td>        .quad <var>0xBF6111B1BA632A97</var>   <i>/* P8  = -2.083632588527460989469e-03 */</i></td></tr>
+<tr><th id="603">603</th><td>        .quad <var>0xBF84725FBE5B6E61</var>   <i>/* P9  = -9.983776089419639342530e-03 */</i></td></tr>
+<tr><th id="604">604</th><td>        .quad <var>0x3F7438A2986CFA9C</var>   <i>/* P10 = +4.936823976832951342488e-03 */</i></td></tr>
+<tr><th id="605">605</th><td>        .quad <var>0xBFE3000000000000</var>   <i>/* B = -.59375  */</i></td></tr>
+<tr><th id="606">606</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="607">607</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="608">608</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="609">609</th><td>        .quad <var>0x3C6BE9160BFB3505</var>   <i>/* PL0 = +1.210424670976053242391e-17 */</i></td></tr>
+<tr><th id="610">610</th><td>        .quad <var>0x3FE26D76F73233C7</var>   <i>/* PH0 = +5.758623912857893101247e-01 */</i></td></tr>
+<tr><th id="611">611</th><td>        .quad <var>0x3FE56363B5B93937</var>   <i>/* P1  = +6.683825063026124740752e-01 */</i></td></tr>
+<tr><th id="612">612</th><td>        .quad <var>0xBFD8A2244B27297E</var>   <i>/* P2  = -3.848963483730115724200e-01 */</i></td></tr>
+<tr><th id="613">613</th><td>        .quad <var>0xBF52CA2F101EEF63</var>   <i>/* P3  = -1.146837196286797844817e-03 */</i></td></tr>
+<tr><th id="614">614</th><td>        .quad <var>0x3FC081BC342243AD</var>   <i>/* P4  = +1.289592032012739958675e-01 */</i></td></tr>
+<tr><th id="615">615</th><td>        .quad <var>0xBFAE38DB4A932344</var>   <i>/* P5  = -5.902753148399722719732e-02 */</i></td></tr>
+<tr><th id="616">616</th><td>        .quad <var>0xBF91F814D4AE90C6</var>   <i>/* P6  = -1.754791782481459457885e-02 */</i></td></tr>
+<tr><th id="617">617</th><td>        .quad <var>0x3F9D056AE193C4F3</var>   <i>/* P7  = +2.834097863973723355792e-02 */</i></td></tr>
+<tr><th id="618">618</th><td>        .quad <var>0xBF7BD0B502D8F3A0</var>   <i>/* P8  = -6.790835451792626336974e-03 */</i></td></tr>
+<tr><th id="619">619</th><td>        .quad <var>0xBF7B763F7BB8AE2F</var>   <i>/* P9  = -6.704566938008179114124e-03 */</i></td></tr>
+<tr><th id="620">620</th><td>        .quad <var>0x3F76036F42D9AB69</var>   <i>/* P10 = +5.374369252971835729099e-03 */</i></td></tr>
+<tr><th id="621">621</th><td>        .quad <var>0xBFE5000000000000</var>   <i>/* B = -.65625  */</i></td></tr>
+<tr><th id="622">622</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="623">623</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="624">624</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="625">625</th><td>        .quad <var>0x3C8B64AF0450486E</var>   <i>/* PL0 = +4.751979286662385162741e-17 */</i></td></tr>
+<tr><th id="626">626</th><td>        .quad <var>0x3FE3B75F8BCB742D</var>   <i>/* PH0 = +6.161344271055263499548e-01 */</i></td></tr>
+<tr><th id="627">627</th><td>        .quad <var>0x3FE3DA23BC12369F</var>   <i>/* P1  = +6.203783677353447780947e-01 */</i></td></tr>
+<tr><th id="628">628</th><td>        .quad <var>0xBFD8768FF4B46416</var>   <i>/* P2  = -3.822364701932782367281e-01 */</i></td></tr>
+<tr><th id="629">629</th><td>        .quad <var>0x3F9D67CB8AD9CB1A</var>   <i>/* P3  = +2.871625933625941117406e-02 */</i></td></tr>
+<tr><th id="630">630</th><td>        .quad <var>0x3FBC168CB7827DF4</var>   <i>/* P4  = +1.097190807363331305006e-01 */</i></td></tr>
+<tr><th id="631">631</th><td>        .quad <var>0xBFB03A2B83C9272E</var>   <i>/* P5  = -6.338760344911228324430e-02 */</i></td></tr>
+<tr><th id="632">632</th><td>        .quad <var>0xBF789FEB595297DC</var>   <i>/* P6  = -6.011885959344067548074e-03 */</i></td></tr>
+<tr><th id="633">633</th><td>        .quad <var>0x3F98BD01B4C335E7</var>   <i>/* P7  = +2.415850320612902513532e-02 */</i></td></tr>
+<tr><th id="634">634</th><td>        .quad <var>0xBF83BADC303D6535</var>   <i>/* P8  = -9.633751127398152979976e-03 */</i></td></tr>
+<tr><th id="635">635</th><td>        .quad <var>0xBF6C54E7A1C1E3F3</var>   <i>/* P9  = -3.458454519258407989501e-03 */</i></td></tr>
+<tr><th id="636">636</th><td>        .quad <var>0x3F7408394B7EF3E7</var>   <i>/* P10 = +4.890655334688332484537e-03 */</i></td></tr>
+<tr><th id="637">637</th><td>        .quad <var>0xBFE7000000000000</var>   <i>/* B = -.71875  */</i></td></tr>
+<tr><th id="638">638</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="639">639</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="640">640</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="641">641</th><td>        .quad <var>0x3C6A48557F6E0D3E</var>   <i>/* PL0 = +1.139824111505584215867e-17 */</i></td></tr>
+<tr><th id="642">642</th><td>        .quad <var>0x3FE4E8D895B010DC</var>   <i>/* PH0 = +6.534235881413468227663e-01 */</i></td></tr>
+<tr><th id="643">643</th><td>        .quad <var>0x3FE25652FAAF8A73</var>   <i>/* P1  = +5.730376144604875448991e-01 */</i></td></tr>
+<tr><th id="644">644</th><td>        .quad <var>0xBFD7F6C3A57C444B</var>   <i>/* P2  = -3.744362941807295084434e-01 */</i></td></tr>
+<tr><th id="645">645</th><td>        .quad <var>0x3FAB7866E3F99EBE</var>   <i>/* P3  = +5.365296872042567001598e-02 */</i></td></tr>
+<tr><th id="646">646</th><td>        .quad <var>0x3FB6FA1DF47CCD40</var>   <i>/* P4  = +8.975398272450707099784e-02 */</i></td></tr>
+<tr><th id="647">647</th><td>        .quad <var>0xBFB05508D3741B8E</var>   <i>/* P5  = -6.379752314033580026840e-02 */</i></td></tr>
+<tr><th id="648">648</th><td>        .quad <var>0x3F6C3EFDF7BB279C</var>   <i>/* P6  = +3.448005705512137236209e-03 */</i></td></tr>
+<tr><th id="649">649</th><td>        .quad <var>0x3F9372BADD6D3E27</var>   <i>/* P7  = +1.899234749299530050806e-02 */</i></td></tr>
+<tr><th id="650">650</th><td>        .quad <var>0xBF860FD5AE65F3DA</var>   <i>/* P8  = -1.077238977881649471165e-02 */</i></td></tr>
+<tr><th id="651">651</th><td>        .quad <var>0xBF47266FFB07E628</var>   <i>/* P9  = -7.064863949032872448118e-04 */</i></td></tr>
+<tr><th id="652">652</th><td>        .quad <var>0x3F6F9763992C2A05</var>   <i>/* P10 = +3.856367614735181120799e-03 */</i></td></tr>
+<tr><th id="653">653</th><td>        .quad <var>0xBFE9000000000000</var>   <i>/* B = -.78125  */</i></td></tr>
+<tr><th id="654">654</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="655">655</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="656">656</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="657">657</th><td>        .quad <var>0x3C6BB6A2B194E3AB</var>   <i>/* PL0 = +1.201878007209462528697e-17 */</i></td></tr>
+<tr><th id="658">658</th><td>        .quad <var>0x3FE602609AAE7C22</var>   <i>/* PH0 = +6.877902051090851731630e-01 */</i></td></tr>
+<tr><th id="659">659</th><td>        .quad <var>0x3FE0DCBAFE191C7F</var>   <i>/* P1  = +5.269446337560025312137e-01 */</i></td></tr>
+<tr><th id="660">660</th><td>        .quad <var>0xBFD732028428A9FB</var>   <i>/* P2  = -3.624273577321727538225e-01 */</i></td></tr>
+<tr><th id="661">661</th><td>        .quad <var>0x3FB2D92389BE065B</var>   <i>/* P3  = +7.362577545975439796588e-02 */</i></td></tr>
+<tr><th id="662">662</th><td>        .quad <var>0x3FB1F6A9C8C49993</var>   <i>/* P4  = +7.017003203927733370937e-02 */</i></td></tr>
+<tr><th id="663">663</th><td>        .quad <var>0xBFAF47C0B50B56EE</var>   <i>/* P5  = -6.109430513394707378526e-02 */</i></td></tr>
+<tr><th id="664">664</th><td>        .quad <var>0x3F85A8EDD1356223</var>   <i>/* P6  = +1.057611269668352068104e-02 */</i></td></tr>
+<tr><th id="665">665</th><td>        .quad <var>0x3F8BE05C5CD1B4FA</var>   <i>/* P7  = +1.361152799855823798207e-02 */</i></td></tr>
+<tr><th id="666">666</th><td>        .quad <var>0xBF85A0EFE4552F76</var>   <i>/* P8  = -1.056086936537046752272e-02 */</i></td></tr>
+<tr><th id="667">667</th><td>        .quad <var>0x3F559F2A6A356194</var>   <i>/* P9  = +1.319686337259627831943e-03 */</i></td></tr>
+<tr><th id="668">668</th><td>        .quad <var>0x3F6576F5E989208D</var>   <i>/* P10 = +2.620201394425042596201e-03 */</i></td></tr>
+<tr><th id="669">669</th><td>        .quad <var>0xBFEB000000000000</var>   <i>/* B = -.84375  */</i></td></tr>
+<tr><th id="670">670</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="671">671</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="672">672</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="673">673</th><td>        .quad <var>0x3C80328BD86C8B74</var>   <i>/* PL0 = +2.809809047161267929701e-17 */</i></td></tr>
+<tr><th id="674">674</th><td>        .quad <var>0x3FE704BB1B7FCB81</var>   <i>/* PH0 = +7.193275010198335595035e-01 */</i></td></tr>
+<tr><th id="675">675</th><td>        .quad <var>0x3FDEE264AAD6C40C</var>   <i>/* P1  = +4.825679462765613089739e-01 */</i></td></tr>
+<tr><th id="676">676</th><td>        .quad <var>0xBFD637493CE659F1</var>   <i>/* P2  = -3.471243948673921548357e-01 */</i></td></tr>
+<tr><th id="677">677</th><td>        .quad <var>0x3FB6BE3A3DEE6F4A</var>   <i>/* P3  = +8.884014141079635303208e-02 */</i></td></tr>
+<tr><th id="678">678</th><td>        .quad <var>0x3FAA85EB6470AC0F</var>   <i>/* P4  = +5.180297471118688523488e-02 */</i></td></tr>
+<tr><th id="679">679</th><td>        .quad <var>0xBFACC0146EA4858D</var>   <i>/* P5  = -5.615295267694895314457e-02 */</i></td></tr>
+<tr><th id="680">680</th><td>        .quad <var>0x3F8F8FB683CDDAC5</var>   <i>/* P6  = +1.541082944616557159055e-02 */</i></td></tr>
+<tr><th id="681">681</th><td>        .quad <var>0x3F819515DEE2CB91</var>   <i>/* P7  = +8.585139145315585602547e-03 */</i></td></tr>
+<tr><th id="682">682</th><td>        .quad <var>0xBF834E45E6AF9EA1</var>   <i>/* P8  = -9.426637747267209169415e-03 */</i></td></tr>
+<tr><th id="683">683</th><td>        .quad <var>0x3F65250F197CA56D</var>   <i>/* P9  = +2.581147662472352252568e-03 */</i></td></tr>
+<tr><th id="684">684</th><td>        .quad <var>0x3F57A766026D036C</var>   <i>/* P10 = +1.443719500187702367690e-03 */</i></td></tr>
+<tr><th id="685">685</th><td>        .quad <var>0xBFED000000000000</var>   <i>/* B = -.90625  */</i></td></tr>
+<tr><th id="686">686</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="687">687</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="688">688</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="689">689</th><td>        .quad <var>0x3C716F7EEF7B61AD</var>   <i>/* PL0 = +1.512291215142578135651e-17 */</i></td></tr>
+<tr><th id="690">690</th><td>        .quad <var>0x3FE7F0E1A4CD846E</var>   <i>/* PH0 = +7.481544703297353660076e-01 */</i></td></tr>
+<tr><th id="691">691</th><td>        .quad <var>0x3FDC2D4CC872DC09</var>   <i>/* P1  = +4.402648885256331012598e-01 */</i></td></tr>
+<tr><th id="692">692</th><td>        .quad <var>0xBFD514A99F92ED53</var>   <i>/* P2  = -3.293861444796750250530e-01 */</i></td></tr>
+<tr><th id="693">693</th><td>        .quad <var>0x3FB9846A6CF2F337</var>   <i>/* P3  = +9.967675361526749494844e-02 */</i></td></tr>
+<tr><th id="694">694</th><td>        .quad <var>0x3FA20896939AB161</var>   <i>/* P4  = +3.522177268800664413493e-02 */</i></td></tr>
+<tr><th id="695">695</th><td>        .quad <var>0xBFA97E801F31EE0D</var>   <i>/* P5  = -4.979324703978358553405e-02 */</i></td></tr>
+<tr><th id="696">696</th><td>        .quad <var>0x3F92A11F47B82085</var>   <i>/* P6  = +1.819275737037219740638e-02 */</i></td></tr>
+<tr><th id="697">697</th><td>        .quad <var>0x3F717D70FE289C34</var>   <i>/* P7  = +4.270020845559097605514e-03 */</i></td></tr>
+<tr><th id="698">698</th><td>        .quad <var>0xBF7FDCF1D3F6CE2D</var>   <i>/* P8  = -7.779068604054678540132e-03 */</i></td></tr>
+<tr><th id="699">699</th><td>        .quad <var>0x3F69F607E81AF6B6</var>   <i>/* P9  = +3.169074480722534625181e-03 */</i></td></tr>
+<tr><th id="700">700</th><td>        .quad <var>0x3F3F925C80D0F889</var>   <i>/* P10 = +4.817462766516585511824e-04 */</i></td></tr>
+<tr><th id="701">701</th><td>        .quad <var>0xBFEF000000000000</var>   <i>/* B = -.96875  */</i></td></tr>
+<tr><th id="702">702</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="703">703</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="704">704</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="705">705</th><td>        .quad <var>0x3C931A11D7E8606E</var>   <i>/* PL0 = +6.627280241435322692188e-17 */</i></td></tr>
+<tr><th id="706">706</th><td>        .quad <var>0x3FE92BFB370D9B71</var>   <i>/* PH0 = +7.866188121086975515439e-01 */</i></td></tr>
+<tr><th id="707">707</th><td>        .quad <var>0x3FD866160E454111</var>   <i>/* P1  = +3.812308444367014680480e-01 */</i></td></tr>
+<tr><th id="708">708</th><td>        .quad <var>0xBFD33149F3801DBA</var>   <i>/* P2  = -2.998833539899937679796e-01 */</i></td></tr>
+<tr><th id="709">709</th><td>        .quad <var>0x3FBBDB6D4C949899</var>   <i>/* P3  = +1.088169395412442909023e-01 */</i></td></tr>
+<tr><th id="710">710</th><td>        .quad <var>0x3F8D6AB2A74B9343</var>   <i>/* P4  = +1.436366627735597372494e-02 */</i></td></tr>
+<tr><th id="711">711</th><td>        .quad <var>0xBFA404D1047C5D72</var>   <i>/* P5  = -3.909924678571997970917e-02 */</i></td></tr>
+<tr><th id="712">712</th><td>        .quad <var>0x3F93C47D9ACCD919</var>   <i>/* P6  = +1.930423981976856424661e-02 */</i></td></tr>
+<tr><th id="713">713</th><td>        .quad <var>0xBF41B755642CFF1B</var>   <i>/* P7  = -5.406538915408738478158e-04 */</i></td></tr>
+<tr><th id="714">714</th><td>        .quad <var>0xBF74B5301AA1E788</var>   <i>/* P8  = -5.055606752756853900641e-03 */</i></td></tr>
+<tr><th id="715">715</th><td>        .quad <var>0x3F69A84C5B2A3E68</var>   <i>/* P9  = +3.132008679422249529120e-03 */</i></td></tr>
+<tr><th id="716">716</th><td>        .quad <var>0xBF3CF47830328C11</var>   <i>/* P10 = -4.418176105877589308931e-04 */</i></td></tr>
+<tr><th id="717">717</th><td>        .quad <var>0xBFF1000000000000</var>   <i>/* B = -1.0625   */</i></td></tr>
+<tr><th id="718">718</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="719">719</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="720">720</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="721">721</th><td>        .quad <var>0x3C884D471B8FD396</var>   <i>/* PL0 = +4.215701792312937090514e-17 */</i></td></tr>
+<tr><th id="722">722</th><td>        .quad <var>0x3FEA8DBCBC31897A</var>   <i>/* PH0 = +8.298019099859594849278e-01 */</i></td></tr>
+<tr><th id="723">723</th><td>        .quad <var>0x3FD3EE730537C8EA</var>   <i>/* P1  = +3.114287901836535219818e-01 */</i></td></tr>
+<tr><th id="724">724</th><td>        .quad <var>0xBFD08A05AD27CE32</var>   <i>/* P2  = -2.584242049190123217982e-01 */</i></td></tr>
+<tr><th id="725">725</th><td>        .quad <var>0x3FBC5255406F84B6</var>   <i>/* P3  = +1.106313021005175045399e-01 */</i></td></tr>
+<tr><th id="726">726</th><td>        .quad <var>0xBF772FA2F633AA5E</var>   <i>/* P4  = -5.660664147607434209241e-03 */</i></td></tr>
+<tr><th id="727">727</th><td>        .quad <var>0xBF99DD8E4C473FC4</var>   <i>/* P5  = -2.525923100057504533247e-02 */</i></td></tr>
+<tr><th id="728">728</th><td>        .quad <var>0x3F9183C935B6495D</var>   <i>/* P6  = +1.710428610165003372069e-02 */</i></td></tr>
+<tr><th id="729">729</th><td>        .quad <var>0xBF70471A3A591480</var>   <i>/* P7  = -3.974058583087303228038e-03 */</i></td></tr>
+<tr><th id="730">730</th><td>        .quad <var>0xBF603DDD4DEBB9A4</var>   <i>/* P8  = -1.982624278176818987264e-03 */</i></td></tr>
+<tr><th id="731">731</th><td>        .quad <var>0x3F62591E44D3C17F</var>   <i>/* P9  = +2.239760512218135956425e-03 */</i></td></tr>
+<tr><th id="732">732</th><td>        .quad <var>0xBF4C195D3A9B1AB4</var>   <i>/* P10 = -8.575158328419569430544e-04 */</i></td></tr>
+<tr><th id="733">733</th><td>        .quad <var>0xBFF3000000000000</var>   <i>/* B = -1.1875   */</i></td></tr>
+<tr><th id="734">734</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="735">735</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="736">736</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="737">737</th><td>        .quad <var>0x3C90DD1C9BFF7F64</var>   <i>/* PL0 = +5.850777430004479798187e-17 */</i></td></tr>
+<tr><th id="738">738</th><td>        .quad <var>0x3FEBAD50A4A68BC1</var>   <i>/* PH0 = +8.649066177207417327466e-01 */</i></td></tr>
+<tr><th id="739">739</th><td>        .quad <var>0x3FD01FBA72CEE1A5</var>   <i>/* P1  = +2.519365426228666233893e-01 */</i></td></tr>
+<tr><th id="740">740</th><td>        .quad <var>0xBFCBE432F647C4D6</var>   <i>/* P2  = -2.179015829602010702633e-01 */</i></td></tr>
+<tr><th id="741">741</th><td>        .quad <var>0x3FBABF92B6E5AC73</var>   <i>/* P3  = +1.044856735731387955105e-01 */</i></td></tr>
+<tr><th id="742">742</th><td>        .quad <var>0xBF922983AA24E217</var>   <i>/* P4  = -1.773648954369563555378e-02 */</i></td></tr>
+<tr><th id="743">743</th><td>        .quad <var>0xBF8C72214C14E23A</var>   <i>/* P5  = -1.388956082756564056328e-02 */</i></td></tr>
+<tr><th id="744">744</th><td>        .quad <var>0x3F8ACB4D1F388E8B</var>   <i>/* P6  = +1.308307887581540972153e-02 */</i></td></tr>
+<tr><th id="745">745</th><td>        .quad <var>0xBF740EF8B4A2EE3B</var>   <i>/* P7  = -4.897090441029978580995e-03 */</i></td></tr>
+<tr><th id="746">746</th><td>        .quad <var>0xBF0EA9F30C8DC900</var>   <i>/* P8  = -5.848668076326342477133e-05 */</i></td></tr>
+<tr><th id="747">747</th><td>        .quad <var>0x3F53CC40D18713AE</var>   <i>/* P9  = +1.208365725788622757410e-03 */</i></td></tr>
+<tr><th id="748">748</th><td>        .quad <var>0xBF4848B86029CBA1</var>   <i>/* P10 = -7.410908004444779592485e-04 */</i></td></tr>
+<tr><th id="749">749</th><td>        .quad <var>0xBFF5000000000000</var>   <i>/* B = -1.3125   */</i></td></tr>
+<tr><th id="750">750</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="751">751</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="752">752</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="753">753</th><td>        .quad <var>0x3C8FB61781D22681</var>   <i>/* PL0 = +5.501032995458057064843e-17 */</i></td></tr>
+<tr><th id="754">754</th><td>        .quad <var>0x3FEC950A3340C8BF</var>   <i>/* PH0 = +8.931933404003514764824e-01 */</i></td></tr>
+<tr><th id="755">755</th><td>        .quad <var>0x3FC9E1DFFD385423</var>   <i>/* P1  = +2.022056566644617586005e-01 */</i></td></tr>
+<tr><th id="756">756</th><td>        .quad <var>0xBFC71E2FF88EBA23</var>   <i>/* P2  = -1.806087459239772032583e-01 */</i></td></tr>
+<tr><th id="757">757</th><td>        .quad <var>0x3FB80AEBD07AB5BA</var>   <i>/* P3  = +9.391664352252506838449e-02 */</i></td></tr>
+<tr><th id="758">758</th><td>        .quad <var>0xBF98404E27EAE6ED</var>   <i>/* P4  = -2.368280523908243895884e-02 */</i></td></tr>
+<tr><th id="759">759</th><td>        .quad <var>0xBF772DA520B5006E</var>   <i>/* P5  = -5.658764868087568802107e-03 */</i></td></tr>
+<tr><th id="760">760</th><td>        .quad <var>0x3F824C9268AF9423</var>   <i>/* P6  = +8.935111827620250551925e-03 */</i></td></tr>
+<tr><th id="761">761</th><td>        .quad <var>0xBF722AE76D206AE3</var>   <i>/* P7  = -4.435447701349490160113e-03 */</i></td></tr>
+<tr><th id="762">762</th><td>        .quad <var>0x3F4B807F56298D5E</var>   <i>/* P8  = +8.392926941493230644497e-04 */</i></td></tr>
+<tr><th id="763">763</th><td>        .quad <var>0x3F3D71027DF95D2A</var>   <i>/* P9  = +4.492407879061627603159e-04 */</i></td></tr>
+<tr><th id="764">764</th><td>        .quad <var>0xBF3EBD17676755FB</var>   <i>/* P10 = -4.690343988874298905483e-04 */</i></td></tr>
+<tr><th id="765">765</th><td>        .quad <var>0xBFF7000000000000</var>   <i>/* B = -1.4375   */</i></td></tr>
+<tr><th id="766">766</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="767">767</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="768">768</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="769">769</th><td>        .quad <var>0x3C95393C63CE8224</var>   <i>/* PL0 = +7.363407705201031038415e-17 */</i></td></tr>
+<tr><th id="770">770</th><td>        .quad <var>0x3FED4E6F464286B0</var>   <i>/* PH0 = +9.158245441687622445670e-01 */</i></td></tr>
+<tr><th id="771">771</th><td>        .quad <var>0x3FC4A45842B7DE1E</var>   <i>/* P1  = +1.612654042980787191461e-01 */</i></td></tr>
+<tr><th id="772">772</th><td>        .quad <var>0xBFC2E7885AFDD3D0</var>   <i>/* P2  = -1.476908153814791087327e-01 */</i></td></tr>
+<tr><th id="773">773</th><td>        .quad <var>0x3FB4DD6DD51D3FEB</var>   <i>/* P3  = +8.150373890862254580204e-02 */</i></td></tr>
+<tr><th id="774">774</th><td>        .quad <var>0xBF9A05D3ADAB489C</var>   <i>/* P4  = -2.541285274021075503042e-02 */</i></td></tr>
+<tr><th id="775">775</th><td>        .quad <var>0xBF3459B643B4995C</var>   <i>/* P5  = -3.105230313899165257622e-04 */</i></td></tr>
+<tr><th id="776">776</th><td>        .quad <var>0x3F766B30745F2E3A</var>   <i>/* P6  = +5.473317409222350365811e-03 */</i></td></tr>
+<tr><th id="777">777</th><td>        .quad <var>0xBF6C2C891E555BDF</var>   <i>/* P7  = -3.439204988051155730940e-03 */</i></td></tr>
+<tr><th id="778">778</th><td>        .quad <var>0x3F5194F30D6C576D</var>   <i>/* P8  = +1.073109966176012791522e-03 */</i></td></tr>
+<tr><th id="779">779</th><td>        .quad <var>0x3EF4DBB43C3132A2</var>   <i>/* P9  = +1.989194766975849961365e-05 */</i></td></tr>
+<tr><th id="780">780</th><td>        .quad <var>0xBF2E45EBAB3C15A0</var>   <i>/* P10 = -2.309656316514087783666e-04 */</i></td></tr>
+<tr><th id="781">781</th><td>        .quad <var>0xBFF9000000000000</var>   <i>/* B = -1.5625   */</i></td></tr>
+<tr><th id="782">782</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="783">783</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="784">784</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="785">785</th><td>        .quad <var>0x3C75111669651DAA</var>   <i>/* PL0 = +1.827249135453834384396e-17 */</i></td></tr>
+<tr><th id="786">786</th><td>        .quad <var>0x3FEDE1EB5937518F</var>   <i>/* PH0 = +9.338280432225917193634e-01 */</i></td></tr>
+<tr><th id="787">787</th><td>        .quad <var>0x3FC06129C7C8EBB1</var>   <i>/* P1  = +1.279651856910653382507e-01 */</i></td></tr>
+<tr><th id="788">788</th><td>        .quad <var>0xBFBE9763041064E1</var>   <i>/* P2  = -1.194974789545031421774e-01 */</i></td></tr>
+<tr><th id="789">789</th><td>        .quad <var>0x3FB1A5B9F9113928</var>   <i>/* P3  = +6.893503504509068635308e-02 */</i></td></tr>
+<tr><th id="790">790</th><td>        .quad <var>0xBF992145039F9AFE</var>   <i>/* P4  = -2.454097590080105816526e-02 */</i></td></tr>
+<tr><th id="791">791</th><td>        .quad <var>0x3F66CB116EA49C89</var>   <i>/* P5  = +2.782377288116648315142e-03 */</i></td></tr>
+<tr><th id="792">792</th><td>        .quad <var>0x3F67F972FDF30001</var>   <i>/* P6  = +2.926563829163342740100e-03 */</i></td></tr>
+<tr><th id="793">793</th><td>        .quad <var>0xBF63A7B5975F02F3</var>   <i>/* P7  = -2.399305983061922438601e-03 */</i></td></tr>
+<tr><th id="794">794</th><td>        .quad <var>0x3F4FDE7B8777F4C8</var>   <i>/* P8  = +9.725669069095216373599e-04 */</i></td></tr>
+<tr><th id="795">795</th><td>        .quad <var>0xBF25918876626BA4</var>   <i>/* P9  = -1.645545082212515656240e-04 */</i></td></tr>
+<tr><th id="796">796</th><td>        .quad <var>0xBF1495123C991F00</var>   <i>/* P10 = -7.851527984669912693674e-05 */</i></td></tr>
+<tr><th id="797">797</th><td>        .quad <var>0xBFFB000000000000</var>   <i>/* B = -1.6875   */</i></td></tr>
+<tr><th id="798">798</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="799">799</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="800">800</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="801">801</th><td>        .quad <var>0x3C9F29A5B7426D27</var>   <i>/* PL0 = +1.081172820484012446345e-16 */</i></td></tr>
+<tr><th id="802">802</th><td>        .quad <var>0x3FEE56B6F3EFABFC</var>   <i>/* PH0 = +9.480852856044061915952e-01 */</i></td></tr>
+<tr><th id="803">803</th><td>        .quad <var>0x3FB9E3EFD94BB9FC</var>   <i>/* P1  = +1.011342912204113371518e-01 */</i></td></tr>
+<tr><th id="804">804</th><td>        .quad <var>0xBFB88BD9760FECA7</var>   <i>/* P2  = -9.588393337610288420285e-02 */</i></td></tr>
+<tr><th id="805">805</th><td>        .quad <var>0x3FAD48A0350B3ACF</var>   <i>/* P3  = +5.719471595295077387313e-02 */</i></td></tr>
+<tr><th id="806">806</th><td>        .quad <var>0xBF96CC6A5110F129</var>   <i>/* P4  = -2.226415748394675367257e-02 */</i></td></tr>
+<tr><th id="807">807</th><td>        .quad <var>0x3F71934687170384</var>   <i>/* P5  = +4.290843485649345772606e-03 */</i></td></tr>
+<tr><th id="808">808</th><td>        .quad <var>0x3F5407BAF73B3DF9</var>   <i>/* P6  = +1.222546180475235334287e-03 */</i></td></tr>
+<tr><th id="809">809</th><td>        .quad <var>0xBF591B626C0646DD</var>   <i>/* P7  = -1.532407870488964407324e-03 */</i></td></tr>
+<tr><th id="810">810</th><td>        .quad <var>0x3F48B0E1DD283558</var>   <i>/* P8  = +7.535078860329375669277e-04 */</i></td></tr>
+<tr><th id="811">811</th><td>        .quad <var>0xBF2B322292840D2B</var>   <i>/* P9  = -2.074877932117605962646e-04 */</i></td></tr>
+<tr><th id="812">812</th><td>        .quad <var>0xBE99E4061120C741</var>   <i>/* P10 = -3.858017559892704559672e-07 */</i></td></tr>
+<tr><th id="813">813</th><td>        .quad <var>0xBFFD000000000000</var>   <i>/* B = -1.8125   */</i></td></tr>
+<tr><th id="814">814</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="815">815</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="816">816</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="817">817</th><td>        .quad <var>0x3C6AF8C2041C67CD</var>   <i>/* PL0 = +1.169711482626385762338e-17 */</i></td></tr>
+<tr><th id="818">818</th><td>        .quad <var>0x3FEEB2DFEDD5EC93</var>   <i>/* PH0 = +9.593352933146824801369e-01 */</i></td></tr>
+<tr><th id="819">819</th><td>        .quad <var>0x3FB465A205CFB638</var>   <i>/* P1  = +7.967579500083210999681e-02 */</i></td></tr>
+<tr><th id="820">820</th><td>        .quad <var>0xBFB3914BF68D39FF</var>   <i>/* P2  = -7.643580216720378576778e-02 */</i></td></tr>
+<tr><th id="821">821</th><td>        .quad <var>0x3FA7F21A08C5C734</var>   <i>/* P3  = +4.676896435820623621673e-02 */</i></td></tr>
+<tr><th id="822">822</th><td>        .quad <var>0xBF93DA9560EA9960</var>   <i>/* P4  = -1.938851741820124550772e-02 */</i></td></tr>
+<tr><th id="823">823</th><td>        .quad <var>0x3F73953FEC62820E</var>   <i>/* P5  = +4.781007481284861359820e-03 */</i></td></tr>
+<tr><th id="824">824</th><td>        .quad <var>0x3F2749D5E1273E3C</var>   <i>/* P6  = +1.776765426044646108071e-04 */</i></td></tr>
+<tr><th id="825">825</th><td>        .quad <var>0xBF4D46B0B498CE5A</var>   <i>/* P7  = -8.934367007839658352859e-04 */</i></td></tr>
+<tr><th id="826">826</th><td>        .quad <var>0x3F4153D680E1F4C4</var>   <i>/* P8  = +5.287930851093571206574e-04 */</i></td></tr>
+<tr><th id="827">827</th><td>        .quad <var>0xBF28477014ECA6A2</var>   <i>/* P9  = -1.852344816708944640949e-04 */</i></td></tr>
+<tr><th id="828">828</th><td>        .quad <var>0x3EFFAC54E07CEB4B</var>   <i>/* P10 = +3.020588886147182143902e-05 */</i></td></tr>
+<tr><th id="829">829</th><td>        .quad <var>0xBFFF000000000000</var>   <i>/* B = -1.9375   */</i></td></tr>
+<tr><th id="830">830</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="831">831</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="832">832</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="833">833</th><td>        .quad <var>0x3C7A8AF2BB2231F2</var>   <i>/* PL0 = +2.302217989249372577466e-17 */</i></td></tr>
+<tr><th id="834">834</th><td>        .quad <var>0x3FEF1994DF724FC8</var>   <i>/* PH0 = +9.718727459135090285258e-01 */</i></td></tr>
+<tr><th id="835">835</th><td>        .quad <var>0x3FAC65B1BC0C9D58</var>   <i>/* P1  = +5.546336575053583942603e-02 */</i></td></tr>
+<tr><th id="836">836</th><td>        .quad <var>0xBFAB9937BDA747C8</var>   <i>/* P2  = -5.390333356957871365599e-02 */</i></td></tr>
+<tr><th id="837">837</th><td>        .quad <var>0x3FA15B42D9EF931C</var>   <i>/* P3  = +3.389939222669210777241e-02 */</i></td></tr>
+<tr><th id="838">838</th><td>        .quad <var>0xBF8EACD8E8507A3C</var>   <i>/* P4  = -1.497811755149058215502e-02 */</i></td></tr>
+<tr><th id="839">839</th><td>        .quad <var>0x3F7263A15721C682</var>   <i>/* P5  = +4.489546046998806349050e-03 */</i></td></tr>
+<tr><th id="840">840</th><td>        .quad <var>0xBF42A032ACDC3B32</var>   <i>/* P6  = -5.684134900735048121829e-04 */</i></td></tr>
+<tr><th id="841">841</th><td>        .quad <var>0xBF3431E79B5AD185</var>   <i>/* P7  = -3.081503340170088810438e-04 */</i></td></tr>
+<tr><th id="842">842</th><td>        .quad <var>0x3F31B51667C7DF5E</var>   <i>/* P8  = +2.701930714290502424828e-04 */</i></td></tr>
+<tr><th id="843">843</th><td>        .quad <var>0xBF1F8709579250AD</var>   <i>/* P9  = -1.202678157759563704341e-04 */</i></td></tr>
+<tr><th id="844">844</th><td>        .quad <var>0x3F01ED8ED1BF9595</var>   <i>/* P10 = +3.419487094883790833778e-05 */</i></td></tr>
+<tr><th id="845">845</th><td>        .quad <var>0xC001000000000000</var>   <i>/* B = -2.125    */</i></td></tr>
+<tr><th id="846">846</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="847">847</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="848">848</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="849">849</th><td>        .quad <var>0x3C86F3F7C3DAFC55</var>   <i>/* PL0 = +3.981710680748877459333e-17 */</i></td></tr>
+<tr><th id="850">850</th><td>        .quad <var>0x3FEF73776B2AA2DB</var>   <i>/* PH0 = +9.828450291725759901951e-01 */</i></td></tr>
+<tr><th id="851">851</th><td>        .quad <var>0x3FA16A7FC4D7B900</var>   <i>/* P1  = +3.401564863075812007064e-02 */</i></td></tr>
+<tr><th id="852">852</th><td>        .quad <var>0xBFA11E03803AD621</var>   <i>/* P2  = -3.343211117082156940532e-02 */</i></td></tr>
+<tr><th id="853">853</th><td>        .quad <var>0x3F9609591597297F</var>   <i>/* P3  = +2.152003473546803654658e-02 */</i></td></tr>
+<tr><th id="854">854</th><td>        .quad <var>0xBF847E74ED9BBB0C</var>   <i>/* P4  = -1.000682211039596246436e-02 */</i></td></tr>
+<tr><th id="855">855</th><td>        .quad <var>0x3F6BFF771725CD65</var>   <i>/* P5  = +3.417713736035987187864e-03 */</i></td></tr>
+<tr><th id="856">856</th><td>        .quad <var>0xBF491D1FF73C18FA</var>   <i>/* P6  = -7.664114077392807421000e-04 */</i></td></tr>
+<tr><th id="857">857</th><td>        .quad <var>0x3EF53EE467B51DC5</var>   <i>/* P7  = +2.026145237479599375099e-05 */</i></td></tr>
+<tr><th id="858">858</th><td>        .quad <var>0x3F160135BE0D94A0</var>   <i>/* P8  = +8.394136922403255700685e-05 */</i></td></tr>
+<tr><th id="859">859</th><td>        .quad <var>0xBF0B32CB1D276A40</var>   <i>/* P9  = -5.187685350778849443841e-05 */</i></td></tr>
+<tr><th id="860">860</th><td>        .quad <var>0x3EF4DAF70C12D555</var>   <i>/* P10 = +1.988919462255396826584e-05 */</i></td></tr>
+<tr><th id="861">861</th><td>        .quad <var>0xC003000000000000</var>   <i>/* B = -2.375    */</i></td></tr>
+<tr><th id="862">862</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="863">863</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="864">864</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="865">865</th><td>        .quad <var>0x3C19DBF4E2E5B7DC</var>   <i>/* PL0 = +3.504575836708380670219e-19 */</i></td></tr>
+<tr><th id="866">866</th><td>        .quad <var>0x3FEFAA7934B75EBD</var>   <i>/* PH0 = +9.895597486128832054320e-01 */</i></td></tr>
+<tr><th id="867">867</th><td>        .quad <var>0x3F9545200830A42C</var>   <i>/* P1  = +2.077150392520736492125e-02 */</i></td></tr>
+<tr><th id="868">868</th><td>        .quad <var>0xBF950C46D285F6BC</var>   <i>/* P2  = -2.055464420253970271376e-02 */</i></td></tr>
+<tr><th id="869">869</th><td>        .quad <var>0x3F8B79F5BFC6513F</var>   <i>/* P3  = +1.341621390819425058164e-02 */</i></td></tr>
+<tr><th id="870">870</th><td>        .quad <var>0xBF7A50ADAD777898</var>   <i>/* P4  = -6.424597194806612772505e-03 */</i></td></tr>
+<tr><th id="871">871</th><td>        .quad <var>0x3F633A19BE8255E3</var>   <i>/* P5  = +2.347040444940816227383e-03 */</i></td></tr>
+<tr><th id="872">872</th><td>        .quad <var>0xBF44E609BC2557B7</var>   <i>/* P6  = -6.377742322836087134324e-04 */</i></td></tr>
+<tr><th id="873">873</th><td>        .quad <var>0x3F1AFCBAD60EAACD</var>   <i>/* P7  = +1.029480968230231421206e-04 */</i></td></tr>
+<tr><th id="874">874</th><td>        .quad <var>0x3EE80476AC34A8EF</var>   <i>/* P8  = +1.145240583485084317660e-05 */</i></td></tr>
+<tr><th id="875">875</th><td>        .quad <var>0xBEF278E23DE463E9</var>   <i>/* P9  = -1.761646478213091821804e-05 */</i></td></tr>
+<tr><th id="876">876</th><td>        .quad <var>0x3EE209FAF377264D</var>   <i>/* P10 = +8.601658563106529694651e-06 */</i></td></tr>
+<tr><th id="877">877</th><td>        .quad <var>0xC005000000000000</var>   <i>/* B = -2.625    */</i></td></tr>
+<tr><th id="878">878</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="879">879</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="880">880</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="881">881</th><td>        .quad <var>0x3C979D62702C631C</var>   <i>/* PL0 = +8.193023793215066385979e-17 */</i></td></tr>
+<tr><th id="882">882</th><td>        .quad <var>0x3FEFCC04CDBCDC4B</var>   <i>/* PH0 = +9.936546343150295390600e-01 */</i></td></tr>
+<tr><th id="883">883</th><td>        .quad <var>0x3F89E87D088D269A</var>   <i>/* P1  = +1.265046770426474576547e-02 */</i></td></tr>
+<tr><th id="884">884</th><td>        .quad <var>0xBF89BE6721012B80</var>   <i>/* P2  = -1.257019586059526836624e-02 */</i></td></tr>
+<tr><th id="885">885</th><td>        .quad <var>0x3F80F1C13E8D39D3</var>   <i>/* P3  = +8.273610803056031004326e-03 */</i></td></tr>
+<tr><th id="886">886</th><td>        .quad <var>0xBF7082DBC9602757</var>   <i>/* P4  = -4.031046430108839563004e-03 */</i></td></tr>
+<tr><th id="887">887</th><td>        .quad <var>0x3F590BE9BD4E0A11</var>   <i>/* P5  = +1.528719197467002507978e-03 */</i></td></tr>
+<tr><th id="888">888</th><td>        .quad <var>0xBF3DCC2BEF6D0283</var>   <i>/* P6  = -4.546744598208711809986e-04 */</i></td></tr>
+<tr><th id="889">889</th><td>        .quad <var>0x3F1A08065C4A8E85</var>   <i>/* P7  = +9.930170842636406837764e-05 */</i></td></tr>
+<tr><th id="890">890</th><td>        .quad <var>0xBEE528117D0410F3</var>   <i>/* P8  = -1.008821337267942266431e-05 */</i></td></tr>
+<tr><th id="891">891</th><td>        .quad <var>0xBED0BE73A44FF565</var>   <i>/* P9  = -3.992069257383521775961e-06 */</i></td></tr>
+<tr><th id="892">892</th><td>        .quad <var>0x3EC9B0C11E342E38</var>   <i>/* P10 = +3.062539904901699218737e-06 */</i></td></tr>
+<tr><th id="893">893</th><td>        .quad <var>0xC007000000000000</var>   <i>/* B = -2.875    */</i></td></tr>
+<tr><th id="894">894</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="895">895</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="896">896</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="897">897</th><td>        .quad <var>0x3C804B931AD7A3CC</var>   <i>/* PL0 = +2.826768921701616830245e-17 */</i></td></tr>
+<tr><th id="898">898</th><td>        .quad <var>0x3FEFE06EB0688212</var>   <i>/* PH0 = +9.961465306733450209009e-01 */</i></td></tr>
+<tr><th id="899">899</th><td>        .quad <var>0x3F7F81BD8876224D</var>   <i>/* P1  = +7.692089427458426472642e-03 */</i></td></tr>
+<tr><th id="900">900</th><td>        .quad <var>0xBF7F62A8C699A963</var>   <i>/* P2  = -7.662448196791823756776e-03 */</i></td></tr>
+<tr><th id="901">901</th><td>        .quad <var>0x3F74C31E2B2A6A28</var>   <i>/* P3  = +5.068891378551522166321e-03 */</i></td></tr>
+<tr><th id="902">902</th><td>        .quad <var>0xBF6470D537F16227</var>   <i>/* P4  = -2.495209162173734080001e-03 */</i></td></tr>
+<tr><th id="903">903</th><td>        .quad <var>0x3F4FAEEF61C89673</var>   <i>/* P5  = +9.668988091717359455754e-04 */</i></td></tr>
+<tr><th id="904">904</th><td>        .quad <var>0xBF33C5E80B349783</var>   <i>/* P6  = -3.017131341088651514023e-04 */</i></td></tr>
+<tr><th id="905">905</th><td>        .quad <var>0x3F138F3D31037A6B</var>   <i>/* P7  = +7.461367590931028650557e-05 */</i></td></tr>
+<tr><th id="906">906</th><td>        .quad <var>0xBEEB3C780996FFE3</var>   <i>/* P8  = -1.298723536791163711556e-05 */</i></td></tr>
+<tr><th id="907">907</th><td>        .quad <var>0x3E9D0C75BC8BFEFC</var>   <i>/* P9  = +4.328589367358221917138e-07 */</i></td></tr>
+<tr><th id="908">908</th><td>        .quad <var>0x3EAC3865227764D4</var>   <i>/* P10 = +8.410302755848104487452e-07 */</i></td></tr>
+<tr><th id="909">909</th><td>        .quad <var>0xC009000000000000</var>   <i>/* B = -3.125    */</i></td></tr>
+<tr><th id="910">910</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="911">911</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="912">912</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="913">913</th><td>        .quad <var>0x3C5B978B202749F9</var>   <i>/* PL0 = +5.983054034451594408315e-18 */</i></td></tr>
+<tr><th id="914">914</th><td>        .quad <var>0x3FEFECD6B7EA3128</var>   <i>/* PH0 = +9.976609794698889643882e-01 */</i></td></tr>
+<tr><th id="915">915</th><td>        .quad <var>0x3F73238B786137FE</var>   <i>/* P1  = +4.672570043181776968058e-03 */</i></td></tr>
+<tr><th id="916">916</th><td>        .quad <var>0xBF731815ACEA072E</var>   <i>/* P2  = -4.661640805922390930706e-03 */</i></td></tr>
+<tr><th id="917">917</th><td>        .quad <var>0x3F6956F0816D5AEE</var>   <i>/* P3  = +3.093213784647877798933e-03 */</i></td></tr>
+<tr><th id="918">918</th><td>        .quad <var>0xBF591A16286C4885</var>   <i>/* P4  = -1.532098425461232453877e-03 */</i></td></tr>
+<tr><th id="919">919</th><td>        .quad <var>0x3F43B3E3A00C6096</var>   <i>/* P5  = +6.012784434430592468442e-04 */</i></td></tr>
+<tr><th id="920">920</th><td>        .quad <var>0xBF29441B2A56DEC7</var>   <i>/* P6  = -1.927645836710038499293e-04 */</i></td></tr>
+<tr><th id="921">921</th><td>        .quad <var>0x3F0A99C3A2E857B6</var>   <i>/* P7  = +5.073669705184196724674e-05 */</i></td></tr>
+<tr><th id="922">922</th><td>        .quad <var>0xBEE61CB034DDC151</var>   <i>/* P8  = -1.054385361573597042258e-05 */</i></td></tr>
+<tr><th id="923">923</th><td>        .quad <var>0x3EB792BBC76D6107</var>   <i>/* P9  = +1.405070887824641788698e-06 */</i></td></tr>
+<tr><th id="924">924</th><td>        .quad <var>0x3E761472362A16F0</var>   <i>/* P10 = +8.225391704739515383837e-08 */</i></td></tr>
+<tr><th id="925">925</th><td>        .quad <var>0xC00B000000000000</var>   <i>/* B = -3.375    */</i></td></tr>
+<tr><th id="926">926</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="927">927</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="928">928</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="929">929</th><td>        .quad <var>0x3C9C290AFCBDE00D</var>   <i>/* PL0 = +9.770074992945060684926e-17 */</i></td></tr>
+<tr><th id="930">930</th><td>        .quad <var>0x3FEFF45F6D36133A</var>   <i>/* PH0 = +9.985806592017987259879e-01 */</i></td></tr>
+<tr><th id="931">931</th><td>        .quad <var>0x3F673CEC093032DE</var>   <i>/* P1  = +2.836667068100913999228e-03 */</i></td></tr>
+<tr><th id="932">932</th><td>        .quad <var>0xBF67347A7CD844D5</var>   <i>/* P2  = -2.832640870800243808078e-03 */</i></td></tr>
+<tr><th id="933">933</th><td>        .quad <var>0x3F5EDA25530355DB</var>   <i>/* P3  = +1.883064698679040793627e-03 */</i></td></tr>
+<tr><th id="934">934</th><td>        .quad <var>0xBF4EAD3BBABC1BA9</var>   <i>/* P4  = -9.361783645268534848806e-04 */</i></td></tr>
+<tr><th id="935">935</th><td>        .quad <var>0x3F3842E61CD35432</var>   <i>/* P5  = +3.701984213198588740338e-04 */</i></td></tr>
+<tr><th id="936">936</th><td>        .quad <var>0xBF1F9AB7FD1A3DDD</var>   <i>/* P6  = -1.205611036090218544867e-04 */</i></td></tr>
+<tr><th id="937">937</th><td>        .quad <var>0x3F0136C154EA3DED</var>   <i>/* P7  = +3.283288480304320224929e-05 */</i></td></tr>
+<tr><th id="938">938</th><td>        .quad <var>0xBEDF12807F721E66</var>   <i>/* P8  = -7.408207230892235753013e-06 */</i></td></tr>
+<tr><th id="939">939</th><td>        .quad <var>0x3EB5B53687AD5112</var>   <i>/* P9  = +1.293889481520047941659e-06 */</i></td></tr>
+<tr><th id="940">940</th><td>        .quad <var>0xBE801E90FBFED147</var>   <i>/* P10 = -1.200988872775447204019e-07 */</i></td></tr>
+<tr><th id="941">941</th><td>        .quad <var>0xC00D000000000000</var>   <i>/* B = -3.625    */</i></td></tr>
+<tr><th id="942">942</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="943">943</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="944">944</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="945">945</th><td>        .quad <var>0x3C9E323294294877</var>   <i>/* PL0 = +1.047637125334028950603e-16 */</i></td></tr>
+<tr><th id="946">946</th><td>        .quad <var>0x3FEFF8F21CDAAA62</var>   <i>/* PH0 = +9.991388858373506653976e-01 */</i></td></tr>
+<tr><th id="947">947</th><td>        .quad <var>0x3F5C3470628813F2</var>   <i>/* P1  = +1.721486807697344658108e-03 */</i></td></tr>
+<tr><th id="948">948</th><td>        .quad <var>0xBF5C2E38AC6FF8D2</var>   <i>/* P2  = -1.720004411026422324849e-03 */</i></td></tr>
+<tr><th id="949">949</th><td>        .quad <var>0x3F52C13234626F43</var>   <i>/* P3  = +1.144694354969070234454e-03 */</i></td></tr>
+<tr><th id="950">950</th><td>        .quad <var>0xBF42B0A47DF47BB4</var>   <i>/* P4  = -5.703738387728891173354e-04 */</i></td></tr>
+<tr><th id="951">951</th><td>        .quad <var>0x3F2DB2889E32FBFD</var>   <i>/* P5  = +2.265731592156760387344e-04 */</i></td></tr>
+<tr><th id="952">952</th><td>        .quad <var>0xBF1385FBD54C5A55</var>   <i>/* P6  = -7.447576110695385196414e-05 */</i></td></tr>
+<tr><th id="953">953</th><td>        .quad <var>0x3EF5AFA812C6984E</var>   <i>/* P7  = +2.068153223579892541184e-05 */</i></td></tr>
+<tr><th id="954">954</th><td>        .quad <var>0xBED47097C188A03C</var>   <i>/* P8  = -4.873231795467276043290e-06 */</i></td></tr>
+<tr><th id="955">955</th><td>        .quad <var>0x3EAFF2B982F7EE8C</var>   <i>/* P9  = +9.521288628073486288914e-07 */</i></td></tr>
+<tr><th id="956">956</th><td>        .quad <var>0xBE828EC5B57D424D</var>   <i>/* P10 = -1.382656715739529384702e-07 */</i></td></tr>
+<tr><th id="957">957</th><td>        .quad <var>0xC00F000000000000</var>   <i>/* B = -3.875    */</i></td></tr>
+<tr><th id="958">958</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="959">959</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="960">960</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="961">961</th><td>        .quad <var>0x3C9BA40DA6983BEC</var>   <i>/* PL0 = +9.589840482158163453169e-17 */</i></td></tr>
+<tr><th id="962">962</th><td>        .quad <var>0x3FEFFCAAC3F20E65</var>   <i>/* PH0 = +9.995931460438894911036e-01 */</i></td></tr>
+<tr><th id="963">963</th><td>        .quad <var>0x3F4AA87CF664754C</var>   <i>/* P1  = +8.135423820793490331956e-04 */</i></td></tr>
+<tr><th id="964">964</th><td>        .quad <var>0xBF4AA5B62919E224</var>   <i>/* P2  = -8.132113891426467676310e-04 */</i></td></tr>
+<tr><th id="965">965</th><td>        .quad <var>0x3F41C01B53B0B312</var>   <i>/* P3  = +5.416997368051531710388e-04 */</i></td></tr>
+<tr><th id="966">966</th><td>        .quad <var>0xBF31B8B54D091751</var>   <i>/* P4  = -2.704088811110632606347e-04 */</i></td></tr>
+<tr><th id="967">967</th><td>        .quad <var>0x3F1C431305954ECC</var>   <i>/* P5  = +1.078110084525254933728e-04 */</i></td></tr>
+<tr><th id="968">968</th><td>        .quad <var>0xBF02B7DEAD0D44E6</var>   <i>/* P6  = -3.570221236393906131126e-05 */</i></td></tr>
+<tr><th id="969">969</th><td>        .quad <var>0x3EE51C6EFF109EA9</var>   <i>/* P7  = +1.006654199116272154479e-05 */</i></td></tr>
+<tr><th id="970">970</th><td>        .quad <var>0xBEC48CFB08072D17</var>   <i>/* P8  = -2.449834994621594976610e-06 */</i></td></tr>
+<tr><th id="971">971</th><td>        .quad <var>0x3EA1585EC59CAE34</var>   <i>/* P9  = +5.169271261920604503617e-07 */</i></td></tr>
+<tr><th id="972">972</th><td>        .quad <var>0xBE78832BAF950BA9</var>   <i>/* P10 = -9.131575131209528255629e-08 */</i></td></tr>
+<tr><th id="973">973</th><td>        .quad <var>0xC011000000000000</var>   <i>/* B = -4.25     */</i></td></tr>
+<tr><th id="974">974</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="975">975</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="976">976</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="977">977</th><td>        .quad <var>0x3C8FBF237F4AFE10</var>   <i>/* PL0 = +5.507163370275307643966e-17 */</i></td></tr>
+<tr><th id="978">978</th><td>        .quad <var>0x3FEFFEC61279A3A4</var>   <i>/* PH0 = +9.998503075449787225182e-01 */</i></td></tr>
+<tr><th id="979">979</th><td>        .quad <var>0x3F339E78281A00EA</var>   <i>/* P1  = +2.993625022114214863645e-04 */</i></td></tr>
+<tr><th id="980">980</th><td>        .quad <var>0xBF339DB7B072AD62</var>   <i>/* P2  = -2.993176899035080028902e-04 */</i></td></tr>
+<tr><th id="981">981</th><td>        .quad <var>0x3F2A259E658EF4E4</var>   <i>/* P3  = +1.994853835451177669594e-04 */</i></td></tr>
+<tr><th id="982">982</th><td>        .quad <var>0xBF1A219C312B10BA</var>   <i>/* P4  = -9.968295880030927192162e-05 */</i></td></tr>
+<tr><th id="983">983</th><td>        .quad <var>0x3F04E146B4F5F4B7</var>   <i>/* P5  = +3.982541113154699160876e-05 */</i></td></tr>
+<tr><th id="984">984</th><td>        .quad <var>0xBEEBC5F137088210</var>   <i>/* P6  = -1.324329943580649487333e-05 */</i></td></tr>
+<tr><th id="985">985</th><td>        .quad <var>0x3ECF96736E300B00</var>   <i>/* P7  = +3.765547135882256916132e-06 */</i></td></tr>
+<tr><th id="986">986</th><td>        .quad <var>0xBEAF4874840B91EB</var>   <i>/* P8  = -9.323068824421825762292e-07 */</i></td></tr>
+<tr><th id="987">987</th><td>        .quad <var>0x3E8B6AB2B5C8FD3F</var>   <i>/* P9  = +2.042709991312793245971e-07 */</i></td></tr>
+<tr><th id="988">988</th><td>        .quad <var>0xBE650BCCE62FD2B7</var>   <i>/* P10 = -3.920140725219944650830e-08 */</i></td></tr>
+<tr><th id="989">989</th><td>        .quad <var>0xC013000000000000</var>   <i>/* B = -4.75     */</i></td></tr>
+<tr><th id="990">990</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="991">991</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="992">992</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="993">993</th><td>        .quad <var>0x3C9C869C85471703</var>   <i>/* PL0 = +9.896883942603146946483e-17 */</i></td></tr>
+<tr><th id="994">994</th><td>        .quad <var>0x3FEFFF8C81C6DC33</var>   <i>/* PH0 = +9.999449286177707341139e-01 */</i></td></tr>
+<tr><th id="995">995</th><td>        .quad <var>0x3F1CDF5A2E4D7C69</var>   <i>/* P1  = +1.101397316012206760643e-04 */</i></td></tr>
+<tr><th id="996">996</th><td>        .quad <var>0xBF1CDEF1F9BE63BE</var>   <i>/* P2  = -1.101336660539594564027e-04 */</i></td></tr>
+<tr><th id="997">997</th><td>        .quad <var>0x3F133EC10C83AAA0</var>   <i>/* P3  = +7.341435696487731017506e-05 */</i></td></tr>
+<tr><th id="998">998</th><td>        .quad <var>0xBF033DAB325FAACB</var>   <i>/* P4  = -3.669909192168459445238e-05 */</i></td></tr>
+<tr><th id="999">999</th><td>        .quad <var>0x3EEEC598FA98BAD8</var>   <i>/* P5  = +1.467316890843338172161e-05 */</i></td></tr>
+<tr><th id="1000">1000</th><td>        .quad <var>0xBED47F1A15BA368E</var>   <i>/* P6  = -4.886744445221253126882e-06 */</i></td></tr>
+<tr><th id="1001">1001</th><td>        .quad <var>0x3EB761FBE7D201C1</var>   <i>/* P7  = +1.393720509029845064726e-06 */</i></td></tr>
+<tr><th id="1002">1002</th><td>        .quad <var>0xBE974CD75A43BF6B</var>   <i>/* P8  = -3.471994551992448536007e-07 */</i></td></tr>
+<tr><th id="1003">1003</th><td>        .quad <var>0x3E74B02965BBF8DC</var>   <i>/* P9  = +7.706929621914905669946e-08 */</i></td></tr>
+<tr><th id="1004">1004</th><td>        .quad <var>0xBE504EF4E3892A66</var>   <i>/* P10 = -1.518840362012570189110e-08 */</i></td></tr>
+<tr><th id="1005">1005</th><td>        .quad <var>0xC015000000000000</var>   <i>/* B = -5.25     */</i></td></tr>
+<tr><th id="1006">1006</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1007">1007</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1008">1008</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1009">1009</th><td>        .quad <var>0x3C643810400471B0</var>   <i>/* PL0 = +8.768592603904887599187e-18 */</i></td></tr>
+<tr><th id="1010">1010</th><td>        .quad <var>0x3FEFFFD583014825</var>   <i>/* PH0 = +9.999797400180382433987e-01 */</i></td></tr>
+<tr><th id="1011">1011</th><td>        .quad <var>0x3F053E71416C43CA</var>   <i>/* P1  = +4.051955345663706869871e-05 */</i></td></tr>
+<tr><th id="1012">1012</th><td>        .quad <var>0xBF053E550C7C8CC9</var>   <i>/* P2  = -4.051873253121394012080e-05 */</i></td></tr>
+<tr><th id="1013">1013</th><td>        .quad <var>0x3EFC52D0D90D4843</var>   <i>/* P3  = +2.701139380018752534477e-05 */</i></td></tr>
+<tr><th id="1014">1014</th><td>        .quad <var>0xBEEC523A6ADBE142</var>   <i>/* P4  = -1.350460237457883558350e-05 */</i></td></tr>
+<tr><th id="1015">1015</th><td>        .quad <var>0x3ED6A73E22D844B3</var>   <i>/* P5  = +5.400965660055565196396e-06 */</i></td></tr>
+<tr><th id="1016">1016</th><td>        .quad <var>0xBEBE31D10F23ACD0</var>   <i>/* P6  = -1.799738182979224868919e-06 */</i></td></tr>
+<tr><th id="1017">1017</th><td>        .quad <var>0x3EA13E14264DEAB2</var>   <i>/* P7  = +5.138663935333241981438e-07 */</i></td></tr>
+<tr><th id="1018">1018</th><td>        .quad <var>0xBE81385ABB98EDCC</var>   <i>/* P8  = -1.282999997786486835638e-07 */</i></td></tr>
+<tr><th id="1019">1019</th><td>        .quad <var>0x3E5EB9164593E0B6</var>   <i>/* P9  = +2.861301981891537161158e-08 */</i></td></tr>
+<tr><th id="1020">1020</th><td>        .quad <var>0xBE387218CFE7772E</var>   <i>/* P10 = -5.691705994073124478195e-09 */</i></td></tr>
+<tr><th id="1021">1021</th><td>        .quad <var>0xC017000000000000</var>   <i>/* B = -5.75     */</i></td></tr>
+<tr><th id="1022">1022</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1023">1023</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1024">1024</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1025">1025</th><td>        .quad <var>0x3C92530433F4C703</var>   <i>/* PL0 = +6.357512739163799046861e-17 */</i></td></tr>
+<tr><th id="1026">1026</th><td>        .quad <var>0x3FEFFFF05E8D3191</var>   <i>/* PH0 = +9.999925467214315633058e-01 */</i></td></tr>
+<tr><th id="1027">1027</th><td>        .quad <var>0x3EEF42DDFA52B575</var>   <i>/* P1  = +1.490650158538873335176e-05 */</i></td></tr>
+<tr><th id="1028">1028</th><td>        .quad <var>0xBEEF42CEB54212AA</var>   <i>/* P2  = -1.490639048307961378200e-05 */</i></td></tr>
+<tr><th id="1029">1029</th><td>        .quad <var>0x3EE4D7201CBCB853</var>   <i>/* P3  = +9.937445518550804010127e-06 */</i></td></tr>
+<tr><th id="1030">1030</th><td>        .quad <var>0xBED4D6F764B66C37</var>   <i>/* P4  = -4.968574624976280456686e-06 */</i></td></tr>
+<tr><th id="1031">1031</th><td>        .quad <var>0x3EC0ABB806EBDE71</var>   <i>/* P5  = +1.987311456171617620608e-06 */</i></td></tr>
+<tr><th id="1032">1032</th><td>        .quad <var>0xBEA6399CF854F876</var>   <i>/* P6  = -6.623581475862682369330e-07 */</i></td></tr>
+<tr><th id="1033">1033</th><td>        .quad <var>0x3E8964B91728D7C9</var>   <i>/* P7  = +1.891959403186505598965e-07 */</i></td></tr>
+<tr><th id="1034">1034</th><td>        .quad <var>0xBE6961A0528444D6</var>   <i>/* P8  = -4.727645325404986954168e-08 */</i></td></tr>
+<tr><th id="1035">1035</th><td>        .quad <var>0x3E46AE3B0814EE00</var>   <i>/* P9  = +1.056147192151514779549e-08 */</i></td></tr>
+<tr><th id="1036">1036</th><td>        .quad <var>0xBE221B8194DACD16</var>   <i>/* P10 = -2.107984154277957626641e-09 */</i></td></tr>
+<tr><th id="1037">1037</th><td>        .quad <var>0xC019000000000000</var>   <i>/* B = -6.25     */</i></td></tr>
+<tr><th id="1038">1038</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1039">1039</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1040">1040</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1041">1041</th><td>        .quad <var>0x3C7BB5622CE1A79E</var>   <i>/* PL0 = +2.403331811901679167526e-17 */</i></td></tr>
+<tr><th id="1042">1042</th><td>        .quad <var>0x3FEFFFFA3FF22708</var>   <i>/* PH0 = +9.999972580855862602789e-01 */</i></td></tr>
+<tr><th id="1043">1043</th><td>        .quad <var>0x3ED7003552D53503</var>   <i>/* P1  = +5.483821309338170039906e-06 */</i></td></tr>
+<tr><th id="1044">1044</th><td>        .quad <var>0xBED7003130C1AB92</var>   <i>/* P2  = -5.483806273169366545037e-06 */</i></td></tr>
+<tr><th id="1045">1045</th><td>        .quad <var>0x3ECEAAE13B699C45</var>   <i>/* P3  = +3.655850800133043324271e-06 */</i></td></tr>
+<tr><th id="1046">1046</th><td>        .quad <var>0xBEBEAACB305F3D07</var>   <i>/* P4  = -1.827905351959291114416e-06 */</i></td></tr>
+<tr><th id="1047">1047</th><td>        .quad <var>0x3EA8887F5F9C87EF</var>   <i>/* P5  = +7.311461438267648556646e-07 */</i></td></tr>
+<tr><th id="1048">1048</th><td>        .quad <var>0xBE905AD08DF8454F</var>   <i>/* P6  = -2.437046884027860662692e-07 */</i></td></tr>
+<tr><th id="1049">1049</th><td>        .quad <var>0x3E72B068300B703F</var>   <i>/* P7  = +6.962228483613086736676e-08 */</i></td></tr>
+<tr><th id="1050">1050</th><td>        .quad <var>0xBE52AF921A71C058</var>   <i>/* P8  = -1.740252888706390465423e-08 */</i></td></tr>
+<tr><th id="1051">1051</th><td>        .quad <var>0x3E30B53EAA35300D</var>   <i>/* P9  = +3.890131469838137725119e-09 */</i></td></tr>
+<tr><th id="1052">1052</th><td>        .quad <var>0xBE0AB60CDAD7E22E</var>   <i>/* P10 = -7.773963050435300060566e-10 */</i></td></tr>
+<tr><th id="1053">1053</th><td>        .quad <var>0xC01B000000000000</var>   <i>/* B = -6.75     */</i></td></tr>
+<tr><th id="1054">1054</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1055">1055</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1056">1056</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1057">1057</th><td>        .quad <var>0x3C8BD1ACF80D7256</var>   <i>/* PL0 = +4.825835138930451121169e-17 */</i></td></tr>
+<tr><th id="1058">1058</th><td>        .quad <var>0x3FEFFFFDE2760A41</var>   <i>/* PH0 = +9.999989913051835488389e-01 */</i></td></tr>
+<tr><th id="1059">1059</th><td>        .quad <var>0x3EC0EC4F1EC27E55</var>   <i>/* P1  = +2.017388615341105998718e-06 */</i></td></tr>
+<tr><th id="1060">1060</th><td>        .quad <var>0xBEC0EC4E005E6EAC</var>   <i>/* P2  = -2.017386580411626200507e-06 */</i></td></tr>
+<tr><th id="1061">1061</th><td>        .quad <var>0x3EB6906504BC4610</var>   <i>/* P3  = +1.344921673533307001969e-06 */</i></td></tr>
+<tr><th id="1062">1062</th><td>        .quad <var>0xBEA6905F0D52C8B5</var>   <i>/* P4  = -6.724581235377781360384e-07 */</i></td></tr>
+<tr><th id="1063">1063</th><td>        .quad <var>0x3E920D0F5CCE152B</var>   <i>/* P5  = +2.689810941136721216499e-07 */</i></td></tr>
+<tr><th id="1064">1064</th><td>        .quad <var>0xBE7811505B10E753</var>   <i>/* P6  = -8.965891741619763761543e-08 */</i></td></tr>
+<tr><th id="1065">1065</th><td>        .quad <var>0x3E5B811EE4F9B8EE</var>   <i>/* P7  = +2.561544781706659619288e-08 */</i></td></tr>
+<tr><th id="1066">1066</th><td>        .quad <var>0xBE3B80ABC067E840</var>   <i>/* P8  = -6.403452884688571158579e-09 */</i></td></tr>
+<tr><th id="1067">1067</th><td>        .quad <var>0x3E1898E394E09335</var>   <i>/* P9  = +1.431746793613569087489e-09 */</i></td></tr>
+<tr><th id="1068">1068</th><td>        .quad <var>0xBDF3ABB5BA711DB7</var>   <i>/* P10 = -2.862469657501951918569e-10 */</i></td></tr>
+<tr><th id="1069">1069</th><td>        .quad <var>0xC01D000000000000</var>   <i>/* B = -7.25     */</i></td></tr>
+<tr><th id="1070">1070</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1071">1071</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1072">1072</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1073">1073</th><td>        .quad <var>0x3C8AE01DB39A3791</var>   <i>/* PL0 = +4.662147961093911873193e-17 */</i></td></tr>
+<tr><th id="1074">1074</th><td>        .quad <var>0x3FEFFFFF38C76668</var>   <i>/* PH0 = +9.999996289217962797125e-01 */</i></td></tr>
+<tr><th id="1075">1075</th><td>        .quad <var>0x3EA8E712E56E1188</var>   <i>/* P1  = +7.421562696484951529573e-07 */</i></td></tr>
+<tr><th id="1076">1076</th><td>        .quad <var>0xBEA8E7124A650791</var>   <i>/* P2  = -7.421559942504648535596e-07 */</i></td></tr>
+<tr><th id="1077">1077</th><td>        .quad <var>0x3EA09A0B62D8EF94</var>   <i>/* P3  = +4.947702955735978541097e-07 */</i></td></tr>
+<tr><th id="1078">1078</th><td>        .quad <var>0xBE909A09C56C2107</var>   <i>/* P4  = -2.473847805916120382218e-07 */</i></td></tr>
+<tr><th id="1079">1079</th><td>        .quad <var>0x3E7A900A90A54A6E</var>   <i>/* P5  = +9.895362410487317236618e-08 */</i></td></tr>
+<tr><th id="1080">1080</th><td>        .quad <var>0xBE61B5557BB449B6</var>   <i>/* P6  = -3.298434544432568302770e-08 */</i></td></tr>
+<tr><th id="1081">1081</th><td>        .quad <var>0x3E443CC74732CDCA</var>   <i>/* P7  = +9.423781066565733462466e-09 */</i></td></tr>
+<tr><th id="1082">1082</th><td>        .quad <var>0xBE243CA8AA8D6E54</var>   <i>/* P8  = -2.355890888986360997159e-09 */</i></td></tr>
+<tr><th id="1083">1083</th><td>        .quad <var>0x3E0219C341E0D1B4</var>   <i>/* P9  = +5.267978308406275552691e-10 */</i></td></tr>
+<tr><th id="1084">1084</th><td>        .quad <var>0xBDDCF49A10950F13</var>   <i>/* P10 = -1.053394074620716018815e-10 */</i></td></tr>
+<tr><th id="1085">1085</th><td>        .quad <var>0xC01F000000000000</var>   <i>/* B = -7.75     */</i></td></tr>
+<tr><th id="1086">1086</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1087">1087</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1088">1088</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1089">1089</th><td>        .quad <var>0x3C75CB18F3775414</var>   <i>/* PL0 = +1.890271747518592444083e-17 */</i></td></tr>
+<tr><th id="1090">1090</th><td>        .quad <var>0x3FEFFFFFD38C39F0</var>   <i>/* PH0 = +9.999999172012490333827e-01 */</i></td></tr>
+<tr><th id="1091">1091</th><td>        .quad <var>0x3E8639E2F89493BB</var>   <i>/* P1  = +1.655974950855472979393e-07 */</i></td></tr>
+<tr><th id="1092">1092</th><td>        .quad <var>0xBE8639E2D9B29562</var>   <i>/* P2  = -1.655974813708346974914e-07 */</i></td></tr>
+<tr><th id="1093">1093</th><td>        .quad <var>0x3E7DA2836A1F706E</var>   <i>/* P3  = +1.103982989742589616541e-07 */</i></td></tr>
+<tr><th id="1094">1094</th><td>        .quad <var>0xBE6DA282C6733DAE</var>   <i>/* P4  = -5.519913131581509871840e-08 */</i></td></tr>
+<tr><th id="1095">1095</th><td>        .quad <var>0x3E57B53A278851FD</var>   <i>/* P5  = +2.207971980430773309147e-08 */</i></td></tr>
+<tr><th id="1096">1096</th><td>        .quad <var>0xBE3F9C4A72536E22</var>   <i>/* P6  = -7.359895614149337484810e-09 */</i></td></tr>
+<tr><th id="1097">1097</th><td>        .quad <var>0x3E220E81FBE19CDD</var>   <i>/* P7  = +2.102073153607135257714e-09 */</i></td></tr>
+<tr><th id="1098">1098</th><td>        .quad <var>0xBE020E8875ADA8D8</var>   <i>/* P8  = -5.255211642212584097407e-10 */</i></td></tr>
+<tr><th id="1099">1099</th><td>        .quad <var>0x3DE07634328384FC</var>   <i>/* P9  = +1.197748786062966341989e-10 */</i></td></tr>
+<tr><th id="1100">1100</th><td>        .quad <var>0xBDBA54078E3C351F</var>   <i>/* P10 = -2.394539505021488953905e-11 */</i></td></tr>
+<tr><th id="1101">1101</th><td>        .quad <var>0xC021000000000000</var>   <i>/* B = -8.5      */</i></td></tr>
+<tr><th id="1102">1102</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1103">1103</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1104">1104</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1105">1105</th><td>        .quad <var>0x3C98B78738B0EDEF</var>   <i>/* PL0 = +8.575399788039081964921e-17 */</i></td></tr>
+<tr><th id="1106">1106</th><td>        .quad <var>0x3FEFFFFFF9FBEA40</var>   <i>/* PH0 = +9.999999887944071019774e-01 */</i></td></tr>
+<tr><th id="1107">1107</th><td>        .quad <var>0x3E581056FAC28C46</var>   <i>/* P1  = +2.241118550516412682327e-08 */</i></td></tr>
+<tr><th id="1108">1108</th><td>        .quad <var>0xBE581056F63A4351</var>   <i>/* P2  = -2.241118525356742542550e-08 */</i></td></tr>
+<tr><th id="1109">1109</th><td>        .quad <var>0x3E500AE49533790A</var>   <i>/* P3  = +1.494078933911655875521e-08 */</i></td></tr>
+<tr><th id="1110">1110</th><td>        .quad <var>0xBE400AE489ACBA90</var>   <i>/* P4  = -7.470394349637968945652e-09 */</i></td></tr>
+<tr><th id="1111">1111</th><td>        .quad <var>0x3E29AB0D59A1967B</var>   <i>/* P5  = +2.988168557255271725494e-09 */</i></td></tr>
+<tr><th id="1112">1112</th><td>        .quad <var>0xBE111CB32D6EEF2B</var>   <i>/* P6  = -9.960558400070350772418e-10 */</i></td></tr>
+<tr><th id="1113">1113</th><td>        .quad <var>0x3DF38CBADF396908</var>   <i>/* P7  = +2.844859618921805216353e-10 */</i></td></tr>
+<tr><th id="1114">1114</th><td>        .quad <var>0xBDD38CC7B92CECD3</var>   <i>/* P8  = -7.112220386749926320915e-11 */</i></td></tr>
+<tr><th id="1115">1115</th><td>        .quad <var>0x3DB1D2BBE2705032</var>   <i>/* P9  = +1.621008722427575444686e-11 */</i></td></tr>
+<tr><th id="1116">1116</th><td>        .quad <var>0xBD8C8199294E6380</var>   <i>/* P10 = -3.240784656869469020111e-12 */</i></td></tr>
+<tr><th id="1117">1117</th><td>        .quad <var>0xC023000000000000</var>   <i>/* B = -9.5      */</i></td></tr>
+<tr><th id="1118">1118</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1119">1119</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1120">1120</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1121">1121</th><td>        .quad <var>0x3C8EEEC16618B984</var>   <i>/* PL0 = +5.365957423487855307906e-17 */</i></td></tr>
+<tr><th id="1122">1122</th><td>        .quad <var>0x3FEFFFFFFF2F9279</var>   <i>/* PH0 = +9.999999984834878619111e-01 */</i></td></tr>
+<tr><th id="1123">1123</th><td>        .quad <var>0x3E2A0DB0D052B148</var>   <i>/* P1  = +3.033024167396880687734e-09 */</i></td></tr>
+<tr><th id="1124">1124</th><td>        .quad <var>0xBE2A0DB0CFA6AB71</var>   <i>/* P2  = -3.033024162734192808028e-09 */</i></td></tr>
+<tr><th id="1125">1125</th><td>        .quad <var>0x3E215E75D53A3105</var>   <i>/* P3  = +2.022016035353114070618e-09 */</i></td></tr>
+<tr><th id="1126">1126</th><td>        .quad <var>0xBE115E75D40AA47F</var>   <i>/* P4  = -1.011008013562702155050e-09 */</i></td></tr>
+<tr><th id="1127">1127</th><td>        .quad <var>0x3DFBCA5CDC12ED1C</var>   <i>/* P5  = +4.044047007631481841556e-10 */</i></td></tr>
+<tr><th id="1128">1128</th><td>        .quad <var>0xBDE286E85704FC22</var>   <i>/* P6  = -1.348015410318274576187e-10 */</i></td></tr>
+<tr><th id="1129">1129</th><td>        .quad <var>0x3DC52A8925354517</var>   <i>/* P7  = +3.850101197145027796396e-11 */</i></td></tr>
+<tr><th id="1130">1130</th><td>        .quad <var>0xBDA52A97EA3F5F4A</var>   <i>/* P8  = -9.625355478142550638468e-12 */</i></td></tr>
+<tr><th id="1131">1131</th><td>        .quad <var>0x3D834C011A2AC0F7</var>   <i>/* P9  = +2.193802608697321032841e-12 */</i></td></tr>
+<tr><th id="1132">1132</th><td>        .quad <var>0xBD5EDD05BDCB3A62</var>   <i>/* P10 = -4.385948508419928563300e-13 */</i></td></tr>
+<tr><th id="1133">1133</th><td>        .quad <var>0xC025000000000000</var>   <i>/* B = -10.5      */</i></td></tr>
+<tr><th id="1134">1134</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1135">1135</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1136">1136</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1137">1137</th><td>        .quad <var>0x3C6BD8B474BBF792</var>   <i>/* PL0 = +1.207649585364892639612e-17 */</i></td></tr>
+<tr><th id="1138">1138</th><td>        .quad <var>0x3FEFFFFFFFE3CAD8</var>   <i>/* PH0 = +9.999999997947623953110e-01 */</i></td></tr>
+<tr><th id="1139">1139</th><td>        .quad <var>0x3DFC3527E43C565F</var>   <i>/* P1  = +4.104751852963940338559e-10 */</i></td></tr>
+<tr><th id="1140">1140</th><td>        .quad <var>0xBDFC3527E420F415</var>   <i>/* P2  = -4.104751852036136216697e-10 */</i></td></tr>
+<tr><th id="1141">1141</th><td>        .quad <var>0x3DF2CE1A8D806DAD</var>   <i>/* P3  = +2.736501142887952919489e-10 */</i></td></tr>
+<tr><th id="1142">1142</th><td>        .quad <var>0xBDE2CE1A8DDF690A</var>   <i>/* P4  = -1.368250573053032426141e-10 */</i></td></tr>
+<tr><th id="1143">1143</th><td>        .quad <var>0x3DCE169832D8BD68</var>   <i>/* P5  = +5.473022586854025789680e-11 */</i></td></tr>
+<tr><th id="1144">1144</th><td>        .quad <var>0xBDB40F0FE853DA5B</var>   <i>/* P6  = -1.824340550195944358477e-11 */</i></td></tr>
+<tr><th id="1145">1145</th><td>        .quad <var>0x3D96EA8D930D31A1</var>   <i>/* P7  = +5.210545794901128943676e-12 */</i></td></tr>
+<tr><th id="1146">1146</th><td>        .quad <var>0xBD76EA9DB0D09839</var>   <i>/* P8  = -1.302650427355019556441e-12 */</i></td></tr>
+<tr><th id="1147">1147</th><td>        .quad <var>0x3D54E474FD4303A1</var>   <i>/* P9  = +2.968990047962355000258e-13 */</i></td></tr>
+<tr><th id="1148">1148</th><td>        .quad <var>0xBD30B526CA2B228A</var>   <i>/* P10 = -5.935740124899435401321e-14 */</i></td></tr>
+<tr><th id="1149">1149</th><td>        .quad <var>0xC027000000000000</var>   <i>/* B = -11.5      */</i></td></tr>
+<tr><th id="1150">1150</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1151">1151</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1152">1152</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1153">1153</th><td>        .quad <var>0x3C56E8953D525FD5</var>   <i>/* PL0 = +4.967494994909661698725e-18 */</i></td></tr>
+<tr><th id="1154">1154</th><td>        .quad <var>0x3FEFFFFFFFFC2EB9</var>   <i>/* PH0 = +9.999999999722241073030e-01 */</i></td></tr>
+<tr><th id="1155">1155</th><td>        .quad <var>0x3DCE8A37A48016C2</var>   <i>/* P1  = +5.555177547354687971427e-11 */</i></td></tr>
+<tr><th id="1156">1156</th><td>        .quad <var>0xBDCE8A37A479B7D4</var>   <i>/* P2  = -5.555177547084873157964e-11 */</i></td></tr>
+<tr><th id="1157">1157</th><td>        .quad <var>0x3DC45C250CFA9C16</var>   <i>/* P3  = +3.703451575129414499553e-11 */</i></td></tr>
+<tr><th id="1158">1158</th><td>        .quad <var>0xBDB45C250D9F8467</var>   <i>/* P4  = -1.851725791056759260154e-11 */</i></td></tr>
+<tr><th id="1159">1159</th><td>        .quad <var>0x3DA049BB33CBD4E9</var>   <i>/* P5  = +7.406930640558963265190e-12 */</i></td></tr>
+<tr><th id="1160">1160</th><td>        .quad <var>0xBD85B7A407C422C1</var>   <i>/* P6  = -2.468976464832073512208e-12 */</i></td></tr>
+<tr><th id="1161">1161</th><td>        .quad <var>0x3D68CF9CED2B3FD5</var>   <i>/* P7  = +7.051706989348171774536e-13 */</i></td></tr>
+<tr><th id="1162">1162</th><td>        .quad <var>0xBD48CFAE64C352B3</var>   <i>/* P8  = -1.762945685274427023683e-13 */</i></td></tr>
+<tr><th id="1163">1163</th><td>        .quad <var>0x3D269EAE08690D52</var>   <i>/* P9  = +4.018091287355461204663e-14 */</i></td></tr>
+<tr><th id="1164">1164</th><td>        .quad <var>0xBD0216CBEAFFF5AA</var>   <i>/* P10 = -8.033151495672990022322e-15 */</i></td></tr>
+<tr><th id="1165">1165</th><td>        .quad <var>0xC029000000000000</var>   <i>/* B = -12.5      */</i></td></tr>
+<tr><th id="1166">1166</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1167">1167</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1168">1168</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1169">1169</th><td>        .quad <var>0x3C8ACF1392B106D3</var>   <i>/* PL0 = +4.650601502940921454330e-17 */</i></td></tr>
+<tr><th id="1170">1170</th><td>        .quad <var>0x3FEFFFFFFFFF7BBD</var>   <i>/* PH0 = +9.999999999962408958609e-01 */</i></td></tr>
+<tr><th id="1171">1171</th><td>        .quad <var>0x3DA088529889B316</var>   <i>/* P1  = +7.518115268189742464885e-12 */</i></td></tr>
+<tr><th id="1172">1172</th><td>        .quad <var>0xBDA088529887F4C4</var>   <i>/* P2  = -7.518115268005149164680e-12 */</i></td></tr>
+<tr><th id="1173">1173</th><td>        .quad <var>0x3D960B18BF1DF711</var>   <i>/* P3  = +5.012076679213679703380e-12 */</i></td></tr>
+<tr><th id="1174">1174</th><td>        .quad <var>0xBD860B18BFD99A48</var>   <i>/* P4  = -2.506038344573564868987e-12 */</i></td></tr>
+<tr><th id="1175">1175</th><td>        .quad <var>0x3D71A27E7CA64143</var>   <i>/* P5  = +1.002419056539285288454e-12 */</i></td></tr>
+<tr><th id="1176">1176</th><td>        .quad <var>0xBD5783530EA76D91</var>   <i>/* P6  = -3.341396294294381580191e-13 */</i></td></tr>
+<tr><th id="1177">1177</th><td>        .quad <var>0x3D3ADCC75CBD2A03</var>   <i>/* P7  = +9.543447641637910477850e-14 */</i></td></tr>
+<tr><th id="1178">1178</th><td>        .quad <var>0xBD1ADCDA46BE5F17</var>   <i>/* P8  = -2.385887543769010971872e-14 */</i></td></tr>
+<tr><th id="1179">1179</th><td>        .quad <var>0x3CF87D77650BE5B8</var>   <i>/* P9  = +5.437895260471143131391e-15 */</i></td></tr>
+<tr><th id="1180">1180</th><td>        .quad <var>0xBCD395AE6E74C6D2</var>   <i>/* P10 = -1.087168847335561258239e-15 */</i></td></tr>
+<tr><th id="1181">1181</th><td>        .quad <var>0xC02B000000000000</var>   <i>/* B = -13.5      */</i></td></tr>
+<tr><th id="1182">1182</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1183">1183</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1184">1184</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1185">1185</th><td>        .quad <var>0x3C97A8A295292858</var>   <i>/* PL0 = +8.208271151146829171896e-17 */</i></td></tr>
+<tr><th id="1186">1186</th><td>        .quad <var>0x3FEFFFFFFFFFEE19</var>   <i>/* PH0 = +9.999999999994911847878e-01 */</i></td></tr>
+<tr><th id="1187">1187</th><td>        .quad <var>0x3D71E642BB008F95</var>   <i>/* P1  = +1.017466259229268282255e-12 */</i></td></tr>
+<tr><th id="1188">1188</th><td>        .quad <var>0xBD71E642BAFEEC54</var>   <i>/* P2  = -1.017466259207593392022e-12 */</i></td></tr>
+<tr><th id="1189">1189</th><td>        .quad <var>0x3D67DDAE41647741</var>   <i>/* P3  = +6.783108169938233581038e-13 */</i></td></tr>
+<tr><th id="1190">1190</th><td>        .quad <var>0xBD57DDAE4230F34B</var>   <i>/* P4  = -3.391554091734942426856e-13 */</i></td></tr>
+<tr><th id="1191">1191</th><td>        .quad <var>0x3D4317C33FAE2536</var>   <i>/* P5  = +1.356626669455791324801e-13 */</i></td></tr>
+<tr><th id="1192">1192</th><td>        .quad <var>0xBD2975040D3E26B9</var>   <i>/* P6  = -4.522088139411435138867e-14 */</i></td></tr>
+<tr><th id="1193">1193</th><td>        .quad <var>0x3D0D155DCD0F0AFB</var>   <i>/* P7  = +1.291565189902030307333e-14 */</i></td></tr>
+<tr><th id="1194">1194</th><td>        .quad <var>0xBCED157247832B20</var>   <i>/* P8  = -3.228947666403019234175e-15 */</i></td></tr>
+<tr><th id="1195">1195</th><td>        .quad <var>0x3CCA83D70F607C28</var>   <i>/* P9  = +7.359390959466796619024e-16 */</i></td></tr>
+<tr><th id="1196">1196</th><td>        .quad <var>0xBCA5343952C1E19E</var>   <i>/* P10 = -1.471323041436694087188e-16 */</i></td></tr>
+<tr><th id="1197">1197</th><td>        .quad <var>0xC02D000000000000</var>   <i>/* B = -14.5      */</i></td></tr>
+<tr><th id="1198">1198</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1199">1199</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1200">1200</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1201">1201</th><td>        .quad <var>0x3C9B7876CBC5306E</var>   <i>/* PL0 = +9.530765996816607711732e-17 */</i></td></tr>
+<tr><th id="1202">1202</th><td>        .quad <var>0x3FEFFFFFFFFFFD93</var>   <i>/* PH0 = +9.999999999999310551502e-01 */</i></td></tr>
+<tr><th id="1203">1203</th><td>        .quad <var>0x3D436121E2640D76</var>   <i>/* P1  = +1.376990843765503869546e-13 */</i></td></tr>
+<tr><th id="1204">1204</th><td>        .quad <var>0xBD436121E26250EA</var>   <i>/* P2  = -1.376990843736775811281e-13 */</i></td></tr>
+<tr><th id="1205">1205</th><td>        .quad <var>0x3D39D6D7CA259186</var>   <i>/* P3  = +9.179938654047876451320e-14 */</i></td></tr>
+<tr><th id="1206">1206</th><td>        .quad <var>0xBD29D6D7CB0327CE</var>   <i>/* P4  = -4.589969336188563660531e-14 */</i></td></tr>
+<tr><th id="1207">1207</th><td>        .quad <var>0x3D14ABE4DC31244A</var>   <i>/* P5  = +1.835994545584345768382e-14 */</i></td></tr>
+<tr><th id="1208">1208</th><td>        .quad <var>0xBCFB8FDB82AB6BB7</var>   <i>/* P6  = -6.119980791767901275443e-15 */</i></td></tr>
+<tr><th id="1209">1209</th><td>        .quad <var>0x3CDF7CF757491B60</var>   <i>/* P7  = +1.747943407988343076526e-15 */</i></td></tr>
+<tr><th id="1210">1210</th><td>        .quad <var>0xBCBF7D0D833640FB</var>   <i>/* P8  = -4.369905470133249448357e-16 */</i></td></tr>
+<tr><th id="1211">1211</th><td>        .quad <var>0x3C9CB512F6BDC754</var>   <i>/* P9  = +9.959852600692493655511e-17 */</i></td></tr>
+<tr><th id="1212">1212</th><td>        .quad <var>0xBC76F50AB1B0E9BA</var>   <i>/* P10 = -1.991219205936492089091e-17 */</i></td></tr>
+<tr><th id="1213">1213</th><td>        .quad <var>0xC02F000000000000</var>   <i>/* B = -15.5      */</i></td></tr>
+<tr><th id="1214">1214</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1215">1215</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1216">1216</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1217">1217</th><td>        .quad <var>0x3C6FFE15D5F78543</var>   <i>/* PL0 = +1.387454417328248962819e-17 */</i></td></tr>
+<tr><th id="1218">1218</th><td>        .quad <var>0x3FEFFFFFFFFFFFE1</var>   <i>/* PH0 = +9.999999999999965583086e-01 */</i></td></tr>
+<tr><th id="1219">1219</th><td>        .quad <var>0x3CFEE00288B99C26</var>   <i>/* P1  = +6.855635762864742358597e-15 */</i></td></tr>
+<tr><th id="1220">1220</th><td>        .quad <var>0xBCFEE0027D060EE2</var>   <i>/* P2  = -6.855635607998342735403e-15 */</i></td></tr>
+<tr><th id="1221">1221</th><td>        .quad <var>0x3CF4954AA23148A2</var>   <i>/* P3  = +4.570381865813341696777e-15 */</i></td></tr>
+<tr><th id="1222">1222</th><td>        .quad <var>0xBCE4954B5DAD3010</var>   <i>/* P4  = -2.285192173571711474199e-15 */</i></td></tr>
+<tr><th id="1223">1223</th><td>        .quad <var>0x3CD07883DD8793BD</var>   <i>/* P5  = +9.143109661358222028007e-16 */</i></td></tr>
+<tr><th id="1224">1224</th><td>        .quad <var>0xBCB5F5F4BB87ADCF</var>   <i>/* P6  = -3.047668447080103869032e-16 */</i></td></tr>
+<tr><th id="1225">1225</th><td>        .quad <var>0x3C98F1A905097685</var>   <i>/* P7  = +8.654183371862458774513e-17 */</i></td></tr>
+<tr><th id="1226">1226</th><td>        .quad <var>0xBC78F2D585007222</var>   <i>/* P8  = -2.163943551222030413627e-17 */</i></td></tr>
+<tr><th id="1227">1227</th><td>        .quad <var>0x3C58A37CC5082B5F</var>   <i>/* P9  = +5.342649626494471588064e-18 */</i></td></tr>
+<tr><th id="1228">1228</th><td>        .quad <var>0xBC33AE7917F94D17</var>   <i>/* P10 = -1.066938163384541013918e-18 */</i></td></tr>
+<tr><th id="1229">1229</th><td>        .quad <var>0xC031000000000000</var>   <i>/* B = -17        */</i></td></tr>
+<tr><th id="1230">1230</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1231">1231</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1232">1232</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1233">1233</th><td>        .quad <var>0x3C91BF1D80474F0F</var>   <i>/* PL0 = +6.157069264461989135096e-17 */</i></td></tr>
+<tr><th id="1234">1234</th><td>        .quad <var>0x3FEFFFFFFFFFFFFE</var>   <i>/* PH0 = +9.999999999999997779554e-01 */</i></td></tr>
+<tr><th id="1235">1235</th><td>        .quad <var>0x3CB72071400E6275</var>   <i>/* P1  = +3.209478247225075961360e-16 */</i></td></tr>
+<tr><th id="1236">1236</th><td>        .quad <var>0xBCB72071400A9F37</var>   <i>/* P2  = -3.209478247103497434502e-16 */</i></td></tr>
+<tr><th id="1237">1237</th><td>        .quad <var>0x3CAED5EC39A77629</var>   <i>/* P3  = +2.139652050028423711308e-16 */</i></td></tr>
+<tr><th id="1238">1238</th><td>        .quad <var>0xBC9ED5EC3B530600</var>   <i>/* P4  = -1.069826028468029104719e-16 */</i></td></tr>
+<tr><th id="1239">1239</th><td>        .quad <var>0x3C88AB2BFED159DE</var>   <i>/* P5  = +4.279326904335078988705e-17 */</i></td></tr>
+<tr><th id="1240">1240</th><td>        .quad <var>0xBC70721D1220B3FC</var>   <i>/* P6  = -1.426441958074916244382e-17 */</i></td></tr>
+<tr><th id="1241">1241</th><td>        .quad <var>0x3C52C96049721FB8</var>   <i>/* P7  = +4.073700029965821523731e-18 */</i></td></tr>
+<tr><th id="1242">1242</th><td>        .quad <var>0xBC32C971215735DC</var>   <i>/* P8  = -1.018438939975201710113e-18 */</i></td></tr>
+<tr><th id="1243">1243</th><td>        .quad <var>0x3C112EF658AB41A9</var>   <i>/* P9  = +2.328791246104218830028e-19 */</i></td></tr>
+<tr><th id="1244">1244</th><td>        .quad <var>0xBBEB7B598C6AD3DE</var>   <i>/* P10 = -4.655603964908654142787e-20 */</i></td></tr>
+<tr><th id="1245">1245</th><td>        .quad <var>0xC03287E0C98F84E5</var>   <i>/* B = -18.530774 */</i></td></tr>
+<tr><th id="1246">1246</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* A = +1        */</i></td></tr>
+<tr><th id="1247">1247</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1248">1248</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1249">1249</th><td>        .quad <var>0x0000000000000000</var>   <i>/* PL0 = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="1250">1250</th><td>        .quad <var>0x3FF0000000000000</var>   <i>/* PH0 = +1.000000000000000000000e+00 */</i></td></tr>
+<tr><th id="1251">1251</th><td>        .quad <var>0x0000000000000000</var>   <i>/* P1  = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="1252">1252</th><td>        .quad <var>0x0000000000000000</var>   <i>/* P2  = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="1253">1253</th><td>        .quad <var>0x0000000000000000</var>   <i>/* P3  = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="1254">1254</th><td>        .quad <var>0x0000000000000000</var>   <i>/* P4  = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="1255">1255</th><td>        .quad <var>0x0000000000000000</var>   <i>/* P5  = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="1256">1256</th><td>        .quad <var>0x0000000000000000</var>   <i>/* P6  = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="1257">1257</th><td>        .quad <var>0x0000000000000000</var>   <i>/* P7  = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="1258">1258</th><td>        .quad <var>0x0000000000000000</var>   <i>/* P8  = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="1259">1259</th><td>        .quad <var>0x0000000000000000</var>   <i>/* P9  = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="1260">1260</th><td>        .quad <var>0x0000000000000000</var>   <i>/* P10 = +0.000000000000000000000e-01 */</i></td></tr>
+<tr><th id="1261">1261</th><td>        .quad <var>0x0000000000000000</var>   <i>/* B = +0        */</i></td></tr>
+<tr><th id="1262">1262</th><td>        .quad <var>0x0000000000000000</var>   <i>/* A = +0        */</i></td></tr>
+<tr><th id="1263">1263</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1264">1264</th><td>        .quad <var>0x0000000000000000</var>   <i>/* Align value = +0        */</i></td></tr>
+<tr><th id="1265">1265</th><td>        .align <var>32</var></td></tr>
+<tr><th id="1266">1266</th><td>        .quad <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>   <i>/* _dbSignMask       */</i></td></tr>
+<tr><th id="1267">1267</th><td>        .align <var>32</var></td></tr>
+<tr><th id="1268">1268</th><td>        .quad <var>0x7fffffffffffffff</var>, <var>0x7fffffffffffffff</var>, <var>0x7fffffffffffffff</var>, <var>0x7fffffffffffffff</var>   <i>/* _dbAbsMask        */</i></td></tr>
+<tr><th id="1269">1269</th><td>        .align <var>32</var></td></tr>
+<tr><th id="1270">1270</th><td>        .<em>long</em> <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>, <var>0x7ffe0000</var>           <i>/* _iExpMantMask     */</i></td></tr>
+<tr><th id="1271">1271</th><td>        .align <var>32</var></td></tr>
+<tr><th id="1272">1272</th><td>        .<em>long</em> <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>, <var>0x7fe00000</var>           <i>/* _iExpMask         */</i></td></tr>
+<tr><th id="1273">1273</th><td>        .align <var>32</var></td></tr>
+<tr><th id="1274">1274</th><td>        .<em>long</em> <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>, <var>0x3fbe0000</var>           <i>/* _iMinIdxOfsMask   */</i></td></tr>
+<tr><th id="1275">1275</th><td>        .align <var>32</var></td></tr>
+<tr><th id="1276">1276</th><td>        .<em>long</em> <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>, <var>0x00760000</var>           <i>/* _iMaxIdxMask      */</i></td></tr>
+<tr><th id="1277">1277</th><td>        .align <var>32</var></td></tr>
+<tr><th id="1278">1278</th><td>        .type	__svml_dtanh_data_internal,@object</td></tr>
+<tr><th id="1279">1279</th><td>        .size	__svml_dtanh_data_internal,.-__svml_dtanh_data_internal</td></tr>
+<tr><th id="1280">1280</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

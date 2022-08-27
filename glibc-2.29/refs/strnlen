@@ -1,0 +1,6 @@
+<use f='codebrowser/elf/rtld.c' l='1699' macro='1' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2399' macro='1' u='c' c='process_dl_debug'/>
+<use f='codebrowser/libio/fmemopen.c' l='187' u='c' c='__fmemopen'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='193' c='__strnlen_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='196' c='__strnlen_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strnlen.c' l='32' macro='1' type='size_t strnlen(const char * , size_t )'/>

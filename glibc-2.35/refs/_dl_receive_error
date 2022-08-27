@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='959' type='void _dl_receive_error(receiver_fct fct, void (*)(void *) operate, void * args)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='955'>/* Call OPERATE, receiving errors from `dl_signal_cerror&apos;.  Unlike
+   `_dl_catch_error&apos; the operation is resumed after the OPERATE
+   function returns.
+   ARGS is passed as argument to OPERATE.  */</doc>
+<def f='codebrowser/elf/dl-error-skeleton.c' l='236' ll='250' type='void _dl_receive_error(receiver_fct fct, void (*)(void *) operate, void * args)'/>
+<use f='codebrowser/elf/rtld.c' l='2031' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2100' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2191' u='c' c='dl_main'/>

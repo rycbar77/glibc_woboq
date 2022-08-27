@@ -1,0 +1,59 @@
+<dec f='codebrowser/misc/error.h' l='31' type='void error(int __status, int __errnum, const char * __format)'/>
+<use f='codebrowser/elf/cache.c' l='163' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='177' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='181' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='195' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='432' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='440' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='450' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='454' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='459' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='463' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='469' u='c' c='save_cache'/>
+<doc f='codebrowser/misc/error.h' l='27'>/* Print a message with `fprintf (stderr, FORMAT, ...)&apos;;
+   if ERRNUM is nonzero, follow it with &quot;: &quot; and strerror (ERRNUM).
+   If STATUS is nonzero, terminate the program with `exit (STATUS)&apos;.  */</doc>
+<use f='codebrowser/elf/readlib.c' l='97' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='103' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='114' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='120' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='130' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='169' u='c' c='process_file'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/i386/readelflib.c' l='65' u='c' c='process_elf_file'/>
+<use f='codebrowser/elf/readelflib.c' l='66' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='68' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='70' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='77' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='108' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='66' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='68' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='70' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='77' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='108' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='34' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='127' u='c' c='la_version'/>
+<use f='codebrowser/locale/programs/xmalloc.c' l='63' u='c' c='fixup_null_alloc'/>
+<dec f='codebrowser/include/alloc_buffer.h' l='210' type='void error()'/>
+<use f='codebrowser/include/alloc_buffer.h' l='211' u='c' c='__alloc_buffer_assert_size'/>
+<dec f='codebrowser/include/alloc_buffer.h' l='215' type='void error()'/>
+<use f='codebrowser/include/alloc_buffer.h' l='216' u='c' c='__alloc_buffer_assert_size'/>
+<dec f='codebrowser/include/alloc_buffer.h' l='228' type='void error()'/>
+<use f='codebrowser/include/alloc_buffer.h' l='229' u='c' c='__alloc_buffer_assert_align'/>
+<dec f='codebrowser/include/alloc_buffer.h' l='233' type='void error()'/>
+<use f='codebrowser/include/alloc_buffer.h' l='234' u='c' c='__alloc_buffer_assert_align'/>
+<dec f='codebrowser/include/alloc_buffer.h' l='238' type='void error()'/>
+<use f='codebrowser/include/alloc_buffer.h' l='239' u='c' c='__alloc_buffer_assert_align'/>
+<def f='codebrowser/misc/error.c' l='406' macro='1' type='void error(int , int , const char * )'/>

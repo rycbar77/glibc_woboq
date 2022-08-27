@@ -1,0 +1,12 @@
+<dec f='codebrowser/libio/stdio.h' l='573' type='int fputc(int __c, FILE * __stream)'/>
+<doc f='codebrowser/libio/stdio.h' l='566'>/* Write a character to STREAM.
+
+   These functions are possible cancellation points and therefore not
+   marked with __THROW.
+
+   These functions is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/fputc.c' l='30' ll='39' type='int fputc(int c, _IO_FILE * fp)'/>
+<use f='codebrowser/malloc/memusage.c' l='913' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='927' u='c' c='dest'/>
+<use f='codebrowser/resolv/res_debug.c' l='202' u='c' c='do_section'/>

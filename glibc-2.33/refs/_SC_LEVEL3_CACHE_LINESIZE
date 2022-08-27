@@ -1,0 +1,10 @@
+<dec f='codebrowser/bits/confname.h' l='487' type='196'/>
+<use f='codebrowser/posix/getconf.c' l='395' macro='1'/>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='1174' macro='1' c='posix_sysconf'/>
+<use f='codebrowser/sysdeps/x86/cacheinfo.c' l='59' macro='1' c='__cache_sysconf'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='305' macro='1' u='r' c='handle_intel'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='323' macro='1' u='r' c='handle_amd'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='420' macro='1' c='handle_amd'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='743' macro='1' u='r' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='764' macro='1' u='r' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='783' macro='1' u='r' c='dl_init_cacheinfo'/>

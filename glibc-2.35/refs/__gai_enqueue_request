@@ -1,0 +1,6 @@
+<dec f='codebrowser/resolv/gai_misc.h' l='77' type='struct requestlist * __gai_enqueue_request(struct gaicb * gaicbp)'/>
+<doc f='codebrowser/resolv/gai_misc.h' l='76'>/* Enqueue request.  */</doc>
+<def f='codebrowser/resolv/gai_misc.c' l='220' ll='303' type='struct requestlist * __gai_enqueue_request(struct gaicb * gaicbp)'/>
+<doc f='codebrowser/resolv/gai_misc.c' l='218'>/* The main function of the async I/O handling.  It enqueues requests
+   and if necessary starts and handles threads.  */</doc>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='66' u='c' c='__getaddrinfo_a'/>

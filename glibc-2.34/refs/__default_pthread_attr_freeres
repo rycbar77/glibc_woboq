@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='206' type='void __default_pthread_attr_freeres()'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='205'>/* Called from __libc_freeres to deallocate the default attribute.  */</doc>
+<dec f='codebrowser/nptl/nptlfreeres.c' l='29' type='void __default_pthread_attr_freeres()'/>
+<use f='codebrowser/nptl/nptlfreeres.c' l='29' c='__default_pthread_attr_freeres'/>
+<use f='codebrowser/nptl/nptlfreeres.c' l='29' u='r' c='__libpthread_freeres'/>
+<use f='codebrowser/nptl/nptlfreeres.c' l='29' u='c' c='__libpthread_freeres'/>
+<def f='codebrowser/nptl/pthread_setattr_default_np.c' l='95' ll='99' type='void __default_pthread_attr_freeres()'/>
+<doc f='codebrowser/nptl/pthread_setattr_default_np.c' l='91'>/* This is placed in the same file as pthread_setattr_default_np
+   because only this function can trigger allocation of attribute
+   data.  This way, the function is automatically defined for all the
+   cases when it is needed in static builds.  */</doc>

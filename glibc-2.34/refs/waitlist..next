@@ -1,0 +1,18 @@
+<dec f='codebrowser/resolv/gai_misc.h' l='29' type='struct waitlist *'/>
+<offset>0</offset>
+<use f='codebrowser/resolv/gai_notify.c' l='113' u='r' c='__gai_notify'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='56' u='w' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='117' u='a' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='120' u='r' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='111' u='w' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='165' u='w' c='__getaddrinfo_a'/>
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='46' type='struct waitlist *'/>
+<offset>0</offset>
+<use f='codebrowser/rt/aio_notify.c' l='133' u='r' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_suspend.c' l='81' u='a' c='cleanup'/>
+<use f='codebrowser/rt/aio_suspend.c' l='84' u='r' c='cleanup'/>
+<use f='codebrowser/rt/aio_suspend.c' l='147' u='w' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/aio_suspend.c' l='223' u='a' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/aio_suspend.c' l='226' u='r' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='150' u='w' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='213' u='w' c='lio_listio_internal'/>

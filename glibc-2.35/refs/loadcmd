@@ -1,0 +1,18 @@
+<def f='codebrowser/elf/dl-load.h' l='76' ll='81'/>
+<use f='codebrowser/elf/dl-load.h' l='89' c='_dl_postprocess_loadcmd'/>
+<use f='codebrowser/elf/dl-load.h' l='118' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='25' c='_dl_map_segment'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='77' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='81' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-load.c' l='1100' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1145' c='_dl_map_object_from_fd'/>
+<size>56</size>
+<doc f='codebrowser/elf/dl-load.h' l='74'>/* This structure describes one PT_LOAD command.
+   Its details have been expanded out and converted.  */</doc>
+<mbr r='loadcmd::mapstart' o='0' t='Elf64_Addr'/>
+<mbr r='loadcmd::mapend' o='64' t='Elf64_Addr'/>
+<mbr r='loadcmd::dataend' o='128' t='Elf64_Addr'/>
+<mbr r='loadcmd::allocend' o='192' t='Elf64_Addr'/>
+<mbr r='loadcmd::mapalign' o='256' t='Elf64_Addr'/>
+<mbr r='loadcmd::mapoff' o='320' t='Elf64_Off'/>
+<mbr r='loadcmd::prot' o='384' t='int'/>

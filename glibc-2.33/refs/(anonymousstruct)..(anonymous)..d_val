@@ -1,0 +1,56 @@
+<dec f='codebrowser/elf/elf.h' l='833' type='Elf32_Word'/>
+<dec f='codebrowser/elf/elf.h' l='843' type='Elf64_Xword'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/elf.h' l='833'>/* Integer value */</doc>
+<doc f='codebrowser/elf/elf.h' l='843'>/* Integer value */</doc>
+<use f='codebrowser/elf/dl-addr.c' l='42' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-close.c' l='121' u='r' c='call_destructors'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='118' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='118' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='126' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='126' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='149' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/get-dynamic-info.h' l='160' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/dl-deps.c' l='244' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='287' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-fini.c' l='136' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-init.c' l='70' u='r' c='call_init'/>
+<use f='codebrowser/elf/dl-init.c' l='95' u='r' c='_dl_init'/>
+<use f='codebrowser/elf/dl-load.c' l='679' u='r' c='cache_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='1460' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1467' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='2042' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-lookup.c' l='487' u='r' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='492' u='r' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-reloc.c' l='274' macro='1' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='274' macro='1' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='274' macro='1' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='274' macro='1' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='274' macro='1' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='284' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='287' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/setup-vdso.h' l='91' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/readelflib.c' l='272' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='273' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='286' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='302' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='272' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='273' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='286' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='302' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/rtld.c' l='222' u='r' c='audit_list_add_dynamic_tag'/>
+<use f='codebrowser/elf/rtld.c' l='563' macro='1' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='563' macro='1' u='r' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='563' macro='1' u='r' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='563' macro='1' u='r' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='563' macro='1' u='r' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='1393' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1395' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1613' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1638' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2267' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2284' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2289' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2347' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2941' u='r' c='print_statistics'/>
+<use f='codebrowser/elf/rtld.c' l='2954' u='r' c='print_statistics'/>

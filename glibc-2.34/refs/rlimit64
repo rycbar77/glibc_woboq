@@ -1,0 +1,14 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/bits/resource.h' l='148' ll='154'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/resource.h' l='218' c='prlimit64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/bits/resource.h' l='219' c='prlimit64'/>
+<use f='codebrowser/resource/sys/resource.h' l='63' c='getrlimit64'/>
+<use f='codebrowser/resource/sys/resource.h' l='83' c='setrlimit64'/>
+<size>16</size>
+<mbr r='rlimit64::rlim_cur' o='0' t='rlim64_t'/>
+<mbr r='rlimit64::rlim_max' o='64' t='rlim64_t'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getrlimit64.c' l='37' c='__getrlimit64'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setrlimit64.c' l='38' c='__setrlimit64'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='177' c='__spawni_child'/>
+<size>16</size>

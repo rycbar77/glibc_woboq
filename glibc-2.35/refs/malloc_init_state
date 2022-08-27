@@ -1,0 +1,8 @@
+<def f='codebrowser/malloc/malloc.c' l='1959' ll='1981' type='void malloc_init_state(mstate av)'/>
+<use f='codebrowser/malloc/arena.c' l='349' u='c' c='ptmalloc_init'/>
+<doc f='codebrowser/malloc/malloc.c' l='1952'>/*
+   Initialize a malloc_state struct.
+
+   This is called from ptmalloc_init () or from _int_new_arena ()
+   when creating a new arena.
+ */</doc>

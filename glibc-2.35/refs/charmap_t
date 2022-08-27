@@ -1,0 +1,185 @@
+<def f='codebrowser/locale/programs/charmap.h' l='36' ll='52'/>
+<use f='codebrowser/locale/programs/charmap.h' l='71' c='charmap_read'/>
+<use f='codebrowser/locale/programs/charmap.h' l='76' c='charmap_find_value'/>
+<use f='codebrowser/locale/programs/charmap.h' l='80' c='charmap_find_symbol'/>
+<size>504</size>
+<mbr r='charmap_t::code_set_name' o='0' t='const char *'/>
+<mbr r='charmap_t::repertoiremap' o='64' t='const char *'/>
+<mbr r='charmap_t::mb_cur_min' o='128' t='int'/>
+<mbr r='charmap_t::mb_cur_max' o='160' t='int'/>
+<mbr r='charmap_t::width_rules' o='192' t='struct width_rule *'/>
+<mbr r='charmap_t::nwidth_rules' o='256' t='size_t'/>
+<mbr r='charmap_t::nwidth_rules_max' o='320' t='size_t'/>
+<mbr r='charmap_t::width_default' o='384' t='unsigned int'/>
+<mbr r='charmap_t::mem_pool' o='448' t='struct obstack'/>
+<mbr r='charmap_t::char_table' o='1152' t='hash_table'/>
+<mbr r='charmap_t::byte_table' o='2112' t='hash_table'/>
+<mbr r='charmap_t::ucs4_table' o='3072' t='hash_table'/>
+<use f='codebrowser/iconv/iconv_prog.h' l='31' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_prog.h' l='33' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='84' c='use_from_charmap'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='87' c='use_to_charmap'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='88' c='use_both_charmaps'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='89' c='use_both_charmaps'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='99' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='100' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='320' c='use_from_charmap'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='355' c='use_to_charmap'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='397' c='use_both_charmaps'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='398' c='use_both_charmaps'/>
+<size>504</size>
+<use f='codebrowser/iconv/iconv_prog.c' l='122' c='main'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='123' c='main'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/localedef.h' l='137' c='find_locale'/>
+<use f='codebrowser/locale/programs/localedef.h' l='142' c='load_locale'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/linereader.h' l='91' c='lr_token'/>
+<use f='codebrowser/locale/programs/charmap.c' l='43' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='45' c='new_width'/>
+<use f='codebrowser/locale/programs/charmap.c' l='48' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='87' c='charmap_read'/>
+<use f='codebrowser/locale/programs/charmap.c' l='91' c='charmap_read'/>
+<use f='codebrowser/locale/programs/charmap.c' l='275' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='278' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='291' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='291' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='292' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='865' c='new_width'/>
+<use f='codebrowser/locale/programs/charmap.c' l='923' c='charmap_find_value'/>
+<use f='codebrowser/locale/programs/charmap.c' l='933' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='1102' c='charmap_find_symbol'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/locfile.h' l='51' c='handle_copy'/>
+<use f='codebrowser/locale/programs/locfile.h' l='59' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='63' c='check_all_categories'/>
+<use f='codebrowser/locale/programs/locfile.h' l='67' c='write_all_categories'/>
+<use f='codebrowser/locale/programs/locfile.h' l='135' c='ctype_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='139' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='141' c='ctype_output'/>
+<use f='codebrowser/locale/programs/locfile.h' l='144' c='find_translit'/>
+<use f='codebrowser/locale/programs/locfile.h' l='149' c='collate_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='153' c='collate_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='155' c='collate_output'/>
+<use f='codebrowser/locale/programs/locfile.h' l='161' c='monetary_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='165' c='monetary_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='167' c='monetary_output'/>
+<use f='codebrowser/locale/programs/locfile.h' l='173' c='numeric_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='177' c='numeric_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='179' c='numeric_output'/>
+<use f='codebrowser/locale/programs/locfile.h' l='185' c='messages_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='189' c='messages_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='191' c='messages_output'/>
+<use f='codebrowser/locale/programs/locfile.h' l='197' c='time_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='201' c='time_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='203' c='time_output'/>
+<use f='codebrowser/locale/programs/locfile.h' l='209' c='paper_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='213' c='paper_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='215' c='paper_output'/>
+<use f='codebrowser/locale/programs/locfile.h' l='221' c='name_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='225' c='name_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='227' c='name_output'/>
+<use f='codebrowser/locale/programs/locfile.h' l='233' c='address_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='237' c='address_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='239' c='address_output'/>
+<use f='codebrowser/locale/programs/locfile.h' l='245' c='telephone_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='249' c='telephone_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='251' c='telephone_output'/>
+<use f='codebrowser/locale/programs/locfile.h' l='257' c='measurement_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='261' c='measurement_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='263' c='measurement_output'/>
+<use f='codebrowser/locale/programs/locfile.h' l='269' c='identification_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='273' c='identification_finish'/>
+<use f='codebrowser/locale/programs/locfile.h' l='275' c='identification_output'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='100' c='address_finish'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='343' c='address_output'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='370' c='address_read'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/ld-collate.c' l='420' c='check_duplicate'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='463' c='read_directions'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='697' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='953' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1076' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1530' c='collate_finish'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2108' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2522' c='skip_to'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2562' c='collate_read'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='257' c='ctype_startup'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='264' c='ctype_map_new'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='268' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='271' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='290' c='ctype_startup'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='365' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='766' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='786' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='828' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='903' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1146' c='ctype_map_new'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1256' c='get_character'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1340' c='charclass_symbolic_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1453' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1578' c='charclass_charcode_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1687' c='find_translit2'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1748' c='find_translit'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1785' c='read_widestring'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1856' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1940' c='read_translit_ignore_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2065' c='ctype_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2853' c='set_one_default'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2896' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3326' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3555' c='translit_flatten'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3609' c='allocate_arrays'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/ld-identification.c' l='97' c='identification_finish'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='208' c='identification_output'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='245' c='identification_read'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/ld-measurement.c' l='59' c='measurement_finish'/>
+<use f='codebrowser/locale/programs/ld-measurement.c' l='118' c='measurement_output'/>
+<use f='codebrowser/locale/programs/ld-measurement.c' l='134' c='measurement_read'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/ld-messages.c' l='64' c='messages_finish'/>
+<use f='codebrowser/locale/programs/ld-messages.c' l='178' c='messages_output'/>
+<use f='codebrowser/locale/programs/ld-messages.c' l='198' c='messages_read'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='160' c='monetary_finish'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='367' c='monetary_output'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='436' c='monetary_read'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/ld-name.c' l='62' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='153' c='name_output'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='174' c='name_read'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/ld-numeric.c' l='66' c='numeric_finish'/>
+<use f='codebrowser/locale/programs/ld-numeric.c' l='130' c='numeric_output'/>
+<use f='codebrowser/locale/programs/ld-numeric.c' l='150' c='numeric_read'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/ld-paper.c' l='58' c='paper_finish'/>
+<use f='codebrowser/locale/programs/ld-paper.c' l='117' c='paper_output'/>
+<use f='codebrowser/locale/programs/ld-paper.c' l='134' c='paper_read'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='60' c='telephone_finish'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='170' c='telephone_output'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='190' c='telephone_read'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/ld-time.c' l='133' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='534' c='time_output'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='671' c='time_read'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/linereader.c' l='41' c='get_string'/>
+<use f='codebrowser/locale/programs/linereader.c' l='191' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='591' c='get_string'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/localedef.c' l='191' c='main'/>
+<use f='codebrowser/locale/programs/localedef.c' l='666' c='find_locale'/>
+<use f='codebrowser/locale/programs/localedef.c' l='686' c='load_locale'/>
+<size>504</size>
+<use f='codebrowser/locale/programs/locfile.c' l='49' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='279'/>
+<use f='codebrowser/locale/programs/locfile.c' l='297' c='check_all_categories'/>
+<use f='codebrowser/locale/programs/locfile.c' l='310'/>
+<use f='codebrowser/locale/programs/locfile.c' l='329' c='write_all_categories'/>
+<use f='codebrowser/locale/programs/locfile.c' l='955' c='handle_copy'/>
+<size>504</size>

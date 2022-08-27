@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/x86/atomic-machine.h' l='558'/>
+<use f='codebrowser/include/atomic.h' l='508' u='a'/>
+<doc f='codebrowser/sysdeps/x86/atomic-machine.h' l='556'>/* We don&apos;t use mfence because it is supposedly slower due to having to
+   provide stronger guarantees (e.g., regarding self-modifying code).  */</doc>
+<use f='codebrowser/sysdeps/generic/malloc-machine.h' l='26' u='a'/>
+<use f='codebrowser/nptl/pthread_mutex_setprioceiling.c' l='117' u='c'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/time/sys/time.h' l='152' type='int futimesat(int __fd, const char * __file, const struct timeval * __tvp)'/>
+<doc f='codebrowser/time/sys/time.h' l='149'>/* Change the access time of FILE relative to FD to TVP[0] and the
+   modification time of FILE to TVP[1].  If TVP is a null pointer, use
+   the current time instead.  Returns 0 on success, -1 on errors.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/futimesat.c' l='54' macro='1' type='int futimesat(int , const char * , const struct timeval * )'/>

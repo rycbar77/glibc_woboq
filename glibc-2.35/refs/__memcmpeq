@@ -1,0 +1,21 @@
+<dec f='codebrowser/string/string.h' l='80' type='int __memcmpeq(const void * __s1, const void * __s2, size_t __n)'/>
+<dec f='codebrowser/include/string.h' l='115' type='int __memcmpeq(const void * , const void * , size_t )'/>
+<use f='codebrowser/include/string.h' l='115' c='__memcmpeq'/>
+<doc f='codebrowser/string/string.h' l='67'>/* Compare N bytes of S1 and S2.  Return zero if S1 and S2 are equal.
+   Return some non-zero value otherwise.
+
+   Essentially __memcmpeq has the exact same semantics as memcmp
+   except the return value is less constrained.  memcmp is always a
+   correct implementation of __memcmpeq.  As well !!memcmp, -memcmp,
+   or bcmp are correct implementations.
+
+   __memcmpeq is meant to be used by compilers when memcmp return is
+   only used for its bolean value.
+
+   __memcmpeq is declared only for use by compilers.  Programs should
+   continue to use memcmp.  */</doc>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='43' c='__memcmpeq_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='47' c='__memcmpeq_avx2_rtm'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='52' c='__memcmpeq_evex'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='57' c='__memcmpeq_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/memcmpeq.c' l='29' macro='1' type='int __memcmpeq(const void * , const void * , size_t )'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/time.h' l='51' type='int'/>
+<def f='codebrowser/time/tzfile.c' l='32' type='int'/>
+<use f='codebrowser/time/tzfile.c' l='109' u='r' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='116' u='w' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='474' u='w' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='501' u='r' c='__tzfile_default'/>
+<use f='codebrowser/time/tzfile.c' l='506' u='w' c='__tzfile_default'/>
+<use f='codebrowser/time/tzset.c' l='342' u='r' c='__tzset_parse_tz'/>
+<use f='codebrowser/time/tzset.c' l='406' u='r' c='tzset_internal'/>
+<use f='codebrowser/time/tzset.c' l='553' u='r' c='__tzset'/>
+<use f='codebrowser/time/tzset.c' l='579' u='r' c='__tz_convert'/>

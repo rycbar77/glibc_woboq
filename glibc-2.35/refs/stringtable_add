@@ -1,0 +1,6 @@
+<dec f='codebrowser/elf/stringtable.h' l='43' type='struct stringtable_entry * stringtable_add(struct stringtable * table, const char * string)'/>
+<use f='codebrowser/elf/cache.c' l='75' u='c' c='new_glibc_hwcaps_subdirectory'/>
+<use f='codebrowser/elf/cache.c' l='806' u='c' c='add_to_cache'/>
+<use f='codebrowser/elf/cache.c' l='810' u='c' c='add_to_cache'/>
+<doc f='codebrowser/elf/stringtable.h' l='42'>/* Adds STRING to TABLE.  May return the address of an existing entry.  */</doc>
+<def f='codebrowser/elf/stringtable.c' l='81' ll='118' type='struct stringtable_entry * stringtable_add(struct stringtable * table, const char * string)'/>

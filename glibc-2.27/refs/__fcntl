@@ -1,0 +1,24 @@
+<dec f='codebrowser/include/fcntl.h' l='15' type='int __fcntl(int __fd, int __cmd)'/>
+<dec f='codebrowser/include/fcntl.h' l='16' type='int __fcntl(int , int )'/>
+<use f='codebrowser/include/fcntl.h' l='16' c='__fcntl'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='89' c='__fcntl_nocancel'/>
+<dec f='codebrowser/sysdeps/generic/dl-fcntl.h' l='21' type='int __fcntl(int , int )'/>
+<use f='codebrowser/sysdeps/generic/dl-fcntl.h' l='21' c='__fcntl'/>
+<use f='codebrowser/inet/rcmd.c' l='183' u='c' c='rcmd_af'/>
+<use f='codebrowser/io/lockf.c' l='52' u='c' c='lockf'/>
+<use f='codebrowser/io/lockf.c' l='80' u='c' c='lockf'/>
+<use f='codebrowser/libio/iofdopen.c' l='88' u='c' c='_IO_new_fdopen'/>
+<use f='codebrowser/libio/iofdopen.c' l='118' u='c' c='_IO_new_fdopen'/>
+<use f='codebrowser/libio/iopopen.c' l='133' u='c' c='_IO_new_proc_open'/>
+<use f='codebrowser/libio/iopopen.c' l='161' u='c' c='_IO_new_proc_open'/>
+<use f='codebrowser/posix/wordexp.c' l='821' u='c' c='exec_comm_child'/>
+<use f='codebrowser/shadow/lckpwdf.c' l='138' u='c' c='__lckpwdf'/>
+<use f='codebrowser/streams/isastream.c' l='28' u='c' c='isastream'/>
+<use f='codebrowser/sunrpc/key_call.c' l='476' u='c' c='getkeyserv_handle'/>
+<use f='codebrowser/sysdeps/posix/fdopendir.c' l='41' u='c' c='__fdopendir'/>
+<use f='codebrowser/io/copy_file_range-compat.c' l='72' u='c' c='copy_file_range_compat'/>
+<use f='codebrowser/sysdeps/posix/opendir.c' l='200' u='c' c='__alloc_dir'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fcntl.c' l='87' macro='1' type='int __fcntl(int , int )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/netlink_assert_response.c' l='66' u='c' c='__netlink_assert_response'/>
+<use f='codebrowser/sysdeps/posix/posix_fallocate.c' l='45' u='c' c='internal_fallocate'/>
+<use f='codebrowser/sysdeps/posix/posix_fallocate64.c' l='45' u='c' c='internal_fallocate64'/>

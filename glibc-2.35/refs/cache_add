@@ -1,0 +1,30 @@
+<dec f='codebrowser/nscd/nscd.h' l='280' type='int cache_add(int type, const void * key, size_t len, struct datahead * packet, _Bool first, struct database_dyn * table, uid_t owner, _Bool prune_wakeup)'/>
+<use f='codebrowser/nscd/aicache.c' l='504' u='c' c='addhstaiX'/>
+<def f='codebrowser/nscd/cache.c' l='135' ll='232' type='int cache_add(int type, const void * key, size_t len, struct datahead * packet, _Bool first, struct database_dyn * table, uid_t owner, _Bool prune_wakeup)'/>
+<doc f='codebrowser/nscd/cache.c' l='126'>/* Add a new entry to the cache.  The return value is zero if the function
+   call was successful.
+
+   This function must be called with the read-lock held.
+
+   We modify the table but we nevertheless only acquire a read-lock.
+   This is ok since we use operations which would be safe even without
+   locking, given that the `prune_cache&apos; function never runs.  Using
+   the readlock reduces the chance of conflicts.  */</doc>
+<use f='codebrowser/nscd/grpcache.c' l='148' u='c' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='345' u='c' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='354' u='c' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='363' u='c' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='370' u='c' c='cache_addgr'/>
+<use f='codebrowser/nscd/hstcache.c' l='174' u='c' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='391' u='c' c='cache_addhst'/>
+<use f='codebrowser/nscd/initgrcache.c' l='232' u='c' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='365' u='c' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='433' u='c' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='593' u='c' c='addinnetgrX'/>
+<use f='codebrowser/nscd/pwdcache.c' l='155' u='c' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='324' u='c' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='333' u='c' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='342' u='c' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='348' u='c' c='cache_addpw'/>
+<use f='codebrowser/nscd/servicescache.c' l='143' u='c' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='299' u='c' c='cache_addserv'/>

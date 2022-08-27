@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1231' type='void _dl_show_scope(struct link_map * new, int from)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1230'>/* Show show of an object.  */</doc>
+<use f='codebrowser/elf/dl-open.c' l='348' u='c' c='update_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='626' u='c' c='dl_open_worker'/>
+<def f='codebrowser/elf/dl-open.c' l='925' ll='947' type='void _dl_show_scope(struct link_map * l, int from)'/>
+<use f='codebrowser/elf/rtld.c' l='2328' u='c' c='dl_main'/>

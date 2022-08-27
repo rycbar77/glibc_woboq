@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/printf.h' l='12' type='int __printf_fp(FILE * , const struct printf_info * , const void *const * )'/>
+<dec f='codebrowser/include/printf.h' l='14' type='int __printf_fp(FILE * , const struct printf_info * , const void *const * )'/>
+<use f='codebrowser/include/printf.h' l='14' c='__printf_fp'/>
+<def f='codebrowser/stdio-common/printf_fp.c' l='1270' macro='1' type='int __printf_fp(FILE * , const struct printf_info * , const void *const * )'/>
+<dec f='codebrowser/stdio-common/printf_size.c' l='77' type='int __printf_fp(FILE * fp, const struct printf_info * info, const void *const * args)'/>
+<use f='codebrowser/stdio-common/printf_size.c' l='197' u='c' c='__printf_size'/>
+<use f='codebrowser/stdio-common/printf_size.c' l='211' u='c' c='__printf_size'/>
+<doc f='codebrowser/stdio-common/printf_size.c' l='76'>/* Prototype for helper functions.  */</doc>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='828' u='c' c='__vfprintf_internal'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='840' u='c' c='__vfprintf_internal'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='828' u='c' c='printf_positional'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='840' u='c' c='printf_positional'/>

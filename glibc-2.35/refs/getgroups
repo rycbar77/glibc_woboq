@@ -1,0 +1,6 @@
+<dec f='codebrowser/posix/unistd.h' l='711' type='int getgroups(int __size, __gid_t * __list)'/>
+<doc f='codebrowser/posix/unistd.h' l='708'>/* If SIZE is zero, return the number of supplementary groups
+   the calling process is in.  Otherwise, fill in the group IDs
+   of its supplementary groups in LIST and return the number written.  */</doc>
+<def f='codebrowser/posix/bits/unistd.h' l='218' ll='224' macro='1' type='int getgroups(int __size, __gid_t * __list)'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='210' u='c' c='support_capture_subprogram_self_sgid'/>

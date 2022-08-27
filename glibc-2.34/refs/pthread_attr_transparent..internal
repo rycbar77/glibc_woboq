@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/nptl/internaltypes.h' l='58' type='struct pthread_attr'/>
+<use f='codebrowser/sysdeps/nptl/pthread_early_init.h' l='53' u='m' c='__pthread_early_init'/>
+<use f='codebrowser/sysdeps/nptl/pthread_early_init.h' l='54' u='m' c='__pthread_early_init'/>
+<offset>0</offset>
+<use f='codebrowser/nptl/pthread_attr_copy.c' l='32' u='m' c='__pthread_attr_copy'/>
+<use f='codebrowser/nptl/pthread_attr_getstacksize.c' l='36' u='m' c='__pthread_attr_getstacksize'/>
+<use f='codebrowser/nptl/allocatestack.c' l='232' u='m' c='allocate_stack'/>
+<use f='codebrowser/nptl/pthread_create.c' l='605' u='a' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='70' u='m' c='__pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='71' u='m' c='__pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='71' u='m' c='__pthread_setattr_default_np'/>

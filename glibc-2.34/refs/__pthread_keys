@@ -1,0 +1,20 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='216' type='struct pthread_key_struct[1024]'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='217' type='typeof (__pthread_keys)'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='217'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='215'>/* Thread-local data key handling.  */</doc>
+<use f='codebrowser/nptl/nptl_deallocate_tsd.c' l='69' u='m' c='__nptl_deallocate_tsd'/>
+<use f='codebrowser/nptl/nptl_deallocate_tsd.c' l='72' u='m' c='__nptl_deallocate_tsd'/>
+<use f='codebrowser/nptl/nptl_deallocate_tsd.c' l='74' u='m' c='__nptl_deallocate_tsd'/>
+<use f='codebrowser/nptl_db/structs.def' l='84' u='r'/>
+<use f='codebrowser/nptl_db/structs.def' l='84' u='r'/>
+<use f='codebrowser/nptl_db/structs.def' l='84' u='r'/>
+<use f='codebrowser/nptl/pthread_getspecific.c' l='60' u='m' c='___pthread_getspecific'/>
+<use f='codebrowser/nptl/pthread_key_create.c' l='30' u='m' c='___pthread_key_create'/>
+<use f='codebrowser/nptl/pthread_key_create.c' l='34' u='m' c='___pthread_key_create'/>
+<use f='codebrowser/nptl/pthread_key_create.c' l='38' u='m' c='___pthread_key_create'/>
+<use f='codebrowser/nptl/pthread_key_delete.c' l='31' u='m' c='___pthread_key_delete'/>
+<use f='codebrowser/nptl/pthread_key_delete.c' l='34' u='m' c='___pthread_key_delete'/>
+<def f='codebrowser/nptl/pthread_keys.c' l='22' type='struct pthread_key_struct[1024]'/>
+<doc f='codebrowser/nptl/pthread_keys.c' l='21'>/* Table of the key information.  */</doc>
+<use f='codebrowser/nptl/pthread_setspecific.c' l='40' u='m' c='___pthread_setspecific'/>
+<use f='codebrowser/nptl/pthread_setspecific.c' l='53' u='m' c='___pthread_setspecific'/>

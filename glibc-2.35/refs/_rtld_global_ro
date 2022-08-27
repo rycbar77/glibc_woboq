@@ -1,0 +1,16 @@
+<use f='codebrowser/elf/libc-dl_find_object.c' l='25' macro='1' u='m' c='_dl_find_object'/>
+<def f='codebrowser/elf/rtld.c' l='360' ll='391' type='struct rtld_global_ro'/>
+<doc f='codebrowser/elf/rtld.c' l='358'>/* This variable is similar to _rtld_local, but all values are
+   read-only after relocation.  */</doc>
+<use f='codebrowser/malloc/malloc.c' l='2033' macro='1' u='m' c='madvise_thp'/>
+<use f='codebrowser/malloc/malloc.c' l='2035' macro='1' u='m' c='madvise_thp'/>
+<use f='codebrowser/malloc/arena.c' l='576' macro='1' u='m' c='new_heap'/>
+<use f='codebrowser/malloc/malloc.c' l='2568' macro='1' u='m' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2717' macro='1' u='m' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2717' macro='1' u='m' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2717' macro='1' u='m' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2998' macro='1' u='m' c='systrim'/>
+<use f='codebrowser/malloc/malloc.c' l='3045' macro='1' u='m' c='munmap_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='3076' macro='1' u='m' c='mremap_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='5043' macro='1' u='m' c='mtrim'/>
+<use f='codebrowser/malloc/malloc-check.c' l='143' macro='1' u='m' c='mem2chunk_check'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='793' type='wint_t fgetwc_unlocked(__FILE * __stream)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='787'>/* This is the wide character version of a GNU extension.
+
+   This function is not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation it is a cancellation point and
+   therefore not marked with __THROW.  */</doc>
+<def f='codebrowser/libio/getwc_u.c' l='40' macro='1' type='wint_t fgetwc_unlocked(FILE * )'/>

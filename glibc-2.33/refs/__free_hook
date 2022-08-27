@@ -1,0 +1,15 @@
+<dec f='codebrowser/malloc/malloc.h' l='165' type='void (*)(void *, const void *)'/>
+<def f='codebrowser/malloc/malloc.c' l='1999' ll='2000' macro='1' type='void (*)(void *, const void *)'/>
+<use f='codebrowser/malloc/hooks.c' l='61' u='w' c='__malloc_check_init'/>
+<use f='codebrowser/malloc/malloc.c' l='3265' c='__libc_free'/>
+<use f='codebrowser/malloc/malloc.c' l='3265' u='r' c='__libc_free'/>
+<doc f='codebrowser/malloc/malloc.h' l='164'>/* Hooks for debugging and user-defined versions. */</doc>
+<use f='codebrowser/malloc/mcheck.c' l='192' u='w' c='freehook'/>
+<use f='codebrowser/malloc/mcheck.c' l='197' u='w' c='freehook'/>
+<use f='codebrowser/malloc/mcheck.c' l='308' u='w' c='reallochook'/>
+<use f='codebrowser/malloc/mcheck.c' l='319' u='w' c='reallochook'/>
+<use f='codebrowser/malloc/mcheck.c' l='386' u='r' c='mcheck'/>
+<use f='codebrowser/malloc/mcheck.c' l='387' u='w' c='mcheck'/>
+<use f='codebrowser/malloc/mtrace.c' l='133' u='w' c='set_default_hooks'/>
+<use f='codebrowser/malloc/mtrace.c' l='143' u='w' c='set_trace_hooks'/>
+<use f='codebrowser/malloc/mtrace.c' l='153' u='r' c='save_default_hooks'/>

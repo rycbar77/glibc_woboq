@@ -1,0 +1,3 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/rseq-internal.h' l='29' ll='42' type='_Bool rseq_register_current_thread(struct pthread * self, _Bool do_rseq)'/>
+<use f='codebrowser/nptl/pthread_create.c' l='373' u='c' c='start_thread'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='108' u='c' c='__tls_init_tp'/>

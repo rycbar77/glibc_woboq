@@ -1,0 +1,18 @@
+<dec f='codebrowser/libio/stdio.h' l='649' type='char * fgets_unlocked(char *restrict __s, int __n, FILE *restrict __stream)'/>
+<use f='codebrowser/include/stdio.h' l='164' c='__fgets_unlocked'/>
+<doc f='codebrowser/libio/stdio.h' l='643'>/* This function does the same as `fgets&apos; but does not lock the stream.
+
+   This function is not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation it is a cancellation point and
+   therefore not marked with __THROW.  */</doc>
+<use f='codebrowser/grp/fgetgrent_r.c' l='69' u='c' c='__fgetgrent_r'/>
+<use f='codebrowser/gshadow/fgetsgent_r.c' l='45' u='c' c='__fgetsgent_r'/>
+<def f='codebrowser/libio/iofgets_u.c' l='67' macro='1' type='char * fgets_unlocked(char *restrict , int , FILE *restrict )'/>
+<use f='codebrowser/locale/programs/locale.c' l='555' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='607' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1221' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1308' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/misc/getusershell.c' l='130' u='c' c='initshells'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='81' u='c' c='__fgetpwent_r'/>
+<use f='codebrowser/shadow/fgetspent_r.c' l='48' u='c' c='__fgetspent_r'/>

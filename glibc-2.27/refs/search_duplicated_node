@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/regcomp.c' l='55' type='int search_duplicated_node(const re_dfa_t * dfa, int org_node, unsigned int constraint)'/>
+<use f='codebrowser/posix/regcomp.c' l='1531' u='c' c='duplicate_node_closure'/>
+<def f='codebrowser/posix/regcomp.c' l='1573' ll='1585' type='int search_duplicated_node(const re_dfa_t * dfa, int org_node, unsigned int constraint)'/>
+<doc f='codebrowser/posix/regcomp.c' l='1570'>/* Search for a node which is duplicated from the node ORG_NODE, and
+   satisfies the constraint CONSTRAINT.  */</doc>

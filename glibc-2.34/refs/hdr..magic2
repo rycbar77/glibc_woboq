@@ -1,0 +1,8 @@
+<dec f='codebrowser/malloc/mcheck-impl.c' l='43' type='unsigned long'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='89' u='r' c='checkhdr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='179' u='w' c='free_mcheck'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='218' u='w' c='malloc_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='269' u='w' c='memalign_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='340' u='w' c='realloc_mcheck_after'/>
+<offset>320</offset>
+<doc f='codebrowser/malloc/mcheck-impl.c' l='43'>/* Extra, keeps us doubleword aligned.  */</doc>

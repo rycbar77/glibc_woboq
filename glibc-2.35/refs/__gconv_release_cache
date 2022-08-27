@@ -1,0 +1,6 @@
+<dec f='codebrowser/iconv/gconv_int.h' l='239' type='void __gconv_release_cache(struct __gconv_step * steps, size_t nsteps)'/>
+<doc f='codebrowser/iconv/gconv_int.h' l='237'>/* Free all resources allocated for the transformation record when
+   using the cache.  */</doc>
+<def f='codebrowser/iconv/gconv_cache.c' l='445' ll='452' type='void __gconv_release_cache(struct __gconv_step * steps, size_t nsteps)'/>
+<doc f='codebrowser/iconv/gconv_cache.c' l='444'>/* Free memory allocated for the transformation record.  */</doc>
+<use f='codebrowser/iconv/gconv_db.c' l='800' u='c' c='__gconv_close_transform'/>

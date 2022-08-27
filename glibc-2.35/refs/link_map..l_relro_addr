@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/link.h' l='348' type='Elf64_Addr'/>
+<offset>9088</offset>
+<use f='codebrowser/elf/dl-load.c' l='1213' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-reloc.c' l='344' u='r' c='_dl_protect_relro'/>
+<use f='codebrowser/elf/dl-reloc.c' l='344' u='r' c='_dl_protect_relro'/>
+<use f='codebrowser/elf/dl-reloc.c' l='347' u='r' c='_dl_protect_relro'/>
+<use f='codebrowser/elf/dl-reloc.c' l='347' u='r' c='_dl_protect_relro'/>
+<use f='codebrowser/elf/dl-support.c' l='416' u='w' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/rtld.c' l='1275' u='w' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1776' u='w' c='dl_main'/>

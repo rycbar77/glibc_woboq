@@ -1,0 +1,13 @@
+<dec f='codebrowser/inet/netgroup.h' l='75' type='void __internal_endnetgrent(struct __netgrent * datap)'/>
+<def f='codebrowser/inet/getnetgrent_r.c' l='182' ll='188' type='void __internal_endnetgrent(struct __netgrent * datap)'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='197' u='c' c='endnetgrent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='213' u='c' c='internal_setpwent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='271' u='c' c='internal_endpwent'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='344' u='c' c='getpwent_next_nss_netgr'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='358' u='c' c='getpwent_next_nss_netgr'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='548' u='c' c='getpwent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='168' u='c' c='internal_setspent'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='226' u='c' c='internal_endspent'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='302' u='c' c='getspent_next_nss_netgr'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='316' u='c' c='getspent_next_nss_netgr'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='501' u='c' c='getspent_next_file'/>

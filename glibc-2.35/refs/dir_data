@@ -1,0 +1,14 @@
+<def f='codebrowser/io/ftw.c' l='159' ll='164'/>
+<use f='codebrowser/io/ftw.c' l='175'/>
+<use f='codebrowser/io/ftw.c' l='210' c='ftw_allocate'/>
+<use f='codebrowser/io/ftw.c' l='217' c='ftw_allocate'/>
+<use f='codebrowser/io/ftw.c' l='236' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='278' c='open_dir_stream'/>
+<use f='codebrowser/io/ftw.c' l='392' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='485' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='487' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='658' c='ftw_startup'/>
+<size>24</size>
+<mbr r='dir_data::stream' o='0' t='DIR *'/>
+<mbr r='dir_data::streamfd' o='64' t='int'/>
+<mbr r='dir_data::content' o='128' t='char *'/>

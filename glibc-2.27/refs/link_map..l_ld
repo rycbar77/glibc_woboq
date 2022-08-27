@@ -1,0 +1,17 @@
+<dec f='codebrowser/include/link.h' l='100' type='Elf64_Dyn *'/>
+<offset>128</offset>
+<use f='codebrowser/elf/get-dynamic-info.h' l='33' u='r' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/dl-deps.c' l='238' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-load.c' l='1000' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1132' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1141' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1141' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1260' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/setup-vdso.h' l='46' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='67' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='67' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/rtld.c' l='489' u='w' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='1155' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1174' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1300' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1860' u='r' c='dl_main'/>

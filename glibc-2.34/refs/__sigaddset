@@ -1,0 +1,12 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='99' ll='105' type='void __sigaddset(sigset_t * set, int sig)'/>
+<use f='codebrowser/inet/rcmd.c' l='167' u='c' c='rcmd_af'/>
+<use f='codebrowser/nptl/pthread_create.c' l='85' u='c' c='late_init'/>
+<use f='codebrowser/nptl/pthread_create.c' l='86' u='c' c='late_init'/>
+<use f='codebrowser/shadow/lckpwdf.c' l='126' u='c' c='__lckpwdf'/>
+<use f='codebrowser/signal/sigaddset.c' l='34' u='c' c='sigaddset'/>
+<use f='codebrowser/stdlib/abort.c' l='63' u='c' c='abort'/>
+<use f='codebrowser/sysdeps/posix/sigintr.c' l='38' u='c' c='siginterrupt'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='126' u='c' c='do_system'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='133' u='c' c='do_system'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='135' u='c' c='do_system'/>
+<use f='codebrowser/sysdeps/posix/signal.c' l='43' u='c' c='__bsd_signal'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/argz.h' l='11' type='error_t __argz_append(char **restrict __argz, size_t *restrict __argz_len, const char *restrict __buf, size_t __buf_len)'/>
+<def f='codebrowser/string/argz-append.c' l='24' ll='38' type='error_t __argz_append(char ** argz, size_t * argz_len, const char * buf, size_t buf_len)'/>
+<use f='codebrowser/string/argz-append.c' l='39' c='argz_append'/>
+<use f='codebrowser/string/argz-append.c' l='46' u='c' c='__argz_add'/>
+<doc f='codebrowser/string/argz-append.c' l='23'>/* Add BUF, of length BUF_LEN to the argz vector in ARGZ &amp; ARGZ_LEN.  */</doc>
+<use f='codebrowser/string/argz-replace.c' l='100' u='c' c='__argz_replace'/>
+<use f='codebrowser/string/envz.c' l='140' u='c' c='envz_merge'/>
+<use f='codebrowser/string/envz.c' l='144' u='c' c='envz_merge'/>

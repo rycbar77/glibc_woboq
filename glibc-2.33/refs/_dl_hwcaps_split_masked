@@ -1,0 +1,6 @@
+<dec f='codebrowser/elf/dl-hwcaps.h' l='93' type='_Bool _dl_hwcaps_split_masked(struct dl_hwcaps_split_masked * s)'/>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='92'>/* Like _dl_hwcaps_split, but apply masking.  */</doc>
+<use f='codebrowser/elf/dl-hwcaps.c' l='52' u='c' c='update_hwcaps_counts'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='77' u='c' c='copy_hwcaps'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='125' u='c' c='compute_priorities'/>
+<def f='codebrowser/elf/dl-hwcaps_split.c' l='49' ll='62' type='_Bool _dl_hwcaps_split_masked(struct dl_hwcaps_split_masked * s)'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/posix/unistd.h' l='356' type='int close(int __fd)'/>
+<doc f='codebrowser/posix/unistd.h' l='352'>/* Close the file descriptor FD.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/elf/cache.c' l='170' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='251' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='458' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='696' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='711' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='730' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='821' u='c' c='save_aux_cache'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/close.c' l='31' macro='1' type='int close(int )'/>

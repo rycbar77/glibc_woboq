@@ -1,0 +1,6 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='538' type='int __pthread_sigmask(int , const sigset_t * , sigset_t * )'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='539' type='int __pthread_sigmask(int , const sigset_t * , sigset_t * )'/>
+<use f='codebrowser/nptl/pthreadP.h' l='539' c='__pthread_sigmask'/>
+<def f='codebrowser/nptl/pthread_sigmask.c' l='24' ll='47' type='int __pthread_sigmask(int how, const sigset_t * newmask, sigset_t * oldmask)'/>
+<use f='codebrowser/nptl/pthread_sigmask.c' l='50' c='pthread_sigmask'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigprocmask.c' l='25' u='c' c='__sigprocmask'/>

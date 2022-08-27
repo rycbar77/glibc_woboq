@@ -1,0 +1,53 @@
+<def f='codebrowser/inet/netgroup.h' l='34' ll='68'/>
+<use f='codebrowser/inet/netgroup.h' l='73' c='__internal_setnetgrent'/>
+<use f='codebrowser/inet/netgroup.h' l='75' c='__internal_endnetgrent'/>
+<use f='codebrowser/inet/netgroup.h' l='78' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/include/netdb.h' l='216' c='_nss_netgroup_parseline'/>
+<use f='codebrowser/include/netdb.h' l='265' c='_nss_compat_setnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='267' c='_nss_compat_endnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='269' c='_nss_compat_getnetgrent_r'/>
+<use f='codebrowser/include/netdb.h' l='265' c='_nss_dns_setnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='267' c='_nss_dns_endnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='269' c='_nss_dns_getnetgrent_r'/>
+<use f='codebrowser/include/netdb.h' l='265' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='267' c='_nss_files_endnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='269' c='_nss_files_getnetgrent_r'/>
+<use f='codebrowser/include/netdb.h' l='265' c='_nss_hesiod_setnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='267' c='_nss_hesiod_endnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='269' c='_nss_hesiod_getnetgrent_r'/>
+<use f='codebrowser/include/netdb.h' l='265' c='_nss_nis_setnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='267' c='_nss_nis_endnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='269' c='_nss_nis_getnetgrent_r'/>
+<use f='codebrowser/include/netdb.h' l='265' c='_nss_nisplus_setnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='267' c='_nss_nisplus_endnetgrent'/>
+<use f='codebrowser/include/netdb.h' l='269' c='_nss_nisplus_getnetgrent_r'/>
+<use f='codebrowser/nscd/nscd_proto.h' l='83' c='__nscd_setnetgrent'/>
+<size>88</size>
+<doc f='codebrowser/inet/netgroup.h' l='33'>/* Dataset for iterating netgroups.  */</doc>
+<mbr r='__netgrent::type' o='0' t='enum (unnamed enum at /media/rr/Data/glibc_source/glibc-2.31/argp/../inet/netgroup.h:36:3)'/>
+<mbr r='__netgrent::val' o='64' t='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.31/argp/../inet/netgroup.h:38:3)'/>
+<mbr r='__netgrent::data' o='256' t='char *'/>
+<mbr r='__netgrent::data_size' o='320' t='size_t'/>
+<mbr r='__netgrent::first' o='448' t='int'/>
+<mbr r='__netgrent::known_groups' o='512' t='struct name_list *'/>
+<mbr r='__netgrent::needed_groups' o='576' t='struct name_list *'/>
+<mbr r='__netgrent::nip' o='640' t='service_user *'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='37'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='81' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='99' c='endnetgrent_hook'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='101' c='endnetgrent_hook'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='113' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='118' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='142' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='170' c='__internal_setnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='211' c='__internal_endnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='240' c='nscd_getnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='260' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='263' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='405' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='408' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='409' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='410' c='innetgr'/>
+<size>88</size>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='47' c='__nscd_setnetgrent'/>
+<size>88</size>

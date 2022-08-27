@@ -1,0 +1,23 @@
+<dec f='codebrowser/malloc/dynarray-skeleton.c' l='134' type='size_t'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='199' u='w' c='action_list_init'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='210' u='r' c='action_list_free'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='230' u='r' c='action_list_mark_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='233' u='w' c='action_list_mark_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='243' u='r' c='action_list_size'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='274' u='r' c='action_list_end'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='291' u='w' c='action_list_add__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='306' u='r' c='action_list_add'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='314' u='w' c='action_list_add'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='323' u='r' c='action_list_emplace__tail__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='324' u='w' c='action_list_emplace__tail__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='365' u='r' c='action_list_emplace'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='379' u='r' c='action_list_resize'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='413' u='r' c='action_list_resize'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='414' u='w' c='action_list_resize'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='425' u='r' c='action_list_remove_last'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='427' u='r' c='action_list_remove_last'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='431' u='w' c='action_list_remove_last'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='444' u='r' c='action_list_clear'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='445' u='w' c='action_list_clear'/>
+<offset>0</offset>
+<doc f='codebrowser/malloc/dynarray-skeleton.c' l='133'>/* These fields must match struct dynarray_header.  */</doc>

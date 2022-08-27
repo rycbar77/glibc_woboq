@@ -1,0 +1,9 @@
+<use f='codebrowser/intl/eval-plural.h' l='64' u='c' c='plural_eval'/>
+<use f='codebrowser/intl/eval-plural.h' l='70' u='c' c='plural_eval'/>
+<use f='codebrowser/stdlib/abort.c' l='79' u='c' c='abort'/>
+<use f='codebrowser/stdlib/abort.c' l='100' u='c' c='abort'/>
+<use f='codebrowser/support/support_test_main.c' l='153' u='c' c='signal_handler'/>
+<use f='codebrowser/support/xraise.c' l='25' u='c' c='xraise'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/raise.c' l='26' ll='51' type='int raise(int sig)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/raise.c' l='53' c='gsignal'/>
+<use f='codebrowser/debug/segfault.c' l='139' u='c' c='catch_segfault'/>

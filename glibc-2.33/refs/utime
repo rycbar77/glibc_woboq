@@ -1,0 +1,5 @@
+<dec f='codebrowser/io/utime.h' l='44' type='int utime(const char * __file, const struct utimbuf * __file_times)'/>
+<doc f='codebrowser/io/utime.h' l='42'>/* Set the access and modification times of FILE to those given in
+   *FILE_TIMES.  If FILE_TIMES is NULL, set them to the current time.  */</doc>
+<use f='codebrowser/support/test-container.c' l='435' u='c' c='copy_one_file'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/utime.c' l='56' macro='1' type='int utime(const char * , const struct utimbuf * )'/>

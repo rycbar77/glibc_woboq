@@ -1,0 +1,4 @@
+<dec f='codebrowser/inet/arpa/inet.h' l='100' type='char * inet_nsap_ntoa(int __len, const unsigned char * __cp, char * __buf)'/>
+<doc f='codebrowser/inet/arpa/inet.h' l='98'>/* Convert internet address in binary form in LEN bytes starting at CP
+   a presentation form and place result in BUF.  */</doc>
+<def f='codebrowser/resolv/nsap_addr.c' l='65' ll='92' type='char * inet_nsap_ntoa(int binlen, const u_char * binary, char * ascii)'/>

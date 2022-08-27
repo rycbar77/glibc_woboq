@@ -1,0 +1,22 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='47'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='44'>/* This macro is used on syscall that takes a sigset_t to specify the expected
+   size in bytes.  As for glibc, kernel sigset is implemented as an array of
+   unsigned long.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='72' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='82' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='90' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='98' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='106' u='c'/>
+<use f='codebrowser/nptl/nptl-init.c' l='280' u='c'/>
+<use f='codebrowser/nptl/pthread_sigmask.c' l='42' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_misc.h' l='35' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_misc.h' l='57' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_misc.h' l='63' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/epoll_pwait.c' l='41' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ppoll.c' l='49' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pselect.c' l='50' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/signalfd.c' l='27' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigpending.c' l='27' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigsuspend.c' l='26' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigtimedwait.c' l='29' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigaction.c' l='61' u='c'/>

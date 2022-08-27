@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/utmp.h' l='15' type='void __endutent()'/>
+<dec f='codebrowser/include/utmp.h' l='16' type='void __endutent()'/>
+<use f='codebrowser/include/utmp.h' l='16' c='__endutent'/>
+<use f='codebrowser/login/endutxent.c' l='24' u='c' c='endutxent'/>
+<def f='codebrowser/login/getutent_r.c' l='75' ll='83' type='void __endutent()'/>
+<use f='codebrowser/login/getutent_r.c' l='85' c='endutent'/>
+<use f='codebrowser/login/login.c' l='125' u='c' c='__login'/>
+<use f='codebrowser/login/logout.c' l='60' u='c' c='__logout'/>
+<use f='codebrowser/sysdeps/unix/getlogin.c' l='78' u='c' c='getlogin_fd0'/>

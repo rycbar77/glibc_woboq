@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/unistd.h' l='850' type='ssize_t readlinkat(int __fd, const char *restrict __path, char *restrict __buf, size_t __len)'/>
+<dec f='codebrowser/include/unistd.h' l='27' type='ssize_t readlinkat(int , const char *restrict , char *restrict , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='27' c='readlinkat'/>
+<doc f='codebrowser/posix/unistd.h' l='849'>/* Like readlink but a relative PATH is interpreted relative to FD.  */</doc>
+<use f='codebrowser/debug/readlinkat_chk.c' l='29' u='c' c='__readlinkat_chk'/>

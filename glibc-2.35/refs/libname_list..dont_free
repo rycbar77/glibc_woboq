@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='233' type='int'/>
+<offset>128</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='233'>/* Flag whether this element should be freed
+				   if the object is not entirely unloaded.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='709' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-libc.c' l='286' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-load.c' l='442' u='w' c='add_name_to_object'/>
+<use f='codebrowser/elf/dl-load.c' l='981' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-object.c' l='106' u='w' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-support.c' l='90' u='w'/>
+<use f='codebrowser/elf/rtld.c' l='1669' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2432' u='w' c='dl_main'/>

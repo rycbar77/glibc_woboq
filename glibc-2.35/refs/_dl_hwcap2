@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='687' type='uint64_t'/>
+<def f='codebrowser/elf/dl-support.c' l='168' type='uint64_t'/>
+<use f='codebrowser/elf/dl-support.c' l='282' macro='1' u='w' c='_dl_aux_init'/>
+<dec f='codebrowser/elf/rtld_static_init.c' l='68' type='typeof (dl-&gt;_dl_hwcap2)'/>
+<use f='codebrowser/elf/rtld_static_init.c' l='69' u='r' c='__rtld_static_init'/>
+<use f='codebrowser/misc/getauxval.c' l='37' macro='1' u='r' c='__getauxval2'/>

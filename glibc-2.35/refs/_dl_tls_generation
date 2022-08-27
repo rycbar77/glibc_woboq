@@ -1,0 +1,24 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='479' type='size_t'/>
+<def f='codebrowser/csu/libc-tls.c' l='65' type='size_t'/>
+<doc f='codebrowser/csu/libc-tls.c' l='64'>/* Generation counter for the dtv.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='82' macro='1' u='r' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='742' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='746' macro='1' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='746' macro='1' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='746' macro='1' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='746' macro='1' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='746' macro='1' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='403' macro='1' u='r' c='update_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-open.c' l='408' macro='1' u='a' c='update_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-open.c' l='408' macro='1' u='a' c='update_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-open.c' l='408' macro='1' u='a' c='update_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-open.c' l='408' macro='1' u='a' c='update_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-open.c' l='408' macro='1' u='a' c='update_tls_slotinfo'/>
+<use f='codebrowser/elf/dl-tls.c' l='575' macro='1' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='575' macro='1' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='978' macro='1' u='a' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='978' macro='1' u='a' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='978' macro='1' u='a' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='978' macro='1' u='a' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='978' macro='1' u='a' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='1067' macro='1' u='r' c='_dl_add_to_slotinfo'/>

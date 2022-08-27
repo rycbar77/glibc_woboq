@@ -1,0 +1,5 @@
+<dec f='include/selinux/avc.h' l='155' type='void *(*)(void (*)(void))'/>
+<offset>0</offset>
+<doc f='include/selinux/avc.h' l='153'>/* create and start a thread, returning an opaque pointer to it; 
+	   the thread should run the given function. */</doc>
+<use f='codebrowser/nscd/selinux.c' l='103' u='w'/>

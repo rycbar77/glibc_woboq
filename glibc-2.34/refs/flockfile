@@ -1,0 +1,4 @@
+<dec f='codebrowser/libio/stdio.h' l='861' type='void flockfile(FILE * __stream)'/>
+<doc f='codebrowser/libio/stdio.h' l='860'>/* Acquire ownership of STREAM.  */</doc>
+<use f='codebrowser/malloc/mtrace-impl.c' l='88' u='c' c='lock_and_info'/>
+<def f='codebrowser/stdio-common/flockfile.c' l='28' macro='1' type='void flockfile(FILE * )'/>

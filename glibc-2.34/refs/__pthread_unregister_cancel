@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='709' type='void __pthread_unregister_cancel(__pthread_unwind_buf_t * __buf)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='267' type='void __pthread_unregister_cancel(__pthread_unwind_buf_t * __buf)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='269' type='void __pthread_unregister_cancel(__pthread_unwind_buf_t * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='269' c='__pthread_unregister_cancel'/>
+<def f='codebrowser/nptl/cleanup.c' l='55' macro='1' type='void __pthread_unregister_cancel(__pthread_unwind_buf_t * )'/>

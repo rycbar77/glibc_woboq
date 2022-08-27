@@ -1,0 +1,18 @@
+<dec f='codebrowser/malloc/malloc-debug.c' l='54' type='4'/>
+<use f='codebrowser/malloc/malloc-check.c' l='385' u='r' c='_dl_tunable_set_mallopt_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='402' u='r' c='initialize_malloc_check'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='180' u='r' c='__debug_malloc'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='207' u='r' c='__debug_free'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='255' u='r' c='__debug_realloc'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='284' u='r' c='_debug_mid_memalign'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='383' u='r' c='__debug_calloc'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='404' u='r' c='malloc_usable_size'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='430' u='r' c='malloc_info'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='443' u='r' c='mallopt'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='456' u='r' c='malloc_stats'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='469' u='r' c='mallinfo2'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='485' u='r' c='mallinfo'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='501' u='r' c='malloc_trim'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='574' u='r' c='malloc_set_state'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='581' u='r' c='malloc_set_state'/>
+<doc f='codebrowser/malloc/malloc-debug.c' l='54'>/* MALLOC_CHECK_ or glibc.malloc.check.  */</doc>

@@ -1,0 +1,16 @@
+<def f='codebrowser/sysdeps/nptl/internaltypes.h' l='55' ll='59'/>
+<size>56</size>
+<doc f='codebrowser/sysdeps/nptl/internaltypes.h' l='53'>/* Used to allocate a pthread_attr_t object which is also accessed
+   internally.  */</doc>
+<mbr r='pthread_attr_transparent::external' o='0' t='pthread_attr_t'/>
+<mbr r='pthread_attr_transparent::internal' o='0' t='struct pthread_attr'/>
+<use f='codebrowser/nptl/pthreadP.h' l='202'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_attr_copy.c' l='28' c='__pthread_attr_copy'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_create.c' l='631' c='__pthread_create_2_1'/>
+<size>56</size>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='60' c='pthread_setattr_default_np'/>
+<size>56</size>
+<use f='codebrowser/nptl/vars.c' l='25'/>
+<size>56</size>

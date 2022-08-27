@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>struct_semid_ds.h source code [codebrowser/sysdeps/unix/sysv/linux/x86/bits/types/struct_semid_ds.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="semid_ds "/>
+<link rel="stylesheet" href="../../../../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/x86/bits/types/struct_semid_ds.h'; var root_path = '../../../../../../../..'; var data_path = '../../../../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../../../../..'>codebrowser</a>/<a href='../../../../../..'>sysdeps</a>/<a href='../../../../..'>unix</a>/<a href='../../../..'>sysv</a>/<a href='../../..'>linux</a>/<a href='../..'>x86</a>/<a href='..'>bits</a>/<a href='./'>types</a>/<a href='struct_semid_ds.h.html'>struct_semid_ds.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* x86 implementation of the semaphore struct semid_ds.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 1995-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <a class="macro" href="../../../../../../../sysvipc/sys/sem.h.html#19" data-ref="_M/_SYS_SEM_H">_SYS_SEM_H</a></u></td></tr>
+<tr><th id="20">20</th><td><u># error "Never include &lt;bits/types/struct_semid_ds.h&gt; directly; use &lt;sys/sem.h&gt; instead."</u></td></tr>
+<tr><th id="21">21</th><td><u>#<span data-ppcond="19">endif</span></u></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><i>/* Data structure describing a set of semaphores.  */</i></td></tr>
+<tr><th id="24">24</th><td><b>struct</b> <dfn class="type def" id="semid_ds" title='semid_ds' data-ref="semid_ds" data-ref-filename="semid_ds">semid_ds</dfn></td></tr>
+<tr><th id="25">25</th><td>{</td></tr>
+<tr><th id="26">26</th><td><u>#<span data-ppcond="26">ifdef</span> <span class="macro" data-ref="_M/__USE_TIME_BITS64">__USE_TIME_BITS64</span></u></td></tr>
+<tr><th id="27">27</th><td><u># include &lt;bits/types/struct_semid64_ds_helper.h&gt;</u></td></tr>
+<tr><th id="28">28</th><td><u>#<span data-ppcond="26">else</span></u></td></tr>
+<tr><th id="29">29</th><td>  <b>struct</b> <a class="type" href="../../../bits/ipc-perm.h.html#ipc_perm" title='ipc_perm' data-ref="ipc_perm" data-ref-filename="ipc_perm">ipc_perm</a> <dfn class="decl field" id="semid_ds::sem_perm" title='semid_ds::sem_perm' data-ref="semid_ds::sem_perm" data-ref-filename="semid_ds..sem_perm">sem_perm</dfn>;   <i>/* operation permission struct */</i></td></tr>
+<tr><th id="30">30</th><td>  <a class="typedef" href="../../../../../../../posix/bits/types.h.html#__time_t" title='__time_t' data-type='long' data-ref="__time_t" data-ref-filename="__time_t">__time_t</a> <dfn class="decl field" id="semid_ds::sem_otime" title='semid_ds::sem_otime' data-ref="semid_ds::sem_otime" data-ref-filename="semid_ds..sem_otime">sem_otime</dfn>;  <i>/* last semop() time */</i></td></tr>
+<tr><th id="31">31</th><td>  <a class="typedef" href="../../../../../../../posix/bits/types.h.html#__syscall_ulong_t" title='__syscall_ulong_t' data-type='unsigned long' data-ref="__syscall_ulong_t" data-ref-filename="__syscall_ulong_t">__syscall_ulong_t</a> <dfn class="decl field" id="semid_ds::__sem_otime_high" title='semid_ds::__sem_otime_high' data-ref="semid_ds::__sem_otime_high" data-ref-filename="semid_ds..__sem_otime_high">__sem_otime_high</dfn>;</td></tr>
+<tr><th id="32">32</th><td>  <a class="typedef" href="../../../../../../../posix/bits/types.h.html#__time_t" title='__time_t' data-type='long' data-ref="__time_t" data-ref-filename="__time_t">__time_t</a> <dfn class="decl field" id="semid_ds::sem_ctime" title='semid_ds::sem_ctime' data-ref="semid_ds::sem_ctime" data-ref-filename="semid_ds..sem_ctime">sem_ctime</dfn>;  <i>/* last time changed by semctl() */</i></td></tr>
+<tr><th id="33">33</th><td>  <a class="typedef" href="../../../../../../../posix/bits/types.h.html#__syscall_ulong_t" title='__syscall_ulong_t' data-type='unsigned long' data-ref="__syscall_ulong_t" data-ref-filename="__syscall_ulong_t">__syscall_ulong_t</a> <dfn class="decl field" id="semid_ds::__sem_ctime_high" title='semid_ds::__sem_ctime_high' data-ref="semid_ds::__sem_ctime_high" data-ref-filename="semid_ds..__sem_ctime_high">__sem_ctime_high</dfn>;</td></tr>
+<tr><th id="34">34</th><td>  <a class="typedef" href="../../../../../../../posix/bits/types.h.html#__syscall_ulong_t" title='__syscall_ulong_t' data-type='unsigned long' data-ref="__syscall_ulong_t" data-ref-filename="__syscall_ulong_t">__syscall_ulong_t</a> <dfn class="decl field" id="semid_ds::sem_nsems" title='semid_ds::sem_nsems' data-ref="semid_ds::sem_nsems" data-ref-filename="semid_ds..sem_nsems">sem_nsems</dfn>;    <i>/* number of semaphores in set */</i></td></tr>
+<tr><th id="35">35</th><td>  <a class="typedef" href="../../../../../../../posix/bits/types.h.html#__syscall_ulong_t" title='__syscall_ulong_t' data-type='unsigned long' data-ref="__syscall_ulong_t" data-ref-filename="__syscall_ulong_t">__syscall_ulong_t</a> <dfn class="decl field" id="semid_ds::__glibc_reserved3" title='semid_ds::__glibc_reserved3' data-ref="semid_ds::__glibc_reserved3" data-ref-filename="semid_ds..__glibc_reserved3">__glibc_reserved3</dfn>;</td></tr>
+<tr><th id="36">36</th><td>  <a class="typedef" href="../../../../../../../posix/bits/types.h.html#__syscall_ulong_t" title='__syscall_ulong_t' data-type='unsigned long' data-ref="__syscall_ulong_t" data-ref-filename="__syscall_ulong_t">__syscall_ulong_t</a> <dfn class="decl field" id="semid_ds::__glibc_reserved4" title='semid_ds::__glibc_reserved4' data-ref="semid_ds::__glibc_reserved4" data-ref-filename="semid_ds..__glibc_reserved4">__glibc_reserved4</dfn>;</td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="26">endif</span></u></td></tr>
+<tr><th id="38">38</th><td>};</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../../semctl.c.html'>codebrowser/sysdeps/unix/sysv/linux/semctl.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

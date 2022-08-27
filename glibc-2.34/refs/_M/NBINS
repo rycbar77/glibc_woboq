@@ -1,0 +1,31 @@
+<dec f='codebrowser/malloc/malloc.c' l='1577'/>
+<use f='codebrowser/malloc/malloc.c' l='1853' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='1958' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='4935' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='5082' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='5623' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='5667' u='c'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='526' u='c'/>
+<doc f='codebrowser/malloc/malloc.c' l='1553'>/*
+   Indexing
+
+    Bins for sizes &lt; 512 bytes contain chunks of all the same size, spaced
+    8 bytes apart. Larger bins are approximately logarithmically spaced:
+
+    64 bins of size       8
+    32 bins of size      64
+    16 bins of size     512
+     8 bins of size    4096
+     4 bins of size   32768
+     2 bins of size  262144
+     1 bin  of size what&apos;s left
+
+    There is actually a little bit of slop in the numbers in bin_index
+    for the sake of speed. This makes no difference elsewhere.
+
+    The bins top out around 1MB because we expect to service large
+    requests via mmap.
+
+    Bin 0 does not exist.  Bin 1 is the unordered list; if that would be
+    a valid chunk size the small bins are bumped up one.
+ */</doc>

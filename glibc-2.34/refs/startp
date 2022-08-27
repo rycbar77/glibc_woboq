@@ -1,0 +1,6 @@
+<def f='codebrowser/nss/getXXent_r.c' l='102' type='nss_action_list'/>
+<use f='codebrowser/nss/getXXent_r.c' l='125' u='a' c='setgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='140' u='r' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='143' u='a' c='endgrent'/>
+<use f='codebrowser/nss/getXXent_r.c' l='161' u='a' c='__getgrent_r'/>
+<doc f='codebrowser/nss/getXXent_r.c' l='101'>/* Remember the first service_entry across set/get/endent.  */</doc>

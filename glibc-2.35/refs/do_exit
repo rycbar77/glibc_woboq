@@ -1,0 +1,21 @@
+<dec f='codebrowser/nscd/nscd.h' l='257' type='void do_exit(int child_ret, int errnum, const char * format)'/>
+<use f='codebrowser/nscd/connections.c' l='600' u='c' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='650' u='c' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='785' u='c' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='794' u='c' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='805' u='c' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='2386' u='c' c='start_threads'/>
+<use f='codebrowser/nscd/connections.c' l='2394' u='c' c='start_threads'/>
+<use f='codebrowser/nscd/connections.c' l='2408' u='c' c='start_threads'/>
+<use f='codebrowser/nscd/connections.c' l='2463' u='c' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2481' u='c' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2491' u='c' c='begin_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2509' u='c' c='finish_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2520' u='c' c='finish_drop_privileges'/>
+<use f='codebrowser/nscd/connections.c' l='2530' u='c' c='finish_drop_privileges'/>
+<use f='codebrowser/nscd/nscd.c' l='275' u='c' c='main'/>
+<def f='codebrowser/nscd/nscd.c' l='669' ll='699' type='void do_exit(int child_ret, int errnum, const char * format)'/>
+<use f='codebrowser/nscd/selinux.c' l='255' u='c' c='nscd_selinux_enabled'/>
+<use f='codebrowser/nscd/selinux.c' l='269' u='c' c='avc_create_thread'/>
+<use f='codebrowser/nscd/selinux.c' l='291' u='c' c='avc_alloc_lock'/>
+<use f='codebrowser/nscd/selinux.c' l='337' u='c' c='nscd_avc_init'/>

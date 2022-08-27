@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/libintl.h' l='9' type='char * __gettext(const char * __msgid)'/>
+<doc f='codebrowser/include/libintl.h' l='8'>/* Now define the internal interfaces.  */</doc>
+<dec f='codebrowser/intl/gettextP.h' l='41' type='char * __gettext(const char * __msgid)'/>
+<def f='codebrowser/intl/gettext.c' l='52' ll='56' type='char * __gettext(const char * msgid)'/>
+<use f='codebrowser/intl/gettext.c' l='60' c='gettext'/>
+<doc f='codebrowser/intl/gettext.c' l='49'>/* Look up MSGID in the current default message catalog for the current
+   LC_MESSAGES locale.  If not found, returns MSGID itself (the default
+   text).  */</doc>

@@ -1,0 +1,15 @@
+<def f='codebrowser/inet/net-internal.h' l='78' ll='81'/>
+<use f='codebrowser/inet/net-internal.h' l='85' c='__deadline_current_time'/>
+<use f='codebrowser/inet/net-internal.h' l='113' c='__deadline_elapsed'/>
+<use f='codebrowser/inet/net-internal.h' l='139' c='__deadline_from_timeval'/>
+<use f='codebrowser/inet/net-internal.h' l='146' c='__deadline_to_ms'/>
+<use f='codebrowser/inet/deadline.c' l='27' c='__deadline_current_time'/>
+<use f='codebrowser/inet/deadline.c' l='30' c='__deadline_current_time'/>
+<use f='codebrowser/inet/deadline.c' l='46' c='__deadline_from_timeval'/>
+<use f='codebrowser/inet/deadline.c' l='77' c='__deadline_to_ms'/>
+<size>16</size>
+<doc f='codebrowser/inet/net-internal.h' l='76'>/* Cache of the current time.  Used to compute deadlines from relative
+   timeouts and vice versa.  */</doc>
+<mbr r='deadline_current_time::current' o='0' t='struct timespec'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='293' c='clntudp_call'/>
+<size>16</size>

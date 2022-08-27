@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/generic/fd_to_filename.h' l='34' type='char * __fd_to_filename(int descriptor, struct fd_to_filename * storage)'/>
+<use f='codebrowser/libio/freopen.c' l='53' u='c' c='freopen'/>
+<doc f='codebrowser/sysdeps/generic/fd_to_filename.h' l='31'>/* Writes a /proc/self/fd-style path for DESCRIPTOR to *STORAGE and
+   returns a pointer to the start of the string.  DESCRIPTOR must be
+   non-negative.  */</doc>
+<use f='codebrowser/libio/freopen64.c' l='52' u='c' c='freopen64'/>
+<def f='codebrowser/misc/fd_to_filename.c' l='24' ll='38' type='char * __fd_to_filename(int descriptor, struct fd_to_filename * storage)'/>

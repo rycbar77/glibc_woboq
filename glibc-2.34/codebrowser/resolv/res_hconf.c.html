@@ -1,0 +1,591 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>res_hconf.c source code [codebrowser/resolv/res_hconf.c] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="cmd,parse_cbs "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/resolv/res_hconf.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>resolv</a>/<a href='res_hconf.c.html'>res_hconf.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Copyright (C) 1993-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="2">2</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="3">3</th><td><i>   Contributed by David Mosberger (davidm@azstarnet.com).</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/* This file provides a Linux /etc/host.conf compatible front end to</i></td></tr>
+<tr><th id="20">20</th><td><i>   the various name resolvers (/etc/hosts, named, NIS server, etc.).</i></td></tr>
+<tr><th id="21">21</th><td><i>   Though mostly compatibly, the following differences exist compared</i></td></tr>
+<tr><th id="22">22</th><td><i>   to the original implementation:</i></td></tr>
+<tr><th id="23">23</th><td><i></i></td></tr>
+<tr><th id="24">24</th><td><i>	- line comments can appear anywhere (not just at the beginning of</i></td></tr>
+<tr><th id="25">25</th><td><i>	  a line)</i></td></tr>
+<tr><th id="26">26</th><td><i>*/</i></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#include <a href="../include/assert.h.html">&lt;assert.h&gt;</a></u></td></tr>
+<tr><th id="29">29</th><td><u>#include <a href="../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="../include/ctype.h.html">&lt;ctype.h&gt;</a></u></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="../include/libintl.h.html">&lt;libintl.h&gt;</a></u></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="../include/memory.h.html">&lt;memory.h&gt;</a></u></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="../include/stdio_ext.h.html">&lt;stdio_ext.h&gt;</a></u></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="37">37</th><td><u>#include <a href="../include/net/if.h.html">&lt;net/if.h&gt;</a></u></td></tr>
+<tr><th id="38">38</th><td><u>#include <a href="../include/sys/ioctl.h.html">&lt;sys/ioctl.h&gt;</a></u></td></tr>
+<tr><th id="39">39</th><td><u>#include <a href="../include/unistd.h.html">&lt;unistd.h&gt;</a></u></td></tr>
+<tr><th id="40">40</th><td><u>#include <a href="../include/netinet/in.h.html">&lt;netinet/in.h&gt;</a></u></td></tr>
+<tr><th id="41">41</th><td><u>#include <a href="../sysdeps/nptl/libc-lock.h.html">&lt;libc-lock.h&gt;</a></u></td></tr>
+<tr><th id="42">42</th><td><u>#include <a href="../include/ifreq.h.html">"ifreq.h"</a></u></td></tr>
+<tr><th id="43">43</th><td><u>#include <a href="res_hconf.h.html">"res_hconf.h"</a></u></td></tr>
+<tr><th id="44">44</th><td><u>#include <a href="../include/wchar.h.html">&lt;wchar.h&gt;</a></u></td></tr>
+<tr><th id="45">45</th><td><u>#include <a href="../include/atomic.h.html">&lt;atomic.h&gt;</a></u></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><u>#<span data-ppcond="47">if</span> <a class="macro" href="../include/libc-symbols.h.html#35" title="(19 == 19)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="48">48</th><td><u># define <dfn class="macro" id="_M/fgets_unlocked" data-ref="_M/fgets_unlocked">fgets_unlocked</dfn> <a class="ref fn" href="../include/stdio.h.html#__fgets_unlocked" title='__fgets_unlocked' data-ref="__fgets_unlocked" data-ref-filename="__fgets_unlocked">__fgets_unlocked</a></u></td></tr>
+<tr><th id="49">49</th><td><u>#<span data-ppcond="47">endif</span></u></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><u>#define <dfn class="macro" id="_M/_PATH_HOSTCONF" data-ref="_M/_PATH_HOSTCONF">_PATH_HOSTCONF</dfn>	"/etc/host.conf"</u></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><i>/* Environment vars that all user to override default behavior:  */</i></td></tr>
+<tr><th id="54">54</th><td><u>#define <dfn class="macro" id="_M/ENV_HOSTCONF" data-ref="_M/ENV_HOSTCONF">ENV_HOSTCONF</dfn>	"RESOLV_HOST_CONF"</u></td></tr>
+<tr><th id="55">55</th><td><u>#define <dfn class="macro" id="_M/ENV_TRIM_OVERR" data-ref="_M/ENV_TRIM_OVERR">ENV_TRIM_OVERR</dfn>	"RESOLV_OVERRIDE_TRIM_DOMAINS"</u></td></tr>
+<tr><th id="56">56</th><td><u>#define <dfn class="macro" id="_M/ENV_TRIM_ADD" data-ref="_M/ENV_TRIM_ADD">ENV_TRIM_ADD</dfn>	"RESOLV_ADD_TRIM_DOMAINS"</u></td></tr>
+<tr><th id="57">57</th><td><u>#define <dfn class="macro" id="_M/ENV_MULTI" data-ref="_M/ENV_MULTI">ENV_MULTI</dfn>	"RESOLV_MULTI"</u></td></tr>
+<tr><th id="58">58</th><td><u>#define <dfn class="macro" id="_M/ENV_REORDER" data-ref="_M/ENV_REORDER">ENV_REORDER</dfn>	"RESOLV_REORDER"</u></td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td><b>enum</b> <dfn class="type def" id="parse_cbs" title='parse_cbs' data-ref="parse_cbs" data-ref-filename="parse_cbs">parse_cbs</dfn></td></tr>
+<tr><th id="61">61</th><td>  {</td></tr>
+<tr><th id="62">62</th><td>    <dfn class="enum" id="CB_none" title='CB_none' data-ref="CB_none" data-ref-filename="CB_none">CB_none</dfn>,</td></tr>
+<tr><th id="63">63</th><td>    <dfn class="enum" id="CB_arg_trimdomain_list" title='CB_arg_trimdomain_list' data-ref="CB_arg_trimdomain_list" data-ref-filename="CB_arg_trimdomain_list">CB_arg_trimdomain_list</dfn>,</td></tr>
+<tr><th id="64">64</th><td>    <dfn class="enum" id="CB_arg_bool" title='CB_arg_bool' data-ref="CB_arg_bool" data-ref-filename="CB_arg_bool">CB_arg_bool</dfn></td></tr>
+<tr><th id="65">65</th><td>  };</td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><em>static</em> <em>const</em> <b>struct</b> <dfn class="type def" id="cmd" title='cmd' data-ref="cmd" data-ref-filename="cmd"><a class="type" href="#cmd" title='cmd' data-ref="cmd" data-ref-filename="cmd">cmd</a></dfn></td></tr>
+<tr><th id="68">68</th><td>{</td></tr>
+<tr><th id="69">69</th><td>  <em>const</em> <em>char</em> <dfn class="tu decl field" id="cmd::name" title='cmd::name' data-type='const char[11]' data-ref="cmd::name" data-ref-filename="cmd..name">name</dfn>[<var>11</var>];</td></tr>
+<tr><th id="70">70</th><td>  <a class="typedef" href="../bits/stdint-uintn.h.html#uint8_t" title='uint8_t' data-type='__uint8_t' data-ref="uint8_t" data-ref-filename="uint8_t">uint8_t</a> <dfn class="tu decl field" id="cmd::cb" title='cmd::cb' data-type='uint8_t' data-ref="cmd::cb" data-ref-filename="cmd..cb">cb</dfn>;</td></tr>
+<tr><th id="71">71</th><td>  <em>unsigned</em> <em>int</em> <dfn class="tu decl field" id="cmd::arg" title='cmd::arg' data-type='unsigned int' data-ref="cmd::arg" data-ref-filename="cmd..arg">arg</dfn>;</td></tr>
+<tr><th id="72">72</th><td>} <dfn class="tu decl def" id="cmd" title='cmd' data-type='const struct cmd[4]' data-ref="cmd" data-ref-filename="cmd">cmd</dfn>[] =</td></tr>
+<tr><th id="73">73</th><td>{</td></tr>
+<tr><th id="74">74</th><td>  {<q>"order"</q>,		<a class="enum" href="#CB_none" title='CB_none' data-ref="CB_none" data-ref-filename="CB_none">CB_none</a>,		<var>0</var>},</td></tr>
+<tr><th id="75">75</th><td>  {<q>"trim"</q>,		<a class="enum" href="#CB_arg_trimdomain_list" title='CB_arg_trimdomain_list' data-ref="CB_arg_trimdomain_list" data-ref-filename="CB_arg_trimdomain_list">CB_arg_trimdomain_list</a>,	<var>0</var>},</td></tr>
+<tr><th id="76">76</th><td>  {<q>"multi"</q>,		<a class="enum" href="#CB_arg_bool" title='CB_arg_bool' data-ref="CB_arg_bool" data-ref-filename="CB_arg_bool">CB_arg_bool</a>,		<a class="macro" href="res_hconf.h.html#45" title="(1 &lt;&lt; 4)" data-ref="_M/HCONF_FLAG_MULTI">HCONF_FLAG_MULTI</a>},</td></tr>
+<tr><th id="77">77</th><td>  {<q>"reorder"</q>,		<a class="enum" href="#CB_arg_bool" title='CB_arg_bool' data-ref="CB_arg_bool" data-ref-filename="CB_arg_bool">CB_arg_bool</a>,		<a class="macro" href="res_hconf.h.html#44" title="(1 &lt;&lt; 3)" data-ref="_M/HCONF_FLAG_REORDER">HCONF_FLAG_REORDER</a>}</td></tr>
+<tr><th id="78">78</th><td>};</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><i>/* Structure containing the state.  */</i></td></tr>
+<tr><th id="81">81</th><td><b>struct</b> <a class="type" href="res_hconf.h.html#hconf" title='hconf' data-ref="hconf" data-ref-filename="hconf">hconf</a> <dfn class="decl def" id="_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</dfn>;</td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><i  data-doc="skip_ws">/* Skip white space.  */</i></td></tr>
+<tr><th id="84">84</th><td><em>static</em> <em>const</em> <em>char</em> *</td></tr>
+<tr><th id="85">85</th><td><dfn class="tu decl def fn" id="skip_ws" title='skip_ws' data-type='const char * skip_ws(const char * str)' data-ref="skip_ws" data-ref-filename="skip_ws">skip_ws</dfn> (<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="7str" title='str' data-type='const char *' data-ref="7str" data-ref-filename="7str">str</dfn>)</td></tr>
+<tr><th id="86">86</th><td>{</td></tr>
+<tr><th id="87">87</th><td>  <b>while</b> (<a class="macro" href="../ctype/ctype.h.html#197" title="((*__ctype_b_loc ())[(int) ((*str))] &amp; (unsigned short int) _ISspace)" data-ref="_M/isspace">isspace</a> (*<a class="local col7 ref" href="#7str" title='str' data-ref="7str" data-ref-filename="7str">str</a>)) ++<a class="local col7 ref" href="#7str" title='str' data-ref="7str" data-ref-filename="7str">str</a>;</td></tr>
+<tr><th id="88">88</th><td>  <b>return</b> <a class="local col7 ref" href="#7str" title='str' data-ref="7str" data-ref-filename="7str">str</a>;</td></tr>
+<tr><th id="89">89</th><td>}</td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td><i  data-doc="skip_string">/* Skip until whitespace, comma, end of line, or comment character.  */</i></td></tr>
+<tr><th id="93">93</th><td><em>static</em> <em>const</em> <em>char</em> *</td></tr>
+<tr><th id="94">94</th><td><dfn class="tu decl def fn" id="skip_string" title='skip_string' data-type='const char * skip_string(const char * str)' data-ref="skip_string" data-ref-filename="skip_string">skip_string</dfn> (<em>const</em> <em>char</em> *<dfn class="local col8 decl" id="8str" title='str' data-type='const char *' data-ref="8str" data-ref-filename="8str">str</dfn>)</td></tr>
+<tr><th id="95">95</th><td>{</td></tr>
+<tr><th id="96">96</th><td>  <b>while</b> (*<a class="local col8 ref" href="#8str" title='str' data-ref="8str" data-ref-filename="8str">str</a> &amp;&amp; !<a class="macro" href="../ctype/ctype.h.html#197" title="((*__ctype_b_loc ())[(int) ((*str))] &amp; (unsigned short int) _ISspace)" data-ref="_M/isspace">isspace</a> (*<a class="local col8 ref" href="#8str" title='str' data-ref="8str" data-ref-filename="8str">str</a>) &amp;&amp; *<a class="local col8 ref" href="#8str" title='str' data-ref="8str" data-ref-filename="8str">str</a> != <kbd>'#'</kbd> &amp;&amp; *<a class="local col8 ref" href="#8str" title='str' data-ref="8str" data-ref-filename="8str">str</a> != <kbd>','</kbd>)</td></tr>
+<tr><th id="97">97</th><td>    ++<a class="local col8 ref" href="#8str" title='str' data-ref="8str" data-ref-filename="8str">str</a>;</td></tr>
+<tr><th id="98">98</th><td>  <b>return</b> <a class="local col8 ref" href="#8str" title='str' data-ref="8str" data-ref-filename="8str">str</a>;</td></tr>
+<tr><th id="99">99</th><td>}</td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><em>static</em> <em>const</em> <em>char</em> *</td></tr>
+<tr><th id="103">103</th><td><dfn class="tu decl def fn" id="arg_trimdomain_list" title='arg_trimdomain_list' data-type='const char * arg_trimdomain_list(const char * fname, int line_num, const char * args)' data-ref="arg_trimdomain_list" data-ref-filename="arg_trimdomain_list">arg_trimdomain_list</dfn> (<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="9fname" title='fname' data-type='const char *' data-ref="9fname" data-ref-filename="9fname">fname</dfn>, <em>int</em> <dfn class="local col0 decl" id="10line_num" title='line_num' data-type='int' data-ref="10line_num" data-ref-filename="10line_num">line_num</dfn>, <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="11args" title='args' data-type='const char *' data-ref="11args" data-ref-filename="11args">args</dfn>)</td></tr>
+<tr><th id="104">104</th><td>{</td></tr>
+<tr><th id="105">105</th><td>  <em>const</em> <em>char</em> * <dfn class="local col2 decl" id="12start" title='start' data-type='const char *' data-ref="12start" data-ref-filename="12start">start</dfn>;</td></tr>
+<tr><th id="106">106</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col3 decl" id="13len" title='len' data-type='size_t' data-ref="13len" data-ref-filename="13len">len</dfn>;</td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td>  <b>do</b></td></tr>
+<tr><th id="109">109</th><td>    {</td></tr>
+<tr><th id="110">110</th><td>      <a class="local col2 ref" href="#12start" title='start' data-ref="12start" data-ref-filename="12start">start</a> = <a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a>;</td></tr>
+<tr><th id="111">111</th><td>      <a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a> = <a class="tu ref fn" href="#skip_string" title='skip_string' data-use='c' data-ref="skip_string" data-ref-filename="skip_string">skip_string</a> (<a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a>);</td></tr>
+<tr><th id="112">112</th><td>      <a class="local col3 ref" href="#13len" title='len' data-ref="13len" data-ref-filename="13len">len</a> = <a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a> - <a class="local col2 ref" href="#12start" title='start' data-ref="12start" data-ref-filename="12start">start</a>;</td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td>      <b>if</b> (<a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>.<a class="ref field" href="res_hconf.h.html#hconf::num_trimdomains" title='hconf::num_trimdomains' data-ref="hconf::num_trimdomains" data-ref-filename="hconf..num_trimdomains">num_trimdomains</a> &gt;= <a class="macro" href="res_hconf.h.html#24" title="4" data-ref="_M/TRIMDOMAINS_MAX">TRIMDOMAINS_MAX</a>)</td></tr>
+<tr><th id="115">115</th><td>	{</td></tr>
+<tr><th id="116">116</th><td>	  <em>char</em> *<dfn class="local col4 decl" id="14buf" title='buf' data-type='char *' data-ref="14buf" data-ref-filename="14buf">buf</dfn>;</td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td>	  <b>if</b> (<a class="ref fn" href="../libio/stdio.h.html#__asprintf" title='__asprintf' data-ref="__asprintf" data-ref-filename="__asprintf">__asprintf</a> (&amp;<a class="local col4 ref" href="#14buf" title='buf' data-ref="14buf" data-ref-filename="14buf">buf</a>, <a class="macro" href="../include/libintl.h.html#48" title="__dcgettext (_libc_intl_domainname, &quot;%s: line %d: cannot specify more than %d trim domains&quot;, 5)" data-ref="_M/_">_</a>(<q>"\</q></td></tr>
+<tr><th id="119">119</th><td><q>%s: line %d: cannot specify more than %d trim domains"</q>),</td></tr>
+<tr><th id="120">120</th><td>			  <a class="local col9 ref" href="#9fname" title='fname' data-ref="9fname" data-ref-filename="9fname">fname</a>, <a class="local col0 ref" href="#10line_num" title='line_num' data-ref="10line_num" data-ref-filename="10line_num">line_num</a>, <a class="macro" href="res_hconf.h.html#24" title="4" data-ref="_M/TRIMDOMAINS_MAX">TRIMDOMAINS_MAX</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="121">121</th><td>	    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td>	  <a class="ref fn" href="../include/stdio.h.html#__fxprintf" title='__fxprintf' data-ref="__fxprintf" data-ref-filename="__fxprintf">__fxprintf</a> (<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <q>"%s"</q>, <a class="local col4 ref" href="#14buf" title='buf' data-ref="14buf" data-ref-filename="14buf">buf</a>);</td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td>	  <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col4 ref" href="#14buf" title='buf' data-ref="14buf" data-ref-filename="14buf">buf</a>);</td></tr>
+<tr><th id="126">126</th><td>	  <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="127">127</th><td>	}</td></tr>
+<tr><th id="128">128</th><td>      <a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>.<a class="ref field" href="res_hconf.h.html#hconf::trimdomain" title='hconf::trimdomain' data-ref="hconf::trimdomain" data-ref-filename="hconf..trimdomain">trimdomain</a>[<a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>.<a class="ref field" href="res_hconf.h.html#hconf::num_trimdomains" title='hconf::num_trimdomains' data-ref="hconf::num_trimdomains" data-ref-filename="hconf..num_trimdomains">num_trimdomains</a>++] =</td></tr>
+<tr><th id="129">129</th><td>	<a class="ref fn" href="../include/string.h.html#__strndup" title='__strndup' data-ref="__strndup" data-ref-filename="__strndup">__strndup</a> (<a class="local col2 ref" href="#12start" title='start' data-ref="12start" data-ref-filename="12start">start</a>, <a class="local col3 ref" href="#13len" title='len' data-ref="13len" data-ref-filename="13len">len</a>);</td></tr>
+<tr><th id="130">130</th><td>      <a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a> = <a class="tu ref fn" href="#skip_ws" title='skip_ws' data-use='c' data-ref="skip_ws" data-ref-filename="skip_ws">skip_ws</a> (<a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a>);</td></tr>
+<tr><th id="131">131</th><td>      <b>switch</b> (*<a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a>)</td></tr>
+<tr><th id="132">132</th><td>	{</td></tr>
+<tr><th id="133">133</th><td>	<b>case</b> <kbd>','</kbd>: <b>case</b> <kbd>';'</kbd>: <b>case</b> <kbd>':'</kbd>:</td></tr>
+<tr><th id="134">134</th><td>	  <a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a> = <a class="tu ref fn" href="#skip_ws" title='skip_ws' data-use='c' data-ref="skip_ws" data-ref-filename="skip_ws">skip_ws</a> (++<a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a>);</td></tr>
+<tr><th id="135">135</th><td>	  <b>if</b> (!*<a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a> || *<a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a> == <kbd>'#'</kbd>)</td></tr>
+<tr><th id="136">136</th><td>	    {</td></tr>
+<tr><th id="137">137</th><td>	      <em>char</em> *<dfn class="local col5 decl" id="15buf" title='buf' data-type='char *' data-ref="15buf" data-ref-filename="15buf">buf</dfn>;</td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td>	      <b>if</b> (<a class="ref fn" href="../libio/stdio.h.html#__asprintf" title='__asprintf' data-ref="__asprintf" data-ref-filename="__asprintf">__asprintf</a> (&amp;<a class="local col5 ref" href="#15buf" title='buf' data-ref="15buf" data-ref-filename="15buf">buf</a>, <a class="macro" href="../include/libintl.h.html#48" title="__dcgettext (_libc_intl_domainname, &quot;%s: line %d: list delimiter not followed by domain&quot;, 5)" data-ref="_M/_">_</a>(<q>"\</q></td></tr>
+<tr><th id="140">140</th><td><q>%s: line %d: list delimiter not followed by domain"</q>),</td></tr>
+<tr><th id="141">141</th><td>			      <a class="local col9 ref" href="#9fname" title='fname' data-ref="9fname" data-ref-filename="9fname">fname</a>, <a class="local col0 ref" href="#10line_num" title='line_num' data-ref="10line_num" data-ref-filename="10line_num">line_num</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="142">142</th><td>		<b>return</b> <var>0</var>;</td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td>	      <a class="ref fn" href="../include/stdio.h.html#__fxprintf" title='__fxprintf' data-ref="__fxprintf" data-ref-filename="__fxprintf">__fxprintf</a> (<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <q>"%s"</q>, <a class="local col5 ref" href="#15buf" title='buf' data-ref="15buf" data-ref-filename="15buf">buf</a>);</td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td>	      <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col5 ref" href="#15buf" title='buf' data-ref="15buf" data-ref-filename="15buf">buf</a>);</td></tr>
+<tr><th id="147">147</th><td>	      <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="148">148</th><td>	    }</td></tr>
+<tr><th id="149">149</th><td>	<b>default</b>:</td></tr>
+<tr><th id="150">150</th><td>	  <b>break</b>;</td></tr>
+<tr><th id="151">151</th><td>	}</td></tr>
+<tr><th id="152">152</th><td>    }</td></tr>
+<tr><th id="153">153</th><td>  <b>while</b> (*<a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a> &amp;&amp; *<a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a> != <kbd>'#'</kbd>);</td></tr>
+<tr><th id="154">154</th><td>  <b>return</b> <a class="local col1 ref" href="#11args" title='args' data-ref="11args" data-ref-filename="11args">args</a>;</td></tr>
+<tr><th id="155">155</th><td>}</td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td><em>static</em> <em>const</em> <em>char</em> *</td></tr>
+<tr><th id="159">159</th><td><dfn class="tu decl def fn" id="arg_bool" title='arg_bool' data-type='const char * arg_bool(const char * fname, int line_num, const char * args, unsigned int flag)' data-ref="arg_bool" data-ref-filename="arg_bool">arg_bool</dfn> (<em>const</em> <em>char</em> *<dfn class="local col6 decl" id="16fname" title='fname' data-type='const char *' data-ref="16fname" data-ref-filename="16fname">fname</dfn>, <em>int</em> <dfn class="local col7 decl" id="17line_num" title='line_num' data-type='int' data-ref="17line_num" data-ref-filename="17line_num">line_num</dfn>, <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="18args" title='args' data-type='const char *' data-ref="18args" data-ref-filename="18args">args</dfn>, <em>unsigned</em> <dfn class="local col9 decl" id="19flag" title='flag' data-type='unsigned int' data-ref="19flag" data-ref-filename="19flag">flag</dfn>)</td></tr>
+<tr><th id="160">160</th><td>{</td></tr>
+<tr><th id="161">161</th><td>  <b>if</b> (<a class="ref fn" href="../include/string.h.html#__strncasecmp" title='__strncasecmp' data-ref="__strncasecmp" data-ref-filename="__strncasecmp">__strncasecmp</a> (<a class="local col8 ref" href="#18args" title='args' data-ref="18args" data-ref-filename="18args">args</a>, <q>"on"</q>, <var>2</var>) == <var>0</var>)</td></tr>
+<tr><th id="162">162</th><td>    {</td></tr>
+<tr><th id="163">163</th><td>      <a class="local col8 ref" href="#18args" title='args' data-ref="18args" data-ref-filename="18args">args</a> += <var>2</var>;</td></tr>
+<tr><th id="164">164</th><td>      <a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>.<a class="ref field" href="res_hconf.h.html#hconf::flags" title='hconf::flags' data-ref="hconf::flags" data-ref-filename="hconf..flags">flags</a> |= <a class="local col9 ref" href="#19flag" title='flag' data-ref="19flag" data-ref-filename="19flag">flag</a>;</td></tr>
+<tr><th id="165">165</th><td>    }</td></tr>
+<tr><th id="166">166</th><td>  <b>else</b> <b>if</b> (<a class="ref fn" href="../include/string.h.html#__strncasecmp" title='__strncasecmp' data-ref="__strncasecmp" data-ref-filename="__strncasecmp">__strncasecmp</a> (<a class="local col8 ref" href="#18args" title='args' data-ref="18args" data-ref-filename="18args">args</a>, <q>"off"</q>, <var>3</var>) == <var>0</var>)</td></tr>
+<tr><th id="167">167</th><td>    {</td></tr>
+<tr><th id="168">168</th><td>      <a class="local col8 ref" href="#18args" title='args' data-ref="18args" data-ref-filename="18args">args</a> += <var>3</var>;</td></tr>
+<tr><th id="169">169</th><td>      <a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>.<a class="ref field" href="res_hconf.h.html#hconf::flags" title='hconf::flags' data-ref="hconf::flags" data-ref-filename="hconf..flags">flags</a> &amp;= ~<a class="local col9 ref" href="#19flag" title='flag' data-ref="19flag" data-ref-filename="19flag">flag</a>;</td></tr>
+<tr><th id="170">170</th><td>    }</td></tr>
+<tr><th id="171">171</th><td>  <b>else</b></td></tr>
+<tr><th id="172">172</th><td>    {</td></tr>
+<tr><th id="173">173</th><td>      <em>char</em> *<dfn class="local col0 decl" id="20buf" title='buf' data-type='char *' data-ref="20buf" data-ref-filename="20buf">buf</dfn>;</td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td>      <b>if</b> (<a class="ref fn" href="../libio/stdio.h.html#__asprintf" title='__asprintf' data-ref="__asprintf" data-ref-filename="__asprintf">__asprintf</a> (&amp;<a class="local col0 ref" href="#20buf" title='buf' data-ref="20buf" data-ref-filename="20buf">buf</a>,</td></tr>
+<tr><th id="176">176</th><td>		      <a class="macro" href="../include/libintl.h.html#48" title="__dcgettext (_libc_intl_domainname, &quot;%s: line %d: expected `on&apos; or `off&apos;, found `%s&apos;\n&quot;, 5)" data-ref="_M/_">_</a>(<q>"%s: line %d: expected `on' or `off', found `%s'\n"</q>),</td></tr>
+<tr><th id="177">177</th><td>		      <a class="local col6 ref" href="#16fname" title='fname' data-ref="16fname" data-ref-filename="16fname">fname</a>, <a class="local col7 ref" href="#17line_num" title='line_num' data-ref="17line_num" data-ref-filename="17line_num">line_num</a>, <a class="local col8 ref" href="#18args" title='args' data-ref="18args" data-ref-filename="18args">args</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="178">178</th><td>	<b>return</b> <var>0</var>;</td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td>      <a class="ref fn" href="../include/stdio.h.html#__fxprintf" title='__fxprintf' data-ref="__fxprintf" data-ref-filename="__fxprintf">__fxprintf</a> (<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <q>"%s"</q>, <a class="local col0 ref" href="#20buf" title='buf' data-ref="20buf" data-ref-filename="20buf">buf</a>);</td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td>      <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col0 ref" href="#20buf" title='buf' data-ref="20buf" data-ref-filename="20buf">buf</a>);</td></tr>
+<tr><th id="183">183</th><td>      <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="184">184</th><td>    }</td></tr>
+<tr><th id="185">185</th><td>  <b>return</b> <a class="local col8 ref" href="#18args" title='args' data-ref="18args" data-ref-filename="18args">args</a>;</td></tr>
+<tr><th id="186">186</th><td>}</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="190">190</th><td><dfn class="tu decl def fn" id="parse_line" title='parse_line' data-type='void parse_line(const char * fname, int line_num, const char * str)' data-ref="parse_line" data-ref-filename="parse_line">parse_line</dfn> (<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="21fname" title='fname' data-type='const char *' data-ref="21fname" data-ref-filename="21fname">fname</dfn>, <em>int</em> <dfn class="local col2 decl" id="22line_num" title='line_num' data-type='int' data-ref="22line_num" data-ref-filename="22line_num">line_num</dfn>, <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="23str" title='str' data-type='const char *' data-ref="23str" data-ref-filename="23str">str</dfn>)</td></tr>
+<tr><th id="191">191</th><td>{</td></tr>
+<tr><th id="192">192</th><td>  <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="24start" title='start' data-type='const char *' data-ref="24start" data-ref-filename="24start">start</dfn>;</td></tr>
+<tr><th id="193">193</th><td>  <em>const</em> <b>struct</b> <a class="type" href="#cmd" title='cmd' data-ref="cmd" data-ref-filename="cmd">cmd</a> *<dfn class="local col5 decl" id="25c" title='c' data-type='const struct cmd *' data-ref="25c" data-ref-filename="25c">c</dfn> = <var>0</var>;</td></tr>
+<tr><th id="194">194</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col6 decl" id="26len" title='len' data-type='size_t' data-ref="26len" data-ref-filename="26len">len</dfn>;</td></tr>
+<tr><th id="195">195</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col7 decl" id="27i" title='i' data-type='size_t' data-ref="27i" data-ref-filename="27i">i</dfn>;</td></tr>
+<tr><th id="196">196</th><td></td></tr>
+<tr><th id="197">197</th><td>  <a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a> = <a class="tu ref fn" href="#skip_ws" title='skip_ws' data-use='c' data-ref="skip_ws" data-ref-filename="skip_ws">skip_ws</a> (<a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a>);</td></tr>
+<tr><th id="198">198</th><td></td></tr>
+<tr><th id="199">199</th><td>  <i>/* skip line comment and empty lines: */</i></td></tr>
+<tr><th id="200">200</th><td>  <b>if</b> (*<a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a> == <kbd>'\0'</kbd> || *<a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a> == <kbd>'#'</kbd>) <b>return</b>;</td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td>  <a class="local col4 ref" href="#24start" title='start' data-ref="24start" data-ref-filename="24start">start</a> = <a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a>;</td></tr>
+<tr><th id="203">203</th><td>  <a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a> = <a class="tu ref fn" href="#skip_string" title='skip_string' data-use='c' data-ref="skip_string" data-ref-filename="skip_string">skip_string</a> (<a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a>);</td></tr>
+<tr><th id="204">204</th><td>  <a class="local col6 ref" href="#26len" title='len' data-ref="26len" data-ref-filename="26len">len</a> = <a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a> - <a class="local col4 ref" href="#24start" title='start' data-ref="24start" data-ref-filename="24start">start</a>;</td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td>  <b>for</b> (<a class="local col7 ref" href="#27i" title='i' data-ref="27i" data-ref-filename="27i">i</a> = <var>0</var>; <a class="local col7 ref" href="#27i" title='i' data-ref="27i" data-ref-filename="27i">i</a> &lt; <b>sizeof</b> (<a class="tu ref" href="#cmd" title='cmd' data-use='r' data-ref="cmd" data-ref-filename="cmd">cmd</a>) / <b>sizeof</b> (<a class="tu ref" href="#cmd" title='cmd' data-use='r' data-ref="cmd" data-ref-filename="cmd">cmd</a>[<var>0</var>]); ++<a class="local col7 ref" href="#27i" title='i' data-ref="27i" data-ref-filename="27i">i</a>)</td></tr>
+<tr><th id="207">207</th><td>    {</td></tr>
+<tr><th id="208">208</th><td>      <b>if</b> (<a class="ref fn" href="../include/string.h.html#__strncasecmp" title='__strncasecmp' data-ref="__strncasecmp" data-ref-filename="__strncasecmp">__strncasecmp</a> (<a class="local col4 ref" href="#24start" title='start' data-ref="24start" data-ref-filename="24start">start</a>, <a class="tu ref" href="#cmd" title='cmd' data-use='m' data-ref="cmd" data-ref-filename="cmd">cmd</a>[<a class="local col7 ref" href="#27i" title='i' data-ref="27i" data-ref-filename="27i">i</a>].<a class="tu ref field" href="#cmd::name" title='cmd::name' data-use='r' data-ref="cmd::name" data-ref-filename="cmd..name">name</a>, <a class="local col6 ref" href="#26len" title='len' data-ref="26len" data-ref-filename="26len">len</a>) == <var>0</var></td></tr>
+<tr><th id="209">209</th><td>	  &amp;&amp; <a class="ref fn" href="../string/string.h.html#strlen" title='strlen' data-ref="strlen" data-ref-filename="strlen">strlen</a> (<a class="tu ref" href="#cmd" title='cmd' data-use='m' data-ref="cmd" data-ref-filename="cmd">cmd</a>[<a class="local col7 ref" href="#27i" title='i' data-ref="27i" data-ref-filename="27i">i</a>].<a class="tu ref field" href="#cmd::name" title='cmd::name' data-use='r' data-ref="cmd::name" data-ref-filename="cmd..name">name</a>) == <a class="local col6 ref" href="#26len" title='len' data-ref="26len" data-ref-filename="26len">len</a>)</td></tr>
+<tr><th id="210">210</th><td>	{</td></tr>
+<tr><th id="211">211</th><td>	  <a class="local col5 ref" href="#25c" title='c' data-ref="25c" data-ref-filename="25c">c</a> = &amp;<a class="tu ref" href="#cmd" title='cmd' data-use='a' data-ref="cmd" data-ref-filename="cmd">cmd</a>[<a class="local col7 ref" href="#27i" title='i' data-ref="27i" data-ref-filename="27i">i</a>];</td></tr>
+<tr><th id="212">212</th><td>	  <b>break</b>;</td></tr>
+<tr><th id="213">213</th><td>	}</td></tr>
+<tr><th id="214">214</th><td>    }</td></tr>
+<tr><th id="215">215</th><td>  <b>if</b> (<a class="local col5 ref" href="#25c" title='c' data-ref="25c" data-ref-filename="25c">c</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="216">216</th><td>    {</td></tr>
+<tr><th id="217">217</th><td>      <em>char</em> *<dfn class="local col8 decl" id="28buf" title='buf' data-type='char *' data-ref="28buf" data-ref-filename="28buf">buf</dfn>;</td></tr>
+<tr><th id="218">218</th><td></td></tr>
+<tr><th id="219">219</th><td>      <b>if</b> (<a class="ref fn" href="../libio/stdio.h.html#__asprintf" title='__asprintf' data-ref="__asprintf" data-ref-filename="__asprintf">__asprintf</a> (&amp;<a class="local col8 ref" href="#28buf" title='buf' data-ref="28buf" data-ref-filename="28buf">buf</a>, <a class="macro" href="../include/libintl.h.html#48" title="__dcgettext (_libc_intl_domainname, &quot;%s: line %d: bad command `%s&apos;\n&quot;, 5)" data-ref="_M/_">_</a>(<q>"%s: line %d: bad command `%s'\n"</q>),</td></tr>
+<tr><th id="220">220</th><td>		      <a class="local col1 ref" href="#21fname" title='fname' data-ref="21fname" data-ref-filename="21fname">fname</a>, <a class="local col2 ref" href="#22line_num" title='line_num' data-ref="22line_num" data-ref-filename="22line_num">line_num</a>, <a class="local col4 ref" href="#24start" title='start' data-ref="24start" data-ref-filename="24start">start</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="221">221</th><td>	<b>return</b>;</td></tr>
+<tr><th id="222">222</th><td></td></tr>
+<tr><th id="223">223</th><td>      <a class="ref fn" href="../include/stdio.h.html#__fxprintf" title='__fxprintf' data-ref="__fxprintf" data-ref-filename="__fxprintf">__fxprintf</a> (<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <q>"%s"</q>, <a class="local col8 ref" href="#28buf" title='buf' data-ref="28buf" data-ref-filename="28buf">buf</a>);</td></tr>
+<tr><th id="224">224</th><td></td></tr>
+<tr><th id="225">225</th><td>      <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col8 ref" href="#28buf" title='buf' data-ref="28buf" data-ref-filename="28buf">buf</a>);</td></tr>
+<tr><th id="226">226</th><td>      <b>return</b>;</td></tr>
+<tr><th id="227">227</th><td>    }</td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td>  <i>/* process args: */</i></td></tr>
+<tr><th id="230">230</th><td>  <a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a> = <a class="tu ref fn" href="#skip_ws" title='skip_ws' data-use='c' data-ref="skip_ws" data-ref-filename="skip_ws">skip_ws</a> (<a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a>);</td></tr>
+<tr><th id="231">231</th><td></td></tr>
+<tr><th id="232">232</th><td>  <b>if</b> (<a class="local col5 ref" href="#25c" title='c' data-ref="25c" data-ref-filename="25c">c</a>-&gt;<a class="tu ref field" href="#cmd::cb" title='cmd::cb' data-use='r' data-ref="cmd::cb" data-ref-filename="cmd..cb">cb</a> == <a class="enum" href="#CB_arg_trimdomain_list" title='CB_arg_trimdomain_list' data-ref="CB_arg_trimdomain_list" data-ref-filename="CB_arg_trimdomain_list">CB_arg_trimdomain_list</a>)</td></tr>
+<tr><th id="233">233</th><td>    <a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a> = <a class="tu ref fn" href="#arg_trimdomain_list" title='arg_trimdomain_list' data-use='c' data-ref="arg_trimdomain_list" data-ref-filename="arg_trimdomain_list">arg_trimdomain_list</a> (<a class="local col1 ref" href="#21fname" title='fname' data-ref="21fname" data-ref-filename="21fname">fname</a>, <a class="local col2 ref" href="#22line_num" title='line_num' data-ref="22line_num" data-ref-filename="22line_num">line_num</a>, <a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a>);</td></tr>
+<tr><th id="234">234</th><td>  <b>else</b> <b>if</b> (<a class="local col5 ref" href="#25c" title='c' data-ref="25c" data-ref-filename="25c">c</a>-&gt;<a class="tu ref field" href="#cmd::cb" title='cmd::cb' data-use='r' data-ref="cmd::cb" data-ref-filename="cmd..cb">cb</a> == <a class="enum" href="#CB_arg_bool" title='CB_arg_bool' data-ref="CB_arg_bool" data-ref-filename="CB_arg_bool">CB_arg_bool</a>)</td></tr>
+<tr><th id="235">235</th><td>    <a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a> = <a class="tu ref fn" href="#arg_bool" title='arg_bool' data-use='c' data-ref="arg_bool" data-ref-filename="arg_bool">arg_bool</a> (<a class="local col1 ref" href="#21fname" title='fname' data-ref="21fname" data-ref-filename="21fname">fname</a>, <a class="local col2 ref" href="#22line_num" title='line_num' data-ref="22line_num" data-ref-filename="22line_num">line_num</a>, <a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a>, <a class="local col5 ref" href="#25c" title='c' data-ref="25c" data-ref-filename="25c">c</a>-&gt;<a class="tu ref field" href="#cmd::arg" title='cmd::arg' data-use='r' data-ref="cmd::arg" data-ref-filename="cmd..arg">arg</a>);</td></tr>
+<tr><th id="236">236</th><td>  <b>else</b></td></tr>
+<tr><th id="237">237</th><td>    <i>/* Ignore the line.  */</i></td></tr>
+<tr><th id="238">238</th><td>    <b>return</b>;</td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td>  <b>if</b> (!<a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a>)</td></tr>
+<tr><th id="241">241</th><td>    <b>return</b>;</td></tr>
+<tr><th id="242">242</th><td></td></tr>
+<tr><th id="243">243</th><td>  <i>/* rest of line must contain white space or comment only: */</i></td></tr>
+<tr><th id="244">244</th><td>  <b>while</b> (*<a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a>)</td></tr>
+<tr><th id="245">245</th><td>    {</td></tr>
+<tr><th id="246">246</th><td>      <b>if</b> (!<a class="macro" href="../ctype/ctype.h.html#197" title="((*__ctype_b_loc ())[(int) ((*str))] &amp; (unsigned short int) _ISspace)" data-ref="_M/isspace">isspace</a> (*<a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a>)) {</td></tr>
+<tr><th id="247">247</th><td>	<b>if</b> (*<a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a> != <kbd>'#'</kbd>)</td></tr>
+<tr><th id="248">248</th><td>	  {</td></tr>
+<tr><th id="249">249</th><td>	    <em>char</em> *<dfn class="local col9 decl" id="29buf" title='buf' data-type='char *' data-ref="29buf" data-ref-filename="29buf">buf</dfn>;</td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td>	    <b>if</b> (<a class="ref fn" href="../libio/stdio.h.html#__asprintf" title='__asprintf' data-ref="__asprintf" data-ref-filename="__asprintf">__asprintf</a> (&amp;<a class="local col9 ref" href="#29buf" title='buf' data-ref="29buf" data-ref-filename="29buf">buf</a>,</td></tr>
+<tr><th id="252">252</th><td>			    <a class="macro" href="../include/libintl.h.html#48" title="__dcgettext (_libc_intl_domainname, &quot;%s: line %d: ignoring trailing garbage `%s&apos;\n&quot;, 5)" data-ref="_M/_">_</a>(<q>"%s: line %d: ignoring trailing garbage `%s'\n"</q>),</td></tr>
+<tr><th id="253">253</th><td>			    <a class="local col1 ref" href="#21fname" title='fname' data-ref="21fname" data-ref-filename="21fname">fname</a>, <a class="local col2 ref" href="#22line_num" title='line_num' data-ref="22line_num" data-ref-filename="22line_num">line_num</a>, <a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="254">254</th><td>	      <b>break</b>;</td></tr>
+<tr><th id="255">255</th><td></td></tr>
+<tr><th id="256">256</th><td>	    <a class="ref fn" href="../include/stdio.h.html#__fxprintf" title='__fxprintf' data-ref="__fxprintf" data-ref-filename="__fxprintf">__fxprintf</a> (<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <q>"%s"</q>, <a class="local col9 ref" href="#29buf" title='buf' data-ref="29buf" data-ref-filename="29buf">buf</a>);</td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td>	    <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col9 ref" href="#29buf" title='buf' data-ref="29buf" data-ref-filename="29buf">buf</a>);</td></tr>
+<tr><th id="259">259</th><td>	  }</td></tr>
+<tr><th id="260">260</th><td>	<b>break</b>;</td></tr>
+<tr><th id="261">261</th><td>      }</td></tr>
+<tr><th id="262">262</th><td>      ++<a class="local col3 ref" href="#23str" title='str' data-ref="23str" data-ref-filename="23str">str</a>;</td></tr>
+<tr><th id="263">263</th><td>    }</td></tr>
+<tr><th id="264">264</th><td>}</td></tr>
+<tr><th id="265">265</th><td></td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="268">268</th><td><dfn class="tu decl def fn" id="do_init" title='do_init' data-type='void do_init()' data-ref="do_init" data-ref-filename="do_init">do_init</dfn> (<em>void</em>)</td></tr>
+<tr><th id="269">269</th><td>{</td></tr>
+<tr><th id="270">270</th><td>  <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="30hconf_name" title='hconf_name' data-type='const char *' data-ref="30hconf_name" data-ref-filename="30hconf_name">hconf_name</dfn>;</td></tr>
+<tr><th id="271">271</th><td>  <em>int</em> <dfn class="local col1 decl" id="31line_num" title='line_num' data-type='int' data-ref="31line_num" data-ref-filename="31line_num">line_num</dfn> = <var>0</var>;</td></tr>
+<tr><th id="272">272</th><td>  <em>char</em> <dfn class="local col2 decl" id="32buf" title='buf' data-type='char[256]' data-ref="32buf" data-ref-filename="32buf">buf</dfn>[<var>256</var>], *<dfn class="local col3 decl" id="33envval" title='envval' data-type='char *' data-ref="33envval" data-ref-filename="33envval">envval</dfn>;</td></tr>
+<tr><th id="273">273</th><td>  <a class="typedef" href="../libio/bits/types/FILE.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE" data-ref-filename="FILE">FILE</a> *<dfn class="local col4 decl" id="34fp" title='fp' data-type='FILE *' data-ref="34fp" data-ref-filename="34fp">fp</dfn>;</td></tr>
+<tr><th id="274">274</th><td></td></tr>
+<tr><th id="275">275</th><td>  <a class="ref fn" href="../string/string.h.html#memset" title='memset' data-ref="memset" data-ref-filename="memset">memset</a> (&amp;<a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>, <kbd>'\0'</kbd>, <b>sizeof</b> (<a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>));</td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td>  <a class="local col0 ref" href="#30hconf_name" title='hconf_name' data-ref="30hconf_name" data-ref-filename="30hconf_name">hconf_name</a> = <a class="ref fn" href="../stdlib/stdlib.h.html#getenv" title='getenv' data-ref="getenv" data-ref-filename="getenv">getenv</a> (<a class="macro" href="#54" title="&quot;RESOLV_HOST_CONF&quot;" data-ref="_M/ENV_HOSTCONF">ENV_HOSTCONF</a>);</td></tr>
+<tr><th id="278">278</th><td>  <b>if</b> (<a class="local col0 ref" href="#30hconf_name" title='hconf_name' data-ref="30hconf_name" data-ref-filename="30hconf_name">hconf_name</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="279">279</th><td>    <a class="local col0 ref" href="#30hconf_name" title='hconf_name' data-ref="30hconf_name" data-ref-filename="30hconf_name">hconf_name</a> = <a class="macro" href="#51" title="&quot;/etc/host.conf&quot;" data-ref="_M/_PATH_HOSTCONF">_PATH_HOSTCONF</a>;</td></tr>
+<tr><th id="280">280</th><td></td></tr>
+<tr><th id="281">281</th><td>  <a class="local col4 ref" href="#34fp" title='fp' data-ref="34fp" data-ref-filename="34fp">fp</a> = <a class="macro" href="../include/stdio.h.html#190" title="_IO_new_fopen (hconf_name, &quot;rce&quot;)" data-ref="_M/fopen">fopen</a> (<a class="local col0 ref" href="#30hconf_name" title='hconf_name' data-ref="30hconf_name" data-ref-filename="30hconf_name">hconf_name</a>, <q>"rce"</q>);</td></tr>
+<tr><th id="282">282</th><td>  <b>if</b> (<a class="local col4 ref" href="#34fp" title='fp' data-ref="34fp" data-ref-filename="34fp">fp</a>)</td></tr>
+<tr><th id="283">283</th><td>    {</td></tr>
+<tr><th id="284">284</th><td>      <i>/* No threads using this stream.  */</i></td></tr>
+<tr><th id="285">285</th><td>      <a class="macro" href="../include/stdio_ext.h.html#8" title="({ int __result = ((fp-&gt;_flags &amp; 0x8000) ? FSETLOCKING_BYCALLER : FSETLOCKING_INTERNAL); if (FSETLOCKING_BYCALLER != FSETLOCKING_QUERY) { fp-&gt;_flags &amp;= ~0x8000; if (FSETLOCKING_BYCALLER == FSETLOCKING_BYCALLER) fp-&gt;_flags |= 0x8000; } __result; })" data-ref="_M/__fsetlocking">__fsetlocking</a> (<a class="local col4 ref" href="#34fp" title='fp' data-ref="34fp" data-ref-filename="34fp">fp</a>, <a class="macro" href="../stdio-common/stdio_ext.h.html#38" title="FSETLOCKING_BYCALLER" data-ref="_M/FSETLOCKING_BYCALLER">FSETLOCKING_BYCALLER</a>);</td></tr>
+<tr><th id="286">286</th><td></td></tr>
+<tr><th id="287">287</th><td>      <b>while</b> (<a class="macro" href="#48" title="__fgets_unlocked" data-ref="_M/fgets_unlocked">fgets_unlocked</a> (<a class="local col2 ref" href="#32buf" title='buf' data-ref="32buf" data-ref-filename="32buf">buf</a>, <b>sizeof</b> (<a class="local col2 ref" href="#32buf" title='buf' data-ref="32buf" data-ref-filename="32buf">buf</a>), <a class="local col4 ref" href="#34fp" title='fp' data-ref="34fp" data-ref-filename="34fp">fp</a>))</td></tr>
+<tr><th id="288">288</th><td>	{</td></tr>
+<tr><th id="289">289</th><td>	  ++<a class="local col1 ref" href="#31line_num" title='line_num' data-ref="31line_num" data-ref-filename="31line_num">line_num</a>;</td></tr>
+<tr><th id="290">290</th><td>	  *<a class="ref fn" href="../include/string.h.html#__strchrnul" title='__strchrnul' data-ref="__strchrnul" data-ref-filename="__strchrnul">__strchrnul</a> (<a class="local col2 ref" href="#32buf" title='buf' data-ref="32buf" data-ref-filename="32buf">buf</a>, <kbd>'\n'</kbd>) = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="291">291</th><td>	  <a class="tu ref fn" href="#parse_line" title='parse_line' data-use='c' data-ref="parse_line" data-ref-filename="parse_line">parse_line</a> (<a class="local col0 ref" href="#30hconf_name" title='hconf_name' data-ref="30hconf_name" data-ref-filename="30hconf_name">hconf_name</a>, <a class="local col1 ref" href="#31line_num" title='line_num' data-ref="31line_num" data-ref-filename="31line_num">line_num</a>, <a class="local col2 ref" href="#32buf" title='buf' data-ref="32buf" data-ref-filename="32buf">buf</a>);</td></tr>
+<tr><th id="292">292</th><td>	}</td></tr>
+<tr><th id="293">293</th><td>      <a class="macro" href="../include/stdio.h.html#194" title="_IO_new_fclose (fp)" data-ref="_M/fclose">fclose</a> (<a class="local col4 ref" href="#34fp" title='fp' data-ref="34fp" data-ref-filename="34fp">fp</a>);</td></tr>
+<tr><th id="294">294</th><td>    }</td></tr>
+<tr><th id="295">295</th><td></td></tr>
+<tr><th id="296">296</th><td>  <a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a> = <a class="ref fn" href="../stdlib/stdlib.h.html#getenv" title='getenv' data-ref="getenv" data-ref-filename="getenv">getenv</a> (<a class="macro" href="#57" title="&quot;RESOLV_MULTI&quot;" data-ref="_M/ENV_MULTI">ENV_MULTI</a>);</td></tr>
+<tr><th id="297">297</th><td>  <b>if</b> (<a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a>)</td></tr>
+<tr><th id="298">298</th><td>    <a class="tu ref fn" href="#arg_bool" title='arg_bool' data-use='c' data-ref="arg_bool" data-ref-filename="arg_bool">arg_bool</a> (<a class="macro" href="#57" title="&quot;RESOLV_MULTI&quot;" data-ref="_M/ENV_MULTI">ENV_MULTI</a>, <var>1</var>, <a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a>, <a class="macro" href="res_hconf.h.html#45" title="(1 &lt;&lt; 4)" data-ref="_M/HCONF_FLAG_MULTI">HCONF_FLAG_MULTI</a>);</td></tr>
+<tr><th id="299">299</th><td></td></tr>
+<tr><th id="300">300</th><td>  <a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a> = <a class="ref fn" href="../stdlib/stdlib.h.html#getenv" title='getenv' data-ref="getenv" data-ref-filename="getenv">getenv</a> (<a class="macro" href="#58" title="&quot;RESOLV_REORDER&quot;" data-ref="_M/ENV_REORDER">ENV_REORDER</a>);</td></tr>
+<tr><th id="301">301</th><td>  <b>if</b> (<a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a>)</td></tr>
+<tr><th id="302">302</th><td>    <a class="tu ref fn" href="#arg_bool" title='arg_bool' data-use='c' data-ref="arg_bool" data-ref-filename="arg_bool">arg_bool</a> (<a class="macro" href="#58" title="&quot;RESOLV_REORDER&quot;" data-ref="_M/ENV_REORDER">ENV_REORDER</a>, <var>1</var>, <a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a>, <a class="macro" href="res_hconf.h.html#44" title="(1 &lt;&lt; 3)" data-ref="_M/HCONF_FLAG_REORDER">HCONF_FLAG_REORDER</a>);</td></tr>
+<tr><th id="303">303</th><td></td></tr>
+<tr><th id="304">304</th><td>  <a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a> = <a class="ref fn" href="../stdlib/stdlib.h.html#getenv" title='getenv' data-ref="getenv" data-ref-filename="getenv">getenv</a> (<a class="macro" href="#56" title="&quot;RESOLV_ADD_TRIM_DOMAINS&quot;" data-ref="_M/ENV_TRIM_ADD">ENV_TRIM_ADD</a>);</td></tr>
+<tr><th id="305">305</th><td>  <b>if</b> (<a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a>)</td></tr>
+<tr><th id="306">306</th><td>    <a class="tu ref fn" href="#arg_trimdomain_list" title='arg_trimdomain_list' data-use='c' data-ref="arg_trimdomain_list" data-ref-filename="arg_trimdomain_list">arg_trimdomain_list</a> (<a class="macro" href="#56" title="&quot;RESOLV_ADD_TRIM_DOMAINS&quot;" data-ref="_M/ENV_TRIM_ADD">ENV_TRIM_ADD</a>, <var>1</var>, <a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a>);</td></tr>
+<tr><th id="307">307</th><td></td></tr>
+<tr><th id="308">308</th><td>  <a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a> = <a class="ref fn" href="../stdlib/stdlib.h.html#getenv" title='getenv' data-ref="getenv" data-ref-filename="getenv">getenv</a> (<a class="macro" href="#55" title="&quot;RESOLV_OVERRIDE_TRIM_DOMAINS&quot;" data-ref="_M/ENV_TRIM_OVERR">ENV_TRIM_OVERR</a>);</td></tr>
+<tr><th id="309">309</th><td>  <b>if</b> (<a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a>)</td></tr>
+<tr><th id="310">310</th><td>    {</td></tr>
+<tr><th id="311">311</th><td>      <a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>.<a class="ref field" href="res_hconf.h.html#hconf::num_trimdomains" title='hconf::num_trimdomains' data-ref="hconf::num_trimdomains" data-ref-filename="hconf..num_trimdomains">num_trimdomains</a> = <var>0</var>;</td></tr>
+<tr><th id="312">312</th><td>      <a class="tu ref fn" href="#arg_trimdomain_list" title='arg_trimdomain_list' data-use='c' data-ref="arg_trimdomain_list" data-ref-filename="arg_trimdomain_list">arg_trimdomain_list</a> (<a class="macro" href="#55" title="&quot;RESOLV_OVERRIDE_TRIM_DOMAINS&quot;" data-ref="_M/ENV_TRIM_OVERR">ENV_TRIM_OVERR</a>, <var>1</var>, <a class="local col3 ref" href="#33envval" title='envval' data-ref="33envval" data-ref-filename="33envval">envval</a>);</td></tr>
+<tr><th id="313">313</th><td>    }</td></tr>
+<tr><th id="314">314</th><td></td></tr>
+<tr><th id="315">315</th><td>  <i>/* See comments on the declaration of _res_hconf.  */</i></td></tr>
+<tr><th id="316">316</th><td>  <a class="macro" href="../include/atomic.h.html#587" title="do { if ((sizeof (*(&amp;_res_hconf.initialized)) != 1) &amp;&amp; (sizeof (*(&amp;_res_hconf.initialized)) != 2) &amp;&amp; (sizeof (*(&amp;_res_hconf.initialized)) != 4) &amp;&amp; (sizeof (*(&amp;_res_hconf.initialized)) != 8)) __atomic_link_error ();; __atomic_store_n ((&amp;_res_hconf.initialized), (1), 3); } while (0)" data-ref="_M/atomic_store_release">atomic_store_release</a> (&amp;<a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>.<a class="ref field" href="res_hconf.h.html#hconf::initialized" title='hconf::initialized' data-ref="hconf::initialized" data-ref-filename="hconf..initialized">initialized</a>, <var>1</var>);</td></tr>
+<tr><th id="317">317</th><td>}</td></tr>
+<tr><th id="318">318</th><td></td></tr>
+<tr><th id="319">319</th><td></td></tr>
+<tr><th id="320">320</th><td><i>/* Initialize hconf datastructure by reading host.conf file and</i></td></tr>
+<tr><th id="321">321</th><td><i>   environment variables.  */</i></td></tr>
+<tr><th id="322">322</th><td><em>void</em></td></tr>
+<tr><th id="323">323</th><td><dfn class="decl def fn" id="_res_hconf_init" title='_res_hconf_init' data-ref="_res_hconf_init" data-ref-filename="_res_hconf_init">_res_hconf_init</dfn> (<em>void</em>)</td></tr>
+<tr><th id="324">324</th><td>{</td></tr>
+<tr><th id="325">325</th><td>  <a class="macro" href="../sysdeps/nptl/libc-lockP.h.html#140" title="static pthread_once_t once" data-ref="_M/__libc_once_define">__libc_once_define</a> (<em>static</em>, <dfn class="local col5 decl" id="35once" title='once' data-type='pthread_once_t' data-ref="35once" data-ref-filename="35once">once</dfn>);</td></tr>
+<tr><th id="326">326</th><td></td></tr>
+<tr><th id="327">327</th><td>  <a class="macro" href="../sysdeps/nptl/libc-lockP.h.html#150" title="__pthread_once (&amp;(once), do_init)" data-ref="_M/__libc_once">__libc_once</a> (<a class="local col5 ref" href="#325" title='once' data-ref="35once" data-ref-filename="35once">once</a>, <a class="tu ref fn" href="#do_init" title='do_init' data-use='r' data-ref="do_init" data-ref-filename="do_init">do_init</a>);</td></tr>
+<tr><th id="328">328</th><td>}</td></tr>
+<tr><th id="329">329</th><td></td></tr>
+<tr><th id="330">330</th><td></td></tr>
+<tr><th id="331">331</th><td><u>#<span data-ppcond="331">if</span> <a class="macro" href="../include/libc-symbols.h.html#35" title="(19 == 19)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="332">332</th><td><u># <span data-ppcond="332">if</span> defined <a class="macro" href="../sysdeps/unix/sysv/linux/bits/ioctls.h.html#33" data-ref="_M/SIOCGIFCONF">SIOCGIFCONF</a> &amp;&amp; defined <a class="macro" href="../sysdeps/unix/sysv/linux/bits/ioctls.h.html#42" data-ref="_M/SIOCGIFNETMASK">SIOCGIFNETMASK</a></u></td></tr>
+<tr><th id="333">333</th><td><i>/* List of known interfaces.  */</i></td></tr>
+<tr><th id="334">334</th><td><a class="macro" href="../include/libc-symbols.h.html#307" title="asm (&quot;.section &quot; &quot;__libc_freeres_ptrs, \&quot;aw\&quot;, %nobits&quot; &quot;\n\t.previous&quot;); static struct netaddr{ int addrtype; union { struct { uint32_t addr; uint32_t mask; } ipv4; } u;} *ifaddrs __attribute__ ((section (&quot;__libc_freeres_ptrs&quot; &quot;\n\t#&quot;)))" data-ref="_M/libc_freeres_ptr">libc_freeres_ptr</a> (</td></tr>
+<tr><th id="335">335</th><td><em>static</em> <b>struct</b> <dfn class="type def" id="netaddr" title='netaddr' data-ref="netaddr" data-ref-filename="netaddr"><a class="type" href="#334" title='netaddr' data-ref="netaddr" data-ref-filename="netaddr">netaddr</a></dfn></td></tr>
+<tr><th id="336">336</th><td>{</td></tr>
+<tr><th id="337">337</th><td>  <em>int</em> <dfn class="tu decl field" id="netaddr::addrtype" title='netaddr::addrtype' data-type='int' data-ref="netaddr::addrtype" data-ref-filename="netaddr..addrtype">addrtype</dfn>;</td></tr>
+<tr><th id="338">338</th><td>  <b>union</b></td></tr>
+<tr><th id="339">339</th><td>  {</td></tr>
+<tr><th id="340">340</th><td>    <b>struct</b></td></tr>
+<tr><th id="341">341</th><td>    {</td></tr>
+<tr><th id="342">342</th><td>      <a class="typedef" href="../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a>	<dfn class="tu decl field" id="netaddr::(anonymousunion)::(anonymous)::addr" title='netaddr::(anonymous union)::(anonymous struct)::addr' data-type='uint32_t' data-ref="netaddr::(anonymousunion)::(anonymous)::addr" data-ref-filename="netaddr..(anonymousunion)..(anonymous)..addr">addr</dfn>;</td></tr>
+<tr><th id="343">343</th><td>      <a class="typedef" href="../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a>	<dfn class="tu decl field" id="netaddr::(anonymousunion)::(anonymous)::mask" title='netaddr::(anonymous union)::(anonymous struct)::mask' data-type='uint32_t' data-ref="netaddr::(anonymousunion)::(anonymous)::mask" data-ref-filename="netaddr..(anonymousunion)..(anonymous)..mask">mask</dfn>;</td></tr>
+<tr><th id="344">344</th><td>    } <dfn class="tu decl field" id="netaddr::(anonymous)::ipv4" title='netaddr::(anonymous union)::ipv4' data-type='struct (unnamed struct at /media/rr/Data/glibc_source/glibc-2.34/resolv/res_hconf.c:334:1)' data-ref="netaddr::(anonymous)::ipv4" data-ref-filename="netaddr..(anonymous)..ipv4">ipv4</dfn>;</td></tr>
+<tr><th id="345">345</th><td>  } <dfn class="tu decl field" id="netaddr::u" title='netaddr::u' data-type='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.34/resolv/res_hconf.c:334:1)' data-ref="netaddr::u" data-ref-filename="netaddr..u">u</dfn>;</td></tr>
+<tr><th id="346">346</th><td>} *<dfn class="tu decl def" id="ifaddrs" title='ifaddrs' data-type='struct netaddr *' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</dfn>);</td></tr>
+<tr><th id="347">347</th><td><u># <span data-ppcond="332">endif</span></u></td></tr>
+<tr><th id="348">348</th><td></td></tr>
+<tr><th id="349">349</th><td><i>/* Reorder addresses returned in a hostent such that the first address</i></td></tr>
+<tr><th id="350">350</th><td><i>   is an address on the local subnet, if there is such an address.</i></td></tr>
+<tr><th id="351">351</th><td><i>   Otherwise, nothing is changed.</i></td></tr>
+<tr><th id="352">352</th><td><i></i></td></tr>
+<tr><th id="353">353</th><td><i>   Note that this function currently only handles IPv4 addresses.  */</i></td></tr>
+<tr><th id="354">354</th><td></td></tr>
+<tr><th id="355">355</th><td><em>void</em></td></tr>
+<tr><th id="356">356</th><td><dfn class="decl def fn" id="_res_hconf_reorder_addrs" title='_res_hconf_reorder_addrs' data-ref="_res_hconf_reorder_addrs" data-ref-filename="_res_hconf_reorder_addrs">_res_hconf_reorder_addrs</dfn> (<b>struct</b> <a class="type" href="netdb.h.html#hostent" title='hostent' data-ref="hostent" data-ref-filename="hostent">hostent</a> *<dfn class="local col6 decl" id="36hp" title='hp' data-type='struct hostent *' data-ref="36hp" data-ref-filename="36hp">hp</dfn>)</td></tr>
+<tr><th id="357">357</th><td>{</td></tr>
+<tr><th id="358">358</th><td><u>#<span data-ppcond="358">if</span> defined <a class="macro" href="../sysdeps/unix/sysv/linux/bits/ioctls.h.html#33" data-ref="_M/SIOCGIFCONF">SIOCGIFCONF</a> &amp;&amp; defined <a class="macro" href="../sysdeps/unix/sysv/linux/bits/ioctls.h.html#42" data-ref="_M/SIOCGIFNETMASK">SIOCGIFNETMASK</a></u></td></tr>
+<tr><th id="359">359</th><td>  <em>int</em> <dfn class="local col7 decl" id="37i" title='i' data-type='int' data-ref="37i" data-ref-filename="37i">i</dfn>, <dfn class="local col8 decl" id="38j" title='j' data-type='int' data-ref="38j" data-ref-filename="38j">j</dfn>;</td></tr>
+<tr><th id="360">360</th><td>  <i>/* Number of interfaces.  Also serves as a flag for the</i></td></tr>
+<tr><th id="361">361</th><td><i>     double-checked locking idiom.  */</i></td></tr>
+<tr><th id="362">362</th><td>  <em>static</em> <em>int</em> <dfn class="local col9 decl" id="39num_ifs" title='num_ifs' data-type='int' data-ref="39num_ifs" data-ref-filename="39num_ifs">num_ifs</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="363">363</th><td>  <i>/* Local copy of num_ifs, for non-atomic access.  */</i></td></tr>
+<tr><th id="364">364</th><td>  <em>int</em> <dfn class="local col0 decl" id="40num_ifs_local" title='num_ifs_local' data-type='int' data-ref="40num_ifs_local" data-ref-filename="40num_ifs_local">num_ifs_local</dfn>;</td></tr>
+<tr><th id="365">365</th><td>  <i>/* We need to protect the dynamic buffer handling.  The lock is only</i></td></tr>
+<tr><th id="366">366</th><td><i>     acquired during initialization.  Afterwards, a positive num_ifs</i></td></tr>
+<tr><th id="367">367</th><td><i>     value indicates completed initialization.  */</i></td></tr>
+<tr><th id="368">368</th><td>  <a class="macro" href="../sysdeps/nptl/libc-lockP.h.html#64" title="static __libc_lock_t lock;" data-ref="_M/__libc_lock_define_initialized">__libc_lock_define_initialized</a> (<em>static</em>, <dfn class="local col1 decl" id="41lock" title='lock' data-type='__libc_lock_t' data-ref="41lock" data-ref-filename="41lock">lock</dfn>);</td></tr>
+<tr><th id="369">369</th><td></td></tr>
+<tr><th id="370">370</th><td>  <i>/* Only reorder if we're supposed to.  */</i></td></tr>
+<tr><th id="371">371</th><td>  <b>if</b> ((<a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>.<a class="ref field" href="res_hconf.h.html#hconf::flags" title='hconf::flags' data-ref="hconf::flags" data-ref-filename="hconf..flags">flags</a> &amp; <a class="macro" href="res_hconf.h.html#44" title="(1 &lt;&lt; 3)" data-ref="_M/HCONF_FLAG_REORDER">HCONF_FLAG_REORDER</a>) == <var>0</var>)</td></tr>
+<tr><th id="372">372</th><td>    <b>return</b>;</td></tr>
+<tr><th id="373">373</th><td></td></tr>
+<tr><th id="374">374</th><td>  <i>/* Can't deal with anything but IPv4 for now...  */</i></td></tr>
+<tr><th id="375">375</th><td>  <b>if</b> (<a class="local col6 ref" href="#36hp" title='hp' data-ref="36hp" data-ref-filename="36hp">hp</a>-&gt;<a class="ref field" href="netdb.h.html#hostent::h_addrtype" title='hostent::h_addrtype' data-ref="hostent::h_addrtype" data-ref-filename="hostent..h_addrtype">h_addrtype</a> != <a class="macro" href="../sysdeps/unix/sysv/linux/bits/socket.h.html#96" title="2" data-ref="_M/AF_INET">AF_INET</a>)</td></tr>
+<tr><th id="376">376</th><td>    <b>return</b>;</td></tr>
+<tr><th id="377">377</th><td></td></tr>
+<tr><th id="378">378</th><td>  <i>/* This load synchronizes with the release MO store in the</i></td></tr>
+<tr><th id="379">379</th><td><i>     initialization block below.  */</i></td></tr>
+<tr><th id="380">380</th><td>  <a class="local col0 ref" href="#40num_ifs_local" title='num_ifs_local' data-ref="40num_ifs_local" data-ref-filename="40num_ifs_local">num_ifs_local</a> = <a class="macro" href="../include/atomic.h.html#578" title="({ if ((sizeof (*(&amp;num_ifs)) != 1) &amp;&amp; (sizeof (*(&amp;num_ifs)) != 2) &amp;&amp; (sizeof (*(&amp;num_ifs)) != 4) &amp;&amp; (sizeof (*(&amp;num_ifs)) != 8)) __atomic_link_error ();; __atomic_load_n ((&amp;num_ifs), 2); })" data-ref="_M/atomic_load_acquire">atomic_load_acquire</a> (&amp;<a class="local col9 ref" href="#39num_ifs" title='num_ifs' data-ref="39num_ifs" data-ref-filename="39num_ifs">num_ifs</a>);</td></tr>
+<tr><th id="381">381</th><td>  <b>if</b> (<a class="local col0 ref" href="#40num_ifs_local" title='num_ifs_local' data-ref="40num_ifs_local" data-ref-filename="40num_ifs_local">num_ifs_local</a> &lt;= <var>0</var>)</td></tr>
+<tr><th id="382">382</th><td>    {</td></tr>
+<tr><th id="383">383</th><td>      <b>struct</b> <a class="type" href="../sysdeps/gnu/net/if.h.html#ifreq" title='ifreq' data-ref="ifreq" data-ref-filename="ifreq">ifreq</a> *<dfn class="local col2 decl" id="42ifr" title='ifr' data-type='struct ifreq *' data-ref="42ifr" data-ref-filename="42ifr">ifr</dfn>, *<dfn class="local col3 decl" id="43cur_ifr" title='cur_ifr' data-type='struct ifreq *' data-ref="43cur_ifr" data-ref-filename="43cur_ifr">cur_ifr</dfn>;</td></tr>
+<tr><th id="384">384</th><td>      <em>int</em> <dfn class="local col4 decl" id="44sd" title='sd' data-type='int' data-ref="44sd" data-ref-filename="44sd">sd</dfn>, <dfn class="local col5 decl" id="45num" title='num' data-type='int' data-ref="45num" data-ref-filename="45num">num</dfn>, <dfn class="local col6 decl" id="46i" title='i' data-type='int' data-ref="46i" data-ref-filename="46i">i</dfn>;</td></tr>
+<tr><th id="385">385</th><td>      <i>/* Save errno.  */</i></td></tr>
+<tr><th id="386">386</th><td>      <em>int</em> <dfn class="local col7 decl" id="47save" title='save' data-type='int' data-ref="47save" data-ref-filename="47save">save</dfn> = <a class="macro" href="../include/errno.h.html#27" title="__libc_errno" data-ref="_M/errno">errno</a>;</td></tr>
+<tr><th id="387">387</th><td></td></tr>
+<tr><th id="388">388</th><td>      <i>/* Initialize interface table.  */</i></td></tr>
+<tr><th id="389">389</th><td></td></tr>
+<tr><th id="390">390</th><td>      <i>/* The SIOCGIFNETMASK ioctl will only work on an AF_INET socket.  */</i></td></tr>
+<tr><th id="391">391</th><td>      <a class="local col4 ref" href="#44sd" title='sd' data-ref="44sd" data-ref-filename="44sd">sd</a> = <a class="ref fn" href="../include/sys/socket.h.html#__socket" title='__socket' data-ref="__socket" data-ref-filename="__socket">__socket</a> (<a class="macro" href="../sysdeps/unix/sysv/linux/bits/socket.h.html#96" title="2" data-ref="_M/AF_INET">AF_INET</a>, <a class="macro" href="../sysdeps/unix/sysv/linux/bits/socket_type.h.html#31" title="SOCK_DGRAM" data-ref="_M/SOCK_DGRAM">SOCK_DGRAM</a> | <a class="macro" href="../sysdeps/unix/sysv/linux/bits/socket_type.h.html#51" title="SOCK_CLOEXEC" data-ref="_M/SOCK_CLOEXEC">SOCK_CLOEXEC</a>, <var>0</var>);</td></tr>
+<tr><th id="392">392</th><td>      <b>if</b> (<a class="local col4 ref" href="#44sd" title='sd' data-ref="44sd" data-ref-filename="44sd">sd</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="393">393</th><td>	<b>return</b>;</td></tr>
+<tr><th id="394">394</th><td></td></tr>
+<tr><th id="395">395</th><td>      <i>/* Get lock.  */</i></td></tr>
+<tr><th id="396">396</th><td>      <a class="macro" href="../sysdeps/nptl/libc-lockP.h.html#111" title="({ ((void) ({ int *__futex = (&amp;(lock)); if (__builtin_expect (((! __sync_bool_compare_and_swap (__futex, 0, 1))), 0)) { if (__builtin_constant_p (0) &amp;&amp; (0) == 0) __lll_lock_wait_private (__futex); else __lll_lock_wait (__futex, 0); } })); 0; })" data-ref="_M/__libc_lock_lock">__libc_lock_lock</a> (<a class="local col1 ref" href="#368" title='lock' data-ref="41lock" data-ref-filename="41lock">lock</a>);</td></tr>
+<tr><th id="397">397</th><td></td></tr>
+<tr><th id="398">398</th><td>      <i>/* Recheck, somebody else might have done the work by now.  No</i></td></tr>
+<tr><th id="399">399</th><td><i>	 ordering is required for the load because we have the lock,</i></td></tr>
+<tr><th id="400">400</th><td><i>	 and num_ifs is only updated under the lock.  Also see (3) in</i></td></tr>
+<tr><th id="401">401</th><td><i>	 the analysis below.  */</i></td></tr>
+<tr><th id="402">402</th><td>      <a class="local col0 ref" href="#40num_ifs_local" title='num_ifs_local' data-ref="40num_ifs_local" data-ref-filename="40num_ifs_local">num_ifs_local</a> = <a class="macro" href="../include/atomic.h.html#575" title="({ if ((sizeof (*(&amp;num_ifs)) != 1) &amp;&amp; (sizeof (*(&amp;num_ifs)) != 2) &amp;&amp; (sizeof (*(&amp;num_ifs)) != 4) &amp;&amp; (sizeof (*(&amp;num_ifs)) != 8)) __atomic_link_error ();; __atomic_load_n ((&amp;num_ifs), 0); })" data-ref="_M/atomic_load_relaxed">atomic_load_relaxed</a> (&amp;<a class="local col9 ref" href="#39num_ifs" title='num_ifs' data-ref="39num_ifs" data-ref-filename="39num_ifs">num_ifs</a>);</td></tr>
+<tr><th id="403">403</th><td>      <b>if</b> (<a class="local col0 ref" href="#40num_ifs_local" title='num_ifs_local' data-ref="40num_ifs_local" data-ref-filename="40num_ifs_local">num_ifs_local</a> &lt;= <var>0</var>)</td></tr>
+<tr><th id="404">404</th><td>	{</td></tr>
+<tr><th id="405">405</th><td>	  <i>/* This is the only block which writes to num_ifs.  It can</i></td></tr>
+<tr><th id="406">406</th><td><i>	     be executed several times (sequentially) if</i></td></tr>
+<tr><th id="407">407</th><td><i>	     initialization does not yield any interfaces, and num_ifs</i></td></tr>
+<tr><th id="408">408</th><td><i>	     remains zero.  However, once we stored a positive value</i></td></tr>
+<tr><th id="409">409</th><td><i>	     in num_ifs below, this block cannot be entered again due</i></td></tr>
+<tr><th id="410">410</th><td><i>	     to the condition above.  */</i></td></tr>
+<tr><th id="411">411</th><td>	  <em>int</em> <dfn class="local col8 decl" id="48new_num_ifs" title='new_num_ifs' data-type='int' data-ref="48new_num_ifs" data-ref-filename="48new_num_ifs">new_num_ifs</dfn> = <var>0</var>;</td></tr>
+<tr><th id="412">412</th><td></td></tr>
+<tr><th id="413">413</th><td>	  <i>/* Get a list of interfaces.  */</i></td></tr>
+<tr><th id="414">414</th><td>	  <a class="ref fn" href="../include/ifreq.h.html#__ifreq" title='__ifreq' data-ref="__ifreq" data-ref-filename="__ifreq">__ifreq</a> (&amp;<a class="local col2 ref" href="#42ifr" title='ifr' data-ref="42ifr" data-ref-filename="42ifr">ifr</a>, &amp;<a class="local col5 ref" href="#45num" title='num' data-ref="45num" data-ref-filename="45num">num</a>, <a class="local col4 ref" href="#44sd" title='sd' data-ref="44sd" data-ref-filename="44sd">sd</a>);</td></tr>
+<tr><th id="415">415</th><td>	  <b>if</b> (!<a class="local col2 ref" href="#42ifr" title='ifr' data-ref="42ifr" data-ref-filename="42ifr">ifr</a>)</td></tr>
+<tr><th id="416">416</th><td>	    <b>goto</b> <a class="lbl" href="#49cleanup" data-ref="49cleanup" data-ref-filename="49cleanup">cleanup</a>;</td></tr>
+<tr><th id="417">417</th><td></td></tr>
+<tr><th id="418">418</th><td>	  <a class="tu ref" href="#334" title='ifaddrs' data-use='w' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a> = <a class="ref fn" href="../stdlib/stdlib.h.html#malloc" title='malloc' data-ref="malloc" data-ref-filename="malloc">malloc</a> (<a class="local col5 ref" href="#45num" title='num' data-ref="45num" data-ref-filename="45num">num</a> * <b>sizeof</b> (<a class="tu ref" href="#334" title='ifaddrs' data-use='r' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a>[<var>0</var>]));</td></tr>
+<tr><th id="419">419</th><td>	  <b>if</b> (!<a class="tu ref" href="#334" title='ifaddrs' data-use='r' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a>)</td></tr>
+<tr><th id="420">420</th><td>	    <b>goto</b> <a class="lbl" href="#50cleanup1" data-ref="50cleanup1" data-ref-filename="50cleanup1">cleanup1</a>;</td></tr>
+<tr><th id="421">421</th><td></td></tr>
+<tr><th id="422">422</th><td>	  <i>/* Copy usable interfaces in ifaddrs structure.  */</i></td></tr>
+<tr><th id="423">423</th><td>	  <b>for</b> (<a class="local col3 ref" href="#43cur_ifr" title='cur_ifr' data-ref="43cur_ifr" data-ref-filename="43cur_ifr">cur_ifr</a> = <a class="local col2 ref" href="#42ifr" title='ifr' data-ref="42ifr" data-ref-filename="42ifr">ifr</a>, <a class="local col6 ref" href="#46i" title='i' data-ref="46i" data-ref-filename="46i">i</a> = <var>0</var>; <a class="local col6 ref" href="#46i" title='i' data-ref="46i" data-ref-filename="46i">i</a> &lt; <a class="local col5 ref" href="#45num" title='num' data-ref="45num" data-ref-filename="45num">num</a>;</td></tr>
+<tr><th id="424">424</th><td>	       <a class="local col3 ref" href="#43cur_ifr" title='cur_ifr' data-ref="43cur_ifr" data-ref-filename="43cur_ifr">cur_ifr</a> = <a class="ref fn" href="../include/ifreq.h.html#__if_nextreq" title='__if_nextreq' data-ref="__if_nextreq" data-ref-filename="__if_nextreq">__if_nextreq</a> (<a class="local col3 ref" href="#43cur_ifr" title='cur_ifr' data-ref="43cur_ifr" data-ref-filename="43cur_ifr">cur_ifr</a>), ++<a class="local col6 ref" href="#46i" title='i' data-ref="46i" data-ref-filename="46i">i</a>)</td></tr>
+<tr><th id="425">425</th><td>	    {</td></tr>
+<tr><th id="426">426</th><td>	      <b>union</b></td></tr>
+<tr><th id="427">427</th><td>	      {</td></tr>
+<tr><th id="428">428</th><td>		<b>struct</b> <a class="type" href="../sysdeps/unix/sysv/linux/bits/socket.h.html#sockaddr" title='sockaddr' data-ref="sockaddr" data-ref-filename="sockaddr">sockaddr</a> <dfn class="local col1 decl field" id="51sa" title='sa' data-type='struct sockaddr' data-ref="51sa" data-ref-filename="51sa">sa</dfn>;</td></tr>
+<tr><th id="429">429</th><td>		<b>struct</b> <a class="type" href="../inet/netinet/in.h.html#sockaddr_in" title='sockaddr_in' data-ref="sockaddr_in" data-ref-filename="sockaddr_in">sockaddr_in</a> <dfn class="local col2 decl field" id="52sin" title='sin' data-type='struct sockaddr_in' data-ref="52sin" data-ref-filename="52sin">sin</dfn>;</td></tr>
+<tr><th id="430">430</th><td>	      } <dfn class="local col3 decl" id="53ss" title='ss' data-type='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.34/resolv/res_hconf.c:426:8)' data-ref="53ss" data-ref-filename="53ss">ss</dfn>;</td></tr>
+<tr><th id="431">431</th><td></td></tr>
+<tr><th id="432">432</th><td>	      <b>if</b> (<a class="local col3 ref" href="#43cur_ifr" title='cur_ifr' data-ref="43cur_ifr" data-ref-filename="43cur_ifr">cur_ifr</a>-&gt;<a class="macro" href="../sysdeps/gnu/net/if.h.html#153" title="ifr_ifru.ifru_addr" data-ref="_M/ifr_addr">ifr_addr</a>.<a class="ref field" href="../sysdeps/unix/sysv/linux/bits/socket.h.html#180" title='sockaddr::sa_family' data-ref="sockaddr::sa_family" data-ref-filename="sockaddr..sa_family">sa_family</a> != <a class="macro" href="../sysdeps/unix/sysv/linux/bits/socket.h.html#96" title="2" data-ref="_M/AF_INET">AF_INET</a>)</td></tr>
+<tr><th id="433">433</th><td>		<b>continue</b>;</td></tr>
+<tr><th id="434">434</th><td></td></tr>
+<tr><th id="435">435</th><td>	      <a class="tu ref" href="#334" title='ifaddrs' data-use='r' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a>[<a class="local col8 ref" href="#48new_num_ifs" title='new_num_ifs' data-ref="48new_num_ifs" data-ref-filename="48new_num_ifs">new_num_ifs</a>].<a class="tu ref field" href="#334" title='netaddr::addrtype' data-use='w' data-ref="netaddr::addrtype" data-ref-filename="netaddr..addrtype">addrtype</a> = <a class="macro" href="../sysdeps/unix/sysv/linux/bits/socket.h.html#96" title="2" data-ref="_M/AF_INET">AF_INET</a>;</td></tr>
+<tr><th id="436">436</th><td>	      <a class="local col3 ref" href="#53ss" title='ss' data-ref="53ss" data-ref-filename="53ss">ss</a>.<a class="local col1 ref field" href="#51sa" title='sa' data-ref="51sa" data-ref-filename="51sa">sa</a> = <a class="local col3 ref" href="#43cur_ifr" title='cur_ifr' data-ref="43cur_ifr" data-ref-filename="43cur_ifr">cur_ifr</a>-&gt;<a class="macro" href="../sysdeps/gnu/net/if.h.html#153" title="ifr_ifru.ifru_addr" data-ref="_M/ifr_addr">ifr_addr</a>;</td></tr>
+<tr><th id="437">437</th><td>	      <a class="tu ref" href="#334" title='ifaddrs' data-use='r' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a>[<a class="local col8 ref" href="#48new_num_ifs" title='new_num_ifs' data-ref="48new_num_ifs" data-ref-filename="48new_num_ifs">new_num_ifs</a>].<a class="tu ref field" href="#334" title='netaddr::u' data-use='m' data-ref="netaddr::u" data-ref-filename="netaddr..u">u</a>.<a class="tu ref field" href="#334" title='netaddr::(anonymous union)::ipv4' data-use='m' data-ref="netaddr::(anonymous)::ipv4" data-ref-filename="netaddr..(anonymous)..ipv4">ipv4</a>.<a class="tu ref field" href="#334" title='netaddr::(anonymous union)::(anonymous struct)::addr' data-use='w' data-ref="netaddr::(anonymousunion)::(anonymous)::addr" data-ref-filename="netaddr..(anonymousunion)..(anonymous)..addr">addr</a> = <a class="local col3 ref" href="#53ss" title='ss' data-ref="53ss" data-ref-filename="53ss">ss</a>.<a class="local col2 ref field" href="#52sin" title='sin' data-ref="52sin" data-ref-filename="52sin">sin</a>.<a class="ref field" href="../inet/netinet/in.h.html#sockaddr_in::sin_addr" title='sockaddr_in::sin_addr' data-ref="sockaddr_in::sin_addr" data-ref-filename="sockaddr_in..sin_addr">sin_addr</a>.<a class="ref field" href="../inet/netinet/in.h.html#in_addr::s_addr" title='in_addr::s_addr' data-ref="in_addr::s_addr" data-ref-filename="in_addr..s_addr">s_addr</a>;</td></tr>
+<tr><th id="438">438</th><td></td></tr>
+<tr><th id="439">439</th><td>	      <b>if</b> (<a class="ref fn" href="../include/sys/ioctl.h.html#__ioctl" title='__ioctl' data-ref="__ioctl" data-ref-filename="__ioctl">__ioctl</a> (<a class="local col4 ref" href="#44sd" title='sd' data-ref="44sd" data-ref-filename="44sd">sd</a>, <a class="macro" href="../sysdeps/unix/sysv/linux/bits/ioctls.h.html#42" title="0x891b" data-ref="_M/SIOCGIFNETMASK">SIOCGIFNETMASK</a>, <a class="local col3 ref" href="#43cur_ifr" title='cur_ifr' data-ref="43cur_ifr" data-ref-filename="43cur_ifr">cur_ifr</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="440">440</th><td>		<b>continue</b>;</td></tr>
+<tr><th id="441">441</th><td></td></tr>
+<tr><th id="442">442</th><td>	      <a class="local col3 ref" href="#53ss" title='ss' data-ref="53ss" data-ref-filename="53ss">ss</a>.<a class="local col1 ref field" href="#51sa" title='sa' data-ref="51sa" data-ref-filename="51sa">sa</a> = <a class="local col3 ref" href="#43cur_ifr" title='cur_ifr' data-ref="43cur_ifr" data-ref-filename="43cur_ifr">cur_ifr</a>-&gt;<a class="macro" href="../sysdeps/gnu/net/if.h.html#156" title="ifr_ifru.ifru_netmask" data-ref="_M/ifr_netmask">ifr_netmask</a>;</td></tr>
+<tr><th id="443">443</th><td>	      <a class="tu ref" href="#334" title='ifaddrs' data-use='r' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a>[<a class="local col8 ref" href="#48new_num_ifs" title='new_num_ifs' data-ref="48new_num_ifs" data-ref-filename="48new_num_ifs">new_num_ifs</a>].<a class="tu ref field" href="#334" title='netaddr::u' data-use='m' data-ref="netaddr::u" data-ref-filename="netaddr..u">u</a>.<a class="tu ref field" href="#334" title='netaddr::(anonymous union)::ipv4' data-use='m' data-ref="netaddr::(anonymous)::ipv4" data-ref-filename="netaddr..(anonymous)..ipv4">ipv4</a>.<a class="tu ref field" href="#334" title='netaddr::(anonymous union)::(anonymous struct)::mask' data-use='w' data-ref="netaddr::(anonymousunion)::(anonymous)::mask" data-ref-filename="netaddr..(anonymousunion)..(anonymous)..mask">mask</a> = <a class="local col3 ref" href="#53ss" title='ss' data-ref="53ss" data-ref-filename="53ss">ss</a>.<a class="local col2 ref field" href="#52sin" title='sin' data-ref="52sin" data-ref-filename="52sin">sin</a>.<a class="ref field" href="../inet/netinet/in.h.html#sockaddr_in::sin_addr" title='sockaddr_in::sin_addr' data-ref="sockaddr_in::sin_addr" data-ref-filename="sockaddr_in..sin_addr">sin_addr</a>.<a class="ref field" href="../inet/netinet/in.h.html#in_addr::s_addr" title='in_addr::s_addr' data-ref="in_addr::s_addr" data-ref-filename="in_addr..s_addr">s_addr</a>;</td></tr>
+<tr><th id="444">444</th><td></td></tr>
+<tr><th id="445">445</th><td>	      <i>/* Now we're committed to this entry.  */</i></td></tr>
+<tr><th id="446">446</th><td>	      ++<a class="local col8 ref" href="#48new_num_ifs" title='new_num_ifs' data-ref="48new_num_ifs" data-ref-filename="48new_num_ifs">new_num_ifs</a>;</td></tr>
+<tr><th id="447">447</th><td>	    }</td></tr>
+<tr><th id="448">448</th><td>	  <i>/* Just keep enough memory to hold all the interfaces we want.  */</i></td></tr>
+<tr><th id="449">449</th><td>	  <a class="tu ref" href="#334" title='ifaddrs' data-use='w' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a> = <a class="ref fn" href="../stdlib/stdlib.h.html#realloc" title='realloc' data-ref="realloc" data-ref-filename="realloc">realloc</a> (<a class="tu ref" href="#334" title='ifaddrs' data-use='r' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a>, <a class="local col8 ref" href="#48new_num_ifs" title='new_num_ifs' data-ref="48new_num_ifs" data-ref-filename="48new_num_ifs">new_num_ifs</a> * <b>sizeof</b> (<a class="tu ref" href="#334" title='ifaddrs' data-use='r' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a>[<var>0</var>]));</td></tr>
+<tr><th id="450">450</th><td>	  <a class="macro" href="../assert/assert.h.html#104" title="((void) sizeof ((ifaddrs != ((void*)0)) ? 1 : 0), __extension__ ({ if (ifaddrs != ((void*)0)) ; else __assert_fail (&quot;ifaddrs != NULL&quot;, &quot;/media/rr/Data/glibc_source/glibc-2.34/resolv/res_hconf.c&quot;, 450, __extension__ __PRETTY_FUNCTION__); }))" data-ref="_M/assert">assert</a> (<a class="tu ref" href="#334" title='ifaddrs' data-use='r' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="451">451</th><td></td></tr>
+<tr><th id="452">452</th><td>	<dfn class="lbl" id="50cleanup1" data-ref="50cleanup1" data-ref-filename="50cleanup1">cleanup1</dfn>:</td></tr>
+<tr><th id="453">453</th><td>	  <a class="ref fn" href="../sysdeps/generic/ifreq.h.html#__if_freereq" title='__if_freereq' data-ref="__if_freereq" data-ref-filename="__if_freereq">__if_freereq</a> (<a class="local col2 ref" href="#42ifr" title='ifr' data-ref="42ifr" data-ref-filename="42ifr">ifr</a>, <a class="local col5 ref" href="#45num" title='num' data-ref="45num" data-ref-filename="45num">num</a>);</td></tr>
+<tr><th id="454">454</th><td></td></tr>
+<tr><th id="455">455</th><td>	<dfn class="lbl" id="49cleanup" data-ref="49cleanup" data-ref-filename="49cleanup">cleanup</dfn>:</td></tr>
+<tr><th id="456">456</th><td>	  <i>/* Release lock, preserve error value, and close socket.  */</i></td></tr>
+<tr><th id="457">457</th><td>	  <a class="macro" href="../include/errno.h.html#27" title="__libc_errno" data-ref="_M/errno">errno</a> = <a class="local col7 ref" href="#47save" title='save' data-ref="47save" data-ref-filename="47save">save</a>;</td></tr>
+<tr><th id="458">458</th><td></td></tr>
+<tr><th id="459">459</th><td>	  <i>/* Advertise successful initialization if new_num_ifs is</i></td></tr>
+<tr><th id="460">460</th><td><i>	     positive (and no updates to ifaddrs are permitted after</i></td></tr>
+<tr><th id="461">461</th><td><i>	     that).  Otherwise, num_ifs remains unchanged, at zero.</i></td></tr>
+<tr><th id="462">462</th><td><i>	     This store synchronizes with the initial acquire MO</i></td></tr>
+<tr><th id="463">463</th><td><i>	     load.  */</i></td></tr>
+<tr><th id="464">464</th><td>	  <a class="macro" href="../include/atomic.h.html#587" title="do { if ((sizeof (*(&amp;num_ifs)) != 1) &amp;&amp; (sizeof (*(&amp;num_ifs)) != 2) &amp;&amp; (sizeof (*(&amp;num_ifs)) != 4) &amp;&amp; (sizeof (*(&amp;num_ifs)) != 8)) __atomic_link_error ();; __atomic_store_n ((&amp;num_ifs), (new_num_ifs), 3); } while (0)" data-ref="_M/atomic_store_release">atomic_store_release</a> (&amp;<a class="local col9 ref" href="#39num_ifs" title='num_ifs' data-ref="39num_ifs" data-ref-filename="39num_ifs">num_ifs</a>, <a class="local col8 ref" href="#48new_num_ifs" title='new_num_ifs' data-ref="48new_num_ifs" data-ref-filename="48new_num_ifs">new_num_ifs</a>);</td></tr>
+<tr><th id="465">465</th><td>	  <i>/* Keep the local copy current, to save another load.  */</i></td></tr>
+<tr><th id="466">466</th><td>	  <a class="local col0 ref" href="#40num_ifs_local" title='num_ifs_local' data-ref="40num_ifs_local" data-ref-filename="40num_ifs_local">num_ifs_local</a> = <a class="local col8 ref" href="#48new_num_ifs" title='new_num_ifs' data-ref="48new_num_ifs" data-ref-filename="48new_num_ifs">new_num_ifs</a>;</td></tr>
+<tr><th id="467">467</th><td>	}</td></tr>
+<tr><th id="468">468</th><td></td></tr>
+<tr><th id="469">469</th><td>      <a class="macro" href="../sysdeps/nptl/libc-lockP.h.html#119" title="((void) ({ int *__futex = (&amp;(lock)); int __private = (0); int __oldval = ({ __typeof (*__futex) result; if (sizeof (*__futex) == 1) __asm __volatile (&quot;xchgb %b0, %1&quot; : &quot;=q&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; (0), &quot;m&quot; (*__futex)); else if (sizeof (*__futex) == 2) __asm __volatile (&quot;xchgw %w0, %1&quot; : &quot;=r&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; (0), &quot;m&quot; (*__futex)); else if (sizeof (*__futex) == 4) __asm __volatile (&quot;xchgl %0, %1&quot; : &quot;=r&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; (0), &quot;m&quot; (*__futex)); else if (1) __asm __volatile (&quot;xchgq %q0, %1&quot; : &quot;=r&quot; (result), &quot;=m&quot; (*__futex) : &quot;0&quot; ((atomic64_t) ((__typeof__ (*(0 ? (__typeof__ (0 ? (__typeof__ ((__typeof__ (0)) 0) *) 0 : (void *) ((__builtin_classify_type ((__typeof__ (0)) 0) == 5)))) 0 : (__typeof__ (0 ? (intptr_t *) 0 : (void *) (!((__builtin_classify_type ((__typeof__ (0)) 0) == 5))))) 0))) (0))), &quot;m&quot; (*__futex)); else { result = 0; __atomic_link_error (); } result; }); if (__builtin_expect ((__oldval &gt; 1), 0)) { if (__builtin_constant_p (0) &amp;&amp; (0) == 0) __lll_lock_wake_private (__futex); else __lll_lock_wake (__futex, __private); } }))" data-ref="_M/__libc_lock_unlock">__libc_lock_unlock</a> (<a class="local col1 ref" href="#368" title='lock' data-ref="41lock" data-ref-filename="41lock">lock</a>);</td></tr>
+<tr><th id="470">470</th><td></td></tr>
+<tr><th id="471">471</th><td>      <a class="ref fn" href="../include/unistd.h.html#__close" title='__close' data-ref="__close" data-ref-filename="__close">__close</a> (<a class="local col4 ref" href="#44sd" title='sd' data-ref="44sd" data-ref-filename="44sd">sd</a>);</td></tr>
+<tr><th id="472">472</th><td>    }</td></tr>
+<tr><th id="473">473</th><td></td></tr>
+<tr><th id="474">474</th><td>  <i>/* num_ifs_local cannot be negative because the if statement above</i></td></tr>
+<tr><th id="475">475</th><td><i>     covered this case.  It can still be zero if we just performed</i></td></tr>
+<tr><th id="476">476</th><td><i>     initialization, but could not find any interfaces.  */</i></td></tr>
+<tr><th id="477">477</th><td>  <b>if</b> (<a class="local col0 ref" href="#40num_ifs_local" title='num_ifs_local' data-ref="40num_ifs_local" data-ref-filename="40num_ifs_local">num_ifs_local</a> == <var>0</var>)</td></tr>
+<tr><th id="478">478</th><td>    <b>return</b>;</td></tr>
+<tr><th id="479">479</th><td></td></tr>
+<tr><th id="480">480</th><td>  <i>/* The code below accesses ifaddrs, so we need to ensure that the</i></td></tr>
+<tr><th id="481">481</th><td><i>     initialization happens-before this point.</i></td></tr>
+<tr><th id="482">482</th><td><i></i></td></tr>
+<tr><th id="483">483</th><td><i>     The actual initialization is sequenced-before the release store</i></td></tr>
+<tr><th id="484">484</th><td><i>     to num_ifs, and sequenced-before the end of the critical section.</i></td></tr>
+<tr><th id="485">485</th><td><i></i></td></tr>
+<tr><th id="486">486</th><td><i>     This means there are three possible executions:</i></td></tr>
+<tr><th id="487">487</th><td><i></i></td></tr>
+<tr><th id="488">488</th><td><i>     (1) The thread that initialized the data also uses it, so</i></td></tr>
+<tr><th id="489">489</th><td><i>         sequenced-before is sufficient to ensure happens-before.</i></td></tr>
+<tr><th id="490">490</th><td><i></i></td></tr>
+<tr><th id="491">491</th><td><i>     (2) The release MO store of num_ifs synchronizes-with the acquire</i></td></tr>
+<tr><th id="492">492</th><td><i>         MO load, and the acquire MO load is sequenced before the use</i></td></tr>
+<tr><th id="493">493</th><td><i>         of the initialized data below.</i></td></tr>
+<tr><th id="494">494</th><td><i></i></td></tr>
+<tr><th id="495">495</th><td><i>     (3) We enter the critical section, and the relaxed MO load of</i></td></tr>
+<tr><th id="496">496</th><td><i>         num_ifs yields a positive value.  The write to ifaddrs is</i></td></tr>
+<tr><th id="497">497</th><td><i>         sequenced-before leaving the critical section.  Leaving the</i></td></tr>
+<tr><th id="498">498</th><td><i>         critical section happens-before we entered the critical</i></td></tr>
+<tr><th id="499">499</th><td><i>         section ourselves, which means that the write to ifaddrs</i></td></tr>
+<tr><th id="500">500</th><td><i>         happens-before this point.</i></td></tr>
+<tr><th id="501">501</th><td><i></i></td></tr>
+<tr><th id="502">502</th><td><i>     Consequently, all potential writes to ifaddrs (and the data it</i></td></tr>
+<tr><th id="503">503</th><td><i>     points to) happens-before this point.  */</i></td></tr>
+<tr><th id="504">504</th><td></td></tr>
+<tr><th id="505">505</th><td>  <i>/* Find an address for which we have a direct connection.  */</i></td></tr>
+<tr><th id="506">506</th><td>  <b>for</b> (<a class="local col7 ref" href="#37i" title='i' data-ref="37i" data-ref-filename="37i">i</a> = <var>0</var>; <a class="local col6 ref" href="#36hp" title='hp' data-ref="36hp" data-ref-filename="36hp">hp</a>-&gt;<a class="ref field" href="netdb.h.html#hostent::h_addr_list" title='hostent::h_addr_list' data-ref="hostent::h_addr_list" data-ref-filename="hostent..h_addr_list">h_addr_list</a>[<a class="local col7 ref" href="#37i" title='i' data-ref="37i" data-ref-filename="37i">i</a>]; ++<a class="local col7 ref" href="#37i" title='i' data-ref="37i" data-ref-filename="37i">i</a>)</td></tr>
+<tr><th id="507">507</th><td>    {</td></tr>
+<tr><th id="508">508</th><td>      <b>struct</b> <a class="type" href="../inet/netinet/in.h.html#in_addr" title='in_addr' data-ref="in_addr" data-ref-filename="in_addr">in_addr</a> *<dfn class="local col4 decl" id="54haddr" title='haddr' data-type='struct in_addr *' data-ref="54haddr" data-ref-filename="54haddr">haddr</dfn> = (<b>struct</b> <a class="type" href="../inet/netinet/in.h.html#in_addr" title='in_addr' data-ref="in_addr" data-ref-filename="in_addr">in_addr</a> *) <a class="local col6 ref" href="#36hp" title='hp' data-ref="36hp" data-ref-filename="36hp">hp</a>-&gt;<a class="ref field" href="netdb.h.html#hostent::h_addr_list" title='hostent::h_addr_list' data-ref="hostent::h_addr_list" data-ref-filename="hostent..h_addr_list">h_addr_list</a>[<a class="local col7 ref" href="#37i" title='i' data-ref="37i" data-ref-filename="37i">i</a>];</td></tr>
+<tr><th id="509">509</th><td></td></tr>
+<tr><th id="510">510</th><td>      <b>for</b> (<a class="local col8 ref" href="#38j" title='j' data-ref="38j" data-ref-filename="38j">j</a> = <var>0</var>; <a class="local col8 ref" href="#38j" title='j' data-ref="38j" data-ref-filename="38j">j</a> &lt; <a class="local col0 ref" href="#40num_ifs_local" title='num_ifs_local' data-ref="40num_ifs_local" data-ref-filename="40num_ifs_local">num_ifs_local</a>; ++<a class="local col8 ref" href="#38j" title='j' data-ref="38j" data-ref-filename="38j">j</a>)</td></tr>
+<tr><th id="511">511</th><td>	{</td></tr>
+<tr><th id="512">512</th><td>	  <a class="typedef" href="../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="local col5 decl" id="55if_addr" title='if_addr' data-type='uint32_t' data-ref="55if_addr" data-ref-filename="55if_addr">if_addr</dfn>    = <a class="tu ref" href="#334" title='ifaddrs' data-use='r' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a>[<a class="local col8 ref" href="#38j" title='j' data-ref="38j" data-ref-filename="38j">j</a>].<a class="tu ref field" href="#334" title='netaddr::u' data-use='m' data-ref="netaddr::u" data-ref-filename="netaddr..u">u</a>.<a class="tu ref field" href="#334" title='netaddr::(anonymous union)::ipv4' data-use='m' data-ref="netaddr::(anonymous)::ipv4" data-ref-filename="netaddr..(anonymous)..ipv4">ipv4</a>.<a class="tu ref field" href="#334" title='netaddr::(anonymous union)::(anonymous struct)::addr' data-use='r' data-ref="netaddr::(anonymousunion)::(anonymous)::addr" data-ref-filename="netaddr..(anonymousunion)..(anonymous)..addr">addr</a>;</td></tr>
+<tr><th id="513">513</th><td>	  <a class="typedef" href="../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="local col6 decl" id="56if_netmask" title='if_netmask' data-type='uint32_t' data-ref="56if_netmask" data-ref-filename="56if_netmask">if_netmask</dfn> = <a class="tu ref" href="#334" title='ifaddrs' data-use='r' data-ref="ifaddrs" data-ref-filename="ifaddrs">ifaddrs</a>[<a class="local col8 ref" href="#38j" title='j' data-ref="38j" data-ref-filename="38j">j</a>].<a class="tu ref field" href="#334" title='netaddr::u' data-use='m' data-ref="netaddr::u" data-ref-filename="netaddr..u">u</a>.<a class="tu ref field" href="#334" title='netaddr::(anonymous union)::ipv4' data-use='m' data-ref="netaddr::(anonymous)::ipv4" data-ref-filename="netaddr..(anonymous)..ipv4">ipv4</a>.<a class="tu ref field" href="#334" title='netaddr::(anonymous union)::(anonymous struct)::mask' data-use='r' data-ref="netaddr::(anonymousunion)::(anonymous)::mask" data-ref-filename="netaddr..(anonymousunion)..(anonymous)..mask">mask</a>;</td></tr>
+<tr><th id="514">514</th><td></td></tr>
+<tr><th id="515">515</th><td>	  <b>if</b> (((<a class="local col4 ref" href="#54haddr" title='haddr' data-ref="54haddr" data-ref-filename="54haddr">haddr</a>-&gt;<a class="ref field" href="../inet/netinet/in.h.html#in_addr::s_addr" title='in_addr::s_addr' data-ref="in_addr::s_addr" data-ref-filename="in_addr..s_addr">s_addr</a> ^ <a class="local col5 ref" href="#55if_addr" title='if_addr' data-ref="55if_addr" data-ref-filename="55if_addr">if_addr</a>) &amp; <a class="local col6 ref" href="#56if_netmask" title='if_netmask' data-ref="56if_netmask" data-ref-filename="56if_netmask">if_netmask</a>) == <var>0</var>)</td></tr>
+<tr><th id="516">516</th><td>	    {</td></tr>
+<tr><th id="517">517</th><td>	      <em>void</em> *<dfn class="local col7 decl" id="57tmp" title='tmp' data-type='void *' data-ref="57tmp" data-ref-filename="57tmp">tmp</dfn>;</td></tr>
+<tr><th id="518">518</th><td></td></tr>
+<tr><th id="519">519</th><td>	      <a class="local col7 ref" href="#57tmp" title='tmp' data-ref="57tmp" data-ref-filename="57tmp">tmp</a> = <a class="local col6 ref" href="#36hp" title='hp' data-ref="36hp" data-ref-filename="36hp">hp</a>-&gt;<a class="ref field" href="netdb.h.html#hostent::h_addr_list" title='hostent::h_addr_list' data-ref="hostent::h_addr_list" data-ref-filename="hostent..h_addr_list">h_addr_list</a>[<a class="local col7 ref" href="#37i" title='i' data-ref="37i" data-ref-filename="37i">i</a>];</td></tr>
+<tr><th id="520">520</th><td>	      <a class="local col6 ref" href="#36hp" title='hp' data-ref="36hp" data-ref-filename="36hp">hp</a>-&gt;<a class="ref field" href="netdb.h.html#hostent::h_addr_list" title='hostent::h_addr_list' data-ref="hostent::h_addr_list" data-ref-filename="hostent..h_addr_list">h_addr_list</a>[<a class="local col7 ref" href="#37i" title='i' data-ref="37i" data-ref-filename="37i">i</a>] = <a class="local col6 ref" href="#36hp" title='hp' data-ref="36hp" data-ref-filename="36hp">hp</a>-&gt;<a class="ref field" href="netdb.h.html#hostent::h_addr_list" title='hostent::h_addr_list' data-ref="hostent::h_addr_list" data-ref-filename="hostent..h_addr_list">h_addr_list</a>[<var>0</var>];</td></tr>
+<tr><th id="521">521</th><td>	      <a class="local col6 ref" href="#36hp" title='hp' data-ref="36hp" data-ref-filename="36hp">hp</a>-&gt;<a class="ref field" href="netdb.h.html#hostent::h_addr_list" title='hostent::h_addr_list' data-ref="hostent::h_addr_list" data-ref-filename="hostent..h_addr_list">h_addr_list</a>[<var>0</var>] = <a class="local col7 ref" href="#57tmp" title='tmp' data-ref="57tmp" data-ref-filename="57tmp">tmp</a>;</td></tr>
+<tr><th id="522">522</th><td>	      <b>return</b>;</td></tr>
+<tr><th id="523">523</th><td>	    }</td></tr>
+<tr><th id="524">524</th><td>	}</td></tr>
+<tr><th id="525">525</th><td>    }</td></tr>
+<tr><th id="526">526</th><td><u>#<span data-ppcond="358">endif</span> /* defined(SIOCGIFCONF) &amp;&amp; ... */</u></td></tr>
+<tr><th id="527">527</th><td>}</td></tr>
+<tr><th id="528">528</th><td></td></tr>
+<tr><th id="529">529</th><td></td></tr>
+<tr><th id="530">530</th><td><i>/* If HOSTNAME has a postfix matching any of the trimdomains, trim away</i></td></tr>
+<tr><th id="531">531</th><td><i>   that postfix.  Notice that HOSTNAME is modified inplace.  Also, the</i></td></tr>
+<tr><th id="532">532</th><td><i>   original code applied all trimdomains in order, meaning that the</i></td></tr>
+<tr><th id="533">533</th><td><i>   same domainname could be trimmed multiple times.  I believe this</i></td></tr>
+<tr><th id="534">534</th><td><i>   was unintentional.  */</i></td></tr>
+<tr><th id="535">535</th><td><em>void</em></td></tr>
+<tr><th id="536">536</th><td><dfn class="decl def fn" id="_res_hconf_trim_domain" title='_res_hconf_trim_domain' data-ref="_res_hconf_trim_domain" data-ref-filename="_res_hconf_trim_domain">_res_hconf_trim_domain</dfn> (<em>char</em> *<dfn class="local col8 decl" id="58hostname" title='hostname' data-type='char *' data-ref="58hostname" data-ref-filename="58hostname">hostname</dfn>)</td></tr>
+<tr><th id="537">537</th><td>{</td></tr>
+<tr><th id="538">538</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col9 decl" id="59hostname_len" title='hostname_len' data-type='size_t' data-ref="59hostname_len" data-ref-filename="59hostname_len">hostname_len</dfn>, <dfn class="local col0 decl" id="60trim_len" title='trim_len' data-type='size_t' data-ref="60trim_len" data-ref-filename="60trim_len">trim_len</dfn>;</td></tr>
+<tr><th id="539">539</th><td>  <em>int</em> <dfn class="local col1 decl" id="61i" title='i' data-type='int' data-ref="61i" data-ref-filename="61i">i</dfn>;</td></tr>
+<tr><th id="540">540</th><td></td></tr>
+<tr><th id="541">541</th><td>  <a class="local col9 ref" href="#59hostname_len" title='hostname_len' data-ref="59hostname_len" data-ref-filename="59hostname_len">hostname_len</a> = <a class="ref fn" href="../string/string.h.html#strlen" title='strlen' data-ref="strlen" data-ref-filename="strlen">strlen</a> (<a class="local col8 ref" href="#58hostname" title='hostname' data-ref="58hostname" data-ref-filename="58hostname">hostname</a>);</td></tr>
+<tr><th id="542">542</th><td></td></tr>
+<tr><th id="543">543</th><td>  <b>for</b> (<a class="local col1 ref" href="#61i" title='i' data-ref="61i" data-ref-filename="61i">i</a> = <var>0</var>; <a class="local col1 ref" href="#61i" title='i' data-ref="61i" data-ref-filename="61i">i</a> &lt; <a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>.<a class="ref field" href="res_hconf.h.html#hconf::num_trimdomains" title='hconf::num_trimdomains' data-ref="hconf::num_trimdomains" data-ref-filename="hconf..num_trimdomains">num_trimdomains</a>; ++<a class="local col1 ref" href="#61i" title='i' data-ref="61i" data-ref-filename="61i">i</a>)</td></tr>
+<tr><th id="544">544</th><td>    {</td></tr>
+<tr><th id="545">545</th><td>      <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="62trim" title='trim' data-type='const char *' data-ref="62trim" data-ref-filename="62trim">trim</dfn> = <a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>.<a class="ref field" href="res_hconf.h.html#hconf::trimdomain" title='hconf::trimdomain' data-ref="hconf::trimdomain" data-ref-filename="hconf..trimdomain">trimdomain</a>[<a class="local col1 ref" href="#61i" title='i' data-ref="61i" data-ref-filename="61i">i</a>];</td></tr>
+<tr><th id="546">546</th><td></td></tr>
+<tr><th id="547">547</th><td>      <a class="local col0 ref" href="#60trim_len" title='trim_len' data-ref="60trim_len" data-ref-filename="60trim_len">trim_len</a> = <a class="ref fn" href="../string/string.h.html#strlen" title='strlen' data-ref="strlen" data-ref-filename="strlen">strlen</a> (<a class="local col2 ref" href="#62trim" title='trim' data-ref="62trim" data-ref-filename="62trim">trim</a>);</td></tr>
+<tr><th id="548">548</th><td>      <b>if</b> (<a class="local col9 ref" href="#59hostname_len" title='hostname_len' data-ref="59hostname_len" data-ref-filename="59hostname_len">hostname_len</a> &gt; <a class="local col0 ref" href="#60trim_len" title='trim_len' data-ref="60trim_len" data-ref-filename="60trim_len">trim_len</a></td></tr>
+<tr><th id="549">549</th><td>	  &amp;&amp; <a class="ref fn" href="../include/string.h.html#__strcasecmp" title='__strcasecmp' data-ref="__strcasecmp" data-ref-filename="__strcasecmp">__strcasecmp</a> (&amp;<a class="local col8 ref" href="#58hostname" title='hostname' data-ref="58hostname" data-ref-filename="58hostname">hostname</a>[<a class="local col9 ref" href="#59hostname_len" title='hostname_len' data-ref="59hostname_len" data-ref-filename="59hostname_len">hostname_len</a> - <a class="local col0 ref" href="#60trim_len" title='trim_len' data-ref="60trim_len" data-ref-filename="60trim_len">trim_len</a>], <a class="local col2 ref" href="#62trim" title='trim' data-ref="62trim" data-ref-filename="62trim">trim</a>) == <var>0</var>)</td></tr>
+<tr><th id="550">550</th><td>	{</td></tr>
+<tr><th id="551">551</th><td>	  <a class="local col8 ref" href="#58hostname" title='hostname' data-ref="58hostname" data-ref-filename="58hostname">hostname</a>[<a class="local col9 ref" href="#59hostname_len" title='hostname_len' data-ref="59hostname_len" data-ref-filename="59hostname_len">hostname_len</a> - <a class="local col0 ref" href="#60trim_len" title='trim_len' data-ref="60trim_len" data-ref-filename="60trim_len">trim_len</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="552">552</th><td>	  <b>break</b>;</td></tr>
+<tr><th id="553">553</th><td>	}</td></tr>
+<tr><th id="554">554</th><td>    }</td></tr>
+<tr><th id="555">555</th><td>}</td></tr>
+<tr><th id="556">556</th><td></td></tr>
+<tr><th id="557">557</th><td></td></tr>
+<tr><th id="558">558</th><td><i>/* Trim all hostnames/aliases in HP according to the trimdomain list.</i></td></tr>
+<tr><th id="559">559</th><td><i>   Notice that HP is modified inplace!  */</i></td></tr>
+<tr><th id="560">560</th><td><em>void</em></td></tr>
+<tr><th id="561">561</th><td><dfn class="decl def fn" id="_res_hconf_trim_domains" title='_res_hconf_trim_domains' data-ref="_res_hconf_trim_domains" data-ref-filename="_res_hconf_trim_domains">_res_hconf_trim_domains</dfn> (<b>struct</b> <a class="type" href="netdb.h.html#hostent" title='hostent' data-ref="hostent" data-ref-filename="hostent">hostent</a> *<dfn class="local col3 decl" id="63hp" title='hp' data-type='struct hostent *' data-ref="63hp" data-ref-filename="63hp">hp</dfn>)</td></tr>
+<tr><th id="562">562</th><td>{</td></tr>
+<tr><th id="563">563</th><td>  <em>int</em> <dfn class="local col4 decl" id="64i" title='i' data-type='int' data-ref="64i" data-ref-filename="64i">i</dfn>;</td></tr>
+<tr><th id="564">564</th><td></td></tr>
+<tr><th id="565">565</th><td>  <b>if</b> (<a class="ref" href="res_hconf.h.html#_res_hconf" title='_res_hconf' data-ref="_res_hconf" data-ref-filename="_res_hconf">_res_hconf</a>.<a class="ref field" href="res_hconf.h.html#hconf::num_trimdomains" title='hconf::num_trimdomains' data-ref="hconf::num_trimdomains" data-ref-filename="hconf..num_trimdomains">num_trimdomains</a> == <var>0</var>)</td></tr>
+<tr><th id="566">566</th><td>    <b>return</b>;</td></tr>
+<tr><th id="567">567</th><td></td></tr>
+<tr><th id="568">568</th><td>  <a class="ref fn" href="#_res_hconf_trim_domain" title='_res_hconf_trim_domain' data-ref="_res_hconf_trim_domain" data-ref-filename="_res_hconf_trim_domain">_res_hconf_trim_domain</a> (<a class="local col3 ref" href="#63hp" title='hp' data-ref="63hp" data-ref-filename="63hp">hp</a>-&gt;<a class="ref field" href="netdb.h.html#hostent::h_name" title='hostent::h_name' data-ref="hostent::h_name" data-ref-filename="hostent..h_name">h_name</a>);</td></tr>
+<tr><th id="569">569</th><td>  <b>for</b> (<a class="local col4 ref" href="#64i" title='i' data-ref="64i" data-ref-filename="64i">i</a> = <var>0</var>; <a class="local col3 ref" href="#63hp" title='hp' data-ref="63hp" data-ref-filename="63hp">hp</a>-&gt;<a class="ref field" href="netdb.h.html#hostent::h_aliases" title='hostent::h_aliases' data-ref="hostent::h_aliases" data-ref-filename="hostent..h_aliases">h_aliases</a>[<a class="local col4 ref" href="#64i" title='i' data-ref="64i" data-ref-filename="64i">i</a>]; ++<a class="local col4 ref" href="#64i" title='i' data-ref="64i" data-ref-filename="64i">i</a>)</td></tr>
+<tr><th id="570">570</th><td>    <a class="ref fn" href="#_res_hconf_trim_domain" title='_res_hconf_trim_domain' data-ref="_res_hconf_trim_domain" data-ref-filename="_res_hconf_trim_domain">_res_hconf_trim_domain</a> (<a class="local col3 ref" href="#63hp" title='hp' data-ref="63hp" data-ref-filename="63hp">hp</a>-&gt;<a class="ref field" href="netdb.h.html#hostent::h_aliases" title='hostent::h_aliases' data-ref="hostent::h_aliases" data-ref-filename="hostent..h_aliases">h_aliases</a>[<a class="local col4 ref" href="#64i" title='i' data-ref="64i" data-ref-filename="64i">i</a>]);</td></tr>
+<tr><th id="571">571</th><td>}</td></tr>
+<tr><th id="572">572</th><td><u>#<span data-ppcond="331">endif</span></u></td></tr>
+<tr><th id="573">573</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

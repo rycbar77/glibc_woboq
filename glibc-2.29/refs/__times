@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/sys/times.h' l='6' type='clock_t __times(struct tms * __buffer)'/>
+<doc f='codebrowser/include/sys/times.h' l='5'>/* Now define the internal interfaces.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/times.c' l='23' ll='66' type='clock_t __times(struct tms * buf)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/times.c' l='67' c='times'/>

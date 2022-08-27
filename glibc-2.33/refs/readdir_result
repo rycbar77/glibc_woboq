@@ -1,0 +1,14 @@
+<def f='codebrowser/posix/glob.c' l='108' ll='114'/>
+<use f='codebrowser/posix/glob.c' l='118' c='readdir_result_type'/>
+<use f='codebrowser/posix/glob.c' l='146' c='convert_dirent'/>
+<use f='codebrowser/posix/glob.c' l='151' c='convert_dirent'/>
+<use f='codebrowser/posix/glob.c' l='154' c='convert_dirent'/>
+<use f='codebrowser/posix/glob.c' l='161' c='convert_dirent64'/>
+<use f='codebrowser/posix/glob.c' l='166' c='convert_dirent64'/>
+<use f='codebrowser/posix/glob.c' l='169' c='convert_dirent64'/>
+<use f='codebrowser/posix/glob.c' l='1342' c='glob_in_dir'/>
+<size>16</size>
+<doc f='codebrowser/posix/glob.c' l='106'>/* A representation of a directory entry which does not depend on the
+   layout of struct dirent, or the size of ino_t.  */</doc>
+<mbr r='readdir_result::name' o='0' t='const char *'/>
+<mbr r='readdir_result::type' o='64' t='dirent_type'/>

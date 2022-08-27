@@ -1,0 +1,170 @@
+<use f='codebrowser/socket/sys/socket.h' l='69'/>
+<use f='codebrowser/socket/sys/socket.h' l='69'/>
+<def f='codebrowser/inet/netinet/in.h' l='242' ll='253'/>
+<use f='codebrowser/inet/netinet/in.h' l='507' c='bindresvport'/>
+<use f='codebrowser/resolv/bits/types/res_state.h' l='18'/>
+<size>16</size>
+<doc f='codebrowser/inet/netinet/in.h' l='241'>/* Structure describing an Internet socket address.  */</doc>
+<mbr r='sockaddr_in::sin_family' o='0' t='sa_family_t'/>
+<mbr r='sockaddr_in::sin_port' o='16' t='in_port_t'/>
+<mbr r='sockaddr_in::sin_addr' o='32' t='struct in_addr'/>
+<mbr r='sockaddr_in::sin_zero' o='64' t='unsigned char[8]'/>
+<use f='codebrowser/resolv/resolv.h' l='184' c='__res_isourserver'/>
+<size>16</size>
+<use f='codebrowser/inet/bindresvport.c' l='49' c='bindresvport'/>
+<use f='codebrowser/inet/bindresvport.c' l='52' c='bindresvport'/>
+<use f='codebrowser/inet/bindresvport.c' l='61' c='bindresvport'/>
+<use f='codebrowser/inet/bindresvport.c' l='92' c='bindresvport'/>
+<size>16</size>
+<use f='codebrowser/inet/getnameinfo.c' l='248' c='gni_host_inet_name'/>
+<use f='codebrowser/inet/getnameinfo.c' l='248' c='gni_host_inet_name'/>
+<use f='codebrowser/inet/getnameinfo.c' l='352' c='gni_host_inet_numeric'/>
+<use f='codebrowser/inet/getnameinfo.c' l='352' c='gni_host_inet_numeric'/>
+<use f='codebrowser/inet/getnameinfo.c' l='426' c='gni_serv_inet'/>
+<use f='codebrowser/inet/getnameinfo.c' l='428' c='gni_serv_inet'/>
+<use f='codebrowser/inet/getnameinfo.c' l='431' c='gni_serv_inet'/>
+<use f='codebrowser/inet/getnameinfo.c' l='431' c='gni_serv_inet'/>
+<use f='codebrowser/inet/getnameinfo.c' l='507' c='getnameinfo'/>
+<size>16</size>
+<use f='codebrowser/inet/rcmd.c' l='112' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='370' c='rresvport_af'/>
+<use f='codebrowser/inet/rcmd.c' l='379' c='rresvport_af'/>
+<use f='codebrowser/inet/rcmd.c' l='593' c='iruserok_af'/>
+<use f='codebrowser/inet/rcmd.c' l='603' c='iruserok_af'/>
+<use f='codebrowser/inet/rcmd.c' l='638' c='__ivaliduser'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/rpc/clnt.h' l='307' c='clnttcp_create'/>
+<use f='codebrowser/sunrpc/rpc/clnt.h' l='332' c='clntudp_create'/>
+<use f='codebrowser/sunrpc/rpc/clnt.h' l='335' c='clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/rpc/clnt.h' l='411' c='get_myaddress'/>
+<use f='codebrowser/include/rpc/clnt.h' l='9' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/rpc/auth_des.h' l='105' c='rtime'/>
+<use f='codebrowser/sunrpc/rpc/svc.h' l='110'/>
+<use f='codebrowser/include/rpc/rpc.h' l='62' c='__libc_rpc_gethostbyname'/>
+<size>16</size>
+<use f='codebrowser/resolv/res_hconf.c' l='429' c='_res_hconf_reorder_addrs'/>
+<size>16</size>
+<use f='codebrowser/resolv/res_init.c' l='216' c='allocate_address_v4'/>
+<size>16</size>
+<use f='codebrowser/resolv/resolv_conf.c' l='204' c='same_address_v4'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='205' c='same_address_v4'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='231' c='same_address'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='232' c='same_address'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='368' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='371' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='377' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='429' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='430' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='430' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='430' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='431' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='493' c='update_from_conf'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/auth_des.c' l='455' c='synchronize'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='52' c='__GI_clnt_create'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/clnt_simp.c' l='59' c='__GI_callrpc'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/rpc/pmap_clnt.h' l='45'/>
+<use f='codebrowser/sunrpc/rpc/pmap_clnt.h' l='73' c='pmap_getmaps'/>
+<use f='codebrowser/sunrpc/rpc/pmap_clnt.h' l='74' c='pmap_rmtcall'/>
+<use f='codebrowser/sunrpc/rpc/pmap_clnt.h' l='88' c='pmap_getport'/>
+<use f='codebrowser/include/rpc/pmap_clnt.h' l='11' c='__get_socket'/>
+<use f='codebrowser/include/rpc/pmap_clnt.h' l='12' c='__libc_rpc_getport'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='69'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='112' c='__GI_clnttcp_create'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='151' c='__GI_clnttcp_create'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='378' c='clnttcp_control'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='94'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='124' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='188' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='218' c='__GI_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='228' c='__GI_clntudp_create'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='286' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='416' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='580' c='clntudp_control'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/get_myaddr.c' l='56' c='__GI_get_myaddress'/>
+<use f='codebrowser/sunrpc/get_myaddr.c' l='79' c='__GI_get_myaddress'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/getrpcport.c' l='63' c='getrpcport'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/key_call.c' l='214' c='__GI_key_gendes'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/pm_getmaps.c' l='55' c='__GI_pmap_getmaps'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/pm_getport.c' l='49' c='__get_socket'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='55' c='__get_socket'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='84' c='__libc_rpc_getport'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='149' c='__GI_pmap_getport'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='56' c='__get_myaddress'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='78' c='__get_myaddress'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='108' c='__GI_pmap_set'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='144' c='__GI_pmap_unset'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='68' c='__GI_pmap_rmtcall'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='187' c='getbroadcastnets'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='232' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='232' c='__GI_clnt_broadcast'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/rpc_gethostbyname.c' l='26' c='__libc_rpc_gethostbyname'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/rtime.c' l='70' c='__GI_rtime'/>
+<use f='codebrowser/sunrpc/rtime.c' l='79' c='__GI_rtime'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='158' c='__GI_svctcp_create'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='159' c='__GI_svctcp_create'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='257' c='rendezvous_request'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='262' c='rendezvous_request'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/svc_udp.c' l='127' c='__GI_svcudp_bufcreate'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='128' c='__GI_svcudp_bufcreate'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='244' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='432'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='458'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/svc_unix.c' l='157' c='__GI_svcunix_create'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='254' c='rendezvous_request'/>
+<size>16</size>
+<use f='codebrowser/support/resolv_test.c' l='551'/>
+<use f='codebrowser/support/resolv_test.c' l='1013' c='make_server_sockets'/>
+<use f='codebrowser/support/resolv_test.c' l='1062' c='make_server_sockets_for_address'/>
+<use f='codebrowser/support/resolv_test.c' l='1066' c='make_server_sockets_for_address'/>
+<size>16</size>
+<use f='codebrowser/support/support_format_addrinfo.c' l='34' c='socket_address_length'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='177' c='format_ai_one'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='177' c='format_ai_one'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1036' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1082' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1083' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1184' c='get_scope'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1184' c='get_scope'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1302' c='match_prefix'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1302' c='match_prefix'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1548' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1549' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1551' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1552' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1559' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1560' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1562' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1563' c='rfc3484_sort'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2361' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2362' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2399' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2400' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2406' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2406' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2412' c='getaddrinfo'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsourcefilter.c' l='46'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='66'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='608' c='getifaddrs_internal'/>
+<size>16</size>
+<use f='codebrowser/socket/sa_len.c' l='82' c='__libc_sa_len'/>
+<size>16</size>

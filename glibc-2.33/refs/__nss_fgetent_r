@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/nss_files.h' l='80' type='int __nss_fgetent_r(FILE * fp, void * result, char * buffer, size_t buffer_length, nss_files_parse_line * parser)'/>
+<use f='codebrowser/grp/fgetgrent_r.c' l='58' u='c' c='__fgetgrent_r'/>
+<doc f='codebrowser/include/nss_files.h' l='77'>/* Generic implementation of fget*ent_r.  Reads lines from FP until
+   EOF or a successful parse into *RESULT using PARSER.  Returns 0 on
+   success, ENOENT on EOF, ERANGE on too-small buffer.  */</doc>
+<use f='codebrowser/gshadow/fgetsgent_r.c' l='39' u='c' c='__fgetsgent_r'/>
+<def f='codebrowser/nss/nss_fgetent_r.c' l='23' ll='56' type='int __nss_fgetent_r(FILE * fp, void * result, char * buffer, size_t buffer_length, nss_files_parse_line * parser)'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='72' u='c' c='__fgetpwent_r'/>
+<use f='codebrowser/shadow/fgetspent_r.c' l='39' u='c' c='__fgetspent_r'/>

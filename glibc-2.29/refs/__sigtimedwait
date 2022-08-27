@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/sigtimedwait.c' l='23' ll='39' type='int __sigtimedwait(const sigset_t * set, siginfo_t * info, const struct timespec * timeout)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigtimedwait.c' l='41' c='sigtimedwait'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigwait.c' l='28' u='c' c='__sigwait'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigwaitinfo.c' l='25' u='c' c='__sigwaitinfo'/>

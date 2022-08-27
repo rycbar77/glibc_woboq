@@ -1,0 +1,3 @@
+<def f='codebrowser/sysdeps/generic/dl-r_debug.h' l='33' macro='1' type='Elf32_Addr r_debug_offset32(Elf32_Dyn * d, int fd, Elf32_Addr offset)'/>
+<use f='codebrowser/elf/pldd-xx.c' l='135' macro='1' u='c' c='find_maps32'/>
+<doc f='codebrowser/sysdeps/generic/dl-r_debug.h' l='30'>/* Return the offset of the struct r_debug before relocation.  */</doc>

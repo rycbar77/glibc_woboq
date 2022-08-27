@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/utmp.h' l='9' type='int __utmpname(const char * __file)'/>
+<dec f='codebrowser/include/utmp.h' l='10' type='int __utmpname(const char * )'/>
+<use f='codebrowser/include/utmp.h' l='10' c='__utmpname'/>
+<use f='codebrowser/login/login.c' l='117' u='c' c='__login'/>
+<use f='codebrowser/login/logout.c' l='34' u='c' c='__logout'/>
+<def f='codebrowser/login/utmpname.c' l='37' ll='74' type='int __utmpname(const char * file)'/>
+<use f='codebrowser/login/utmpname.c' l='76' c='utmpname'/>
+<use f='codebrowser/login/utmpxname.c' l='25' u='c' c='utmpxname'/>

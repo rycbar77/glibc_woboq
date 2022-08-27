@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='256' type='int pthread_equal(pthread_t __thread1, pthread_t __thread2)'/>
+<def f='codebrowser/sysdeps/nptl/pthread.h' l='1197' ll='1201' macro='1' type='int pthread_equal(pthread_t __thread1, pthread_t __thread2)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='255'>/* Compare two thread identifiers.  */</doc>
+<def f='codebrowser/nptl/pthread_equal.c' l='27' macro='1' type='int pthread_equal(pthread_t , pthread_t )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='108' c='__gthrw_pthread_equal'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='521' type='void __pthread_exit(void * value)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='522' type='void __pthread_exit(void * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='522' c='__pthread_exit'/>
+<def f='codebrowser/nptl/pthread_exit.c' l='25' ll='38' type='void __pthread_exit(void * value)'/>
+<use f='codebrowser/nptl/pthread_exit.c' l='40' c='pthread_exit'/>
+<use f='codebrowser/resolv/gai_misc.c' l='433' u='c' c='handle_requests'/>
+<use f='codebrowser/sysdeps/pthread/thrd_exit.c' l='25' u='c' c='__thrd_exit'/>

@@ -1,0 +1,4 @@
+<def f='codebrowser/nptl/pthread_cond_signal.c' l='99' macro='1' type='int pthread_cond_signal(pthread_cond_t * )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='127' c='__gthrw_pthread_cond_signal'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='457' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='654' u='c' c='handle_fildes_io'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/elf/stringtable.h' l='28' type='struct stringtable_entry *'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/stringtable.h' l='28'>/* For collision resolution.  */</doc>
+<use f='codebrowser/elf/stringtable.c' l='68' u='r' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='71' u='w' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='96' u='r' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='112' u='w' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='165' u='r' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='206' u='r' c='stringtable_finalize'/>

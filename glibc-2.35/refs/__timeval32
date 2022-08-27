@@ -1,0 +1,20 @@
+<def f='codebrowser/include/time.h' l='456' ll='460'/>
+<use f='codebrowser/include/time.h' l='464' c='valid_timeval32_to_timeval64'/>
+<use f='codebrowser/include/time.h' l='469' c='valid_timeval64_to_timeval32'/>
+<use f='codebrowser/include/time.h' l='472' c='valid_timeval64_to_timeval32'/>
+<use f='codebrowser/include/time.h' l='476' c='valid_timeval32_to_timeval'/>
+<use f='codebrowser/include/time.h' l='481' c='valid_timeval_to_timeval32'/>
+<use f='codebrowser/include/time.h' l='484' c='valid_timeval_to_timeval32'/>
+<use f='codebrowser/include/time.h' l='488' c='valid_timeval32_to_timespec'/>
+<use f='codebrowser/include/time.h' l='493' c='valid_timespec_to_timeval32'/>
+<use f='codebrowser/include/time.h' l='496' c='valid_timespec_to_timeval32'/>
+<size>8</size>
+<doc f='codebrowser/include/time.h' l='454'>/* A version of &apos;struct timeval&apos; with 32-bit time_t
+   and suseconds_t.  */</doc>
+<mbr r='__timeval32::tv_sec' o='0' t='int32_t'/>
+<mbr r='__timeval32::tv_usec' o='32' t='int32_t'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='28'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='29'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='34'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='35'/>
+<size>8</size>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='94' type='struct requestlist * __aio_enqueue_request(aiocb_union * aiocbp, int operation)'/>
+<doc f='codebrowser/sysdeps/generic/aio_misc.h' l='93'>/* Enqueue request.  */</doc>
+<use f='codebrowser/rt/aio_fsync.c' l='52' u='c' c='__aio_fsync'/>
+<def f='codebrowser/rt/aio_misc.c' l='310' ll='488' type='struct requestlist * __aio_enqueue_request(aiocb_union * aiocbp, int operation)'/>
+<doc f='codebrowser/rt/aio_misc.c' l='308'>/* The main function of the async I/O handling.  It enqueues requests
+   and if necessary starts and handles threads.  */</doc>
+<use f='codebrowser/rt/aio_read.c' l='36' u='c' c='__aio_read'/>
+<use f='codebrowser/rt/aio_write.c' l='36' u='c' c='__aio_write'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='101' u='c' c='lio_listio_internal'/>

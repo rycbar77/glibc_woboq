@@ -1,0 +1,40 @@
+<dec f='codebrowser/posix/unistd.h' l='564' type='char **'/>
+<doc f='codebrowser/posix/unistd.h' l='563'>/* NULL-terminated array of &quot;NAME=VALUE&quot; environment variables.  */</doc>
+<use f='codebrowser/csu/init-first.c' l='63' u='w' c='__libc_init_first'/>
+<use f='codebrowser/dlfcn/dlmopen.c' l='63' u='r' c='dlmopen_doit'/>
+<use f='codebrowser/dlfcn/dlopen.c' l='59' u='r' c='dlopen_doit'/>
+<dec f='codebrowser/elf/dl-environ.c' l='53' type='char **'/>
+<use f='codebrowser/elf/dl-environ.c' l='60' u='r' c='unsetenv'/>
+<doc f='codebrowser/elf/dl-environ.c' l='52'>/* In ld.so __environ is not exported.  */</doc>
+<dec f='codebrowser/elf/dl-libc.c' l='27' type='char **'/>
+<use f='codebrowser/elf/dl-libc.c' l='97' u='r' c='do_dlopen'/>
+<use f='codebrowser/elf/rtld.c' l='678' u='r' c='dlmopen_doit'/>
+<use f='codebrowser/libio/iopopen.c' l='89' u='r' c='spawn_process'/>
+<def f='codebrowser/posix/environ.c' l='7' type='char **'/>
+<use f='codebrowser/posix/environ.c' l='8'/>
+<use f='codebrowser/posix/environ.c' l='12'/>
+<doc f='codebrowser/posix/environ.c' l='6'>/* This must be initialized; we cannot have a weak alias into bss.  */</doc>
+<use f='codebrowser/posix/execl.c' l='56' u='r' c='execl'/>
+<use f='codebrowser/posix/execlp.c' l='56' u='r' c='execlp'/>
+<use f='codebrowser/posix/execv.c' l='25' u='r' c='execv'/>
+<use f='codebrowser/posix/execvp.c' l='26' u='r' c='execvp'/>
+<use f='codebrowser/posix/wordexp.c' l='850' u='r' c='exec_comm_child'/>
+<use f='codebrowser/posix/wordexp.c' l='861' u='r' c='exec_comm_child'/>
+<use f='codebrowser/stdlib/getenv.c' l='38' u='r' c='getenv'/>
+<use f='codebrowser/stdlib/getenv.c' l='51' u='r' c='getenv'/>
+<use f='codebrowser/stdlib/getenv.c' l='75' u='r' c='getenv'/>
+<use f='codebrowser/stdlib/setenv.c' l='137' u='r' c='__add_to_environ'/>
+<use f='codebrowser/stdlib/setenv.c' l='164' u='r' c='__add_to_environ'/>
+<use f='codebrowser/stdlib/setenv.c' l='165' u='r' c='__add_to_environ'/>
+<use f='codebrowser/stdlib/setenv.c' l='172' u='w' c='__add_to_environ'/>
+<use f='codebrowser/stdlib/setenv.c' l='280' u='r' c='__unsetenv'/>
+<use f='codebrowser/stdlib/setenv.c' l='311' u='r' c='__clearenv'/>
+<use f='codebrowser/stdlib/setenv.c' l='311' u='r' c='__clearenv'/>
+<use f='codebrowser/stdlib/setenv.c' l='314' u='r' c='__clearenv'/>
+<use f='codebrowser/stdlib/setenv.c' l='319' u='w' c='__clearenv'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='151' u='r' c='do_system'/>
+<use f='codebrowser/sysdeps/nptl/libc_start_call_main.h' l='58' u='r' c='__libc_start_call_main'/>
+<use f='codebrowser/csu/libc-start.c' l='246' u='w' c='__libc_start_main_impl'/>
+<use f='codebrowser/csu/libc-start.c' l='291' u='r' c='__libc_start_main_impl'/>
+<use f='codebrowser/csu/libc-start.c' l='354' u='r' c='__libc_start_main_impl'/>
+<use f='codebrowser/csu/libc-start.c' l='387' u='r' c='__libc_start_main_impl'/>

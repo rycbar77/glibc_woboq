@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='525' type='int pthread_setcanceltype(int __type, int * __oldtype)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='523'>/* Set cancellation state of current thread to TYPE, returning the old
+   type in *OLDTYPE if OLDTYPE is not NULL.  */</doc>
+<def f='codebrowser/nptl/pthread_setcanceltype.c' l='41' macro='1' type='int pthread_setcanceltype(int , int * )'/>

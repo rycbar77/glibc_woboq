@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/sys/select.h' l='40' type='int __select(int __nfds, fd_set *restrict __readfds, fd_set *restrict __writefds, fd_set *restrict __exceptfds, struct timeval *restrict __timeout)'/>
+<dec f='codebrowser/include/sys/select.h' l='44' type='int __select(int , fd_set *restrict , fd_set *restrict , fd_set *restrict , struct timeval *restrict )'/>
+<use f='codebrowser/include/sys/select.h' l='44' c='__select'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/select.c' l='32' macro='1' type='int __select(int nfds, fd_set * readfds, fd_set * writefds, fd_set * exceptfds, struct timeval * timeout)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/select.c' l='141' c='select'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/select.c' l='142' c='__libc_select'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/select.c' l='25'>/* Check the first NFDS descriptors each in READFDS (if not NULL) for read
+   readiness, in WRITEFDS (if not NULL) for write readiness, and in EXCEPTFDS
+   (if not NULL) for exceptional conditions.  If TIMEOUT is not NULL, time out
+   after waiting the interval specified therein.  Returns the number of ready
+   descriptors, or -1 for errors.  */</doc>

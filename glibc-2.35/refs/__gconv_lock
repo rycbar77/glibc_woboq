@@ -1,0 +1,14 @@
+<dec f='codebrowser/iconv/gconv_int.h' l='111' type='__libc_lock_t'/>
+<doc f='codebrowser/iconv/gconv_int.h' l='110'>/* Lock for the conversion database content.  */</doc>
+<def f='codebrowser/iconv/gconv_db.c' l='41' macro='1' type='__libc_lock_t'/>
+<use f='codebrowser/iconv/gconv_db.c' l='730' u='a' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_db.c' l='736' u='a' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_db.c' l='743' u='a' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_db.c' l='762' u='a' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_db.c' l='770' u='a' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_db.c' l='789' u='a' c='__gconv_close_transform'/>
+<use f='codebrowser/iconv/gconv_db.c' l='803' u='a' c='__gconv_close_transform'/>
+<use f='codebrowser/libio/iofclose.c' l='64' u='a' c='_IO_new_fclose'/>
+<use f='codebrowser/libio/iofclose.c' l='67' u='a' c='_IO_new_fclose'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='230' u='a' c='__wcsmbs_clone_conv'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='240' u='a' c='__wcsmbs_clone_conv'/>

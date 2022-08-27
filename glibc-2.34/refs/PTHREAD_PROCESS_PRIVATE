@@ -1,0 +1,14 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='146' type='0'/>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='104' macro='1' u='r' c='futex_supports_pshared'/>
+<use f='codebrowser/nptl/pthread_barrier_init.c' l='27' macro='1'/>
+<use f='codebrowser/nptl/pthread_barrier_init.c' l='59' macro='1' u='r' c='___pthread_barrier_init'/>
+<use f='codebrowser/nptl/pthread_barrierattr_init.c' l='29' macro='1' u='r' c='__pthread_barrierattr_init'/>
+<use f='codebrowser/nptl/pthread_condattr_getpshared.c' l='26' macro='1' u='r' c='__pthread_condattr_getpshared'/>
+<use f='codebrowser/nptl/pthread_condattr_setpshared.c' l='33' macro='1' u='r' c='__pthread_condattr_setpshared'/>
+<use f='codebrowser/nptl/pthread_mutexattr_getpshared.c' l='30' macro='1' u='r' c='__pthread_mutexattr_getpshared'/>
+<use f='codebrowser/nptl/pthread_mutexattr_setpshared.c' l='35' macro='1' u='r' c='__pthread_mutexattr_setpshared'/>
+<use f='codebrowser/nptl/pthread_rwlock_init.c' l='27' macro='1'/>
+<use f='codebrowser/nptl/pthread_rwlock_init.c' l='54' macro='1' u='r' c='___pthread_rwlock_init'/>
+<use f='codebrowser/nptl/pthread_rwlockattr_init.c' l='34' macro='1' u='r' c='__pthread_rwlockattr_init'/>
+<use f='codebrowser/nptl/sem_init.c' l='38' macro='1' u='r' c='__new_sem_init'/>
+<use f='codebrowser/nptl/sem_init.c' l='59' macro='1' u='r' c='__new_sem_init'/>

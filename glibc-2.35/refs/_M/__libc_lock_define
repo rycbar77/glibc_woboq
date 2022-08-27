@@ -1,0 +1,20 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='48'/>
+<doc f='codebrowser/sysdeps/nptl/libc-lockP.h' l='41'>/* Define a lock variable NAME with storage class CLASS.  The lock must be
+   initialized with __libc_lock_init before it can be used (or define it
+   with __libc_lock_define_initialized, below).  Use `extern&apos; for CLASS to
+   declare a lock defined in another module.  In public structure
+   definitions you must use a pointer to the lock structure (i.e., NAME
+   begins with a `*&apos;), because its storage size will not be known outside
+   of libc.  */</doc>
+<use f='codebrowser/nss/nss_db/db-XXX.c' l='57' u='c'/>
+<use f='codebrowser/iconv/gconv_int.h' l='111' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dirstream.h' l='34' u='c'/>
+<use f='codebrowser/login/utmp-private.h' l='41' u='c'/>
+<use f='codebrowser/login/getutid_r.c' l='27' u='c'/>
+<use f='codebrowser/login/getutline_r.c' l='26' u='c'/>
+<use f='codebrowser/login/utmpname.c' l='33' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='1833' u='c'/>
+<use f='codebrowser/nss/nss_action.c' l='45' u='c'/>
+<use f='codebrowser/nss/nss_database.c' l='35' u='c'/>
+<use f='codebrowser/nss/nss_module.c' l='54' u='c'/>
+<use f='codebrowser/stdlib/exit.h' l='77' u='c'/>

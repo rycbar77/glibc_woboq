@@ -1,0 +1,5 @@
+<dec f='codebrowser/malloc/arena.c' l='86' type='char[8]'/>
+<offset>320</offset>
+<doc f='codebrowser/malloc/arena.c' l='83'>/* Make sure the following data is properly aligned, particularly
+     that sizeof (heap_info) + 2 * SIZE_SZ is a multiple of
+     MALLOC_ALIGNMENT. */</doc>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='418' type='int __pthread_cond_init(pthread_cond_t * cond, const pthread_condattr_t * cond_attr)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='420' type='int __pthread_cond_init(pthread_cond_t * , const pthread_condattr_t * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='420' c='__pthread_cond_init'/>
+<def f='codebrowser/nptl/pthread_cond_init.c' l='25' ll='50' type='int __pthread_cond_init(pthread_cond_t * cond, const pthread_condattr_t * cond_attr)'/>
+<use f='codebrowser/nptl/pthread_cond_init.c' l='52' c='pthread_cond_init'/>
+<doc f='codebrowser/nptl/pthread_cond_init.c' l='24'>/* See __pthread_cond_wait for details.  */</doc>
+<use f='codebrowser/sysdeps/pthread/cnd_init.c' l='32' u='c' c='__cnd_init'/>

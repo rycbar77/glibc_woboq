@@ -1,0 +1,13 @@
+<dec f='codebrowser/iconv/gconv_int.h' l='258' type='int __gconv_transliterate(struct __gconv_step * step, struct __gconv_step_data * step_data, const unsigned char * inbufstart, const unsigned char ** inbufp, const unsigned char * inbufend, unsigned char ** outbufstart, size_t * irreversible)'/>
+<dec f='codebrowser/iconv/gconv_int.h' l='265' type='int __gconv_transliterate(struct __gconv_step * , struct __gconv_step_data * , const unsigned char * , const unsigned char ** , const unsigned char * , unsigned char ** , size_t * )'/>
+<use f='codebrowser/iconv/gconv_int.h' l='265' c='__gconv_transliterate'/>
+<doc f='codebrowser/iconv/gconv_int.h' l='257'>/* Transliteration using the locale&apos;s data.  */</doc>
+<use f='codebrowser/iconv/loop.c' l='228' u='c' c='internal_ascii_loop'/>
+<use f='codebrowser/iconv/loop.c' l='228' u='c' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='228' u='c' c='internal_utf8_loop'/>
+<use f='codebrowser/iconv/loop.c' l='228' u='c' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='228' u='c' c='internal_ucs2_loop'/>
+<use f='codebrowser/iconv/loop.c' l='228' u='c' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/loop.c' l='228' u='c' c='internal_ucs2reverse_loop'/>
+<use f='codebrowser/iconv/loop.c' l='228' u='c' c='internal_ucs2reverse_loop_single'/>
+<def f='codebrowser/iconv/gconv_trans.c' l='31' ll='237' type='int __gconv_transliterate(struct __gconv_step * step, struct __gconv_step_data * step_data, const unsigned char * inbufstart, const unsigned char ** inbufp, const unsigned char * inbufend, unsigned char ** outbufstart, size_t * irreversible)'/>

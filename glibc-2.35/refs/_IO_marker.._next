@@ -1,0 +1,12 @@
+<dec f='codebrowser/libio/libio.h' l='106' type='struct _IO_marker *'/>
+<offset>0</offset>
+<use f='codebrowser/libio/genops.c' l='118' u='r' c='_IO_least_marker'/>
+<use f='codebrowser/libio/genops.c' l='262' u='r' c='save_for_backup'/>
+<use f='codebrowser/libio/genops.c' l='609' u='r' c='_IO_default_finish'/>
+<use f='codebrowser/libio/genops.c' l='893' u='w' c='_IO_init_marker'/>
+<use f='codebrowser/libio/genops.c' l='902' u='a' c='_IO_remove_marker'/>
+<use f='codebrowser/libio/genops.c' l='908' u='r' c='_IO_remove_marker'/>
+<use f='codebrowser/libio/wgenops.c' l='44' u='r' c='_IO_least_wmarker'/>
+<use f='codebrowser/libio/wgenops.c' l='179' u='r' c='_IO_wdefault_finish'/>
+<use f='codebrowser/libio/wgenops.c' l='486' u='r' c='save_for_wbackup'/>
+<use f='codebrowser/libio/wgenops.c' l='555' u='w' c='_IO_init_wmarker'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/inet/netinet/ip6.h' l='77' type='uint8_t'/>
+<offset>16</offset>
+<doc f='codebrowser/inet/netinet/ip6.h' l='77'>/* routing type */</doc>
+<use f='codebrowser/inet/inet6_rth.c' l='72' u='w' c='inet6_rth_init'/>
+<use f='codebrowser/inet/inet6_rth.c' l='89' u='r' c='inet6_rth_add'/>
+<use f='codebrowser/inet/inet6_rth.c' l='120' u='r' c='inet6_rth_reverse'/>
+<use f='codebrowser/inet/inet6_rth.c' l='160' u='r' c='inet6_rth_segments'/>
+<use f='codebrowser/inet/inet6_rth.c' l='182' u='r' c='inet6_rth_getaddr'/>

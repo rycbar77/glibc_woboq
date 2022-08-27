@@ -1,0 +1,16 @@
+<def f='codebrowser/rt/aio.h' l='86' ll='97'/>
+<use f='codebrowser/rt/aio.h' l='137' c='aio_init'/>
+<use f='codebrowser/include/aio.h' l='6' c='__aio_init'/>
+<size>32</size>
+<doc f='codebrowser/rt/aio.h' l='85'>/* To optimize the implementation one can use the following struct.  */</doc>
+<mbr r='aioinit::aio_threads' o='0' t='int'/>
+<mbr r='aioinit::aio_num' o='32' t='int'/>
+<mbr r='aioinit::aio_locks' o='64' t='int'/>
+<mbr r='aioinit::aio_usedba' o='96' t='int'/>
+<mbr r='aioinit::aio_debug' o='128' t='int'/>
+<mbr r='aioinit::aio_numusers' o='160' t='int'/>
+<mbr r='aioinit::aio_idle_time' o='192' t='int'/>
+<mbr r='aioinit::aio_reserved' o='224' t='int'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='86'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='271' c='__aio_init'/>
+<size>32</size>

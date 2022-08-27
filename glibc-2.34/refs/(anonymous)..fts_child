@@ -1,0 +1,24 @@
+<dec f='codebrowser/io/fts.h' l='59' type='struct _ftsent *'/>
+<dec f='codebrowser/io/fts.h' l='86' type='struct _ftsent64 *'/>
+<use f='codebrowser/io/fts.c' l='278' u='r' c='fts_close'/>
+<use f='codebrowser/io/fts.c' l='279' u='r' c='fts_close'/>
+<use f='codebrowser/io/fts.c' l='361' u='r' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='362' u='r' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='363' u='w' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='370' u='r' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='372' u='r' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='373' u='w' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='388' u='r' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='392' u='r' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='397' u='w' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='402' u='r' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='403' u='w' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='555' u='r' c='fts_children'/>
+<use f='codebrowser/io/fts.c' l='556' u='r' c='fts_children'/>
+<use f='codebrowser/io/fts.c' l='573' u='w' c='fts_children'/>
+<use f='codebrowser/io/fts.c' l='577' u='w' c='fts_children'/>
+<use f='codebrowser/io/fts.c' l='581' u='r' c='fts_children'/>
+<use f='codebrowser/io/fts.c' l='1083' u='r' c='fts_padjust'/>
+<offset>64</offset>
+<doc f='codebrowser/io/fts.h' l='59'>/* linked list of children */</doc>
+<doc f='codebrowser/io/fts.h' l='86'>/* linked list of children */</doc>

@@ -1,0 +1,100 @@
+<dec f='codebrowser/bits/dlfcn.h' l='54'/>
+<doc f='codebrowser/bits/dlfcn.h' l='44'>/* To support profiling of shared objects it is a good idea to call
+   the function found using `dlsym&apos; using the following macro since
+   these calls do not use the PLT.  But this would mean the dynamic
+   loader has no chance to find out when the function is called.  The
+   macro applies the necessary magic so that profiling is possible.
+   Rewrite
+	foo = (*fctp) (arg1, arg2);
+   into
+        foo = DL_CALL_FCT (fctp, (arg1, arg2));
+*/</doc>
+<use f='codebrowser/nss/getXXbyYY_r.c' l='273' u='c'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='30' u='c'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='43' u='c'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='113' u='c'/>
+<use f='codebrowser/grp/initgroups.c' l='101' u='c'/>
+<use f='codebrowser/iconv/gconv.c' l='57' u='c'/>
+<use f='codebrowser/iconv/gconv.c' l='77' u='c'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='212' u='c'/>
+<use f='codebrowser/iconv/gconv_db.c' l='187' u='c'/>
+<use f='codebrowser/iconv/gconv_db.c' l='215' u='c'/>
+<use f='codebrowser/iconv/gconv_db.c' l='311' u='c'/>
+<use f='codebrowser/iconv/gconv_db.c' l='411' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='153' u='a'/>
+<use f='codebrowser/iconv/skeleton.c' l='501' u='c'/>
+<use f='codebrowser/iconv/skeleton.c' l='675' u='c'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='125' u='c'/>
+<use f='codebrowser/iconv/gconv_trans.c' l='213' u='c'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='106' u='c'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='118' u='c'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='261' u='c'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='400' u='c'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='409' u='c'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='470' u='c'/>
+<use f='codebrowser/libio/iofwide.c' l='132' u='c'/>
+<use f='codebrowser/libio/iofwide.c' l='184' u='c'/>
+<use f='codebrowser/libio/iofwide.c' l='251' u='c'/>
+<use f='codebrowser/nscd/aicache.c' l='120' u='c'/>
+<use f='codebrowser/nscd/aicache.c' l='208' u='c'/>
+<use f='codebrowser/nscd/aicache.c' l='228' u='c'/>
+<use f='codebrowser/nscd/aicache.c' l='268' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='317' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='747' u='c'/>
+<use f='codebrowser/nscd/initgrcache.c' l='131' u='c'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='182' u='c'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='335' u='c'/>
+<use f='codebrowser/nss/getnssent_r.c' l='84' u='c'/>
+<use f='codebrowser/nss/getnssent_r.c' l='86' u='c'/>
+<use f='codebrowser/nss/getnssent_r.c' l='139' u='c'/>
+<use f='codebrowser/nss/getnssent_r.c' l='194' u='c'/>
+<use f='codebrowser/nss/getnssent_r.c' l='239' u='c'/>
+<use f='codebrowser/nss/getnssent_r.c' l='241' u='c'/>
+<use f='codebrowser/wcsmbs/btowc.c' l='57' u='c'/>
+<use f='codebrowser/wcsmbs/btowc.c' l='88' u='c'/>
+<use f='codebrowser/wcsmbs/mbrtoc16.c' l='104' u='c'/>
+<use f='codebrowser/wcsmbs/mbrtowc.c' l='85' u='c'/>
+<use f='codebrowser/wcsmbs/mbsnrtowcs.c' l='88' u='c'/>
+<use f='codebrowser/wcsmbs/mbsnrtowcs.c' l='108' u='c'/>
+<use f='codebrowser/wcsmbs/mbsrtowcs_l.c' l='83' u='c'/>
+<use f='codebrowser/wcsmbs/mbsrtowcs_l.c' l='117' u='c'/>
+<use f='codebrowser/wcsmbs/wcrtomb.c' l='77' u='c'/>
+<use f='codebrowser/wcsmbs/wcrtomb.c' l='88' u='c'/>
+<use f='codebrowser/wcsmbs/wcsnrtombs.c' l='88' u='c'/>
+<use f='codebrowser/wcsmbs/wcsnrtombs.c' l='112' u='c'/>
+<use f='codebrowser/wcsmbs/wcsrtombs.c' l='81' u='c'/>
+<use f='codebrowser/wcsmbs/wcsrtombs.c' l='109' u='c'/>
+<use f='codebrowser/wcsmbs/wctob.c' l='70' u='c'/>

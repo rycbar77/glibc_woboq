@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/mqueue.h' l='22' type='void __mq_notify_fork_subprocess()'/>
+<dec f='codebrowser/sysdeps/nptl/fork.h' l='47' type='void __mq_notify_fork_subprocess()'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='47' c='__mq_notify_fork_subprocess'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='47' u='r' c='fork_system_setup_after_fork'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='47' u='c' c='fork_system_setup_after_fork'/>
+<doc f='codebrowser/include/mqueue.h' l='20'>/* Called from fork so that the new subprocess re-creates the
+   notification thread if necessary.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='145' ll='149' type='void __mq_notify_fork_subprocess()'/>

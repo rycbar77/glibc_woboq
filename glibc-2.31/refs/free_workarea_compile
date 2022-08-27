@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/regcomp.c' l='33' type='void free_workarea_compile(regex_t * preg)'/>
+<use f='codebrowser/posix/regcomp.c' l='779' u='c' c='re_compile_internal'/>
+<use f='codebrowser/posix/regcomp.c' l='809' u='c' c='re_compile_internal'/>
+<def f='codebrowser/posix/regcomp.c' l='977' ll='992' type='void free_workarea_compile(regex_t * preg)'/>
+<doc f='codebrowser/posix/regcomp.c' l='975'>/* Free the work area which are only used while compiling.  */</doc>

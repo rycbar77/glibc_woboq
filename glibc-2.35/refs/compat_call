@@ -1,0 +1,3 @@
+<def f='codebrowser/grp/compat-initgroups.c' l='12' ll='116' type='enum nss_status compat_call(nss_action_list nip, const char * user, gid_t group, long * start, long * size, gid_t ** groupsp, long limit, int * errnop)'/>
+<use f='codebrowser/grp/initgroups.c' l='98' u='c' c='internal_getgrouplist'/>
+<use f='codebrowser/nscd/initgrcache.c' l='124' u='c' c='addinitgroupsX'/>

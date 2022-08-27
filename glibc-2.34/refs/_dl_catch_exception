@@ -1,0 +1,16 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='945' type='int _dl_catch_exception(struct dl_exception * exception, void (*)(void *) operate, void * args)'/>
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='947' type='int _dl_catch_exception(struct dl_exception * , void (*)(void *) , void * )'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='947' c='_dl_catch_exception'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='940'>/* Call OPERATE (ARGS).  If no error occurs, set *EXCEPTION to zero.
+   Otherwise, store a copy of the raised exception in *EXCEPTION,
+   which has to be freed by _dl_exception_free.  As a special case, if
+   EXCEPTION is null, call OPERATE (ARGS) with exception handling
+   disabled (so that exceptions are fatal).  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='300' u='c' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-deps.c' l='248' u='c' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='303' u='c' c='_dl_map_object_deps'/>
+<def f='codebrowser/elf/dl-error-skeleton.c' l='172' ll='219' type='int _dl_catch_exception(struct dl_exception * exception, void (*)(void *) operate, void * args)'/>
+<use f='codebrowser/elf/dl-error-skeleton.c' l='227' u='c' c='_dl_catch_error'/>
+<use f='codebrowser/elf/dl-open.c' l='788' u='c' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='863' u='c' c='_dl_open'/>
+<use f='codebrowser/elf/dl-sym.c' l='121' u='c' c='do_sym'/>

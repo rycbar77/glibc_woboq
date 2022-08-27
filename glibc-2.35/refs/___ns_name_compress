@@ -1,0 +1,14 @@
+<def f='codebrowser/resolv/ns_name_compress.c' l='32' ll='42' type='int ___ns_name_compress(const char * src, unsigned char * dst, size_t dstsiz, const unsigned char ** dnptrs, const unsigned char ** lastdnptr)'/>
+<use f='codebrowser/resolv/ns_name_compress.c' l='43' c='ns_name_compress'/>
+<use f='codebrowser/resolv/ns_name_compress.c' l='44' c='__ns_name_compress'/>
+<doc f='codebrowser/resolv/ns_name_compress.c' l='21'>/* Compresses a domain name into wire format, using compression pointers.
+   Returns the number of bytes consumed in DST or -1 (with errno set).
+
+   DNPTRS is an array of pointers to previous compressed names.
+   DNPTRS[0] is a pointer to the beginning of the message.
+
+   The list ends with NULL.  LASTDNPTR is a pointer to the end of the
+   array pointed to by DNPTRS.  Side effect is to update the list of
+   pointers for labels inserted into the message as we compress the
+   name.  If DNPTRS is NULL, we don&apos;t try to compress names.  If
+   LASTDNPTR * is NULL, we don&apos;t update the list.  */</doc>

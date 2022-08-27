@@ -1,0 +1,6 @@
+<dec f='codebrowser/nis/rpcsvc/ypclnt.h' l='80' type='int __yp_check(char ** )'/>
+<dec f='codebrowser/include/rpcsvc/ypclnt.h' l='22' type='int __yp_check(char ** )'/>
+<use f='codebrowser/include/rpcsvc/ypclnt.h' l='22' c='__yp_check'/>
+<doc f='codebrowser/nis/rpcsvc/ypclnt.h' l='79'>/* This functions exists only under BSD and Linux systems.  */</doc>
+<def f='codebrowser/nis/ypclnt.c' l='420' ll='435' type='int __yp_check(char ** domain)'/>
+<use f='codebrowser/nis/ypclnt.c' l='436' c='__EI___yp_check'/>

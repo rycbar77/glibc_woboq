@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/sys/socket.h' l='161' type='int __libc_sa_len(sa_family_t __af)'/>
+<dec f='codebrowser/include/sys/socket.h' l='162' type='int __libc_sa_len(sa_family_t )'/>
+<use f='codebrowser/include/sys/socket.h' l='162' c='__libc_sa_len'/>
+<use f='codebrowser/inet/rexec.c' l='128' macro='1' u='c' c='rexec_af'/>
+<def f='codebrowser/socket/sa_len.c' l='60' ll='105' type='int __libc_sa_len(sa_family_t af)'/>

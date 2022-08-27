@@ -1,0 +1,5 @@
+<dec f='include/selinux/avc.h' l='148' type='void (*)(void *, security_class_t, char *, size_t)'/>
+<offset>64</offset>
+<doc f='include/selinux/avc.h' l='146'>/* store a string representation of auditdata (corresponding
+	   to the given security class) into msgbuf. */</doc>
+<use f='codebrowser/nscd/selinux.c' l='99' u='w'/>

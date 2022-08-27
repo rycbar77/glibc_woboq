@@ -1,0 +1,13 @@
+<dec f='codebrowser/elf/elf.h' l='66' type='Elf32_Half'/>
+<dec f='codebrowser/elf/elf.h' l='84' type='Elf64_Half'/>
+<offset>128</offset>
+<doc f='codebrowser/elf/elf.h' l='66'>/* Object file type */</doc>
+<doc f='codebrowser/elf/elf.h' l='84'>/* Object file type */</doc>
+<use f='codebrowser/elf/dl-load.c' l='1089' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1747' u='r' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1748' u='r' c='open_verify'/>
+<use f='codebrowser/elf/readlib.c' l='175' u='r' c='process_file'/>
+<use f='codebrowser/elf/readelflib.c' l='76' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='79' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='76' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='79' u='r' c='process_elf64_file'/>

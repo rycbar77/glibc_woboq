@@ -1,0 +1,20 @@
+<def f='codebrowser/include/dlfcn.h' l='99' ll='119'/>
+<size>104</size>
+<doc f='codebrowser/include/dlfcn.h' l='96'>/* This structure is used to make the outer (statically linked)
+   implementation of dlopen and related functions to the inner libc
+   after static dlopen, via the GLRO (dl_dlfcn_hook) pointer.  */</doc>
+<mbr r='dlfcn_hook::dlopen' o='0' t='void *(*)(const char *, int, void *)'/>
+<mbr r='dlfcn_hook::dlclose' o='64' t='int (*)(void *)'/>
+<mbr r='dlfcn_hook::dlsym' o='128' t='void *(*)(void *, const char *, void *)'/>
+<mbr r='dlfcn_hook::dlvsym' o='192' t='void *(*)(void *, const char *, const char *, void *)'/>
+<mbr r='dlfcn_hook::dlerror' o='256' t='char *(*)(void)'/>
+<mbr r='dlfcn_hook::dladdr' o='320' t='int (*)(const void *, Dl_info *)'/>
+<mbr r='dlfcn_hook::dladdr1' o='384' t='int (*)(const void *, Dl_info *, void **, int)'/>
+<mbr r='dlfcn_hook::dlinfo' o='448' t='int (*)(void *, int, void *)'/>
+<mbr r='dlfcn_hook::dlmopen' o='512' t='void *(*)(Lmid_t, const char *, int, void *)'/>
+<mbr r='dlfcn_hook::libc_dlopen_mode' o='576' t='void *(*)(const char *, int)'/>
+<mbr r='dlfcn_hook::libc_dlsym' o='640' t='void *(*)(void *, const char *)'/>
+<mbr r='dlfcn_hook::libc_dlvsym' o='704' t='void *(*)(void *, const char *, const char *)'/>
+<mbr r='dlfcn_hook::libc_dlclose' o='768' t='int (*)(void *)'/>
+<use f='codebrowser/elf/rtld_static_init.c' l='28'/>
+<size>104</size>

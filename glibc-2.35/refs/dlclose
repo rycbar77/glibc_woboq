@@ -1,0 +1,7 @@
+<dec f='codebrowser/dlfcn/dlfcn.h' l='62' type='int dlclose(void * __handle)'/>
+<doc f='codebrowser/dlfcn/dlfcn.h' l='60'>/* Unmap and close a shared object opened by `dlopen&apos;.
+   The handle cannot be used again after calling `dlclose&apos;.  */</doc>
+<def f='codebrowser/dlfcn/dlclose.c' l='33' macro='1' type='int dlclose(void * )'/>
+<use f='codebrowser/elf/sprof.c' l='442' u='c' c='load_shobj'/>
+<use f='codebrowser/elf/sprof.c' l='738' u='c' c='unload_shobj'/>
+<use f='codebrowser/support/xdlfcn.c' l='77' u='c' c='xdlclose'/>

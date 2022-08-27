@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='1103' type='int pthread_rwlockattr_setkind_np(pthread_rwlockattr_t * __attr, int __pref)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='1102'>/* Set reader/write preference.  */</doc>
+<def f='codebrowser/nptl/pthread_rwlockattr_setkind_np.c' l='39' macro='1' type='int pthread_rwlockattr_setkind_np(pthread_rwlockattr_t * , int )'/>
+<use f='codebrowser/support/xpthread_rwlockattr_setkind_np.c' l='26' u='c' c='xpthread_rwlockattr_setkind_np'/>

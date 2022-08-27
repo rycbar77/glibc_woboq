@@ -1,0 +1,7 @@
+<def f='codebrowser/sunrpc/svc.c' l='131' ll='148' type='void xprt_unregister(SVCXPRT * xprt)'/>
+<use f='codebrowser/sunrpc/svc.c' l='152' c='__EI_xprt_unregister'/>
+<use f='codebrowser/sunrpc/svc.c' l='440' u='c' c='__GI_svc_getreq_poll'/>
+<doc f='codebrowser/sunrpc/svc.c' l='130'>/* De-activate a transport handle. */</doc>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='298' u='c' c='svctcp_destroy'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='391' u='c' c='svcudp_destroy'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='294' u='c' c='svcunix_destroy'/>

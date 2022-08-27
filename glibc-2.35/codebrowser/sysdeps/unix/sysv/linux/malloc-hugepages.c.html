@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>malloc-hugepages.c source code [codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>unix</a>/<a href='..'>sysv</a>/<a href='./'>linux</a>/<a href='malloc-hugepages.c.html'>malloc-hugepages.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Huge Page support.  Linux implementation.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public License as</i></td></tr>
+<tr><th id="7">7</th><td><i>   published by the Free Software Foundation; either version 2.1 of the</i></td></tr>
+<tr><th id="8">8</th><td><i>   License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; see the file COPYING.LIB.  If</i></td></tr>
+<tr><th id="17">17</th><td><i>   not, see &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../../../../include/intprops.h.html">&lt;intprops.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../../../../include/dirent.h.html">&lt;dirent.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../../../generic/malloc-hugepages.h.html">&lt;malloc-hugepages.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="not-cancel.h.html">&lt;not-cancel.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../../../../include/sys/mman.h.html">&lt;sys/mman.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>unsigned</em> <em>long</em> <em>int</em></td></tr>
+<tr><th id="26">26</th><td><dfn class="decl def fn" id="__malloc_default_thp_pagesize" title='__malloc_default_thp_pagesize' data-ref="__malloc_default_thp_pagesize" data-ref-filename="__malloc_default_thp_pagesize">__malloc_default_thp_pagesize</dfn> (<em>void</em>)</td></tr>
+<tr><th id="27">27</th><td>{</td></tr>
+<tr><th id="28">28</th><td>  <em>int</em> <dfn class="local col1 decl" id="1fd" title='fd' data-type='int' data-ref="1fd" data-ref-filename="1fd">fd</dfn> = <a class="ref fn" href="not-cancel.h.html#__open64_nocancel" title='__open64_nocancel' data-ref="__open64_nocancel" data-ref-filename="__open64_nocancel">__open64_nocancel</a> (</td></tr>
+<tr><th id="29">29</th><td>    <q>"/sys/kernel/mm/transparent_hugepage/hpage_pmd_size"</q>, <a class="macro" href="bits/fcntl-linux.h.html#43" title="00" data-ref="_M/O_RDONLY">O_RDONLY</a>);</td></tr>
+<tr><th id="30">30</th><td>  <b>if</b> (<a class="local col1 ref" href="#1fd" title='fd' data-ref="1fd" data-ref-filename="1fd">fd</a> == -<var>1</var>)</td></tr>
+<tr><th id="31">31</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td>  <em>char</em> <dfn class="local col2 decl" id="2str" title='str' data-type='char[21]' data-ref="2str" data-ref-filename="2str">str</dfn>[<a class="macro" href="../../../../include/intprops.h.html#126" title="((((((sizeof (unsigned long int) * 8) - (! ((__typeof__ (unsigned long int)) 0 &lt; (__typeof__ (unsigned long int)) -1))) * 146 + 484) / 485) + (! ((__typeof__ (unsigned long int)) 0 &lt; (__typeof__ (unsigned long int)) -1))) + 1)" data-ref="_M/INT_BUFSIZE_BOUND">INT_BUFSIZE_BOUND</a> (<em>unsigned</em> <em>long</em> <em>int</em>)];</td></tr>
+<tr><th id="34">34</th><td>  <a class="typedef" href="../../../../posix/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t" data-ref-filename="ssize_t">ssize_t</a> <dfn class="local col3 decl" id="3s" title='s' data-type='ssize_t' data-ref="3s" data-ref-filename="3s">s</dfn> = <a class="ref fn" href="not-cancel.h.html#__read_nocancel" title='__read_nocancel' data-ref="__read_nocancel" data-ref-filename="__read_nocancel">__read_nocancel</a> (<a class="local col1 ref" href="#1fd" title='fd' data-ref="1fd" data-ref-filename="1fd">fd</a>, <a class="local col2 ref" href="#2str" title='str' data-ref="2str" data-ref-filename="2str">str</a>, <b>sizeof</b> (<a class="local col2 ref" href="#2str" title='str' data-ref="2str" data-ref-filename="2str">str</a>));</td></tr>
+<tr><th id="35">35</th><td>  <a class="ref fn" href="not-cancel.h.html#__close_nocancel" title='__close_nocancel' data-ref="__close_nocancel" data-ref-filename="__close_nocancel">__close_nocancel</a> (<a class="local col1 ref" href="#1fd" title='fd' data-ref="1fd" data-ref-filename="1fd">fd</a>);</td></tr>
+<tr><th id="36">36</th><td>  <b>if</b> (<a class="local col3 ref" href="#3s" title='s' data-ref="3s" data-ref-filename="3s">s</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="37">37</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td>  <em>unsigned</em> <em>long</em> <em>int</em> <dfn class="local col4 decl" id="4r" title='r' data-type='unsigned long' data-ref="4r" data-ref-filename="4r">r</dfn> = <var>0</var>;</td></tr>
+<tr><th id="40">40</th><td>  <b>for</b> (<a class="typedef" href="../../../../posix/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t" data-ref-filename="ssize_t">ssize_t</a> <dfn class="local col5 decl" id="5i" title='i' data-type='ssize_t' data-ref="5i" data-ref-filename="5i">i</dfn> = <var>0</var>; <a class="local col5 ref" href="#5i" title='i' data-ref="5i" data-ref-filename="5i">i</a> &lt; <a class="local col3 ref" href="#3s" title='s' data-ref="3s" data-ref-filename="3s">s</a>; <a class="local col5 ref" href="#5i" title='i' data-ref="5i" data-ref-filename="5i">i</a>++)</td></tr>
+<tr><th id="41">41</th><td>    {</td></tr>
+<tr><th id="42">42</th><td>      <b>if</b> (<a class="local col2 ref" href="#2str" title='str' data-ref="2str" data-ref-filename="2str">str</a>[<a class="local col5 ref" href="#5i" title='i' data-ref="5i" data-ref-filename="5i">i</a>] == <kbd>'\n'</kbd>)</td></tr>
+<tr><th id="43">43</th><td>	<b>break</b>;</td></tr>
+<tr><th id="44">44</th><td>      <a class="local col4 ref" href="#4r" title='r' data-ref="4r" data-ref-filename="4r">r</a> *= <var>10</var>;</td></tr>
+<tr><th id="45">45</th><td>      <a class="local col4 ref" href="#4r" title='r' data-ref="4r" data-ref-filename="4r">r</a> += <a class="local col2 ref" href="#2str" title='str' data-ref="2str" data-ref-filename="2str">str</a>[<a class="local col5 ref" href="#5i" title='i' data-ref="5i" data-ref-filename="5i">i</a>] - <kbd>'0'</kbd>;</td></tr>
+<tr><th id="46">46</th><td>    }</td></tr>
+<tr><th id="47">47</th><td>  <b>return</b> <a class="local col4 ref" href="#4r" title='r' data-ref="4r" data-ref-filename="4r">r</a>;</td></tr>
+<tr><th id="48">48</th><td>}</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><b>enum</b> <a class="type" href="../../../generic/malloc-hugepages.h.html#malloc_thp_mode_t" title='malloc_thp_mode_t' data-ref="malloc_thp_mode_t" data-ref-filename="malloc_thp_mode_t">malloc_thp_mode_t</a></td></tr>
+<tr><th id="51">51</th><td><dfn class="decl def fn" id="__malloc_thp_mode" title='__malloc_thp_mode' data-ref="__malloc_thp_mode" data-ref-filename="__malloc_thp_mode">__malloc_thp_mode</dfn> (<em>void</em>)</td></tr>
+<tr><th id="52">52</th><td>{</td></tr>
+<tr><th id="53">53</th><td>  <em>int</em> <dfn class="local col6 decl" id="6fd" title='fd' data-type='int' data-ref="6fd" data-ref-filename="6fd">fd</dfn> = <a class="ref fn" href="not-cancel.h.html#__open64_nocancel" title='__open64_nocancel' data-ref="__open64_nocancel" data-ref-filename="__open64_nocancel">__open64_nocancel</a> (<q>"/sys/kernel/mm/transparent_hugepage/enabled"</q>,</td></tr>
+<tr><th id="54">54</th><td>			      <a class="macro" href="bits/fcntl-linux.h.html#43" title="00" data-ref="_M/O_RDONLY">O_RDONLY</a>);</td></tr>
+<tr><th id="55">55</th><td>  <b>if</b> (<a class="local col6 ref" href="#6fd" title='fd' data-ref="6fd" data-ref-filename="6fd">fd</a> == -<var>1</var>)</td></tr>
+<tr><th id="56">56</th><td>    <b>return</b> <a class="enum" href="../../../generic/malloc-hugepages.h.html#malloc_thp_mode_not_supported" title='malloc_thp_mode_not_supported' data-ref="malloc_thp_mode_not_supported" data-ref-filename="malloc_thp_mode_not_supported">malloc_thp_mode_not_supported</a>;</td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td>  <em>static</em> <em>const</em> <em>char</em> <dfn class="local col7 decl" id="7mode_always" title='mode_always' data-type='const char[24]' data-ref="7mode_always" data-ref-filename="7mode_always">mode_always</dfn>[]  = <q>"[always] madvise never\n"</q>;</td></tr>
+<tr><th id="59">59</th><td>  <em>static</em> <em>const</em> <em>char</em> <dfn class="local col8 decl" id="8mode_madvise" title='mode_madvise' data-type='const char[24]' data-ref="8mode_madvise" data-ref-filename="8mode_madvise">mode_madvise</dfn>[] = <q>"always [madvise] never\n"</q>;</td></tr>
+<tr><th id="60">60</th><td>  <em>static</em> <em>const</em> <em>char</em> <dfn class="local col9 decl" id="9mode_never" title='mode_never' data-type='const char[24]' data-ref="9mode_never" data-ref-filename="9mode_never">mode_never</dfn>[]   = <q>"always madvise [never]\n"</q>;</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td>  <em>char</em> <dfn class="local col0 decl" id="10str" title='str' data-type='char[24]' data-ref="10str" data-ref-filename="10str">str</dfn>[<b>sizeof</b>(<a class="local col7 ref" href="#7mode_always" title='mode_always' data-ref="7mode_always" data-ref-filename="7mode_always">mode_always</a>)];</td></tr>
+<tr><th id="63">63</th><td>  <a class="typedef" href="../../../../posix/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t" data-ref-filename="ssize_t">ssize_t</a> <dfn class="local col1 decl" id="11s" title='s' data-type='ssize_t' data-ref="11s" data-ref-filename="11s">s</dfn> = <a class="ref fn" href="not-cancel.h.html#__read_nocancel" title='__read_nocancel' data-ref="__read_nocancel" data-ref-filename="__read_nocancel">__read_nocancel</a> (<a class="local col6 ref" href="#6fd" title='fd' data-ref="6fd" data-ref-filename="6fd">fd</a>, <a class="local col0 ref" href="#10str" title='str' data-ref="10str" data-ref-filename="10str">str</a>, <b>sizeof</b> (<a class="local col0 ref" href="#10str" title='str' data-ref="10str" data-ref-filename="10str">str</a>));</td></tr>
+<tr><th id="64">64</th><td>  <a class="ref fn" href="not-cancel.h.html#__close_nocancel" title='__close_nocancel' data-ref="__close_nocancel" data-ref-filename="__close_nocancel">__close_nocancel</a> (<a class="local col6 ref" href="#6fd" title='fd' data-ref="6fd" data-ref-filename="6fd">fd</a>);</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td>  <b>if</b> (<a class="local col1 ref" href="#11s" title='s' data-ref="11s" data-ref-filename="11s">s</a> == <b>sizeof</b> (<a class="local col7 ref" href="#7mode_always" title='mode_always' data-ref="7mode_always" data-ref-filename="7mode_always">mode_always</a>) - <var>1</var>)</td></tr>
+<tr><th id="67">67</th><td>    {</td></tr>
+<tr><th id="68">68</th><td>      <b>if</b> (<a class="ref fn" href="../../../../string/string.h.html#strcmp" title='strcmp' data-ref="strcmp" data-ref-filename="strcmp">strcmp</a> (<a class="local col0 ref" href="#10str" title='str' data-ref="10str" data-ref-filename="10str">str</a>, <a class="local col7 ref" href="#7mode_always" title='mode_always' data-ref="7mode_always" data-ref-filename="7mode_always">mode_always</a>) == <var>0</var>)</td></tr>
+<tr><th id="69">69</th><td>	<b>return</b> <a class="enum" href="../../../generic/malloc-hugepages.h.html#malloc_thp_mode_always" title='malloc_thp_mode_always' data-ref="malloc_thp_mode_always" data-ref-filename="malloc_thp_mode_always">malloc_thp_mode_always</a>;</td></tr>
+<tr><th id="70">70</th><td>      <b>else</b> <b>if</b> (<a class="ref fn" href="../../../../string/string.h.html#strcmp" title='strcmp' data-ref="strcmp" data-ref-filename="strcmp">strcmp</a> (<a class="local col0 ref" href="#10str" title='str' data-ref="10str" data-ref-filename="10str">str</a>, <a class="local col8 ref" href="#8mode_madvise" title='mode_madvise' data-ref="8mode_madvise" data-ref-filename="8mode_madvise">mode_madvise</a>) == <var>0</var>)</td></tr>
+<tr><th id="71">71</th><td>	<b>return</b> <a class="enum" href="../../../generic/malloc-hugepages.h.html#malloc_thp_mode_madvise" title='malloc_thp_mode_madvise' data-ref="malloc_thp_mode_madvise" data-ref-filename="malloc_thp_mode_madvise">malloc_thp_mode_madvise</a>;</td></tr>
+<tr><th id="72">72</th><td>      <b>else</b> <b>if</b> (<a class="ref fn" href="../../../../string/string.h.html#strcmp" title='strcmp' data-ref="strcmp" data-ref-filename="strcmp">strcmp</a> (<a class="local col0 ref" href="#10str" title='str' data-ref="10str" data-ref-filename="10str">str</a>, <a class="local col9 ref" href="#9mode_never" title='mode_never' data-ref="9mode_never" data-ref-filename="9mode_never">mode_never</a>) == <var>0</var>)</td></tr>
+<tr><th id="73">73</th><td>	<b>return</b> <a class="enum" href="../../../generic/malloc-hugepages.h.html#malloc_thp_mode_never" title='malloc_thp_mode_never' data-ref="malloc_thp_mode_never" data-ref-filename="malloc_thp_mode_never">malloc_thp_mode_never</a>;</td></tr>
+<tr><th id="74">74</th><td>    }</td></tr>
+<tr><th id="75">75</th><td>  <b>return</b> <a class="enum" href="../../../generic/malloc-hugepages.h.html#malloc_thp_mode_not_supported" title='malloc_thp_mode_not_supported' data-ref="malloc_thp_mode_not_supported" data-ref-filename="malloc_thp_mode_not_supported">malloc_thp_mode_not_supported</a>;</td></tr>
+<tr><th id="76">76</th><td>}</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><em>static</em> <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span></td></tr>
+<tr><th id="79">79</th><td><dfn class="tu decl def fn" id="malloc_default_hugepage_size" title='malloc_default_hugepage_size' data-type='size_t malloc_default_hugepage_size()' data-ref="malloc_default_hugepage_size" data-ref-filename="malloc_default_hugepage_size">malloc_default_hugepage_size</dfn> (<em>void</em>)</td></tr>
+<tr><th id="80">80</th><td>{</td></tr>
+<tr><th id="81">81</th><td>  <em>int</em> <dfn class="local col2 decl" id="12fd" title='fd' data-type='int' data-ref="12fd" data-ref-filename="12fd">fd</dfn> = <a class="ref fn" href="not-cancel.h.html#__open64_nocancel" title='__open64_nocancel' data-ref="__open64_nocancel" data-ref-filename="__open64_nocancel">__open64_nocancel</a> (<q>"/proc/meminfo"</q>, <a class="macro" href="bits/fcntl-linux.h.html#43" title="00" data-ref="_M/O_RDONLY">O_RDONLY</a>);</td></tr>
+<tr><th id="82">82</th><td>  <b>if</b> (<a class="local col2 ref" href="#12fd" title='fd' data-ref="12fd" data-ref-filename="12fd">fd</a> == -<var>1</var>)</td></tr>
+<tr><th id="83">83</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col3 decl" id="13hpsize" title='hpsize' data-type='size_t' data-ref="13hpsize" data-ref-filename="13hpsize">hpsize</dfn> = <var>0</var>;</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td>  <em>char</em> <dfn class="local col4 decl" id="14buf" title='buf' data-type='char[512]' data-ref="14buf" data-ref-filename="14buf">buf</dfn>[<var>512</var>];</td></tr>
+<tr><th id="88">88</th><td>  <a class="typedef" href="../../../../posix/sys/types.h.html#off64_t" title='off64_t' data-type='__off64_t' data-ref="off64_t" data-ref-filename="off64_t">off64_t</a> <dfn class="local col5 decl" id="15off" title='off' data-type='off64_t' data-ref="15off" data-ref-filename="15off">off</dfn> = <var>0</var>;</td></tr>
+<tr><th id="89">89</th><td>  <b>while</b> (<var>1</var>)</td></tr>
+<tr><th id="90">90</th><td>    {</td></tr>
+<tr><th id="91">91</th><td>      <a class="typedef" href="../../../../posix/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t" data-ref-filename="ssize_t">ssize_t</a> <dfn class="local col6 decl" id="16r" title='r' data-type='ssize_t' data-ref="16r" data-ref-filename="16r">r</dfn> = <a class="ref fn" href="not-cancel.h.html#__pread64_nocancel" title='__pread64_nocancel' data-ref="__pread64_nocancel" data-ref-filename="__pread64_nocancel">__pread64_nocancel</a> (<a class="local col2 ref" href="#12fd" title='fd' data-ref="12fd" data-ref-filename="12fd">fd</a>, <a class="local col4 ref" href="#14buf" title='buf' data-ref="14buf" data-ref-filename="14buf">buf</a>, <b>sizeof</b> (<a class="local col4 ref" href="#14buf" title='buf' data-ref="14buf" data-ref-filename="14buf">buf</a>) - <var>1</var>, <a class="local col5 ref" href="#15off" title='off' data-ref="15off" data-ref-filename="15off">off</a>);</td></tr>
+<tr><th id="92">92</th><td>      <b>if</b> (<a class="local col6 ref" href="#16r" title='r' data-ref="16r" data-ref-filename="16r">r</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="93">93</th><td>	<b>break</b>;</td></tr>
+<tr><th id="94">94</th><td>      <a class="local col4 ref" href="#14buf" title='buf' data-ref="14buf" data-ref-filename="14buf">buf</a>[<a class="local col6 ref" href="#16r" title='r' data-ref="16r" data-ref-filename="16r">r</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td>      <i>/* If the tag is not found, read the last line again.  */</i></td></tr>
+<tr><th id="97">97</th><td>      <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="17s" title='s' data-type='const char *' data-ref="17s" data-ref-filename="17s">s</dfn> = <a class="ref fn" href="../../../../string/string.h.html#strstr" title='strstr' data-ref="strstr" data-ref-filename="strstr">strstr</a> (<a class="local col4 ref" href="#14buf" title='buf' data-ref="14buf" data-ref-filename="14buf">buf</a>, <q>"Hugepagesize:"</q>);</td></tr>
+<tr><th id="98">98</th><td>      <b>if</b> (<a class="local col7 ref" href="#17s" title='s' data-ref="17s" data-ref-filename="17s">s</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="99">99</th><td>	{</td></tr>
+<tr><th id="100">100</th><td>	  <em>char</em> *<dfn class="local col8 decl" id="18nl" title='nl' data-type='char *' data-ref="18nl" data-ref-filename="18nl">nl</dfn> = <a class="ref fn" href="../../../../string/string.h.html#strrchr" title='strrchr' data-ref="strrchr" data-ref-filename="strrchr">strrchr</a> (<a class="local col4 ref" href="#14buf" title='buf' data-ref="14buf" data-ref-filename="14buf">buf</a>, <kbd>'\n'</kbd>);</td></tr>
+<tr><th id="101">101</th><td>	  <b>if</b> (<a class="local col8 ref" href="#18nl" title='nl' data-ref="18nl" data-ref-filename="18nl">nl</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="102">102</th><td>	    <b>break</b>;</td></tr>
+<tr><th id="103">103</th><td>	  <a class="local col5 ref" href="#15off" title='off' data-ref="15off" data-ref-filename="15off">off</a> += (<a class="local col8 ref" href="#18nl" title='nl' data-ref="18nl" data-ref-filename="18nl">nl</a> + <var>1</var>) - <a class="local col4 ref" href="#14buf" title='buf' data-ref="14buf" data-ref-filename="14buf">buf</a>;</td></tr>
+<tr><th id="104">104</th><td>	  <b>continue</b>;</td></tr>
+<tr><th id="105">105</th><td>	}</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td>      <i>/* The default huge page size is in the form:</i></td></tr>
+<tr><th id="108">108</th><td><i>	 Hugepagesize:       NUMBER kB  */</i></td></tr>
+<tr><th id="109">109</th><td>      <a class="local col7 ref" href="#17s" title='s' data-ref="17s" data-ref-filename="17s">s</a> += <b>sizeof</b> (<q>"Hugepagesize: "</q>) - <var>1</var>;</td></tr>
+<tr><th id="110">110</th><td>      <b>for</b> (<em>int</em> <dfn class="local col9 decl" id="19i" title='i' data-type='int' data-ref="19i" data-ref-filename="19i">i</dfn> = <var>0</var>; (<a class="local col7 ref" href="#17s" title='s' data-ref="17s" data-ref-filename="17s">s</a>[<a class="local col9 ref" href="#19i" title='i' data-ref="19i" data-ref-filename="19i">i</a>] &gt;= <kbd>'0'</kbd> &amp;&amp; <a class="local col7 ref" href="#17s" title='s' data-ref="17s" data-ref-filename="17s">s</a>[<a class="local col9 ref" href="#19i" title='i' data-ref="19i" data-ref-filename="19i">i</a>] &lt;= <kbd>'9'</kbd>) || <a class="local col7 ref" href="#17s" title='s' data-ref="17s" data-ref-filename="17s">s</a>[<a class="local col9 ref" href="#19i" title='i' data-ref="19i" data-ref-filename="19i">i</a>] == <kbd>' '</kbd>; <a class="local col9 ref" href="#19i" title='i' data-ref="19i" data-ref-filename="19i">i</a>++)</td></tr>
+<tr><th id="111">111</th><td>	{</td></tr>
+<tr><th id="112">112</th><td>	  <b>if</b> (<a class="local col7 ref" href="#17s" title='s' data-ref="17s" data-ref-filename="17s">s</a>[<a class="local col9 ref" href="#19i" title='i' data-ref="19i" data-ref-filename="19i">i</a>] == <kbd>' '</kbd>)</td></tr>
+<tr><th id="113">113</th><td>	    <b>continue</b>;</td></tr>
+<tr><th id="114">114</th><td>	  <a class="local col3 ref" href="#13hpsize" title='hpsize' data-ref="13hpsize" data-ref-filename="13hpsize">hpsize</a> *= <var>10</var>;</td></tr>
+<tr><th id="115">115</th><td>	  <a class="local col3 ref" href="#13hpsize" title='hpsize' data-ref="13hpsize" data-ref-filename="13hpsize">hpsize</a> += <a class="local col7 ref" href="#17s" title='s' data-ref="17s" data-ref-filename="17s">s</a>[<a class="local col9 ref" href="#19i" title='i' data-ref="19i" data-ref-filename="19i">i</a>] - <kbd>'0'</kbd>;</td></tr>
+<tr><th id="116">116</th><td>	}</td></tr>
+<tr><th id="117">117</th><td>      <a class="local col3 ref" href="#13hpsize" title='hpsize' data-ref="13hpsize" data-ref-filename="13hpsize">hpsize</a> *= <var>1024</var>;</td></tr>
+<tr><th id="118">118</th><td>      <b>break</b>;</td></tr>
+<tr><th id="119">119</th><td>    }</td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td>  <a class="ref fn" href="not-cancel.h.html#__close_nocancel" title='__close_nocancel' data-ref="__close_nocancel" data-ref-filename="__close_nocancel">__close_nocancel</a> (<a class="local col2 ref" href="#12fd" title='fd' data-ref="12fd" data-ref-filename="12fd">fd</a>);</td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td>  <b>return</b> <a class="local col3 ref" href="#13hpsize" title='hpsize' data-ref="13hpsize" data-ref-filename="13hpsize">hpsize</a>;</td></tr>
+<tr><th id="124">124</th><td>}</td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td><em>static</em> <b>inline</b> <em>int</em></td></tr>
+<tr><th id="127">127</th><td><dfn class="tu decl def fn" id="hugepage_flags" title='hugepage_flags' data-type='int hugepage_flags(size_t pagesize)' data-ref="hugepage_flags" data-ref-filename="hugepage_flags">hugepage_flags</dfn> (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col0 decl" id="20pagesize" title='pagesize' data-type='size_t' data-ref="20pagesize" data-ref-filename="20pagesize">pagesize</dfn>)</td></tr>
+<tr><th id="128">128</th><td>{</td></tr>
+<tr><th id="129">129</th><td>  <b>return</b> <a class="macro" href="bits/mman-map-flags-generic.h.html#37" title="0x40000" data-ref="_M/MAP_HUGETLB">MAP_HUGETLB</a> | (<a class="ref fn" href="#129" title='__builtin_ctzll' data-ref="__builtin_ctzll" data-ref-filename="__builtin_ctzll">__builtin_ctzll</a> (<a class="local col0 ref" href="#20pagesize" title='pagesize' data-ref="20pagesize" data-ref-filename="20pagesize">pagesize</a>) &lt;&lt; <a class="macro" href="bits/mman-linux.h.html#61" title="26" data-ref="_M/MAP_HUGE_SHIFT">MAP_HUGE_SHIFT</a>);</td></tr>
+<tr><th id="130">130</th><td>}</td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><em>void</em></td></tr>
+<tr><th id="133">133</th><td><dfn class="decl def fn" id="__malloc_hugepage_config" title='__malloc_hugepage_config' data-ref="__malloc_hugepage_config" data-ref-filename="__malloc_hugepage_config">__malloc_hugepage_config</dfn> (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col1 decl" id="21requested" title='requested' data-type='size_t' data-ref="21requested" data-ref-filename="21requested">requested</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> *<dfn class="local col2 decl" id="22pagesize" title='pagesize' data-type='size_t *' data-ref="22pagesize" data-ref-filename="22pagesize">pagesize</dfn>, <em>int</em> *<dfn class="local col3 decl" id="23flags" title='flags' data-type='int *' data-ref="23flags" data-ref-filename="23flags">flags</dfn>)</td></tr>
+<tr><th id="134">134</th><td>{</td></tr>
+<tr><th id="135">135</th><td>  *<a class="local col2 ref" href="#22pagesize" title='pagesize' data-ref="22pagesize" data-ref-filename="22pagesize">pagesize</a> = <var>0</var>;</td></tr>
+<tr><th id="136">136</th><td>  *<a class="local col3 ref" href="#23flags" title='flags' data-ref="23flags" data-ref-filename="23flags">flags</a> = <var>0</var>;</td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td>  <b>if</b> (<a class="local col1 ref" href="#21requested" title='requested' data-ref="21requested" data-ref-filename="21requested">requested</a> == <var>0</var>)</td></tr>
+<tr><th id="139">139</th><td>    {</td></tr>
+<tr><th id="140">140</th><td>      *<a class="local col2 ref" href="#22pagesize" title='pagesize' data-ref="22pagesize" data-ref-filename="22pagesize">pagesize</a> = <a class="tu ref fn" href="#malloc_default_hugepage_size" title='malloc_default_hugepage_size' data-use='c' data-ref="malloc_default_hugepage_size" data-ref-filename="malloc_default_hugepage_size">malloc_default_hugepage_size</a> ();</td></tr>
+<tr><th id="141">141</th><td>      <b>if</b> (*<a class="local col2 ref" href="#22pagesize" title='pagesize' data-ref="22pagesize" data-ref-filename="22pagesize">pagesize</a> != <var>0</var>)</td></tr>
+<tr><th id="142">142</th><td>	*<a class="local col3 ref" href="#23flags" title='flags' data-ref="23flags" data-ref-filename="23flags">flags</a> = <a class="tu ref fn" href="#hugepage_flags" title='hugepage_flags' data-use='c' data-ref="hugepage_flags" data-ref-filename="hugepage_flags">hugepage_flags</a> (*<a class="local col2 ref" href="#22pagesize" title='pagesize' data-ref="22pagesize" data-ref-filename="22pagesize">pagesize</a>);</td></tr>
+<tr><th id="143">143</th><td>      <b>return</b>;</td></tr>
+<tr><th id="144">144</th><td>    }</td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td>  <i>/* Each entry represents a supported huge page in the form of:</i></td></tr>
+<tr><th id="147">147</th><td><i>     hugepages-&lt;size&gt;kB.  */</i></td></tr>
+<tr><th id="148">148</th><td>  <em>int</em> <dfn class="local col4 decl" id="24dirfd" title='dirfd' data-type='int' data-ref="24dirfd" data-ref-filename="24dirfd">dirfd</dfn> = <a class="ref fn" href="not-cancel.h.html#__open64_nocancel" title='__open64_nocancel' data-ref="__open64_nocancel" data-ref-filename="__open64_nocancel">__open64_nocancel</a> (<q>"/sys/kernel/mm/hugepages"</q>,</td></tr>
+<tr><th id="149">149</th><td>				 <a class="macro" href="bits/fcntl-linux.h.html#43" title="00" data-ref="_M/O_RDONLY">O_RDONLY</a> | <a class="macro" href="bits/fcntl-linux.h.html#142" title="0200000" data-ref="_M/O_DIRECTORY">O_DIRECTORY</a>, <var>0</var>);</td></tr>
+<tr><th id="150">150</th><td>  <b>if</b> (<a class="local col4 ref" href="#24dirfd" title='dirfd' data-ref="24dirfd" data-ref-filename="24dirfd">dirfd</a> == -<var>1</var>)</td></tr>
+<tr><th id="151">151</th><td>    <b>return</b>;</td></tr>
+<tr><th id="152">152</th><td></td></tr>
+<tr><th id="153">153</th><td>  <em>char</em> <dfn class="local col5 decl" id="25buffer" title='buffer' data-type='char[1024]' data-ref="25buffer" data-ref-filename="25buffer">buffer</dfn>[<var>1024</var>];</td></tr>
+<tr><th id="154">154</th><td>  <b>while</b> (<span class="macro" title="1" data-ref="_M/true">true</span>)</td></tr>
+<tr><th id="155">155</th><td>    {</td></tr>
+<tr><th id="156">156</th><td><u>#<span data-ppcond="156">if</span> !<a class="macro" href="../../../../include/libc-symbols.h.html#35" title="(20 == 20)" data-ref="_M/IS_IN">IS_IN</a>(libc)</u></td></tr>
+<tr><th id="157">157</th><td><u># define __getdents64 getdents64</u></td></tr>
+<tr><th id="158">158</th><td><u>#<span data-ppcond="156">endif</span></u></td></tr>
+<tr><th id="159">159</th><td>      <a class="typedef" href="../../../../posix/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t" data-ref-filename="ssize_t">ssize_t</a> <dfn class="local col6 decl" id="26ret" title='ret' data-type='ssize_t' data-ref="26ret" data-ref-filename="26ret">ret</dfn> = <a class="ref fn" href="../../../../include/dirent.h.html#__getdents64" title='__getdents64' data-ref="__getdents64" data-ref-filename="__getdents64">__getdents64</a> (<a class="local col4 ref" href="#24dirfd" title='dirfd' data-ref="24dirfd" data-ref-filename="24dirfd">dirfd</a>, <a class="local col5 ref" href="#25buffer" title='buffer' data-ref="25buffer" data-ref-filename="25buffer">buffer</a>, <b>sizeof</b> (<a class="local col5 ref" href="#25buffer" title='buffer' data-ref="25buffer" data-ref-filename="25buffer">buffer</a>));</td></tr>
+<tr><th id="160">160</th><td>      <b>if</b> (<a class="local col6 ref" href="#26ret" title='ret' data-ref="26ret" data-ref-filename="26ret">ret</a> == -<var>1</var>)</td></tr>
+<tr><th id="161">161</th><td>	<b>break</b>;</td></tr>
+<tr><th id="162">162</th><td>      <b>else</b> <b>if</b> (<a class="local col6 ref" href="#26ret" title='ret' data-ref="26ret" data-ref-filename="26ret">ret</a> == <var>0</var>)</td></tr>
+<tr><th id="163">163</th><td>        <b>break</b>;</td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td>      <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col7 decl" id="27found" title='found' data-type='_Bool' data-ref="27found" data-ref-filename="27found">found</dfn> = <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="166">166</th><td>      <em>char</em> *<dfn class="local col8 decl" id="28begin" title='begin' data-type='char *' data-ref="28begin" data-ref-filename="28begin">begin</dfn> = <a class="local col5 ref" href="#25buffer" title='buffer' data-ref="25buffer" data-ref-filename="25buffer">buffer</a>, *<dfn class="local col9 decl" id="29end" title='end' data-type='char *' data-ref="29end" data-ref-filename="29end">end</dfn> = <a class="local col5 ref" href="#25buffer" title='buffer' data-ref="25buffer" data-ref-filename="25buffer">buffer</a> + <a class="local col6 ref" href="#26ret" title='ret' data-ref="26ret" data-ref-filename="26ret">ret</a>;</td></tr>
+<tr><th id="167">167</th><td>      <b>while</b> (<a class="local col8 ref" href="#28begin" title='begin' data-ref="28begin" data-ref-filename="28begin">begin</a> != <a class="local col9 ref" href="#29end" title='end' data-ref="29end" data-ref-filename="29end">end</a>)</td></tr>
+<tr><th id="168">168</th><td>        {</td></tr>
+<tr><th id="169">169</th><td>          <em>unsigned</em> <em>short</em> <em>int</em> <dfn class="local col0 decl" id="30d_reclen" title='d_reclen' data-type='unsigned short' data-ref="30d_reclen" data-ref-filename="30d_reclen">d_reclen</dfn>;</td></tr>
+<tr><th id="170">170</th><td>          <a class="ref fn" href="../../../../string/string.h.html#memcpy" title='memcpy' data-ref="memcpy" data-ref-filename="memcpy">memcpy</a> (&amp;<a class="local col0 ref" href="#30d_reclen" title='d_reclen' data-ref="30d_reclen" data-ref-filename="30d_reclen">d_reclen</a>, <a class="local col8 ref" href="#28begin" title='begin' data-ref="28begin" data-ref-filename="28begin">begin</a> + <span class="macro" title="__builtin_offsetof(struct dirent64, d_reclen)" data-ref="_M/offsetof">offsetof</span> (<b>struct</b> <a class="type" href="bits/dirent.h.html#dirent64" title='dirent64' data-ref="dirent64" data-ref-filename="dirent64">dirent64</a>, d_reclen),</td></tr>
+<tr><th id="171">171</th><td>                  <b>sizeof</b> (<a class="local col0 ref" href="#30d_reclen" title='d_reclen' data-ref="30d_reclen" data-ref-filename="30d_reclen">d_reclen</a>));</td></tr>
+<tr><th id="172">172</th><td>          <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="31dname" title='dname' data-type='const char *' data-ref="31dname" data-ref-filename="31dname">dname</dfn> = <a class="local col8 ref" href="#28begin" title='begin' data-ref="28begin" data-ref-filename="28begin">begin</a> + <span class="macro" title="__builtin_offsetof(struct dirent64, d_name)" data-ref="_M/offsetof">offsetof</span> (<b>struct</b> <a class="type" href="bits/dirent.h.html#dirent64" title='dirent64' data-ref="dirent64" data-ref-filename="dirent64">dirent64</a>, d_name);</td></tr>
+<tr><th id="173">173</th><td>          <a class="local col8 ref" href="#28begin" title='begin' data-ref="28begin" data-ref-filename="28begin">begin</a> += <a class="local col0 ref" href="#30d_reclen" title='d_reclen' data-ref="30d_reclen" data-ref-filename="30d_reclen">d_reclen</a>;</td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td>          <b>if</b> (<a class="local col1 ref" href="#31dname" title='dname' data-ref="31dname" data-ref-filename="31dname">dname</a>[<var>0</var>] == <kbd>'.'</kbd></td></tr>
+<tr><th id="176">176</th><td>	      || <a class="ref fn" href="../../../../string/string.h.html#strncmp" title='strncmp' data-ref="strncmp" data-ref-filename="strncmp">strncmp</a> (<a class="local col1 ref" href="#31dname" title='dname' data-ref="31dname" data-ref-filename="31dname">dname</a>, <q>"hugepages-"</q>, <b>sizeof</b> (<q>"hugepages-"</q>) - <var>1</var>) != <var>0</var>)</td></tr>
+<tr><th id="177">177</th><td>            <b>continue</b>;</td></tr>
+<tr><th id="178">178</th><td></td></tr>
+<tr><th id="179">179</th><td>	  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col2 decl" id="32hpsize" title='hpsize' data-type='size_t' data-ref="32hpsize" data-ref-filename="32hpsize">hpsize</dfn> = <var>0</var>;</td></tr>
+<tr><th id="180">180</th><td>	  <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="33sizestr" title='sizestr' data-type='const char *' data-ref="33sizestr" data-ref-filename="33sizestr">sizestr</dfn> = <a class="local col1 ref" href="#31dname" title='dname' data-ref="31dname" data-ref-filename="31dname">dname</a> + <b>sizeof</b> (<q>"hugepages-"</q>) - <var>1</var>;</td></tr>
+<tr><th id="181">181</th><td>	  <b>for</b> (<em>int</em> <dfn class="local col4 decl" id="34i" title='i' data-type='int' data-ref="34i" data-ref-filename="34i">i</dfn> = <var>0</var>; <a class="local col3 ref" href="#33sizestr" title='sizestr' data-ref="33sizestr" data-ref-filename="33sizestr">sizestr</a>[<a class="local col4 ref" href="#34i" title='i' data-ref="34i" data-ref-filename="34i">i</a>] &gt;= <kbd>'0'</kbd> &amp;&amp; <a class="local col3 ref" href="#33sizestr" title='sizestr' data-ref="33sizestr" data-ref-filename="33sizestr">sizestr</a>[<a class="local col4 ref" href="#34i" title='i' data-ref="34i" data-ref-filename="34i">i</a>] &lt;= <kbd>'9'</kbd>; <a class="local col4 ref" href="#34i" title='i' data-ref="34i" data-ref-filename="34i">i</a>++)</td></tr>
+<tr><th id="182">182</th><td>	    {</td></tr>
+<tr><th id="183">183</th><td>	      <a class="local col2 ref" href="#32hpsize" title='hpsize' data-ref="32hpsize" data-ref-filename="32hpsize">hpsize</a> *= <var>10</var>;</td></tr>
+<tr><th id="184">184</th><td>	      <a class="local col2 ref" href="#32hpsize" title='hpsize' data-ref="32hpsize" data-ref-filename="32hpsize">hpsize</a> += <a class="local col3 ref" href="#33sizestr" title='sizestr' data-ref="33sizestr" data-ref-filename="33sizestr">sizestr</a>[<a class="local col4 ref" href="#34i" title='i' data-ref="34i" data-ref-filename="34i">i</a>] - <kbd>'0'</kbd>;</td></tr>
+<tr><th id="185">185</th><td>	    }</td></tr>
+<tr><th id="186">186</th><td>	  <a class="local col2 ref" href="#32hpsize" title='hpsize' data-ref="32hpsize" data-ref-filename="32hpsize">hpsize</a> *= <var>1024</var>;</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td>	  <b>if</b> (<a class="local col2 ref" href="#32hpsize" title='hpsize' data-ref="32hpsize" data-ref-filename="32hpsize">hpsize</a> == <a class="local col1 ref" href="#21requested" title='requested' data-ref="21requested" data-ref-filename="21requested">requested</a>)</td></tr>
+<tr><th id="189">189</th><td>	    {</td></tr>
+<tr><th id="190">190</th><td>	      *<a class="local col2 ref" href="#22pagesize" title='pagesize' data-ref="22pagesize" data-ref-filename="22pagesize">pagesize</a> = <a class="local col2 ref" href="#32hpsize" title='hpsize' data-ref="32hpsize" data-ref-filename="32hpsize">hpsize</a>;</td></tr>
+<tr><th id="191">191</th><td>	      *<a class="local col3 ref" href="#23flags" title='flags' data-ref="23flags" data-ref-filename="23flags">flags</a> = <a class="tu ref fn" href="#hugepage_flags" title='hugepage_flags' data-use='c' data-ref="hugepage_flags" data-ref-filename="hugepage_flags">hugepage_flags</a> (*<a class="local col2 ref" href="#22pagesize" title='pagesize' data-ref="22pagesize" data-ref-filename="22pagesize">pagesize</a>);</td></tr>
+<tr><th id="192">192</th><td>	      <a class="local col7 ref" href="#27found" title='found' data-ref="27found" data-ref-filename="27found">found</a> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="193">193</th><td>	      <b>break</b>;</td></tr>
+<tr><th id="194">194</th><td>	    }</td></tr>
+<tr><th id="195">195</th><td>        }</td></tr>
+<tr><th id="196">196</th><td>      <b>if</b> (<a class="local col7 ref" href="#27found" title='found' data-ref="27found" data-ref-filename="27found">found</a>)</td></tr>
+<tr><th id="197">197</th><td>	<b>break</b>;</td></tr>
+<tr><th id="198">198</th><td>    }</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td>  <a class="ref fn" href="not-cancel.h.html#__close_nocancel" title='__close_nocancel' data-ref="__close_nocancel" data-ref-filename="__close_nocancel">__close_nocancel</a> (<a class="local col4 ref" href="#24dirfd" title='dirfd' data-ref="24dirfd" data-ref-filename="24dirfd">dirfd</a>);</td></tr>
+<tr><th id="201">201</th><td>}</td></tr>
+<tr><th id="202">202</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

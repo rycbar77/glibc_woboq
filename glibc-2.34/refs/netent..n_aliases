@@ -1,0 +1,9 @@
+<dec f='codebrowser/bits/netdb.h' l='29' type='char **'/>
+<offset>64</offset>
+<doc f='codebrowser/bits/netdb.h' l='29'>/* Alias list.  */</doc>
+<use f='codebrowser/nss/nss_files/files-network.c' l='31' u='w' c='_nss_files_parse_netent'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='80' u='r' c='_nss_files_getnetbyname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='333' u='w' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='413' u='w' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='420' u='r' c='getanswer_r'/>
+<use f='codebrowser/support/support_format_netent.c' l='43' u='r' c='support_format_netent'/>

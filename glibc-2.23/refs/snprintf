@@ -1,0 +1,22 @@
+<dec f='codebrowser/libio/stdio.h' l='386' type='int snprintf(char *restrict __s, size_t __maxlen, const char *restrict __format)'/>
+<doc f='codebrowser/libio/stdio.h' l='385'>/* Maximum chars of output to write in MAXLEN.  */</doc>
+<use f='codebrowser/crypt/sha256-crypt.c' l='322' u='c' c='__sha256_crypt_r'/>
+<use f='codebrowser/crypt/sha512-crypt.c' l='321' u='c' c='__sha512_crypt_r'/>
+<use f='codebrowser/elf/cache.c' l='492' u='c' c='add_to_cache'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='91' u='c' c='init'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='250' u='c' c='print_enter'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='337' u='c' c='print_exit'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='489' u='c' c='address_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='763' u='c' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='823' u='c' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3499' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='534' u='c' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='550' u='c' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1284' u='c' c='get_character'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1488' u='c' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1492' u='c' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1722' u='c' c='find_translit2'/>
+<use f='codebrowser/locale/programs/linereader.c' l='728' u='c' c='get_string'/>
+<use f='codebrowser/nss/getent.c' l='390' u='c' c='ahosts_keys_int'/>
+<use f='codebrowser/resolv/ns_print.c' l='691' u='c' c='ns_sprintrrf'/>
+<def f='codebrowser/stdio-common/snprintf.c' l='38' macro='1' type='int snprintf(char *restrict , size_t , const char *restrict )'/>

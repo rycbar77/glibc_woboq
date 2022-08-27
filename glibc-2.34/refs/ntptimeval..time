@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sys/timex.h' l='32' type='struct timeval'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='170' u='w' c='valid_ntptimeval_to_ntptimeval64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='170' u='r' c='valid_ntptimeval_to_ntptimeval64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='188' u='w' c='valid_ntptimeval64_to_ntptimeval'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='188' u='r' c='valid_ntptimeval64_to_ntptimeval'/>
+<offset>0</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sys/timex.h' l='32'>/* current time (ro) */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettime.c' l='40' u='w' c='__ntp_gettime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettimex.c' l='36' u='w' c='__ntp_gettimex'/>

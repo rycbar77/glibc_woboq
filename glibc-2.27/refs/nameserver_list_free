@@ -1,0 +1,4 @@
+<def f='codebrowser/malloc/dynarray-skeleton.c' l='203' macro='1' type='void nameserver_list_free(struct nameserver_list * list)'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='500' macro='1' u='c' c='nameserver_list_finalize'/>
+<use f='codebrowser/resolv/res_init.c' l='205' u='c' c='resolv_conf_parser_free'/>
+<doc f='codebrowser/malloc/dynarray-skeleton.c' l='200'>/* Deallocate the dynamic array and its elements.  */</doc>

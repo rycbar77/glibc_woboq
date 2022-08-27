@@ -1,0 +1,4 @@
+<def f='codebrowser/include/atomic_wide_counter.h' l='27' ll='31' type='uint64_t __atomic_wide_counter_load_relaxed(__atomic_wide_counter * c)'/>
+<use f='codebrowser/elf/dl-find_object.c' l='260' u='c' c='_dlfo_read_version_locked'/>
+<use f='codebrowser/nptl/pthread_cond_common.c' l='34' u='c' c='__condvar_load_wseq_relaxed'/>
+<use f='codebrowser/nptl/pthread_cond_common.c' l='46' u='c' c='__condvar_load_g1_start_relaxed'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/grp/grp.h' l='67' type='void endgrent()'/>
+<doc f='codebrowser/grp/grp.h' l='63'>/* Close the group-file stream.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/nss/getXXent_r.c' l='134' macro='1' type='void endgrent()'/>
+<use f='codebrowser/nss/getent.c' l='204' u='c' c='group_keys'/>

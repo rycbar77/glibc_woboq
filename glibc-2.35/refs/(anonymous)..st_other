@@ -1,0 +1,13 @@
+<dec f='codebrowser/elf/elf.h' l='523' type='unsigned char'/>
+<dec f='codebrowser/elf/elf.h' l='531' type='unsigned char'/>
+<offset>40</offset>
+<doc f='codebrowser/elf/elf.h' l='523'>/* Symbol visibility */</doc>
+<doc f='codebrowser/elf/elf.h' l='531'>/* Symbol visibility */</doc>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='137' u='r' c='dl_symbol_visibility_binds_local_p'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='138' u='r' c='dl_symbol_visibility_binds_local_p'/>
+<use f='codebrowser/elf/dl-lookup.c' l='531' u='r' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='889' u='r' c='_dl_lookup_symbol_x'/>
+<use f='codebrowser/elf/dl-runtime.c' l='67' u='r' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='254' u='r' c='_dl_profile_fixup'/>
+<use f='codebrowser/elf/sprof.c' l='1085' u='r' c='read_symbols'/>
+<use f='codebrowser/elf/sprof.c' l='1143' u='r' c='read_symbols'/>

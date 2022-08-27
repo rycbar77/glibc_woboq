@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/netdb.h' l='12' type='int'/>
+<def f='codebrowser/inet/herrno.c' l='27' type='int'/>
+<doc f='codebrowser/inet/herrno.c' l='24'>/* We need to have the error status variable of the resolver
+   accessible in the libc.  */</doc>
+<use f='codebrowser/resolv/res_hostalias.c' l='30' macro='1' u='w' c='context_hostalias_common'/>

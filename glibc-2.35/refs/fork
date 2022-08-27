@@ -1,0 +1,12 @@
+<dec f='codebrowser/posix/unistd.h' l='778' type='__pid_t fork()'/>
+<doc f='codebrowser/posix/unistd.h' l='775'>/* Clone the calling process, creating an exact copy.
+   Return -1 for errors, 0 to the new process,
+   and the process ID of the new process to the old process.  */</doc>
+<use f='codebrowser/nscd/nscd.c' l='204' u='c' c='main'/>
+<def f='codebrowser/posix/fork.c' l='136' macro='1' type='__pid_t fork()'/>
+<use f='codebrowser/support/shell-container.c' l='247' u='c' c='run_command_array'/>
+<use f='codebrowser/support/support_test_main.c' l='422' u='c' c='support_test_main'/>
+<use f='codebrowser/support/test-container.c' l='384' u='c' c='recursive_remove'/>
+<use f='codebrowser/support/test-container.c' l='1034' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1118' u='c' c='main'/>
+<use f='codebrowser/support/xfork.c' l='28' u='c' c='xfork'/>

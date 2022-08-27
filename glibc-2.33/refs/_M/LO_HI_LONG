@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sysdep.h' l='94'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86_64/sysdep.h' l='425' u='w'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86_64/sysdep.h' l='426'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sysdep.h' l='93'>/* Provide a macro to pass the off{64}_t argument on p{readv,writev}{64}.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/preadv64.c' l='26' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/preadv64v2.c' l='27' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pwritev64.c' l='26' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pwritev64v2.c' l='27' u='c'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/malloc/malloc.h' l='152' type='int malloc_trim(size_t __pad)'/>
+<def f='codebrowser/malloc/malloc.c' l='5878' macro='1' type='int malloc_trim(size_t )'/>
+<doc f='codebrowser/malloc/malloc.h' l='150'>/* Release all but __pad bytes of freed top-most memory back to the
+   system. Return 1 if successful, else 0. */</doc>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/x86/fpu/bits/fenv.h' l='91' type='unsigned int'/>
+<dec f='codebrowser/sysdeps/x86/fpu/bits/fenv.h' l='110' type='unsigned int'/>
+<use f='codebrowser/sysdeps/i386/fpu/fenv_private.h' l='73' u='w' c='libc_feholdexcept_sse'/>
+<use f='codebrowser/sysdeps/i386/fpu/fenv_private.h' l='112' u='w' c='libc_feholdexcept_setround_sse'/>
+<use f='codebrowser/sysdeps/i386/fpu/fenv_private.h' l='161' c='libc_fesetenv_sse'/>
+<use f='codebrowser/sysdeps/i386/fpu/fenv_private.h' l='183' u='r' c='libc_feupdateenv_test_sse'/>
+<use f='codebrowser/sysdeps/i386/fpu/fenv_private.h' l='232' u='w' c='libc_feholdsetround_sse'/>
+<use f='codebrowser/sysdeps/i386/fpu/fenv_private.h' l='266' u='r' c='libc_feresetround_sse'/>
+<use f='codebrowser/sysdeps/i386/fpu/fenv_private.h' l='352' u='w' c='libc_feholdexcept_setround_sse_ctx'/>
+<use f='codebrowser/sysdeps/i386/fpu/fenv_private.h' l='449' u='w' c='libc_feholdsetround_sse_ctx'/>
+<offset>32</offset>

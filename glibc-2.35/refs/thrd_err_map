@@ -1,0 +1,16 @@
+<def f='codebrowser/sysdeps/pthread/thrd_priv.h' l='27' ll='43' type='int thrd_err_map(int err_code)'/>
+<use f='codebrowser/sysdeps/pthread/cnd_broadcast.c' l='26' u='c' c='__cnd_broadcast'/>
+<use f='codebrowser/sysdeps/pthread/cnd_init.c' l='33' u='c' c='__cnd_init'/>
+<use f='codebrowser/sysdeps/pthread/cnd_signal.c' l='26' u='c' c='__cnd_signal'/>
+<use f='codebrowser/sysdeps/pthread/cnd_wait.c' l='27' u='c' c='__cnd_wait'/>
+<use f='codebrowser/sysdeps/pthread/mtx_init.c' l='53' u='c' c='__mtx_init'/>
+<use f='codebrowser/sysdeps/pthread/mtx_lock.c' l='26' u='c' c='__mtx_lock'/>
+<use f='codebrowser/sysdeps/pthread/mtx_trylock.c' l='26' u='c' c='__mtx_trylock'/>
+<use f='codebrowser/sysdeps/pthread/mtx_unlock.c' l='26' u='c' c='__mtx_unlock'/>
+<use f='codebrowser/sysdeps/pthread/thrd_create.c' l='30' u='c' c='__thrd_create'/>
+<use f='codebrowser/sysdeps/pthread/thrd_detach.c' l='28' u='c' c='__thrd_detach'/>
+<use f='codebrowser/sysdeps/pthread/thrd_join.c' l='30' u='c' c='__thrd_join'/>
+<use f='codebrowser/sysdeps/pthread/tss_create.c' l='33' u='c' c='__tss_create'/>
+<use f='codebrowser/sysdeps/pthread/tss_set.c' l='26' u='c' c='__tss_set'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/cnd_timedwait.c' l='30' u='c' c='__cnd_timedwait'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mtx_timedlock.c' l='29' u='c' c='__mtx_timedlock'/>

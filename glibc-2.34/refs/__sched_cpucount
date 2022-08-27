@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/bits/cpu-set.h' l='117' type='int __sched_cpucount(size_t __setsize, const cpu_set_t * __setp)'/>
+<dec f='codebrowser/include/bits/cpu-set.h' l='5' type='int __sched_cpucount(size_t __setsize, const cpu_set_t * __setp)'/>
+<dec f='codebrowser/include/bits/cpu-set.h' l='6' type='int __sched_cpucount(size_t , const cpu_set_t * )'/>
+<use f='codebrowser/include/bits/cpu-set.h' l='6' c='__sched_cpucount'/>
+<def f='codebrowser/posix/sched_cpucount.c' l='33' ll='40' type='int __sched_cpucount(size_t setsize, const cpu_set_t * setp)'/>

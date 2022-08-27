@@ -1,0 +1,12 @@
+<dec f='include/selinux/avc.h' l='40' type='int avc_sid_to_context(security_id_t sid, char ** ctx)'/>
+<doc f='include/selinux/avc.h' l='29'>/**
+ * avc_sid_to_context - get copy of context corresponding to SID.
+ * @sid: input SID
+ * @ctx: pointer to context reference
+ *
+ * Return a copy of the security context corresponding to the input
+ * @sid in the memory referenced by @ctx.  The caller is expected to 
+ * free the context with freecon().  Return %0 on success, -%1 on
+ * failure, with @errno set to %ENOMEM if insufficient memory was
+ * available to make the copy, or %EINVAL if the input SID is invalid.
+ */</doc>

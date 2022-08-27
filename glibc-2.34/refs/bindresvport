@@ -1,0 +1,8 @@
+<dec f='codebrowser/inet/netinet/in.h' l='507' type='int bindresvport(int __sockfd, struct sockaddr_in * __sock_in)'/>
+<dec f='codebrowser/include/netinet/in.h' l='6' type='int bindresvport(int , struct sockaddr_in * )'/>
+<use f='codebrowser/include/netinet/in.h' l='6' c='bindresvport'/>
+<doc f='codebrowser/inet/netinet/in.h' l='506'>/* Bind socket to a privileged IP port.  */</doc>
+<def f='codebrowser/inet/bindresvport.c' l='48' ll='109' type='int bindresvport(int sd, struct sockaddr_in * sin)'/>
+<doc f='codebrowser/inet/bindresvport.c' l='45'>/*
+ * Bind a socket to a privileged IP port
+ */</doc>

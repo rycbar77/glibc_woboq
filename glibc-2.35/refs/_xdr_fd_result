@@ -1,0 +1,4 @@
+<dec f='codebrowser/nis/nis_xdr.h' l='35' type='bool_t _xdr_fd_result(XDR * , fd_result * )'/>
+<use f='codebrowser/nis/nis_free.c' l='27' u='r' c='__free_fdresult'/>
+<use f='codebrowser/nis/nis_util.c' l='41' u='r' c='__nis_finddirectory'/>
+<def f='codebrowser/nis/nis_xdr.c' l='423' ll='440' type='bool_t _xdr_fd_result(XDR * xdrs, fd_result * objp)'/>

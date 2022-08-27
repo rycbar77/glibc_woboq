@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='421' type='int __pthread_cond_signal(pthread_cond_t * cond)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='422' type='int __pthread_cond_signal(pthread_cond_t * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='422' c='__pthread_cond_signal'/>
+<def f='codebrowser/nptl/pthread_cond_signal.c' l='101' macro='1' type='int __pthread_cond_signal(pthread_cond_t * )'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='142' u='c' c='__condvar_cancel_waiting'/>
+<use f='codebrowser/resolv/gai_misc.c' l='296' u='c' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='406' u='c' c='handle_requests'/>
+<use f='codebrowser/rt/aio_misc.c' l='469' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='666' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/pthread/cnd_signal.c' l='25' u='c' c='__cnd_signal'/>

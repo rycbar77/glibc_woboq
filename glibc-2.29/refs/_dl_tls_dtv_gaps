@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='399' type='_Bool'/>
+<def f='codebrowser/csu/libc-tls.c' l='50' macro='1' type='_Bool'/>
+<use f='codebrowser/elf/dl-open.c' l='610' macro='1' u='w' c='_dl_open'/>
+<use f='codebrowser/elf/dl-tls.c' l='51' macro='1' u='r' c='_dl_next_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='89' macro='1' u='w' c='_dl_next_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='113' macro='1' u='r' c='_dl_count_modids'/>

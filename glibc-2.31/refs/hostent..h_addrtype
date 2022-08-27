@@ -1,0 +1,13 @@
+<dec f='codebrowser/resolv/netdb.h' l='102' type='int'/>
+<offset>128</offset>
+<doc f='codebrowser/resolv/netdb.h' l='102'>/* Host address type.  */</doc>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='281' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='286' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nss/digits_dots.c' l='201' u='w' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nss/digits_dots.c' l='206' u='w' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nss/digits_dots.c' l='276' u='w' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/resolv/res_hconf.c' l='375' u='r' c='_res_hconf_reorder_addrs'/>
+<use f='codebrowser/sunrpc/rpc_gethostbyname.c' l='59' u='r' c='__libc_rpc_gethostbyname'/>
+<use f='codebrowser/support/support_format_hostent.c' l='66' u='r' c='support_format_hostent'/>
+<use f='codebrowser/support/support_format_hostent.c' l='72' u='r' c='support_format_hostent'/>
+<use f='codebrowser/support/support_format_hostent.c' l='74' u='r' c='support_format_hostent'/>

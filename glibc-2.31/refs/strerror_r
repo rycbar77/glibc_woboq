@@ -1,0 +1,4 @@
+<dec f='codebrowser/string/string.h' l='421' type='char * strerror_r(int __errnum, char * __buf, size_t __buflen)'/>
+<doc f='codebrowser/string/string.h' l='419'>/* If a temporary buffer is required, at most BUFLEN bytes of BUF will be
+   used.  */</doc>
+<def f='codebrowser/string/_strerror.c' l='73' macro='1' type='char * strerror_r(int , char * , size_t )'/>

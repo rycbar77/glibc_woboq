@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/sys/un.h' l='10' type='int __sockaddr_un_set(struct sockaddr_un * addr, const char * pathname)'/>
+<doc f='codebrowser/include/sys/un.h' l='5'>/* Set ADDR-&gt;sun_family to AF_UNIX and ADDR-&gt;sun_path to PATHNAME.
+   Return 0 on success or -1 on failure (due to overlong PATHNAME).
+   The caller should always use sizeof (struct sockaddr_un) as the
+   socket address length, disregaring the length of PATHNAME.
+   Only concrete (non-abstract) pathnames are supported.  */</doc>
+<def f='codebrowser/socket/sockaddr_un_set.c' l='24' ll='41' type='int __sockaddr_un_set(struct sockaddr_un * addr, const char * pathname)'/>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='60' u='c' c='__GI_clnt_create'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='159' u='c' c='__GI_svcunix_create'/>

@@ -1,0 +1,13 @@
+<def f='codebrowser/include/stdlib.h' l='309' ll='313'/>
+<use f='codebrowser/include/stdlib.h' l='314'/>
+<size>4</size>
+<mbr r='abort_msg_s::size' o='0' t='unsigned int'/>
+<mbr r='abort_msg_s::msg' o='32' t='char[0]'/>
+<use f='codebrowser/assert/assert.c' l='68' c='__assert_fail_base'/>
+<use f='codebrowser/assert/assert.c' l='77' c='__assert_fail_base'/>
+<size>4</size>
+<use f='codebrowser/sysdeps/posix/libc_fatal.c' l='130' c='__libc_message'/>
+<use f='codebrowser/sysdeps/posix/libc_fatal.c' l='143' c='__libc_message'/>
+<size>4</size>
+<use f='codebrowser/stdlib/abort.c' l='35'/>
+<size>4</size>

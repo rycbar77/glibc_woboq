@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='61' type='void (*)(sigval_t)'/>
+<offset>64</offset>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='84' u='w' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='94' u='r' c='timer_helper_thread'/>

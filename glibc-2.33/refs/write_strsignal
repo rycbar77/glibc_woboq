@@ -1,0 +1,5 @@
+<def f='codebrowser/debug/segfault.c' l='55' ll='62' type='void write_strsignal(int fd, int signal)'/>
+<use f='codebrowser/debug/segfault.c' l='87' u='c' c='catch_segfault'/>
+<doc f='codebrowser/debug/segfault.c' l='52'>/* Print the signal number SIGNAL.  Either strerror or strsignal might
+   call local internal functions and these in turn call far too many
+   other functions and might even allocate memory which might fail.  */</doc>

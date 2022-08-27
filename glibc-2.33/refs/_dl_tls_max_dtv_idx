@@ -1,0 +1,25 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='426' type='size_t'/>
+<def f='codebrowser/csu/libc-tls.c' l='43' type='size_t'/>
+<use f='codebrowser/csu/libc-tls.c' l='84' macro='1' u='w' c='init_slotinfo'/>
+<use f='codebrowser/csu/libc-tls.c' l='101' macro='1' u='r' c='init_static_tls'/>
+<doc f='codebrowser/csu/libc-tls.c' l='42'>/* Highest dtv index currently needed.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='89' macro='1' u='r' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='100' macro='1' u='w' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='574' macro='1' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-tls.c' l='143' macro='1' u='r' c='_dl_next_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='152' macro='1' u='r' c='_dl_next_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='152' macro='1' u='r' c='_dl_next_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='162' macro='1' u='r' c='_dl_next_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='166' macro='1' u='r' c='_dl_next_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='166' macro='1' u='r' c='_dl_next_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='178' macro='1' u='w' c='_dl_next_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='193' macro='1' u='r' c='_dl_count_modids'/>
+<use f='codebrowser/elf/dl-tls.c' l='365' macro='1' u='r' c='allocate_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='481' macro='1' u='a' c='_dl_resize_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='481' macro='1' u='a' c='_dl_resize_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='481' macro='1' u='a' c='_dl_resize_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='481' macro='1' u='a' c='_dl_resize_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='481' macro='1' u='a' c='_dl_resize_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='528' macro='1' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='551' macro='1' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='593' macro='1' u='r' c='_dl_allocate_tls_init'/>

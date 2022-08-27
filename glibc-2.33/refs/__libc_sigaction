@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/signal.h' l='60' type='int __libc_sigaction(int sig, const struct sigaction * act, struct sigaction * oact)'/>
+<dec f='codebrowser/include/signal.h' l='62' type='int __libc_sigaction(int , const struct sigaction * , struct sigaction * )'/>
+<use f='codebrowser/include/signal.h' l='62' c='__libc_sigaction'/>
+<use f='codebrowser/nptl/nptl-init.c' l='267' u='c' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='272' u='c' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='151' u='c' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='160' u='c' c='__spawni_child'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/sigaction.c' l='41' ll='71' type='int __libc_sigaction(int sig, const struct sigaction * act, struct sigaction * oact)'/>
+<use f='codebrowser/nptl/sigaction.c' l='30' u='c' c='__sigaction'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sigaction.c' l='39'>/* If ACT is not NULL, change the action for SIG to *ACT.
+   If OACT is not NULL, put the old action for SIG in *OACT.  */</doc>

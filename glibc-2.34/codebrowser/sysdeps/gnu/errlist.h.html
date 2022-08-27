@@ -1,0 +1,814 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>errlist.h source code [codebrowser/sysdeps/gnu/errlist.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/gnu/errlist.h'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>sysdeps</a>/<a href='./'>gnu</a>/<a href='errlist.h.html'>errlist.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[0] = &quot;Success&quot;," data-ref="_M/_S">_S</a>(<var>0</var>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Success&quot;" data-ref="_M/N_">N_</a>(<q>"Success"</q>))</td></tr>
+<tr><th id="2">2</th><td><u>#<span data-ppcond="2">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#5" data-ref="_M/EPERM">EPERM</a></u></td></tr>
+<tr><th id="3">3</th><td><i>/*</i></td></tr>
+<tr><th id="4">4</th><td><i>TRANS Only the owner of the file (or other resource)</i></td></tr>
+<tr><th id="5">5</th><td><i>TRANS or processes with special privileges can perform the operation. */</i></td></tr>
+<tr><th id="6">6</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[1] = &quot;Operation not permitted&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#5" title="1" data-ref="_M/EPERM">EPERM</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Operation not permitted&quot;" data-ref="_M/N_">N_</a>(<q>"Operation not permitted"</q>))</td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="2">endif</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#<span data-ppcond="8">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#6" data-ref="_M/ENOENT">ENOENT</a></u></td></tr>
+<tr><th id="9">9</th><td><i>/*</i></td></tr>
+<tr><th id="10">10</th><td><i>TRANS This is a ``file doesn't exist'' error</i></td></tr>
+<tr><th id="11">11</th><td><i>TRANS for ordinary files that are referenced in contexts where they are</i></td></tr>
+<tr><th id="12">12</th><td><i>TRANS expected to already exist. */</i></td></tr>
+<tr><th id="13">13</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[2] = &quot;No such file or directory&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#6" title="2" data-ref="_M/ENOENT">ENOENT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No such file or directory&quot;" data-ref="_M/N_">N_</a>(<q>"No such file or directory"</q>))</td></tr>
+<tr><th id="14">14</th><td><u>#<span data-ppcond="8">endif</span></u></td></tr>
+<tr><th id="15">15</th><td><u>#<span data-ppcond="15">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#7" data-ref="_M/ESRCH">ESRCH</a></u></td></tr>
+<tr><th id="16">16</th><td><i>/*</i></td></tr>
+<tr><th id="17">17</th><td><i>TRANS No process matches the specified process ID. */</i></td></tr>
+<tr><th id="18">18</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[3] = &quot;No such process&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#7" title="3" data-ref="_M/ESRCH">ESRCH</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No such process&quot;" data-ref="_M/N_">N_</a>(<q>"No such process"</q>))</td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="15">endif</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#<span data-ppcond="20">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#8" data-ref="_M/EINTR">EINTR</a></u></td></tr>
+<tr><th id="21">21</th><td><i>/*</i></td></tr>
+<tr><th id="22">22</th><td><i>TRANS An asynchronous signal occurred and prevented</i></td></tr>
+<tr><th id="23">23</th><td><i>TRANS completion of the call.  When this happens, you should try the call</i></td></tr>
+<tr><th id="24">24</th><td><i>TRANS again.</i></td></tr>
+<tr><th id="25">25</th><td><i>TRANS</i></td></tr>
+<tr><th id="26">26</th><td><i>TRANS You can choose to have functions resume after a signal that is handled,</i></td></tr>
+<tr><th id="27">27</th><td><i>TRANS rather than failing with @code{EINTR}; see @ref{Interrupted</i></td></tr>
+<tr><th id="28">28</th><td><i>TRANS Primitives}. */</i></td></tr>
+<tr><th id="29">29</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[4] = &quot;Interrupted system call&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#8" title="4" data-ref="_M/EINTR">EINTR</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Interrupted system call&quot;" data-ref="_M/N_">N_</a>(<q>"Interrupted system call"</q>))</td></tr>
+<tr><th id="30">30</th><td><u>#<span data-ppcond="20">endif</span></u></td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="31">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#9" data-ref="_M/EIO">EIO</a></u></td></tr>
+<tr><th id="32">32</th><td><i>/*</i></td></tr>
+<tr><th id="33">33</th><td><i>TRANS Usually used for physical read or write errors. */</i></td></tr>
+<tr><th id="34">34</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[5] = &quot;Input/output error&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#9" title="5" data-ref="_M/EIO">EIO</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Input/output error&quot;" data-ref="_M/N_">N_</a>(<q>"Input/output error"</q>))</td></tr>
+<tr><th id="35">35</th><td><u>#<span data-ppcond="31">endif</span></u></td></tr>
+<tr><th id="36">36</th><td><u>#<span data-ppcond="36">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#10" data-ref="_M/ENXIO">ENXIO</a></u></td></tr>
+<tr><th id="37">37</th><td><i>/*</i></td></tr>
+<tr><th id="38">38</th><td><i>TRANS The system tried to use the device</i></td></tr>
+<tr><th id="39">39</th><td><i>TRANS represented by a file you specified, and it couldn't find the device.</i></td></tr>
+<tr><th id="40">40</th><td><i>TRANS This can mean that the device file was installed incorrectly, or that</i></td></tr>
+<tr><th id="41">41</th><td><i>TRANS the physical device is missing or not correctly attached to the</i></td></tr>
+<tr><th id="42">42</th><td><i>TRANS computer. */</i></td></tr>
+<tr><th id="43">43</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[6] = &quot;No such device or address&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#10" title="6" data-ref="_M/ENXIO">ENXIO</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No such device or address&quot;" data-ref="_M/N_">N_</a>(<q>"No such device or address"</q>))</td></tr>
+<tr><th id="44">44</th><td><u>#<span data-ppcond="36">endif</span></u></td></tr>
+<tr><th id="45">45</th><td><u>#<span data-ppcond="45">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#11" data-ref="_M/E2BIG">E2BIG</a></u></td></tr>
+<tr><th id="46">46</th><td><i>/*</i></td></tr>
+<tr><th id="47">47</th><td><i>TRANS Used when the arguments passed to a new program</i></td></tr>
+<tr><th id="48">48</th><td><i>TRANS being executed with one of the @code{exec} functions (@pxref{Executing a</i></td></tr>
+<tr><th id="49">49</th><td><i>TRANS File}) occupy too much memory space.  This condition never arises on</i></td></tr>
+<tr><th id="50">50</th><td><i>TRANS @gnuhurdsystems{}. */</i></td></tr>
+<tr><th id="51">51</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[7] = &quot;Argument list too long&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#11" title="7" data-ref="_M/E2BIG">E2BIG</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Argument list too long&quot;" data-ref="_M/N_">N_</a>(<q>"Argument list too long"</q>))</td></tr>
+<tr><th id="52">52</th><td><u>#<span data-ppcond="45">endif</span></u></td></tr>
+<tr><th id="53">53</th><td><u>#<span data-ppcond="53">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#12" data-ref="_M/ENOEXEC">ENOEXEC</a></u></td></tr>
+<tr><th id="54">54</th><td><i>/*</i></td></tr>
+<tr><th id="55">55</th><td><i>TRANS Invalid executable file format.  This condition is detected by the</i></td></tr>
+<tr><th id="56">56</th><td><i>TRANS @code{exec} functions; see @ref{Executing a File}. */</i></td></tr>
+<tr><th id="57">57</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[8] = &quot;Exec format error&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#12" title="8" data-ref="_M/ENOEXEC">ENOEXEC</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Exec format error&quot;" data-ref="_M/N_">N_</a>(<q>"Exec format error"</q>))</td></tr>
+<tr><th id="58">58</th><td><u>#<span data-ppcond="53">endif</span></u></td></tr>
+<tr><th id="59">59</th><td><u>#<span data-ppcond="59">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#13" data-ref="_M/EBADF">EBADF</a></u></td></tr>
+<tr><th id="60">60</th><td><i>/*</i></td></tr>
+<tr><th id="61">61</th><td><i>TRANS For example, I/O on a descriptor that has been</i></td></tr>
+<tr><th id="62">62</th><td><i>TRANS closed or reading from a descriptor open only for writing (or vice</i></td></tr>
+<tr><th id="63">63</th><td><i>TRANS versa). */</i></td></tr>
+<tr><th id="64">64</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[9] = &quot;Bad file descriptor&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#13" title="9" data-ref="_M/EBADF">EBADF</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Bad file descriptor&quot;" data-ref="_M/N_">N_</a>(<q>"Bad file descriptor"</q>))</td></tr>
+<tr><th id="65">65</th><td><u>#<span data-ppcond="59">endif</span></u></td></tr>
+<tr><th id="66">66</th><td><u>#<span data-ppcond="66">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#14" data-ref="_M/ECHILD">ECHILD</a></u></td></tr>
+<tr><th id="67">67</th><td><i>/*</i></td></tr>
+<tr><th id="68">68</th><td><i>TRANS This error happens on operations that are</i></td></tr>
+<tr><th id="69">69</th><td><i>TRANS supposed to manipulate child processes, when there aren't any processes</i></td></tr>
+<tr><th id="70">70</th><td><i>TRANS to manipulate. */</i></td></tr>
+<tr><th id="71">71</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[10] = &quot;No child processes&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#14" title="10" data-ref="_M/ECHILD">ECHILD</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No child processes&quot;" data-ref="_M/N_">N_</a>(<q>"No child processes"</q>))</td></tr>
+<tr><th id="72">72</th><td><u>#<span data-ppcond="66">endif</span></u></td></tr>
+<tr><th id="73">73</th><td><u>#<span data-ppcond="73">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#7" data-ref="_M/EDEADLK">EDEADLK</a></u></td></tr>
+<tr><th id="74">74</th><td><i>/*</i></td></tr>
+<tr><th id="75">75</th><td><i>TRANS Allocating a system resource would have resulted in a</i></td></tr>
+<tr><th id="76">76</th><td><i>TRANS deadlock situation.  The system does not guarantee that it will notice</i></td></tr>
+<tr><th id="77">77</th><td><i>TRANS all such situations.  This error means you got lucky and the system</i></td></tr>
+<tr><th id="78">78</th><td><i>TRANS noticed; it might just hang.  @xref{File Locks}, for an example. */</i></td></tr>
+<tr><th id="79">79</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[35] = &quot;Resource deadlock avoided&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#7" title="35" data-ref="_M/EDEADLK">EDEADLK</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Resource deadlock avoided&quot;" data-ref="_M/N_">N_</a>(<q>"Resource deadlock avoided"</q>))</td></tr>
+<tr><th id="80">80</th><td><u>#<span data-ppcond="73">endif</span></u></td></tr>
+<tr><th id="81">81</th><td><u>#<span data-ppcond="81">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#16" data-ref="_M/ENOMEM">ENOMEM</a></u></td></tr>
+<tr><th id="82">82</th><td><i>/*</i></td></tr>
+<tr><th id="83">83</th><td><i>TRANS The system cannot allocate more virtual memory</i></td></tr>
+<tr><th id="84">84</th><td><i>TRANS because its capacity is full. */</i></td></tr>
+<tr><th id="85">85</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[12] = &quot;Cannot allocate memory&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#16" title="12" data-ref="_M/ENOMEM">ENOMEM</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Cannot allocate memory&quot;" data-ref="_M/N_">N_</a>(<q>"Cannot allocate memory"</q>))</td></tr>
+<tr><th id="86">86</th><td><u>#<span data-ppcond="81">endif</span></u></td></tr>
+<tr><th id="87">87</th><td><u>#<span data-ppcond="87">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#17" data-ref="_M/EACCES">EACCES</a></u></td></tr>
+<tr><th id="88">88</th><td><i>/*</i></td></tr>
+<tr><th id="89">89</th><td><i>TRANS The file permissions do not allow the attempted operation. */</i></td></tr>
+<tr><th id="90">90</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[13] = &quot;Permission denied&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#17" title="13" data-ref="_M/EACCES">EACCES</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Permission denied&quot;" data-ref="_M/N_">N_</a>(<q>"Permission denied"</q>))</td></tr>
+<tr><th id="91">91</th><td><u>#<span data-ppcond="87">endif</span></u></td></tr>
+<tr><th id="92">92</th><td><u>#<span data-ppcond="92">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#18" data-ref="_M/EFAULT">EFAULT</a></u></td></tr>
+<tr><th id="93">93</th><td><i>/*</i></td></tr>
+<tr><th id="94">94</th><td><i>TRANS An invalid pointer was detected.</i></td></tr>
+<tr><th id="95">95</th><td><i>TRANS On @gnuhurdsystems{}, this error never happens; you get a signal instead. */</i></td></tr>
+<tr><th id="96">96</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[14] = &quot;Bad address&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#18" title="14" data-ref="_M/EFAULT">EFAULT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Bad address&quot;" data-ref="_M/N_">N_</a>(<q>"Bad address"</q>))</td></tr>
+<tr><th id="97">97</th><td><u>#<span data-ppcond="92">endif</span></u></td></tr>
+<tr><th id="98">98</th><td><u>#<span data-ppcond="98">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#19" data-ref="_M/ENOTBLK">ENOTBLK</a></u></td></tr>
+<tr><th id="99">99</th><td><i>/*</i></td></tr>
+<tr><th id="100">100</th><td><i>TRANS A file that isn't a block special file was given in a situation that</i></td></tr>
+<tr><th id="101">101</th><td><i>TRANS requires one.  For example, trying to mount an ordinary file as a file</i></td></tr>
+<tr><th id="102">102</th><td><i>TRANS system in Unix gives this error. */</i></td></tr>
+<tr><th id="103">103</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[15] = &quot;Block device required&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#19" title="15" data-ref="_M/ENOTBLK">ENOTBLK</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Block device required&quot;" data-ref="_M/N_">N_</a>(<q>"Block device required"</q>))</td></tr>
+<tr><th id="104">104</th><td><u>#<span data-ppcond="98">endif</span></u></td></tr>
+<tr><th id="105">105</th><td><u>#<span data-ppcond="105">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#20" data-ref="_M/EBUSY">EBUSY</a></u></td></tr>
+<tr><th id="106">106</th><td><i>/*</i></td></tr>
+<tr><th id="107">107</th><td><i>TRANS A system resource that can't be shared is already in use.</i></td></tr>
+<tr><th id="108">108</th><td><i>TRANS For example, if you try to delete a file that is the root of a currently</i></td></tr>
+<tr><th id="109">109</th><td><i>TRANS mounted filesystem, you get this error. */</i></td></tr>
+<tr><th id="110">110</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[16] = &quot;Device or resource busy&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#20" title="16" data-ref="_M/EBUSY">EBUSY</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Device or resource busy&quot;" data-ref="_M/N_">N_</a>(<q>"Device or resource busy"</q>))</td></tr>
+<tr><th id="111">111</th><td><u>#<span data-ppcond="105">endif</span></u></td></tr>
+<tr><th id="112">112</th><td><u>#<span data-ppcond="112">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#21" data-ref="_M/EEXIST">EEXIST</a></u></td></tr>
+<tr><th id="113">113</th><td><i>/*</i></td></tr>
+<tr><th id="114">114</th><td><i>TRANS An existing file was specified in a context where it only</i></td></tr>
+<tr><th id="115">115</th><td><i>TRANS makes sense to specify a new file. */</i></td></tr>
+<tr><th id="116">116</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[17] = &quot;File exists&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#21" title="17" data-ref="_M/EEXIST">EEXIST</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;File exists&quot;" data-ref="_M/N_">N_</a>(<q>"File exists"</q>))</td></tr>
+<tr><th id="117">117</th><td><u>#<span data-ppcond="112">endif</span></u></td></tr>
+<tr><th id="118">118</th><td><u>#<span data-ppcond="118">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#22" data-ref="_M/EXDEV">EXDEV</a></u></td></tr>
+<tr><th id="119">119</th><td><i>/*</i></td></tr>
+<tr><th id="120">120</th><td><i>TRANS An attempt to make an improper link across file systems was detected.</i></td></tr>
+<tr><th id="121">121</th><td><i>TRANS This happens not only when you use @code{link} (@pxref{Hard Links}) but</i></td></tr>
+<tr><th id="122">122</th><td><i>TRANS also when you rename a file with @code{rename} (@pxref{Renaming Files}). */</i></td></tr>
+<tr><th id="123">123</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[18] = &quot;Invalid cross-device link&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#22" title="18" data-ref="_M/EXDEV">EXDEV</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Invalid cross-device link&quot;" data-ref="_M/N_">N_</a>(<q>"Invalid cross-device link"</q>))</td></tr>
+<tr><th id="124">124</th><td><u>#<span data-ppcond="118">endif</span></u></td></tr>
+<tr><th id="125">125</th><td><u>#<span data-ppcond="125">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#23" data-ref="_M/ENODEV">ENODEV</a></u></td></tr>
+<tr><th id="126">126</th><td><i>/*</i></td></tr>
+<tr><th id="127">127</th><td><i>TRANS The wrong type of device was given to a function that expects a</i></td></tr>
+<tr><th id="128">128</th><td><i>TRANS particular sort of device. */</i></td></tr>
+<tr><th id="129">129</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[19] = &quot;No such device&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#23" title="19" data-ref="_M/ENODEV">ENODEV</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No such device&quot;" data-ref="_M/N_">N_</a>(<q>"No such device"</q>))</td></tr>
+<tr><th id="130">130</th><td><u>#<span data-ppcond="125">endif</span></u></td></tr>
+<tr><th id="131">131</th><td><u>#<span data-ppcond="131">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#24" data-ref="_M/ENOTDIR">ENOTDIR</a></u></td></tr>
+<tr><th id="132">132</th><td><i>/*</i></td></tr>
+<tr><th id="133">133</th><td><i>TRANS A file that isn't a directory was specified when a directory is required. */</i></td></tr>
+<tr><th id="134">134</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[20] = &quot;Not a directory&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#24" title="20" data-ref="_M/ENOTDIR">ENOTDIR</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Not a directory&quot;" data-ref="_M/N_">N_</a>(<q>"Not a directory"</q>))</td></tr>
+<tr><th id="135">135</th><td><u>#<span data-ppcond="131">endif</span></u></td></tr>
+<tr><th id="136">136</th><td><u>#<span data-ppcond="136">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#25" data-ref="_M/EISDIR">EISDIR</a></u></td></tr>
+<tr><th id="137">137</th><td><i>/*</i></td></tr>
+<tr><th id="138">138</th><td><i>TRANS You cannot open a directory for writing,</i></td></tr>
+<tr><th id="139">139</th><td><i>TRANS or create or remove hard links to it. */</i></td></tr>
+<tr><th id="140">140</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[21] = &quot;Is a directory&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#25" title="21" data-ref="_M/EISDIR">EISDIR</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Is a directory&quot;" data-ref="_M/N_">N_</a>(<q>"Is a directory"</q>))</td></tr>
+<tr><th id="141">141</th><td><u>#<span data-ppcond="136">endif</span></u></td></tr>
+<tr><th id="142">142</th><td><u>#<span data-ppcond="142">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#26" data-ref="_M/EINVAL">EINVAL</a></u></td></tr>
+<tr><th id="143">143</th><td><i>/*</i></td></tr>
+<tr><th id="144">144</th><td><i>TRANS This is used to indicate various kinds of problems</i></td></tr>
+<tr><th id="145">145</th><td><i>TRANS with passing the wrong argument to a library function. */</i></td></tr>
+<tr><th id="146">146</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[22] = &quot;Invalid argument&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#26" title="22" data-ref="_M/EINVAL">EINVAL</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Invalid argument&quot;" data-ref="_M/N_">N_</a>(<q>"Invalid argument"</q>))</td></tr>
+<tr><th id="147">147</th><td><u>#<span data-ppcond="142">endif</span></u></td></tr>
+<tr><th id="148">148</th><td><u>#<span data-ppcond="148">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#28" data-ref="_M/EMFILE">EMFILE</a></u></td></tr>
+<tr><th id="149">149</th><td><i>/*</i></td></tr>
+<tr><th id="150">150</th><td><i>TRANS The current process has too many files open and can't open any more.</i></td></tr>
+<tr><th id="151">151</th><td><i>TRANS Duplicate descriptors do count toward this limit.</i></td></tr>
+<tr><th id="152">152</th><td><i>TRANS</i></td></tr>
+<tr><th id="153">153</th><td><i>TRANS In BSD and GNU, the number of open files is controlled by a resource</i></td></tr>
+<tr><th id="154">154</th><td><i>TRANS limit that can usually be increased.  If you get this error, you might</i></td></tr>
+<tr><th id="155">155</th><td><i>TRANS want to increase the @code{RLIMIT_NOFILE} limit or make it unlimited;</i></td></tr>
+<tr><th id="156">156</th><td><i>TRANS @pxref{Limits on Resources}. */</i></td></tr>
+<tr><th id="157">157</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[24] = &quot;Too many open files&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#28" title="24" data-ref="_M/EMFILE">EMFILE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Too many open files&quot;" data-ref="_M/N_">N_</a>(<q>"Too many open files"</q>))</td></tr>
+<tr><th id="158">158</th><td><u>#<span data-ppcond="148">endif</span></u></td></tr>
+<tr><th id="159">159</th><td><u>#<span data-ppcond="159">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#27" data-ref="_M/ENFILE">ENFILE</a></u></td></tr>
+<tr><th id="160">160</th><td><i>/*</i></td></tr>
+<tr><th id="161">161</th><td><i>TRANS There are too many distinct file openings in the entire system.  Note</i></td></tr>
+<tr><th id="162">162</th><td><i>TRANS that any number of linked channels count as just one file opening; see</i></td></tr>
+<tr><th id="163">163</th><td><i>TRANS @ref{Linked Channels}.  This error never occurs on @gnuhurdsystems{}. */</i></td></tr>
+<tr><th id="164">164</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[23] = &quot;Too many open files in system&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#27" title="23" data-ref="_M/ENFILE">ENFILE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Too many open files in system&quot;" data-ref="_M/N_">N_</a>(<q>"Too many open files in system"</q>))</td></tr>
+<tr><th id="165">165</th><td><u>#<span data-ppcond="159">endif</span></u></td></tr>
+<tr><th id="166">166</th><td><u>#<span data-ppcond="166">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#29" data-ref="_M/ENOTTY">ENOTTY</a></u></td></tr>
+<tr><th id="167">167</th><td><i>/*</i></td></tr>
+<tr><th id="168">168</th><td><i>TRANS Inappropriate I/O control operation, such as trying to set terminal</i></td></tr>
+<tr><th id="169">169</th><td><i>TRANS modes on an ordinary file. */</i></td></tr>
+<tr><th id="170">170</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[25] = &quot;Inappropriate ioctl for device&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#29" title="25" data-ref="_M/ENOTTY">ENOTTY</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Inappropriate ioctl for device&quot;" data-ref="_M/N_">N_</a>(<q>"Inappropriate ioctl for device"</q>))</td></tr>
+<tr><th id="171">171</th><td><u>#<span data-ppcond="166">endif</span></u></td></tr>
+<tr><th id="172">172</th><td><u>#<span data-ppcond="172">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#30" data-ref="_M/ETXTBSY">ETXTBSY</a></u></td></tr>
+<tr><th id="173">173</th><td><i>/*</i></td></tr>
+<tr><th id="174">174</th><td><i>TRANS An attempt to execute a file that is currently open for writing, or</i></td></tr>
+<tr><th id="175">175</th><td><i>TRANS write to a file that is currently being executed.  Often using a</i></td></tr>
+<tr><th id="176">176</th><td><i>TRANS debugger to run a program is considered having it open for writing and</i></td></tr>
+<tr><th id="177">177</th><td><i>TRANS will cause this error.  (The name stands for ``text file busy''.)  This</i></td></tr>
+<tr><th id="178">178</th><td><i>TRANS is not an error on @gnuhurdsystems{}; the text is copied as necessary. */</i></td></tr>
+<tr><th id="179">179</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[26] = &quot;Text file busy&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#30" title="26" data-ref="_M/ETXTBSY">ETXTBSY</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Text file busy&quot;" data-ref="_M/N_">N_</a>(<q>"Text file busy"</q>))</td></tr>
+<tr><th id="180">180</th><td><u>#<span data-ppcond="172">endif</span></u></td></tr>
+<tr><th id="181">181</th><td><u>#<span data-ppcond="181">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#31" data-ref="_M/EFBIG">EFBIG</a></u></td></tr>
+<tr><th id="182">182</th><td><i>/*</i></td></tr>
+<tr><th id="183">183</th><td><i>TRANS The size of a file would be larger than allowed by the system. */</i></td></tr>
+<tr><th id="184">184</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[27] = &quot;File too large&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#31" title="27" data-ref="_M/EFBIG">EFBIG</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;File too large&quot;" data-ref="_M/N_">N_</a>(<q>"File too large"</q>))</td></tr>
+<tr><th id="185">185</th><td><u>#<span data-ppcond="181">endif</span></u></td></tr>
+<tr><th id="186">186</th><td><u>#<span data-ppcond="186">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#32" data-ref="_M/ENOSPC">ENOSPC</a></u></td></tr>
+<tr><th id="187">187</th><td><i>/*</i></td></tr>
+<tr><th id="188">188</th><td><i>TRANS Write operation on a file failed because the</i></td></tr>
+<tr><th id="189">189</th><td><i>TRANS disk is full. */</i></td></tr>
+<tr><th id="190">190</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[28] = &quot;No space left on device&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#32" title="28" data-ref="_M/ENOSPC">ENOSPC</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No space left on device&quot;" data-ref="_M/N_">N_</a>(<q>"No space left on device"</q>))</td></tr>
+<tr><th id="191">191</th><td><u>#<span data-ppcond="186">endif</span></u></td></tr>
+<tr><th id="192">192</th><td><u>#<span data-ppcond="192">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#33" data-ref="_M/ESPIPE">ESPIPE</a></u></td></tr>
+<tr><th id="193">193</th><td><i>/*</i></td></tr>
+<tr><th id="194">194</th><td><i>TRANS Invalid seek operation (such as on a pipe). */</i></td></tr>
+<tr><th id="195">195</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[29] = &quot;Illegal seek&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#33" title="29" data-ref="_M/ESPIPE">ESPIPE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Illegal seek&quot;" data-ref="_M/N_">N_</a>(<q>"Illegal seek"</q>))</td></tr>
+<tr><th id="196">196</th><td><u>#<span data-ppcond="192">endif</span></u></td></tr>
+<tr><th id="197">197</th><td><u>#<span data-ppcond="197">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#34" data-ref="_M/EROFS">EROFS</a></u></td></tr>
+<tr><th id="198">198</th><td><i>/*</i></td></tr>
+<tr><th id="199">199</th><td><i>TRANS An attempt was made to modify something on a read-only file system. */</i></td></tr>
+<tr><th id="200">200</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[30] = &quot;Read-only file system&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#34" title="30" data-ref="_M/EROFS">EROFS</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Read-only file system&quot;" data-ref="_M/N_">N_</a>(<q>"Read-only file system"</q>))</td></tr>
+<tr><th id="201">201</th><td><u>#<span data-ppcond="197">endif</span></u></td></tr>
+<tr><th id="202">202</th><td><u>#<span data-ppcond="202">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#35" data-ref="_M/EMLINK">EMLINK</a></u></td></tr>
+<tr><th id="203">203</th><td><i>/*</i></td></tr>
+<tr><th id="204">204</th><td><i>TRANS The link count of a single file would become too large.</i></td></tr>
+<tr><th id="205">205</th><td><i>TRANS @code{rename} can cause this error if the file being renamed already has</i></td></tr>
+<tr><th id="206">206</th><td><i>TRANS as many links as it can take (@pxref{Renaming Files}). */</i></td></tr>
+<tr><th id="207">207</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[31] = &quot;Too many links&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#35" title="31" data-ref="_M/EMLINK">EMLINK</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Too many links&quot;" data-ref="_M/N_">N_</a>(<q>"Too many links"</q>))</td></tr>
+<tr><th id="208">208</th><td><u>#<span data-ppcond="202">endif</span></u></td></tr>
+<tr><th id="209">209</th><td><u>#<span data-ppcond="209">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#36" data-ref="_M/EPIPE">EPIPE</a></u></td></tr>
+<tr><th id="210">210</th><td><i>/*</i></td></tr>
+<tr><th id="211">211</th><td><i>TRANS There is no process reading from the other end of a pipe.</i></td></tr>
+<tr><th id="212">212</th><td><i>TRANS Every library function that returns this error code also generates a</i></td></tr>
+<tr><th id="213">213</th><td><i>TRANS @code{SIGPIPE} signal; this signal terminates the program if not handled</i></td></tr>
+<tr><th id="214">214</th><td><i>TRANS or blocked.  Thus, your program will never actually see @code{EPIPE}</i></td></tr>
+<tr><th id="215">215</th><td><i>TRANS unless it has handled or blocked @code{SIGPIPE}. */</i></td></tr>
+<tr><th id="216">216</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[32] = &quot;Broken pipe&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#36" title="32" data-ref="_M/EPIPE">EPIPE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Broken pipe&quot;" data-ref="_M/N_">N_</a>(<q>"Broken pipe"</q>))</td></tr>
+<tr><th id="217">217</th><td><u>#<span data-ppcond="209">endif</span></u></td></tr>
+<tr><th id="218">218</th><td><u>#<span data-ppcond="218">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#37" data-ref="_M/EDOM">EDOM</a></u></td></tr>
+<tr><th id="219">219</th><td><i>/*</i></td></tr>
+<tr><th id="220">220</th><td><i>TRANS Used by mathematical functions when an argument value does</i></td></tr>
+<tr><th id="221">221</th><td><i>TRANS not fall into the domain over which the function is defined. */</i></td></tr>
+<tr><th id="222">222</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[33] = &quot;Numerical argument out of domain&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#37" title="33" data-ref="_M/EDOM">EDOM</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Numerical argument out of domain&quot;" data-ref="_M/N_">N_</a>(<q>"Numerical argument out of domain"</q>))</td></tr>
+<tr><th id="223">223</th><td><u>#<span data-ppcond="218">endif</span></u></td></tr>
+<tr><th id="224">224</th><td><u>#<span data-ppcond="224">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#38" data-ref="_M/ERANGE">ERANGE</a></u></td></tr>
+<tr><th id="225">225</th><td><i>/*</i></td></tr>
+<tr><th id="226">226</th><td><i>TRANS Used by mathematical functions when the result value is</i></td></tr>
+<tr><th id="227">227</th><td><i>TRANS not representable because of overflow or underflow. */</i></td></tr>
+<tr><th id="228">228</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[34] = &quot;Numerical result out of range&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#38" title="34" data-ref="_M/ERANGE">ERANGE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Numerical result out of range&quot;" data-ref="_M/N_">N_</a>(<q>"Numerical result out of range"</q>))</td></tr>
+<tr><th id="229">229</th><td><u>#<span data-ppcond="224">endif</span></u></td></tr>
+<tr><th id="230">230</th><td><u>#<span data-ppcond="230">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno-base.h.html#15" data-ref="_M/EAGAIN">EAGAIN</a></u></td></tr>
+<tr><th id="231">231</th><td><i>/*</i></td></tr>
+<tr><th id="232">232</th><td><i>TRANS The call might work if you try again</i></td></tr>
+<tr><th id="233">233</th><td><i>TRANS later.  The macro @code{EWOULDBLOCK} is another name for @code{EAGAIN};</i></td></tr>
+<tr><th id="234">234</th><td><i>TRANS they are always the same in @theglibc{}.</i></td></tr>
+<tr><th id="235">235</th><td><i>TRANS</i></td></tr>
+<tr><th id="236">236</th><td><i>TRANS This error can happen in a few different situations:</i></td></tr>
+<tr><th id="237">237</th><td><i>TRANS</i></td></tr>
+<tr><th id="238">238</th><td><i>TRANS @itemize @bullet</i></td></tr>
+<tr><th id="239">239</th><td><i>TRANS @item</i></td></tr>
+<tr><th id="240">240</th><td><i>TRANS An operation that would block was attempted on an object that has</i></td></tr>
+<tr><th id="241">241</th><td><i>TRANS non-blocking mode selected.  Trying the same operation again will block</i></td></tr>
+<tr><th id="242">242</th><td><i>TRANS until some external condition makes it possible to read, write, or</i></td></tr>
+<tr><th id="243">243</th><td><i>TRANS connect (whatever the operation).  You can use @code{select} to find out</i></td></tr>
+<tr><th id="244">244</th><td><i>TRANS when the operation will be possible; @pxref{Waiting for I/O}.</i></td></tr>
+<tr><th id="245">245</th><td><i>TRANS</i></td></tr>
+<tr><th id="246">246</th><td><i>TRANS @strong{Portability Note:} In many older Unix systems, this condition</i></td></tr>
+<tr><th id="247">247</th><td><i>TRANS was indicated by @code{EWOULDBLOCK}, which was a distinct error code</i></td></tr>
+<tr><th id="248">248</th><td><i>TRANS different from @code{EAGAIN}.  To make your program portable, you should</i></td></tr>
+<tr><th id="249">249</th><td><i>TRANS check for both codes and treat them the same.</i></td></tr>
+<tr><th id="250">250</th><td><i>TRANS</i></td></tr>
+<tr><th id="251">251</th><td><i>TRANS @item</i></td></tr>
+<tr><th id="252">252</th><td><i>TRANS A temporary resource shortage made an operation impossible.  @code{fork}</i></td></tr>
+<tr><th id="253">253</th><td><i>TRANS can return this error.  It indicates that the shortage is expected to</i></td></tr>
+<tr><th id="254">254</th><td><i>TRANS pass, so your program can try the call again later and it may succeed.</i></td></tr>
+<tr><th id="255">255</th><td><i>TRANS It is probably a good idea to delay for a few seconds before trying it</i></td></tr>
+<tr><th id="256">256</th><td><i>TRANS again, to allow time for other processes to release scarce resources.</i></td></tr>
+<tr><th id="257">257</th><td><i>TRANS Such shortages are usually fairly serious and affect the whole system,</i></td></tr>
+<tr><th id="258">258</th><td><i>TRANS so usually an interactive program should report the error to the user</i></td></tr>
+<tr><th id="259">259</th><td><i>TRANS and return to its command loop.</i></td></tr>
+<tr><th id="260">260</th><td><i>TRANS @end itemize */</i></td></tr>
+<tr><th id="261">261</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[11] = &quot;Resource temporarily unavailable&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno-base.h.html#15" title="11" data-ref="_M/EAGAIN">EAGAIN</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Resource temporarily unavailable&quot;" data-ref="_M/N_">N_</a>(<q>"Resource temporarily unavailable"</q>))</td></tr>
+<tr><th id="262">262</th><td><u>#<span data-ppcond="230">endif</span></u></td></tr>
+<tr><th id="263">263</th><td><u>#<span data-ppcond="263">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#98" data-ref="_M/EINPROGRESS">EINPROGRESS</a></u></td></tr>
+<tr><th id="264">264</th><td><i>/*</i></td></tr>
+<tr><th id="265">265</th><td><i>TRANS An operation that cannot complete immediately was initiated on an object</i></td></tr>
+<tr><th id="266">266</th><td><i>TRANS that has non-blocking mode selected.  Some functions that must always</i></td></tr>
+<tr><th id="267">267</th><td><i>TRANS block (such as @code{connect}; @pxref{Connecting}) never return</i></td></tr>
+<tr><th id="268">268</th><td><i>TRANS @code{EAGAIN}.  Instead, they return @code{EINPROGRESS} to indicate that</i></td></tr>
+<tr><th id="269">269</th><td><i>TRANS the operation has begun and will take some time.  Attempts to manipulate</i></td></tr>
+<tr><th id="270">270</th><td><i>TRANS the object before the call completes return @code{EALREADY}.  You can</i></td></tr>
+<tr><th id="271">271</th><td><i>TRANS use the @code{select} function to find out when the pending operation</i></td></tr>
+<tr><th id="272">272</th><td><i>TRANS has completed; @pxref{Waiting for I/O}. */</i></td></tr>
+<tr><th id="273">273</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[115] = &quot;Operation now in progress&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#98" title="115" data-ref="_M/EINPROGRESS">EINPROGRESS</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Operation now in progress&quot;" data-ref="_M/N_">N_</a>(<q>"Operation now in progress"</q>))</td></tr>
+<tr><th id="274">274</th><td><u>#<span data-ppcond="263">endif</span></u></td></tr>
+<tr><th id="275">275</th><td><u>#<span data-ppcond="275">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#97" data-ref="_M/EALREADY">EALREADY</a></u></td></tr>
+<tr><th id="276">276</th><td><i>/*</i></td></tr>
+<tr><th id="277">277</th><td><i>TRANS An operation is already in progress on an object that has non-blocking</i></td></tr>
+<tr><th id="278">278</th><td><i>TRANS mode selected. */</i></td></tr>
+<tr><th id="279">279</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[114] = &quot;Operation already in progress&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#97" title="114" data-ref="_M/EALREADY">EALREADY</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Operation already in progress&quot;" data-ref="_M/N_">N_</a>(<q>"Operation already in progress"</q>))</td></tr>
+<tr><th id="280">280</th><td><u>#<span data-ppcond="275">endif</span></u></td></tr>
+<tr><th id="281">281</th><td><u>#<span data-ppcond="281">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#71" data-ref="_M/ENOTSOCK">ENOTSOCK</a></u></td></tr>
+<tr><th id="282">282</th><td><i>/*</i></td></tr>
+<tr><th id="283">283</th><td><i>TRANS A file that isn't a socket was specified when a socket is required. */</i></td></tr>
+<tr><th id="284">284</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[88] = &quot;Socket operation on non-socket&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#71" title="88" data-ref="_M/ENOTSOCK">ENOTSOCK</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Socket operation on non-socket&quot;" data-ref="_M/N_">N_</a>(<q>"Socket operation on non-socket"</q>))</td></tr>
+<tr><th id="285">285</th><td><u>#<span data-ppcond="281">endif</span></u></td></tr>
+<tr><th id="286">286</th><td><u>#<span data-ppcond="286">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#73" data-ref="_M/EMSGSIZE">EMSGSIZE</a></u></td></tr>
+<tr><th id="287">287</th><td><i>/*</i></td></tr>
+<tr><th id="288">288</th><td><i>TRANS The size of a message sent on a socket was larger than the supported</i></td></tr>
+<tr><th id="289">289</th><td><i>TRANS maximum size. */</i></td></tr>
+<tr><th id="290">290</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[90] = &quot;Message too long&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#73" title="90" data-ref="_M/EMSGSIZE">EMSGSIZE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Message too long&quot;" data-ref="_M/N_">N_</a>(<q>"Message too long"</q>))</td></tr>
+<tr><th id="291">291</th><td><u>#<span data-ppcond="286">endif</span></u></td></tr>
+<tr><th id="292">292</th><td><u>#<span data-ppcond="292">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#74" data-ref="_M/EPROTOTYPE">EPROTOTYPE</a></u></td></tr>
+<tr><th id="293">293</th><td><i>/*</i></td></tr>
+<tr><th id="294">294</th><td><i>TRANS The socket type does not support the requested communications protocol. */</i></td></tr>
+<tr><th id="295">295</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[91] = &quot;Protocol wrong type for socket&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#74" title="91" data-ref="_M/EPROTOTYPE">EPROTOTYPE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Protocol wrong type for socket&quot;" data-ref="_M/N_">N_</a>(<q>"Protocol wrong type for socket"</q>))</td></tr>
+<tr><th id="296">296</th><td><u>#<span data-ppcond="292">endif</span></u></td></tr>
+<tr><th id="297">297</th><td><u>#<span data-ppcond="297">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#75" data-ref="_M/ENOPROTOOPT">ENOPROTOOPT</a></u></td></tr>
+<tr><th id="298">298</th><td><i>/*</i></td></tr>
+<tr><th id="299">299</th><td><i>TRANS You specified a socket option that doesn't make sense for the</i></td></tr>
+<tr><th id="300">300</th><td><i>TRANS particular protocol being used by the socket.  @xref{Socket Options}. */</i></td></tr>
+<tr><th id="301">301</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[92] = &quot;Protocol not available&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#75" title="92" data-ref="_M/ENOPROTOOPT">ENOPROTOOPT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Protocol not available&quot;" data-ref="_M/N_">N_</a>(<q>"Protocol not available"</q>))</td></tr>
+<tr><th id="302">302</th><td><u>#<span data-ppcond="297">endif</span></u></td></tr>
+<tr><th id="303">303</th><td><u>#<span data-ppcond="303">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#76" data-ref="_M/EPROTONOSUPPORT">EPROTONOSUPPORT</a></u></td></tr>
+<tr><th id="304">304</th><td><i>/*</i></td></tr>
+<tr><th id="305">305</th><td><i>TRANS The socket domain does not support the requested communications protocol</i></td></tr>
+<tr><th id="306">306</th><td><i>TRANS (perhaps because the requested protocol is completely invalid).</i></td></tr>
+<tr><th id="307">307</th><td><i>TRANS @xref{Creating a Socket}. */</i></td></tr>
+<tr><th id="308">308</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[93] = &quot;Protocol not supported&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#76" title="93" data-ref="_M/EPROTONOSUPPORT">EPROTONOSUPPORT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Protocol not supported&quot;" data-ref="_M/N_">N_</a>(<q>"Protocol not supported"</q>))</td></tr>
+<tr><th id="309">309</th><td><u>#<span data-ppcond="303">endif</span></u></td></tr>
+<tr><th id="310">310</th><td><u>#<span data-ppcond="310">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#77" data-ref="_M/ESOCKTNOSUPPORT">ESOCKTNOSUPPORT</a></u></td></tr>
+<tr><th id="311">311</th><td><i>/*</i></td></tr>
+<tr><th id="312">312</th><td><i>TRANS The socket type is not supported. */</i></td></tr>
+<tr><th id="313">313</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[94] = &quot;Socket type not supported&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#77" title="94" data-ref="_M/ESOCKTNOSUPPORT">ESOCKTNOSUPPORT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Socket type not supported&quot;" data-ref="_M/N_">N_</a>(<q>"Socket type not supported"</q>))</td></tr>
+<tr><th id="314">314</th><td><u>#<span data-ppcond="310">endif</span></u></td></tr>
+<tr><th id="315">315</th><td><u>#<span data-ppcond="315">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#78" data-ref="_M/EOPNOTSUPP">EOPNOTSUPP</a></u></td></tr>
+<tr><th id="316">316</th><td><i>/*</i></td></tr>
+<tr><th id="317">317</th><td><i>TRANS The operation you requested is not supported.  Some socket functions</i></td></tr>
+<tr><th id="318">318</th><td><i>TRANS don't make sense for all types of sockets, and others may not be</i></td></tr>
+<tr><th id="319">319</th><td><i>TRANS implemented for all communications protocols.  On @gnuhurdsystems{}, this</i></td></tr>
+<tr><th id="320">320</th><td><i>TRANS error can happen for many calls when the object does not support the</i></td></tr>
+<tr><th id="321">321</th><td><i>TRANS particular operation; it is a generic indication that the server knows</i></td></tr>
+<tr><th id="322">322</th><td><i>TRANS nothing to do for that call. */</i></td></tr>
+<tr><th id="323">323</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[95] = &quot;Operation not supported&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#78" title="95" data-ref="_M/EOPNOTSUPP">EOPNOTSUPP</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Operation not supported&quot;" data-ref="_M/N_">N_</a>(<q>"Operation not supported"</q>))</td></tr>
+<tr><th id="324">324</th><td><u>#<span data-ppcond="315">endif</span></u></td></tr>
+<tr><th id="325">325</th><td><u>#<span data-ppcond="325">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#79" data-ref="_M/EPFNOSUPPORT">EPFNOSUPPORT</a></u></td></tr>
+<tr><th id="326">326</th><td><i>/*</i></td></tr>
+<tr><th id="327">327</th><td><i>TRANS The socket communications protocol family you requested is not supported. */</i></td></tr>
+<tr><th id="328">328</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[96] = &quot;Protocol family not supported&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#79" title="96" data-ref="_M/EPFNOSUPPORT">EPFNOSUPPORT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Protocol family not supported&quot;" data-ref="_M/N_">N_</a>(<q>"Protocol family not supported"</q>))</td></tr>
+<tr><th id="329">329</th><td><u>#<span data-ppcond="325">endif</span></u></td></tr>
+<tr><th id="330">330</th><td><u>#<span data-ppcond="330">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#80" data-ref="_M/EAFNOSUPPORT">EAFNOSUPPORT</a></u></td></tr>
+<tr><th id="331">331</th><td><i>/*</i></td></tr>
+<tr><th id="332">332</th><td><i>TRANS The address family specified for a socket is not supported; it is</i></td></tr>
+<tr><th id="333">333</th><td><i>TRANS inconsistent with the protocol being used on the socket.  @xref{Sockets}. */</i></td></tr>
+<tr><th id="334">334</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[97] = &quot;Address family not supported by protocol&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#80" title="97" data-ref="_M/EAFNOSUPPORT">EAFNOSUPPORT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Address family not supported by protocol&quot;" data-ref="_M/N_">N_</a>(<q>"Address family not supported by protocol"</q>))</td></tr>
+<tr><th id="335">335</th><td><u>#<span data-ppcond="330">endif</span></u></td></tr>
+<tr><th id="336">336</th><td><u>#<span data-ppcond="336">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#81" data-ref="_M/EADDRINUSE">EADDRINUSE</a></u></td></tr>
+<tr><th id="337">337</th><td><i>/*</i></td></tr>
+<tr><th id="338">338</th><td><i>TRANS The requested socket address is already in use.  @xref{Socket Addresses}. */</i></td></tr>
+<tr><th id="339">339</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[98] = &quot;Address already in use&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#81" title="98" data-ref="_M/EADDRINUSE">EADDRINUSE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Address already in use&quot;" data-ref="_M/N_">N_</a>(<q>"Address already in use"</q>))</td></tr>
+<tr><th id="340">340</th><td><u>#<span data-ppcond="336">endif</span></u></td></tr>
+<tr><th id="341">341</th><td><u>#<span data-ppcond="341">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#82" data-ref="_M/EADDRNOTAVAIL">EADDRNOTAVAIL</a></u></td></tr>
+<tr><th id="342">342</th><td><i>/*</i></td></tr>
+<tr><th id="343">343</th><td><i>TRANS The requested socket address is not available; for example, you tried</i></td></tr>
+<tr><th id="344">344</th><td><i>TRANS to give a socket a name that doesn't match the local host name.</i></td></tr>
+<tr><th id="345">345</th><td><i>TRANS @xref{Socket Addresses}. */</i></td></tr>
+<tr><th id="346">346</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[99] = &quot;Cannot assign requested address&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#82" title="99" data-ref="_M/EADDRNOTAVAIL">EADDRNOTAVAIL</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Cannot assign requested address&quot;" data-ref="_M/N_">N_</a>(<q>"Cannot assign requested address"</q>))</td></tr>
+<tr><th id="347">347</th><td><u>#<span data-ppcond="341">endif</span></u></td></tr>
+<tr><th id="348">348</th><td><u>#<span data-ppcond="348">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#83" data-ref="_M/ENETDOWN">ENETDOWN</a></u></td></tr>
+<tr><th id="349">349</th><td><i>/*</i></td></tr>
+<tr><th id="350">350</th><td><i>TRANS A socket operation failed because the network was down. */</i></td></tr>
+<tr><th id="351">351</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[100] = &quot;Network is down&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#83" title="100" data-ref="_M/ENETDOWN">ENETDOWN</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Network is down&quot;" data-ref="_M/N_">N_</a>(<q>"Network is down"</q>))</td></tr>
+<tr><th id="352">352</th><td><u>#<span data-ppcond="348">endif</span></u></td></tr>
+<tr><th id="353">353</th><td><u>#<span data-ppcond="353">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#84" data-ref="_M/ENETUNREACH">ENETUNREACH</a></u></td></tr>
+<tr><th id="354">354</th><td><i>/*</i></td></tr>
+<tr><th id="355">355</th><td><i>TRANS A socket operation failed because the subnet containing the remote host</i></td></tr>
+<tr><th id="356">356</th><td><i>TRANS was unreachable. */</i></td></tr>
+<tr><th id="357">357</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[101] = &quot;Network is unreachable&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#84" title="101" data-ref="_M/ENETUNREACH">ENETUNREACH</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Network is unreachable&quot;" data-ref="_M/N_">N_</a>(<q>"Network is unreachable"</q>))</td></tr>
+<tr><th id="358">358</th><td><u>#<span data-ppcond="353">endif</span></u></td></tr>
+<tr><th id="359">359</th><td><u>#<span data-ppcond="359">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#85" data-ref="_M/ENETRESET">ENETRESET</a></u></td></tr>
+<tr><th id="360">360</th><td><i>/*</i></td></tr>
+<tr><th id="361">361</th><td><i>TRANS A network connection was reset because the remote host crashed. */</i></td></tr>
+<tr><th id="362">362</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[102] = &quot;Network dropped connection on reset&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#85" title="102" data-ref="_M/ENETRESET">ENETRESET</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Network dropped connection on reset&quot;" data-ref="_M/N_">N_</a>(<q>"Network dropped connection on reset"</q>))</td></tr>
+<tr><th id="363">363</th><td><u>#<span data-ppcond="359">endif</span></u></td></tr>
+<tr><th id="364">364</th><td><u>#<span data-ppcond="364">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#86" data-ref="_M/ECONNABORTED">ECONNABORTED</a></u></td></tr>
+<tr><th id="365">365</th><td><i>/*</i></td></tr>
+<tr><th id="366">366</th><td><i>TRANS A network connection was aborted locally. */</i></td></tr>
+<tr><th id="367">367</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[103] = &quot;Software caused connection abort&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#86" title="103" data-ref="_M/ECONNABORTED">ECONNABORTED</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Software caused connection abort&quot;" data-ref="_M/N_">N_</a>(<q>"Software caused connection abort"</q>))</td></tr>
+<tr><th id="368">368</th><td><u>#<span data-ppcond="364">endif</span></u></td></tr>
+<tr><th id="369">369</th><td><u>#<span data-ppcond="369">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#87" data-ref="_M/ECONNRESET">ECONNRESET</a></u></td></tr>
+<tr><th id="370">370</th><td><i>/*</i></td></tr>
+<tr><th id="371">371</th><td><i>TRANS A network connection was closed for reasons outside the control of the</i></td></tr>
+<tr><th id="372">372</th><td><i>TRANS local host, such as by the remote machine rebooting or an unrecoverable</i></td></tr>
+<tr><th id="373">373</th><td><i>TRANS protocol violation. */</i></td></tr>
+<tr><th id="374">374</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[104] = &quot;Connection reset by peer&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#87" title="104" data-ref="_M/ECONNRESET">ECONNRESET</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Connection reset by peer&quot;" data-ref="_M/N_">N_</a>(<q>"Connection reset by peer"</q>))</td></tr>
+<tr><th id="375">375</th><td><u>#<span data-ppcond="369">endif</span></u></td></tr>
+<tr><th id="376">376</th><td><u>#<span data-ppcond="376">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#88" data-ref="_M/ENOBUFS">ENOBUFS</a></u></td></tr>
+<tr><th id="377">377</th><td><i>/*</i></td></tr>
+<tr><th id="378">378</th><td><i>TRANS The kernel's buffers for I/O operations are all in use.  In GNU, this</i></td></tr>
+<tr><th id="379">379</th><td><i>TRANS error is always synonymous with @code{ENOMEM}; you may get one or the</i></td></tr>
+<tr><th id="380">380</th><td><i>TRANS other from network operations. */</i></td></tr>
+<tr><th id="381">381</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[105] = &quot;No buffer space available&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#88" title="105" data-ref="_M/ENOBUFS">ENOBUFS</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No buffer space available&quot;" data-ref="_M/N_">N_</a>(<q>"No buffer space available"</q>))</td></tr>
+<tr><th id="382">382</th><td><u>#<span data-ppcond="376">endif</span></u></td></tr>
+<tr><th id="383">383</th><td><u>#<span data-ppcond="383">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#89" data-ref="_M/EISCONN">EISCONN</a></u></td></tr>
+<tr><th id="384">384</th><td><i>/*</i></td></tr>
+<tr><th id="385">385</th><td><i>TRANS You tried to connect a socket that is already connected.</i></td></tr>
+<tr><th id="386">386</th><td><i>TRANS @xref{Connecting}. */</i></td></tr>
+<tr><th id="387">387</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[106] = &quot;Transport endpoint is already connected&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#89" title="106" data-ref="_M/EISCONN">EISCONN</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Transport endpoint is already connected&quot;" data-ref="_M/N_">N_</a>(<q>"Transport endpoint is already connected"</q>))</td></tr>
+<tr><th id="388">388</th><td><u>#<span data-ppcond="383">endif</span></u></td></tr>
+<tr><th id="389">389</th><td><u>#<span data-ppcond="389">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#90" data-ref="_M/ENOTCONN">ENOTCONN</a></u></td></tr>
+<tr><th id="390">390</th><td><i>/*</i></td></tr>
+<tr><th id="391">391</th><td><i>TRANS The socket is not connected to anything.  You get this error when you</i></td></tr>
+<tr><th id="392">392</th><td><i>TRANS try to transmit data over a socket, without first specifying a</i></td></tr>
+<tr><th id="393">393</th><td><i>TRANS destination for the data.  For a connectionless socket (for datagram</i></td></tr>
+<tr><th id="394">394</th><td><i>TRANS protocols, such as UDP), you get @code{EDESTADDRREQ} instead. */</i></td></tr>
+<tr><th id="395">395</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[107] = &quot;Transport endpoint is not connected&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#90" title="107" data-ref="_M/ENOTCONN">ENOTCONN</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Transport endpoint is not connected&quot;" data-ref="_M/N_">N_</a>(<q>"Transport endpoint is not connected"</q>))</td></tr>
+<tr><th id="396">396</th><td><u>#<span data-ppcond="389">endif</span></u></td></tr>
+<tr><th id="397">397</th><td><u>#<span data-ppcond="397">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#72" data-ref="_M/EDESTADDRREQ">EDESTADDRREQ</a></u></td></tr>
+<tr><th id="398">398</th><td><i>/*</i></td></tr>
+<tr><th id="399">399</th><td><i>TRANS No default destination address was set for the socket.  You get this</i></td></tr>
+<tr><th id="400">400</th><td><i>TRANS error when you try to transmit data over a connectionless socket,</i></td></tr>
+<tr><th id="401">401</th><td><i>TRANS without first specifying a destination for the data with @code{connect}. */</i></td></tr>
+<tr><th id="402">402</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[89] = &quot;Destination address required&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#72" title="89" data-ref="_M/EDESTADDRREQ">EDESTADDRREQ</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Destination address required&quot;" data-ref="_M/N_">N_</a>(<q>"Destination address required"</q>))</td></tr>
+<tr><th id="403">403</th><td><u>#<span data-ppcond="397">endif</span></u></td></tr>
+<tr><th id="404">404</th><td><u>#<span data-ppcond="404">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#91" data-ref="_M/ESHUTDOWN">ESHUTDOWN</a></u></td></tr>
+<tr><th id="405">405</th><td><i>/*</i></td></tr>
+<tr><th id="406">406</th><td><i>TRANS The socket has already been shut down. */</i></td></tr>
+<tr><th id="407">407</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[108] = &quot;Cannot send after transport endpoint shutdown&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#91" title="108" data-ref="_M/ESHUTDOWN">ESHUTDOWN</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Cannot send after transport endpoint shutdown&quot;" data-ref="_M/N_">N_</a>(<q>"Cannot send after transport endpoint shutdown"</q>))</td></tr>
+<tr><th id="408">408</th><td><u>#<span data-ppcond="404">endif</span></u></td></tr>
+<tr><th id="409">409</th><td><u>#<span data-ppcond="409">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#92" data-ref="_M/ETOOMANYREFS">ETOOMANYREFS</a></u></td></tr>
+<tr><th id="410">410</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[109] = &quot;Too many references: cannot splice&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#92" title="109" data-ref="_M/ETOOMANYREFS">ETOOMANYREFS</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Too many references: cannot splice&quot;" data-ref="_M/N_">N_</a>(<q>"Too many references: cannot splice"</q>))</td></tr>
+<tr><th id="411">411</th><td><u>#<span data-ppcond="409">endif</span></u></td></tr>
+<tr><th id="412">412</th><td><u>#<span data-ppcond="412">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#93" data-ref="_M/ETIMEDOUT">ETIMEDOUT</a></u></td></tr>
+<tr><th id="413">413</th><td><i>/*</i></td></tr>
+<tr><th id="414">414</th><td><i>TRANS A socket operation with a specified timeout received no response during</i></td></tr>
+<tr><th id="415">415</th><td><i>TRANS the timeout period. */</i></td></tr>
+<tr><th id="416">416</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[110] = &quot;Connection timed out&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#93" title="110" data-ref="_M/ETIMEDOUT">ETIMEDOUT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Connection timed out&quot;" data-ref="_M/N_">N_</a>(<q>"Connection timed out"</q>))</td></tr>
+<tr><th id="417">417</th><td><u>#<span data-ppcond="412">endif</span></u></td></tr>
+<tr><th id="418">418</th><td><u>#<span data-ppcond="418">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#94" data-ref="_M/ECONNREFUSED">ECONNREFUSED</a></u></td></tr>
+<tr><th id="419">419</th><td><i>/*</i></td></tr>
+<tr><th id="420">420</th><td><i>TRANS A remote host refused to allow the network connection (typically because</i></td></tr>
+<tr><th id="421">421</th><td><i>TRANS it is not running the requested service). */</i></td></tr>
+<tr><th id="422">422</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[111] = &quot;Connection refused&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#94" title="111" data-ref="_M/ECONNREFUSED">ECONNREFUSED</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Connection refused&quot;" data-ref="_M/N_">N_</a>(<q>"Connection refused"</q>))</td></tr>
+<tr><th id="423">423</th><td><u>#<span data-ppcond="418">endif</span></u></td></tr>
+<tr><th id="424">424</th><td><u>#<span data-ppcond="424">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#21" data-ref="_M/ELOOP">ELOOP</a></u></td></tr>
+<tr><th id="425">425</th><td><i>/*</i></td></tr>
+<tr><th id="426">426</th><td><i>TRANS Too many levels of symbolic links were encountered in looking up a file name.</i></td></tr>
+<tr><th id="427">427</th><td><i>TRANS This often indicates a cycle of symbolic links. */</i></td></tr>
+<tr><th id="428">428</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[40] = &quot;Too many levels of symbolic links&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#21" title="40" data-ref="_M/ELOOP">ELOOP</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Too many levels of symbolic links&quot;" data-ref="_M/N_">N_</a>(<q>"Too many levels of symbolic links"</q>))</td></tr>
+<tr><th id="429">429</th><td><u>#<span data-ppcond="424">endif</span></u></td></tr>
+<tr><th id="430">430</th><td><u>#<span data-ppcond="430">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#8" data-ref="_M/ENAMETOOLONG">ENAMETOOLONG</a></u></td></tr>
+<tr><th id="431">431</th><td><i>/*</i></td></tr>
+<tr><th id="432">432</th><td><i>TRANS Filename too long (longer than @code{PATH_MAX}; @pxref{Limits for</i></td></tr>
+<tr><th id="433">433</th><td><i>TRANS Files}) or host name too long (in @code{gethostname} or</i></td></tr>
+<tr><th id="434">434</th><td><i>TRANS @code{sethostname}; @pxref{Host Identification}). */</i></td></tr>
+<tr><th id="435">435</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[36] = &quot;File name too long&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#8" title="36" data-ref="_M/ENAMETOOLONG">ENAMETOOLONG</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;File name too long&quot;" data-ref="_M/N_">N_</a>(<q>"File name too long"</q>))</td></tr>
+<tr><th id="436">436</th><td><u>#<span data-ppcond="430">endif</span></u></td></tr>
+<tr><th id="437">437</th><td><u>#<span data-ppcond="437">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#95" data-ref="_M/EHOSTDOWN">EHOSTDOWN</a></u></td></tr>
+<tr><th id="438">438</th><td><i>/*</i></td></tr>
+<tr><th id="439">439</th><td><i>TRANS The remote host for a requested network connection is down. */</i></td></tr>
+<tr><th id="440">440</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[112] = &quot;Host is down&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#95" title="112" data-ref="_M/EHOSTDOWN">EHOSTDOWN</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Host is down&quot;" data-ref="_M/N_">N_</a>(<q>"Host is down"</q>))</td></tr>
+<tr><th id="441">441</th><td><u>#<span data-ppcond="437">endif</span></u></td></tr>
+<tr><th id="442">442</th><td><i>/*</i></td></tr>
+<tr><th id="443">443</th><td><i>TRANS The remote host for a requested network connection is not reachable. */</i></td></tr>
+<tr><th id="444">444</th><td><u>#<span data-ppcond="444">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#96" data-ref="_M/EHOSTUNREACH">EHOSTUNREACH</a></u></td></tr>
+<tr><th id="445">445</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[113] = &quot;No route to host&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#96" title="113" data-ref="_M/EHOSTUNREACH">EHOSTUNREACH</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No route to host&quot;" data-ref="_M/N_">N_</a>(<q>"No route to host"</q>))</td></tr>
+<tr><th id="446">446</th><td><u>#<span data-ppcond="444">endif</span></u></td></tr>
+<tr><th id="447">447</th><td><u>#<span data-ppcond="447">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#20" data-ref="_M/ENOTEMPTY">ENOTEMPTY</a></u></td></tr>
+<tr><th id="448">448</th><td><i>/*</i></td></tr>
+<tr><th id="449">449</th><td><i>TRANS Directory not empty, where an empty directory was expected.  Typically,</i></td></tr>
+<tr><th id="450">450</th><td><i>TRANS this error occurs when you are trying to delete a directory. */</i></td></tr>
+<tr><th id="451">451</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[39] = &quot;Directory not empty&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#20" title="39" data-ref="_M/ENOTEMPTY">ENOTEMPTY</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Directory not empty&quot;" data-ref="_M/N_">N_</a>(<q>"Directory not empty"</q>))</td></tr>
+<tr><th id="452">452</th><td><u>#<span data-ppcond="447">endif</span></u></td></tr>
+<tr><th id="453">453</th><td><u>#<span data-ppcond="453">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#70" data-ref="_M/EUSERS">EUSERS</a></u></td></tr>
+<tr><th id="454">454</th><td><i>/*</i></td></tr>
+<tr><th id="455">455</th><td><i>TRANS The file quota system is confused because there are too many users.</i></td></tr>
+<tr><th id="456">456</th><td><i>TRANS @c This can probably happen in a GNU system when using NFS. */</i></td></tr>
+<tr><th id="457">457</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[87] = &quot;Too many users&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#70" title="87" data-ref="_M/EUSERS">EUSERS</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Too many users&quot;" data-ref="_M/N_">N_</a>(<q>"Too many users"</q>))</td></tr>
+<tr><th id="458">458</th><td><u>#<span data-ppcond="453">endif</span></u></td></tr>
+<tr><th id="459">459</th><td><u>#<span data-ppcond="459">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#105" data-ref="_M/EDQUOT">EDQUOT</a></u></td></tr>
+<tr><th id="460">460</th><td><i>/*</i></td></tr>
+<tr><th id="461">461</th><td><i>TRANS The user's disk quota was exceeded. */</i></td></tr>
+<tr><th id="462">462</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[122] = &quot;Disk quota exceeded&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#105" title="122" data-ref="_M/EDQUOT">EDQUOT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Disk quota exceeded&quot;" data-ref="_M/N_">N_</a>(<q>"Disk quota exceeded"</q>))</td></tr>
+<tr><th id="463">463</th><td><u>#<span data-ppcond="459">endif</span></u></td></tr>
+<tr><th id="464">464</th><td><u>#<span data-ppcond="464">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#99" data-ref="_M/ESTALE">ESTALE</a></u></td></tr>
+<tr><th id="465">465</th><td><i>/*</i></td></tr>
+<tr><th id="466">466</th><td><i>TRANS This indicates an internal confusion in the</i></td></tr>
+<tr><th id="467">467</th><td><i>TRANS file system which is due to file system rearrangements on the server host</i></td></tr>
+<tr><th id="468">468</th><td><i>TRANS for NFS file systems or corruption in other file systems.</i></td></tr>
+<tr><th id="469">469</th><td><i>TRANS Repairing this condition usually requires unmounting, possibly repairing</i></td></tr>
+<tr><th id="470">470</th><td><i>TRANS and remounting the file system. */</i></td></tr>
+<tr><th id="471">471</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[116] = &quot;Stale file handle&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#99" title="116" data-ref="_M/ESTALE">ESTALE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Stale file handle&quot;" data-ref="_M/N_">N_</a>(<q>"Stale file handle"</q>))</td></tr>
+<tr><th id="472">472</th><td><u>#<span data-ppcond="464">endif</span></u></td></tr>
+<tr><th id="473">473</th><td><u>#<span data-ppcond="473">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#49" data-ref="_M/EREMOTE">EREMOTE</a></u></td></tr>
+<tr><th id="474">474</th><td><i>/*</i></td></tr>
+<tr><th id="475">475</th><td><i>TRANS An attempt was made to NFS-mount a remote file system with a file name that</i></td></tr>
+<tr><th id="476">476</th><td><i>TRANS already specifies an NFS-mounted file.</i></td></tr>
+<tr><th id="477">477</th><td><i>TRANS (This is an error on some operating systems, but we expect it to work</i></td></tr>
+<tr><th id="478">478</th><td><i>TRANS properly on @gnuhurdsystems{}, making this error code impossible.) */</i></td></tr>
+<tr><th id="479">479</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[66] = &quot;Object is remote&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#49" title="66" data-ref="_M/EREMOTE">EREMOTE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Object is remote&quot;" data-ref="_M/N_">N_</a>(<q>"Object is remote"</q>))</td></tr>
+<tr><th id="480">480</th><td><u>#<span data-ppcond="473">endif</span></u></td></tr>
+<tr><th id="481">481</th><td><u>#<span data-ppcond="481">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#9" data-ref="_M/ENOLCK">ENOLCK</a></u></td></tr>
+<tr><th id="482">482</th><td><i>/*</i></td></tr>
+<tr><th id="483">483</th><td><i>TRANS This is used by the file locking facilities; see</i></td></tr>
+<tr><th id="484">484</th><td><i>TRANS @ref{File Locks}.  This error is never generated by @gnuhurdsystems{}, but</i></td></tr>
+<tr><th id="485">485</th><td><i>TRANS it can result from an operation to an NFS server running another</i></td></tr>
+<tr><th id="486">486</th><td><i>TRANS operating system. */</i></td></tr>
+<tr><th id="487">487</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[37] = &quot;No locks available&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#9" title="37" data-ref="_M/ENOLCK">ENOLCK</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No locks available&quot;" data-ref="_M/N_">N_</a>(<q>"No locks available"</q>))</td></tr>
+<tr><th id="488">488</th><td><u>#<span data-ppcond="481">endif</span></u></td></tr>
+<tr><th id="489">489</th><td><u>#<span data-ppcond="489">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#18" data-ref="_M/ENOSYS">ENOSYS</a></u></td></tr>
+<tr><th id="490">490</th><td><i>/*</i></td></tr>
+<tr><th id="491">491</th><td><i>TRANS This indicates that the function called is</i></td></tr>
+<tr><th id="492">492</th><td><i>TRANS not implemented at all, either in the C library itself or in the</i></td></tr>
+<tr><th id="493">493</th><td><i>TRANS operating system.  When you get this error, you can be sure that this</i></td></tr>
+<tr><th id="494">494</th><td><i>TRANS particular function will always fail with @code{ENOSYS} unless you</i></td></tr>
+<tr><th id="495">495</th><td><i>TRANS install a new version of the C library or the operating system. */</i></td></tr>
+<tr><th id="496">496</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[38] = &quot;Function not implemented&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#18" title="38" data-ref="_M/ENOSYS">ENOSYS</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Function not implemented&quot;" data-ref="_M/N_">N_</a>(<q>"Function not implemented"</q>))</td></tr>
+<tr><th id="497">497</th><td><u>#<span data-ppcond="489">endif</span></u></td></tr>
+<tr><th id="498">498</th><td><u>#<span data-ppcond="498">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#67" data-ref="_M/EILSEQ">EILSEQ</a></u></td></tr>
+<tr><th id="499">499</th><td><i>/*</i></td></tr>
+<tr><th id="500">500</th><td><i>TRANS While decoding a multibyte character the function came along an invalid</i></td></tr>
+<tr><th id="501">501</th><td><i>TRANS or an incomplete sequence of bytes or the given wide character is invalid. */</i></td></tr>
+<tr><th id="502">502</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[84] = &quot;Invalid or incomplete multibyte or wide character&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#67" title="84" data-ref="_M/EILSEQ">EILSEQ</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Invalid or incomplete multibyte or wide character&quot;" data-ref="_M/N_">N_</a>(<q>"Invalid or incomplete multibyte or wide character"</q>))</td></tr>
+<tr><th id="503">503</th><td><u>#<span data-ppcond="498">endif</span></u></td></tr>
+<tr><th id="504">504</th><td><u>#<span data-ppcond="504">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#57" data-ref="_M/EBADMSG">EBADMSG</a></u></td></tr>
+<tr><th id="505">505</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[74] = &quot;Bad message&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#57" title="74" data-ref="_M/EBADMSG">EBADMSG</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Bad message&quot;" data-ref="_M/N_">N_</a>(<q>"Bad message"</q>))</td></tr>
+<tr><th id="506">506</th><td><u>#<span data-ppcond="504">endif</span></u></td></tr>
+<tr><th id="507">507</th><td><u>#<span data-ppcond="507">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#24" data-ref="_M/EIDRM">EIDRM</a></u></td></tr>
+<tr><th id="508">508</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[43] = &quot;Identifier removed&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#24" title="43" data-ref="_M/EIDRM">EIDRM</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Identifier removed&quot;" data-ref="_M/N_">N_</a>(<q>"Identifier removed"</q>))</td></tr>
+<tr><th id="509">509</th><td><u>#<span data-ppcond="507">endif</span></u></td></tr>
+<tr><th id="510">510</th><td><u>#<span data-ppcond="510">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#55" data-ref="_M/EMULTIHOP">EMULTIHOP</a></u></td></tr>
+<tr><th id="511">511</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[72] = &quot;Multihop attempted&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#55" title="72" data-ref="_M/EMULTIHOP">EMULTIHOP</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Multihop attempted&quot;" data-ref="_M/N_">N_</a>(<q>"Multihop attempted"</q>))</td></tr>
+<tr><th id="512">512</th><td><u>#<span data-ppcond="510">endif</span></u></td></tr>
+<tr><th id="513">513</th><td><u>#<span data-ppcond="513">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#44" data-ref="_M/ENODATA">ENODATA</a></u></td></tr>
+<tr><th id="514">514</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[61] = &quot;No data available&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#44" title="61" data-ref="_M/ENODATA">ENODATA</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No data available&quot;" data-ref="_M/N_">N_</a>(<q>"No data available"</q>))</td></tr>
+<tr><th id="515">515</th><td><u>#<span data-ppcond="513">endif</span></u></td></tr>
+<tr><th id="516">516</th><td><u>#<span data-ppcond="516">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#50" data-ref="_M/ENOLINK">ENOLINK</a></u></td></tr>
+<tr><th id="517">517</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[67] = &quot;Link has been severed&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#50" title="67" data-ref="_M/ENOLINK">ENOLINK</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Link has been severed&quot;" data-ref="_M/N_">N_</a>(<q>"Link has been severed"</q>))</td></tr>
+<tr><th id="518">518</th><td><u>#<span data-ppcond="516">endif</span></u></td></tr>
+<tr><th id="519">519</th><td><u>#<span data-ppcond="519">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#23" data-ref="_M/ENOMSG">ENOMSG</a></u></td></tr>
+<tr><th id="520">520</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[42] = &quot;No message of desired type&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#23" title="42" data-ref="_M/ENOMSG">ENOMSG</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No message of desired type&quot;" data-ref="_M/N_">N_</a>(<q>"No message of desired type"</q>))</td></tr>
+<tr><th id="521">521</th><td><u>#<span data-ppcond="519">endif</span></u></td></tr>
+<tr><th id="522">522</th><td><u>#<span data-ppcond="522">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#46" data-ref="_M/ENOSR">ENOSR</a></u></td></tr>
+<tr><th id="523">523</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[63] = &quot;Out of streams resources&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#46" title="63" data-ref="_M/ENOSR">ENOSR</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Out of streams resources&quot;" data-ref="_M/N_">N_</a>(<q>"Out of streams resources"</q>))</td></tr>
+<tr><th id="524">524</th><td><u>#<span data-ppcond="522">endif</span></u></td></tr>
+<tr><th id="525">525</th><td><u>#<span data-ppcond="525">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#43" data-ref="_M/ENOSTR">ENOSTR</a></u></td></tr>
+<tr><th id="526">526</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[60] = &quot;Device not a stream&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#43" title="60" data-ref="_M/ENOSTR">ENOSTR</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Device not a stream&quot;" data-ref="_M/N_">N_</a>(<q>"Device not a stream"</q>))</td></tr>
+<tr><th id="527">527</th><td><u>#<span data-ppcond="525">endif</span></u></td></tr>
+<tr><th id="528">528</th><td><u>#<span data-ppcond="528">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#58" data-ref="_M/EOVERFLOW">EOVERFLOW</a></u></td></tr>
+<tr><th id="529">529</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[75] = &quot;Value too large for defined data type&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#58" title="75" data-ref="_M/EOVERFLOW">EOVERFLOW</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Value too large for defined data type&quot;" data-ref="_M/N_">N_</a>(<q>"Value too large for defined data type"</q>))</td></tr>
+<tr><th id="530">530</th><td><u>#<span data-ppcond="528">endif</span></u></td></tr>
+<tr><th id="531">531</th><td><u>#<span data-ppcond="531">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#54" data-ref="_M/EPROTO">EPROTO</a></u></td></tr>
+<tr><th id="532">532</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[71] = &quot;Protocol error&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#54" title="71" data-ref="_M/EPROTO">EPROTO</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Protocol error&quot;" data-ref="_M/N_">N_</a>(<q>"Protocol error"</q>))</td></tr>
+<tr><th id="533">533</th><td><u>#<span data-ppcond="531">endif</span></u></td></tr>
+<tr><th id="534">534</th><td><u>#<span data-ppcond="534">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#45" data-ref="_M/ETIME">ETIME</a></u></td></tr>
+<tr><th id="535">535</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[62] = &quot;Timer expired&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#45" title="62" data-ref="_M/ETIME">ETIME</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Timer expired&quot;" data-ref="_M/N_">N_</a>(<q>"Timer expired"</q>))</td></tr>
+<tr><th id="536">536</th><td><u>#<span data-ppcond="534">endif</span></u></td></tr>
+<tr><th id="537">537</th><td><u>#<span data-ppcond="537">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#109" data-ref="_M/ECANCELED">ECANCELED</a></u></td></tr>
+<tr><th id="538">538</th><td><i>/*</i></td></tr>
+<tr><th id="539">539</th><td><i>TRANS An asynchronous operation was canceled before it</i></td></tr>
+<tr><th id="540">540</th><td><i>TRANS completed.  @xref{Asynchronous I/O}.  When you call @code{aio_cancel},</i></td></tr>
+<tr><th id="541">541</th><td><i>TRANS the normal result is for the operations affected to complete with this</i></td></tr>
+<tr><th id="542">542</th><td><i>TRANS error; @pxref{Cancel AIO Operations}. */</i></td></tr>
+<tr><th id="543">543</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[125] = &quot;Operation canceled&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#109" title="125" data-ref="_M/ECANCELED">ECANCELED</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Operation canceled&quot;" data-ref="_M/N_">N_</a>(<q>"Operation canceled"</q>))</td></tr>
+<tr><th id="544">544</th><td><u>#<span data-ppcond="537">endif</span></u></td></tr>
+<tr><th id="545">545</th><td><u>#<span data-ppcond="545">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#116" data-ref="_M/EOWNERDEAD">EOWNERDEAD</a></u></td></tr>
+<tr><th id="546">546</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[130] = &quot;Owner died&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#116" title="130" data-ref="_M/EOWNERDEAD">EOWNERDEAD</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Owner died&quot;" data-ref="_M/N_">N_</a>(<q>"Owner died"</q>))</td></tr>
+<tr><th id="547">547</th><td><u>#<span data-ppcond="545">endif</span></u></td></tr>
+<tr><th id="548">548</th><td><u>#<span data-ppcond="548">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#117" data-ref="_M/ENOTRECOVERABLE">ENOTRECOVERABLE</a></u></td></tr>
+<tr><th id="549">549</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[131] = &quot;State not recoverable&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#117" title="131" data-ref="_M/ENOTRECOVERABLE">ENOTRECOVERABLE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;State not recoverable&quot;" data-ref="_M/N_">N_</a>(<q>"State not recoverable"</q>))</td></tr>
+<tr><th id="550">550</th><td><u>#<span data-ppcond="548">endif</span></u></td></tr>
+<tr><th id="551">551</th><td><u>#<span data-ppcond="551">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#68" data-ref="_M/ERESTART">ERESTART</a></u></td></tr>
+<tr><th id="552">552</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[85] = &quot;Interrupted system call should be restarted&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#68" title="85" data-ref="_M/ERESTART">ERESTART</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Interrupted system call should be restarted&quot;" data-ref="_M/N_">N_</a>(<q>"Interrupted system call should be restarted"</q>))</td></tr>
+<tr><th id="553">553</th><td><u>#<span data-ppcond="551">endif</span></u></td></tr>
+<tr><th id="554">554</th><td><u>#<span data-ppcond="554">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#25" data-ref="_M/ECHRNG">ECHRNG</a></u></td></tr>
+<tr><th id="555">555</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[44] = &quot;Channel number out of range&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#25" title="44" data-ref="_M/ECHRNG">ECHRNG</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Channel number out of range&quot;" data-ref="_M/N_">N_</a>(<q>"Channel number out of range"</q>))</td></tr>
+<tr><th id="556">556</th><td><u>#<span data-ppcond="554">endif</span></u></td></tr>
+<tr><th id="557">557</th><td><u>#<span data-ppcond="557">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#26" data-ref="_M/EL2NSYNC">EL2NSYNC</a></u></td></tr>
+<tr><th id="558">558</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[45] = &quot;Level 2 not synchronized&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#26" title="45" data-ref="_M/EL2NSYNC">EL2NSYNC</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Level 2 not synchronized&quot;" data-ref="_M/N_">N_</a>(<q>"Level 2 not synchronized"</q>))</td></tr>
+<tr><th id="559">559</th><td><u>#<span data-ppcond="557">endif</span></u></td></tr>
+<tr><th id="560">560</th><td><u>#<span data-ppcond="560">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#27" data-ref="_M/EL3HLT">EL3HLT</a></u></td></tr>
+<tr><th id="561">561</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[46] = &quot;Level 3 halted&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#27" title="46" data-ref="_M/EL3HLT">EL3HLT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Level 3 halted&quot;" data-ref="_M/N_">N_</a>(<q>"Level 3 halted"</q>))</td></tr>
+<tr><th id="562">562</th><td><u>#<span data-ppcond="560">endif</span></u></td></tr>
+<tr><th id="563">563</th><td><u>#<span data-ppcond="563">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#28" data-ref="_M/EL3RST">EL3RST</a></u></td></tr>
+<tr><th id="564">564</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[47] = &quot;Level 3 reset&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#28" title="47" data-ref="_M/EL3RST">EL3RST</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Level 3 reset&quot;" data-ref="_M/N_">N_</a>(<q>"Level 3 reset"</q>))</td></tr>
+<tr><th id="565">565</th><td><u>#<span data-ppcond="563">endif</span></u></td></tr>
+<tr><th id="566">566</th><td><u>#<span data-ppcond="566">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#29" data-ref="_M/ELNRNG">ELNRNG</a></u></td></tr>
+<tr><th id="567">567</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[48] = &quot;Link number out of range&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#29" title="48" data-ref="_M/ELNRNG">ELNRNG</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Link number out of range&quot;" data-ref="_M/N_">N_</a>(<q>"Link number out of range"</q>))</td></tr>
+<tr><th id="568">568</th><td><u>#<span data-ppcond="566">endif</span></u></td></tr>
+<tr><th id="569">569</th><td><u>#<span data-ppcond="569">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#30" data-ref="_M/EUNATCH">EUNATCH</a></u></td></tr>
+<tr><th id="570">570</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[49] = &quot;Protocol driver not attached&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#30" title="49" data-ref="_M/EUNATCH">EUNATCH</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Protocol driver not attached&quot;" data-ref="_M/N_">N_</a>(<q>"Protocol driver not attached"</q>))</td></tr>
+<tr><th id="571">571</th><td><u>#<span data-ppcond="569">endif</span></u></td></tr>
+<tr><th id="572">572</th><td><u>#<span data-ppcond="572">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#31" data-ref="_M/ENOCSI">ENOCSI</a></u></td></tr>
+<tr><th id="573">573</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[50] = &quot;No CSI structure available&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#31" title="50" data-ref="_M/ENOCSI">ENOCSI</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No CSI structure available&quot;" data-ref="_M/N_">N_</a>(<q>"No CSI structure available"</q>))</td></tr>
+<tr><th id="574">574</th><td><u>#<span data-ppcond="572">endif</span></u></td></tr>
+<tr><th id="575">575</th><td><u>#<span data-ppcond="575">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#32" data-ref="_M/EL2HLT">EL2HLT</a></u></td></tr>
+<tr><th id="576">576</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[51] = &quot;Level 2 halted&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#32" title="51" data-ref="_M/EL2HLT">EL2HLT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Level 2 halted&quot;" data-ref="_M/N_">N_</a>(<q>"Level 2 halted"</q>))</td></tr>
+<tr><th id="577">577</th><td><u>#<span data-ppcond="575">endif</span></u></td></tr>
+<tr><th id="578">578</th><td><u>#<span data-ppcond="578">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#33" data-ref="_M/EBADE">EBADE</a></u></td></tr>
+<tr><th id="579">579</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[52] = &quot;Invalid exchange&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#33" title="52" data-ref="_M/EBADE">EBADE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Invalid exchange&quot;" data-ref="_M/N_">N_</a>(<q>"Invalid exchange"</q>))</td></tr>
+<tr><th id="580">580</th><td><u>#<span data-ppcond="578">endif</span></u></td></tr>
+<tr><th id="581">581</th><td><u>#<span data-ppcond="581">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#34" data-ref="_M/EBADR">EBADR</a></u></td></tr>
+<tr><th id="582">582</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[53] = &quot;Invalid request descriptor&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#34" title="53" data-ref="_M/EBADR">EBADR</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Invalid request descriptor&quot;" data-ref="_M/N_">N_</a>(<q>"Invalid request descriptor"</q>))</td></tr>
+<tr><th id="583">583</th><td><u>#<span data-ppcond="581">endif</span></u></td></tr>
+<tr><th id="584">584</th><td><u>#<span data-ppcond="584">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#35" data-ref="_M/EXFULL">EXFULL</a></u></td></tr>
+<tr><th id="585">585</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[54] = &quot;Exchange full&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#35" title="54" data-ref="_M/EXFULL">EXFULL</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Exchange full&quot;" data-ref="_M/N_">N_</a>(<q>"Exchange full"</q>))</td></tr>
+<tr><th id="586">586</th><td><u>#<span data-ppcond="584">endif</span></u></td></tr>
+<tr><th id="587">587</th><td><u>#<span data-ppcond="587">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#36" data-ref="_M/ENOANO">ENOANO</a></u></td></tr>
+<tr><th id="588">588</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[55] = &quot;No anode&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#36" title="55" data-ref="_M/ENOANO">ENOANO</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No anode&quot;" data-ref="_M/N_">N_</a>(<q>"No anode"</q>))</td></tr>
+<tr><th id="589">589</th><td><u>#<span data-ppcond="587">endif</span></u></td></tr>
+<tr><th id="590">590</th><td><u>#<span data-ppcond="590">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#37" data-ref="_M/EBADRQC">EBADRQC</a></u></td></tr>
+<tr><th id="591">591</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[56] = &quot;Invalid request code&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#37" title="56" data-ref="_M/EBADRQC">EBADRQC</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Invalid request code&quot;" data-ref="_M/N_">N_</a>(<q>"Invalid request code"</q>))</td></tr>
+<tr><th id="592">592</th><td><u>#<span data-ppcond="590">endif</span></u></td></tr>
+<tr><th id="593">593</th><td><u>#<span data-ppcond="593">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#38" data-ref="_M/EBADSLT">EBADSLT</a></u></td></tr>
+<tr><th id="594">594</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[57] = &quot;Invalid slot&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#38" title="57" data-ref="_M/EBADSLT">EBADSLT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Invalid slot&quot;" data-ref="_M/N_">N_</a>(<q>"Invalid slot"</q>))</td></tr>
+<tr><th id="595">595</th><td><u>#<span data-ppcond="593">endif</span></u></td></tr>
+<tr><th id="596">596</th><td><u>#<span data-ppcond="596">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#42" data-ref="_M/EBFONT">EBFONT</a></u></td></tr>
+<tr><th id="597">597</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[59] = &quot;Bad font file format&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#42" title="59" data-ref="_M/EBFONT">EBFONT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Bad font file format&quot;" data-ref="_M/N_">N_</a>(<q>"Bad font file format"</q>))</td></tr>
+<tr><th id="598">598</th><td><u>#<span data-ppcond="596">endif</span></u></td></tr>
+<tr><th id="599">599</th><td><u>#<span data-ppcond="599">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#47" data-ref="_M/ENONET">ENONET</a></u></td></tr>
+<tr><th id="600">600</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[64] = &quot;Machine is not on the network&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#47" title="64" data-ref="_M/ENONET">ENONET</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Machine is not on the network&quot;" data-ref="_M/N_">N_</a>(<q>"Machine is not on the network"</q>))</td></tr>
+<tr><th id="601">601</th><td><u>#<span data-ppcond="599">endif</span></u></td></tr>
+<tr><th id="602">602</th><td><u>#<span data-ppcond="602">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#48" data-ref="_M/ENOPKG">ENOPKG</a></u></td></tr>
+<tr><th id="603">603</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[65] = &quot;Package not installed&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#48" title="65" data-ref="_M/ENOPKG">ENOPKG</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Package not installed&quot;" data-ref="_M/N_">N_</a>(<q>"Package not installed"</q>))</td></tr>
+<tr><th id="604">604</th><td><u>#<span data-ppcond="602">endif</span></u></td></tr>
+<tr><th id="605">605</th><td><u>#<span data-ppcond="605">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#51" data-ref="_M/EADV">EADV</a></u></td></tr>
+<tr><th id="606">606</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[68] = &quot;Advertise error&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#51" title="68" data-ref="_M/EADV">EADV</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Advertise error&quot;" data-ref="_M/N_">N_</a>(<q>"Advertise error"</q>))</td></tr>
+<tr><th id="607">607</th><td><u>#<span data-ppcond="605">endif</span></u></td></tr>
+<tr><th id="608">608</th><td><u>#<span data-ppcond="608">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#52" data-ref="_M/ESRMNT">ESRMNT</a></u></td></tr>
+<tr><th id="609">609</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[69] = &quot;Srmount error&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#52" title="69" data-ref="_M/ESRMNT">ESRMNT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Srmount error&quot;" data-ref="_M/N_">N_</a>(<q>"Srmount error"</q>))</td></tr>
+<tr><th id="610">610</th><td><u>#<span data-ppcond="608">endif</span></u></td></tr>
+<tr><th id="611">611</th><td><u>#<span data-ppcond="611">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#53" data-ref="_M/ECOMM">ECOMM</a></u></td></tr>
+<tr><th id="612">612</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[70] = &quot;Communication error on send&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#53" title="70" data-ref="_M/ECOMM">ECOMM</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Communication error on send&quot;" data-ref="_M/N_">N_</a>(<q>"Communication error on send"</q>))</td></tr>
+<tr><th id="613">613</th><td><u>#<span data-ppcond="611">endif</span></u></td></tr>
+<tr><th id="614">614</th><td><u>#<span data-ppcond="614">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#56" data-ref="_M/EDOTDOT">EDOTDOT</a></u></td></tr>
+<tr><th id="615">615</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[73] = &quot;RFS specific error&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#56" title="73" data-ref="_M/EDOTDOT">EDOTDOT</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;RFS specific error&quot;" data-ref="_M/N_">N_</a>(<q>"RFS specific error"</q>))</td></tr>
+<tr><th id="616">616</th><td><u>#<span data-ppcond="614">endif</span></u></td></tr>
+<tr><th id="617">617</th><td><u>#<span data-ppcond="617">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#59" data-ref="_M/ENOTUNIQ">ENOTUNIQ</a></u></td></tr>
+<tr><th id="618">618</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[76] = &quot;Name not unique on network&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#59" title="76" data-ref="_M/ENOTUNIQ">ENOTUNIQ</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Name not unique on network&quot;" data-ref="_M/N_">N_</a>(<q>"Name not unique on network"</q>))</td></tr>
+<tr><th id="619">619</th><td><u>#<span data-ppcond="617">endif</span></u></td></tr>
+<tr><th id="620">620</th><td><u>#<span data-ppcond="620">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#60" data-ref="_M/EBADFD">EBADFD</a></u></td></tr>
+<tr><th id="621">621</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[77] = &quot;File descriptor in bad state&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#60" title="77" data-ref="_M/EBADFD">EBADFD</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;File descriptor in bad state&quot;" data-ref="_M/N_">N_</a>(<q>"File descriptor in bad state"</q>))</td></tr>
+<tr><th id="622">622</th><td><u>#<span data-ppcond="620">endif</span></u></td></tr>
+<tr><th id="623">623</th><td><u>#<span data-ppcond="623">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#61" data-ref="_M/EREMCHG">EREMCHG</a></u></td></tr>
+<tr><th id="624">624</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[78] = &quot;Remote address changed&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#61" title="78" data-ref="_M/EREMCHG">EREMCHG</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Remote address changed&quot;" data-ref="_M/N_">N_</a>(<q>"Remote address changed"</q>))</td></tr>
+<tr><th id="625">625</th><td><u>#<span data-ppcond="623">endif</span></u></td></tr>
+<tr><th id="626">626</th><td><u>#<span data-ppcond="626">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#62" data-ref="_M/ELIBACC">ELIBACC</a></u></td></tr>
+<tr><th id="627">627</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[79] = &quot;Can not access a needed shared library&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#62" title="79" data-ref="_M/ELIBACC">ELIBACC</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Can not access a needed shared library&quot;" data-ref="_M/N_">N_</a>(<q>"Can not access a needed shared library"</q>))</td></tr>
+<tr><th id="628">628</th><td><u>#<span data-ppcond="626">endif</span></u></td></tr>
+<tr><th id="629">629</th><td><u>#<span data-ppcond="629">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#63" data-ref="_M/ELIBBAD">ELIBBAD</a></u></td></tr>
+<tr><th id="630">630</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[80] = &quot;Accessing a corrupted shared library&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#63" title="80" data-ref="_M/ELIBBAD">ELIBBAD</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Accessing a corrupted shared library&quot;" data-ref="_M/N_">N_</a>(<q>"Accessing a corrupted shared library"</q>))</td></tr>
+<tr><th id="631">631</th><td><u>#<span data-ppcond="629">endif</span></u></td></tr>
+<tr><th id="632">632</th><td><u>#<span data-ppcond="632">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#64" data-ref="_M/ELIBSCN">ELIBSCN</a></u></td></tr>
+<tr><th id="633">633</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[81] = &quot;.lib section in a.out corrupted&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#64" title="81" data-ref="_M/ELIBSCN">ELIBSCN</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;.lib section in a.out corrupted&quot;" data-ref="_M/N_">N_</a>(<q>".lib section in a.out corrupted"</q>))</td></tr>
+<tr><th id="634">634</th><td><u>#<span data-ppcond="632">endif</span></u></td></tr>
+<tr><th id="635">635</th><td><u>#<span data-ppcond="635">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#65" data-ref="_M/ELIBMAX">ELIBMAX</a></u></td></tr>
+<tr><th id="636">636</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[82] = &quot;Attempting to link in too many shared libraries&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#65" title="82" data-ref="_M/ELIBMAX">ELIBMAX</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Attempting to link in too many shared libraries&quot;" data-ref="_M/N_">N_</a>(<q>"Attempting to link in too many shared libraries"</q>))</td></tr>
+<tr><th id="637">637</th><td><u>#<span data-ppcond="635">endif</span></u></td></tr>
+<tr><th id="638">638</th><td><u>#<span data-ppcond="638">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#66" data-ref="_M/ELIBEXEC">ELIBEXEC</a></u></td></tr>
+<tr><th id="639">639</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[83] = &quot;Cannot exec a shared library directly&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#66" title="83" data-ref="_M/ELIBEXEC">ELIBEXEC</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Cannot exec a shared library directly&quot;" data-ref="_M/N_">N_</a>(<q>"Cannot exec a shared library directly"</q>))</td></tr>
+<tr><th id="640">640</th><td><u>#<span data-ppcond="638">endif</span></u></td></tr>
+<tr><th id="641">641</th><td><u>#<span data-ppcond="641">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#69" data-ref="_M/ESTRPIPE">ESTRPIPE</a></u></td></tr>
+<tr><th id="642">642</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[86] = &quot;Streams pipe error&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#69" title="86" data-ref="_M/ESTRPIPE">ESTRPIPE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Streams pipe error&quot;" data-ref="_M/N_">N_</a>(<q>"Streams pipe error"</q>))</td></tr>
+<tr><th id="643">643</th><td><u>#<span data-ppcond="641">endif</span></u></td></tr>
+<tr><th id="644">644</th><td><u>#<span data-ppcond="644">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#100" data-ref="_M/EUCLEAN">EUCLEAN</a></u></td></tr>
+<tr><th id="645">645</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[117] = &quot;Structure needs cleaning&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#100" title="117" data-ref="_M/EUCLEAN">EUCLEAN</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Structure needs cleaning&quot;" data-ref="_M/N_">N_</a>(<q>"Structure needs cleaning"</q>))</td></tr>
+<tr><th id="646">646</th><td><u>#<span data-ppcond="644">endif</span></u></td></tr>
+<tr><th id="647">647</th><td><u>#<span data-ppcond="647">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#101" data-ref="_M/ENOTNAM">ENOTNAM</a></u></td></tr>
+<tr><th id="648">648</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[118] = &quot;Not a XENIX named type file&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#101" title="118" data-ref="_M/ENOTNAM">ENOTNAM</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Not a XENIX named type file&quot;" data-ref="_M/N_">N_</a>(<q>"Not a XENIX named type file"</q>))</td></tr>
+<tr><th id="649">649</th><td><u>#<span data-ppcond="647">endif</span></u></td></tr>
+<tr><th id="650">650</th><td><u>#<span data-ppcond="650">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#102" data-ref="_M/ENAVAIL">ENAVAIL</a></u></td></tr>
+<tr><th id="651">651</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[119] = &quot;No XENIX semaphores available&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#102" title="119" data-ref="_M/ENAVAIL">ENAVAIL</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No XENIX semaphores available&quot;" data-ref="_M/N_">N_</a>(<q>"No XENIX semaphores available"</q>))</td></tr>
+<tr><th id="652">652</th><td><u>#<span data-ppcond="650">endif</span></u></td></tr>
+<tr><th id="653">653</th><td><u>#<span data-ppcond="653">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#103" data-ref="_M/EISNAM">EISNAM</a></u></td></tr>
+<tr><th id="654">654</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[120] = &quot;Is a named type file&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#103" title="120" data-ref="_M/EISNAM">EISNAM</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Is a named type file&quot;" data-ref="_M/N_">N_</a>(<q>"Is a named type file"</q>))</td></tr>
+<tr><th id="655">655</th><td><u>#<span data-ppcond="653">endif</span></u></td></tr>
+<tr><th id="656">656</th><td><u>#<span data-ppcond="656">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#104" data-ref="_M/EREMOTEIO">EREMOTEIO</a></u></td></tr>
+<tr><th id="657">657</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[121] = &quot;Remote I/O error&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#104" title="121" data-ref="_M/EREMOTEIO">EREMOTEIO</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Remote I/O error&quot;" data-ref="_M/N_">N_</a>(<q>"Remote I/O error"</q>))</td></tr>
+<tr><th id="658">658</th><td><u>#<span data-ppcond="656">endif</span></u></td></tr>
+<tr><th id="659">659</th><td><u>#<span data-ppcond="659">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#107" data-ref="_M/ENOMEDIUM">ENOMEDIUM</a></u></td></tr>
+<tr><th id="660">660</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[123] = &quot;No medium found&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#107" title="123" data-ref="_M/ENOMEDIUM">ENOMEDIUM</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;No medium found&quot;" data-ref="_M/N_">N_</a>(<q>"No medium found"</q>))</td></tr>
+<tr><th id="661">661</th><td><u>#<span data-ppcond="659">endif</span></u></td></tr>
+<tr><th id="662">662</th><td><u>#<span data-ppcond="662">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#108" data-ref="_M/EMEDIUMTYPE">EMEDIUMTYPE</a></u></td></tr>
+<tr><th id="663">663</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[124] = &quot;Wrong medium type&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#108" title="124" data-ref="_M/EMEDIUMTYPE">EMEDIUMTYPE</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Wrong medium type&quot;" data-ref="_M/N_">N_</a>(<q>"Wrong medium type"</q>))</td></tr>
+<tr><th id="664">664</th><td><u>#<span data-ppcond="662">endif</span></u></td></tr>
+<tr><th id="665">665</th><td><u>#<span data-ppcond="665">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#110" data-ref="_M/ENOKEY">ENOKEY</a></u></td></tr>
+<tr><th id="666">666</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[126] = &quot;Required key not available&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#110" title="126" data-ref="_M/ENOKEY">ENOKEY</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Required key not available&quot;" data-ref="_M/N_">N_</a>(<q>"Required key not available"</q>))</td></tr>
+<tr><th id="667">667</th><td><u>#<span data-ppcond="665">endif</span></u></td></tr>
+<tr><th id="668">668</th><td><u>#<span data-ppcond="668">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#111" data-ref="_M/EKEYEXPIRED">EKEYEXPIRED</a></u></td></tr>
+<tr><th id="669">669</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[127] = &quot;Key has expired&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#111" title="127" data-ref="_M/EKEYEXPIRED">EKEYEXPIRED</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Key has expired&quot;" data-ref="_M/N_">N_</a>(<q>"Key has expired"</q>))</td></tr>
+<tr><th id="670">670</th><td><u>#<span data-ppcond="668">endif</span></u></td></tr>
+<tr><th id="671">671</th><td><u>#<span data-ppcond="671">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#112" data-ref="_M/EKEYREVOKED">EKEYREVOKED</a></u></td></tr>
+<tr><th id="672">672</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[128] = &quot;Key has been revoked&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#112" title="128" data-ref="_M/EKEYREVOKED">EKEYREVOKED</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Key has been revoked&quot;" data-ref="_M/N_">N_</a>(<q>"Key has been revoked"</q>))</td></tr>
+<tr><th id="673">673</th><td><u>#<span data-ppcond="671">endif</span></u></td></tr>
+<tr><th id="674">674</th><td><u>#<span data-ppcond="674">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#113" data-ref="_M/EKEYREJECTED">EKEYREJECTED</a></u></td></tr>
+<tr><th id="675">675</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[129] = &quot;Key was rejected by service&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#113" title="129" data-ref="_M/EKEYREJECTED">EKEYREJECTED</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Key was rejected by service&quot;" data-ref="_M/N_">N_</a>(<q>"Key was rejected by service"</q>))</td></tr>
+<tr><th id="676">676</th><td><u>#<span data-ppcond="674">endif</span></u></td></tr>
+<tr><th id="677">677</th><td><u>#<span data-ppcond="677">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#119" data-ref="_M/ERFKILL">ERFKILL</a></u></td></tr>
+<tr><th id="678">678</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[132] = &quot;Operation not possible due to RF-kill&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#119" title="132" data-ref="_M/ERFKILL">ERFKILL</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Operation not possible due to RF-kill&quot;" data-ref="_M/N_">N_</a>(<q>"Operation not possible due to RF-kill"</q>))</td></tr>
+<tr><th id="679">679</th><td><u>#<span data-ppcond="677">endif</span></u></td></tr>
+<tr><th id="680">680</th><td><u>#<span data-ppcond="680">ifdef</span> <a class="macro" href="../../../include/asm-generic/errno.h.html#121" data-ref="_M/EHWPOISON">EHWPOISON</a></u></td></tr>
+<tr><th id="681">681</th><td><a class="macro" href="../../stdio-common/errlist.c.html#29" title="[133] = &quot;Memory page has hardware error&quot;," data-ref="_M/_S">_S</a>(<a class="macro" href="../../../include/asm-generic/errno.h.html#121" title="133" data-ref="_M/EHWPOISON">EHWPOISON</a>, <a class="macro" href="../../include/libintl.h.html#66" title="&quot;Memory page has hardware error&quot;" data-ref="_M/N_">N_</a>(<q>"Memory page has hardware error"</q>))</td></tr>
+<tr><th id="682">682</th><td><u>#<span data-ppcond="680">endif</span></u></td></tr>
+<tr><th id="683">683</th><td><u>#<span data-ppcond="683">ifdef</span> <span class="macro" data-ref="_M/EBADRPC">EBADRPC</span></u></td></tr>
+<tr><th id="684">684</th><td>_S(EBADRPC, N_(<q>"RPC struct is bad"</q>))</td></tr>
+<tr><th id="685">685</th><td><u>#<span data-ppcond="683">endif</span></u></td></tr>
+<tr><th id="686">686</th><td><u>#<span data-ppcond="686">ifdef</span> <span class="macro" data-ref="_M/EFTYPE">EFTYPE</span></u></td></tr>
+<tr><th id="687">687</th><td><i>/*</i></td></tr>
+<tr><th id="688">688</th><td><i>TRANS The file was the wrong type for the</i></td></tr>
+<tr><th id="689">689</th><td><i>TRANS operation, or a data file had the wrong format.</i></td></tr>
+<tr><th id="690">690</th><td><i>TRANS</i></td></tr>
+<tr><th id="691">691</th><td><i>TRANS On some systems @code{chmod} returns this error if you try to set the</i></td></tr>
+<tr><th id="692">692</th><td><i>TRANS sticky bit on a non-directory file; @pxref{Setting Permissions}. */</i></td></tr>
+<tr><th id="693">693</th><td>_S(EFTYPE, N_(<q>"Inappropriate file type or format"</q>))</td></tr>
+<tr><th id="694">694</th><td><u>#<span data-ppcond="686">endif</span></u></td></tr>
+<tr><th id="695">695</th><td><u>#<span data-ppcond="695">ifdef</span> <span class="macro" data-ref="_M/EPROCUNAVAIL">EPROCUNAVAIL</span></u></td></tr>
+<tr><th id="696">696</th><td>_S(EPROCUNAVAIL, N_(<q>"RPC bad procedure for program"</q>))</td></tr>
+<tr><th id="697">697</th><td><u>#<span data-ppcond="695">endif</span></u></td></tr>
+<tr><th id="698">698</th><td><u>#<span data-ppcond="698">ifdef</span> <span class="macro" data-ref="_M/EAUTH">EAUTH</span></u></td></tr>
+<tr><th id="699">699</th><td>_S(EAUTH, N_(<q>"Authentication error"</q>))</td></tr>
+<tr><th id="700">700</th><td><u>#<span data-ppcond="698">endif</span></u></td></tr>
+<tr><th id="701">701</th><td><u>#<span data-ppcond="701">ifdef</span> <span class="macro" data-ref="_M/EDIED">EDIED</span></u></td></tr>
+<tr><th id="702">702</th><td><i>/*</i></td></tr>
+<tr><th id="703">703</th><td><i>TRANS On @gnuhurdsystems{}, opening a file returns this error when the file is</i></td></tr>
+<tr><th id="704">704</th><td><i>TRANS translated by a program and the translator program dies while starting</i></td></tr>
+<tr><th id="705">705</th><td><i>TRANS up, before it has connected to the file. */</i></td></tr>
+<tr><th id="706">706</th><td>_S(EDIED, N_(<q>"Translator died"</q>))</td></tr>
+<tr><th id="707">707</th><td><u>#<span data-ppcond="701">endif</span></u></td></tr>
+<tr><th id="708">708</th><td><u>#<span data-ppcond="708">ifdef</span> <span class="macro" data-ref="_M/ERPCMISMATCH">ERPCMISMATCH</span></u></td></tr>
+<tr><th id="709">709</th><td>_S(ERPCMISMATCH, N_(<q>"RPC version wrong"</q>))</td></tr>
+<tr><th id="710">710</th><td><u>#<span data-ppcond="708">endif</span></u></td></tr>
+<tr><th id="711">711</th><td><u>#<span data-ppcond="711">ifdef</span> <span class="macro" data-ref="_M/EGREGIOUS">EGREGIOUS</span></u></td></tr>
+<tr><th id="712">712</th><td><i>/*</i></td></tr>
+<tr><th id="713">713</th><td><i>TRANS You did @strong{what}? */</i></td></tr>
+<tr><th id="714">714</th><td>_S(EGREGIOUS, N_(<q>"You really blew it this time"</q>))</td></tr>
+<tr><th id="715">715</th><td><u>#<span data-ppcond="711">endif</span></u></td></tr>
+<tr><th id="716">716</th><td><u>#<span data-ppcond="716">ifdef</span> <span class="macro" data-ref="_M/EPROCLIM">EPROCLIM</span></u></td></tr>
+<tr><th id="717">717</th><td><i>/*</i></td></tr>
+<tr><th id="718">718</th><td><i>TRANS This means that the per-user limit on new process would be exceeded by</i></td></tr>
+<tr><th id="719">719</th><td><i>TRANS an attempted @code{fork}.  @xref{Limits on Resources}, for details on</i></td></tr>
+<tr><th id="720">720</th><td><i>TRANS the @code{RLIMIT_NPROC} limit. */</i></td></tr>
+<tr><th id="721">721</th><td>_S(EPROCLIM, N_(<q>"Too many processes"</q>))</td></tr>
+<tr><th id="722">722</th><td><u>#<span data-ppcond="716">endif</span></u></td></tr>
+<tr><th id="723">723</th><td><u>#<span data-ppcond="723">ifdef</span> <span class="macro" data-ref="_M/EGRATUITOUS">EGRATUITOUS</span></u></td></tr>
+<tr><th id="724">724</th><td><i>/*</i></td></tr>
+<tr><th id="725">725</th><td><i>TRANS This error code has no purpose. */</i></td></tr>
+<tr><th id="726">726</th><td>_S(EGRATUITOUS, N_(<q>"Gratuitous error"</q>))</td></tr>
+<tr><th id="727">727</th><td><u>#<span data-ppcond="723">endif</span></u></td></tr>
+<tr><th id="728">728</th><td><u>#<span data-ppcond="728">if</span> defined (<a class="macro" href="../unix/sysv/linux/bits/errno.h.html#30" data-ref="_M/ENOTSUP">ENOTSUP</a>) &amp;&amp; <a class="macro" href="../unix/sysv/linux/bits/errno.h.html#30" title="95" data-ref="_M/ENOTSUP">ENOTSUP</a> != <a class="macro" href="../../../include/asm-generic/errno.h.html#78" title="95" data-ref="_M/EOPNOTSUPP">EOPNOTSUPP</a></u></td></tr>
+<tr><th id="729">729</th><td><i>/*</i></td></tr>
+<tr><th id="730">730</th><td><i>TRANS A function returns this error when certain parameter</i></td></tr>
+<tr><th id="731">731</th><td><i>TRANS values are valid, but the functionality they request is not available.</i></td></tr>
+<tr><th id="732">732</th><td><i>TRANS This can mean that the function does not implement a particular command</i></td></tr>
+<tr><th id="733">733</th><td><i>TRANS or option value or flag bit at all.  For functions that operate on some</i></td></tr>
+<tr><th id="734">734</th><td><i>TRANS object given in a parameter, such as a file descriptor or a port, it</i></td></tr>
+<tr><th id="735">735</th><td><i>TRANS might instead mean that only @emph{that specific object} (file</i></td></tr>
+<tr><th id="736">736</th><td><i>TRANS descriptor, port, etc.) is unable to support the other parameters given;</i></td></tr>
+<tr><th id="737">737</th><td><i>TRANS different file descriptors might support different ranges of parameter</i></td></tr>
+<tr><th id="738">738</th><td><i>TRANS values.</i></td></tr>
+<tr><th id="739">739</th><td><i>TRANS</i></td></tr>
+<tr><th id="740">740</th><td><i>TRANS If the entire function is not available at all in the implementation,</i></td></tr>
+<tr><th id="741">741</th><td><i>TRANS it returns @code{ENOSYS} instead. */</i></td></tr>
+<tr><th id="742">742</th><td>_S(ENOTSUP, N_(<q>"Not supported"</q>))</td></tr>
+<tr><th id="743">743</th><td><u>#<span data-ppcond="728">endif</span></u></td></tr>
+<tr><th id="744">744</th><td><u>#<span data-ppcond="744">ifdef</span> <span class="macro" data-ref="_M/EPROGMISMATCH">EPROGMISMATCH</span></u></td></tr>
+<tr><th id="745">745</th><td>_S(EPROGMISMATCH, N_(<q>"RPC program version wrong"</q>))</td></tr>
+<tr><th id="746">746</th><td><u>#<span data-ppcond="744">endif</span></u></td></tr>
+<tr><th id="747">747</th><td><u>#<span data-ppcond="747">ifdef</span> <span class="macro" data-ref="_M/EBACKGROUND">EBACKGROUND</span></u></td></tr>
+<tr><th id="748">748</th><td><i>/*</i></td></tr>
+<tr><th id="749">749</th><td><i>TRANS On @gnuhurdsystems{}, servers supporting the @code{term} protocol return</i></td></tr>
+<tr><th id="750">750</th><td><i>TRANS this error for certain operations when the caller is not in the</i></td></tr>
+<tr><th id="751">751</th><td><i>TRANS foreground process group of the terminal.  Users do not usually see this</i></td></tr>
+<tr><th id="752">752</th><td><i>TRANS error because functions such as @code{read} and @code{write} translate</i></td></tr>
+<tr><th id="753">753</th><td><i>TRANS it into a @code{SIGTTIN} or @code{SIGTTOU} signal.  @xref{Job Control},</i></td></tr>
+<tr><th id="754">754</th><td><i>TRANS for information on process groups and these signals. */</i></td></tr>
+<tr><th id="755">755</th><td>_S(EBACKGROUND, N_(<q>"Inappropriate operation for background process"</q>))</td></tr>
+<tr><th id="756">756</th><td><u>#<span data-ppcond="747">endif</span></u></td></tr>
+<tr><th id="757">757</th><td><u>#<span data-ppcond="757">ifdef</span> <span class="macro" data-ref="_M/EIEIO">EIEIO</span></u></td></tr>
+<tr><th id="758">758</th><td><i>/*</i></td></tr>
+<tr><th id="759">759</th><td><i>TRANS Go home and have a glass of warm, dairy-fresh milk.</i></td></tr>
+<tr><th id="760">760</th><td><i>TRANS @c Okay.  Since you are dying to know, I'll tell you.</i></td></tr>
+<tr><th id="761">761</th><td><i>TRANS @c This is a joke, obviously.  There is a children's song which begins,</i></td></tr>
+<tr><th id="762">762</th><td><i>TRANS @c "Old McDonald had a farm, e-i-e-i-o."  Every time I see the (real)</i></td></tr>
+<tr><th id="763">763</th><td><i>TRANS @c errno macro EIO, I think about that song.  Probably most of my</i></td></tr>
+<tr><th id="764">764</th><td><i>TRANS @c compatriots who program on Unix do, too.  One of them must have stayed</i></td></tr>
+<tr><th id="765">765</th><td><i>TRANS @c up a little too late one night and decided to add it to Hurd or Glibc.</i></td></tr>
+<tr><th id="766">766</th><td><i>TRANS @c Whoever did it should be castigated, but it made me laugh.</i></td></tr>
+<tr><th id="767">767</th><td><i>TRANS @c  --jtobey@channel1.com</i></td></tr>
+<tr><th id="768">768</th><td><i>TRANS @c</i></td></tr>
+<tr><th id="769">769</th><td><i>TRANS @c "bought the farm" means "died".  -jtobey</i></td></tr>
+<tr><th id="770">770</th><td><i>TRANS @c</i></td></tr>
+<tr><th id="771">771</th><td><i>TRANS @c Translators, please do not translate this litteraly, translate it into</i></td></tr>
+<tr><th id="772">772</th><td><i>TRANS @c an idiomatic funny way of saying that the computer died. */</i></td></tr>
+<tr><th id="773">773</th><td>_S(EIEIO, N_(<q>"Computer bought the farm"</q>))</td></tr>
+<tr><th id="774">774</th><td><u>#<span data-ppcond="757">endif</span></u></td></tr>
+<tr><th id="775">775</th><td><u>#<span data-ppcond="775">if</span> defined (<a class="macro" href="../../../include/asm-generic/errno.h.html#22" data-ref="_M/EWOULDBLOCK">EWOULDBLOCK</a>) &amp;&amp; <a class="macro" href="../../../include/asm-generic/errno.h.html#22" title="11" data-ref="_M/EWOULDBLOCK">EWOULDBLOCK</a> != <a class="macro" href="../../../include/asm-generic/errno-base.h.html#15" title="11" data-ref="_M/EAGAIN">EAGAIN</a></u></td></tr>
+<tr><th id="776">776</th><td><i>/*</i></td></tr>
+<tr><th id="777">777</th><td><i>TRANS In @theglibc{}, this is another name for @code{EAGAIN} (above).</i></td></tr>
+<tr><th id="778">778</th><td><i>TRANS The values are always the same, on every operating system.</i></td></tr>
+<tr><th id="779">779</th><td><i>TRANS</i></td></tr>
+<tr><th id="780">780</th><td><i>TRANS C libraries in many older Unix systems have @code{EWOULDBLOCK} as a</i></td></tr>
+<tr><th id="781">781</th><td><i>TRANS separate error code. */</i></td></tr>
+<tr><th id="782">782</th><td>_S(EWOULDBLOCK, N_(<q>"Operation would block"</q>))</td></tr>
+<tr><th id="783">783</th><td><u>#<span data-ppcond="775">endif</span></u></td></tr>
+<tr><th id="784">784</th><td><u>#<span data-ppcond="784">ifdef</span> <span class="macro" data-ref="_M/ENEEDAUTH">ENEEDAUTH</span></u></td></tr>
+<tr><th id="785">785</th><td>_S(ENEEDAUTH, N_(<q>"Need authenticator"</q>))</td></tr>
+<tr><th id="786">786</th><td><u>#<span data-ppcond="784">endif</span></u></td></tr>
+<tr><th id="787">787</th><td><u>#<span data-ppcond="787">ifdef</span> <span class="macro" data-ref="_M/ED">ED</span></u></td></tr>
+<tr><th id="788">788</th><td><i>/*</i></td></tr>
+<tr><th id="789">789</th><td><i>TRANS The experienced user will know what is wrong.</i></td></tr>
+<tr><th id="790">790</th><td><i>TRANS @c This error code is a joke.  Its perror text is part of the joke.</i></td></tr>
+<tr><th id="791">791</th><td><i>TRANS @c Don't change it. */</i></td></tr>
+<tr><th id="792">792</th><td>_S(ED, N_(<q>"?"</q>))</td></tr>
+<tr><th id="793">793</th><td><u>#<span data-ppcond="787">endif</span></u></td></tr>
+<tr><th id="794">794</th><td><u>#<span data-ppcond="794">ifdef</span> <span class="macro" data-ref="_M/EPROGUNAVAIL">EPROGUNAVAIL</span></u></td></tr>
+<tr><th id="795">795</th><td>_S(EPROGUNAVAIL, N_(<q>"RPC program not available"</q>))</td></tr>
+<tr><th id="796">796</th><td><u>#<span data-ppcond="794">endif</span></u></td></tr>
+<tr><th id="797">797</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../stdio-common/errlist.c.html'>codebrowser/stdio-common/errlist.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,5 @@
+<def f='codebrowser/sysdeps/x86_64/dl-machine.h' l='64' ll='135' type='int elf_machine_runtime_setup(struct link_map * l, int lazy, int profile)'/>
+<doc f='codebrowser/sysdeps/x86_64/dl-machine.h' l='61'>/* Set up the loaded object described by L so its unrelocated PLT
+   entries will jump to the on-demand fixup code in dl-runtime.c.  */</doc>
+<use f='codebrowser/elf/dl-reloc.c' l='274' macro='1' u='c' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/rtld.c' l='563' macro='1' u='c' c='_dl_start'/>

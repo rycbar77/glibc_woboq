@@ -1,0 +1,16 @@
+<dec f='codebrowser/elf/elf.h' l='1140' type='uint32_t'/>
+<dec f='codebrowser/elf/elf.h' l='1152' type='uint64_t'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/elf.h' l='1140'>/* Entry type */</doc>
+<doc f='codebrowser/elf/elf.h' l='1152'>/* Entry type */</doc>
+<use f='codebrowser/elf/dl-support.c' l='250' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='251' u='r' c='_dl_aux_init'/>
+<use f='codebrowser/elf/rtld.c' l='1395' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1396' u='r' c='dl_main'/>
+<use f='codebrowser/misc/getauxval.c' l='42' u='r' c='__getauxval2'/>
+<use f='codebrowser/misc/getauxval.c' l='43' u='r' c='__getauxval2'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='30' u='r' c='print_auxv'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='34' u='r' c='print_auxv'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='35' u='r' c='print_auxv'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='36' u='r' c='print_auxv'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='37' u='r' c='print_auxv'/>

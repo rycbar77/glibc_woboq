@@ -1,0 +1,12 @@
+<dec f='codebrowser/libio/libioP.h' l='745' type='void _IO_str_init_static_internal(struct _IO_strfile_ * , char * , size_t , char * )'/>
+<use f='codebrowser/libio/strfile.h' l='95' u='c' c='_IO_strfile_read'/>
+<use f='codebrowser/libio/iovsprintf.c' l='92' u='c' c='__vsprintf_internal'/>
+<use f='codebrowser/libio/memstream.c' l='91' u='c' c='__open_memstream'/>
+<use f='codebrowser/libio/obprintf.c' l='155' u='c' c='__obstack_vprintf_internal'/>
+<def f='codebrowser/libio/strops.c' l='33' ll='65' type='void _IO_str_init_static_internal(_IO_strfile * sf, char * ptr, size_t size, char * pstart)'/>
+<use f='codebrowser/libio/strops.c' l='70' u='c' c='_IO_str_init_static'/>
+<use f='codebrowser/libio/strops.c' l='76' u='c' c='_IO_str_init_readonly'/>
+<use f='codebrowser/libio/vasprintf.c' l='53' u='c' c='__vasprintf_internal'/>
+<use f='codebrowser/libio/vsnprintf.c' l='113' u='c' c='__vsnprintf_internal'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='532' u='c' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/stdlib/strfrom-skeleton.c' l='124' u='c' c='strfromd'/>

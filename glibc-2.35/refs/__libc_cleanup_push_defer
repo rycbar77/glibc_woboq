@@ -1,0 +1,19 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lock.h' l='149' type='void __libc_cleanup_push_defer(struct _pthread_cleanup_buffer * buffer)'/>
+<dec f='codebrowser/sysdeps/nptl/libc-lock.h' l='150' type='void __libc_cleanup_push_defer(struct _pthread_cleanup_buffer * )'/>
+<use f='codebrowser/sysdeps/nptl/libc-lock.h' l='150' c='__libc_cleanup_push_defer'/>
+<doc f='codebrowser/sysdeps/nptl/libc-lock.h' l='146'>/* Put the unwind buffer BUFFER on the per-thread callback stack.  The
+   caller must fill BUFFER-&gt;__routine and BUFFER-&gt;__arg before calling
+   this function.  */</doc>
+<use f='codebrowser/libio/genops.c' l='58' macro='1' u='c' c='_IO_un_link'/>
+<use f='codebrowser/libio/genops.c' l='92' macro='1' u='c' c='_IO_link_in'/>
+<use f='codebrowser/libio/genops.c' l='691' macro='1' u='c' c='_IO_flush_all_lockp'/>
+<use f='codebrowser/libio/genops.c' l='737' macro='1' u='c' c='_IO_flush_all_linebuffered'/>
+<use f='codebrowser/libio/genops.c' l='786' macro='1' u='c' c='_IO_unbuffer_all'/>
+<use f='codebrowser/libio/iopopen.c' l='193' macro='1' u='c' c='_IO_new_proc_open'/>
+<use f='codebrowser/libio/iopopen.c' l='258' macro='1' u='c' c='_IO_new_proc_close'/>
+<def f='codebrowser/nptl/libc-cleanup.c' l='22' ll='34' type='void __libc_cleanup_push_defer(struct _pthread_cleanup_buffer * buffer)'/>
+<use f='codebrowser/rt/aio_suspend.c' l='189' macro='1' u='c' c='___aio_suspend_time64'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='1259' macro='1' u='c' c='__vfprintf_internal'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='2264' macro='1' u='c' c='buffered_vfprintf'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='372' macro='1' u='c' c='__vfscanf_internal'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='166' macro='1' u='c' c='do_system'/>

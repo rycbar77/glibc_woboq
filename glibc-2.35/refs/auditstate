@@ -1,0 +1,20 @@
+<def f='codebrowser/include/link.h' l='360' ll='364'/>
+<size>16</size>
+<doc f='codebrowser/include/link.h' l='356'>/* Information used by audit modules.  For most link maps, this data
+   immediate follows the link map in memory.  For the dynamic linker,
+   it is allocated separately.  See link_map_audit_state in
+   &lt;ldsodefs.h&gt;.  */</doc>
+<mbr r='auditstate::cookie' o='0' t='uintptr_t'/>
+<mbr r='auditstate::bindflags' o='64' t='unsigned int'/>
+<use f='codebrowser/elf/dl-audit.c' l='63' c='_dl_audit_objsearch'/>
+<use f='codebrowser/elf/dl-audit.c' l='85' c='_dl_audit_objopen'/>
+<use f='codebrowser/elf/dl-audit.c' l='106' c='_dl_audit_objclose'/>
+<use f='codebrowser/elf/dl-audit.c' l='150' c='__GI__dl_audit_symbind_alt'/>
+<use f='codebrowser/elf/dl-audit.c' l='151' c='__GI__dl_audit_symbind_alt'/>
+<use f='codebrowser/elf/dl-audit.c' l='219' c='_dl_audit_symbind'/>
+<use f='codebrowser/elf/dl-audit.c' l='220' c='_dl_audit_symbind'/>
+<use f='codebrowser/elf/dl-audit.c' l='299' c='_dl_audit_pltenter'/>
+<use f='codebrowser/elf/dl-audit.c' l='300' c='_dl_audit_pltenter'/>
+<use f='codebrowser/elf/dl-audit.c' l='371' c='_dl_audit_pltexit'/>
+<use f='codebrowser/elf/dl-audit.c' l='372' c='_dl_audit_pltexit'/>
+<size>16</size>

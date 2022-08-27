@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='1071' type='int pthread_rwlock_unlock(pthread_rwlock_t * __rwlock)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='1070'>/* Unlock RWLOCK.  */</doc>
+<def f='codebrowser/nptl/pthread_rwlock_unlock.c' l='46' macro='1' type='int pthread_rwlock_unlock(pthread_rwlock_t * )'/>
+<use f='codebrowser/support/xpthread_rwlock_unlock.c' l='25' u='c' c='xpthread_rwlock_unlock'/>

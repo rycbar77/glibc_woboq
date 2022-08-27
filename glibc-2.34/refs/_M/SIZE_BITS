@@ -1,0 +1,10 @@
+<dec f='codebrowser/malloc/malloc.c' l='1406'/>
+<use f='codebrowser/malloc/malloc.c' l='3893' u='c'/>
+<doc f='codebrowser/malloc/malloc.c' l='1398'>/*
+   Bits to mask off when extracting size
+
+   Note: IS_MMAPPED is intentionally not masked off from size field in
+   macros for which mmapped chunks should never be seen. This should
+   cause helpful core dumps to occur if it is tried by accident by
+   people extending or adapting this malloc.
+ */</doc>

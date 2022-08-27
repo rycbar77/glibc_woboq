@@ -1,0 +1,10 @@
+<dec f='codebrowser/signal/signal.h' l='123' type='int raise(int __sig)'/>
+<dec f='codebrowser/include/signal.h' l='12' type='int raise(int )'/>
+<use f='codebrowser/include/signal.h' l='12' c='raise'/>
+<doc f='codebrowser/signal/signal.h' l='122'>/* Raise signal SIG, i.e., send SIG to yourself.  */</doc>
+<use f='codebrowser/intl/eval-plural.h' l='64' u='c' c='plural_eval'/>
+<use f='codebrowser/intl/eval-plural.h' l='70' u='c' c='plural_eval'/>
+<use f='codebrowser/stdlib/abort.c' l='79' u='c' c='abort'/>
+<use f='codebrowser/stdlib/abort.c' l='100' u='c' c='abort'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/raise.c' l='26' ll='51' type='int raise(int sig)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/raise.c' l='53' c='gsignal'/>

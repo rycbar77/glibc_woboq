@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/dlfcn.h' l='130' type='void * __libc_dlsym_private(struct link_map * map, const char * name)'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='248' u='c' c='__libc_register_dlfcn_hook'/>
+<def f='codebrowser/elf/dl-libc.c' l='208' ll='218' type='void * __libc_dlsym_private(struct link_map * map, const char * name)'/>
+<use f='codebrowser/elf/dl-libc.c' l='225' u='c' c='__libc_register_dl_open_hook'/>
+<use f='codebrowser/elf/dl-libc.c' l='230' u='c' c='__libc_register_dl_open_hook'/>

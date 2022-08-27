@@ -1,0 +1,15 @@
+<dec f='codebrowser/include/link.h' l='171' type='unsigned int'/>
+<offset>6306</offset>
+<doc f='codebrowser/include/link.h' l='171'>/* Nonzero if object&apos;s relocations done.  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='2221' u='w' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-open.c' l='320' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='330' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-reloc.c' l='96' u='r' c='_dl_try_allocate_static_tls'/>
+<use f='codebrowser/elf/dl-reloc.c' l='171' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='285' u='w' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/setup-vdso.h' l='70' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/rtld.c' l='399' u='w' c='_dl_start'/>
+<use f='codebrowser/elf/rtld.c' l='1157' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1840' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2021' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2128' u='w' c='dl_main'/>

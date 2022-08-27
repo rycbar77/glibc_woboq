@@ -1,0 +1,6 @@
+<use f='codebrowser/inet/deadline.c' l='31' u='c' c='__deadline_current_time'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='517' u='c' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock.c' l='34' u='c' c='clock'/>
+<def f='codebrowser/sysdeps/unix/clock_gettime.c' l='91' ll='134' type='int __clock_gettime(clockid_t clock_id, struct timespec * tp)'/>
+<use f='codebrowser/sysdeps/unix/clock_gettime.c' l='135' c='clock_gettime'/>
+<doc f='codebrowser/sysdeps/unix/clock_gettime.c' l='90'>/* Get current value of CLOCK and store it in TP.  */</doc>

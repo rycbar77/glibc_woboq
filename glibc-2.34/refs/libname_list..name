@@ -1,0 +1,31 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='223' type='const char *'/>
+<offset>0</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='223'>/* Name requested (before search).  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='424' u='r' c='add_name_to_object'/>
+<use f='codebrowser/elf/dl-load.c' l='438' u='w' c='add_name_to_object'/>
+<use f='codebrowser/elf/dl-misc.c' l='347' u='r' c='_dl_name_match_p'/>
+<use f='codebrowser/elf/dl-object.c' l='101' u='w' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='122' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-open.c' l='79' u='r' c='add_to_global_resize_failure'/>
+<use f='codebrowser/elf/dl-support.c' l='89' u='w'/>
+<use f='codebrowser/elf/setup-vdso.h' l='88' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/rtld.c' l='1479' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1492' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1501' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1586' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1596' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1601' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1674' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2026' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2032' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2032' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2100' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2101' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2102' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2106' u='r' c='dl_main'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='178' u='r' c='la_objopen'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='179' u='r' c='la_objopen'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='182' u='r' c='la_objopen'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='182' u='r' c='la_objopen'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='186' u='r' c='la_objopen'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='186' u='r' c='la_objopen'/>

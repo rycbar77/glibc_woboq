@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>e_sqrt.c source code [codebrowser/sysdeps/ieee754/dbl-64/e_sqrt.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/ieee754/dbl-64/e_sqrt.c'; var root_path = '../../../..'; var data_path = '../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>sysdeps</a>/<a href='..'>ieee754</a>/<a href='./'>dbl-64</a>/<a href='e_sqrt.c.html'>e_sqrt.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * IBM Accurate Mathematical Library</i></td></tr>
+<tr><th id="3">3</th><td><i> * written by International Business Machines Corp.</i></td></tr>
+<tr><th id="4">4</th><td><i> * Copyright (C) 2001-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="5">5</th><td><i> *</i></td></tr>
+<tr><th id="6">6</th><td><i> * This program is free software; you can redistribute it and/or modify</i></td></tr>
+<tr><th id="7">7</th><td><i> * it under the terms of the GNU Lesser General Public License as published by</i></td></tr>
+<tr><th id="8">8</th><td><i> * the Free Software Foundation; either version 2.1 of the License, or</i></td></tr>
+<tr><th id="9">9</th><td><i> * (at your option) any later version.</i></td></tr>
+<tr><th id="10">10</th><td><i> *</i></td></tr>
+<tr><th id="11">11</th><td><i> * This program is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="12">12</th><td><i> * but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="13">13</th><td><i> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</i></td></tr>
+<tr><th id="14">14</th><td><i> * GNU Lesser General Public License for more details.</i></td></tr>
+<tr><th id="15">15</th><td><i> *</i></td></tr>
+<tr><th id="16">16</th><td><i> * You should have received a copy of the GNU Lesser General Public License</i></td></tr>
+<tr><th id="17">17</th><td><i> * along with this program; if not, see &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.</i></td></tr>
+<tr><th id="18">18</th><td><i> */</i></td></tr>
+<tr><th id="19">19</th><td><i>/*********************************************************************/</i></td></tr>
+<tr><th id="20">20</th><td><i>/* MODULE_NAME: uroot.c                                              */</i></td></tr>
+<tr><th id="21">21</th><td><i>/*                                                                   */</i></td></tr>
+<tr><th id="22">22</th><td><i>/* FUNCTION:    usqrt                                                */</i></td></tr>
+<tr><th id="23">23</th><td><i>/*                                                                   */</i></td></tr>
+<tr><th id="24">24</th><td><i>/* FILES NEEDED: dla.h endian.h mydefs.h                             */</i></td></tr>
+<tr><th id="25">25</th><td><i>/*               uroot.tbl                                           */</i></td></tr>
+<tr><th id="26">26</th><td><i>/*                                                                   */</i></td></tr>
+<tr><th id="27">27</th><td><i>/* An ultimate sqrt routine. Given an IEEE double machine number x   */</i></td></tr>
+<tr><th id="28">28</th><td><i>/* it computes the correctly rounded (to nearest) value of square    */</i></td></tr>
+<tr><th id="29">29</th><td><i>/* root of x.                                                        */</i></td></tr>
+<tr><th id="30">30</th><td><i>/* Assumption: Machine arithmetic operations are performed in        */</i></td></tr>
+<tr><th id="31">31</th><td><i>/* round to nearest mode of IEEE 754 standard.                       */</i></td></tr>
+<tr><th id="32">32</th><td><i>/*                                                                   */</i></td></tr>
+<tr><th id="33">33</th><td><i>/*********************************************************************/</i></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="../../../include/endian.h.html">"endian.h"</a></u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="mydefs.h.html">"mydefs.h"</a></u></td></tr>
+<tr><th id="37">37</th><td><u>#include <a href="dla.h.html">&lt;dla.h&gt;</a></u></td></tr>
+<tr><th id="38">38</th><td><u>#include <a href="root.tbl.html">"root.tbl"</a></u></td></tr>
+<tr><th id="39">39</th><td><u>#include <a href="../../x86/fpu/math-barriers.h.html">&lt;math-barriers.h&gt;</a></u></td></tr>
+<tr><th id="40">40</th><td><u>#include <a href="../../x86/fpu/math_private.h.html">&lt;math_private.h&gt;</a></u></td></tr>
+<tr><th id="41">41</th><td><u>#include <a href="../../x86/fpu/fenv_private.h.html">&lt;fenv_private.h&gt;</a></u></td></tr>
+<tr><th id="42">42</th><td><u>#include <a href="../libm-alias-finite.h.html">&lt;libm-alias-finite.h&gt;</a></u></td></tr>
+<tr><th id="43">43</th><td><u>#include <a href="../../generic/math-use-builtins.h.html">&lt;math-use-builtins.h&gt;</a></u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><i>/*********************************************************************/</i></td></tr>
+<tr><th id="46">46</th><td><i>/* An ultimate sqrt routine. Given an IEEE double machine number x   */</i></td></tr>
+<tr><th id="47">47</th><td><i>/* it computes the correctly rounded (to nearest) value of square    */</i></td></tr>
+<tr><th id="48">48</th><td><i>/* root of x.                                                        */</i></td></tr>
+<tr><th id="49">49</th><td><i>/*********************************************************************/</i></td></tr>
+<tr><th id="50">50</th><td><em>double</em></td></tr>
+<tr><th id="51">51</th><td><dfn class="decl def fn" id="__ieee754_sqrt" title='__ieee754_sqrt' data-ref="__ieee754_sqrt" data-ref-filename="__ieee754_sqrt">__ieee754_sqrt</dfn> (<em>double</em> <dfn class="local col1 decl" id="1x" title='x' data-type='double' data-ref="1x" data-ref-filename="1x">x</dfn>)</td></tr>
+<tr><th id="52">52</th><td>{</td></tr>
+<tr><th id="53">53</th><td><u>#<span data-ppcond="53">if</span> <a class="macro" href="../../x86_64/fpu/math-use-builtins-sqrt.h.html#1" title="1" data-ref="_M/USE_SQRT_BUILTIN">USE_SQRT_BUILTIN</a></u></td></tr>
+<tr><th id="54">54</th><td>  <b>return</b> <a class="ref fn" href="#54" title='__builtin_sqrt' data-ref="__builtin_sqrt" data-ref-filename="__builtin_sqrt">__builtin_sqrt</a> (<a class="local col1 ref" href="#1x" title='x' data-ref="1x" data-ref-filename="1x">x</a>);</td></tr>
+<tr><th id="55">55</th><td><u>#<span data-ppcond="53">else</span></u></td></tr>
+<tr><th id="56">56</th><td>  <i>/* Use generic implementation.  */</i></td></tr>
+<tr><th id="57">57</th><td>  <em>static</em> <em>const</em> <em>double</em></td></tr>
+<tr><th id="58">58</th><td>    rt0 = <var>9.99999999859990725855365213134618E-01</var>,</td></tr>
+<tr><th id="59">59</th><td>    rt1 = <var>4.99999999495955425917856814202739E-01</var>,</td></tr>
+<tr><th id="60">60</th><td>    rt2 = <var>3.75017500867345182581453026130850E-01</var>,</td></tr>
+<tr><th id="61">61</th><td>    rt3 = <var>3.12523626554518656309172508769531E-01</var>;</td></tr>
+<tr><th id="62">62</th><td>  <em>static</em> <em>const</em> <em>double</em> big = <var>134217728.0</var>;</td></tr>
+<tr><th id="63">63</th><td>  <em>double</em> y, t, del, res, res1, hy, z, zz, s;</td></tr>
+<tr><th id="64">64</th><td>  mynumber a, c = { { <var>0</var>, <var>0</var> } };</td></tr>
+<tr><th id="65">65</th><td>  int4 k;</td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td>  a.x = x;</td></tr>
+<tr><th id="68">68</th><td>  k = a.i[HIGH_HALF];</td></tr>
+<tr><th id="69">69</th><td>  a.i[HIGH_HALF] = (k &amp; <var>0x001fffff</var>) | <var>0x3fe00000</var>;</td></tr>
+<tr><th id="70">70</th><td>  t = inroot[(k &amp; <var>0x001fffff</var>) &gt;&gt; <var>14</var>];</td></tr>
+<tr><th id="71">71</th><td>  s = a.x;</td></tr>
+<tr><th id="72">72</th><td>  <i>/*----------------- 2^-1022  &lt;= | x |&lt; 2^1024  -----------------*/</i></td></tr>
+<tr><th id="73">73</th><td>  <b>if</b> (k &gt; <var>0x000fffff</var> &amp;&amp; k &lt; <var>0x7ff00000</var>)</td></tr>
+<tr><th id="74">74</th><td>    {</td></tr>
+<tr><th id="75">75</th><td>      <em>int</em> rm = __fegetround ();</td></tr>
+<tr><th id="76">76</th><td>      fenv_t env;</td></tr>
+<tr><th id="77">77</th><td>      libc_feholdexcept_setround (&amp;env, FE_TONEAREST);</td></tr>
+<tr><th id="78">78</th><td>      <em>double</em> ret;</td></tr>
+<tr><th id="79">79</th><td>      y = <var>1.0</var> - t * (t * s);</td></tr>
+<tr><th id="80">80</th><td>      t = t * (rt0 + y * (rt1 + y * (rt2 + y * rt3)));</td></tr>
+<tr><th id="81">81</th><td>      c.i[HIGH_HALF] = <var>0x20000000</var> + ((k &amp; <var>0x7fe00000</var>) &gt;&gt; <var>1</var>);</td></tr>
+<tr><th id="82">82</th><td>      y = t * s;</td></tr>
+<tr><th id="83">83</th><td>      hy = (y + big) - big;</td></tr>
+<tr><th id="84">84</th><td>      del = <var>0.5</var> * t * ((s - hy * hy) - (y - hy) * (y + hy));</td></tr>
+<tr><th id="85">85</th><td>      res = y + del;</td></tr>
+<tr><th id="86">86</th><td>      <b>if</b> (res == (res + <var>1.002</var> * ((y - res) + del)))</td></tr>
+<tr><th id="87">87</th><td>	ret = res * c.x;</td></tr>
+<tr><th id="88">88</th><td>      <b>else</b></td></tr>
+<tr><th id="89">89</th><td>	{</td></tr>
+<tr><th id="90">90</th><td>	  res1 = res + <var>1.5</var> * ((y - res) + del);</td></tr>
+<tr><th id="91">91</th><td>	  EMULV (res, res1, z, zz); <i>/* (z+zz)=res*res1 */</i></td></tr>
+<tr><th id="92">92</th><td>	  res = ((((z - s) + zz) &lt; <var>0</var>) ? max (res, res1) :</td></tr>
+<tr><th id="93">93</th><td>					min (res, res1));</td></tr>
+<tr><th id="94">94</th><td>	  ret = res * c.x;</td></tr>
+<tr><th id="95">95</th><td>	}</td></tr>
+<tr><th id="96">96</th><td>      math_force_eval (ret);</td></tr>
+<tr><th id="97">97</th><td>      libc_fesetenv (&amp;env);</td></tr>
+<tr><th id="98">98</th><td>      <em>double</em> dret = x / ret;</td></tr>
+<tr><th id="99">99</th><td>      <b>if</b> (dret != ret)</td></tr>
+<tr><th id="100">100</th><td>	{</td></tr>
+<tr><th id="101">101</th><td>	  <em>double</em> force_inexact = <var>1.0</var> / <var>3.0</var>;</td></tr>
+<tr><th id="102">102</th><td>	  math_force_eval (force_inexact);</td></tr>
+<tr><th id="103">103</th><td>	  <i>/* The square root is inexact, ret is the round-to-nearest</i></td></tr>
+<tr><th id="104">104</th><td><i>	     value which may need adjusting for other rounding</i></td></tr>
+<tr><th id="105">105</th><td><i>	     modes.  */</i></td></tr>
+<tr><th id="106">106</th><td>	  <b>switch</b> (rm)</td></tr>
+<tr><th id="107">107</th><td>	    {</td></tr>
+<tr><th id="108">108</th><td><u>#ifdef FE_UPWARD</u></td></tr>
+<tr><th id="109">109</th><td>	    <b>case</b> FE_UPWARD:</td></tr>
+<tr><th id="110">110</th><td>	      <b>if</b> (dret &gt; ret)</td></tr>
+<tr><th id="111">111</th><td>		ret = (res + <var>0x1p-1022</var>) * c.x;</td></tr>
+<tr><th id="112">112</th><td>	      <b>break</b>;</td></tr>
+<tr><th id="113">113</th><td><u>#endif</u></td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td><u>#ifdef FE_DOWNWARD</u></td></tr>
+<tr><th id="116">116</th><td>	    <b>case</b> FE_DOWNWARD:</td></tr>
+<tr><th id="117">117</th><td><u>#endif</u></td></tr>
+<tr><th id="118">118</th><td><u>#ifdef FE_TOWARDZERO</u></td></tr>
+<tr><th id="119">119</th><td>	    <b>case</b> FE_TOWARDZERO:</td></tr>
+<tr><th id="120">120</th><td><u>#endif</u></td></tr>
+<tr><th id="121">121</th><td><u>#if defined FE_DOWNWARD || defined FE_TOWARDZERO</u></td></tr>
+<tr><th id="122">122</th><td>	      <b>if</b> (dret &lt; ret)</td></tr>
+<tr><th id="123">123</th><td>		ret = (res - <var>0x1p-1022</var>) * c.x;</td></tr>
+<tr><th id="124">124</th><td>	      <b>break</b>;</td></tr>
+<tr><th id="125">125</th><td><u>#endif</u></td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td>	    <b>default</b>:</td></tr>
+<tr><th id="128">128</th><td>	      <b>break</b>;</td></tr>
+<tr><th id="129">129</th><td>	    }</td></tr>
+<tr><th id="130">130</th><td>	}</td></tr>
+<tr><th id="131">131</th><td>      <i>/* Otherwise (x / ret == ret), either the square root was exact or</i></td></tr>
+<tr><th id="132">132</th><td><i>         the division was inexact.  */</i></td></tr>
+<tr><th id="133">133</th><td>      <b>return</b> ret;</td></tr>
+<tr><th id="134">134</th><td>    }</td></tr>
+<tr><th id="135">135</th><td>  <b>else</b></td></tr>
+<tr><th id="136">136</th><td>    {</td></tr>
+<tr><th id="137">137</th><td>      <b>if</b> ((k &amp; <var>0x7ff00000</var>) == <var>0x7ff00000</var>)</td></tr>
+<tr><th id="138">138</th><td>	<b>return</b> x * x + x; <i>/* sqrt(NaN)=NaN, sqrt(+inf)=+inf, sqrt(-inf)=sNaN */</i></td></tr>
+<tr><th id="139">139</th><td>      <b>if</b> (x == <var>0</var>)</td></tr>
+<tr><th id="140">140</th><td>	<b>return</b> x;       <i>/* sqrt(+0)=+0, sqrt(-0)=-0 */</i></td></tr>
+<tr><th id="141">141</th><td>      <b>if</b> (k &lt; <var>0</var>)</td></tr>
+<tr><th id="142">142</th><td>	<b>return</b> (x - x) / (x - x); <i>/* sqrt(-ve)=sNaN */</i></td></tr>
+<tr><th id="143">143</th><td>      <b>return</b> <var>0x1p-256</var> * __ieee754_sqrt (x * <var>0x1p512</var>);</td></tr>
+<tr><th id="144">144</th><td>    }</td></tr>
+<tr><th id="145">145</th><td><u>#<span data-ppcond="53">endif</span> /* ! USE_SQRT_BUILTIN  */</u></td></tr>
+<tr><th id="146">146</th><td>}</td></tr>
+<tr><th id="147">147</th><td><u>#<span data-ppcond="147">ifndef</span> <span class="macro" data-ref="_M/__ieee754_sqrt">__ieee754_sqrt</span></u></td></tr>
+<tr><th id="148">148</th><td><a class="macro" href="../libm-alias-finite.h.html#36" title="" data-ref="_M/libm_alias_finite">libm_alias_finite</a> (__ieee754_sqrt, __sqrt)</td></tr>
+<tr><th id="149">149</th><td><u>#<span data-ppcond="147">endif</span></u></td></tr>
+<tr><th id="150">150</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

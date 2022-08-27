@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='296' type='int __nptl_change_stack_perm(struct pthread * pd)'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='293'>/* Change the permissions of a thread stack.  Called from
+   _dl_make_stacks_executable and pthread_create.  */</doc>
+<use f='codebrowser/nptl/allocatestack.c' l='456' u='c' c='allocate_stack'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='74' u='c' c='_dl_make_stacks_executable'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='85' u='c' c='_dl_make_stacks_executable'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='96' ll='118' type='int __nptl_change_stack_perm(struct pthread * pd)'/>

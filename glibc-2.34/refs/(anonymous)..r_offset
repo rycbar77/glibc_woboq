@@ -1,0 +1,11 @@
+<dec f='codebrowser/elf/elf.h' l='634' type='Elf32_Addr'/>
+<dec f='codebrowser/elf/elf.h' l='645' type='Elf64_Addr'/>
+<dec f='codebrowser/elf/elf.h' l='653' type='Elf32_Addr'/>
+<dec f='codebrowser/elf/elf.h' l='660' type='Elf64_Addr'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/elf.h' l='634'>/* Address */</doc>
+<doc f='codebrowser/elf/elf.h' l='645'>/* Address */</doc>
+<doc f='codebrowser/elf/elf.h' l='653'>/* Address */</doc>
+<doc f='codebrowser/elf/elf.h' l='660'>/* Address */</doc>
+<use f='codebrowser/sysdeps/x86_64/dl-irel.h' l='39' u='r' c='elf_irela'/>
+<use f='codebrowser/elf/dl-runtime.c' l='72' u='r' c='_dl_fixup'/>

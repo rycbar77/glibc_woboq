@@ -1,0 +1,22 @@
+<dec f='codebrowser/nss/nss_db/nss_db.h' l='37' type='uint64_t'/>
+<use f='codebrowser/nss/nss_db/db-XXX.c' l='262' u='r' c='_nss_db_getetherent_r'/>
+<use f='codebrowser/nss/nss_db/db-XXX.c' l='268' u='r' c='_nss_db_getetherent_r'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='54' macro='1' u='r' c='_nss_db_gethostton_r'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='60' macro='1' u='r' c='_nss_db_getntohost_r'/>
+<offset>64</offset>
+<use f='codebrowser/nss/nss_files/files-grp.c' l='33' macro='1' u='r' c='_nss_db_getgrnam_r'/>
+<use f='codebrowser/nss/nss_files/files-grp.c' l='40' macro='1' u='r' c='_nss_db_getgrgid_r'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='38' macro='1' u='r' c='_nss_db_getprotobyname_r'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='42' macro='1' u='r' c='_nss_db_getprotobynumber_r'/>
+<use f='codebrowser/nss/nss_files/files-pwd.c' l='33' macro='1' u='r' c='_nss_db_getpwnam_r'/>
+<use f='codebrowser/nss/nss_files/files-pwd.c' l='40' macro='1' u='r' c='_nss_db_getpwuid_r'/>
+<use f='codebrowser/nss/nss_files/files-rpc.c' l='38' macro='1' u='r' c='_nss_db_getrpcbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-rpc.c' l='42' macro='1' u='r' c='_nss_db_getrpcbynumber_r'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='41' macro='1' u='r' c='_nss_db_getservbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='55' macro='1' u='r' c='_nss_db_getservbyport_r'/>
+<use f='codebrowser/nss/nss_files/files-sgrp.c' l='33' macro='1' u='r' c='_nss_db_getsgnam_r'/>
+<use f='codebrowser/nss/nss_files/files-spwd.c' l='33' macro='1' u='r' c='_nss_db_getspnam_r'/>
+<use f='codebrowser/nss/makedb.c' l='745' u='w' c='write_output'/>
+<use f='codebrowser/nss/makedb.c' l='831' u='r' c='print_database'/>
+<use f='codebrowser/nss/nss_db/db-initgroups.c' l='61' u='r' c='_nss_db_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_db/db-netgrp.c' l='52' u='r' c='_nss_db_setnetgrent'/>

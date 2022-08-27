@@ -1,0 +1,9 @@
+<dec f='codebrowser/malloc/mcheck.h' l='48' type='void mcheck_check_all()'/>
+<dec f='codebrowser/include/mcheck.h' l='8' type='void mcheck_check_all()'/>
+<use f='codebrowser/include/mcheck.h' l='8' c='mcheck_check_all'/>
+<def f='codebrowser/malloc/mcheck.c' l='117' ll='136' type='void mcheck_check_all()'/>
+<use f='codebrowser/malloc/mcheck.c' l='180' u='c' c='freehook'/>
+<use f='codebrowser/malloc/mcheck.c' l='206' u='c' c='mallochook'/>
+<use f='codebrowser/malloc/mcheck.c' l='242' u='c' c='memalignhook'/>
+<use f='codebrowser/malloc/mcheck.c' l='285' u='c' c='reallochook'/>
+<doc f='codebrowser/malloc/mcheck.h' l='47'>/* Force check of all blocks now.  */</doc>

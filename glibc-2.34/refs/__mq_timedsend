@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/mqueue.h' l='5' type='int __mq_timedsend(mqd_t , const char * , size_t , unsigned int , const struct timespec * )'/>
+<dec f='codebrowser/include/mqueue.h' l='18' type='int __mq_timedsend(mqd_t , const char * , size_t , unsigned int , const struct timespec * )'/>
+<use f='codebrowser/include/mqueue.h' l='18' c='__mq_timedsend'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_send.c' l='29' u='c' c='__mq_send'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/mq_timedsend.c' l='66' macro='1' type='int __mq_timedsend(mqd_t , const char * , size_t , unsigned int , const struct timespec * )'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/nss_files.h' l='138' macro='1' type='enum nss_status _nss_files_getnetbyaddr_r(uint32_t , int , struct netent * , char * , size_t , int * , int * )'/>
+<dec f='codebrowser/nss/function.def' l='48' macro='1' type='enum nss_status _nss_files_getnetbyaddr_r(uint32_t , int , struct netent * , char * , size_t , int * , int * )'/>
+<use f='codebrowser/nss/function.def' l='48' macro='1' c='_nss_files_getnetbyaddr_r'/>
+<dec f='codebrowser/include/netdb.h' l='285' macro='1' type='enum nss_status _nss_files_getnetbyaddr_r(uint32_t addr, int type, struct netent * net, char * buffer, size_t buflen, int * errnop, int * herrnop)'/>
+<def f='codebrowser/nss/nss_files/files-network.c' l='83' macro='1' type='enum nss_status _nss_files_getnetbyaddr_r(uint32_t net, int type, struct netent * result, char * buffer, size_t buflen, int * errnop, int * herrnop)'/>

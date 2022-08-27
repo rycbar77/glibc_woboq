@@ -1,0 +1,12 @@
+<def f='codebrowser/malloc/dynarray.h' l='147' ll='151'/>
+<use f='codebrowser/malloc/dynarray.h' l='162' c='__libc_dynarray_finalize'/>
+<size>16</size>
+<doc f='codebrowser/malloc/dynarray.h' l='146'>/* Internal type.  */</doc>
+<mbr r='dynarray_finalize_result::array' o='0' t='void *'/>
+<mbr r='dynarray_finalize_result::length' o='64' t='size_t'/>
+<use f='codebrowser/malloc/dynarray_finalize.c' l='26' c='__libc_dynarray_finalize'/>
+<use f='codebrowser/malloc/dynarray_finalize.c' l='41' c='__libc_dynarray_finalize'/>
+<use f='codebrowser/malloc/dynarray_finalize.c' l='54' c='__libc_dynarray_finalize'/>
+<size>16</size>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='490' c='action_list_finalize'/>
+<size>16</size>

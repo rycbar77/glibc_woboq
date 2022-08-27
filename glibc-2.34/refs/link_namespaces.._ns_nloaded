@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='324' type='unsigned int'/>
+<offset>64</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='323'>/* Number of object in the _dl_loaded list.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='169' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='720' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-fini.c' l='56' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='45' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-object.c' l='46' u='w' c='_dl_add_to_namespace_list'/>
+<use f='codebrowser/elf/dl-open.c' l='845' u='r' c='_dl_open'/>
+<use f='codebrowser/elf/dl-support.c' l='113' u='w'/>
+<use f='codebrowser/elf/rtld.c' l='826' u='r' c='do_preload'/>
+<use f='codebrowser/elf/rtld.c' l='837' u='r' c='do_preload'/>
+<use f='codebrowser/elf/rtld.c' l='922' u='r' c='unload_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='922' u='r' c='unload_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='1678' u='w' c='dl_main'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='203' type='int'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='204' type='typeof (__default_pthread_attr_lock)'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='204'/>
+<use f='codebrowser/nptl/pthread_attr_getstacksize.c' l='35' u='a' c='__pthread_attr_getstacksize'/>
+<use f='codebrowser/nptl/pthread_attr_getstacksize.c' l='37' u='a' c='__pthread_attr_getstacksize'/>
+<use f='codebrowser/nptl/allocatestack.c' l='231' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='233' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/pthread_getattr_default_np.c' l='25' u='a' c='___pthread_getattr_default_np'/>
+<use f='codebrowser/nptl/pthread_getattr_default_np.c' l='27' u='a' c='___pthread_getattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='67' u='a' c='__pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='81' u='a' c='__pthread_setattr_default_np'/>
+<def f='codebrowser/nptl/vars.c' l='29' type='int'/>
+<doc f='codebrowser/nptl/vars.c' l='28'>/* Mutex protecting __default_pthread_attr.  */</doc>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='45' u='w' c='fork_system_setup_after_fork'/>

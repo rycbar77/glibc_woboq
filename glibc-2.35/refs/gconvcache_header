@@ -1,0 +1,22 @@
+<def f='codebrowser/iconv/iconvconfig.h' l='24' ll='32'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='51' c='__gconv_load_cache'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='69' c='__gconv_load_cache'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='112' c='__gconv_load_cache'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='148' c='find_module_idx'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='153' c='find_module_idx'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='248' c='__gconv_lookup_cache'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='261' c='__gconv_lookup_cache'/>
+<size>16</size>
+<mbr r='gconvcache_header::magic' o='0' t='uint32_t'/>
+<mbr r='gconvcache_header::string_offset' o='32' t='gidx_t'/>
+<mbr r='gconvcache_header::hash_offset' o='48' t='gidx_t'/>
+<mbr r='gconvcache_header::hash_size' o='64' t='gidx_t'/>
+<mbr r='gconvcache_header::module_offset' o='80' t='gidx_t'/>
+<mbr r='gconvcache_header::otherconv_offset' o='96' t='gidx_t'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='716' c='insert_cache'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='721' c='insert_cache'/>
+<size>16</size>
+<use f='codebrowser/iconv/iconvconfig.c' l='1006' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1139' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1144' c='write_output'/>
+<size>16</size>

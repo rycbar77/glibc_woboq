@@ -1,0 +1,55 @@
+<dec f='include/asm-generic/errno.h' l='18'/>
+<doc f='include/asm-generic/errno.h' l='11'>/*
+ * This error code is special: arch syscall entry code will return
+ * -ENOSYS if users try to call a syscall that doesn&apos;t exist.  To keep
+ * failures of syscalls that really do exist distinguishable from
+ * failures due to attempts to use a nonexistent syscall, syscall
+ * implementations should refrain from returning -ENOSYS.
+ */</doc>
+<use f='codebrowser/build/misc/stub-syscalls.c' l='8' u='c'/>
+<use f='codebrowser/io/lchmod.c' l='27' u='c'/>
+<use f='codebrowser/locale/loadlocale.c' l='230' u='c'/>
+<use f='codebrowser/locale/loadlocale.c' l='230' u='c'/>
+<use f='codebrowser/login/setlogin.c' l='25' u='c'/>
+<use f='codebrowser/misc/chflags.c' l='35' u='c'/>
+<use f='codebrowser/misc/fchflags.c' l='35' u='c'/>
+<use f='codebrowser/misc/gtty.c' l='32' u='c'/>
+<use f='codebrowser/misc/revoke.c' l='25' u='c'/>
+<use f='codebrowser/misc/sstk.c' l='28' u='c'/>
+<use f='codebrowser/misc/stty.c' l='32' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futex-internal.h' l='74' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futex-internal.h' l='102' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futex-internal.h' l='127' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futex-internal.h' l='156' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futex-internal.h' l='186' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futex-internal.h' l='220' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futex-internal.h' l='244' u='c'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='197' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_init.c' l='48' u='c'/>
+<use f='codebrowser/streams/fattach.c' l='24' u='c'/>
+<use f='codebrowser/streams/fdetach.c' l='24' u='c'/>
+<use f='codebrowser/streams/getmsg.c' l='24' u='c'/>
+<use f='codebrowser/streams/putmsg.c' l='25' u='c'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/error_constants.h' l='68' u='c'/>
+<use f='codebrowser/sysdeps/gnu/errlist.c' l='887' u='a'/>
+<use f='codebrowser/sysdeps/gnu/errlist.c' l='894' u='c'/>
+<use f='codebrowser/sysdeps/gnu/errlist.c' l='895' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/copy_file_range.c' l='39' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fexecve.c' l='45' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fexecve.c' l='65' u='c'/>
+<use f='codebrowser/sysdeps/posix/fpathconf.c' l='72' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='59' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mlock2.c' l='32' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='243' u='c'/>
+<use f='codebrowser/sysdeps/posix/pathconf.c' l='73' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='137' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='200' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='249' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='284' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/preadv64v2.c' l='33' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pwritev64v2.c' l='33' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/renameat2.c' l='35' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/shm-directory.c' l='129' u='c'/>
+<use f='codebrowser/signal/sigreturn.c' l='24' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/statx.c' l='33' u='c'/>
+<dec f='codebrowser/build/pthread-errnos.h' l='6'/>

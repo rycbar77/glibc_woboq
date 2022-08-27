@@ -1,0 +1,12 @@
+<dec f='codebrowser/nis/rpcsvc/nis.h' l='136' type='nis_name'/>
+<offset>0</offset>
+<use f='codebrowser/nis/nis_call.c' l='233' u='r' c='__nisbind_connect'/>
+<use f='codebrowser/nis/nis_callback.c' l='276' u='w' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='277' u='r' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='70' u='r' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='81' u='r' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='83' u='w' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='83' u='r' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='84' u='r' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_print.c' l='176' u='r' c='__GI_nis_print_directory'/>
+<use f='codebrowser/nis/nis_xdr.c' l='87' u='a' c='_xdr_nis_server'/>

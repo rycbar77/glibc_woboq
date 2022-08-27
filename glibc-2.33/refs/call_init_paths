@@ -1,0 +1,5 @@
+<def f='codebrowser/elf/dl-main.h' l='106' ll='111' type='void call_init_paths(const struct dl_main_state * state)'/>
+<use f='codebrowser/elf/dl-usage.c' l='86' u='c' c='print_search_path_for_help'/>
+<doc f='codebrowser/elf/dl-main.h' l='104'>/* Helper function to invoke _dl_init_paths with the right arguments
+   from *STATE.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='1676' u='c' c='dl_main'/>

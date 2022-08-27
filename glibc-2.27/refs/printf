@@ -1,0 +1,13 @@
+<dec f='codebrowser/libio/stdio.h' l='318' type='int printf(const char *restrict __format)'/>
+<doc f='codebrowser/libio/stdio.h' l='314'>/* Write formatted output to stdout.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/elf/cache.c' l='59' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='126' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='130' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='146' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='152' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='228' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='238' u='c' c='print_cache'/>
+<def f='codebrowser/stdio-common/printf.c' l='40' macro='1' type='int printf(const char * )'/>

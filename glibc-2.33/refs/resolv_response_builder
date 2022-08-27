@@ -1,0 +1,48 @@
+<use f='codebrowser/support/resolv_test.h' l='88'/>
+<use f='codebrowser/support/resolv_test.h' l='165' c='resolv_response_init'/>
+<use f='codebrowser/support/resolv_test.h' l='170' c='resolv_response_section'/>
+<use f='codebrowser/support/resolv_test.h' l='173' c='resolv_response_add_question'/>
+<use f='codebrowser/support/resolv_test.h' l='179' c='resolv_response_open_record'/>
+<use f='codebrowser/support/resolv_test.h' l='184' c='resolv_response_add_data'/>
+<use f='codebrowser/support/resolv_test.h' l='189' c='resolv_response_add_name'/>
+<use f='codebrowser/support/resolv_test.h' l='193' c='resolv_response_close_record'/>
+<use f='codebrowser/support/resolv_test.h' l='197' c='resolv_response_drop'/>
+<use f='codebrowser/support/resolv_test.h' l='201' c='resolv_response_close'/>
+<use f='codebrowser/support/resolv_test.h' l='204' c='resolv_response_length'/>
+<use f='codebrowser/support/resolv_test.h' l='208' c='resolv_response_builder_allocate'/>
+<use f='codebrowser/support/resolv_test.h' l='213' c='resolv_response_builder_free'/>
+<use f='codebrowser/support/resolv_test.h' l='220' c='resolv_response_send_udp'/>
+<def f='codebrowser/support/resolv_test.c' l='139' ll='159'/>
+<use f='codebrowser/support/resolv_test.c' l='164' c='resolv_response_init'/>
+<use f='codebrowser/support/resolv_test.c' l='204' c='resolv_response_section'/>
+<use f='codebrowser/support/resolv_test.c' l='215' c='response_add_byte'/>
+<use f='codebrowser/support/resolv_test.c' l='225' c='response_add_16'/>
+<use f='codebrowser/support/resolv_test.c' l='233' c='response_count_increment'/>
+<use f='codebrowser/support/resolv_test.c' l='249' c='resolv_response_add_question'/>
+<use f='codebrowser/support/resolv_test.c' l='267' c='resolv_response_add_name'/>
+<use f='codebrowser/support/resolv_test.c' l='355' c='resolv_response_open_record'/>
+<use f='codebrowser/support/resolv_test.c' l='377' c='resolv_response_close_record'/>
+<use f='codebrowser/support/resolv_test.c' l='392' c='resolv_response_add_data'/>
+<use f='codebrowser/support/resolv_test.c' l='404' c='resolv_response_drop'/>
+<use f='codebrowser/support/resolv_test.c' l='410' c='resolv_response_close'/>
+<use f='codebrowser/support/resolv_test.c' l='416' c='resolv_response_truncate_data'/>
+<use f='codebrowser/support/resolv_test.c' l='426' c='resolv_response_length'/>
+<use f='codebrowser/support/resolv_test.c' l='432' c='resolv_response_buffer'/>
+<use f='codebrowser/support/resolv_test.c' l='439' c='resolv_response_builder_allocate'/>
+<use f='codebrowser/support/resolv_test.c' l='443' c='resolv_response_builder_allocate'/>
+<use f='codebrowser/support/resolv_test.c' l='444' c='resolv_response_builder_allocate'/>
+<use f='codebrowser/support/resolv_test.c' l='451' c='resolv_response_builder_free'/>
+<use f='codebrowser/support/resolv_test.c' l='675' c='server_thread_udp_process_one'/>
+<use f='codebrowser/support/resolv_test.c' l='711' c='resolv_response_send_udp'/>
+<use f='codebrowser/support/resolv_test.c' l='921' c='server_thread_tcp_client'/>
+<size>65592</size>
+<mbr r='resolv_response_builder::query_buffer' o='0' t='const unsigned char *'/>
+<mbr r='resolv_response_builder::query_length' o='64' t='size_t'/>
+<mbr r='resolv_response_builder::offset' o='128' t='size_t'/>
+<mbr r='resolv_response_builder::section' o='192' t='ns_sect'/>
+<mbr r='resolv_response_builder::truncate_bytes' o='224' t='unsigned int'/>
+<mbr r='resolv_response_builder::drop' o='256' t='_Bool'/>
+<mbr r='resolv_response_builder::close' o='264' t='_Bool'/>
+<mbr r='resolv_response_builder::current_rdata_offset' o='320' t='size_t'/>
+<mbr r='resolv_response_builder::compression_offsets' o='384' t='void *'/>
+<mbr r='resolv_response_builder::buffer' o='448' t='unsigned char[65536]'/>

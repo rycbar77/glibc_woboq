@@ -1,0 +1,13 @@
+<dec f='codebrowser/malloc/malloc.h' l='137'/>
+<dec f='codebrowser/malloc/malloc.c' l='1090'/>
+<use f='codebrowser/malloc/malloc.c' l='5489' u='c'/>
+<doc f='codebrowser/malloc/malloc.c' l='1079'>/*
+  M_MMAP_MAX is the maximum number of requests to simultaneously
+  service using mmap. This parameter exists because
+  some systems have a limited number of internal tables for
+  use by mmap, and using more than a few of them may degrade
+  performance.
+
+  The default is set to a value that serves only as a safeguard.
+  Setting to 0 disables use of mmap for servicing large requests.
+*/</doc>

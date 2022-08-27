@@ -1,0 +1,18 @@
+<dec f='codebrowser/sunrpc/rpc/xdr.h' l='314' type='bool_t xdr_string(XDR * __xdrs, char ** __cpp, u_int __maxsize)'/>
+<dec f='codebrowser/include/rpc/xdr.h' l='22' type='bool_t xdr_string(XDR * , char ** , u_int )'/>
+<use f='codebrowser/include/rpc/xdr.h' l='22' c='xdr_string'/>
+<use f='codebrowser/nis/nis_xdr.c' l='31' u='c' c='xdr_nis_attr'/>
+<use f='codebrowser/nis/nis_xdr.c' l='41' u='c' c='xdr_nis_name'/>
+<use f='codebrowser/nis/nis_xdr.c' l='74' u='c' c='xdr_endpoint'/>
+<use f='codebrowser/nis/nis_xdr.c' l='77' u='c' c='xdr_endpoint'/>
+<use f='codebrowser/nis/nis_xdr.c' l='79' u='c' c='xdr_endpoint'/>
+<use f='codebrowser/nis/nis_xdr.c' l='141' u='c' c='xdr_entry_obj'/>
+<use f='codebrowser/nis/nis_xdr.c' l='178' u='c' c='xdr_table_col'/>
+<use f='codebrowser/nis/nis_xdr.c' l='191' u='c' c='xdr_table_obj'/>
+<use f='codebrowser/nis/nis_xdr.c' l='204' u='c' c='xdr_table_obj'/>
+<use f='codebrowser/nis/nis_xdr.c' l='402' u='c' c='_xdr_nis_tag'/>
+<use f='codebrowser/nis/yp_xdr.c' l='61' u='c' c='xdr_domainname'/>
+<use f='codebrowser/nis/yp_xdr.c' l='68' u='c' c='xdr_mapname'/>
+<use f='codebrowser/nis/yp_xdr.c' l='75' u='c' c='xdr_peername'/>
+<use f='codebrowser/nis/ypupdate_xdr.c' l='46' u='c' c='__GI_xdr_ypupdate_args'/>
+<use f='codebrowser/nis/ypupdate_xdr.c' l='57' u='c' c='__GI_xdr_ypdelete_args'/>

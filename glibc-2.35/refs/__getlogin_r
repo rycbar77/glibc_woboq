@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/unistd.h' l='24' type='int __getlogin_r(char * , size_t )'/>
+<dec f='codebrowser/include/unistd.h' l='25' type='int __getlogin_r(char * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='25' c='__getlogin_r'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getlogin_r.c' l='110' ll='118' type='int __getlogin_r(char * name, size_t namesize)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getlogin_r.c' l='120' c='getlogin_r'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/getlogin_r.c' l='106'>/* Return at most NAME_LEN characters of the login name of the user in NAME.
+   If it cannot be determined or some other error occurred, return the error
+   code.  Otherwise return 0.  */</doc>
+<use f='codebrowser/posix/glob.c' l='653' u='c' c='__glob_lstat_compat'/>

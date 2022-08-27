@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/dl-sysdep.h' l='26'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/dl-sysdep.h' l='26'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/dl-sysdep.h' l='21'>/* On many architectures the kernel provides a virtual DSO and gives
+   AT_SYSINFO_EHDR to point us to it.  As this is introduced for new
+   machines, we should look at it for unwind information even if
+   we aren&apos;t making direct use of it.  So enable this across the board.  */</doc>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='623' u='a'/>
+<use f='codebrowser/elf/dl-support.c' l='206' u='a'/>
+<use f='codebrowser/elf/setup-vdso.h' l='23' u='a'/>
+<use f='codebrowser/elf/dl-support.c' l='281' u='a'/>
+<use f='codebrowser/elf/rtld.c' l='1975' u='a'/>
+<use f='codebrowser/elf/rtld.c' l='2085' u='a'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-sysdep.c' l='47' u='a'/>

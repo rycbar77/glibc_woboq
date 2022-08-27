@@ -1,0 +1,4 @@
+<def f='codebrowser/csu/libc-start.c' l='172' ll='190' type='void call_init(int argc, char ** argv, char ** envp)'/>
+<use f='codebrowser/csu/libc-start.c' l='381' u='c' c='__libc_start_main_impl'/>
+<doc f='codebrowser/csu/libc-start.c' l='170'>/* Initialization for static executables.  There is no dynamic
+   segment, so we access the symbols directly.  */</doc>

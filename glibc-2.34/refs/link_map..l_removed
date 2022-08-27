@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/link.h' l='196' type='unsigned int'/>
+<offset>6381</offset>
+<doc f='codebrowser/include/link.h' l='196'>/* Nozero if the object cannot be used anymore
+				   since it is removed.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='324' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='516' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='524' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-load.c' l='998' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='2052' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-lookup.c' l='384' u='r' c='do_lookup_x'/>

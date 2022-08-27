@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/sys/socket.h' l='92' type='ssize_t __sendmsg(int __fd, const struct msghdr * __message, int __flags)'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='518' u='c' c='__msgwrite'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='314' u='c' c='svcudp_recv'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='351' u='c' c='svcudp_reply'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='407' u='c' c='__msgwrite'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/sendmsg.c' l='34' macro='1' type='ssize_t __sendmsg(int , const struct msghdr * , int )'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/regex_internal.c' l='24' type='re_dfastate_t * create_ci_newstate(const re_dfa_t * dfa, const re_node_set * nodes, re_hashval_t hash)'/>
+<use f='codebrowser/posix/regex_internal.c' l='1515' u='c' c='re_acquire_state'/>
+<def f='codebrowser/posix/regex_internal.c' l='1628' ll='1673' type='re_dfastate_t * create_ci_newstate(const re_dfa_t * dfa, const re_node_set * nodes, re_hashval_t hash)'/>
+<doc f='codebrowser/posix/regex_internal.c' l='1625'>/* Create the new state which is independent of contexts.
+   Return the new state if succeeded, otherwise return NULL.  */</doc>

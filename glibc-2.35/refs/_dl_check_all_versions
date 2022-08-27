@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1107' type='int _dl_check_all_versions(struct link_map * map, int verbose, int trace_mode)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1105'>/* Check the version dependencies of all objects available through
+   MAP.  If VERBOSE print some more diagnostics.  */</doc>
+<def f='codebrowser/elf/dl-version.c' l='359' ll='370' type='int _dl_check_all_versions(struct link_map * map, int verbose, int trace_mode)'/>
+<use f='codebrowser/elf/rtld.c' l='698' u='c' c='version_check_doit'/>

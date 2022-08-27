@@ -1,0 +1,8 @@
+<def f='include/linux/fanotify.h' l='130' ll='134'/>
+<use f='include/linux/fanotify.h' l='144'/>
+<use f='include/linux/fanotify.h' l='158'/>
+<size>4</size>
+<doc f='include/linux/fanotify.h' l='129'>/* Variable length info record following event metadata */</doc>
+<mbr r='fanotify_event_info_header::info_type' o='0' t='__u8'/>
+<mbr r='fanotify_event_info_header::pad' o='8' t='__u8'/>
+<mbr r='fanotify_event_info_header::len' o='16' t='__u16'/>

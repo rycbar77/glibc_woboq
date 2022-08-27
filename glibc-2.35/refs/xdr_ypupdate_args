@@ -1,0 +1,4 @@
+<dec f='codebrowser/nis/rpcsvc/ypupd.h' l='60' type='bool_t xdr_ypupdate_args(XDR * , ypupdate_args * )'/>
+<dec f='codebrowser/include/rpcsvc/ypupd.h' l='8' type='bool_t xdr_ypupdate_args(XDR * , ypupdate_args * )'/>
+<use f='codebrowser/include/rpcsvc/ypupd.h' l='8' c='xdr_ypupdate_args'/>
+<use f='codebrowser/nis/ypclnt.c' l='1001' u='r' c='__GI_yp_update'/>

@@ -1,0 +1,8 @@
+<def f='codebrowser/elf/do-rel.h' l='42' ll='215' type='void elf_dynamic_do_Rela(struct link_map * map, struct r_scope_elem ** scope, Elf64_Addr reladdr, Elf64_Addr relsize, typeof (((Elf64_Dyn *)0)-&gt;d_un.d_val) nrelative, int lazy, int skip_ifunc)'/>
+<doc f='codebrowser/elf/do-rel.h' l='37'>/* Perform the relocations in MAP on the running program image as specified
+   by RELTAG, SZTAG.  If LAZY is nonzero, this is the first pass on PLT
+   relocations; they should be set up to call _dl_runtime_resolve, rather
+   than fully resolved now.  */</doc>
+<use f='codebrowser/elf/dl-reloc-static-pie.c' l='63' macro='1' u='c' c='_dl_relocate_static_pie'/>
+<use f='codebrowser/elf/dl-reloc.c' l='288' macro='1' u='c' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/rtld.c' l='573' macro='1' u='c' c='_dl_start'/>

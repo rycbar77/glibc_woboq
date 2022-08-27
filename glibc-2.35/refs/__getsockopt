@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/sys/socket.h' l='133' type='int __getsockopt(int __fd, int __level, int __optname, void *restrict __optval, socklen_t *restrict __optlen)'/>
+<doc f='codebrowser/include/sys/socket.h' l='130'>/* Put the current value for socket FD&apos;s option OPTNAME at protocol level LEVEL
+   into OPTVAL (which is *OPTLEN bytes long), and set *OPTLEN to the value&apos;s
+   actual length.  Returns 0 on success, -1 for errors.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getipv4sourcefilter.c' l='52' u='c' c='getipv4sourcefilter'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getsockopt.c' l='91' ll='102' type='int __getsockopt(int fd, int level, int optname, void * optval, socklen_t * len)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsockopt.c' l='103' c='getsockopt'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsourcefilter.c' l='124' u='c' c='getsourcefilter'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='525' type='int __pthread_setcanceltype(int type, int * oldtype)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='526' type='int __pthread_setcanceltype(int , int * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='526' c='__pthread_setcanceltype'/>
+<def f='codebrowser/nptl/pthread_setcanceltype.c' l='24' ll='39' type='int __pthread_setcanceltype(int type, int * oldtype)'/>
+<use f='codebrowser/nptl/pthread_setcanceltype.c' l='41' c='pthread_setcanceltype'/>

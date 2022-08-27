@@ -1,0 +1,17 @@
+<dec f='codebrowser/include/stdlib.h' l='96' type='char * __realpath(const char * __name, char * __resolved)'/>
+<dec f='codebrowser/include/stdlib.h' l='97' type='char * __realpath(const char * , char * )'/>
+<use f='codebrowser/include/stdlib.h' l='97' c='__realpath'/>
+<use f='codebrowser/debug/realpath_chk.c' l='31' u='c' c='__realpath_chk'/>
+<def f='codebrowser/stdlib/canonicalize.c' l='430' ll='439' type='char * __realpath(const char * name, char * resolved)'/>
+<use f='codebrowser/stdlib/canonicalize.c' l='441' c='realpath'/>
+<use f='codebrowser/stdlib/canonicalize.c' l='465' u='c' c='__canonicalize_file_name'/>
+<doc f='codebrowser/stdlib/canonicalize.c' l='419'>/* Return the canonical absolute name of file NAME.  A canonical name
+   does not contain any &quot;.&quot;, &quot;..&quot; components nor any repeated file name
+   separators (&apos;/&apos;) or symlinks.  All file name components must exist.  If
+   RESOLVED is null, the result is malloc&apos;d; otherwise, if the
+   canonical name is PATH_MAX chars or more, returns null with &apos;errno&apos;
+   set to ENAMETOOLONG; if the name fits in fewer than PATH_MAX chars,
+   returns the name in RESOLVED.  If the name cannot be resolved and
+   RESOLVED is non-NULL, it contains the name of the first component
+   that cannot be resolved.  If the name can be resolved, RESOLVED
+   holds the same value as the value returned.  */</doc>

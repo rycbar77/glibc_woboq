@@ -1,0 +1,6 @@
+<dec f='codebrowser/posix/unistd.h' l='1123' type='char * crypt(const char * __key, const char * __salt)'/>
+<doc f='codebrowser/posix/unistd.h' l='1122'>/* Encrypt at most 8 characters from KEY using salt to perturb DES.  */</doc>
+<dec f='codebrowser/crypt/crypt.h' l='32' type='char * crypt(const char * __key, const char * __salt)'/>
+<def f='codebrowser/crypt/crypt-entry.c' l='148' ll='168' type='char * crypt(const char * key, const char * salt)'/>
+<use f='codebrowser/crypt/crypt-entry.c' l='176' c='fcrypt'/>
+<doc f='codebrowser/crypt/crypt.h' l='31'>/* Encrypt at most 8 characters from KEY using salt to perturb DES.  */</doc>

@@ -1,0 +1,18 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='220' type='uint32_t'/>
+<use f='codebrowser/nscd/nscd-client.h' l='252' u='w' c='datahead_init_common'/>
+<offset>160</offset>
+<doc f='codebrowser/nscd/nscd-client.h' l='220'>/* TTL value used.  */</doc>
+<use f='codebrowser/nscd/aicache.c' l='398' u='w' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='398' u='r' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='454' u='r' c='addhstaiX'/>
+<use f='codebrowser/nscd/cachedumper.c' l='155' u='a' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='155' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='155' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/hstcache.c' l='124' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='313' u='w' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='313' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='387' u='w' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='387' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='515' u='r' c='addinnetgrX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='563' u='w' c='addinnetgrX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='563' u='r' c='addinnetgrX'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/support/resolv_test.h' l='87' type='void (*)(const struct resolv_response_context *, struct resolv_response_builder *, const char *, uint16_t, uint16_t)'/>
+<offset>0</offset>
+<doc f='codebrowser/support/resolv_test.h' l='84'>/* The response_callback function is called for every incoming DNS
+     packet, over UDP or TCP.  It must be specified, the other
+     configuration settings are optional.  */</doc>
+<use f='codebrowser/support/resolv_test.c' l='677' u='r' c='server_thread_udp_process_one'/>
+<use f='codebrowser/support/resolv_test.c' l='923' u='r' c='server_thread_tcp_client'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/include/link.h' l='306' type='void *'/>
+<offset>8576</offset>
+<doc f='codebrowser/include/link.h' l='305'>/* Start of the initialization image.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='203' u='w' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/dl-load.c' l='1216' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1385' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1386' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1386' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/rtld.c' l='1544' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1575' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1576' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1577' u='r' c='dl_main'/>
+<use f='codebrowser/elf/dl-tls.c' l='597' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='1074' u='r' c='init_one_static_tls'/>

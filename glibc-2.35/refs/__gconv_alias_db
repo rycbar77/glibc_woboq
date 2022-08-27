@@ -1,0 +1,12 @@
+<dec f='codebrowser/iconv/gconv_int.h' l='102' type='void *'/>
+<doc f='codebrowser/iconv/gconv_int.h' l='101'>/* Database of alias names.  */</doc>
+<use f='codebrowser/iconv/gconv_conf.c' l='142' u='a' c='add_alias2'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='316' u='a' c='add_module'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='492' u='a' c='__gconv_read_conf'/>
+<def f='codebrowser/iconv/gconv_db.c' l='35' type='void *'/>
+<use f='codebrowser/iconv/gconv_db.c' l='54' u='r' c='__gconv_get_alias_db'/>
+<use f='codebrowser/iconv/gconv_db.c' l='696' u='a' c='do_lookup_alias'/>
+<use f='codebrowser/iconv/gconv_db.c' l='841' u='r' c='free_mem'/>
+<use f='codebrowser/iconv/gconv_db.c' l='842' u='r' c='free_mem'/>
+<doc f='codebrowser/iconv/gconv_db.c' l='33'>/* Simple data structure for alias mapping.  We have two names, `from&apos;
+   and `to&apos;.  */</doc>

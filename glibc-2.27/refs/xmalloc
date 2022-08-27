@@ -1,0 +1,16 @@
+<dec f='codebrowser/include/programs/xmalloc.h' l='25' type='void * xmalloc(size_t n)'/>
+<use f='codebrowser/elf/cache.c' l='331' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='348' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='374' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='425' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='494' u='c' c='add_to_cache'/>
+<use f='codebrowser/elf/cache.c' l='657' u='c' c='insert_to_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='757' u='c' c='save_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='799' u='c' c='save_aux_cache'/>
+<doc f='codebrowser/include/programs/xmalloc.h' l='24'>/* Prototypes for a few program-wide used functions.  */</doc>
+<use f='codebrowser/elf/chroot_canon.c' l='59' u='c' c='chroot_canon'/>
+<dec f='codebrowser/locale/programs/xmalloc.c' l='29' type='void * xmalloc(size_t n)'/>
+<def f='codebrowser/locale/programs/xmalloc.c' l='69' ll='78' macro='1' type='void * xmalloc(size_t n)'/>
+<use f='codebrowser/locale/programs/xmalloc.c' l='101' u='c' c='xrealloc'/>
+<dec f='codebrowser/locale/programs/xstrdup.c' l='27' type='void * xmalloc(size_t n)'/>
+<use f='codebrowser/locale/programs/xstrdup.c' l='35' u='c' c='xstrdup'/>

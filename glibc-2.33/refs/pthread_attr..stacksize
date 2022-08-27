@@ -1,0 +1,28 @@
+<dec f='codebrowser/sysdeps/nptl/internaltypes.h' l='38' type='size_t'/>
+<offset>256</offset>
+<use f='codebrowser/nptl/nptl-init.c' l='317' u='w' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/pthread_attr_getstack.c' l='32' u='r' c='__pthread_attr_getstack'/>
+<use f='codebrowser/nptl/pthread_attr_getstack.c' l='36' u='r' c='__pthread_attr_getstack'/>
+<use f='codebrowser/nptl/pthread_attr_getstacksize.c' l='29' u='r' c='__pthread_attr_getstacksize'/>
+<use f='codebrowser/nptl/pthread_attr_getstacksize.c' l='36' u='r' c='__pthread_attr_getstacksize'/>
+<use f='codebrowser/nptl/pthread_attr_setstack.c' l='46' u='w' c='__pthread_attr_setstack'/>
+<use f='codebrowser/nptl/pthread_attr_setstacksize.c' l='40' u='w' c='__pthread_attr_setstacksize'/>
+<use f='codebrowser/nptl/allocatestack.c' l='413' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='414' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='418' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='432' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='436' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='437' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='67' u='w' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='135' u='w' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='141' u='w' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='141' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='145' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='147' u='w' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='49' u='r' c='pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='51' u='r' c='pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='70' u='r' c='pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='71' u='w' c='pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='71' u='r' c='pthread_setattr_default_np'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='110' u='w' c='__timer_create_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='110' u='r' c='__timer_create_new'/>

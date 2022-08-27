@@ -1,0 +1,17 @@
+<dec f='codebrowser/malloc/obstack.h' l='159' type='char *'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='58' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='67' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='70' macro='1' u='r' c='__obstack_vprintf_chk'/>
+<offset>256</offset>
+<doc f='codebrowser/malloc/obstack.h' l='159'>/* address of char after current chunk */</doc>
+<use f='codebrowser/libio/obprintf.c' l='48' macro='1' u='r' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='53' macro='1' u='r' c='_IO_obstack_overflow'/>
+<use f='codebrowser/libio/obprintf.c' l='76' macro='1' u='r' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='81' macro='1' u='r' c='_IO_obstack_xsputn'/>
+<use f='codebrowser/libio/obprintf.c' l='136' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='145' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='148' macro='1' u='r' c='_IO_obstack_vprintf'/>
+<use f='codebrowser/malloc/obstack.c' l='181' u='w' c='_obstack_begin'/>
+<use f='codebrowser/malloc/obstack.c' l='229' u='w' c='_obstack_begin_1'/>
+<use f='codebrowser/malloc/obstack.c' l='266' u='w' c='_obstack_newchunk'/>
+<use f='codebrowser/malloc/obstack.c' l='366' u='w' c='obstack_free'/>

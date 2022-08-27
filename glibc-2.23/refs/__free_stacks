@@ -1,0 +1,4 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='580' type='void __free_stacks(size_t limit)'/>
+<def f='codebrowser/nptl/allocatestack.c' l='261' ll='296' type='void __free_stacks(size_t limit)'/>
+<use f='codebrowser/nptl/allocatestack.c' l='312' u='c' c='queue_stack'/>
+<doc f='codebrowser/nptl/allocatestack.c' l='260'>/* Free stacks until cache size is lower than LIMIT.  */</doc>

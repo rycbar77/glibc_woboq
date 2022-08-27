@@ -1,0 +1,15 @@
+<def f='codebrowser/sysdeps/nptl/internaltypes.h' l='123' ll='126'/>
+<size>4</size>
+<doc f='codebrowser/sysdeps/nptl/internaltypes.h' l='122'>/* Barrier variable attribute data structure.  */</doc>
+<mbr r='pthread_barrierattr::pshared' o='0' t='int'/>
+<use f='codebrowser/nptl/pthread_barrier_init.c' l='24'/>
+<use f='codebrowser/nptl/pthread_barrier_init.c' l='46' c='___pthread_barrier_init'/>
+<use f='codebrowser/nptl/pthread_barrier_init.c' l='48' c='___pthread_barrier_init'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_barrierattr_getpshared.c' l='25' c='__pthread_barrierattr_getpshared'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_barrierattr_init.c' l='26' c='__pthread_barrierattr_init'/>
+<use f='codebrowser/nptl/pthread_barrierattr_init.c' l='28' c='__pthread_barrierattr_init'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_barrierattr_setpshared.c' l='30' c='__pthread_barrierattr_setpshared'/>
+<size>4</size>

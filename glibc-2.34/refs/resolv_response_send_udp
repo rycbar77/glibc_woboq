@@ -1,0 +1,7 @@
+<dec f='codebrowser/support/resolv_test.h' l='219' type='void resolv_response_send_udp(const struct resolv_response_context * , struct resolv_response_builder * )'/>
+<doc f='codebrowser/support/resolv_test.h' l='215'>/* Sends a UDP response using a specific context.  This can be used to
+   reorder or duplicate responses, along with
+   resolv_response_context_duplicate and
+   response_builder_allocate.  */</doc>
+<use f='codebrowser/support/resolv_test.c' l='703' u='c' c='server_thread_udp_process_one'/>
+<def f='codebrowser/support/resolv_test.c' l='709' ll='726' type='void resolv_response_send_udp(const struct resolv_response_context * ctx, struct resolv_response_builder * b)'/>

@@ -1,0 +1,7 @@
+<def f='codebrowser/nptl/pthread_cond_common.c' l='43' ll='47' type='uint64_t __condvar_load_g1_start_relaxed(pthread_cond_t * cond)'/>
+<use f='codebrowser/nptl/pthread_cond_common.c' l='213' u='c' c='__condvar_quiesce_and_switch_g1'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='87' u='c' c='__condvar_cancel_waiting'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='453' u='c' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='486' u='c' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='539' u='c' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='572' u='c' c='__pthread_cond_wait_common'/>

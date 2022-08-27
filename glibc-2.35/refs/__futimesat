@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/futimesat.c' l='25' macro='1' type='int __futimesat(int fd, const char * file, const struct timeval * tvp64)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimesat.c' l='54' c='futimesat'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/futimesat.c' l='22'>/* Change the access time of FILE relative to FD to TVP[0] and
+   the modification time of FILE to TVP[1].  */</doc>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/libio/stdio.h' l='843' type='int ftrylockfile(FILE * __stream)'/>
+<doc f='codebrowser/libio/stdio.h' l='841'>/* Try to acquire ownership of STREAM but do not block if it is not
+   possible.  */</doc>
+<def f='codebrowser/sysdeps/pthread/ftrylockfile.c' l='31' macro='1' type='int ftrylockfile(FILE * )'/>

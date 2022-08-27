@@ -1,0 +1,38 @@
+<dec f='codebrowser/resolv/resolv.h' l='163' type='struct __res_state * __res_state()'/>
+<use f='codebrowser/resolv/resolv.h' l='163' c='__res_state'/>
+<use f='codebrowser/include/resolv.h' l='21'/>
+<dec f='codebrowser/include/resolv.h' l='41' type='struct __res_state * __res_state()'/>
+<use f='codebrowser/include/resolv.h' l='41' c='__res_state'/>
+<size>568</size>
+<use f='codebrowser/resolv/resolv_conf.h' l='71' c='__resolv_conf_load'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='82' c='__resolv_conf_get'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='97' c='__resolv_conf_attach'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='101' c='__resolv_conf_detach'/>
+<use f='codebrowser/resolv/resolv_context.h' l='51'/>
+<use f='codebrowser/resolv/resolv_context.h' l='92' c='__resolv_context_get_override'/>
+<size>568</size>
+<def f='codebrowser/nptl/res.c' l='22' ll='26' type='struct __res_state * __res_state()'/>
+<use f='codebrowser/nptl/res.c' l='22' c='__res_state'/>
+<size>568</size>
+<def f='codebrowser/resolv/res-state.c' l='22' ll='26' type='struct __res_state * __res_state()'/>
+<use f='codebrowser/resolv/res-state.c' l='22' c='__res_state'/>
+<size>568</size>
+<use f='codebrowser/resolv/res_init.c' l='167' c='has_preinit_values'/>
+<use f='codebrowser/resolv/res_init.c' l='177' c='resolv_conf_parser_init'/>
+<use f='codebrowser/resolv/res_init.c' l='553' c='__resolv_conf_load'/>
+<size>568</size>
+<use f='codebrowser/resolv/res_libc.c' l='91'/>
+<use f='codebrowser/resolv/res_libc.c' l='94'/>
+<use f='codebrowser/resolv/res_libc.c' l='95'/>
+<size>568</size>
+<use f='codebrowser/resolv/resolv_conf.c' l='195' c='resolv_conf_get_1'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='262' c='resolv_conf_matches'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='358' c='__resolv_conf_get'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='486' c='update_from_conf'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='598' c='__resolv_conf_attach'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='657' c='__resolv_conf_detach'/>
+<size>568</size>
+<use f='codebrowser/resolv/resolv_context.c' l='73' c='maybe_init'/>
+<use f='codebrowser/resolv/resolv_context.c' l='131' c='context_alloc'/>
+<use f='codebrowser/resolv/resolv_context.c' l='207' c='__resolv_context_get_override'/>
+<size>568</size>

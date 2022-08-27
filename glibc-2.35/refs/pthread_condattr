@@ -1,0 +1,19 @@
+<def f='codebrowser/sysdeps/nptl/internaltypes.h' l='87' ll='96'/>
+<size>4</size>
+<doc f='codebrowser/sysdeps/nptl/internaltypes.h' l='86'>/* Conditional variable attribute data structure.  */</doc>
+<mbr r='pthread_condattr::value' o='0' t='int'/>
+<use f='codebrowser/nptl/pthread_cond_init.c' l='30' c='__pthread_cond_init'/>
+<use f='codebrowser/nptl/pthread_cond_init.c' l='30' c='__pthread_cond_init'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_condattr_getclock.c' l='25' c='__pthread_condattr_getclock'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_condattr_getpshared.c' l='24' c='__pthread_condattr_getpshared'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_condattr_init.c' l='27' c='__pthread_condattr_init'/>
+<use f='codebrowser/nptl/pthread_condattr_init.c' l='29' c='__pthread_condattr_init'/>
+<use f='codebrowser/nptl/pthread_condattr_init.c' l='29' c='__pthread_condattr_init'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_condattr_setclock.c' l='38' c='__pthread_condattr_setclock'/>
+<size>4</size>
+<use f='codebrowser/nptl/pthread_condattr_setpshared.c' l='30' c='__pthread_condattr_setpshared'/>
+<size>4</size>

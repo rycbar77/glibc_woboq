@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/string.h' l='56' type='const char * __sigdescr_np(int __errnum)'/>
+<dec f='codebrowser/include/string.h' l='57' type='const char * __sigdescr_np(int )'/>
+<use f='codebrowser/include/string.h' l='57' c='__sigdescr_np'/>
+<def f='codebrowser/string/sigdescr_np.c' l='23' ll='32' type='const char * __sigdescr_np(int signum)'/>
+<use f='codebrowser/string/sigdescr_np.c' l='34' c='sigdescr_np'/>
+<use f='codebrowser/string/strsignal.c' l='29' u='c' c='strsignal'/>

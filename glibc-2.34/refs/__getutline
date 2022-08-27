@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/utmp.h' l='19' type='struct utmp * __getutline(const struct utmp * __line)'/>
+<dec f='codebrowser/include/utmp.h' l='20' type='struct utmp * __getutline(const struct utmp * )'/>
+<use f='codebrowser/include/utmp.h' l='20' c='__getutline'/>
+<def f='codebrowser/login/getutline.c' l='27' ll='42' type='struct utmp * __getutline(const struct utmp * line)'/>
+<use f='codebrowser/login/getutline.c' l='44' c='getutline'/>
+<use f='codebrowser/login/getutxline.c' l='25' u='c' c='getutxline'/>

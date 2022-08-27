@@ -1,0 +1,11 @@
+<dec f='codebrowser/malloc/malloc.c' l='1859' type='struct malloc_state *'/>
+<use f='codebrowser/malloc/malloc.c' l='1921' u='w'/>
+<use f='codebrowser/malloc/arena.c' l='159' u='r' c='__malloc_fork_lock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='174' u='r' c='__malloc_fork_unlock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='203' u='r' c='__malloc_fork_unlock_child'/>
+<use f='codebrowser/malloc/malloc.c' l='4997' u='r' c='__malloc_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='5125' u='r' c='__libc_mallinfo2'/>
+<use f='codebrowser/malloc/malloc.c' l='5187' u='r' c='__malloc_stats'/>
+<use f='codebrowser/malloc/malloc.c' l='5764' u='r' c='__malloc_info'/>
+<offset>17280</offset>
+<doc f='codebrowser/malloc/malloc.c' l='1858'>/* Linked list */</doc>

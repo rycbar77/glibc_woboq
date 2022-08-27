@@ -1,0 +1,6 @@
+<def f='codebrowser/elf/dl-sym-post.h' l='36' ll='61' type='void * _dl_sym_post(lookup_t result, const Elf64_Sym * ref, void * value, Elf64_Addr caller, struct link_map * match)'/>
+<use f='codebrowser/elf/dl-minimal.c' l='71' u='c' c='lookup_malloc_symbol'/>
+<doc f='codebrowser/elf/dl-sym-post.h' l='33'>/* Translates RESULT, *REF, VALUE into a symbol address from the point
+   of view of MATCH.  Performs IFUNC resolution and auditing if
+   necessary.  If MATCH is NULL, CALLER is used to determine it.  */</doc>
+<use f='codebrowser/elf/dl-sym.c' l='170' u='c' c='do_sym'/>

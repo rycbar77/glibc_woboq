@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>e_exp10f.c source code [codebrowser/sysdeps/ieee754/flt-32/e_exp10f.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/ieee754/flt-32/e_exp10f.c'; var root_path = '../../../..'; var data_path = '../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>sysdeps</a>/<a href='..'>ieee754</a>/<a href='./'>flt-32</a>/<a href='e_exp10f.c.html'>e_exp10f.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Single-precision 10^x function.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2020-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../../../include/math.h.html">&lt;math.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../../../include/math-narrow-eval.h.html">&lt;math-narrow-eval.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../../../include/stdint.h.html">&lt;stdint.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../libm-alias-finite.h.html">&lt;libm-alias-finite.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../../generic/libm-alias-float.h.html">&lt;libm-alias-float.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../../../include/shlib-compat.h.html">&lt;shlib-compat.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../../../math/math-svid-compat.h.html">&lt;math-svid-compat.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="math_config.h.html">"math_config.h"</a></u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><i>/*</i></td></tr>
+<tr><th id="29">29</th><td><i>  EXP2F_TABLE_BITS 5</i></td></tr>
+<tr><th id="30">30</th><td><i>  EXP2F_POLY_ORDER 3</i></td></tr>
+<tr><th id="31">31</th><td><i></i></td></tr>
+<tr><th id="32">32</th><td><i>  Max. ULP error: 0.502 (normal range, nearest rounding).</i></td></tr>
+<tr><th id="33">33</th><td><i>  Max. relative error: 2^-33.240 (before rounding to float).</i></td></tr>
+<tr><th id="34">34</th><td><i>  Wrong count: 169839.</i></td></tr>
+<tr><th id="35">35</th><td><i>  Non-nearest ULP error: 1 (rounded ULP error).</i></td></tr>
+<tr><th id="36">36</th><td><i></i></td></tr>
+<tr><th id="37">37</th><td><i>  Detailed error analysis (for EXP2F_TABLE_BITS=3 thus N=32):</i></td></tr>
+<tr><th id="38">38</th><td><i></i></td></tr>
+<tr><th id="39">39</th><td><i>  - We first compute z = RN(InvLn10N * x) where</i></td></tr>
+<tr><th id="40">40</th><td><i></i></td></tr>
+<tr><th id="41">41</th><td><i>      InvLn10N = N*log(10)/log(2) * (1 + theta1) with |theta1| &lt; 2^-54.150</i></td></tr>
+<tr><th id="42">42</th><td><i></i></td></tr>
+<tr><th id="43">43</th><td><i>    since z is rounded to nearest:</i></td></tr>
+<tr><th id="44">44</th><td><i></i></td></tr>
+<tr><th id="45">45</th><td><i>      z = InvLn10N * x * (1 + theta2) with |theta2| &lt; 2^-53</i></td></tr>
+<tr><th id="46">46</th><td><i></i></td></tr>
+<tr><th id="47">47</th><td><i>    thus z =  N*log(10)/log(2) * x * (1 + theta3) with |theta3| &lt; 2^-52.463</i></td></tr>
+<tr><th id="48">48</th><td><i></i></td></tr>
+<tr><th id="49">49</th><td><i>  - Since |x| &lt; 38 in the main branch, we deduce:</i></td></tr>
+<tr><th id="50">50</th><td><i></i></td></tr>
+<tr><th id="51">51</th><td><i>    z = N*log(10)/log(2) * x + theta4 with |theta4| &lt; 2^-40.483</i></td></tr>
+<tr><th id="52">52</th><td><i></i></td></tr>
+<tr><th id="53">53</th><td><i>  - We then write z = k + r where k is an integer and |r| &lt;= 0.5 (exact)</i></td></tr>
+<tr><th id="54">54</th><td><i></i></td></tr>
+<tr><th id="55">55</th><td><i>  - We thus have</i></td></tr>
+<tr><th id="56">56</th><td><i></i></td></tr>
+<tr><th id="57">57</th><td><i>    x = z*log(2)/(N*log(10)) - theta4*log(2)/(N*log(10))</i></td></tr>
+<tr><th id="58">58</th><td><i>      = z*log(2)/(N*log(10)) + theta5 with |theta5| &lt; 2^-47.215</i></td></tr>
+<tr><th id="59">59</th><td><i></i></td></tr>
+<tr><th id="60">60</th><td><i>    10^x = 2^(k/N) * 2^(r/N) * 10^theta5</i></td></tr>
+<tr><th id="61">61</th><td><i>         =  2^(k/N) * 2^(r/N) * (1 + theta6) with |theta6| &lt; 2^-46.011</i></td></tr>
+<tr><th id="62">62</th><td><i></i></td></tr>
+<tr><th id="63">63</th><td><i>  - Then 2^(k/N) is approximated by table lookup, the maximal relative error</i></td></tr>
+<tr><th id="64">64</th><td><i>    is for (k%N) = 5, with</i></td></tr>
+<tr><th id="65">65</th><td><i></i></td></tr>
+<tr><th id="66">66</th><td><i>      s = 2^(i/N) * (1 + theta7) with |theta7| &lt; 2^-53.249</i></td></tr>
+<tr><th id="67">67</th><td><i></i></td></tr>
+<tr><th id="68">68</th><td><i>  - 2^(r/N) is approximated by a degree-3 polynomial, where the maximal</i></td></tr>
+<tr><th id="69">69</th><td><i>    mathematical relative error is 2^-33.243.</i></td></tr>
+<tr><th id="70">70</th><td><i></i></td></tr>
+<tr><th id="71">71</th><td><i>  - For C[0] * r + C[1], assuming no FMA is used, since |r| &lt;= 0.5 and</i></td></tr>
+<tr><th id="72">72</th><td><i>    |C[0]| &lt; 1.694e-6, |C[0] * r| &lt; 8.47e-7, and the absolute error on</i></td></tr>
+<tr><th id="73">73</th><td><i>    C[0] * r is bounded by 1/2*ulp(8.47e-7) = 2^-74.  Then we add C[1] with</i></td></tr>
+<tr><th id="74">74</th><td><i>    |C[1]| &lt; 0.000235, thus the absolute error on C[0] * r + C[1] is bounded</i></td></tr>
+<tr><th id="75">75</th><td><i>    by 2^-65.994 (z is bounded by 0.000236).</i></td></tr>
+<tr><th id="76">76</th><td><i></i></td></tr>
+<tr><th id="77">77</th><td><i>  - For r2 = r * r, since |r| &lt;= 0.5, we have |r2| &lt;= 0.25 and the absolute</i></td></tr>
+<tr><th id="78">78</th><td><i>    error is bounded by 1/4*ulp(0.25) = 2^-56 (the factor 1/4 is because |r2|</i></td></tr>
+<tr><th id="79">79</th><td><i>    cannot exceed 1/4, and on the left of 1/4 the distance between two</i></td></tr>
+<tr><th id="80">80</th><td><i>    consecutive numbers is 1/4*ulp(1/4)).</i></td></tr>
+<tr><th id="81">81</th><td><i></i></td></tr>
+<tr><th id="82">82</th><td><i>  - For y = C[2] * r + 1, assuming no FMA is used, since |r| &lt;= 0.5 and</i></td></tr>
+<tr><th id="83">83</th><td><i>    |C[2]| &lt; 0.0217, the absolute error on C[2] * r is bounded by 2^-60,</i></td></tr>
+<tr><th id="84">84</th><td><i>    and thus the absolute error on C[2] * r + 1 is bounded by 1/2*ulp(1)+2^60</i></td></tr>
+<tr><th id="85">85</th><td><i>    &lt; 2^-52.988, and |y| &lt; 1.01085 (the error bound is better if a FMA is</i></td></tr>
+<tr><th id="86">86</th><td><i>    used).</i></td></tr>
+<tr><th id="87">87</th><td><i></i></td></tr>
+<tr><th id="88">88</th><td><i>  - for z * r2 + y: the absolute error on z is bounded by 2^-65.994, with</i></td></tr>
+<tr><th id="89">89</th><td><i>    |z| &lt; 0.000236, and the absolute error on r2 is bounded by 2^-56, with</i></td></tr>
+<tr><th id="90">90</th><td><i>    r2 &lt; 0.25, thus |z*r2| &lt; 0.000059, and the absolute error on z * r2</i></td></tr>
+<tr><th id="91">91</th><td><i>    (including the rounding error) is bounded by:</i></td></tr>
+<tr><th id="92">92</th><td><i></i></td></tr>
+<tr><th id="93">93</th><td><i>      2^-65.994 * 0.25 + 0.000236 * 2^-56 + 1/2*ulp(0.000059) &lt; 2^-66.429.</i></td></tr>
+<tr><th id="94">94</th><td><i></i></td></tr>
+<tr><th id="95">95</th><td><i>    Now we add y, with |y| &lt; 1.01085, and error on y bounded by 2^-52.988,</i></td></tr>
+<tr><th id="96">96</th><td><i>    thus the absolute error is bounded by:</i></td></tr>
+<tr><th id="97">97</th><td><i></i></td></tr>
+<tr><th id="98">98</th><td><i>      2^-66.429 + 2^-52.988 + 1/2*ulp(1.01085) &lt; 2^-51.993</i></td></tr>
+<tr><th id="99">99</th><td><i></i></td></tr>
+<tr><th id="100">100</th><td><i>  - Now we convert the error on y into relative error.  Recall that y</i></td></tr>
+<tr><th id="101">101</th><td><i>    approximates 2^(r/N), for |r| &lt;= 0.5 and N=32. Thus 2^(-0.5/32) &lt;= y,</i></td></tr>
+<tr><th id="102">102</th><td><i>    and the relative error on y is bounded by</i></td></tr>
+<tr><th id="103">103</th><td><i></i></td></tr>
+<tr><th id="104">104</th><td><i>      2^-51.993/2^(-0.5/32) &lt; 2^-51.977</i></td></tr>
+<tr><th id="105">105</th><td><i></i></td></tr>
+<tr><th id="106">106</th><td><i>  - Taking into account the mathematical relative error of 2^-33.243 we have:</i></td></tr>
+<tr><th id="107">107</th><td><i></i></td></tr>
+<tr><th id="108">108</th><td><i>      y = 2^(r/N) * (1 + theta8) with |theta8| &lt; 2^-33.242</i></td></tr>
+<tr><th id="109">109</th><td><i></i></td></tr>
+<tr><th id="110">110</th><td><i>  - Since we had s = 2^(k/N) * (1 + theta7) with |theta7| &lt; 2^-53.249,</i></td></tr>
+<tr><th id="111">111</th><td><i>    after y = y * s we get y = 2^(k/N) * 2^(r/N) * (1 + theta9)</i></td></tr>
+<tr><th id="112">112</th><td><i>    with |theta9| &lt; 2^-33.241</i></td></tr>
+<tr><th id="113">113</th><td><i></i></td></tr>
+<tr><th id="114">114</th><td><i>  - Finally, taking into account the error theta6 due to the rounding error on</i></td></tr>
+<tr><th id="115">115</th><td><i>    InvLn10N, and when multiplying InvLn10N * x, we get:</i></td></tr>
+<tr><th id="116">116</th><td><i></i></td></tr>
+<tr><th id="117">117</th><td><i>      y = 10^x * (1 + theta10) with |theta10| &lt; 2^-33.240</i></td></tr>
+<tr><th id="118">118</th><td><i></i></td></tr>
+<tr><th id="119">119</th><td><i>  - Converting into binary64 ulps, since y &lt; 2^53*ulp(y), the error is at most</i></td></tr>
+<tr><th id="120">120</th><td><i>    2^19.76 ulp(y)</i></td></tr>
+<tr><th id="121">121</th><td><i></i></td></tr>
+<tr><th id="122">122</th><td><i>  - If the result is a binary32 value in the normal range (i.e., &gt;= 2^-126),</i></td></tr>
+<tr><th id="123">123</th><td><i>    then the error is at most 2^-9.24 ulps, i.e., less than 0.00166 (in the</i></td></tr>
+<tr><th id="124">124</th><td><i>    subnormal range, the error in ulps might be larger).</i></td></tr>
+<tr><th id="125">125</th><td><i></i></td></tr>
+<tr><th id="126">126</th><td><i>  Note that this bound is tight, since for x=-0x25.54ac0p0 the final value of</i></td></tr>
+<tr><th id="127">127</th><td><i>  y (before conversion to float) differs from 879853 ulps from the correctly</i></td></tr>
+<tr><th id="128">128</th><td><i>  rounded value, and 879853 ~ 2^19.7469.  */</i></td></tr>
+<tr><th id="129">129</th><td></td></tr>
+<tr><th id="130">130</th><td><u>#define <dfn class="macro" id="_M/N" data-ref="_M/N">N</dfn> (1 &lt;&lt; EXP2F_TABLE_BITS)</u></td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><u>#define <dfn class="macro" id="_M/InvLn10N" data-ref="_M/InvLn10N">InvLn10N</dfn> (0x3.5269e12f346e2p0 * N) /* log(10)/log(2) to nearest */</u></td></tr>
+<tr><th id="133">133</th><td><u>#define <dfn class="macro" id="_M/T" data-ref="_M/T">T</dfn> <a class="ref" href="math_config.h.html#__exp2f_data" title='__exp2f_data' data-ref="__exp2f_data" data-ref-filename="__exp2f_data">__exp2f_data</a>.<a class="ref field" href="math_config.h.html#exp2f_data::tab" title='exp2f_data::tab' data-ref="exp2f_data::tab" data-ref-filename="exp2f_data..tab">tab</a></u></td></tr>
+<tr><th id="134">134</th><td><u>#define <dfn class="macro" id="_M/C" data-ref="_M/C">C</dfn> <a class="ref" href="math_config.h.html#__exp2f_data" title='__exp2f_data' data-ref="__exp2f_data" data-ref-filename="__exp2f_data">__exp2f_data</a>.<a class="ref field" href="math_config.h.html#exp2f_data::poly_scaled" title='exp2f_data::poly_scaled' data-ref="exp2f_data::poly_scaled" data-ref-filename="exp2f_data..poly_scaled">poly_scaled</a></u></td></tr>
+<tr><th id="135">135</th><td><u>#define <dfn class="macro" id="_M/SHIFT" data-ref="_M/SHIFT">SHIFT</dfn> __exp2f_data.shift</u></td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td><em>static</em> <b>inline</b> <a class="typedef" href="../../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a></td></tr>
+<tr><th id="138">138</th><td><dfn class="tu decl def fn" id="top13" title='top13' data-type='uint32_t top13(float x)' data-ref="top13" data-ref-filename="top13">top13</dfn> (<em>float</em> <dfn class="local col7 decl" id="17x" title='x' data-type='float' data-ref="17x" data-ref-filename="17x">x</dfn>)</td></tr>
+<tr><th id="139">139</th><td>{</td></tr>
+<tr><th id="140">140</th><td>  <b>return</b> <a class="ref fn" href="math_config.h.html#asuint" title='asuint' data-ref="asuint" data-ref-filename="asuint">asuint</a> (<a class="local col7 ref" href="#17x" title='x' data-ref="17x" data-ref-filename="17x">x</a>) &gt;&gt; <var>19</var>;</td></tr>
+<tr><th id="141">141</th><td>}</td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td><em>float</em></td></tr>
+<tr><th id="144">144</th><td><dfn class="decl def fn" id="__exp10f" title='__exp10f' data-ref="__exp10f" data-ref-filename="__exp10f">__exp10f</dfn> (<em>float</em> <dfn class="local col8 decl" id="18x" title='x' data-type='float' data-ref="18x" data-ref-filename="18x">x</dfn>)</td></tr>
+<tr><th id="145">145</th><td>{</td></tr>
+<tr><th id="146">146</th><td>  <a class="typedef" href="../../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="local col9 decl" id="19abstop" title='abstop' data-type='uint32_t' data-ref="19abstop" data-ref-filename="19abstop">abstop</dfn>;</td></tr>
+<tr><th id="147">147</th><td>  <a class="typedef" href="../../../bits/stdint-uintn.h.html#uint64_t" title='uint64_t' data-type='__uint64_t' data-ref="uint64_t" data-ref-filename="uint64_t">uint64_t</a> <dfn class="local col0 decl" id="20ki" title='ki' data-type='uint64_t' data-ref="20ki" data-ref-filename="20ki">ki</dfn>, <dfn class="local col1 decl" id="21t" title='t' data-type='uint64_t' data-ref="21t" data-ref-filename="21t">t</dfn>;</td></tr>
+<tr><th id="148">148</th><td>  <em>double</em> <dfn class="local col2 decl" id="22kd" title='kd' data-type='double' data-ref="22kd" data-ref-filename="22kd">kd</dfn>, <dfn class="local col3 decl" id="23xd" title='xd' data-type='double' data-ref="23xd" data-ref-filename="23xd">xd</dfn>, <dfn class="local col4 decl" id="24z" title='z' data-type='double' data-ref="24z" data-ref-filename="24z">z</dfn>, <dfn class="local col5 decl" id="25r" title='r' data-type='double' data-ref="25r" data-ref-filename="25r">r</dfn>, <dfn class="local col6 decl" id="26r2" title='r2' data-type='double' data-ref="26r2" data-ref-filename="26r2">r2</dfn>, <dfn class="local col7 decl" id="27y" title='y' data-type='double' data-ref="27y" data-ref-filename="27y">y</dfn>, <dfn class="local col8 decl" id="28s" title='s' data-type='double' data-ref="28s" data-ref-filename="28s">s</dfn>;</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td>  <a class="local col3 ref" href="#23xd" title='xd' data-ref="23xd" data-ref-filename="23xd">xd</a> = (<em>double</em>) <a class="local col8 ref" href="#18x" title='x' data-ref="18x" data-ref-filename="18x">x</a>;</td></tr>
+<tr><th id="151">151</th><td>  <a class="local col9 ref" href="#19abstop" title='abstop' data-ref="19abstop" data-ref-filename="19abstop">abstop</a> = <a class="tu ref fn" href="#top13" title='top13' data-use='c' data-ref="top13" data-ref-filename="top13">top13</a> (<a class="local col8 ref" href="#18x" title='x' data-ref="18x" data-ref-filename="18x">x</a>) &amp; <var>0xfff</var>; <i>/* Ignore sign.  */</i></td></tr>
+<tr><th id="152">152</th><td>  <b>if</b> (<a class="macro" href="../../../misc/sys/cdefs.h.html#412" title="__builtin_expect ((abstop &gt;= top13 (38.0f)), 0)" data-ref="_M/__glibc_unlikely">__glibc_unlikely</a> (<a class="local col9 ref" href="#19abstop" title='abstop' data-ref="19abstop" data-ref-filename="19abstop">abstop</a> &gt;= <a class="tu ref fn" href="#top13" title='top13' data-use='c' data-ref="top13" data-ref-filename="top13">top13</a> (<var>38.0f</var>)))</td></tr>
+<tr><th id="153">153</th><td>    {</td></tr>
+<tr><th id="154">154</th><td>      <i>/* |x| &gt;= 38 or x is nan.  */</i></td></tr>
+<tr><th id="155">155</th><td>      <b>if</b> (<a class="ref fn" href="math_config.h.html#asuint" title='asuint' data-ref="asuint" data-ref-filename="asuint">asuint</a> (<a class="local col8 ref" href="#18x" title='x' data-ref="18x" data-ref-filename="18x">x</a>) == <a class="ref fn" href="math_config.h.html#asuint" title='asuint' data-ref="asuint" data-ref-filename="asuint">asuint</a> (-<a class="macro" href="../../../math/math.h.html#91" title="(__builtin_inff ())" data-ref="_M/INFINITY">INFINITY</a>))</td></tr>
+<tr><th id="156">156</th><td>        <b>return</b> <var>0.0f</var>;</td></tr>
+<tr><th id="157">157</th><td>      <b>if</b> (<a class="local col9 ref" href="#19abstop" title='abstop' data-ref="19abstop" data-ref-filename="19abstop">abstop</a> &gt;= <a class="tu ref fn" href="#top13" title='top13' data-use='c' data-ref="top13" data-ref-filename="top13">top13</a> (<a class="macro" href="../../../math/math.h.html#91" title="(__builtin_inff ())" data-ref="_M/INFINITY">INFINITY</a>))</td></tr>
+<tr><th id="158">158</th><td>        <b>return</b> <a class="local col8 ref" href="#18x" title='x' data-ref="18x" data-ref-filename="18x">x</a> + <a class="local col8 ref" href="#18x" title='x' data-ref="18x" data-ref-filename="18x">x</a>;</td></tr>
+<tr><th id="159">159</th><td>      <i>/* 0x26.8826ap0 is the largest value such that 10^x &lt; 2^128.  */</i></td></tr>
+<tr><th id="160">160</th><td>      <b>if</b> (<a class="local col8 ref" href="#18x" title='x' data-ref="18x" data-ref-filename="18x">x</a> &gt; <var>0x26.8826ap0f</var>)</td></tr>
+<tr><th id="161">161</th><td>        <b>return</b> <a class="ref fn" href="math_config.h.html#__math_oflowf" title='__math_oflowf' data-ref="__math_oflowf" data-ref-filename="__math_oflowf">__math_oflowf</a> (<var>0</var>);</td></tr>
+<tr><th id="162">162</th><td>      <i>/* -0x2d.278d4p0 is the smallest value such that 10^x &gt; 2^-150.  */</i></td></tr>
+<tr><th id="163">163</th><td>      <b>if</b> (<a class="local col8 ref" href="#18x" title='x' data-ref="18x" data-ref-filename="18x">x</a> &lt; -<var>0x2d.278d4p0f</var>)</td></tr>
+<tr><th id="164">164</th><td>        <b>return</b> <a class="ref fn" href="math_config.h.html#__math_uflowf" title='__math_uflowf' data-ref="__math_uflowf" data-ref-filename="__math_uflowf">__math_uflowf</a> (<var>0</var>);</td></tr>
+<tr><th id="165">165</th><td><u>#<span data-ppcond="165">if</span> <a class="macro" href="math_config.h.html#37" title="(1 &amp;&amp; 1)" data-ref="_M/WANT_ERRNO_UFLOW">WANT_ERRNO_UFLOW</a></u></td></tr>
+<tr><th id="166">166</th><td>      <b>if</b> (<a class="local col8 ref" href="#18x" title='x' data-ref="18x" data-ref-filename="18x">x</a> &lt; -<var>0x2c.da7cfp0</var>)</td></tr>
+<tr><th id="167">167</th><td>        <b>return</b> <a class="ref fn" href="math_config.h.html#__math_may_uflowf" title='__math_may_uflowf' data-ref="__math_may_uflowf" data-ref-filename="__math_may_uflowf">__math_may_uflowf</a> (<var>0</var>);</td></tr>
+<tr><th id="168">168</th><td><u>#<span data-ppcond="165">endif</span></u></td></tr>
+<tr><th id="169">169</th><td>      <i>/* the smallest value such that 10^x &gt;= 2^-126 (normal range)</i></td></tr>
+<tr><th id="170">170</th><td><i>         is x = -0x25.ee060p0 */</i></td></tr>
+<tr><th id="171">171</th><td>      <i>/* we go through here for 2014929 values out of 2060451840</i></td></tr>
+<tr><th id="172">172</th><td><i>         (not counting NaN and infinities, i.e., about 0.1% */</i></td></tr>
+<tr><th id="173">173</th><td>    }</td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td>  <i>/* x*N*Ln10/Ln2 = k + r with r in [-1/2, 1/2] and int k.  */</i></td></tr>
+<tr><th id="176">176</th><td>  <a class="local col4 ref" href="#24z" title='z' data-ref="24z" data-ref-filename="24z">z</a> = <a class="macro" href="#132" title="(0x3.5269e12f346e2p0 * (1 &lt;&lt; 5))" data-ref="_M/InvLn10N">InvLn10N</a> * <a class="local col3 ref" href="#23xd" title='xd' data-ref="23xd" data-ref-filename="23xd">xd</a>;</td></tr>
+<tr><th id="177">177</th><td>  <i>/* |xd| &lt; 38 thus |z| &lt; 1216 */</i></td></tr>
+<tr><th id="178">178</th><td><u>#<span data-ppcond="178">if</span> <a class="macro" href="math_config.h.html#43" title="0" data-ref="_M/TOINT_INTRINSICS">TOINT_INTRINSICS</a></u></td></tr>
+<tr><th id="179">179</th><td>  kd = roundtoint (z);</td></tr>
+<tr><th id="180">180</th><td>  ki = converttoint (z);</td></tr>
+<tr><th id="181">181</th><td><u>#<span data-ppcond="178">else</span></u></td></tr>
+<tr><th id="182">182</th><td><u># define <dfn class="macro" id="_M/SHIFT" data-ref="_M/SHIFT">SHIFT</dfn> <a class="ref" href="math_config.h.html#__exp2f_data" title='__exp2f_data' data-ref="__exp2f_data" data-ref-filename="__exp2f_data">__exp2f_data</a>.<a class="ref field" href="math_config.h.html#exp2f_data::shift" title='exp2f_data::shift' data-ref="exp2f_data::shift" data-ref-filename="exp2f_data..shift">shift</a></u></td></tr>
+<tr><th id="183">183</th><td>  <a class="local col2 ref" href="#22kd" title='kd' data-ref="22kd" data-ref-filename="22kd">kd</a> = <a class="macro" href="../../../include/math-narrow-eval.h.html#29" title="((double) (z + __exp2f_data.shift))" data-ref="_M/math_narrow_eval">math_narrow_eval</a> ((<em>double</em>) (<a class="local col4 ref" href="#24z" title='z' data-ref="24z" data-ref-filename="24z">z</a> + <a class="macro" href="#182" title="__exp2f_data.shift" data-ref="_M/SHIFT">SHIFT</a>)); <i>/* Needs to be double.  */</i></td></tr>
+<tr><th id="184">184</th><td>  <a class="local col0 ref" href="#20ki" title='ki' data-ref="20ki" data-ref-filename="20ki">ki</a> = <a class="ref fn" href="math_config.h.html#asuint64" title='asuint64' data-ref="asuint64" data-ref-filename="asuint64">asuint64</a> (<a class="local col2 ref" href="#22kd" title='kd' data-ref="22kd" data-ref-filename="22kd">kd</a>);</td></tr>
+<tr><th id="185">185</th><td>  <a class="local col2 ref" href="#22kd" title='kd' data-ref="22kd" data-ref-filename="22kd">kd</a> -= <a class="macro" href="#182" title="__exp2f_data.shift" data-ref="_M/SHIFT">SHIFT</a>;</td></tr>
+<tr><th id="186">186</th><td><u>#<span data-ppcond="178">endif</span></u></td></tr>
+<tr><th id="187">187</th><td>  <a class="local col5 ref" href="#25r" title='r' data-ref="25r" data-ref-filename="25r">r</a> = <a class="local col4 ref" href="#24z" title='z' data-ref="24z" data-ref-filename="24z">z</a> - <a class="local col2 ref" href="#22kd" title='kd' data-ref="22kd" data-ref-filename="22kd">kd</a>;</td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td>  <i>/* 10^x = 10^(k/N) * 10^(r/N) ~= s * (C0*r^3 + C1*r^2 + C2*r + 1)  */</i></td></tr>
+<tr><th id="190">190</th><td>  <a class="local col1 ref" href="#21t" title='t' data-ref="21t" data-ref-filename="21t">t</a> = <a class="macro" href="#133" title="__exp2f_data.tab" data-ref="_M/T">T</a>[<a class="local col0 ref" href="#20ki" title='ki' data-ref="20ki" data-ref-filename="20ki">ki</a> % <a class="macro" href="#130" title="(1 &lt;&lt; 5)" data-ref="_M/N">N</a>];</td></tr>
+<tr><th id="191">191</th><td>  <a class="local col1 ref" href="#21t" title='t' data-ref="21t" data-ref-filename="21t">t</a> += <a class="local col0 ref" href="#20ki" title='ki' data-ref="20ki" data-ref-filename="20ki">ki</a> &lt;&lt; (<var>52</var> - <a class="macro" href="math_config.h.html#113" title="5" data-ref="_M/EXP2F_TABLE_BITS">EXP2F_TABLE_BITS</a>);</td></tr>
+<tr><th id="192">192</th><td>  <a class="local col8 ref" href="#28s" title='s' data-ref="28s" data-ref-filename="28s">s</a> = <a class="ref fn" href="math_config.h.html#asdouble" title='asdouble' data-ref="asdouble" data-ref-filename="asdouble">asdouble</a> (<a class="local col1 ref" href="#21t" title='t' data-ref="21t" data-ref-filename="21t">t</a>);</td></tr>
+<tr><th id="193">193</th><td>  <a class="local col4 ref" href="#24z" title='z' data-ref="24z" data-ref-filename="24z">z</a> = <a class="macro" href="#134" title="__exp2f_data.poly_scaled" data-ref="_M/C">C</a>[<var>0</var>] * <a class="local col5 ref" href="#25r" title='r' data-ref="25r" data-ref-filename="25r">r</a> + <a class="macro" href="#134" title="__exp2f_data.poly_scaled" data-ref="_M/C">C</a>[<var>1</var>];</td></tr>
+<tr><th id="194">194</th><td>  <a class="local col6 ref" href="#26r2" title='r2' data-ref="26r2" data-ref-filename="26r2">r2</a> = <a class="local col5 ref" href="#25r" title='r' data-ref="25r" data-ref-filename="25r">r</a> * <a class="local col5 ref" href="#25r" title='r' data-ref="25r" data-ref-filename="25r">r</a>;</td></tr>
+<tr><th id="195">195</th><td>  <a class="local col7 ref" href="#27y" title='y' data-ref="27y" data-ref-filename="27y">y</a> = <a class="macro" href="#134" title="__exp2f_data.poly_scaled" data-ref="_M/C">C</a>[<var>2</var>] * <a class="local col5 ref" href="#25r" title='r' data-ref="25r" data-ref-filename="25r">r</a> + <var>1</var>;</td></tr>
+<tr><th id="196">196</th><td>  <a class="local col7 ref" href="#27y" title='y' data-ref="27y" data-ref-filename="27y">y</a> = <a class="local col4 ref" href="#24z" title='z' data-ref="24z" data-ref-filename="24z">z</a> * <a class="local col6 ref" href="#26r2" title='r2' data-ref="26r2" data-ref-filename="26r2">r2</a> + <a class="local col7 ref" href="#27y" title='y' data-ref="27y" data-ref-filename="27y">y</a>;</td></tr>
+<tr><th id="197">197</th><td>  <a class="local col7 ref" href="#27y" title='y' data-ref="27y" data-ref-filename="27y">y</a> = <a class="local col7 ref" href="#27y" title='y' data-ref="27y" data-ref-filename="27y">y</a> * <a class="local col8 ref" href="#28s" title='s' data-ref="28s" data-ref-filename="28s">s</a>;</td></tr>
+<tr><th id="198">198</th><td>  <b>return</b> (<em>float</em>) <a class="local col7 ref" href="#27y" title='y' data-ref="27y" data-ref-filename="27y">y</a>;</td></tr>
+<tr><th id="199">199</th><td>}</td></tr>
+<tr><th id="200">200</th><td><u>#<span data-ppcond="200">ifndef</span> <span class="macro" data-ref="_M/__exp10f">__exp10f</span></u></td></tr>
+<tr><th id="201">201</th><td><a class="macro" href="../../../include/libc-symbols.h.html#138" title="extern __typeof (__exp10f) __ieee754_exp10f __attribute__ ((alias (&quot;__exp10f&quot;))) ;" data-ref="_M/strong_alias">strong_alias</a> (<a class="ref fn" href="#__exp10f" title='__exp10f' data-ref="__exp10f" data-ref-filename="__exp10f">__exp10f</a>, <dfn class="decl def fn" id="__ieee754_exp10f" title='__ieee754_exp10f' data-ref="__ieee754_exp10f" data-ref-filename="__ieee754_exp10f">__ieee754_exp10f</dfn>)</td></tr>
+<tr><th id="202">202</th><td><a class="macro" href="../libm-alias-finite.h.html#36" title="" data-ref="_M/libm_alias_finite">libm_alias_finite</a> (__ieee754_exp10f, __exp10f)</td></tr>
+<tr><th id="203">203</th><td><i>/* For architectures that already provided exp10f without SVID support, there</i></td></tr>
+<tr><th id="204">204</th><td><i>   is no need to add a new version.  */</i></td></tr>
+<tr><th id="205">205</th><td><u>#<span data-ppcond="205">if</span> !<a class="macro" href="../../../math/math-svid-compat.h.html#74" title="0" data-ref="_M/LIBM_SVID_COMPAT">LIBM_SVID_COMPAT</a></u></td></tr>
+<tr><th id="206">206</th><td><u># define <dfn class="macro" id="_M/EXP10F_VERSION" data-ref="_M/EXP10F_VERSION">EXP10F_VERSION</dfn> GLIBC_2_26</u></td></tr>
+<tr><th id="207">207</th><td><u>#<span data-ppcond="205">else</span></u></td></tr>
+<tr><th id="208">208</th><td><u># define EXP10F_VERSION GLIBC_2_32</u></td></tr>
+<tr><th id="209">209</th><td><u>#<span data-ppcond="205">endif</span></u></td></tr>
+<tr><th id="210">210</th><td><a class="macro" href="../../../include/shlib-compat.h.html#113" title="extern __typeof (__exp10f) exp10f __attribute__ ((weak, alias (&quot;__exp10f&quot;))) ;" data-ref="_M/versioned_symbol">versioned_symbol</a> (libm, <a class="ref fn" href="#__exp10f" title='__exp10f' data-ref="__exp10f" data-ref-filename="__exp10f">__exp10f</a>, <dfn class="decl def fn" id="exp10f" title='exp10f' data-ref="exp10f" data-ref-filename="exp10f">exp10f</dfn>, EXP10F_VERSION);</td></tr>
+<tr><th id="211">211</th><td><a class="macro" href="../../generic/libm-alias-float.h.html#36" title="extern __typeof (__exp10f) exp10f32 __attribute__ ((weak, alias (&quot;__exp10f&quot;))) ;" data-ref="_M/libm_alias_float_other">libm_alias_float_other</a> (__exp10, exp10)</td></tr>
+<tr><th id="212">212</th><td><u>#<span data-ppcond="200">endif</span></u></td></tr>
+<tr><th id="213">213</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.33</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/nss/nss.h' l='45' type='char *'/>
+<offset>64</offset>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='232' u='w' c='convert_hostent_to_gaih_addrtuple'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='328' u='r' c='getcanonname'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='691' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='700' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='818' u='r' c='gaih_inet'/>

@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/x86/fpu/include/bits/fenv.h' l='40' ll='51' macro='1' type='int __feraiseexcept(int __excepts)'/>
+<dec f='codebrowser/include/fenv.h' l='11' type='int __feraiseexcept(int __excepts)'/>
+<use f='codebrowser/sysdeps/i386/fpu/fenv_private.h' l='190' u='c' c='libc_feupdateenv_test_sse'/>
+<use f='codebrowser/sysdeps/i386/fpu/fenv_private.h' l='209' u='c' c='libc_feupdateenv_test_387'/>

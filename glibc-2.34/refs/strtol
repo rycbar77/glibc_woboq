@@ -1,0 +1,31 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='176' type='long strtol(const char *restrict __nptr, char **restrict __endptr, int __base)'/>
+<use f='codebrowser/stdlib/stdlib.h' l='363' u='c' c='atoi'/>
+<use f='codebrowser/stdlib/stdlib.h' l='368' u='c' c='atol'/>
+<dec f='codebrowser/include/stdlib.h' l='229' type='long strtol(const char * , char ** , int )'/>
+<use f='codebrowser/include/stdlib.h' l='229' c='strtol'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='175'>/* Convert a string to a long integer.  */</doc>
+<use f='codebrowser/iconv/gconv_conf.c' l='294' u='c' c='add_module'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='626' u='c' c='add_module'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1343' u='c' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1348' u='c' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='270' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='309' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='319' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='326' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='383' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='393' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='400' u='c' c='time_finish'/>
+<use f='codebrowser/posix/wordexp.c' l='568' u='c' c='eval_expr_val'/>
+<use f='codebrowser/stdlib/atoi.c' l='27' u='c' c='atoi'/>
+<use f='codebrowser/stdlib/atol.c' l='27' u='c' c='atol'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='267' u='c' c='init'/>
+<use f='include/c++/11/bits/basic_string.h' l='6620' u='a' c='_ZNSt7__cxx114stoiERKNS_12basic_stringIcSt11char_traitsIcESaIcEEEPmi'/>
+<use f='include/c++/11/bits/basic_string.h' l='6625' u='a' c='_ZNSt7__cxx114stolERKNS_12basic_stringIcSt11char_traitsIcESaIcEEEPmi'/>
+<use f='codebrowser/support/support_descriptors.c' l='85' u='c' c='support_descriptors_list'/>
+<use f='codebrowser/support/test-container.c' l='964' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1018' u='c' c='main'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf.c' l='114' u='c' c='linux_sysconf'/>
+<def f='codebrowser/stdlib/strtol.c' l='108' macro='1' type='long strtol(const char * , char ** , int )'/>
+<use f='codebrowser/sysdeps/wordsize-64/strtol.c' l='13' c='strtoll'/>
+<use f='codebrowser/sysdeps/wordsize-64/strtol.c' l='15' c='strtoq'/>
+<use f='codebrowser/sysdeps/wordsize-64/strtol.c' l='17' c='strtoimax'/>

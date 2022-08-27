@@ -1,0 +1,8 @@
+<use f='codebrowser/iconv/gconv_conf.c' l='384' u='c' c='read_conf_file'/>
+<use f='codebrowser/intl/localealias.c' l='93' u='c' c='read_alias_file'/>
+<def f='codebrowser/libio/feof_u.c' l='32' ll='37' type='int __feof_unlocked(FILE * fp)'/>
+<use f='codebrowser/libio/feof_u.c' l='38' c='feof_unlocked'/>
+<use f='codebrowser/nss/nsswitch.c' l='602' u='c' c='nss_parse_file'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='93' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readonly-area.c' l='56' u='c' c='__readonly_area'/>
+<use f='codebrowser/time/getdate.c' l='201' u='c' c='__getdate_r'/>

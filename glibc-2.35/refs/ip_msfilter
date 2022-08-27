@@ -1,0 +1,18 @@
+<def f='codebrowser/inet/netinet/in.h' l='331' ll='346'/>
+<size>20</size>
+<doc f='codebrowser/inet/netinet/in.h' l='330'>/* Full-state filter operations.  */</doc>
+<mbr r='ip_msfilter::imsf_multiaddr' o='0' t='struct in_addr'/>
+<mbr r='ip_msfilter::imsf_interface' o='32' t='struct in_addr'/>
+<mbr r='ip_msfilter::imsf_fmode' o='64' t='uint32_t'/>
+<mbr r='ip_msfilter::imsf_numsrc' o='96' t='uint32_t'/>
+<mbr r='ip_msfilter::imsf_slist' o='128' t='struct in_addr[1]'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getipv4sourcefilter.c' l='35' macro='1' c='getipv4sourcefilter'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getipv4sourcefilter.c' l='38' c='getipv4sourcefilter'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getipv4sourcefilter.c' l='40' c='getipv4sourcefilter'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getipv4sourcefilter.c' l='43' c='getipv4sourcefilter'/>
+<size>20</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setipv4sourcefilter.c' l='35' macro='1' c='setipv4sourcefilter'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setipv4sourcefilter.c' l='38' c='setipv4sourcefilter'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setipv4sourcefilter.c' l='40' c='setipv4sourcefilter'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setipv4sourcefilter.c' l='43' c='setipv4sourcefilter'/>
+<size>20</size>

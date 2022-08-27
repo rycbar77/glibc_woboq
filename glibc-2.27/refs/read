@@ -1,0 +1,10 @@
+<dec f='codebrowser/posix/unistd.h' l='363' type='ssize_t read(int __fd, void * __buf, size_t __nbytes)'/>
+<dec f='codebrowser/include/unistd.h' l='59' type='ssize_t read(int , void * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='59' c='read'/>
+<doc f='codebrowser/posix/unistd.h' l='358'>/* Read NBYTES into BUF from FD.  Return the
+   number read, -1 for errors or 0 for EOF.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/io/copy_file_range-compat.c' l='98' u='c' c='copy_file_range_compat'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/read.c' l='34' macro='1' type='ssize_t read(int , void * , size_t )'/>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='139'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='137'>/* The kernel when waking robust mutexes on exit never uses
+   FUTEX_PRIVATE_FLAG FUTEX_WAKE.  */</doc>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='324' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='334' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='427' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='488' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='256' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='270' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='362' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='425' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='182' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='289' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='341' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='173' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='280' u='c'/>

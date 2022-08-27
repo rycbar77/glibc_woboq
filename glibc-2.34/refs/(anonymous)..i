@@ -1,0 +1,57 @@
+<dec f='codebrowser/sysdeps/x86_64/nptl/tls.h' l='38' type='int[4]'/>
+<offset>0</offset>
+<dec f='codebrowser/sysdeps/ieee754/dbl-64/mydefs.h' l='31' type='int4[2]'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/branred.c' l='66' u='r' c='__branred'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/branred.c' l='71' u='w' c='__branred'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/branred.c' l='96' u='r' c='__branred'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/branred.c' l='101' u='w' c='__branred'/>
+<offset>0</offset>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='52' u='r' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='53' u='w' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='54' u='r' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='64' u='w' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='64' u='r' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='80' u='r' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='82' u='w' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='85' u='r' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='86' u='r' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='89' u='w' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='91' u='w' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='92' u='w' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='95' u='r' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='97' u='w' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='98' u='w' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='99' u='w' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='117' u='r' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='127' u='r' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='141' u='r' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_remainder.c' l='145' u='r' c='__ieee754_remainder'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='69' u='r' c='do_cos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='69' u='r' c='do_sin'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sin.c' l='160' u='r' c='reduce_sincos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sincos.c' l='40' u='r' c='__sincos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='53' u='r' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='150' u='r' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='166' u='r' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='168' u='r' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='170' u='w' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='171' u='w' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='172' u='w' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='173' u='w' c='__ieee754_asin_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='196' u='r' c='__ieee754_acos_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='309' u='r' c='__ieee754_acos_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='335' u='r' c='__ieee754_acos_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='337' u='r' c='__ieee754_acos_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='339' u='w' c='__ieee754_acos_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='340' u='w' c='__ieee754_acos_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='341' u='w' c='__ieee754_acos_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='342' u='w' c='__ieee754_acos_fma'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='71' u='r' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='72' u='r' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='79' u='r' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_atan2.c' l='80' u='r' c='__ieee754_atan2_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='60' u='r' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_atan.c' l='61' u='r' c='__atan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='68' u='r' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='129' u='r' c='__tan_avx'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_tan.c' l='213' u='r' c='__tan_avx'/>

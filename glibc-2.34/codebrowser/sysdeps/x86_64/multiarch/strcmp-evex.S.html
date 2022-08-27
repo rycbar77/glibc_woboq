@@ -1,0 +1,1061 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>strcmp-evex.S source code [codebrowser/sysdeps/x86_64/multiarch/strcmp-evex.S] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/multiarch/strcmp-evex.S'; var root_path = '../../../..'; var data_path = '../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>sysdeps</a>/<a href='..'>x86_64</a>/<a href='./'>multiarch</a>/<a href='strcmp-evex.S.html'>strcmp-evex.S</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* strcmp/wcscmp/strncmp/wcsncmp optimized with 256-bit EVEX instructions.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">if</span> <a class="macro" href="../../../include/libc-symbols.h.html#35" title="(19 == 19)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><u># include <a href="../../unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u># <span data-ppcond="23">ifndef</span> <span class="macro" data-ref="_M/STRCMP">STRCMP</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#  define <dfn class="macro" id="_M/STRCMP" data-ref="_M/STRCMP">STRCMP</dfn>	<span class='warning' title="type specifier missing, defaults to &apos;int&apos;"><dfn class="decl def" id="__strcmp_evex" title='__strcmp_evex' data-ref="__strcmp_evex" data-ref-filename="__strcmp_evex">__strcmp_evex</dfn></span></u></td></tr>
+<tr><th id="25">25</th><td><u># <span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><u># define <dfn class="macro" id="_M/PAGE_SIZE" data-ref="_M/PAGE_SIZE">PAGE_SIZE</dfn>	4096</u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><i>/* VEC_SIZE = Number of bytes in a ymm register */</i></td></tr>
+<tr><th id="30">30</th><td><u># define <dfn class="macro" id="_M/VEC_SIZE" data-ref="_M/VEC_SIZE">VEC_SIZE</dfn>	32</u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><i>/* Shift for dividing by (VEC_SIZE * 4).  */</i></td></tr>
+<tr><th id="33">33</th><td><u># define <dfn class="macro" id="_M/DIVIDE_BY_VEC_4_SHIFT" data-ref="_M/DIVIDE_BY_VEC_4_SHIFT">DIVIDE_BY_VEC_4_SHIFT</dfn>	7</u></td></tr>
+<tr><th id="34">34</th><td><u># <span data-ppcond="34">if</span> (<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * 4) != (1 &lt;&lt; <a class="macro" href="#33" title="7" data-ref="_M/DIVIDE_BY_VEC_4_SHIFT">DIVIDE_BY_VEC_4_SHIFT</a>)</u></td></tr>
+<tr><th id="35">35</th><td><u>#  error (VEC_SIZE * 4) != (1 &lt;&lt; DIVIDE_BY_VEC_4_SHIFT)</u></td></tr>
+<tr><th id="36">36</th><td><u># <span data-ppcond="34">endif</span></u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><u># define <dfn class="macro" id="_M/VMOVU" data-ref="_M/VMOVU">VMOVU</dfn>		vmovdqu64</u></td></tr>
+<tr><th id="39">39</th><td><u># define <dfn class="macro" id="_M/VMOVA" data-ref="_M/VMOVA">VMOVA</dfn>		vmovdqa64</u></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><u># <span data-ppcond="41">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="42">42</th><td><i>/* Compare packed dwords.  */</i></td></tr>
+<tr><th id="43">43</th><td><u>#  define VPCMP		vpcmpd</u></td></tr>
+<tr><th id="44">44</th><td><u>#  define SHIFT_REG32	r8d</u></td></tr>
+<tr><th id="45">45</th><td><u>#  define SHIFT_REG64	r8</u></td></tr>
+<tr><th id="46">46</th><td><i>/* 1 dword char == 4 bytes.  */</i></td></tr>
+<tr><th id="47">47</th><td><u>#  define SIZE_OF_CHAR	4</u></td></tr>
+<tr><th id="48">48</th><td><u># <span data-ppcond="41">else</span></u></td></tr>
+<tr><th id="49">49</th><td><i>/* Compare packed bytes.  */</i></td></tr>
+<tr><th id="50">50</th><td><u>#  define <dfn class="macro" id="_M/VPCMP" data-ref="_M/VPCMP">VPCMP</dfn>		vpcmpb</u></td></tr>
+<tr><th id="51">51</th><td><u>#  define <dfn class="macro" id="_M/SHIFT_REG32" data-ref="_M/SHIFT_REG32">SHIFT_REG32</dfn>	ecx</u></td></tr>
+<tr><th id="52">52</th><td><u>#  define <dfn class="macro" id="_M/SHIFT_REG64" data-ref="_M/SHIFT_REG64">SHIFT_REG64</dfn>	rcx</u></td></tr>
+<tr><th id="53">53</th><td><i>/* 1 byte char == 1 byte.  */</i></td></tr>
+<tr><th id="54">54</th><td><u>#  define <dfn class="macro" id="_M/SIZE_OF_CHAR" data-ref="_M/SIZE_OF_CHAR">SIZE_OF_CHAR</dfn>	1</u></td></tr>
+<tr><th id="55">55</th><td><u># <span data-ppcond="41">endif</span></u></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><u># define <dfn class="macro" id="_M/XMMZERO" data-ref="_M/XMMZERO">XMMZERO</dfn>	xmm16</u></td></tr>
+<tr><th id="58">58</th><td><u># define <dfn class="macro" id="_M/XMM0" data-ref="_M/XMM0">XMM0</dfn>		xmm17</u></td></tr>
+<tr><th id="59">59</th><td><u># define <dfn class="macro" id="_M/XMM1" data-ref="_M/XMM1">XMM1</dfn>		xmm18</u></td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><u># define <dfn class="macro" id="_M/YMMZERO" data-ref="_M/YMMZERO">YMMZERO</dfn>	ymm16</u></td></tr>
+<tr><th id="62">62</th><td><u># define <dfn class="macro" id="_M/YMM0" data-ref="_M/YMM0">YMM0</dfn>		ymm17</u></td></tr>
+<tr><th id="63">63</th><td><u># define <dfn class="macro" id="_M/YMM1" data-ref="_M/YMM1">YMM1</dfn>		ymm18</u></td></tr>
+<tr><th id="64">64</th><td><u># define <dfn class="macro" id="_M/YMM2" data-ref="_M/YMM2">YMM2</dfn>		ymm19</u></td></tr>
+<tr><th id="65">65</th><td><u># define <dfn class="macro" id="_M/YMM3" data-ref="_M/YMM3">YMM3</dfn>		ymm20</u></td></tr>
+<tr><th id="66">66</th><td><u># define <dfn class="macro" id="_M/YMM4" data-ref="_M/YMM4">YMM4</dfn>		ymm21</u></td></tr>
+<tr><th id="67">67</th><td><u># define <dfn class="macro" id="_M/YMM5" data-ref="_M/YMM5">YMM5</dfn>		ymm22</u></td></tr>
+<tr><th id="68">68</th><td><u># define <dfn class="macro" id="_M/YMM6" data-ref="_M/YMM6">YMM6</dfn>		ymm23</u></td></tr>
+<tr><th id="69">69</th><td><u># define <dfn class="macro" id="_M/YMM7" data-ref="_M/YMM7">YMM7</dfn>		ymm24</u></td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><i>/* Warning!</i></td></tr>
+<tr><th id="72">72</th><td><i>           wcscmp/wcsncmp have to use SIGNED comparison for elements.</i></td></tr>
+<tr><th id="73">73</th><td><i>           strcmp/strncmp have to use UNSIGNED comparison for elements.</i></td></tr>
+<tr><th id="74">74</th><td><i>*/</i></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><i>/* The main idea of the string comparison (byte or dword) using 256-bit</i></td></tr>
+<tr><th id="77">77</th><td><i>   EVEX instructions consists of comparing (VPCMP) two ymm vectors. The</i></td></tr>
+<tr><th id="78">78</th><td><i>   latter can be on either packed bytes or dwords depending on</i></td></tr>
+<tr><th id="79">79</th><td><i>   USE_AS_WCSCMP. In order to check the null char, algorithm keeps the</i></td></tr>
+<tr><th id="80">80</th><td><i>   matched bytes/dwords, requiring 5 EVEX instructions (3 VPCMP and 2</i></td></tr>
+<tr><th id="81">81</th><td><i>   KORD). In general, the costs of comparing VEC_SIZE bytes (32-bytes)</i></td></tr>
+<tr><th id="82">82</th><td><i>   are 3 VPCMP and 2 KORD instructions, together with VMOVU and ktestd</i></td></tr>
+<tr><th id="83">83</th><td><i>   instructions.  Main loop (away from from page boundary) compares 4</i></td></tr>
+<tr><th id="84">84</th><td><i>   vectors are a time, effectively comparing 4 x VEC_SIZE bytes (128</i></td></tr>
+<tr><th id="85">85</th><td><i>   bytes) on each loop.</i></td></tr>
+<tr><th id="86">86</th><td><i></i></td></tr>
+<tr><th id="87">87</th><td><i>   The routine strncmp/wcsncmp (enabled by defining USE_AS_STRNCMP) logic</i></td></tr>
+<tr><th id="88">88</th><td><i>   is the same as strcmp, except that an a maximum offset is tracked.  If</i></td></tr>
+<tr><th id="89">89</th><td><i>   the maximum offset is reached before a difference is found, zero is</i></td></tr>
+<tr><th id="90">90</th><td><i>   returned.  */</i></td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td>	.section .text.evex,<q>"ax"</q>,@progbits</td></tr>
+<tr><th id="93">93</th><td><a class="macro" href="../../x86/sysdep.h.html#81" title=".globl __strcmp_evex; .type __strcmp_evex,@function; .align 1&lt;&lt;4; __strcmp_evex: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a> (<a class="macro" href="#24" title="__strcmp_evex" data-ref="_M/STRCMP">STRCMP</a>)</td></tr>
+<tr><th id="94">94</th><td><u># <span data-ppcond="94">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="95">95</th><td>	<i>/* Check for simple cases (0 or 1) in offset.  */</i></td></tr>
+<tr><th id="96">96</th><td>	cmp	$<var>1</var>, %RDX_LP</td></tr>
+<tr><th id="97">97</th><td>	je	L(char0)</td></tr>
+<tr><th id="98">98</th><td>	jb	L(zero)</td></tr>
+<tr><th id="99">99</th><td><u>#  ifdef USE_AS_WCSCMP</u></td></tr>
+<tr><th id="100">100</th><td>	<i>/* Convert units: from wide to byte char.  */</i></td></tr>
+<tr><th id="101">101</th><td>	shl	$<var>2</var>, %RDX_LP</td></tr>
+<tr><th id="102">102</th><td><u>#  endif</u></td></tr>
+<tr><th id="103">103</th><td>	<i>/* Register %r11 tracks the maximum offset.  */</i></td></tr>
+<tr><th id="104">104</th><td>	mov	%RDX_LP, %R11_LP</td></tr>
+<tr><th id="105">105</th><td><u># <span data-ppcond="94">endif</span></u></td></tr>
+<tr><th id="106">106</th><td>	<span class='error' title="unknown type name &apos;movl&apos;">movl</span>	<span class='error' title="expected identifier or &apos;(&apos;">%</span>edi, %eax</td></tr>
+<tr><th id="107">107</th><td>	xorl	%edx, %edx</td></tr>
+<tr><th id="108">108</th><td>	<i>/* Make %XMMZERO (%YMMZERO) all zeros in this function.  */</i></td></tr>
+<tr><th id="109">109</th><td>	vpxorq	%<a class="macro" href="#57" title="xmm16" data-ref="_M/XMMZERO">XMMZERO</a>, %<a class="macro" href="#57" title="xmm16" data-ref="_M/XMMZERO">XMMZERO</a>, %<a class="macro" href="#57" title="xmm16" data-ref="_M/XMMZERO">XMMZERO</a></td></tr>
+<tr><th id="110">110</th><td>	orl	%esi, %eax</td></tr>
+<tr><th id="111">111</th><td>	andl	$(<a class="macro" href="#27" title="4096" data-ref="_M/PAGE_SIZE">PAGE_SIZE</a> - <var>1</var>), %eax</td></tr>
+<tr><th id="112">112</th><td>	cmpl	$(<a class="macro" href="#27" title="4096" data-ref="_M/PAGE_SIZE">PAGE_SIZE</a> - (<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>)), %eax</td></tr>
+<tr><th id="113">113</th><td>	jg	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page" data-ref="_M/L">L</a>(cross_page)</td></tr>
+<tr><th id="114">114</th><td>	<i>/* Start comparing 4 vectors.  */</i></td></tr>
+<tr><th id="115">115</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rdi), %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a></td></tr>
+<tr><th id="116">116</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rsi), %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td>	<i>/* Each bit in K0 represents a mismatch in YMM0 and YMM1.  */</i></td></tr>
+<tr><th id="119">119</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a>, %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a>, %k0</td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td>	<i>/* Check for NULL in YMM0.  */</i></td></tr>
+<tr><th id="122">122</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a>, %k1</td></tr>
+<tr><th id="123">123</th><td>	<i>/* Check for NULL in YMM1.  */</i></td></tr>
+<tr><th id="124">124</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a>, %k2</td></tr>
+<tr><th id="125">125</th><td>	<i>/* Each bit in K1 represents a NULL in YMM0 or YMM1.  */</i></td></tr>
+<tr><th id="126">126</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td>	<i>/* Each bit in K1 represents:</i></td></tr>
+<tr><th id="129">129</th><td><i>	   1. A mismatch in YMM0 and YMM1.  Or</i></td></tr>
+<tr><th id="130">130</th><td><i>	   2. A NULL in YMM0 or YMM1.</i></td></tr>
+<tr><th id="131">131</th><td><i>	 */</i></td></tr>
+<tr><th id="132">132</th><td>	kord	%k0, %k1, %k1</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td>	ktestd	%k1, %k1</td></tr>
+<tr><th id="135">135</th><td>	je	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lnext_3_vectors" data-ref="_M/L">L</a>(next_3_vectors)</td></tr>
+<tr><th id="136">136</th><td>	kmovd	%k1, %ecx</td></tr>
+<tr><th id="137">137</th><td>	tzcntl	%ecx, %edx</td></tr>
+<tr><th id="138">138</th><td><u># <span data-ppcond="138">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="139">139</th><td>	<i>/* NB: Multiply wchar_t count by 4 to get the number of bytes.  */</i></td></tr>
+<tr><th id="140">140</th><td>	sall	$<var>2</var>, %edx</td></tr>
+<tr><th id="141">141</th><td><u># <span data-ppcond="138">endif</span></u></td></tr>
+<tr><th id="142">142</th><td><u># <span data-ppcond="142">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="143">143</th><td>	<i>/* Return 0 if the mismatched index (%rdx) is after the maximum</i></td></tr>
+<tr><th id="144">144</th><td><i>	   offset (%r11).   */</i></td></tr>
+<tr><th id="145">145</th><td>	cmpq	%r11, %rdx</td></tr>
+<tr><th id="146">146</th><td>	jae	L(zero)</td></tr>
+<tr><th id="147">147</th><td><u># <span data-ppcond="142">endif</span></u></td></tr>
+<tr><th id="148">148</th><td><u># <span data-ppcond="148">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="149">149</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="150">150</th><td>	movl	(%rdi, %rdx), %ecx</td></tr>
+<tr><th id="151">151</th><td>	cmpl	(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="152">152</th><td>	je	L(<b>return</b>)</td></tr>
+<tr><th id="153">153</th><td>L(wcscmp_return):</td></tr>
+<tr><th id="154">154</th><td>	setl	%al</td></tr>
+<tr><th id="155">155</th><td>	negl	%eax</td></tr>
+<tr><th id="156">156</th><td>	orl	$<var>1</var>, %eax</td></tr>
+<tr><th id="157">157</th><td>L(<b>return</b>):</td></tr>
+<tr><th id="158">158</th><td><u># <span data-ppcond="148">else</span></u></td></tr>
+<tr><th id="159">159</th><td>	movzbl	(%rdi, %rdx), %eax</td></tr>
+<tr><th id="160">160</th><td>	movzbl	(%rsi, %rdx), %edx</td></tr>
+<tr><th id="161">161</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="162">162</th><td><u># <span data-ppcond="148">endif</span></u></td></tr>
+<tr><th id="163">163</th><td>	ret</td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="166">166</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lreturn_vec_size" data-ref="_M/L">L</a>(return_vec_size):</td></tr>
+<tr><th id="167">167</th><td>	kmovd	%k1, %ecx</td></tr>
+<tr><th id="168">168</th><td>	tzcntl	%ecx, %edx</td></tr>
+<tr><th id="169">169</th><td><u># <span data-ppcond="169">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="170">170</th><td>	<i>/* NB: Multiply wchar_t count by 4 to get the number of bytes.  */</i></td></tr>
+<tr><th id="171">171</th><td>	sall	$<var>2</var>, %edx</td></tr>
+<tr><th id="172">172</th><td><u># <span data-ppcond="169">endif</span></u></td></tr>
+<tr><th id="173">173</th><td><u># <span data-ppcond="173">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="174">174</th><td>	<i>/* Return 0 if the mismatched index (%rdx + VEC_SIZE) is after</i></td></tr>
+<tr><th id="175">175</th><td><i>	   the maximum offset (%r11).  */</i></td></tr>
+<tr><th id="176">176</th><td>	addq	$VEC_SIZE, %rdx</td></tr>
+<tr><th id="177">177</th><td>	cmpq	%r11, %rdx</td></tr>
+<tr><th id="178">178</th><td>	jae	L(zero)</td></tr>
+<tr><th id="179">179</th><td><u>#  ifdef USE_AS_WCSCMP</u></td></tr>
+<tr><th id="180">180</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="181">181</th><td>	movl	(%rdi, %rdx), %ecx</td></tr>
+<tr><th id="182">182</th><td>	cmpl	(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="183">183</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="184">184</th><td><u>#  else</u></td></tr>
+<tr><th id="185">185</th><td>	movzbl	(%rdi, %rdx), %eax</td></tr>
+<tr><th id="186">186</th><td>	movzbl	(%rsi, %rdx), %edx</td></tr>
+<tr><th id="187">187</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="188">188</th><td><u>#  endif</u></td></tr>
+<tr><th id="189">189</th><td><u># <span data-ppcond="173">else</span></u></td></tr>
+<tr><th id="190">190</th><td><u>#  <span data-ppcond="190">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="191">191</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="192">192</th><td>	movl	VEC_SIZE(%rdi, %rdx), %ecx</td></tr>
+<tr><th id="193">193</th><td>	cmpl	VEC_SIZE(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="194">194</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="195">195</th><td><u>#  <span data-ppcond="190">else</span></u></td></tr>
+<tr><th id="196">196</th><td>	movzbl	<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rdi, %rdx), %eax</td></tr>
+<tr><th id="197">197</th><td>	movzbl	<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rsi, %rdx), %edx</td></tr>
+<tr><th id="198">198</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="199">199</th><td><u>#  <span data-ppcond="190">endif</span></u></td></tr>
+<tr><th id="200">200</th><td><u># <span data-ppcond="173">endif</span></u></td></tr>
+<tr><th id="201">201</th><td>	ret</td></tr>
+<tr><th id="202">202</th><td></td></tr>
+<tr><th id="203">203</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="204">204</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lreturn_2_vec_size" data-ref="_M/L">L</a>(return_2_vec_size):</td></tr>
+<tr><th id="205">205</th><td>	kmovd	%k1, %ecx</td></tr>
+<tr><th id="206">206</th><td>	tzcntl	%ecx, %edx</td></tr>
+<tr><th id="207">207</th><td><u># <span data-ppcond="207">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="208">208</th><td>	<i>/* NB: Multiply wchar_t count by 4 to get the number of bytes.  */</i></td></tr>
+<tr><th id="209">209</th><td>	sall	$<var>2</var>, %edx</td></tr>
+<tr><th id="210">210</th><td><u># <span data-ppcond="207">endif</span></u></td></tr>
+<tr><th id="211">211</th><td><u># <span data-ppcond="211">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="212">212</th><td>	<i>/* Return 0 if the mismatched index (%rdx + 2 * VEC_SIZE) is</i></td></tr>
+<tr><th id="213">213</th><td><i>	   after the maximum offset (%r11).  */</i></td></tr>
+<tr><th id="214">214</th><td>	addq	$(VEC_SIZE * <var>2</var>), %rdx</td></tr>
+<tr><th id="215">215</th><td>	cmpq	%r11, %rdx</td></tr>
+<tr><th id="216">216</th><td>	jae	L(zero)</td></tr>
+<tr><th id="217">217</th><td><u>#  ifdef USE_AS_WCSCMP</u></td></tr>
+<tr><th id="218">218</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="219">219</th><td>	movl	(%rdi, %rdx), %ecx</td></tr>
+<tr><th id="220">220</th><td>	cmpl	(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="221">221</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="222">222</th><td><u>#  else</u></td></tr>
+<tr><th id="223">223</th><td>	movzbl	(%rdi, %rdx), %eax</td></tr>
+<tr><th id="224">224</th><td>	movzbl	(%rsi, %rdx), %edx</td></tr>
+<tr><th id="225">225</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="226">226</th><td><u>#  endif</u></td></tr>
+<tr><th id="227">227</th><td><u># <span data-ppcond="211">else</span></u></td></tr>
+<tr><th id="228">228</th><td><u>#  <span data-ppcond="228">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="229">229</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="230">230</th><td>	movl	(VEC_SIZE * <var>2</var>)(%rdi, %rdx), %ecx</td></tr>
+<tr><th id="231">231</th><td>	cmpl	(VEC_SIZE * <var>2</var>)(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="232">232</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="233">233</th><td><u>#  <span data-ppcond="228">else</span></u></td></tr>
+<tr><th id="234">234</th><td>	movzbl	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdi, %rdx), %eax</td></tr>
+<tr><th id="235">235</th><td>	movzbl	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rsi, %rdx), %edx</td></tr>
+<tr><th id="236">236</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="237">237</th><td><u>#  <span data-ppcond="228">endif</span></u></td></tr>
+<tr><th id="238">238</th><td><u># <span data-ppcond="211">endif</span></u></td></tr>
+<tr><th id="239">239</th><td>	ret</td></tr>
+<tr><th id="240">240</th><td></td></tr>
+<tr><th id="241">241</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="242">242</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lreturn_3_vec_size" data-ref="_M/L">L</a>(return_3_vec_size):</td></tr>
+<tr><th id="243">243</th><td>	kmovd	%k1, %ecx</td></tr>
+<tr><th id="244">244</th><td>	tzcntl	%ecx, %edx</td></tr>
+<tr><th id="245">245</th><td><u># <span data-ppcond="245">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="246">246</th><td>	<i>/* NB: Multiply wchar_t count by 4 to get the number of bytes.  */</i></td></tr>
+<tr><th id="247">247</th><td>	sall	$<var>2</var>, %edx</td></tr>
+<tr><th id="248">248</th><td><u># <span data-ppcond="245">endif</span></u></td></tr>
+<tr><th id="249">249</th><td><u># <span data-ppcond="249">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="250">250</th><td>	<i>/* Return 0 if the mismatched index (%rdx + 3 * VEC_SIZE) is</i></td></tr>
+<tr><th id="251">251</th><td><i>	   after the maximum offset (%r11).  */</i></td></tr>
+<tr><th id="252">252</th><td>	addq	$(VEC_SIZE * <var>3</var>), %rdx</td></tr>
+<tr><th id="253">253</th><td>	cmpq	%r11, %rdx</td></tr>
+<tr><th id="254">254</th><td>	jae	L(zero)</td></tr>
+<tr><th id="255">255</th><td><u>#  ifdef USE_AS_WCSCMP</u></td></tr>
+<tr><th id="256">256</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="257">257</th><td>	movl	(%rdi, %rdx), %ecx</td></tr>
+<tr><th id="258">258</th><td>	cmpl	(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="259">259</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="260">260</th><td><u>#  else</u></td></tr>
+<tr><th id="261">261</th><td>	movzbl	(%rdi, %rdx), %eax</td></tr>
+<tr><th id="262">262</th><td>	movzbl	(%rsi, %rdx), %edx</td></tr>
+<tr><th id="263">263</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="264">264</th><td><u>#  endif</u></td></tr>
+<tr><th id="265">265</th><td><u># <span data-ppcond="249">else</span></u></td></tr>
+<tr><th id="266">266</th><td><u>#  <span data-ppcond="266">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="267">267</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="268">268</th><td>	movl	(VEC_SIZE * <var>3</var>)(%rdi, %rdx), %ecx</td></tr>
+<tr><th id="269">269</th><td>	cmpl	(VEC_SIZE * <var>3</var>)(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="270">270</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="271">271</th><td><u>#  <span data-ppcond="266">else</span></u></td></tr>
+<tr><th id="272">272</th><td>	movzbl	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rdi, %rdx), %eax</td></tr>
+<tr><th id="273">273</th><td>	movzbl	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rsi, %rdx), %edx</td></tr>
+<tr><th id="274">274</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="275">275</th><td><u>#  <span data-ppcond="266">endif</span></u></td></tr>
+<tr><th id="276">276</th><td><u># <span data-ppcond="249">endif</span></u></td></tr>
+<tr><th id="277">277</th><td>	ret</td></tr>
+<tr><th id="278">278</th><td></td></tr>
+<tr><th id="279">279</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="280">280</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lnext_3_vectors" data-ref="_M/L">L</a>(next_3_vectors):</td></tr>
+<tr><th id="281">281</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rdi), %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a></td></tr>
+<tr><th id="282">282</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rsi), %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="283">283</th><td>	<i>/* Each bit in K0 represents a mismatch in YMM0 and YMM1.  */</i></td></tr>
+<tr><th id="284">284</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a>, %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a>, %k0</td></tr>
+<tr><th id="285">285</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a>, %k1</td></tr>
+<tr><th id="286">286</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a>, %k2</td></tr>
+<tr><th id="287">287</th><td>	<i>/* Each bit in K1 represents a NULL in YMM0 or YMM1.  */</i></td></tr>
+<tr><th id="288">288</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="289">289</th><td>	<i>/* Each bit in K1 represents a NULL or a mismatch.  */</i></td></tr>
+<tr><th id="290">290</th><td>	kord	%k0, %k1, %k1</td></tr>
+<tr><th id="291">291</th><td>	ktestd	%k1, %k1</td></tr>
+<tr><th id="292">292</th><td>	jne	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lreturn_vec_size" data-ref="_M/L">L</a>(return_vec_size)</td></tr>
+<tr><th id="293">293</th><td></td></tr>
+<tr><th id="294">294</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdi), %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a></td></tr>
+<tr><th id="295">295</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rdi), %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a></td></tr>
+<tr><th id="296">296</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rsi), %<a class="macro" href="#66" title="ymm21" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="297">297</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rsi), %<a class="macro" href="#67" title="ymm22" data-ref="_M/YMM5">YMM5</a></td></tr>
+<tr><th id="298">298</th><td></td></tr>
+<tr><th id="299">299</th><td>	<i>/* Each bit in K0 represents a mismatch in YMM2 and YMM4.  */</i></td></tr>
+<tr><th id="300">300</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a>, %<a class="macro" href="#66" title="ymm21" data-ref="_M/YMM4">YMM4</a>, %k0</td></tr>
+<tr><th id="301">301</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a>, %k1</td></tr>
+<tr><th id="302">302</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#66" title="ymm21" data-ref="_M/YMM4">YMM4</a>, %k2</td></tr>
+<tr><th id="303">303</th><td>	<i>/* Each bit in K1 represents a NULL in YMM2 or YMM4.  */</i></td></tr>
+<tr><th id="304">304</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="305">305</th><td>	<i>/* Each bit in K1 represents a NULL or a mismatch.  */</i></td></tr>
+<tr><th id="306">306</th><td>	kord	%k0, %k1, %k1</td></tr>
+<tr><th id="307">307</th><td>	ktestd	%k1, %k1</td></tr>
+<tr><th id="308">308</th><td>	jne	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lreturn_2_vec_size" data-ref="_M/L">L</a>(return_2_vec_size)</td></tr>
+<tr><th id="309">309</th><td></td></tr>
+<tr><th id="310">310</th><td>	<i>/* Each bit in K0 represents a mismatch in YMM3 and YMM5.  */</i></td></tr>
+<tr><th id="311">311</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a>, %<a class="macro" href="#67" title="ymm22" data-ref="_M/YMM5">YMM5</a>, %k0</td></tr>
+<tr><th id="312">312</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a>, %k1</td></tr>
+<tr><th id="313">313</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#67" title="ymm22" data-ref="_M/YMM5">YMM5</a>, %k2</td></tr>
+<tr><th id="314">314</th><td>	<i>/* Each bit in K1 represents a NULL in YMM3 or YMM5.  */</i></td></tr>
+<tr><th id="315">315</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="316">316</th><td>	<i>/* Each bit in K1 represents a NULL or a mismatch.  */</i></td></tr>
+<tr><th id="317">317</th><td>	kord	%k0, %k1, %k1</td></tr>
+<tr><th id="318">318</th><td>	ktestd	%k1, %k1</td></tr>
+<tr><th id="319">319</th><td>	jne	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lreturn_3_vec_size" data-ref="_M/L">L</a>(return_3_vec_size)</td></tr>
+<tr><th id="320">320</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lmain_loop_header" data-ref="_M/L">L</a>(main_loop_header):</td></tr>
+<tr><th id="321">321</th><td>	leaq	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>)(%rdi), %rdx</td></tr>
+<tr><th id="322">322</th><td>	movl	$<a class="macro" href="#27" title="4096" data-ref="_M/PAGE_SIZE">PAGE_SIZE</a>, %ecx</td></tr>
+<tr><th id="323">323</th><td>	<i>/* Align load via RAX.  */</i></td></tr>
+<tr><th id="324">324</th><td>	andq	$-(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>), %rdx</td></tr>
+<tr><th id="325">325</th><td>	subq	%rdi, %rdx</td></tr>
+<tr><th id="326">326</th><td>	leaq	(%rdi, %rdx), %rax</td></tr>
+<tr><th id="327">327</th><td><u># <span data-ppcond="327">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="328">328</th><td>	<i>/* Starting from this point, the maximum offset, or simply the</i></td></tr>
+<tr><th id="329">329</th><td><i>	   'offset', DECREASES by the same amount when base pointers are</i></td></tr>
+<tr><th id="330">330</th><td><i>	   moved forward.  Return 0 when:</i></td></tr>
+<tr><th id="331">331</th><td><i>	     1) On match: offset &lt;= the matched vector index.</i></td></tr>
+<tr><th id="332">332</th><td><i>	     2) On mistmach, offset is before the mistmatched index.</i></td></tr>
+<tr><th id="333">333</th><td><i>	 */</i></td></tr>
+<tr><th id="334">334</th><td>	subq	%rdx, %r11</td></tr>
+<tr><th id="335">335</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="336">336</th><td><u># <span data-ppcond="327">endif</span></u></td></tr>
+<tr><th id="337">337</th><td>	addq	%rsi, %rdx</td></tr>
+<tr><th id="338">338</th><td>	movq	%rdx, %rsi</td></tr>
+<tr><th id="339">339</th><td>	andl	$(<a class="macro" href="#27" title="4096" data-ref="_M/PAGE_SIZE">PAGE_SIZE</a> - <var>1</var>), %esi</td></tr>
+<tr><th id="340">340</th><td>	<i>/* Number of bytes before page crossing.  */</i></td></tr>
+<tr><th id="341">341</th><td>	subq	%rsi, %rcx</td></tr>
+<tr><th id="342">342</th><td>	<i>/* Number of VEC_SIZE * 4 blocks before page crossing.  */</i></td></tr>
+<tr><th id="343">343</th><td>	shrq	$<a class="macro" href="#33" title="7" data-ref="_M/DIVIDE_BY_VEC_4_SHIFT">DIVIDE_BY_VEC_4_SHIFT</a>, %rcx</td></tr>
+<tr><th id="344">344</th><td>	<i>/* ESI: Number of VEC_SIZE * 4 blocks before page crossing.   */</i></td></tr>
+<tr><th id="345">345</th><td>	movl	%ecx, %esi</td></tr>
+<tr><th id="346">346</th><td>	jmp	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lloop_start" data-ref="_M/L">L</a>(loop_start)</td></tr>
+<tr><th id="347">347</th><td></td></tr>
+<tr><th id="348">348</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="349">349</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lloop" data-ref="_M/L">L</a>(loop):</td></tr>
+<tr><th id="350">350</th><td><u># <span data-ppcond="350">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="351">351</th><td>	<i>/* Base pointers are moved forward by 4 * VEC_SIZE.  Decrease</i></td></tr>
+<tr><th id="352">352</th><td><i>	   the maximum offset (%r11) by the same amount.  */</i></td></tr>
+<tr><th id="353">353</th><td>	subq	$(VEC_SIZE * <var>4</var>), %r11</td></tr>
+<tr><th id="354">354</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="355">355</th><td><u># <span data-ppcond="350">endif</span></u></td></tr>
+<tr><th id="356">356</th><td>	addq	$(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>), %rax</td></tr>
+<tr><th id="357">357</th><td>	addq	$(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>), %rdx</td></tr>
+<tr><th id="358">358</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lloop_start" data-ref="_M/L">L</a>(loop_start):</td></tr>
+<tr><th id="359">359</th><td>	testl	%esi, %esi</td></tr>
+<tr><th id="360">360</th><td>	leal	-<var>1</var>(%esi), %esi</td></tr>
+<tr><th id="361">361</th><td>	je	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lloop_cross_page" data-ref="_M/L">L</a>(loop_cross_page)</td></tr>
+<tr><th id="362">362</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lback_to_loop" data-ref="_M/L">L</a>(back_to_loop):</td></tr>
+<tr><th id="363">363</th><td>	<i>/* Main loop, comparing 4 vectors are a time.  */</i></td></tr>
+<tr><th id="364">364</th><td>	<a class="macro" href="#39" title="vmovdqa64" data-ref="_M/VMOVA">VMOVA</a>	(%rax), %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a></td></tr>
+<tr><th id="365">365</th><td>	<a class="macro" href="#39" title="vmovdqa64" data-ref="_M/VMOVA">VMOVA</a>	<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rax), %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a></td></tr>
+<tr><th id="366">366</th><td>	<a class="macro" href="#39" title="vmovdqa64" data-ref="_M/VMOVA">VMOVA</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rax), %<a class="macro" href="#66" title="ymm21" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="367">367</th><td>	<a class="macro" href="#39" title="vmovdqa64" data-ref="_M/VMOVA">VMOVA</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rax), %<a class="macro" href="#68" title="ymm23" data-ref="_M/YMM6">YMM6</a></td></tr>
+<tr><th id="368">368</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rdx), %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="369">369</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rdx), %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a></td></tr>
+<tr><th id="370">370</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdx), %<a class="macro" href="#67" title="ymm22" data-ref="_M/YMM5">YMM5</a></td></tr>
+<tr><th id="371">371</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rdx), %<a class="macro" href="#69" title="ymm24" data-ref="_M/YMM7">YMM7</a></td></tr>
+<tr><th id="372">372</th><td></td></tr>
+<tr><th id="373">373</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a>, %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a>, %k0</td></tr>
+<tr><th id="374">374</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a>, %k1</td></tr>
+<tr><th id="375">375</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a>, %k2</td></tr>
+<tr><th id="376">376</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="377">377</th><td>	<i>/* Each bit in K4 represents a NULL or a mismatch in YMM0 and</i></td></tr>
+<tr><th id="378">378</th><td><i>	   YMM1.  */</i></td></tr>
+<tr><th id="379">379</th><td>	kord	%k0, %k1, %k4</td></tr>
+<tr><th id="380">380</th><td></td></tr>
+<tr><th id="381">381</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a>, %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a>, %k0</td></tr>
+<tr><th id="382">382</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a>, %k1</td></tr>
+<tr><th id="383">383</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a>, %k2</td></tr>
+<tr><th id="384">384</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="385">385</th><td>	<i>/* Each bit in K5 represents a NULL or a mismatch in YMM2 and</i></td></tr>
+<tr><th id="386">386</th><td><i>	   YMM3.  */</i></td></tr>
+<tr><th id="387">387</th><td>	kord	%k0, %k1, %k5</td></tr>
+<tr><th id="388">388</th><td></td></tr>
+<tr><th id="389">389</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#66" title="ymm21" data-ref="_M/YMM4">YMM4</a>, %<a class="macro" href="#67" title="ymm22" data-ref="_M/YMM5">YMM5</a>, %k0</td></tr>
+<tr><th id="390">390</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#66" title="ymm21" data-ref="_M/YMM4">YMM4</a>, %k1</td></tr>
+<tr><th id="391">391</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#67" title="ymm22" data-ref="_M/YMM5">YMM5</a>, %k2</td></tr>
+<tr><th id="392">392</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="393">393</th><td>	<i>/* Each bit in K6 represents a NULL or a mismatch in YMM4 and</i></td></tr>
+<tr><th id="394">394</th><td><i>	   YMM5.  */</i></td></tr>
+<tr><th id="395">395</th><td>	kord	%k0, %k1, %k6</td></tr>
+<tr><th id="396">396</th><td></td></tr>
+<tr><th id="397">397</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#68" title="ymm23" data-ref="_M/YMM6">YMM6</a>, %<a class="macro" href="#69" title="ymm24" data-ref="_M/YMM7">YMM7</a>, %k0</td></tr>
+<tr><th id="398">398</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#68" title="ymm23" data-ref="_M/YMM6">YMM6</a>, %k1</td></tr>
+<tr><th id="399">399</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#69" title="ymm24" data-ref="_M/YMM7">YMM7</a>, %k2</td></tr>
+<tr><th id="400">400</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="401">401</th><td>	<i>/* Each bit in K7 represents a NULL or a mismatch in YMM6 and</i></td></tr>
+<tr><th id="402">402</th><td><i>	   YMM7.  */</i></td></tr>
+<tr><th id="403">403</th><td>	kord	%k0, %k1, %k7</td></tr>
+<tr><th id="404">404</th><td></td></tr>
+<tr><th id="405">405</th><td>	kord	%k4, %k5, %k0</td></tr>
+<tr><th id="406">406</th><td>	kord	%k6, %k7, %k1</td></tr>
+<tr><th id="407">407</th><td></td></tr>
+<tr><th id="408">408</th><td>	<i>/* Test each mask (32 bits) individually because for VEC_SIZE</i></td></tr>
+<tr><th id="409">409</th><td><i>	   == 32 is not possible to OR the four masks and keep all bits</i></td></tr>
+<tr><th id="410">410</th><td><i>	   in a 64-bit integer register, differing from SSE2 strcmp</i></td></tr>
+<tr><th id="411">411</th><td><i>	   where ORing is possible.  */</i></td></tr>
+<tr><th id="412">412</th><td>	kortestd %k0, %k1</td></tr>
+<tr><th id="413">413</th><td>	je	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lloop" data-ref="_M/L">L</a>(loop)</td></tr>
+<tr><th id="414">414</th><td>	ktestd	%k4, %k4</td></tr>
+<tr><th id="415">415</th><td>	je	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Ltest_vec" data-ref="_M/L">L</a>(test_vec)</td></tr>
+<tr><th id="416">416</th><td>	kmovd	%k4, %edi</td></tr>
+<tr><th id="417">417</th><td>	tzcntl	%edi, %ecx</td></tr>
+<tr><th id="418">418</th><td><u># <span data-ppcond="418">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="419">419</th><td>	<i>/* NB: Multiply wchar_t count by 4 to get the number of bytes.  */</i></td></tr>
+<tr><th id="420">420</th><td>	sall	$<var>2</var>, %ecx</td></tr>
+<tr><th id="421">421</th><td><u># <span data-ppcond="418">endif</span></u></td></tr>
+<tr><th id="422">422</th><td><u># <span data-ppcond="422">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="423">423</th><td>	cmpq	%rcx, %r11</td></tr>
+<tr><th id="424">424</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="425">425</th><td><u>#  ifdef USE_AS_WCSCMP</u></td></tr>
+<tr><th id="426">426</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="427">427</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="428">428</th><td>	movl	(%rsi, %rcx), %edi</td></tr>
+<tr><th id="429">429</th><td>	cmpl	(%rdx, %rcx), %edi</td></tr>
+<tr><th id="430">430</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="431">431</th><td><u>#  else</u></td></tr>
+<tr><th id="432">432</th><td>	movzbl	(%rax, %rcx), %eax</td></tr>
+<tr><th id="433">433</th><td>	movzbl	(%rdx, %rcx), %edx</td></tr>
+<tr><th id="434">434</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="435">435</th><td><u>#  endif</u></td></tr>
+<tr><th id="436">436</th><td><u># <span data-ppcond="422">else</span></u></td></tr>
+<tr><th id="437">437</th><td><u>#  <span data-ppcond="437">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="438">438</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="439">439</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="440">440</th><td>	movl	(%rsi, %rcx), %edi</td></tr>
+<tr><th id="441">441</th><td>	cmpl	(%rdx, %rcx), %edi</td></tr>
+<tr><th id="442">442</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="443">443</th><td><u>#  <span data-ppcond="437">else</span></u></td></tr>
+<tr><th id="444">444</th><td>	movzbl	(%rax, %rcx), %eax</td></tr>
+<tr><th id="445">445</th><td>	movzbl	(%rdx, %rcx), %edx</td></tr>
+<tr><th id="446">446</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="447">447</th><td><u>#  <span data-ppcond="437">endif</span></u></td></tr>
+<tr><th id="448">448</th><td><u># <span data-ppcond="422">endif</span></u></td></tr>
+<tr><th id="449">449</th><td>	ret</td></tr>
+<tr><th id="450">450</th><td></td></tr>
+<tr><th id="451">451</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="452">452</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Ltest_vec" data-ref="_M/L">L</a>(test_vec):</td></tr>
+<tr><th id="453">453</th><td><u># <span data-ppcond="453">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="454">454</th><td>	<i>/* The first vector matched.  Return 0 if the maximum offset</i></td></tr>
+<tr><th id="455">455</th><td><i>	   (%r11) &lt;= VEC_SIZE.  */</i></td></tr>
+<tr><th id="456">456</th><td>	cmpq	$VEC_SIZE, %r11</td></tr>
+<tr><th id="457">457</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="458">458</th><td><u># <span data-ppcond="453">endif</span></u></td></tr>
+<tr><th id="459">459</th><td>	ktestd	%k5, %k5</td></tr>
+<tr><th id="460">460</th><td>	je	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Ltest_2_vec" data-ref="_M/L">L</a>(test_2_vec)</td></tr>
+<tr><th id="461">461</th><td>	kmovd	%k5, %ecx</td></tr>
+<tr><th id="462">462</th><td>	tzcntl	%ecx, %edi</td></tr>
+<tr><th id="463">463</th><td><u># <span data-ppcond="463">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="464">464</th><td>	<i>/* NB: Multiply wchar_t count by 4 to get the number of bytes.  */</i></td></tr>
+<tr><th id="465">465</th><td>	sall	$<var>2</var>, %edi</td></tr>
+<tr><th id="466">466</th><td><u># <span data-ppcond="463">endif</span></u></td></tr>
+<tr><th id="467">467</th><td><u># <span data-ppcond="467">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="468">468</th><td>	addq	$VEC_SIZE, %rdi</td></tr>
+<tr><th id="469">469</th><td>	cmpq	%rdi, %r11</td></tr>
+<tr><th id="470">470</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="471">471</th><td><u>#  ifdef USE_AS_WCSCMP</u></td></tr>
+<tr><th id="472">472</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="473">473</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="474">474</th><td>	movl	(%rsi, %rdi), %ecx</td></tr>
+<tr><th id="475">475</th><td>	cmpl	(%rdx, %rdi), %ecx</td></tr>
+<tr><th id="476">476</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="477">477</th><td><u>#  else</u></td></tr>
+<tr><th id="478">478</th><td>	movzbl	(%rax, %rdi), %eax</td></tr>
+<tr><th id="479">479</th><td>	movzbl	(%rdx, %rdi), %edx</td></tr>
+<tr><th id="480">480</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="481">481</th><td><u>#  endif</u></td></tr>
+<tr><th id="482">482</th><td><u># <span data-ppcond="467">else</span></u></td></tr>
+<tr><th id="483">483</th><td><u>#  <span data-ppcond="483">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="484">484</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="485">485</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="486">486</th><td>	movl	VEC_SIZE(%rsi, %rdi), %ecx</td></tr>
+<tr><th id="487">487</th><td>	cmpl	VEC_SIZE(%rdx, %rdi), %ecx</td></tr>
+<tr><th id="488">488</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="489">489</th><td><u>#  <span data-ppcond="483">else</span></u></td></tr>
+<tr><th id="490">490</th><td>	movzbl	<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rax, %rdi), %eax</td></tr>
+<tr><th id="491">491</th><td>	movzbl	<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rdx, %rdi), %edx</td></tr>
+<tr><th id="492">492</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="493">493</th><td><u>#  <span data-ppcond="483">endif</span></u></td></tr>
+<tr><th id="494">494</th><td><u># <span data-ppcond="467">endif</span></u></td></tr>
+<tr><th id="495">495</th><td>	ret</td></tr>
+<tr><th id="496">496</th><td></td></tr>
+<tr><th id="497">497</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="498">498</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Ltest_2_vec" data-ref="_M/L">L</a>(test_2_vec):</td></tr>
+<tr><th id="499">499</th><td><u># <span data-ppcond="499">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="500">500</th><td>	<i>/* The first 2 vectors matched.  Return 0 if the maximum offset</i></td></tr>
+<tr><th id="501">501</th><td><i>	   (%r11) &lt;= 2 * VEC_SIZE.  */</i></td></tr>
+<tr><th id="502">502</th><td>	cmpq	$(VEC_SIZE * <var>2</var>), %r11</td></tr>
+<tr><th id="503">503</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="504">504</th><td><u># <span data-ppcond="499">endif</span></u></td></tr>
+<tr><th id="505">505</th><td>	ktestd	%k6, %k6</td></tr>
+<tr><th id="506">506</th><td>	je	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Ltest_3_vec" data-ref="_M/L">L</a>(test_3_vec)</td></tr>
+<tr><th id="507">507</th><td>	kmovd	%k6, %ecx</td></tr>
+<tr><th id="508">508</th><td>	tzcntl	%ecx, %edi</td></tr>
+<tr><th id="509">509</th><td><u># <span data-ppcond="509">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="510">510</th><td>	<i>/* NB: Multiply wchar_t count by 4 to get the number of bytes.  */</i></td></tr>
+<tr><th id="511">511</th><td>	sall	$<var>2</var>, %edi</td></tr>
+<tr><th id="512">512</th><td><u># <span data-ppcond="509">endif</span></u></td></tr>
+<tr><th id="513">513</th><td><u># <span data-ppcond="513">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="514">514</th><td>	addq	$(VEC_SIZE * <var>2</var>), %rdi</td></tr>
+<tr><th id="515">515</th><td>	cmpq	%rdi, %r11</td></tr>
+<tr><th id="516">516</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="517">517</th><td><u>#  ifdef USE_AS_WCSCMP</u></td></tr>
+<tr><th id="518">518</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="519">519</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="520">520</th><td>	movl	(%rsi, %rdi), %ecx</td></tr>
+<tr><th id="521">521</th><td>	cmpl	(%rdx, %rdi), %ecx</td></tr>
+<tr><th id="522">522</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="523">523</th><td><u>#  else</u></td></tr>
+<tr><th id="524">524</th><td>	movzbl	(%rax, %rdi), %eax</td></tr>
+<tr><th id="525">525</th><td>	movzbl	(%rdx, %rdi), %edx</td></tr>
+<tr><th id="526">526</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="527">527</th><td><u>#  endif</u></td></tr>
+<tr><th id="528">528</th><td><u># <span data-ppcond="513">else</span></u></td></tr>
+<tr><th id="529">529</th><td><u>#  <span data-ppcond="529">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="530">530</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="531">531</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="532">532</th><td>	movl	(VEC_SIZE * <var>2</var>)(%rsi, %rdi), %ecx</td></tr>
+<tr><th id="533">533</th><td>	cmpl	(VEC_SIZE * <var>2</var>)(%rdx, %rdi), %ecx</td></tr>
+<tr><th id="534">534</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="535">535</th><td><u>#  <span data-ppcond="529">else</span></u></td></tr>
+<tr><th id="536">536</th><td>	movzbl	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rax, %rdi), %eax</td></tr>
+<tr><th id="537">537</th><td>	movzbl	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdx, %rdi), %edx</td></tr>
+<tr><th id="538">538</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="539">539</th><td><u>#  <span data-ppcond="529">endif</span></u></td></tr>
+<tr><th id="540">540</th><td><u># <span data-ppcond="513">endif</span></u></td></tr>
+<tr><th id="541">541</th><td>	ret</td></tr>
+<tr><th id="542">542</th><td></td></tr>
+<tr><th id="543">543</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="544">544</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Ltest_3_vec" data-ref="_M/L">L</a>(test_3_vec):</td></tr>
+<tr><th id="545">545</th><td><u># <span data-ppcond="545">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="546">546</th><td>	<i>/* The first 3 vectors matched.  Return 0 if the maximum offset</i></td></tr>
+<tr><th id="547">547</th><td><i>	   (%r11) &lt;= 3 * VEC_SIZE.  */</i></td></tr>
+<tr><th id="548">548</th><td>	cmpq	$(VEC_SIZE * <var>3</var>), %r11</td></tr>
+<tr><th id="549">549</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="550">550</th><td><u># <span data-ppcond="545">endif</span></u></td></tr>
+<tr><th id="551">551</th><td>	kmovd	%k7, %esi</td></tr>
+<tr><th id="552">552</th><td>	tzcntl	%esi, %ecx</td></tr>
+<tr><th id="553">553</th><td><u># <span data-ppcond="553">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="554">554</th><td>	<i>/* NB: Multiply wchar_t count by 4 to get the number of bytes.  */</i></td></tr>
+<tr><th id="555">555</th><td>	sall	$<var>2</var>, %ecx</td></tr>
+<tr><th id="556">556</th><td><u># <span data-ppcond="553">endif</span></u></td></tr>
+<tr><th id="557">557</th><td><u># <span data-ppcond="557">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="558">558</th><td>	addq	$(VEC_SIZE * <var>3</var>), %rcx</td></tr>
+<tr><th id="559">559</th><td>	cmpq	%rcx, %r11</td></tr>
+<tr><th id="560">560</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="561">561</th><td><u>#  ifdef USE_AS_WCSCMP</u></td></tr>
+<tr><th id="562">562</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="563">563</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="564">564</th><td>	movl	(%rsi, %rcx), %esi</td></tr>
+<tr><th id="565">565</th><td>	cmpl	(%rdx, %rcx), %esi</td></tr>
+<tr><th id="566">566</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="567">567</th><td><u>#  else</u></td></tr>
+<tr><th id="568">568</th><td>	movzbl	(%rax, %rcx), %eax</td></tr>
+<tr><th id="569">569</th><td>	movzbl	(%rdx, %rcx), %edx</td></tr>
+<tr><th id="570">570</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="571">571</th><td><u>#  endif</u></td></tr>
+<tr><th id="572">572</th><td><u># <span data-ppcond="557">else</span></u></td></tr>
+<tr><th id="573">573</th><td><u>#  <span data-ppcond="573">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="574">574</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="575">575</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="576">576</th><td>	movl	(VEC_SIZE * <var>3</var>)(%rsi, %rcx), %esi</td></tr>
+<tr><th id="577">577</th><td>	cmpl	(VEC_SIZE * <var>3</var>)(%rdx, %rcx), %esi</td></tr>
+<tr><th id="578">578</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="579">579</th><td><u>#  <span data-ppcond="573">else</span></u></td></tr>
+<tr><th id="580">580</th><td>	movzbl	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rax, %rcx), %eax</td></tr>
+<tr><th id="581">581</th><td>	movzbl	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rdx, %rcx), %edx</td></tr>
+<tr><th id="582">582</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="583">583</th><td><u>#  <span data-ppcond="573">endif</span></u></td></tr>
+<tr><th id="584">584</th><td><u># <span data-ppcond="557">endif</span></u></td></tr>
+<tr><th id="585">585</th><td>	ret</td></tr>
+<tr><th id="586">586</th><td></td></tr>
+<tr><th id="587">587</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="588">588</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lloop_cross_page" data-ref="_M/L">L</a>(loop_cross_page):</td></tr>
+<tr><th id="589">589</th><td>	xorl	%r10d, %r10d</td></tr>
+<tr><th id="590">590</th><td>	movq	%rdx, %rcx</td></tr>
+<tr><th id="591">591</th><td>	<i>/* Align load via RDX.  We load the extra ECX bytes which should</i></td></tr>
+<tr><th id="592">592</th><td><i>	   be ignored.  */</i></td></tr>
+<tr><th id="593">593</th><td>	andl	$((<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>) - <var>1</var>), %ecx</td></tr>
+<tr><th id="594">594</th><td>	<i>/* R10 is -RCX.  */</i></td></tr>
+<tr><th id="595">595</th><td>	subq	%rcx, %r10</td></tr>
+<tr><th id="596">596</th><td></td></tr>
+<tr><th id="597">597</th><td>	<i>/* This works only if VEC_SIZE * 2 == 64. */</i></td></tr>
+<tr><th id="598">598</th><td><u># <span data-ppcond="598">if</span> (<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * 2) != 64</u></td></tr>
+<tr><th id="599">599</th><td><u>#  error (VEC_SIZE * 2) != 64</u></td></tr>
+<tr><th id="600">600</th><td><u># <span data-ppcond="598">endif</span></u></td></tr>
+<tr><th id="601">601</th><td></td></tr>
+<tr><th id="602">602</th><td>	<i>/* Check if the first VEC_SIZE * 2 bytes should be ignored.  */</i></td></tr>
+<tr><th id="603">603</th><td>	cmpl	$(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>), %ecx</td></tr>
+<tr><th id="604">604</th><td>	jge	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lloop_cross_page_2_vec" data-ref="_M/L">L</a>(loop_cross_page_2_vec)</td></tr>
+<tr><th id="605">605</th><td></td></tr>
+<tr><th id="606">606</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rax, %r10), %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a></td></tr>
+<tr><th id="607">607</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rax, %r10), %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a></td></tr>
+<tr><th id="608">608</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rdx, %r10), %<a class="macro" href="#66" title="ymm21" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="609">609</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rdx, %r10), %<a class="macro" href="#67" title="ymm22" data-ref="_M/YMM5">YMM5</a></td></tr>
+<tr><th id="610">610</th><td></td></tr>
+<tr><th id="611">611</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#66" title="ymm21" data-ref="_M/YMM4">YMM4</a>, %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a>, %k0</td></tr>
+<tr><th id="612">612</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a>, %k1</td></tr>
+<tr><th id="613">613</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#66" title="ymm21" data-ref="_M/YMM4">YMM4</a>, %k2</td></tr>
+<tr><th id="614">614</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="615">615</th><td>	<i>/* Each bit in K1 represents a NULL or a mismatch in YMM2 and</i></td></tr>
+<tr><th id="616">616</th><td><i>	   YMM4.  */</i></td></tr>
+<tr><th id="617">617</th><td>	kord	%k0, %k1, %k1</td></tr>
+<tr><th id="618">618</th><td></td></tr>
+<tr><th id="619">619</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#67" title="ymm22" data-ref="_M/YMM5">YMM5</a>, %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a>, %k3</td></tr>
+<tr><th id="620">620</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a>, %k4</td></tr>
+<tr><th id="621">621</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#67" title="ymm22" data-ref="_M/YMM5">YMM5</a>, %k5</td></tr>
+<tr><th id="622">622</th><td>	kord	%k4, %k5, %k4</td></tr>
+<tr><th id="623">623</th><td>	<i>/* Each bit in K3 represents a NULL or a mismatch in YMM3 and</i></td></tr>
+<tr><th id="624">624</th><td><i>	   YMM5.  */</i></td></tr>
+<tr><th id="625">625</th><td>	kord	%k3, %k4, %k3</td></tr>
+<tr><th id="626">626</th><td></td></tr>
+<tr><th id="627">627</th><td><u># <span data-ppcond="627">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="628">628</th><td>	<i>/* NB: Each bit in K1/K3 represents 4-byte element.  */</i></td></tr>
+<tr><th id="629">629</th><td>	kshiftlw $<var>8</var>, %k3, %k2</td></tr>
+<tr><th id="630">630</th><td>	<i>/* NB: Divide shift count by 4 since each bit in K1 represent 4</i></td></tr>
+<tr><th id="631">631</th><td><i>	   bytes.  */</i></td></tr>
+<tr><th id="632">632</th><td>	movl	%ecx, %SHIFT_REG32</td></tr>
+<tr><th id="633">633</th><td>	sarl	$<var>2</var>, %SHIFT_REG32</td></tr>
+<tr><th id="634">634</th><td><u># <span data-ppcond="627">else</span></u></td></tr>
+<tr><th id="635">635</th><td>	kshiftlq $<var>32</var>, %k3, %k2</td></tr>
+<tr><th id="636">636</th><td><u># <span data-ppcond="627">endif</span></u></td></tr>
+<tr><th id="637">637</th><td></td></tr>
+<tr><th id="638">638</th><td>	<i>/* Each bit in K1 represents a NULL or a mismatch.  */</i></td></tr>
+<tr><th id="639">639</th><td>	korq	%k1, %k2, %k1</td></tr>
+<tr><th id="640">640</th><td>	kmovq	%k1, %rdi</td></tr>
+<tr><th id="641">641</th><td></td></tr>
+<tr><th id="642">642</th><td>	<i>/* Since ECX &lt; VEC_SIZE * 2, simply skip the first ECX bytes.  */</i></td></tr>
+<tr><th id="643">643</th><td>	shrxq	%<a class="macro" href="#52" title="rcx" data-ref="_M/SHIFT_REG64">SHIFT_REG64</a>, %rdi, %rdi</td></tr>
+<tr><th id="644">644</th><td>	testq	%rdi, %rdi</td></tr>
+<tr><th id="645">645</th><td>	je	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lloop_cross_page_2_vec" data-ref="_M/L">L</a>(loop_cross_page_2_vec)</td></tr>
+<tr><th id="646">646</th><td>	tzcntq	%rdi, %rcx</td></tr>
+<tr><th id="647">647</th><td><u># <span data-ppcond="647">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="648">648</th><td>	<i>/* NB: Multiply wchar_t count by 4 to get the number of bytes.  */</i></td></tr>
+<tr><th id="649">649</th><td>	sall	$<var>2</var>, %ecx</td></tr>
+<tr><th id="650">650</th><td><u># <span data-ppcond="647">endif</span></u></td></tr>
+<tr><th id="651">651</th><td><u># <span data-ppcond="651">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="652">652</th><td>	cmpq	%rcx, %r11</td></tr>
+<tr><th id="653">653</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="654">654</th><td><u>#  ifdef USE_AS_WCSCMP</u></td></tr>
+<tr><th id="655">655</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="656">656</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="657">657</th><td>	movl	(%rsi, %rcx), %edi</td></tr>
+<tr><th id="658">658</th><td>	cmpl	(%rdx, %rcx), %edi</td></tr>
+<tr><th id="659">659</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="660">660</th><td><u>#  else</u></td></tr>
+<tr><th id="661">661</th><td>	movzbl	(%rax, %rcx), %eax</td></tr>
+<tr><th id="662">662</th><td>	movzbl	(%rdx, %rcx), %edx</td></tr>
+<tr><th id="663">663</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="664">664</th><td><u>#  endif</u></td></tr>
+<tr><th id="665">665</th><td><u># <span data-ppcond="651">else</span></u></td></tr>
+<tr><th id="666">666</th><td><u>#  <span data-ppcond="666">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="667">667</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="668">668</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="669">669</th><td>	movl	(%rsi, %rcx), %edi</td></tr>
+<tr><th id="670">670</th><td>	cmpl	(%rdx, %rcx), %edi</td></tr>
+<tr><th id="671">671</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="672">672</th><td><u>#  <span data-ppcond="666">else</span></u></td></tr>
+<tr><th id="673">673</th><td>	movzbl	(%rax, %rcx), %eax</td></tr>
+<tr><th id="674">674</th><td>	movzbl	(%rdx, %rcx), %edx</td></tr>
+<tr><th id="675">675</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="676">676</th><td><u>#  <span data-ppcond="666">endif</span></u></td></tr>
+<tr><th id="677">677</th><td><u># <span data-ppcond="651">endif</span></u></td></tr>
+<tr><th id="678">678</th><td>	ret</td></tr>
+<tr><th id="679">679</th><td></td></tr>
+<tr><th id="680">680</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="681">681</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lloop_cross_page_2_vec" data-ref="_M/L">L</a>(loop_cross_page_2_vec):</td></tr>
+<tr><th id="682">682</th><td>	<i>/* The first VEC_SIZE * 2 bytes match or are ignored.  */</i></td></tr>
+<tr><th id="683">683</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rax, %r10), %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a></td></tr>
+<tr><th id="684">684</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rax, %r10), %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="685">685</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdx, %r10), %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a></td></tr>
+<tr><th id="686">686</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rdx, %r10), %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a></td></tr>
+<tr><th id="687">687</th><td></td></tr>
+<tr><th id="688">688</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a>, %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a>, %k0</td></tr>
+<tr><th id="689">689</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a>, %k1</td></tr>
+<tr><th id="690">690</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#64" title="ymm19" data-ref="_M/YMM2">YMM2</a>, %k2</td></tr>
+<tr><th id="691">691</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="692">692</th><td>	<i>/* Each bit in K1 represents a NULL or a mismatch in YMM0 and</i></td></tr>
+<tr><th id="693">693</th><td><i>	   YMM2.  */</i></td></tr>
+<tr><th id="694">694</th><td>	kord	%k0, %k1, %k1</td></tr>
+<tr><th id="695">695</th><td></td></tr>
+<tr><th id="696">696</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a>, %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a>, %k3</td></tr>
+<tr><th id="697">697</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a>, %k4</td></tr>
+<tr><th id="698">698</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#65" title="ymm20" data-ref="_M/YMM3">YMM3</a>, %k5</td></tr>
+<tr><th id="699">699</th><td>	kord	%k4, %k5, %k4</td></tr>
+<tr><th id="700">700</th><td>	<i>/* Each bit in K3 represents a NULL or a mismatch in YMM1 and</i></td></tr>
+<tr><th id="701">701</th><td><i>	   YMM3.  */</i></td></tr>
+<tr><th id="702">702</th><td>	kord	%k3, %k4, %k3</td></tr>
+<tr><th id="703">703</th><td></td></tr>
+<tr><th id="704">704</th><td><u># <span data-ppcond="704">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="705">705</th><td>	<i>/* NB: Each bit in K1/K3 represents 4-byte element.  */</i></td></tr>
+<tr><th id="706">706</th><td>	kshiftlw $<var>8</var>, %k3, %k2</td></tr>
+<tr><th id="707">707</th><td><u># <span data-ppcond="704">else</span></u></td></tr>
+<tr><th id="708">708</th><td>	kshiftlq $<var>32</var>, %k3, %k2</td></tr>
+<tr><th id="709">709</th><td><u># <span data-ppcond="704">endif</span></u></td></tr>
+<tr><th id="710">710</th><td></td></tr>
+<tr><th id="711">711</th><td>	<i>/* Each bit in K1 represents a NULL or a mismatch.  */</i></td></tr>
+<tr><th id="712">712</th><td>	korq	%k1, %k2, %k1</td></tr>
+<tr><th id="713">713</th><td>	kmovq	%k1, %rdi</td></tr>
+<tr><th id="714">714</th><td></td></tr>
+<tr><th id="715">715</th><td>	xorl	%r8d, %r8d</td></tr>
+<tr><th id="716">716</th><td>	<i>/* If ECX &gt; VEC_SIZE * 2, skip ECX - (VEC_SIZE * 2) bytes.  */</i></td></tr>
+<tr><th id="717">717</th><td>	subl	$(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>), %ecx</td></tr>
+<tr><th id="718">718</th><td>	jle	<var>1f</var></td></tr>
+<tr><th id="719">719</th><td>	<i>/* R8 has number of bytes skipped.  */</i></td></tr>
+<tr><th id="720">720</th><td>	movl	%ecx, %r8d</td></tr>
+<tr><th id="721">721</th><td><u># <span data-ppcond="721">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="722">722</th><td>	<i>/* NB: Divide shift count by 4 since each bit in K1 represent 4</i></td></tr>
+<tr><th id="723">723</th><td><i>	   bytes.  */</i></td></tr>
+<tr><th id="724">724</th><td>	sarl	$<var>2</var>, %ecx</td></tr>
+<tr><th id="725">725</th><td><u># <span data-ppcond="721">endif</span></u></td></tr>
+<tr><th id="726">726</th><td>	<i>/* Skip ECX bytes.  */</i></td></tr>
+<tr><th id="727">727</th><td>	shrq	%cl, %rdi</td></tr>
+<tr><th id="728">728</th><td><var>1</var>:</td></tr>
+<tr><th id="729">729</th><td>	<i>/* Before jumping back to the loop, set ESI to the number of</i></td></tr>
+<tr><th id="730">730</th><td><i>	   VEC_SIZE * 4 blocks before page crossing.  */</i></td></tr>
+<tr><th id="731">731</th><td>	movl	$(<a class="macro" href="#27" title="4096" data-ref="_M/PAGE_SIZE">PAGE_SIZE</a> / (<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>) - <var>1</var>), %esi</td></tr>
+<tr><th id="732">732</th><td></td></tr>
+<tr><th id="733">733</th><td>	testq	%rdi, %rdi</td></tr>
+<tr><th id="734">734</th><td><u># <span data-ppcond="734">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="735">735</th><td>	<i>/* At this point, if %rdi value is 0, it already tested</i></td></tr>
+<tr><th id="736">736</th><td><i>	   VEC_SIZE*4+%r10 byte starting from %rax. This label</i></td></tr>
+<tr><th id="737">737</th><td><i>	   checks whether strncmp maximum offset reached or not.  */</i></td></tr>
+<tr><th id="738">738</th><td>	je	L(string_nbyte_offset_check)</td></tr>
+<tr><th id="739">739</th><td><u># <span data-ppcond="734">else</span></u></td></tr>
+<tr><th id="740">740</th><td>	je	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lback_to_loop" data-ref="_M/L">L</a>(back_to_loop)</td></tr>
+<tr><th id="741">741</th><td><u># <span data-ppcond="734">endif</span></u></td></tr>
+<tr><th id="742">742</th><td>	tzcntq	%rdi, %rcx</td></tr>
+<tr><th id="743">743</th><td><u># <span data-ppcond="743">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="744">744</th><td>	<i>/* NB: Multiply wchar_t count by 4 to get the number of bytes.  */</i></td></tr>
+<tr><th id="745">745</th><td>	sall	$<var>2</var>, %ecx</td></tr>
+<tr><th id="746">746</th><td><u># <span data-ppcond="743">endif</span></u></td></tr>
+<tr><th id="747">747</th><td>	addq	%r10, %rcx</td></tr>
+<tr><th id="748">748</th><td>	<i>/* Adjust for number of bytes skipped.  */</i></td></tr>
+<tr><th id="749">749</th><td>	addq	%r8, %rcx</td></tr>
+<tr><th id="750">750</th><td><u># <span data-ppcond="750">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="751">751</th><td>	addq	$(VEC_SIZE * <var>2</var>), %rcx</td></tr>
+<tr><th id="752">752</th><td>	subq	%rcx, %r11</td></tr>
+<tr><th id="753">753</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="754">754</th><td><u>#  ifdef USE_AS_WCSCMP</u></td></tr>
+<tr><th id="755">755</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="756">756</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="757">757</th><td>	movl	(%rsi, %rcx), %edi</td></tr>
+<tr><th id="758">758</th><td>	cmpl	(%rdx, %rcx), %edi</td></tr>
+<tr><th id="759">759</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="760">760</th><td><u>#  else</u></td></tr>
+<tr><th id="761">761</th><td>	movzbl	(%rax, %rcx), %eax</td></tr>
+<tr><th id="762">762</th><td>	movzbl	(%rdx, %rcx), %edx</td></tr>
+<tr><th id="763">763</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="764">764</th><td><u>#  endif</u></td></tr>
+<tr><th id="765">765</th><td><u># <span data-ppcond="750">else</span></u></td></tr>
+<tr><th id="766">766</th><td><u>#  <span data-ppcond="766">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="767">767</th><td>	movq	%rax, %rsi</td></tr>
+<tr><th id="768">768</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="769">769</th><td>	movl	(VEC_SIZE * <var>2</var>)(%rsi, %rcx), %edi</td></tr>
+<tr><th id="770">770</th><td>	cmpl	(VEC_SIZE * <var>2</var>)(%rdx, %rcx), %edi</td></tr>
+<tr><th id="771">771</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="772">772</th><td><u>#  <span data-ppcond="766">else</span></u></td></tr>
+<tr><th id="773">773</th><td>	movzbl	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rax, %rcx), %eax</td></tr>
+<tr><th id="774">774</th><td>	movzbl	(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdx, %rcx), %edx</td></tr>
+<tr><th id="775">775</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="776">776</th><td><u>#  <span data-ppcond="766">endif</span></u></td></tr>
+<tr><th id="777">777</th><td><u># <span data-ppcond="750">endif</span></u></td></tr>
+<tr><th id="778">778</th><td>	ret</td></tr>
+<tr><th id="779">779</th><td></td></tr>
+<tr><th id="780">780</th><td><u># <span data-ppcond="780">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="781">781</th><td>L(string_nbyte_offset_check):</td></tr>
+<tr><th id="782">782</th><td>	leaq	(VEC_SIZE * <var>4</var>)(%r10), %r10</td></tr>
+<tr><th id="783">783</th><td>	cmpq	%r10, %r11</td></tr>
+<tr><th id="784">784</th><td>	jbe	L(zero)</td></tr>
+<tr><th id="785">785</th><td>	jmp	L(back_to_loop)</td></tr>
+<tr><th id="786">786</th><td><u># <span data-ppcond="780">endif</span></u></td></tr>
+<tr><th id="787">787</th><td></td></tr>
+<tr><th id="788">788</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="789">789</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page_loop" data-ref="_M/L">L</a>(cross_page_loop):</td></tr>
+<tr><th id="790">790</th><td>	<i>/* Check one byte/dword at a time.  */</i></td></tr>
+<tr><th id="791">791</th><td><u># <span data-ppcond="791">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="792">792</th><td>	cmpl	%ecx, %eax</td></tr>
+<tr><th id="793">793</th><td><u># <span data-ppcond="791">else</span></u></td></tr>
+<tr><th id="794">794</th><td>	subl	%ecx, %eax</td></tr>
+<tr><th id="795">795</th><td><u># <span data-ppcond="791">endif</span></u></td></tr>
+<tr><th id="796">796</th><td>	jne	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Ldifferent" data-ref="_M/L">L</a>(different)</td></tr>
+<tr><th id="797">797</th><td>	addl	$<a class="macro" href="#54" title="1" data-ref="_M/SIZE_OF_CHAR">SIZE_OF_CHAR</a>, %edx</td></tr>
+<tr><th id="798">798</th><td>	cmpl	$(<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>), %edx</td></tr>
+<tr><th id="799">799</th><td>	je	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lmain_loop_header" data-ref="_M/L">L</a>(main_loop_header)</td></tr>
+<tr><th id="800">800</th><td><u># <span data-ppcond="800">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="801">801</th><td>	cmpq	%r11, %rdx</td></tr>
+<tr><th id="802">802</th><td>	jae	L(zero)</td></tr>
+<tr><th id="803">803</th><td><u># <span data-ppcond="800">endif</span></u></td></tr>
+<tr><th id="804">804</th><td><u># <span data-ppcond="804">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="805">805</th><td>	movl	(%rdi, %rdx), %eax</td></tr>
+<tr><th id="806">806</th><td>	movl	(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="807">807</th><td><u># <span data-ppcond="804">else</span></u></td></tr>
+<tr><th id="808">808</th><td>	movzbl	(%rdi, %rdx), %eax</td></tr>
+<tr><th id="809">809</th><td>	movzbl	(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="810">810</th><td><u># <span data-ppcond="804">endif</span></u></td></tr>
+<tr><th id="811">811</th><td>	<i>/* Check null char.  */</i></td></tr>
+<tr><th id="812">812</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="813">813</th><td>	jne	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page_loop" data-ref="_M/L">L</a>(cross_page_loop)</td></tr>
+<tr><th id="814">814</th><td>	<i>/* Since %eax == 0, subtract is OK for both SIGNED and UNSIGNED</i></td></tr>
+<tr><th id="815">815</th><td><i>	   comparisons.  */</i></td></tr>
+<tr><th id="816">816</th><td>	subl	%ecx, %eax</td></tr>
+<tr><th id="817">817</th><td><u># <span data-ppcond="817">ifndef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="818">818</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Ldifferent" data-ref="_M/L">L</a>(different):</td></tr>
+<tr><th id="819">819</th><td><u># <span data-ppcond="817">endif</span></u></td></tr>
+<tr><th id="820">820</th><td>	ret</td></tr>
+<tr><th id="821">821</th><td></td></tr>
+<tr><th id="822">822</th><td><u># <span data-ppcond="822">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="823">823</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="824">824</th><td>L(different):</td></tr>
+<tr><th id="825">825</th><td>	<i>/* Use movl to avoid modifying EFLAGS.  */</i></td></tr>
+<tr><th id="826">826</th><td>	movl	$<var>0</var>, %eax</td></tr>
+<tr><th id="827">827</th><td>	setl	%al</td></tr>
+<tr><th id="828">828</th><td>	negl	%eax</td></tr>
+<tr><th id="829">829</th><td>	orl	$<var>1</var>, %eax</td></tr>
+<tr><th id="830">830</th><td>	ret</td></tr>
+<tr><th id="831">831</th><td><u># <span data-ppcond="822">endif</span></u></td></tr>
+<tr><th id="832">832</th><td></td></tr>
+<tr><th id="833">833</th><td><u># <span data-ppcond="833">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="834">834</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="835">835</th><td>L(zero):</td></tr>
+<tr><th id="836">836</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="837">837</th><td>	ret</td></tr>
+<tr><th id="838">838</th><td></td></tr>
+<tr><th id="839">839</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="840">840</th><td>L(char0):</td></tr>
+<tr><th id="841">841</th><td><u>#  ifdef USE_AS_WCSCMP</u></td></tr>
+<tr><th id="842">842</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="843">843</th><td>	movl	(%rdi), %ecx</td></tr>
+<tr><th id="844">844</th><td>	cmpl	(%rsi), %ecx</td></tr>
+<tr><th id="845">845</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="846">846</th><td><u>#  else</u></td></tr>
+<tr><th id="847">847</th><td>	movzbl	(%rsi), %ecx</td></tr>
+<tr><th id="848">848</th><td>	movzbl	(%rdi), %eax</td></tr>
+<tr><th id="849">849</th><td>	subl	%ecx, %eax</td></tr>
+<tr><th id="850">850</th><td><u>#  endif</u></td></tr>
+<tr><th id="851">851</th><td>	ret</td></tr>
+<tr><th id="852">852</th><td><u># <span data-ppcond="833">endif</span></u></td></tr>
+<tr><th id="853">853</th><td></td></tr>
+<tr><th id="854">854</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="855">855</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Llast_vector" data-ref="_M/L">L</a>(last_vector):</td></tr>
+<tr><th id="856">856</th><td>	addq	%rdx, %rdi</td></tr>
+<tr><th id="857">857</th><td>	addq	%rdx, %rsi</td></tr>
+<tr><th id="858">858</th><td><u># <span data-ppcond="858">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="859">859</th><td>	subq	%rdx, %r11</td></tr>
+<tr><th id="860">860</th><td><u># <span data-ppcond="858">endif</span></u></td></tr>
+<tr><th id="861">861</th><td>	tzcntl	%ecx, %edx</td></tr>
+<tr><th id="862">862</th><td><u># <span data-ppcond="862">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="863">863</th><td>	<i>/* NB: Multiply wchar_t count by 4 to get the number of bytes.  */</i></td></tr>
+<tr><th id="864">864</th><td>	sall	$<var>2</var>, %edx</td></tr>
+<tr><th id="865">865</th><td><u># <span data-ppcond="862">endif</span></u></td></tr>
+<tr><th id="866">866</th><td><u># <span data-ppcond="866">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="867">867</th><td>	cmpq	%r11, %rdx</td></tr>
+<tr><th id="868">868</th><td>	jae	L(zero)</td></tr>
+<tr><th id="869">869</th><td><u># <span data-ppcond="866">endif</span></u></td></tr>
+<tr><th id="870">870</th><td><u># <span data-ppcond="870">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="871">871</th><td>	xorl	%eax, %eax</td></tr>
+<tr><th id="872">872</th><td>	movl	(%rdi, %rdx), %ecx</td></tr>
+<tr><th id="873">873</th><td>	cmpl	(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="874">874</th><td>	jne	L(wcscmp_return)</td></tr>
+<tr><th id="875">875</th><td><u># <span data-ppcond="870">else</span></u></td></tr>
+<tr><th id="876">876</th><td>	movzbl	(%rdi, %rdx), %eax</td></tr>
+<tr><th id="877">877</th><td>	movzbl	(%rsi, %rdx), %edx</td></tr>
+<tr><th id="878">878</th><td>	subl	%edx, %eax</td></tr>
+<tr><th id="879">879</th><td><u># <span data-ppcond="870">endif</span></u></td></tr>
+<tr><th id="880">880</th><td>	ret</td></tr>
+<tr><th id="881">881</th><td></td></tr>
+<tr><th id="882">882</th><td>	<i>/* Comparing on page boundary region requires special treatment:</i></td></tr>
+<tr><th id="883">883</th><td><i>	   It must done one vector at the time, starting with the wider</i></td></tr>
+<tr><th id="884">884</th><td><i>	   ymm vector if possible, if not, with xmm. If fetching 16 bytes</i></td></tr>
+<tr><th id="885">885</th><td><i>	   (xmm) still passes the boundary, byte comparison must be done.</i></td></tr>
+<tr><th id="886">886</th><td><i>	 */</i></td></tr>
+<tr><th id="887">887</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="888">888</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page" data-ref="_M/L">L</a>(cross_page):</td></tr>
+<tr><th id="889">889</th><td>	<i>/* Try one ymm vector at a time.  */</i></td></tr>
+<tr><th id="890">890</th><td>	cmpl	$(<a class="macro" href="#27" title="4096" data-ref="_M/PAGE_SIZE">PAGE_SIZE</a> - <a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>), %eax</td></tr>
+<tr><th id="891">891</th><td>	jg	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page_1_vector" data-ref="_M/L">L</a>(cross_page_1_vector)</td></tr>
+<tr><th id="892">892</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lloop_1_vector" data-ref="_M/L">L</a>(loop_1_vector):</td></tr>
+<tr><th id="893">893</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rdi, %rdx), %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a></td></tr>
+<tr><th id="894">894</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rsi, %rdx), %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="895">895</th><td></td></tr>
+<tr><th id="896">896</th><td>	<i>/* Each bit in K0 represents a mismatch in YMM0 and YMM1.  */</i></td></tr>
+<tr><th id="897">897</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a>, %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a>, %k0</td></tr>
+<tr><th id="898">898</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#62" title="ymm17" data-ref="_M/YMM0">YMM0</a>, %k1</td></tr>
+<tr><th id="899">899</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#61" title="ymm16" data-ref="_M/YMMZERO">YMMZERO</a>, %<a class="macro" href="#63" title="ymm18" data-ref="_M/YMM1">YMM1</a>, %k2</td></tr>
+<tr><th id="900">900</th><td>	<i>/* Each bit in K1 represents a NULL in YMM0 or YMM1.  */</i></td></tr>
+<tr><th id="901">901</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="902">902</th><td>	<i>/* Each bit in K1 represents a NULL or a mismatch.  */</i></td></tr>
+<tr><th id="903">903</th><td>	kord	%k0, %k1, %k1</td></tr>
+<tr><th id="904">904</th><td>	kmovd	%k1, %ecx</td></tr>
+<tr><th id="905">905</th><td>	testl	%ecx, %ecx</td></tr>
+<tr><th id="906">906</th><td>	jne	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Llast_vector" data-ref="_M/L">L</a>(last_vector)</td></tr>
+<tr><th id="907">907</th><td></td></tr>
+<tr><th id="908">908</th><td>	addl	$<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>, %edx</td></tr>
+<tr><th id="909">909</th><td></td></tr>
+<tr><th id="910">910</th><td>	addl	$<a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>, %eax</td></tr>
+<tr><th id="911">911</th><td><u># <span data-ppcond="911">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="912">912</th><td>	<i>/* Return 0 if the current offset (%rdx) &gt;= the maximum offset</i></td></tr>
+<tr><th id="913">913</th><td><i>	   (%r11).  */</i></td></tr>
+<tr><th id="914">914</th><td>	cmpq	%r11, %rdx</td></tr>
+<tr><th id="915">915</th><td>	jae	L(zero)</td></tr>
+<tr><th id="916">916</th><td><u># <span data-ppcond="911">endif</span></u></td></tr>
+<tr><th id="917">917</th><td>	cmpl	$(<a class="macro" href="#27" title="4096" data-ref="_M/PAGE_SIZE">PAGE_SIZE</a> - <a class="macro" href="#30" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>), %eax</td></tr>
+<tr><th id="918">918</th><td>	jle	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lloop_1_vector" data-ref="_M/L">L</a>(loop_1_vector)</td></tr>
+<tr><th id="919">919</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page_1_vector" data-ref="_M/L">L</a>(cross_page_1_vector):</td></tr>
+<tr><th id="920">920</th><td>	<i>/* Less than 32 bytes to check, try one xmm vector.  */</i></td></tr>
+<tr><th id="921">921</th><td>	cmpl	$(<a class="macro" href="#27" title="4096" data-ref="_M/PAGE_SIZE">PAGE_SIZE</a> - <var>16</var>), %eax</td></tr>
+<tr><th id="922">922</th><td>	jg	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page_1_xmm" data-ref="_M/L">L</a>(cross_page_1_xmm)</td></tr>
+<tr><th id="923">923</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rdi, %rdx), %<a class="macro" href="#58" title="xmm17" data-ref="_M/XMM0">XMM0</a></td></tr>
+<tr><th id="924">924</th><td>	<a class="macro" href="#38" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rsi, %rdx), %<a class="macro" href="#59" title="xmm18" data-ref="_M/XMM1">XMM1</a></td></tr>
+<tr><th id="925">925</th><td></td></tr>
+<tr><th id="926">926</th><td>	<i>/* Each bit in K0 represents a mismatch in XMM0 and XMM1.  */</i></td></tr>
+<tr><th id="927">927</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#58" title="xmm17" data-ref="_M/XMM0">XMM0</a>, %<a class="macro" href="#59" title="xmm18" data-ref="_M/XMM1">XMM1</a>, %k0</td></tr>
+<tr><th id="928">928</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#57" title="xmm16" data-ref="_M/XMMZERO">XMMZERO</a>, %<a class="macro" href="#58" title="xmm17" data-ref="_M/XMM0">XMM0</a>, %k1</td></tr>
+<tr><th id="929">929</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#57" title="xmm16" data-ref="_M/XMMZERO">XMMZERO</a>, %<a class="macro" href="#59" title="xmm18" data-ref="_M/XMM1">XMM1</a>, %k2</td></tr>
+<tr><th id="930">930</th><td>	<i>/* Each bit in K1 represents a NULL in XMM0 or XMM1.  */</i></td></tr>
+<tr><th id="931">931</th><td>	korw	%k1, %k2, %k1</td></tr>
+<tr><th id="932">932</th><td>	<i>/* Each bit in K1 represents a NULL or a mismatch.  */</i></td></tr>
+<tr><th id="933">933</th><td>	korw	%k0, %k1, %k1</td></tr>
+<tr><th id="934">934</th><td>	kmovw	%k1, %ecx</td></tr>
+<tr><th id="935">935</th><td>	testl	%ecx, %ecx</td></tr>
+<tr><th id="936">936</th><td>	jne	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Llast_vector" data-ref="_M/L">L</a>(last_vector)</td></tr>
+<tr><th id="937">937</th><td></td></tr>
+<tr><th id="938">938</th><td>	addl	$<var>16</var>, %edx</td></tr>
+<tr><th id="939">939</th><td><u># <span data-ppcond="939">ifndef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="940">940</th><td>	addl	$<var>16</var>, %eax</td></tr>
+<tr><th id="941">941</th><td><u># <span data-ppcond="939">endif</span></u></td></tr>
+<tr><th id="942">942</th><td><u># <span data-ppcond="942">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="943">943</th><td>	<i>/* Return 0 if the current offset (%rdx) &gt;= the maximum offset</i></td></tr>
+<tr><th id="944">944</th><td><i>	   (%r11).  */</i></td></tr>
+<tr><th id="945">945</th><td>	cmpq	%r11, %rdx</td></tr>
+<tr><th id="946">946</th><td>	jae	L(zero)</td></tr>
+<tr><th id="947">947</th><td><u># <span data-ppcond="942">endif</span></u></td></tr>
+<tr><th id="948">948</th><td></td></tr>
+<tr><th id="949">949</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page_1_xmm" data-ref="_M/L">L</a>(cross_page_1_xmm):</td></tr>
+<tr><th id="950">950</th><td><u># <span data-ppcond="950">ifndef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="951">951</th><td>	<i>/* Less than 16 bytes to check, try 8 byte vector.  NB: No need</i></td></tr>
+<tr><th id="952">952</th><td><i>	   for wcscmp nor wcsncmp since wide char is 4 bytes.   */</i></td></tr>
+<tr><th id="953">953</th><td>	cmpl	$(<a class="macro" href="#27" title="4096" data-ref="_M/PAGE_SIZE">PAGE_SIZE</a> - <var>8</var>), %eax</td></tr>
+<tr><th id="954">954</th><td>	jg	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page_8bytes" data-ref="_M/L">L</a>(cross_page_8bytes)</td></tr>
+<tr><th id="955">955</th><td>	vmovq	(%rdi, %rdx), %<a class="macro" href="#58" title="xmm17" data-ref="_M/XMM0">XMM0</a></td></tr>
+<tr><th id="956">956</th><td>	vmovq	(%rsi, %rdx), %<a class="macro" href="#59" title="xmm18" data-ref="_M/XMM1">XMM1</a></td></tr>
+<tr><th id="957">957</th><td></td></tr>
+<tr><th id="958">958</th><td>	<i>/* Each bit in K0 represents a mismatch in XMM0 and XMM1.  */</i></td></tr>
+<tr><th id="959">959</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#58" title="xmm17" data-ref="_M/XMM0">XMM0</a>, %<a class="macro" href="#59" title="xmm18" data-ref="_M/XMM1">XMM1</a>, %k0</td></tr>
+<tr><th id="960">960</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#57" title="xmm16" data-ref="_M/XMMZERO">XMMZERO</a>, %<a class="macro" href="#58" title="xmm17" data-ref="_M/XMM0">XMM0</a>, %k1</td></tr>
+<tr><th id="961">961</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#57" title="xmm16" data-ref="_M/XMMZERO">XMMZERO</a>, %<a class="macro" href="#59" title="xmm18" data-ref="_M/XMM1">XMM1</a>, %k2</td></tr>
+<tr><th id="962">962</th><td>	<i>/* Each bit in K1 represents a NULL in XMM0 or XMM1.  */</i></td></tr>
+<tr><th id="963">963</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="964">964</th><td>	<i>/* Each bit in K1 represents a NULL or a mismatch.  */</i></td></tr>
+<tr><th id="965">965</th><td>	kord	%k0, %k1, %k1</td></tr>
+<tr><th id="966">966</th><td>	kmovd	%k1, %ecx</td></tr>
+<tr><th id="967">967</th><td></td></tr>
+<tr><th id="968">968</th><td><u># <span data-ppcond="968">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="969">969</th><td>	<i>/* Only last 2 bits are valid.  */</i></td></tr>
+<tr><th id="970">970</th><td>	andl	$<var>0x3</var>, %ecx</td></tr>
+<tr><th id="971">971</th><td><u># <span data-ppcond="968">else</span></u></td></tr>
+<tr><th id="972">972</th><td>	<i>/* Only last 8 bits are valid.  */</i></td></tr>
+<tr><th id="973">973</th><td>	andl	$<var>0xff</var>, %ecx</td></tr>
+<tr><th id="974">974</th><td><u># <span data-ppcond="968">endif</span></u></td></tr>
+<tr><th id="975">975</th><td></td></tr>
+<tr><th id="976">976</th><td>	testl	%ecx, %ecx</td></tr>
+<tr><th id="977">977</th><td>	jne	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Llast_vector" data-ref="_M/L">L</a>(last_vector)</td></tr>
+<tr><th id="978">978</th><td></td></tr>
+<tr><th id="979">979</th><td>	addl	$<var>8</var>, %edx</td></tr>
+<tr><th id="980">980</th><td>	addl	$<var>8</var>, %eax</td></tr>
+<tr><th id="981">981</th><td><u>#  <span data-ppcond="981">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="982">982</th><td>	<i>/* Return 0 if the current offset (%rdx) &gt;= the maximum offset</i></td></tr>
+<tr><th id="983">983</th><td><i>	   (%r11).  */</i></td></tr>
+<tr><th id="984">984</th><td>	cmpq	%r11, %rdx</td></tr>
+<tr><th id="985">985</th><td>	jae	L(zero)</td></tr>
+<tr><th id="986">986</th><td><u>#  <span data-ppcond="981">endif</span></u></td></tr>
+<tr><th id="987">987</th><td></td></tr>
+<tr><th id="988">988</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page_8bytes" data-ref="_M/L">L</a>(cross_page_8bytes):</td></tr>
+<tr><th id="989">989</th><td>	<i>/* Less than 8 bytes to check, try 4 byte vector.  */</i></td></tr>
+<tr><th id="990">990</th><td>	cmpl	$(<a class="macro" href="#27" title="4096" data-ref="_M/PAGE_SIZE">PAGE_SIZE</a> - <var>4</var>), %eax</td></tr>
+<tr><th id="991">991</th><td>	jg	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page_4bytes" data-ref="_M/L">L</a>(cross_page_4bytes)</td></tr>
+<tr><th id="992">992</th><td>	vmovd	(%rdi, %rdx), %<a class="macro" href="#58" title="xmm17" data-ref="_M/XMM0">XMM0</a></td></tr>
+<tr><th id="993">993</th><td>	vmovd	(%rsi, %rdx), %<a class="macro" href="#59" title="xmm18" data-ref="_M/XMM1">XMM1</a></td></tr>
+<tr><th id="994">994</th><td></td></tr>
+<tr><th id="995">995</th><td>	<i>/* Each bit in K0 represents a mismatch in XMM0 and XMM1.  */</i></td></tr>
+<tr><th id="996">996</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, %<a class="macro" href="#58" title="xmm17" data-ref="_M/XMM0">XMM0</a>, %<a class="macro" href="#59" title="xmm18" data-ref="_M/XMM1">XMM1</a>, %k0</td></tr>
+<tr><th id="997">997</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#57" title="xmm16" data-ref="_M/XMMZERO">XMMZERO</a>, %<a class="macro" href="#58" title="xmm17" data-ref="_M/XMM0">XMM0</a>, %k1</td></tr>
+<tr><th id="998">998</th><td>	<a class="macro" href="#50" title="vpcmpb" data-ref="_M/VPCMP">VPCMP</a>	$<var>0</var>, %<a class="macro" href="#57" title="xmm16" data-ref="_M/XMMZERO">XMMZERO</a>, %<a class="macro" href="#59" title="xmm18" data-ref="_M/XMM1">XMM1</a>, %k2</td></tr>
+<tr><th id="999">999</th><td>	<i>/* Each bit in K1 represents a NULL in XMM0 or XMM1.  */</i></td></tr>
+<tr><th id="1000">1000</th><td>	kord	%k1, %k2, %k1</td></tr>
+<tr><th id="1001">1001</th><td>	<i>/* Each bit in K1 represents a NULL or a mismatch.  */</i></td></tr>
+<tr><th id="1002">1002</th><td>	kord	%k0, %k1, %k1</td></tr>
+<tr><th id="1003">1003</th><td>	kmovd	%k1, %ecx</td></tr>
+<tr><th id="1004">1004</th><td></td></tr>
+<tr><th id="1005">1005</th><td><u># <span data-ppcond="1005">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="1006">1006</th><td>	<i>/* Only the last bit is valid.  */</i></td></tr>
+<tr><th id="1007">1007</th><td>	andl	$<var>0x1</var>, %ecx</td></tr>
+<tr><th id="1008">1008</th><td><u># <span data-ppcond="1005">else</span></u></td></tr>
+<tr><th id="1009">1009</th><td>	<i>/* Only last 4 bits are valid.  */</i></td></tr>
+<tr><th id="1010">1010</th><td>	andl	$<var>0xf</var>, %ecx</td></tr>
+<tr><th id="1011">1011</th><td><u># <span data-ppcond="1005">endif</span></u></td></tr>
+<tr><th id="1012">1012</th><td></td></tr>
+<tr><th id="1013">1013</th><td>	testl	%ecx, %ecx</td></tr>
+<tr><th id="1014">1014</th><td>	jne	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Llast_vector" data-ref="_M/L">L</a>(last_vector)</td></tr>
+<tr><th id="1015">1015</th><td></td></tr>
+<tr><th id="1016">1016</th><td>	addl	$<var>4</var>, %edx</td></tr>
+<tr><th id="1017">1017</th><td><u>#  <span data-ppcond="1017">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="1018">1018</th><td>	<i>/* Return 0 if the current offset (%rdx) &gt;= the maximum offset</i></td></tr>
+<tr><th id="1019">1019</th><td><i>	   (%r11).  */</i></td></tr>
+<tr><th id="1020">1020</th><td>	cmpq	%r11, %rdx</td></tr>
+<tr><th id="1021">1021</th><td>	jae	L(zero)</td></tr>
+<tr><th id="1022">1022</th><td><u>#  <span data-ppcond="1017">endif</span></u></td></tr>
+<tr><th id="1023">1023</th><td></td></tr>
+<tr><th id="1024">1024</th><td><a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page_4bytes" data-ref="_M/L">L</a>(cross_page_4bytes):</td></tr>
+<tr><th id="1025">1025</th><td><u># <span data-ppcond="950">endif</span></u></td></tr>
+<tr><th id="1026">1026</th><td>	<i>/* Less than 4 bytes to check, try one byte/dword at a time.  */</i></td></tr>
+<tr><th id="1027">1027</th><td><u># <span data-ppcond="1027">ifdef</span> <span class="macro" data-ref="_M/USE_AS_STRNCMP">USE_AS_STRNCMP</span></u></td></tr>
+<tr><th id="1028">1028</th><td>	cmpq	%r11, %rdx</td></tr>
+<tr><th id="1029">1029</th><td>	jae	L(zero)</td></tr>
+<tr><th id="1030">1030</th><td><u># <span data-ppcond="1027">endif</span></u></td></tr>
+<tr><th id="1031">1031</th><td><u># <span data-ppcond="1031">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WCSCMP">USE_AS_WCSCMP</span></u></td></tr>
+<tr><th id="1032">1032</th><td>	movl	(%rdi, %rdx), %eax</td></tr>
+<tr><th id="1033">1033</th><td>	movl	(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="1034">1034</th><td><u># <span data-ppcond="1031">else</span></u></td></tr>
+<tr><th id="1035">1035</th><td>	movzbl	(%rdi, %rdx), %eax</td></tr>
+<tr><th id="1036">1036</th><td>	movzbl	(%rsi, %rdx), %ecx</td></tr>
+<tr><th id="1037">1037</th><td><u># <span data-ppcond="1031">endif</span></u></td></tr>
+<tr><th id="1038">1038</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="1039">1039</th><td>	jne	<a class="macro" href="../../x86/sysdep.h.html#111" title=".Lcross_page_loop" data-ref="_M/L">L</a>(cross_page_loop)</td></tr>
+<tr><th id="1040">1040</th><td>	subl	%ecx, %eax</td></tr>
+<tr><th id="1041">1041</th><td>	ret</td></tr>
+<tr><th id="1042">1042</th><td><a class="macro" href="../../x86/sysdep.h.html#91" title=".cfi_endproc; .size __strcmp_evex,.-__strcmp_evex;" data-ref="_M/END">END</a> (<a class="macro" href="#24" title="__strcmp_evex" data-ref="_M/STRCMP">STRCMP</a>)</td></tr>
+<tr><th id="1043">1043</th><td><u>#<span data-ppcond="19">endif</span></u></td></tr>
+<tr><th id="1044">1044</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

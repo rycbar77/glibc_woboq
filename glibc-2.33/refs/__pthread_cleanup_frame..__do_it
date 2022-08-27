@@ -1,0 +1,19 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='538' type='int'/>
+<offset>128</offset>
+<use f='codebrowser/sysdeps/nptl/libc-lockP.h' l='279' u='r' c='__libc_cleanup_routine'/>
+<use f='codebrowser/dirent/scandir-tail-common.c' l='36' macro='1' u='w' c='__scandir64_tail'/>
+<use f='codebrowser/dirent/scandir-tail-common.c' l='98' macro='1' u='w' c='__scandir64_tail'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='41' macro='1' u='w' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='81' macro='1' u='w' c='__dl_iterate_phdr'/>
+<use f='codebrowser/misc/getpass.c' l='74' macro='1' u='w' c='getpass'/>
+<use f='codebrowser/misc/getpass.c' l='117' macro='1' u='w' c='getpass'/>
+<use f='codebrowser/nptl/cleanup_routine.c' l='25' u='r' c='__pthread_cleanup_routine'/>
+<use f='codebrowser/nptl/libc-cleanup.c' l='25' u='r' c='__libc_cleanup_routine'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='187' macro='1' u='w' c='__aio_suspend'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='197' macro='1' u='w' c='__aio_suspend'/>
+<use f='codebrowser/misc/syslog.c' l='183' macro='1' u='w' c='__vsyslog_internal'/>
+<use f='codebrowser/misc/syslog.c' l='330' macro='1' u='w' c='__vsyslog_internal'/>
+<use f='codebrowser/misc/syslog.c' l='391' macro='1' u='w' c='openlog'/>
+<use f='codebrowser/misc/syslog.c' l='396' macro='1' u='w' c='openlog'/>
+<use f='codebrowser/misc/syslog.c' l='422' macro='1' u='w' c='closelog'/>
+<use f='codebrowser/misc/syslog.c' l='430' macro='1' u='w' c='closelog'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/nss/nsswitch.h' l='94' type='int __nss_lookup(struct nss_action ** ni, const char * fct_name, const char * fct2_name, void ** fctp)'/>
+<dec f='codebrowser/nss/nsswitch.h' l='96' type='int __nss_lookup(struct nss_action ** , const char * , const char * , void ** )'/>
+<use f='codebrowser/nss/nsswitch.h' l='96' c='__nss_lookup'/>
+<doc f='codebrowser/nss/nsswitch.h' l='91'>/* Put first function with name FCT_NAME for SERVICE in FCTP.  The
+   position is remembered in NI.  The function returns a value &lt; 0 if
+   an error occurred or no such function exists.  */</doc>
+<use f='codebrowser/nss/XXX-lookup.c' l='58' u='c' c='__nss_aliases_lookup2'/>
+<use f='codebrowser/nss/getnssent_r.c' l='45' u='c' c='setup'/>
+<use f='codebrowser/nss/getnssent_r.c' l='234' u='c' c='__nss_getent_r'/>
+<def f='codebrowser/nss/nsswitch.c' l='64' ll='84' type='int __nss_lookup(nss_action_list * ni, const char * fct_name, const char * fct2_name, void ** fctp)'/>
+<doc f='codebrowser/nss/nsswitch.c' l='61'>/* -1 == not found
+    0 == function found
+    1 == finished */</doc>

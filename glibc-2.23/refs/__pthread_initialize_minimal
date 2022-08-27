@@ -1,0 +1,6 @@
+<def f='codebrowser/csu/libc-tls.c' l='240' ll='245' type='void __pthread_initialize_minimal()'/>
+<doc f='codebrowser/csu/libc-tls.c' l='238'>/* This is the minimal initialization function used when libpthread is
+   not used.  */</doc>
+<def f='codebrowser/nptl/nptl-init.c' l='500' macro='1' type='void __pthread_initialize_minimal()'/>
+<dec f='codebrowser/csu/libc-start.c' l='35' type='void __pthread_initialize_minimal()'/>
+<use f='codebrowser/csu/libc-start.c' l='196' u='c' c='generic_start_main'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='215' type='nscd_ssize_t'/>
+<use f='codebrowser/nscd/nscd-client.h' l='250' u='w' c='datahead_init_common'/>
+<offset>32</offset>
+<doc f='codebrowser/nscd/nscd-client.h' l='215'>/* Size of the record.  */</doc>
+<use f='codebrowser/nscd/nscd_getai.c' l='82' u='r' c='__nscd_getai'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='117' u='r' c='nscd_getgr_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='184' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='109' u='r' c='nscd_getpw_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='131' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='63' u='r' c='__nscd_getgrouplist'/>

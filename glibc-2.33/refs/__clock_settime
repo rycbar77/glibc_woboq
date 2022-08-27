@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/time.h' l='28' type='int __clock_settime(clockid_t , const struct timespec * )'/>
+<dec f='codebrowser/include/time.h' l='29' type='int __clock_settime(clockid_t , const struct timespec * )'/>
+<use f='codebrowser/include/time.h' l='29' c='__clock_settime'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/clock_settime.c' l='26' macro='1' type='int __clock_settime(clockid_t clock_id, const struct timespec * tp)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_settime.c' l='71' c='clock_settime'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/clock_settime.c' l='24'>/* Set CLOCK to value TP.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/settimeofday.c' l='40' macro='1' u='c' c='__settimeofday'/>

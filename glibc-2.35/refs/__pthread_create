@@ -1,0 +1,16 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='304' type='int __pthread_create(pthread_t * newthread, const pthread_attr_t * attr, void *(*)(void *) start_routine, void * arg)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='307' type='int __pthread_create(pthread_t * , const pthread_attr_t * , void *(*)(void *) , void * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='307' c='__pthread_create'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='303'>/* Functions with versioned interfaces.  */</doc>
+<def f='codebrowser/nptl/pthread_create.c' l='897' macro='1' type='int __pthread_create(pthread_t * , const pthread_attr_t * , void *(*)(void *) , void * )'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='113' u='c' c='__gai_create_helper_thread'/>
+<use f='codebrowser/resolv/gai_misc.c' l='420' u='c' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_notify.c' l='86' u='c' c='__gai_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_misc.h' l='58' u='c' c='__aio_create_helper_thread'/>
+<use f='codebrowser/rt/aio_misc.c' l='680' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_notify.c' l='88' u='c' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/pthread/thrd_create.c' l='28' u='c' c='__thrd_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='127' u='c' c='helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='183' u='c' c='init_mq_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='98' u='c' c='timer_helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='147' u='c' c='__timer_start_helper_thread'/>

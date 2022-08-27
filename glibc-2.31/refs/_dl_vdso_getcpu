@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso-setup.c' l='59' type='int (*)(unsigned int *, unsigned int *, void *)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso-setup.h' l='39' macro='1' u='w' c='setup_vdso_pointers'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getcpu.c' l='27' macro='1' c='__getcpu'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getcpu.c' l='27' macro='1' u='r' c='__getcpu'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sched_getcpu.c' l='29' macro='1' c='sched_getcpu'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sched_getcpu.c' l='29' macro='1' u='r' c='sched_getcpu'/>

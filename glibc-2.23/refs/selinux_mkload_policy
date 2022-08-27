@@ -1,0 +1,11 @@
+<dec f='include/selinux/selinux.h' l='301' type='int selinux_mkload_policy(int preservebools)'/>
+<doc f='include/selinux/selinux.h' l='291'>/*
+ * Make a policy image and load it.
+ * This function provides a higher level interface for loading policy
+ * than security_load_policy, internally determining the right policy
+ * version, locating and opening the policy file, mapping it into memory,
+ * manipulating it as needed for current boolean settings and/or local 
+ * definitions, and then calling security_load_policy to load it.
+ *
+ * &apos;preservebools&apos; is no longer supported, set to 0.
+ */</doc>

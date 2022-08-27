@@ -1,0 +1,14 @@
+<def f='codebrowser/elf/dl-hwcaps.h' l='139' ll='148'/>
+<use f='codebrowser/elf/dl-hwcaps.h' l='152'/>
+<size>16</size>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='136'>/* Pre-computed glibc-hwcaps subdirectory priorities.  Used in
+   dl-cache.c to quickly find the proprieties for the stored HWCAP
+   names.  */</doc>
+<mbr r='dl_hwcaps_priority::name' o='0' t='const char *'/>
+<mbr r='dl_hwcaps_priority::name_length' o='64' t='uint32_t'/>
+<mbr r='dl_hwcaps_priority::priority' o='96' t='uint32_t'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='92'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='145' c='sort_priorities_by_name'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='146' c='sort_priorities_by_name'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='161' c='sort_priorities_by_name'/>
+<size>16</size>

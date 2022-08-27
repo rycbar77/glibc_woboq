@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/stdlib.h' l='122' type='void * __libc_reallocarray(void * __ptr, size_t __nmemb, size_t __size)'/>
+<dec f='codebrowser/include/stdlib.h' l='124' type='void * __libc_reallocarray(void * , size_t , size_t )'/>
+<use f='codebrowser/include/stdlib.h' l='124' c='__libc_reallocarray'/>
+<def f='codebrowser/malloc/reallocarray.c' l='23' ll='34' type='void * __libc_reallocarray(void * optr, size_t nmemb, size_t elem_size)'/>
+<use f='codebrowser/malloc/reallocarray.c' l='37' c='reallocarray'/>

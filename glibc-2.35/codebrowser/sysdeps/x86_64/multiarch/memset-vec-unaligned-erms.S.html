@@ -1,0 +1,437 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>memset-vec-unaligned-erms.S source code [codebrowser/sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S'; var root_path = '../../../..'; var data_path = '../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>sysdeps</a>/<a href='..'>x86_64</a>/<a href='./'>multiarch</a>/<a href='memset-vec-unaligned-erms.S.html'>memset-vec-unaligned-erms.S</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* memset/bzero with unaligned store and rep stosb</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2016-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/* memset is implemented as:</i></td></tr>
+<tr><th id="20">20</th><td><i>   1. Use overlapping store to avoid branch.</i></td></tr>
+<tr><th id="21">21</th><td><i>   2. If size is less than VEC, use integer register stores.</i></td></tr>
+<tr><th id="22">22</th><td><i>   3. If size is from VEC_SIZE to 2 * VEC_SIZE, use 2 VEC stores.</i></td></tr>
+<tr><th id="23">23</th><td><i>   4. If size is from 2 * VEC_SIZE to 4 * VEC_SIZE, use 4 VEC stores.</i></td></tr>
+<tr><th id="24">24</th><td><i>   5. If size is more to 4 * VEC_SIZE, align to 4 * VEC_SIZE with</i></td></tr>
+<tr><th id="25">25</th><td><i>      4 VEC stores and store 4 * VEC at a time until done.  */</i></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="../../unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="29">ifndef</span> <span class="macro" data-ref="_M/MEMSET_CHK_SYMBOL">MEMSET_CHK_SYMBOL</span></u></td></tr>
+<tr><th id="30">30</th><td><u># define <dfn class="macro" id="_M/MEMSET_CHK_SYMBOL" data-ref="_M/MEMSET_CHK_SYMBOL">MEMSET_CHK_SYMBOL</dfn>(p,s)		MEMSET_SYMBOL(p, s)</u></td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="29">endif</span></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="33">ifndef</span> <span class="macro" data-ref="_M/WMEMSET_CHK_SYMBOL">WMEMSET_CHK_SYMBOL</span></u></td></tr>
+<tr><th id="34">34</th><td><u># define <dfn class="macro" id="_M/WMEMSET_CHK_SYMBOL" data-ref="_M/WMEMSET_CHK_SYMBOL">WMEMSET_CHK_SYMBOL</dfn>(p,s)	WMEMSET_SYMBOL(p, s)</u></td></tr>
+<tr><th id="35">35</th><td><u>#<span data-ppcond="33">endif</span></u></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="37">ifndef</span> <span class="macro" data-ref="_M/XMM0">XMM0</span></u></td></tr>
+<tr><th id="38">38</th><td><u># define <dfn class="macro" id="_M/XMM0" data-ref="_M/XMM0">XMM0</dfn>				xmm0</u></td></tr>
+<tr><th id="39">39</th><td><u>#<span data-ppcond="37">endif</span></u></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><u>#<span data-ppcond="41">ifndef</span> <span class="macro" data-ref="_M/YMM0">YMM0</span></u></td></tr>
+<tr><th id="42">42</th><td><u># define <dfn class="macro" id="_M/YMM0" data-ref="_M/YMM0">YMM0</dfn>				ymm0</u></td></tr>
+<tr><th id="43">43</th><td><u>#<span data-ppcond="41">endif</span></u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><u>#<span data-ppcond="45">ifndef</span> <span class="macro" data-ref="_M/VZEROUPPER">VZEROUPPER</span></u></td></tr>
+<tr><th id="46">46</th><td><u># <span data-ppcond="46">if</span> <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> &gt; 16</u></td></tr>
+<tr><th id="47">47</th><td><u>#  define <dfn class="macro" id="_M/VZEROUPPER" data-ref="_M/VZEROUPPER">VZEROUPPER</dfn>			vzeroupper</u></td></tr>
+<tr><th id="48">48</th><td><u>#  define <dfn class="macro" id="_M/VZEROUPPER_SHORT_RETURN" data-ref="_M/VZEROUPPER_SHORT_RETURN">VZEROUPPER_SHORT_RETURN</dfn>	vzeroupper; ret</u></td></tr>
+<tr><th id="49">49</th><td><u># <span data-ppcond="46">else</span></u></td></tr>
+<tr><th id="50">50</th><td><u>#  define VZEROUPPER</u></td></tr>
+<tr><th id="51">51</th><td><u># <span data-ppcond="46">endif</span></u></td></tr>
+<tr><th id="52">52</th><td><u>#<span data-ppcond="45">endif</span></u></td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><u>#<span data-ppcond="54">ifndef</span> <a class="macro" href="#48" data-ref="_M/VZEROUPPER_SHORT_RETURN">VZEROUPPER_SHORT_RETURN</a></u></td></tr>
+<tr><th id="55">55</th><td><u># define VZEROUPPER_SHORT_RETURN	rep; ret</u></td></tr>
+<tr><th id="56">56</th><td><u>#<span data-ppcond="54">endif</span></u></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><u>#<span data-ppcond="58">ifndef</span> <span class="macro" data-ref="_M/MOVQ">MOVQ</span></u></td></tr>
+<tr><th id="59">59</th><td><u># <span data-ppcond="59">if</span> <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> &gt; 16</u></td></tr>
+<tr><th id="60">60</th><td><u>#  define <dfn class="macro" id="_M/MOVQ" data-ref="_M/MOVQ">MOVQ</dfn>				vmovq</u></td></tr>
+<tr><th id="61">61</th><td><u># <span data-ppcond="59">else</span></u></td></tr>
+<tr><th id="62">62</th><td><u>#  define MOVQ				movq</u></td></tr>
+<tr><th id="63">63</th><td><u># <span data-ppcond="59">endif</span></u></td></tr>
+<tr><th id="64">64</th><td><u>#<span data-ppcond="58">endif</span></u></td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><u>#<span data-ppcond="66">if</span> <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> == 64</u></td></tr>
+<tr><th id="67">67</th><td><u># define LOOP_4X_OFFSET	(VEC_SIZE * 4)</u></td></tr>
+<tr><th id="68">68</th><td><u>#<span data-ppcond="66">else</span></u></td></tr>
+<tr><th id="69">69</th><td><u># define <dfn class="macro" id="_M/LOOP_4X_OFFSET" data-ref="_M/LOOP_4X_OFFSET">LOOP_4X_OFFSET</dfn>	(0)</u></td></tr>
+<tr><th id="70">70</th><td><u>#<span data-ppcond="66">endif</span></u></td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><u>#<span data-ppcond="72">if</span> defined <span class="macro" data-ref="_M/USE_WITH_EVEX">USE_WITH_EVEX</span> || defined <span class="macro" data-ref="_M/USE_WITH_AVX512">USE_WITH_AVX512</span></u></td></tr>
+<tr><th id="73">73</th><td><u># define END_REG	rcx</u></td></tr>
+<tr><th id="74">74</th><td><u># define LOOP_REG	rdi</u></td></tr>
+<tr><th id="75">75</th><td><u>#<span data-ppcond="72">else</span></u></td></tr>
+<tr><th id="76">76</th><td><u># define <dfn class="macro" id="_M/END_REG" data-ref="_M/END_REG">END_REG</dfn>	rdi</u></td></tr>
+<tr><th id="77">77</th><td><u># define <dfn class="macro" id="_M/LOOP_REG" data-ref="_M/LOOP_REG">LOOP_REG</dfn>	rdx</u></td></tr>
+<tr><th id="78">78</th><td><u>#<span data-ppcond="72">endif</span></u></td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><u>#define <dfn class="macro" id="_M/PAGE_SIZE" data-ref="_M/PAGE_SIZE">PAGE_SIZE</dfn> 4096</u></td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><i>/* Macro to calculate size of small memset block for aligning</i></td></tr>
+<tr><th id="83">83</th><td><i>   purposes.  */</i></td></tr>
+<tr><th id="84">84</th><td><u>#define <dfn class="macro" id="_M/SMALL_MEMSET_ALIGN" data-ref="_M/SMALL_MEMSET_ALIGN">SMALL_MEMSET_ALIGN</dfn>(mov_sz,	ret_sz)	(2 * (mov_sz) + (ret_sz) + 1)</u></td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><u>#<span data-ppcond="87">ifndef</span> <a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#6" data-ref="_M/SECTION">SECTION</a></u></td></tr>
+<tr><th id="88">88</th><td><u># error SECTION is not defined!</u></td></tr>
+<tr><th id="89">89</th><td><u>#<span data-ppcond="87">endif</span></u></td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td>	.section <a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#6" title=".text.avx.rtm" data-ref="_M/SECTION">SECTION</a>(.text),<q>"ax"</q>,@progbits</td></tr>
+<tr><th id="92">92</th><td><u>#<span data-ppcond="92">if</span> <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> == 16 &amp;&amp; <a class="macro" href="../../../include/libc-symbols.h.html#35" title="(20 == 20)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="93">93</th><td>ENTRY (__bzero)</td></tr>
+<tr><th id="94">94</th><td>	mov	%RDI_LP, %RAX_LP <i>/* Set return value.  */</i></td></tr>
+<tr><th id="95">95</th><td>	mov	%RSI_LP, %RDX_LP <i>/* Set n.  */</i></td></tr>
+<tr><th id="96">96</th><td>	xorl	%esi, %esi</td></tr>
+<tr><th id="97">97</th><td>	pxor	%XMM0, %XMM0</td></tr>
+<tr><th id="98">98</th><td>	jmp	L(entry_from_bzero)</td></tr>
+<tr><th id="99">99</th><td>END (__bzero)</td></tr>
+<tr><th id="100">100</th><td>weak_alias (__bzero, bzero)</td></tr>
+<tr><th id="101">101</th><td><u>#<span data-ppcond="92">endif</span></u></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><u>#<span data-ppcond="103">if</span> <a class="macro" href="../../../include/libc-symbols.h.html#35" title="(20 == 20)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="104">104</th><td><u># <span data-ppcond="104">if</span> defined <span class="macro" data-ref="_M/SHARED">SHARED</span></u></td></tr>
+<tr><th id="105">105</th><td>ENTRY_CHK (WMEMSET_CHK_SYMBOL (__wmemset_chk, unaligned))</td></tr>
+<tr><th id="106">106</th><td>	cmp	%RDX_LP, %RCX_LP</td></tr>
+<tr><th id="107">107</th><td>	jb	HIDDEN_JUMPTARGET (__chk_fail)</td></tr>
+<tr><th id="108">108</th><td>END_CHK (WMEMSET_CHK_SYMBOL (__wmemset_chk, unaligned))</td></tr>
+<tr><th id="109">109</th><td><u># <span data-ppcond="104">endif</span></u></td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td><a class="macro" href="../../x86/sysdep.h.html#91" title=".globl __wmemset_avx2_unaligned_rtm; .type __wmemset_avx2_unaligned_rtm,@function; .align 1&lt;&lt;4; __wmemset_avx2_unaligned_rtm: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a> (<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#8" title="__wmemset_avx2_unaligned_rtm" data-ref="_M/WMEMSET_SYMBOL">WMEMSET_SYMBOL</a> (__wmemset, unaligned))</td></tr>
+<tr><th id="112">112</th><td>	<span class='error' title="unknown type name &apos;shl&apos;">shl</span>	<span class='error' title="expected identifier or &apos;(&apos;">$</span><var>2</var>, %<a class="macro" href="../sysdep.h.html#86" title="rdx" data-ref="_M/RDX_LP">RDX_LP</a></td></tr>
+<tr><th id="113">113</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#18" title="vmovd %esi, %xmm0; movq %rdi, %rax; vpbroadcastd %xmm0, %ymm0" data-ref="_M/WMEMSET_VDUP_TO_VEC0_AND_SET_RETURN">WMEMSET_VDUP_TO_VEC0_AND_SET_RETURN</a> (%esi, <span class='error' title="expected identifier or &apos;(&apos;">%</span>rdi)</td></tr>
+<tr><th id="114">114</th><td>	jmp	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lentry_from_bzero" data-ref="_M/L">L</a>(entry_from_bzero)</td></tr>
+<tr><th id="115">115</th><td><a class="macro" href="../../x86/sysdep.h.html#94" title=".cfi_endproc; .size __wmemset_avx2_unaligned_rtm,.-__wmemset_avx2_unaligned_rtm;" data-ref="_M/END">END</a> (<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#8" title="__wmemset_avx2_unaligned_rtm" data-ref="_M/WMEMSET_SYMBOL">WMEMSET_SYMBOL</a> (__wmemset, unaligned))</td></tr>
+<tr><th id="116">116</th><td><u>#<span data-ppcond="103">endif</span></u></td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td><u>#<span data-ppcond="118">if</span> defined <span class="macro" data-ref="_M/SHARED">SHARED</span> &amp;&amp; <a class="macro" href="../../../include/libc-symbols.h.html#35" title="(20 == 20)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="119">119</th><td>ENTRY_CHK (MEMSET_CHK_SYMBOL (__memset_chk, unaligned))</td></tr>
+<tr><th id="120">120</th><td>	cmp	%RDX_LP, %RCX_LP</td></tr>
+<tr><th id="121">121</th><td>	jb	HIDDEN_JUMPTARGET (__chk_fail)</td></tr>
+<tr><th id="122">122</th><td>END_CHK (MEMSET_CHK_SYMBOL (__memset_chk, unaligned))</td></tr>
+<tr><th id="123">123</th><td><u>#<span data-ppcond="118">endif</span></u></td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td><a class="macro" href="../../x86/sysdep.h.html#91" title=".globl __memset_avx2_unaligned_rtm; .type __memset_avx2_unaligned_rtm,@function; .align 1&lt;&lt;4; __memset_avx2_unaligned_rtm: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a> (<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#7" title="__memset_avx2_unaligned_rtm" data-ref="_M/MEMSET_SYMBOL">MEMSET_SYMBOL</a> (__memset, unaligned))</td></tr>
+<tr><th id="126">126</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#13" title="vmovd %esi, %xmm0; movq %rdi, %rax; vpbroadcastb %xmm0, %ymm0" data-ref="_M/MEMSET_VDUP_TO_VEC0_AND_SET_RETURN">MEMSET_VDUP_TO_VEC0_AND_SET_RETURN</a> (<span class='error' title="expected identifier or &apos;(&apos;">%</span>esi, <span class='error' title="expected identifier or &apos;(&apos;">%</span>rdi)</td></tr>
+<tr><th id="127">127</th><td><u># <span data-ppcond="127">ifdef</span> <span class="macro" data-ref="_M/__ILP32__">__ILP32__</span></u></td></tr>
+<tr><th id="128">128</th><td>	<i>/* Clear the upper 32 bits.  */</i></td></tr>
+<tr><th id="129">129</th><td>	mov	%edx, %edx</td></tr>
+<tr><th id="130">130</th><td><u># <span data-ppcond="127">endif</span></u></td></tr>
+<tr><th id="131">131</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lentry_from_bzero" data-ref="_M/L">L</a>(entry_from_bzero):</td></tr>
+<tr><th id="132">132</th><td>	cmpq	$<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>, %rdx</td></tr>
+<tr><th id="133">133</th><td>	jb	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lless_vec" data-ref="_M/L">L</a>(less_vec)</td></tr>
+<tr><th id="134">134</th><td>	cmpq	$(<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>), %rdx</td></tr>
+<tr><th id="135">135</th><td>	ja	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lmore_2x_vec" data-ref="_M/L">L</a>(more_2x_vec)</td></tr>
+<tr><th id="136">136</th><td>	<i>/* From VEC and to 2 * VEC.  No branch when size == VEC_SIZE.  */</i></td></tr>
+<tr><th id="137">137</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), -<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rdi,%rdx)</td></tr>
+<tr><th id="138">138</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (%rdi)</td></tr>
+<tr><th id="139">139</th><td>	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#4" title="jmp .Lreturn" data-ref="_M/VZEROUPPER_RETURN">VZEROUPPER_RETURN</a></td></tr>
+<tr><th id="140">140</th><td><u>#<span data-ppcond="140">if</span> defined <a class="macro" href="../../../build/config.h.html#173" data-ref="_M/USE_MULTIARCH">USE_MULTIARCH</a> &amp;&amp; <a class="macro" href="../../../include/libc-symbols.h.html#35" title="(20 == 20)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="141">141</th><td><a class="macro" href="../../x86/sysdep.h.html#94" title=".cfi_endproc; .size __memset_avx2_unaligned_rtm,.-__memset_avx2_unaligned_rtm;" data-ref="_M/END">END</a> (<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#7" title="__memset_avx2_unaligned_rtm" data-ref="_M/MEMSET_SYMBOL">MEMSET_SYMBOL</a> (__memset, unaligned))</td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td><u># <span data-ppcond="143">if</span> <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> == 16</u></td></tr>
+<tr><th id="144">144</th><td>ENTRY (__memset_chk_erms)</td></tr>
+<tr><th id="145">145</th><td>	cmp	%RDX_LP, %RCX_LP</td></tr>
+<tr><th id="146">146</th><td>	jb	HIDDEN_JUMPTARGET (__chk_fail)</td></tr>
+<tr><th id="147">147</th><td>END (__memset_chk_erms)</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><i>/* Only used to measure performance of REP STOSB.  */</i></td></tr>
+<tr><th id="150">150</th><td>ENTRY (__memset_erms)</td></tr>
+<tr><th id="151">151</th><td>	<i>/* Skip zero length.  */</i></td></tr>
+<tr><th id="152">152</th><td>	test	%RDX_LP, %RDX_LP</td></tr>
+<tr><th id="153">153</th><td>	jnz	 L(stosb)</td></tr>
+<tr><th id="154">154</th><td>	movq	%rdi, %rax</td></tr>
+<tr><th id="155">155</th><td>	ret</td></tr>
+<tr><th id="156">156</th><td><u># <span data-ppcond="143">else</span></u></td></tr>
+<tr><th id="157">157</th><td><i>/* Provide a hidden symbol to debugger.  */</i></td></tr>
+<tr><th id="158">158</th><td>	<span class='error' title="expected identifier or &apos;(&apos;">.</span>hidden	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#7" title="__memset_avx2_erms_rtm" data-ref="_M/MEMSET_SYMBOL">MEMSET_SYMBOL</a> (__memset, erms)</td></tr>
+<tr><th id="159">159</th><td><a class="macro" href="../../x86/sysdep.h.html#91" title=".globl __memset_avx2_erms_rtm; .type __memset_avx2_erms_rtm,@function; .align 1&lt;&lt;4; __memset_avx2_erms_rtm: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a> (<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#7" title="__memset_avx2_erms_rtm" data-ref="_M/MEMSET_SYMBOL">MEMSET_SYMBOL</a> (__memset, erms))</td></tr>
+<tr><th id="160">160</th><td><u># <span data-ppcond="143">endif</span></u></td></tr>
+<tr><th id="161">161</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lstosb" data-ref="_M/L">L</a>(stosb):</td></tr>
+<tr><th id="162">162</th><td>	mov	%<a class="macro" href="../sysdep.h.html#86" title="rdx" data-ref="_M/RDX_LP">RDX_LP</a>, %<a class="macro" href="../sysdep.h.html#84" title="rcx" data-ref="_M/RCX_LP">RCX_LP</a></td></tr>
+<tr><th id="163">163</th><td>	movzbl	%sil, %eax</td></tr>
+<tr><th id="164">164</th><td>	mov	%<a class="macro" href="../sysdep.h.html#85" title="rdi" data-ref="_M/RDI_LP">RDI_LP</a>, %<a class="macro" href="../sysdep.h.html#86" title="rdx" data-ref="_M/RDX_LP">RDX_LP</a></td></tr>
+<tr><th id="165">165</th><td>	rep stosb</td></tr>
+<tr><th id="166">166</th><td>	mov	%<a class="macro" href="../sysdep.h.html#86" title="rdx" data-ref="_M/RDX_LP">RDX_LP</a>, %<a class="macro" href="../sysdep.h.html#81" title="rax" data-ref="_M/RAX_LP">RAX_LP</a></td></tr>
+<tr><th id="167">167</th><td>	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#4" title="jmp .Lreturn" data-ref="_M/VZEROUPPER_RETURN">VZEROUPPER_RETURN</a></td></tr>
+<tr><th id="168">168</th><td><u># <span data-ppcond="168">if</span> <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> == 16</u></td></tr>
+<tr><th id="169">169</th><td>END (__memset_erms)</td></tr>
+<tr><th id="170">170</th><td><u># <span data-ppcond="168">else</span></u></td></tr>
+<tr><th id="171">171</th><td><a class="macro" href="../../x86/sysdep.h.html#94" title=".cfi_endproc; .size __memset_avx2_erms_rtm,.-__memset_avx2_erms_rtm;" data-ref="_M/END">END</a> (<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#7" title="__memset_avx2_erms_rtm" data-ref="_M/MEMSET_SYMBOL">MEMSET_SYMBOL</a> (__memset, erms))</td></tr>
+<tr><th id="172">172</th><td><u># <span data-ppcond="168">endif</span></u></td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td><u># <span data-ppcond="174">if</span> defined <span class="macro" data-ref="_M/SHARED">SHARED</span> &amp;&amp; <a class="macro" href="../../../include/libc-symbols.h.html#35" title="(20 == 20)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="175">175</th><td>ENTRY_CHK (MEMSET_CHK_SYMBOL (__memset_chk, unaligned_erms))</td></tr>
+<tr><th id="176">176</th><td>	cmp	%RDX_LP, %RCX_LP</td></tr>
+<tr><th id="177">177</th><td>	jb	HIDDEN_JUMPTARGET (__chk_fail)</td></tr>
+<tr><th id="178">178</th><td>END_CHK (MEMSET_CHK_SYMBOL (__memset_chk, unaligned_erms))</td></tr>
+<tr><th id="179">179</th><td><u># <span data-ppcond="174">endif</span></u></td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td><a class="macro" href="../../x86/sysdep.h.html#81" title=".globl __memset_avx2_unaligned_erms_rtm; .type __memset_avx2_unaligned_erms_rtm,@function; .align 1&lt;&lt;6; __memset_avx2_unaligned_erms_rtm: .cfi_startproc; endbr64;" data-ref="_M/ENTRY_P2ALIGN">ENTRY_P2ALIGN</a> (<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#7" title="__memset_avx2_unaligned_erms_rtm" data-ref="_M/MEMSET_SYMBOL">MEMSET_SYMBOL</a> (__memset, unaligned_erms), <var>6</var>)</td></tr>
+<tr><th id="182">182</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#13" title="vmovd %esi, %xmm0; movq %rdi, %rax; vpbroadcastb %xmm0, %ymm0" data-ref="_M/MEMSET_VDUP_TO_VEC0_AND_SET_RETURN">MEMSET_VDUP_TO_VEC0_AND_SET_RETURN</a> (<span class='error' title="expected identifier or &apos;(&apos;">%</span>esi, <span class='error' title="expected identifier or &apos;(&apos;">%</span>rdi)</td></tr>
+<tr><th id="183">183</th><td><u># <span data-ppcond="183">ifdef</span> <span class="macro" data-ref="_M/__ILP32__">__ILP32__</span></u></td></tr>
+<tr><th id="184">184</th><td>	<i>/* Clear the upper 32 bits.  */</i></td></tr>
+<tr><th id="185">185</th><td>	mov	%edx, %edx</td></tr>
+<tr><th id="186">186</th><td><u># <span data-ppcond="183">endif</span></u></td></tr>
+<tr><th id="187">187</th><td>	cmp	$<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>, %<a class="macro" href="../sysdep.h.html#86" title="rdx" data-ref="_M/RDX_LP">RDX_LP</a></td></tr>
+<tr><th id="188">188</th><td>	jb	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lless_vec" data-ref="_M/L">L</a>(less_vec)</td></tr>
+<tr><th id="189">189</th><td>	cmp	$(<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>), %<a class="macro" href="../sysdep.h.html#86" title="rdx" data-ref="_M/RDX_LP">RDX_LP</a></td></tr>
+<tr><th id="190">190</th><td>	ja	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lstosb_more_2x_vec" data-ref="_M/L">L</a>(stosb_more_2x_vec)</td></tr>
+<tr><th id="191">191</th><td>	<i>/* From VEC and to 2 * VEC.  No branch when size == VEC_SIZE.</i></td></tr>
+<tr><th id="192">192</th><td><i>	 */</i></td></tr>
+<tr><th id="193">193</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (%rax)</td></tr>
+<tr><th id="194">194</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), -<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rax, %rdx)</td></tr>
+<tr><th id="195">195</th><td>	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#4" title="jmp .Lreturn" data-ref="_M/VZEROUPPER_RETURN">VZEROUPPER_RETURN</a></td></tr>
+<tr><th id="196">196</th><td><u>#<span data-ppcond="140">endif</span></u></td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td>	.p2align <var>4</var>,, <var>10</var></td></tr>
+<tr><th id="199">199</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Llast_2x_vec" data-ref="_M/L">L</a>(last_2x_vec):</td></tr>
+<tr><th id="200">200</th><td><u>#<span data-ppcond="200">ifdef</span> <span class="macro" data-ref="_M/USE_LESS_VEC_MASK_STORE">USE_LESS_VEC_MASK_STORE</span></u></td></tr>
+<tr><th id="201">201</th><td>	VMOVU	%VEC(<var>0</var>), (VEC_SIZE * <var>2</var> + LOOP_4X_OFFSET)(%rcx)</td></tr>
+<tr><th id="202">202</th><td>	VMOVU	%VEC(<var>0</var>), (VEC_SIZE * <var>3</var> + LOOP_4X_OFFSET)(%rcx)</td></tr>
+<tr><th id="203">203</th><td><u>#<span data-ppcond="200">else</span></u></td></tr>
+<tr><th id="204">204</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * -<var>2</var>)(%rdi)</td></tr>
+<tr><th id="205">205</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * -<var>1</var>)(%rdi)</td></tr>
+<tr><th id="206">206</th><td><u>#<span data-ppcond="200">endif</span></u></td></tr>
+<tr><th id="207">207</th><td>	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#4" title="jmp .Lreturn" data-ref="_M/VZEROUPPER_RETURN">VZEROUPPER_RETURN</a></td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td>	<i>/* If have AVX512 mask instructions put L(less_vec) close to</i></td></tr>
+<tr><th id="210">210</th><td><i>	   entry as it doesn't take much space and is likely a hot target.</i></td></tr>
+<tr><th id="211">211</th><td><i>	 */</i></td></tr>
+<tr><th id="212">212</th><td><u>#<span data-ppcond="212">ifdef</span> <span class="macro" data-ref="_M/USE_LESS_VEC_MASK_STORE">USE_LESS_VEC_MASK_STORE</span></u></td></tr>
+<tr><th id="213">213</th><td>	.p2align <var>4</var>,, <var>10</var></td></tr>
+<tr><th id="214">214</th><td>L(less_vec):</td></tr>
+<tr><th id="215">215</th><td>	<i>/* Less than 1 VEC.  */</i></td></tr>
+<tr><th id="216">216</th><td><u># if VEC_SIZE != 16 &amp;&amp; VEC_SIZE != 32 &amp;&amp; VEC_SIZE != 64</u></td></tr>
+<tr><th id="217">217</th><td><u>#  error Unsupported VEC_SIZE!</u></td></tr>
+<tr><th id="218">218</th><td><u># endif</u></td></tr>
+<tr><th id="219">219</th><td>	<i>/* Clear high bits from edi. Only keeping bits relevant to page</i></td></tr>
+<tr><th id="220">220</th><td><i>	   cross check. Note that we are using rax which is set in</i></td></tr>
+<tr><th id="221">221</th><td><i>	   MEMSET_VDUP_TO_VEC0_AND_SET_RETURN as ptr from here on out.  */</i></td></tr>
+<tr><th id="222">222</th><td>	andl	$(PAGE_SIZE - <var>1</var>), %edi</td></tr>
+<tr><th id="223">223</th><td>	<i>/* Check if VEC_SIZE store cross page. Mask stores suffer</i></td></tr>
+<tr><th id="224">224</th><td><i>	   serious performance degradation when it has to fault supress.</i></td></tr>
+<tr><th id="225">225</th><td><i>	 */</i></td></tr>
+<tr><th id="226">226</th><td>	cmpl	$(PAGE_SIZE - VEC_SIZE), %edi</td></tr>
+<tr><th id="227">227</th><td>	<i>/* This is generally considered a cold target.  */</i></td></tr>
+<tr><th id="228">228</th><td>	ja	L(cross_page)</td></tr>
+<tr><th id="229">229</th><td><u># if VEC_SIZE &gt; 32</u></td></tr>
+<tr><th id="230">230</th><td>	movq	$-<var>1</var>, %rcx</td></tr>
+<tr><th id="231">231</th><td>	bzhiq	%rdx, %rcx, %rcx</td></tr>
+<tr><th id="232">232</th><td>	kmovq	%rcx, %k1</td></tr>
+<tr><th id="233">233</th><td><u># else</u></td></tr>
+<tr><th id="234">234</th><td>	movl	$-<var>1</var>, %ecx</td></tr>
+<tr><th id="235">235</th><td>	bzhil	%edx, %ecx, %ecx</td></tr>
+<tr><th id="236">236</th><td>	kmovd	%ecx, %k1</td></tr>
+<tr><th id="237">237</th><td><u># endif</u></td></tr>
+<tr><th id="238">238</th><td>	vmovdqu8 %VEC(<var>0</var>), (%rax){%k1}</td></tr>
+<tr><th id="239">239</th><td>	VZEROUPPER_RETURN</td></tr>
+<tr><th id="240">240</th><td></td></tr>
+<tr><th id="241">241</th><td><u># if defined USE_MULTIARCH &amp;&amp; IS_IN (libc)</u></td></tr>
+<tr><th id="242">242</th><td>	<i>/* Include L(stosb_local) here if including L(less_vec) between</i></td></tr>
+<tr><th id="243">243</th><td><i>	   L(stosb_more_2x_vec) and ENTRY. This is to cache align the</i></td></tr>
+<tr><th id="244">244</th><td><i>	   L(stosb_more_2x_vec) target.  */</i></td></tr>
+<tr><th id="245">245</th><td>	.p2align <var>4</var>,, <var>10</var></td></tr>
+<tr><th id="246">246</th><td>L(stosb_local):</td></tr>
+<tr><th id="247">247</th><td>	movzbl	%sil, %eax</td></tr>
+<tr><th id="248">248</th><td>	mov	%RDX_LP, %RCX_LP</td></tr>
+<tr><th id="249">249</th><td>	mov	%RDI_LP, %RDX_LP</td></tr>
+<tr><th id="250">250</th><td>	rep	stosb</td></tr>
+<tr><th id="251">251</th><td>	mov	%RDX_LP, %RAX_LP</td></tr>
+<tr><th id="252">252</th><td>	VZEROUPPER_RETURN</td></tr>
+<tr><th id="253">253</th><td><u># endif</u></td></tr>
+<tr><th id="254">254</th><td><u>#<span data-ppcond="212">endif</span></u></td></tr>
+<tr><th id="255">255</th><td></td></tr>
+<tr><th id="256">256</th><td><u>#<span data-ppcond="256">if</span> defined <a class="macro" href="../../../build/config.h.html#173" data-ref="_M/USE_MULTIARCH">USE_MULTIARCH</a> &amp;&amp; <a class="macro" href="../../../include/libc-symbols.h.html#35" title="(20 == 20)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="257">257</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="258">258</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lstosb_more_2x_vec" data-ref="_M/L">L</a>(stosb_more_2x_vec):</td></tr>
+<tr><th id="259">259</th><td>	cmp	__x86_rep_stosb_threshold(%rip), %<a class="macro" href="../sysdep.h.html#86" title="rdx" data-ref="_M/RDX_LP">RDX_LP</a></td></tr>
+<tr><th id="260">260</th><td>	ja	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lstosb_local" data-ref="_M/L">L</a>(stosb_local)</td></tr>
+<tr><th id="261">261</th><td><u>#<span data-ppcond="256">endif</span></u></td></tr>
+<tr><th id="262">262</th><td>	<i>/* Fallthrough goes to L(loop_4x_vec). Tests for memset (2x, 4x]</i></td></tr>
+<tr><th id="263">263</th><td><i>	   and (4x, 8x] jump to target.  */</i></td></tr>
+<tr><th id="264">264</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lmore_2x_vec" data-ref="_M/L">L</a>(more_2x_vec):</td></tr>
+<tr><th id="265">265</th><td></td></tr>
+<tr><th id="266">266</th><td>	<i>/* Two different methods of setting up pointers / compare. The</i></td></tr>
+<tr><th id="267">267</th><td><i>	   two methods are based on the fact that EVEX/AVX512 mov</i></td></tr>
+<tr><th id="268">268</th><td><i>	   instructions take more bytes then AVX2/SSE2 mov instructions. As</i></td></tr>
+<tr><th id="269">269</th><td><i>	   well that EVEX/AVX512 machines also have fast LEA_BID. Both</i></td></tr>
+<tr><th id="270">270</th><td><i>	   setup and END_REG to avoid complex address mode. For EVEX/AVX512</i></td></tr>
+<tr><th id="271">271</th><td><i>	   this saves code size and keeps a few targets in one fetch block.</i></td></tr>
+<tr><th id="272">272</th><td><i>	   For AVX2/SSE2 this helps prevent AGU bottlenecks.  */</i></td></tr>
+<tr><th id="273">273</th><td><u>#<span data-ppcond="273">if</span> defined <span class="macro" data-ref="_M/USE_WITH_EVEX">USE_WITH_EVEX</span> || defined <span class="macro" data-ref="_M/USE_WITH_AVX512">USE_WITH_AVX512</span></u></td></tr>
+<tr><th id="274">274</th><td>	<i>/* If EVEX/AVX512 compute END_REG - (VEC_SIZE * 4 +</i></td></tr>
+<tr><th id="275">275</th><td><i>	   LOOP_4X_OFFSET) with LEA_BID.  */</i></td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td>	<i>/* END_REG is rcx for EVEX/AVX512.  */</i></td></tr>
+<tr><th id="278">278</th><td>	leaq	-(VEC_SIZE * <var>4</var> + LOOP_4X_OFFSET)(%rdi, %rdx), %END_REG</td></tr>
+<tr><th id="279">279</th><td><u>#<span data-ppcond="273">endif</span></u></td></tr>
+<tr><th id="280">280</th><td></td></tr>
+<tr><th id="281">281</th><td>	<i>/* Stores to first 2x VEC before cmp as any path forward will</i></td></tr>
+<tr><th id="282">282</th><td><i>	   require it.  */</i></td></tr>
+<tr><th id="283">283</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (%rax)</td></tr>
+<tr><th id="284">284</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rax)</td></tr>
+<tr><th id="285">285</th><td></td></tr>
+<tr><th id="286">286</th><td></td></tr>
+<tr><th id="287">287</th><td><u>#<span data-ppcond="287">if</span> !(defined <span class="macro" data-ref="_M/USE_WITH_EVEX">USE_WITH_EVEX</span> || defined <span class="macro" data-ref="_M/USE_WITH_AVX512">USE_WITH_AVX512</span>)</u></td></tr>
+<tr><th id="288">288</th><td>	<i>/* If AVX2/SSE2 compute END_REG (rdi) with ALU.  */</i></td></tr>
+<tr><th id="289">289</th><td>	addq	%rdx, %<a class="macro" href="#76" title="rdi" data-ref="_M/END_REG">END_REG</a></td></tr>
+<tr><th id="290">290</th><td><u>#<span data-ppcond="287">endif</span></u></td></tr>
+<tr><th id="291">291</th><td></td></tr>
+<tr><th id="292">292</th><td>	cmpq	$(<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>), %rdx</td></tr>
+<tr><th id="293">293</th><td>	jbe	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Llast_2x_vec" data-ref="_M/L">L</a>(last_2x_vec)</td></tr>
+<tr><th id="294">294</th><td></td></tr>
+<tr><th id="295">295</th><td>	<i>/* Store next 2x vec regardless.  */</i></td></tr>
+<tr><th id="296">296</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rax)</td></tr>
+<tr><th id="297">297</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rax)</td></tr>
+<tr><th id="298">298</th><td></td></tr>
+<tr><th id="299">299</th><td></td></tr>
+<tr><th id="300">300</th><td><u>#<span data-ppcond="300">if</span> defined <span class="macro" data-ref="_M/USE_WITH_EVEX">USE_WITH_EVEX</span> || defined <span class="macro" data-ref="_M/USE_WITH_AVX512">USE_WITH_AVX512</span></u></td></tr>
+<tr><th id="301">301</th><td>	<i>/* If LOOP_4X_OFFSET don't readjust LOOP_REG (rdi), just add</i></td></tr>
+<tr><th id="302">302</th><td><i>	   extra offset to addresses in loop. Used for AVX512 to save space</i></td></tr>
+<tr><th id="303">303</th><td><i>	   as no way to get (VEC_SIZE * 4) in imm8.  */</i></td></tr>
+<tr><th id="304">304</th><td><u># if LOOP_4X_OFFSET == 0</u></td></tr>
+<tr><th id="305">305</th><td>	subq	$-(VEC_SIZE * <var>4</var>), %LOOP_REG</td></tr>
+<tr><th id="306">306</th><td><u># endif</u></td></tr>
+<tr><th id="307">307</th><td>	<i>/* Avoid imm32 compare here to save code size.  */</i></td></tr>
+<tr><th id="308">308</th><td>	cmpq	%rdi, %rcx</td></tr>
+<tr><th id="309">309</th><td><u>#<span data-ppcond="300">else</span></u></td></tr>
+<tr><th id="310">310</th><td>	addq	$-(<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>), %<a class="macro" href="#76" title="rdi" data-ref="_M/END_REG">END_REG</a></td></tr>
+<tr><th id="311">311</th><td>	cmpq	$(<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>8</var>), %rdx</td></tr>
+<tr><th id="312">312</th><td><u>#<span data-ppcond="300">endif</span></u></td></tr>
+<tr><th id="313">313</th><td>	jbe	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Llast_4x_vec" data-ref="_M/L">L</a>(last_4x_vec)</td></tr>
+<tr><th id="314">314</th><td><u>#<span data-ppcond="314">if</span> !(defined <span class="macro" data-ref="_M/USE_WITH_EVEX">USE_WITH_EVEX</span> || defined <span class="macro" data-ref="_M/USE_WITH_AVX512">USE_WITH_AVX512</span>)</u></td></tr>
+<tr><th id="315">315</th><td>	<i>/* Set LOOP_REG (rdx).  */</i></td></tr>
+<tr><th id="316">316</th><td>	leaq	(<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>)(%rax), %<a class="macro" href="#77" title="rdx" data-ref="_M/LOOP_REG">LOOP_REG</a></td></tr>
+<tr><th id="317">317</th><td><u>#<span data-ppcond="314">endif</span></u></td></tr>
+<tr><th id="318">318</th><td>	<i>/* Align dst for loop.  */</i></td></tr>
+<tr><th id="319">319</th><td>	andq	$(<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * -<var>2</var>), %<a class="macro" href="#77" title="rdx" data-ref="_M/LOOP_REG">LOOP_REG</a></td></tr>
+<tr><th id="320">320</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="321">321</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lloop" data-ref="_M/L">L</a>(loop):</td></tr>
+<tr><th id="322">322</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#11" title="vmovdqa" data-ref="_M/VMOVA">VMOVA</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), <a class="macro" href="#69" title="(0)" data-ref="_M/LOOP_4X_OFFSET">LOOP_4X_OFFSET</a>(%<a class="macro" href="#77" title="rdx" data-ref="_M/LOOP_REG">LOOP_REG</a>)</td></tr>
+<tr><th id="323">323</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#11" title="vmovdqa" data-ref="_M/VMOVA">VMOVA</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> + <a class="macro" href="#69" title="(0)" data-ref="_M/LOOP_4X_OFFSET">LOOP_4X_OFFSET</a>)(%<a class="macro" href="#77" title="rdx" data-ref="_M/LOOP_REG">LOOP_REG</a>)</td></tr>
+<tr><th id="324">324</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#11" title="vmovdqa" data-ref="_M/VMOVA">VMOVA</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var> + <a class="macro" href="#69" title="(0)" data-ref="_M/LOOP_4X_OFFSET">LOOP_4X_OFFSET</a>)(%<a class="macro" href="#77" title="rdx" data-ref="_M/LOOP_REG">LOOP_REG</a>)</td></tr>
+<tr><th id="325">325</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#11" title="vmovdqa" data-ref="_M/VMOVA">VMOVA</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var> + <a class="macro" href="#69" title="(0)" data-ref="_M/LOOP_4X_OFFSET">LOOP_4X_OFFSET</a>)(%<a class="macro" href="#77" title="rdx" data-ref="_M/LOOP_REG">LOOP_REG</a>)</td></tr>
+<tr><th id="326">326</th><td>	subq	$-(<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>), %<a class="macro" href="#77" title="rdx" data-ref="_M/LOOP_REG">LOOP_REG</a></td></tr>
+<tr><th id="327">327</th><td>	cmpq	%<a class="macro" href="#76" title="rdi" data-ref="_M/END_REG">END_REG</a>, %<a class="macro" href="#77" title="rdx" data-ref="_M/LOOP_REG">LOOP_REG</a></td></tr>
+<tr><th id="328">328</th><td>	jb	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lloop" data-ref="_M/L">L</a>(loop)</td></tr>
+<tr><th id="329">329</th><td>	.p2align <var>4</var>,, <a class="macro" href="memset-avx2-unaligned-erms.S.html#5" title="4" data-ref="_M/MOV_SIZE">MOV_SIZE</a></td></tr>
+<tr><th id="330">330</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Llast_4x_vec" data-ref="_M/L">L</a>(last_4x_vec):</td></tr>
+<tr><th id="331">331</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), <a class="macro" href="#69" title="(0)" data-ref="_M/LOOP_4X_OFFSET">LOOP_4X_OFFSET</a>(%<a class="macro" href="#76" title="rdi" data-ref="_M/END_REG">END_REG</a>)</td></tr>
+<tr><th id="332">332</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> + <a class="macro" href="#69" title="(0)" data-ref="_M/LOOP_4X_OFFSET">LOOP_4X_OFFSET</a>)(%<a class="macro" href="#76" title="rdi" data-ref="_M/END_REG">END_REG</a>)</td></tr>
+<tr><th id="333">333</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var> + <a class="macro" href="#69" title="(0)" data-ref="_M/LOOP_4X_OFFSET">LOOP_4X_OFFSET</a>)(%<a class="macro" href="#76" title="rdi" data-ref="_M/END_REG">END_REG</a>)</td></tr>
+<tr><th id="334">334</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="memset-avx2-unaligned-erms.S.html#8" title="ymm0" data-ref="_M/VEC">VEC</a>(<var>0</var>), (<a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var> + <a class="macro" href="#69" title="(0)" data-ref="_M/LOOP_4X_OFFSET">LOOP_4X_OFFSET</a>)(%<a class="macro" href="#76" title="rdi" data-ref="_M/END_REG">END_REG</a>)</td></tr>
+<tr><th id="335">335</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn" data-ref="_M/L">L</a>(<b>return</b>):</td></tr>
+<tr><th id="336">336</th><td><u>#<span data-ppcond="336">if</span> <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> &gt; 16</u></td></tr>
+<tr><th id="337">337</th><td>	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#1" title="xtest; jz 1f; vzeroall; ret; 1: vzeroupper; ret" data-ref="_M/ZERO_UPPER_VEC_REGISTERS_RETURN">ZERO_UPPER_VEC_REGISTERS_RETURN</a></td></tr>
+<tr><th id="338">338</th><td><u>#<span data-ppcond="336">else</span></u></td></tr>
+<tr><th id="339">339</th><td>	ret</td></tr>
+<tr><th id="340">340</th><td><u>#<span data-ppcond="336">endif</span></u></td></tr>
+<tr><th id="341">341</th><td></td></tr>
+<tr><th id="342">342</th><td>	<span class='error' title="expected identifier or &apos;(&apos;">.</span>p2align <var>4</var>,, <var>10</var></td></tr>
+<tr><th id="343">343</th><td><u>#<span data-ppcond="343">ifndef</span> <span class="macro" data-ref="_M/USE_LESS_VEC_MASK_STORE">USE_LESS_VEC_MASK_STORE</span></u></td></tr>
+<tr><th id="344">344</th><td><u># <span data-ppcond="344">if</span> defined <a class="macro" href="../../../build/config.h.html#173" data-ref="_M/USE_MULTIARCH">USE_MULTIARCH</a> &amp;&amp; <a class="macro" href="../../../include/libc-symbols.h.html#35" title="(20 == 20)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="345">345</th><td>	<i>/* If no USE_LESS_VEC_MASK put L(stosb_local) here. Will be in</i></td></tr>
+<tr><th id="346">346</th><td><i>	   range for 2-byte jump encoding.  */</i></td></tr>
+<tr><th id="347">347</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lstosb_local" data-ref="_M/L">L</a>(stosb_local):</td></tr>
+<tr><th id="348">348</th><td>	movzbl	%sil, %eax</td></tr>
+<tr><th id="349">349</th><td>	mov	%<a class="macro" href="../sysdep.h.html#86" title="rdx" data-ref="_M/RDX_LP">RDX_LP</a>, %<a class="macro" href="../sysdep.h.html#84" title="rcx" data-ref="_M/RCX_LP">RCX_LP</a></td></tr>
+<tr><th id="350">350</th><td>	mov	%<a class="macro" href="../sysdep.h.html#85" title="rdi" data-ref="_M/RDI_LP">RDI_LP</a>, %<a class="macro" href="../sysdep.h.html#86" title="rdx" data-ref="_M/RDX_LP">RDX_LP</a></td></tr>
+<tr><th id="351">351</th><td>	rep	stosb</td></tr>
+<tr><th id="352">352</th><td>	mov	%<a class="macro" href="../sysdep.h.html#86" title="rdx" data-ref="_M/RDX_LP">RDX_LP</a>, %<a class="macro" href="../sysdep.h.html#81" title="rax" data-ref="_M/RAX_LP">RAX_LP</a></td></tr>
+<tr><th id="353">353</th><td>	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#4" title="jmp .Lreturn" data-ref="_M/VZEROUPPER_RETURN">VZEROUPPER_RETURN</a></td></tr>
+<tr><th id="354">354</th><td><u># <span data-ppcond="344">endif</span></u></td></tr>
+<tr><th id="355">355</th><td>	<i>/* Define L(less_vec) only if not otherwise defined.  */</i></td></tr>
+<tr><th id="356">356</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="357">357</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lless_vec" data-ref="_M/L">L</a>(less_vec):</td></tr>
+<tr><th id="358">358</th><td><u>#<span data-ppcond="343">endif</span></u></td></tr>
+<tr><th id="359">359</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lcross_page" data-ref="_M/L">L</a>(cross_page):</td></tr>
+<tr><th id="360">360</th><td><u>#<span data-ppcond="360">if</span> <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> &gt; 32</u></td></tr>
+<tr><th id="361">361</th><td>	cmpl	$<var>32</var>, %edx</td></tr>
+<tr><th id="362">362</th><td>	jae	L(between_32_63)</td></tr>
+<tr><th id="363">363</th><td><u>#<span data-ppcond="360">endif</span></u></td></tr>
+<tr><th id="364">364</th><td><u>#<span data-ppcond="364">if</span> <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> &gt; 16</u></td></tr>
+<tr><th id="365">365</th><td>	cmpl	$<var>16</var>, %edx</td></tr>
+<tr><th id="366">366</th><td>	jae	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lbetween_16_31" data-ref="_M/L">L</a>(between_16_31)</td></tr>
+<tr><th id="367">367</th><td><u>#<span data-ppcond="364">endif</span></u></td></tr>
+<tr><th id="368">368</th><td>	<a class="macro" href="#60" title="vmovq" data-ref="_M/MOVQ">MOVQ</a>	%<a class="macro" href="#38" title="xmm0" data-ref="_M/XMM0">XMM0</a>, %rdi</td></tr>
+<tr><th id="369">369</th><td>	cmpl	$<var>8</var>, %edx</td></tr>
+<tr><th id="370">370</th><td>	jae	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lbetween_8_15" data-ref="_M/L">L</a>(between_8_15)</td></tr>
+<tr><th id="371">371</th><td>	cmpl	$<var>4</var>, %edx</td></tr>
+<tr><th id="372">372</th><td>	jae	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lbetween_4_7" data-ref="_M/L">L</a>(between_4_7)</td></tr>
+<tr><th id="373">373</th><td>	cmpl	$<var>1</var>, %edx</td></tr>
+<tr><th id="374">374</th><td>	ja	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lbetween_2_3" data-ref="_M/L">L</a>(between_2_3)</td></tr>
+<tr><th id="375">375</th><td>	jb	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn" data-ref="_M/L">L</a>(<b>return</b>)</td></tr>
+<tr><th id="376">376</th><td>	movb	%sil, (%rax)</td></tr>
+<tr><th id="377">377</th><td>	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#4" title="jmp .Lreturn" data-ref="_M/VZEROUPPER_RETURN">VZEROUPPER_RETURN</a></td></tr>
+<tr><th id="378">378</th><td></td></tr>
+<tr><th id="379">379</th><td>	<i>/* Align small targets only if not doing so would cross a fetch</i></td></tr>
+<tr><th id="380">380</th><td><i>	   line.  */</i></td></tr>
+<tr><th id="381">381</th><td><u>#<span data-ppcond="381">if</span> <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> &gt; 32</u></td></tr>
+<tr><th id="382">382</th><td>	.p2align <var>4</var>,, SMALL_MEMSET_ALIGN(MOV_SIZE, RET_SIZE)</td></tr>
+<tr><th id="383">383</th><td>	<i>/* From 32 to 63.  No branch when size == 32.  */</i></td></tr>
+<tr><th id="384">384</th><td>L(between_32_63):</td></tr>
+<tr><th id="385">385</th><td>	VMOVU	%YMM0, (%rax)</td></tr>
+<tr><th id="386">386</th><td>	VMOVU	%YMM0, -<var>32</var>(%rax, %rdx)</td></tr>
+<tr><th id="387">387</th><td>	VZEROUPPER_RETURN</td></tr>
+<tr><th id="388">388</th><td><u>#<span data-ppcond="381">endif</span></u></td></tr>
+<tr><th id="389">389</th><td></td></tr>
+<tr><th id="390">390</th><td><u>#<span data-ppcond="390">if</span> <a class="macro" href="memset-avx2-unaligned-erms.S.html#4" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> &gt;= 32</u></td></tr>
+<tr><th id="391">391</th><td>	.p2align <var>4</var>,, <a class="macro" href="#84" title="(2 * (4) + (4) + 1)" data-ref="_M/SMALL_MEMSET_ALIGN">SMALL_MEMSET_ALIGN</a>(<a class="macro" href="memset-avx2-unaligned-erms.S.html#5" title="4" data-ref="_M/MOV_SIZE">MOV_SIZE</a>, <a class="macro" href="memset-avx2-unaligned-erms.S.html#6" title="4" data-ref="_M/RET_SIZE">RET_SIZE</a>)</td></tr>
+<tr><th id="392">392</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lbetween_16_31" data-ref="_M/L">L</a>(between_16_31):</td></tr>
+<tr><th id="393">393</th><td>	<i>/* From 16 to 31.  No branch when size == 16.  */</i></td></tr>
+<tr><th id="394">394</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="#38" title="xmm0" data-ref="_M/XMM0">XMM0</a>, (%rax)</td></tr>
+<tr><th id="395">395</th><td>	<a class="macro" href="memset-avx2-unaligned-erms.S.html#10" title="vmovdqu" data-ref="_M/VMOVU">VMOVU</a>	%<a class="macro" href="#38" title="xmm0" data-ref="_M/XMM0">XMM0</a>, -<var>16</var>(%rax, %rdx)</td></tr>
+<tr><th id="396">396</th><td>	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#4" title="jmp .Lreturn" data-ref="_M/VZEROUPPER_RETURN">VZEROUPPER_RETURN</a></td></tr>
+<tr><th id="397">397</th><td><u>#<span data-ppcond="390">endif</span></u></td></tr>
+<tr><th id="398">398</th><td></td></tr>
+<tr><th id="399">399</th><td>	.p2align <var>4</var>,, <a class="macro" href="#84" title="(2 * (3) + (4) + 1)" data-ref="_M/SMALL_MEMSET_ALIGN">SMALL_MEMSET_ALIGN</a>(<var>3</var>, <a class="macro" href="memset-avx2-unaligned-erms.S.html#6" title="4" data-ref="_M/RET_SIZE">RET_SIZE</a>)</td></tr>
+<tr><th id="400">400</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lbetween_8_15" data-ref="_M/L">L</a>(between_8_15):</td></tr>
+<tr><th id="401">401</th><td>	<i>/* From 8 to 15.  No branch when size == 8.  */</i></td></tr>
+<tr><th id="402">402</th><td>	movq	%rdi, (%rax)</td></tr>
+<tr><th id="403">403</th><td>	movq	%rdi, -<var>8</var>(%rax, %rdx)</td></tr>
+<tr><th id="404">404</th><td>	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#4" title="jmp .Lreturn" data-ref="_M/VZEROUPPER_RETURN">VZEROUPPER_RETURN</a></td></tr>
+<tr><th id="405">405</th><td></td></tr>
+<tr><th id="406">406</th><td>	.p2align <var>4</var>,, <a class="macro" href="#84" title="(2 * (2) + (4) + 1)" data-ref="_M/SMALL_MEMSET_ALIGN">SMALL_MEMSET_ALIGN</a>(<var>2</var>, <a class="macro" href="memset-avx2-unaligned-erms.S.html#6" title="4" data-ref="_M/RET_SIZE">RET_SIZE</a>)</td></tr>
+<tr><th id="407">407</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lbetween_4_7" data-ref="_M/L">L</a>(between_4_7):</td></tr>
+<tr><th id="408">408</th><td>	<i>/* From 4 to 7.  No branch when size == 4.  */</i></td></tr>
+<tr><th id="409">409</th><td>	movl	%edi, (%rax)</td></tr>
+<tr><th id="410">410</th><td>	movl	%edi, -<var>4</var>(%rax, %rdx)</td></tr>
+<tr><th id="411">411</th><td>	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#4" title="jmp .Lreturn" data-ref="_M/VZEROUPPER_RETURN">VZEROUPPER_RETURN</a></td></tr>
+<tr><th id="412">412</th><td></td></tr>
+<tr><th id="413">413</th><td>	.p2align <var>4</var>,, <a class="macro" href="#84" title="(2 * (3) + (4) + 1)" data-ref="_M/SMALL_MEMSET_ALIGN">SMALL_MEMSET_ALIGN</a>(<var>3</var>, <a class="macro" href="memset-avx2-unaligned-erms.S.html#6" title="4" data-ref="_M/RET_SIZE">RET_SIZE</a>)</td></tr>
+<tr><th id="414">414</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lbetween_2_3" data-ref="_M/L">L</a>(between_2_3):</td></tr>
+<tr><th id="415">415</th><td>	<i>/* From 2 to 3.  No branch when size == 2.  */</i></td></tr>
+<tr><th id="416">416</th><td>	movw	%di, (%rax)</td></tr>
+<tr><th id="417">417</th><td>	movb	%dil, -<var>1</var>(%rax, %rdx)</td></tr>
+<tr><th id="418">418</th><td>	<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#4" title="jmp .Lreturn" data-ref="_M/VZEROUPPER_RETURN">VZEROUPPER_RETURN</a></td></tr>
+<tr><th id="419">419</th><td><a class="macro" href="../../x86/sysdep.h.html#94" title=".cfi_endproc; .size __memset_avx2_unaligned_erms_rtm,.-__memset_avx2_unaligned_erms_rtm;" data-ref="_M/END">END</a> (<a class="macro" href="memset-avx2-unaligned-erms-rtm.S.html#7" title="__memset_avx2_unaligned_erms_rtm" data-ref="_M/MEMSET_SYMBOL">MEMSET_SYMBOL</a> (__memset, unaligned_erms))</td></tr>
+<tr><th id="420">420</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='memset-avx2-unaligned-erms-rtm.S.html'>codebrowser/sysdeps/x86_64/multiarch/memset-avx2-unaligned-erms-rtm.S</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

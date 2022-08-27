@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/sys/sysinfo.h' l='14' type='int __get_nprocs()'/>
+<doc f='codebrowser/include/sys/sysinfo.h' l='12'>/* Return number of available processors (not all of them will be
+   available to the caller process).  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='142' ll='197' type='int __get_nprocs()'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='199' c='get_nprocs'/>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='629' u='c' c='posix_sysconf'/>

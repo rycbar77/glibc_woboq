@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='283' type='struct audit_ifaces *'/>
+<offset>512</offset>
+<use f='codebrowser/elf/dl-audit.c' l='34' u='r' c='_dl_audit_activity_map'/>
+<use f='codebrowser/elf/dl-audit.c' l='68' u='r' c='_dl_audit_objsearch'/>
+<use f='codebrowser/elf/dl-audit.c' l='90' u='r' c='_dl_audit_objopen'/>
+<use f='codebrowser/elf/dl-audit.c' l='111' u='r' c='_dl_audit_objclose'/>
+<use f='codebrowser/elf/dl-audit.c' l='126' u='r' c='_dl_audit_preinit'/>
+<use f='codebrowser/elf/dl-audit.c' l='168' u='r' c='__GI__dl_audit_symbind_alt'/>
+<use f='codebrowser/elf/dl-audit.c' l='251' u='r' c='_dl_audit_symbind'/>
+<use f='codebrowser/elf/dl-audit.c' l='332' u='r' c='_dl_audit_pltenter'/>
+<use f='codebrowser/elf/dl-audit.c' l='379' u='r' c='_dl_audit_pltexit'/>
+<use f='codebrowser/elf/rtld.c' l='1054' u='w' c='load_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='1058' u='w' c='load_audit_module'/>

@@ -1,0 +1,12 @@
+<def f='codebrowser/malloc/arena.c' l='125' type='_Bool'/>
+<use f='codebrowser/malloc/arena.c' l='179' u='r' c='__malloc_fork_lock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='199' u='r' c='__malloc_fork_unlock_parent'/>
+<use f='codebrowser/malloc/arena.c' l='215' u='r' c='__malloc_fork_unlock_child'/>
+<use f='codebrowser/malloc/arena.c' l='315' u='r' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='318' u='w' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/malloc.c' l='5100' u='r' c='__malloc_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='5219' u='r' c='__libc_mallinfo2'/>
+<use f='codebrowser/malloc/malloc.c' l='5270' u='r' c='__malloc_stats'/>
+<use f='codebrowser/malloc/malloc.c' l='5455' u='r' c='__libc_mallopt'/>
+<use f='codebrowser/malloc/malloc.c' l='5723' u='r' c='__malloc_info'/>
+<doc f='codebrowser/malloc/arena.c' l='124'>/* Already initialized? */</doc>

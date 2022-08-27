@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/sys/sysinfo.h' l='13' type='int __get_nprocs()'/>
+<dec f='codebrowser/include/sys/sysinfo.h' l='14' type='int __get_nprocs()'/>
+<use f='codebrowser/include/sys/sysinfo.h' l='14' c='__get_nprocs'/>
+<use f='codebrowser/malloc/arena.c' l='939' u='c' c='arena_get2'/>
+<doc f='codebrowser/include/sys/sysinfo.h' l='12'>/* Return number of available processors.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='125' ll='229' type='int __get_nprocs()'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='231' c='get_nprocs'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='279' u='c' c='__get_nprocs_conf'/>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='631' u='c' c='posix_sysconf'/>

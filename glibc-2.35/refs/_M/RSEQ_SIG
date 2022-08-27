@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/rseq.h' l='30'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/rseq.h' l='22'>/* RSEQ_SIG is a signature required before each abort handler code.
+
+   RSEQ_SIG is used with the following reserved undefined instructions, which
+   trap in user-space:
+
+   x86-32:    0f b9 3d 53 30 05 53      ud1    0x53053053,%edi
+   x86-64:    0f b9 3d 53 30 05 53      ud1    0x53053053(%rip),%edi  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/rseq-internal.h' l='28' u='a'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/rseq-internal.h' l='36' u='c'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='116' u='a'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sched_getcpu.c' l='36' u='a'/>

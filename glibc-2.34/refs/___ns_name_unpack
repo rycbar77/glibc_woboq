@@ -1,0 +1,5 @@
+<def f='codebrowser/resolv/ns_name_unpack.c' l='26' ll='108' type='int ___ns_name_unpack(const unsigned char * msg, const unsigned char * eom, const unsigned char * src, unsigned char * dst, size_t dstsiz)'/>
+<use f='codebrowser/resolv/ns_name_unpack.c' l='109' c='ns_name_unpack'/>
+<use f='codebrowser/resolv/ns_name_unpack.c' l='110' c='__ns_name_unpack'/>
+<doc f='codebrowser/resolv/ns_name_unpack.c' l='24'>/* Unpack a domain name from a message, source may be compressed.
+   Returns -1 if it fails, or consumed octets if it succeeds.  */</doc>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/socket/sys/socket.h' l='152' type='ssize_t sendto(int __fd, const void * __buf, size_t __n, int __flags, __CONST_SOCKADDR_ARG __addr, socklen_t __addr_len)'/>
+<doc f='codebrowser/socket/sys/socket.h' l='147'>/* Send N bytes of BUF on socket FD to peer at address ADDR (which is
+   ADDR_LEN bytes long).  Returns the number sent, or -1 for errors.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='147' macro='1' u='c' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_native.c' l='106' macro='1' u='c' c='__check_native'/>
+<use f='codebrowser/support/resolv_test.c' l='722' u='c' c='resolv_response_send_udp'/>
+<use f='codebrowser/support/xsendto.c' l='29' u='c' c='xsendto'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/sendto.c' l='34' macro='1' type='ssize_t sendto(int , const void * , size_t , int , __CONST_SOCKADDR_ARG , socklen_t )'/>

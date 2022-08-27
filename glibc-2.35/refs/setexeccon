@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='65' type='int setexeccon(const char * con)'/>
+<doc f='include/selinux/selinux.h' l='63'>/* Set exec security context for the next execve. 
+   Call with NULL if you want to reset to the default. */</doc>

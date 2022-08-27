@@ -1,0 +1,22 @@
+<dec f='include/selinux/avc.h' l='272' type='int avc_has_perm_noaudit(security_id_t ssid, security_id_t tsid, security_class_t tclass, access_vector_t requested, struct avc_entry_ref * aeref, struct av_decision * avd)'/>
+<doc f='include/selinux/avc.h' l='251'>/**
+ * avc_has_perm_noaudit - Check permissions but perform no auditing.
+ * @ssid: source security identifier
+ * @tsid: target security identifier
+ * @tclass: target security class
+ * @requested: requested permissions, interpreted based on @tclass
+ * @aeref:  AVC entry reference
+ * @avd: access vector decisions
+ *
+ * Check the AVC to determine whether the @requested permissions are granted
+ * for the SID pair (@ssid, @tsid), interpreting the permissions
+ * based on @tclass, and call the security server on a cache miss to obtain
+ * a new decision and add it to the cache.  Update @aeref to refer to an AVC
+ * entry with the resulting decisions, and return a copy of the decisions
+ * in @avd.  Return %0 if all @requested permissions are granted, -%1 with
+ * @errno set to %EACCES if any permissions are denied, or to another value
+ * upon other errors.  This function is typically called by avc_has_perm(),
+ * but may also be called directly to separate permission checking from
+ * auditing, e.g. in cases where a lock must be held for the check but
+ * should be released for the auditing.
+ */</doc>

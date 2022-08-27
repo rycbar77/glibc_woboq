@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/mq_receive.c' l='26' ll='31' type='ssize_t __mq_receive(mqd_t mqdes, char * msg_ptr, size_t msg_len, unsigned int * msg_prio)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_receive.c' l='32' c='mq_receive'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/mq_receive.c' l='24'>/* Receive the oldest from highest priority messages in message queue
+   MQDES.  */</doc>

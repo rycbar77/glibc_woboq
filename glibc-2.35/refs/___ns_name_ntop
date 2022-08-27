@@ -1,0 +1,7 @@
+<def f='codebrowser/resolv/ns_name_ntop.c' l='57' ll='138' type='int ___ns_name_ntop(const unsigned char * src, char * dst, size_t dstsiz)'/>
+<use f='codebrowser/resolv/ns_name_ntop.c' l='139' c='ns_name_ntop'/>
+<use f='codebrowser/resolv/ns_name_ntop.c' l='140' c='__ns_name_ntop'/>
+<doc f='codebrowser/resolv/ns_name_ntop.c' l='53'>/* Converts an uncompressed, encoded domain name to printable ASCII as
+   per RFC1035.  Returns the number of bytes written to buffer, or -1
+   (with errno set).  The root is returned as &quot;.&quot;  All other domains
+   are returned in non absolute form.  */</doc>

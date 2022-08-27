@@ -1,0 +1,4 @@
+<dec f='codebrowser/io/sys/statvfs.h' l='73' type='int fstatvfs(int __fildes, struct statvfs * __buf)'/>
+<dec f='codebrowser/include/sys/statvfs.h' l='11' type='int fstatvfs(int , struct statvfs * )'/>
+<use f='codebrowser/include/sys/statvfs.h' l='11' c='fstatvfs'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fstatvfs64.c' l='47' macro='1' type='int fstatvfs(int , struct statvfs64 * )'/>

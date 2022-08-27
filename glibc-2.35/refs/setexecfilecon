@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='669' type='int setexecfilecon(const char * filename, const char * fallback_type)'/>
+<doc f='include/selinux/selinux.h' l='667'>/* Set an appropriate security context based on the filename of a helper
+ * program, falling back to a new context with the specified type. */</doc>

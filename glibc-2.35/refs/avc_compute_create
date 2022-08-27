@@ -1,0 +1,15 @@
+<dec f='include/selinux/avc.h' l='337' type='int avc_compute_create(security_id_t ssid, security_id_t tsid, security_class_t tclass, security_id_t * newsid)'/>
+<doc f='include/selinux/avc.h' l='323'>/**
+ * avc_compute_create - Compute SID for labeling a new object.
+ * @ssid: source security identifier
+ * @tsid: target security identifier
+ * @tclass: target security class
+ * @newsid: pointer to SID reference
+ *
+ * Call the security server to obtain a context for labeling a
+ * new object.  Look up the context in the SID table, making
+ * a new entry if not found.  Increment the reference counter
+ * for the SID.  Store a pointer to the SID structure into the
+ * memory referenced by @newsid, returning %0 on success or -%1 on
+ * error with @errno set.  
+ */</doc>

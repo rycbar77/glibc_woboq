@@ -1,0 +1,119 @@
+<dec f='codebrowser/time/bits/types/struct_timespec.h' l='12' type='__time_t'/>
+<use f='codebrowser/include/time.h' l='269' u='w' c='valid_timeval_to_timespec64'/>
+<use f='codebrowser/include/time.h' l='281' u='w' c='valid_timespec_to_timespec64'/>
+<use f='codebrowser/include/time.h' l='281' u='r' c='valid_timespec_to_timespec64'/>
+<use f='codebrowser/include/time.h' l='294' u='w' c='valid_timespec64_to_timespec'/>
+<use f='codebrowser/include/time.h' l='294' u='r' c='valid_timespec64_to_timespec'/>
+<use f='codebrowser/include/time.h' l='307' u='r' c='valid_timespec64_to_timeval'/>
+<use f='codebrowser/include/time.h' l='327' u='r' c='time_now'/>
+<offset>0</offset>
+<doc f='codebrowser/time/bits/types/struct_timespec.h' l='12'>/* Seconds.  */</doc>
+<use f='codebrowser/elf/cache.c' l='626' macro='1' u='r' c='search_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='684' macro='1' u='r' c='add_to_aux_cache'/>
+<use f='codebrowser/inet/net-internal.h' l='116' u='r' c='__deadline_elapsed'/>
+<use f='codebrowser/inet/net-internal.h' l='116' u='r' c='__deadline_elapsed'/>
+<use f='codebrowser/inet/net-internal.h' l='117' u='r' c='__deadline_elapsed'/>
+<use f='codebrowser/inet/net-internal.h' l='117' u='r' c='__deadline_elapsed'/>
+<use f='codebrowser/inet/net-internal.h' l='126' u='r' c='__deadline_first'/>
+<use f='codebrowser/inet/net-internal.h' l='126' u='r' c='__deadline_first'/>
+<use f='codebrowser/inet/net-internal.h' l='127' u='r' c='__deadline_first'/>
+<use f='codebrowser/inet/net-internal.h' l='127' u='r' c='__deadline_first'/>
+<use f='codebrowser/inet/deadline.c' l='33' u='r' c='__deadline_current_time'/>
+<use f='codebrowser/inet/deadline.c' l='33' u='r' c='__deadline_current_time'/>
+<use f='codebrowser/inet/deadline.c' l='53' u='r' c='__deadline_from_timeval'/>
+<use f='codebrowser/inet/deadline.c' l='83' u='r' c='__deadline_to_ms'/>
+<use f='codebrowser/inet/deadline.c' l='83' u='r' c='__deadline_to_ms'/>
+<use f='codebrowser/inet/deadline.c' l='84' u='r' c='__deadline_to_ms'/>
+<use f='codebrowser/inet/deadline.c' l='84' u='r' c='__deadline_to_ms'/>
+<use f='codebrowser/inet/deadline.c' l='87' u='r' c='__deadline_to_ms'/>
+<use f='codebrowser/inet/deadline.c' l='87' u='r' c='__deadline_to_ms'/>
+<use f='codebrowser/locale/loadarchive.c' l='410' macro='1' u='r' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/loadarchive.c' l='410' macro='1' u='r' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='625' u='w' c='open_archive'/>
+<use f='codebrowser/nptl/lll_timedlock_wait.c' l='44' u='w' c='__lll_clocklock_wait'/>
+<use f='codebrowser/nptl/lll_timedlock_wait.c' l='44' u='r' c='__lll_clocklock_wait'/>
+<use f='codebrowser/nptl/lll_timedlock_wait.c' l='44' u='r' c='__lll_clocklock_wait'/>
+<use f='codebrowser/nptl/lll_timedlock_wait.c' l='49' u='w' c='__lll_clocklock_wait'/>
+<use f='codebrowser/nptl/lll_timedlock_wait.c' l='52' u='r' c='__lll_clocklock_wait'/>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='282' u='r' c='futex_abstimed_wait'/>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='316' u='r' c='futex_abstimed_wait_cancelable'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='516' u='r' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='58' u='w' c='clockwait_tid'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='58' u='r' c='clockwait_tid'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='58' u='r' c='clockwait_tid'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='63' u='w' c='clockwait_tid'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='67' u='r' c='clockwait_tid'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='64' u='r' c='wait_on_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='75' u='r' c='wait_on_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='220' u='w' c='open_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='220' u='r' c='open_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='225' u='r' c='open_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='225' u='r' c='open_socket'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='151' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='151' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='153' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='153' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/include/random-bits.h' l='36' u='r' c='random_bits'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='257' u='r' c='authdes_marshal'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='459' u='r' c='synchronize'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='127' u='r' c='__GI_authunix_create'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='302' u='r' c='authunix_refresh'/>
+<use f='codebrowser/sunrpc/create_xid.c' l='45' u='r' c='_create_xid'/>
+<use f='codebrowser/sunrpc/svc.c' l='558' u='w' c='__svc_accept_failed'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='302' macro='1' u='r' c='_svcauth_des'/>
+<use f='codebrowser/support/support_test_main.c' l='99' u='a' c='print_timestamp'/>
+<use f='codebrowser/support/support_test_main.c' l='101' u='r' c='print_timestamp'/>
+<use f='codebrowser/support/support_test_main.c' l='121' macro='1' u='r' c='signal_handler'/>
+<use f='codebrowser/support/support_test_main.c' l='142' u='w' c='signal_handler'/>
+<use f='codebrowser/support/test-container.c' l='404' macro='1' u='r' c='copy_one_file'/>
+<use f='codebrowser/support/test-container.c' l='405' macro='1' u='r' c='copy_one_file'/>
+<use f='codebrowser/support/test-container.c' l='442' macro='1' u='r' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='442' macro='1' u='r' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='448' macro='1' u='r' c='need_sync'/>
+<use f='codebrowser/support/test-container.c' l='448' macro='1' u='r' c='need_sync'/>
+<use f='codebrowser/support/timespec.h' l='36' u='w' c='make_timespec'/>
+<use f='codebrowser/support/timespec-add.c' l='31' u='r' c='timespec_add'/>
+<use f='codebrowser/support/timespec-add.c' l='32' u='r' c='timespec_add'/>
+<use f='codebrowser/support/timespec-sub.c' l='32' u='r' c='timespec_sub'/>
+<use f='codebrowser/support/timespec-sub.c' l='33' u='r' c='timespec_sub'/>
+<use f='codebrowser/support/timespec.c' l='28' u='r' c='test_timespec_before_impl'/>
+<use f='codebrowser/support/timespec.c' l='28' u='r' c='test_timespec_before_impl'/>
+<use f='codebrowser/support/timespec.c' l='29' u='r' c='test_timespec_before_impl'/>
+<use f='codebrowser/support/timespec.c' l='29' u='r' c='test_timespec_before_impl'/>
+<use f='codebrowser/support/timespec.c' l='36' u='r' c='test_timespec_before_impl'/>
+<use f='codebrowser/support/timespec.c' l='37' u='r' c='test_timespec_before_impl'/>
+<use f='codebrowser/support/timespec.c' l='38' u='r' c='test_timespec_before_impl'/>
+<use f='codebrowser/support/timespec.c' l='47' u='r' c='test_timespec_equal_or_after_impl'/>
+<use f='codebrowser/support/timespec.c' l='47' u='r' c='test_timespec_equal_or_after_impl'/>
+<use f='codebrowser/support/timespec.c' l='48' u='r' c='test_timespec_equal_or_after_impl'/>
+<use f='codebrowser/support/timespec.c' l='48' u='r' c='test_timespec_equal_or_after_impl'/>
+<use f='codebrowser/support/timespec.c' l='55' u='r' c='test_timespec_equal_or_after_impl'/>
+<use f='codebrowser/support/timespec.c' l='56' u='r' c='test_timespec_equal_or_after_impl'/>
+<use f='codebrowser/support/timespec.c' l='57' u='r' c='test_timespec_equal_or_after_impl'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1669' u='r' c='check_gaiconf_mtime'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1669' u='r' c='check_gaiconf_mtime'/>
+<use f='codebrowser/sysdeps/posix/sleep.c' l='42' u='r' c='__sleep'/>
+<use f='codebrowser/sysdeps/posix/sleep.c' l='46' u='w' c='__sleep'/>
+<use f='codebrowser/sysdeps/posix/sleep.c' l='47' u='r' c='__sleep'/>
+<use f='codebrowser/sysdeps/posix/sleep.c' l='51' u='w' c='__sleep'/>
+<use f='codebrowser/sysdeps/posix/sleep.c' l='58' u='r' c='__sleep'/>
+<use f='codebrowser/sysdeps/posix/usleep.c' l='26' u='w' c='usleep'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='622' u='w' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='622' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='627' u='w' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock.c' l='37' u='r' c='clock'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='45' macro='1' u='w' c='__futimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='46' macro='1' u='w' c='__futimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lutimes.c' l='38' macro='1' u='w' c='lutimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lutimes.c' l='39' macro='1' u='w' c='lutimes'/>
+<use f='codebrowser/io/statx_generic.c' l='34' u='r' c='statx_convert_timestamp'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='243' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='552' u='w' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='552' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='552' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='557' u='w' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='561' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/time/ftime.c' l='28' u='r' c='ftime'/>
+<use f='codebrowser/time/settimeofday.c' l='38' macro='1' u='w' c='__settimeofday'/>
+<use f='codebrowser/time/tzfile.c' l='157' macro='1' u='r' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='176' macro='1' u='r' c='__tzfile_read'/>

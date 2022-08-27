@@ -1,0 +1,11 @@
+<dec f='codebrowser/resolv/resolv_conf.h' l='57' type='unsigned int'/>
+<offset>480</offset>
+<doc f='codebrowser/resolv/resolv_conf.h' l='57'>/* Timeout.  */</doc>
+<use f='codebrowser/resolv/res_init.c' l='188' u='w' c='resolv_conf_parser_init'/>
+<use f='codebrowser/resolv/res_init.c' l='194' u='w' c='resolv_conf_parser_init'/>
+<use f='codebrowser/resolv/res_init.c' l='667' u='w' c='res_setoptions'/>
+<use f='codebrowser/resolv/res_init.c' l='669' u='w' c='res_setoptions'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='408' u='w' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='408' u='r' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='476' u='r' c='update_from_conf'/>
+<use f='codebrowser/resolv/resolv_context.c' l='63' u='r' c='replicated_configuration_matches'/>

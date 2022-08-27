@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='68' type='int __memcmp_avx2_movbe(const void * , const void * , unsigned long )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='68' u='r' c='__libc_ifunc_impl_list'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memcmp.h' l='25' macro='1' type='int __memcmp_avx2_movbe(const void * , const void * , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memcmp.h' l='47' macro='1' u='r' c='memcmp_ifunc_selector'/>

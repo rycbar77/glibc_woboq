@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/resolv.h' l='70' type='int __libc_res_queriesmatch(const unsigned char * , const unsigned char * , const unsigned char * , const unsigned char * )'/>
+<dec f='codebrowser/include/resolv.h' l='71' type='int __libc_res_queriesmatch(const unsigned char * , const unsigned char * , const unsigned char * , const unsigned char * )'/>
+<use f='codebrowser/include/resolv.h' l='71' c='__libc_res_queriesmatch'/>
+<def f='codebrowser/resolv/res_queriesmatch.c' l='88' ll='128' type='int __libc_res_queriesmatch(const unsigned char * buf1, const unsigned char * eom1, const unsigned char * buf2, const unsigned char * eom2)'/>
+<doc f='codebrowser/resolv/res_queriesmatch.c' l='87'>/* Author: paul vixie, 29may94.  */</doc>
+<use f='codebrowser/resolv/res_send.c' l='1199' u='c' c='send_dg'/>
+<use f='codebrowser/resolv/res_send.c' l='1205' u='c' c='send_dg'/>

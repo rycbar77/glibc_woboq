@@ -1,0 +1,29 @@
+<dec f='codebrowser/io/ftw.c' l='185' type='struct FTW'/>
+<use f='codebrowser/io/ftw.c' l='352' u='m' c='open_dir_stream'/>
+<use f='codebrowser/io/ftw.c' l='364' u='m' c='open_dir_stream'/>
+<use f='codebrowser/io/ftw.c' l='405' u='m' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='410' u='m' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='473' u='a' c='process_entry'/>
+<use f='codebrowser/io/ftw.c' l='489' u='m' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='501' u='a' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='509' u='a' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='537' u='m' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='543' u='m' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='596' u='m' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='597' u='m' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='598' u='m' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='602' u='a' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='618' u='m' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='665' u='m' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='670' u='m' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='711' u='m' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='716' u='m' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='721' u='m' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='722' u='m' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='724' u='m' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='736' u='m' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='752' u='a' c='ftw_startup'/>
+<use f='codebrowser/io/ftw.c' l='778' u='a' c='ftw_startup'/>
+<offset>320</offset>
+<doc f='codebrowser/io/ftw.c' l='183'>/* Passed as fourth argument to `nftw&apos; callback.  The `base&apos; member
+     tracks the content of the `dirbuf&apos;.  */</doc>

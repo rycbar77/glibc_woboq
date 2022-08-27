@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/dirent.h' l='39' type='__ino64_t'/>
+<offset>0</offset>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname.c' l='66' macro='1' u='r' c='getttyname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='53' macro='1' u='r' c='getttyname_r'/>
+<use f='codebrowser/posix/glob.c' l='119' u='w' c='glob_in_dir'/>
+<use f='codebrowser/posix/glob.c' l='142' u='r' c='glob_in_dir'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/sys/stat.h' l='76' type='int __mknod(const char * __path, __mode_t __mode, __dev_t __dev)'/>
+<dec f='codebrowser/include/sys/stat.h' l='78' type='int __mknod(const char * , __mode_t , __dev_t )'/>
+<use f='codebrowser/include/sys/stat.h' l='78' c='__mknod'/>
+<def f='codebrowser/io/mknod.c' l='21' ll='25' type='int __mknod(const char * path, mode_t mode, dev_t dev)'/>
+<use f='codebrowser/io/mknod.c' l='27' c='mknod'/>
+<use f='codebrowser/sysdeps/posix/mkfifo.c' l='27' u='c' c='mkfifo'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/locale/programs/localedef.h' l='147' type='void open_archive(struct locarhandle * ah, _Bool readonly)'/>
+<doc f='codebrowser/locale/programs/localedef.h' l='146'>/* Open the locale archive.  */</doc>
+<use f='codebrowser/locale/programs/locarchive.c' l='206' u='c' c='create_archive'/>
+<def f='codebrowser/locale/programs/locarchive.c' l='556' ll='685' type='void open_archive(struct locarhandle * ah, _Bool readonly)'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1343' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1537' u='c' c='delete_locales_from_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1637' u='c' c='show_archive_content'/>
+<use f='codebrowser/locale/programs/locfile.c' l='346' u='c' c='write_all_categories'/>

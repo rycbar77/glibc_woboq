@@ -1,0 +1,9 @@
+<dec f='codebrowser/malloc/mcheck-impl.c' l='39' type='unsigned long'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='78' u='r' c='checkhdr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='139' u='w' c='unlink_blk'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='145' u='w' c='unlink_blk'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='158' u='w' c='link_blk'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='164' u='w' c='link_blk'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='178' u='w' c='free_mcheck'/>
+<offset>64</offset>
+<doc f='codebrowser/malloc/mcheck-impl.c' l='39'>/* Magic number to check header integrity.  */</doc>

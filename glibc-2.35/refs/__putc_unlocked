@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/stdio.h' l='252' type='int __putc_unlocked(int , FILE * )'/>
+<def f='codebrowser/include/stdio.h' l='287' ll='291' macro='1' type='int __putc_unlocked(int __c, FILE * __stream)'/>
+<def f='codebrowser/libio/putc_u.c' l='23' ll='28' type='int __putc_unlocked(int c, FILE * fp)'/>
+<use f='codebrowser/libio/putc_u.c' l='29' c='putc_unlocked'/>
+<use f='codebrowser/misc/mntent_r.c' l='226' u='c' c='write_string'/>
+<use f='codebrowser/misc/mntent_r.c' l='229' u='c' c='write_string'/>
+<use f='codebrowser/misc/mntent_r.c' l='230' u='c' c='write_string'/>
+<use f='codebrowser/misc/mntent_r.c' l='231' u='c' c='write_string'/>
+<use f='codebrowser/misc/mntent_r.c' l='232' u='c' c='write_string'/>
+<use f='codebrowser/misc/mntent_r.c' l='235' u='c' c='write_string'/>
+<use f='codebrowser/misc/syslog.c' l='220' u='c' c='__vsyslog_internal'/>
+<use f='codebrowser/misc/syslog.c' l='221' u='c' c='__vsyslog_internal'/>

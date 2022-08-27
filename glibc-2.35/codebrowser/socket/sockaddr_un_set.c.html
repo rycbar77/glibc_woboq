@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>sockaddr_un_set.c source code [codebrowser/socket/sockaddr_un_set.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/socket/sockaddr_un_set.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>socket</a>/<a href='sockaddr_un_set.c.html'>sockaddr_un_set.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Set the sun_path member of struct sockaddr_un.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../include/sys/socket.h.html">&lt;sys/socket.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../include/sys/un.h.html">&lt;sys/un.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><em>int</em></td></tr>
+<tr><th id="25">25</th><td><dfn class="decl def fn" id="__sockaddr_un_set" title='__sockaddr_un_set' data-ref="__sockaddr_un_set" data-ref-filename="__sockaddr_un_set">__sockaddr_un_set</dfn> (<b>struct</b> <a class="type" href="sys/un.h.html#sockaddr_un" title='sockaddr_un' data-ref="sockaddr_un" data-ref-filename="sockaddr_un">sockaddr_un</a> *<dfn class="local col1 decl" id="1addr" title='addr' data-type='struct sockaddr_un *' data-ref="1addr" data-ref-filename="1addr">addr</dfn>, <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="2pathname" title='pathname' data-type='const char *' data-ref="2pathname" data-ref-filename="2pathname">pathname</dfn>)</td></tr>
+<tr><th id="26">26</th><td>{</td></tr>
+<tr><th id="27">27</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col3 decl" id="3name_length" title='name_length' data-type='size_t' data-ref="3name_length" data-ref-filename="3name_length">name_length</dfn> = <a class="ref fn" href="../string/string.h.html#strlen" title='strlen' data-ref="strlen" data-ref-filename="strlen">strlen</a> (<a class="local col2 ref" href="#2pathname" title='pathname' data-ref="2pathname" data-ref-filename="2pathname">pathname</a>);</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td>  <i>/* The kernel supports names of exactly sizeof (addr-&gt;sun_path)</i></td></tr>
+<tr><th id="30">30</th><td><i>     bytes, without a null terminator, but userspace does not; see the</i></td></tr>
+<tr><th id="31">31</th><td><i>     SUN_LEN macro.  */</i></td></tr>
+<tr><th id="32">32</th><td>  <b>if</b> (<a class="local col3 ref" href="#3name_length" title='name_length' data-ref="3name_length" data-ref-filename="3name_length">name_length</a> &gt;= <b>sizeof</b> (<a class="local col1 ref" href="#1addr" title='addr' data-ref="1addr" data-ref-filename="1addr">addr</a>-&gt;<a class="ref field" href="sys/un.h.html#sockaddr_un::sun_path" title='sockaddr_un::sun_path' data-ref="sockaddr_un::sun_path" data-ref-filename="sockaddr_un..sun_path">sun_path</a>))</td></tr>
+<tr><th id="33">33</th><td>    {</td></tr>
+<tr><th id="34">34</th><td>      <a class="macro" href="../include/errno.h.html#35" title="(__libc_errno = (22))" data-ref="_M/__set_errno">__set_errno</a> (<a class="macro" href="../../include/asm-generic/errno-base.h.html#26" title="22" data-ref="_M/EINVAL">EINVAL</a>);     <i>/* Error code used by the kernel.  */</i></td></tr>
+<tr><th id="35">35</th><td>      <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="36">36</th><td>    }</td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td>  <a class="local col1 ref" href="#1addr" title='addr' data-ref="1addr" data-ref-filename="1addr">addr</a>-&gt;<a class="ref field" href="sys/un.h.html#31" title='sockaddr_un::sun_family' data-ref="sockaddr_un::sun_family" data-ref-filename="sockaddr_un..sun_family">sun_family</a> = <a class="macro" href="../sysdeps/unix/sysv/linux/bits/socket.h.html#95" title="1" data-ref="_M/AF_UNIX">AF_UNIX</a>;</td></tr>
+<tr><th id="39">39</th><td>  <a class="ref fn" href="../string/string.h.html#memcpy" title='memcpy' data-ref="memcpy" data-ref-filename="memcpy">memcpy</a> (<a class="local col1 ref" href="#1addr" title='addr' data-ref="1addr" data-ref-filename="1addr">addr</a>-&gt;<a class="ref field" href="sys/un.h.html#sockaddr_un::sun_path" title='sockaddr_un::sun_path' data-ref="sockaddr_un::sun_path" data-ref-filename="sockaddr_un..sun_path">sun_path</a>, <a class="local col2 ref" href="#2pathname" title='pathname' data-ref="2pathname" data-ref-filename="2pathname">pathname</a>, <a class="local col3 ref" href="#3name_length" title='name_length' data-ref="3name_length" data-ref-filename="3name_length">name_length</a> + <var>1</var>);</td></tr>
+<tr><th id="40">40</th><td>  <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="41">41</th><td>}</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

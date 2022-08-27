@@ -1,0 +1,120 @@
+<use f='codebrowser/sysdeps/unix/sysv/linux/sys/procfs.h' l='73'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sys/procfs.h' l='74'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sys/procfs.h' l='75'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sys/procfs.h' l='76'/>
+<size>16</size>
+<use f='codebrowser/inet/net-internal.h' l='126' c='__deadline_from_timeval'/>
+<use f='codebrowser/inet/net-internal.h' l='138' c='__is_timeval_valid_timeout'/>
+<use f='codebrowser/inet/deadline.c' l='33' c='__deadline_current_time'/>
+<use f='codebrowser/inet/deadline.c' l='53' c='__deadline_from_timeval'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/rpc/clnt.h' l='134'/>
+<use f='codebrowser/sunrpc/rpc/clnt.h' l='333' c='clntudp_create'/>
+<use f='codebrowser/sunrpc/rpc/clnt.h' l='337' c='clntudp_bufcreate'/>
+<use f='codebrowser/include/rpc/clnt.h' l='11' c='__libc_clntudp_bufcreate'/>
+<size>16</size>
+<use f='codebrowser/resource/bits/types/struct_rusage.h' l='36'/>
+<use f='codebrowser/resource/bits/types/struct_rusage.h' l='38'/>
+<size>16</size>
+<use f='codebrowser/nscd/nscd_helper.c' l='62' c='wait_on_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='194' c='open_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='215' c='open_socket'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/auth_des.c' l='249' c='authdes_marshal'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='448' c='synchronize'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/auth_unix.c' l='99' c='__GI_authunix_create'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='279' c='authunix_refresh'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='55' c='__GI_clnt_create'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='65' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='133' c='clntraw_call'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/clnt_simp.c' l='61' c='__GI_callrpc'/>
+<use f='codebrowser/sunrpc/clnt_simp.c' l='61' c='__GI_callrpc'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/rpc/pmap_clnt.h' l='80' c='pmap_rmtcall'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='67'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='80' c='clnttcp_call'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='230' c='clnttcp_call'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='371' c='clnttcp_control'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='375' c='clnttcp_control'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='67' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='95'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='96'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='124' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='218' c='__GI_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='228' c='__GI_clntudp_create'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='277' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='301' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='557' c='clntudp_control'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='560' c='clntudp_control'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='563' c='clntudp_control'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='566' c='clntudp_control'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='68'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='81' c='clntunix_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='209' c='clntunix_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='346' c='clntunix_control'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='349' c='clntunix_control'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/create_xid.c' l='42' c='_create_xid'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/key_call.c' l='66'/>
+<use f='codebrowser/sunrpc/key_call.c' l='67'/>
+<use f='codebrowser/sunrpc/key_call.c' l='391' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='483' c='key_call_socket'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/pm_getmaps.c' l='58' c='__GI_pmap_getmaps'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/pm_getport.c' l='88' c='__libc_rpc_getport'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='89' c='__libc_rpc_getport'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='98'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='99'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='58'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='70' c='__GI_pmap_rmtcall'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='220' c='__GI_clnt_broadcast'/>
+<size>16</size>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='256' c='_svcauth_des'/>
+<size>16</size>
+<use f='codebrowser/support/support_test_main.c' l='91' c='print_timestamp'/>
+<use f='codebrowser/support/support_test_main.c' l='113' c='signal_handler'/>
+<use f='codebrowser/support/support_test_main.c' l='172' c='signal_handler'/>
+<size>16</size>
+<use f='codebrowser/gmon/sys/profil.h' l='56' c='sprofil'/>
+<use f='codebrowser/include/sys/profil.h' l='9' c='__sprofil'/>
+<use f='codebrowser/sysdeps/posix/sprofil.c' l='282' c='__sprofil'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/posix/tempname.c' l='84' c='__gen_tempname'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='617' c='handle_fildes_io'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/stime.c' l='28' c='stime'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sys/timex.h' l='32'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/adjtime.c' l='31' c='__adjtime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/adjtime.c' l='31' c='__adjtime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/adjtime.c' l='31' c='__adjtime'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/clock_gettime.c' l='81' c='realtime_gettime'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/bsd/ftime.c' l='24' c='ftime'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='35' c='__futimes'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimesat.c' l='32' c='futimesat'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lutimes.c' l='28' c='lutimes'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/select.c' l='38' c='__select'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/utimes.c' l='31' c='__utimes'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/gettimeofday.c' l='53' c='__gettimeofday'/>
+<size>16</size>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='596' c='__pthread_mutex_timedlock'/>
+<size>16</size>

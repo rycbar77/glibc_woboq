@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/fcntl.h' l='8' type='int __libc_open64(const char * file, int oflag)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/open64.c' l='28' ll='43' type='int __libc_open64(const char * file, int oflag)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/open64.c' l='45' c='__open64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/open64.c' l='47' c='open64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/open64.c' l='50' c='__libc_open'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/open64.c' l='51' c='__open'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/open64.c' l='53' c='open'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/open64.c' l='26'>/* Open FILE with access OFLAG.  If O_CREAT or O_TMPFILE is in OFLAG,
+   a third argument is the file protection.  */</doc>

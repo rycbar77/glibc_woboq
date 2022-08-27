@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/nptl/proc_service.h' l='67' type='pid_t ps_getpid(struct ps_prochandle * )'/>
+<doc f='codebrowser/sysdeps/nptl/proc_service.h' l='66'>/* Return the PID of the process.  */</doc>
+<use f='codebrowser/nptl_db/td_ta_map_lwp2thr.c' l='200' u='c' c='td_ta_map_lwp2thr'/>
+<use f='codebrowser/nptl_db/td_thr_get_info.c' l='108' u='c' c='td_thr_get_info'/>
+<use f='codebrowser/nptl_db/td_thr_getfpregs.c' l='32' u='c' c='td_thr_getfpregs'/>
+<use f='codebrowser/nptl_db/td_thr_getgregs.c' l='32' u='c' c='td_thr_getgregs'/>
+<use f='codebrowser/nptl_db/td_thr_setfpregs.c' l='32' u='c' c='td_thr_setfpregs'/>
+<use f='codebrowser/nptl_db/td_thr_setgregs.c' l='32' u='c' c='td_thr_setgregs'/>
+<use f='codebrowser/nptl_db/td_thr_tlsbase.c' l='144' u='c' c='td_thr_tlsbase'/>

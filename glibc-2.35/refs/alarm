@@ -1,0 +1,17 @@
+<dec f='codebrowser/posix/unistd.h' l='452' type='unsigned int alarm(unsigned int __seconds)'/>
+<dec f='codebrowser/include/unistd.h' l='13' type='unsigned int alarm(unsigned int )'/>
+<use f='codebrowser/include/unistd.h' l='13' c='alarm'/>
+<doc f='codebrowser/posix/unistd.h' l='445'>/* Schedule an alarm.  In SECONDS seconds, the process will get a SIGALRM.
+   If SECONDS is zero, any currently scheduled alarm will be cancelled.
+   The function returns the number of seconds remaining until the last
+   alarm scheduled would have signaled, or zero if there wasn&apos;t one.
+   There is no return value to indicate an error, but you can set `errno&apos;
+   to 0 and check its value after calling `alarm&apos;, and this might tell you.
+   The signal may come late due to processor scheduling.  */</doc>
+<use f='codebrowser/shadow/lckpwdf.c' l='131' u='c' c='__lckpwdf'/>
+<use f='codebrowser/shadow/lckpwdf.c' l='74' u='c' c='__lckpwdf'/>
+<use f='codebrowser/support/support_test_main.c' l='453' u='c' c='support_test_main'/>
+<use f='codebrowser/login/utmp_file.c' l='83' u='c' c='try_file_lock'/>
+<use f='codebrowser/login/utmp_file.c' l='93' u='c' c='try_file_lock'/>
+<use f='codebrowser/login/utmp_file.c' l='111' u='c' c='try_file_lock'/>
+<use f='codebrowser/login/utmp_file.c' l='114' u='c' c='try_file_lock'/>

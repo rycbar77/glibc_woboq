@@ -1,0 +1,5 @@
+<def f='codebrowser/elf/static-stubs.c' l='30' ll='34' type='void _Unwind_Resume(struct _Unwind_Exception * exc)'/>
+<doc f='codebrowser/elf/static-stubs.c' l='27'>/* These programs do not use thread cancellation, so _Unwind_Resume
+   and the personality routine are never actually called.  */</doc>
+<def f='codebrowser/sysdeps/gnu/unwind-resume.c' l='58' ll='69' type='void _Unwind_Resume(struct _Unwind_Exception * exc)'/>
+<def f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='95' ll='106' type='void _Unwind_Resume(struct _Unwind_Exception * exc)'/>

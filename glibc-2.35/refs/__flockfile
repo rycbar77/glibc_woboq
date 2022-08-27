@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/stdio.h' l='162' type='void __flockfile(FILE * __stream)'/>
+<doc f='codebrowser/include/stdio.h' l='161'>/* Acquire ownership of STREAM.  */</doc>
+<use f='codebrowser/argp/argp-help.c' l='1671' u='c' c='_help'/>
+<use f='codebrowser/argp/argp-help.c' l='1876' u='c' c='__argp_error_internal'/>
+<use f='codebrowser/argp/argp-help.c' l='1940' u='c' c='__argp_failure_internal'/>
+<def f='codebrowser/stdio-common/flockfile.c' l='22' ll='27' type='void __flockfile(FILE * stream)'/>
+<use f='codebrowser/stdio-common/flockfile.c' l='28' c='flockfile'/>
+<use f='codebrowser/stdio-common/flockfile.c' l='29' c='_IO_flockfile'/>

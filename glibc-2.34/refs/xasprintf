@@ -1,0 +1,27 @@
+<dec f='codebrowser/include/programs/xasprintf.h' l='21' type='char * xasprintf(const char * format)'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='659' u='c' c='handle_dir'/>
+<use f='codebrowser/locale/programs/localedef.c' l='438' u='c' c='more_help'/>
+<use f='codebrowser/locale/programs/localedef.c' l='441' u='c' c='more_help'/>
+<use f='codebrowser/locale/programs/localedef.c' l='516' u='c' c='construct_output_path'/>
+<use f='codebrowser/locale/programs/localedef.c' l='519' u='c' c='construct_output_path'/>
+<use f='codebrowser/locale/programs/localedef.c' l='528' u='c' c='construct_output_path'/>
+<use f='codebrowser/locale/programs/localedef.c' l='594' u='c' c='normalize_codeset'/>
+<def f='codebrowser/locale/programs/xasprintf.c' l='24' ll='34' type='char * xasprintf(const char * format)'/>
+<dec f='codebrowser/support/support.h' l='103' type='char * xasprintf(const char * format)'/>
+<use f='codebrowser/support/blob_repeat.c' l='166' u='c' c='allocate_big'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='114' u='c' c='copy_and_spawn_sgid'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='116' u='c' c='copy_and_spawn_sgid'/>
+<use f='codebrowser/support/support_chroot.c' l='36' u='c' c='write_file'/>
+<use f='codebrowser/support/support_chroot.c' l='51' u='c' c='support_chroot_create'/>
+<use f='codebrowser/support/support_chroot.c' l='65' u='c' c='support_chroot_create'/>
+<use f='codebrowser/support/support_descriptors.c' l='97' u='c' c='support_descriptors_list'/>
+<use f='codebrowser/support/support_format_address_family.c' l='37' u='c' c='support_format_address_family'/>
+<use f='codebrowser/support/support_format_herrno.c' l='42' u='c' c='support_format_herrno'/>
+<use f='codebrowser/support/support_format_hostent.c' l='47' u='c' c='support_format_hostent'/>
+<use f='codebrowser/support/support_format_hostent.c' l='51' u='c' c='support_format_hostent'/>
+<use f='codebrowser/support/support_format_netent.c' l='33' u='c' c='support_format_netent'/>
+<use f='codebrowser/support/support_run_diff.c' l='33' u='c' c='write_to_temp_file'/>
+<use f='codebrowser/support/temp_file.c' l='68' u='c' c='create_temp_file_in_dir'/>
+<use f='codebrowser/support/temp_file.c' l='96' u='c' c='support_create_temp_directory'/>
+<use f='codebrowser/support/test-container.c' l='696' u='c' c='run_ldconfig'/>
+<def f='codebrowser/support/xasprintf.c' l='26' ll='36' type='char * xasprintf(const char * format)'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='578' type='void __pthread_cleanup_pop(struct _pthread_cleanup_buffer * buffer, int execute)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='580' type='void __pthread_cleanup_pop(struct _pthread_cleanup_buffer * , int )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='580' c='__pthread_cleanup_pop'/>
+<def f='codebrowser/nptl/cleanup_compat.c' l='39' ll='50' type='void __pthread_cleanup_pop(struct _pthread_cleanup_buffer * buffer, int execute)'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='52' c='_pthread_cleanup_pop'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='507' u='c' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='114' macro='1' u='c' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_once.c' l='119' macro='1' u='c' c='__pthread_once_slow'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='224' macro='1' u='c' c='__new_sem_wait_slow64'/>

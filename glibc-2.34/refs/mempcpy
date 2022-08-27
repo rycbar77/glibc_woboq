@@ -1,0 +1,8 @@
+<dec f='codebrowser/string/string.h' l='384' type='void * mempcpy(void *restrict __dest, const void *restrict __src, size_t __n)'/>
+<dec f='codebrowser/include/string.h' l='135' type='void * mempcpy(void * , const void * , unsigned long )'/>
+<use f='codebrowser/include/string.h' l='135' c='mempcpy'/>
+<dec f='codebrowser/include/string.h' l='178' type='void * mempcpy(void * , const void * , unsigned long )'/>
+<use f='codebrowser/include/string.h' l='178' c='mempcpy'/>
+<doc f='codebrowser/include/string.h' l='176'>/* Redirect calls to __builtin_mempcpy and __builtin_stpcpy to call
+   __mempcpy and __stpcpy if not inlined.  */</doc>
+<def f='codebrowser/sysdeps/x86_64/multiarch/mempcpy.c' l='35' macro='1' type='void * mempcpy(void *restrict , const void *restrict , size_t )'/>

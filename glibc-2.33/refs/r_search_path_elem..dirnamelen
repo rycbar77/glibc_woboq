@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='210' type='size_t'/>
+<offset>256</offset>
+<use f='codebrowser/elf/dl-load.c' l='492' u='r' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='523' u='w' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='744' u='w' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='1524' u='r' c='print_search_path'/>
+<use f='codebrowser/elf/dl-load.c' l='1893' u='r' c='open_path'/>
+<use f='codebrowser/elf/dl-load.c' l='2345' u='r' c='add_path'/>
+<use f='codebrowser/elf/dl-load.c' l='2345' u='r' c='add_path'/>
+<use f='codebrowser/elf/dl-load.c' l='2351' u='r' c='add_path'/>
+<use f='codebrowser/elf/dl-load.c' l='2352' u='r' c='add_path'/>
+<use f='codebrowser/elf/dl-load.c' l='2355' u='r' c='add_path'/>
+<use f='codebrowser/elf/dl-usage.c' l='64' u='r' c='print_search_path_for_help_1'/>

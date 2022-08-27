@@ -1,0 +1,7 @@
+<dec f='codebrowser/misc/search.h' l='155' type='void twalk_r(const void * __root, void (*)(const void *, VISIT, void *) , void * __closure)'/>
+<use f='codebrowser/include/search.h' l='26' c='__twalk_r'/>
+<doc f='codebrowser/misc/search.h' l='153'>/* Like twalk, but pass down a closure parameter instead of the
+   level.  */</doc>
+<def f='codebrowser/misc/tsearch.c' l='755' macro='1' type='void twalk_r(const void * , void (*)(const void *, VISIT, void *) , void * )'/>
+<use f='codebrowser/nss/makedb.c' l='700' u='c' c='compute_tables'/>
+<use f='codebrowser/nss/makedb.c' l='727' u='c' c='compute_tables'/>

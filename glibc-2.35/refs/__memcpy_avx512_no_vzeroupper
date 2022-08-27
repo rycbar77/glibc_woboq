@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='873' type='void * __memcpy_avx512_no_vzeroupper(void * , const void * , unsigned long )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='873' u='r' c='__libc_ifunc_impl_list'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memmove.h' l='44' macro='1' type='void * __memcpy_avx512_no_vzeroupper(void *restrict , const void *restrict , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memmove.h' l='67' macro='1' u='r' c='memcpy_ifunc_selector'/>

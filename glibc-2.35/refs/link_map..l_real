@@ -1,0 +1,31 @@
+<dec f='codebrowser/include/link.h' l='112' type='struct link_map *'/>
+<offset>320</offset>
+<doc f='codebrowser/include/link.h' l='109'>/* This is an element which is only ever different from a pointer to
+       the very same copy of this type for ld.so when it is used in more
+       than one namespace.  */</doc>
+<use f='codebrowser/elf/dl-find_object.c' l='508' u='r' c='_dlfo_process_initial'/>
+<use f='codebrowser/elf/dl-find_object.c' l='790' u='r' c='_dl_find_object_update'/>
+<use f='codebrowser/elf/dl-find_object.c' l='797' u='r' c='_dl_find_object_update'/>
+<use f='codebrowser/elf/dl-fini.c' l='80' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-init.c' l='31' u='r' c='call_init'/>
+<use f='codebrowser/elf/dl-init.c' l='31' u='r' c='call_init'/>
+<use f='codebrowser/elf/dl-init.c' l='31' u='r' c='call_init'/>
+<use f='codebrowser/elf/dl-init.c' l='31' u='r' c='call_init'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='64' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='65' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='66' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='67' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='71' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='73' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-lookup.c' l='374' u='r' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-object.c' l='98' u='w' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-open.c' l='597' u='r' c='dl_open_worker_begin'/>
+<use f='codebrowser/elf/dl-open.c' l='599' u='r' c='dl_open_worker_begin'/>
+<use f='codebrowser/elf/dl-open.c' l='645' u='r' c='dl_open_worker_begin'/>
+<use f='codebrowser/elf/dl-open.c' l='669' u='r' c='dl_open_worker_begin'/>
+<use f='codebrowser/elf/dl-reloc.c' l='111' u='r' c='_dl_try_allocate_static_tls'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='54' u='r' c='_dl_sort_maps_original'/>
+<use f='codebrowser/elf/dl-support.c' l='88' u='w'/>
+<use f='codebrowser/elf/setup-vdso.h' l='79' u='a' c='setup_vdso'/>
+<use f='codebrowser/elf/dl-version.c' l='220' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/rtld.c' l='489' u='w' c='_dl_start_final'/>

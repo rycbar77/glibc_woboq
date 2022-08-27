@@ -1,0 +1,7 @@
+<dec f='codebrowser/posix/unistd.h' l='900' type='int getdomainname(char * __name, size_t __len)'/>
+<doc f='codebrowser/posix/unistd.h' l='897'>/* Get and set the NIS (aka YP) domain name, if any.
+   Called just like `gethostname&apos; and `sethostname&apos;.
+   The NIS domain name is usually the empty string when not using NIS.  */</doc>
+<use f='codebrowser/debug/getdomainname_chk.c' l='27' u='c' c='__getdomainname_chk'/>
+<def f='codebrowser/misc/getdomain.c' l='31' ll='43' type='int getdomainname(char * name, size_t len)'/>
+<doc f='codebrowser/misc/getdomain.c' l='29'>/* The `uname&apos; information includes the domain name.  */</doc>

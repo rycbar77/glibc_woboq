@@ -1,0 +1,4 @@
+<def f='codebrowser/elf/dl-minimal-malloc.c' l='107' ll='117' type='void * __minimal_realloc(void * ptr, size_t n)'/>
+<doc f='codebrowser/elf/dl-minimal-malloc.c' l='106'>/* This is only called with the most recent block returned by malloc.  */</doc>
+<dec f='codebrowser/sysdeps/generic/dl-minimal-malloc.h' l='26' type='void * __minimal_realloc(void * ptr, size_t n)'/>
+<use f='codebrowser/elf/dl-minimal.c' l='46' u='a' c='__rtld_malloc_init_stubs'/>

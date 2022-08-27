@@ -1,0 +1,14 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/dirstream.h' l='38' type='size_t'/>
+<offset>192</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/dirstream.h' l='38'>/* Current offset into the block.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/opendir.c' l='128' u='w' c='__alloc_dir'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='44' u='r' c='__readdir64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='69' u='w' c='__readdir64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='72' u='r' c='__readdir64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='76' u='w' c='__readdir64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='42' u='r' c='__readdir64_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='71' u='w' c='__readdir64_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='74' u='r' c='__readdir64_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='78' u='w' c='__readdir64_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/rewinddir.c' l='33' u='w' c='__rewinddir'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/seekdir.c' l='32' u='w' c='seekdir'/>

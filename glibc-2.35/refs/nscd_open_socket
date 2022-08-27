@@ -1,0 +1,6 @@
+<dec f='codebrowser/nscd/nscd.h' l='255' type='int nscd_open_socket()'/>
+<use f='codebrowser/nscd/nscd.c' l='338' u='c' c='invalidate_db'/>
+<use f='codebrowser/nscd/nscd.c' l='388' u='c' c='send_shutdown'/>
+<def f='codebrowser/nscd/nscd.c' l='532' ll='552' type='int nscd_open_socket()'/>
+<doc f='codebrowser/nscd/nscd.c' l='531'>/* Create a socket connected to a name.  */</doc>
+<use f='codebrowser/nscd/nscd_stat.c' l='194' u='c' c='receive_print_stats'/>

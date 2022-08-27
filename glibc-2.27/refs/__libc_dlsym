@@ -1,0 +1,18 @@
+<dec f='codebrowser/include/dlfcn.h' l='37' type='void * __libc_dlsym(void * __map, const char * __name)'/>
+<dec f='codebrowser/include/dlfcn.h' l='41' type='void * __libc_dlsym(void * , const char * )'/>
+<use f='codebrowser/include/dlfcn.h' l='41' c='__libc_dlsym'/>
+<use f='codebrowser/elf/dl-libc.c' l='176' u='r'/>
+<def f='codebrowser/elf/dl-libc.c' l='236' ll='249' type='void * __libc_dlsym(void * map, const char * name)'/>
+<use f='codebrowser/iconv/gconv_dl.c' l='118' u='c' c='__gconv_find_shlib'/>
+<use f='codebrowser/iconv/gconv_dl.c' l='128' u='c' c='__gconv_find_shlib'/>
+<use f='codebrowser/iconv/gconv_dl.c' l='129' u='c' c='__gconv_find_shlib'/>
+<use f='codebrowser/libidn/idn-stub.c' l='56' u='c' c='load_dso'/>
+<use f='codebrowser/libidn/idn-stub.c' l='57' u='c' c='load_dso'/>
+<use f='codebrowser/nss/nsswitch.c' l='392' u='c' c='nss_load_library'/>
+<use f='codebrowser/nss/nsswitch.c' l='487' u='c' c='__nss_lookup_function'/>
+<use f='codebrowser/sysdeps/gnu/unwind-resume.c' l='45' u='c' c='__libgcc_s_init'/>
+<use f='codebrowser/sysdeps/gnu/unwind-resume.c' l='46' u='c' c='__libgcc_s_init'/>
+<use f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='55' u='c' c='pthread_cancel_init'/>
+<use f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='56' u='c' c='pthread_cancel_init'/>
+<use f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='57' u='c' c='pthread_cancel_init'/>
+<use f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='59' u='c' c='pthread_cancel_init'/>

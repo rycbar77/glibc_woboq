@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/arpa/inet.h' l='15' type='in_addr_t __inet_network(const char * )'/>
+<dec f='codebrowser/include/arpa/inet.h' l='16' type='in_addr_t __inet_network(const char * )'/>
+<use f='codebrowser/include/arpa/inet.h' l='16' c='__inet_network'/>
+<def f='codebrowser/inet/inet_net.c' l='57' ll='109' type='in_addr_t __inet_network(const char * cp)'/>
+<use f='codebrowser/inet/inet_net.c' l='111' c='inet_network'/>
+<doc f='codebrowser/inet/inet_net.c' l='52'>/*
+ * Internet network address interpretation routine.
+ * The library routines call this routine to interpret
+ * network numbers.
+ */</doc>
+<use f='codebrowser/nss/nss_files/files-network.c' l='72' u='c' c='_nss_files_parse_netent'/>

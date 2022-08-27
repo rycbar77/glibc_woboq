@@ -1,0 +1,25 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='105' type='int atoi(const char * __nptr)'/>
+<def f='codebrowser/stdlib/stdlib.h' l='361' ll='365' macro='1' type='int atoi(const char * __nptr)'/>
+<dec f='codebrowser/include/stdlib.h' l='234' type='int atoi(const char * )'/>
+<use f='codebrowser/include/stdlib.h' l='234' c='atoi'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='104'>/* Convert a string to an integer.  */</doc>
+<use f='codebrowser/argp/argp-help.c' l='213' u='c' c='fill_in_uparams'/>
+<use f='codebrowser/argp/argp-parse.c' l='150' u='c' c='argp_default_parser'/>
+<use f='codebrowser/catgets/gencat.c' l='592' u='c' c='read_input_file'/>
+<use f='codebrowser/inet/rexec.c' l='137' u='c' c='rexec_af'/>
+<use f='codebrowser/malloc/memusage.c' l='300' u='c' c='me'/>
+<use f='codebrowser/nis/nis_defaults.c' l='93' u='c' c='searchttl'/>
+<use f='codebrowser/nis/nis_defaults.c' l='102' u='c' c='searchttl'/>
+<use f='codebrowser/nis/nis_defaults.c' l='111' u='c' c='searchttl'/>
+<use f='codebrowser/nis/nis_defaults.c' l='119' u='c' c='searchttl'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='174' u='c' c='nscd_parse_file'/>
+<use f='codebrowser/resolv/res_init.c' l='657' u='c' c='res_setoptions'/>
+<use f='codebrowser/resolv/res_init.c' l='665' u='c' c='res_setoptions'/>
+<use f='codebrowser/resolv/res_init.c' l='673' u='c' c='res_setoptions'/>
+<def f='codebrowser/stdlib/atoi.c' l='24' ll='28' type='int atoi(const char * nptr)'/>
+<doc f='codebrowser/stdlib/atoi.c' l='23'>/* Convert a string to an int.  */</doc>
+<use f='codebrowser/support/shell-container.c' l='150' u='c' c='exit_func'/>
+<use f='codebrowser/support/shell-container.c' l='168' u='c' c='kill_func'/>
+<use f='codebrowser/support/support_test_main.c' l='190' u='c' c='run_test_function'/>
+<use f='codebrowser/support/support_test_main.c' l='204' u='c' c='run_test_function'/>
+<use f='codebrowser/support/support_wait_for_thread_exit.c' l='52' u='c' c='support_wait_for_thread_exit'/>

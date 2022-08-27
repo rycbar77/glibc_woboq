@@ -1,0 +1,29 @@
+<dec f='codebrowser/include/libc-pointer-arith.h' l='50'/>
+<doc f='codebrowser/include/libc-pointer-arith.h' l='45'>/* Align a value by rounding up to closest size.
+   e.g. Using size of 4096, we get this behavior:
+	{4095, 4096, 4097} = {4096, 4096, 8192}.
+
+  Note: The size argument has side effects (expanded multiple times).  */</doc>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='177' u='c'/>
+<use f='codebrowser/elf/dl-load.c' l='899' u='c'/>
+<use f='codebrowser/elf/dl-load.c' l='1160' u='c'/>
+<use f='codebrowser/elf/dl-reloc.c' l='217' u='c'/>
+<use f='codebrowser/elf/readelflib.c' l='227' u='c'/>
+<use f='codebrowser/elf/readelflib.c' l='227' u='c'/>
+<use f='codebrowser/malloc/alloc_buffer_alloc_array.c' l='28' u='c'/>
+<use f='codebrowser/malloc/arena.c' l='518' u='c'/>
+<use f='codebrowser/malloc/arena.c' l='586' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='2459' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='2461' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='2622' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='2656' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='2762' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='3026' u='c'/>
+<use f='codebrowser/nptl/nptl-init.c' l='315' u='c'/>
+<use f='codebrowser/support/test-container.c' l='337' u='c'/>
+<use f='codebrowser/support/test-container.c' l='358' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='349' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86_64/makecontext.c' l='97' u='c'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='218' u='c'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='258' u='c'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='268' u='c'/>

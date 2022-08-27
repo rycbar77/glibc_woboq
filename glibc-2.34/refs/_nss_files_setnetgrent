@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/nss_files.h' l='138' macro='1' type='enum nss_status _nss_files_setnetgrent(const char * , struct __netgrent * )'/>
+<dec f='codebrowser/nss/function.def' l='78' macro='1' type='enum nss_status _nss_files_setnetgrent(const char * , struct __netgrent * )'/>
+<use f='codebrowser/nss/function.def' l='78' macro='1' c='_nss_files_setnetgrent'/>
+<dec f='codebrowser/include/netdb.h' l='285' macro='1' type='enum nss_status _nss_files_setnetgrent(const char * group, struct __netgrent * result)'/>
+<def f='codebrowser/nss/nss_files/files-netgrp.c' l='56' ll='152' type='enum nss_status _nss_files_setnetgrent(const char * group, struct __netgrent * result)'/>

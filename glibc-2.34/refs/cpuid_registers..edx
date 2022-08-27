@@ -1,0 +1,84 @@
+<dec f='codebrowser/sysdeps/x86/include/cpu-features.h' l='844' type='unsigned int'/>
+<offset>96</offset>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='143' macro='1' u='w' c='_dl_tunable_set_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='145' macro='1' u='w' c='_dl_tunable_set_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='146' macro='1' u='w' c='_dl_tunable_set_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='156' macro='1' u='w' c='_dl_tunable_set_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='159' macro='1' u='w' c='_dl_tunable_set_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='286' macro='1' u='r' c='_dl_tunable_set_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='80' macro='1' u='r' c='dl_cet_check'/>
+<use f='codebrowser/sysdeps/x86/get-isa-level.h' l='30' macro='1' u='r' c='get_isa_level'/>
+<use f='codebrowser/sysdeps/x86/get-isa-level.h' l='31' macro='1' u='r' c='get_isa_level'/>
+<use f='codebrowser/sysdeps/x86/get-isa-level.h' l='32' macro='1' u='r' c='get_isa_level'/>
+<use f='codebrowser/sysdeps/x86/get-isa-level.h' l='33' macro='1' u='r' c='get_isa_level'/>
+<use f='codebrowser/sysdeps/x86/get-isa-level.h' l='34' macro='1' u='r' c='get_isa_level'/>
+<use f='codebrowser/sysdeps/x86/get-isa-level.h' l='35' macro='1' u='r' c='get_isa_level'/>
+<use f='codebrowser/sysdeps/x86/get-isa-level.h' l='36' macro='1' u='r' c='get_isa_level'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='526' macro='1' u='r' c='get_common_cache_info'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='896' macro='1' u='r' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='57' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='57' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='58' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='58' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='59' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='59' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='60' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='60' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='61' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='61' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='62' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='62' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='63' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='63' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='64' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='64' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='65' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='65' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='84' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='84' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='85' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='85' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='86' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='86' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='87' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='87' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='93' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='93' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='100' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='104' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='104' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='170' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='170' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='172' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='172' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='187' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='187' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='192' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='192' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='202' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='202' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='204' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='204' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='206' macro='1' u='w' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='206' macro='1' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='309' c='get_extended_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='315' c='get_extended_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='321' c='get_extended_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='335' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='354' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='359' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='367' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='374' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='381' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='560' macro='1' u='r' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='664' macro='1' u='r' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='668' macro='1' u='r' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='721' macro='1' u='w' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='722' macro='1' u='w' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='729' macro='1' u='w' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='731' macro='1' u='w' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='732' macro='1' u='w' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='733' macro='1' u='w' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='734' macro='1' u='w' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='804' macro='1' u='w' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='823' macro='1' u='r' c='init_cpu_features'/>

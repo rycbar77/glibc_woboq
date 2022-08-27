@@ -1,0 +1,6 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='646' type='char * secure_getenv(const char * __name)'/>
+<use f='codebrowser/include/stdlib.h' l='41' c='__libc_secure_getenv'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='644'>/* This function is similar to the above but returns NULL if the
+   programs is running with SUID or SGID enabled.  */</doc>
+<use f='codebrowser/malloc/mtrace-impl.c' l='179' u='c' c='do_mtrace'/>
+<def f='codebrowser/stdlib/secure-getenv.c' l='31' macro='1' type='char * secure_getenv(const char * )'/>

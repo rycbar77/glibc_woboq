@@ -1,0 +1,22 @@
+<dec f='codebrowser/locale/programs/locfile.h' l='119' type='void add_locale_uint32_array(struct locale_file * file, const uint32_t * data, size_t n_elems)'/>
+<use f='codebrowser/locale/programs/3level.h' l='307' u='c' c='add_locale_collidx_table'/>
+<use f='codebrowser/locale/programs/3level.h' l='307' u='c' c='add_locale_collseq_table'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2147' u='c' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2362' u='c' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2507' u='c' c='collate_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='949' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='949' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='949' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='949' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='949' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='949' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='949' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='949' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1067' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1100' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3540' u='c' c='add_locale_wctype_table'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='418' u='c' c='monetary_output'/>
+<use f='codebrowser/locale/programs/locfile.c' l='623' u='c' c='add_locale_wstring'/>
+<def f='codebrowser/locale/programs/locfile.c' l='638' ll='646' type='void add_locale_uint32_array(struct locale_file * file, const uint32_t * data, size_t n_elems)'/>
+<doc f='codebrowser/locale/programs/locfile.c' l='636'>/* Record that FILE&apos;s next element is an array of N_ELEMS integers
+   starting at DATA.  */</doc>

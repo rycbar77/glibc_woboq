@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>strerror_l.c source code [codebrowser/string/strerror_l.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/string/strerror_l.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>string</a>/<a href='strerror_l.c.html'>strerror_l.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Copyright (C) 2007-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="2">2</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="3">3</th><td><i></i></td></tr>
+<tr><th id="4">4</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="5">5</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="6">6</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="7">7</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="8">8</th><td><i></i></td></tr>
+<tr><th id="9">9</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="10">10</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="11">11</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="12">12</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="13">13</th><td><i></i></td></tr>
+<tr><th id="14">14</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="15">15</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="16">16</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><u>#include <a href="../include/libintl.h.html">&lt;libintl.h&gt;</a></u></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../include/locale.h.html">&lt;locale.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/tls-internal.h.html">&lt;tls-internal.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>static</em> <em>const</em> <em>char</em> *</td></tr>
+<tr><th id="26">26</th><td><dfn class="tu decl def fn" id="translate" title='translate' data-type='const char * translate(const char * str, locale_t loc)' data-ref="translate" data-ref-filename="translate">translate</dfn> (<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="1str" title='str' data-type='const char *' data-ref="1str" data-ref-filename="1str">str</dfn>, <a class="typedef" href="../locale/bits/types/locale_t.h.html#locale_t" title='locale_t' data-type='__locale_t' data-ref="locale_t" data-ref-filename="locale_t">locale_t</a> <dfn class="local col2 decl" id="2loc" title='loc' data-type='locale_t' data-ref="2loc" data-ref-filename="2loc">loc</dfn>)</td></tr>
+<tr><th id="27">27</th><td>{</td></tr>
+<tr><th id="28">28</th><td>  <a class="typedef" href="../locale/bits/types/locale_t.h.html#locale_t" title='locale_t' data-type='__locale_t' data-ref="locale_t" data-ref-filename="locale_t">locale_t</a> <dfn class="local col3 decl" id="3oldloc" title='oldloc' data-type='locale_t' data-ref="3oldloc" data-ref-filename="3oldloc">oldloc</dfn> = <a class="ref fn" href="../include/locale.h.html#__uselocale" title='__uselocale' data-ref="__uselocale" data-ref-filename="__uselocale">__uselocale</a> (<a class="local col2 ref" href="#2loc" title='loc' data-ref="2loc" data-ref-filename="2loc">loc</a>);</td></tr>
+<tr><th id="29">29</th><td>  <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="4res" title='res' data-type='const char *' data-ref="4res" data-ref-filename="4res">res</dfn> = <a class="macro" href="../include/libintl.h.html#48" title="__dcgettext (_libc_intl_domainname, str, 5)" data-ref="_M/_">_</a>(<a class="local col1 ref" href="#1str" title='str' data-ref="1str" data-ref-filename="1str">str</a>);</td></tr>
+<tr><th id="30">30</th><td>  <a class="ref fn" href="../include/locale.h.html#__uselocale" title='__uselocale' data-ref="__uselocale" data-ref-filename="__uselocale">__uselocale</a> (<a class="local col3 ref" href="#3oldloc" title='oldloc' data-ref="3oldloc" data-ref-filename="3oldloc">oldloc</a>);</td></tr>
+<tr><th id="31">31</th><td>  <b>return</b> <a class="local col4 ref" href="#4res" title='res' data-ref="4res" data-ref-filename="4res">res</a>;</td></tr>
+<tr><th id="32">32</th><td>}</td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><i>/* Return a string describing the errno code in ERRNUM.  */</i></td></tr>
+<tr><th id="36">36</th><td><em>char</em> *</td></tr>
+<tr><th id="37">37</th><td><dfn class="decl def fn" id="__strerror_l" title='__strerror_l' data-ref="__strerror_l" data-ref-filename="__strerror_l">__strerror_l</dfn> (<em>int</em> <dfn class="local col5 decl" id="5errnum" title='errnum' data-type='int' data-ref="5errnum" data-ref-filename="5errnum">errnum</dfn>, <a class="typedef" href="../locale/bits/types/locale_t.h.html#locale_t" title='locale_t' data-type='__locale_t' data-ref="locale_t" data-ref-filename="locale_t">locale_t</a> <dfn class="local col6 decl" id="6loc" title='loc' data-type='locale_t' data-ref="6loc" data-ref-filename="6loc">loc</dfn>)</td></tr>
+<tr><th id="38">38</th><td>{</td></tr>
+<tr><th id="39">39</th><td>  <em>int</em> <dfn class="local col7 decl" id="7saved_errno" title='saved_errno' data-type='int' data-ref="7saved_errno" data-ref-filename="7saved_errno">saved_errno</dfn> = <a class="macro" href="../include/errno.h.html#27" title="__libc_errno" data-ref="_M/errno">errno</a>;</td></tr>
+<tr><th id="40">40</th><td>  <em>char</em> *<dfn class="local col8 decl" id="8err" title='err' data-type='char *' data-ref="8err" data-ref-filename="8err">err</dfn> = (<em>char</em> *) <a class="ref fn" href="../include/stdio.h.html#__get_errlist" title='__get_errlist' data-ref="__get_errlist" data-ref-filename="__get_errlist">__get_errlist</a> (<a class="local col5 ref" href="#5errnum" title='errnum' data-ref="5errnum" data-ref-filename="5errnum">errnum</a>);</td></tr>
+<tr><th id="41">41</th><td>  <b>if</b> (<a class="macro" href="../misc/sys/cdefs.h.html#510" title="__builtin_expect ((err == ((void*)0)), 0)" data-ref="_M/__glibc_unlikely">__glibc_unlikely</a> (<a class="local col8 ref" href="#8err" title='err' data-ref="8err" data-ref-filename="8err">err</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>))</td></tr>
+<tr><th id="42">42</th><td>    {</td></tr>
+<tr><th id="43">43</th><td>      <b>struct</b> <a class="type" href="../sysdeps/generic/tls-internal-struct.h.html#tls_internal_t" title='tls_internal_t' data-ref="tls_internal_t" data-ref-filename="tls_internal_t">tls_internal_t</a> *<dfn class="local col9 decl" id="9tls_internal" title='tls_internal' data-type='struct tls_internal_t *' data-ref="9tls_internal" data-ref-filename="9tls_internal">tls_internal</dfn> = <a class="ref fn" href="../sysdeps/unix/sysv/linux/tls-internal.h.html#__glibc_tls_internal" title='__glibc_tls_internal' data-ref="__glibc_tls_internal" data-ref-filename="__glibc_tls_internal">__glibc_tls_internal</a> ();</td></tr>
+<tr><th id="44">44</th><td>      <a class="ref fn" href="../stdlib/stdlib.h.html#free" title='free' data-ref="free" data-ref-filename="free">free</a> (<a class="local col9 ref" href="#9tls_internal" title='tls_internal' data-ref="9tls_internal" data-ref-filename="9tls_internal">tls_internal</a>-&gt;<a class="ref field" href="../sysdeps/generic/tls-internal-struct.h.html#tls_internal_t::strerror_l_buf" title='tls_internal_t::strerror_l_buf' data-ref="tls_internal_t::strerror_l_buf" data-ref-filename="tls_internal_t..strerror_l_buf">strerror_l_buf</a>);</td></tr>
+<tr><th id="45">45</th><td>      <b>if</b> (<a class="ref fn" href="../libio/stdio.h.html#__asprintf" title='__asprintf' data-ref="__asprintf" data-ref-filename="__asprintf">__asprintf</a> (&amp;<a class="local col9 ref" href="#9tls_internal" title='tls_internal' data-ref="9tls_internal" data-ref-filename="9tls_internal">tls_internal</a>-&gt;<a class="ref field" href="../sysdeps/generic/tls-internal-struct.h.html#tls_internal_t::strerror_l_buf" title='tls_internal_t::strerror_l_buf' data-ref="tls_internal_t::strerror_l_buf" data-ref-filename="tls_internal_t..strerror_l_buf">strerror_l_buf</a>, <q>"%s%d"</q>,</td></tr>
+<tr><th id="46">46</th><td>		      <a class="tu ref fn" href="#translate" title='translate' data-use='c' data-ref="translate" data-ref-filename="translate">translate</a> (<q>"Unknown error "</q>, <a class="local col6 ref" href="#6loc" title='loc' data-ref="6loc" data-ref-filename="6loc">loc</a>), <a class="local col5 ref" href="#5errnum" title='errnum' data-ref="5errnum" data-ref-filename="5errnum">errnum</a>) == -<var>1</var>)</td></tr>
+<tr><th id="47">47</th><td>	<a class="local col9 ref" href="#9tls_internal" title='tls_internal' data-ref="9tls_internal" data-ref-filename="9tls_internal">tls_internal</a>-&gt;<a class="ref field" href="../sysdeps/generic/tls-internal-struct.h.html#tls_internal_t::strerror_l_buf" title='tls_internal_t::strerror_l_buf' data-ref="tls_internal_t::strerror_l_buf" data-ref-filename="tls_internal_t..strerror_l_buf">strerror_l_buf</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td>      <a class="local col8 ref" href="#8err" title='err' data-ref="8err" data-ref-filename="8err">err</a> = <a class="local col9 ref" href="#9tls_internal" title='tls_internal' data-ref="9tls_internal" data-ref-filename="9tls_internal">tls_internal</a>-&gt;<a class="ref field" href="../sysdeps/generic/tls-internal-struct.h.html#tls_internal_t::strerror_l_buf" title='tls_internal_t::strerror_l_buf' data-ref="tls_internal_t::strerror_l_buf" data-ref-filename="tls_internal_t..strerror_l_buf">strerror_l_buf</a>;</td></tr>
+<tr><th id="50">50</th><td>    }</td></tr>
+<tr><th id="51">51</th><td>  <b>else</b></td></tr>
+<tr><th id="52">52</th><td>    <a class="local col8 ref" href="#8err" title='err' data-ref="8err" data-ref-filename="8err">err</a> = (<em>char</em> *) <a class="tu ref fn" href="#translate" title='translate' data-use='c' data-ref="translate" data-ref-filename="translate">translate</a> (<a class="local col8 ref" href="#8err" title='err' data-ref="8err" data-ref-filename="8err">err</a>, <a class="local col6 ref" href="#6loc" title='loc' data-ref="6loc" data-ref-filename="6loc">loc</a>);</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td>  <a class="macro" href="../include/errno.h.html#35" title="(__libc_errno = (saved_errno))" data-ref="_M/__set_errno">__set_errno</a> (<a class="local col7 ref" href="#7saved_errno" title='saved_errno' data-ref="7saved_errno" data-ref-filename="7saved_errno">saved_errno</a>);</td></tr>
+<tr><th id="55">55</th><td>  <b>return</b> <a class="local col8 ref" href="#8err" title='err' data-ref="8err" data-ref-filename="8err">err</a>;</td></tr>
+<tr><th id="56">56</th><td>}</td></tr>
+<tr><th id="57">57</th><td><a class="macro" href="../include/libc-symbols.h.html#153" title="extern __typeof (__strerror_l) strerror_l __attribute__ ((weak, alias (&quot;__strerror_l&quot;))) ;" data-ref="_M/weak_alias">weak_alias</a> (<a class="ref fn" href="#__strerror_l" title='__strerror_l' data-ref="__strerror_l" data-ref-filename="__strerror_l">__strerror_l</a>, <dfn class="decl def fn" id="strerror_l" title='strerror_l' data-ref="strerror_l" data-ref-filename="strerror_l">strerror_l</dfn>)</td></tr>
+<tr><th id="58">58</th><td><a class="macro" href="../include/libc-symbols.h.html#623" title="" data-ref="_M/libc_hidden_def">libc_hidden_def</a> (__strerror_l)</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

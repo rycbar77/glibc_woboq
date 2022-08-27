@@ -1,0 +1,4 @@
+<dec f='codebrowser/libio/stdio.h' l='294' type='FILE * fopencookie(void *restrict __magic_cookie, const char *restrict __modes, cookie_io_functions_t __io_funcs)'/>
+<doc f='codebrowser/libio/stdio.h' l='292'>/* Create a new stream that refers to the given magic cookie,
+   and uses the given functions for input and output.  */</doc>
+<def f='codebrowser/libio/iofopncook.c' l='217' macro='1' type='FILE * fopencookie(void * , const char * , cookie_io_functions_t )'/>

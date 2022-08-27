@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='392' type='struct r_search_path_elem *'/>
+<use f='codebrowser/elf/dl-libc.c' l='331' macro='1' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-load.c' l='491' macro='1' u='r' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='543' macro='1' u='r' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='544' macro='1' u='w' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='730' macro='1' u='w' c='_dl_init_paths'/>
+<def f='codebrowser/elf/dl-support.c' l='150' type='struct r_search_path_elem *'/>
+<use f='codebrowser/elf/dl-support.c' l='345' macro='1' u='r' c='_dl_non_dynamic_init'/>
+<doc f='codebrowser/elf/dl-support.c' l='149'>/* All known directories in sorted order.  */</doc>

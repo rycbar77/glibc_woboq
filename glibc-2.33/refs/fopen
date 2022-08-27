@@ -1,0 +1,19 @@
+<dec f='codebrowser/libio/stdio.h' l='246' type='FILE * fopen(const char *restrict __filename, const char *restrict __modes)'/>
+<doc f='codebrowser/libio/stdio.h' l='242'>/* Open a file and create a new stream for it.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='284' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='1022' u='c' c='write_out'/>
+<use f='codebrowser/elf/readlib.c' l='92' u='c' c='process_file'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='139' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='426' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='672' u='c' c='handle_dir'/>
+<def f='codebrowser/libio/iofopen.c' l='91' macro='1' type='FILE * fopen(const char * , const char * )'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='223' u='c' c='charmap_open'/>
+<use f='codebrowser/locale/programs/linereader.c' l='58' u='c' c='lr_open'/>
+<use f='codebrowser/locale/programs/locale.c' l='532' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1201' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/support/support_ptrace.c' l='34' u='c' c='support_ptrace_scope'/>
+<use f='codebrowser/support/support_test_main.c' l='372' u='c' c='support_test_main'/>
+<use f='codebrowser/support/xfopen.c' l='27' u='c' c='xfopen'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='667' type='const Elf64_Phdr *'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='666'>/* dl-support.c defines these and initializes them early on.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='114' u='r' c='__libc_setup_tls'/>
+<use f='codebrowser/csu/libc-tls.c' l='115' u='r' c='__libc_setup_tls'/>
+<use f='codebrowser/csu/libc-tls.c' l='115' u='r' c='__libc_setup_tls'/>
+<def f='codebrowser/elf/dl-support.c' l='158' type='const Elf64_Phdr *'/>
+<use f='codebrowser/elf/dl-support.c' l='246' macro='1' u='w' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='312' macro='1' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='376' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='377' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='377' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/csu/libc-start.c' l='167' macro='1' u='r' c='__libc_start_main'/>
+<use f='codebrowser/csu/libc-start.c' l='180' macro='1' u='r' c='__libc_start_main'/>
+<use f='codebrowser/csu/libc-start.c' l='180' macro='1' u='r' c='__libc_start_main'/>
+<use f='codebrowser/csu/libc-start.c' l='181' macro='1' u='w' c='__libc_start_main'/>

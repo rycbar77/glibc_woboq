@@ -1,0 +1,4 @@
+<dec f='codebrowser/socket/sys/socket.h' l='216' type='ssize_t recvmsg(int __fd, struct msghdr * __message, int __flags)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='170' macro='1' u='c' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_native.c' l='125' macro='1' u='c' c='__check_native'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/recvmsg.c' l='59' macro='1' type='ssize_t recvmsg(int , struct msghdr * , int )'/>

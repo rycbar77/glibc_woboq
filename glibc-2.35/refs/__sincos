@@ -1,0 +1,23 @@
+<dec f='codebrowser/math/bits/mathcalls.h' l='79' macro='1' type='void __sincos(double __x, double * __sinx, double * __cosx)'/>
+<use f='codebrowser/math/s_ccosh_template.c' l='44' macro='1' u='c' c='__ccosh'/>
+<use f='codebrowser/math/s_ccosh_template.c' l='104' macro='1' u='c' c='__ccosh'/>
+<use f='codebrowser/math/s_cexp_template.c' l='44' macro='1' u='c' c='__cexp'/>
+<use f='codebrowser/math/s_cexp_template.c' l='109' macro='1' u='c' c='__cexp'/>
+<use f='codebrowser/math/s_csin_template.c' l='47' macro='1' u='c' c='__csin'/>
+<use f='codebrowser/math/s_csin_template.c' l='127' macro='1' u='c' c='__csin'/>
+<use f='codebrowser/math/s_csinh_template.c' l='47' macro='1' u='c' c='__csinh'/>
+<use f='codebrowser/math/s_csinh_template.c' l='121' macro='1' u='c' c='__csinh'/>
+<use f='codebrowser/math/s_ctan_template.c' l='38' macro='1' u='c' c='__ctan'/>
+<use f='codebrowser/math/s_ctan_template.c' l='72' macro='1' u='c' c='__ctan'/>
+<use f='codebrowser/math/s_ctanh_template.c' l='39' macro='1' u='c' c='__ctanh'/>
+<use f='codebrowser/math/s_ctanh_template.c' l='72' macro='1' u='c' c='__ctanh'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_j0.c' l='98' u='c' c='__ieee754_j0'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_j0.c' l='189' u='c' c='__ieee754_y0'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_j1.c' l='102' u='c' c='__ieee754_j1'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_j1.c' l='186' u='c' c='__ieee754_y1'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_jn.c' l='106' u='c' c='__ieee754_jn'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_jn.c' l='314' u='c' c='__ieee754_yn'/>
+<def f='codebrowser/sysdeps/ieee754/dbl-64/s_sincos.c' l='30' ll='102' type='void __sincos(double x, double * sinx, double * cosx)'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sincos.c' l='103' c='sincos'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sincos.c' l='103' c='sincosf64'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/s_sincos.c' l='103' c='sincosf32x'/>

@@ -1,0 +1,11 @@
+<def f='codebrowser/resolv/gai_misc.h' l='44' ll='55'/>
+<use f='codebrowser/resolv/gai_misc.h' l='48'/>
+<use f='codebrowser/resolv/gai_misc.h' l='78' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.h' l='82' c='__gai_find_request'/>
+<use f='codebrowser/resolv/gai_misc.h' l='90' c='__gai_notify'/>
+<size>32</size>
+<doc f='codebrowser/resolv/gai_misc.h' l='43'>/* Used to queue requests..  */</doc>
+<mbr r='requestlist::running' o='0' t='int'/>
+<mbr r='requestlist::next' o='64' t='struct requestlist *'/>
+<mbr r='requestlist::gaicbp' o='128' t='struct gaicb *'/>
+<mbr r='requestlist::waiting' o='192' t='struct waitlist *'/>

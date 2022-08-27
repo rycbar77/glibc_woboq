@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='32' type='pthread_once_t'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='31'>/* Control variable for helper thread creation.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='71' u='a' c='___timer_create'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='110' type='pthread_once_t'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='121' u='w' c='__timer_fork_subprocess'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='109'>/* Control variable for helper thread creation.  */</doc>

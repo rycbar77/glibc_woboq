@@ -1,0 +1,10 @@
+<def f='codebrowser/sysdeps/generic/dl-cache.h' l='272' ll='275'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='280' c='cache_extension_verify'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='301' c='cache_extension_load'/>
+<use f='codebrowser/elf/cache.c' l='271' c='glibc_hwcaps_string'/>
+<use f='codebrowser/elf/cache.c' l='301' c='print_extensions'/>
+<use f='codebrowser/elf/cache.c' l='401' c='print_cache'/>
+<size>48</size>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='270'>/* All supported extension sections, relocated.  Filled in by
+   cache_extension_load below.  */</doc>
+<mbr r='cache_extension_all_loaded::sections' o='0' t='struct cache_extension_loaded[2]'/>

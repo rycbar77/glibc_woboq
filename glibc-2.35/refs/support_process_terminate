@@ -1,0 +1,4 @@
+<dec f='codebrowser/support/subprocess.h' l='52' type='int support_process_terminate(struct support_subprocess * proc)'/>
+<doc f='codebrowser/support/subprocess.h' l='50'>/* Terminate the subprocess indicated by PROC::PID, first with a SIGTERM and
+   then with a SIGKILL.  Return the status as for waitpid call.  */</doc>
+<def f='codebrowser/support/support_subprocess.c' l='149' ll='165' type='int support_process_terminate(struct support_subprocess * proc)'/>

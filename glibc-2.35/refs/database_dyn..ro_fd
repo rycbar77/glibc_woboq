@@ -1,0 +1,16 @@
+<dec f='codebrowser/nscd/nscd.h' l='149' type='int'/>
+<offset>2144</offset>
+<doc f='codebrowser/nscd/nscd.h' l='149'>/* Unwritable file descriptor.  */</doc>
+<use f='codebrowser/nscd/connections.c' l='130' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='149' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='168' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='187' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='206' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='581' u='w' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='583' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='744' u='w' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='776' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='776' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='997' u='r' c='send_ro_fd'/>
+<use f='codebrowser/nscd/connections.c' l='1026' u='r' c='send_ro_fd'/>
+<use f='codebrowser/nscd/connections.c' l='1038' u='r' c='send_ro_fd'/>

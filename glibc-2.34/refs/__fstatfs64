@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/sys/statfs.h' l='13' type='int __fstatfs64(int __fildes, struct statfs64 * __buf)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fstatfs64.c' l='28' ll='36' type='int __fstatfs64(int fd, struct statfs64 * buf)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatfs64.c' l='37' c='fstatfs64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatfs64.c' l='40' c='__fstatfs'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatfs64.c' l='41' c='fstatfs'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/fstatfs64.c' l='27'>/* Return information about the filesystem on which FD resides.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatvfs64.c' l='32' u='c' c='__fstatvfs64'/>
+<use f='codebrowser/sysdeps/posix/posix_fallocate.c' l='82' u='c' c='internal_fallocate'/>
+<use f='codebrowser/sysdeps/posix/posix_fallocate64.c' l='82' u='c' c='internal_fallocate64'/>

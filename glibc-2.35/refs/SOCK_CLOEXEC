@@ -1,0 +1,21 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/socket_type.h' l='49' type='524288'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/socket_type.h' l='46'>/* Flags to be ORed into the type parameter of socket and socketpair and
+     used for the flags parameter of paccept.  */</doc>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/socket_type.h' l='49'>/* Atomically set close-on-exec flag for the
+				   new descriptor(s).  */</doc>
+<use f='codebrowser/misc/syslog.c' l='325' macro='1' u='r' c='openlog_internal'/>
+<use f='codebrowser/nis/nis_findserv.c' l='144' macro='1' u='r' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/nis/ypclnt.c' l='76' macro='1' u='r' c='yp_bind_client_create'/>
+<use f='codebrowser/nscd/connections.c' l='781' macro='1' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='813' macro='1' u='r' c='nscd_init'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2335' macro='1' u='r' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='316' macro='1' u='r' c='__check_pf'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_native.c' l='44' macro='1' u='r' c='__check_native'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='171' macro='1' u='r' c='open_socket'/>
+<use f='codebrowser/resolv/res_send.c' l='608' macro='1' u='r' c='send_vc'/>
+<use f='codebrowser/resolv/res_send.c' l='805' macro='1' u='r' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='812' macro='1' u='r' c='reopen'/>
+<use f='codebrowser/socket/opensock.c' l='28' macro='1' u='r' c='__opensock'/>
+<use f='codebrowser/support/support_enter_network_namespace.c' l='47' macro='1' u='r' c='support_enter_network_namespace'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='257' macro='1' u='r' c='__netlink_open'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='159' macro='1' u='r' c='init_mq_netlink'/>

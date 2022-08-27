@@ -1,0 +1,10 @@
+<dec f='codebrowser/elf/dl-main.h' l='59' type='char[255]'/>
+<offset>1216</offset>
+<doc f='codebrowser/elf/dl-main.h' l='57'>/* Scratch buffer for returning a name which is part of the strings
+     in audit_strings.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='247' u='r' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='249' u='r' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='250' u='w' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='254' u='w' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='262' u='r' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='263' u='r' c='audit_list_next'/>

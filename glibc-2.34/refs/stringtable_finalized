@@ -1,0 +1,10 @@
+<def f='codebrowser/elf/stringtable.h' l='48' ll='52'/>
+<use f='codebrowser/elf/stringtable.h' l='57' c='stringtable_finalize'/>
+<use f='codebrowser/elf/cache.c' l='590' c='save_cache'/>
+<size>16</size>
+<doc f='codebrowser/elf/stringtable.h' l='46'>/* Result of stringtable_finalize.  SIZE bytes at STRINGS should be
+   written to the file.  */</doc>
+<mbr r='stringtable_finalized::strings' o='0' t='char *'/>
+<mbr r='stringtable_finalized::size' o='64' t='size_t'/>
+<use f='codebrowser/elf/stringtable.c' l='150' c='stringtable_finalize'/>
+<size>16</size>

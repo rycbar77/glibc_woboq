@@ -1,0 +1,28 @@
+<dec f='codebrowser/include/list_t.h' l='27' type='struct list_head *'/>
+<offset>64</offset>
+<use f='codebrowser/include/list.h' l='44' u='w' c='list_add'/>
+<use f='codebrowser/include/list.h' l='45' u='w' c='list_add'/>
+<use f='codebrowser/include/list.h' l='55' u='w' c='list_del'/>
+<use f='codebrowser/include/list.h' l='55' u='r' c='list_del'/>
+<use f='codebrowser/include/list.h' l='56' u='r' c='list_del'/>
+<use f='codebrowser/include/list.h' l='67' u='w' c='list_splice'/>
+<use f='codebrowser/include/list.h' l='68' u='r' c='list_splice'/>
+<use f='codebrowser/include/list.h' l='69' u='w' c='list_splice'/>
+<use f='codebrowser/include/list.h' l='69' u='r' c='list_splice'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='64' macro='1' u='r' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='64' macro='1' u='r' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='64' macro='1' u='r' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl_db/structs.def' l='67' u='r'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='76' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='78' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='83' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='83' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='85' u='w' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='92' u='w' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='92' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='93' u='r' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='143' macro='1' u='w' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='144' macro='1' u='w' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='56' macro='1' u='w' c='__tls_pre_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='57' macro='1' u='w' c='__tls_pre_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='58' macro='1' u='w' c='__tls_pre_init_tp'/>

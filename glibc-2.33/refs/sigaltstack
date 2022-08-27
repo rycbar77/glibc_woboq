@@ -1,0 +1,6 @@
+<dec f='codebrowser/signal/signal.h' l='319' type='int sigaltstack(const stack_t *restrict __ss, stack_t *restrict __oss)'/>
+<doc f='codebrowser/signal/signal.h' l='317'>/* Alternate signal handler stack interface.
+   This interface should always be preferred over `sigstack&apos;.  */</doc>
+<use f='codebrowser/support/xsigstack.c' l='87' u='c' c='xalloc_sigstack'/>
+<use f='codebrowser/support/xsigstack.c' l='100' u='c' c='xfree_sigstack'/>
+<use f='codebrowser/debug/segfault.c' l='173' u='c' c='install_handler'/>

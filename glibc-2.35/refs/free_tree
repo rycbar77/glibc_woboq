@@ -1,0 +1,12 @@
+<dec f='codebrowser/posix/regcomp.c' l='124' type='reg_errcode_t free_tree(void * extra, bin_tree_t * node)'/>
+<use f='codebrowser/posix/regcomp.c' l='2173' u='r' c='parse_reg_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='2216' u='r' c='parse_branch'/>
+<use f='codebrowser/posix/regcomp.c' l='2224' u='r' c='parse_branch'/>
+<use f='codebrowser/posix/regcomp.c' l='2225' u='r' c='parse_branch'/>
+<use f='codebrowser/posix/regcomp.c' l='2452' u='r' c='parse_expression'/>
+<use f='codebrowser/posix/regcomp.c' l='2462' u='r' c='parse_expression'/>
+<use f='codebrowser/posix/regcomp.c' l='2499' u='r' c='parse_sub_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='2598' u='r' c='parse_dup_op'/>
+<def f='codebrowser/posix/regcomp.c' l='3884' ll='3889' type='reg_errcode_t free_tree(void * extra, bin_tree_t * node)'/>
+<doc f='codebrowser/posix/regcomp.c' l='3881'>/* Worker function for tree walking.  Free the allocated memory inside NODE
+   and its children. */</doc>

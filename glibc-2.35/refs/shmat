@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysvipc/sys/shm.h' l='65' type='void * shmat(int __shmid, const void * __shmaddr, int __shmflg)'/>
+<doc f='codebrowser/sysvipc/sys/shm.h' l='64'>/* Attach shared memory segment.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/shmat.c' l='26' ll='42' type='void * shmat(int shmid, const void * shmaddr, int shmflg)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/shmat.c' l='22'>/* Attach the shared memory segment associated with SHMID to the data
+   segment of the calling process.  SHMADDR and SHMFLG determine how
+   and where the segment is attached.  */</doc>

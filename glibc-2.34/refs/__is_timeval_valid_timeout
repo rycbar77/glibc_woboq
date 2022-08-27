@@ -1,0 +1,7 @@
+<def f='codebrowser/inet/net-internal.h' l='151' ll='155' type='_Bool __is_timeval_valid_timeout(struct timeval tv)'/>
+<use f='codebrowser/inet/deadline.c' l='49' u='c' c='__deadline_from_timeval'/>
+<use f='codebrowser/inet/deadline.c' l='49' u='c' c='__deadline_from_timeval'/>
+<doc f='codebrowser/inet/net-internal.h' l='149'>/* Return true if TV.tv_sec is non-negative and TV.tv_usec is in the
+   interval [0, 999999].  */</doc>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='319' u='c' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='325' u='c' c='clntudp_call'/>

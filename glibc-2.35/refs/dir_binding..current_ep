@@ -1,0 +1,10 @@
+<dec f='codebrowser/nis/rpcsvc/nislib.h' l='260' type='unsigned int'/>
+<offset>192</offset>
+<doc f='codebrowser/nis/rpcsvc/nislib.h' l='260'>/* Which endpoint of the server are in use? */</doc>
+<use f='codebrowser/nis/nis_call.c' l='84' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='90' u='w' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='104' u='w' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='195' u='r' c='__nisbind_connect'/>
+<use f='codebrowser/nis/nis_call.c' l='288' u='w' c='__nisbind_create'/>
+<use f='codebrowser/nis/nis_call.c' l='779' u='r' c='__nisfind_server'/>
+<use f='codebrowser/nis/nis_findserv.c' l='181' u='w' c='__nis_findfastest_with_timeout'/>

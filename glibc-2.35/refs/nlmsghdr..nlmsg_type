@@ -1,0 +1,22 @@
+<dec f='include/linux/netlink.h' l='46' type='__u16'/>
+<offset>32</offset>
+<doc f='include/linux/netlink.h' l='46'>/* Message content */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='126' u='w' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='187' u='r' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='262' u='r' c='make_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_native.c' l='72' u='w' c='__check_native'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_native.c' l='142' u='r' c='__check_native'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_native.c' l='164' u='r' c='__check_native'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='120' u='r' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='123' u='r' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='154' u='r' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='157' u='r' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='108' u='w' c='__netlink_sendreq'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='195' u='r' c='__netlink_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='201' u='r' c='__netlink_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='380' u='r' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='383' u='r' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='406' u='r' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='455' u='r' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='458' u='r' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='551' u='r' c='getifaddrs_internal'/>

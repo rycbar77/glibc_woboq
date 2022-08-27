@@ -1,0 +1,57 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='322' type='struct link_map *'/>
+<offset>0</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='321'>/* A pointer to the map for the main map.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='115' u='r' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/dl-close.c' l='177' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='816' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='820' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-conflict.c' l='57' u='r' c='_dl_resolve_conflicts'/>
+<use f='codebrowser/elf/dl-debug.c' l='59' u='r' c='_dl_debug_initialize'/>
+<use f='codebrowser/elf/dl-deps.c' l='508' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-fini.c' l='73' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-fini.c' l='73' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-fini.c' l='74' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='63' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-libc.c' l='276' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-load.c' l='780' u='r' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='997' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1945' u='r' c='open_path'/>
+<use f='codebrowser/elf/dl-load.c' l='2047' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2140' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2174' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2191' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2213' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2245' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2259' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2280' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2422' u='r' c='_dl_rtld_di_serinfo'/>
+<use f='codebrowser/elf/dl-lookup.c' l='694' u='r' c='add_dependency'/>
+<use f='codebrowser/elf/dl-sym-post.h' l='30' u='r' c='_dl_sym_find_caller_link_map'/>
+<use f='codebrowser/elf/dl-object.c' l='35' u='r' c='_dl_add_to_namespace_list'/>
+<use f='codebrowser/elf/dl-object.c' l='37' u='r' c='_dl_add_to_namespace_list'/>
+<use f='codebrowser/elf/dl-object.c' l='45' u='w' c='_dl_add_to_namespace_list'/>
+<use f='codebrowser/elf/dl-object.c' l='152' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='154' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-open.c' l='215' u='r' c='_dl_find_dso_for_object'/>
+<use f='codebrowser/elf/dl-open.c' l='448' u='r' c='activate_nodelete'/>
+<use f='codebrowser/elf/dl-open.c' l='504' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='816' u='r' c='_dl_open'/>
+<use f='codebrowser/elf/dl-open.c' l='846' u='r' c='_dl_open'/>
+<use f='codebrowser/elf/dl-support.c' l='112' u='w'/>
+<use f='codebrowser/elf/dl-sym.c' l='133' u='r' c='do_sym'/>
+<use f='codebrowser/elf/dl-usage.c' l='93' u='r' c='print_search_path_for_help'/>
+<use f='codebrowser/elf/dl-version.c' l='37' u='r' c='find_needed'/>
+<use f='codebrowser/elf/rtld.c' l='685' u='r' c='version_check_doit'/>
+<use f='codebrowser/elf/rtld.c' l='695' u='r' c='find_needed'/>
+<use f='codebrowser/elf/rtld.c' l='770' u='r' c='init_tls'/>
+<use f='codebrowser/elf/rtld.c' l='770' u='r' c='init_tls'/>
+<use f='codebrowser/elf/rtld.c' l='772' u='r' c='init_tls'/>
+<use f='codebrowser/elf/rtld.c' l='921' u='r' c='unload_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='921' u='r' c='unload_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='1372' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1431' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1431' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2480' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2913' u='r' c='print_statistics'/>
+<use f='codebrowser/elf/rtld.c' l='2916' u='r' c='print_statistics'/>
+<use f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='129' u='r' c='__cxa_thread_atexit_impl'/>

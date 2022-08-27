@@ -1,0 +1,9 @@
+<dec f='codebrowser/iconv/gconv_int.h' l='300' type='wint_t __gconv_btwoc_ascii(struct __gconv_step * step, unsigned char c)'/>
+<doc f='codebrowser/iconv/gconv_int.h' l='298'>/* Specialized conversion function for a single byte to INTERNAL, recognizing
+   only ASCII characters.  */</doc>
+<use f='codebrowser/iconv/gconv_builtin.h' l='55' u='r'/>
+<use f='codebrowser/iconv/gconv_builtin.h' l='85' u='r'/>
+<def f='codebrowser/iconv/gconv_simple.c' l='47' ll='54' type='wint_t __gconv_btwoc_ascii(struct __gconv_step * step, unsigned char c)'/>
+<doc f='codebrowser/iconv/gconv_simple.c' l='45'>/* Specialized conversion function for a single byte to INTERNAL, recognizing
+   only ASCII characters.  */</doc>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='39' u='r'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='116' type='int __aio_notify_only(struct sigevent * sigev)'/>
+<doc f='codebrowser/sysdeps/generic/aio_misc.h' l='115'>/* Notify initiator of request.  */</doc>
+<def f='codebrowser/rt/aio_notify.c' l='54' ll='111' type='int __aio_notify_only(struct sigevent * sigev)'/>
+<use f='codebrowser/rt/aio_notify.c' l='120' u='c' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_notify.c' l='153' u='c' c='__aio_notify'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='126' u='c' c='lio_listio_internal'/>

@@ -1,0 +1,13 @@
+<use f='codebrowser/locale/programs/localedef.h' l='102'/>
+<def f='codebrowser/locale/programs/ld-telephone.c' l='34' ll='40'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='48' c='telephone_startup'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='49' c='telephone_startup'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='62' c='telephone_finish'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='173' c='telephone_output'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='193' c='telephone_read'/>
+<size>32</size>
+<doc f='codebrowser/locale/programs/ld-telephone.c' l='33'>/* The real definition of the struct for the LC_TELEPHONE locale.  */</doc>
+<mbr r='locale_telephone_t::tel_int_fmt' o='0' t='const char *'/>
+<mbr r='locale_telephone_t::tel_dom_fmt' o='64' t='const char *'/>
+<mbr r='locale_telephone_t::int_select' o='128' t='const char *'/>
+<mbr r='locale_telephone_t::int_prefix' o='192' t='const char *'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='170' type='1'/>
+<use f='codebrowser/assert/assert.c' l='53' macro='1' c='__assert_fail_base'/>
+<use f='codebrowser/libio/iopopen.c' l='285' macro='1' c='_IO_new_proc_close'/>
+<use f='codebrowser/misc/error.c' l='243' macro='1' c='__error_internal'/>
+<use f='codebrowser/misc/error.c' l='312' macro='1' c='__error_at_line_internal'/>
+<use f='codebrowser/nptl/pthread_setcancelstate.c' l='29' macro='1' u='r' c='__pthread_setcancelstate'/>
+<use f='codebrowser/nptl/pthread_setcancelstate.c' l='37' macro='1' u='r' c='__pthread_setcancelstate'/>
+<use f='codebrowser/nptl/pthread_setcancelstate.c' l='44' macro='1' u='r' c='__pthread_setcancelstate'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='129' macro='1' c='fmtmsg'/>
+<use f='codebrowser/sysdeps/posix/shm_open.c' l='42' macro='1' u='r' c='shm_open'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='85' macro='1' c='cancel_handler'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='159' macro='1' u='r' c='sem_open'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='357' macro='1' c='__spawnix'/>

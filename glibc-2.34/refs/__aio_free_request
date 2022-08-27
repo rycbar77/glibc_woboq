@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='110' type='void __aio_free_request(struct requestlist * req)'/>
+<use f='codebrowser/rt/aio_cancel.c' l='147' u='c' c='__aio_cancel'/>
+<doc f='codebrowser/sysdeps/generic/aio_misc.h' l='109'>/* Release the entry for the request.  */</doc>
+<def f='codebrowser/rt/aio_misc.c' l='175' ll='181' type='void __aio_free_request(struct requestlist * elem)'/>
+<use f='codebrowser/rt/aio_misc.c' l='478' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='621' u='c' c='handle_fildes_io'/>

@@ -1,0 +1,4 @@
+<def f='codebrowser/debug/explicit_bzero_chk.c' l='29' ll='38' type='void __explicit_bzero_chk(void * dst, size_t len, size_t dstlen)'/>
+<use f='codebrowser/debug/explicit_bzero_chk.c' l='44' c='__explicit_bzero_chk_internal'/>
+<dec f='codebrowser/string/bits/string_fortified.h' l='77' type='void __explicit_bzero_chk(void * __dest, size_t __len, size_t __destlen)'/>
+<use f='codebrowser/string/bits/string_fortified.h' l='83' u='c' c='explicit_bzero'/>

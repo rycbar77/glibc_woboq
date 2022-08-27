@@ -1,0 +1,7 @@
+<dec f='codebrowser/support/process_state.h' l='41' type='void support_process_state_wait(pid_t pid, enum support_process_state state)'/>
+<def f='codebrowser/support/support_process_state.c' l='29' ll='92' type='void support_process_state_wait(pid_t pid, enum support_process_state state)'/>
+<doc f='codebrowser/support/process_state.h' l='36'>/* Wait for process PID to reach state STATE.  It can be a combination of
+   multiple possible states (&apos;process_state_running | process_state_sleeping&apos;)
+   where the function return when any of these state are observed.
+   For an invalid state not represented by SUPPORT_PROCESS_STATE, it fallbacks
+   to a 2 second sleep.  */</doc>

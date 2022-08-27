@@ -1,0 +1,13 @@
+<dec f='codebrowser/include/unistd.h' l='154' type='int __getpagesize()'/>
+<dec f='codebrowser/include/unistd.h' l='155' type='int __getpagesize()'/>
+<use f='codebrowser/include/unistd.h' l='155' c='__getpagesize'/>
+<use f='codebrowser/libio/fileops.c' l='569' u='c' c='mmap_remap_check'/>
+<use f='codebrowser/nptl/pthread_attr_init.c' l='47' u='c' c='__pthread_attr_init_2_1'/>
+<use f='codebrowser/nptl/allocatestack.c' l='381' u='c' c='advise_stack_range'/>
+<use f='codebrowser/nptl/allocatestack.c' l='411' u='c' c='allocate_stack'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getpagesize.c' l='25' ll='30' type='int __getpagesize()'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getpagesize.c' l='32' c='getpagesize'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/getpagesize.c' l='24'>/* Return the system page size.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='296' u='c' c='sysinfo_mempages'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/shm.h' l='42' type='int __getpagesize()'/>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='215' u='c' c='posix_sysconf'/>

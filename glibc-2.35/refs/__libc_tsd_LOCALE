@@ -1,0 +1,23 @@
+<dec f='codebrowser/locale/localeinfo.h' l='225' macro='1' type='locale_t'/>
+<def f='codebrowser/locale/global-locale.c' l='64' type='locale_t'/>
+<doc f='codebrowser/locale/global-locale.c' l='63'>/* The tsd macros don&apos;t permit an initializer.  */</doc>
+<use f='codebrowser/locale/lc-ctype.c' l='65' macro='1' u='r' c='_nl_postload_ctype'/>
+<use f='codebrowser/locale/localename.c' l='25' macro='1' u='r' c='__current_locale_name'/>
+<use f='codebrowser/locale/nl_langinfo.c' l='31' macro='1' u='r' c='nl_langinfo'/>
+<use f='codebrowser/locale/uselocale.c' l='31' macro='1' u='r' c='__uselocale'/>
+<use f='codebrowser/locale/uselocale.c' l='37' macro='1' u='w' c='__uselocale'/>
+<use f='codebrowser/stdio-common/printf_fp.c' l='1279' macro='1' u='r' c='___printf_fp'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='288' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdlib/strfmon.c' l='31' macro='1' u='r' c='__strfmon'/>
+<use f='codebrowser/stdlib/strfrom-skeleton.c' l='146' macro='1' u='r' c='strfromd'/>
+<use f='codebrowser/stdlib/strtod.c' l='69' macro='1' u='r' c='__strtod_internal'/>
+<use f='codebrowser/stdlib/strtod.c' l='82' macro='1' u='r' c='strtod'/>
+<use f='codebrowser/string/strcoll.c' l='33' macro='1' u='r' c='strcoll'/>
+<use f='codebrowser/string/strerror.c' l='24' macro='1' u='r' c='strerror'/>
+<use f='codebrowser/string/strxfrm.c' l='30' macro='1' u='r' c='strxfrm'/>
+<use f='codebrowser/stdlib/strtol.c' l='98' macro='1' u='r' c='__strtol_internal'/>
+<use f='codebrowser/stdlib/strtol.c' l='106' macro='1' u='r' c='__strtol'/>
+<use f='codebrowser/time/strftime.c' l='25' macro='1' u='r' c='strftime'/>
+<use f='codebrowser/time/strptime.c' l='32' macro='1' u='r' c='strptime'/>
+<use f='codebrowser/time/wcsftime.c' l='26' macro='1' u='r' c='wcsftime'/>
+<use f='codebrowser/wcsmbs/mbsrtowcs.c' l='28' macro='1' u='r' c='__mbsrtowcs'/>

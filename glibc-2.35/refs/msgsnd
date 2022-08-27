@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysvipc/sys/msg.h' l='87' type='int msgsnd(int __msqid, const void * __msgp, size_t __msgsz, int __msgflg)'/>
+<doc f='codebrowser/sysvipc/sys/msg.h' l='83'>/* Send message to message queue.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/msgsnd.c' l='31' macro='1' type='int msgsnd(int , const void * , size_t , int )'/>

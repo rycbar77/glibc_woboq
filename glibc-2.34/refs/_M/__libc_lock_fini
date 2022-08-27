@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='107'/>
+<doc f='codebrowser/sysdeps/nptl/libc-lockP.h' l='104'>/* Finalize the named lock variable, which must be locked.  It cannot be
+   used again until __libc_lock_init is called again on it.  This must be
+   called on a lock variable before the containing storage is reused.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/closedir.c' l='47' u='c'/>

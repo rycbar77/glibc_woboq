@@ -1,0 +1,7 @@
+<def f='codebrowser/sysdeps/generic/dl-cache.h' l='189' ll='197' type='_Bool cache_file_new_matches_endian(const struct cache_file_new * cache)'/>
+<use f='codebrowser/elf/cache.c' l='296' u='c' c='check_new_cache'/>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='186'>/* Returns false if *CACHE has the wrong endianness for this
+   architecture, and true if the endianness matches (or is
+   unknown).  */</doc>
+<use f='codebrowser/elf/dl-cache.c' l='433' u='c' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-cache.c' l='462' u='c' c='_dl_load_cache_lookup'/>

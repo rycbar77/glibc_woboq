@@ -1,0 +1,16 @@
+<dec f='codebrowser/malloc/malloc.c' l='1989' type='void malloc_consolidate(mstate )'/>
+<use f='codebrowser/malloc/malloc.c' l='3965' u='c' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4394' u='c' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4674' u='c' c='_int_free'/>
+<def f='codebrowser/malloc/malloc.c' l='4714' ll='4809' type='void malloc_consolidate(mstate av)'/>
+<use f='codebrowser/malloc/malloc.c' l='5041' u='c' c='mtrim'/>
+<use f='codebrowser/malloc/malloc.c' l='5463' u='c' c='__libc_mallopt'/>
+<doc f='codebrowser/malloc/malloc.c' l='4704'>/*
+  ------------------------- malloc_consolidate -------------------------
+
+  malloc_consolidate is a specialized version of free() that tears
+  down chunks held in fastbins.  Free itself cannot be used for this
+  purpose since, among other things, it might place chunks back onto
+  fastbins.  So, instead, we need to use a minor variant of the same
+  code.
+*/</doc>

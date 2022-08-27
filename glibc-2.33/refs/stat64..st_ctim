@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='134' type='struct timespec'/>
+<offset>832</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='134'>/* Time of last status change.  */</doc>
+<use f='codebrowser/elf/cache.c' l='940' macro='1' u='m' c='search_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1002' macro='1' u='m' c='add_to_aux_cache'/>
+<use f='codebrowser/io/file_change_detection.c' l='60' u='r' c='__file_change_detection_for_stat'/>
+<use f='codebrowser/io/statx_generic.c' l='79' u='r' c='statx_generic'/>

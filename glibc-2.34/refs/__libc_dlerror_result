@@ -1,0 +1,21 @@
+<dec f='codebrowser/dlfcn/dlerror.h' l='88' type='struct dl_action_result *'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='39' u='r' c='__dlerror'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='49' u='w' c='__dlerror'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='62' u='w' c='__dlerror'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='114' u='r' c='_dlerror_run'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='120' u='w' c='_dlerror_run'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='143' u='r' c='_dlerror_run'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='153' u='w' c='_dlerror_run'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='175' u='w' c='_dlerror_run'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='178' u='w' c='_dlerror_run'/>
+<doc f='codebrowser/dlfcn/dlerror.h' l='86'>/* Thread-local variable for storing dlfcn failures for subsequent
+   reporting via dlerror.  */</doc>
+<def f='codebrowser/dlfcn/libc_dlerror_result.c' l='24' type='struct dl_action_result *'/>
+<use f='codebrowser/dlfcn/libc_dlerror_result.c' l='30' u='r' c='__libc_dlerror_result_free'/>
+<use f='codebrowser/dlfcn/libc_dlerror_result.c' l='32' u='r' c='__libc_dlerror_result_free'/>
+<use f='codebrowser/dlfcn/libc_dlerror_result.c' l='34' u='r' c='__libc_dlerror_result_free'/>
+<use f='codebrowser/dlfcn/libc_dlerror_result.c' l='35' u='r' c='__libc_dlerror_result_free'/>
+<use f='codebrowser/dlfcn/libc_dlerror_result.c' l='37' u='w' c='__libc_dlerror_result_free'/>
+<doc f='codebrowser/dlfcn/libc_dlerror_result.c' l='21'>/* This pointer is either NULL, dl_action_result_malloc_failed (), or
+   has been allocated using malloc by the namespace that also contains
+   this instance of the thread-local variable.  */</doc>

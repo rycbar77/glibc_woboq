@@ -1,0 +1,22 @@
+<dec f='codebrowser/posix/spawn_int.h' l='44' type='int'/>
+<dec f='codebrowser/posix/spawn_int.h' l='48' type='int'/>
+<dec f='codebrowser/posix/spawn_int.h' l='53' type='int'/>
+<dec f='codebrowser/posix/spawn_int.h' l='64' type='int'/>
+<dec f='codebrowser/posix/spawn_int.h' l='72' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/posix/spawn_faction_addclose.c' l='44' u='w' c='__posix_spawn_file_actions_addclose'/>
+<use f='codebrowser/posix/spawn_faction_adddup2.c' l='44' u='w' c='__posix_spawn_file_actions_adddup2'/>
+<use f='codebrowser/posix/spawn_faction_addfchdir.c' l='40' u='w' c='posix_spawn_file_actions_addfchdir_np'/>
+<use f='codebrowser/posix/spawn_faction_addopen.c' l='53' u='w' c='__posix_spawn_file_actions_addopen'/>
+<use f='codebrowser/posix/spawn_faction_addtcsetpgrp_np.c' l='42' u='w' c='__posix_spawn_file_actions_addtcsetpgrp_np'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='187' u='r' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='196' u='r' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='197' u='r' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='210' u='r' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='223' u='r' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='225' u='r' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='226' u='r' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='238' u='r' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='248' u='r' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='260' u='r' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='278' u='r' c='__spawni_child'/>

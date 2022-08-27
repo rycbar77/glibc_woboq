@@ -1,0 +1,4 @@
+<use f='codebrowser/support/support_openpty.c' l='69' u='c' c='support_openpty'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/unlockpt.c' l='27' ll='48' type='int unlockpt(int fd)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/unlockpt.c' l='25'>/* Unlock the slave pseudo terminal associated with the master pseudo
+   terminal specified by FD.  */</doc>

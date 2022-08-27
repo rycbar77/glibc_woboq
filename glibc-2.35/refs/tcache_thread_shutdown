@@ -1,0 +1,5 @@
+<dec f='codebrowser/malloc/malloc.c' l='1996' type='void tcache_thread_shutdown()'/>
+<use f='codebrowser/malloc/arena.c' l='1003' u='c' c='__malloc_arena_thread_freeres'/>
+<def f='codebrowser/malloc/malloc.c' l='3276' ll='3280' type='void tcache_thread_shutdown()'/>
+<doc f='codebrowser/malloc/malloc.c' l='1994'>/* This function is called from the arena shutdown hook, to free the
+   thread cache (if it exists).  */</doc>

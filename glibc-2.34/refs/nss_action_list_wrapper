@@ -1,0 +1,12 @@
+<def f='codebrowser/nss/nss_action.c' l='29' ll='39'/>
+<use f='codebrowser/nss/nss_action.c' l='32'/>
+<use f='codebrowser/nss/nss_action.c' l='42'/>
+<use f='codebrowser/nss/nss_action.c' l='74' c='find_allocated'/>
+<use f='codebrowser/nss/nss_action.c' l='89' c='__nss_action_allocate'/>
+<use f='codebrowser/nss/nss_action.c' l='108' c='__nss_action_freeres'/>
+<use f='codebrowser/nss/nss_action.c' l='111' c='__nss_action_freeres'/>
+<size>16</size>
+<doc f='codebrowser/nss/nss_action.c' l='24'>/* Maintain a global list of NSS action lists.  Since most databases
+   use the same list of actions, this list is usually short.
+   Deduplication in __nss_action_allocate ensures that the list does
+   not grow without bounds.  */</doc>

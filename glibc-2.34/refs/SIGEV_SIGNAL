@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/sigevent-consts.h' l='29' type='0'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/sigevent-consts.h' l='29'>/* Notify via signal.  */</doc>
+<use f='codebrowser/resolv/gai_notify.c' l='94' macro='1' u='r' c='__gai_notify_only'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='92' macro='1' u='r' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='156' macro='1' u='r' c='__getaddrinfo_a'/>
+<use f='codebrowser/rt/aio_notify.c' l='96' macro='1' u='r' c='__aio_notify_only'/>
+<use f='codebrowser/support/support_create_timer.c' l='40' macro='1' u='r' c='support_create_timer'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='54' macro='1' u='r' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='114' macro='1' u='r' c='___timer_create'/>

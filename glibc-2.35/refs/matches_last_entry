@@ -1,0 +1,6 @@
+<def f='codebrowser/login/utmp_file.c' l='46' ll='62' type='_Bool matches_last_entry(const struct utmp * data)'/>
+<use f='codebrowser/login/utmp_file.c' l='240' u='c' c='internal_getut_nolock'/>
+<use f='codebrowser/login/utmp_file.c' l='376' u='c' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='391' u='c' c='__libc_pututline'/>
+<doc f='codebrowser/login/utmp_file.c' l='44'>/* Returns true if *ENTRY matches last_entry, based on
+   data-&gt;ut_type.  */</doc>

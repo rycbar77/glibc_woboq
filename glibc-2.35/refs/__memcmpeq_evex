@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='56' type='int __memcmpeq_evex(const void * , const void * , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='56' u='r' c='__libc_ifunc_impl_list'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/memcmpeq-evex.S' l='60' macro='1' type='int'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memcmpeq.h' l='25' macro='1' type='int __memcmpeq_evex(const void * , const void * , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memcmpeq.h' l='38' macro='1' u='r' c='__memcmpeq_ifunc_selector'/>

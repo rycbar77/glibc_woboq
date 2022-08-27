@@ -1,0 +1,72 @@
+<dec f='codebrowser/string/string.h' l='125' type='char * strcpy(char *restrict __dest, const char *restrict __src)'/>
+<doc f='codebrowser/string/string.h' l='124'>/* Copy SRC to DEST.  */</doc>
+<use f='codebrowser/assert/assert.c' l='73' u='c' c='__assert_fail_base'/>
+<def f='codebrowser/string/bits/string3.h' l='107' ll='111' macro='1' type='char * strcpy(char *restrict __dest, const char *restrict __src)'/>
+<use f='codebrowser/elf/dl-cache.c' l='304' u='c' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='671' u='c' c='handle_dir'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1067' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1070' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1073' u='c' c='write_output'/>
+<use f='codebrowser/inet/ether_ntoh.c' l='81' u='c' c='ether_ntohost'/>
+<use f='codebrowser/inet/ruserpass.c' l='172' u='c' c='ruserpass'/>
+<use f='codebrowser/inet/ruserpass.c' l='195' u='c' c='ruserpass'/>
+<use f='codebrowser/intl/dcigettext.c' l='797' u='c' c='__dcigettext'/>
+<use f='codebrowser/io/getwd.c' l='50' u='c' c='getwd'/>
+<use f='codebrowser/libidn/idna.c' l='471' u='c' c='idna_to_ascii_4z'/>
+<use f='codebrowser/libidn/idna.c' l='481' u='c' c='idna_to_ascii_4z'/>
+<use f='codebrowser/libidn/idna.c' l='522' u='c' c='idna_to_ascii_4z'/>
+<use f='codebrowser/libidn/stringprep.c' l='400' u='c' c='stringprep'/>
+<use f='codebrowser/libidn/stringprep.c' l='455' u='c' c='stringprep_profile'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2872' u='c' c='set_one_default'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3240' u='c' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='357' u='c' c='monetary_finish'/>
+<use f='codebrowser/locale/programs/locale.c' l='498' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='128' u='c' c='create_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='348' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='349' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='575' u='c' c='open_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1400' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1417' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1455' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1470' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locfile.c' l='415' u='c' c='siblings_uncached'/>
+<use f='codebrowser/locale/programs/locfile.c' l='863' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='912' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/xstrdup.c' l='35' u='c' c='xstrdup'/>
+<use f='codebrowser/nptl/sem_open.c' l='227' u='c' c='sem_open'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='182' u='c' c='open_socket'/>
+<use f='codebrowser/nss/digits_dots.c' l='164' u='c' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/digits_dots.c' l='256' u='c' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/makedb.c' l='584' u='c' c='copy_valstr'/>
+<use f='codebrowser/posix/wordexp.c' l='2318' u='c' c='wordexp'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='303' u='c' c='getanswer'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='326' u='c' c='getanswer'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='468' u='c' c='getanswer'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='702' u='c' c='res_gethostbyaddr'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='713' u='c' c='res_gethostbyaddr'/>
+<use f='codebrowser/resolv/inet_neta.c' l='73' u='c' c='inet_neta'/>
+<use f='codebrowser/resolv/inet_ntop.c' l='96' u='c' c='inet_ntop4'/>
+<use f='codebrowser/resolv/inet_ntop.c' l='192' u='c' c='inet_ntop6'/>
+<use f='codebrowser/resolv/ns_samedomain.c' l='171' u='c' c='ns_makecanon'/>
+<use f='codebrowser/resolv/ns_ttl.c' l='156' u='c' c='fmt1'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='462' u='c' c='_nss_dns_gethostbyaddr2_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='478' u='c' c='_nss_dns_gethostbyaddr2_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='489' u='c' c='_nss_dns_gethostbyaddr2_r'/>
+<use f='codebrowser/resolv/res_debug.c' l='322' u='c' c='__p_fqnname'/>
+<use f='codebrowser/resolv/res_init.c' l='427' u='c' c='__res_vinit'/>
+<use f='codebrowser/sysdeps/posix/ctermid.c' l='34' u='c' c='ctermid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/opensock.c' l='78' u='c' c='__opensock'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/opensock.c' l='88' u='c' c='__opensock'/>
+<use f='codebrowser/posix/glob.c' l='1239' u='c' c='glob'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='176' c='__strcpy_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='178' c='__strcpy_sse2_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='179' c='__strcpy_sse2'/>
+<use f='codebrowser/timezone/zdump.c' l='408' u='c' c='zdump_tzalloc'/>
+<use f='codebrowser/timezone/zdump.c' l='534' u='c' c='saveabbr'/>
+<use f='codebrowser/timezone/zic.c' l='736' u='c' c='relname'/>
+<use f='codebrowser/timezone/zic.c' l='789' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1814' u='c' c='writezone'/>
+<use f='codebrowser/timezone/zic.c' l='1956' u='c' c='doabbr'/>
+<use f='codebrowser/timezone/zic.c' l='2482' u='c' c='outzone'/>
+<use f='codebrowser/timezone/zic.c' l='2559' u='c' c='addtt'/>
+<use f='codebrowser/timezone/zic.c' l='2971' u='c' c='newabbr'/>

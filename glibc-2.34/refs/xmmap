@@ -1,0 +1,6 @@
+<dec f='codebrowser/support/xunistd.h' l='80' type='void * xmmap(void * addr, size_t length, int prot, int flags, int fd)'/>
+<doc f='codebrowser/support/xunistd.h' l='79'>/* Invoke mmap with a zero file offset.  */</doc>
+<use f='codebrowser/support/next_to_fault.c' l='35' u='c' c='support_next_to_fault_allocate'/>
+<use f='codebrowser/support/support_shared_allocate.c' l='45' u='c' c='support_shared_allocate'/>
+<use f='codebrowser/support/support_stack_alloc.c' l='61' u='c' c='support_stack_alloc'/>
+<def f='codebrowser/support/xmmap.c' l='23' ll='31' type='void * xmmap(void * addr, size_t length, int prot, int flags, int fd)'/>

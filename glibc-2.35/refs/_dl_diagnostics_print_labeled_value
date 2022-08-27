@@ -1,0 +1,13 @@
+<dec f='codebrowser/elf/dl-diagnostics.h' l='35' type='void _dl_diagnostics_print_labeled_value(const char * label, uint64_t value)'/>
+<def f='codebrowser/elf/dl-diagnostics.c' l='98' ll='113' type='void _dl_diagnostics_print_labeled_value(const char * label, uint64_t value)'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='235' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='239' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='240' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='241' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='244' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='246' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='247' u='c' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='251' u='c' c='_dl_print_diagnostics'/>
+<doc f='codebrowser/elf/dl-diagnostics.h' l='33'>/* Print LABEL=VALUE to standard output, followed by a newline
+   character.  */</doc>
+<use f='codebrowser/sysdeps/x86/dl-diagnostics-cpu.c' l='26' u='c' c='print_cpu_features_value'/>

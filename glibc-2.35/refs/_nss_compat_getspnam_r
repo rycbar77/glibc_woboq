@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/shadow.h' l='38' macro='1' type='enum nss_status _nss_compat_getspnam_r(const char * name, struct spwd * pwd, char * buffer, size_t buflen, int * errnop)'/>
+<dec f='codebrowser/nss/nss_compat/compat-grp.c' l='30' macro='1' type='enum nss_status _nss_compat_getspnam_r(const char * , struct spwd * , char * , size_t , int * )'/>
+<dec f='codebrowser/nss/nss_compat/compat-initgroups.c' l='33' macro='1' type='enum nss_status _nss_compat_getspnam_r(const char * , struct spwd * , char * , size_t , int * )'/>
+<dec f='codebrowser/nss/nss_compat/compat-pwd.c' l='34' macro='1' type='enum nss_status _nss_compat_getspnam_r(const char * , struct spwd * , char * , size_t , int * )'/>
+<dec f='codebrowser/nss/nss_compat/compat-spwd.c' l='34' macro='1' type='enum nss_status _nss_compat_getspnam_r(const char * , struct spwd * , char * , size_t , int * )'/>
+<def f='codebrowser/nss/nss_compat/compat-spwd.c' l='772' ll='798' type='enum nss_status _nss_compat_getspnam_r(const char * name, struct spwd * pwd, char * buffer, size_t buflen, int * errnop)'/>

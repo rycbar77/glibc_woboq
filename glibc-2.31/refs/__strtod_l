@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/stdlib.h' l='16' type='double __strtod_l(const char *restrict , char **restrict , locale_t )'/>
+<dec f='codebrowser/include/stdlib.h' l='23' type='double __strtod_l(const char *restrict , char **restrict , locale_t )'/>
+<use f='codebrowser/include/stdlib.h' l='23' c='__strtod_l'/>
+<def f='codebrowser/stdlib/strtod_l.c' l='1778' ll='1785' macro='1' type='double __strtod_l(const char * nptr, char ** endptr, locale_t loc)'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='56' c='strtod_l'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getloadavg.c' l='57' u='c' c='getloadavg'/>

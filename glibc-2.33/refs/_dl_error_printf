@@ -1,0 +1,14 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='781' type='void _dl_error_printf(const char * fmt)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='779'>/* Write a message on the specified descriptor standard error.  The
+   parameters are interpreted as for a `printf&apos; call.  */</doc>
+<def f='codebrowser/elf/dl-misc.c' l='315' ll='323' type='void _dl_error_printf(const char * fmt)'/>
+<use f='codebrowser/elf/dl-profile.c' l='340' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='381' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-usage.c' l='32' u='c' c='_dl_usage'/>
+<use f='codebrowser/elf/dl-usage.c' l='34' u='c' c='_dl_usage'/>
+<use f='codebrowser/elf/dl-usage.c' l='35' u='c' c='_dl_usage'/>
+<use f='codebrowser/elf/rtld.c' l='832' u='c' c='do_preload'/>
+<use f='codebrowser/elf/rtld.c' l='950' u='c' c='report_audit_module_load_error'/>
+<use f='codebrowser/elf/rtld.c' l='2532' u='c' c='print_unresolved'/>
+<use f='codebrowser/elf/rtld.c' l='2541' u='c' c='print_missing_version'/>
+<use f='codebrowser/elf/rtld.c' l='2614' u='c' c='process_dl_debug'/>

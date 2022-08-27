@@ -1,0 +1,27 @@
+<dec f='codebrowser/nscd/nscd.h' l='230' type='unsigned int'/>
+<use f='codebrowser/nscd/aicache.c' l='449' u='r' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='449' u='r' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='451' u='r' c='addhstaiX'/>
+<doc f='codebrowser/nscd/nscd.h' l='228'>/* Number of times a value is reloaded without being used.  UINT_MAX
+   means unlimited.  */</doc>
+<def f='codebrowser/nscd/cache.c' l='43' type='unsigned int'/>
+<use f='codebrowser/nscd/cache.c' l='392' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='393' u='r' c='prune_cache'/>
+<doc f='codebrowser/nscd/cache.c' l='41'>/* Number of times a value is reloaded without being used.  UINT_MAX
+   means unlimited.  */</doc>
+<use f='codebrowser/nscd/grpcache.c' l='97' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='99' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/hstcache.c' l='119' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='121' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/initgrcache.c' l='184' u='r' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='184' u='r' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='186' u='r' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='236' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='241' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='243' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='121' u='r' c='send_stats'/>
+<use f='codebrowser/nscd/pwdcache.c' l='103' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='103' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='105' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/servicescache.c' l='91' u='r' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='93' u='r' c='cache_addserv'/>

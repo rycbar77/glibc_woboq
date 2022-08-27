@@ -1,0 +1,19 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='452' type='size_t'/>
+<offset>0</offset>
+<use f='codebrowser/csu/libc-tls.c' l='79' u='w' c='init_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='53' u='r' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='64' u='r' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='70' u='r' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-libc.c' l='246' u='r' c='free_slotinfo'/>
+<use f='codebrowser/elf/rtld.c' l='778' u='w' c='init_tls'/>
+<use f='codebrowser/nptl_db/structs.def' l='114' u='r'/>
+<use f='codebrowser/elf/dl-tls.c' l='150' u='r' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='159' u='r' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='166' u='r' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='207' u='r' c='_dl_count_modids'/>
+<use f='codebrowser/elf/dl-tls.c' l='559' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='990' u='r' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='992' u='r' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='1029' u='r' c='_dl_add_to_slotinfo'/>
+<use f='codebrowser/elf/dl-tls.c' l='1031' u='r' c='_dl_add_to_slotinfo'/>
+<use f='codebrowser/elf/dl-tls.c' l='1054' u='w' c='_dl_add_to_slotinfo'/>

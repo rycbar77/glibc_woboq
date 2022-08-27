@@ -1,0 +1,9 @@
+<dec f='codebrowser/rt/aio.h' l='45' type='int'/>
+<offset>832</offset>
+<use f='codebrowser/rt/aio_misc.c' l='363' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='384' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='522' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='525' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='716' u='r' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='719' u='r' c='add_request_to_runlist'/>
+<use f='codebrowser/rt/aio_misc.c' l='729' u='r' c='add_request_to_runlist'/>

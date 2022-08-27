@@ -1,0 +1,13 @@
+<dec f='codebrowser/libio/libioP.h' l='538' type='int _IO_file_doallocate(FILE * )'/>
+<dec f='codebrowser/libio/libioP.h' l='539' type='int _IO_file_doallocate(FILE * )'/>
+<use f='codebrowser/libio/libioP.h' l='539' c='_IO_file_doallocate'/>
+<doc f='codebrowser/libio/libioP.h' l='536'>/* Jumptable functions for files. */</doc>
+<def f='codebrowser/libio/filedoalloc.c' l='76' ll='106' type='int _IO_file_doallocate(FILE * fp)'/>
+<doc f='codebrowser/libio/filedoalloc.c' l='74'>/* Allocate a file buffer, or switch to unbuffered I/O.  Streams for
+   TTY devices default to line buffered.  */</doc>
+<use f='codebrowser/libio/fileops.c' l='1454' u='r'/>
+<use f='codebrowser/libio/fileops.c' l='1479'/>
+<use f='codebrowser/libio/fileops.c' l='1503'/>
+<use f='codebrowser/libio/iofopncook.c' l='124' u='r'/>
+<use f='codebrowser/libio/iopopen.c' l='305'/>
+<use f='codebrowser/libio/wfiledoalloc.c' l='70' u='c' c='_IO_wfile_doallocate'/>

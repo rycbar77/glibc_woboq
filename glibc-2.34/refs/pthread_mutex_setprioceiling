@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='847' type='int pthread_mutex_setprioceiling(pthread_mutex_t *restrict __mutex, int __prioceiling, int *restrict __old_ceiling)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='845'>/* Set the priority ceiling of MUTEX to PRIOCEILING, return old
+   priority ceiling value in *OLD_CEILING.  */</doc>
+<def f='codebrowser/nptl/pthread_mutex_setprioceiling.c' l='124' macro='1' type='int pthread_mutex_setprioceiling(pthread_mutex_t * , int , int * )'/>

@@ -1,0 +1,17 @@
+<dec f='codebrowser/sunrpc/rpc/clnt.h' l='141' type='void (*)(CLIENT *)'/>
+<offset>256</offset>
+<doc f='codebrowser/sunrpc/rpc/clnt.h' l='140'>/* frees results */</doc>
+<doc f='codebrowser/sunrpc/rpc/clnt.h' l='141'>/* destroy this structure */</doc>
+<use f='codebrowser/sunrpc/clnt_simp.c' l='99' macro='1' u='r' c='__GI_callrpc'/>
+<use f='codebrowser/sunrpc/clnt_simp.c' l='152' macro='1' u='r' c='__rpc_thread_clnt_cleanup'/>
+<use f='codebrowser/sunrpc/key_call.c' l='232' macro='1' u='r' c='__GI_key_gendes'/>
+<use f='codebrowser/sunrpc/key_call.c' l='417' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='428' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='444' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='466' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='570' macro='1' u='r' c='__rpc_thread_key_cleanup'/>
+<use f='codebrowser/sunrpc/pm_getmaps.c' l='79' macro='1' u='r' c='__GI_pmap_getmaps'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='129' macro='1' u='r' c='__libc_rpc_getport'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='130' macro='1' u='r' c='__GI_pmap_set'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='161' macro='1' u='r' c='__GI_pmap_unset'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='93' macro='1' u='r' c='__GI_pmap_rmtcall'/>

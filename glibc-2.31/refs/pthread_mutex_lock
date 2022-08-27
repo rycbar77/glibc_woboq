@@ -1,0 +1,19 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='738' type='int pthread_mutex_lock(pthread_mutex_t * __mutex)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='737'>/* Lock a mutex.  */</doc>
+<def f='codebrowser/nptl/forward.c' l='160' macro='1' type='int pthread_mutex_lock(pthread_mutex_t * mutex)'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='116' c='__gthrw_pthread_mutex_lock'/>
+<use f='codebrowser/support/xpthread_mutex_lock.c' l='24' u='c' c='xpthread_mutex_lock'/>
+<use f='codebrowser/sysdeps/pthread/aio_cancel.c' l='54' u='c' c='aio_cancel'/>
+<use f='codebrowser/sysdeps/pthread/aio_error.c' l='41' u='c' c='aio_error'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='274' u='c' c='__aio_init'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='326' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='498' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='586' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='59' u='c' c='cleanup'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='101' macro='1' u='c' c='do_aio_misc_wait'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='128' u='c' c='aio_suspend'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='99' u='c' c='timer_helper_thread'/>
+<use f='codebrowser/sysdeps/pthread/lio_listio.c' l='74' u='c' c='lio_listio_internal'/>
+<use f='codebrowser/sysdeps/pthread/lio_listio.c' l='142' macro='1' u='c' c='lio_listio_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='159' u='c' c='__timer_create_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='45' u='c' c='__timer_delete_new'/>

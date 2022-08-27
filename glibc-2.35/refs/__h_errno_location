@@ -1,0 +1,36 @@
+<dec f='codebrowser/resolv/netdb.h' l='59' type='int * __h_errno_location()'/>
+<doc f='codebrowser/resolv/netdb.h' l='58'>/* Function to get address of global `h_errno&apos; variable.  */</doc>
+<def f='codebrowser/inet/herrno-loc.c' l='23' ll='28' type='int * __h_errno_location()'/>
+<doc f='codebrowser/inet/herrno-loc.c' l='22'>/* When threaded, h_errno may be a per-thread variable.  */</doc>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='317' macro='1' u='c' c='getcanonname'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='561' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='562' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='586' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='595' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='597' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='747' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='754' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='756' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='759' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='832' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='832' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='832' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='832' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='832' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='844' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='844' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='844' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='844' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='844' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='894' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='912' macro='1' u='c' c='gaih_inet'/>
+<use f='codebrowser/nscd/hstcache.c' l='415' macro='1' u='c' c='lookup'/>
+<use f='codebrowser/nscd/hstcache.c' l='418' macro='1' u='c' c='lookup'/>
+<use f='codebrowser/nscd/hstcache.c' l='421' macro='1' u='c' c='lookup'/>
+<use f='codebrowser/nscd/hstcache.c' l='423' macro='1' u='c' c='lookup'/>
+<use f='codebrowser/nscd/hstcache.c' l='461' macro='1' u='c' c='addhstbyX'/>
+<use f='codebrowser/nscd/hstcache.c' l='472' macro='1' u='c' c='addhstbyX'/>
+<use f='codebrowser/nscd/hstcache.c' l='478' macro='1' u='c' c='addhstbyX'/>
+<use f='codebrowser/support/support_format_hostent.c' l='46' macro='1' u='c' c='support_format_hostent'/>
+<use f='codebrowser/support/support_format_hostent.c' l='50' macro='1' u='c' c='support_format_hostent'/>
+<use f='codebrowser/support/support_format_netent.c' l='32' macro='1' u='c' c='support_format_netent'/>

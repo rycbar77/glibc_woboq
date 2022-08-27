@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1228' type='void _dl_tls_static_surplus_init(size_t naudit)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1226'>/* Calculate the size of the static TLS surplus, when the given
+   number of audit modules are loaded.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='136' u='c' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/rtld.c' l='798' u='c' c='init_tls'/>
+<def f='codebrowser/elf/dl-tls.c' l='95' ll='118' type='void _dl_tls_static_surplus_init(size_t naudit)'/>
+<doc f='codebrowser/elf/dl-tls.c' l='92'>/* Calculate the size of the static TLS surplus, when the given
+   number of audit modules are loaded.  Must be called after the
+   number of audit modules is known and before static TLS allocation.  */</doc>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/nis/rpcsvc/nislib.h' l='258' type='unsigned int'/>
+<offset>128</offset>
+<doc f='codebrowser/nis/rpcsvc/nislib.h' l='258'>/* # of servers */</doc>
+<use f='codebrowser/nis/nis_call.c' l='81' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='96' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_call.c' l='258' u='w' c='__nisbind_create'/>
+<use f='codebrowser/nis/nis_findserv.c' l='85' u='r' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/nis/nis_findserv.c' l='96' u='r' c='__nis_findfastest_with_timeout'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/nptl/descr.h' l='359' type='void *(*)(void *)'/>
+<offset>12800</offset>
+<doc f='codebrowser/nptl/descr.h' l='357'>/* Start position of the code to be executed and the argument passed
+     to the function.  */</doc>
+<use f='codebrowser/nptl/pthread_create.c' l='438' u='r' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='442' u='r' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='675' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl_db/structs.def' l='55' u='r'/>

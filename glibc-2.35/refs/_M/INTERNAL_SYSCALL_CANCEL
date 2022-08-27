@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/unix/sysdep.h' l='134'/>
+<doc f='codebrowser/sysdeps/unix/sysdep.h' l='132'>/* Issue a syscall defined by syscall number plus any other argument
+   required.  Any error will be returned unmodified (including errno).  */</doc>
+<use f='codebrowser/nptl/futex-internal.c' l='57' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_nanosleep.c' l='48' u='c'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='533' type='unsigned long __strcspn_sse2(const char * , const char * )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='533' u='r' c='__libc_ifunc_impl_list'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/strcspn-c.c' l='56' type='size_t __strcspn_sse2(const char * , const char * )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strcspn-c.c' l='56' u='c' c='__strcspn_sse42'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strcspn-c.c' l='56' u='c' c='__strcspn_sse42'/>
+<def f='codebrowser/sysdeps/x86_64/strcspn.S' l='25' macro='1' type='int'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-sse4_2.h' l='22' macro='1' type='size_t __strcspn_sse2(const char * , const char * )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-sse4_2.h' l='33' macro='1' u='r' c='strcspn_ifunc_selector'/>

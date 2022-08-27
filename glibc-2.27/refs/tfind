@@ -1,0 +1,4 @@
+<dec f='codebrowser/misc/search.h' l='134' type='void * tfind(const void * __key, void *const * __rootp, __compar_fn_t __compar)'/>
+<doc f='codebrowser/misc/search.h' l='132'>/* Search for an entry matching the given KEY in the tree pointed to
+   by *ROOTP.  If no matching entry is available return NULL.  */</doc>
+<def f='codebrowser/misc/tsearch.c' l='397' macro='1' type='void * tfind(const void * , void *const * , __compar_fn_t )'/>

@@ -1,0 +1,25 @@
+<use f='codebrowser/csu/libc-tls.c' l='197' macro='1' u='c' c='__libc_setup_tls'/>
+<def f='codebrowser/elf/dl-minimal.c' l='186' ll='190' type='void __libc_fatal(const char * message)'/>
+<use f='codebrowser/elf/dl-minimal.c' l='191' c='__EI___libc_fatal'/>
+<use f='codebrowser/elf/dl-minimal.c' l='191' c='__EI___libc_fatal'/>
+<use f='codebrowser/sysdeps/x86_64/dl-irel.h' l='48' u='c' c='elf_irela'/>
+<def f='codebrowser/sysdeps/posix/libc_fatal.c' l='186' ll='192' type='void __libc_fatal(const char * message)'/>
+<use f='codebrowser/grp/initgroups.c' l='131' u='c' c='internal_getgrouplist'/>
+<use f='codebrowser/inet/deadline.c' l='35' u='c' c='__deadline_current_time'/>
+<use f='codebrowser/libio/vtables.c' l='72' u='c' c='_IO_vtable_check'/>
+<use f='codebrowser/malloc/alloc_buffer_create_failure.c' l='29' u='c' c='__libc_alloc_buffer_create_failure'/>
+<use f='codebrowser/malloc/dynarray_at_failure.c' l='29' u='c' c='__libc_dynarray_at_failure'/>
+<use f='codebrowser/malloc/mcheck.c' l='360' u='c' c='mabort'/>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='200' u='c' c='futex_fatal_error'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='518' u='c' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/unwind.c' l='105' u='c' c='unwind_cleanup'/>
+<use f='codebrowser/nss/nsswitch.c' l='238' u='c' c='__nss_next2'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='909' u='c' c='__vfprintf_internal'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='1896' u='c' c='printf_positional'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='909' u='c' c='printf_positional'/>
+<use f='codebrowser/sysdeps/gnu/unwind-resume.c' l='44' u='c' c='__libgcc_s_init'/>
+<use f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='65' u='c' c='pthread_cancel_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/netlink_assert_response.c' l='82' u='c' c='__netlink_assert_response'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/netlink_assert_response.c' l='102' u='c' c='__netlink_assert_response'/>
+<use f='codebrowser/csu/libc-start.c' l='217' u='c' c='__libc_start_main'/>
+<use f='codebrowser/csu/libc-start.c' l='217' u='c' c='__libc_start_main'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/libio/stdio.h' l='290' type='void setbuf(FILE *restrict __stream, char *restrict __buf)'/>
+<doc f='codebrowser/libio/stdio.h' l='288'>/* If BUF is NULL, make STREAM unbuffered.
+   Else make it use buffer BUF, of size BUFSIZ.  */</doc>
+<def f='codebrowser/libio/setbuf.c' l='30' ll='34' type='void setbuf(_IO_FILE * fp, char * buf)'/>

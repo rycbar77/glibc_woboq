@@ -1,0 +1,5 @@
+<dec f='include/selinux/selinux.h' l='659' type='void set_selinuxmnt(const char * mnt)'/>
+<doc f='include/selinux/selinux.h' l='655'>/* Set the path to the selinuxfs mount point explicitly.
+   Normally, this is determined automatically during libselinux 
+   initialization, but this is not always possible, e.g. for /sbin/init
+   which performs the initial mount of selinuxfs. */</doc>

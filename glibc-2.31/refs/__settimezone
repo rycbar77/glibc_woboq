@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/sys/time.h' l='25' type='int __settimezone(const struct timezone * __tz)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/settimezone.c' l='27' ll='36' type='int __settimezone(const struct timezone * tz)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/settimezone.c' l='23'>/* Set the system-wide timezone.
+   This call is restricted to the super-user.
+   This operation is considered obsolete, kernel support may not be
+   available on all architectures.  */</doc>
+<use f='codebrowser/time/settimeofday.c' l='34' u='c' c='__settimeofday'/>

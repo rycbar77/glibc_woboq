@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/generic/libc-mtag.h' l='57' ll='62' type='void * __libc_mtag_address_get_tag(void * p)'/>
+<use f='codebrowser/malloc/malloc.c' l='483' u='c' c='tag_at'/>
+<doc f='codebrowser/sysdeps/generic/libc-mtag.h' l='55'>/* Convert address P to a pointer that is tagged correctly for that
+   location.  */</doc>

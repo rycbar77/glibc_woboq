@@ -1,0 +1,10 @@
+<dec f='codebrowser/locale/programs/localedef.h' l='100' type='struct locale_name_t *'/>
+<offset>0</offset>
+<use f='codebrowser/locale/programs/ld-name.c' l='50' u='w' c='name_startup'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='64' u='r' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='81' u='r' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='84' u='w' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='85' u='r' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='95' u='r' c='name_finish'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='156' u='r' c='name_output'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='202' u='r' c='name_read'/>

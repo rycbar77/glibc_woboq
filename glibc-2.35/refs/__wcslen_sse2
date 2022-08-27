@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='708' type='unsigned long __wcslen_sse2(const int * )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='708' u='r' c='__libc_ifunc_impl_list'/>
+<def f='codebrowser/sysdeps/x86_64/wcslen.S' l='22' macro='1' type='int'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-wcslen.h' l='22' macro='1' type='size_t __wcslen_sse2(const wchar_t * )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-wcslen.h' l='51' macro='1' u='r' c='wcslen_ifunc_selector'/>

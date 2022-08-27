@@ -1,0 +1,31 @@
+<def f='codebrowser/nscd/cachedumper.c' l='42' ll='62' type='unsigned char * data_string(unsigned char * cp, const char * str, int len)'/>
+<use f='codebrowser/nscd/cachedumper.c' l='138' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='168' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='179' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='363' u='c' c='nscd_print_cache'/>
+<doc f='codebrowser/nscd/cachedumper.c' l='38'>/* Given a chunk of raw data CP of length LEN, print it in a hopefully
+   user-readable format, including colorizing non-readable characters.
+   STR prefixes it, if non-NULL.  If LEN is -1, CP is
+   NUL-terminated.  */</doc>

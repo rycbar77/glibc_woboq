@@ -1,0 +1,70 @@
+<def f='codebrowser/resolv/netdb.h' l='257' ll='263'/>
+<use f='codebrowser/resolv/netdb.h' l='283' c='getservent'/>
+<use f='codebrowser/resolv/netdb.h' l='290' c='getservbyname'/>
+<use f='codebrowser/resolv/netdb.h' l='297' c='getservbyport'/>
+<use f='codebrowser/resolv/netdb.h' l='308' c='getservent_r'/>
+<use f='codebrowser/resolv/netdb.h' l='310' c='getservent_r'/>
+<use f='codebrowser/resolv/netdb.h' l='314' c='getservbyname_r'/>
+<use f='codebrowser/resolv/netdb.h' l='316' c='getservbyname_r'/>
+<use f='codebrowser/resolv/netdb.h' l='319' c='getservbyport_r'/>
+<use f='codebrowser/resolv/netdb.h' l='321' c='getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='122' c='__getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='124' c='__getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='126' c='__old_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='128' c='__old_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='132' c='__getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='134' c='__getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='137' c='__old_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='139' c='__old_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='143' c='__getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='145' c='__getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='148' c='__old_getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='150' c='__old_getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='199' c='_nss_files_parse_servent'/>
+<use f='codebrowser/include/netdb.h' l='245' c='_nss_compat_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='249' c='_nss_compat_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='252' c='_nss_compat_getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='245' c='_nss_dns_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='249' c='_nss_dns_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='252' c='_nss_dns_getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='245' c='_nss_files_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='249' c='_nss_files_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='252' c='_nss_files_getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='245' c='_nss_hesiod_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='249' c='_nss_hesiod_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='252' c='_nss_hesiod_getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='245' c='_nss_nis_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='249' c='_nss_nis_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='252' c='_nss_nis_getservbyport_r'/>
+<use f='codebrowser/include/netdb.h' l='245' c='_nss_nisplus_getservent_r'/>
+<use f='codebrowser/include/netdb.h' l='249' c='_nss_nisplus_getservbyname_r'/>
+<use f='codebrowser/include/netdb.h' l='252' c='_nss_nisplus_getservbyport_r'/>
+<use f='codebrowser/nscd/nscd_proto.h' l='69' c='__nscd_getservbyname_r'/>
+<use f='codebrowser/nscd/nscd_proto.h' l='70' c='__nscd_getservbyname_r'/>
+<use f='codebrowser/nscd/nscd_proto.h' l='72' c='__nscd_getservbyport_r'/>
+<use f='codebrowser/nscd/nscd_proto.h' l='73' c='__nscd_getservbyport_r'/>
+<size>32</size>
+<doc f='codebrowser/resolv/netdb.h' l='256'>/* Description of data base entry for a single service.  */</doc>
+<mbr r='servent::s_name' o='0' t='char *'/>
+<mbr r='servent::s_aliases' o='64' t='char **'/>
+<mbr r='servent::s_port' o='128' t='int'/>
+<mbr r='servent::s_proto' o='192' t='char *'/>
+<use f='codebrowser/inet/getnameinfo.c' l='428' c='getnameinfo'/>
+<use f='codebrowser/inet/getnameinfo.c' l='428' c='getnameinfo'/>
+<size>32</size>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='34' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='35' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='40' c='__nscd_getservbyname_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='41' c='__nscd_getservbyname_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='50' c='__nscd_getservbyport_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='51' c='__nscd_getservbyport_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='79' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='80' c='nscd_getserv_r'/>
+<size>32</size>
+<use f='codebrowser/nss/getent.c' l='711' c='print_services'/>
+<use f='codebrowser/nss/getent.c' l='732' c='services_keys'/>
+<use f='codebrowser/nss/getent.c' l='745' c='services_keys'/>
+<size>32</size>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='140' c='gaih_inet_serv'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='142' c='gaih_inet_serv'/>
+<size>32</size>

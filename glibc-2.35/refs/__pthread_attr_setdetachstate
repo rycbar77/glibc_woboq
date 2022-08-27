@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='371' type='int __pthread_attr_setdetachstate(pthread_attr_t * attr, int detachstate)'/>
+<def f='codebrowser/nptl/pthread_attr_setdetachstate.c' l='22' ll='41' type='int __pthread_attr_setdetachstate(pthread_attr_t * attr, int detachstate)'/>
+<use f='codebrowser/nptl/pthread_attr_setdetachstate.c' l='42' c='pthread_attr_setdetachstate'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='97' u='c' c='__gai_create_helper_thread'/>
+<use f='codebrowser/resolv/gai_misc.c' l='414' u='c' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_notify.c' l='68' u='c' c='__gai_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_misc.h' l='45' u='c' c='__aio_create_helper_thread'/>
+<use f='codebrowser/rt/aio_misc.c' l='674' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_notify.c' l='70' u='c' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='173' u='c' c='init_mq_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='107' u='c' c='___timer_create'/>

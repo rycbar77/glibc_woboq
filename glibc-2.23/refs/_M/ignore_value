@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/libc-internal.h' l='80'/>
+<doc f='codebrowser/include/libc-internal.h' l='77'>/* Ignore the value of an expression when a cast to void does not
+   suffice (in particular, for a call to a function declared with
+   attribute warn_unused_result).  */</doc>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='135' u='c'/>

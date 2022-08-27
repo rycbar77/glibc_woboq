@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/sys/socket.h' l='23' type='int __opensock()'/>
+<doc f='codebrowser/include/sys/socket.h' l='21'>/* Return a socket of any type.  The socket can be used in subsequent
+   ioctl calls to talk to the kernel.  */</doc>
+<def f='codebrowser/socket/opensock.c' l='24' ll='42' type='int __opensock()'/>
+<doc f='codebrowser/socket/opensock.c' l='22'>/* Return a socket of any type.  The socket can be used in subsequent
+   ioctl calls to talk to the kernel.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='49' u='c' c='__if_nametoindex'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='226' u='c' c='__if_indextoname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifreq.c' l='31' u='c' c='__ifreq'/>

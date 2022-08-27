@@ -1,0 +1,12 @@
+<dec f='include/linux/rtnetlink.h' l='791'/>
+<doc f='include/linux/rtnetlink.h' l='780'>/* tcamsg flags stored in attribute TCA_ROOT_FLAGS
+ *
+ * TCA_ACT_FLAG_LARGE_DUMP_ON user-&gt;kernel to request for larger than
+ * TCA_ACT_MAX_PRIO actions in a dump. All dump responses will contain the
+ * number of actions being dumped stored in for user app&apos;s consumption in
+ * TCA_ROOT_COUNT
+ *
+ * TCA_ACT_FLAG_TERSE_DUMP user-&gt;kernel to request terse (brief) dump that only
+ * includes essential action info (kind, index, etc.)
+ *
+ */</doc>

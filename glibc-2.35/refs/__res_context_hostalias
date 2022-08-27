@@ -1,0 +1,9 @@
+<dec f='codebrowser/resolv/resolv-internal.h' l='82' type='const char * __res_context_hostalias(struct resolv_context * , const char * , char * , size_t )'/>
+<dec f='codebrowser/resolv/resolv-internal.h' l='84' type='const char * __res_context_hostalias(struct resolv_context * , const char * , char * , size_t )'/>
+<use f='codebrowser/resolv/resolv-internal.h' l='84' c='__res_context_hostalias'/>
+<doc f='codebrowser/resolv/resolv-internal.h' l='81'>/* Internal function similar to res_hostalias.  */</doc>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='215' u='c' c='gethostbyname3_context'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='355' u='c' c='_nss_dns_gethostbyname4_r'/>
+<def f='codebrowser/resolv/res_context_hostalias.c' l='93' ll='131' type='const char * __res_context_hostalias(struct resolv_context * ctx, const char * name, char * dst, size_t siz)'/>
+<use f='codebrowser/resolv/res_hostalias.c' l='33' u='c' c='context_hostalias_common'/>
+<use f='codebrowser/resolv/res_query.c' l='360' u='c' c='__res_context_search'/>

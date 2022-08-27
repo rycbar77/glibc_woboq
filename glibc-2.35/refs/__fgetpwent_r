@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/pwd.h' l='23' type='int __fgetpwent_r(FILE * __stream, struct passwd * __resultbuf, char * __buffer, size_t __buflen, struct passwd ** __result)'/>
+<use f='codebrowser/pwd/fgetpwent.c' l='54' u='c' c='fgetpwent'/>
+<def f='codebrowser/pwd/fgetpwent_r.c' l='68' ll='78' type='int __fgetpwent_r(FILE * stream, struct passwd * resbuf, char * buffer, size_t buflen, struct passwd ** result)'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='79' c='fgetpwent_r'/>
+<doc f='codebrowser/pwd/fgetpwent_r.c' l='67'>/* Read one entry from the given stream.  */</doc>

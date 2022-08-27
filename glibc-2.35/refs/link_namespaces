@@ -1,0 +1,18 @@
+<def f='codebrowser/sysdeps/generic/ldsodefs.h' l='334' ll='374'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='334'/>
+<size>160</size>
+<mbr r='link_namespaces::_ns_loaded' o='0' t='struct link_map *'/>
+<mbr r='link_namespaces::_ns_nloaded' o='64' t='unsigned int'/>
+<mbr r='link_namespaces::_ns_main_searchlist' o='128' t='struct r_scope_elem *'/>
+<mbr r='link_namespaces::_ns_global_scope_alloc' o='192' t='unsigned int'/>
+<mbr r='link_namespaces::_ns_global_scope_pending_adds' o='224' t='unsigned int'/>
+<mbr r='link_namespaces::libc_map' o='256' t='struct link_map *'/>
+<mbr r='link_namespaces::_ns_unique_sym_table' o='320' t='struct unique_sym_table'/>
+<mbr r='link_namespaces::_ns_debug' o='896' t='struct r_debug_extended'/>
+<use f='codebrowser/elf/dl-close.c' l='164' c='_dl_close_worker'/>
+<size>160</size>
+<use f='codebrowser/elf/dl-open.c' l='94' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='175' c='add_to_global_update'/>
+<size>160</size>
+<use f='codebrowser/elf/dl-support.c' l='109'/>
+<size>160</size>

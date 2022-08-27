@@ -1,0 +1,5 @@
+<dec f='codebrowser/support/support.h' l='127' type='void support_copy_file(const char * from, const char * to)'/>
+<doc f='codebrowser/support/support.h' l='124'>/* Copies the file at the path FROM to TO.  If TO does not exist, it
+   is created.  If TO is a regular file, it is truncated before
+   copying.  The file mode is copied, but the permissions are not.  */</doc>
+<def f='codebrowser/support/support_copy_file.c' l='24' ll='43' type='void support_copy_file(const char * from, const char * to)'/>

@@ -1,0 +1,430 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>svml_d_cosh4_core_avx2.S source code [codebrowser/sysdeps/x86_64/fpu/multiarch/svml_d_cosh4_core_avx2.S] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/fpu/multiarch/svml_d_cosh4_core_avx2.S'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>x86_64</a>/<a href='..'>fpu</a>/<a href='./'>multiarch</a>/<a href='svml_d_cosh4_core_avx2.S.html'>svml_d_cosh4_core_avx2.S</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Function cosh vectorized with AVX2.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/*</i></td></tr>
+<tr><th id="20">20</th><td><i> * ALGORITHM DESCRIPTION:</i></td></tr>
+<tr><th id="21">21</th><td><i> *</i></td></tr>
+<tr><th id="22">22</th><td><i> *   Compute cosh(x) as (exp(x)+exp(-x))/2,</i></td></tr>
+<tr><th id="23">23</th><td><i> *   where exp is calculated as</i></td></tr>
+<tr><th id="24">24</th><td><i> *   exp(M*ln2 + ln2*(j/2^k) + r) = 2^M * 2^(j/2^k) * exp(r)</i></td></tr>
+<tr><th id="25">25</th><td><i> *</i></td></tr>
+<tr><th id="26">26</th><td><i> *   Special cases:</i></td></tr>
+<tr><th id="27">27</th><td><i> *</i></td></tr>
+<tr><th id="28">28</th><td><i> *   cosh(NaN) = quiet NaN, and raise invalid exception</i></td></tr>
+<tr><th id="29">29</th><td><i> *   cosh(INF) = that INF</i></td></tr>
+<tr><th id="30">30</th><td><i> *   cosh(0)   = 1</i></td></tr>
+<tr><th id="31">31</th><td><i> *   cosh(x) overflows for big x and returns MAXLOG+log(2)</i></td></tr>
+<tr><th id="32">32</th><td><i> *</i></td></tr>
+<tr><th id="33">33</th><td><i> */</i></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><i>/* Offsets for data table __svml_dcosh_data_internal</i></td></tr>
+<tr><th id="36">36</th><td><i> */</i></td></tr>
+<tr><th id="37">37</th><td><u>#define <dfn class="macro" id="_M/_dbT" data-ref="_M/_dbT">_dbT</dfn>                          	0</u></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/_dbInvLn2" data-ref="_M/_dbInvLn2">_dbInvLn2</dfn>                     	2080</u></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/_dbLn2hi" data-ref="_M/_dbLn2hi">_dbLn2hi</dfn>                      	2112</u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/_dbLn2lo" data-ref="_M/_dbLn2lo">_dbLn2lo</dfn>                      	2144</u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/_dbShifter" data-ref="_M/_dbShifter">_dbShifter</dfn>                    	2176</u></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/_iIndexMask" data-ref="_M/_iIndexMask">_iIndexMask</dfn>                   	2208</u></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/_dPC2" data-ref="_M/_dPC2">_dPC2</dfn>                         	2240</u></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/_dPC3" data-ref="_M/_dPC3">_dPC3</dfn>                         	2272</u></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/_dPC4" data-ref="_M/_dPC4">_dPC4</dfn>                         	2304</u></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/_iMaxIndex" data-ref="_M/_iMaxIndex">_iMaxIndex</dfn>                    	2336</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/_lExpMask" data-ref="_M/_lExpMask">_lExpMask</dfn>                     	2368</u></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/_dSign" data-ref="_M/_dSign">_dSign</dfn>                        	2400</u></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/_iDomainRange" data-ref="_M/_iDomainRange">_iDomainRange</dfn>                 	2432</u></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><u>#include <a href="../../../unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td>        .text</td></tr>
+<tr><th id="54">54</th><td>	.section .text.avx2,<q>"ax"</q>,@progbits</td></tr>
+<tr><th id="55">55</th><td><a class="macro" href="../../../x86/sysdep.h.html#91" title=".globl _ZGVdN4v_cosh_avx2; .type _ZGVdN4v_cosh_avx2,@function; .align 1&lt;&lt;4; _ZGVdN4v_cosh_avx2: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a>(<span class='warning' title="type specifier missing, defaults to &apos;int&apos;"><dfn class="decl def" id="_ZGVdN4v_cosh_avx2" title='_ZGVdN4v_cosh_avx2' data-ref="_ZGVdN4v_cosh_avx2" data-ref-filename="_ZGVdN4v_cosh_avx2">_ZGVdN4v_cosh_avx2</dfn></span>)</td></tr>
+<tr><th id="56">56</th><td>        <span class='error' title="unknown type name &apos;pushq&apos;">pushq</span>     <span class='error' title="expected identifier or &apos;(&apos;">%</span>rbp</td></tr>
+<tr><th id="57">57</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#44" title=".cfi_def_cfa_offset 16" data-ref="_M/cfi_def_cfa_offset">cfi_def_cfa_offset</a>(<var>16</var>)</td></tr>
+<tr><th id="58">58</th><td>        movq      %rsp, %rbp</td></tr>
+<tr><th id="59">59</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 6, 16" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>6</var>, <var>16</var>)</td></tr>
+<tr><th id="60">60</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 6, -16" data-ref="_M/cfi_offset">cfi_offset</a>(<var>6</var>, -<var>16</var>)</td></tr>
+<tr><th id="61">61</th><td>        andq      $-<var>32</var>, %rsp</td></tr>
+<tr><th id="62">62</th><td>        subq      $<var>96</var>, %rsp</td></tr>
+<tr><th id="63">63</th><td>        lea       <a class="macro" href="#37" title="0" data-ref="_M/_dbT">_dbT</a>+__svml_dcosh_data_internal(%rip), %rax</td></tr>
+<tr><th id="64">64</th><td>        vmovupd   <a class="macro" href="#48" title="2400" data-ref="_M/_dSign">_dSign</a>+__svml_dcosh_data_internal(%rip), %ymm8</td></tr>
+<tr><th id="65">65</th><td>        vmovupd   <a class="macro" href="#41" title="2176" data-ref="_M/_dbShifter">_dbShifter</a>+__svml_dcosh_data_internal(%rip), %ymm6</td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><i>/*</i></td></tr>
+<tr><th id="68">68</th><td><i> *  Load argument</i></td></tr>
+<tr><th id="69">69</th><td><i> * dM = x*2^K/log(2) + RShifter</i></td></tr>
+<tr><th id="70">70</th><td><i> */</i></td></tr>
+<tr><th id="71">71</th><td>        vmovupd   <a class="macro" href="#38" title="2080" data-ref="_M/_dbInvLn2">_dbInvLn2</a>+__svml_dcosh_data_internal(%rip), %ymm3</td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><i>/*</i></td></tr>
+<tr><th id="74">74</th><td><i> * trick</i></td></tr>
+<tr><th id="75">75</th><td><i> * 256=-iIndex</i></td></tr>
+<tr><th id="76">76</th><td><i> */</i></td></tr>
+<tr><th id="77">77</th><td>        vmovups   <a class="macro" href="#46" title="2336" data-ref="_M/_iMaxIndex">_iMaxIndex</a>+__svml_dcosh_data_internal(%rip), %xmm14</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><i>/* dXSign=0x001000000000 */</i></td></tr>
+<tr><th id="80">80</th><td>        vpsrlq    $<var>11</var>, %ymm8, %ymm5</td></tr>
+<tr><th id="81">81</th><td>        vmovapd   %ymm0, %ymm7</td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><i>/*  Abs argument  */</i></td></tr>
+<tr><th id="84">84</th><td>        vandnpd   %ymm7, %ymm8, %ymm4</td></tr>
+<tr><th id="85">85</th><td>        vfmadd213pd %ymm6, %ymm4, %ymm3</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><i>/*  Index and lookup  */</i></td></tr>
+<tr><th id="88">88</th><td>        vextractf128 $<var>1</var>, %ymm3, %xmm12</td></tr>
+<tr><th id="89">89</th><td>        vshufps   $<var>136</var>, %xmm12, %xmm3, %xmm13</td></tr>
+<tr><th id="90">90</th><td>        vpand     <a class="macro" href="#42" title="2208" data-ref="_M/_iIndexMask">_iIndexMask</a>+__svml_dcosh_data_internal(%rip), %xmm13, %xmm15</td></tr>
+<tr><th id="91">91</th><td>        vpsubd    %xmm15, %xmm14, %xmm0</td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td><i>/* iDomainRange*=3 */</i></td></tr>
+<tr><th id="94">94</th><td>        vpslld    $<var>3</var>, %xmm0, %xmm2</td></tr>
+<tr><th id="95">95</th><td>        vmovd     %xmm2, %r9d</td></tr>
+<tr><th id="96">96</th><td>        vpextrd   $<var>2</var>, %xmm2, %r11d</td></tr>
+<tr><th id="97">97</th><td>        movslq    %r9d, %r9</td></tr>
+<tr><th id="98">98</th><td>        vpextrd   $<var>1</var>, %xmm2, %r10d</td></tr>
+<tr><th id="99">99</th><td>        movslq    %r11d, %r11</td></tr>
+<tr><th id="100">100</th><td>        movslq    %r10d, %r10</td></tr>
+<tr><th id="101">101</th><td>        vmovsd    (%rax,%r9), %xmm12</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><i>/*</i></td></tr>
+<tr><th id="104">104</th><td><i> * Check for overflow\underflow</i></td></tr>
+<tr><th id="105">105</th><td><i> *</i></td></tr>
+<tr><th id="106">106</th><td><i> */</i></td></tr>
+<tr><th id="107">107</th><td>        vextractf128 $<var>1</var>, %ymm4, %xmm9</td></tr>
+<tr><th id="108">108</th><td>        vmovsd    (%rax,%r11), %xmm14</td></tr>
+<tr><th id="109">109</th><td>        vmovhpd   (%rax,%r10), %xmm12, %xmm13</td></tr>
+<tr><th id="110">110</th><td>        vshufps   $<var>221</var>, %xmm9, %xmm4, %xmm10</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><i>/* iIndex*=3 */</i></td></tr>
+<tr><th id="113">113</th><td>        vpslld    $<var>3</var>, %xmm15, %xmm9</td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td><i>/*</i></td></tr>
+<tr><th id="116">116</th><td><i> *  R</i></td></tr>
+<tr><th id="117">117</th><td><i> * dN = dM - RShifter</i></td></tr>
+<tr><th id="118">118</th><td><i> */</i></td></tr>
+<tr><th id="119">119</th><td>        vsubpd    %ymm6, %ymm3, %ymm15</td></tr>
+<tr><th id="120">120</th><td>        vmovd     %xmm9, %ecx</td></tr>
+<tr><th id="121">121</th><td>        vpcmpgtd  <a class="macro" href="#49" title="2432" data-ref="_M/_iDomainRange">_iDomainRange</a>+__svml_dcosh_data_internal(%rip), %xmm10, %xmm11</td></tr>
+<tr><th id="122">122</th><td>        vmovupd   <a class="macro" href="#39" title="2112" data-ref="_M/_dbLn2hi">_dbLn2hi</a>+__svml_dcosh_data_internal(%rip), %ymm6</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><i>/*</i></td></tr>
+<tr><th id="125">125</th><td><i> *  G1,G2,G3: dTdif,dTn * 2^N,2^(-N)</i></td></tr>
+<tr><th id="126">126</th><td><i> * NB: copied from sinh_la - to be optimized!!!!!</i></td></tr>
+<tr><th id="127">127</th><td><i> */</i></td></tr>
+<tr><th id="128">128</th><td>        vpsllq    $<var>44</var>, %ymm3, %ymm3</td></tr>
+<tr><th id="129">129</th><td>        vmovmskps %xmm11, %edx</td></tr>
+<tr><th id="130">130</th><td></td></tr>
+<tr><th id="131">131</th><td><i>/* dR = dX - dN*Log2_hi/2^K */</i></td></tr>
+<tr><th id="132">132</th><td>        vfnmadd231pd %ymm6, %ymm15, %ymm4</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><i>/* lM now is an EXP(2^N) */</i></td></tr>
+<tr><th id="135">135</th><td>        vpand     <a class="macro" href="#47" title="2368" data-ref="_M/_lExpMask">_lExpMask</a>+__svml_dcosh_data_internal(%rip), %ymm3, %ymm3</td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td><i>/* dR = (dX - dN*Log2_hi/2^K) - dN*Log2_lo/2^K */</i></td></tr>
+<tr><th id="138">138</th><td>        vfnmadd231pd <a class="macro" href="#40" title="2144" data-ref="_M/_dbLn2lo">_dbLn2lo</a>+__svml_dcosh_data_internal(%rip), %ymm15, %ymm4</td></tr>
+<tr><th id="139">139</th><td>        movslq    %ecx, %rcx</td></tr>
+<tr><th id="140">140</th><td>        vpextrd   $<var>2</var>, %xmm9, %edi</td></tr>
+<tr><th id="141">141</th><td>        vpextrd   $<var>1</var>, %xmm9, %esi</td></tr>
+<tr><th id="142">142</th><td>        movslq    %edi, %rdi</td></tr>
+<tr><th id="143">143</th><td>        vmovsd    (%rax,%rcx), %xmm1</td></tr>
+<tr><th id="144">144</th><td>        vpextrd   $<var>3</var>, %xmm9, %r8d</td></tr>
+<tr><th id="145">145</th><td>        vpextrd   $<var>3</var>, %xmm2, %ecx</td></tr>
+<tr><th id="146">146</th><td>        movslq    %esi, %rsi</td></tr>
+<tr><th id="147">147</th><td>        movslq    %r8d, %r8</td></tr>
+<tr><th id="148">148</th><td>        movslq    %ecx, %rcx</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td><i>/* dR2 = dR^2 */</i></td></tr>
+<tr><th id="151">151</th><td>        vmulpd    %ymm4, %ymm4, %ymm0</td></tr>
+<tr><th id="152">152</th><td>        vmovsd    (%rax,%rdi), %xmm10</td></tr>
+<tr><th id="153">153</th><td>        vmovhpd   (%rax,%rsi), %xmm1, %xmm8</td></tr>
+<tr><th id="154">154</th><td>        vmovhpd   (%rax,%r8), %xmm10, %xmm11</td></tr>
+<tr><th id="155">155</th><td>        vmovhpd   (%rax,%rcx), %xmm14, %xmm2</td></tr>
+<tr><th id="156">156</th><td>        vinsertf128 $<var>1</var>, %xmm11, %ymm8, %ymm1</td></tr>
+<tr><th id="157">157</th><td>        vinsertf128 $<var>1</var>, %xmm2, %ymm13, %ymm2</td></tr>
+<tr><th id="158">158</th><td>        vpaddq    %ymm3, %ymm1, %ymm6</td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td><i>/*  */</i></td></tr>
+<tr><th id="161">161</th><td>        vpsubq    %ymm3, %ymm2, %ymm1</td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td><i>/*</i></td></tr>
+<tr><th id="164">164</th><td><i> * sinh(r) = r +r*r^2*a3 ....</i></td></tr>
+<tr><th id="165">165</th><td><i> * dSinh_r = r^2*a3</i></td></tr>
+<tr><th id="166">166</th><td><i> */</i></td></tr>
+<tr><th id="167">167</th><td>        vmulpd    <a class="macro" href="#44" title="2272" data-ref="_M/_dPC3">_dPC3</a>+__svml_dcosh_data_internal(%rip), %ymm0, %ymm2</td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td><i>/* lX- = EXP(1/2) */</i></td></tr>
+<tr><th id="170">170</th><td>        vpsubq    %ymm5, %ymm1, %ymm5</td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td><i>/* dSinh_r = r + r*r^2*a3 */</i></td></tr>
+<tr><th id="173">173</th><td>        vfmadd213pd %ymm4, %ymm4, %ymm2</td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td><i>/* poly(r) = dTp + dTn*sinh(dR)+dTp*dR2*(a2 +a4*dR2) */</i></td></tr>
+<tr><th id="176">176</th><td>        vmovupd   <a class="macro" href="#45" title="2304" data-ref="_M/_dPC4">_dPC4</a>+__svml_dcosh_data_internal(%rip), %ymm4</td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><i>/* dTn = dTn*2^N - dTn*2^-N */</i></td></tr>
+<tr><th id="179">179</th><td>        vsubpd    %ymm5, %ymm6, %ymm1</td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td><i>/* dTp = dTn*2^N + dTn*2^-N */</i></td></tr>
+<tr><th id="182">182</th><td>        vaddpd    %ymm5, %ymm6, %ymm3</td></tr>
+<tr><th id="183">183</th><td>        vfmadd213pd <a class="macro" href="#43" title="2240" data-ref="_M/_dPC2">_dPC2</a>+__svml_dcosh_data_internal(%rip), %ymm0, %ymm4</td></tr>
+<tr><th id="184">184</th><td>        vmulpd    %ymm2, %ymm1, %ymm1</td></tr>
+<tr><th id="185">185</th><td>        vmulpd    %ymm4, %ymm0, %ymm0</td></tr>
+<tr><th id="186">186</th><td></td></tr>
+<tr><th id="187">187</th><td><i>/* dTn*sinh(dR)+dTp*dR2*(a2 +a4*dR2) */</i></td></tr>
+<tr><th id="188">188</th><td>        vfmadd213pd %ymm1, %ymm3, %ymm0</td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td><i>/* _VRES1 = dTp + dTn*sinh(dR)+dTp*dR2*(a2 +a4*dR2) */</i></td></tr>
+<tr><th id="191">191</th><td>        vaddpd    %ymm0, %ymm3, %ymm0</td></tr>
+<tr><th id="192">192</th><td></td></tr>
+<tr><th id="193">193</th><td><i>/*  Ret H  */</i></td></tr>
+<tr><th id="194">194</th><td>        testl     %edx, %edx</td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td><i>/* Go to special inputs processing branch */</i></td></tr>
+<tr><th id="197">197</th><td>        jne       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH)</td></tr>
+<tr><th id="198">198</th><td>                                <u># LOE rbx r12 r13 r14 r15 edx ymm0 ymm7</u></td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><i>/* Restore registers</i></td></tr>
+<tr><th id="201">201</th><td><i> * and exit the function</i></td></tr>
+<tr><th id="202">202</th><td><i> */</i></td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT):</td></tr>
+<tr><th id="205">205</th><td>        movq      %rbp, %rsp</td></tr>
+<tr><th id="206">206</th><td>        popq      %rbp</td></tr>
+<tr><th id="207">207</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 7, 8" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>7</var>, <var>8</var>)</td></tr>
+<tr><th id="208">208</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 6" data-ref="_M/cfi_restore">cfi_restore</a>(<var>6</var>)</td></tr>
+<tr><th id="209">209</th><td>        ret</td></tr>
+<tr><th id="210">210</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 6, 16" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>6</var>, <var>16</var>)</td></tr>
+<tr><th id="211">211</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 6, -16" data-ref="_M/cfi_offset">cfi_offset</a>(<var>6</var>, -<var>16</var>)</td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td><i>/* Branch to process</i></td></tr>
+<tr><th id="214">214</th><td><i> * special inputs</i></td></tr>
+<tr><th id="215">215</th><td><i> */</i></td></tr>
+<tr><th id="216">216</th><td></td></tr>
+<tr><th id="217">217</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH):</td></tr>
+<tr><th id="218">218</th><td>        vmovupd   %ymm7, <var>32</var>(%rsp)</td></tr>
+<tr><th id="219">219</th><td>        vmovupd   %ymm0, <var>64</var>(%rsp)</td></tr>
+<tr><th id="220">220</th><td>                                <u># LOE rbx r12 r13 r14 r15 edx ymm0</u></td></tr>
+<tr><th id="221">221</th><td></td></tr>
+<tr><th id="222">222</th><td>        xorl      %eax, %eax</td></tr>
+<tr><th id="223">223</th><td>                                <u># LOE rbx r12 r13 r14 r15 eax edx</u></td></tr>
+<tr><th id="224">224</th><td></td></tr>
+<tr><th id="225">225</th><td>        vzeroupper</td></tr>
+<tr><th id="226">226</th><td>        movq      %r12, <var>16</var>(%rsp)</td></tr>
+<tr><th id="227">227</th><td>        <i>/*  DW_CFA_expression: r12 (r12) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -80; DW_OP_plus)  */</i></td></tr>
+<tr><th id="228">228</th><td>        .cfi_escape <var>0x10</var>, <var>0x0c</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xb0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="229">229</th><td>        movl      %eax, %r12d</td></tr>
+<tr><th id="230">230</th><td>        movq      %r13, <var>8</var>(%rsp)</td></tr>
+<tr><th id="231">231</th><td>        <i>/*  DW_CFA_expression: r13 (r13) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -88; DW_OP_plus)  */</i></td></tr>
+<tr><th id="232">232</th><td>        .cfi_escape <var>0x10</var>, <var>0x0d</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa8</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="233">233</th><td>        movl      %edx, %r13d</td></tr>
+<tr><th id="234">234</th><td>        movq      %r14, (%rsp)</td></tr>
+<tr><th id="235">235</th><td>        <i>/*  DW_CFA_expression: r14 (r14) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -96; DW_OP_plus)  */</i></td></tr>
+<tr><th id="236">236</th><td>        .cfi_escape <var>0x10</var>, <var>0x0e</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="237">237</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="238">238</th><td></td></tr>
+<tr><th id="239">239</th><td><i>/* Range mask</i></td></tr>
+<tr><th id="240">240</th><td><i> * bits check</i></td></tr>
+<tr><th id="241">241</th><td><i> */</i></td></tr>
+<tr><th id="242">242</th><td></td></tr>
+<tr><th id="243">243</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK):</td></tr>
+<tr><th id="244">244</th><td>        btl       %r12d, %r13d</td></tr>
+<tr><th id="245">245</th><td></td></tr>
+<tr><th id="246">246</th><td><i>/* Call scalar math function */</i></td></tr>
+<tr><th id="247">247</th><td>        jc        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL)</td></tr>
+<tr><th id="248">248</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="249">249</th><td></td></tr>
+<tr><th id="250">250</th><td><i>/* Special inputs</i></td></tr>
+<tr><th id="251">251</th><td><i> * processing loop</i></td></tr>
+<tr><th id="252">252</th><td><i> */</i></td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP):</td></tr>
+<tr><th id="255">255</th><td>        incl      %r12d</td></tr>
+<tr><th id="256">256</th><td>        cmpl      $<var>4</var>, %r12d</td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td><i>/* Check bits in range mask */</i></td></tr>
+<tr><th id="259">259</th><td>        jl        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK)</td></tr>
+<tr><th id="260">260</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="261">261</th><td></td></tr>
+<tr><th id="262">262</th><td>        movq      <var>16</var>(%rsp), %r12</td></tr>
+<tr><th id="263">263</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 12" data-ref="_M/cfi_restore">cfi_restore</a>(<var>12</var>)</td></tr>
+<tr><th id="264">264</th><td>        movq      <var>8</var>(%rsp), %r13</td></tr>
+<tr><th id="265">265</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 13" data-ref="_M/cfi_restore">cfi_restore</a>(<var>13</var>)</td></tr>
+<tr><th id="266">266</th><td>        movq      (%rsp), %r14</td></tr>
+<tr><th id="267">267</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 14" data-ref="_M/cfi_restore">cfi_restore</a>(<var>14</var>)</td></tr>
+<tr><th id="268">268</th><td>        vmovupd   <var>64</var>(%rsp), %ymm0</td></tr>
+<tr><th id="269">269</th><td></td></tr>
+<tr><th id="270">270</th><td><i>/* Go to exit */</i></td></tr>
+<tr><th id="271">271</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT)</td></tr>
+<tr><th id="272">272</th><td>        <i>/*  DW_CFA_expression: r12 (r12) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -80; DW_OP_plus)  */</i></td></tr>
+<tr><th id="273">273</th><td>        .cfi_escape <var>0x10</var>, <var>0x0c</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xb0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="274">274</th><td>        <i>/*  DW_CFA_expression: r13 (r13) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -88; DW_OP_plus)  */</i></td></tr>
+<tr><th id="275">275</th><td>        .cfi_escape <var>0x10</var>, <var>0x0d</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa8</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="276">276</th><td>        <i>/*  DW_CFA_expression: r14 (r14) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -96; DW_OP_plus)  */</i></td></tr>
+<tr><th id="277">277</th><td>        .cfi_escape <var>0x10</var>, <var>0x0e</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="278">278</th><td>                                <u># LOE rbx r12 r13 r14 r15 ymm0</u></td></tr>
+<tr><th id="279">279</th><td></td></tr>
+<tr><th id="280">280</th><td><i>/* Scalar math fucntion call</i></td></tr>
+<tr><th id="281">281</th><td><i> * to process special input</i></td></tr>
+<tr><th id="282">282</th><td><i> */</i></td></tr>
+<tr><th id="283">283</th><td></td></tr>
+<tr><th id="284">284</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL):</td></tr>
+<tr><th id="285">285</th><td>        movl      %r12d, %r14d</td></tr>
+<tr><th id="286">286</th><td>        movsd     <var>32</var>(%rsp,%r14,<var>8</var>), %xmm0</td></tr>
+<tr><th id="287">287</th><td>        call      cosh@PLT</td></tr>
+<tr><th id="288">288</th><td>                                <u># LOE rbx r14 r15 r12d r13d xmm0</u></td></tr>
+<tr><th id="289">289</th><td></td></tr>
+<tr><th id="290">290</th><td>        movsd     %xmm0, <var>64</var>(%rsp,%r14,<var>8</var>)</td></tr>
+<tr><th id="291">291</th><td></td></tr>
+<tr><th id="292">292</th><td><i>/* Process special inputs in loop */</i></td></tr>
+<tr><th id="293">293</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP)</td></tr>
+<tr><th id="294">294</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="295">295</th><td><a class="macro" href="../../../x86/sysdep.h.html#94" title=".cfi_endproc; .size _ZGVdN4v_cosh_avx2,.-_ZGVdN4v_cosh_avx2;" data-ref="_M/END">END</a>(_ZGVdN4v_cosh_avx2)</td></tr>
+<tr><th id="296">296</th><td></td></tr>
+<tr><th id="297">297</th><td>        <span class='error' title="expected identifier or &apos;(&apos;">.</span>section .rodata, <q>"a"</q></td></tr>
+<tr><th id="298">298</th><td>        .align <var>32</var></td></tr>
+<tr><th id="299">299</th><td></td></tr>
+<tr><th id="300">300</th><td><u>#<span data-ppcond="300">ifdef</span> <span class="macro" data-ref="_M/__svml_dcosh_data_internal_typedef">__svml_dcosh_data_internal_typedef</span></u></td></tr>
+<tr><th id="301">301</th><td><b>typedef</b> <em>unsigned</em> <em>int</em> VUINT32;</td></tr>
+<tr><th id="302">302</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="303">303</th><td>{</td></tr>
+<tr><th id="304">304</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dbT[(<var>1</var> + (<var>1</var>&lt;&lt;<var>8</var>))][<var>2</var>];  <i>//dTpj ONLY!</i></td></tr>
+<tr><th id="305">305</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dbInvLn2[<var>4</var>][<var>2</var>];</td></tr>
+<tr><th id="306">306</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dbLn2hi[<var>4</var>][<var>2</var>];</td></tr>
+<tr><th id="307">307</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dbLn2lo[<var>4</var>][<var>2</var>];</td></tr>
+<tr><th id="308">308</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dbShifter[<var>4</var>][<var>2</var>];</td></tr>
+<tr><th id="309">309</th><td>        __declspec(align(<var>32</var>)) VUINT32 _iIndexMask[<var>8</var>][<var>1</var>];          <i>//(1&lt;&lt;K)1-</i></td></tr>
+<tr><th id="310">310</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dPC2[<var>4</var>][<var>2</var>];</td></tr>
+<tr><th id="311">311</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dPC3[<var>4</var>][<var>2</var>];</td></tr>
+<tr><th id="312">312</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dPC4[<var>4</var>][<var>2</var>];</td></tr>
+<tr><th id="313">313</th><td>        __declspec(align(<var>32</var>)) VUINT32 _iMaxIndex[<var>8</var>][<var>1</var>];       <i>//(1&lt;&lt;K)</i></td></tr>
+<tr><th id="314">314</th><td>        __declspec(align(<var>32</var>)) VUINT32 _lExpMask[<var>4</var>][<var>2</var>];</td></tr>
+<tr><th id="315">315</th><td>        __declspec(align(<var>32</var>)) VUINT32 _dSign[<var>4</var>][<var>2</var>];               <i>//0x8000000000000000</i></td></tr>
+<tr><th id="316">316</th><td>        __declspec(align(<var>32</var>)) VUINT32 _iDomainRange[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="317">317</th><td>} __svml_dcosh_data_internal;</td></tr>
+<tr><th id="318">318</th><td><u>#<span data-ppcond="300">endif</span></u></td></tr>
+<tr><th id="319">319</th><td>__svml_dcosh_data_internal:</td></tr>
+<tr><th id="320">320</th><td>        <i>/*== _dbT ==*/</i></td></tr>
+<tr><th id="321">321</th><td>        .quad <var>0x3fe0000000000000</var>, <var>0x3fe00b1afa5abcbf</var>, <var>0x3fe0163da9fb3335</var>, <var>0x3fe02168143b0281</var></td></tr>
+<tr><th id="322">322</th><td>        .quad <var>0x3fe02c9a3e778061</var>, <var>0x3fe037d42e11bbcc</var>, <var>0x3fe04315e86e7f85</var>, <var>0x3fe04e5f72f654b1</var></td></tr>
+<tr><th id="323">323</th><td>        .quad <var>0x3fe059b0d3158574</var>, <var>0x3fe0650a0e3c1f89</var>, <var>0x3fe0706b29ddf6de</var>, <var>0x3fe07bd42b72a836</var></td></tr>
+<tr><th id="324">324</th><td>        .quad <var>0x3fe0874518759bc8</var>, <var>0x3fe092bdf66607e0</var>, <var>0x3fe09e3ecac6f383</var>, <var>0x3fe0a9c79b1f3919</var></td></tr>
+<tr><th id="325">325</th><td>        .quad <var>0x3fe0b5586cf9890f</var>, <var>0x3fe0c0f145e46c85</var>, <var>0x3fe0cc922b7247f7</var>, <var>0x3fe0d83b23395dec</var></td></tr>
+<tr><th id="326">326</th><td>        .quad <var>0x3fe0e3ec32d3d1a2</var>, <var>0x3fe0efa55fdfa9c5</var>, <var>0x3fe0fb66affed31b</var>, <var>0x3fe1073028d7233e</var></td></tr>
+<tr><th id="327">327</th><td>        .quad <var>0x3fe11301d0125b51</var>, <var>0x3fe11edbab5e2ab6</var>, <var>0x3fe12abdc06c31cc</var>, <var>0x3fe136a814f204ab</var></td></tr>
+<tr><th id="328">328</th><td>        .quad <var>0x3fe1429aaea92de0</var>, <var>0x3fe14e95934f312e</var>, <var>0x3fe15a98c8a58e51</var>, <var>0x3fe166a45471c3c2</var></td></tr>
+<tr><th id="329">329</th><td>        .quad <var>0x3fe172b83c7d517b</var>, <var>0x3fe17ed48695bbc0</var>, <var>0x3fe18af9388c8dea</var>, <var>0x3fe1972658375d2f</var></td></tr>
+<tr><th id="330">330</th><td>        .quad <var>0x3fe1a35beb6fcb75</var>, <var>0x3fe1af99f8138a1c</var>, <var>0x3fe1bbe084045cd4</var>, <var>0x3fe1c82f95281c6b</var></td></tr>
+<tr><th id="331">331</th><td>        .quad <var>0x3fe1d4873168b9aa</var>, <var>0x3fe1e0e75eb44027</var>, <var>0x3fe1ed5022fcd91d</var>, <var>0x3fe1f9c18438ce4d</var></td></tr>
+<tr><th id="332">332</th><td>        .quad <var>0x3fe2063b88628cd6</var>, <var>0x3fe212be3578a819</var>, <var>0x3fe21f49917ddc96</var>, <var>0x3fe22bdda27912d1</var></td></tr>
+<tr><th id="333">333</th><td>        .quad <var>0x3fe2387a6e756238</var>, <var>0x3fe2451ffb82140a</var>, <var>0x3fe251ce4fb2a63f</var>, <var>0x3fe25e85711ece75</var></td></tr>
+<tr><th id="334">334</th><td>        .quad <var>0x3fe26b4565e27cdd</var>, <var>0x3fe2780e341ddf29</var>, <var>0x3fe284dfe1f56381</var>, <var>0x3fe291ba7591bb70</var></td></tr>
+<tr><th id="335">335</th><td>        .quad <var>0x3fe29e9df51fdee1</var>, <var>0x3fe2ab8a66d10f13</var>, <var>0x3fe2b87fd0dad990</var>, <var>0x3fe2c57e39771b2f</var></td></tr>
+<tr><th id="336">336</th><td>        .quad <var>0x3fe2d285a6e4030b</var>, <var>0x3fe2df961f641589</var>, <var>0x3fe2ecafa93e2f56</var>, <var>0x3fe2f9d24abd886b</var></td></tr>
+<tr><th id="337">337</th><td>        .quad <var>0x3fe306fe0a31b715</var>, <var>0x3fe31432edeeb2fd</var>, <var>0x3fe32170fc4cd831</var>, <var>0x3fe32eb83ba8ea32</var></td></tr>
+<tr><th id="338">338</th><td>        .quad <var>0x3fe33c08b26416ff</var>, <var>0x3fe3496266e3fa2d</var>, <var>0x3fe356c55f929ff1</var>, <var>0x3fe36431a2de883b</var></td></tr>
+<tr><th id="339">339</th><td>        .quad <var>0x3fe371a7373aa9cb</var>, <var>0x3fe37f26231e754a</var>, <var>0x3fe38cae6d05d866</var>, <var>0x3fe39a401b7140ef</var></td></tr>
+<tr><th id="340">340</th><td>        .quad <var>0x3fe3a7db34e59ff7</var>, <var>0x3fe3b57fbfec6cf4</var>, <var>0x3fe3c32dc313a8e5</var>, <var>0x3fe3d0e544ede173</var></td></tr>
+<tr><th id="341">341</th><td>        .quad <var>0x3fe3dea64c123422</var>, <var>0x3fe3ec70df1c5175</var>, <var>0x3fe3fa4504ac801c</var>, <var>0x3fe40822c367a024</var></td></tr>
+<tr><th id="342">342</th><td>        .quad <var>0x3fe4160a21f72e2a</var>, <var>0x3fe423fb2709468a</var>, <var>0x3fe431f5d950a897</var>, <var>0x3fe43ffa3f84b9d4</var></td></tr>
+<tr><th id="343">343</th><td>        .quad <var>0x3fe44e086061892d</var>, <var>0x3fe45c2042a7d232</var>, <var>0x3fe46a41ed1d0057</var>, <var>0x3fe4786d668b3237</var></td></tr>
+<tr><th id="344">344</th><td>        .quad <var>0x3fe486a2b5c13cd0</var>, <var>0x3fe494e1e192aed2</var>, <var>0x3fe4a32af0d7d3de</var>, <var>0x3fe4b17dea6db7d7</var></td></tr>
+<tr><th id="345">345</th><td>        .quad <var>0x3fe4bfdad5362a27</var>, <var>0x3fe4ce41b817c114</var>, <var>0x3fe4dcb299fddd0d</var>, <var>0x3fe4eb2d81d8abff</var></td></tr>
+<tr><th id="346">346</th><td>        .quad <var>0x3fe4f9b2769d2ca7</var>, <var>0x3fe508417f4531ee</var>, <var>0x3fe516daa2cf6642</var>, <var>0x3fe5257de83f4eef</var></td></tr>
+<tr><th id="347">347</th><td>        .quad <var>0x3fe5342b569d4f82</var>, <var>0x3fe542e2f4f6ad27</var>, <var>0x3fe551a4ca5d920f</var>, <var>0x3fe56070dde910d2</var></td></tr>
+<tr><th id="348">348</th><td>        .quad <var>0x3fe56f4736b527da</var>, <var>0x3fe57e27dbe2c4cf</var>, <var>0x3fe58d12d497c7fd</var>, <var>0x3fe59c0827ff07cc</var></td></tr>
+<tr><th id="349">349</th><td>        .quad <var>0x3fe5ab07dd485429</var>, <var>0x3fe5ba11fba87a03</var>, <var>0x3fe5c9268a5946b7</var>, <var>0x3fe5d84590998b93</var></td></tr>
+<tr><th id="350">350</th><td>        .quad <var>0x3fe5e76f15ad2148</var>, <var>0x3fe5f6a320dceb71</var>, <var>0x3fe605e1b976dc09</var>, <var>0x3fe6152ae6cdf6f4</var></td></tr>
+<tr><th id="351">351</th><td>        .quad <var>0x3fe6247eb03a5585</var>, <var>0x3fe633dd1d1929fd</var>, <var>0x3fe6434634ccc320</var>, <var>0x3fe652b9febc8fb7</var></td></tr>
+<tr><th id="352">352</th><td>        .quad <var>0x3fe6623882552225</var>, <var>0x3fe671c1c70833f6</var>, <var>0x3fe68155d44ca973</var>, <var>0x3fe690f4b19e9538</var></td></tr>
+<tr><th id="353">353</th><td>        .quad <var>0x3fe6a09e667f3bcd</var>, <var>0x3fe6b052fa75173e</var>, <var>0x3fe6c012750bdabf</var>, <var>0x3fe6cfdcddd47645</var></td></tr>
+<tr><th id="354">354</th><td>        .quad <var>0x3fe6dfb23c651a2f</var>, <var>0x3fe6ef9298593ae5</var>, <var>0x3fe6ff7df9519484</var>, <var>0x3fe70f7466f42e87</var></td></tr>
+<tr><th id="355">355</th><td>        .quad <var>0x3fe71f75e8ec5f74</var>, <var>0x3fe72f8286ead08a</var>, <var>0x3fe73f9a48a58174</var>, <var>0x3fe74fbd35d7cbfd</var></td></tr>
+<tr><th id="356">356</th><td>        .quad <var>0x3fe75feb564267c9</var>, <var>0x3fe77024b1ab6e09</var>, <var>0x3fe780694fde5d3f</var>, <var>0x3fe790b938ac1cf6</var></td></tr>
+<tr><th id="357">357</th><td>        .quad <var>0x3fe7a11473eb0187</var>, <var>0x3fe7b17b0976cfdb</var>, <var>0x3fe7c1ed0130c132</var>, <var>0x3fe7d26a62ff86f0</var></td></tr>
+<tr><th id="358">358</th><td>        .quad <var>0x3fe7e2f336cf4e62</var>, <var>0x3fe7f3878491c491</var>, <var>0x3fe80427543e1a12</var>, <var>0x3fe814d2add106d9</var></td></tr>
+<tr><th id="359">359</th><td>        .quad <var>0x3fe82589994cce13</var>, <var>0x3fe8364c1eb941f7</var>, <var>0x3fe8471a4623c7ad</var>, <var>0x3fe857f4179f5b21</var></td></tr>
+<tr><th id="360">360</th><td>        .quad <var>0x3fe868d99b4492ed</var>, <var>0x3fe879cad931a436</var>, <var>0x3fe88ac7d98a6699</var>, <var>0x3fe89bd0a478580f</var></td></tr>
+<tr><th id="361">361</th><td>        .quad <var>0x3fe8ace5422aa0db</var>, <var>0x3fe8be05bad61778</var>, <var>0x3fe8cf3216b5448c</var>, <var>0x3fe8e06a5e0866d9</var></td></tr>
+<tr><th id="362">362</th><td>        .quad <var>0x3fe8f1ae99157736</var>, <var>0x3fe902fed0282c8a</var>, <var>0x3fe9145b0b91ffc6</var>, <var>0x3fe925c353aa2fe2</var></td></tr>
+<tr><th id="363">363</th><td>        .quad <var>0x3fe93737b0cdc5e5</var>, <var>0x3fe948b82b5f98e5</var>, <var>0x3fe95a44cbc8520f</var>, <var>0x3fe96bdd9a7670b3</var></td></tr>
+<tr><th id="364">364</th><td>        .quad <var>0x3fe97d829fde4e50</var>, <var>0x3fe98f33e47a22a2</var>, <var>0x3fe9a0f170ca07ba</var>, <var>0x3fe9b2bb4d53fe0d</var></td></tr>
+<tr><th id="365">365</th><td>        .quad <var>0x3fe9c49182a3f090</var>, <var>0x3fe9d674194bb8d5</var>, <var>0x3fe9e86319e32323</var>, <var>0x3fe9fa5e8d07f29e</var></td></tr>
+<tr><th id="366">366</th><td>        .quad <var>0x3fea0c667b5de565</var>, <var>0x3fea1e7aed8eb8bb</var>, <var>0x3fea309bec4a2d33</var>, <var>0x3fea42c980460ad8</var></td></tr>
+<tr><th id="367">367</th><td>        .quad <var>0x3fea5503b23e255d</var>, <var>0x3fea674a8af46052</var>, <var>0x3fea799e1330b358</var>, <var>0x3fea8bfe53c12e59</var></td></tr>
+<tr><th id="368">368</th><td>        .quad <var>0x3fea9e6b5579fdbf</var>, <var>0x3feab0e521356eba</var>, <var>0x3feac36bbfd3f37a</var>, <var>0x3fead5ff3a3c2774</var></td></tr>
+<tr><th id="369">369</th><td>        .quad <var>0x3feae89f995ad3ad</var>, <var>0x3feafb4ce622f2ff</var>, <var>0x3feb0e07298db666</var>, <var>0x3feb20ce6c9a8952</var></td></tr>
+<tr><th id="370">370</th><td>        .quad <var>0x3feb33a2b84f15fb</var>, <var>0x3feb468415b749b1</var>, <var>0x3feb59728de5593a</var>, <var>0x3feb6c6e29f1c52a</var></td></tr>
+<tr><th id="371">371</th><td>        .quad <var>0x3feb7f76f2fb5e47</var>, <var>0x3feb928cf22749e4</var>, <var>0x3feba5b030a1064a</var>, <var>0x3febb8e0b79a6f1f</var></td></tr>
+<tr><th id="372">372</th><td>        .quad <var>0x3febcc1e904bc1d2</var>, <var>0x3febdf69c3f3a207</var>, <var>0x3febf2c25bd71e09</var>, <var>0x3fec06286141b33d</var></td></tr>
+<tr><th id="373">373</th><td>        .quad <var>0x3fec199bdd85529c</var>, <var>0x3fec2d1cd9fa652c</var>, <var>0x3fec40ab5fffd07a</var>, <var>0x3fec544778fafb22</var></td></tr>
+<tr><th id="374">374</th><td>        .quad <var>0x3fec67f12e57d14b</var>, <var>0x3fec7ba88988c933</var>, <var>0x3fec8f6d9406e7b5</var>, <var>0x3feca3405751c4db</var></td></tr>
+<tr><th id="375">375</th><td>        .quad <var>0x3fecb720dcef9069</var>, <var>0x3feccb0f2e6d1675</var>, <var>0x3fecdf0b555dc3fa</var>, <var>0x3fecf3155b5bab74</var></td></tr>
+<tr><th id="376">376</th><td>        .quad <var>0x3fed072d4a07897c</var>, <var>0x3fed1b532b08c968</var>, <var>0x3fed2f87080d89f2</var>, <var>0x3fed43c8eacaa1d6</var></td></tr>
+<tr><th id="377">377</th><td>        .quad <var>0x3fed5818dcfba487</var>, <var>0x3fed6c76e862e6d3</var>, <var>0x3fed80e316c98398</var>, <var>0x3fed955d71ff6075</var></td></tr>
+<tr><th id="378">378</th><td>        .quad <var>0x3feda9e603db3285</var>, <var>0x3fedbe7cd63a8315</var>, <var>0x3fedd321f301b460</var>, <var>0x3fede7d5641c0658</var></td></tr>
+<tr><th id="379">379</th><td>        .quad <var>0x3fedfc97337b9b5f</var>, <var>0x3fee11676b197d17</var>, <var>0x3fee264614f5a129</var>, <var>0x3fee3b333b16ee12</var></td></tr>
+<tr><th id="380">380</th><td>        .quad <var>0x3fee502ee78b3ff6</var>, <var>0x3fee653924676d76</var>, <var>0x3fee7a51fbc74c83</var>, <var>0x3fee8f7977cdb740</var></td></tr>
+<tr><th id="381">381</th><td>        .quad <var>0x3feea4afa2a490da</var>, <var>0x3feeb9f4867cca6e</var>, <var>0x3feecf482d8e67f1</var>, <var>0x3feee4aaa2188510</var></td></tr>
+<tr><th id="382">382</th><td>        .quad <var>0x3feefa1bee615a27</var>, <var>0x3fef0f9c1cb6412a</var>, <var>0x3fef252b376bba97</var>, <var>0x3fef3ac948dd7274</var></td></tr>
+<tr><th id="383">383</th><td>        .quad <var>0x3fef50765b6e4540</var>, <var>0x3fef6632798844f8</var>, <var>0x3fef7bfdad9cbe14</var>, <var>0x3fef91d802243c89</var></td></tr>
+<tr><th id="384">384</th><td>        .quad <var>0x3fefa7c1819e90d8</var>, <var>0x3fefbdba3692d514</var>, <var>0x3fefd3c22b8f71f1</var>, <var>0x3fefe9d96b2a23d9</var></td></tr>
+<tr><th id="385">385</th><td>        .quad <var>0x3ff0000000000000</var></td></tr>
+<tr><th id="386">386</th><td>        .align <var>32</var></td></tr>
+<tr><th id="387">387</th><td>        .quad <var>0x3ff71547652b82fe</var>, <var>0x3ff71547652b82fe</var>, <var>0x3ff71547652b82fe</var>, <var>0x3ff71547652b82fe</var> <i>/* _dbInvLn2 = 1/log(2) */</i></td></tr>
+<tr><th id="388">388</th><td>        .align <var>32</var></td></tr>
+<tr><th id="389">389</th><td>        .quad <var>0x3FE62E42FEFC0000</var>, <var>0x3FE62E42FEFC0000</var>, <var>0x3FE62E42FEFC0000</var>, <var>0x3FE62E42FEFC0000</var> <i>/* _dbLn2hi  = log(2) hi*/</i></td></tr>
+<tr><th id="390">390</th><td>        .align <var>32</var></td></tr>
+<tr><th id="391">391</th><td>        .quad <var>0xBDAC610CA86C3899</var>, <var>0xBDAC610CA86C3899</var>, <var>0xBDAC610CA86C3899</var>, <var>0xBDAC610CA86C3899</var> <i>/* _dbLn2lo  = log(2) lo*/</i></td></tr>
+<tr><th id="392">392</th><td>        .align <var>32</var></td></tr>
+<tr><th id="393">393</th><td>        .quad <var>0x42B8000000000000</var>, <var>0x42B8000000000000</var>, <var>0x42B8000000000000</var>, <var>0x42B8000000000000</var> <i>/* _dbShifter */</i></td></tr>
+<tr><th id="394">394</th><td>        .align <var>32</var></td></tr>
+<tr><th id="395">395</th><td>        .<em>long</em> <var>0x000000FF</var>, <var>0x000000FF</var>, <var>0x000000FF</var>, <var>0x000000FF</var>, <var>0x000000FF</var>, <var>0x000000FF</var>, <var>0x000000FF</var>, <var>0x000000FF</var>         <i>/* _iIndexMask */</i></td></tr>
+<tr><th id="396">396</th><td>        .align <var>32</var></td></tr>
+<tr><th id="397">397</th><td>        .quad <var>0x3FDFFFFFFFFFFDBD</var>, <var>0x3FDFFFFFFFFFFDBD</var>, <var>0x3FDFFFFFFFFFFDBD</var>, <var>0x3FDFFFFFFFFFFDBD</var> <i>/* _dPC2 */</i></td></tr>
+<tr><th id="398">398</th><td>        .align <var>32</var></td></tr>
+<tr><th id="399">399</th><td>        .quad <var>0x3FC5555570813E14</var>, <var>0x3FC5555570813E14</var>, <var>0x3FC5555570813E14</var>, <var>0x3FC5555570813E14</var> <i>/* _dPC3 */</i></td></tr>
+<tr><th id="400">400</th><td>        .align <var>32</var></td></tr>
+<tr><th id="401">401</th><td>        .quad <var>0x3FA55555CF16D299</var>, <var>0x3FA55555CF16D299</var>, <var>0x3FA55555CF16D299</var>, <var>0x3FA55555CF16D299</var> <i>/* _dPC4 */</i></td></tr>
+<tr><th id="402">402</th><td>        .align <var>32</var></td></tr>
+<tr><th id="403">403</th><td>        .<em>long</em> <var>0x00000100</var>, <var>0x00000100</var>, <var>0x00000100</var>, <var>0x00000100</var>, <var>0x00000100</var>, <var>0x00000100</var>, <var>0x00000100</var>, <var>0x00000100</var> <i>/* _iMaxIndex */</i></td></tr>
+<tr><th id="404">404</th><td>        .align <var>32</var></td></tr>
+<tr><th id="405">405</th><td>        .quad <var>0x7ff0000000000000</var>, <var>0x7ff0000000000000</var>, <var>0x7ff0000000000000</var>, <var>0x7ff0000000000000</var> <i>/* _lExpMask */</i></td></tr>
+<tr><th id="406">406</th><td>        .align <var>32</var></td></tr>
+<tr><th id="407">407</th><td>        .quad <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var> <i>/* _dSign*/</i></td></tr>
+<tr><th id="408">408</th><td>        .align <var>32</var></td></tr>
+<tr><th id="409">409</th><td>        .<em>long</em> <var>0x40861d99</var>, <var>0x40861d99</var>, <var>0x40861d99</var>, <var>0x40861d99</var>, <var>0x40861d99</var>, <var>0x40861d99</var>, <var>0x40861d99</var>, <var>0x40861d99</var> <i>/* _iDomainRange 0x40861d9ac12a3e85 =(1021*2^K-0.5)*log(2)/2^K -needed for quick exp*/</i></td></tr>
+<tr><th id="410">410</th><td>        .align <var>32</var></td></tr>
+<tr><th id="411">411</th><td>        .type	__svml_dcosh_data_internal,@object</td></tr>
+<tr><th id="412">412</th><td>        .size	__svml_dcosh_data_internal,.-__svml_dcosh_data_internal</td></tr>
+<tr><th id="413">413</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>nss_database.h source code [codebrowser/nss/nss_database.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="nss_database,nss_database_data "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/nss/nss_database.h'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>nss</a>/<a href='nss_database.h.html'>nss_database.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Mapping NSS services to action lists.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2020-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_NSS_DATABASE_H">_NSS_DATABASE_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/_NSS_DATABASE_H" data-ref="_M/_NSS_DATABASE_H">_NSS_DATABASE_H</dfn></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../include/file_change_detection.h.html">&lt;file_change_detection.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><i>/* Each "line" in nsswitch.conf maps a supported database (example:</i></td></tr>
+<tr><th id="25">25</th><td><i>   passwd) to one or more name service providers (example: files dns).</i></td></tr>
+<tr><th id="26">26</th><td><i>   Internally, each name service provider (example: dns) is a</i></td></tr>
+<tr><th id="27">27</th><td><i>   dynamically loadable module (i.e. libnss_dns.so), managed by</i></td></tr>
+<tr><th id="28">28</th><td><i>   nss_module.h.  The sequence of providers and rules (example: files</i></td></tr>
+<tr><th id="29">29</th><td><i>   [SUCCESS=RETURN] dns) is mapped by nss_action.h to a cached entry</i></td></tr>
+<tr><th id="30">30</th><td><i>   which encodes the sequence of modules and rules.  Keeping track of</i></td></tr>
+<tr><th id="31">31</th><td><i>   all supported databases and their corresponding actions is done</i></td></tr>
+<tr><th id="32">32</th><td><i>   here.</i></td></tr>
+<tr><th id="33">33</th><td><i></i></td></tr>
+<tr><th id="34">34</th><td><i>   The key entry is __nss_database_get, which provides a set of</i></td></tr>
+<tr><th id="35">35</th><td><i>   actions which can be used with nss_lookup_function() and</i></td></tr>
+<tr><th id="36">36</th><td><i>   nss_next().  Callers should assume that these functions are fast,</i></td></tr>
+<tr><th id="37">37</th><td><i>   and should not cache the result longer than needed.  */</i></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><u>#include <a href="nss_action.h.html">"nss_action.h"</a></u></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><i>/* The enumeration literal in enum nss_database for the database NAME</i></td></tr>
+<tr><th id="42">42</th><td><i>   (e.g., nss_database_hosts for hosts).  */</i></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/NSS_DATABASE_LITERAL" data-ref="_M/NSS_DATABASE_LITERAL">NSS_DATABASE_LITERAL</dfn>(name) nss_database_##name</u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><b>enum</b> <dfn class="type def" id="nss_database" title='nss_database' data-ref="nss_database" data-ref-filename="nss_database">nss_database</dfn></td></tr>
+<tr><th id="46">46</th><td>{</td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/DEFINE_DATABASE" data-ref="_M/DEFINE_DATABASE">DEFINE_DATABASE</dfn>(name) NSS_DATABASE_LITERAL (name),</u></td></tr>
+<tr><th id="48">48</th><td><u>#include <a href="databases.def.html">"databases.def"</a></u></td></tr>
+<tr><th id="49">49</th><td><u>#undef <a class="macro" href="#47" data-ref="_M/DEFINE_DATABASE">DEFINE_DATABASE</a></u></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td>  <i>/* Total number of databases.  */</i></td></tr>
+<tr><th id="52">52</th><td>  <dfn class="enum" id="NSS_DATABASE_COUNT" title='NSS_DATABASE_COUNT' data-ref="NSS_DATABASE_COUNT" data-ref-filename="NSS_DATABASE_COUNT">NSS_DATABASE_COUNT</dfn></td></tr>
+<tr><th id="53">53</th><td>};</td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><i>/* Looks up the action list for DB and stores it in *ACTIONS.  Returns</i></td></tr>
+<tr><th id="57">57</th><td><i>   true on success or false on failure.  Success can mean that</i></td></tr>
+<tr><th id="58">58</th><td><i>   *ACTIONS is NULL.  */</i></td></tr>
+<tr><th id="59">59</th><td><span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl fn" id="__nss_database_get" title='__nss_database_get' data-ref="__nss_database_get" data-ref-filename="__nss_database_get">__nss_database_get</dfn> (<b>enum</b> <a class="type" href="#nss_database" title='nss_database' data-ref="nss_database" data-ref-filename="nss_database">nss_database</a> <dfn class="local col6 decl" id="186db" title='db' data-type='enum nss_database' data-ref="186db" data-ref-filename="186db">db</dfn>, <a class="typedef" href="nss_action.h.html#nss_action_list" title='nss_action_list' data-type='struct nss_action *' data-ref="nss_action_list" data-ref-filename="nss_action_list">nss_action_list</a> *<dfn class="local col7 decl" id="187actions" title='actions' data-type='nss_action_list *' data-ref="187actions" data-ref-filename="187actions">actions</dfn>)</td></tr>
+<tr><th id="60">60</th><td>  <a class="macro" href="../include/libc-symbols.h.html#439" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><i>/* Like __nss_database_get, but does not reload /etc/nsswitch.conf</i></td></tr>
+<tr><th id="63">63</th><td><i>   from disk.  This assumes that there has been a previous successful</i></td></tr>
+<tr><th id="64">64</th><td><i>   __nss_database_get call (which may not have returned any data).  */</i></td></tr>
+<tr><th id="65">65</th><td><a class="typedef" href="nss_action.h.html#nss_action_list" title='nss_action_list' data-type='struct nss_action *' data-ref="nss_action_list" data-ref-filename="nss_action_list">nss_action_list</a> <dfn class="decl fn" id="__nss_database_get_noreload" title='__nss_database_get_noreload' data-ref="__nss_database_get_noreload" data-ref-filename="__nss_database_get_noreload">__nss_database_get_noreload</dfn> (<b>enum</b> <a class="type" href="#nss_database" title='nss_database' data-ref="nss_database" data-ref-filename="nss_database">nss_database</a> <dfn class="local col8 decl" id="188db" title='db' data-type='enum nss_database' data-ref="188db" data-ref-filename="188db">db</dfn>)</td></tr>
+<tr><th id="66">66</th><td>  <a class="macro" href="../include/libc-symbols.h.html#439" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><i>/* Called from __libc_freeres.  */</i></td></tr>
+<tr><th id="69">69</th><td><em>void</em> <dfn class="decl fn" id="__nss_database_freeres" title='__nss_database_freeres' data-ref="__nss_database_freeres" data-ref-filename="__nss_database_freeres">__nss_database_freeres</dfn> (<em>void</em>) <a class="macro" href="../include/libc-symbols.h.html#439" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><i>/* Internal type.  Exposed only for fork handling purposes.  */</i></td></tr>
+<tr><th id="72">72</th><td><b>struct</b> <dfn class="type def" id="nss_database_data" title='nss_database_data' data-ref="nss_database_data" data-ref-filename="nss_database_data">nss_database_data</dfn></td></tr>
+<tr><th id="73">73</th><td>{</td></tr>
+<tr><th id="74">74</th><td>  <b>struct</b> <a class="type" href="../include/file_change_detection.h.html#file_change_detection" title='file_change_detection' data-ref="file_change_detection" data-ref-filename="file_change_detection">file_change_detection</a> <dfn class="decl field" id="nss_database_data::nsswitch_conf" title='nss_database_data::nsswitch_conf' data-ref="nss_database_data::nsswitch_conf" data-ref-filename="nss_database_data..nsswitch_conf">nsswitch_conf</dfn>;</td></tr>
+<tr><th id="75">75</th><td>  <a class="typedef" href="nss_action.h.html#nss_action_list" title='nss_action_list' data-type='struct nss_action *' data-ref="nss_action_list" data-ref-filename="nss_action_list">nss_action_list</a> <dfn class="decl field" id="nss_database_data::services" title='nss_database_data::services' data-ref="nss_database_data::services" data-ref-filename="nss_database_data..services">services</dfn>[<a class="enum" href="#NSS_DATABASE_COUNT" title='NSS_DATABASE_COUNT' data-ref="NSS_DATABASE_COUNT" data-ref-filename="NSS_DATABASE_COUNT">NSS_DATABASE_COUNT</a>];</td></tr>
+<tr><th id="76">76</th><td>  <em>int</em> <dfn class="decl field" id="nss_database_data::reload_disabled" title='nss_database_data::reload_disabled' data-ref="nss_database_data::reload_disabled" data-ref-filename="nss_database_data..reload_disabled">reload_disabled</dfn>;          <i>/* Actually bool; int for atomic access.  */</i></td></tr>
+<tr><th id="77">77</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="decl field" id="nss_database_data::initialized" title='nss_database_data::initialized' data-ref="nss_database_data::initialized" data-ref-filename="nss_database_data..initialized">initialized</dfn>;</td></tr>
+<tr><th id="78">78</th><td>};</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><i>/* Called by fork in the parent process, before forking.  */</i></td></tr>
+<tr><th id="81">81</th><td><em>void</em> <dfn class="decl fn" id="__nss_database_fork_prepare_parent" title='__nss_database_fork_prepare_parent' data-ref="__nss_database_fork_prepare_parent" data-ref-filename="__nss_database_fork_prepare_parent">__nss_database_fork_prepare_parent</dfn> (<b>struct</b> <a class="type" href="#nss_database_data" title='nss_database_data' data-ref="nss_database_data" data-ref-filename="nss_database_data">nss_database_data</a> *<dfn class="local col9 decl" id="189data" title='data' data-type='struct nss_database_data *' data-ref="189data" data-ref-filename="189data">data</dfn>)</td></tr>
+<tr><th id="82">82</th><td>  <a class="macro" href="../include/libc-symbols.h.html#439" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><i>/* Called by fork in the new subprocess, after forking.  */</i></td></tr>
+<tr><th id="85">85</th><td><em>void</em> <dfn class="decl fn" id="__nss_database_fork_subprocess" title='__nss_database_fork_subprocess' data-ref="__nss_database_fork_subprocess" data-ref-filename="__nss_database_fork_subprocess">__nss_database_fork_subprocess</dfn> (<b>struct</b> <a class="type" href="#nss_database_data" title='nss_database_data' data-ref="nss_database_data" data-ref-filename="nss_database_data">nss_database_data</a> *<dfn class="local col0 decl" id="190data" title='data' data-type='struct nss_database_data *' data-ref="190data" data-ref-filename="190data">data</dfn>)</td></tr>
+<tr><th id="86">86</th><td>  <a class="macro" href="../include/libc-symbols.h.html#439" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td><u>#<span data-ppcond="19">endif</span> /* _NSS_DATABASE_H */</u></td></tr>
+<tr><th id="89">89</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../grp/getgrent.c.html'>codebrowser/grp/getgrent.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.33</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

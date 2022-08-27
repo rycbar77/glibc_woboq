@@ -1,0 +1,25 @@
+<dec f='codebrowser/include/stdio.h' l='189' type='FILE * _IO_new_fopen(const char * , const char * )'/>
+<dec f='codebrowser/libio/iolibio.h' l='24' type='FILE * _IO_new_fopen(const char * , const char * )'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='369' macro='1' u='c' c='read_conf_file'/>
+<use f='codebrowser/inet/rcmd.c' l='483' macro='1' u='c' c='iruserfopen'/>
+<use f='codebrowser/inet/ruserpass.c' l='112' macro='1' u='c' c='ruserpass'/>
+<use f='codebrowser/intl/localealias.c' l='229' macro='1' u='c' c='read_alias_file'/>
+<def f='codebrowser/libio/iofopen.c' l='83' ll='87' type='FILE * _IO_new_fopen(const char * filename, const char * mode)'/>
+<use f='codebrowser/libio/iofopen.c' l='89' c='__new_fopen'/>
+<use f='codebrowser/libio/iofopen.c' l='90' c='_IO_fopen'/>
+<use f='codebrowser/libio/iofopen.c' l='94' c='_IO_fopen64'/>
+<use f='codebrowser/libio/iofopen.c' l='95' c='fopen64'/>
+<use f='codebrowser/malloc/mtrace.c' l='330' macro='1' u='c' c='mtrace'/>
+<use f='codebrowser/misc/getpass.c' l='58' macro='1' u='c' c='getpass'/>
+<use f='codebrowser/misc/getttyent.c' l='190' macro='1' u='c' c='__setttyent'/>
+<use f='codebrowser/misc/getusershell.c' l='107' macro='1' u='c' c='initshells'/>
+<use f='codebrowser/misc/mntent_r.c' l='44' macro='1' u='c' c='__setmntent'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='86' macro='1' u='c' c='__pthread_getattr_np'/>
+<use f='codebrowser/nss/nss_database.c' l='304' macro='1' u='c' c='nss_database_reload'/>
+<use f='codebrowser/nss/nss_files_fopen.c' l='27' macro='1' u='c' c='__nss_files_fopen'/>
+<use f='codebrowser/resolv/res_hconf.c' l='281' macro='1' u='c' c='do_init'/>
+<use f='codebrowser/resolv/res_init.c' l='559' macro='1' u='c' c='__resolv_conf_load'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1779' macro='1' u='c' c='gaiconf_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readonly-area.c' l='34' macro='1' u='c' c='__readonly_area'/>
+<use f='codebrowser/time/getdate.c' l='134' macro='1' u='c' c='__getdate_r'/>
+<use f='codebrowser/time/tzfile.c' l='162' macro='1' u='c' c='__tzfile_read'/>

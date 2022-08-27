@@ -1,0 +1,5 @@
+<def f='codebrowser/malloc/dynarray-skeleton.c' l='316' macro='1' type='const struct sockaddr ** nameserver_list_emplace__tail__(struct nameserver_list * list)'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='341' macro='1' u='c' c='nameserver_list_emplace__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='364' macro='1' u='c' c='nameserver_list_emplace'/>
+<doc f='codebrowser/malloc/dynarray-skeleton.c' l='313'>/* Internal function.  Building block for the emplace functions below.
+   Assumes space for one more element in *LIST.  */</doc>

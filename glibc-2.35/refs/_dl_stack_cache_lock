@@ -1,0 +1,22 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='510' type='int'/>
+<def f='codebrowser/elf/dl-support.c' l='195' type='int'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='112' macro='1' u='a' c='__nptl_deallocate_stack'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='128' macro='1' u='a' c='__nptl_deallocate_stack'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='179' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='276' macro='1' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='63' macro='1' u='a' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='96' macro='1' u='a' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='114' macro='1' u='a' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='318' macro='1' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='323' macro='1' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='443' macro='1' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='448' macro='1' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='485' macro='1' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='490' macro='1' u='a' c='allocate_stack'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='44' macro='1' u='w' c='fork_system_setup_after_fork'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='28' macro='1' u='a' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='79' macro='1' u='a' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='69' macro='1' u='a' c='_dl_make_stacks_executable'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='91' macro='1' u='a' c='_dl_make_stacks_executable'/>
+<use f='codebrowser/elf/dl-tls.c' l='1092' macro='1' u='a' c='_dl_init_static_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='1103' macro='1' u='a' c='_dl_init_static_tls'/>

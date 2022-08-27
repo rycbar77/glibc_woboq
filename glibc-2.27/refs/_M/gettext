@@ -1,0 +1,11 @@
+<dec f='codebrowser/intl/libintl.h' l='109'/>
+<doc f='codebrowser/intl/libintl.h' l='105'>/* These must be macros.  Inlined functions are useless because the
+   `__builtin_constant_p&apos; predicate in dcgettext would always return
+   false.  */</doc>
+<use f='codebrowser/posix/regex_internal.h' l='73' u='w'/>
+<dec f='codebrowser/posix/regex_internal.h' l='74'/>
+<use f='codebrowser/posix/regcomp.c' l='236' u='c'/>
+<use f='codebrowser/posix/regcomp.c' l='543' u='c'/>
+<use f='codebrowser/posix/regcomp.c' l='675' u='c'/>
+<use f='codebrowser/posix/regcomp.c' l='692' u='c'/>
+<use f='codebrowser/posix/regcomp.c' l='708' u='c'/>

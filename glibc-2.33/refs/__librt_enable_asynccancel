@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sysdep-cancel.h' l='32' type='int __librt_enable_asynccancel()'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sysdep-cancel.h' l='31'>/* The two functions are in librt.so and not exported.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_timedreceive.c' l='32' macro='1' u='c' c='__mq_timedreceive'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_timedsend.c' l='32' macro='1' u='c' c='__mq_timedsend'/>

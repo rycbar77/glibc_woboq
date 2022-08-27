@@ -1,0 +1,4 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='615' type='int on_exit(void (*)(int, void *) __func, void * __arg)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='613'>/* Register a function to be called with the status
+   given to `exit&apos; and the given argument.  */</doc>
+<def f='codebrowser/stdlib/on_exit.c' l='51' macro='1' type='int on_exit(void (*)(int, void *) , void * )'/>

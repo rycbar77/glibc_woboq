@@ -1,0 +1,13 @@
+<dec f='codebrowser/sunrpc/rpc/auth.h' l='102' type='void (*)(AUTH *)'/>
+<offset>256</offset>
+<doc f='codebrowser/sunrpc/rpc/auth.h' l='102'>/* destroy this structure */</doc>
+<use f='codebrowser/nis/nis_call.c' l='64' macro='1' u='r' c='__nisbind_destroy'/>
+<use f='codebrowser/nis/nis_call.c' l='76' macro='1' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_findserv.c' l='152' macro='1' u='r' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/nis/nis_findserv.c' l='191' macro='1' u='r' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/nis/ypclnt.c' l='1024' macro='1' u='r' c='__GI_yp_update'/>
+<use f='codebrowser/sunrpc/key_call.c' l='421' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='432' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='444' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='571' macro='1' u='r' c='__rpc_thread_key_cleanup'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='389' macro='1' u='r' c='__GI_clnt_broadcast'/>

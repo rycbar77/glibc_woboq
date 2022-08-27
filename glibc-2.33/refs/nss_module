@@ -1,0 +1,25 @@
+<def f='codebrowser/nss/nss_module.h' l='51' ll='72'/>
+<use f='codebrowser/nss/nss_module.h' l='68'/>
+<use f='codebrowser/nss/nss_module.h' l='78' c='__nss_module_allocate'/>
+<use f='codebrowser/nss/nss_module.h' l='82' c='__nss_module_load'/>
+<use f='codebrowser/nss/nss_module.h' l='87' c='__nss_module_get_function'/>
+<use f='codebrowser/nss/nss_action.h' l='36'/>
+<size>536</size>
+<doc f='codebrowser/nss/nss_module.h' l='49'>/* A NSS service module (potentially unloaded).  Client code should
+   use the functions below.  */</doc>
+<mbr r='nss_module::state' o='0' t='int'/>
+<mbr r='nss_module::functions' o='64' t='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.33/argp/../nss/nss_module.h:58:3)'/>
+<mbr r='nss_module::handle' o='4160' t='void *'/>
+<mbr r='nss_module::next' o='4224' t='struct nss_module *'/>
+<mbr r='nss_module::name' o='4288' t='char[]'/>
+<use f='codebrowser/nss/nss_module.c' l='55'/>
+<use f='codebrowser/nss/nss_module.c' l='74' c='__nss_module_allocate'/>
+<use f='codebrowser/nss/nss_module.c' l='79' c='__nss_module_allocate'/>
+<use f='codebrowser/nss/nss_module.c' l='80' c='__nss_module_allocate'/>
+<use f='codebrowser/nss/nss_module.c' l='123' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='249' c='__nss_module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='275' c='__nss_module_get_function'/>
+<use f='codebrowser/nss/nss_module.c' l='358' c='__nss_module_disable_loading'/>
+<use f='codebrowser/nss/nss_module.c' l='368' c='__nss_module_freeres'/>
+<use f='codebrowser/nss/nss_module.c' l='374' c='__nss_module_freeres'/>
+<size>536</size>

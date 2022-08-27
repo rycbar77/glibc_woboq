@@ -1,0 +1,52 @@
+<dec f='codebrowser/elf/elf.h' l='681' type='Elf32_Addr'/>
+<dec f='codebrowser/elf/elf.h' l='694' type='Elf64_Addr'/>
+<offset>128</offset>
+<doc f='codebrowser/elf/elf.h' l='681'>/* Segment virtual address */</doc>
+<doc f='codebrowser/elf/elf.h' l='694'>/* Segment virtual address */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='127' u='r' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/dl-addr-obj.c' l='71' u='r' c='_dl_addr_inside_object'/>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='203' u='r' c='_dl_process_pt_note'/>
+<use f='codebrowser/elf/dl-load.c' l='867' u='r' c='_dl_process_pt_gnu_property'/>
+<use f='codebrowser/elf/dl-load.c' l='1150' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1156' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1167' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1176' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1176' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1177' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1177' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1178' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1179' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1212' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1216' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1240' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-profile.c' l='211' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='212' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-reloc.c' l='218' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='218' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='219' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='219' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='220' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='220' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='220' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/setup-vdso.h' l='46' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='52' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='53' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='54' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='56' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='57' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/dl-support.c' l='407' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/readelflib.c' l='272' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='273' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='276' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='272' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='273' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='276' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/rtld.c' l='1465' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1470' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1480' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1516' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1521' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1541' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1544' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1556' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1716' u='r' c='dl_main'/>

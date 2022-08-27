@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/stdlib.h' l='98' type='int __ptsname_r(int __fd, char * __buf, size_t __buflen)'/>
+<dec f='codebrowser/include/stdlib.h' l='141' type='int __ptsname_r(int , char * , size_t )'/>
+<dec f='codebrowser/include/stdlib.h' l='143' type='int __ptsname_r(int , char * , size_t )'/>
+<use f='codebrowser/include/stdlib.h' l='143' c='__ptsname_r'/>
+<use f='codebrowser/login/openpty.c' l='46' u='c' c='pts_name'/>
+<use f='codebrowser/login/ptsname_r_chk.c' l='27' u='c' c='__ptsname_r_chk'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ptsname.c' l='42' u='c' c='ptsname'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/ptsname.c' l='49' ll='81' type='int __ptsname_r(int fd, char * buf, size_t buflen)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ptsname.c' l='83' c='ptsname_r'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/ptsname.c' l='46'>/* Store at most BUFLEN characters of the pathname of the slave pseudo
+   terminal associated with the master FD is open on in BUF.
+   Return 0 on success, otherwise an error number.  */</doc>

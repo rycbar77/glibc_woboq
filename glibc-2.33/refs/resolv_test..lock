@@ -1,0 +1,12 @@
+<dec f='codebrowser/support/resolv_test.c' l='576' type='pthread_mutex_t'/>
+<use f='codebrowser/support/resolv_test.c' l='641' u='a' c='server_thread_udp_process_one'/>
+<use f='codebrowser/support/resolv_test.c' l='643' u='a' c='server_thread_udp_process_one'/>
+<use f='codebrowser/support/resolv_test.c' l='977' u='a' c='server_thread_tcp'/>
+<use f='codebrowser/support/resolv_test.c' l='980' u='a' c='server_thread_tcp'/>
+<use f='codebrowser/support/resolv_test.c' l='984' u='a' c='server_thread_tcp'/>
+<use f='codebrowser/support/resolv_test.c' l='1132' u='w' c='resolv_test_start'/>
+<use f='codebrowser/support/resolv_test.c' l='1233' u='a' c='resolv_test_end'/>
+<use f='codebrowser/support/resolv_test.c' l='1235' u='a' c='resolv_test_end'/>
+<offset>0</offset>
+<doc f='codebrowser/support/resolv_test.c' l='574'>/* After initialization, any access to the struct must be performed
+     while this lock is acquired.  */</doc>

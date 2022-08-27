@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='504' type='int __pthread_setspecific(pthread_key_t key, const void * value)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='505' type='int __pthread_setspecific(pthread_key_t , const void * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='505' c='__pthread_setspecific'/>
+<def f='codebrowser/nptl/pthread_setspecific.c' l='95' macro='1' type='int __pthread_setspecific(pthread_key_t , const void * )'/>
+<use f='codebrowser/sysdeps/pthread/tss_set.c' l='25' u='c' c='__tss_set'/>

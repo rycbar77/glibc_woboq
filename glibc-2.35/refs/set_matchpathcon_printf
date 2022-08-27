@@ -1,0 +1,4 @@
+<dec f='include/selinux/selinux.h' l='441' type='void set_matchpathcon_printf(void (*)(const char *, ...) f)'/>
+<doc f='include/selinux/selinux.h' l='438'>/* Set the function used by matchpathcon_init when displaying
+   errors about the file_contexts configuration.  If not set,
+   then this defaults to fprintf(stderr, fmt, ...). */</doc>

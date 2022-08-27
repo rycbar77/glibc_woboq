@@ -1,0 +1,22 @@
+<def f='codebrowser/inet/netgroup.h' l='26' ll='30'/>
+<use f='codebrowser/inet/netgroup.h' l='28'/>
+<use f='codebrowser/inet/netgroup.h' l='62'/>
+<use f='codebrowser/inet/netgroup.h' l='63'/>
+<size>8</size>
+<doc f='codebrowser/inet/netgroup.h' l='24'>/* A netgroup can consist of names of other netgroups.  We have to
+   track which netgroups were read and which still have to be read.  */</doc>
+<mbr r='name_list::next' o='0' t='struct name_list *'/>
+<mbr r='name_list::name' o='64' t='char[]'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='85' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='92' c='free_memory'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='122' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='152' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='152' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='301' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='320' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='337' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='337' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='444' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='460' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='510' c='innetgr'/>
+<size>8</size>

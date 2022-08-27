@@ -1,0 +1,19 @@
+<dec f='codebrowser/stdlib/errno.h' l='37' type='int * __errno_location()'/>
+<dec f='codebrowser/include/errno.h' l='39' type='int * __errno_location()'/>
+<dec f='codebrowser/include/errno.h' l='44' type='int * __errno_location()'/>
+<use f='codebrowser/include/errno.h' l='44' c='__errno_location'/>
+<doc f='codebrowser/stdlib/errno.h' l='36'>/* The error code set by various library functions.  */</doc>
+<def f='codebrowser/csu/errno-loc.c' l='23' ll='27' type='int * __errno_location()'/>
+<use f='codebrowser/elf/cache.c' l='163' macro='1' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='177' macro='1' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='432' macro='1' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='440' macro='1' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='450' macro='1' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='454' macro='1' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='459' macro='1' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='463' macro='1' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='469' macro='1' u='c' c='save_cache'/>
+<use f='codebrowser/elf/chroot_canon.c' l='55' macro='1' u='c' c='chroot_canon'/>
+<use f='codebrowser/elf/chroot_canon.c' l='131' macro='1' u='c' c='chroot_canon'/>
+<use f='codebrowser/elf/chroot_canon.c' l='150' macro='1' u='c' c='chroot_canon'/>
+<use f='codebrowser/sysdeps/posix/libc_fatal.c' l='44' macro='1' u='c' c='writev_for_fatal'/>

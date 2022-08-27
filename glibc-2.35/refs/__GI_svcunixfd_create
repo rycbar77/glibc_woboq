@@ -1,0 +1,6 @@
+<def f='codebrowser/sunrpc/svc_unix.c' l='208' ll='212' type='SVCXPRT * svcunixfd_create(int fd, u_int sendsize, u_int recvsize)'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='213' c='__EI_svcunixfd_create'/>
+<doc f='codebrowser/sunrpc/svc_unix.c' l='204'>/*
+ * Like svunix_create(), except the routine takes any *open* UNIX file
+ * descriptor as its first input.
+ */</doc>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='1023' type='int pthread_rwlock_wrlock(pthread_rwlock_t * __rwlock)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='1022'>/* Acquire write lock for RWLOCK.  */</doc>
+<def f='codebrowser/nptl/pthread_rwlock_wrlock.c' l='30' macro='1' type='int pthread_rwlock_wrlock(pthread_rwlock_t * )'/>
+<use f='codebrowser/nscd/cache.c' l='451' u='c' c='prune_cache'/>
+<use f='codebrowser/nscd/mem.c' l='110' u='c' c='gc'/>
+<use f='codebrowser/support/xpthread_rwlock_wrlock.c' l='25' u='c' c='xpthread_rwlock_wrlock'/>

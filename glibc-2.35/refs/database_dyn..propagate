@@ -1,0 +1,19 @@
+<dec f='codebrowser/nscd/nscd.h' l='139' type='int'/>
+<offset>1696</offset>
+<use f='codebrowser/nscd/connections.c' l='121' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='140' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='159' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='178' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='197' u='w'/>
+<use f='codebrowser/nscd/grpcache.c' l='207' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='214' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='362' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='369' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='376' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='266' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='268' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/pwdcache.c' l='200' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='207' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='341' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='347' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='354' u='r' c='cache_addpw'/>

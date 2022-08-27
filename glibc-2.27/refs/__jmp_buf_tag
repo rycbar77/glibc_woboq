@@ -1,0 +1,21 @@
+<def f='codebrowser/setjmp/setjmp.h' l='33' ll='42'/>
+<use f='codebrowser/setjmp/setjmp.h' l='45'/>
+<use f='codebrowser/setjmp/setjmp.h' l='54' c='__sigsetjmp'/>
+<use f='codebrowser/setjmp/setjmp.h' l='58' c='_setjmp'/>
+<use f='codebrowser/setjmp/setjmp.h' l='67' c='longjmp'/>
+<use f='codebrowser/setjmp/setjmp.h' l='74' c='_longjmp'/>
+<use f='codebrowser/setjmp/setjmp.h' l='83'/>
+<use f='codebrowser/include/setjmp.h' l='64'/>
+<use f='codebrowser/include/setjmp.h' l='66'/>
+<use f='codebrowser/sysdeps/nptl/pthread.h' l='744' c='__sigsetjmp'/>
+<size>200</size>
+<doc f='codebrowser/setjmp/setjmp.h' l='32'>/* Calling environment, plus possibly a saved signal mask.  */</doc>
+<mbr r='__jmp_buf_tag::__jmpbuf' o='0' t='__jmp_buf'/>
+<mbr r='__jmp_buf_tag::__mask_was_saved' o='512' t='int'/>
+<mbr r='__jmp_buf_tag::__saved_mask' o='576' t='__sigset_t'/>
+<use f='codebrowser/nptl/pthread_create.c' l='435' c='start_thread'/>
+<size>200</size>
+<use f='codebrowser/nptl/unwind.c' l='94' c='unwind_stop'/>
+<size>200</size>
+<use f='codebrowser/csu/libc-start.c' l='295' c='__libc_start_main'/>
+<size>200</size>

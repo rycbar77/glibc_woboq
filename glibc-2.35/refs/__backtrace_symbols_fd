@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/execinfo.h' l='11' type='void __backtrace_symbols_fd(void *const * __array, int __size, int __fd)'/>
+<dec f='codebrowser/include/execinfo.h' l='13' type='void __backtrace_symbols_fd(void *const * , int , int )'/>
+<use f='codebrowser/include/execinfo.h' l='13' c='__backtrace_symbols_fd'/>
+<def f='codebrowser/debug/backtracesymsfd.c' l='34' ll='119' type='void __backtrace_symbols_fd(void *const * array, int size, int fd)'/>
+<use f='codebrowser/debug/backtracesymsfd.c' l='120' c='backtrace_symbols_fd'/>

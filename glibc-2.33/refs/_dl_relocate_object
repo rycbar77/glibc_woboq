@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1001' type='void _dl_relocate_object(struct link_map * map, struct r_scope_elem ** scope, int reloc_mode, int consider_profiling)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='998'>/* Relocate the given object (if it hasn&apos;t already been).
+   SCOPE is passed to _dl_lookup_symbol in symbol lookups.
+   If RTLD_LAZY is set in RELOC-MODE, don&apos;t relocate its PLT.  */</doc>
+<use f='codebrowser/elf/dl-open.c' l='700' u='c' c='dl_open_worker'/>
+<def f='codebrowser/elf/dl-reloc.c' l='164' ll='323' type='void _dl_relocate_object(struct link_map * l, struct r_scope_elem ** scope, int reloc_mode, int consider_profiling)'/>
+<use f='codebrowser/elf/rtld.c' l='644' u='c' c='relocate_doit'/>
+<use f='codebrowser/elf/rtld.c' l='2175' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2407' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2470' u='c' c='dl_main'/>

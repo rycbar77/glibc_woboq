@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/link.h' l='185' type='unsigned int'/>
+<offset>6376</offset>
+<doc f='codebrowser/include/link.h' l='185'>/* Used internally for map dependency
+				   graph traversal.  */</doc>
+<use f='codebrowser/elf/dl-sort-maps.c' l='143' u='r' c='dfs_traversal'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='146' u='w' c='dfs_traversal'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='153' u='r' c='dfs_traversal'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='168' u='r' c='dfs_traversal'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='186' u='w' c='_dl_sort_maps_dfs'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='257' u='w' c='_dl_sort_maps_dfs'/>

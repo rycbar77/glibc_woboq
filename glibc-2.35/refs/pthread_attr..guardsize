@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/nptl/internaltypes.h' l='34' type='size_t'/>
+<offset>128</offset>
+<doc f='codebrowser/sysdeps/nptl/internaltypes.h' l='33'>/* Size of guard area.  */</doc>
+<use f='codebrowser/sysdeps/nptl/pthread_early_init.h' l='54' u='w' c='__pthread_early_init'/>
+<use f='codebrowser/nptl/pthread_attr_getguardsize.c' l='28' u='r' c='__pthread_attr_getguardsize'/>
+<use f='codebrowser/nptl/pthread_attr_init.c' l='46' u='w' c='__pthread_attr_init'/>
+<use f='codebrowser/nptl/pthread_attr_setguardsize.c' l='31' u='w' c='__pthread_attr_setguardsize'/>
+<use f='codebrowser/nptl/allocatestack.c' l='347' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='351' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='59' u='w' c='__pthread_getattr_np'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='101' u='w' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='101' u='r' c='___timer_create'/>

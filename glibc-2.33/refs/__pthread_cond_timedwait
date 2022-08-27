@@ -1,0 +1,6 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='506' type='int __pthread_cond_timedwait(pthread_cond_t * cond, pthread_mutex_t * mutex, const struct timespec * abstime)'/>
+<def f='codebrowser/nptl/forward.c' l='99' macro='1' type='int __pthread_cond_timedwait(pthread_cond_t * cond, pthread_mutex_t * mutex, const struct timespec * abstime)'/>
+<def f='codebrowser/nptl/pthread_cond_wait.c' l='624' macro='1' type='int __pthread_cond_timedwait(pthread_cond_t * cond, pthread_mutex_t * mutex, const struct timespec * abstime)'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='655' c='pthread_cond_timedwait'/>
+<doc f='codebrowser/nptl/pthread_cond_wait.c' l='622'>/* See __pthread_cond_wait_common.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/cnd_timedwait.c' l='26' macro='1' u='c' c='__cnd_timedwait'/>

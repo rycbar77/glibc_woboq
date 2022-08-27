@@ -1,0 +1,52 @@
+<use f='codebrowser/include/rpc/auth_des.h' l='16' c='_svcauth_des'/>
+<def f='codebrowser/sunrpc/rpc/svc.h' l='164' ll='171'/>
+<use f='codebrowser/sunrpc/rpc/svc.h' l='175'/>
+<use f='codebrowser/sunrpc/rpc/svc_auth.h' l='45' c='_authenticate'/>
+<use f='codebrowser/include/rpc/svc_auth.h' l='7' c='_svcauth_unix'/>
+<use f='codebrowser/include/rpc/svc_auth.h' l='9' c='_svcauth_short'/>
+<size>64</size>
+<doc f='codebrowser/sunrpc/rpc/svc.h' l='161'>/*
+ * Service request
+ */</doc>
+<mbr r='svc_req::rq_prog' o='0' t='rpcprog_t'/>
+<mbr r='svc_req::rq_vers' o='64' t='rpcvers_t'/>
+<mbr r='svc_req::rq_proc' o='128' t='rpcproc_t'/>
+<mbr r='svc_req::rq_cred' o='192' t='struct opaque_auth'/>
+<mbr r='svc_req::rq_clntcred' o='384' t='caddr_t'/>
+<mbr r='svc_req::rq_xprt' o='448' t='SVCXPRT *'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='228' c='key_set_1_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='231' c='key_encrypt_1_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='234' c='key_decrypt_1_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='237' c='key_gen_1_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='240' c='key_getcred_1_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='290' c='key_set_2_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='292' c='key_encrypt_2_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='294' c='key_decrypt_2_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='296' c='key_gen_2_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='298' c='key_getcred_2_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='301' c='key_encrypt_pk_2_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='304' c='key_decrypt_pk_2_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='307' c='key_net_put_2_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='310' c='key_net_get_2_svc'/>
+<use f='codebrowser/sunrpc/rpc/key_prot.h' l='313' c='key_get_conv_2_svc'/>
+<size>64</size>
+<use f='codebrowser/sunrpc/svc.c' l='77'/>
+<use f='codebrowser/sunrpc/svc.c' l='183' c='__GI_svc_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='479' c='__GI_svc_getreq_common'/>
+<size>64</size>
+<use f='codebrowser/sunrpc/svc_auth.c' l='54' c='_svcauth_null'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='56' c='_svcauth_unix'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='58' c='_svcauth_short'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='60' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='65'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='96' c='__GI__authenticate'/>
+<use f='codebrowser/sunrpc/svc_auth.c' l='112' c='_svcauth_null'/>
+<size>64</size>
+<use f='codebrowser/sunrpc/svc_authux.c' l='48' c='_svcauth_unix'/>
+<use f='codebrowser/sunrpc/svc_authux.c' l='144' c='_svcauth_short'/>
+<size>64</size>
+<use f='codebrowser/sunrpc/svc_simple.c' l='59' c='universal'/>
+<use f='codebrowser/sunrpc/svc_simple.c' l='122' c='universal'/>
+<size>64</size>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='106' c='_svcauth_des'/>
+<size>64</size>

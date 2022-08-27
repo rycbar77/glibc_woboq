@@ -1,0 +1,10 @@
+<def f='codebrowser/sysdeps/ieee754/float128/ieee754_float128.h' l='110' ll='136'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/ldbl2mpn.c' l='37' macro='1' c='__mpn_extract_float128'/>
+<size>1</size>
+<doc f='codebrowser/sysdeps/ieee754/float128/ieee754_float128.h' l='107'>/* Likewise, some helper macros which are exposed via ieee754.h for
+   C99 real types, but not _Float128.  */</doc>
+<mbr r='ieee854_float128::d' t='int'/>
+<mbr r='ieee854_float128::ieee' t='struct (unnamed struct at /media/rr/Data/glibc_source/glibc-2.27/argp/../sysdeps/ieee754/float128/ieee754_float128.h:115:5)'/>
+<mbr r='ieee854_float128::ieee_nan' t='struct (unnamed struct at /media/rr/Data/glibc_source/glibc-2.27/argp/../sysdeps/ieee754/float128/ieee754_float128.h:126:5)'/>
+<use f='codebrowser/sysdeps/ieee754/float128/mpn2float128.c' l='33' c='__mpn_construct_float128'/>
+<size>1</size>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/dirent/dirent.h' l='209' type='void rewinddir(DIR * __dirp)'/>
+<use f='codebrowser/include/dirent.h' l='54' c='__rewinddir'/>
+<doc f='codebrowser/dirent/dirent.h' l='208'>/* Rewind DIRP to the beginning of the directory.  */</doc>
+<use f='codebrowser/support/support_wait_for_thread_exit.c' l='68' u='c' c='support_wait_for_thread_exit'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/rewinddir.c' l='41' macro='1' type='void rewinddir(DIR * )'/>

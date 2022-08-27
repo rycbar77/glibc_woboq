@@ -1,0 +1,8 @@
+<def f='codebrowser/dlfcn/dlinfo.c' l='36' ll='42'/>
+<use f='codebrowser/dlfcn/dlinfo.c' l='47' c='dlinfo_doit'/>
+<use f='codebrowser/dlfcn/dlinfo.c' l='119' c='__dlinfo'/>
+<size>32</size>
+<mbr r='dlinfo_args::caller' o='0' t='Elf64_Addr'/>
+<mbr r='dlinfo_args::handle' o='64' t='void *'/>
+<mbr r='dlinfo_args::request' o='128' t='int'/>
+<mbr r='dlinfo_args::arg' o='192' t='void *'/>

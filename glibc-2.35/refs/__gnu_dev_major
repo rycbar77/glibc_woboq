@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/sys/sysmacros.h' l='42' macro='1' type='unsigned int __gnu_dev_major(__dev_t __dev)'/>
+<def f='codebrowser/include/sys/sysmacros.h' l='47' macro='1' type='unsigned int __gnu_dev_major(__dev_t __dev)'/>
+<use f='codebrowser/libio/filedoalloc.c' l='91' macro='1' u='c' c='_IO_file_doallocate'/>
+<def f='codebrowser/misc/makedev.c' l='28' macro='1' type='unsigned int __gnu_dev_major(__dev_t __dev)'/>
+<use f='codebrowser/misc/makedev.c' l='29' c='gnu_dev_major'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='77' u='c' c='distinguish_extX'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname.h' l='30' u='c' c='is_pty'/>

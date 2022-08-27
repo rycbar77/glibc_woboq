@@ -1,0 +1,4 @@
+<use f='codebrowser/csu/libc-tls.c' l='179' u='w' c='__libc_setup_tls'/>
+<use f='codebrowser/nptl/allocatestack.c' l='243' u='r' c='get_cached_stack'/>
+<use f='codebrowser/elf/dl-tls.c' l='485' u='w' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='544' u='r' c='_dl_deallocate_tls'/>

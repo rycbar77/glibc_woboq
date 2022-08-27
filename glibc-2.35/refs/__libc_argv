@@ -1,0 +1,21 @@
+<dec f='codebrowser/include/dlfcn.h' l='24' type='char **'/>
+<def f='codebrowser/csu/init-first.c' l='34' type='char **'/>
+<use f='codebrowser/csu/init-first.c' l='62' u='w' c='__libc_init_first'/>
+<dec f='codebrowser/debug/chk_fail.c' l='22' type='char **'/>
+<use f='codebrowser/dlfcn/dlmopen.c' l='63' u='r' c='dlmopen_doit'/>
+<use f='codebrowser/dlfcn/dlopen.c' l='59' u='r' c='dlopen_doit'/>
+<dec f='codebrowser/elf/dl-libc.c' l='25' type='char **'/>
+<use f='codebrowser/elf/dl-libc.c' l='96' u='r' c='do_dlopen'/>
+<dec f='codebrowser/malloc/malloc.c' l='5658' type='char **'/>
+<doc f='codebrowser/malloc/malloc.c' l='5656'>/* Helper code.  */</doc>
+<dec f='codebrowser/posix/wordexp.c' l='45' type='char **'/>
+<use f='codebrowser/posix/wordexp.c' l='1408' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1438' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1439' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1445' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1449' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1461' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1468' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1472' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1474' u='r' c='parse_param'/>
+<use f='codebrowser/posix/wordexp.c' l='1481' u='r' c='parse_param'/>

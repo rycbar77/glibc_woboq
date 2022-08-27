@@ -1,0 +1,25 @@
+<dec f='codebrowser/libio/stdio.h' l='237' type='int fclose(FILE * __stream)'/>
+<doc f='codebrowser/libio/stdio.h' l='233'>/* Close STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='838' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='1069' u='c' c='write_out'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='356' u='c' c='main'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='725' u='c' c='handle_dir'/>
+<def f='codebrowser/libio/iofclose.c' l='93' macro='1' type='int fclose(_IO_FILE * )'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='287' u='c' c='charmap_aliases'/>
+<use f='codebrowser/locale/programs/linereader.c' l='88' u='c' c='lr_create'/>
+<use f='codebrowser/locale/programs/linereader.c' l='145' u='c' c='lr_close'/>
+<use f='codebrowser/locale/programs/locale.c' l='614' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1316' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='146' u='c' c='pthread_getattr_np'/>
+<use f='codebrowser/nss/getent.c' l='917' u='c' c='more_help'/>
+<use f='codebrowser/nss/makedb.c' l='260' u='c' c='main'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='792' u='c' c='_endhtent'/>
+<use f='codebrowser/resolv/res_query.c' l='645' u='c' c='__res_hostalias'/>
+<use f='codebrowser/resolv/res_query.c' l='649' u='c' c='__res_hostalias'/>
+<use f='codebrowser/timezone/zdump.c' l='542' u='c' c='close_file'/>
+<use f='codebrowser/timezone/zdump.c' l='737' u='c' c='main'/>
+<use f='codebrowser/timezone/zic.c' l='484' u='c' c='close_file'/>
+<use f='codebrowser/timezone/zic.c' l='651' u='c' c='main'/>

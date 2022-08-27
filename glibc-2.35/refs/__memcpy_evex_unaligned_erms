@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='866' type='void * __memcpy_evex_unaligned_erms(void * , const void * , unsigned long )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='866' u='r' c='__libc_ifunc_impl_list'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memmove.h' l='38' macro='1' type='void * __memcpy_evex_unaligned_erms(void *restrict , const void *restrict , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-memmove.h' l='75' macro='1' u='r' c='memcpy_ifunc_selector'/>

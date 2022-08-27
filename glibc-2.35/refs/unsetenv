@@ -1,0 +1,5 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='664' type='int unsetenv(const char * __name)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='663'>/* Remove the variable NAME from the environment.  */</doc>
+<def f='codebrowser/elf/dl-environ.c' l='55' ll='84' type='int unsetenv(const char * name)'/>
+<use f='codebrowser/elf/rtld.c' l='2855' u='c' c='process_envvars'/>
+<def f='codebrowser/stdlib/setenv.c' l='340' macro='1' type='int unsetenv(const char * )'/>

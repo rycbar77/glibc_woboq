@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/arpa/nameser.h' l='55' type='int __ns_name_unpack(const unsigned char * , const unsigned char * , const unsigned char * , unsigned char * , size_t )'/>
+<dec f='codebrowser/include/arpa/nameser.h' l='87' type='int __ns_name_unpack(const unsigned char * , const unsigned char * , const unsigned char * , unsigned char * , size_t )'/>
+<use f='codebrowser/resolv/ns_name_uncompress.c' l='29' u='c' c='___ns_name_uncompress'/>
+<def f='codebrowser/resolv/ns_name_unpack.c' l='110' macro='1' type='int __ns_name_unpack(const unsigned char * , const unsigned char * , const unsigned char * , unsigned char * , size_t )'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='694' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='754' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='884' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1034' u='c' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='1080' u='c' c='gaih_getanswer_slice'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='338' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='372' u='c' c='getanswer_r'/>

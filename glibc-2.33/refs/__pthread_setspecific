@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='355' type='int __pthread_setspecific(pthread_key_t __key, const void * __pointer)'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='519' type='int __pthread_setspecific(pthread_key_t key, const void * value)'/>
+<def f='codebrowser/nptl/pthread_setspecific.c' l='24' ll='91' type='int __pthread_setspecific(pthread_key_t key, const void * value)'/>
+<use f='codebrowser/nptl/pthread_setspecific.c' l='92' c='pthread_setspecific'/>
+<use f='codebrowser/sysdeps/pthread/tss_set.c' l='24' u='c' c='tss_set'/>

@@ -1,0 +1,40 @@
+<dec f='codebrowser/posix/unistd.h' l='371' type='ssize_t read(int __fd, void * __buf, size_t __nbytes)'/>
+<dec f='codebrowser/include/unistd.h' l='68' type='ssize_t read(int , void * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='68' c='read'/>
+<doc f='codebrowser/posix/unistd.h' l='366'>/* Read NBYTES into BUF from FD.  Return the
+   number read, -1 for errors or 0 for EOF.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/debug/pcprofiledump.c' l='113' u='c' c='main'/>
+<use f='codebrowser/debug/pcprofiledump.c' l='136' u='c' c='main'/>
+<use f='codebrowser/debug/pcprofiledump.c' l='163' u='c' c='main'/>
+<use f='codebrowser/elf/pldd.c' l='295' u='c' c='get_process_info'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='498' u='c' c='process_fd'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='534' u='c' c='process_fd'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='552' u='c' c='process_fd'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='588' u='c' c='process_fd'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='651' u='c' c='open_archive'/>
+<use f='codebrowser/locale/programs/locfile.c' l='477' u='c' c='full_read'/>
+<def f='codebrowser/posix/bits/unistd.h' l='35' ll='41' macro='1' type='ssize_t read(int __fd, void * __buf, size_t __nbytes)'/>
+<use f='codebrowser/nscd/connections.c' l='510' u='c' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='1315' u='c' c='read_cmdline'/>
+<use f='codebrowser/nscd/connections.c' l='1630' u='c' c='nscd_run_worker'/>
+<use f='codebrowser/nscd/connections.c' l='1676' u='c' c='nscd_run_worker'/>
+<use f='codebrowser/nscd/connections.c' l='1975' u='c' c='handle_inotify_events'/>
+<use f='codebrowser/nscd/connections.c' l='2125' u='c' c='main_loop_poll'/>
+<use f='codebrowser/nscd/connections.c' l='2283' u='c' c='main_loop_epoll'/>
+<use f='codebrowser/nscd/nscd.c' l='369' u='c' c='invalidate_db'/>
+<use f='codebrowser/nscd/nscd.c' l='636' u='c' c='monitor_child'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='212' u='c' c='receive_print_stats'/>
+<use f='codebrowser/nss/nss_db/db-open.c' l='44' u='c' c='internal_setent'/>
+<use f='codebrowser/resolv/res_send.c' l='657' u='c' c='send_vc'/>
+<use f='codebrowser/resolv/res_send.c' l='742' u='c' c='send_vc'/>
+<use f='codebrowser/resolv/res_send.c' l='759' u='c' c='send_vc'/>
+<use f='codebrowser/rt/aio_misc.c' l='554' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/support/resolv_test.c' l='808' u='c' c='read_fully'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='38' u='c' c='transfer'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='137' u='c' c='copy_and_spawn_sgid'/>
+<use f='codebrowser/support/support_copy_file_range.c' l='81' u='c' c='support_copy_file_range'/>
+<use f='codebrowser/support/test-container.c' l='1158' u='c' c='main'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/read.c' l='33' macro='1' type='ssize_t read(int , void * , size_t )'/>

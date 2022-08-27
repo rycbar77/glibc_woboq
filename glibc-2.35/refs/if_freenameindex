@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/gnu/net/if.h' l='202' type='void if_freenameindex(struct if_nameindex * __ptr)'/>
+<dec f='codebrowser/include/net/if.h' l='11' type='void if_freenameindex(struct if_nameindex * )'/>
+<use f='codebrowser/include/net/if.h' l='11' c='if_freenameindex'/>
+<use f='codebrowser/include/net/if.h' l='12' c='__if_freenameindex'/>
+<doc f='codebrowser/sysdeps/gnu/net/if.h' l='201'>/* Free the data returned from if_nameindex.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='83' macro='1' type='void if_freenameindex(struct if_nameindex * )'/>

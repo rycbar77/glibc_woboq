@@ -1,0 +1,8 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='49' ll='53' type='_Bool __is_internal_signal(int sig)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='48'>/* Return is sig is used internally.  */</doc>
+<use f='codebrowser/nptl/pthread_kill.c' l='86' u='c' c='__pthread_kill'/>
+<use f='codebrowser/signal/sigaction.c' l='27' u='c' c='__sigaction'/>
+<use f='codebrowser/signal/sigaddset.c' l='28' u='c' c='sigaddset'/>
+<use f='codebrowser/signal/sigdelset.c' l='28' u='c' c='sigdelset'/>
+<use f='codebrowser/sysdeps/posix/signal.c' l='35' u='c' c='__bsd_signal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='127' u='c' c='__spawni_child'/>

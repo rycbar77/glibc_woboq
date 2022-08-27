@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='489' type='int __pthread_mutex_clocklock(pthread_mutex_t * mutex, clockid_t clockid, const struct timespec * abstime)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='492' type='int __pthread_mutex_clocklock(pthread_mutex_t * , clockid_t , const struct timespec * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='492' c='__pthread_mutex_clocklock'/>
+<def f='codebrowser/nptl/pthread_mutex_timedlock.c' l='603' macro='1' type='int __pthread_mutex_clocklock(pthread_mutex_t * , clockid_t , const struct timespec * )'/>

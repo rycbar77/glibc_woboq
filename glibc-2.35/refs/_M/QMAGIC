@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/a.out.h' l='55'/>
+<use f='codebrowser/elf/readlib.c' l='137' u='a'/>
+<use f='codebrowser/elf/readlib.c' l='138' u='c'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/a.out.h' l='53'>/* This indicates a demand-paged executable with the header in the text.
+   The first page is unmapped to help trap NULL pointer references.  */</doc>

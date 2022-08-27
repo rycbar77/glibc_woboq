@@ -1,0 +1,21 @@
+<dec f='codebrowser/resolv/netdb.h' l='103' type='char **'/>
+<offset>64</offset>
+<doc f='codebrowser/resolv/netdb.h' l='103'>/* Alias list.  */</doc>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='276' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='364' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='368' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='396' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='405' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='411' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nss/digits_dots.c' l='166' u='w' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/digits_dots.c' l='258' u='w' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/getent.c' l='283' u='r' c='print_hosts'/>
+<use f='codebrowser/nss/getent.c' l='286' u='r' c='print_hosts'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='248' u='w' c='getanswer'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='571' u='w' c='res_gethostbyname2'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='604' u='w' c='res_gethostbyname2'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='844' u='w' c='_gethtent'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='888' u='r' c='_gethtbyname2'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='712' u='w' c='getanswer_r'/>
+<use f='codebrowser/resolv/res_hconf.c' l='604' u='r' c='_res_hconf_trim_domains'/>
+<use f='codebrowser/resolv/res_hconf.c' l='605' u='r' c='_res_hconf_trim_domains'/>

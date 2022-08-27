@@ -1,0 +1,3 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='894' type='int pthread_mutexattr_gettype(const pthread_mutexattr_t *restrict __attr, int *restrict __kind)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='893'>/* Return in *KIND the mutex kind attribute in *ATTR.  */</doc>
+<def f='codebrowser/nptl/pthread_mutexattr_gettype.c' l='33' macro='1' type='int pthread_mutexattr_gettype(const pthread_mutexattr_t * , int * )'/>

@@ -1,0 +1,11 @@
+<dec f='include/selinux/avc.h' l='67' type='int sidget(security_id_t sid)'/>
+<doc f='include/selinux/avc.h' l='57'>/**
+ * sidget - increment SID reference counter.
+ * @sid: SID reference
+ *
+ * Increment the reference counter for @sid, indicating that
+ * @sid is in use by an (additional) object.  Return the
+ * new reference count, or zero if @sid is invalid (has zero
+ * reference count).  Note that avc_context_to_sid() also
+ * increments reference counts.
+ */</doc>

@@ -1,0 +1,7 @@
+<def f='codebrowser/malloc/malloc.c' l='5044' ll='5105' type='void int_mallinfo(mstate av, struct mallinfo2 * m)'/>
+<use f='codebrowser/malloc/malloc.c' l='5122' u='c' c='__libc_mallinfo2'/>
+<use f='codebrowser/malloc/malloc.c' l='5176' u='c' c='__malloc_stats'/>
+<doc f='codebrowser/malloc/malloc.c' l='5040'>/*
+   ------------------------------ mallinfo ------------------------------
+   Accumulate malloc statistics for arena AV into M.
+ */</doc>

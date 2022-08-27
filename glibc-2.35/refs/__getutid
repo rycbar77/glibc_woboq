@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/utmp.h' l='17' type='struct utmp * __getutid(const struct utmp * __id)'/>
+<dec f='codebrowser/include/utmp.h' l='18' type='struct utmp * __getutid(const struct utmp * )'/>
+<use f='codebrowser/include/utmp.h' l='18' c='__getutid'/>
+<def f='codebrowser/login/getutid.c' l='25' ll='40' type='struct utmp * __getutid(const struct utmp * id)'/>
+<use f='codebrowser/login/getutid.c' l='42' c='getutid'/>
+<use f='codebrowser/login/getutxid.c' l='24' u='c' c='getutxid'/>

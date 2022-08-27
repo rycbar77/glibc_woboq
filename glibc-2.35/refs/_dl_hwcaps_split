@@ -1,0 +1,12 @@
+<dec f='codebrowser/elf/dl-hwcaps.h' l='64' type='_Bool _dl_hwcaps_split(struct dl_hwcaps_split * s)'/>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='59'>/* Extract the next non-empty string segment, up to &apos;:&apos; or the null
+   terminator.  Return true if one more segment was found, or false if
+   the end of the string was reached.  On success, S-&gt;segment is the
+   start of the segment found, and S-&gt;length is its length.
+   (Typically, S-&gt;segment[S-&gt;length] is not null.)  */</doc>
+<use f='codebrowser/elf/dl-hwcaps.c' l='112' u='c' c='compute_priorities'/>
+<def f='codebrowser/elf/dl-hwcaps_split.c' l='23' ll='47' type='_Bool _dl_hwcaps_split(struct dl_hwcaps_split * s)'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='54' u='c' c='_dl_hwcaps_split_masked'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='72' u='c' c='_dl_hwcaps_contains'/>
+<use f='codebrowser/elf/dl-usage.c' l='164' u='c' c='print_hwcaps_subdirectories'/>
+<use f='codebrowser/elf/dl-usage.c' l='177' u='c' c='print_hwcaps_subdirectories'/>

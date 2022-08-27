@@ -1,0 +1,89 @@
+<dec f='codebrowser/nptl/descr.h' l='113' type='void *'/>
+<offset>0</offset>
+<use f='codebrowser/nptl/nptl-init.c' l='239' u='w' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/allocatestack.c' l='758' u='w' c='allocate_stack'/>
+<use f='codebrowser/sysdeps/nptl/fork.c' l='105' u='w' c='__libc_fork'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='236' macro='1' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='236' macro='1' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='236' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='236' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='236' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='236' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='236' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='333' macro='1' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='333' macro='1' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='333' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='333' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='333' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='333' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='333' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='449' macro='1' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='449' macro='1' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='449' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='449' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='449' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='449' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='449' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='488' macro='1' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='488' macro='1' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='488' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='488' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='488' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='488' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='488' macro='1' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='190' macro='1' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='190' macro='1' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='190' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='190' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='190' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='190' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='190' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='297' macro='1' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='297' macro='1' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='297' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='297' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='297' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='297' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='297' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='426' macro='1' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='426' macro='1' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='426' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='426' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='426' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='426' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='426' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='460' macro='1' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='460' macro='1' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='460' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='460' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='460' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='460' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='460' macro='1' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='129' macro='1' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='129' macro='1' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='129' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='129' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='129' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='129' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='129' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='203' macro='1' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='203' macro='1' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='203' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='203' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='203' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='203' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='203' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='330' macro='1' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='330' macro='1' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='330' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='330' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='330' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='330' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='330' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='363' macro='1' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='363' macro='1' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='363' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='363' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='363' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='363' macro='1' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='363' macro='1' u='r' c='__pthread_mutex_trylock'/>

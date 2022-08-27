@@ -1,0 +1,13 @@
+<dec f='codebrowser/malloc/malloc.h' l='171' type='void *(*)(void *, size_t, const void *)'/>
+<def f='codebrowser/malloc/malloc.c' l='2003' ll='2005' macro='1' type='void *(*)(void *, size_t, const void *)'/>
+<use f='codebrowser/malloc/hooks.c' l='39' u='w' c='realloc_hook_ini'/>
+<use f='codebrowser/malloc/hooks.c' l='62' u='w' c='__malloc_check_init'/>
+<use f='codebrowser/malloc/malloc.c' l='3325' c='__libc_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='3325' u='r' c='__libc_realloc'/>
+<use f='codebrowser/malloc/mcheck.c' l='311' u='w' c='reallochook'/>
+<use f='codebrowser/malloc/mcheck.c' l='322' u='w' c='reallochook'/>
+<use f='codebrowser/malloc/mcheck.c' l='392' u='r' c='mcheck'/>
+<use f='codebrowser/malloc/mcheck.c' l='393' u='w' c='mcheck'/>
+<use f='codebrowser/malloc/mtrace.c' l='135' u='w' c='set_default_hooks'/>
+<use f='codebrowser/malloc/mtrace.c' l='145' u='w' c='set_trace_hooks'/>
+<use f='codebrowser/malloc/mtrace.c' l='155' u='r' c='save_default_hooks'/>

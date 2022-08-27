@@ -1,0 +1,8 @@
+<dec f='codebrowser/libio/stdio.h' l='146' type='int remove(const char * __filename)'/>
+<dec f='codebrowser/include/stdio.h' l='217' type='int remove(const char * )'/>
+<use f='codebrowser/include/stdio.h' l='217' c='remove'/>
+<doc f='codebrowser/libio/stdio.h' l='145'>/* Remove file FILENAME.  */</doc>
+<use f='codebrowser/support/temp_file.c' l='126' u='c' c='support_delete_temp_files'/>
+<def f='codebrowser/sysdeps/posix/remove.c' l='29' ll='42' type='int remove(const char * file)'/>
+<use f='codebrowser/timezone/zic.c' l='998' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1987' u='c' c='writezone'/>

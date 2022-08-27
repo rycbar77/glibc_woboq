@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/unistd.h' l='35' type='int __faccessat(int __fd, const char * __file, int __type, int __flag)'/>
+<use f='codebrowser/stdlib/canonicalize.c' l='100' u='c' c='file_accessible'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/faccessat.c' l='26' ll='75' type='int __faccessat(int fd, const char * file, int mode, int flag)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/faccessat.c' l='76' c='faccessat'/>

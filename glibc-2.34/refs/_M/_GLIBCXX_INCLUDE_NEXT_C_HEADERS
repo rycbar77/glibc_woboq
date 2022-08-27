@@ -1,0 +1,6 @@
+<dec f='codebrowser/build/cstdlib' l='74'/>
+<use f='codebrowser/build/cstdlib' l='76' u='w'/>
+<dec f='codebrowser/build/bits/std_abs.h' l='37'/>
+<use f='codebrowser/build/bits/std_abs.h' l='42' u='w'/>
+<doc f='codebrowser/build/cstdlib' l='72'>// Need to ensure this finds the C library&apos;s &lt;stdlib.h&gt; not a libstdc++
+// wrapper that might already be installed later in the include search path.</doc>

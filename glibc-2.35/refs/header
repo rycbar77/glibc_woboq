@@ -1,0 +1,24 @@
+<def f='codebrowser/malloc/memusage.c' l='67' ll='71'/>
+<use f='codebrowser/malloc/memusage.c' l='139' c='update_data'/>
+<use f='codebrowser/malloc/memusage.c' l='349' c='malloc'/>
+<use f='codebrowser/malloc/memusage.c' l='379' c='malloc'/>
+<use f='codebrowser/malloc/memusage.c' l='379' c='malloc'/>
+<use f='codebrowser/malloc/memusage.c' l='399' c='realloc'/>
+<use f='codebrowser/malloc/memusage.c' l='400' c='realloc'/>
+<use f='codebrowser/malloc/memusage.c' l='424' c='realloc'/>
+<use f='codebrowser/malloc/memusage.c' l='467' c='realloc'/>
+<use f='codebrowser/malloc/memusage.c' l='467' c='realloc'/>
+<use f='codebrowser/malloc/memusage.c' l='494' c='calloc'/>
+<use f='codebrowser/malloc/memusage.c' l='525' c='calloc'/>
+<use f='codebrowser/malloc/memusage.c' l='525' c='calloc'/>
+<use f='codebrowser/malloc/memusage.c' l='545' c='free'/>
+<use f='codebrowser/malloc/memusage.c' l='571' c='free'/>
+<size>16</size>
+<def f='codebrowser/support/support_shared_allocate.c' l='27' ll='31'/>
+<use f='codebrowser/support/support_shared_allocate.c' l='36' c='support_shared_allocate'/>
+<use f='codebrowser/support/support_shared_allocate.c' l='45' c='support_shared_allocate'/>
+<use f='codebrowser/support/support_shared_allocate.c' l='55' c='support_shared_free'/>
+<use f='codebrowser/support/support_shared_allocate.c' l='55' c='support_shared_free'/>
+<size>16</size>
+<doc f='codebrowser/support/support_shared_allocate.c' l='25'>/* Header for the allocation.  It contains the size of the allocation
+   for subsequent unmapping.  */</doc>

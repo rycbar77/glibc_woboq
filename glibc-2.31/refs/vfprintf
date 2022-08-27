@@ -1,0 +1,10 @@
+<dec f='codebrowser/libio/stdio.h' l='341' type='int vfprintf(FILE *restrict __s, const char *restrict __format, struct __va_list_tag * __arg)'/>
+<use f='codebrowser/libio/bits/stdio.h' l='41' u='c' c='vprintf'/>
+<dec f='codebrowser/include/stdio.h' l='185' type='int vfprintf(FILE * , const char * , struct __va_list_tag * )'/>
+<use f='codebrowser/include/stdio.h' l='185' c='vfprintf'/>
+<doc f='codebrowser/libio/stdio.h' l='337'>/* Write formatted output to S from argument list ARG.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/stdio-common/vfprintf.c' l='26' macro='1' type='int vfprintf(FILE * , const char * , struct __va_list_tag * )'/>
+<use f='codebrowser/timezone/zic.c' l='530' u='c' c='verror'/>

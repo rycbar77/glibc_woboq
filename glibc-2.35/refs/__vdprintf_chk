@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/stdio.h' l='78' type='int __vdprintf_chk(int , int , const char * , struct __va_list_tag * )'/>
+<def f='codebrowser/debug/vdprintf_chk.c' l='29' ll='37' type='int __vdprintf_chk(int d, int flag, const char * format, struct __va_list_tag * ap)'/>
+<dec f='codebrowser/libio/bits/stdio2.h' l='141' type='int __vdprintf_chk(int __fd, int __flag, const char *restrict __fmt, struct __va_list_tag * __arg)'/>
+<use f='codebrowser/libio/bits/stdio2.h' l='160' u='c' c='vdprintf'/>

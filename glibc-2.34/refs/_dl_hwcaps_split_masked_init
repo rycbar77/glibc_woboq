@@ -1,0 +1,9 @@
+<def f='codebrowser/elf/dl-hwcaps.h' l='82' ll='90' type='void _dl_hwcaps_split_masked_init(struct dl_hwcaps_split_masked * s, const char * subject, uint32_t bitmask, const char * mask)'/>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='77'>/* Prepare *S for iteration with _dl_hwcaps_split_masked.  Only HWCAP
+   names in SUBJECT whose bit is set in BITMASK and whose name is in
+   MASK will be returned.  SUBJECT must not contain empty HWCAP names.
+   If MASK is NULL, no name-based masking is applied.  Likewise for
+   BITMASK if BITMASK is -1 (infinite number of bits).  */</doc>
+<use f='codebrowser/elf/dl-hwcaps.c' l='51' u='c' c='update_hwcaps_counts'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='76' u='c' c='copy_hwcaps'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='124' u='c' c='compute_priorities'/>

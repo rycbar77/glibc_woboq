@@ -1,0 +1,72 @@
+<def f='codebrowser/nss/nss_module.h' l='29' ll='34'/>
+<use f='codebrowser/nss/nss_module.h' l='39'/>
+<use f='codebrowser/nss/nss_module.h' l='70'/>
+<size>512</size>
+<doc f='codebrowser/nss/nss_module.h' l='27'>/* Typed function pointers for all functions that can be defined by a
+   service module.  */</doc>
+<mbr r='nss_module_functions::endaliasent' o='0' t='nss_endaliasent *'/>
+<mbr r='nss_module_functions::endetherent' o='64' t='nss_endetherent *'/>
+<mbr r='nss_module_functions::endgrent' o='128' t='nss_endgrent *'/>
+<mbr r='nss_module_functions::endhostent' o='192' t='nss_endhostent *'/>
+<mbr r='nss_module_functions::endnetent' o='256' t='nss_endnetent *'/>
+<mbr r='nss_module_functions::endnetgrent' o='320' t='nss_endnetgrent *'/>
+<mbr r='nss_module_functions::endprotoent' o='384' t='nss_endprotoent *'/>
+<mbr r='nss_module_functions::endpwent' o='448' t='nss_endpwent *'/>
+<mbr r='nss_module_functions::endrpcent' o='512' t='nss_endrpcent *'/>
+<mbr r='nss_module_functions::endservent' o='576' t='nss_endservent *'/>
+<mbr r='nss_module_functions::endsgent' o='640' t='nss_endsgent *'/>
+<mbr r='nss_module_functions::endspent' o='704' t='nss_endspent *'/>
+<mbr r='nss_module_functions::getaliasbyname_r' o='768' t='nss_getaliasbyname_r *'/>
+<mbr r='nss_module_functions::getaliasent_r' o='832' t='nss_getaliasent_r *'/>
+<mbr r='nss_module_functions::getcanonname_r' o='896' t='nss_getcanonname_r *'/>
+<mbr r='nss_module_functions::getetherent_r' o='960' t='nss_getetherent_r *'/>
+<mbr r='nss_module_functions::getgrent_r' o='1024' t='nss_getgrent_r *'/>
+<mbr r='nss_module_functions::getgrgid_r' o='1088' t='nss_getgrgid_r *'/>
+<mbr r='nss_module_functions::getgrnam_r' o='1152' t='nss_getgrnam_r *'/>
+<mbr r='nss_module_functions::gethostbyaddr2_r' o='1216' t='nss_gethostbyaddr2_r *'/>
+<mbr r='nss_module_functions::gethostbyaddr_r' o='1280' t='nss_gethostbyaddr_r *'/>
+<mbr r='nss_module_functions::gethostbyname2_r' o='1344' t='nss_gethostbyname2_r *'/>
+<mbr r='nss_module_functions::gethostbyname3_r' o='1408' t='nss_gethostbyname3_r *'/>
+<mbr r='nss_module_functions::gethostbyname4_r' o='1472' t='nss_gethostbyname4_r *'/>
+<mbr r='nss_module_functions::gethostbyname_r' o='1536' t='nss_gethostbyname_r *'/>
+<mbr r='nss_module_functions::gethostent_r' o='1600' t='nss_gethostent_r *'/>
+<mbr r='nss_module_functions::gethostton_r' o='1664' t='nss_gethostton_r *'/>
+<mbr r='nss_module_functions::getnetbyaddr_r' o='1728' t='nss_getnetbyaddr_r *'/>
+<mbr r='nss_module_functions::getnetbyname_r' o='1792' t='nss_getnetbyname_r *'/>
+<mbr r='nss_module_functions::getnetent_r' o='1856' t='nss_getnetent_r *'/>
+<mbr r='nss_module_functions::getnetgrent_r' o='1920' t='nss_getnetgrent_r *'/>
+<mbr r='nss_module_functions::getntohost_r' o='1984' t='nss_getntohost_r *'/>
+<mbr r='nss_module_functions::getprotobyname_r' o='2048' t='nss_getprotobyname_r *'/>
+<mbr r='nss_module_functions::getprotobynumber_r' o='2112' t='nss_getprotobynumber_r *'/>
+<mbr r='nss_module_functions::getprotoent_r' o='2176' t='nss_getprotoent_r *'/>
+<mbr r='nss_module_functions::getpublickey' o='2240' t='nss_getpublickey *'/>
+<mbr r='nss_module_functions::getpwent_r' o='2304' t='nss_getpwent_r *'/>
+<mbr r='nss_module_functions::getpwnam_r' o='2368' t='nss_getpwnam_r *'/>
+<mbr r='nss_module_functions::getpwuid_r' o='2432' t='nss_getpwuid_r *'/>
+<mbr r='nss_module_functions::getrpcbyname_r' o='2496' t='nss_getrpcbyname_r *'/>
+<mbr r='nss_module_functions::getrpcbynumber_r' o='2560' t='nss_getrpcbynumber_r *'/>
+<mbr r='nss_module_functions::getrpcent_r' o='2624' t='nss_getrpcent_r *'/>
+<mbr r='nss_module_functions::getsecretkey' o='2688' t='nss_getsecretkey *'/>
+<mbr r='nss_module_functions::getservbyname_r' o='2752' t='nss_getservbyname_r *'/>
+<mbr r='nss_module_functions::getservbyport_r' o='2816' t='nss_getservbyport_r *'/>
+<mbr r='nss_module_functions::getservent_r' o='2880' t='nss_getservent_r *'/>
+<mbr r='nss_module_functions::getsgent_r' o='2944' t='nss_getsgent_r *'/>
+<mbr r='nss_module_functions::getsgnam_r' o='3008' t='nss_getsgnam_r *'/>
+<mbr r='nss_module_functions::getspent_r' o='3072' t='nss_getspent_r *'/>
+<mbr r='nss_module_functions::getspnam_r' o='3136' t='nss_getspnam_r *'/>
+<mbr r='nss_module_functions::initgroups_dyn' o='3200' t='nss_initgroups_dyn *'/>
+<mbr r='nss_module_functions::netname2user' o='3264' t='nss_netname2user *'/>
+<mbr r='nss_module_functions::setaliasent' o='3328' t='nss_setaliasent *'/>
+<mbr r='nss_module_functions::setetherent' o='3392' t='nss_setetherent *'/>
+<mbr r='nss_module_functions::setgrent' o='3456' t='nss_setgrent *'/>
+<mbr r='nss_module_functions::sethostent' o='3520' t='nss_sethostent *'/>
+<mbr r='nss_module_functions::setnetent' o='3584' t='nss_setnetent *'/>
+<mbr r='nss_module_functions::setnetgrent' o='3648' t='nss_setnetgrent *'/>
+<mbr r='nss_module_functions::setprotoent' o='3712' t='nss_setprotoent *'/>
+<mbr r='nss_module_functions::setpwent' o='3776' t='nss_setpwent *'/>
+<mbr r='nss_module_functions::setrpcent' o='3840' t='nss_setrpcent *'/>
+<mbr r='nss_module_functions::setservent' o='3904' t='nss_setservent *'/>
+<mbr r='nss_module_functions::setsgent' o='3968' t='nss_setsgent *'/>
+<mbr r='nss_module_functions::setspent' o='4032' t='nss_setspent *'/>
+<use f='codebrowser/resolv/nss_dns_functions.c' l='26' c='__nss_dns_functions'/>
+<size>512</size>

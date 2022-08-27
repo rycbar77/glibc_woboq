@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='913' type='int pthread_mutexattr_setprotocol(pthread_mutexattr_t * __attr, int __protocol)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='911'>/* Set the mutex protocol attribute in *ATTR to PROTOCOL (either
+   PTHREAD_PRIO_NONE, PTHREAD_PRIO_INHERIT, or PTHREAD_PRIO_PROTECT).  */</doc>
+<def f='codebrowser/nptl/pthread_mutexattr_setprotocol.c' l='38' macro='1' type='int pthread_mutexattr_setprotocol(pthread_mutexattr_t * , int )'/>
+<use f='codebrowser/support/xpthread_mutexattr_setprotocol.c' l='25' u='c' c='xpthread_mutexattr_setprotocol'/>

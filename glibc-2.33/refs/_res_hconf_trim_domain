@@ -1,0 +1,9 @@
+<dec f='codebrowser/resolv/res_hconf.h' l='50' type='void _res_hconf_trim_domain(char * domain)'/>
+<def f='codebrowser/resolv/res_hconf.c' l='535' ll='555' type='void _res_hconf_trim_domain(char * hostname)'/>
+<use f='codebrowser/resolv/res_hconf.c' l='568' u='c' c='_res_hconf_trim_domains'/>
+<use f='codebrowser/resolv/res_hconf.c' l='570' u='c' c='_res_hconf_trim_domains'/>
+<doc f='codebrowser/resolv/res_hconf.c' l='530'>/* If HOSTNAME has a postfix matching any of the trimdomains, trim away
+   that postfix.  Notice that HOSTNAME is modified inplace.  Also, the
+   original code applied all trimdomains in order, meaning that the
+   same domainname could be trimmed multiple times.  I believe this
+   was unintentional.  */</doc>

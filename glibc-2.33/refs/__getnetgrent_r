@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/netdb.h' l='187' type='int __getnetgrent_r(char **restrict __hostp, char **restrict __userp, char **restrict __domainp, char *restrict __buffer, size_t __buflen)'/>
+<use f='codebrowser/inet/getnetgrent.c' l='48' u='c' c='getnetgrent'/>
+<def f='codebrowser/inet/getnetgrent_r.c' l='339' ll='353' type='int __getnetgrent_r(char ** hostp, char ** userp, char ** domainp, char * buffer, size_t buflen)'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='354' c='getnetgrent_r'/>
+<doc f='codebrowser/inet/getnetgrent_r.c' l='338'>/* The real entry point.  */</doc>

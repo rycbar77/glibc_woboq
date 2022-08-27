@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/posix_opt.h' l='32'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/posix_opt.h' l='28'>/* Priority scheduling is not supported with the correct semantics,
+   but GNU/Linux applications expect that the corresponding interfaces
+   are available, even though the semantics do not meet the POSIX
+   requirements.  See glibc bug 14829.  */</doc>
+<use f='codebrowser/build/posix/posix-conf-vars-def.h' l='703' u='a'/>
+<use f='codebrowser/build/posix/posix-conf-vars-def.h' l='706' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='163' u='a'/>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='122' u='c'/>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>libc-lockP.h source code [codebrowser/sysdeps/nptl/libc-lockP.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/nptl/libc-lockP.h'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>sysdeps</a>/<a href='./'>nptl</a>/<a href='libc-lockP.h.html'>libc-lockP.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Private libc-internal interface for mutex locks.  NPTL version.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 1996-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public License as</i></td></tr>
+<tr><th id="7">7</th><td><i>   published by the Free Software Foundation; either version 2.1 of the</i></td></tr>
+<tr><th id="8">8</th><td><i>   License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; see the file COPYING.LIB.  If</i></td></tr>
+<tr><th id="17">17</th><td><i>   not, see &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_LIBC_LOCKP_H">_LIBC_LOCKP_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/_LIBC_LOCKP_H" data-ref="_M/_LIBC_LOCKP_H">_LIBC_LOCKP_H</dfn> 1</u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../../include/pthread.h.html">&lt;pthread.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#define <dfn class="macro" id="_M/__need_NULL" data-ref="_M/__need_NULL">__need_NULL</dfn></u></td></tr>
+<tr><th id="24">24</th><td><u>#include &lt;stddef.h&gt;</u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><i>/* Fortunately Linux now has a mean to do locking which is realtime</i></td></tr>
+<tr><th id="28">28</th><td><i>   safe without the aid of the thread library.  We also need no fancy</i></td></tr>
+<tr><th id="29">29</th><td><i>   options like error checking mutexes etc.  We only need simple</i></td></tr>
+<tr><th id="30">30</th><td><i>   locks, maybe recursive.  This can be easily and cheaply implemented</i></td></tr>
+<tr><th id="31">31</th><td><i>   using futexes.  We will use them everywhere except in ld.so since</i></td></tr>
+<tr><th id="32">32</th><td><i>   ld.so might be used on old kernels with a different libc.so.  */</i></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="lowlevellock.h.html">&lt;lowlevellock.h&gt;</a></u></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="../x86_64/nptl/tls.h.html">&lt;tls.h&gt;</a></u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><i>/* Mutex type.  */</i></td></tr>
+<tr><th id="37">37</th><td><b>typedef</b> <em>int</em> <dfn class="typedef" id="__libc_lock_t" title='__libc_lock_t' data-type='int' data-ref="__libc_lock_t" data-ref-filename="__libc_lock_t">__libc_lock_t</dfn>;</td></tr>
+<tr><th id="38">38</th><td><b>typedef</b> <b>struct</b> { <a class="typedef" href="bits/pthreadtypes.h.html#pthread_mutex_t" title='pthread_mutex_t' data-type='union pthread_mutex_t' data-ref="pthread_mutex_t" data-ref-filename="pthread_mutex_t">pthread_mutex_t</a> <dfn class="decl field" id="(anonymous)::mutex" title='(anonymous struct)::mutex' data-ref="(anonymous)::mutex" data-ref-filename="(anonymous)..mutex">mutex</dfn>; } <dfn class="typedef" id="__rtld_lock_recursive_t" title='__rtld_lock_recursive_t' data-type='struct __rtld_lock_recursive_t' data-ref="__rtld_lock_recursive_t" data-ref-filename="__rtld_lock_recursive_t">__rtld_lock_recursive_t</dfn>;</td></tr>
+<tr><th id="39">39</th><td><b>typedef</b> <a class="typedef" href="bits/pthreadtypes.h.html#pthread_rwlock_t" title='pthread_rwlock_t' data-type='union pthread_rwlock_t' data-ref="pthread_rwlock_t" data-ref-filename="pthread_rwlock_t">pthread_rwlock_t</a> <dfn class="typedef" id="__libc_rwlock_t" title='__libc_rwlock_t' data-type='pthread_rwlock_t' data-ref="__libc_rwlock_t" data-ref-filename="__libc_rwlock_t">__libc_rwlock_t</dfn>;</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><i>/* Define a lock variable NAME with storage class CLASS.  The lock must be</i></td></tr>
+<tr><th id="42">42</th><td><i>   initialized with __libc_lock_init before it can be used (or define it</i></td></tr>
+<tr><th id="43">43</th><td><i>   with __libc_lock_define_initialized, below).  Use `extern' for CLASS to</i></td></tr>
+<tr><th id="44">44</th><td><i>   declare a lock defined in another module.  In public structure</i></td></tr>
+<tr><th id="45">45</th><td><i>   definitions you must use a pointer to the lock structure (i.e., NAME</i></td></tr>
+<tr><th id="46">46</th><td><i>   begins with a `*'), because its storage size will not be known outside</i></td></tr>
+<tr><th id="47">47</th><td><i>   of libc.  */</i></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/__libc_lock_define" data-ref="_M/__libc_lock_define">__libc_lock_define</dfn>(CLASS,NAME) \</u></td></tr>
+<tr><th id="49">49</th><td><u>  CLASS __libc_lock_t NAME;</u></td></tr>
+<tr><th id="50">50</th><td><u>#define <dfn class="macro" id="_M/__libc_rwlock_define" data-ref="_M/__libc_rwlock_define">__libc_rwlock_define</dfn>(CLASS,NAME) \</u></td></tr>
+<tr><th id="51">51</th><td><u>  CLASS __libc_rwlock_t NAME;</u></td></tr>
+<tr><th id="52">52</th><td><u>#define <dfn class="macro" id="_M/__rtld_lock_define_recursive" data-ref="_M/__rtld_lock_define_recursive">__rtld_lock_define_recursive</dfn>(CLASS,NAME) \</u></td></tr>
+<tr><th id="53">53</th><td><u>  CLASS __rtld_lock_recursive_t NAME;</u></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><i>/* Define an initialized lock variable NAME with storage class CLASS.</i></td></tr>
+<tr><th id="56">56</th><td><i></i></td></tr>
+<tr><th id="57">57</th><td><i>   For the C library we take a deeper look at the initializer.  For</i></td></tr>
+<tr><th id="58">58</th><td><i>   this implementation all fields are initialized to zero.  Therefore</i></td></tr>
+<tr><th id="59">59</th><td><i>   we don't initialize the variable which allows putting it into the</i></td></tr>
+<tr><th id="60">60</th><td><i>   BSS section.  */</i></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><a class="macro" href="../../include/sys/cdefs.h.html#7" title="_Static_assert ((0) == 0, &quot;LLL_LOCK_INITIALIZER != 0&quot;)" data-ref="_M/_Static_assert"><b>_Static_assert</b></a> (<a class="macro" href="lowlevellock.h.html#171" title="(0)" data-ref="_M/LLL_LOCK_INITIALIZER">LLL_LOCK_INITIALIZER</a> == <var>0</var>, <q>"LLL_LOCK_INITIALIZER != 0"</q>);</td></tr>
+<tr><th id="63">63</th><td><u>#define <dfn class="macro" id="_M/_LIBC_LOCK_INITIALIZER" data-ref="_M/_LIBC_LOCK_INITIALIZER">_LIBC_LOCK_INITIALIZER</dfn> LLL_LOCK_INITIALIZER</u></td></tr>
+<tr><th id="64">64</th><td><u>#define <dfn class="macro" id="_M/__libc_lock_define_initialized" data-ref="_M/__libc_lock_define_initialized">__libc_lock_define_initialized</dfn>(CLASS,NAME) \</u></td></tr>
+<tr><th id="65">65</th><td><u>  CLASS __libc_lock_t NAME;</u></td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><u>#define <dfn class="macro" id="_M/__libc_rwlock_define_initialized" data-ref="_M/__libc_rwlock_define_initialized">__libc_rwlock_define_initialized</dfn>(CLASS,NAME) \</u></td></tr>
+<tr><th id="68">68</th><td><u>  CLASS __libc_rwlock_t NAME = PTHREAD_RWLOCK_INITIALIZER;</u></td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><u>#define <dfn class="macro" id="_M/__rtld_lock_define_initialized_recursive" data-ref="_M/__rtld_lock_define_initialized_recursive">__rtld_lock_define_initialized_recursive</dfn>(CLASS,NAME) \</u></td></tr>
+<tr><th id="71">71</th><td><u>  CLASS __rtld_lock_recursive_t NAME = _RTLD_LOCK_RECURSIVE_INITIALIZER;</u></td></tr>
+<tr><th id="72">72</th><td><u>#define <dfn class="macro" id="_M/_RTLD_LOCK_RECURSIVE_INITIALIZER" data-ref="_M/_RTLD_LOCK_RECURSIVE_INITIALIZER">_RTLD_LOCK_RECURSIVE_INITIALIZER</dfn> \</u></td></tr>
+<tr><th id="73">73</th><td><u>  {PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP}</u></td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><u>#define <dfn class="macro" id="_M/__rtld_lock_initialize" data-ref="_M/__rtld_lock_initialize">__rtld_lock_initialize</dfn>(NAME) \</u></td></tr>
+<tr><th id="76">76</th><td><u>  (void) ((NAME) = (__rtld_lock_recursive_t) _RTLD_LOCK_RECURSIVE_INITIALIZER)</u></td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><i>/* If we check for a weakly referenced symbol and then perform a</i></td></tr>
+<tr><th id="79">79</th><td><i>   normal jump to it te code generated for some platforms in case of</i></td></tr>
+<tr><th id="80">80</th><td><i>   PIC is unnecessarily slow.  What would happen is that the function</i></td></tr>
+<tr><th id="81">81</th><td><i>   is first referenced as data and then it is called indirectly</i></td></tr>
+<tr><th id="82">82</th><td><i>   through the PLT.  We can make this a direct jump.  */</i></td></tr>
+<tr><th id="83">83</th><td><u>#<span data-ppcond="83">ifdef</span> <span class="macro" data-ref="_M/__PIC__">__PIC__</span></u></td></tr>
+<tr><th id="84">84</th><td><u># define <dfn class="macro" id="_M/__libc_maybe_call" data-ref="_M/__libc_maybe_call">__libc_maybe_call</dfn>(FUNC, ARGS, ELSE) \</u></td></tr>
+<tr><th id="85">85</th><td><u>  (__extension__ ({ __typeof (FUNC) *_fn = (FUNC); \</u></td></tr>
+<tr><th id="86">86</th><td><u>		    _fn != NULL ? (*_fn) ARGS : ELSE; }))</u></td></tr>
+<tr><th id="87">87</th><td><u>#<span data-ppcond="83">else</span></u></td></tr>
+<tr><th id="88">88</th><td><u># define __libc_maybe_call(FUNC, ARGS, ELSE) \</u></td></tr>
+<tr><th id="89">89</th><td><u>  (FUNC != NULL ? FUNC ARGS : ELSE)</u></td></tr>
+<tr><th id="90">90</th><td><u>#<span data-ppcond="83">endif</span></u></td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td><i>/* All previously forwarded functions are now called directly (either</i></td></tr>
+<tr><th id="93">93</th><td><i>   via local call in libc, or through a __export), but __libc_ptf_call</i></td></tr>
+<tr><th id="94">94</th><td><i>   is still used in generic code shared with Hurd.  */</i></td></tr>
+<tr><th id="95">95</th><td><u>#define <dfn class="macro" id="_M/PTFAVAIL" data-ref="_M/PTFAVAIL">PTFAVAIL</dfn>(NAME) 1</u></td></tr>
+<tr><th id="96">96</th><td><u>#define <dfn class="macro" id="_M/__libc_ptf_call" data-ref="_M/__libc_ptf_call">__libc_ptf_call</dfn>(FUNC, ARGS, ELSE) FUNC ARGS</u></td></tr>
+<tr><th id="97">97</th><td><u>#define <dfn class="macro" id="_M/__libc_ptf_call_always" data-ref="_M/__libc_ptf_call_always">__libc_ptf_call_always</dfn>(FUNC, ARGS) FUNC ARGS</u></td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><i>/* Initialize the named lock variable, leaving it in a consistent, unlocked</i></td></tr>
+<tr><th id="100">100</th><td><i>   state.  */</i></td></tr>
+<tr><th id="101">101</th><td><u>#define <dfn class="macro" id="_M/__libc_lock_init" data-ref="_M/__libc_lock_init">__libc_lock_init</dfn>(NAME) ((void) ((NAME) = LLL_LOCK_INITIALIZER))</u></td></tr>
+<tr><th id="102">102</th><td><u>#define <dfn class="macro" id="_M/__libc_rwlock_init" data-ref="_M/__libc_rwlock_init">__libc_rwlock_init</dfn>(NAME) __pthread_rwlock_init (&amp;(NAME), NULL)</u></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><i>/* Finalize the named lock variable, which must be locked.  It cannot be</i></td></tr>
+<tr><th id="105">105</th><td><i>   used again until __libc_lock_init is called again on it.  This must be</i></td></tr>
+<tr><th id="106">106</th><td><i>   called on a lock variable before the containing storage is reused.  */</i></td></tr>
+<tr><th id="107">107</th><td><u>#define <dfn class="macro" id="_M/__libc_lock_fini" data-ref="_M/__libc_lock_fini">__libc_lock_fini</dfn>(NAME) ((void) 0)</u></td></tr>
+<tr><th id="108">108</th><td><u>#define <dfn class="macro" id="_M/__libc_rwlock_fini" data-ref="_M/__libc_rwlock_fini">__libc_rwlock_fini</dfn>(NAME) ((void) 0)</u></td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td><i>/* Lock the named lock variable.  */</i></td></tr>
+<tr><th id="111">111</th><td><u>#define <dfn class="macro" id="_M/__libc_lock_lock" data-ref="_M/__libc_lock_lock">__libc_lock_lock</dfn>(NAME) ({ lll_lock (NAME, LLL_PRIVATE); 0; })</u></td></tr>
+<tr><th id="112">112</th><td><u>#define <dfn class="macro" id="_M/__libc_rwlock_rdlock" data-ref="_M/__libc_rwlock_rdlock">__libc_rwlock_rdlock</dfn>(NAME) __pthread_rwlock_rdlock (&amp;(NAME))</u></td></tr>
+<tr><th id="113">113</th><td><u>#define <dfn class="macro" id="_M/__libc_rwlock_wrlock" data-ref="_M/__libc_rwlock_wrlock">__libc_rwlock_wrlock</dfn>(NAME) __pthread_rwlock_wrlock (&amp;(NAME))</u></td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td><i>/* Try to lock the named lock variable.  */</i></td></tr>
+<tr><th id="116">116</th><td><u>#define <dfn class="macro" id="_M/__libc_lock_trylock" data-ref="_M/__libc_lock_trylock">__libc_lock_trylock</dfn>(NAME) lll_trylock (NAME)</u></td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td><i>/* Unlock the named lock variable.  */</i></td></tr>
+<tr><th id="119">119</th><td><u>#define <dfn class="macro" id="_M/__libc_lock_unlock" data-ref="_M/__libc_lock_unlock">__libc_lock_unlock</dfn>(NAME) lll_unlock (NAME, LLL_PRIVATE)</u></td></tr>
+<tr><th id="120">120</th><td><u>#define <dfn class="macro" id="_M/__libc_rwlock_unlock" data-ref="_M/__libc_rwlock_unlock">__libc_rwlock_unlock</dfn>(NAME) __pthread_rwlock_unlock (&amp;(NAME))</u></td></tr>
+<tr><th id="121">121</th><td></td></tr>
+<tr><th id="122">122</th><td><u>#<span data-ppcond="122">if</span> <a class="macro" href="../../include/libc-symbols.h.html#35" title="(20 == 19)" data-ref="_M/IS_IN">IS_IN</a> (rtld)</u></td></tr>
+<tr><th id="123">123</th><td><u># define __rtld_lock_lock_recursive(NAME) \</u></td></tr>
+<tr><th id="124">124</th><td><u>  ___rtld_mutex_lock (&amp;(NAME).mutex)</u></td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td><u># define __rtld_lock_unlock_recursive(NAME) \</u></td></tr>
+<tr><th id="127">127</th><td><u>  ___rtld_mutex_unlock (&amp;(NAME).mutex)</u></td></tr>
+<tr><th id="128">128</th><td><u>#<span data-ppcond="122">else</span> /* Not in the dynamic loader.  */</u></td></tr>
+<tr><th id="129">129</th><td><u># define <dfn class="macro" id="_M/__rtld_lock_lock_recursive" data-ref="_M/__rtld_lock_lock_recursive">__rtld_lock_lock_recursive</dfn>(NAME) \</u></td></tr>
+<tr><th id="130">130</th><td><u>  __pthread_mutex_lock (&amp;(NAME).mutex)</u></td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><u># define <dfn class="macro" id="_M/__rtld_lock_unlock_recursive" data-ref="_M/__rtld_lock_unlock_recursive">__rtld_lock_unlock_recursive</dfn>(NAME) \</u></td></tr>
+<tr><th id="133">133</th><td><u>  __pthread_mutex_unlock (&amp;(NAME).mutex)</u></td></tr>
+<tr><th id="134">134</th><td><u>#<span data-ppcond="122">endif</span></u></td></tr>
+<tr><th id="135">135</th><td></td></tr>
+<tr><th id="136">136</th><td><i>/* Define once control variable.  */</i></td></tr>
+<tr><th id="137">137</th><td><u>#<span data-ppcond="137">if</span> <a class="macro" href="pthread.h.html#186" title="0" data-ref="_M/PTHREAD_ONCE_INIT">PTHREAD_ONCE_INIT</a> == 0</u></td></tr>
+<tr><th id="138">138</th><td><i>/* Special case for static variables where we can avoid the initialization</i></td></tr>
+<tr><th id="139">139</th><td><i>   if it is zero.  */</i></td></tr>
+<tr><th id="140">140</th><td><u># define <dfn class="macro" id="_M/__libc_once_define" data-ref="_M/__libc_once_define">__libc_once_define</dfn>(CLASS, NAME) \</u></td></tr>
+<tr><th id="141">141</th><td><u>  CLASS pthread_once_t NAME</u></td></tr>
+<tr><th id="142">142</th><td><u>#<span data-ppcond="137">else</span></u></td></tr>
+<tr><th id="143">143</th><td><u># define __libc_once_define(CLASS, NAME) \</u></td></tr>
+<tr><th id="144">144</th><td><u>  CLASS pthread_once_t NAME = PTHREAD_ONCE_INIT</u></td></tr>
+<tr><th id="145">145</th><td><u>#<span data-ppcond="137">endif</span></u></td></tr>
+<tr><th id="146">146</th><td></td></tr>
+<tr><th id="147">147</th><td><i>/* Call handler iff the first call.  Use a local call in libc, but the</i></td></tr>
+<tr><th id="148">148</th><td><i>   global pthread_once symbol elsewhere.  */</i></td></tr>
+<tr><th id="149">149</th><td><u>#<span data-ppcond="149">if</span> <a class="macro" href="../../include/libc-symbols.h.html#35" title="(20 == 20)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="150">150</th><td><u># define <dfn class="macro" id="_M/__libc_once" data-ref="_M/__libc_once">__libc_once</dfn>(ONCE_CONTROL, INIT_FUNCTION) \</u></td></tr>
+<tr><th id="151">151</th><td><u>  __pthread_once (&amp;(ONCE_CONTROL), INIT_FUNCTION)</u></td></tr>
+<tr><th id="152">152</th><td><u>#<span data-ppcond="149">else</span></u></td></tr>
+<tr><th id="153">153</th><td><u># define __libc_once(ONCE_CONTROL, INIT_FUNCTION) \</u></td></tr>
+<tr><th id="154">154</th><td><u>  pthread_once (&amp;(ONCE_CONTROL), INIT_FUNCTION)</u></td></tr>
+<tr><th id="155">155</th><td><u>#<span data-ppcond="149">endif</span></u></td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td><i>/* Get once control variable.  */</i></td></tr>
+<tr><th id="158">158</th><td><u>#define <dfn class="macro" id="_M/__libc_once_get" data-ref="_M/__libc_once_get">__libc_once_get</dfn>(ONCE_CONTROL)	((ONCE_CONTROL) != PTHREAD_ONCE_INIT)</u></td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td><i>/* __libc_cleanup_push and __libc_cleanup_pop depend on exception</i></td></tr>
+<tr><th id="161">161</th><td><i>   handling and stack unwinding.  */</i></td></tr>
+<tr><th id="162">162</th><td><u>#<span data-ppcond="162">ifdef</span> <span class="macro" data-ref="_M/__EXCEPTIONS">__EXCEPTIONS</span></u></td></tr>
+<tr><th id="163">163</th><td></td></tr>
+<tr><th id="164">164</th><td><i>/* Normal cleanup handling, based on C cleanup attribute.  */</i></td></tr>
+<tr><th id="165">165</th><td><em>static</em> <a class="macro" href="../../misc/sys/cdefs.h.html#424" title="__inline __attribute__ ((__always_inline__))" data-ref="_M/__always_inline">__always_inline</a> <em>void</em></td></tr>
+<tr><th id="166">166</th><td><dfn class="decl def fn" id="__libc_cleanup_routine" title='__libc_cleanup_routine' data-ref="__libc_cleanup_routine" data-ref-filename="__libc_cleanup_routine">__libc_cleanup_routine</dfn> (<b>struct</b> <a class="type" href="pthread.h.html#__pthread_cleanup_frame" title='__pthread_cleanup_frame' data-ref="__pthread_cleanup_frame" data-ref-filename="__pthread_cleanup_frame">__pthread_cleanup_frame</a> *<dfn class="local col2 decl" id="882f" title='f' data-type='struct __pthread_cleanup_frame *' data-ref="882f" data-ref-filename="882f">f</dfn>)</td></tr>
+<tr><th id="167">167</th><td>{</td></tr>
+<tr><th id="168">168</th><td>  <b>if</b> (<a class="local col2 ref" href="#882f" title='f' data-ref="882f" data-ref-filename="882f">f</a>-&gt;<a class="ref field" href="pthread.h.html#__pthread_cleanup_frame::__do_it" title='__pthread_cleanup_frame::__do_it' data-ref="__pthread_cleanup_frame::__do_it" data-ref-filename="__pthread_cleanup_frame..__do_it">__do_it</a>)</td></tr>
+<tr><th id="169">169</th><td>    <a class="local col2 ref" href="#882f" title='f' data-ref="882f" data-ref-filename="882f">f</a>-&gt;<a class="ref field" href="pthread.h.html#__pthread_cleanup_frame::__cancel_routine" title='__pthread_cleanup_frame::__cancel_routine' data-ref="__pthread_cleanup_frame::__cancel_routine" data-ref-filename="__pthread_cleanup_frame..__cancel_routine">__cancel_routine</a> (<a class="local col2 ref" href="#882f" title='f' data-ref="882f" data-ref-filename="882f">f</a>-&gt;<a class="ref field" href="pthread.h.html#__pthread_cleanup_frame::__cancel_arg" title='__pthread_cleanup_frame::__cancel_arg' data-ref="__pthread_cleanup_frame::__cancel_arg" data-ref-filename="__pthread_cleanup_frame..__cancel_arg">__cancel_arg</a>);</td></tr>
+<tr><th id="170">170</th><td>}</td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td><u># define <dfn class="macro" id="_M/__libc_cleanup_push" data-ref="_M/__libc_cleanup_push">__libc_cleanup_push</dfn>(fct, arg) \</u></td></tr>
+<tr><th id="173">173</th><td><u>  do {									      \</u></td></tr>
+<tr><th id="174">174</th><td><u>    struct __pthread_cleanup_frame __clframe				      \</u></td></tr>
+<tr><th id="175">175</th><td><u>      __attribute__ ((__cleanup__ (__libc_cleanup_routine)))		      \</u></td></tr>
+<tr><th id="176">176</th><td><u>      = { .__cancel_routine = (fct), .__cancel_arg = (arg),		      \</u></td></tr>
+<tr><th id="177">177</th><td><u>	  .__do_it = 1 };</u></td></tr>
+<tr><th id="178">178</th><td></td></tr>
+<tr><th id="179">179</th><td><u># define <dfn class="macro" id="_M/__libc_cleanup_pop" data-ref="_M/__libc_cleanup_pop">__libc_cleanup_pop</dfn>(execute) \</u></td></tr>
+<tr><th id="180">180</th><td><u>    __clframe.__do_it = (execute);					      \</u></td></tr>
+<tr><th id="181">181</th><td><u>  } while (0)</u></td></tr>
+<tr><th id="182">182</th><td><u>#<span data-ppcond="162">endif</span> /* __EXCEPTIONS */</u></td></tr>
+<tr><th id="183">183</th><td></td></tr>
+<tr><th id="184">184</th><td><i>/* Register handlers to execute before and after `fork'.  Note that the</i></td></tr>
+<tr><th id="185">185</th><td><i>   last parameter is NULL.  The handlers registered by the libc are</i></td></tr>
+<tr><th id="186">186</th><td><i>   never removed so this is OK.  */</i></td></tr>
+<tr><th id="187">187</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__register_atfork" title='__register_atfork' data-ref="__register_atfork" data-ref-filename="__register_atfork">__register_atfork</dfn> (<em>void</em> (*<dfn class="local col3 decl" id="883__prepare" title='__prepare' data-type='void (*)(void)' data-ref="883__prepare" data-ref-filename="883__prepare">__prepare</dfn>) (<em>void</em>),</td></tr>
+<tr><th id="188">188</th><td>			      <em>void</em> (*<dfn class="local col4 decl" id="884__parent" title='__parent' data-type='void (*)(void)' data-ref="884__parent" data-ref-filename="884__parent">__parent</dfn>) (<em>void</em>),</td></tr>
+<tr><th id="189">189</th><td>			      <em>void</em> (*<dfn class="local col5 decl" id="885__child" title='__child' data-type='void (*)(void)' data-ref="885__child" data-ref-filename="885__child">__child</dfn>) (<em>void</em>),</td></tr>
+<tr><th id="190">190</th><td>			      <em>void</em> *<dfn class="local col6 decl" id="886__dso_handle" title='__dso_handle' data-type='void *' data-ref="886__dso_handle" data-ref-filename="886__dso_handle">__dso_handle</dfn>);</td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td><i>/* Functions that are used by this file and are internal to the GNU C</i></td></tr>
+<tr><th id="193">193</th><td><i>   library.  */</i></td></tr>
+<tr><th id="194">194</th><td></td></tr>
+<tr><th id="195">195</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_mutex_init" title='__pthread_mutex_init' data-ref="__pthread_mutex_init" data-ref-filename="__pthread_mutex_init">__pthread_mutex_init</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_mutex_t" title='pthread_mutex_t' data-type='union pthread_mutex_t' data-ref="pthread_mutex_t" data-ref-filename="pthread_mutex_t">pthread_mutex_t</a> *<dfn class="local col7 decl" id="887__mutex" title='__mutex' data-type='pthread_mutex_t *' data-ref="887__mutex" data-ref-filename="887__mutex">__mutex</dfn>,</td></tr>
+<tr><th id="196">196</th><td>				 <em>const</em> <a class="typedef" href="bits/pthreadtypes.h.html#pthread_mutexattr_t" title='pthread_mutexattr_t' data-type='union pthread_mutexattr_t' data-ref="pthread_mutexattr_t" data-ref-filename="pthread_mutexattr_t">pthread_mutexattr_t</a> *<dfn class="local col8 decl" id="888__mutex_attr" title='__mutex_attr' data-type='const pthread_mutexattr_t *' data-ref="888__mutex_attr" data-ref-filename="888__mutex_attr">__mutex_attr</dfn>);</td></tr>
+<tr><th id="197">197</th><td><a class="macro" href="../../include/libc-symbols.h.html#621" title="extern __typeof (__pthread_mutex_init) __pthread_mutex_init __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__pthread_mutex_init" title='__pthread_mutex_init' data-ref="__pthread_mutex_init" data-ref-filename="__pthread_mutex_init"><a class="ref fn" href="#__pthread_mutex_init" title='__pthread_mutex_init' data-ref="__pthread_mutex_init" data-ref-filename="__pthread_mutex_init">__pthread_mutex_init</a></a>)</td></tr>
+<tr><th id="198">198</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_mutex_destroy" title='__pthread_mutex_destroy' data-ref="__pthread_mutex_destroy" data-ref-filename="__pthread_mutex_destroy">__pthread_mutex_destroy</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_mutex_t" title='pthread_mutex_t' data-type='union pthread_mutex_t' data-ref="pthread_mutex_t" data-ref-filename="pthread_mutex_t">pthread_mutex_t</a> *<dfn class="local col9 decl" id="889__mutex" title='__mutex' data-type='pthread_mutex_t *' data-ref="889__mutex" data-ref-filename="889__mutex">__mutex</dfn>);</td></tr>
+<tr><th id="199">199</th><td><a class="macro" href="../../include/libc-symbols.h.html#621" title="extern __typeof (__pthread_mutex_destroy) __pthread_mutex_destroy __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__pthread_mutex_destroy" title='__pthread_mutex_destroy' data-ref="__pthread_mutex_destroy" data-ref-filename="__pthread_mutex_destroy"><a class="ref fn" href="#__pthread_mutex_destroy" title='__pthread_mutex_destroy' data-ref="__pthread_mutex_destroy" data-ref-filename="__pthread_mutex_destroy">__pthread_mutex_destroy</a></a>)</td></tr>
+<tr><th id="200">200</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_mutex_trylock" title='__pthread_mutex_trylock' data-ref="__pthread_mutex_trylock" data-ref-filename="__pthread_mutex_trylock">__pthread_mutex_trylock</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_mutex_t" title='pthread_mutex_t' data-type='union pthread_mutex_t' data-ref="pthread_mutex_t" data-ref-filename="pthread_mutex_t">pthread_mutex_t</a> *<dfn class="local col0 decl" id="890__mutex" title='__mutex' data-type='pthread_mutex_t *' data-ref="890__mutex" data-ref-filename="890__mutex">__mutex</dfn>);</td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_mutex_lock" title='__pthread_mutex_lock' data-ref="__pthread_mutex_lock" data-ref-filename="__pthread_mutex_lock">__pthread_mutex_lock</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_mutex_t" title='pthread_mutex_t' data-type='union pthread_mutex_t' data-ref="pthread_mutex_t" data-ref-filename="pthread_mutex_t">pthread_mutex_t</a> *<dfn class="local col1 decl" id="891__mutex" title='__mutex' data-type='pthread_mutex_t *' data-ref="891__mutex" data-ref-filename="891__mutex">__mutex</dfn>);</td></tr>
+<tr><th id="203">203</th><td><a class="macro" href="../../include/libc-symbols.h.html#621" title="extern __typeof (__pthread_mutex_lock) __pthread_mutex_lock __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__pthread_mutex_lock" title='__pthread_mutex_lock' data-ref="__pthread_mutex_lock" data-ref-filename="__pthread_mutex_lock"><a class="ref fn" href="#__pthread_mutex_lock" title='__pthread_mutex_lock' data-ref="__pthread_mutex_lock" data-ref-filename="__pthread_mutex_lock">__pthread_mutex_lock</a></a>)</td></tr>
+<tr><th id="204">204</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_mutex_unlock" title='__pthread_mutex_unlock' data-ref="__pthread_mutex_unlock" data-ref-filename="__pthread_mutex_unlock">__pthread_mutex_unlock</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_mutex_t" title='pthread_mutex_t' data-type='union pthread_mutex_t' data-ref="pthread_mutex_t" data-ref-filename="pthread_mutex_t">pthread_mutex_t</a> *<dfn class="local col2 decl" id="892__mutex" title='__mutex' data-type='pthread_mutex_t *' data-ref="892__mutex" data-ref-filename="892__mutex">__mutex</dfn>);</td></tr>
+<tr><th id="205">205</th><td><a class="macro" href="../../include/libc-symbols.h.html#621" title="extern __typeof (__pthread_mutex_unlock) __pthread_mutex_unlock __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__pthread_mutex_unlock" title='__pthread_mutex_unlock' data-ref="__pthread_mutex_unlock" data-ref-filename="__pthread_mutex_unlock"><a class="ref fn" href="#__pthread_mutex_unlock" title='__pthread_mutex_unlock' data-ref="__pthread_mutex_unlock" data-ref-filename="__pthread_mutex_unlock">__pthread_mutex_unlock</a></a>)</td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_mutexattr_destroy" title='__pthread_mutexattr_destroy' data-ref="__pthread_mutexattr_destroy" data-ref-filename="__pthread_mutexattr_destroy">__pthread_mutexattr_destroy</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_mutexattr_t" title='pthread_mutexattr_t' data-type='union pthread_mutexattr_t' data-ref="pthread_mutexattr_t" data-ref-filename="pthread_mutexattr_t">pthread_mutexattr_t</a> *<dfn class="local col3 decl" id="893__attr" title='__attr' data-type='pthread_mutexattr_t *' data-ref="893__attr" data-ref-filename="893__attr">__attr</dfn>);</td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_rwlock_init" title='__pthread_rwlock_init' data-ref="__pthread_rwlock_init" data-ref-filename="__pthread_rwlock_init">__pthread_rwlock_init</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_rwlock_t" title='pthread_rwlock_t' data-type='union pthread_rwlock_t' data-ref="pthread_rwlock_t" data-ref-filename="pthread_rwlock_t">pthread_rwlock_t</a> *<dfn class="local col4 decl" id="894__rwlock" title='__rwlock' data-type='pthread_rwlock_t *' data-ref="894__rwlock" data-ref-filename="894__rwlock">__rwlock</dfn>,</td></tr>
+<tr><th id="210">210</th><td>				  <em>const</em> <a class="typedef" href="bits/pthreadtypes.h.html#pthread_rwlockattr_t" title='pthread_rwlockattr_t' data-type='union pthread_rwlockattr_t' data-ref="pthread_rwlockattr_t" data-ref-filename="pthread_rwlockattr_t">pthread_rwlockattr_t</a> *<dfn class="local col5 decl" id="895__attr" title='__attr' data-type='const pthread_rwlockattr_t *' data-ref="895__attr" data-ref-filename="895__attr">__attr</dfn>);</td></tr>
+<tr><th id="211">211</th><td><a class="macro" href="../../include/libc-symbols.h.html#621" title="extern __typeof (__pthread_rwlock_init) __pthread_rwlock_init __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__pthread_rwlock_init" title='__pthread_rwlock_init' data-ref="__pthread_rwlock_init" data-ref-filename="__pthread_rwlock_init"><a class="ref fn" href="#__pthread_rwlock_init" title='__pthread_rwlock_init' data-ref="__pthread_rwlock_init" data-ref-filename="__pthread_rwlock_init">__pthread_rwlock_init</a></a>)</td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_rwlock_destroy" title='__pthread_rwlock_destroy' data-ref="__pthread_rwlock_destroy" data-ref-filename="__pthread_rwlock_destroy">__pthread_rwlock_destroy</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_rwlock_t" title='pthread_rwlock_t' data-type='union pthread_rwlock_t' data-ref="pthread_rwlock_t" data-ref-filename="pthread_rwlock_t">pthread_rwlock_t</a> *<dfn class="local col6 decl" id="896__rwlock" title='__rwlock' data-type='pthread_rwlock_t *' data-ref="896__rwlock" data-ref-filename="896__rwlock">__rwlock</dfn>);</td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_rwlock_rdlock" title='__pthread_rwlock_rdlock' data-ref="__pthread_rwlock_rdlock" data-ref-filename="__pthread_rwlock_rdlock">__pthread_rwlock_rdlock</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_rwlock_t" title='pthread_rwlock_t' data-type='union pthread_rwlock_t' data-ref="pthread_rwlock_t" data-ref-filename="pthread_rwlock_t">pthread_rwlock_t</a> *<dfn class="local col7 decl" id="897__rwlock" title='__rwlock' data-type='pthread_rwlock_t *' data-ref="897__rwlock" data-ref-filename="897__rwlock">__rwlock</dfn>);</td></tr>
+<tr><th id="216">216</th><td><a class="macro" href="../../include/libc-symbols.h.html#621" title="extern __typeof (__pthread_rwlock_rdlock) __pthread_rwlock_rdlock __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__pthread_rwlock_rdlock" title='__pthread_rwlock_rdlock' data-ref="__pthread_rwlock_rdlock" data-ref-filename="__pthread_rwlock_rdlock"><a class="ref fn" href="#__pthread_rwlock_rdlock" title='__pthread_rwlock_rdlock' data-ref="__pthread_rwlock_rdlock" data-ref-filename="__pthread_rwlock_rdlock">__pthread_rwlock_rdlock</a></a>)</td></tr>
+<tr><th id="217">217</th><td></td></tr>
+<tr><th id="218">218</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_rwlock_wrlock" title='__pthread_rwlock_wrlock' data-ref="__pthread_rwlock_wrlock" data-ref-filename="__pthread_rwlock_wrlock">__pthread_rwlock_wrlock</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_rwlock_t" title='pthread_rwlock_t' data-type='union pthread_rwlock_t' data-ref="pthread_rwlock_t" data-ref-filename="pthread_rwlock_t">pthread_rwlock_t</a> *<dfn class="local col8 decl" id="898__rwlock" title='__rwlock' data-type='pthread_rwlock_t *' data-ref="898__rwlock" data-ref-filename="898__rwlock">__rwlock</dfn>);</td></tr>
+<tr><th id="219">219</th><td><a class="macro" href="../../include/libc-symbols.h.html#621" title="extern __typeof (__pthread_rwlock_wrlock) __pthread_rwlock_wrlock __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__pthread_rwlock_wrlock" title='__pthread_rwlock_wrlock' data-ref="__pthread_rwlock_wrlock" data-ref-filename="__pthread_rwlock_wrlock"><a class="ref fn" href="#__pthread_rwlock_wrlock" title='__pthread_rwlock_wrlock' data-ref="__pthread_rwlock_wrlock" data-ref-filename="__pthread_rwlock_wrlock">__pthread_rwlock_wrlock</a></a>)</td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_rwlock_unlock" title='__pthread_rwlock_unlock' data-ref="__pthread_rwlock_unlock" data-ref-filename="__pthread_rwlock_unlock">__pthread_rwlock_unlock</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_rwlock_t" title='pthread_rwlock_t' data-type='union pthread_rwlock_t' data-ref="pthread_rwlock_t" data-ref-filename="pthread_rwlock_t">pthread_rwlock_t</a> *<dfn class="local col9 decl" id="899__rwlock" title='__rwlock' data-type='pthread_rwlock_t *' data-ref="899__rwlock" data-ref-filename="899__rwlock">__rwlock</dfn>);</td></tr>
+<tr><th id="222">222</th><td><a class="macro" href="../../include/libc-symbols.h.html#621" title="extern __typeof (__pthread_rwlock_unlock) __pthread_rwlock_unlock __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__pthread_rwlock_unlock" title='__pthread_rwlock_unlock' data-ref="__pthread_rwlock_unlock" data-ref-filename="__pthread_rwlock_unlock"><a class="ref fn" href="#__pthread_rwlock_unlock" title='__pthread_rwlock_unlock' data-ref="__pthread_rwlock_unlock" data-ref-filename="__pthread_rwlock_unlock">__pthread_rwlock_unlock</a></a>)</td></tr>
+<tr><th id="223">223</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_once" title='__pthread_once' data-ref="__pthread_once" data-ref-filename="__pthread_once">__pthread_once</dfn> (<a class="typedef" href="bits/pthreadtypes.h.html#pthread_once_t" title='pthread_once_t' data-type='int' data-ref="pthread_once_t" data-ref-filename="pthread_once_t">pthread_once_t</a> *<dfn class="local col0 decl" id="900__once_control" title='__once_control' data-type='pthread_once_t *' data-ref="900__once_control" data-ref-filename="900__once_control">__once_control</dfn>,</td></tr>
+<tr><th id="224">224</th><td>			   <em>void</em> (*<dfn class="local col1 decl" id="901__init_routine" title='__init_routine' data-type='void (*)(void)' data-ref="901__init_routine" data-ref-filename="901__init_routine">__init_routine</dfn>) (<em>void</em>));</td></tr>
+<tr><th id="225">225</th><td><a class="macro" href="../../include/libc-symbols.h.html#621" title="extern __typeof (__pthread_once) __pthread_once __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__pthread_once" title='__pthread_once' data-ref="__pthread_once" data-ref-filename="__pthread_once"><a class="ref fn" href="#__pthread_once" title='__pthread_once' data-ref="__pthread_once" data-ref-filename="__pthread_once">__pthread_once</a></a>)</td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_atfork" title='__pthread_atfork' data-ref="__pthread_atfork" data-ref-filename="__pthread_atfork">__pthread_atfork</dfn> (<em>void</em> (*<dfn class="local col2 decl" id="902__prepare" title='__prepare' data-type='void (*)(void)' data-ref="902__prepare" data-ref-filename="902__prepare">__prepare</dfn>) (<em>void</em>),</td></tr>
+<tr><th id="228">228</th><td>			     <em>void</em> (*<dfn class="local col3 decl" id="903__parent" title='__parent' data-type='void (*)(void)' data-ref="903__parent" data-ref-filename="903__parent">__parent</dfn>) (<em>void</em>),</td></tr>
+<tr><th id="229">229</th><td>			     <em>void</em> (*<dfn class="local col4 decl" id="904__child" title='__child' data-type='void (*)(void)' data-ref="904__child" data-ref-filename="904__child">__child</dfn>) (<em>void</em>));</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="__pthread_setcancelstate" title='__pthread_setcancelstate' data-ref="__pthread_setcancelstate" data-ref-filename="__pthread_setcancelstate">__pthread_setcancelstate</dfn> (<em>int</em> <dfn class="local col5 decl" id="905state" title='state' data-type='int' data-ref="905state" data-ref-filename="905state">state</dfn>, <em>int</em> *<dfn class="local col6 decl" id="906oldstate" title='oldstate' data-type='int *' data-ref="906oldstate" data-ref-filename="906oldstate">oldstate</dfn>);</td></tr>
+<tr><th id="232">232</th><td><a class="macro" href="../../include/libc-symbols.h.html#621" title="extern __typeof (__pthread_setcancelstate) __pthread_setcancelstate __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__pthread_setcancelstate" title='__pthread_setcancelstate' data-ref="__pthread_setcancelstate" data-ref-filename="__pthread_setcancelstate"><a class="ref fn" href="#__pthread_setcancelstate" title='__pthread_setcancelstate' data-ref="__pthread_setcancelstate" data-ref-filename="__pthread_setcancelstate">__pthread_setcancelstate</a></a>)</td></tr>
+<tr><th id="233">233</th><td></td></tr>
+<tr><th id="234">234</th><td><i>/* Make the pthread functions weak so that we can elide them from</i></td></tr>
+<tr><th id="235">235</th><td><i>   single-threaded processes.  */</i></td></tr>
+<tr><th id="236">236</th><td><u>#<span data-ppcond="236">ifndef</span> <span class="macro" data-ref="_M/__NO_WEAK_PTHREAD_ALIASES">__NO_WEAK_PTHREAD_ALIASES</span></u></td></tr>
+<tr><th id="237">237</th><td><u># <span data-ppcond="237">ifdef</span> <a class="macro" href="../../include/libc-symbols.h.html#167" data-ref="_M/weak_extern">weak_extern</a></u></td></tr>
+<tr><th id="238">238</th><td><a class="macro" href="../../include/libc-symbols.h.html#167" title="" data-ref="_M/weak_extern">weak_extern</a> (__pthread_mutex_trylock)</td></tr>
+<tr><th id="239">239</th><td><a class="macro" href="../../include/libc-symbols.h.html#167" title="" data-ref="_M/weak_extern">weak_extern</a> (__pthread_mutexattr_destroy)</td></tr>
+<tr><th id="240">240</th><td><a class="macro" href="../../include/libc-symbols.h.html#167" title="" data-ref="_M/weak_extern">weak_extern</a> (__pthread_initialize)</td></tr>
+<tr><th id="241">241</th><td><a class="macro" href="../../include/libc-symbols.h.html#167" title="" data-ref="_M/weak_extern">weak_extern</a> (__pthread_atfork)</td></tr>
+<tr><th id="242">242</th><td><u># <span data-ppcond="237">else</span></u></td></tr>
+<tr><th id="243">243</th><td><u>#  pragma weak __pthread_mutex_trylock</u></td></tr>
+<tr><th id="244">244</th><td><u>#  pragma weak __pthread_mutexattr_destroy</u></td></tr>
+<tr><th id="245">245</th><td><u>#  pragma weak __pthread_initialize</u></td></tr>
+<tr><th id="246">246</th><td><u>#  pragma weak __pthread_atfork</u></td></tr>
+<tr><th id="247">247</th><td><u># <span data-ppcond="237">endif</span></u></td></tr>
+<tr><th id="248">248</th><td><u>#<span data-ppcond="236">endif</span></u></td></tr>
+<tr><th id="249">249</th><td></td></tr>
+<tr><th id="250">250</th><td><u>#<span data-ppcond="19">endif</span>	/* libc-lockP.h */</u></td></tr>
+<tr><th id="251">251</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../argp/argp-fmtstream.c.html'>codebrowser/argp/argp-fmtstream.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

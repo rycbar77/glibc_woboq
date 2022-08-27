@@ -1,0 +1,50 @@
+<def f='codebrowser/rt/aio.h' l='34' ll='57'/>
+<use f='codebrowser/rt/aio.h' l='44'/>
+<use f='codebrowser/rt/aio.h' l='72'/>
+<use f='codebrowser/rt/aio.h' l='143' c='aio_read'/>
+<use f='codebrowser/rt/aio.h' l='145' c='aio_write'/>
+<use f='codebrowser/rt/aio.h' l='149' c='lio_listio'/>
+<use f='codebrowser/rt/aio.h' l='154' c='aio_error'/>
+<use f='codebrowser/rt/aio.h' l='156' c='aio_return'/>
+<use f='codebrowser/rt/aio.h' l='160' c='aio_cancel'/>
+<use f='codebrowser/rt/aio.h' l='167' c='aio_suspend'/>
+<use f='codebrowser/rt/aio.h' l='173' c='aio_fsync'/>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='38'/>
+<use f='codebrowser/rt/aio_cancel.c' l='42' c='__aio_cancel'/>
+<size>168</size>
+<doc f='codebrowser/rt/aio.h' l='33'>/* Asynchronous I/O control block.  */</doc>
+<mbr r='aiocb::aio_fildes' o='0' t='int'/>
+<mbr r='aiocb::aio_lio_opcode' o='32' t='int'/>
+<mbr r='aiocb::aio_reqprio' o='64' t='int'/>
+<mbr r='aiocb::aio_buf' o='128' t='volatile void *'/>
+<mbr r='aiocb::aio_nbytes' o='192' t='size_t'/>
+<mbr r='aiocb::aio_sigevent' o='256' t='struct sigevent'/>
+<mbr r='aiocb::__next_prio' o='768' t='struct aiocb *'/>
+<mbr r='aiocb::__abs_prio' o='832' t='int'/>
+<mbr r='aiocb::__policy' o='864' t='int'/>
+<mbr r='aiocb::__error_code' o='896' t='int'/>
+<mbr r='aiocb::__return_value' o='960' t='__ssize_t'/>
+<mbr r='aiocb::aio_offset' o='1024' t='__off_t'/>
+<mbr r='aiocb::__pad' o='1088' t='char[0]'/>
+<mbr r='aiocb::__glibc_reserved' o='1088' t='char[32]'/>
+<use f='codebrowser/rt/aio_error.c' l='36' c='__aio_error'/>
+<size>168</size>
+<use f='codebrowser/rt/aio_fsync.c' l='37' c='__aio_fsync'/>
+<size>168</size>
+<use f='codebrowser/rt/aio_misc.c' l='133' c='get_elem'/>
+<use f='codebrowser/rt/aio_misc.c' l='133' c='get_elem'/>
+<size>168</size>
+<use f='codebrowser/rt/aio_notify.c' l='119' c='__aio_notify'/>
+<size>168</size>
+<use f='codebrowser/rt/aio_read.c' l='34' c='__aio_read'/>
+<size>168</size>
+<use f='codebrowser/rt/aio_return.c' l='34' c='__aio_return'/>
+<size>168</size>
+<use f='codebrowser/rt/aio_suspend.c' l='45'/>
+<use f='codebrowser/rt/aio_suspend.c' l='110' c='___aio_suspend_time64'/>
+<size>168</size>
+<use f='codebrowser/rt/aio_write.c' l='34' c='__aio_write'/>
+<size>168</size>
+<use f='codebrowser/rt/lio_listio-common.c' l='75' macro='1' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='256' macro='1' c='__lio_listio_24'/>
+<size>168</size>

@@ -1,0 +1,29 @@
+<def f='codebrowser/sysdeps/generic/ldsodefs.h' l='450' ll='459'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='453'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='450'/>
+<size>16</size>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='449'>/* Information about the dtv slots.  */</doc>
+<mbr r='dtv_slotinfo_list::len' o='0' t='size_t'/>
+<mbr r='dtv_slotinfo_list::next' o='64' t='struct dtv_slotinfo_list *'/>
+<mbr r='dtv_slotinfo_list::slotinfo' o='128' t='struct dtv_slotinfo[]'/>
+<use f='codebrowser/csu/libc-tls.c' l='36'/>
+<use f='codebrowser/csu/libc-tls.c' l='47'/>
+<size>16</size>
+<use f='codebrowser/elf/dl-close.c' l='50' c='remove_slotinfo'/>
+<size>16</size>
+<use f='codebrowser/elf/dl-libc.c' l='232' c='free_slotinfo'/>
+<size>16</size>
+<use f='codebrowser/elf/rtld.c' l='771' c='init_tls'/>
+<use f='codebrowser/elf/rtld.c' l='772' c='init_tls'/>
+<size>16</size>
+<use f='codebrowser/nptl_db/db_info.c' l='42'/>
+<size>16</size>
+<use f='codebrowser/elf/dl-tls.c' l='137' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='204' c='_dl_count_modids'/>
+<use f='codebrowser/elf/dl-tls.c' l='534' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='989' c='_dl_tls_get_addr_soft'/>
+<use f='codebrowser/elf/dl-tls.c' l='1019' c='_dl_add_to_slotinfo'/>
+<use f='codebrowser/elf/dl-tls.c' l='1020' c='_dl_add_to_slotinfo'/>
+<use f='codebrowser/elf/dl-tls.c' l='1044' c='_dl_add_to_slotinfo'/>
+<use f='codebrowser/elf/dl-tls.c' l='1045' c='_dl_add_to_slotinfo'/>
+<size>16</size>

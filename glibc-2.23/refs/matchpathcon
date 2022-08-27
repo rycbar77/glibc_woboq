@@ -1,0 +1,8 @@
+<dec f='include/selinux/selinux.h' l='502' type='int matchpathcon(const char * path, mode_t mode, char ** con)'/>
+<use f='codebrowser/nss/makedb.c' l='863' u='c' c='set_file_creation_context'/>
+<doc f='include/selinux/selinux.h' l='496'>/* Match the specified pathname and mode against the file contexts
+   configuration and set *con to refer to the resulting context.
+   &apos;mode&apos; can be 0 to disable mode matching.
+   Caller must free via freecon.
+   If matchpathcon_init has not already been called, then this function
+   will call it upon its first invocation with a NULL path. */</doc>

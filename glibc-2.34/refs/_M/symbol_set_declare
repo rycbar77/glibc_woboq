@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/libc-symbols.h' l='392'/>
+<doc f='codebrowser/include/libc-symbols.h' l='388'>/* Declare SET for use in this module, if defined in another module.
+   In a shared library, this is always local to that shared object.
+   For static linking, the set might be wholly absent and so we use
+   weak references.  */</doc>
+<use f='codebrowser/libio/libioP.h' l='896' u='c'/>

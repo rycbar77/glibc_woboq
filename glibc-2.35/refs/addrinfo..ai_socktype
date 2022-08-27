@@ -1,0 +1,26 @@
+<dec f='codebrowser/resolv/netdb.h' l='569' type='int'/>
+<offset>64</offset>
+<doc f='codebrowser/resolv/netdb.h' l='569'>/* Socket type.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='136' u='w' c='rcmd_af'/>
+<use f='codebrowser/inet/rexec.c' l='66' u='w' c='rexec_af'/>
+<use f='codebrowser/inet/rexec.c' l='90' u='r' c='rexec_af'/>
+<use f='codebrowser/inet/rexec.c' l='118' u='r' c='rexec_af'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='148' u='w'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='342' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='347' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='347' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='355' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='389' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='390' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='422' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1049' u='w' c='gaih_inet'/>
+<use f='codebrowser/nss/getent.c' l='367' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='369' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='371' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='374' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='378' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='382' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='386' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='392' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='124' u='r' c='format_ai_one'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='136' u='r' c='format_ai_one'/>

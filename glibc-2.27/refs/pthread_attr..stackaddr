@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/nptl/internaltypes.h' l='37' type='void *'/>
+<offset>192</offset>
+<doc f='codebrowser/sysdeps/nptl/internaltypes.h' l='36'>/* Stack handling.  */</doc>
+<use f='codebrowser/nptl/pthread_attr_getstack.c' l='32' u='r' c='__pthread_attr_getstack'/>
+<use f='codebrowser/nptl/pthread_attr_getstackaddr.c' l='33' u='r' c='__pthread_attr_getstackaddr'/>
+<use f='codebrowser/nptl/pthread_attr_setstack.c' l='48' u='w' c='__pthread_attr_setstack'/>
+<use f='codebrowser/nptl/pthread_attr_setstackaddr.c' l='34' u='w' c='__pthread_attr_setstackaddr'/>
+<use f='codebrowser/nptl/allocatestack.c' l='431' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='64' u='w' c='pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='129' u='w' c='pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='141' u='r' c='pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='142' u='r' c='pthread_getattr_np'/>

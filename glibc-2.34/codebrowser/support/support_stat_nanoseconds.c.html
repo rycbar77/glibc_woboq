@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>support_stat_nanoseconds.c source code [codebrowser/support/support_stat_nanoseconds.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/support/support_stat_nanoseconds.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>support</a>/<a href='support_stat_nanoseconds.c.html'>support_stat_nanoseconds.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Check if stat supports nanosecond resolution.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../include/fcntl.h.html">&lt;fcntl.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="check.h.html">&lt;support/check.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="support.h.html">&lt;support/support.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="timespec.h.html">&lt;support/timespec.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include &lt;stdbool.h&gt;</u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../include/sys/stat.h.html">&lt;sys/stat.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../include/sys/types.h.html">&lt;sys/types.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td><u>#include <a href="../include/unistd.h.html">&lt;unistd.h&gt;</a></u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><span class="macro" title="_Bool" data-ref="_M/bool">bool</span></td></tr>
+<tr><th id="30">30</th><td><dfn class="decl def fn" id="support_stat_nanoseconds" title='support_stat_nanoseconds' data-ref="support_stat_nanoseconds" data-ref-filename="support_stat_nanoseconds">support_stat_nanoseconds</dfn> (<em>const</em> <em>char</em> *<dfn class="local col4 decl" id="24path" title='path' data-type='const char *' data-ref="24path" data-ref-filename="24path">path</dfn>)</td></tr>
+<tr><th id="31">31</th><td>{</td></tr>
+<tr><th id="32">32</th><td>  <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <dfn class="local col5 decl" id="25support" title='support' data-type='_Bool' data-ref="25support" data-ref-filename="25support">support</dfn> = <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="33">ifdef</span> <span class="macro" data-ref="_M/__linux__">__linux__</span></u></td></tr>
+<tr><th id="34">34</th><td>  <i>/* Obtain the original timestamp to restore at the end.  */</i></td></tr>
+<tr><th id="35">35</th><td>  <b>struct</b> <a class="type" href="../sysdeps/unix/sysv/linux/x86/bits/struct_stat.h.html#stat" title='stat' data-ref="stat" data-ref-filename="stat">stat</a> <dfn class="local col6 decl" id="26ost" title='ost' data-type='struct stat' data-ref="26ost" data-ref-filename="26ost">ost</dfn>;</td></tr>
+<tr><th id="36">36</th><td>  <a class="macro" href="check.h.html#58" title="({ if (stat (path, &amp;ost) == 0) ; else support_test_verify_exit_impl (1, &quot;/media/rr/Data/glibc_source/glibc-2.34/support/support_stat_nanoseconds.c&quot;, 36, &quot;stat (path, &amp;ost) == 0&quot;); })" data-ref="_M/TEST_VERIFY_EXIT">TEST_VERIFY_EXIT</a> (<a class="ref fn" href="../io/sys/stat.h.html#stat" title='stat' data-ref="stat" data-ref-filename="stat">stat</a> (<a class="local col4 ref" href="#24path" title='path' data-ref="24path" data-ref-filename="24path">path</a>, &amp;<a class="local col6 ref" href="#26ost" title='ost' data-ref="26ost" data-ref-filename="26ost">ost</a>) == <var>0</var>);</td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td>  <em>const</em> <b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a> <dfn class="local col7 decl" id="27tsp" title='tsp' data-type='const struct timespec[2]' data-ref="27tsp" data-ref-filename="27tsp">tsp</dfn>[] = { { <var>0</var>, <a class="enum" href="timespec.h.html#TIMESPEC_HZ" title='TIMESPEC_HZ' data-ref="TIMESPEC_HZ" data-ref-filename="TIMESPEC_HZ">TIMESPEC_HZ</a> - <var>1</var> },</td></tr>
+<tr><th id="39">39</th><td>				  { <var>0</var>, <a class="enum" href="timespec.h.html#TIMESPEC_HZ" title='TIMESPEC_HZ' data-ref="TIMESPEC_HZ" data-ref-filename="TIMESPEC_HZ">TIMESPEC_HZ</a> / <var>2</var> } };</td></tr>
+<tr><th id="40">40</th><td>  <a class="macro" href="check.h.html#58" title="({ if (utimensat (-100, path, tsp, 0) == 0) ; else support_test_verify_exit_impl (1, &quot;/media/rr/Data/glibc_source/glibc-2.34/support/support_stat_nanoseconds.c&quot;, 40, &quot;utimensat (AT_FDCWD, path, tsp, 0) == 0&quot;); })" data-ref="_M/TEST_VERIFY_EXIT">TEST_VERIFY_EXIT</a> (<a class="ref fn" href="../io/sys/stat.h.html#utimensat" title='utimensat' data-ref="utimensat" data-ref-filename="utimensat">utimensat</a> (<a class="macro" href="../io/fcntl.h.html#149" title="-100" data-ref="_M/AT_FDCWD">AT_FDCWD</a>, <a class="local col4 ref" href="#24path" title='path' data-ref="24path" data-ref-filename="24path">path</a>, <a class="local col7 ref" href="#27tsp" title='tsp' data-ref="27tsp" data-ref-filename="27tsp">tsp</a>, <var>0</var>) == <var>0</var>);</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td>  <b>struct</b> <a class="type" href="../sysdeps/unix/sysv/linux/x86/bits/struct_stat.h.html#stat" title='stat' data-ref="stat" data-ref-filename="stat">stat</a> <dfn class="local col8 decl" id="28st" title='st' data-type='struct stat' data-ref="28st" data-ref-filename="28st">st</dfn>;</td></tr>
+<tr><th id="43">43</th><td>  <a class="macro" href="check.h.html#58" title="({ if (stat (path, &amp;st) == 0) ; else support_test_verify_exit_impl (1, &quot;/media/rr/Data/glibc_source/glibc-2.34/support/support_stat_nanoseconds.c&quot;, 43, &quot;stat (path, &amp;st) == 0&quot;); })" data-ref="_M/TEST_VERIFY_EXIT">TEST_VERIFY_EXIT</a> (<a class="ref fn" href="../io/sys/stat.h.html#stat" title='stat' data-ref="stat" data-ref-filename="stat">stat</a> (<a class="local col4 ref" href="#24path" title='path' data-ref="24path" data-ref-filename="24path">path</a>, &amp;<a class="local col8 ref" href="#28st" title='st' data-ref="28st" data-ref-filename="28st">st</a>) == <var>0</var>);</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td>  <a class="local col5 ref" href="#25support" title='support' data-ref="25support" data-ref-filename="25support">support</a> = <a class="local col8 ref" href="#28st" title='st' data-ref="28st" data-ref-filename="28st">st</a>.<a class="ref field" href="../sysdeps/unix/sysv/linux/x86/bits/struct_stat.h.html#stat::st_atim" title='stat::st_atim' data-ref="stat::st_atim" data-ref-filename="stat..st_atim">st_atim</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> == <a class="local col7 ref" href="#27tsp" title='tsp' data-ref="27tsp" data-ref-filename="27tsp">tsp</a>[<var>0</var>].<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a></td></tr>
+<tr><th id="46">46</th><td>	    &amp;&amp; <a class="local col8 ref" href="#28st" title='st' data-ref="28st" data-ref-filename="28st">st</a>.<a class="ref field" href="../sysdeps/unix/sysv/linux/x86/bits/struct_stat.h.html#stat::st_mtim" title='stat::st_mtim' data-ref="stat::st_mtim" data-ref-filename="stat..st_mtim">st_mtim</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> == <a class="local col7 ref" href="#27tsp" title='tsp' data-ref="27tsp" data-ref-filename="27tsp">tsp</a>[<var>1</var>].<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a>;</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td>  <i>/* Reset to original timestamps.  */</i></td></tr>
+<tr><th id="49">49</th><td>  <em>const</em> <b>struct</b> <a class="type" href="../time/bits/types/struct_timespec.h.html#timespec" title='timespec' data-ref="timespec" data-ref-filename="timespec">timespec</a> <dfn class="local col9 decl" id="29otsp" title='otsp' data-type='const struct timespec[2]' data-ref="29otsp" data-ref-filename="29otsp">otsp</dfn>[] =</td></tr>
+<tr><th id="50">50</th><td>  {</td></tr>
+<tr><th id="51">51</th><td>    { <a class="local col6 ref" href="#26ost" title='ost' data-ref="26ost" data-ref-filename="26ost">ost</a>.<a class="ref field" href="../sysdeps/unix/sysv/linux/x86/bits/struct_stat.h.html#stat::st_atim" title='stat::st_atim' data-ref="stat::st_atim" data-ref-filename="stat..st_atim">st_atim</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a>, <a class="local col6 ref" href="#26ost" title='ost' data-ref="26ost" data-ref-filename="26ost">ost</a>.<a class="ref field" href="../sysdeps/unix/sysv/linux/x86/bits/struct_stat.h.html#stat::st_atim" title='stat::st_atim' data-ref="stat::st_atim" data-ref-filename="stat..st_atim">st_atim</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> },</td></tr>
+<tr><th id="52">52</th><td>    { <a class="local col6 ref" href="#26ost" title='ost' data-ref="26ost" data-ref-filename="26ost">ost</a>.<a class="ref field" href="../sysdeps/unix/sysv/linux/x86/bits/struct_stat.h.html#stat::st_mtim" title='stat::st_mtim' data-ref="stat::st_mtim" data-ref-filename="stat..st_mtim">st_mtim</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec" data-ref-filename="timespec..tv_sec">tv_sec</a>, <a class="local col6 ref" href="#26ost" title='ost' data-ref="26ost" data-ref-filename="26ost">ost</a>.<a class="ref field" href="../sysdeps/unix/sysv/linux/x86/bits/struct_stat.h.html#stat::st_mtim" title='stat::st_mtim' data-ref="stat::st_mtim" data-ref-filename="stat..st_mtim">st_mtim</a>.<a class="ref field" href="../time/bits/types/struct_timespec.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec" data-ref-filename="timespec..tv_nsec">tv_nsec</a> },</td></tr>
+<tr><th id="53">53</th><td>  };</td></tr>
+<tr><th id="54">54</th><td>  <a class="macro" href="check.h.html#58" title="({ if (utimensat (-100, path, otsp, 0) == 0) ; else support_test_verify_exit_impl (1, &quot;/media/rr/Data/glibc_source/glibc-2.34/support/support_stat_nanoseconds.c&quot;, 54, &quot;utimensat (AT_FDCWD, path, otsp, 0) == 0&quot;); })" data-ref="_M/TEST_VERIFY_EXIT">TEST_VERIFY_EXIT</a> (<a class="ref fn" href="../io/sys/stat.h.html#utimensat" title='utimensat' data-ref="utimensat" data-ref-filename="utimensat">utimensat</a> (<a class="macro" href="../io/fcntl.h.html#149" title="-100" data-ref="_M/AT_FDCWD">AT_FDCWD</a>, <a class="local col4 ref" href="#24path" title='path' data-ref="24path" data-ref-filename="24path">path</a>, <a class="local col9 ref" href="#29otsp" title='otsp' data-ref="29otsp" data-ref-filename="29otsp">otsp</a>, <var>0</var>) == <var>0</var>);</td></tr>
+<tr><th id="55">55</th><td><u>#<span data-ppcond="33">endif</span></u></td></tr>
+<tr><th id="56">56</th><td>  <b>return</b> <a class="local col5 ref" href="#25support" title='support' data-ref="25support" data-ref-filename="25support">support</a>;</td></tr>
+<tr><th id="57">57</th><td>}</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

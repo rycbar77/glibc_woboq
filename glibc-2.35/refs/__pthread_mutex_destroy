@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='198' type='int __pthread_mutex_destroy(pthread_mutex_t * __mutex)'/>
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='199' type='int __pthread_mutex_destroy(pthread_mutex_t * )'/>
+<use f='codebrowser/sysdeps/nptl/libc-lockP.h' l='199' c='__pthread_mutex_destroy'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='345' type='int __pthread_mutex_destroy(pthread_mutex_t * __mutex)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='346' type='int __pthread_mutex_destroy(pthread_mutex_t * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='346' c='__pthread_mutex_destroy'/>
+<def f='codebrowser/nptl/pthread_mutex_destroy.c' l='47' macro='1' type='int __pthread_mutex_destroy(pthread_mutex_t * )'/>
+<use f='codebrowser/sysdeps/pthread/mtx_destroy.c' l='26' u='c' c='__mtx_destroy'/>

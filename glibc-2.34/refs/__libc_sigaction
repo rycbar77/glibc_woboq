@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/signal.h' l='60' type='int __libc_sigaction(int sig, const struct sigaction * act, struct sigaction * oact)'/>
+<dec f='codebrowser/include/signal.h' l='62' type='int __libc_sigaction(int , const struct sigaction * , struct sigaction * )'/>
+<use f='codebrowser/include/signal.h' l='62' c='__libc_sigaction'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='81' u='c' c='__pthread_cancel'/>
+<use f='codebrowser/nptl/pthread_create.c' l='80' u='c' c='late_init'/>
+<use f='codebrowser/signal/sigaction.c' l='33' u='c' c='__sigaction'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='131' u='c' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='140' u='c' c='__spawni_child'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/libc_sigaction.c' l='41' ll='71' type='int __libc_sigaction(int sig, const struct sigaction * act, struct sigaction * oact)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/libc_sigaction.c' l='39'>/* If ACT is not NULL, change the action for SIG to *ACT.
+   If OACT is not NULL, put the old action for SIG in *OACT.  */</doc>

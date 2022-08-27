@@ -1,0 +1,32 @@
+<dec f='codebrowser/include/libc-diag.h' l='56'/>
+<doc f='codebrowser/include/libc-diag.h' l='44'>/* Ignore the diagnostic OPTION.  VERSION is the most recent GCC
+   version for which the diagnostic has been confirmed to appear in
+   the absence of the pragma (in the form MAJOR.MINOR for GCC 4.x,
+   just MAJOR for GCC 5 and later).  Uses of this pragma should be
+   reviewed when the GCC version given is no longer supported for
+   building glibc; the version number should always be on the same
+   source line as the macro name, so such uses can be found with grep.
+   Uses should come with a comment giving more details of the
+   diagnostic, and an architecture on which it is seen if possibly
+   optimization-related and not in architecture-specific code.  This
+   macro should only be used if the diagnostic seems hard to fix (for
+   example, optimization-related false positives).  */</doc>
+<use f='codebrowser/iconv/loop.c' l='409' u='c'/>
+<use f='codebrowser/inet/net-internal.h' l='109' u='c'/>
+<use f='codebrowser/nis/nis_table.c' l='183' u='c'/>
+<use f='codebrowser/nis/ypclnt.c' l='376' u='c'/>
+<use f='codebrowser/nscd/selinux.c' l='327' u='c'/>
+<use f='codebrowser/nscd/selinux.c' l='351' u='c'/>
+<use f='codebrowser/nss/makedb.c' l='862' u='c'/>
+<use f='codebrowser/resolv/res_send.c' l='269' u='c'/>
+<use f='codebrowser/resolv/res_send.c' l='367' u='c'/>
+<use f='codebrowser/resolv/res_send.c' l='391' u='c'/>
+<use f='codebrowser/resolv/res_send.c' l='578' u='c'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='302' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_lgamma_r.c' l='307' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/k_rem_pio2.c' l='263' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/k_rem_pio2.c' l='340' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-128/k_tanl.c' l='146' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/flt-32/e_lgammaf_r.c' l='242' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/e_lgammal_r.c' l='434' u='c'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/k_tanl.c' l='143' u='c'/>

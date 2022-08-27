@@ -1,0 +1,25 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86_64/64/timer_t_was_int_compat.h' l='19'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='114' u='c'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86_64/64/timer_t_was_int_compat.h' l='1'>/* timer_t/int compatibility transition.  x86_64 version.
+   Copyright (C) 2021 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public License as
+   published by the Free Software Foundation; either version 2.1 of the
+   License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; see the file COPYING.LIB.  If
+   not, see &lt;https://www.gnu.org/licenses/&gt;.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/librt-compat.c' l='23' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='143' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='70' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_getoverr.c' l='34' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_gettime.c' l='27' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_settime.c' l='27' u='c'/>

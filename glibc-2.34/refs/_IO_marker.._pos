@@ -1,0 +1,23 @@
+<dec f='codebrowser/libio/libio.h' l='112' type='int'/>
+<offset>128</offset>
+<doc f='codebrowser/libio/libio.h' l='111'>/* if _pos &lt; 0, it points to _buf-&gt;eBptr()+_pos. FIXME comment */</doc>
+<use f='codebrowser/libio/genops.c' l='119' u='r' c='_IO_least_marker'/>
+<use f='codebrowser/libio/genops.c' l='120' u='r' c='_IO_least_marker'/>
+<use f='codebrowser/libio/genops.c' l='263' u='w' c='save_for_backup'/>
+<use f='codebrowser/libio/genops.c' l='888' u='w' c='_IO_init_marker'/>
+<use f='codebrowser/libio/genops.c' l='890' u='w' c='_IO_init_marker'/>
+<use f='codebrowser/libio/genops.c' l='921' u='r' c='_IO_marker_difference'/>
+<use f='codebrowser/libio/genops.c' l='921' u='r' c='_IO_marker_difference'/>
+<use f='codebrowser/libio/genops.c' l='935' u='r' c='_IO_marker_delta'/>
+<use f='codebrowser/libio/genops.c' l='943' u='r' c='_IO_seekmark'/>
+<use f='codebrowser/libio/genops.c' l='947' u='r' c='_IO_seekmark'/>
+<use f='codebrowser/libio/genops.c' l='953' u='r' c='_IO_seekmark'/>
+<use f='codebrowser/libio/wgenops.c' l='47' u='r' c='_IO_least_wmarker'/>
+<use f='codebrowser/libio/wgenops.c' l='48' u='r' c='_IO_least_wmarker'/>
+<use f='codebrowser/libio/wgenops.c' l='489' u='w' c='save_for_wbackup'/>
+<use f='codebrowser/libio/wgenops.c' l='551' u='w' c='_IO_init_wmarker'/>
+<use f='codebrowser/libio/wgenops.c' l='553' u='w' c='_IO_init_wmarker'/>
+<use f='codebrowser/libio/wgenops.c' l='576' u='r' c='_IO_wmarker_delta'/>
+<use f='codebrowser/libio/wgenops.c' l='584' u='r' c='_IO_seekwmark'/>
+<use f='codebrowser/libio/wgenops.c' l='589' u='r' c='_IO_seekwmark'/>
+<use f='codebrowser/libio/wgenops.c' l='595' u='r' c='_IO_seekwmark'/>

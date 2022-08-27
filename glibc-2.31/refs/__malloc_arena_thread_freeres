@@ -1,0 +1,7 @@
+<dec f='codebrowser/malloc/malloc-internal.h' l='75' type='void __malloc_arena_thread_freeres()'/>
+<doc f='codebrowser/malloc/malloc-internal.h' l='74'>/* Called as part of the thread shutdown sequence.  */</doc>
+<def f='codebrowser/malloc/arena.c' l='945' ll='969' macro='1' type='void __malloc_arena_thread_freeres()'/>
+<dec f='codebrowser/malloc/thread-freeres.c' l='38' type='void __malloc_arena_thread_freeres()'/>
+<use f='codebrowser/malloc/thread-freeres.c' l='38' c='__malloc_arena_thread_freeres'/>
+<use f='codebrowser/malloc/thread-freeres.c' l='38' u='r' c='__libc_thread_freeres'/>
+<use f='codebrowser/malloc/thread-freeres.c' l='38' u='c' c='__libc_thread_freeres'/>

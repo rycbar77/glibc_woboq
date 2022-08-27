@@ -1,0 +1,5 @@
+<def f='codebrowser/malloc/malloc-check.c' l='108' ll='173' type='mchunkptr mem2chunk_check(void * mem, unsigned char ** magic_p)'/>
+<use f='codebrowser/malloc/malloc-check.c' l='227' u='c' c='free_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='273' u='c' c='realloc_check'/>
+<doc f='codebrowser/malloc/malloc-check.c' l='105'>/* Convert a pointer to be free()d or realloc()ed to a valid chunk
+   pointer.  If the provided pointer is not valid, return NULL. */</doc>

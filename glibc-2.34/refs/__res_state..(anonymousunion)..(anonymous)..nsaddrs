@@ -1,0 +1,18 @@
+<dec f='codebrowser/resolv/bits/types/res_state.h' l='48' type='struct sockaddr_in6 *[3]'/>
+<offset>192</offset>
+<use f='codebrowser/resolv/resolv_context.h' l='138' u='a' c='__resolv_context_nameserver'/>
+<use f='codebrowser/resolv/res-close.c' l='103' u='r' c='__res_iclose'/>
+<use f='codebrowser/resolv/res-close.c' l='112' u='r' c='__res_iclose'/>
+<use f='codebrowser/resolv/res-close.c' l='113' u='w' c='__res_iclose'/>
+<use f='codebrowser/resolv/res_get_nsaddr.c' l='29' u='r' c='__res_get_nsaddr'/>
+<use f='codebrowser/resolv/res_get_nsaddr.c' l='33' u='r' c='__res_get_nsaddr'/>
+<use f='codebrowser/resolv/res_send.c' l='303' u='r' c='__res_context_send'/>
+<use f='codebrowser/resolv/res_send.c' l='323' u='r' c='__res_context_send'/>
+<use f='codebrowser/resolv/res_send.c' l='324' u='w' c='__res_context_send'/>
+<use f='codebrowser/resolv/res_send.c' l='326' u='r' c='__res_context_send'/>
+<use f='codebrowser/resolv/res_send.c' l='327' u='r' c='__res_context_send'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='262' u='r' c='resolv_conf_matches'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='264' u='r' c='resolv_conf_matches'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='494' u='w' c='update_from_conf'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='506' u='r' c='update_from_conf'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='510' u='w' c='update_from_conf'/>

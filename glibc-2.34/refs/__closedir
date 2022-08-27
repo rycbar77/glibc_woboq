@@ -1,0 +1,23 @@
+<dec f='codebrowser/include/dirent.h' l='21' type='int __closedir(DIR * __dirp)'/>
+<use f='codebrowser/dirent/scandir-cancel.c' l='30' u='c' c='__scandir_cancel_handler'/>
+<use f='codebrowser/dirent/scandir-tail-common.c' l='82' u='c' c='__scandir64_tail'/>
+<use f='codebrowser/iconv/gconv_parseconfdir.h' l='33' u='c' c='gconv_parseconfdir'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/closedir.c' l='29' ll='53' type='int __closedir(DIR * dirp)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/closedir.c' l='54' c='closedir'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/closedir.c' l='27'>/* Close the directory stream DIRP.
+   Return 0 if successful, -1 if not.  */</doc>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='289' u='c' c='__getcwd_generic'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='443' u='c' c='__getcwd_generic'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='477' u='c' c='__getcwd_generic'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='115' u='c' c='__get_nprocs_conf'/>
+<use f='codebrowser/posix/glob.c' l='57' u='c' c='glob_in_dir'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='66' u='c' c='getttyname_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='77' u='c' c='getttyname_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='83' u='c' c='getttyname_r'/>
+<use f='codebrowser/io/fts.c' l='690' u='c' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='739' u='c' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='763' u='c' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='820' u='c' c='fts_build'/>
+<use f='codebrowser/io/ftw.c' l='323' u='c' c='open_dir_stream'/>
+<use f='codebrowser/io/ftw.c' l='509' u='c' c='ftw_dir'/>
+<use f='codebrowser/io/ftw.c' l='558' u='c' c='ftw_dir'/>

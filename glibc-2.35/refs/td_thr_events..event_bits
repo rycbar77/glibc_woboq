@@ -1,0 +1,23 @@
+<dec f='codebrowser/sysdeps/nptl/thread_db.h' l='117' type='uint32_t[2]'/>
+<offset>0</offset>
+<use f='codebrowser/nptl/pthread_create.c' l='465' u='r' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='466' u='r' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='611' u='r' c='report_thread_creation'/>
+<use f='codebrowser/nptl/pthread_create.c' l='612' u='r' c='report_thread_creation'/>
+<use f='codebrowser/nptl_db/structs.def' l='62' macro='1' u='r'/>
+<use f='codebrowser/nptl_db/structs.def' l='62' macro='1' u='r'/>
+<use f='codebrowser/nptl_db/structs.def' l='62' macro='1' u='r'/>
+<use f='codebrowser/nptl_db/structs.def' l='70' u='r'/>
+<use f='codebrowser/nptl_db/structs.def' l='70' u='r'/>
+<use f='codebrowser/nptl_db/structs.def' l='70' u='r'/>
+<use f='codebrowser/nptl_db/td_ta_clear_event.c' l='53' u='r' c='td_ta_clear_event'/>
+<use f='codebrowser/nptl_db/td_ta_clear_event.c' l='64' u='r' c='td_ta_clear_event'/>
+<use f='codebrowser/nptl_db/td_ta_set_event.c' l='53' u='r' c='td_ta_set_event'/>
+<use f='codebrowser/nptl_db/td_ta_set_event.c' l='64' u='r' c='td_ta_set_event'/>
+<use f='codebrowser/nptl_db/td_thr_clear_event.c' l='51' u='r' c='td_thr_clear_event'/>
+<use f='codebrowser/nptl_db/td_thr_clear_event.c' l='62' u='r' c='td_thr_clear_event'/>
+<use f='codebrowser/nptl_db/td_thr_get_info.c' l='124' u='w' c='td_thr_get_info'/>
+<use f='codebrowser/nptl_db/td_thr_get_info.c' l='127' u='a' c='td_thr_get_info'/>
+<use f='codebrowser/nptl_db/td_thr_get_info.c' l='128' u='r' c='td_thr_get_info'/>
+<use f='codebrowser/nptl_db/td_thr_set_event.c' l='51' u='r' c='td_thr_set_event'/>
+<use f='codebrowser/nptl_db/td_thr_set_event.c' l='62' u='r' c='td_thr_set_event'/>

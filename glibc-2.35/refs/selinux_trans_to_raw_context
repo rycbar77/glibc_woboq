@@ -1,0 +1,6 @@
+<dec f='include/selinux/selinux.h' l='691' type='int selinux_trans_to_raw_context(const char * trans, char ** rawp)'/>
+<doc f='include/selinux/selinux.h' l='686'>/* Perform context translation between the human-readable format
+   (&quot;translated&quot;) and the internal system format (&quot;raw&quot;). 
+   Caller must free the resulting context via freecon.  
+   Returns -1 upon an error or 0 otherwise.
+   If passed NULL, sets the returned context to NULL and returns 0. */</doc>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='52' type='int *'/>
+<offset>64</offset>
+<use f='codebrowser/rt/aio_notify.c' l='136' u='r' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_notify.c' l='137' u='r' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_suspend.c' l='145' u='w' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='148' u='w' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='211' u='w' c='lio_listio_internal'/>

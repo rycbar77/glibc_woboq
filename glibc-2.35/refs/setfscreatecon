@@ -1,0 +1,5 @@
+<dec f='include/selinux/selinux.h' l='76' type='int setfscreatecon(const char * context)'/>
+<doc f='include/selinux/selinux.h' l='74'>/* Set the fscreate security context for subsequent file creations.
+   Call with NULL if you want to reset to the default. */</doc>
+<use f='codebrowser/nss/makedb.c' l='885' u='c' c='set_file_creation_context'/>
+<use f='codebrowser/nss/makedb.c' l='898' u='c' c='reset_file_creation_context'/>

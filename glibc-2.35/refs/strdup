@@ -1,0 +1,44 @@
+<dec f='codebrowser/string/string.h' l='187' type='char * strdup(const char * __s)'/>
+<doc f='codebrowser/string/string.h' l='186'>/* Duplicate S, returning an identical malloc&apos;d string.  */</doc>
+<use f='codebrowser/elf/ldconfig.c' l='469' u='c' c='add_dir_1'/>
+<use f='codebrowser/hesiod/hesiod.c' l='287' u='c' c='parse_config_file'/>
+<use f='codebrowser/locale/programs/record-status.c' l='69' u='c' c='push_locale'/>
+<use f='codebrowser/nis/nis_addmember.c' l='69' u='c' c='__GI_nis_addmember'/>
+<use f='codebrowser/nis/nis_callback.c' l='276' u='c' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='283' u='c' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='315' u='c' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_creategroup.c' l='53' u='c' c='__GI_nis_creategroup'/>
+<use f='codebrowser/nis/nis_creategroup.c' l='56' u='c' c='__GI_nis_creategroup'/>
+<use f='codebrowser/nis/nis_defaults.c' l='44' u='c' c='searchXYX'/>
+<use f='codebrowser/nis/nis_defaults.c' l='376' u='c' c='__nis_default_owner'/>
+<use f='codebrowser/nis/nis_defaults.c' l='403' u='c' c='__nis_default_group'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='83' u='c' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='108' u='c' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='113' u='c' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='118' u='c' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_subr.c' l='126' u='c' c='__GI_nis_getnames'/>
+<use f='codebrowser/nis/nis_table.c' l='47' u='c' c='__create_ib_request'/>
+<use f='codebrowser/nis/nis_table.c' l='71' u='c' c='__create_ib_request'/>
+<use f='codebrowser/nis/nis_table.c' l='110' u='c' c='__create_ib_request'/>
+<use f='codebrowser/nis/nis_table.c' l='115' u='c' c='__create_ib_request'/>
+<use f='codebrowser/nis/nis_table.c' l='158' u='c' c='get_tablepath'/>
+<use f='codebrowser/nis/nis_table.c' l='194' u='c' c='__follow_path'/>
+<use f='codebrowser/nis/nis_table.c' l='260' u='c' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='336' u='c' c='__GI_nis_list'/>
+<use f='codebrowser/nis/nis_table.c' l='515' u='c' c='__GI_nis_list'/>
+<use f='codebrowser/nis/ypclnt.c' l='618' u='c' c='__GI_yp_master'/>
+<use f='codebrowser/nscd/dbg_log.c' l='36' u='c' c='set_logfile'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='142' u='c' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='158' u='c' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='173' u='c' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='188' u='c' c='copy_pwd_changes'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='130' u='c' c='copy_spwd_changes'/>
+<use f='codebrowser/nss/nss_db/db-netgrp.c' l='71' u='c' c='_nss_db_setnetgrent'/>
+<use f='codebrowser/resolv/res_debug.c' l='1001' u='c' c='__loc_ntoa'/>
+<use f='codebrowser/resolv/res_debug.c' l='1003' u='c' c='__loc_ntoa'/>
+<use f='codebrowser/resolv/res_debug.c' l='1005' u='c' c='__loc_ntoa'/>
+<def f='codebrowser/string/strdup.c' l='53' macro='1' type='char * strdup(const char * )'/>
+<use f='codebrowser/support/shell-container.c' l='376' u='c' c='run_command_string'/>
+<use f='codebrowser/support/temp_file.c' l='59' u='c' c='add_temp_file_internal'/>
+<use f='codebrowser/support/xstrdup.c' l='26' u='c' c='xstrdup'/>
+<use f='codebrowser/timezone/zic.c' l='486' u='c' c='ecpyalloc'/>

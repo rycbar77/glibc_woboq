@@ -1,0 +1,6 @@
+<def f='codebrowser/sysdeps/x86/elide.h' l='28' ll='48' type='_Bool elision_adapt(signed char * adapt_count, unsigned int status)'/>
+<use f='codebrowser/nptl/pthread_rwlock_rdlock.c' l='128' macro='1' u='c' c='__pthread_rwlock_rdlock'/>
+<doc f='codebrowser/sysdeps/x86/elide.h' l='26'>/* Adapt elision with ADAPT_COUNT and STATUS and decide retries.  */</doc>
+<use f='codebrowser/nptl/pthread_rwlock_tryrdlock.c' l='35' macro='1' u='c' c='__pthread_rwlock_tryrdlock'/>
+<use f='codebrowser/nptl/pthread_rwlock_trywrlock.c' l='30' macro='1' u='c' c='__pthread_rwlock_trywrlock'/>
+<use f='codebrowser/nptl/pthread_rwlock_wrlock.c' l='100' macro='1' u='c' c='__pthread_rwlock_wrlock'/>

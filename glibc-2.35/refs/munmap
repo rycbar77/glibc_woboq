@@ -1,0 +1,31 @@
+<dec f='codebrowser/misc/sys/mman.h' l='76' type='int munmap(void * __addr, size_t __len)'/>
+<doc f='codebrowser/misc/sys/mman.h' l='74'>/* Deallocate any mapping for the region starting at ADDR and extending LEN
+   bytes.  Returns 0 if successful, -1 for errors (and sets errno).  */</doc>
+<use f='codebrowser/elf/cache.c' l='424' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='1039' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='1060' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/readlib.c' l='181' u='c' c='process_file'/>
+<use f='codebrowser/elf/sprof.c' l='737' u='c' c='unload_shobj'/>
+<use f='codebrowser/elf/sprof.c' l='816' u='c' c='load_profdata'/>
+<use f='codebrowser/elf/sprof.c' l='825' u='c' c='load_profdata'/>
+<use f='codebrowser/elf/sprof.c' l='913' u='c' c='load_profdata'/>
+<use f='codebrowser/elf/sprof.c' l='923' u='c' c='load_profdata'/>
+<use f='codebrowser/elf/sprof.c' l='956' u='c' c='unload_profdata'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='200' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='209' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='297' u='c' c='main'/>
+<use f='codebrowser/locale/programs/locale.c' l='488' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='503' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='722' u='c' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='362' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='364' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='694' u='c' c='close_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='696' u='c' c='close_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1506' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1517' u='c' c='add_locales_to_archive'/>
+<def f='codebrowser/malloc/memusage.c' l='766' ll='802' type='int munmap(void * start, size_t len)'/>
+<doc f='codebrowser/malloc/memusage.c' l='765'>/* `munmap&apos; replacement.  */</doc>
+<use f='codebrowser/nscd/cachedumper.c' l='372' u='c' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/connections.c' l='558' u='c' c='nscd_init'/>
+<use f='codebrowser/nss/nss_db/db-open.c' l='68' u='c' c='internal_endent'/>
+<use f='codebrowser/support/xmunmap.c' l='26' u='c' c='xmunmap'/>

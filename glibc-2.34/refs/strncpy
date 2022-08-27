@@ -1,0 +1,32 @@
+<dec f='codebrowser/string/string.h' l='128' type='char * strncpy(char *restrict __dest, const char *restrict __src, size_t __n)'/>
+<dec f='codebrowser/include/string.h' l='146' type='char * strncpy(char * , const char * , unsigned long )'/>
+<use f='codebrowser/include/string.h' l='146' c='strncpy'/>
+<doc f='codebrowser/string/string.h' l='127'>/* Copy no more than N characters of SRC to DEST.  */</doc>
+<use f='codebrowser/debug/strncpy_chk.c' l='28' u='c' c='__strncpy_chk'/>
+<use f='codebrowser/elf/dl-profile.c' l='316' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/gmon/gmon.c' l='237' u='c' c='write_hist'/>
+<use f='codebrowser/gshadow/sgetsgent_r.c' l='62' u='c' c='__sgetsgent_r'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='235' u='c' c='monetary_finish'/>
+<use f='codebrowser/login/login.c' l='114' u='c' c='__login'/>
+<use f='codebrowser/login/login.c' l='135' u='c' c='__login'/>
+<use f='codebrowser/login/logout.c' l='42' u='c' c='__logout'/>
+<use f='codebrowser/login/logwtmp.c' l='36' u='c' c='__logwtmp'/>
+<use f='codebrowser/login/logwtmp.c' l='37' u='c' c='__logwtmp'/>
+<use f='codebrowser/login/logwtmp.c' l='38' u='c' c='__logwtmp'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='250' u='c' c='get_next_alias'/>
+<use f='codebrowser/resolv/res_context_hostalias.c' l='123' u='c' c='__res_context_hostalias'/>
+<use f='codebrowser/shadow/sgetspent_r.c' l='94' u='c' c='__sgetspent_r'/>
+<use f='codebrowser/stdlib/strfmon_l.c' l='293' u='c' c='__vstrfmon_l_internal'/>
+<use f='codebrowser/sysdeps/posix/cuserid.c' l='46' u='c' c='cuserid'/>
+<use f='codebrowser/sysdeps/unix/getlogin.c' l='63' u='c' c='getlogin_fd0'/>
+<use f='codebrowser/sysdeps/unix/getlogin.c' l='73' u='c' c='getlogin_fd0'/>
+<use f='codebrowser/sysdeps/unix/getlogin_r.c' l='60' u='c' c='getlogin_r_fd0'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='47' u='c' c='__if_nametoindex'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='245' u='c' c='__if_indextoname'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='565' c='__strncpy_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='567' c='__strncpy_avx2_rtm'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='571' c='__strncpy_evex'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='575' c='__strncpy_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='577' c='__strncpy_sse2_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='579' c='__strncpy_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strncpy.c' l='29' macro='1' type='char * strncpy(char *restrict , const char *restrict , size_t )'/>

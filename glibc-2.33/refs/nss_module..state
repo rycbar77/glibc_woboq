@@ -1,0 +1,33 @@
+<dec f='codebrowser/nss/nss_module.h' l='55' type='int'/>
+<offset>0</offset>
+<doc f='codebrowser/nss/nss_module.h' l='53'>/* Actual type is enum nss_module_state.  Use int due to atomic
+     access.  Used in a double-checked locking idiom.  */</doc>
+<use f='codebrowser/nss/nss_module.c' l='96' u='w' c='__nss_module_allocate'/>
+<use f='codebrowser/nss/nss_module.c' l='152' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='152' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='152' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='152' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='152' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='155' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='155' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='155' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='155' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='155' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='223' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='223' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='223' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='223' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='223' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='231' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='231' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='231' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='231' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='231' u='a' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='251' u='a' c='__nss_module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='251' u='a' c='__nss_module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='251' u='a' c='__nss_module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='251' u='a' c='__nss_module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='251' u='a' c='__nss_module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='359' u='r' c='__nss_module_disable_loading'/>
+<use f='codebrowser/nss/nss_module.c' l='360' u='w' c='__nss_module_disable_loading'/>
+<use f='codebrowser/nss/nss_module.c' l='371' u='r' c='__nss_module_freeres'/>

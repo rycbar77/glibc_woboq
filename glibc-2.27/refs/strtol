@@ -1,0 +1,15 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='176' type='long strtol(const char *restrict __nptr, char **restrict __endptr, int __base)'/>
+<use f='codebrowser/stdlib/stdlib.h' l='363' u='c' c='atoi'/>
+<use f='codebrowser/stdlib/stdlib.h' l='368' u='c' c='atol'/>
+<dec f='codebrowser/include/stdlib.h' l='208' type='long strtol(const char * , char ** , int )'/>
+<use f='codebrowser/include/stdlib.h' l='208' c='strtol'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='175'>/* Convert a string to a long integer.  */</doc>
+<use f='codebrowser/iconv/gconv_conf.c' l='295' u='c' c='add_module'/>
+<use f='codebrowser/posix/wordexp.c' l='571' u='c' c='eval_expr_val'/>
+<use f='codebrowser/stdlib/atoi.c' l='27' u='c' c='atoi'/>
+<use f='codebrowser/stdlib/atol.c' l='27' u='c' c='atol'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='272' u='c' c='init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf.c' l='133' u='c' c='linux_sysconf'/>
+<def f='codebrowser/stdlib/strtol.c' l='108' macro='1' type='long strtol(const char * , char ** , int )'/>
+<use f='codebrowser/sysdeps/wordsize-64/strtol.c' l='13' c='strtoll'/>
+<use f='codebrowser/sysdeps/wordsize-64/strtol.c' l='15' c='strtoq'/>

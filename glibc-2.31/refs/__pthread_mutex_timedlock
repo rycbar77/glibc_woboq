@@ -1,0 +1,4 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='391' type='int __pthread_mutex_timedlock(pthread_mutex_t * __mutex, const struct timespec * __abstime)'/>
+<use f='codebrowser/nptl/mtx_timedlock.c' l='25' u='c' c='mtx_timedlock'/>
+<def f='codebrowser/nptl/pthread_mutex_timedlock.c' l='614' ll='620' type='int __pthread_mutex_timedlock(pthread_mutex_t * mutex, const struct timespec * abstime)'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='621' c='pthread_mutex_timedlock'/>

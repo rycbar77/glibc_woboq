@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/fork.h' l='37' type='void *'/>
+<use f='codebrowser/malloc/arena.c' l='403' macro='1' u='w' c='ptmalloc_init'/>
+<offset>256</offset>
+<use f='codebrowser/nptl/register-atfork.c' l='97' u='w' c='__register_atfork'/>
+<use f='codebrowser/nptl/unregister-atfork.c' l='40' u='r' c='__unregister_atfork'/>
+<use f='codebrowser/nptl/unregister-atfork.c' l='70' u='r' c='__unregister_atfork'/>

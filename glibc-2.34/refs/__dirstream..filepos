@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/dirstream.h' l='40' type='off_t'/>
+<offset>256</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/dirstream.h' l='40'>/* Position of next entry to read.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/opendir.c' l='130' u='w' c='__alloc_dir'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='78' u='w' c='__readdir64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='80' u='w' c='__readdir64_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/rewinddir.c' l='32' u='w' c='__rewinddir'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/seekdir.c' l='33' u='w' c='seekdir'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/telldir.c' l='29' u='r' c='telldir'/>

@@ -1,0 +1,17 @@
+<dec f='codebrowser/elf/stringtable.h' l='30' type='uint32_t'/>
+<use f='codebrowser/elf/cache.c' l='505' u='r' c='write_extensions'/>
+<use f='codebrowser/elf/cache.c' l='663' u='r' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='665' u='r' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='681' u='r' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='683' u='r' c='save_cache'/>
+<offset>96</offset>
+<doc f='codebrowser/elf/stringtable.h' l='30'>/* From start of finalized table.  */</doc>
+<use f='codebrowser/elf/stringtable.c' l='115' u='w' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='175' u='w' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='183' u='w' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='183' u='r' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='185' u='r' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='187' u='a' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='194' u='r' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='207' u='r' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='208' u='r' c='stringtable_finalize'/>

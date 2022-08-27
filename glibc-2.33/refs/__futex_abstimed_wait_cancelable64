@@ -1,0 +1,18 @@
+<dec f='codebrowser/sysdeps/nptl/futex-internal.h' l='344' type='int __futex_abstimed_wait_cancelable64(unsigned int * futex_word, unsigned int expected, clockid_t clockid, const struct timespec * abstime, int private)'/>
+<doc f='codebrowser/sysdeps/nptl/futex-internal.h' l='332'>/* Like futex_wait, but will eventually time out (i.e., stop being blocked)
+   after the duration of time provided (i.e., ABSTIME) has passed using the
+   clock specified by CLOCKID (currently only CLOCK_REALTIME and
+   CLOCK_MONOTONIC, the ones support by lll_futex_supported_clockid). ABSTIME
+   can also equal NULL, in which case this function behaves equivalent to
+   futex_wait.
+
+   Returns the same values as futex_wait under those same conditions;
+   additionally, returns ETIMEDOUT if the timeout expired.
+
+   The call acts as a cancellation entrypoint.  */</doc>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='504' u='c' c='__pthread_cond_wait_common'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='102' u='c' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='112' u='c' c='do_futex_wait'/>
+<def f='codebrowser/sysdeps/nptl/futex-internal.c' l='117' ll='125' type='int __futex_abstimed_wait_cancelable64(unsigned int * futex_word, unsigned int expected, clockid_t clockid, const struct timespec * abstime, int private)'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='101' macro='1' u='c' c='do_aio_misc_wait'/>
+<use f='codebrowser/sysdeps/pthread/lio_listio.c' l='142' macro='1' u='c' c='lio_listio_internal'/>

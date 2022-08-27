@@ -1,0 +1,25 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='49' type='0'/>
+<use f='codebrowser/sysdeps/nptl/pthread.h' l='55'/>
+<use f='codebrowser/sysdeps/nptl/pthread.h' l='62'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='112' u='r'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='114' u='r'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='88' u='r' c='__pthread_mutex_cond_lock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='46' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='84' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='34' u='r' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='69' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='57' u='r' c='__pthread_mutex_unlock_usercnt'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='58' u='r' c='__pthread_mutex_unlock_usercnt'/>
+<use f='codebrowser/nscd/connections.c' l='116' macro='1'/>
+<use f='codebrowser/nscd/connections.c' l='117' macro='1'/>
+<use f='codebrowser/nscd/connections.c' l='135' macro='1'/>
+<use f='codebrowser/nscd/connections.c' l='136' macro='1'/>
+<use f='codebrowser/nscd/connections.c' l='154' macro='1'/>
+<use f='codebrowser/nscd/connections.c' l='155' macro='1'/>
+<use f='codebrowser/nscd/connections.c' l='173' macro='1'/>
+<use f='codebrowser/nscd/connections.c' l='174' macro='1'/>
+<use f='codebrowser/nscd/connections.c' l='192' macro='1'/>
+<use f='codebrowser/nscd/connections.c' l='193' macro='1'/>
+<use f='codebrowser/nscd/connections.c' l='1483' macro='1'/>
+<use f='codebrowser/support/resolv_test.c' l='1132' macro='1' u='r' c='resolv_test_start'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='31' macro='1'/>

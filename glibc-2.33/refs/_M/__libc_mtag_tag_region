@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/generic/libc-mtag.h' l='37'/>
+<doc f='codebrowser/sysdeps/generic/libc-mtag.h' l='34'>/* Set the tags for a region of memory, which must have size and alignment
+   that are multiples of __MTAG_GRANULE_SIZE.  Size cannot be zero.
+   void *__libc_mtag_tag_region (const void *, size_t)  */</doc>

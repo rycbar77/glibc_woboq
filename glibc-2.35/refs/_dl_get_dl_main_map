@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1250' type='struct link_map * _dl_get_dl_main_map()'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1249'>/* Get a pointer to _dl_main_map.  */</doc>
+<use f='codebrowser/elf/dl-reloc-static-pie.c' l='38' u='c' c='_dl_relocate_static_pie'/>
+<def f='codebrowser/elf/dl-support.c' l='436' ll='440' type='struct link_map * _dl_get_dl_main_map()'/>
+<doc f='codebrowser/elf/dl-support.c' l='433'>/* Since relocation to hidden _dl_main_map causes relocation overflow on
+   aarch64, a function is used to get the address of _dl_main_map.  */</doc>

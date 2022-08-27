@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/dlfcn.h' l='54' type='void * __libc_dlsym(void * __map, const char * __name)'/>
+<def f='codebrowser/elf/dl-libc.c' l='179' ll='192' type='void * __libc_dlsym(void * map, const char * name)'/>
+<use f='codebrowser/elf/rtld_static_init.c' l='40' u='r'/>
+<use f='codebrowser/iconv/gconv_dl.c' l='117' u='c' c='__gconv_find_shlib'/>
+<use f='codebrowser/iconv/gconv_dl.c' l='127' u='c' c='__gconv_find_shlib'/>
+<use f='codebrowser/iconv/gconv_dl.c' l='128' u='c' c='__gconv_find_shlib'/>
+<use f='codebrowser/nss/nss_module.c' l='240' u='c' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='263' u='c' c='module_load'/>

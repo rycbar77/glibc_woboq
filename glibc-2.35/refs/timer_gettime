@@ -1,0 +1,4 @@
+<dec f='codebrowser/time/time.h' l='345' type='int timer_gettime(timer_t __timerid, struct itimerspec * __value)'/>
+<doc f='codebrowser/time/time.h' l='344'>/* Get current value of timer TIMERID and store it in VALUE.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_gettime.c' l='83' c='__timer_gettime_new'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/timer_gettime.c' l='93' macro='1' type='int timer_gettime(timer_t , struct itimerspec * )'/>

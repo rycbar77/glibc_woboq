@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/nss_files.h' l='103' type='enum nss_status __nss_files_data_setent(enum nss_files_file file, const char * path)'/>
+<dec f='codebrowser/include/nss_files.h' l='105' type='enum nss_status __nss_files_data_setent(enum nss_files_file , const char * )'/>
+<use f='codebrowser/include/nss_files.h' l='105' c='__nss_files_data_setent'/>
+<doc f='codebrowser/include/nss_files.h' l='101'>/* Performs the set*ent operation for FILE.  PATH is the file to
+   open.  */</doc>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='62' u='c' c='_nss_files_setaliasent'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='92' u='c' c='_nss_files_setetherent'/>
+<def f='codebrowser/nss/nss_files_data.c' l='124' ll='139' type='enum nss_status __nss_files_data_setent(enum nss_files_file file, const char * path)'/>

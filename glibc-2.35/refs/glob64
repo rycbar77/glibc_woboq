@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/glob.h' l='163' type='int glob(const char *restrict __pattern, int __flags, int (*)(const char *, int) __errfunc, glob_t *restrict __pglob)'/>
+<dec f='codebrowser/posix/glob.h' l='183' type='int glob64(const char *restrict __pattern, int __flags, int (*)(const char *, int) __errfunc, glob64_t *restrict __pglob)'/>
+<use f='codebrowser/elf/ldconfig.c' l='1322' u='c' c='parse_conf_include'/>
+<use f='codebrowser/elf/ldconfig.c' l='1326' u='c' c='parse_conf_include'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/glob.c' l='36' macro='1' type='int glob64(const char * , int , int (*)(const char *, int) , glob_t * )'/>

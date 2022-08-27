@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='480' type='size_t'/>
+<def f='codebrowser/elf/dl-support.c' l='190' type='size_t'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='76' macro='1' u='w' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='87' macro='1' u='r' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='104' macro='1' u='w' c='queue_stack'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='105' macro='1' u='r' c='queue_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='111' macro='1' u='w' c='get_cached_stack'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='110' macro='1' u='w' c='reclaim_stacks'/>

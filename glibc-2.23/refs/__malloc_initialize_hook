@@ -1,0 +1,9 @@
+<dec f='codebrowser/malloc/malloc.h' l='147' type='void (*)(void)'/>
+<doc f='codebrowser/malloc/malloc.h' l='144'>/* Called once when malloc is initialized; redefining this variable in
+   the application provides the preferred way to set up the hook
+   pointers. */</doc>
+<def f='codebrowser/locale/programs/localedef.c' l='647' type='void (*)(void)'/>
+<def f='codebrowser/malloc/malloc.c' l='1850' macro='1' type='void (*)(void)'/>
+<use f='codebrowser/malloc/arena.c' l='472' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='472' u='r' c='ptmalloc_init'/>
+<def f='codebrowser/malloc/mcheck-init.c' l='30' type='void (*)(void)'/>

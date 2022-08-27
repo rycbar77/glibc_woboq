@@ -1,0 +1,13 @@
+<dec f='codebrowser/socket/sys/un.h' l='32' type='char[108]'/>
+<use f='codebrowser/inet/getnameinfo.c' l='463' u='r' c='gni_serv_local'/>
+<offset>16</offset>
+<doc f='codebrowser/socket/sys/un.h' l='32'>/* Path name.  */</doc>
+<use f='codebrowser/misc/syslog.c' l='309' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='790' u='r' c='nscd_init'/>
+<use f='codebrowser/nscd/nscd.c' l='543' u='r' c='nscd_open_socket'/>
+<use f='codebrowser/nscd/nscd.c' l='543' u='r' c='nscd_open_socket'/>
+<use f='codebrowser/nscd/nscd.c' l='544' u='r' c='nscd_open_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='184' u='r' c='open_socket'/>
+<use f='codebrowser/socket/sockaddr_un_set.c' l='32' u='r' c='__sockaddr_un_set'/>
+<use f='codebrowser/socket/sockaddr_un_set.c' l='39' u='r' c='__sockaddr_un_set'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='137' u='r' c='__GI_clntunix_create'/>

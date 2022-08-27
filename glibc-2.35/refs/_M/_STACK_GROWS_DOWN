@@ -1,0 +1,22 @@
+<dec f='codebrowser/sysdeps/x86_64/stackinfo.h' l='33'/>
+<use f='codebrowser/include/stackinfo.h' l='26' u='a'/>
+<use f='codebrowser/include/stackinfo.h' l='26' u='c'/>
+<doc f='codebrowser/sysdeps/x86_64/stackinfo.h' l='32'>/* On x86_64 the stack grows down.  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='93' u='c'/>
+<use f='codebrowser/nptl/pthread_attr_getstack.c' l='30' u='c'/>
+<use f='codebrowser/nptl/pthread_attr_setstack.c' l='47' u='c'/>
+<use f='codebrowser/nptl/pthread_cleanup_upto.c' l='39' u='c'/>
+<use f='codebrowser/nptl/allocatestack.c' l='154' u='c'/>
+<use f='codebrowser/nptl/allocatestack.c' l='168' u='c'/>
+<use f='codebrowser/nptl/allocatestack.c' l='191' u='c'/>
+<use f='codebrowser/nptl/allocatestack.c' l='524' u='c'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='67' u='c'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='104' u='c'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='116' u='c'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='142' u='c'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='157' u='c'/>
+<use f='codebrowser/nptl/unwind.c' l='28' u='a'/>
+<use f='codebrowser/support/xclone.c' l='36' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='76' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='80' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='105' u='c'/>

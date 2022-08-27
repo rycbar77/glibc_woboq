@@ -1,0 +1,15 @@
+<dec f='codebrowser/support/xmemstream.h' l='39' type='void xopen_memstream(struct xmemstream * stream)'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='86' u='c' c='support_capture_subprocess'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='87' u='c' c='support_capture_subprocess'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='99' u='c' c='support_capture_subprogram'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='100' u='c' c='support_capture_subprogram'/>
+<doc f='codebrowser/support/xmemstream.h' l='35'>/* Create a new in-memory stream.  Initializes *STREAM.  After this
+   function returns, STREAM-&gt;out is a file descriptor open for
+   writing.  errno is preserved, so that the %m format specifier can
+   be used for writing to STREAM-&gt;out.  */</doc>
+<use f='codebrowser/support/support_format_addrinfo.c' l='218' u='c' c='support_format_addrinfo'/>
+<use f='codebrowser/support/support_format_dns_packet.c' l='110' u='c' c='support_format_dns_packet'/>
+<use f='codebrowser/support/support_format_hostent.c' l='58' u='c' c='support_format_hostent'/>
+<use f='codebrowser/support/support_format_netent.c' l='39' u='c' c='support_format_netent'/>
+<use f='codebrowser/support/support_quote_blob_main.c' l='26' u='c' c='support_quote_blob'/>
+<def f='codebrowser/support/xmemstream.c' l='26' ll='35' type='void xopen_memstream(struct xmemstream * stream)'/>

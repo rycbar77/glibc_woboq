@@ -1,0 +1,10 @@
+<dec f='codebrowser/nptl/descr.h' l='381' type='struct pthread *'/>
+<offset>13120</offset>
+<doc f='codebrowser/nptl/descr.h' l='380'>/* Next descriptor with a pending event.  */</doc>
+<use f='codebrowser/nptl/allocatestack.c' l='226' u='w' c='get_cached_stack'/>
+<use f='codebrowser/nptl/pthread_create.c' l='508' u='r' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='514' u='w' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='516' u='r' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='810' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='812' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl_db/structs.def' l='59' u='r'/>

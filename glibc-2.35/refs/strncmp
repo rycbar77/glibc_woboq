@@ -1,0 +1,101 @@
+<dec f='codebrowser/string/string.h' l='159' type='int strncmp(const char * __s1, const char * __s2, size_t __n)'/>
+<dec f='codebrowser/include/string.h' l='146' type='int strncmp(const char * , const char * , unsigned long )'/>
+<use f='codebrowser/include/string.h' l='146' c='strncmp'/>
+<doc f='codebrowser/string/string.h' l='158'>/* Compare N characters of S1 and S2.  */</doc>
+<use f='codebrowser/argp/argp-help.c' l='223' u='c' c='fill_in_uparams'/>
+<use f='codebrowser/catgets/gencat.c' l='366' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='385' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='465' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='519' u='c' c='read_input_file'/>
+<use f='codebrowser/crypt/crypt-entry.c' l='84' u='c' c='__crypt_r'/>
+<use f='codebrowser/crypt/crypt-entry.c' l='97' u='c' c='__crypt_r'/>
+<use f='codebrowser/crypt/crypt-entry.c' l='102' u='c' c='__crypt_r'/>
+<use f='codebrowser/crypt/crypt-entry.c' l='163' u='c' c='crypt'/>
+<use f='codebrowser/crypt/crypt-entry.c' l='169' u='c' c='crypt'/>
+<use f='codebrowser/crypt/crypt-entry.c' l='173' u='c' c='crypt'/>
+<use f='codebrowser/crypt/md5-crypt.c' l='106' u='c' c='__md5_crypt_r'/>
+<use f='codebrowser/crypt/sha256-crypt.c' l='124' u='c' c='__sha256_crypt_r'/>
+<use f='codebrowser/crypt/sha256-crypt.c' l='128' u='c' c='__sha256_crypt_r'/>
+<use f='codebrowser/crypt/sha512-crypt.c' l='124' u='c' c='__sha512_crypt_r'/>
+<use f='codebrowser/crypt/sha512-crypt.c' l='128' u='c' c='__sha512_crypt_r'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='135' u='c' c='unfiltered_envvar'/>
+<use f='codebrowser/elf/dl-load.c' l='216' u='c' c='is_dst'/>
+<use f='codebrowser/elf/dl-is_dso.h' l='29' u='c' c='_dl_is_dso'/>
+<use f='codebrowser/elf/dl-is_dso.h' l='29' u='c' c='_dl_is_dso'/>
+<use f='codebrowser/elf/dl-is_dso.h' l='31' u='c' c='_dl_is_dso'/>
+<use f='codebrowser/elf/dl-is_dso.h' l='32' u='c' c='_dl_is_dso'/>
+<use f='codebrowser/elf/ldconfig.c' l='1049' u='c' c='search_dir'/>
+<use f='codebrowser/elf/ldconfig.c' l='1276' u='c' c='parse_conf'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='147' u='c' c='match_file'/>
+<use f='codebrowser/inet/rcmd.c' l='659' u='c' c='__checkhost_sa'/>
+<use f='codebrowser/inet/rcmd.c' l='662' u='c' c='__checkhost_sa'/>
+<use f='codebrowser/inet/rcmd.c' l='666' u='c' c='__checkhost_sa'/>
+<use f='codebrowser/inet/rcmd.c' l='711' u='c' c='__icheckuser'/>
+<use f='codebrowser/inet/rcmd.c' l='714' u='c' c='__icheckuser'/>
+<use f='codebrowser/inet/rcmd.c' l='718' u='c' c='__icheckuser'/>
+<use f='codebrowser/locale/loadarchive.c' l='176' u='c' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/programs/charmap-kw.h' l='41' u='c' c='charmap_hash'/>
+<use f='codebrowser/locale/programs/charmap.c' l='1017' u='c' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3091' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3141' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3848' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3889' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='288' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='297' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='362' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='371' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/linereader.c' l='243' u='c' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='251' u='c' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='259' u='c' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='266' u='c' c='lr_token'/>
+<use f='codebrowser/locale/programs/locfile-kw.h' l='149' u='c' c='locfile_hash'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='436' u='c' c='repertoire_new_char'/>
+<use f='codebrowser/login/login.c' l='107' u='c' c='__login'/>
+<use f='codebrowser/misc/getttyent.c' l='107' u='c' c='__getttyent'/>
+<use f='codebrowser/misc/getttyent.c' l='107' u='c' c='__getttyent'/>
+<use f='codebrowser/misc/getttyent.c' l='107' u='c' c='__getttyent'/>
+<use f='codebrowser/misc/getttyent.c' l='108' u='c' c='__getttyent'/>
+<use f='codebrowser/nis/nis_defaults.c' l='37' u='c' c='searchXYX'/>
+<use f='codebrowser/nis/nis_defaults.c' l='37' u='c' c='searchXYX'/>
+<use f='codebrowser/nss/getent.c' l='894' u='c' c='parse_option'/>
+<use f='codebrowser/nss/nss_db/db-initgroups.c' l='76' u='c' c='_nss_db_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_db/db-netgrp.c' l='63' u='c' c='_nss_db_setnetgrent'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='169' u='c' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='90' u='c' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/nss/nss_module.c' l='76' u='c' c='__nss_module_allocate'/>
+<use f='codebrowser/posix/getconf.c' l='509' u='c' c='main'/>
+<use f='codebrowser/posix/getconf.c' l='651' u='c' c='main'/>
+<use f='codebrowser/posix/getopt.c' l='212' u='c' c='process_long_option'/>
+<use f='codebrowser/posix/getopt.c' l='230' u='c' c='process_long_option'/>
+<use f='codebrowser/posix/wordexp.c' l='851' u='c' c='exec_comm_child'/>
+<use f='codebrowser/resolv/res_init.c' l='302' u='c' c='res_vinit_1'/>
+<use f='codebrowser/resolv/res_init.c' l='302' u='c' c='res_vinit_1'/>
+<use f='codebrowser/resolv/res_init.c' l='302' u='c' c='res_vinit_1'/>
+<use f='codebrowser/resolv/res_init.c' l='302' u='c' c='res_vinit_1'/>
+<use f='codebrowser/resolv/res_init.c' l='302' u='c' c='res_vinit_1'/>
+<use f='codebrowser/resolv/res_init.c' l='655' u='c' c='res_setoptions'/>
+<use f='codebrowser/resolv/res_init.c' l='663' u='c' c='res_setoptions'/>
+<use f='codebrowser/resolv/res_init.c' l='671' u='c' c='res_setoptions'/>
+<use f='codebrowser/resolv/res_init.c' l='701' u='c' c='res_setoptions'/>
+<use f='codebrowser/stdlib/getenv.c' l='84' u='c' c='getenv'/>
+<use f='codebrowser/stdlib/getsubopt.c' l='58' u='c' c='getsubopt'/>
+<use f='codebrowser/stdlib/setenv.c' l='143' u='c' c='__add_to_environ'/>
+<use f='codebrowser/stdlib/setenv.c' l='284' u='c' c='__unsetenv'/>
+<use f='codebrowser/support/support_process_state.c' l='63' u='c' c='support_process_state_wait'/>
+<use f='codebrowser/support/test-container.c' l='819' u='c' c='main'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='131' u='c' c='get_nproc_stat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='217' u='c' c='__get_nprocs_conf'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c' l='176' u='c' c='__malloc_hugepage_config'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/nscd_setup_thread.c' l='30' u='c' c='setup_thread'/>
+<use f='codebrowser/sysdeps/generic/utmp-equal.h' l='37' u='c' c='__utmp_equal'/>
+<use f='codebrowser/sysdeps/generic/utmp-equal.h' l='38' u='c' c='__utmp_equal'/>
+<use f='codebrowser/login/utmp_file.c' l='330' u='c' c='__libc_getutline_r'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='974' c='__strncmp_avx2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='977' c='__strncmp_avx2_rtm'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='981' c='__strncmp_evex'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='985' c='__strncmp_sse42'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='987' c='__strncmp_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='989' c='__strncmp_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strncmp.c' l='66' macro='1' type='int strncmp(const char * , const char * , size_t )'/>
+<use f='codebrowser/time/alt_digit.c' l='177' u='c' c='_nl_parse_alt_digit'/>
+<use f='codebrowser/timezone/zdump.c' l='243' u='c' c='zdump_tzalloc'/>

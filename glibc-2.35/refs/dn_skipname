@@ -1,0 +1,6 @@
+<dec f='codebrowser/resolv/resolv.h' l='250' type='int dn_skipname(const unsigned char * , const unsigned char * )'/>
+<use f='codebrowser/include/resolv.h' l='62' c='__libc_dn_skipname'/>
+<use f='codebrowser/hesiod/hesiod.c' l='372' u='c' c='get_txt_records'/>
+<use f='codebrowser/hesiod/hesiod.c' l='385' u='c' c='get_txt_records'/>
+<def f='codebrowser/resolv/dn_skipname.c' l='98' macro='1' type='int dn_skipname(const unsigned char * , const unsigned char * )'/>
+<use f='codebrowser/resolv/ns_parse.c' l='71' u='c' c='ns_skiprr'/>

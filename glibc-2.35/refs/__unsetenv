@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/stdlib.h' l='91' type='int __unsetenv(const char * __name)'/>
+<use f='codebrowser/elf/dl-support.c' l='384' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/stdlib/putenv.c' l='85' u='c' c='putenv'/>
+<def f='codebrowser/stdlib/setenv.c' l='264' ll='301' type='int __unsetenv(const char * name)'/>
+<use f='codebrowser/stdlib/setenv.c' l='340' c='unsetenv'/>

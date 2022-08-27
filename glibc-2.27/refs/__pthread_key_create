@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='365' type='int __pthread_key_create(pthread_key_t * __key, void (*)(void *) __destr_function)'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='176' macro='1' c='init'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='176' macro='1' u='r' c='init'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='490' type='int __pthread_key_create(pthread_key_t * key, void (*)(void *) destr)'/>
+<def f='codebrowser/nptl/pthread_key_create.c' l='24' ll='49' type='int __pthread_key_create(pthread_key_t * key, void (*)(void *) destr)'/>
+<use f='codebrowser/nptl/pthread_key_create.c' l='50' c='pthread_key_create'/>
+<use f='codebrowser/string/strsignal.c' l='82' macro='1' c='init'/>
+<use f='codebrowser/string/strsignal.c' l='82' macro='1' u='r' c='init'/>

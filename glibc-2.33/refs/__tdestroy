@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/search.h' l='28' type='void __tdestroy(void * __root, __free_fn_t freefct)'/>
+<dec f='codebrowser/include/search.h' l='29' type='void __tdestroy(void * , __free_fn_t )'/>
+<use f='codebrowser/include/search.h' l='29' c='__tdestroy'/>
+<use f='codebrowser/iconv/gconv_db.c' l='843' u='c' c='free_mem'/>
+<use f='codebrowser/iconv/gconv_db.c' l='849' u='c' c='free_mem'/>
+<use f='codebrowser/iconv/gconv_dl.c' l='204' u='c' c='free_mem'/>
+<use f='codebrowser/intl/dcigettext.c' l='1694' u='c' c='free_mem'/>
+<def f='codebrowser/misc/tsearch.c' l='772' ll='781' type='void __tdestroy(void * vroot, __free_fn_t freefct)'/>
+<use f='codebrowser/misc/tsearch.c' l='783' c='tdestroy'/>
+<use f='codebrowser/stdlib/setenv.c' l='330' u='c' c='free_mem'/>
+<use f='codebrowser/io/ftw.c' l='807' u='c' c='ftw_startup'/>

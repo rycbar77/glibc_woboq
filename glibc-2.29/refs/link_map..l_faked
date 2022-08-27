@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/link.h' l='185' type='unsigned int'/>
+<offset>6377</offset>
+<doc f='codebrowser/include/link.h' l='185'>/* Nonzero if this is a faked descriptor
+				   without associated file.  */</doc>
+<use f='codebrowser/elf/dl-deps.c' l='491' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-load.c' l='1941' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2206' u='w' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-version.c' l='210' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='367' u='r' c='_dl_check_all_versions'/>
+<use f='codebrowser/elf/rtld.c' l='1828' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1902' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1951' u='r' c='dl_main'/>

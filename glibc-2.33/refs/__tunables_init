@@ -1,0 +1,6 @@
+<dec f='codebrowser/elf/dl-tunables.h' l='52' type='void __tunables_init(char ** )'/>
+<def f='codebrowser/elf/dl-tunables.c' l='327' ll='404' type='void __tunables_init(char ** envp)'/>
+<doc f='codebrowser/elf/dl-tunables.c' l='324'>/* Initialize the tunables list from the environment.  For now we only use the
+   ENV_ALIAS to find values.  Later we will also use the tunable names to find
+   values.  */</doc>
+<use f='codebrowser/csu/libc-start.c' l='196' u='c' c='__libc_start_main'/>

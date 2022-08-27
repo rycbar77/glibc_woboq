@@ -1,0 +1,9 @@
+<dec f='codebrowser/nscd/selinux.h' l='29' type='int'/>
+<use f='codebrowser/nscd/connections.c' l='1057' u='r' c='handle_request'/>
+<doc f='codebrowser/nscd/selinux.h' l='28'>/* Global variable to tell if the kernel has SELinux support.  */</doc>
+<use f='codebrowser/nscd/nscd.c' l='151' u='a' c='main'/>
+<use f='codebrowser/nscd/nscd.c' l='325' u='r' c='main'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='151' u='r' c='send_stats'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='326' u='r' c='receive_print_stats'/>
+<def f='codebrowser/nscd/selinux.c' l='43' type='int'/>
+<doc f='codebrowser/nscd/selinux.c' l='42'>/* Global variable to tell if the kernel has SELinux support.  */</doc>

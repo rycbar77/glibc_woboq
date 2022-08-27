@@ -1,0 +1,8 @@
+<dec f='codebrowser/string/string.h' l='349' type='char * __strtok_r(char *restrict __s, const char *restrict __delim, char **restrict __save_ptr)'/>
+<doc f='codebrowser/string/string.h' l='347'>/* Divide S into tokens separated by characters in DELIM.  Information
+   passed between calls are stored in SAVE_PTR.  */</doc>
+<use f='codebrowser/iconv/gconv_conf.c' l='499' macro='1' u='c' c='__gconv_get_path'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='521' macro='1' u='c' c='__gconv_get_path'/>
+<use f='codebrowser/iconv/gconv_open.c' l='65' macro='1' u='c' c='__gconv_open'/>
+<use f='codebrowser/iconv/gconv_open.c' l='74' macro='1' u='c' c='__gconv_open'/>
+<use f='codebrowser/sysdeps/x86_64/strtok_r.S' l='4' u='r'/>

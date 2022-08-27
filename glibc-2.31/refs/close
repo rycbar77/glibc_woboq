@@ -1,0 +1,58 @@
+<dec f='codebrowser/posix/unistd.h' l='353' type='int close(int __fd)'/>
+<doc f='codebrowser/posix/unistd.h' l='349'>/* Close the file descriptor FD.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='1007' u='c' c='write_out'/>
+<use f='codebrowser/debug/pcprofile.c' l='57' u='c' c='install'/>
+<use f='codebrowser/debug/pcprofile.c' l='71' u='c' c='uninstall'/>
+<use f='codebrowser/debug/pcprofiledump.c' l='182' u='c' c='main'/>
+<use f='codebrowser/elf/cache.c' l='170' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='256' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='472' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='704' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='719' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='738' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='830' u='c' c='save_aux_cache'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='185' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='216' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='225' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='306' u='c' c='main'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='335' u='c' c='main'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1235' u='c' c='write_output'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='1241' u='c' c='write_output'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='192' u='c' c='fopen_uncompressed'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='193' u='c' c='fopen_uncompressed'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='198' u='c' c='fopen_uncompressed'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='199' u='c' c='fopen_uncompressed'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='201' u='c' c='fopen_uncompressed'/>
+<use f='codebrowser/locale/programs/locale.c' l='492' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='508' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='722' u='c' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='200' u='c' c='create_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='618' u='c' c='open_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='643' u='c' c='open_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='691' u='c' c='close_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1457' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1464' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1474' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1485' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1493' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locfile.c' l='536' u='c' c='compare_files'/>
+<use f='codebrowser/locale/programs/locfile.c' l='538' u='c' c='compare_files'/>
+<use f='codebrowser/locale/programs/locfile.c' l='828' u='c' c='write_locale_data'/>
+<use f='codebrowser/malloc/memusage.c' l='826' u='c' c='dest'/>
+<use f='codebrowser/support/ignore_stderr.c' l='31' u='c' c='ignore_stderr'/>
+<use f='codebrowser/support/ignore_stderr.c' l='35' u='c' c='ignore_stderr'/>
+<use f='codebrowser/support/shell-container.c' l='129' u='c' c='copy_func'/>
+<use f='codebrowser/support/shell-container.c' l='130' u='c' c='copy_func'/>
+<use f='codebrowser/support/shell-container.c' l='221' u='c' c='run_command_array'/>
+<use f='codebrowser/support/shell-container.c' l='226' u='c' c='run_command_array'/>
+<use f='codebrowser/support/shell-container.c' l='231' u='c' c='run_command_array'/>
+<use f='codebrowser/support/test-container.c' l='1024' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1025' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1048' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1049' u='c' c='main'/>
+<use f='codebrowser/support/xclose.c' l='26' u='c' c='xclose'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/close.c' l='31' macro='1' type='int close(int )'/>
+<use f='codebrowser/debug/segfault.c' l='134' u='c' c='catch_segfault'/>

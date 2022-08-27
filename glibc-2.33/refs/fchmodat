@@ -1,0 +1,7 @@
+<dec f='codebrowser/io/sys/stat.h' l='299' type='int fchmodat(int __fd, const char * __file, __mode_t __mode, int __flag)'/>
+<dec f='codebrowser/include/sys/stat.h' l='69' type='int fchmodat(int , const char * , __mode_t , int )'/>
+<use f='codebrowser/include/sys/stat.h' l='69' c='fchmodat'/>
+<doc f='codebrowser/io/sys/stat.h' l='297'>/* Set file access permissions of FILE relative to
+   the directory FD is open on.  */</doc>
+<use f='codebrowser/io/lchmod.c' l='26' u='c' c='lchmod'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fchmodat.c' l='28' ll='97' type='int fchmodat(int fd, const char * file, mode_t mode, int flag)'/>

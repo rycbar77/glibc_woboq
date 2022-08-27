@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/types/siginfo_t.h' l='76' type='struct (unnamed struct at /media/rr/Data/glibc_source/glibc-2.34/argp/../sysdeps/unix/sysv/linux/bits/types/siginfo_t.h:71:2)'/>
+<offset>0</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/types/siginfo_t.h' l='70'>/* POSIX.1b signals.  */</doc>
+<use f='codebrowser/nptl/pthread_sigqueue.c' l='56' macro='1' u='m' c='__pthread_sigqueue'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_sigqueue.c' l='43' macro='1' u='m' c='__aio_sigqueue'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/gai_sigqueue.c' l='43' macro='1' u='m' c='__gai_sigqueue'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigqueue.c' l='38' macro='1' u='m' c='__sigqueue'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='74' macro='1' u='m' c='timer_helper_thread'/>

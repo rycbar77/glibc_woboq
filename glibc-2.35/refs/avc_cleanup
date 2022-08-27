@@ -1,0 +1,9 @@
+<dec f='include/selinux/avc.h' l='228' type='void avc_cleanup()'/>
+<doc f='include/selinux/avc.h' l='220'>/**
+ * avc_cleanup - Remove unused SIDs and AVC entries.
+ *
+ * Search the SID table for SID structures with zero
+ * reference counts, and remove them along with all
+ * AVC entries that reference them.  This can be used
+ * to return memory to the system.
+ */</doc>

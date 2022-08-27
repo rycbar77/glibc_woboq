@@ -1,0 +1,7 @@
+<dec f='codebrowser/string/string.h' l='487' type='char * basename(const char * __filename)'/>
+<dec f='codebrowser/include/string.h' l='101' type='char * basename(const char * )'/>
+<use f='codebrowser/include/string.h' l='101' c='basename'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='169' u='c' c='la_objopen'/>
+<use f='codebrowser/locale/programs/charmap.c' l='203' u='c' c='charmap_read'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1507' u='c' c='add_locales_to_archive'/>
+<def f='codebrowser/string/basename.c' l='28' macro='1' type='char * basename(const char * )'/>

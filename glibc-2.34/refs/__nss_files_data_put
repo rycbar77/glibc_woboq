@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/nss_files.h' l='98' type='void __nss_files_data_put(struct nss_files_per_file_data * data)'/>
+<dec f='codebrowser/include/nss_files.h' l='99' type='void __nss_files_data_put(struct nss_files_per_file_data * )'/>
+<use f='codebrowser/include/nss_files.h' l='99' c='__nss_files_data_put'/>
+<doc f='codebrowser/include/nss_files.h' l='96'>/* Unlock the per-file data, previously obtained by
+   __nss_files_data_open.  */</doc>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='354' u='c' c='_nss_files_getaliasent_r'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='181' u='c' c='_nss_files_getetherent_r'/>
+<use f='codebrowser/nss/nss_files_data.c' l='109' u='c' c='__nss_files_data_open'/>
+<def f='codebrowser/nss/nss_files_data.c' l='117' ll='121' type='void __nss_files_data_put(struct nss_files_per_file_data * data)'/>
+<use f='codebrowser/nss/nss_files_data.c' l='137' u='c' c='__nss_files_data_setent'/>

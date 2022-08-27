@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>svml_d_acos8_core_avx512.S source code [codebrowser/sysdeps/x86_64/fpu/multiarch/svml_d_acos8_core_avx512.S] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/fpu/multiarch/svml_d_acos8_core_avx512.S'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>x86_64</a>/<a href='..'>fpu</a>/<a href='./'>multiarch</a>/<a href='svml_d_acos8_core_avx512.S.html'>svml_d_acos8_core_avx512.S</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Function acos vectorized with AVX-512.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/*</i></td></tr>
+<tr><th id="20">20</th><td><i> * ALGORITHM DESCRIPTION:</i></td></tr>
+<tr><th id="21">21</th><td><i> *</i></td></tr>
+<tr><th id="22">22</th><td><i> *      SelMask = (|x| &gt;= 0.5) ? 1 : 0;</i></td></tr>
+<tr><th id="23">23</th><td><i> *      R = SelMask ? sqrt(0.5 - 0.5*|x|) : |x|</i></td></tr>
+<tr><th id="24">24</th><td><i> *      acos(|x|) = SelMask ? 2*Poly(R) : (Pi/2 - Poly(R))</i></td></tr>
+<tr><th id="25">25</th><td><i> *      acos(x) = sign(x) ? (Pi - acos(|x|)) : acos(|x|)</i></td></tr>
+<tr><th id="26">26</th><td><i> *</i></td></tr>
+<tr><th id="27">27</th><td><i> */</i></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><i>/* Offsets for data table __svml_dacos_data_internal</i></td></tr>
+<tr><th id="30">30</th><td><i> */</i></td></tr>
+<tr><th id="31">31</th><td><u>#define <dfn class="macro" id="_M/SgnBit" data-ref="_M/SgnBit">SgnBit</dfn>                        	0</u></td></tr>
+<tr><th id="32">32</th><td><u>#define <dfn class="macro" id="_M/OneHalf" data-ref="_M/OneHalf">OneHalf</dfn>                       	64</u></td></tr>
+<tr><th id="33">33</th><td><u>#define <dfn class="macro" id="_M/SmallNorm" data-ref="_M/SmallNorm">SmallNorm</dfn>                     	128</u></td></tr>
+<tr><th id="34">34</th><td><u>#define <dfn class="macro" id="_M/MOne" data-ref="_M/MOne">MOne</dfn>                          	192</u></td></tr>
+<tr><th id="35">35</th><td><u>#define <dfn class="macro" id="_M/Two" data-ref="_M/Two">Two</dfn>                           	256</u></td></tr>
+<tr><th id="36">36</th><td><u>#define <dfn class="macro" id="_M/sqrt_coeff_1" data-ref="_M/sqrt_coeff_1">sqrt_coeff_1</dfn>                  	320</u></td></tr>
+<tr><th id="37">37</th><td><u>#define <dfn class="macro" id="_M/sqrt_coeff_2" data-ref="_M/sqrt_coeff_2">sqrt_coeff_2</dfn>                  	384</u></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/sqrt_coeff_3" data-ref="_M/sqrt_coeff_3">sqrt_coeff_3</dfn>                  	448</u></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/sqrt_coeff_4" data-ref="_M/sqrt_coeff_4">sqrt_coeff_4</dfn>                  	512</u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_1" data-ref="_M/poly_coeff_1">poly_coeff_1</dfn>                  	576</u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_2" data-ref="_M/poly_coeff_2">poly_coeff_2</dfn>                  	640</u></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_3" data-ref="_M/poly_coeff_3">poly_coeff_3</dfn>                  	704</u></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_4" data-ref="_M/poly_coeff_4">poly_coeff_4</dfn>                  	768</u></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_5" data-ref="_M/poly_coeff_5">poly_coeff_5</dfn>                  	832</u></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_6" data-ref="_M/poly_coeff_6">poly_coeff_6</dfn>                  	896</u></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_7" data-ref="_M/poly_coeff_7">poly_coeff_7</dfn>                  	960</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_8" data-ref="_M/poly_coeff_8">poly_coeff_8</dfn>                  	1024</u></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_9" data-ref="_M/poly_coeff_9">poly_coeff_9</dfn>                  	1088</u></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_10" data-ref="_M/poly_coeff_10">poly_coeff_10</dfn>                 	1152</u></td></tr>
+<tr><th id="50">50</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_11" data-ref="_M/poly_coeff_11">poly_coeff_11</dfn>                 	1216</u></td></tr>
+<tr><th id="51">51</th><td><u>#define <dfn class="macro" id="_M/poly_coeff_12" data-ref="_M/poly_coeff_12">poly_coeff_12</dfn>                 	1280</u></td></tr>
+<tr><th id="52">52</th><td><u>#define <dfn class="macro" id="_M/PiH" data-ref="_M/PiH">PiH</dfn>                           	1344</u></td></tr>
+<tr><th id="53">53</th><td><u>#define <dfn class="macro" id="_M/Pi2H" data-ref="_M/Pi2H">Pi2H</dfn>                          	1408</u></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><u>#include <a href="../../../unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td>        .text</td></tr>
+<tr><th id="58">58</th><td>	.section .text.evex512,<q>"ax"</q>,@progbits</td></tr>
+<tr><th id="59">59</th><td><a class="macro" href="../../../x86/sysdep.h.html#91" title=".globl _ZGVeN8v_acos_skx; .type _ZGVeN8v_acos_skx,@function; .align 1&lt;&lt;4; _ZGVeN8v_acos_skx: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a>(<span class='warning' title="type specifier missing, defaults to &apos;int&apos;"><dfn class="decl def" id="_ZGVeN8v_acos_skx" title='_ZGVeN8v_acos_skx' data-ref="_ZGVeN8v_acos_skx" data-ref-filename="_ZGVeN8v_acos_skx">_ZGVeN8v_acos_skx</dfn></span>)</td></tr>
+<tr><th id="60">60</th><td>        <span class='error' title="unknown type name &apos;pushq&apos;">pushq</span>     <span class='error' title="expected identifier or &apos;(&apos;">%</span>rbp</td></tr>
+<tr><th id="61">61</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#44" title=".cfi_def_cfa_offset 16" data-ref="_M/cfi_def_cfa_offset">cfi_def_cfa_offset</a>(<var>16</var>)</td></tr>
+<tr><th id="62">62</th><td>        movq      %rsp, %rbp</td></tr>
+<tr><th id="63">63</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 6, 16" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>6</var>, <var>16</var>)</td></tr>
+<tr><th id="64">64</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 6, -16" data-ref="_M/cfi_offset">cfi_offset</a>(<var>6</var>, -<var>16</var>)</td></tr>
+<tr><th id="65">65</th><td>        andq      $-<var>64</var>, %rsp</td></tr>
+<tr><th id="66">66</th><td>        subq      $<var>192</var>, %rsp</td></tr>
+<tr><th id="67">67</th><td>        vmovups   __svml_dacos_data_internal(%rip), %zmm7</td></tr>
+<tr><th id="68">68</th><td>        vmovups   <a class="macro" href="#32" title="64" data-ref="_M/OneHalf">OneHalf</a>+__svml_dacos_data_internal(%rip), %zmm8</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><i>/* S ~ 2*sqrt(Y) */</i></td></tr>
+<tr><th id="71">71</th><td>        vmovups   <a class="macro" href="#33" title="128" data-ref="_M/SmallNorm">SmallNorm</a>+__svml_dacos_data_internal(%rip), %zmm11</td></tr>
+<tr><th id="72">72</th><td>        vmovups   <a class="macro" href="#35" title="256" data-ref="_M/Two">Two</a>+__svml_dacos_data_internal(%rip), %zmm14</td></tr>
+<tr><th id="73">73</th><td>        vmovups   <a class="macro" href="#36" title="320" data-ref="_M/sqrt_coeff_1">sqrt_coeff_1</a>+__svml_dacos_data_internal(%rip), %zmm15</td></tr>
+<tr><th id="74">74</th><td>        vmovups   <a class="macro" href="#37" title="384" data-ref="_M/sqrt_coeff_2">sqrt_coeff_2</a>+__svml_dacos_data_internal(%rip), %zmm2</td></tr>
+<tr><th id="75">75</th><td>        vmovups   <a class="macro" href="#38" title="448" data-ref="_M/sqrt_coeff_3">sqrt_coeff_3</a>+__svml_dacos_data_internal(%rip), %zmm1</td></tr>
+<tr><th id="76">76</th><td>        vmovups   <a class="macro" href="#34" title="192" data-ref="_M/MOne">MOne</a>+__svml_dacos_data_internal(%rip), %zmm10</td></tr>
+<tr><th id="77">77</th><td>        vmovaps   %zmm0, %zmm6</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><i>/* x = -|arg| */</i></td></tr>
+<tr><th id="80">80</th><td>        vorpd     %zmm6, %zmm7, %zmm5</td></tr>
+<tr><th id="81">81</th><td>        vandpd    %zmm6, %zmm7, %zmm4</td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><i>/* Y = 0.5 + 0.5*(-x) */</i></td></tr>
+<tr><th id="84">84</th><td>        vfmadd231pd {rn-sae}, %zmm5, %zmm8, %zmm8</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><i>/* x^2 */</i></td></tr>
+<tr><th id="87">87</th><td>        vmulpd    {rn-sae}, %zmm5, %zmm5, %zmm9</td></tr>
+<tr><th id="88">88</th><td>        vrsqrt14pd %zmm8, %zmm12</td></tr>
+<tr><th id="89">89</th><td>        vcmppd    $<var>17</var>, {sae}, %zmm11, %zmm8, %k1</td></tr>
+<tr><th id="90">90</th><td>        vcmppd    $<var>17</var>, {sae}, %zmm10, %zmm5, %k0</td></tr>
+<tr><th id="91">91</th><td>        vmovups   <a class="macro" href="#44" title="832" data-ref="_M/poly_coeff_5">poly_coeff_5</a>+__svml_dacos_data_internal(%rip), %zmm10</td></tr>
+<tr><th id="92">92</th><td>        vmovups   <a class="macro" href="#46" title="960" data-ref="_M/poly_coeff_7">poly_coeff_7</a>+__svml_dacos_data_internal(%rip), %zmm11</td></tr>
+<tr><th id="93">93</th><td>        vminpd    {sae}, %zmm8, %zmm9, %zmm3</td></tr>
+<tr><th id="94">94</th><td>        vmovups   <a class="macro" href="#42" title="704" data-ref="_M/poly_coeff_3">poly_coeff_3</a>+__svml_dacos_data_internal(%rip), %zmm9</td></tr>
+<tr><th id="95">95</th><td>        vxorpd    %zmm12, %zmm12, %zmm12{%k1}</td></tr>
+<tr><th id="96">96</th><td>        <span class='warning' title="type specifier missing, defaults to &apos;int&apos;"><dfn class="decl def" id="vaddpd" title='vaddpd' data-ref="vaddpd" data-ref-filename="vaddpd">vaddpd</dfn></span><span class='error' title="expected &apos;;&apos; after top level declarator"></span>    {rn-sae}, %zmm8, %zmm8, %zmm0</td></tr>
+<tr><th id="97">97</th><td>        vcmppd    $<var>21</var>, {sae}, %zmm8, %zmm3, %k4</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><i>/* X&lt;X^2 iff X&lt;0 */</i></td></tr>
+<tr><th id="100">100</th><td>        vcmppd    $<var>17</var>, {sae}, %zmm3, %zmm6, %k2</td></tr>
+<tr><th id="101">101</th><td>        vmulpd    {rn-sae}, %zmm12, %zmm12, %zmm13</td></tr>
+<tr><th id="102">102</th><td>        vmulpd    {rn-sae}, %zmm12, %zmm0, %zmm7</td></tr>
+<tr><th id="103">103</th><td>        vmovups   <a class="macro" href="#43" title="768" data-ref="_M/poly_coeff_4">poly_coeff_4</a>+__svml_dacos_data_internal(%rip), %zmm12</td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td><i>/* polynomial */</i></td></tr>
+<tr><th id="106">106</th><td>        vmovups   <a class="macro" href="#40" title="576" data-ref="_M/poly_coeff_1">poly_coeff_1</a>+__svml_dacos_data_internal(%rip), %zmm8</td></tr>
+<tr><th id="107">107</th><td>        vfmsub213pd {rn-sae}, %zmm14, %zmm13, %zmm0</td></tr>
+<tr><th id="108">108</th><td>        vmovups   <a class="macro" href="#39" title="512" data-ref="_M/sqrt_coeff_4">sqrt_coeff_4</a>+__svml_dacos_data_internal(%rip), %zmm13</td></tr>
+<tr><th id="109">109</th><td>        vfmadd231pd {rn-sae}, %zmm3, %zmm9, %zmm12</td></tr>
+<tr><th id="110">110</th><td>        vmovups   <a class="macro" href="#50" title="1216" data-ref="_M/poly_coeff_11">poly_coeff_11</a>+__svml_dacos_data_internal(%rip), %zmm9</td></tr>
+<tr><th id="111">111</th><td>        vfmadd231pd {rn-sae}, %zmm0, %zmm15, %zmm2</td></tr>
+<tr><th id="112">112</th><td>        vmovups   <a class="macro" href="#48" title="1088" data-ref="_M/poly_coeff_9">poly_coeff_9</a>+__svml_dacos_data_internal(%rip), %zmm15</td></tr>
+<tr><th id="113">113</th><td>        vmulpd    {rn-sae}, %zmm0, %zmm7, %zmm14</td></tr>
+<tr><th id="114">114</th><td>        vfmadd213pd {rn-sae}, %zmm1, %zmm0, %zmm2</td></tr>
+<tr><th id="115">115</th><td>        vmovups   <a class="macro" href="#41" title="640" data-ref="_M/poly_coeff_2">poly_coeff_2</a>+__svml_dacos_data_internal(%rip), %zmm1</td></tr>
+<tr><th id="116">116</th><td>        kmovw     %k0, %edx</td></tr>
+<tr><th id="117">117</th><td>        vfmadd213pd {rn-sae}, %zmm13, %zmm0, %zmm2</td></tr>
+<tr><th id="118">118</th><td>        vfmadd231pd {rn-sae}, %zmm3, %zmm8, %zmm1</td></tr>
+<tr><th id="119">119</th><td>        vmovups   <a class="macro" href="#49" title="1152" data-ref="_M/poly_coeff_10">poly_coeff_10</a>+__svml_dacos_data_internal(%rip), %zmm8</td></tr>
+<tr><th id="120">120</th><td>        vmulpd    {rn-sae}, %zmm3, %zmm3, %zmm0</td></tr>
+<tr><th id="121">121</th><td>        vfnmadd213pd {rn-sae}, %zmm7, %zmm14, %zmm2</td></tr>
+<tr><th id="122">122</th><td>        vmovups   <a class="macro" href="#45" title="896" data-ref="_M/poly_coeff_6">poly_coeff_6</a>+__svml_dacos_data_internal(%rip), %zmm7</td></tr>
+<tr><th id="123">123</th><td>        vfmadd231pd {rn-sae}, %zmm3, %zmm15, %zmm8</td></tr>
+<tr><th id="124">124</th><td>        vfmadd213pd {rn-sae}, %zmm12, %zmm0, %zmm1</td></tr>
+<tr><th id="125">125</th><td>        vblendmpd %zmm2, %zmm5, %zmm2{%k4}</td></tr>
+<tr><th id="126">126</th><td>        vfmadd231pd {rn-sae}, %zmm3, %zmm10, %zmm7</td></tr>
+<tr><th id="127">127</th><td>        vmovups   <a class="macro" href="#47" title="1024" data-ref="_M/poly_coeff_8">poly_coeff_8</a>+__svml_dacos_data_internal(%rip), %zmm10</td></tr>
+<tr><th id="128">128</th><td>        vfmadd231pd {rn-sae}, %zmm3, %zmm11, %zmm10</td></tr>
+<tr><th id="129">129</th><td>        vmovups   <a class="macro" href="#51" title="1280" data-ref="_M/poly_coeff_12">poly_coeff_12</a>+__svml_dacos_data_internal(%rip), %zmm11</td></tr>
+<tr><th id="130">130</th><td>        kandw     %k4, %k2, %k3</td></tr>
+<tr><th id="131">131</th><td>        vfmadd213pd {rn-sae}, %zmm10, %zmm0, %zmm7</td></tr>
+<tr><th id="132">132</th><td>        vfmadd231pd {rn-sae}, %zmm3, %zmm9, %zmm11</td></tr>
+<tr><th id="133">133</th><td>        vmulpd    {rn-sae}, %zmm0, %zmm0, %zmm10</td></tr>
+<tr><th id="134">134</th><td>        vfmadd213pd {rn-sae}, %zmm7, %zmm10, %zmm1</td></tr>
+<tr><th id="135">135</th><td>        vfmadd213pd {rn-sae}, %zmm8, %zmm0, %zmm1</td></tr>
+<tr><th id="136">136</th><td>        vfmadd213pd {rn-sae}, %zmm11, %zmm0, %zmm1</td></tr>
+<tr><th id="137">137</th><td>        vmovups   <a class="macro" href="#53" title="1408" data-ref="_M/Pi2H">Pi2H</a>+__svml_dacos_data_internal(%rip), %zmm0</td></tr>
+<tr><th id="138">138</th><td>        vmulpd    {rn-sae}, %zmm3, %zmm1, %zmm1</td></tr>
+<tr><th id="139">139</th><td>        vxorpd    %zmm4, %zmm2, %zmm3</td></tr>
+<tr><th id="140">140</th><td>        vxorpd    %zmm0, %zmm0, %zmm0{%k4}</td></tr>
+<tr><th id="141">141</th><td>        vfmadd213pd {rn-sae}, %zmm3, %zmm3, %zmm1</td></tr>
+<tr><th id="142">142</th><td>        vorpd     <a class="macro" href="#52" title="1344" data-ref="_M/PiH">PiH</a>+__svml_dacos_data_internal(%rip), %zmm0, %zmm0{%k3}</td></tr>
+<tr><th id="143">143</th><td>        vaddpd    {rn-sae}, %zmm1, %zmm0, %zmm0</td></tr>
+<tr><th id="144">144</th><td>        testl     %edx, %edx</td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td><i>/* Go to special inputs processing branch */</i></td></tr>
+<tr><th id="147">147</th><td>        jne       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH)</td></tr>
+<tr><th id="148">148</th><td>                                <u># LOE rbx r12 r13 r14 r15 edx zmm0 zmm6</u></td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td><i>/* Restore registers</i></td></tr>
+<tr><th id="151">151</th><td><i> * and exit the function</i></td></tr>
+<tr><th id="152">152</th><td><i> */</i></td></tr>
+<tr><th id="153">153</th><td></td></tr>
+<tr><th id="154">154</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT):</td></tr>
+<tr><th id="155">155</th><td>        movq      %rbp, %rsp</td></tr>
+<tr><th id="156">156</th><td>        popq      %rbp</td></tr>
+<tr><th id="157">157</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 7, 8" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>7</var>, <var>8</var>)</td></tr>
+<tr><th id="158">158</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 6" data-ref="_M/cfi_restore">cfi_restore</a>(<var>6</var>)</td></tr>
+<tr><th id="159">159</th><td>        ret</td></tr>
+<tr><th id="160">160</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 6, 16" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>6</var>, <var>16</var>)</td></tr>
+<tr><th id="161">161</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 6, -16" data-ref="_M/cfi_offset">cfi_offset</a>(<var>6</var>, -<var>16</var>)</td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td><i>/* Branch to process</i></td></tr>
+<tr><th id="164">164</th><td><i> * special inputs</i></td></tr>
+<tr><th id="165">165</th><td><i> */</i></td></tr>
+<tr><th id="166">166</th><td></td></tr>
+<tr><th id="167">167</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH):</td></tr>
+<tr><th id="168">168</th><td>        vmovups   %zmm6, <var>64</var>(%rsp)</td></tr>
+<tr><th id="169">169</th><td>        vmovups   %zmm0, <var>128</var>(%rsp)</td></tr>
+<tr><th id="170">170</th><td>                                <u># LOE rbx r12 r13 r14 r15 edx zmm0</u></td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td>        xorl      %eax, %eax</td></tr>
+<tr><th id="173">173</th><td>                                <u># LOE rbx r12 r13 r14 r15 eax edx</u></td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td>        vzeroupper</td></tr>
+<tr><th id="176">176</th><td>        movq      %r12, <var>16</var>(%rsp)</td></tr>
+<tr><th id="177">177</th><td>        <i>/*  DW_CFA_expression: r12 (r12) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -176; DW_OP_plus)  */</i></td></tr>
+<tr><th id="178">178</th><td>        .cfi_escape <var>0x10</var>, <var>0x0c</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0x50</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="179">179</th><td>        movl      %eax, %r12d</td></tr>
+<tr><th id="180">180</th><td>        movq      %r13, <var>8</var>(%rsp)</td></tr>
+<tr><th id="181">181</th><td>        <i>/*  DW_CFA_expression: r13 (r13) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -184; DW_OP_plus)  */</i></td></tr>
+<tr><th id="182">182</th><td>        .cfi_escape <var>0x10</var>, <var>0x0d</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0x48</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="183">183</th><td>        movl      %edx, %r13d</td></tr>
+<tr><th id="184">184</th><td>        movq      %r14, (%rsp)</td></tr>
+<tr><th id="185">185</th><td>        <i>/*  DW_CFA_expression: r14 (r14) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -192; DW_OP_plus)  */</i></td></tr>
+<tr><th id="186">186</th><td>        .cfi_escape <var>0x10</var>, <var>0x0e</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0x40</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="187">187</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td><i>/* Range mask</i></td></tr>
+<tr><th id="190">190</th><td><i> * bits check</i></td></tr>
+<tr><th id="191">191</th><td><i> */</i></td></tr>
+<tr><th id="192">192</th><td></td></tr>
+<tr><th id="193">193</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK):</td></tr>
+<tr><th id="194">194</th><td>        btl       %r12d, %r13d</td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td><i>/* Call scalar math function */</i></td></tr>
+<tr><th id="197">197</th><td>        jc        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL)</td></tr>
+<tr><th id="198">198</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><i>/* Special inputs</i></td></tr>
+<tr><th id="201">201</th><td><i> * processing loop</i></td></tr>
+<tr><th id="202">202</th><td><i> */</i></td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP):</td></tr>
+<tr><th id="205">205</th><td>        incl      %r12d</td></tr>
+<tr><th id="206">206</th><td>        cmpl      $<var>8</var>, %r12d</td></tr>
+<tr><th id="207">207</th><td></td></tr>
+<tr><th id="208">208</th><td><i>/* Check bits in range mask */</i></td></tr>
+<tr><th id="209">209</th><td>        jl        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK)</td></tr>
+<tr><th id="210">210</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td>        movq      <var>16</var>(%rsp), %r12</td></tr>
+<tr><th id="213">213</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 12" data-ref="_M/cfi_restore">cfi_restore</a>(<var>12</var>)</td></tr>
+<tr><th id="214">214</th><td>        movq      <var>8</var>(%rsp), %r13</td></tr>
+<tr><th id="215">215</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 13" data-ref="_M/cfi_restore">cfi_restore</a>(<var>13</var>)</td></tr>
+<tr><th id="216">216</th><td>        movq      (%rsp), %r14</td></tr>
+<tr><th id="217">217</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 14" data-ref="_M/cfi_restore">cfi_restore</a>(<var>14</var>)</td></tr>
+<tr><th id="218">218</th><td>        vmovups   <var>128</var>(%rsp), %zmm0</td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td><i>/* Go to exit */</i></td></tr>
+<tr><th id="221">221</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT)</td></tr>
+<tr><th id="222">222</th><td>        <i>/*  DW_CFA_expression: r12 (r12) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -176; DW_OP_plus)  */</i></td></tr>
+<tr><th id="223">223</th><td>        .cfi_escape <var>0x10</var>, <var>0x0c</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0x50</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="224">224</th><td>        <i>/*  DW_CFA_expression: r13 (r13) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -184; DW_OP_plus)  */</i></td></tr>
+<tr><th id="225">225</th><td>        .cfi_escape <var>0x10</var>, <var>0x0d</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0x48</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="226">226</th><td>        <i>/*  DW_CFA_expression: r14 (r14) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -64; DW_OP_and; DW_OP_const4s: -192; DW_OP_plus)  */</i></td></tr>
+<tr><th id="227">227</th><td>        .cfi_escape <var>0x10</var>, <var>0x0e</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xc0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0x40</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="228">228</th><td>                                <u># LOE rbx r12 r13 r14 r15 zmm0</u></td></tr>
+<tr><th id="229">229</th><td></td></tr>
+<tr><th id="230">230</th><td><i>/* Scalar math fucntion call</i></td></tr>
+<tr><th id="231">231</th><td><i> * to process special input</i></td></tr>
+<tr><th id="232">232</th><td><i> */</i></td></tr>
+<tr><th id="233">233</th><td></td></tr>
+<tr><th id="234">234</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL):</td></tr>
+<tr><th id="235">235</th><td>        movl      %r12d, %r14d</td></tr>
+<tr><th id="236">236</th><td>        movsd     <var>64</var>(%rsp,%r14,<var>8</var>), %xmm0</td></tr>
+<tr><th id="237">237</th><td>        call      acos@PLT</td></tr>
+<tr><th id="238">238</th><td>                                <u># LOE rbx r14 r15 r12d r13d xmm0</u></td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td>        movsd     %xmm0, <var>128</var>(%rsp,%r14,<var>8</var>)</td></tr>
+<tr><th id="241">241</th><td></td></tr>
+<tr><th id="242">242</th><td><i>/* Process special inputs in loop */</i></td></tr>
+<tr><th id="243">243</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP)</td></tr>
+<tr><th id="244">244</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="245">245</th><td><a class="macro" href="../../../x86/sysdep.h.html#94" title=".cfi_endproc; .size _ZGVeN8v_acos_skx,.-_ZGVeN8v_acos_skx;" data-ref="_M/END">END</a>(_ZGVeN8v_acos_skx)</td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td>        <span class='error' title="expected identifier or &apos;(&apos;">.</span>section .rodata, <q>"a"</q></td></tr>
+<tr><th id="248">248</th><td>        .align <var>64</var></td></tr>
+<tr><th id="249">249</th><td></td></tr>
+<tr><th id="250">250</th><td><u>#<span data-ppcond="250">ifdef</span> <span class="macro" data-ref="_M/__svml_dacos_data_internal_typedef">__svml_dacos_data_internal_typedef</span></u></td></tr>
+<tr><th id="251">251</th><td><b>typedef</b> <em>unsigned</em> <em>int</em> VUINT32;</td></tr>
+<tr><th id="252">252</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="253">253</th><td>        __declspec(align(<var>64</var>)) VUINT32 SgnBit[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="254">254</th><td>        __declspec(align(<var>64</var>)) VUINT32 OneHalf[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="255">255</th><td>        __declspec(align(<var>64</var>)) VUINT32 SmallNorm[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="256">256</th><td>        __declspec(align(<var>64</var>)) VUINT32 MOne[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="257">257</th><td>        __declspec(align(<var>64</var>)) VUINT32 Two[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="258">258</th><td>        __declspec(align(<var>64</var>)) VUINT32 sqrt_coeff[<var>4</var>][<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="259">259</th><td>        __declspec(align(<var>64</var>)) VUINT32 poly_coeff[<var>12</var>][<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="260">260</th><td>        __declspec(align(<var>64</var>)) VUINT32 PiH[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="261">261</th><td>        __declspec(align(<var>64</var>)) VUINT32 Pi2H[<var>8</var>][<var>2</var>];</td></tr>
+<tr><th id="262">262</th><td>} __svml_dacos_data_internal;</td></tr>
+<tr><th id="263">263</th><td><u>#<span data-ppcond="250">endif</span></u></td></tr>
+<tr><th id="264">264</th><td>__svml_dacos_data_internal:</td></tr>
+<tr><th id="265">265</th><td>        <i>/*== SgnBit ==*/</i></td></tr>
+<tr><th id="266">266</th><td>        .quad <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var>, <var>0x8000000000000000</var></td></tr>
+<tr><th id="267">267</th><td>        <i>/*== OneHalf ==*/</i></td></tr>
+<tr><th id="268">268</th><td>        .align <var>64</var></td></tr>
+<tr><th id="269">269</th><td>        .quad <var>0x3fe0000000000000</var>, <var>0x3fe0000000000000</var>, <var>0x3fe0000000000000</var>, <var>0x3fe0000000000000</var>, <var>0x3fe0000000000000</var>, <var>0x3fe0000000000000</var>, <var>0x3fe0000000000000</var>, <var>0x3fe0000000000000</var></td></tr>
+<tr><th id="270">270</th><td>        <i>/*== SmallNorm ==*/</i></td></tr>
+<tr><th id="271">271</th><td>        .align <var>64</var></td></tr>
+<tr><th id="272">272</th><td>        .quad <var>0x3000000000000000</var>, <var>0x3000000000000000</var>, <var>0x3000000000000000</var>, <var>0x3000000000000000</var>, <var>0x3000000000000000</var>, <var>0x3000000000000000</var>, <var>0x3000000000000000</var>, <var>0x3000000000000000</var></td></tr>
+<tr><th id="273">273</th><td>        <i>/*== MOne ==*/</i></td></tr>
+<tr><th id="274">274</th><td>        .align <var>64</var></td></tr>
+<tr><th id="275">275</th><td>        .quad <var>0xbff0000000000000</var>, <var>0xbff0000000000000</var>, <var>0xbff0000000000000</var>, <var>0xbff0000000000000</var>, <var>0xbff0000000000000</var>, <var>0xbff0000000000000</var>, <var>0xbff0000000000000</var>, <var>0xbff0000000000000</var></td></tr>
+<tr><th id="276">276</th><td>        <i>/*== Two ==*/</i></td></tr>
+<tr><th id="277">277</th><td>        .align <var>64</var></td></tr>
+<tr><th id="278">278</th><td>        .quad <var>0x4000000000000000</var>, <var>0x4000000000000000</var>, <var>0x4000000000000000</var>, <var>0x4000000000000000</var>, <var>0x4000000000000000</var>, <var>0x4000000000000000</var>, <var>0x4000000000000000</var>, <var>0x4000000000000000</var></td></tr>
+<tr><th id="279">279</th><td>        <i>/*== sqrt_coeff[4] ==*/</i></td></tr>
+<tr><th id="280">280</th><td>        .align <var>64</var></td></tr>
+<tr><th id="281">281</th><td>        .quad <var>0xbf918000993B24C3</var>, <var>0xbf918000993B24C3</var>, <var>0xbf918000993B24C3</var>, <var>0xbf918000993B24C3</var>, <var>0xbf918000993B24C3</var>, <var>0xbf918000993B24C3</var>, <var>0xbf918000993B24C3</var>, <var>0xbf918000993B24C3</var> <i>/* sqrt_coeff4 */</i></td></tr>
+<tr><th id="282">282</th><td>        .quad <var>0x3fa400006F70D42D</var>, <var>0x3fa400006F70D42D</var>, <var>0x3fa400006F70D42D</var>, <var>0x3fa400006F70D42D</var>, <var>0x3fa400006F70D42D</var>, <var>0x3fa400006F70D42D</var>, <var>0x3fa400006F70D42D</var>, <var>0x3fa400006F70D42D</var> <i>/* sqrt_coeff3 */</i></td></tr>
+<tr><th id="283">283</th><td>        .quad <var>0xbfb7FFFFFFFFFE97</var>, <var>0xbfb7FFFFFFFFFE97</var>, <var>0xbfb7FFFFFFFFFE97</var>, <var>0xbfb7FFFFFFFFFE97</var>, <var>0xbfb7FFFFFFFFFE97</var>, <var>0xbfb7FFFFFFFFFE97</var>, <var>0xbfb7FFFFFFFFFE97</var>, <var>0xbfb7FFFFFFFFFE97</var> <i>/* sqrt_coeff2 */</i></td></tr>
+<tr><th id="284">284</th><td>        .quad <var>0x3fcFFFFFFFFFFF9D</var>, <var>0x3fcFFFFFFFFFFF9D</var>, <var>0x3fcFFFFFFFFFFF9D</var>, <var>0x3fcFFFFFFFFFFF9D</var>, <var>0x3fcFFFFFFFFFFF9D</var>, <var>0x3fcFFFFFFFFFFF9D</var>, <var>0x3fcFFFFFFFFFFF9D</var>, <var>0x3fcFFFFFFFFFFF9D</var> <i>/* sqrt_coeff1 */</i></td></tr>
+<tr><th id="285">285</th><td>        <i>/*== poly_coeff[12] ==*/</i></td></tr>
+<tr><th id="286">286</th><td>        .align <var>64</var></td></tr>
+<tr><th id="287">287</th><td>        .quad <var>0x3fa07520C70EB909</var>, <var>0x3fa07520C70EB909</var>, <var>0x3fa07520C70EB909</var>, <var>0x3fa07520C70EB909</var>, <var>0x3fa07520C70EB909</var>, <var>0x3fa07520C70EB909</var>, <var>0x3fa07520C70EB909</var>, <var>0x3fa07520C70EB909</var> <i>/* poly_coeff12 */</i></td></tr>
+<tr><th id="288">288</th><td>        .quad <var>0xbf90FB17F7DBB0ED</var>, <var>0xbf90FB17F7DBB0ED</var>, <var>0xbf90FB17F7DBB0ED</var>, <var>0xbf90FB17F7DBB0ED</var>, <var>0xbf90FB17F7DBB0ED</var>, <var>0xbf90FB17F7DBB0ED</var>, <var>0xbf90FB17F7DBB0ED</var>, <var>0xbf90FB17F7DBB0ED</var> <i>/* poly_coeff11 */</i></td></tr>
+<tr><th id="289">289</th><td>        .quad <var>0x3f943F44BFBC3BAE</var>, <var>0x3f943F44BFBC3BAE</var>, <var>0x3f943F44BFBC3BAE</var>, <var>0x3f943F44BFBC3BAE</var>, <var>0x3f943F44BFBC3BAE</var>, <var>0x3f943F44BFBC3BAE</var>, <var>0x3f943F44BFBC3BAE</var>, <var>0x3f943F44BFBC3BAE</var> <i>/* poly_coeff10 */</i></td></tr>
+<tr><th id="290">290</th><td>        .quad <var>0x3f7A583395D45ED5</var>, <var>0x3f7A583395D45ED5</var>, <var>0x3f7A583395D45ED5</var>, <var>0x3f7A583395D45ED5</var>, <var>0x3f7A583395D45ED5</var>, <var>0x3f7A583395D45ED5</var>, <var>0x3f7A583395D45ED5</var>, <var>0x3f7A583395D45ED5</var> <i>/* poly_coeff9 */</i></td></tr>
+<tr><th id="291">291</th><td>        .quad <var>0x3f88F8DC2AFCCAD6</var>, <var>0x3f88F8DC2AFCCAD6</var>, <var>0x3f88F8DC2AFCCAD6</var>, <var>0x3f88F8DC2AFCCAD6</var>, <var>0x3f88F8DC2AFCCAD6</var>, <var>0x3f88F8DC2AFCCAD6</var>, <var>0x3f88F8DC2AFCCAD6</var>, <var>0x3f88F8DC2AFCCAD6</var> <i>/* poly_coeff8 */</i></td></tr>
+<tr><th id="292">292</th><td>        .quad <var>0x3f8C6DBBCB88BD57</var>, <var>0x3f8C6DBBCB88BD57</var>, <var>0x3f8C6DBBCB88BD57</var>, <var>0x3f8C6DBBCB88BD57</var>, <var>0x3f8C6DBBCB88BD57</var>, <var>0x3f8C6DBBCB88BD57</var>, <var>0x3f8C6DBBCB88BD57</var>, <var>0x3f8C6DBBCB88BD57</var> <i>/* poly_coeff7 */</i></td></tr>
+<tr><th id="293">293</th><td>        .quad <var>0x3f91C6DCF538AD2E</var>, <var>0x3f91C6DCF538AD2E</var>, <var>0x3f91C6DCF538AD2E</var>, <var>0x3f91C6DCF538AD2E</var>, <var>0x3f91C6DCF538AD2E</var>, <var>0x3f91C6DCF538AD2E</var>, <var>0x3f91C6DCF538AD2E</var>, <var>0x3f91C6DCF538AD2E</var> <i>/* poly_coeff6 */</i></td></tr>
+<tr><th id="294">294</th><td>        .quad <var>0x3f96E89CEBDEFadd</var>, <var>0x3f96E89CEBDEFadd</var>, <var>0x3f96E89CEBDEFadd</var>, <var>0x3f96E89CEBDEFadd</var>, <var>0x3f96E89CEBDEFadd</var>, <var>0x3f96E89CEBDEFadd</var>, <var>0x3f96E89CEBDEFadd</var>, <var>0x3f96E89CEBDEFadd</var> <i>/* poly_coeff5 */</i></td></tr>
+<tr><th id="295">295</th><td>        .quad <var>0x3f9F1C72E13AD8BE</var>, <var>0x3f9F1C72E13AD8BE</var>, <var>0x3f9F1C72E13AD8BE</var>, <var>0x3f9F1C72E13AD8BE</var>, <var>0x3f9F1C72E13AD8BE</var>, <var>0x3f9F1C72E13AD8BE</var>, <var>0x3f9F1C72E13AD8BE</var>, <var>0x3f9F1C72E13AD8BE</var> <i>/* poly_coeff4 */</i></td></tr>
+<tr><th id="296">296</th><td>        .quad <var>0x3fa6DB6DB3B445F8</var>, <var>0x3fa6DB6DB3B445F8</var>, <var>0x3fa6DB6DB3B445F8</var>, <var>0x3fa6DB6DB3B445F8</var>, <var>0x3fa6DB6DB3B445F8</var>, <var>0x3fa6DB6DB3B445F8</var>, <var>0x3fa6DB6DB3B445F8</var>, <var>0x3fa6DB6DB3B445F8</var> <i>/* poly_coeff3 */</i></td></tr>
+<tr><th id="297">297</th><td>        .quad <var>0x3fb333333337E0DE</var>, <var>0x3fb333333337E0DE</var>, <var>0x3fb333333337E0DE</var>, <var>0x3fb333333337E0DE</var>, <var>0x3fb333333337E0DE</var>, <var>0x3fb333333337E0DE</var>, <var>0x3fb333333337E0DE</var>, <var>0x3fb333333337E0DE</var> <i>/* poly_coeff2 */</i></td></tr>
+<tr><th id="298">298</th><td>        .quad <var>0x3fc555555555529C</var>, <var>0x3fc555555555529C</var>, <var>0x3fc555555555529C</var>, <var>0x3fc555555555529C</var>, <var>0x3fc555555555529C</var>, <var>0x3fc555555555529C</var>, <var>0x3fc555555555529C</var>, <var>0x3fc555555555529C</var> <i>/* poly_coeff1 */</i></td></tr>
+<tr><th id="299">299</th><td>        <i>/*== PiH ==*/</i></td></tr>
+<tr><th id="300">300</th><td>        .align <var>64</var></td></tr>
+<tr><th id="301">301</th><td>        .quad <var>0x400921fb54442d18</var>, <var>0x400921fb54442d18</var>, <var>0x400921fb54442d18</var>, <var>0x400921fb54442d18</var>, <var>0x400921fb54442d18</var>, <var>0x400921fb54442d18</var>, <var>0x400921fb54442d18</var>, <var>0x400921fb54442d18</var></td></tr>
+<tr><th id="302">302</th><td>        <i>/*== Pi2H ==*/</i></td></tr>
+<tr><th id="303">303</th><td>        .align <var>64</var></td></tr>
+<tr><th id="304">304</th><td>        .quad <var>0x3ff921fb54442d18</var>, <var>0x3ff921fb54442d18</var>, <var>0x3ff921fb54442d18</var>, <var>0x3ff921fb54442d18</var>, <var>0x3ff921fb54442d18</var>, <var>0x3ff921fb54442d18</var>, <var>0x3ff921fb54442d18</var>, <var>0x3ff921fb54442d18</var></td></tr>
+<tr><th id="305">305</th><td>        .align <var>64</var></td></tr>
+<tr><th id="306">306</th><td>        .type	__svml_dacos_data_internal,@object</td></tr>
+<tr><th id="307">307</th><td>        .size	__svml_dacos_data_internal,.-__svml_dacos_data_internal</td></tr>
+<tr><th id="308">308</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

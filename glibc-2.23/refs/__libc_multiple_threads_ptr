@@ -1,0 +1,8 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='389' type='int *'/>
+<doc f='codebrowser/nptl/pthreadP.h' l='388'>/* Pointer to the corresponding variable in libc.  */</doc>
+<def f='codebrowser/nptl/nptl-init.c' l='44' type='int *'/>
+<use f='codebrowser/nptl/nptl-init.c' l='492' u='w' c='__pthread_initialize_minimal_internal'/>
+<doc f='codebrowser/nptl/nptl-init.c' l='43'>/* Pointer to the corresponding variable in libc.  */</doc>
+<use f='codebrowser/nptl/pthread_cancel.c' l='100' u='r' c='pthread_cancel'/>
+<use f='codebrowser/nptl/allocatestack.c' l='423' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='559' u='r' c='allocate_stack'/>

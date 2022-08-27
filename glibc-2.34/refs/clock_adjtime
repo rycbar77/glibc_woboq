@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/time.h' l='78' type='int clock_adjtime(__clockid_t __clock_id, struct timex * __utx)'/>
+<use f='codebrowser/include/time.h' l='38' c='__clock_adjtime'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/time.h' l='77'>/* Tune a POSIX clock.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/clock_adjtime.c' l='70' macro='1' type='int clock_adjtime(__clockid_t , struct timex * )'/>

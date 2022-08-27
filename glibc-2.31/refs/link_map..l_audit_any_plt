@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/link.h' l='190' type='unsigned int'/>
+<offset>6380</offset>
+<doc f='codebrowser/include/link.h' l='190'>/* Nonzero if at least one audit module
+				       is interested in the PLT interception.*/</doc>
+<use f='codebrowser/elf/rtld.c' l='1053' u='w' c='notify_audit_modules_of_loaded_object'/>

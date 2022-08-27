@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/dirstream.h' l='42' type='int'/>
+<offset>320</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/dirstream.h' l='42'>/* Delayed error code.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/opendir.c' l='131' u='w' c='__alloc_dir'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='63' u='w' c='__readdir64_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='93' u='w' c='__readdir64_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/readdir64_r.c' l='112' u='r' c='__readdir64_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/rewinddir.c' l='35' u='w' c='__rewinddir'/>

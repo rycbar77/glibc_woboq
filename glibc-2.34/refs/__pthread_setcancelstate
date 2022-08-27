@@ -1,0 +1,24 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='231' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='232' type='int __pthread_setcancelstate(int , int * )'/>
+<use f='codebrowser/sysdeps/nptl/libc-lockP.h' l='232' c='__pthread_setcancelstate'/>
+<use f='codebrowser/assert/assert.c' l='53' macro='1' u='c' c='__assert_fail_base'/>
+<use f='codebrowser/libio/iopopen.c' l='285' u='c' c='_IO_new_proc_close'/>
+<use f='codebrowser/libio/iopopen.c' l='287' u='c' c='_IO_new_proc_close'/>
+<use f='codebrowser/misc/error.c' l='243' u='c' c='__error_internal'/>
+<use f='codebrowser/misc/error.c' l='265' u='c' c='__error_internal'/>
+<use f='codebrowser/misc/error.c' l='309' u='c' c='__error_at_line_internal'/>
+<use f='codebrowser/misc/error.c' l='339' u='c' c='__error_at_line_internal'/>
+<def f='codebrowser/nptl/pthread_setcancelstate.c' l='24' ll='39' type='int __pthread_setcancelstate(int state, int * oldstate)'/>
+<use f='codebrowser/nptl/pthread_setcancelstate.c' l='41' c='pthread_setcancelstate'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='94' u='c' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='124' u='c' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='122' u='c' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='135' u='c' c='__getaddrinfo_a'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='128' u='c' c='fmtmsg'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='197' u='c' c='fmtmsg'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='85' u='c' c='cancel_handler'/>
+<use f='codebrowser/sysdeps/posix/system.c' l='87' u='c' c='cancel_handler'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='60' u='c' c='__sem_open'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='216' u='c' c='__sem_open'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='347' u='c' c='__spawnix'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='411' u='c' c='__spawnix'/>

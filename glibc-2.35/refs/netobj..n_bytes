@@ -1,0 +1,17 @@
+<dec f='codebrowser/sunrpc/rpc/xdr.h' l='339' type='char *'/>
+<offset>64</offset>
+<use f='codebrowser/nis/nis_callback.c' l='292' u='w' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='310' u='w' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='58' u='r' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='128' u='w' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='129' u='r' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='134' u='r' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_getservlist.c' l='134' u='r' c='__GI_nis_getservlist'/>
+<use f='codebrowser/nis/nis_table.c' l='789' u='w' c='__GI_nis_next_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='789' u='r' c='__GI_nis_next_entry'/>
+<use f='codebrowser/nis/nis_table.c' l='804' u='w' c='__GI_nis_next_entry'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='115' u='w' c='__GI_authdes_create'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='146' u='r' c='__GI_authdes_pk_create'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='415' u='w' c='authdes_refresh'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='192' u='w' c='_svcauth_des'/>
+<use f='codebrowser/sunrpc/xdr.c' l='662' u='a' c='__GI_xdr_netobj'/>

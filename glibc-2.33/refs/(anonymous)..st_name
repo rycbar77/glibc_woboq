@@ -1,0 +1,17 @@
+<dec f='codebrowser/elf/elf.h' l='518' type='Elf32_Word'/>
+<dec f='codebrowser/elf/elf.h' l='528' type='Elf64_Word'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/elf.h' l='518'>/* Symbol name (string tbl index) */</doc>
+<doc f='codebrowser/elf/elf.h' l='528'>/* Symbol name (string tbl index) */</doc>
+<use f='codebrowser/elf/dl-addr.c' l='67' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='96' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-addr.c' l='111' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-lookup-direct.c' l='53' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='88' u='r' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='323' u='r' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='328' u='r' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='499' u='r' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-sym-post.h' l='90' u='r' c='_dl_sym_post'/>
+<use f='codebrowser/elf/dl-runtime.c' l='109' u='r' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='260' u='r' c='_dl_profile_fixup'/>
+<use f='codebrowser/sysdeps/x86_64/tlsdesc.c' l='69' u='r' c='_dl_tlsdesc_resolve_rela_fixup'/>

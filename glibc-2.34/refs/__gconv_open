@@ -1,0 +1,10 @@
+<dec f='codebrowser/iconv/gconv_int.h' l='151' type='int __gconv_open(struct gconv_spec * conv_spec, __gconv_t * handle, int flags)'/>
+<dec f='codebrowser/iconv/gconv_int.h' l='153' type='int __gconv_open(struct gconv_spec * , __gconv_t * , int )'/>
+<use f='codebrowser/iconv/gconv_int.h' l='153' c='__gconv_open'/>
+<doc f='codebrowser/iconv/gconv_int.h' l='148'>/* Return in *HANDLE, a decriptor for the transformation.  The function expects
+   the specification of the transformation in the structure pointed to by
+   CONV_SPEC.  It only reads *CONV_SPEC and does not take ownership of it.  */</doc>
+<def f='codebrowser/iconv/gconv_open.c' l='33' ll='172' type='int __gconv_open(struct gconv_spec * conv_spec, __gconv_t * handle, int flags)'/>
+<use f='codebrowser/iconv/iconv_open.c' l='40' u='c' c='iconv_open'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='185' u='c' c='main'/>
+<use f='codebrowser/intl/dcigettext.c' l='1130' u='c' c='_nl_find_msg'/>

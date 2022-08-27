@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='353' type='int __pthread_rwlock_rdlock(pthread_rwlock_t * __rwlock)'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='476' type='int __pthread_rwlock_rdlock(pthread_rwlock_t * __rwlock)'/>
+<use f='codebrowser/intl/dcigettext.c' l='526' macro='1' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='526' macro='1' u='r' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='529' macro='1' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='529' macro='1' u='r' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='568' macro='1' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='568' macro='1' u='r' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='998' macro='1' c='_nl_find_msg'/>
+<use f='codebrowser/intl/dcigettext.c' l='998' macro='1' u='r' c='_nl_find_msg'/>
+<use f='codebrowser/intl/finddomain.c' l='86' macro='1' c='_nl_find_domain'/>
+<use f='codebrowser/intl/finddomain.c' l='86' macro='1' u='r' c='_nl_find_domain'/>
+<def f='codebrowser/nptl/pthread_rwlock_rdlock.c' l='22' ll='30' type='int __pthread_rwlock_rdlock(pthread_rwlock_t * rwlock)'/>
+<use f='codebrowser/nptl/pthread_rwlock_rdlock.c' l='32' c='pthread_rwlock_rdlock'/>
+<doc f='codebrowser/nptl/pthread_rwlock_rdlock.c' l='21'>/* See pthread_rwlock_common.c.  */</doc>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/time.h' l='171' type='int __utimensat64_helper(int fd, const char * file, const struct timespec * tsp, int flags)'/>
+<dec f='codebrowser/include/time.h' l='173' type='int __utimensat64_helper(int , const char * , const struct timespec * , int )'/>
+<use f='codebrowser/include/time.h' l='173' c='__utimensat64_helper'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimens.c' l='37' u='c' c='__futimens'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/utimensat.c' l='27' ll='61' type='int __utimensat64_helper(int fd, const char * file, const struct timespec * tsp64, int flags)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/utimensat.c' l='75' u='c' c='__utimensat'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/utimensat.c' l='25'>/* Helper function defined for easy reusage of the code which calls utimensat
+   and utimensat_time64 syscall.  */</doc>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/x86/include/cpu-features.h' l='865' type='unsigned long'/>
+<offset>2432</offset>
+<doc f='codebrowser/sysdeps/x86/include/cpu-features.h' l='863'>/* Data cache size for use in memory and string routines, typically
+     L1 size.  */</doc>
+<use f='codebrowser/sysdeps/x86/cacheinfo.h' l='61' u='r' c='init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='933' u='w' c='dl_init_cacheinfo'/>

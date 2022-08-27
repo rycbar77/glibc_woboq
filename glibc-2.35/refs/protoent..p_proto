@@ -1,0 +1,7 @@
+<dec f='codebrowser/resolv/netdb.h' l='328' type='int'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='44' u='r' c='_nss_db_getprotobynumber_r'/>
+<offset>128</offset>
+<doc f='codebrowser/resolv/netdb.h' l='328'>/* Protocol number.  */</doc>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='43' u='w' c='_nss_files_parse_protoent'/>
+<use f='codebrowser/nss/getent.c' l='656' u='r' c='print_protocols'/>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='104' u='r' c='__GI_clnt_create'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='186' type='void * __memrchr_evex(const void * , int , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='186' u='r' c='__libc_ifunc_impl_list'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/memrchr-evex.S' l='30' macro='1' type='int'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-avx2.h' l='25' macro='1' type='void * __memrchr_evex(const void * , int , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-avx2.h' l='38' macro='1' u='r' c='memrchr_ifunc_selector'/>

@@ -1,0 +1,25 @@
+<use f='codebrowser/posix/sys/wait.h' l='149' c='wait3'/>
+<use f='codebrowser/posix/sys/wait.h' l='165' c='wait4'/>
+<use f='codebrowser/include/sys/wait.h' l='14' c='__wait3'/>
+<use f='codebrowser/include/sys/wait.h' l='16' c='__wait4'/>
+<def f='codebrowser/resource/bits/types/struct_rusage.h' l='33' ll='129'/>
+<use f='codebrowser/resource/sys/resource.h' l='89' c='getrusage'/>
+<use f='codebrowser/include/sys/resource.h' l='10' c='rusage64_to_rusage'/>
+<use f='codebrowser/include/sys/resource.h' l='91' c='rusage64_to_rusage'/>
+<use f='codebrowser/include/sys/resource.h' l='131' c='__getrusage'/>
+<size>144</size>
+<doc f='codebrowser/resource/bits/types/struct_rusage.h' l='29'>/* The purpose of all the unions is to have the kernel-compatible layout
+   while keeping the API type as &apos;long int&apos;, and among machines where
+   __syscall_slong_t is not &apos;long int&apos;, this only does the right thing
+   for little-endian ones, like x32.  */</doc>
+<mbr r='rusage::ru_utime' o='0' t='struct timeval'/>
+<mbr r='rusage::ru_stime' o='128' t='struct timeval'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='54' macro='1' c='rusage32_to_rusage64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tv32-compat.h' l='79' macro='1' c='rusage64_to_rusage32'/>
+<size>144</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getrusage.c' l='26' macro='1' c='__getrusage'/>
+<size>144</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/wait3.c' l='24' macro='1' c='__wait3'/>
+<size>144</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/wait4.c' l='26' macro='1' c='__wait4'/>
+<size>144</size>

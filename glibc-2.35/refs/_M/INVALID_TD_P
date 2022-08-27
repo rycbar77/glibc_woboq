@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='244'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='241'>/* This will not catch all invalid descriptors but is better than
+   nothing.  And if the test triggers the thread descriptor is
+   guaranteed to be invalid.  */</doc>
+<use f='codebrowser/nptl/pthread_getcpuclockid.c' l='32' u='c'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='31' u='c'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='32' u='c'/>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='32' u='c'/>

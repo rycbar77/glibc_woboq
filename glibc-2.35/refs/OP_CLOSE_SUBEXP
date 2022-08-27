@@ -1,0 +1,21 @@
+<dec f='codebrowser/posix/regex_internal.h' l='258' type='9'/>
+<use f='codebrowser/posix/regcomp.c' l='1028' u='r' c='create_initial_state'/>
+<use f='codebrowser/posix/regcomp.c' l='1120' c='optimize_utf8'/>
+<use f='codebrowser/posix/regcomp.c' l='1364' u='r' c='lower_subexp'/>
+<use f='codebrowser/posix/regcomp.c' l='1463' c='link_nfa_nodes'/>
+<use f='codebrowser/posix/regcomp.c' l='1906' u='r' c='peek_token'/>
+<use f='codebrowser/posix/regcomp.c' l='1976' u='r' c='peek_token'/>
+<use f='codebrowser/posix/regcomp.c' l='2003' u='r' c='peek_token'/>
+<use f='codebrowser/posix/regcomp.c' l='2165' u='r' c='parse_reg_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='2210' u='r' c='parse_branch'/>
+<use f='codebrowser/posix/regcomp.c' l='2329' c='parse_expression'/>
+<use f='codebrowser/posix/regcomp.c' l='2330' u='r' c='parse_expression'/>
+<use f='codebrowser/posix/regcomp.c' l='2490' u='r' c='parse_sub_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='2496' u='r' c='parse_sub_exp'/>
+<use f='codebrowser/posix/regexec.c' l='1504' u='r' c='update_regs'/>
+<use f='codebrowser/posix/regexec.c' l='1951' c='check_dst_limits_calc_pos_1'/>
+<use f='codebrowser/posix/regexec.c' l='2022' u='r' c='check_subexp_limits'/>
+<use f='codebrowser/posix/regexec.c' l='2063' u='r' c='check_subexp_limits'/>
+<use f='codebrowser/posix/regexec.c' l='2742' u='r' c='get_subexp'/>
+<use f='codebrowser/posix/regexec.c' l='2756' u='r' c='get_subexp'/>
+<use f='codebrowser/posix/regexec.c' l='3139' u='r' c='check_arrival_expand_ecl_sub'/>

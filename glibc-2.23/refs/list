@@ -1,0 +1,19 @@
+<def f='codebrowser/elf/dl-deps.c' l='91' ll='96'/>
+<use f='codebrowser/elf/dl-deps.c' l='95'/>
+<use f='codebrowser/elf/dl-deps.c' l='142' c='preload'/>
+<use f='codebrowser/elf/dl-deps.c' l='161' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='162' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='162' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='233' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='276' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='278' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='297' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='353' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='383' c='_dl_map_object_deps'/>
+<size>24</size>
+<doc f='codebrowser/elf/dl-deps.c' l='87'>/* We use a very special kind of list to track the path
+   through the list of loaded shared objects.  We have to
+   produce a flat list with unique members of all involved objects.
+*/</doc>
+<dec f='codebrowser/elf/rtld.c' l='69' type='1'/>
+<use f='codebrowser/elf/rtld.c' l='805' u='r' c='dl_main'/>

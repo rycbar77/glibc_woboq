@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1106' type='int _dl_check_caller(const void * caller, enum allowmask mask)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1105'>/* Check validity of the caller.  */</doc>
+<def f='codebrowser/elf/dl-caller.c' l='26' ll='86' type='int _dl_check_caller(const void * caller, enum allowmask mask)'/>
+<use f='codebrowser/elf/rtld.c' l='281'/>

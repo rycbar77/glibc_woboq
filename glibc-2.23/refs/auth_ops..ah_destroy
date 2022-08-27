@@ -1,0 +1,8 @@
+<dec f='codebrowser/sunrpc/rpc/auth.h' l='102' type='void (*)(AUTH *)'/>
+<offset>256</offset>
+<doc f='codebrowser/sunrpc/rpc/auth.h' l='102'>/* destroy this structure */</doc>
+<use f='codebrowser/sunrpc/key_call.c' l='416' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='427' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='439' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='569' macro='1' u='r' c='__rpc_thread_key_cleanup'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='389' macro='1' u='r' c='__GI_clnt_broadcast'/>

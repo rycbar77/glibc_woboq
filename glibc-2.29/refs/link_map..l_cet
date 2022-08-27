@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/x86/link_map.h' l='27' type='enum (unnamed enum at /media/rr/Data/glibc_source/glibc-2.29/argp/../sysdeps/x86/link_map.h:20:1)'/>
+<offset>6385</offset>
+<doc f='codebrowser/sysdeps/x86/link_map.h' l='19'>/* If this object is enabled with CET.  */</doc>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='53' u='r' c='_dl_process_cet_property_note'/>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='76' u='r' c='_dl_process_cet_property_note'/>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='80' u='w' c='_dl_process_cet_property_note'/>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='143' u='w' c='_dl_process_cet_property_note'/>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='145' u='w' c='_dl_process_cet_property_note'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='135' u='r' c='dl_cet_check'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='138' u='r' c='dl_cet_check'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='172' u='r' c='dl_cet_check'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='184' u='r' c='dl_cet_check'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='226' u='r' c='dl_cet_check'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/libio/libioP.h' l='632' type='FILE * _IO_new_proc_open(FILE * , const char * , const char * )'/>
+<def f='codebrowser/libio/iopopen.c' l='107' ll='216' type='FILE * _IO_new_proc_open(FILE * fp, const char * command, const char * mode)'/>
+<use f='codebrowser/libio/iopopen.c' l='240' u='c' c='_IO_new_popen'/>
+<use f='codebrowser/libio/iopopen.c' l='320' c='_IO_proc_open'/>

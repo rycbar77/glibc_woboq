@@ -1,0 +1,13 @@
+<def f='codebrowser/support/support.h' l='204' ll='209'/>
+<use f='codebrowser/support/support.h' l='218' c='support_stack_alloc'/>
+<use f='codebrowser/support/support.h' l='221' c='support_stack_free'/>
+<size>24</size>
+<mbr r='support_stack::stack' o='0' t='void *'/>
+<mbr r='support_stack::size' o='64' t='size_t'/>
+<mbr r='support_stack::guardsize' o='128' t='size_t'/>
+<use f='codebrowser/support/support_stack_alloc.c' l='35' c='support_stack_alloc'/>
+<use f='codebrowser/support/support_stack_alloc.c' l='74' c='support_stack_alloc'/>
+<use f='codebrowser/support/support_stack_alloc.c' l='78' c='support_stack_free'/>
+<size>24</size>
+<use f='codebrowser/support/xsigstack.c' l='40'/>
+<size>24</size>

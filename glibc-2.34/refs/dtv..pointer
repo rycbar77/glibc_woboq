@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/generic/dl-dtv.h' l='32' type='struct dtv_pointer'/>
+<offset>0</offset>
+<use f='codebrowser/csu/libc-tls.c' l='169' u='m' c='__libc_setup_tls'/>
+<use f='codebrowser/csu/libc-tls.c' l='178' u='m' c='__libc_setup_tls'/>
+<use f='codebrowser/csu/libc-tls.c' l='180' u='m' c='__libc_setup_tls'/>
+<use f='codebrowser/nptl/allocatestack.c' l='135' u='m' c='get_cached_stack'/>
+<use f='codebrowser/nptl_db/structs.def' l='99' u='m'/>
+<use f='codebrowser/elf/dl-tls.c' l='574' u='m' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='575' u='m' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='594' u='m' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='635' u='m' c='_dl_deallocate_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='992' u='m' c='_dl_tls_get_addr_soft'/>

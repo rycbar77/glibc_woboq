@@ -1,0 +1,19 @@
+<use f='codebrowser/include/grp.h' l='35' c='_nss_files_parse_grent'/>
+<def f='codebrowser/nss/nss_files/files-parse.c' l='56' ll='65'/>
+<use f='codebrowser/grp/fgetgrent_r.c' l='37' macro='1' c='_nss_files_parse_grent'/>
+<size>0</size>
+<mbr r='parser_data::linebuffer' o='0' t='char[0]'/>
+<use f='codebrowser/include/rpc/netdb.h' l='29' c='_nss_files_parse_rpcent'/>
+<use f='codebrowser/include/netdb.h' l='207' c='_nss_files_parse_protoent'/>
+<use f='codebrowser/include/netdb.h' l='210' c='_nss_files_parse_servent'/>
+<use f='codebrowser/include/netdb.h' l='213' c='_nss_files_parse_netent'/>
+<use f='codebrowser/include/pwd.h' l='31' c='_nss_files_parse_pwent'/>
+<use f='codebrowser/include/gshadow.h' l='15' c='_nss_files_parse_sgent'/>
+<use f='codebrowser/gshadow/sgetsgent_r.c' l='35' macro='1' c='_nss_files_parse_sgent'/>
+<size>0</size>
+<use f='codebrowser/include/netinet/ether.h' l='20' c='_nss_files_parse_etherent'/>
+<use f='codebrowser/include/shadow.h' l='30' c='_nss_files_parse_spent'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='34' macro='1' c='_nss_files_parse_pwent'/>
+<size>0</size>
+<use f='codebrowser/shadow/sgetspent_r.c' l='36' macro='1' c='_nss_files_parse_spent'/>
+<size>0</size>

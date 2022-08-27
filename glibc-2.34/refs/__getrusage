@@ -1,0 +1,3 @@
+<dec f='codebrowser/include/sys/resource.h' l='131' type='int __getrusage(enum __rusage_who __who, struct rusage * __usage)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getrusage.c' l='26' macro='1' type='int __getrusage(enum __rusage_who who, struct rusage * usage)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getrusage.c' l='58' c='getrusage'/>

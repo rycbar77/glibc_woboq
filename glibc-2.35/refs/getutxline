@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/gnu/utmpx.h' l='77' type='struct utmpx * getutxline(const struct utmpx * __line)'/>
+<doc f='codebrowser/sysdeps/gnu/utmpx.h' l='73'>/* Get the user accounting database entry corresponding to LINE.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/login/getutxline.c' l='21' ll='25' type='struct utmpx * getutxline(const struct utmpx * line)'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/nss/nss_module.h' l='104' type='void __nss_module_freeres()'/>
+<doc f='codebrowser/nss/nss_module.h' l='103'>/* Called from __libc_freeres.  */</doc>
+<dec f='codebrowser/malloc/set-freeres.c' l='54' type='void __nss_module_freeres()'/>
+<use f='codebrowser/malloc/set-freeres.c' l='54' c='__nss_module_freeres'/>
+<use f='codebrowser/malloc/set-freeres.c' l='54' u='r' c='__libc_freeres'/>
+<use f='codebrowser/malloc/set-freeres.c' l='54' u='c' c='__libc_freeres'/>
+<def f='codebrowser/nss/nss_module.c' l='421' ll='437' type='void __nss_module_freeres()'/>

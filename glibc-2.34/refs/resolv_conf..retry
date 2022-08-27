@@ -1,0 +1,11 @@
+<dec f='codebrowser/resolv/resolv_conf.h' l='58' type='unsigned int'/>
+<offset>512</offset>
+<doc f='codebrowser/resolv/resolv_conf.h' l='58'>/* Number of times to retry.  */</doc>
+<use f='codebrowser/resolv/res_init.c' l='189' u='w' c='resolv_conf_parser_init'/>
+<use f='codebrowser/resolv/res_init.c' l='195' u='w' c='resolv_conf_parser_init'/>
+<use f='codebrowser/resolv/res_init.c' l='675' u='w' c='res_setoptions'/>
+<use f='codebrowser/resolv/res_init.c' l='677' u='w' c='res_setoptions'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='409' u='w' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='409' u='r' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='477' u='r' c='update_from_conf'/>
+<use f='codebrowser/resolv/resolv_context.c' l='64' u='r' c='replicated_configuration_matches'/>

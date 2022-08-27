@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='688' type='size_t'/>
+<use f='codebrowser/csu/libc-tls.c' l='120' u='r' c='__libc_setup_tls'/>
+<def f='codebrowser/elf/dl-support.c' l='165' type='size_t'/>
+<use f='codebrowser/elf/dl-support.c' l='262' macro='1' u='w' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='326' macro='1' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='393' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/csu/libc-start.c' l='189' macro='1' u='w' c='__libc_start_main'/>

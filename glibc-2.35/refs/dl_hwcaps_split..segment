@@ -1,0 +1,19 @@
+<dec f='codebrowser/elf/dl-hwcaps.h' l='45' type='const char *'/>
+<use f='codebrowser/elf/dl-hwcaps.h' l='54' u='w' c='_dl_hwcaps_split_init'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='45'>/* Start of the current segment.  */</doc>
+<use f='codebrowser/elf/dl-hwcaps.c' l='83' u='r' c='copy_hwcaps'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='114' u='r' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='127' u='r' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='26' u='r' c='_dl_hwcaps_split'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='30' u='w' c='_dl_hwcaps_split'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='34' u='r' c='_dl_hwcaps_split'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='35' u='w' c='_dl_hwcaps_split'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='36' u='r' c='_dl_hwcaps_split'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='41' u='r' c='_dl_hwcaps_split'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='43' u='r' c='_dl_hwcaps_split'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='45' u='r' c='_dl_hwcaps_split'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='59' u='r' c='_dl_hwcaps_split_masked'/>
+<use f='codebrowser/elf/dl-hwcaps_split.c' l='74' u='r' c='_dl_hwcaps_contains'/>
+<use f='codebrowser/elf/dl-usage.c' l='152' u='r' c='print_hwcaps_subdirectories_name'/>
+<use f='codebrowser/elf/dl-usage.c' l='184' u='r' c='print_hwcaps_subdirectories'/>

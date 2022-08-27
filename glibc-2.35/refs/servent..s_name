@@ -1,0 +1,13 @@
+<dec f='codebrowser/resolv/netdb.h' l='257' type='char *'/>
+<offset>0</offset>
+<doc f='codebrowser/resolv/netdb.h' l='257'>/* Official service name.  */</doc>
+<use f='codebrowser/nss/nss_files/files-service.c' l='51' u='r' c='_nss_db_getservbyname_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='42' u='w' c='_nss_files_parse_servent'/>
+<use f='codebrowser/inet/getnameinfo.c' l='450' u='r' c='gni_serv_inet'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='231' u='w' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='241' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='278' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='330' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/servicescache.c' l='157' u='r' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='219' u='r' c='cache_addserv'/>
+<use f='codebrowser/nss/getent.c' l='754' u='r' c='print_services'/>

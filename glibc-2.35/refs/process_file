@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldconfig.h' l='92' type='int process_file(const char * real_file_name, const char * file_name, const char * lib, int * flag, unsigned int * osversion, unsigned int * isa_level, char ** soname, int is_link, struct stat * stat_buf)'/>
+<doc f='codebrowser/sysdeps/generic/ldconfig.h' l='91'>/* Declared in readlib.c.  */</doc>
+<use f='codebrowser/elf/ldconfig.c' l='726' u='c' c='manual_link'/>
+<use f='codebrowser/elf/ldconfig.c' l='999' u='c' c='search_dir'/>
+<def f='codebrowser/elf/readlib.c' l='73' ll='186' type='int process_file(const char * real_file_name, const char * file_name, const char * lib, int * flag, unsigned int * osversion, unsigned int * isa_level, char ** soname, int is_link, struct stat * stat_buf)'/>
+<doc f='codebrowser/elf/readlib.c' l='72'>/* Returns 0 if everything is ok, != 0 in case of error.  */</doc>

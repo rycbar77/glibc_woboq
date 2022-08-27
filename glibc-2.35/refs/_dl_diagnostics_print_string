@@ -1,0 +1,7 @@
+<dec f='codebrowser/elf/dl-diagnostics.h' l='26' type='void _dl_diagnostics_print_string(const char * s)'/>
+<def f='codebrowser/elf/dl-diagnostics.c' l='72' ll='88' type='void _dl_diagnostics_print_string(const char * s)'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='94' u='c' c='_dl_diagnostics_print_labeled_string'/>
+<use f='codebrowser/elf/dl-diagnostics.c' l='194' u='c' c='print_environ'/>
+<doc f='codebrowser/elf/dl-diagnostics.h' l='24'>/* Write the null-terminated string to standard output, surrounded in
+   quotation marks.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-diagnostics-kernel.c' l='40' u='c' c='print_auxv'/>

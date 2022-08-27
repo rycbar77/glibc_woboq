@@ -1,0 +1,8 @@
+<dec f='codebrowser/posix/regexec.c' l='167' type='Idx group_nodes_into_DFAstates(const re_dfa_t * dfa, const re_dfastate_t * state, re_node_set * states_node, bitset_t * states_ch)'/>
+<use f='codebrowser/posix/regexec.c' l='3288' u='c' c='build_trtable'/>
+<def f='codebrowser/posix/regexec.c' l='3449' ll='3631' type='Idx group_nodes_into_DFAstates(const re_dfa_t * dfa, const re_dfastate_t * state, re_node_set * dests_node, bitset_t * dests_ch)'/>
+<doc f='codebrowser/posix/regexec.c' l='3443'>/* Group all nodes belonging to STATE into several destinations.
+   Then for all destinations, set the nodes belonging to the destination
+   to DESTS_NODE[i] and set the characters accepted by the destination
+   to DEST_CH[i].  Return the number of destinations if successful,
+   -1 on internal error.  */</doc>

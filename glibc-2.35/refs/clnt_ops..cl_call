@@ -1,0 +1,21 @@
+<dec f='codebrowser/sunrpc/rpc/clnt.h' l='133' type='enum clnt_stat (*)(CLIENT *, u_long, xdrproc_t, caddr_t, xdrproc_t, caddr_t, struct timeval)'/>
+<offset>0</offset>
+<use f='codebrowser/nis/nis_call.c' l='310' macro='1' u='r' c='__do_niscall3'/>
+<use f='codebrowser/nis/nis_callback.c' l='225' macro='1' u='r' c='internal_nis_do_callback'/>
+<use f='codebrowser/nis/nis_findserv.c' l='164' macro='1' u='r' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/nis/nis_findserv.c' l='171' macro='1' u='r' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/nis/nis_lookup.c' l='78' macro='1' u='r' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_table.c' l='147' macro='1' u='r' c='get_tablepath'/>
+<use f='codebrowser/nis/nis_table.c' l='309' macro='1' u='r' c='__GI_nis_list'/>
+<use f='codebrowser/nis/ypclnt.c' l='128' macro='1' u='r' c='yp_bind_ypbindprog'/>
+<use f='codebrowser/nis/ypclnt.c' l='279' macro='1' u='r' c='__ypclnt_call'/>
+<use f='codebrowser/nis/ypclnt.c' l='769' macro='1' u='r' c='__GI_yp_all'/>
+<use f='codebrowser/nis/ypclnt.c' l='1017' macro='1' u='r' c='__GI_yp_update'/>
+<use f='codebrowser/sunrpc/clnt_simp.c' l='111' macro='1' u='r' c='__GI_callrpc'/>
+<use f='codebrowser/sunrpc/key_call.c' l='230' macro='1' u='r' c='__GI_key_gendes'/>
+<use f='codebrowser/sunrpc/key_call.c' l='508' macro='1' u='r' c='key_call_socket'/>
+<use f='codebrowser/sunrpc/pm_getmaps.c' l='74' macro='1' u='r' c='__GI_pmap_getmaps'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='117' macro='1' u='r' c='__libc_rpc_getport'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='124' macro='1' u='r' c='__GI_pmap_set'/>
+<use f='codebrowser/sunrpc/pmap_clnt.c' l='159' macro='1' u='r' c='__GI_pmap_unset'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='90' macro='1' u='r' c='__GI_pmap_rmtcall'/>

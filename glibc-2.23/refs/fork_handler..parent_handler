@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/fork.h' l='35' type='void (*)(void)'/>
+<use f='codebrowser/malloc/arena.c' l='403' macro='1' u='w' c='ptmalloc_init'/>
+<offset>128</offset>
+<use f='codebrowser/nptl/register-atfork.c' l='95' u='w' c='__register_atfork'/>
+<use f='codebrowser/sysdeps/nptl/fork.c' l='218' u='r' c='__libc_fork'/>
+<use f='codebrowser/sysdeps/nptl/fork.c' l='219' u='r' c='__libc_fork'/>

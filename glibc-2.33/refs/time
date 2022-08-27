@@ -1,0 +1,5 @@
+<dec f='codebrowser/time/time.h' l='75' type='time_t time(time_t * __timer)'/>
+<doc f='codebrowser/time/time.h' l='74'>/* Return the current time and put it in *TIMER if TIMER is not NULL.  */</doc>
+<use f='codebrowser/nscd/nscd-client.h' l='256' u='c' c='datahead_init_common'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/time.c' l='43' ll='47' type='time_t time(time_t * t)'/>
+<use f='codebrowser/timezone/zdump.c' l='515' u='c' c='main'/>

@@ -1,0 +1,19 @@
+<dec f='codebrowser/sunrpc/rpc/xdr.h' l='123' type='u_int (*)(const XDR *)'/>
+<offset>256</offset>
+<doc f='codebrowser/sunrpc/rpc/xdr.h' l='122'>/* put some bytes to &quot; */</doc>
+<use f='codebrowser/sunrpc/auth_none.c' l='89' macro='1' u='r' c='authnone_create_once'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='139' macro='1' u='r' c='__GI_authunix_create'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='351' macro='1' u='r' c='marshal_new_auth'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='118' macro='1' u='r' c='__GI_clntraw_create'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='164' macro='1' u='r' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='199' macro='1' u='r' c='__GI_clnttcp_create'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='175' macro='1' u='r' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='331' macro='1' u='r' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='182' macro='1' u='r' c='__GI_clntunix_create'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='121' macro='1' u='r' c='xdr_rmtcall_args'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='124' macro='1' u='r' c='xdr_rmtcall_args'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='127' macro='1' u='r' c='xdr_rmtcall_args'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='288' macro='1' u='r' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/svc_raw.c' l='129' macro='1' u='r' c='svcraw_reply'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='343' macro='1' u='r' c='svcudp_reply'/>
+<use f='codebrowser/sunrpc/xdr_sizeof.c' l='142' u='w' c='__GI_xdr_sizeof'/>

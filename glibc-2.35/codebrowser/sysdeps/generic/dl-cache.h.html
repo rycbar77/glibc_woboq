@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dl-cache.h source code [codebrowser/sysdeps/generic/dl-cache.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="cache_extension,cache_extension_all_loaded,cache_extension_loaded,cache_extension_section,cache_extension_tag,cache_file,cache_file_new,file_entry,file_entry_new "/>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/generic/dl-cache.h'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>sysdeps</a>/<a href='./'>generic</a>/<a href='dl-cache.h.html'>dl-cache.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Support for reading /etc/ld.so.cache files written by Linux ldconfig.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 1999-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_DL_CACHE_H">_DL_CACHE_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/_DL_CACHE_H" data-ref="_M/_DL_CACHE_H">_DL_CACHE_H</dfn></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../../include/endian.h.html">&lt;endian.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include &lt;stdbool.h&gt;</u></td></tr>
+<tr><th id="24">24</th><td><u>#include &lt;stddef.h&gt;</u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../../include/stdint.h.html">&lt;stdint.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#<span data-ppcond="28">ifndef</span> <a class="macro" href="../unix/sysv/linux/x86_64/dl-cache.h.html#19" data-ref="_M/_DL_CACHE_DEFAULT_ID">_DL_CACHE_DEFAULT_ID</a></u></td></tr>
+<tr><th id="29">29</th><td><u># define _DL_CACHE_DEFAULT_ID	3</u></td></tr>
+<tr><th id="30">30</th><td><u>#<span data-ppcond="28">endif</span></u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><u>#<span data-ppcond="32">ifndef</span> <a class="macro" href="../unix/sysv/linux/x86_64/dl-cache.h.html#21" data-ref="_M/_dl_cache_check_flags">_dl_cache_check_flags</a></u></td></tr>
+<tr><th id="33">33</th><td><u># define _dl_cache_check_flags(flags)			\</u></td></tr>
+<tr><th id="34">34</th><td><u>  ((flags) == 1 || (flags) == _DL_CACHE_DEFAULT_ID)</u></td></tr>
+<tr><th id="35">35</th><td><u>#<span data-ppcond="32">endif</span></u></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="37">ifndef</span> <span class="macro" data-ref="_M/LD_SO_CACHE">LD_SO_CACHE</span></u></td></tr>
+<tr><th id="38">38</th><td><u># define <dfn class="macro" id="_M/LD_SO_CACHE" data-ref="_M/LD_SO_CACHE">LD_SO_CACHE</dfn> SYSCONFDIR "/ld.so.cache"</u></td></tr>
+<tr><th id="39">39</th><td><u>#<span data-ppcond="37">endif</span></u></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><u>#<span data-ppcond="41">ifndef</span> <a class="macro" href="../unix/sysv/linux/x86_64/dl-cache.h.html#24" data-ref="_M/add_system_dir">add_system_dir</a></u></td></tr>
+<tr><th id="42">42</th><td><u># define add_system_dir(dir) add_dir (dir)</u></td></tr>
+<tr><th id="43">43</th><td><u>#<span data-ppcond="41">endif</span></u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/CACHEMAGIC" data-ref="_M/CACHEMAGIC">CACHEMAGIC</dfn> "ld.so-1.7.0"</u></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><i>/* libc5 and glibc 2.0/2.1 use the same format.  For glibc 2.2 another</i></td></tr>
+<tr><th id="48">48</th><td><i>   format has been added in a compatible way:</i></td></tr>
+<tr><th id="49">49</th><td><i>   The beginning of the string table is used for the new table:</i></td></tr>
+<tr><th id="50">50</th><td><i>	old_magic</i></td></tr>
+<tr><th id="51">51</th><td><i>	nlibs</i></td></tr>
+<tr><th id="52">52</th><td><i>	libs[0]</i></td></tr>
+<tr><th id="53">53</th><td><i>	...</i></td></tr>
+<tr><th id="54">54</th><td><i>	libs[nlibs-1]</i></td></tr>
+<tr><th id="55">55</th><td><i>	pad, new magic needs to be aligned</i></td></tr>
+<tr><th id="56">56</th><td><i>	     - this is string[0] for the old format</i></td></tr>
+<tr><th id="57">57</th><td><i>	new magic - this is string[0] for the new format</i></td></tr>
+<tr><th id="58">58</th><td><i>	newnlibs</i></td></tr>
+<tr><th id="59">59</th><td><i>	...</i></td></tr>
+<tr><th id="60">60</th><td><i>	newlibs[0]</i></td></tr>
+<tr><th id="61">61</th><td><i>	...</i></td></tr>
+<tr><th id="62">62</th><td><i>	newlibs[newnlibs-1]</i></td></tr>
+<tr><th id="63">63</th><td><i>	string 1</i></td></tr>
+<tr><th id="64">64</th><td><i>	string 2</i></td></tr>
+<tr><th id="65">65</th><td><i>	...</i></td></tr>
+<tr><th id="66">66</th><td><i>*/</i></td></tr>
+<tr><th id="67">67</th><td><b>struct</b> <dfn class="type def" id="file_entry" title='file_entry' data-ref="file_entry" data-ref-filename="file_entry">file_entry</dfn></td></tr>
+<tr><th id="68">68</th><td>{</td></tr>
+<tr><th id="69">69</th><td>  <a class="typedef" href="../../bits/stdint-intn.h.html#int32_t" title='int32_t' data-type='__int32_t' data-ref="int32_t" data-ref-filename="int32_t">int32_t</a> <dfn class="decl field" id="file_entry::flags" title='file_entry::flags' data-ref="file_entry::flags" data-ref-filename="file_entry..flags">flags</dfn>;		<i>/* This is 1 for an ELF library.  */</i></td></tr>
+<tr><th id="70">70</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="file_entry::key" title='file_entry::key' data-ref="file_entry::key" data-ref-filename="file_entry..key">key</dfn>, <dfn class="decl field" id="file_entry::value" title='file_entry::value' data-ref="file_entry::value" data-ref-filename="file_entry..value">value</dfn>;		<i>/* String table indices.  */</i></td></tr>
+<tr><th id="71">71</th><td>};</td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><b>struct</b> <dfn class="type def" id="cache_file" title='cache_file' data-ref="cache_file" data-ref-filename="cache_file">cache_file</dfn></td></tr>
+<tr><th id="74">74</th><td>{</td></tr>
+<tr><th id="75">75</th><td>  <em>char</em> <dfn class="decl field" id="cache_file::magic" title='cache_file::magic' data-ref="cache_file::magic" data-ref-filename="cache_file..magic">magic</dfn>[<b>sizeof</b> <a class="macro" href="#45" title="&quot;ld.so-1.7.0&quot;" data-ref="_M/CACHEMAGIC">CACHEMAGIC</a> - <var>1</var>];</td></tr>
+<tr><th id="76">76</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl field" id="cache_file::nlibs" title='cache_file::nlibs' data-ref="cache_file::nlibs" data-ref-filename="cache_file..nlibs">nlibs</dfn>;</td></tr>
+<tr><th id="77">77</th><td>  <b>struct</b> <a class="type" href="#file_entry" title='file_entry' data-ref="file_entry" data-ref-filename="file_entry">file_entry</a> <dfn class="decl field" id="cache_file::libs" title='cache_file::libs' data-ref="cache_file::libs" data-ref-filename="cache_file..libs">libs</dfn>[<var>0</var>];</td></tr>
+<tr><th id="78">78</th><td>};</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><u>#define <dfn class="macro" id="_M/CACHEMAGIC_NEW" data-ref="_M/CACHEMAGIC_NEW">CACHEMAGIC_NEW</dfn> "glibc-ld.so.cache"</u></td></tr>
+<tr><th id="81">81</th><td><u>#define <dfn class="macro" id="_M/CACHE_VERSION" data-ref="_M/CACHE_VERSION">CACHE_VERSION</dfn> "1.1"</u></td></tr>
+<tr><th id="82">82</th><td><u>#define <dfn class="macro" id="_M/CACHEMAGIC_VERSION_NEW" data-ref="_M/CACHEMAGIC_VERSION_NEW">CACHEMAGIC_VERSION_NEW</dfn> CACHEMAGIC_NEW CACHE_VERSION</u></td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><b>struct</b> <dfn class="type def" id="file_entry_new" title='file_entry_new' data-ref="file_entry_new" data-ref-filename="file_entry_new">file_entry_new</dfn></td></tr>
+<tr><th id="86">86</th><td>{</td></tr>
+<tr><th id="87">87</th><td>  <b>union</b></td></tr>
+<tr><th id="88">88</th><td>  {</td></tr>
+<tr><th id="89">89</th><td>    <i>/* Fields shared with struct file_entry.  */</i></td></tr>
+<tr><th id="90">90</th><td>    <b>struct</b> <a class="type" href="#file_entry" title='file_entry' data-ref="file_entry" data-ref-filename="file_entry">file_entry</a> <dfn class="decl field" id="file_entry_new::(anonymous)::entry" title='file_entry_new::(anonymous union)::entry' data-ref="file_entry_new::(anonymous)::entry" data-ref-filename="file_entry_new..(anonymous)..entry">entry</dfn>;</td></tr>
+<tr><th id="91">91</th><td>    <i>/* Also expose these fields directly.  */</i></td></tr>
+<tr><th id="92">92</th><td>    <b>struct</b></td></tr>
+<tr><th id="93">93</th><td>    {</td></tr>
+<tr><th id="94">94</th><td>      <a class="typedef" href="../../bits/stdint-intn.h.html#int32_t" title='int32_t' data-type='__int32_t' data-ref="int32_t" data-ref-filename="int32_t">int32_t</a> <dfn class="decl field" id="file_entry_new::(anonymousunion)::(anonymous)::flags" title='file_entry_new::(anonymous union)::(anonymous struct)::flags' data-ref="file_entry_new::(anonymousunion)::(anonymous)::flags" data-ref-filename="file_entry_new..(anonymousunion)..(anonymous)..flags">flags</dfn>;		<i>/* This is 1 for an ELF library.  */</i></td></tr>
+<tr><th id="95">95</th><td>      <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="file_entry_new::(anonymousunion)::(anonymous)::key" title='file_entry_new::(anonymous union)::(anonymous struct)::key' data-ref="file_entry_new::(anonymousunion)::(anonymous)::key" data-ref-filename="file_entry_new..(anonymousunion)..(anonymous)..key">key</dfn>, <dfn class="decl field" id="file_entry_new::(anonymousunion)::(anonymous)::value" title='file_entry_new::(anonymous union)::(anonymous struct)::value' data-ref="file_entry_new::(anonymousunion)::(anonymous)::value" data-ref-filename="file_entry_new..(anonymousunion)..(anonymous)..value">value</dfn>;	<i>/* String table indices.  */</i></td></tr>
+<tr><th id="96">96</th><td>    };</td></tr>
+<tr><th id="97">97</th><td>  };</td></tr>
+<tr><th id="98">98</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="file_entry_new::osversion" title='file_entry_new::osversion' data-ref="file_entry_new::osversion" data-ref-filename="file_entry_new..osversion">osversion</dfn>;		<i>/* Required OS version.	 */</i></td></tr>
+<tr><th id="99">99</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint64_t" title='uint64_t' data-type='__uint64_t' data-ref="uint64_t" data-ref-filename="uint64_t">uint64_t</a> <dfn class="decl field" id="file_entry_new::hwcap" title='file_entry_new::hwcap' data-ref="file_entry_new::hwcap" data-ref-filename="file_entry_new..hwcap">hwcap</dfn>;		<i>/* Hwcap entry.	 */</i></td></tr>
+<tr><th id="100">100</th><td>};</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><i>/* This bit in the hwcap field of struct file_entry_new indicates that</i></td></tr>
+<tr><th id="103">103</th><td><i>   the lower 32 bits contain an index into the</i></td></tr>
+<tr><th id="104">104</th><td><i>   cache_extension_tag_glibc_hwcaps section.  Older glibc versions do</i></td></tr>
+<tr><th id="105">105</th><td><i>   not know about this HWCAP bit, so they will ignore these</i></td></tr>
+<tr><th id="106">106</th><td><i>   entries.  */</i></td></tr>
+<tr><th id="107">107</th><td><u>#define <dfn class="macro" id="_M/DL_CACHE_HWCAP_EXTENSION" data-ref="_M/DL_CACHE_HWCAP_EXTENSION">DL_CACHE_HWCAP_EXTENSION</dfn> (1ULL &lt;&lt; 62)</u></td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td><i>/* The number of the ISA level bits in the upper 32 bits of the hwcap</i></td></tr>
+<tr><th id="110">110</th><td><i>   field.  */</i></td></tr>
+<tr><th id="111">111</th><td><u>#define <dfn class="macro" id="_M/DL_CACHE_HWCAP_ISA_LEVEL_COUNT" data-ref="_M/DL_CACHE_HWCAP_ISA_LEVEL_COUNT">DL_CACHE_HWCAP_ISA_LEVEL_COUNT</dfn> 10</u></td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td><i>/* The mask of the ISA level bits in the hwcap field.  */</i></td></tr>
+<tr><th id="114">114</th><td><u>#define <dfn class="macro" id="_M/DL_CACHE_HWCAP_ISA_LEVEL_MASK" data-ref="_M/DL_CACHE_HWCAP_ISA_LEVEL_MASK">DL_CACHE_HWCAP_ISA_LEVEL_MASK</dfn> \</u></td></tr>
+<tr><th id="115">115</th><td><u>  ((1 &lt;&lt; DL_CACHE_HWCAP_ISA_LEVEL_COUNT) -1)</u></td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><i>/* Return true if the ENTRY-&gt;hwcap value indicates that</i></td></tr>
+<tr><th id="118">118</th><td><i>   DL_CACHE_HWCAP_EXTENSION is used.  */</i></td></tr>
+<tr><th id="119">119</th><td><em>static</em> <b>inline</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span></td></tr>
+<tr><th id="120">120</th><td><dfn class="decl def fn" id="dl_cache_hwcap_extension" title='dl_cache_hwcap_extension' data-ref="dl_cache_hwcap_extension" data-ref-filename="dl_cache_hwcap_extension">dl_cache_hwcap_extension</dfn> (<b>struct</b> <a class="type" href="#file_entry_new" title='file_entry_new' data-ref="file_entry_new" data-ref-filename="file_entry_new">file_entry_new</a> *<dfn class="local col6 decl" id="46entry" title='entry' data-type='struct file_entry_new *' data-ref="46entry" data-ref-filename="46entry">entry</dfn>)</td></tr>
+<tr><th id="121">121</th><td>{</td></tr>
+<tr><th id="122">122</th><td>  <i>/* This is an hwcap extension if only the DL_CACHE_HWCAP_EXTENSION bit</i></td></tr>
+<tr><th id="123">123</th><td><i>     is set, ignoring the lower 32 bits as well as the ISA level bits in</i></td></tr>
+<tr><th id="124">124</th><td><i>     the upper 32 bits.  */</i></td></tr>
+<tr><th id="125">125</th><td>  <b>return</b> (((<a class="local col6 ref" href="#46entry" title='entry' data-ref="46entry" data-ref-filename="46entry">entry</a>-&gt;<a class="ref field" href="#file_entry_new::hwcap" title='file_entry_new::hwcap' data-ref="file_entry_new::hwcap" data-ref-filename="file_entry_new..hwcap">hwcap</a> &gt;&gt; <var>32</var>) &amp; ~<a class="macro" href="#114" title="((1 &lt;&lt; 10) -1)" data-ref="_M/DL_CACHE_HWCAP_ISA_LEVEL_MASK">DL_CACHE_HWCAP_ISA_LEVEL_MASK</a>)</td></tr>
+<tr><th id="126">126</th><td>	  == (<a class="macro" href="#107" title="(1ULL &lt;&lt; 62)" data-ref="_M/DL_CACHE_HWCAP_EXTENSION">DL_CACHE_HWCAP_EXTENSION</a> &gt;&gt; <var>32</var>));</td></tr>
+<tr><th id="127">127</th><td>}</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><i>/* See flags member of struct cache_file_new below.  */</i></td></tr>
+<tr><th id="130">130</th><td><b>enum</b></td></tr>
+<tr><th id="131">131</th><td>  {</td></tr>
+<tr><th id="132">132</th><td>    <i>/* No endianness information available.  An old ldconfig version</i></td></tr>
+<tr><th id="133">133</th><td><i>       without endianness support wrote the file.  */</i></td></tr>
+<tr><th id="134">134</th><td>    <dfn class="enum" id="cache_file_new_flags_endian_unset" title='cache_file_new_flags_endian_unset' data-ref="cache_file_new_flags_endian_unset" data-ref-filename="cache_file_new_flags_endian_unset">cache_file_new_flags_endian_unset</dfn> = <var>0</var>,</td></tr>
+<tr><th id="135">135</th><td></td></tr>
+<tr><th id="136">136</th><td>    <i>/* Cache is invalid and should be ignored.  */</i></td></tr>
+<tr><th id="137">137</th><td>    <dfn class="enum" id="cache_file_new_flags_endian_invalid" title='cache_file_new_flags_endian_invalid' data-ref="cache_file_new_flags_endian_invalid" data-ref-filename="cache_file_new_flags_endian_invalid">cache_file_new_flags_endian_invalid</dfn> = <var>1</var>,</td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td>    <i>/* Cache format is little endian.  */</i></td></tr>
+<tr><th id="140">140</th><td>    <dfn class="enum" id="cache_file_new_flags_endian_little" title='cache_file_new_flags_endian_little' data-ref="cache_file_new_flags_endian_little" data-ref-filename="cache_file_new_flags_endian_little">cache_file_new_flags_endian_little</dfn> = <var>2</var>,</td></tr>
+<tr><th id="141">141</th><td></td></tr>
+<tr><th id="142">142</th><td>    <i>/* Cache format is big endian.  */</i></td></tr>
+<tr><th id="143">143</th><td>    <dfn class="enum" id="cache_file_new_flags_endian_big" title='cache_file_new_flags_endian_big' data-ref="cache_file_new_flags_endian_big" data-ref-filename="cache_file_new_flags_endian_big">cache_file_new_flags_endian_big</dfn> = <var>3</var>,</td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td>    <i>/* Bit mask to extract the cache_file_new_flags_endian_*</i></td></tr>
+<tr><th id="146">146</th><td><i>       values.  */</i></td></tr>
+<tr><th id="147">147</th><td>    <dfn class="enum" id="cache_file_new_flags_endian_mask" title='cache_file_new_flags_endian_mask' data-ref="cache_file_new_flags_endian_mask" data-ref-filename="cache_file_new_flags_endian_mask">cache_file_new_flags_endian_mask</dfn> = <var>3</var>,</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td>    <i>/* Expected value of the endian bits in the flags member for the</i></td></tr>
+<tr><th id="150">150</th><td><i>       current architecture.  */</i></td></tr>
+<tr><th id="151">151</th><td>    <dfn class="enum" id="cache_file_new_flags_endian_current" title='cache_file_new_flags_endian_current' data-ref="cache_file_new_flags_endian_current" data-ref-filename="cache_file_new_flags_endian_current">cache_file_new_flags_endian_current</dfn></td></tr>
+<tr><th id="152">152</th><td>      = (<span class="macro" title="1234" data-ref="_M/__BYTE_ORDER__">__BYTE_ORDER__</span> == <span class="macro" title="1234" data-ref="_M/__ORDER_LITTLE_ENDIAN__">__ORDER_LITTLE_ENDIAN__</span></td></tr>
+<tr><th id="153">153</th><td>	 ? <a class="enum" href="#cache_file_new_flags_endian_little" title='cache_file_new_flags_endian_little' data-ref="cache_file_new_flags_endian_little" data-ref-filename="cache_file_new_flags_endian_little">cache_file_new_flags_endian_little</a></td></tr>
+<tr><th id="154">154</th><td>	 : <a class="enum" href="#cache_file_new_flags_endian_big" title='cache_file_new_flags_endian_big' data-ref="cache_file_new_flags_endian_big" data-ref-filename="cache_file_new_flags_endian_big">cache_file_new_flags_endian_big</a>),</td></tr>
+<tr><th id="155">155</th><td>  };</td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td><b>struct</b> <dfn class="type def" id="cache_file_new" title='cache_file_new' data-ref="cache_file_new" data-ref-filename="cache_file_new">cache_file_new</dfn></td></tr>
+<tr><th id="158">158</th><td>{</td></tr>
+<tr><th id="159">159</th><td>  <em>char</em> <dfn class="decl field" id="cache_file_new::magic" title='cache_file_new::magic' data-ref="cache_file_new::magic" data-ref-filename="cache_file_new..magic">magic</dfn>[<b>sizeof</b> <a class="macro" href="#80" title="&quot;glibc-ld.so.cache&quot;" data-ref="_M/CACHEMAGIC_NEW">CACHEMAGIC_NEW</a> - <var>1</var>];</td></tr>
+<tr><th id="160">160</th><td>  <em>char</em> <dfn class="decl field" id="cache_file_new::version" title='cache_file_new::version' data-ref="cache_file_new::version" data-ref-filename="cache_file_new..version">version</dfn>[<b>sizeof</b> <a class="macro" href="#81" title="&quot;1.1&quot;" data-ref="_M/CACHE_VERSION">CACHE_VERSION</a> - <var>1</var>];</td></tr>
+<tr><th id="161">161</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="cache_file_new::nlibs" title='cache_file_new::nlibs' data-ref="cache_file_new::nlibs" data-ref-filename="cache_file_new..nlibs">nlibs</dfn>;		<i>/* Number of entries.  */</i></td></tr>
+<tr><th id="162">162</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="cache_file_new::len_strings" title='cache_file_new::len_strings' data-ref="cache_file_new::len_strings" data-ref-filename="cache_file_new..len_strings">len_strings</dfn>;		<i>/* Size of string table. */</i></td></tr>
+<tr><th id="163">163</th><td></td></tr>
+<tr><th id="164">164</th><td>  <i>/* flags &amp; cache_file_new_flags_endian_mask is one of the values</i></td></tr>
+<tr><th id="165">165</th><td><i>     cache_file_new_flags_endian_unset, cache_file_new_flags_endian_invalid,</i></td></tr>
+<tr><th id="166">166</th><td><i>     cache_file_new_flags_endian_little, cache_file_new_flags_endian_big.</i></td></tr>
+<tr><th id="167">167</th><td><i></i></td></tr>
+<tr><th id="168">168</th><td><i>     The remaining bits are unused and should be generated as zero and</i></td></tr>
+<tr><th id="169">169</th><td><i>     ignored by readers.  */</i></td></tr>
+<tr><th id="170">170</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint8_t" title='uint8_t' data-type='__uint8_t' data-ref="uint8_t" data-ref-filename="uint8_t">uint8_t</a> <dfn class="decl field" id="cache_file_new::flags" title='cache_file_new::flags' data-ref="cache_file_new::flags" data-ref-filename="cache_file_new..flags">flags</dfn>;</td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint8_t" title='uint8_t' data-type='__uint8_t' data-ref="uint8_t" data-ref-filename="uint8_t">uint8_t</a> <dfn class="decl field" id="cache_file_new::padding_unsed" title='cache_file_new::padding_unsed' data-ref="cache_file_new::padding_unsed" data-ref-filename="cache_file_new..padding_unsed">padding_unsed</dfn>[<var>3</var>];	<i>/* Not used, for future extensions.  */</i></td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td>  <i>/* File offset of the extension directory.  See struct</i></td></tr>
+<tr><th id="175">175</th><td><i>     cache_extension below.  Must be a multiple of four.  */</i></td></tr>
+<tr><th id="176">176</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="cache_file_new::extension_offset" title='cache_file_new::extension_offset' data-ref="cache_file_new::extension_offset" data-ref-filename="cache_file_new..extension_offset">extension_offset</dfn>;</td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="cache_file_new::unused" title='cache_file_new::unused' data-ref="cache_file_new::unused" data-ref-filename="cache_file_new..unused">unused</dfn>[<var>3</var>];		<i>/* Leave space for future extensions</i></td></tr>
+<tr><th id="179">179</th><td><i>				   and align to 8 byte boundary.  */</i></td></tr>
+<tr><th id="180">180</th><td>  <b>struct</b> <a class="type" href="#file_entry_new" title='file_entry_new' data-ref="file_entry_new" data-ref-filename="file_entry_new">file_entry_new</a> <dfn class="decl field" id="cache_file_new::libs" title='cache_file_new::libs' data-ref="cache_file_new::libs" data-ref-filename="cache_file_new..libs">libs</dfn>[<var>0</var>]; <i>/* Entries describing libraries.  */</i></td></tr>
+<tr><th id="181">181</th><td>  <i>/* After this the string table of size len_strings is found.	*/</i></td></tr>
+<tr><th id="182">182</th><td>};</td></tr>
+<tr><th id="183">183</th><td><a class="macro" href="../../include/sys/cdefs.h.html#7" title="_Static_assert (sizeof (struct cache_file_new) == 48, &quot;size of struct cache_file_new&quot;)" data-ref="_M/_Static_assert"><b>_Static_assert</b></a> (<b>sizeof</b> (<b>struct</b> <a class="type" href="#cache_file_new" title='cache_file_new' data-ref="cache_file_new" data-ref-filename="cache_file_new">cache_file_new</a>) == <var>48</var>,</td></tr>
+<tr><th id="184">184</th><td>		<q>"size of struct cache_file_new"</q>);</td></tr>
+<tr><th id="185">185</th><td></td></tr>
+<tr><th id="186">186</th><td><i>/* Returns false if *CACHE has the wrong endianness for this</i></td></tr>
+<tr><th id="187">187</th><td><i>   architecture, and true if the endianness matches (or is</i></td></tr>
+<tr><th id="188">188</th><td><i>   unknown).  */</i></td></tr>
+<tr><th id="189">189</th><td><em>static</em> <b>inline</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span></td></tr>
+<tr><th id="190">190</th><td><dfn class="decl def fn" id="cache_file_new_matches_endian" title='cache_file_new_matches_endian' data-ref="cache_file_new_matches_endian" data-ref-filename="cache_file_new_matches_endian">cache_file_new_matches_endian</dfn> (<em>const</em> <b>struct</b> <a class="type" href="#cache_file_new" title='cache_file_new' data-ref="cache_file_new" data-ref-filename="cache_file_new">cache_file_new</a> *<dfn class="local col7 decl" id="47cache" title='cache' data-type='const struct cache_file_new *' data-ref="47cache" data-ref-filename="47cache">cache</dfn>)</td></tr>
+<tr><th id="191">191</th><td>{</td></tr>
+<tr><th id="192">192</th><td>  <i>/* A zero value for cache-&gt;flags means that no endianness</i></td></tr>
+<tr><th id="193">193</th><td><i>     information is available.  */</i></td></tr>
+<tr><th id="194">194</th><td>  <b>return</b> <a class="local col7 ref" href="#47cache" title='cache' data-ref="47cache" data-ref-filename="47cache">cache</a>-&gt;<a class="ref field" href="#cache_file_new::flags" title='cache_file_new::flags' data-ref="cache_file_new::flags" data-ref-filename="cache_file_new..flags">flags</a> == <var>0</var></td></tr>
+<tr><th id="195">195</th><td>    || ((<a class="local col7 ref" href="#47cache" title='cache' data-ref="47cache" data-ref-filename="47cache">cache</a>-&gt;<a class="ref field" href="#cache_file_new::flags" title='cache_file_new::flags' data-ref="cache_file_new::flags" data-ref-filename="cache_file_new..flags">flags</a> &amp; <a class="enum" href="#cache_file_new_flags_endian_big" title='cache_file_new_flags_endian_big' data-ref="cache_file_new_flags_endian_big" data-ref-filename="cache_file_new_flags_endian_big">cache_file_new_flags_endian_big</a>)</td></tr>
+<tr><th id="196">196</th><td>	== <a class="enum" href="#cache_file_new_flags_endian_current" title='cache_file_new_flags_endian_current' data-ref="cache_file_new_flags_endian_current" data-ref-filename="cache_file_new_flags_endian_current">cache_file_new_flags_endian_current</a>);</td></tr>
+<tr><th id="197">197</th><td>}</td></tr>
+<tr><th id="198">198</th><td></td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><i>/* Randomly chosen magic value, which allows for additional</i></td></tr>
+<tr><th id="201">201</th><td><i>   consistency verification.  */</i></td></tr>
+<tr><th id="202">202</th><td><b>enum</b> { <dfn class="enum" id="cache_extension_magic" title='cache_extension_magic' data-ref="cache_extension_magic" data-ref-filename="cache_extension_magic">cache_extension_magic</dfn> = (<a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a>) -<var>358342284</var> };</td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td><i>/* Tag values for different kinds of extension sections.  Similar to</i></td></tr>
+<tr><th id="205">205</th><td><i>   SHT_* constants.  */</i></td></tr>
+<tr><th id="206">206</th><td><b>enum</b> <dfn class="type def" id="cache_extension_tag" title='cache_extension_tag' data-ref="cache_extension_tag" data-ref-filename="cache_extension_tag">cache_extension_tag</dfn></td></tr>
+<tr><th id="207">207</th><td>  {</td></tr>
+<tr><th id="208">208</th><td>   <i>/* Array of bytes containing the glibc version that generated this</i></td></tr>
+<tr><th id="209">209</th><td><i>      cache file.  */</i></td></tr>
+<tr><th id="210">210</th><td>   <dfn class="enum" id="cache_extension_tag_generator" title='cache_extension_tag_generator' data-ref="cache_extension_tag_generator" data-ref-filename="cache_extension_tag_generator">cache_extension_tag_generator</dfn>,</td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td>   <i>/* glibc-hwcaps subdirectory information.  An array of uint32_t</i></td></tr>
+<tr><th id="213">213</th><td><i>      values, which are indices into the string table.  The strings</i></td></tr>
+<tr><th id="214">214</th><td><i>      are sorted lexicographically (according to strcmp).  The extra</i></td></tr>
+<tr><th id="215">215</th><td><i>      level of indirection (instead of using string table indices</i></td></tr>
+<tr><th id="216">216</th><td><i>      directly) allows the dynamic loader to compute the preference</i></td></tr>
+<tr><th id="217">217</th><td><i>      order of the hwcaps names more efficiently.</i></td></tr>
+<tr><th id="218">218</th><td><i></i></td></tr>
+<tr><th id="219">219</th><td><i>      For this section, 4-byte alignment is required, and the section</i></td></tr>
+<tr><th id="220">220</th><td><i>      size must be a multiple of 4.  */</i></td></tr>
+<tr><th id="221">221</th><td>   <dfn class="enum" id="cache_extension_tag_glibc_hwcaps" title='cache_extension_tag_glibc_hwcaps' data-ref="cache_extension_tag_glibc_hwcaps" data-ref-filename="cache_extension_tag_glibc_hwcaps">cache_extension_tag_glibc_hwcaps</dfn>,</td></tr>
+<tr><th id="222">222</th><td></td></tr>
+<tr><th id="223">223</th><td>   <i>/* Total number of known cache extension tags.  */</i></td></tr>
+<tr><th id="224">224</th><td>   <dfn class="enum" id="cache_extension_count" title='cache_extension_count' data-ref="cache_extension_count" data-ref-filename="cache_extension_count">cache_extension_count</dfn></td></tr>
+<tr><th id="225">225</th><td>  };</td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td><i>/* Element in the array following struct cache_extension.  Similar to</i></td></tr>
+<tr><th id="228">228</th><td><i>   an ELF section header.  */</i></td></tr>
+<tr><th id="229">229</th><td><b>struct</b> <dfn class="type def" id="cache_extension_section" title='cache_extension_section' data-ref="cache_extension_section" data-ref-filename="cache_extension_section">cache_extension_section</dfn></td></tr>
+<tr><th id="230">230</th><td>{</td></tr>
+<tr><th id="231">231</th><td>  <i>/* Type of the extension section.  A enum cache_extension_tag value.  */</i></td></tr>
+<tr><th id="232">232</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="cache_extension_section::tag" title='cache_extension_section::tag' data-ref="cache_extension_section::tag" data-ref-filename="cache_extension_section..tag">tag</dfn>;</td></tr>
+<tr><th id="233">233</th><td></td></tr>
+<tr><th id="234">234</th><td>  <i>/* Extension-specific flags.  Currently generated as zero.  */</i></td></tr>
+<tr><th id="235">235</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="cache_extension_section::flags" title='cache_extension_section::flags' data-ref="cache_extension_section::flags" data-ref-filename="cache_extension_section..flags">flags</dfn>;</td></tr>
+<tr><th id="236">236</th><td></td></tr>
+<tr><th id="237">237</th><td>  <i>/* Offset from the start of the file for the data in this extension</i></td></tr>
+<tr><th id="238">238</th><td><i>     section.  Specific extensions can have alignment constraints.  */</i></td></tr>
+<tr><th id="239">239</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="cache_extension_section::offset" title='cache_extension_section::offset' data-ref="cache_extension_section::offset" data-ref-filename="cache_extension_section..offset">offset</dfn>;</td></tr>
+<tr><th id="240">240</th><td></td></tr>
+<tr><th id="241">241</th><td>  <i>/* Length in bytes of the extension data.  Specific extensions may</i></td></tr>
+<tr><th id="242">242</th><td><i>     have size requirements.  */</i></td></tr>
+<tr><th id="243">243</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="cache_extension_section::size" title='cache_extension_section::size' data-ref="cache_extension_section::size" data-ref-filename="cache_extension_section..size">size</dfn>;</td></tr>
+<tr><th id="244">244</th><td>};</td></tr>
+<tr><th id="245">245</th><td></td></tr>
+<tr><th id="246">246</th><td><i>/* The extension directory in the cache.  An array of struct</i></td></tr>
+<tr><th id="247">247</th><td><i>   cache_extension_section entries.  */</i></td></tr>
+<tr><th id="248">248</th><td><b>struct</b> <dfn class="type def" id="cache_extension" title='cache_extension' data-ref="cache_extension" data-ref-filename="cache_extension">cache_extension</dfn></td></tr>
+<tr><th id="249">249</th><td>{</td></tr>
+<tr><th id="250">250</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="cache_extension::magic" title='cache_extension::magic' data-ref="cache_extension::magic" data-ref-filename="cache_extension..magic">magic</dfn>;		<i>/* Always cache_extension_magic.  */</i></td></tr>
+<tr><th id="251">251</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="cache_extension::count" title='cache_extension::count' data-ref="cache_extension::count" data-ref-filename="cache_extension..count">count</dfn>;		<i>/* Number of following entries.  */</i></td></tr>
+<tr><th id="252">252</th><td></td></tr>
+<tr><th id="253">253</th><td>  <i>/* count section descriptors of type struct cache_extension_section</i></td></tr>
+<tr><th id="254">254</th><td><i>     follow.  */</i></td></tr>
+<tr><th id="255">255</th><td>  <b>struct</b> <a class="type" href="#cache_extension_section" title='cache_extension_section' data-ref="cache_extension_section" data-ref-filename="cache_extension_section">cache_extension_section</a> <dfn class="decl field" id="cache_extension::sections" title='cache_extension::sections' data-ref="cache_extension::sections" data-ref-filename="cache_extension..sections">sections</dfn>[];</td></tr>
+<tr><th id="256">256</th><td>};</td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td><i>/* A relocated version of struct cache_extension_section.  */</i></td></tr>
+<tr><th id="259">259</th><td><b>struct</b> <dfn class="type def" id="cache_extension_loaded" title='cache_extension_loaded' data-ref="cache_extension_loaded" data-ref-filename="cache_extension_loaded">cache_extension_loaded</dfn></td></tr>
+<tr><th id="260">260</th><td>{</td></tr>
+<tr><th id="261">261</th><td>  <i>/* Address and size of this extension section.  base is NULL if the</i></td></tr>
+<tr><th id="262">262</th><td><i>     section is missing from the file.  */</i></td></tr>
+<tr><th id="263">263</th><td>  <em>const</em> <em>void</em> *<dfn class="decl field" id="cache_extension_loaded::base" title='cache_extension_loaded::base' data-ref="cache_extension_loaded::base" data-ref-filename="cache_extension_loaded..base">base</dfn>;</td></tr>
+<tr><th id="264">264</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="decl field" id="cache_extension_loaded::size" title='cache_extension_loaded::size' data-ref="cache_extension_loaded::size" data-ref-filename="cache_extension_loaded..size">size</dfn>;</td></tr>
+<tr><th id="265">265</th><td></td></tr>
+<tr><th id="266">266</th><td>  <i>/* Flags from struct cache_extension_section.  */</i></td></tr>
+<tr><th id="267">267</th><td>  <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="decl field" id="cache_extension_loaded::flags" title='cache_extension_loaded::flags' data-ref="cache_extension_loaded::flags" data-ref-filename="cache_extension_loaded..flags">flags</dfn>;</td></tr>
+<tr><th id="268">268</th><td>};</td></tr>
+<tr><th id="269">269</th><td></td></tr>
+<tr><th id="270">270</th><td><i>/* All supported extension sections, relocated.  Filled in by</i></td></tr>
+<tr><th id="271">271</th><td><i>   cache_extension_load below.  */</i></td></tr>
+<tr><th id="272">272</th><td><b>struct</b> <dfn class="type def" id="cache_extension_all_loaded" title='cache_extension_all_loaded' data-ref="cache_extension_all_loaded" data-ref-filename="cache_extension_all_loaded">cache_extension_all_loaded</dfn></td></tr>
+<tr><th id="273">273</th><td>{</td></tr>
+<tr><th id="274">274</th><td>  <b>struct</b> <a class="type" href="#cache_extension_loaded" title='cache_extension_loaded' data-ref="cache_extension_loaded" data-ref-filename="cache_extension_loaded">cache_extension_loaded</a> <dfn class="decl field" id="cache_extension_all_loaded::sections" title='cache_extension_all_loaded::sections' data-ref="cache_extension_all_loaded::sections" data-ref-filename="cache_extension_all_loaded..sections">sections</dfn>[<a class="enum" href="#cache_extension_count" title='cache_extension_count' data-ref="cache_extension_count" data-ref-filename="cache_extension_count">cache_extension_count</a>];</td></tr>
+<tr><th id="275">275</th><td>};</td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td><i>/* Performs basic data validation based on section tag, and removes</i></td></tr>
+<tr><th id="278">278</th><td><i>   the sections which are invalid.  */</i></td></tr>
+<tr><th id="279">279</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="280">280</th><td><dfn class="decl def fn" id="cache_extension_verify" title='cache_extension_verify' data-ref="cache_extension_verify" data-ref-filename="cache_extension_verify">cache_extension_verify</dfn> (<b>struct</b> <a class="type" href="#cache_extension_all_loaded" title='cache_extension_all_loaded' data-ref="cache_extension_all_loaded" data-ref-filename="cache_extension_all_loaded">cache_extension_all_loaded</a> *<dfn class="local col8 decl" id="48loaded" title='loaded' data-type='struct cache_extension_all_loaded *' data-ref="48loaded" data-ref-filename="48loaded">loaded</dfn>)</td></tr>
+<tr><th id="281">281</th><td>{</td></tr>
+<tr><th id="282">282</th><td>  {</td></tr>
+<tr><th id="283">283</th><td>    <i>/* Section must not be empty, it must be aligned at 4 bytes, and</i></td></tr>
+<tr><th id="284">284</th><td><i>       the size must be a multiple of 4.  */</i></td></tr>
+<tr><th id="285">285</th><td>    <b>struct</b> <a class="type" href="#cache_extension_loaded" title='cache_extension_loaded' data-ref="cache_extension_loaded" data-ref-filename="cache_extension_loaded">cache_extension_loaded</a> *<dfn class="local col9 decl" id="49hwcaps" title='hwcaps' data-type='struct cache_extension_loaded *' data-ref="49hwcaps" data-ref-filename="49hwcaps">hwcaps</dfn></td></tr>
+<tr><th id="286">286</th><td>      = &amp;<a class="local col8 ref" href="#48loaded" title='loaded' data-ref="48loaded" data-ref-filename="48loaded">loaded</a>-&gt;<a class="ref field" href="#cache_extension_all_loaded::sections" title='cache_extension_all_loaded::sections' data-ref="cache_extension_all_loaded::sections" data-ref-filename="cache_extension_all_loaded..sections">sections</a>[<a class="enum" href="#cache_extension_tag_glibc_hwcaps" title='cache_extension_tag_glibc_hwcaps' data-ref="cache_extension_tag_glibc_hwcaps" data-ref-filename="cache_extension_tag_glibc_hwcaps">cache_extension_tag_glibc_hwcaps</a>];</td></tr>
+<tr><th id="287">287</th><td>    <b>if</b> (<a class="local col9 ref" href="#49hwcaps" title='hwcaps' data-ref="49hwcaps" data-ref-filename="49hwcaps">hwcaps</a>-&gt;<a class="ref field" href="#cache_extension_loaded::size" title='cache_extension_loaded::size' data-ref="cache_extension_loaded::size" data-ref-filename="cache_extension_loaded..size">size</a> == <var>0</var></td></tr>
+<tr><th id="288">288</th><td>	|| ((<a class="typedef" href="../../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a>) <a class="local col9 ref" href="#49hwcaps" title='hwcaps' data-ref="49hwcaps" data-ref-filename="49hwcaps">hwcaps</a>-&gt;<a class="ref field" href="#cache_extension_loaded::base" title='cache_extension_loaded::base' data-ref="cache_extension_loaded::base" data-ref-filename="cache_extension_loaded..base">base</a> % <var>4</var>) != <var>0</var></td></tr>
+<tr><th id="289">289</th><td>	|| (<a class="local col9 ref" href="#49hwcaps" title='hwcaps' data-ref="49hwcaps" data-ref-filename="49hwcaps">hwcaps</a>-&gt;<a class="ref field" href="#cache_extension_loaded::size" title='cache_extension_loaded::size' data-ref="cache_extension_loaded::size" data-ref-filename="cache_extension_loaded..size">size</a> % <var>4</var>) != <var>0</var>)</td></tr>
+<tr><th id="290">290</th><td>      {</td></tr>
+<tr><th id="291">291</th><td>	<a class="local col9 ref" href="#49hwcaps" title='hwcaps' data-ref="49hwcaps" data-ref-filename="49hwcaps">hwcaps</a>-&gt;<a class="ref field" href="#cache_extension_loaded::base" title='cache_extension_loaded::base' data-ref="cache_extension_loaded::base" data-ref-filename="cache_extension_loaded..base">base</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="292">292</th><td>	<a class="local col9 ref" href="#49hwcaps" title='hwcaps' data-ref="49hwcaps" data-ref-filename="49hwcaps">hwcaps</a>-&gt;<a class="ref field" href="#cache_extension_loaded::size" title='cache_extension_loaded::size' data-ref="cache_extension_loaded::size" data-ref-filename="cache_extension_loaded..size">size</a> = <var>0</var>;</td></tr>
+<tr><th id="293">293</th><td>	<a class="local col9 ref" href="#49hwcaps" title='hwcaps' data-ref="49hwcaps" data-ref-filename="49hwcaps">hwcaps</a>-&gt;<a class="ref field" href="#cache_extension_loaded::flags" title='cache_extension_loaded::flags' data-ref="cache_extension_loaded::flags" data-ref-filename="cache_extension_loaded..flags">flags</a> = <var>0</var>;</td></tr>
+<tr><th id="294">294</th><td>      }</td></tr>
+<tr><th id="295">295</th><td>  }</td></tr>
+<tr><th id="296">296</th><td>}</td></tr>
+<tr><th id="297">297</th><td></td></tr>
+<tr><th id="298">298</th><td><em>static</em> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span> <b>__attribute__</b> ((unused))</td></tr>
+<tr><th id="299">299</th><td><dfn class="decl def fn" id="cache_extension_load" title='cache_extension_load' data-ref="cache_extension_load" data-ref-filename="cache_extension_load">cache_extension_load</dfn> (<em>const</em> <b>struct</b> <a class="type" href="#cache_file_new" title='cache_file_new' data-ref="cache_file_new" data-ref-filename="cache_file_new">cache_file_new</a> *<dfn class="local col0 decl" id="50cache" title='cache' data-type='const struct cache_file_new *' data-ref="50cache" data-ref-filename="50cache">cache</dfn>,</td></tr>
+<tr><th id="300">300</th><td>		      <em>const</em> <em>void</em> *<dfn class="local col1 decl" id="51file_base" title='file_base' data-type='const void *' data-ref="51file_base" data-ref-filename="51file_base">file_base</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col2 decl" id="52file_size" title='file_size' data-type='size_t' data-ref="52file_size" data-ref-filename="52file_size">file_size</dfn>,</td></tr>
+<tr><th id="301">301</th><td>		      <b>struct</b> <a class="type" href="#cache_extension_all_loaded" title='cache_extension_all_loaded' data-ref="cache_extension_all_loaded" data-ref-filename="cache_extension_all_loaded">cache_extension_all_loaded</a> *<dfn class="local col3 decl" id="53loaded" title='loaded' data-type='struct cache_extension_all_loaded *' data-ref="53loaded" data-ref-filename="53loaded">loaded</dfn>)</td></tr>
+<tr><th id="302">302</th><td>{</td></tr>
+<tr><th id="303">303</th><td>  <a class="ref fn" href="../../string/string.h.html#memset" title='memset' data-ref="memset" data-ref-filename="memset">memset</a> (<a class="local col3 ref" href="#53loaded" title='loaded' data-ref="53loaded" data-ref-filename="53loaded">loaded</a>, <var>0</var>, <b>sizeof</b> (*<a class="local col3 ref" href="#53loaded" title='loaded' data-ref="53loaded" data-ref-filename="53loaded">loaded</a>));</td></tr>
+<tr><th id="304">304</th><td>  <b>if</b> (<a class="local col0 ref" href="#50cache" title='cache' data-ref="50cache" data-ref-filename="50cache">cache</a>-&gt;<a class="ref field" href="#cache_file_new::extension_offset" title='cache_file_new::extension_offset' data-ref="cache_file_new::extension_offset" data-ref-filename="cache_file_new..extension_offset">extension_offset</a> == <var>0</var>)</td></tr>
+<tr><th id="305">305</th><td>    <i>/* No extensions present.  This is not a format error.  */</i></td></tr>
+<tr><th id="306">306</th><td>    <b>return</b> <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="307">307</th><td>  <b>if</b> ((<a class="local col0 ref" href="#50cache" title='cache' data-ref="50cache" data-ref-filename="50cache">cache</a>-&gt;<a class="ref field" href="#cache_file_new::extension_offset" title='cache_file_new::extension_offset' data-ref="cache_file_new::extension_offset" data-ref-filename="cache_file_new..extension_offset">extension_offset</a> % <var>4</var>) != <var>0</var>)</td></tr>
+<tr><th id="308">308</th><td>    <i>/* Extension offset is misaligned.  */</i></td></tr>
+<tr><th id="309">309</th><td>    <b>return</b> <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="310">310</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col4 decl" id="54size_tmp" title='size_tmp' data-type='size_t' data-ref="54size_tmp" data-ref-filename="54size_tmp">size_tmp</dfn>;</td></tr>
+<tr><th id="311">311</th><td>  <b>if</b> (<a class="ref fn" href="#311" title='__builtin_add_overflow' data-ref="__builtin_add_overflow" data-ref-filename="__builtin_add_overflow">__builtin_add_overflow</a> (<a class="local col0 ref" href="#50cache" title='cache' data-ref="50cache" data-ref-filename="50cache">cache</a>-&gt;<a class="ref field" href="#cache_file_new::extension_offset" title='cache_file_new::extension_offset' data-ref="cache_file_new::extension_offset" data-ref-filename="cache_file_new..extension_offset">extension_offset</a>,</td></tr>
+<tr><th id="312">312</th><td>			      <b>sizeof</b> (<b>struct</b> <a class="type" href="#cache_extension" title='cache_extension' data-ref="cache_extension" data-ref-filename="cache_extension">cache_extension</a>), &amp;<a class="local col4 ref" href="#54size_tmp" title='size_tmp' data-ref="54size_tmp" data-ref-filename="54size_tmp">size_tmp</a>)</td></tr>
+<tr><th id="313">313</th><td>      || <a class="local col4 ref" href="#54size_tmp" title='size_tmp' data-ref="54size_tmp" data-ref-filename="54size_tmp">size_tmp</a> &gt; <a class="local col2 ref" href="#52file_size" title='file_size' data-ref="52file_size" data-ref-filename="52file_size">file_size</a>)</td></tr>
+<tr><th id="314">314</th><td>    <i>/* Extension extends beyond the end of the file.  */</i></td></tr>
+<tr><th id="315">315</th><td>    <b>return</b> <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="316">316</th><td>  <em>const</em> <b>struct</b> <a class="type" href="#cache_extension" title='cache_extension' data-ref="cache_extension" data-ref-filename="cache_extension">cache_extension</a> *<dfn class="local col5 decl" id="55ext" title='ext' data-type='const struct cache_extension *' data-ref="55ext" data-ref-filename="55ext">ext</dfn> = <a class="local col1 ref" href="#51file_base" title='file_base' data-ref="51file_base" data-ref-filename="51file_base">file_base</a> + <a class="local col0 ref" href="#50cache" title='cache' data-ref="50cache" data-ref-filename="50cache">cache</a>-&gt;<a class="ref field" href="#cache_file_new::extension_offset" title='cache_file_new::extension_offset' data-ref="cache_file_new::extension_offset" data-ref-filename="cache_file_new..extension_offset">extension_offset</a>;</td></tr>
+<tr><th id="317">317</th><td>  <b>if</b> (<a class="local col5 ref" href="#55ext" title='ext' data-ref="55ext" data-ref-filename="55ext">ext</a>-&gt;<a class="ref field" href="#cache_extension::magic" title='cache_extension::magic' data-ref="cache_extension::magic" data-ref-filename="cache_extension..magic">magic</a> != <a class="enum" href="#cache_extension_magic" title='cache_extension_magic' data-ref="cache_extension_magic" data-ref-filename="cache_extension_magic">cache_extension_magic</a>)</td></tr>
+<tr><th id="318">318</th><td>    <b>return</b> <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="319">319</th><td>  <b>if</b> (<a class="ref fn" href="#319" title='__builtin_mul_overflow' data-ref="__builtin_mul_overflow" data-ref-filename="__builtin_mul_overflow">__builtin_mul_overflow</a> (<a class="local col5 ref" href="#55ext" title='ext' data-ref="55ext" data-ref-filename="55ext">ext</a>-&gt;<a class="ref field" href="#cache_extension::count" title='cache_extension::count' data-ref="cache_extension::count" data-ref-filename="cache_extension..count">count</a>,</td></tr>
+<tr><th id="320">320</th><td>			      <b>sizeof</b> (<b>struct</b> <a class="type" href="#cache_extension_section" title='cache_extension_section' data-ref="cache_extension_section" data-ref-filename="cache_extension_section">cache_extension_section</a>),</td></tr>
+<tr><th id="321">321</th><td>			      &amp;<a class="local col4 ref" href="#54size_tmp" title='size_tmp' data-ref="54size_tmp" data-ref-filename="54size_tmp">size_tmp</a>)</td></tr>
+<tr><th id="322">322</th><td>      || <a class="ref fn" href="#311" title='__builtin_add_overflow' data-ref="__builtin_add_overflow" data-ref-filename="__builtin_add_overflow">__builtin_add_overflow</a> (<a class="local col0 ref" href="#50cache" title='cache' data-ref="50cache" data-ref-filename="50cache">cache</a>-&gt;<a class="ref field" href="#cache_file_new::extension_offset" title='cache_file_new::extension_offset' data-ref="cache_file_new::extension_offset" data-ref-filename="cache_file_new..extension_offset">extension_offset</a></td></tr>
+<tr><th id="323">323</th><td>				 + <b>sizeof</b> (<b>struct</b> <a class="type" href="#cache_extension" title='cache_extension' data-ref="cache_extension" data-ref-filename="cache_extension">cache_extension</a>), <a class="local col4 ref" href="#54size_tmp" title='size_tmp' data-ref="54size_tmp" data-ref-filename="54size_tmp">size_tmp</a>,</td></tr>
+<tr><th id="324">324</th><td>				 &amp;<a class="local col4 ref" href="#54size_tmp" title='size_tmp' data-ref="54size_tmp" data-ref-filename="54size_tmp">size_tmp</a>)</td></tr>
+<tr><th id="325">325</th><td>      || <a class="local col4 ref" href="#54size_tmp" title='size_tmp' data-ref="54size_tmp" data-ref-filename="54size_tmp">size_tmp</a> &gt; <a class="local col2 ref" href="#52file_size" title='file_size' data-ref="52file_size" data-ref-filename="52file_size">file_size</a>)</td></tr>
+<tr><th id="326">326</th><td>    <i>/* Extension array extends beyond the end of the file.  */</i></td></tr>
+<tr><th id="327">327</th><td>    <b>return</b> <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="328">328</th><td>  <b>for</b> (<a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="local col6 decl" id="56i" title='i' data-type='uint32_t' data-ref="56i" data-ref-filename="56i">i</dfn> = <var>0</var>; <a class="local col6 ref" href="#56i" title='i' data-ref="56i" data-ref-filename="56i">i</a> &lt; <a class="local col5 ref" href="#55ext" title='ext' data-ref="55ext" data-ref-filename="55ext">ext</a>-&gt;<a class="ref field" href="#cache_extension::count" title='cache_extension::count' data-ref="cache_extension::count" data-ref-filename="cache_extension..count">count</a>; ++<a class="local col6 ref" href="#56i" title='i' data-ref="56i" data-ref-filename="56i">i</a>)</td></tr>
+<tr><th id="329">329</th><td>    {</td></tr>
+<tr><th id="330">330</th><td>      <b>if</b> (<a class="ref fn" href="#311" title='__builtin_add_overflow' data-ref="__builtin_add_overflow" data-ref-filename="__builtin_add_overflow">__builtin_add_overflow</a> (<a class="local col5 ref" href="#55ext" title='ext' data-ref="55ext" data-ref-filename="55ext">ext</a>-&gt;<a class="ref field" href="#cache_extension::sections" title='cache_extension::sections' data-ref="cache_extension::sections" data-ref-filename="cache_extension..sections">sections</a>[<a class="local col6 ref" href="#56i" title='i' data-ref="56i" data-ref-filename="56i">i</a>].<a class="ref field" href="#cache_extension_section::offset" title='cache_extension_section::offset' data-ref="cache_extension_section::offset" data-ref-filename="cache_extension_section..offset">offset</a>,</td></tr>
+<tr><th id="331">331</th><td>				  <a class="local col5 ref" href="#55ext" title='ext' data-ref="55ext" data-ref-filename="55ext">ext</a>-&gt;<a class="ref field" href="#cache_extension::sections" title='cache_extension::sections' data-ref="cache_extension::sections" data-ref-filename="cache_extension..sections">sections</a>[<a class="local col6 ref" href="#56i" title='i' data-ref="56i" data-ref-filename="56i">i</a>].<a class="ref field" href="#cache_extension_section::size" title='cache_extension_section::size' data-ref="cache_extension_section::size" data-ref-filename="cache_extension_section..size">size</a>, &amp;<a class="local col4 ref" href="#54size_tmp" title='size_tmp' data-ref="54size_tmp" data-ref-filename="54size_tmp">size_tmp</a>)</td></tr>
+<tr><th id="332">332</th><td>	  || <a class="local col4 ref" href="#54size_tmp" title='size_tmp' data-ref="54size_tmp" data-ref-filename="54size_tmp">size_tmp</a> &gt; <a class="local col2 ref" href="#52file_size" title='file_size' data-ref="52file_size" data-ref-filename="52file_size">file_size</a>)</td></tr>
+<tr><th id="333">333</th><td>	<i>/* Extension data extends beyond the end of the file.  */</i></td></tr>
+<tr><th id="334">334</th><td>	<b>return</b> <span class="macro" title="0" data-ref="_M/false">false</span>;</td></tr>
+<tr><th id="335">335</th><td></td></tr>
+<tr><th id="336">336</th><td>      <a class="typedef" href="../../bits/stdint-uintn.h.html#uint32_t" title='uint32_t' data-type='__uint32_t' data-ref="uint32_t" data-ref-filename="uint32_t">uint32_t</a> <dfn class="local col7 decl" id="57tag" title='tag' data-type='uint32_t' data-ref="57tag" data-ref-filename="57tag">tag</dfn> = <a class="local col5 ref" href="#55ext" title='ext' data-ref="55ext" data-ref-filename="55ext">ext</a>-&gt;<a class="ref field" href="#cache_extension::sections" title='cache_extension::sections' data-ref="cache_extension::sections" data-ref-filename="cache_extension..sections">sections</a>[<a class="local col6 ref" href="#56i" title='i' data-ref="56i" data-ref-filename="56i">i</a>].<a class="ref field" href="#cache_extension_section::tag" title='cache_extension_section::tag' data-ref="cache_extension_section::tag" data-ref-filename="cache_extension_section..tag">tag</a>;</td></tr>
+<tr><th id="337">337</th><td>      <b>if</b> (<a class="local col7 ref" href="#57tag" title='tag' data-ref="57tag" data-ref-filename="57tag">tag</a> &gt;= <a class="enum" href="#cache_extension_count" title='cache_extension_count' data-ref="cache_extension_count" data-ref-filename="cache_extension_count">cache_extension_count</a>)</td></tr>
+<tr><th id="338">338</th><td>	<i>/* Tag is out of range and unrecognized.  */</i></td></tr>
+<tr><th id="339">339</th><td>	<b>continue</b>;</td></tr>
+<tr><th id="340">340</th><td>      <a class="local col3 ref" href="#53loaded" title='loaded' data-ref="53loaded" data-ref-filename="53loaded">loaded</a>-&gt;<a class="ref field" href="#cache_extension_all_loaded::sections" title='cache_extension_all_loaded::sections' data-ref="cache_extension_all_loaded::sections" data-ref-filename="cache_extension_all_loaded..sections">sections</a>[<a class="local col7 ref" href="#57tag" title='tag' data-ref="57tag" data-ref-filename="57tag">tag</a>].<a class="ref field" href="#cache_extension_loaded::base" title='cache_extension_loaded::base' data-ref="cache_extension_loaded::base" data-ref-filename="cache_extension_loaded..base">base</a> = <a class="local col1 ref" href="#51file_base" title='file_base' data-ref="51file_base" data-ref-filename="51file_base">file_base</a> + <a class="local col5 ref" href="#55ext" title='ext' data-ref="55ext" data-ref-filename="55ext">ext</a>-&gt;<a class="ref field" href="#cache_extension::sections" title='cache_extension::sections' data-ref="cache_extension::sections" data-ref-filename="cache_extension..sections">sections</a>[<a class="local col6 ref" href="#56i" title='i' data-ref="56i" data-ref-filename="56i">i</a>].<a class="ref field" href="#cache_extension_section::offset" title='cache_extension_section::offset' data-ref="cache_extension_section::offset" data-ref-filename="cache_extension_section..offset">offset</a>;</td></tr>
+<tr><th id="341">341</th><td>      <a class="local col3 ref" href="#53loaded" title='loaded' data-ref="53loaded" data-ref-filename="53loaded">loaded</a>-&gt;<a class="ref field" href="#cache_extension_all_loaded::sections" title='cache_extension_all_loaded::sections' data-ref="cache_extension_all_loaded::sections" data-ref-filename="cache_extension_all_loaded..sections">sections</a>[<a class="local col7 ref" href="#57tag" title='tag' data-ref="57tag" data-ref-filename="57tag">tag</a>].<a class="ref field" href="#cache_extension_loaded::size" title='cache_extension_loaded::size' data-ref="cache_extension_loaded::size" data-ref-filename="cache_extension_loaded..size">size</a> = <a class="local col5 ref" href="#55ext" title='ext' data-ref="55ext" data-ref-filename="55ext">ext</a>-&gt;<a class="ref field" href="#cache_extension::sections" title='cache_extension::sections' data-ref="cache_extension::sections" data-ref-filename="cache_extension..sections">sections</a>[<a class="local col6 ref" href="#56i" title='i' data-ref="56i" data-ref-filename="56i">i</a>].<a class="ref field" href="#cache_extension_section::size" title='cache_extension_section::size' data-ref="cache_extension_section::size" data-ref-filename="cache_extension_section..size">size</a>;</td></tr>
+<tr><th id="342">342</th><td>      <a class="local col3 ref" href="#53loaded" title='loaded' data-ref="53loaded" data-ref-filename="53loaded">loaded</a>-&gt;<a class="ref field" href="#cache_extension_all_loaded::sections" title='cache_extension_all_loaded::sections' data-ref="cache_extension_all_loaded::sections" data-ref-filename="cache_extension_all_loaded..sections">sections</a>[<a class="local col7 ref" href="#57tag" title='tag' data-ref="57tag" data-ref-filename="57tag">tag</a>].<a class="ref field" href="#cache_extension_loaded::flags" title='cache_extension_loaded::flags' data-ref="cache_extension_loaded::flags" data-ref-filename="cache_extension_loaded..flags">flags</a> = <a class="local col5 ref" href="#55ext" title='ext' data-ref="55ext" data-ref-filename="55ext">ext</a>-&gt;<a class="ref field" href="#cache_extension::sections" title='cache_extension::sections' data-ref="cache_extension::sections" data-ref-filename="cache_extension..sections">sections</a>[<a class="local col6 ref" href="#56i" title='i' data-ref="56i" data-ref-filename="56i">i</a>].<a class="ref field" href="#cache_extension_section::flags" title='cache_extension_section::flags' data-ref="cache_extension_section::flags" data-ref-filename="cache_extension_section..flags">flags</a>;</td></tr>
+<tr><th id="343">343</th><td>    }</td></tr>
+<tr><th id="344">344</th><td>  <a class="ref fn" href="#cache_extension_verify" title='cache_extension_verify' data-ref="cache_extension_verify" data-ref-filename="cache_extension_verify">cache_extension_verify</a> (<a class="local col3 ref" href="#53loaded" title='loaded' data-ref="53loaded" data-ref-filename="53loaded">loaded</a>);</td></tr>
+<tr><th id="345">345</th><td>  <b>return</b> <span class="macro" title="1" data-ref="_M/true">true</span>;</td></tr>
+<tr><th id="346">346</th><td>}</td></tr>
+<tr><th id="347">347</th><td></td></tr>
+<tr><th id="348">348</th><td><i>/* Used to align cache_file_new.  */</i></td></tr>
+<tr><th id="349">349</th><td><u>#define <dfn class="macro" id="_M/ALIGN_CACHE" data-ref="_M/ALIGN_CACHE">ALIGN_CACHE</dfn>(addr)				\</u></td></tr>
+<tr><th id="350">350</th><td><u>(((addr) + __alignof__ (struct cache_file_new) -1)	\</u></td></tr>
+<tr><th id="351">351</th><td><u> &amp; (~(__alignof__ (struct cache_file_new) - 1)))</u></td></tr>
+<tr><th id="352">352</th><td></td></tr>
+<tr><th id="353">353</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="_dl_cache_libcmp" title='_dl_cache_libcmp' data-ref="_dl_cache_libcmp" data-ref-filename="_dl_cache_libcmp">_dl_cache_libcmp</dfn> (<em>const</em> <em>char</em> *<dfn class="local col8 decl" id="58p1" title='p1' data-type='const char *' data-ref="58p1" data-ref-filename="58p1">p1</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="59p2" title='p2' data-type='const char *' data-ref="59p2" data-ref-filename="59p2">p2</dfn>) <a class="macro" href="../../include/libc-symbols.h.html#438" title="" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="354">354</th><td></td></tr>
+<tr><th id="355">355</th><td><u>#<span data-ppcond="19">endif</span> /* _DL_CACHE_H */</u></td></tr>
+<tr><th id="356">356</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../elf/cache.c.html'>codebrowser/elf/cache.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

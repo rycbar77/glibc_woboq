@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/pwd.h' l='42' macro='1' type='enum nss_status _nss_compat_getpwuid_r(uid_t uid, struct passwd * pwd, char * buffer, size_t buflen, int * errnop)'/>
+<dec f='codebrowser/nss/nss_compat/compat-grp.c' l='30' macro='1' type='enum nss_status _nss_compat_getpwuid_r(__uid_t , struct passwd * , char * , size_t , int * )'/>
+<dec f='codebrowser/nss/nss_compat/compat-initgroups.c' l='33' macro='1' type='enum nss_status _nss_compat_getpwuid_r(__uid_t , struct passwd * , char * , size_t , int * )'/>
+<dec f='codebrowser/nss/nss_compat/compat-pwd.c' l='34' macro='1' type='enum nss_status _nss_compat_getpwuid_r(__uid_t , struct passwd * , char * , size_t , int * )'/>
+<def f='codebrowser/nss/nss_compat/compat-pwd.c' l='1052' ll='1075' type='enum nss_status _nss_compat_getpwuid_r(uid_t uid, struct passwd * pwd, char * buffer, size_t buflen, int * errnop)'/>
+<dec f='codebrowser/nss/nss_compat/compat-spwd.c' l='34' macro='1' type='enum nss_status _nss_compat_getpwuid_r(__uid_t , struct passwd * , char * , size_t , int * )'/>

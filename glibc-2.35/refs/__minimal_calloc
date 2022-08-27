@@ -1,0 +1,6 @@
+<def f='codebrowser/elf/dl-minimal-malloc.c' l='76' ll='90' type='void * __minimal_calloc(size_t nmemb, size_t size)'/>
+<doc f='codebrowser/elf/dl-minimal-malloc.c' l='73'>/* We use this function occasionally since the real implementation may
+   be optimized when it can assume the memory it returns already is
+   set to NUL.  */</doc>
+<dec f='codebrowser/sysdeps/generic/dl-minimal-malloc.h' l='24' type='void * __minimal_calloc(size_t nmemb, size_t size)'/>
+<use f='codebrowser/elf/dl-minimal.c' l='43' u='a' c='__rtld_malloc_init_stubs'/>

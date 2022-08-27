@@ -1,0 +1,7 @@
+<dec f='codebrowser/nscd/nscd.h' l='49'/>
+<doc f='codebrowser/nscd/nscd.h' l='44'>/* Default limit on the number of times a value gets reloaded without
+   being used in the meantime.  NSCD does not throw a value out as
+   soon as it times out.  It tries to reload the value from the
+   server.  Only if the value has not been used for so many rounds it
+   is removed.  */</doc>
+<use f='codebrowser/nscd/cache.c' l='43' u='c'/>

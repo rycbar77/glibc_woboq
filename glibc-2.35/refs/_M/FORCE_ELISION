@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/lowlevellock.h' l='219'/>
+<doc f='codebrowser/sysdeps/nptl/lowlevellock.h' l='218'>/* Automatically enable elision for existing user lock kinds.  */</doc>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='90' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='85' u='c'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='70' u='c'/>

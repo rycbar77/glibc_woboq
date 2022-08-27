@@ -1,0 +1,5 @@
+<def f='codebrowser/iconv/gconv_parseconfdir.h' l='115' ll='176' type='_Bool gconv_parseconfdir(const char * prefix, const char * dir, size_t dir_len)'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='480' u='c' c='__gconv_read_conf'/>
+<doc f='codebrowser/iconv/gconv_parseconfdir.h' l='112'>/* Prefix DIR (with length DIR_LEN) with PREFIX if the latter is non-NULL and
+   parse configuration in it.  */</doc>
+<use f='codebrowser/iconv/iconvconfig.c' l='669' u='c' c='handle_dir'/>

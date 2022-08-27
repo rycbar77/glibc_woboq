@@ -1,0 +1,42 @@
+<dec f='codebrowser/include/string.h' l='25' type='int __strcasecmp(const char * __s1, const char * __s2)'/>
+<dec f='codebrowser/include/string.h' l='95' type='int __strcasecmp(const char * , const char * )'/>
+<use f='codebrowser/include/string.h' l='95' c='__strcasecmp'/>
+<use f='codebrowser/argp/argp-help.c' l='886' u='c' c='hol_entry_cmp'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='56' u='c' c='_nss_db_gethostton_r'/>
+<use f='codebrowser/iconvdata/iso-2022-jp.c' l='144' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/iso-2022-jp.c' l='149' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/iso-2022-jp.c' l='154' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/iso-2022-jp.c' l='159' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/iso646.c' l='138' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/iso646.c' l='143' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-16.c' l='118' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-16.c' l='123' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-16.c' l='128' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-16.c' l='133' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-16.c' l='138' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-16.c' l='143' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-32.c' l='116' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-32.c' l='121' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-32.c' l='126' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-32.c' l='131' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-32.c' l='136' u='c' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-32.c' l='141' u='c' c='gconv_init'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='449' u='c' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='453' u='c' c='innetgr'/>
+<use f='codebrowser/inet/ruserpass.c' l='139' u='c' c='ruserpass'/>
+<use f='codebrowser/inet/ruserpass.c' l='149' u='c' c='ruserpass'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='150' u='c' c='get_next_alias'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='181' macro='1' u='c' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='181' macro='1' u='c' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='343' macro='1' u='c' c='_nss_files_gethostbyname3_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='343' macro='1' u='c' c='_nss_files_gethostbyname3_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='410' u='c' c='_nss_files_gethostbyname4_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='413' u='c' c='_nss_files_gethostbyname4_r'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='79' macro='1' u='c' c='_nss_files_getnetbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-network.c' l='79' macro='1' u='c' c='_nss_files_getnetbyname_r'/>
+<use f='codebrowser/resolv/ns_samename.c' l='33' u='c' c='__libc_ns_samename'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='878' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='908' u='c' c='getanswer_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='470' u='c' c='getanswer_r'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strcasecmp.c' l='31' macro='1' type='int __strcasecmp(const char * , const char * )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strcasecmp.c' l='34' c='strcasecmp'/>

@@ -1,0 +1,206 @@
+<dec f='codebrowser/libio/bits/types/struct_FILE.h' l='55' type='char *'/>
+<use f='codebrowser/libio/bits/stdio.h' l='58' macro='1' u='r' c='fgetc_unlocked'/>
+<use f='codebrowser/libio/bits/stdio.h' l='68' macro='1' u='r' c='getc_unlocked'/>
+<use f='codebrowser/libio/bits/stdio.h' l='75' macro='1' u='r' c='getchar_unlocked'/>
+<use f='codebrowser/include/stdio.h' l='284' macro='1' u='r' c='__getc_unlocked'/>
+<offset>128</offset>
+<doc f='codebrowser/libio/bits/types/struct_FILE.h' l='55'>/* End of get area. */</doc>
+<use f='codebrowser/debug/gets_chk.c' l='41' macro='1' u='r' c='__gets_chk'/>
+<use f='codebrowser/libio/__fpurge.c' l='39' u='w' c='__fpurge'/>
+<use f='codebrowser/libio/fileops.c' l='154' macro='1' u='w' c='_IO_new_file_close_it'/>
+<use f='codebrowser/libio/fileops.c' l='387' macro='1' u='w' c='_IO_new_file_setbuf'/>
+<use f='codebrowser/libio/fileops.c' l='440' u='r' c='new_do_write'/>
+<use f='codebrowser/libio/fileops.c' l='443' u='r' c='new_do_write'/>
+<use f='codebrowser/libio/fileops.c' l='451' macro='1' u='w' c='new_do_write'/>
+<use f='codebrowser/libio/fileops.c' l='474' u='r' c='_IO_new_file_underflow'/>
+<use f='codebrowser/libio/fileops.c' l='512' u='w' c='_IO_new_file_underflow'/>
+<use f='codebrowser/libio/fileops.c' l='525' u='w' c='_IO_new_file_underflow'/>
+<use f='codebrowser/libio/fileops.c' l='598' u='r' c='mmap_remap_check'/>
+<use f='codebrowser/libio/fileops.c' l='599' macro='1' u='w' c='mmap_remap_check'/>
+<use f='codebrowser/libio/fileops.c' l='628' macro='1' u='w' c='mmap_remap_check'/>
+<use f='codebrowser/libio/fileops.c' l='643' u='r' c='_IO_file_underflow_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='650' u='r' c='_IO_file_underflow_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='696' macro='1' u='w' c='decide_maybe_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='745' macro='1' u='w' c='_IO_new_file_overflow'/>
+<use f='codebrowser/libio/fileops.c' l='756' u='r' c='_IO_new_file_overflow'/>
+<use f='codebrowser/libio/fileops.c' l='764' u='w' c='_IO_new_file_overflow'/>
+<use f='codebrowser/libio/fileops.c' l='768' u='r' c='_IO_new_file_overflow'/>
+<use f='codebrowser/libio/fileops.c' l='799' u='r' c='_IO_new_file_sync'/>
+<use f='codebrowser/libio/fileops.c' l='804' u='w' c='_IO_new_file_sync'/>
+<use f='codebrowser/libio/fileops.c' l='821' u='r' c='_IO_file_sync_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='832' u='w' c='_IO_file_sync_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='866' u='r' c='do_ftell'/>
+<use f='codebrowser/libio/fileops.c' l='876' u='r' c='do_ftell'/>
+<use f='codebrowser/libio/fileops.c' l='913' u='r' c='_IO_new_file_seekoff'/>
+<use f='codebrowser/libio/fileops.c' l='939' macro='1' u='w' c='_IO_new_file_seekoff'/>
+<use f='codebrowser/libio/fileops.c' l='946' u='r' c='_IO_new_file_seekoff'/>
+<use f='codebrowser/libio/fileops.c' l='984' u='r' c='_IO_new_file_seekoff'/>
+<use f='codebrowser/libio/fileops.c' l='987' macro='1' u='w' c='_IO_new_file_seekoff'/>
+<use f='codebrowser/libio/fileops.c' l='989' u='r' c='_IO_new_file_seekoff'/>
+<use f='codebrowser/libio/fileops.c' l='1026' macro='1' u='w' c='_IO_new_file_seekoff'/>
+<use f='codebrowser/libio/fileops.c' l='1040' macro='1' u='w' c='_IO_new_file_seekoff'/>
+<use f='codebrowser/libio/fileops.c' l='1067' u='r' c='_IO_file_seekoff_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='1098' macro='1' u='w' c='_IO_file_seekoff_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='1102' macro='1' u='w' c='_IO_file_seekoff_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='1292' u='r' c='_IO_file_xsgetn'/>
+<use f='codebrowser/libio/fileops.c' l='1329' macro='1' u='w' c='_IO_file_xsgetn'/>
+<use f='codebrowser/libio/fileops.c' l='1370' u='r' c='_IO_file_xsgetn_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='1380' u='r' c='_IO_file_xsgetn_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='1391' u='r' c='_IO_file_xsgetn_mmap'/>
+<use f='codebrowser/libio/genops.c' l='132' u='r' c='_IO_switch_to_main_get_area'/>
+<use f='codebrowser/libio/genops.c' l='133' u='w' c='_IO_switch_to_main_get_area'/>
+<use f='codebrowser/libio/genops.c' l='151' u='r' c='_IO_switch_to_backup_area'/>
+<use f='codebrowser/libio/genops.c' l='152' u='w' c='_IO_switch_to_backup_area'/>
+<use f='codebrowser/libio/genops.c' l='159' u='r' c='_IO_switch_to_backup_area'/>
+<use f='codebrowser/libio/genops.c' l='173' u='r' c='_IO_switch_to_get_mode'/>
+<use f='codebrowser/libio/genops.c' l='174' u='w' c='_IO_switch_to_get_mode'/>
+<use f='codebrowser/libio/genops.c' l='278' u='r' c='__underflow'/>
+<use f='codebrowser/libio/genops.c' l='283' u='r' c='__underflow'/>
+<use f='codebrowser/libio/genops.c' l='288' u='r' c='__underflow'/>
+<use f='codebrowser/libio/genops.c' l='308' u='r' c='__uflow'/>
+<use f='codebrowser/libio/genops.c' l='313' u='r' c='__uflow'/>
+<use f='codebrowser/libio/genops.c' l='318' u='r' c='__uflow'/>
+<use f='codebrowser/libio/genops.c' l='423' u='r' c='_IO_default_xsgetn'/>
+<use f='codebrowser/libio/genops.c' l='425' u='r' c='_IO_default_xsgetn'/>
+<use f='codebrowser/libio/genops.c' l='466' u='w' c='_IO_default_setbuf'/>
+<use f='codebrowser/libio/genops.c' l='540' u='w' c='_IO_old_init'/>
+<use f='codebrowser/libio/genops.c' l='888' u='r' c='_IO_init_marker'/>
+<use f='codebrowser/libio/genops.c' l='932' u='r' c='_IO_marker_delta'/>
+<use f='codebrowser/libio/genops.c' l='953' u='r' c='_IO_seekmark'/>
+<use f='codebrowser/libio/genops.c' l='1009' u='r' c='_IO_default_pbackfail'/>
+<use f='codebrowser/libio/genops.c' l='1018' macro='1' u='w' c='_IO_default_pbackfail'/>
+<use f='codebrowser/libio/getc.c' l='38' macro='1' u='r' c='_IO_getc'/>
+<use f='codebrowser/libio/getc.c' l='40' macro='1' u='r' c='_IO_getc'/>
+<use f='codebrowser/libio/getc_u.c' l='36' macro='1' u='r' c='__getc_unlocked'/>
+<use f='codebrowser/libio/getchar.c' l='37' macro='1' u='r' c='getchar'/>
+<use f='codebrowser/libio/getchar.c' l='39' macro='1' u='r' c='getchar'/>
+<use f='codebrowser/libio/getchar_u.c' l='35' macro='1' u='r' c='getchar_unlocked'/>
+<use f='codebrowser/libio/iogetdelim.c' l='70' u='r' c='__getdelim'/>
+<use f='codebrowser/libio/iogetdelim.c' l='78' u='r' c='__getdelim'/>
+<use f='codebrowser/libio/iogetdelim.c' l='116' u='r' c='__getdelim'/>
+<use f='codebrowser/libio/iogetline.c' l='57' u='r' c='_IO_getline_info'/>
+<use f='codebrowser/libio/iogets.c' l='38' macro='1' u='r' c='_IO_gets'/>
+<use f='codebrowser/libio/ioseekoff.c' l='49' u='r' c='_IO_seekoff_unlocked'/>
+<use f='codebrowser/libio/peekc.c' l='38' macro='1' u='r' c='_IO_peekc_locked'/>
+<use f='codebrowser/libio/strops.c' l='55' u='w' c='_IO_str_init_static_internal'/>
+<use f='codebrowser/libio/strops.c' l='61' u='w' c='_IO_str_init_static_internal'/>
+<use f='codebrowser/libio/strops.c' l='91' u='r' c='_IO_str_overflow'/>
+<use f='codebrowser/libio/strops.c' l='124' u='w' c='_IO_str_overflow'/>
+<use f='codebrowser/libio/strops.c' l='124' u='r' c='_IO_str_overflow'/>
+<use f='codebrowser/libio/strops.c' l='134' u='r' c='_IO_str_overflow'/>
+<use f='codebrowser/libio/strops.c' l='135' u='w' c='_IO_str_overflow'/>
+<use f='codebrowser/libio/strops.c' l='143' u='r' c='_IO_str_underflow'/>
+<use f='codebrowser/libio/strops.c' l='144' u='w' c='_IO_str_underflow'/>
+<use f='codebrowser/libio/strops.c' l='151' u='r' c='_IO_str_underflow'/>
+<use f='codebrowser/libio/strops.c' l='163' u='r' c='_IO_str_count'/>
+<use f='codebrowser/libio/strops.c' l='164' u='r' c='_IO_str_count'/>
+<use f='codebrowser/libio/strops.c' l='207' u='w' c='enlarge_userbuf'/>
+<use f='codebrowser/libio/strops.c' l='213' u='w' c='enlarge_userbuf'/>
+<use f='codebrowser/libio/strops.c' l='213' u='r' c='enlarge_userbuf'/>
+<use f='codebrowser/libio/strops.c' l='239' u='r' c='_IO_str_switch_to_get_mode'/>
+<use f='codebrowser/libio/strops.c' l='240' u='w' c='_IO_str_switch_to_get_mode'/>
+<use f='codebrowser/libio/strops.c' l='242' u='w' c='_IO_str_switch_to_get_mode'/>
+<use f='codebrowser/libio/strops.c' l='296' u='w' c='_IO_str_seekoff'/>
+<use f='codebrowser/libio/vsnprintf.c' l='55' u='w' c='_IO_strn_overflow'/>
+<use f='codebrowser/libio/wfileops.c' l='133' u='r' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='142' u='r' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='164' u='r' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='165' u='w' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='166' u='r' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='170' u='w' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='183' u='w' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='230' u='r' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='231' u='r' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='242' u='w' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='258' u='r' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='296' u='r' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='299' u='w' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='302' u='r' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='321' u='w' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='349' u='r' c='_IO_wfile_underflow_mmap'/>
+<use f='codebrowser/libio/wfileops.c' l='374' u='r' c='_IO_wfile_underflow_mmap'/>
+<use f='codebrowser/libio/wfileops.c' l='428' macro='1' u='w' c='_IO_wfile_overflow'/>
+<use f='codebrowser/libio/wfileops.c' l='443' u='w' c='_IO_wfile_overflow'/>
+<use f='codebrowser/libio/wfileops.c' l='457' u='r' c='_IO_wfile_overflow'/>
+<use f='codebrowser/libio/wfileops.c' l='514' u='r' c='_IO_wfile_sync'/>
+<use f='codebrowser/libio/wfileops.c' l='516' u='r' c='_IO_wfile_sync'/>
+<use f='codebrowser/libio/wfileops.c' l='523' u='w' c='_IO_wfile_sync'/>
+<use f='codebrowser/libio/wfileops.c' l='656' u='r' c='do_ftell_wide'/>
+<use f='codebrowser/libio/wfileops.c' l='666' u='r' c='do_ftell_wide'/>
+<use f='codebrowser/libio/wfileops.c' l='667' u='r' c='do_ftell_wide'/>
+<use f='codebrowser/libio/wfileops.c' l='717' u='r' c='do_ftell_wide'/>
+<use f='codebrowser/libio/wfileops.c' l='784' macro='1' u='w' c='_IO_wfile_seekoff'/>
+<use f='codebrowser/libio/wfileops.c' l='810' u='r' c='_IO_wfile_seekoff'/>
+<use f='codebrowser/libio/wfileops.c' l='822' u='r' c='_IO_wfile_seekoff'/>
+<use f='codebrowser/libio/wfileops.c' l='825' u='r' c='_IO_wfile_seekoff'/>
+<use f='codebrowser/libio/wfileops.c' l='861' u='r' c='_IO_wfile_seekoff'/>
+<use f='codebrowser/libio/wfileops.c' l='864' macro='1' u='w' c='_IO_wfile_seekoff'/>
+<use f='codebrowser/libio/wfileops.c' l='866' u='r' c='_IO_wfile_seekoff'/>
+<use f='codebrowser/libio/wfileops.c' l='911' macro='1' u='w' c='_IO_wfile_seekoff'/>
+<use f='codebrowser/libio/wfileops.c' l='932' macro='1' u='w' c='_IO_wfile_seekoff'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='427' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='453' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='464' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='628' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='640' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='740' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='839' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='842' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='866' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='977' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='994' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1021' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1144' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1211' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1293' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1353' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1398' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1408' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1418' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1428' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1577' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1630' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1686' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1728' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1759' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1801' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1822' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1822' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1822' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1822' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1822' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1823' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1823' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1823' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1823' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1823' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1824' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1824' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1824' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1824' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1824' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1825' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1912' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1925' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1938' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1945' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1959' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1966' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1973' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1982' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1989' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='1996' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2003' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2021' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2034' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2097' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2133' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2159' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2183' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2330' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2388' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2652' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2733' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2767' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='2936' macro='1' u='r' c='__vfscanf_internal'/>
+<use f='codebrowser/stdio-common/vfscanf-internal.c' l='3018' macro='1' u='r' c='__vfscanf_internal'/>

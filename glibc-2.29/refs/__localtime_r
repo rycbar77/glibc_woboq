@@ -1,0 +1,9 @@
+<use f='codebrowser/misc/syslog.c' l='213' u='c' c='__vsyslog_internal'/>
+<use f='codebrowser/time/ctime_r.c' l='28' macro='1' u='c' c='ctime_r'/>
+<use f='codebrowser/time/getdate.c' l='223' u='c' c='__getdate_r'/>
+<def f='codebrowser/time/localtime.c' l='28' macro='1' type='struct tm * __localtime_r(const __time_t * t, struct tm * tp)'/>
+<use f='codebrowser/time/localtime.c' l='47' c='localtime_r'/>
+<doc f='codebrowser/time/localtime.c' l='25'>/* Return the `struct tm&apos; representation of *T in local time,
+   using *TP to store the result.  */</doc>
+<use f='codebrowser/time/mktime.c' l='534' u='r' c='mktime'/>
+<use f='codebrowser/time/strptime_l.c' l='38' u='c' c='__strptime_internal'/>

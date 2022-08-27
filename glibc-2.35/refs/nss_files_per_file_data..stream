@@ -1,0 +1,14 @@
+<dec f='codebrowser/include/nss_files.h' l='58' type='FILE *'/>
+<offset>0</offset>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='349' u='r' c='_nss_files_getaliasent_r'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='178' u='r' c='_nss_files_gethostent_r'/>
+<use f='codebrowser/nss/nss_files_data.c' l='43' u='w' c='nss_files_global_allocate'/>
+<use f='codebrowser/nss/nss_files_data.c' l='81' u='r' c='__nss_files_data_internal_open'/>
+<use f='codebrowser/nss/nss_files_data.c' l='83' u='w' c='__nss_files_data_internal_open'/>
+<use f='codebrowser/nss/nss_files_data.c' l='85' u='r' c='__nss_files_data_internal_open'/>
+<use f='codebrowser/nss/nss_files_data.c' l='103' u='r' c='__nss_files_data_open'/>
+<use f='codebrowser/nss/nss_files_data.c' l='132' u='r' c='__nss_files_data_setent'/>
+<use f='codebrowser/nss/nss_files_data.c' l='135' u='r' c='__nss_files_data_setent'/>
+<use f='codebrowser/nss/nss_files_data.c' l='152' u='r' c='__nss_files_data_endent'/>
+<use f='codebrowser/nss/nss_files_data.c' l='154' u='r' c='__nss_files_data_endent'/>
+<use f='codebrowser/nss/nss_files_data.c' l='155' u='w' c='__nss_files_data_endent'/>

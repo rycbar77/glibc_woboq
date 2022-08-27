@@ -1,0 +1,10 @@
+<def f='codebrowser/io/utime.h' l='36' ll='45'/>
+<use f='codebrowser/io/utime.h' l='51' c='utime'/>
+<size>16</size>
+<doc f='codebrowser/io/utime.h' l='35'>/* Structure describing file times.  */</doc>
+<mbr r='utimbuf::actime' o='0' t='__time_t'/>
+<mbr r='utimbuf::modtime' o='64' t='__time_t'/>
+<use f='codebrowser/support/test-container.c' l='412' c='copy_one_file'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/utime.c' l='24' macro='1' c='__utime'/>
+<size>16</size>

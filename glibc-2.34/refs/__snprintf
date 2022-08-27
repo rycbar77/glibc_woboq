@@ -1,0 +1,25 @@
+<dec f='codebrowser/include/stdio.h' l='42' type='int __snprintf(char *restrict __s, size_t __maxlen, const char *restrict __format)'/>
+<dec f='codebrowser/include/stdio.h' l='45' macro='1' type='int __snprintf(char *restrict , size_t , const char *restrict )'/>
+<use f='codebrowser/include/stdio.h' l='45' macro='1' c='__snprintf'/>
+<use f='codebrowser/gmon/gmon.c' l='364' u='c' c='write_gmon'/>
+<use f='codebrowser/inet/getnameinfo.c' l='218' u='c' c='gni_host_inet_numeric'/>
+<use f='codebrowser/inet/getnameinfo.c' l='218' u='c' c='gni_host_inet_numeric'/>
+<use f='codebrowser/inet/getnameinfo.c' l='218' u='c' c='gni_serv_inet'/>
+<use f='codebrowser/inet/inet_ntoa.c' l='34' u='c' c='inet_ntoa'/>
+<use f='codebrowser/inet/rcmd.c' l='137' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='248' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rexec.c' l='61' u='c' c='rexec_af'/>
+<use f='codebrowser/malloc/alloc_buffer_create_failure.c' l='26' u='c' c='__libc_alloc_buffer_create_failure'/>
+<use f='codebrowser/malloc/dynarray_at_failure.c' l='27' u='c' c='__libc_dynarray_at_failure'/>
+<use f='codebrowser/misc/efgcvt_r-template.c' l='29' u='c' c='__fcvt_r'/>
+<def f='codebrowser/stdio-common/snprintf.c' l='24' ll='35' type='int __snprintf(char * s, size_t maxlen, const char * format)'/>
+<use f='codebrowser/stdio-common/snprintf.c' l='37' c='snprintf'/>
+<doc f='codebrowser/stdio-common/snprintf.c' l='23'>/* VARARGS3 */</doc>
+<use f='codebrowser/string/_strerror.c' l='30' u='c' c='__strerror_r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/netlink_assert_response.c' l='75' u='c' c='__netlink_assert_response'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/netlink_assert_response.c' l='79' u='c' c='__netlink_assert_response'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/netlink_assert_response.c' l='94' u='c' c='__netlink_assert_response'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/netlink_assert_response.c' l='99' u='c' c='__netlink_assert_response'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='76' u='c' c='distinguish_extX'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='84' u='c' c='distinguish_extX'/>
+<use f='codebrowser/time/asctime.c' l='56' u='c' c='asctime_internal'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/login/utmp.h' l='45' type='void login(const struct utmp * __entry)'/>
+<dec f='codebrowser/include/utmp.h' l='32' type='void login(const struct utmp * )'/>
+<use f='codebrowser/include/utmp.h' l='32' c='login'/>
+<doc f='codebrowser/login/utmp.h' l='44'>/* Write the given entry into utmp and wtmp.  */</doc>
+<def f='codebrowser/login/login.c' l='139' macro='1' type='void login(const struct utmp * )'/>

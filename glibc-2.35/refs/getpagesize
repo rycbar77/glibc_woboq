@@ -1,0 +1,6 @@
+<dec f='codebrowser/posix/unistd.h' l='1011' type='int getpagesize()'/>
+<doc f='codebrowser/posix/unistd.h' l='1009'>/* Return the number of bytes in a page.  This is the system&apos;s page size,
+   which is not necessarily the same as the hardware page size.  */</doc>
+<use f='codebrowser/elf/sprof.c' l='412' u='c' c='load_shobj'/>
+<use f='codebrowser/nscd/nscd.c' l='188' u='c' c='main'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getpagesize.c' l='32' macro='1' type='int getpagesize()'/>

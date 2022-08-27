@@ -1,0 +1,5 @@
+<dec f='codebrowser/elf/stringtable.h' l='56' type='void stringtable_finalize(struct stringtable * table, struct stringtable_finalized * result)'/>
+<use f='codebrowser/elf/cache.c' l='591' u='c' c='save_cache'/>
+<doc f='codebrowser/elf/stringtable.h' l='54'>/* Assigns offsets to string table entries and computes the serialized
+   form of the string table.  */</doc>
+<def f='codebrowser/elf/stringtable.c' l='148' ll='209' type='void stringtable_finalize(struct stringtable * table, struct stringtable_finalized * result)'/>

@@ -1,0 +1,6 @@
+<def f='codebrowser/posix/regcomp.c' l='2868' ll='2931' type='unsigned int lookup_collation_sequence_value(bracket_elem_t * br_elem, uint32_t nrules, const unsigned char * collseqmb, const char * collseqwc, int32_t table_size, const int32_t * symb_table, const unsigned char * extra)'/>
+<use f='codebrowser/posix/regcomp.c' l='2962' u='c' c='build_range_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='2964' u='c' c='build_range_exp'/>
+<doc f='codebrowser/posix/regcomp.c' l='2864'>/* Local function for parse_bracket_exp used in _LIBC environment.
+   Look up the collation sequence value of BR_ELEM.
+   Return the value if succeeded, UINT_MAX otherwise.  */</doc>

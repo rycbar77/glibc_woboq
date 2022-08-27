@@ -1,0 +1,18 @@
+<dec f='codebrowser/misc/search.h' l='121' type='1'/>
+<use f='codebrowser/misc/tsearch.c' l='698' c='trecurse'/>
+<dec f='codebrowser/posix/regcomp.c' l='44' type='reg_errcode_t postorder(bin_tree_t * root, reg_errcode_t ((*)(void *, bin_tree_t *)) fn, void * extra)'/>
+<use f='codebrowser/posix/regcomp.c' l='1176' u='c' c='analyze'/>
+<use f='codebrowser/posix/regcomp.c' l='1179' u='c' c='analyze'/>
+<def f='codebrowser/posix/regcomp.c' l='1207' ll='1237' type='reg_errcode_t postorder(bin_tree_t * root, reg_errcode_t ((*)(void *, bin_tree_t *)) fn, void * extra)'/>
+<use f='codebrowser/posix/regcomp.c' l='2152' u='c' c='parse_reg_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='2194' u='c' c='parse_branch'/>
+<use f='codebrowser/posix/regcomp.c' l='2202' u='c' c='parse_branch'/>
+<use f='codebrowser/posix/regcomp.c' l='2203' u='c' c='parse_branch'/>
+<use f='codebrowser/posix/regcomp.c' l='2419' u='c' c='parse_expression'/>
+<use f='codebrowser/posix/regcomp.c' l='2429' u='c' c='parse_expression'/>
+<use f='codebrowser/posix/regcomp.c' l='2465' u='c' c='parse_sub_exp'/>
+<use f='codebrowser/posix/regcomp.c' l='2557' u='c' c='parse_dup_op'/>
+<use f='codebrowser/posix/regcomp.c' l='2586' u='c' c='parse_dup_op'/>
+<doc f='codebrowser/posix/regcomp.c' l='1204'>/* Our parse trees are very unbalanced, so we cannot use a stack to
+   implement parse tree visits.  Instead, we use parent pointers and
+   some hairy code in these two functions.  */</doc>

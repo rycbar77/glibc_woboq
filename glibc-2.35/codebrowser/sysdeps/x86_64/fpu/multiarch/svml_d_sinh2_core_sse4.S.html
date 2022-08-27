@@ -1,0 +1,474 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>svml_d_sinh2_core_sse4.S source code [codebrowser/sysdeps/x86_64/fpu/multiarch/svml_d_sinh2_core_sse4.S] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/fpu/multiarch/svml_d_sinh2_core_sse4.S'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>x86_64</a>/<a href='..'>fpu</a>/<a href='./'>multiarch</a>/<a href='svml_d_sinh2_core_sse4.S.html'>svml_d_sinh2_core_sse4.S</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Function sinh vectorized with SSE4.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/*</i></td></tr>
+<tr><th id="20">20</th><td><i> * ALGORITHM DESCRIPTION:</i></td></tr>
+<tr><th id="21">21</th><td><i> *</i></td></tr>
+<tr><th id="22">22</th><td><i> *   Compute sinh(x) as (exp(x)-exp(-x))/2,</i></td></tr>
+<tr><th id="23">23</th><td><i> *   where exp is calculated as</i></td></tr>
+<tr><th id="24">24</th><td><i> *   exp(M*ln2 + ln2*(j/2^k) + r) = 2^M * 2^(j/2^k) * exp(r)</i></td></tr>
+<tr><th id="25">25</th><td><i> *</i></td></tr>
+<tr><th id="26">26</th><td><i> *   Special cases:</i></td></tr>
+<tr><th id="27">27</th><td><i> *</i></td></tr>
+<tr><th id="28">28</th><td><i> *   sinh(NaN) = quiet NaN, and raise invalid exception</i></td></tr>
+<tr><th id="29">29</th><td><i> *   sinh(INF) = that INF</i></td></tr>
+<tr><th id="30">30</th><td><i> *   sinh(x)   = x for subnormals</i></td></tr>
+<tr><th id="31">31</th><td><i> *   sinh(x) overflows for big x and returns MAXLOG+log(2)</i></td></tr>
+<tr><th id="32">32</th><td><i> *</i></td></tr>
+<tr><th id="33">33</th><td><i> */</i></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><i>/* Offsets for data table __svml_dsinh_data_internal</i></td></tr>
+<tr><th id="36">36</th><td><i> */</i></td></tr>
+<tr><th id="37">37</th><td><u>#define <dfn class="macro" id="_M/_dbInvLn2" data-ref="_M/_dbInvLn2">_dbInvLn2</dfn>                     	0</u></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/_dbLn2hi" data-ref="_M/_dbLn2hi">_dbLn2hi</dfn>                      	16</u></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/_dbLn2lo" data-ref="_M/_dbLn2lo">_dbLn2lo</dfn>                      	32</u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/_dSign" data-ref="_M/_dSign">_dSign</dfn>                        	48</u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/_dbT" data-ref="_M/_dbT">_dbT</dfn>                          	64</u></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/_dbShifter" data-ref="_M/_dbShifter">_dbShifter</dfn>                    	2112</u></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/_iDomainRange" data-ref="_M/_iDomainRange">_iDomainRange</dfn>                 	2128</u></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/_dPC2" data-ref="_M/_dPC2">_dPC2</dfn>                         	2144</u></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/_dPC3" data-ref="_M/_dPC3">_dPC3</dfn>                         	2160</u></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/_dPC4" data-ref="_M/_dPC4">_dPC4</dfn>                         	2176</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/_dPC5" data-ref="_M/_dPC5">_dPC5</dfn>                         	2192</u></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/_lIndexMask" data-ref="_M/_lIndexMask">_lIndexMask</dfn>                   	2208</u></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><u>#include <a href="../../../unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td>        .text</td></tr>
+<tr><th id="53">53</th><td>	.section .text.sse4,<q>"ax"</q>,@progbits</td></tr>
+<tr><th id="54">54</th><td><a class="macro" href="../../../x86/sysdep.h.html#91" title=".globl _ZGVbN2v_sinh_sse4; .type _ZGVbN2v_sinh_sse4,@function; .align 1&lt;&lt;4; _ZGVbN2v_sinh_sse4: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a>(<span class='warning' title="type specifier missing, defaults to &apos;int&apos;"><dfn class="decl def" id="_ZGVbN2v_sinh_sse4" title='_ZGVbN2v_sinh_sse4' data-ref="_ZGVbN2v_sinh_sse4" data-ref-filename="_ZGVbN2v_sinh_sse4">_ZGVbN2v_sinh_sse4</dfn></span>)</td></tr>
+<tr><th id="55">55</th><td>        <span class='error' title="unknown type name &apos;subq&apos;">subq</span>      <span class='error' title="expected identifier or &apos;(&apos;">$</span><var>72</var>, %rsp</td></tr>
+<tr><th id="56">56</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#44" title=".cfi_def_cfa_offset 80" data-ref="_M/cfi_def_cfa_offset">cfi_def_cfa_offset</a>(<var>80</var>)</td></tr>
+<tr><th id="57">57</th><td>        movaps    %xmm0, %xmm2</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><i>/*  Abs argument  */</i></td></tr>
+<tr><th id="60">60</th><td>        movups    <a class="macro" href="#40" title="48" data-ref="_M/_dSign">_dSign</a>+__svml_dsinh_data_internal(%rip), %xmm0</td></tr>
+<tr><th id="61">61</th><td>        lea       <a class="macro" href="#41" title="64" data-ref="_M/_dbT">_dbT</a>+<var>8</var>+__svml_dsinh_data_internal(%rip), %rsi</td></tr>
+<tr><th id="62">62</th><td>        andps     %xmm2, %xmm0</td></tr>
+<tr><th id="63">63</th><td>        movaps    %xmm0, %xmm1</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><i>/*</i></td></tr>
+<tr><th id="66">66</th><td><i> *  Load argument</i></td></tr>
+<tr><th id="67">67</th><td><i> * dM = x*2^K/log(2) + RShifter</i></td></tr>
+<tr><th id="68">68</th><td><i> */</i></td></tr>
+<tr><th id="69">69</th><td>        movups    <a class="macro" href="#37" title="0" data-ref="_M/_dbInvLn2">_dbInvLn2</a>+__svml_dsinh_data_internal(%rip), %xmm10</td></tr>
+<tr><th id="70">70</th><td>        pxor      %xmm2, %xmm1</td></tr>
+<tr><th id="71">71</th><td>        mulpd     %xmm1, %xmm10</td></tr>
+<tr><th id="72">72</th><td>        movups    <a class="macro" href="#42" title="2112" data-ref="_M/_dbShifter">_dbShifter</a>+__svml_dsinh_data_internal(%rip), %xmm5</td></tr>
+<tr><th id="73">73</th><td>        addpd     %xmm5, %xmm10</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><i>/*</i></td></tr>
+<tr><th id="76">76</th><td><i> *  R</i></td></tr>
+<tr><th id="77">77</th><td><i> * dN = dM - RShifter</i></td></tr>
+<tr><th id="78">78</th><td><i> */</i></td></tr>
+<tr><th id="79">79</th><td>        movaps    %xmm10, %xmm7</td></tr>
+<tr><th id="80">80</th><td>        subpd     %xmm5, %xmm7</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><i>/* dR = dX - dN*Log2_hi/2^K */</i></td></tr>
+<tr><th id="83">83</th><td>        movups    <a class="macro" href="#38" title="16" data-ref="_M/_dbLn2hi">_dbLn2hi</a>+__svml_dsinh_data_internal(%rip), %xmm6</td></tr>
+<tr><th id="84">84</th><td>        mulpd     %xmm7, %xmm6</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><i>/* dR = (dX - dN*Log2_hi/2^K) - dN*Log2_lo/2^K */</i></td></tr>
+<tr><th id="87">87</th><td>        movups    <a class="macro" href="#39" title="32" data-ref="_M/_dbLn2lo">_dbLn2lo</a>+__svml_dsinh_data_internal(%rip), %xmm8</td></tr>
+<tr><th id="88">88</th><td>        mulpd     %xmm7, %xmm8</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><i>/*</i></td></tr>
+<tr><th id="91">91</th><td><i> * Check for overflow\underflow</i></td></tr>
+<tr><th id="92">92</th><td><i> *</i></td></tr>
+<tr><th id="93">93</th><td><i> */</i></td></tr>
+<tr><th id="94">94</th><td>        pshufd    $<var>221</var>, %xmm1, %xmm4</td></tr>
+<tr><th id="95">95</th><td>        subpd     %xmm6, %xmm1</td></tr>
+<tr><th id="96">96</th><td>        subpd     %xmm8, %xmm1</td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td><i>/* VLOAD_CONST( D, dPC[0],         TAB._dPC1 ); */</i></td></tr>
+<tr><th id="99">99</th><td>        movq      <a class="macro" href="#43" title="2128" data-ref="_M/_iDomainRange">_iDomainRange</a>+__svml_dsinh_data_internal(%rip), %xmm3</td></tr>
+<tr><th id="100">100</th><td>        pcmpgtd   %xmm3, %xmm4</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><i>/* dR2 = dR^2 */</i></td></tr>
+<tr><th id="103">103</th><td>        movaps    %xmm1, %xmm3</td></tr>
+<tr><th id="104">104</th><td>        mulpd     %xmm1, %xmm3</td></tr>
+<tr><th id="105">105</th><td>        movmskps  %xmm4, %edx</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td><i>/*</i></td></tr>
+<tr><th id="108">108</th><td><i> * sinh(r) = r*((a1=1)+r^2*(a3+r^2*a5)) = r + r*(r^2*(a3+r^2*a5)) ....</i></td></tr>
+<tr><th id="109">109</th><td><i> * dSinh_r = (a3+r^2*a5)</i></td></tr>
+<tr><th id="110">110</th><td><i> */</i></td></tr>
+<tr><th id="111">111</th><td>        movups    <a class="macro" href="#47" title="2192" data-ref="_M/_dPC5">_dPC5</a>+__svml_dsinh_data_internal(%rip), %xmm12</td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td><i>/*</i></td></tr>
+<tr><th id="114">114</th><td><i> * poly(r) = (dG2+dG1)+dG3*sinh(dR)+dG1*sinh(dR)+(dG1+dG2)*dR2*(a2 +a4*dR2)</i></td></tr>
+<tr><th id="115">115</th><td><i> * dOut = (a2 +a4*dR2)</i></td></tr>
+<tr><th id="116">116</th><td><i> */</i></td></tr>
+<tr><th id="117">117</th><td>        movups    <a class="macro" href="#46" title="2176" data-ref="_M/_dPC4">_dPC4</a>+__svml_dsinh_data_internal(%rip), %xmm13</td></tr>
+<tr><th id="118">118</th><td>        mulpd     %xmm3, %xmm12</td></tr>
+<tr><th id="119">119</th><td>        mulpd     %xmm3, %xmm13</td></tr>
+<tr><th id="120">120</th><td>        addpd     <a class="macro" href="#45" title="2160" data-ref="_M/_dPC3">_dPC3</a>+__svml_dsinh_data_internal(%rip), %xmm12</td></tr>
+<tr><th id="121">121</th><td>        addpd     <a class="macro" href="#44" title="2144" data-ref="_M/_dPC2">_dPC2</a>+__svml_dsinh_data_internal(%rip), %xmm13</td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td><i>/* dSinh_r = r^2*(a3+r^2*a5) */</i></td></tr>
+<tr><th id="124">124</th><td>        mulpd     %xmm3, %xmm12</td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td><i>/* dOut = dR2*(a2 +a4*dR2) */</i></td></tr>
+<tr><th id="127">127</th><td>        mulpd     %xmm13, %xmm3</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><i>/* dSinh_r = r + r*(r^2*(a3+r^2*a5)) */</i></td></tr>
+<tr><th id="130">130</th><td>        mulpd     %xmm1, %xmm12</td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><i>/*</i></td></tr>
+<tr><th id="133">133</th><td><i> *  Index and lookup</i></td></tr>
+<tr><th id="134">134</th><td><i> * j</i></td></tr>
+<tr><th id="135">135</th><td><i> */</i></td></tr>
+<tr><th id="136">136</th><td>        movups    <a class="macro" href="#48" title="2208" data-ref="_M/_lIndexMask">_lIndexMask</a>+__svml_dsinh_data_internal(%rip), %xmm9</td></tr>
+<tr><th id="137">137</th><td>        andps     %xmm10, %xmm9</td></tr>
+<tr><th id="138">138</th><td>        movd      %xmm9, %eax</td></tr>
+<tr><th id="139">139</th><td></td></tr>
+<tr><th id="140">140</th><td><i>/* split j and N */</i></td></tr>
+<tr><th id="141">141</th><td>        pxor      %xmm9, %xmm10</td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td><i>/*</i></td></tr>
+<tr><th id="144">144</th><td><i> *  G1,G2,G3: dTdif,dTn * 2^N,2^(-N)</i></td></tr>
+<tr><th id="145">145</th><td><i> * lM now is an EXP(2^N)</i></td></tr>
+<tr><th id="146">146</th><td><i> */</i></td></tr>
+<tr><th id="147">147</th><td>        psllq     $<var>45</var>, %xmm10</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><i>/*  */</i></td></tr>
+<tr><th id="150">150</th><td>        movaps    %xmm10, %xmm4</td></tr>
+<tr><th id="151">151</th><td>        pextrw    $<var>4</var>, %xmm9, %ecx</td></tr>
+<tr><th id="152">152</th><td>        addpd     %xmm12, %xmm1</td></tr>
+<tr><th id="153">153</th><td>        shll      $<var>4</var>, %eax</td></tr>
+<tr><th id="154">154</th><td>        shll      $<var>4</var>, %ecx</td></tr>
+<tr><th id="155">155</th><td>        movq      (%rax,%rsi), %xmm11</td></tr>
+<tr><th id="156">156</th><td>        movhpd    (%rcx,%rsi), %xmm11</td></tr>
+<tr><th id="157">157</th><td>        paddq     %xmm11, %xmm4</td></tr>
+<tr><th id="158">158</th><td></td></tr>
+<tr><th id="159">159</th><td><i>/*  */</i></td></tr>
+<tr><th id="160">160</th><td>        psubq     %xmm10, %xmm11</td></tr>
+<tr><th id="161">161</th><td></td></tr>
+<tr><th id="162">162</th><td><i>/* dG3 = dTn*2^N + dTn*2^-N */</i></td></tr>
+<tr><th id="163">163</th><td>        movdqa    %xmm4, %xmm14</td></tr>
+<tr><th id="164">164</th><td>        addpd     %xmm11, %xmm14</td></tr>
+<tr><th id="165">165</th><td></td></tr>
+<tr><th id="166">166</th><td><i>/* dG2 = dTn*2^N - dTn*2^-N */</i></td></tr>
+<tr><th id="167">167</th><td>        subpd     %xmm11, %xmm4</td></tr>
+<tr><th id="168">168</th><td>        movq      -<var>8</var>(%rax,%rsi), %xmm15</td></tr>
+<tr><th id="169">169</th><td>        movhpd    -<var>8</var>(%rcx,%rsi), %xmm15</td></tr>
+<tr><th id="170">170</th><td>        paddq     %xmm10, %xmm15</td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td><i>/* dG2 += dG1 */</i></td></tr>
+<tr><th id="173">173</th><td>        addpd     %xmm15, %xmm4</td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td><i>/* dG1 += dG3 */</i></td></tr>
+<tr><th id="176">176</th><td>        addpd     %xmm14, %xmm15</td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><i>/* dOut = dG2*dR2*(a2 +a4*dR2) */</i></td></tr>
+<tr><th id="179">179</th><td>        mulpd     %xmm4, %xmm3</td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td><i>/* dOut = dG1*sinh(dR)+dG2*dR2*(a2 +a4*dR2) */</i></td></tr>
+<tr><th id="182">182</th><td>        mulpd     %xmm15, %xmm1</td></tr>
+<tr><th id="183">183</th><td>        addpd     %xmm1, %xmm3</td></tr>
+<tr><th id="184">184</th><td></td></tr>
+<tr><th id="185">185</th><td><i>/* dOut = dG2 + dG1*sinh(dR)+dG2*dR2*(a2 +a4*dR2) */</i></td></tr>
+<tr><th id="186">186</th><td>        addpd     %xmm3, %xmm4</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td><i>/*  Ret H  */</i></td></tr>
+<tr><th id="189">189</th><td>        orps      %xmm4, %xmm0</td></tr>
+<tr><th id="190">190</th><td>        andl      $<var>3</var>, %edx</td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td><i>/* Go to special inputs processing branch */</i></td></tr>
+<tr><th id="193">193</th><td>        jne       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH)</td></tr>
+<tr><th id="194">194</th><td>                                <u># LOE rbx rbp r12 r13 r14 r15 edx xmm0 xmm2</u></td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td><i>/* Restore registers</i></td></tr>
+<tr><th id="197">197</th><td><i> * and exit the function</i></td></tr>
+<tr><th id="198">198</th><td><i> */</i></td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT):</td></tr>
+<tr><th id="201">201</th><td>        addq      $<var>72</var>, %rsp</td></tr>
+<tr><th id="202">202</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#44" title=".cfi_def_cfa_offset 8" data-ref="_M/cfi_def_cfa_offset">cfi_def_cfa_offset</a>(<var>8</var>)</td></tr>
+<tr><th id="203">203</th><td>        ret</td></tr>
+<tr><th id="204">204</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#44" title=".cfi_def_cfa_offset 80" data-ref="_M/cfi_def_cfa_offset">cfi_def_cfa_offset</a>(<var>80</var>)</td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td><i>/* Branch to process</i></td></tr>
+<tr><th id="207">207</th><td><i> * special inputs</i></td></tr>
+<tr><th id="208">208</th><td><i> */</i></td></tr>
+<tr><th id="209">209</th><td></td></tr>
+<tr><th id="210">210</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH):</td></tr>
+<tr><th id="211">211</th><td>        movups    %xmm2, <var>32</var>(%rsp)</td></tr>
+<tr><th id="212">212</th><td>        movups    %xmm0, <var>48</var>(%rsp)</td></tr>
+<tr><th id="213">213</th><td>                                <u># LOE rbx rbp r12 r13 r14 r15 edx xmm0</u></td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td>        xorl      %eax, %eax</td></tr>
+<tr><th id="216">216</th><td>        movq      %r12, <var>16</var>(%rsp)</td></tr>
+<tr><th id="217">217</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 12, -64" data-ref="_M/cfi_offset">cfi_offset</a>(<var>12</var>, -<var>64</var>)</td></tr>
+<tr><th id="218">218</th><td>        movl      %eax, %r12d</td></tr>
+<tr><th id="219">219</th><td>        movq      %r13, <var>8</var>(%rsp)</td></tr>
+<tr><th id="220">220</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 13, -72" data-ref="_M/cfi_offset">cfi_offset</a>(<var>13</var>, -<var>72</var>)</td></tr>
+<tr><th id="221">221</th><td>        movl      %edx, %r13d</td></tr>
+<tr><th id="222">222</th><td>        movq      %r14, (%rsp)</td></tr>
+<tr><th id="223">223</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 14, -80" data-ref="_M/cfi_offset">cfi_offset</a>(<var>14</var>, -<var>80</var>)</td></tr>
+<tr><th id="224">224</th><td>                                <u># LOE rbx rbp r15 r12d r13d</u></td></tr>
+<tr><th id="225">225</th><td></td></tr>
+<tr><th id="226">226</th><td><i>/* Range mask</i></td></tr>
+<tr><th id="227">227</th><td><i> * bits check</i></td></tr>
+<tr><th id="228">228</th><td><i> */</i></td></tr>
+<tr><th id="229">229</th><td></td></tr>
+<tr><th id="230">230</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK):</td></tr>
+<tr><th id="231">231</th><td>        btl       %r12d, %r13d</td></tr>
+<tr><th id="232">232</th><td></td></tr>
+<tr><th id="233">233</th><td><i>/* Call scalar math function */</i></td></tr>
+<tr><th id="234">234</th><td>        jc        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL)</td></tr>
+<tr><th id="235">235</th><td>                                <u># LOE rbx rbp r15 r12d r13d</u></td></tr>
+<tr><th id="236">236</th><td></td></tr>
+<tr><th id="237">237</th><td><i>/* Special inputs</i></td></tr>
+<tr><th id="238">238</th><td><i> * processing loop</i></td></tr>
+<tr><th id="239">239</th><td><i> */</i></td></tr>
+<tr><th id="240">240</th><td></td></tr>
+<tr><th id="241">241</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP):</td></tr>
+<tr><th id="242">242</th><td>        incl      %r12d</td></tr>
+<tr><th id="243">243</th><td>        cmpl      $<var>2</var>, %r12d</td></tr>
+<tr><th id="244">244</th><td></td></tr>
+<tr><th id="245">245</th><td><i>/* Check bits in range mask */</i></td></tr>
+<tr><th id="246">246</th><td>        jl        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK)</td></tr>
+<tr><th id="247">247</th><td>                                <u># LOE rbx rbp r15 r12d r13d</u></td></tr>
+<tr><th id="248">248</th><td></td></tr>
+<tr><th id="249">249</th><td>        movq      <var>16</var>(%rsp), %r12</td></tr>
+<tr><th id="250">250</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 12" data-ref="_M/cfi_restore">cfi_restore</a>(<var>12</var>)</td></tr>
+<tr><th id="251">251</th><td>        movq      <var>8</var>(%rsp), %r13</td></tr>
+<tr><th id="252">252</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 13" data-ref="_M/cfi_restore">cfi_restore</a>(<var>13</var>)</td></tr>
+<tr><th id="253">253</th><td>        movq      (%rsp), %r14</td></tr>
+<tr><th id="254">254</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 14" data-ref="_M/cfi_restore">cfi_restore</a>(<var>14</var>)</td></tr>
+<tr><th id="255">255</th><td>        movups    <var>48</var>(%rsp), %xmm0</td></tr>
+<tr><th id="256">256</th><td></td></tr>
+<tr><th id="257">257</th><td><i>/* Go to exit */</i></td></tr>
+<tr><th id="258">258</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT)</td></tr>
+<tr><th id="259">259</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 12, -64" data-ref="_M/cfi_offset">cfi_offset</a>(<var>12</var>, -<var>64</var>)</td></tr>
+<tr><th id="260">260</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 13, -72" data-ref="_M/cfi_offset">cfi_offset</a>(<var>13</var>, -<var>72</var>)</td></tr>
+<tr><th id="261">261</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 14, -80" data-ref="_M/cfi_offset">cfi_offset</a>(<var>14</var>, -<var>80</var>)</td></tr>
+<tr><th id="262">262</th><td>                                <u># LOE rbx rbp r12 r13 r14 r15 xmm0</u></td></tr>
+<tr><th id="263">263</th><td></td></tr>
+<tr><th id="264">264</th><td><i>/* Scalar math fucntion call</i></td></tr>
+<tr><th id="265">265</th><td><i> * to process special input</i></td></tr>
+<tr><th id="266">266</th><td><i> */</i></td></tr>
+<tr><th id="267">267</th><td></td></tr>
+<tr><th id="268">268</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL):</td></tr>
+<tr><th id="269">269</th><td>        movl      %r12d, %r14d</td></tr>
+<tr><th id="270">270</th><td>        movsd     <var>32</var>(%rsp,%r14,<var>8</var>), %xmm0</td></tr>
+<tr><th id="271">271</th><td>        call      sinh@PLT</td></tr>
+<tr><th id="272">272</th><td>                                <u># LOE rbx rbp r14 r15 r12d r13d xmm0</u></td></tr>
+<tr><th id="273">273</th><td></td></tr>
+<tr><th id="274">274</th><td>        movsd     %xmm0, <var>48</var>(%rsp,%r14,<var>8</var>)</td></tr>
+<tr><th id="275">275</th><td></td></tr>
+<tr><th id="276">276</th><td><i>/* Process special inputs in loop */</i></td></tr>
+<tr><th id="277">277</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP)</td></tr>
+<tr><th id="278">278</th><td>                                <u># LOE rbx rbp r15 r12d r13d</u></td></tr>
+<tr><th id="279">279</th><td><a class="macro" href="../../../x86/sysdep.h.html#94" title=".cfi_endproc; .size _ZGVbN2v_sinh_sse4,.-_ZGVbN2v_sinh_sse4;" data-ref="_M/END">END</a>(_ZGVbN2v_sinh_sse4)</td></tr>
+<tr><th id="280">280</th><td></td></tr>
+<tr><th id="281">281</th><td>        <span class='error' title="expected identifier or &apos;(&apos;">.</span>section .rodata, <q>"a"</q></td></tr>
+<tr><th id="282">282</th><td>        .align <var>16</var></td></tr>
+<tr><th id="283">283</th><td></td></tr>
+<tr><th id="284">284</th><td><u>#<span data-ppcond="284">ifdef</span> <span class="macro" data-ref="_M/__svml_dsinh_data_internal_typedef">__svml_dsinh_data_internal_typedef</span></u></td></tr>
+<tr><th id="285">285</th><td><b>typedef</b> <em>unsigned</em> <em>int</em> VUINT32;</td></tr>
+<tr><th id="286">286</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="287">287</th><td>{</td></tr>
+<tr><th id="288">288</th><td>        __declspec(align(<var>16</var>)) VUINT32 _dbInvLn2[<var>2</var>][<var>2</var>];</td></tr>
+<tr><th id="289">289</th><td>        __declspec(align(<var>16</var>)) VUINT32 _dbLn2hi[<var>2</var>][<var>2</var>];</td></tr>
+<tr><th id="290">290</th><td>        __declspec(align(<var>16</var>)) VUINT32 _dbLn2lo[<var>2</var>][<var>2</var>];</td></tr>
+<tr><th id="291">291</th><td>        __declspec(align(<var>16</var>)) VUINT32 _dSign[<var>2</var>][<var>2</var>];                <i>//0x8000000000000000</i></td></tr>
+<tr><th id="292">292</th><td>        __declspec(align(<var>16</var>)) VUINT32 _dbT[(<var>1</var>&lt;&lt;<var>7</var>)][<var>2</var>][<var>2</var>]; <i>//precalc poly coeff</i></td></tr>
+<tr><th id="293">293</th><td>        __declspec(align(<var>16</var>)) VUINT32 _dbShifter[<var>2</var>][<var>2</var>];</td></tr>
+<tr><th id="294">294</th><td>        __declspec(align(<var>16</var>)) VUINT32 _iDomainRange[<var>4</var>][<var>1</var>];</td></tr>
+<tr><th id="295">295</th><td>        __declspec(align(<var>16</var>)) VUINT32 _dPC2[<var>2</var>][<var>2</var>];</td></tr>
+<tr><th id="296">296</th><td>        __declspec(align(<var>16</var>)) VUINT32 _dPC3[<var>2</var>][<var>2</var>];</td></tr>
+<tr><th id="297">297</th><td>        __declspec(align(<var>16</var>)) VUINT32 _dPC4[<var>2</var>][<var>2</var>];</td></tr>
+<tr><th id="298">298</th><td>        __declspec(align(<var>16</var>)) VUINT32 _dPC5[<var>2</var>][<var>2</var>];</td></tr>
+<tr><th id="299">299</th><td>        __declspec(align(<var>16</var>)) VUINT32 _lIndexMask[<var>2</var>][<var>2</var>];</td></tr>
+<tr><th id="300">300</th><td>} __svml_dsinh_data_internal;</td></tr>
+<tr><th id="301">301</th><td><u>#<span data-ppcond="284">endif</span></u></td></tr>
+<tr><th id="302">302</th><td>__svml_dsinh_data_internal:</td></tr>
+<tr><th id="303">303</th><td>        .quad <var>0x3FF71547652B82FE</var>, <var>0x3FF71547652B82FE</var> <i>/* _dbInvLn2 = 1/log(2) */</i></td></tr>
+<tr><th id="304">304</th><td>        .align <var>16</var></td></tr>
+<tr><th id="305">305</th><td>        .quad <var>0x3FE62E42FEFA0000</var>, <var>0x3FE62E42FEFA0000</var> <i>/* _dbLn2hi  = log(2) hi*/</i></td></tr>
+<tr><th id="306">306</th><td>        .align <var>16</var></td></tr>
+<tr><th id="307">307</th><td>        .quad <var>0x3D7CF79ABC9E3B3A</var>, <var>0x3D7CF79ABC9E3B3A</var> <i>/* _dbLn2lo  = log(2) lo*/</i></td></tr>
+<tr><th id="308">308</th><td>        .align <var>16</var></td></tr>
+<tr><th id="309">309</th><td>        .quad <var>0x8000000000000000</var>, <var>0x8000000000000000</var> <i>/* _dSign */</i></td></tr>
+<tr><th id="310">310</th><td>        <i>//_dbT</i></td></tr>
+<tr><th id="311">311</th><td>        .align <var>16</var></td></tr>
+<tr><th id="312">312</th><td>        .quad <var>0x0000000000000000</var>, <var>0x3FE0000000000000</var>  <i>//2^( 0 /128-1) - 2^(- 0 /128-1), 2^(- 0 /128-1)</i></td></tr>
+<tr><th id="313">313</th><td>        .quad <var>0x3F762E4A19BD1E74</var>, <var>0x3FDFD3C22B8F71F1</var>  <i>//2^( 1 /128-1) - 2^(- 1 /128-1), 2^(- 1 /128-1)</i></td></tr>
+<tr><th id="314">314</th><td>        .quad <var>0x3F862E5F6A0DFD36</var>, <var>0x3FDFA7C1819E90D8</var>  <i>//2^( 2 /128-1) - 2^(- 2 /128-1), 2^(- 2 /128-1)</i></td></tr>
+<tr><th id="315">315</th><td>        .quad <var>0x3F90A2E234040F5F</var>, <var>0x3FDF7BFDAD9CBE14</var>  <i>//2^( 3 /128-1) - 2^(- 3 /128-1), 2^(- 3 /128-1)</i></td></tr>
+<tr><th id="316">316</th><td>        .quad <var>0x3F962EB4ABCC5A81</var>, <var>0x3FDF50765B6E4540</var>  <i>//2^( 4 /128-1) - 2^(- 4 /128-1), 2^(- 4 /128-1)</i></td></tr>
+<tr><th id="317">317</th><td>        .quad <var>0x3F9BBAB1C5033244</var>, <var>0x3FDF252B376BBA97</var>  <i>//2^( 5 /128-1) - 2^(- 5 /128-1), 2^(- 5 /128-1)</i></td></tr>
+<tr><th id="318">318</th><td>        .quad <var>0x3FA0A372144EEB45</var>, <var>0x3FDEFA1BEE615A27</var>  <i>//2^( 6 /128-1) - 2^(- 6 /128-1), 2^(- 6 /128-1)</i></td></tr>
+<tr><th id="319">319</th><td>        .quad <var>0x3FA369AB3FFBF8B0</var>, <var>0x3FDECF482D8E67F1</var>  <i>//2^( 7 /128-1) - 2^(- 7 /128-1), 2^(- 7 /128-1)</i></td></tr>
+<tr><th id="320">320</th><td>        .quad <var>0x3FA63009BA740A2A</var>, <var>0x3FDEA4AFA2A490DA</var>  <i>//2^( 8 /128-1) - 2^(- 8 /128-1), 2^(- 8 /128-1)</i></td></tr>
+<tr><th id="321">321</th><td>        .quad <var>0x3FA8F692D8EA1B5A</var>, <var>0x3FDE7A51FBC74C83</var>  <i>//2^( 9 /128-1) - 2^(- 9 /128-1), 2^(- 9 /128-1)</i></td></tr>
+<tr><th id="322">322</th><td>        .quad <var>0x3FABBD4BF0E31A6F</var>, <var>0x3FDE502EE78B3FF6</var>  <i>//2^( 10 /128-1) - 2^(- 10 /128-1), 2^(- 10 /128-1)</i></td></tr>
+<tr><th id="323">323</th><td>        .quad <var>0x3FAE843A5840286A</var>, <var>0x3FDE264614F5A129</var>  <i>//2^( 11 /128-1) - 2^(- 11 /128-1), 2^(- 11 /128-1)</i></td></tr>
+<tr><th id="324">324</th><td>        .quad <var>0x3FB0A5B1B2A46D0A</var>, <var>0x3FDDFC97337B9B5F</var>  <i>//2^( 12 /128-1) - 2^(- 12 /128-1), 2^(- 12 /128-1)</i></td></tr>
+<tr><th id="325">325</th><td>        .quad <var>0x3FB20966375ABCDF</var>, <var>0x3FDDD321F301B460</var>  <i>//2^( 13 /128-1) - 2^(- 13 /128-1), 2^(- 13 /128-1)</i></td></tr>
+<tr><th id="326">326</th><td>        .quad <var>0x3FB36D3D65DCA4E8</var>, <var>0x3FDDA9E603DB3285</var>  <i>//2^( 14 /128-1) - 2^(- 14 /128-1), 2^(- 14 /128-1)</i></td></tr>
+<tr><th id="327">327</th><td>        .quad <var>0x3FB4D139EA06642A</var>, <var>0x3FDD80E316C98398</var>  <i>//2^( 15 /128-1) - 2^(- 15 /128-1), 2^(- 15 /128-1)</i></td></tr>
+<tr><th id="328">328</th><td>        .quad <var>0x3FB6355E6FFBF9BA</var>, <var>0x3FDD5818DCFBA487</var>  <i>//2^( 16 /128-1) - 2^(- 16 /128-1), 2^(- 16 /128-1)</i></td></tr>
+<tr><th id="329">329</th><td>        .quad <var>0x3FB799ADA42E4788</var>, <var>0x3FDD2F87080D89F2</var>  <i>//2^( 17 /128-1) - 2^(- 17 /128-1), 2^(- 17 /128-1)</i></td></tr>
+<tr><th id="330">330</th><td>        .quad <var>0x3FB8FE2A336035BC</var>, <var>0x3FDD072D4A07897C</var>  <i>//2^( 18 /128-1) - 2^(- 18 /128-1), 2^(- 18 /128-1)</i></td></tr>
+<tr><th id="331">331</th><td>        .quad <var>0x3FBA62D6CAABD6B6</var>, <var>0x3FDCDF0B555DC3FA</var>  <i>//2^( 19 /128-1) - 2^(- 19 /128-1), 2^(- 19 /128-1)</i></td></tr>
+<tr><th id="332">332</th><td>        .quad <var>0x3FBBC7B617878BAF</var>, <var>0x3FDCB720DCEF9069</var>  <i>//2^( 20 /128-1) - 2^(- 20 /128-1), 2^(- 20 /128-1)</i></td></tr>
+<tr><th id="333">333</th><td>        .quad <var>0x3FBD2CCAC7CB2A11</var>, <var>0x3FDC8F6D9406E7B5</var>  <i>//2^( 21 /128-1) - 2^(- 21 /128-1), 2^(- 21 /128-1)</i></td></tr>
+<tr><th id="334">334</th><td>        .quad <var>0x3FBE921789B52185</var>, <var>0x3FDC67F12E57D14B</var>  <i>//2^( 22 /128-1) - 2^(- 22 /128-1), 2^(- 22 /128-1)</i></td></tr>
+<tr><th id="335">335</th><td>        .quad <var>0x3FBFF79F0BEFA2C7</var>, <var>0x3FDC40AB5FFFD07A</var>  <i>//2^( 23 /128-1) - 2^(- 23 /128-1), 2^(- 23 /128-1)</i></td></tr>
+<tr><th id="336">336</th><td>        .quad <var>0x3FC0AEB1FECAE3A9</var>, <var>0x3FDC199BDD85529C</var>  <i>//2^( 24 /128-1) - 2^(- 24 /128-1), 2^(- 24 /128-1)</i></td></tr>
+<tr><th id="337">337</th><td>        .quad <var>0x3FC161B4871C5CEC</var>, <var>0x3FDBF2C25BD71E09</var>  <i>//2^( 25 /128-1) - 2^(- 25 /128-1), 2^(- 25 /128-1)</i></td></tr>
+<tr><th id="338">338</th><td>        .quad <var>0x3FC214D876F26FD0</var>, <var>0x3FDBCC1E904BC1D2</var>  <i>//2^( 26 /128-1) - 2^(- 26 /128-1), 2^(- 26 /128-1)</i></td></tr>
+<tr><th id="339">339</th><td>        .quad <var>0x3FC2C81F2693816F</var>, <var>0x3FDBA5B030A1064A</var>  <i>//2^( 27 /128-1) - 2^(- 27 /128-1), 2^(- 27 /128-1)</i></td></tr>
+<tr><th id="340">340</th><td>        .quad <var>0x3FC37B89EE88BEF7</var>, <var>0x3FDB7F76F2FB5E47</var>  <i>//2^( 28 /128-1) - 2^(- 28 /128-1), 2^(- 28 /128-1)</i></td></tr>
+<tr><th id="341">341</th><td>        .quad <var>0x3FC42F1A27A0B3CD</var>, <var>0x3FDB59728DE5593A</var>  <i>//2^( 29 /128-1) - 2^(- 29 /128-1), 2^(- 29 /128-1)</i></td></tr>
+<tr><th id="342">342</th><td>        .quad <var>0x3FC4E2D12AF1E037</var>, <var>0x3FDB33A2B84F15FB</var>  <i>//2^( 30 /128-1) - 2^(- 30 /128-1), 2^(- 30 /128-1)</i></td></tr>
+<tr><th id="343">343</th><td>        .quad <var>0x3FC596B051DD508D</var>, <var>0x3FDB0E07298DB666</var>  <i>//2^( 31 /128-1) - 2^(- 31 /128-1), 2^(- 31 /128-1)</i></td></tr>
+<tr><th id="344">344</th><td>        .quad <var>0x3FC64AB8F61134FA</var>, <var>0x3FDAE89F995AD3AD</var>  <i>//2^( 32 /128-1) - 2^(- 32 /128-1), 2^(- 32 /128-1)</i></td></tr>
+<tr><th id="345">345</th><td>        .quad <var>0x3FC6FEEC718B79D1</var>, <var>0x3FDAC36BBFD3F37A</var>  <i>//2^( 33 /128-1) - 2^(- 33 /128-1), 2^(- 33 /128-1)</i></td></tr>
+<tr><th id="346">346</th><td>        .quad <var>0x3FC7B34C1E9C607F</var>, <var>0x3FDA9E6B5579FDBF</var>  <i>//2^( 34 /128-1) - 2^(- 34 /128-1), 2^(- 34 /128-1)</i></td></tr>
+<tr><th id="347">347</th><td>        .quad <var>0x3FC867D957E91912</var>, <var>0x3FDA799E1330B358</var>  <i>//2^( 35 /128-1) - 2^(- 35 /128-1), 2^(- 35 /128-1)</i></td></tr>
+<tr><th id="348">348</th><td>        .quad <var>0x3FC91C95786E5C72</var>, <var>0x3FDA5503B23E255D</var>  <i>//2^( 36 /128-1) - 2^(- 36 /128-1), 2^(- 36 /128-1)</i></td></tr>
+<tr><th id="349">349</th><td>        .quad <var>0x3FC9D181DB83072F</var>, <var>0x3FDA309BEC4A2D33</var>  <i>//2^( 37 /128-1) - 2^(- 37 /128-1), 2^(- 37 /128-1)</i></td></tr>
+<tr><th id="350">350</th><td>        .quad <var>0x3FCA869FDCDAB512</var>, <var>0x3FDA0C667B5DE565</var>  <i>//2^( 38 /128-1) - 2^(- 38 /128-1), 2^(- 38 /128-1)</i></td></tr>
+<tr><th id="351">351</th><td>        .quad <var>0x3FCB3BF0D8885D4C</var>, <var>0x3FD9E86319E32323</var>  <i>//2^( 39 /128-1) - 2^(- 39 /128-1), 2^(- 39 /128-1)</i></td></tr>
+<tr><th id="352">352</th><td>        .quad <var>0x3FCBF1762B00EF69</var>, <var>0x3FD9C49182A3F090</var>  <i>//2^( 40 /128-1) - 2^(- 40 /128-1), 2^(- 40 /128-1)</i></td></tr>
+<tr><th id="353">353</th><td>        .quad <var>0x3FCCA731311DF0FB</var>, <var>0x3FD9A0F170CA07BA</var>  <i>//2^( 41 /128-1) - 2^(- 41 /128-1), 2^(- 41 /128-1)</i></td></tr>
+<tr><th id="354">354</th><td>        .quad <var>0x3FCD5D2348201C09</var>, <var>0x3FD97D829FDE4E50</var>  <i>//2^( 42 /128-1) - 2^(- 42 /128-1), 2^(- 42 /128-1)</i></td></tr>
+<tr><th id="355">355</th><td>        .quad <var>0x3FCE134DCDB1FE3E</var>, <var>0x3FD95A44CBC8520F</var>  <i>//2^( 43 /128-1) - 2^(- 43 /128-1), 2^(- 43 /128-1)</i></td></tr>
+<tr><th id="356">356</th><td>        .quad <var>0x3FCEC9B21FEA98EA</var>, <var>0x3FD93737B0CDC5E5</var>  <i>//2^( 44 /128-1) - 2^(- 44 /128-1), 2^(- 44 /128-1)</i></td></tr>
+<tr><th id="357">357</th><td>        .quad <var>0x3FCF80519D5001D3</var>, <var>0x3FD9145B0B91FFC6</var>  <i>//2^( 45 /128-1) - 2^(- 45 /128-1), 2^(- 45 /128-1)</i></td></tr>
+<tr><th id="358">358</th><td>        .quad <var>0x3FD01B96D26D026A</var>, <var>0x3FD8F1AE99157736</var>  <i>//2^( 46 /128-1) - 2^(- 46 /128-1), 2^(- 46 /128-1)</i></td></tr>
+<tr><th id="359">359</th><td>        .quad <var>0x3FD07723CAFA6331</var>, <var>0x3FD8CF3216B5448C</var>  <i>//2^( 47 /128-1) - 2^(- 47 /128-1), 2^(- 47 /128-1)</i></td></tr>
+<tr><th id="360">360</th><td>        .quad <var>0x3FD0D2D06841B373</var>, <var>0x3FD8ACE5422AA0DB</var>  <i>//2^( 48 /128-1) - 2^(- 48 /128-1), 2^(- 48 /128-1)</i></td></tr>
+<tr><th id="361">361</th><td>        .quad <var>0x3FD12E9D5A715381</var>, <var>0x3FD88AC7D98A6699</var>  <i>//2^( 49 /128-1) - 2^(- 49 /128-1), 2^(- 49 /128-1)</i></td></tr>
+<tr><th id="362">362</th><td>        .quad <var>0x3FD18A8B51F5C661</var>, <var>0x3FD868D99B4492ED</var>  <i>//2^( 50 /128-1) - 2^(- 50 /128-1), 2^(- 50 /128-1)</i></td></tr>
+<tr><th id="363">363</th><td>        .quad <var>0x3FD1E69AFF7B04D7</var>, <var>0x3FD8471A4623C7AD</var>  <i>//2^( 51 /128-1) - 2^(- 51 /128-1), 2^(- 51 /128-1)</i></td></tr>
+<tr><th id="364">364</th><td>        .quad <var>0x3FD242CD13EDD0F1</var>, <var>0x3FD82589994CCE13</var>  <i>//2^( 52 /128-1) - 2^(- 52 /128-1), 2^(- 52 /128-1)</i></td></tr>
+<tr><th id="365">365</th><td>        .quad <var>0x3FD29F22407D0A0C</var>, <var>0x3FD80427543E1A12</var>  <i>//2^( 53 /128-1) - 2^(- 53 /128-1), 2^(- 53 /128-1)</i></td></tr>
+<tr><th id="366">366</th><td>        .quad <var>0x3FD2FB9B369B0153</var>, <var>0x3FD7E2F336CF4E62</var>  <i>//2^( 54 /128-1) - 2^(- 54 /128-1), 2^(- 54 /128-1)</i></td></tr>
+<tr><th id="367">367</th><td>        .quad <var>0x3FD35838A7FECEC8</var>, <var>0x3FD7C1ED0130C132</var>  <i>//2^( 55 /128-1) - 2^(- 55 /128-1), 2^(- 55 /128-1)</i></td></tr>
+<tr><th id="368">368</th><td>        .quad <var>0x3FD3B4FB46A5A6CC</var>, <var>0x3FD7A11473EB0187</var>  <i>//2^( 56 /128-1) - 2^(- 56 /128-1), 2^(- 56 /128-1)</i></td></tr>
+<tr><th id="369">369</th><td>        .quad <var>0x3FD411E3C4D4302F</var>, <var>0x3FD780694FDE5D3F</var>  <i>//2^( 57 /128-1) - 2^(- 57 /128-1), 2^(- 57 /128-1)</i></td></tr>
+<tr><th id="370">370</th><td>        .quad <var>0x3FD46EF2D517DAC8</var>, <var>0x3FD75FEB564267C9</var>  <i>//2^( 58 /128-1) - 2^(- 58 /128-1), 2^(- 58 /128-1)</i></td></tr>
+<tr><th id="371">371</th><td>        .quad <var>0x3FD4CC292A48369E</var>, <var>0x3FD73F9A48A58174</var>  <i>//2^( 59 /128-1) - 2^(- 59 /128-1), 2^(- 59 /128-1)</i></td></tr>
+<tr><th id="372">372</th><td>        .quad <var>0x3FD5298777884B96</var>, <var>0x3FD71F75E8EC5F74</var>  <i>//2^( 60 /128-1) - 2^(- 60 /128-1), 2^(- 60 /128-1)</i></td></tr>
+<tr><th id="373">373</th><td>        .quad <var>0x3FD5870E7047F1BC</var>, <var>0x3FD6FF7DF9519484</var>  <i>//2^( 61 /128-1) - 2^(- 61 /128-1), 2^(- 61 /128-1)</i></td></tr>
+<tr><th id="374">374</th><td>        .quad <var>0x3FD5E4BEC8452A1A</var>, <var>0x3FD6DFB23C651A2F</var>  <i>//2^( 62 /128-1) - 2^(- 62 /128-1), 2^(- 62 /128-1)</i></td></tr>
+<tr><th id="375">375</th><td>        .quad <var>0x3FD64299338D7827</var>, <var>0x3FD6C012750BDABF</var>  <i>//2^( 63 /128-1) - 2^(- 63 /128-1), 2^(- 63 /128-1)</i></td></tr>
+<tr><th id="376">376</th><td>        .quad <var>0x3FD6A09E667F3BCD</var>, <var>0x3FD6A09E667F3BCD</var>  <i>//2^( 64 /128-1) - 2^(- 64 /128-1), 2^(- 64 /128-1)</i></td></tr>
+<tr><th id="377">377</th><td>        .quad <var>0x3FD6FECF15CB0C0B</var>, <var>0x3FD68155D44CA973</var>  <i>//2^( 65 /128-1) - 2^(- 65 /128-1), 2^(- 65 /128-1)</i></td></tr>
+<tr><th id="378">378</th><td>        .quad <var>0x3FD75D2BF6751239</var>, <var>0x3FD6623882552225</var>  <i>//2^( 66 /128-1) - 2^(- 66 /128-1), 2^(- 66 /128-1)</i></td></tr>
+<tr><th id="379">379</th><td>        .quad <var>0x3FD7BBB5BDD665E8</var>, <var>0x3FD6434634CCC320</var>  <i>//2^( 67 /128-1) - 2^(- 67 /128-1), 2^(- 67 /128-1)</i></td></tr>
+<tr><th id="380">380</th><td>        .quad <var>0x3FD81A6D219E6963</var>, <var>0x3FD6247EB03A5585</var>  <i>//2^( 68 /128-1) - 2^(- 68 /128-1), 2^(- 68 /128-1)</i></td></tr>
+<tr><th id="381">381</th><td>        .quad <var>0x3FD87952D7D426DF</var>, <var>0x3FD605E1B976DC09</var>  <i>//2^( 69 /128-1) - 2^(- 69 /128-1), 2^(- 69 /128-1)</i></td></tr>
+<tr><th id="382">382</th><td>        .quad <var>0x3FD8D86796D7AE49</var>, <var>0x3FD5E76F15AD2148</var>  <i>//2^( 70 /128-1) - 2^(- 70 /128-1), 2^(- 70 /128-1)</i></td></tr>
+<tr><th id="383">383</th><td>        .quad <var>0x3FD937AC156373C8</var>, <var>0x3FD5C9268A5946B7</var>  <i>//2^( 71 /128-1) - 2^(- 71 /128-1), 2^(- 71 /128-1)</i></td></tr>
+<tr><th id="384">384</th><td>        .quad <var>0x3FD997210A8DAEE4</var>, <var>0x3FD5AB07DD485429</var>  <i>//2^( 72 /128-1) - 2^(- 72 /128-1), 2^(- 72 /128-1)</i></td></tr>
+<tr><th id="385">385</th><td>        .quad <var>0x3FD9F6C72DC9BA68</var>, <var>0x3FD58D12D497C7FD</var>  <i>//2^( 73 /128-1) - 2^(- 73 /128-1), 2^(- 73 /128-1)</i></td></tr>
+<tr><th id="386">386</th><td>        .quad <var>0x3FDA569F36E974EA</var>, <var>0x3FD56F4736B527DA</var>  <i>//2^( 74 /128-1) - 2^(- 74 /128-1), 2^(- 74 /128-1)</i></td></tr>
+<tr><th id="387">387</th><td>        .quad <var>0x3FDAB6A9DE1EA215</var>, <var>0x3FD551A4CA5D920F</var>  <i>//2^( 75 /128-1) - 2^(- 75 /128-1), 2^(- 75 /128-1)</i></td></tr>
+<tr><th id="388">388</th><td>        .quad <var>0x3FDB16E7DBFC4CA3</var>, <var>0x3FD5342B569D4F82</var>  <i>//2^( 76 /128-1) - 2^(- 76 /128-1), 2^(- 76 /128-1)</i></td></tr>
+<tr><th id="389">389</th><td>        .quad <var>0x3FDB7759E9782918</var>, <var>0x3FD516DAA2CF6642</var>  <i>//2^( 77 /128-1) - 2^(- 77 /128-1), 2^(- 77 /128-1)</i></td></tr>
+<tr><th id="390">390</th><td>        .quad <var>0x3FDBD800BFEBF932</var>, <var>0x3FD4F9B2769D2CA7</var>  <i>//2^( 78 /128-1) - 2^(- 78 /128-1), 2^(- 78 /128-1)</i></td></tr>
+<tr><th id="391">391</th><td>        .quad <var>0x3FDC38DD1916F025</var>, <var>0x3FD4DCB299FDDD0D</var>  <i>//2^( 79 /128-1) - 2^(- 79 /128-1), 2^(- 79 /128-1)</i></td></tr>
+<tr><th id="392">392</th><td>        .quad <var>0x3FDC99EFAF1F1790</var>, <var>0x3FD4BFDAD5362A27</var>  <i>//2^( 80 /128-1) - 2^(- 80 /128-1), 2^(- 80 /128-1)</i></td></tr>
+<tr><th id="393">393</th><td>        .quad <var>0x3FDCFB393C92B539</var>, <var>0x3FD4A32AF0D7D3DE</var>  <i>//2^( 81 /128-1) - 2^(- 81 /128-1), 2^(- 81 /128-1)</i></td></tr>
+<tr><th id="394">394</th><td>        .quad <var>0x3FDD5CBA7C69B19C</var>, <var>0x3FD486A2B5C13CD0</var>  <i>//2^( 82 /128-1) - 2^(- 82 /128-1), 2^(- 82 /128-1)</i></td></tr>
+<tr><th id="395">395</th><td>        .quad <var>0x3FDDBE742A06FF34</var>, <var>0x3FD46A41ED1D0057</var>  <i>//2^( 83 /128-1) - 2^(- 83 /128-1), 2^(- 83 /128-1)</i></td></tr>
+<tr><th id="396">396</th><td>        .quad <var>0x3FDE2067013A029D</var>, <var>0x3FD44E086061892D</var>  <i>//2^( 84 /128-1) - 2^(- 84 /128-1), 2^(- 84 /128-1)</i></td></tr>
+<tr><th id="397">397</th><td>        .quad <var>0x3FDE8293BE3FFB87</var>, <var>0x3FD431F5D950A897</var>  <i>//2^( 85 /128-1) - 2^(- 85 /128-1), 2^(- 85 /128-1)</i></td></tr>
+<tr><th id="398">398</th><td>        .quad <var>0x3FDEE4FB1DC56E75</var>, <var>0x3FD4160A21F72E2A</var>  <i>//2^( 86 /128-1) - 2^(- 86 /128-1), 2^(- 86 /128-1)</i></td></tr>
+<tr><th id="399">399</th><td>        .quad <var>0x3FDF479DDCE78F58</var>, <var>0x3FD3FA4504AC801C</var>  <i>//2^( 87 /128-1) - 2^(- 87 /128-1), 2^(- 87 /128-1)</i></td></tr>
+<tr><th id="400">400</th><td>        .quad <var>0x3FDFAA7CB935ACFE</var>, <var>0x3FD3DEA64C123422</var>  <i>//2^( 88 /128-1) - 2^(- 88 /128-1), 2^(- 88 /128-1)</i></td></tr>
+<tr><th id="401">401</th><td>        .quad <var>0x3FE006CC38594EB1</var>, <var>0x3FD3C32DC313A8E5</var>  <i>//2^( 89 /128-1) - 2^(- 89 /128-1), 2^(- 89 /128-1)</i></td></tr>
+<tr><th id="402">402</th><td>        .quad <var>0x3FE03878E0EB1569</var>, <var>0x3FD3A7DB34E59FF7</var>  <i>//2^( 90 /128-1) - 2^(- 90 /128-1), 2^(- 90 /128-1)</i></td></tr>
+<tr><th id="403">403</th><td>        .quad <var>0x3FE06A44B5C74101</var>, <var>0x3FD38CAE6D05D866</var>  <i>//2^( 91 /128-1) - 2^(- 91 /128-1), 2^(- 91 /128-1)</i></td></tr>
+<tr><th id="404">404</th><td>        .quad <var>0x3FE09C3016A0D077</var>, <var>0x3FD371A7373AA9CB</var>  <i>//2^( 92 /128-1) - 2^(- 92 /128-1), 2^(- 92 /128-1)</i></td></tr>
+<tr><th id="405">405</th><td>        .quad <var>0x3FE0CE3B63676360</var>, <var>0x3FD356C55F929FF1</var>  <i>//2^( 93 /128-1) - 2^(- 93 /128-1), 2^(- 93 /128-1)</i></td></tr>
+<tr><th id="406">406</th><td>        .quad <var>0x3FE10066FC47F240</var>, <var>0x3FD33C08B26416FF</var>  <i>//2^( 94 /128-1) - 2^(- 94 /128-1), 2^(- 94 /128-1)</i></td></tr>
+<tr><th id="407">407</th><td>        .quad <var>0x3FE132B341AD8761</var>, <var>0x3FD32170FC4CD831</var>  <i>//2^( 95 /128-1) - 2^(- 95 /128-1), 2^(- 95 /128-1)</i></td></tr>
+<tr><th id="408">408</th><td>        .quad <var>0x3FE165209441F823</var>, <var>0x3FD306FE0A31B715</var>  <i>//2^( 96 /128-1) - 2^(- 96 /128-1), 2^(- 96 /128-1)</i></td></tr>
+<tr><th id="409">409</th><td>        .quad <var>0x3FE197AF54EE9EBB</var>, <var>0x3FD2ECAFA93E2F56</var>  <i>//2^( 97 /128-1) - 2^(- 97 /128-1), 2^(- 97 /128-1)</i></td></tr>
+<tr><th id="410">410</th><td>        .quad <var>0x3FE1CA5FE4DD1475</var>, <var>0x3FD2D285A6E4030B</var>  <i>//2^( 98 /128-1) - 2^(- 98 /128-1), 2^(- 98 /128-1)</i></td></tr>
+<tr><th id="411">411</th><td>        .quad <var>0x3FE1FD32A577EC72</var>, <var>0x3FD2B87FD0DAD990</var>  <i>//2^( 99 /128-1) - 2^(- 99 /128-1), 2^(- 99 /128-1)</i></td></tr>
+<tr><th id="412">412</th><td>        .quad <var>0x3FE23027F86B6ED6</var>, <var>0x3FD29E9DF51FDEE1</var>  <i>//2^( 100 /128-1) - 2^(- 100 /128-1), 2^(- 100 /128-1)</i></td></tr>
+<tr><th id="413">413</th><td>        .quad <var>0x3FE263403FA65489</var>, <var>0x3FD284DFE1F56381</var>  <i>//2^( 101 /128-1) - 2^(- 101 /128-1), 2^(- 101 /128-1)</i></td></tr>
+<tr><th id="414">414</th><td>        .quad <var>0x3FE2967BDD5A8364</var>, <var>0x3FD26B4565E27CDD</var>  <i>//2^( 102 /128-1) - 2^(- 102 /128-1), 2^(- 102 /128-1)</i></td></tr>
+<tr><th id="415">415</th><td>        .quad <var>0x3FE2C9DB33FDCAE9</var>, <var>0x3FD251CE4FB2A63F</var>  <i>//2^( 103 /128-1) - 2^(- 103 /128-1), 2^(- 103 /128-1)</i></td></tr>
+<tr><th id="416">416</th><td>        .quad <var>0x3FE2FD5EA64AA180</var>, <var>0x3FD2387A6E756238</var>  <i>//2^( 104 /128-1) - 2^(- 104 /128-1), 2^(- 104 /128-1)</i></td></tr>
+<tr><th id="417">417</th><td>        .quad <var>0x3FE331069740E22F</var>, <var>0x3FD21F49917DDC96</var>  <i>//2^( 105 /128-1) - 2^(- 105 /128-1), 2^(- 105 /128-1)</i></td></tr>
+<tr><th id="418">418</th><td>        .quad <var>0x3FE364D36A268AE0</var>, <var>0x3FD2063B88628CD6</var>  <i>//2^( 106 /128-1) - 2^(- 106 /128-1), 2^(- 106 /128-1)</i></td></tr>
+<tr><th id="419">419</th><td>        .quad <var>0x3FE398C582887B27</var>, <var>0x3FD1ED5022FCD91D</var>  <i>//2^( 107 /128-1) - 2^(- 107 /128-1), 2^(- 107 /128-1)</i></td></tr>
+<tr><th id="420">420</th><td>        .quad <var>0x3FE3CCDD443B3394</var>, <var>0x3FD1D4873168B9AA</var>  <i>//2^( 108 /128-1) - 2^(- 108 /128-1), 2^(- 108 /128-1)</i></td></tr>
+<tr><th id="421">421</th><td>        .quad <var>0x3FE4011B135B9590</var>, <var>0x3FD1BBE084045CD4</var>  <i>//2^( 109 /128-1) - 2^(- 109 /128-1), 2^(- 109 /128-1)</i></td></tr>
+<tr><th id="422">422</th><td>        .quad <var>0x3FE4357F544FA3C1</var>, <var>0x3FD1A35BEB6FCB75</var>  <i>//2^( 110 /128-1) - 2^(- 110 /128-1), 2^(- 110 /128-1)</i></td></tr>
+<tr><th id="423">423</th><td>        .quad <var>0x3FE46A0A6BC742FD</var>, <var>0x3FD18AF9388C8DEA</var>  <i>//2^( 111 /128-1) - 2^(- 111 /128-1), 2^(- 111 /128-1)</i></td></tr>
+<tr><th id="424">424</th><td>        .quad <var>0x3FE49EBCBEBCFBCA</var>, <var>0x3FD172B83C7D517B</var>  <i>//2^( 112 /128-1) - 2^(- 112 /128-1), 2^(- 112 /128-1)</i></td></tr>
+<tr><th id="425">425</th><td>        .quad <var>0x3FE4D396B276BC6F</var>, <var>0x3FD15A98C8A58E51</var>  <i>//2^( 113 /128-1) - 2^(- 113 /128-1), 2^(- 113 /128-1)</i></td></tr>
+<tr><th id="426">426</th><td>        .quad <var>0x3FE50898AC869B96</var>, <var>0x3FD1429AAEA92DE0</var>  <i>//2^( 114 /128-1) - 2^(- 114 /128-1), 2^(- 114 /128-1)</i></td></tr>
+<tr><th id="427">427</th><td>        .quad <var>0x3FE53DC312CB9B7A</var>, <var>0x3FD12ABDC06C31CC</var>  <i>//2^( 115 /128-1) - 2^(- 115 /128-1), 2^(- 115 /128-1)</i></td></tr>
+<tr><th id="428">428</th><td>        .quad <var>0x3FE573164B726DB6</var>, <var>0x3FD11301D0125B51</var>  <i>//2^( 116 /128-1) - 2^(- 116 /128-1), 2^(- 116 /128-1)</i></td></tr>
+<tr><th id="429">429</th><td>        .quad <var>0x3FE5A892BCF6379B</var>, <var>0x3FD0FB66AFFED31B</var>  <i>//2^( 117 /128-1) - 2^(- 117 /128-1), 2^(- 117 /128-1)</i></td></tr>
+<tr><th id="430">430</th><td>        .quad <var>0x3FE5DE38CE215725</var>, <var>0x3FD0E3EC32D3D1A2</var>  <i>//2^( 118 /128-1) - 2^(- 118 /128-1), 2^(- 118 /128-1)</i></td></tr>
+<tr><th id="431">431</th><td>        .quad <var>0x3FE61408E60E2888</var>, <var>0x3FD0CC922B7247F7</var>  <i>//2^( 119 /128-1) - 2^(- 119 /128-1), 2^(- 119 /128-1)</i></td></tr>
+<tr><th id="432">432</th><td>        .quad <var>0x3FE64A036C27CC52</var>, <var>0x3FD0B5586CF9890F</var>  <i>//2^( 120 /128-1) - 2^(- 120 /128-1), 2^(- 120 /128-1)</i></td></tr>
+<tr><th id="433">433</th><td>        .quad <var>0x3FE68028C82AEE2F</var>, <var>0x3FD09E3ECAC6F383</var>  <i>//2^( 121 /128-1) - 2^(- 121 /128-1), 2^(- 121 /128-1)</i></td></tr>
+<tr><th id="434">434</th><td>        .quad <var>0x3FE6B67962268C43</var>, <var>0x3FD0874518759BC8</var>  <i>//2^( 122 /128-1) - 2^(- 122 /128-1), 2^(- 122 /128-1)</i></td></tr>
+<tr><th id="435">435</th><td>        .quad <var>0x3FE6ECF5A27CBF28</var>, <var>0x3FD0706B29DDF6DE</var>  <i>//2^( 123 /128-1) - 2^(- 123 /128-1), 2^(- 123 /128-1)</i></td></tr>
+<tr><th id="436">436</th><td>        .quad <var>0x3FE7239DF1E38286</var>, <var>0x3FD059B0D3158574</var>  <i>//2^( 124 /128-1) - 2^(- 124 /128-1), 2^(- 124 /128-1)</i></td></tr>
+<tr><th id="437">437</th><td>        .quad <var>0x3FE75A72B9657E51</var>, <var>0x3FD04315E86E7F85</var>  <i>//2^( 125 /128-1) - 2^(- 125 /128-1), 2^(- 125 /128-1)</i></td></tr>
+<tr><th id="438">438</th><td>        .quad <var>0x3FE791746262D0A8</var>, <var>0x3FD02C9A3E778061</var>  <i>//2^( 126 /128-1) - 2^(- 126 /128-1), 2^(- 126 /128-1)</i></td></tr>
+<tr><th id="439">439</th><td>        .quad <var>0x3FE7C8A35691D856</var>, <var>0x3FD0163DA9FB3335</var> <i>//2^( 127 /128-1) - 2^(- 127 /128-1), 2^(- 127 /128-1)</i></td></tr>
+<tr><th id="440">440</th><td>        .align <var>16</var></td></tr>
+<tr><th id="441">441</th><td>        .quad <var>0x42C8000000000000</var>, <var>0x42C8000000000000</var> <i>/* _dbShifter = 1.5 * 2^(52-k)*/</i></td></tr>
+<tr><th id="442">442</th><td>        .align <var>16</var></td></tr>
+<tr><th id="443">443</th><td>        .<em>long</em> <var>0x40861d99</var>, <var>0x40861d99</var>, <var>0x40861d99</var>, <var>0x40861d99</var>         <i>/* _iDomainRange 0x40861d9ac12a3e85 =(1021*2^K-0.5)*log(2)/2^K -needed for quick exp*/</i></td></tr>
+<tr><th id="444">444</th><td>        .align <var>16</var></td></tr>
+<tr><th id="445">445</th><td>        .quad <var>0x3FDFFFFFFFFFFDBD</var>, <var>0x3FDFFFFFFFFFFDBD</var> <i>/* _dPC2 */</i></td></tr>
+<tr><th id="446">446</th><td>        .align <var>16</var></td></tr>
+<tr><th id="447">447</th><td>        .quad <var>0x3FC55555555554AD</var>, <var>0x3FC55555555554AD</var> <i>/* _dPC3 */</i></td></tr>
+<tr><th id="448">448</th><td>        .align <var>16</var></td></tr>
+<tr><th id="449">449</th><td>        .quad <var>0x3FA55555CF16D299</var>, <var>0x3FA55555CF16D299</var> <i>/* _dPC4 */</i></td></tr>
+<tr><th id="450">450</th><td>        .align <var>16</var></td></tr>
+<tr><th id="451">451</th><td>        .quad <var>0x3F8111115712F425</var>, <var>0x3F8111115712F425</var> <i>/* _dPC5 */</i></td></tr>
+<tr><th id="452">452</th><td>        .align <var>16</var></td></tr>
+<tr><th id="453">453</th><td>        .quad <var>0x000000000000007f</var>, <var>0x000000000000007f</var> <i>/* _lIndexMask */</i></td></tr>
+<tr><th id="454">454</th><td>        .align <var>16</var></td></tr>
+<tr><th id="455">455</th><td>        .type	__svml_dsinh_data_internal,@object</td></tr>
+<tr><th id="456">456</th><td>        .size	__svml_dsinh_data_internal,.-__svml_dsinh_data_internal</td></tr>
+<tr><th id="457">457</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

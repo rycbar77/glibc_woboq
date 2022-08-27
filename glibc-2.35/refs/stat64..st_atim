@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='139' type='struct timespec'/>
+<offset>576</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='133'>/* Nanosecond resolution timestamps are stored in a format
+       equivalent to &apos;struct timespec&apos;.  This is the type used
+       whenever possible but the Unix namespace rules do not allow the
+       identifier &apos;timespec&apos; to appear in the &lt;sys/stat.h&gt; header.
+       Therefore we have to handle the use of this header in strictly
+       standard-compliant sources special.  */</doc>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='139'>/* Time of last access.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='63' macro='1' u='w' c='fstatat64_time64_statx'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='64' u='w' c='fstatat64_time64_statx'/>
+<use f='codebrowser/io/statx_generic.c' l='78' u='r' c='statx_generic'/>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/stdlib/inttypes.h' l='305' type='intmax_t wcstoimax(const __gwchar_t *restrict __nptr, __gwchar_t **restrict __endptr, int __base)'/>
+<doc f='codebrowser/stdlib/inttypes.h' l='304'>/* Like `wcstol&apos; but convert to `intmax_t&apos;.  */</doc>
+<def f='codebrowser/sysdeps/wordsize-64/wcstol.c' l='15' macro='1' type='long wcstoimax(const wchar_t *restrict , wchar_t **restrict , int )'/>

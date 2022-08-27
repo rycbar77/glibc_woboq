@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='498' type='int __pthread_key_create(pthread_key_t * key, void (*)(void *) destr)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='499' type='int __pthread_key_create(pthread_key_t * , void (*)(void *) )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='499' c='__pthread_key_create'/>
+<def f='codebrowser/nptl/pthread_key_create.c' l='49' macro='1' type='int __pthread_key_create(pthread_key_t * , void (*)(void *) )'/>
+<use f='codebrowser/sysdeps/pthread/tss_create.c' l='32' u='c' c='__tss_create'/>

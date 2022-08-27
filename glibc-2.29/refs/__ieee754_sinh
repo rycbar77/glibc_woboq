@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/math_private_calls.h' l='51' type='double __ieee754_sinh(double )'/>
+<use f='codebrowser/math/s_ccosh_template.c' l='84' macro='1' u='c' c='__ccosh'/>
+<use f='codebrowser/math/s_csin_template.c' l='90' macro='1' u='c' c='__csin'/>
+<use f='codebrowser/math/s_csinh_template.c' l='89' macro='1' u='c' c='__csinh'/>
+<use f='codebrowser/math/s_ctan_template.c' l='108' macro='1' u='c' c='__ctan'/>
+<use f='codebrowser/math/s_ctanh_template.c' l='108' macro='1' u='c' c='__ctanh'/>
+<use f='codebrowser/math/w_sinh_template.c' l='32' u='c' c='__sinh'/>
+<def f='codebrowser/sysdeps/ieee754/dbl-64/e_sinh.c' l='43' ll='91' type='double __ieee754_sinh(double x)'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_sinh.c' l='92' c='__sinh_finite'/>

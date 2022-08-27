@@ -1,0 +1,6 @@
+<dec f='codebrowser/dirent/dirent.h' l='224' type='int dirfd(DIR * __dirp)'/>
+<use f='codebrowser/include/dirent.h' l='54' c='__dirfd'/>
+<dec f='codebrowser/include/dirent.h' l='55' type='int dirfd(DIR * )'/>
+<use f='codebrowser/include/dirent.h' l='55' c='dirfd'/>
+<doc f='codebrowser/dirent/dirent.h' l='223'>/* Return the file descriptor used by DIRP.  */</doc>
+<def f='codebrowser/sysdeps/posix/dirfd.c' l='30' macro='1' type='int dirfd(DIR * )'/>

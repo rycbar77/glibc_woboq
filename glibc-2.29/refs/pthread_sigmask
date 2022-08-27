@@ -1,0 +1,7 @@
+<use f='codebrowser/support/xpthread_sigmask.c' l='27' u='c' c='xpthread_sigmask'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='82' u='c' c='__gai_start_notify_thread'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='107' u='c' c='__gai_create_helper_thread'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='113' u='c' c='__gai_create_helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='80' u='c' c='change_sigmask'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='189' u='c' c='init_mq_netlink'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/pthread_sigmask.c' l='25' ll='54' type='int pthread_sigmask(int how, const sigset_t * newmask, sigset_t * oldmask)'/>

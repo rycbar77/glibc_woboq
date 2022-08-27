@@ -1,0 +1,6 @@
+<dec f='include/selinux/selinux.h' l='557' type='int selinux_getpolicytype(char ** policytype)'/>
+<doc f='include/selinux/selinux.h' l='552'>/*
+  selinux_getpolicytype reads the /etc/selinux/config file and determines 
+  what the default policy for the machine is.  Calling application must 
+  free policytype.
+ */</doc>

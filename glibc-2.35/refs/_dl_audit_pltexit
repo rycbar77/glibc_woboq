@@ -1,0 +1,3 @@
+<def f='codebrowser/elf/dl-audit.c' l='338' ll='381' type='void _dl_audit_pltexit(struct link_map * l, Elf64_Word reloc_arg, const void * inregs, void * outregs)'/>
+<def f='codebrowser/elf/dl-support.c' l='444' ll='449' type='void _dl_audit_pltexit(struct link_map * l, Elf64_Word reloc_arg, const void * inregs, void * outregs)'/>
+<doc f='codebrowser/elf/dl-support.c' l='443'>/* This is used by _dl_runtime_profile, not used on static code.  */</doc>

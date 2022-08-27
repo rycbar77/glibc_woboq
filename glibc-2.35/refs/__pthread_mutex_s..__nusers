@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/x86/nptl/bits/struct_mutex.h' l='28' type='unsigned int'/>
+<offset>96</offset>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='262' u='w' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='474' u='w' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_destroy.c' l='33' u='r' c='___pthread_mutex_destroy'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='556' u='w' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='56' u='w' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='79' u='w' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='200' u='w' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='361' u='w' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='437' u='w' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='65' u='w' c='__pthread_mutex_unlock_usercnt'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='167' u='w' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='270' u='w' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='332' u='w' c='__pthread_mutex_unlock_full'/>

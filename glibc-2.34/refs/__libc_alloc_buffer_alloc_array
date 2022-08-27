@@ -1,0 +1,17 @@
+<dec f='codebrowser/include/alloc_buffer.h' l='332' type='void * __libc_alloc_buffer_alloc_array(struct alloc_buffer * buf, size_t size, size_t align, size_t count)'/>
+<dec f='codebrowser/include/alloc_buffer.h' l='381' type='void * __libc_alloc_buffer_alloc_array(struct alloc_buffer * , size_t , size_t , size_t )'/>
+<use f='codebrowser/include/alloc_buffer.h' l='381' c='__libc_alloc_buffer_alloc_array'/>
+<def f='codebrowser/malloc/alloc_buffer_alloc_array.c' l='22' ll='45' type='void * __libc_alloc_buffer_alloc_array(struct alloc_buffer * buf, size_t element_size, size_t align, size_t count)'/>
+<doc f='codebrowser/include/alloc_buffer.h' l='331'>/* Internal function.  Allocate an array.  */</doc>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='288' macro='1' u='c' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='290' macro='1' u='c' c='gethostbyname3_multi'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='416' macro='1' u='c' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='421' macro='1' u='c' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='445' macro='1' u='c' c='__resolv_conf_allocate'/>
+<use f='codebrowser/time/tzfile.c' l='283' macro='1' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='284' macro='1' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='285' macro='1' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='286' macro='1' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='287' macro='1' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='289' macro='1' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='293' macro='1' u='c' c='__tzfile_read'/>

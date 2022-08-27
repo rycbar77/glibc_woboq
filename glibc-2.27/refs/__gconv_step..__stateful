@@ -1,0 +1,10 @@
+<dec f='codebrowser/iconv/gconv.h' l='107' type='int'/>
+<offset>704</offset>
+<doc f='codebrowser/iconv/gconv.h' l='106'>/* Flag whether this is a stateful encoding or not.  */</doc>
+<use f='codebrowser/iconv/gconv_builtin.c' l='85' u='w' c='__gconv_get_builtin_trans'/>
+<use f='codebrowser/libio/iofwide.c' l='308' u='r' c='do_encoding'/>
+<use f='codebrowser/stdlib/mblen.c' l='50' u='r' c='mblen'/>
+<use f='codebrowser/stdlib/mbtowc.c' l='53' u='r' c='mbtowc'/>
+<use f='codebrowser/stdlib/wctomb.c' l='52' u='r' c='wctomb'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='46' u='w'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='65' u='w'/>

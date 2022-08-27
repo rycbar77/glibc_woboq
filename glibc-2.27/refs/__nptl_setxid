@@ -1,0 +1,38 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='595' type='int __nptl_setxid(struct xid_command * cmdp)'/>
+<def f='codebrowser/nptl/allocatestack.c' l='1123' ll='1229' type='int __nptl_setxid(struct xid_command * cmdp)'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/setegid.c' l='34' macro='1' type='int __nptl_setxid(struct xid_command * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setegid.c' l='34' macro='1' c='__nptl_setxid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setegid.c' l='34' macro='1' u='r' c='setegid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setegid.c' l='34' macro='1' u='c' c='setegid'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/seteuid.c' l='34' macro='1' type='int __nptl_setxid(struct xid_command * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/seteuid.c' l='34' macro='1' c='__nptl_setxid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/seteuid.c' l='34' macro='1' u='r' c='seteuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/seteuid.c' l='34' macro='1' u='c' c='seteuid'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/setgid.c' l='29' macro='1' type='int __nptl_setxid(struct xid_command * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgid.c' l='29' macro='1' c='__nptl_setxid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgid.c' l='29' macro='1' u='r' c='__setgid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgid.c' l='29' macro='1' u='c' c='__setgid'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/setgroups.c' l='33' macro='1' type='int __nptl_setxid(struct xid_command * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgroups.c' l='33' macro='1' c='__nptl_setxid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgroups.c' l='33' macro='1' u='r' c='setgroups'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setgroups.c' l='33' macro='1' u='c' c='setgroups'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/setregid.c' l='29' macro='1' type='int __nptl_setxid(struct xid_command * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setregid.c' l='29' macro='1' c='__nptl_setxid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setregid.c' l='29' macro='1' u='r' c='__setregid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setregid.c' l='29' macro='1' u='c' c='__setregid'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/setresgid.c' l='29' macro='1' type='int __nptl_setxid(struct xid_command * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresgid.c' l='29' macro='1' c='__nptl_setxid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresgid.c' l='29' macro='1' u='r' c='__setresgid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresgid.c' l='29' macro='1' u='c' c='__setresgid'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/setresuid.c' l='29' macro='1' type='int __nptl_setxid(struct xid_command * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresuid.c' l='29' macro='1' c='__nptl_setxid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresuid.c' l='29' macro='1' u='r' c='__setresuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setresuid.c' l='29' macro='1' u='c' c='__setresuid'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/setreuid.c' l='29' macro='1' type='int __nptl_setxid(struct xid_command * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setreuid.c' l='29' macro='1' c='__nptl_setxid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setreuid.c' l='29' macro='1' u='r' c='__setreuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setreuid.c' l='29' macro='1' u='c' c='__setreuid'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/setuid.c' l='28' macro='1' type='int __nptl_setxid(struct xid_command * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setuid.c' l='28' macro='1' c='__nptl_setxid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setuid.c' l='28' macro='1' u='r' c='__setuid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setuid.c' l='28' macro='1' u='c' c='__setuid'/>

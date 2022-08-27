@@ -1,0 +1,12 @@
+<dec f='codebrowser/libio/stdio.h' l='771' type='int feof_unlocked(FILE * __stream)'/>
+<def f='codebrowser/libio/bits/stdio.h' l='127' ll='131' macro='1' type='int feof_unlocked(FILE * __stream)'/>
+<dec f='codebrowser/include/stdio.h' l='243' type='int feof_unlocked(FILE * )'/>
+<use f='codebrowser/include/stdio.h' l='243' c='feof_unlocked'/>
+<use f='codebrowser/include/stdio.h' l='244' c='__feof_unlocked'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='682' u='c' c='handle_dir'/>
+<use f='codebrowser/inet/ruserpass.c' l='220' u='c' c='token'/>
+<def f='codebrowser/libio/feof_u.c' l='38' macro='1' type='int feof_unlocked(FILE * )'/>
+<use f='codebrowser/locale/programs/locale.c' l='540' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1209' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='121' u='c' c='__pthread_getattr_np'/>
+<use f='codebrowser/nss/nss_readline.c' l='45' u='c' c='__nss_readline'/>

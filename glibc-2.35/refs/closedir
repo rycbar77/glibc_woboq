@@ -1,0 +1,18 @@
+<dec f='codebrowser/dirent/dirent.h' l='149' type='int closedir(DIR * __dirp)'/>
+<doc f='codebrowser/dirent/dirent.h' l='144'>/* Close the directory stream DIRP.
+   Return 0 if successful, -1 if not.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/elf/ldconfig.c' l='454' u='c' c='add_glibc_hwcaps_subdirectories'/>
+<use f='codebrowser/elf/ldconfig.c' l='1139' u='c' c='search_dir'/>
+<use f='codebrowser/elf/pldd.c' l='180' u='c' c='main'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='154' u='c' c='charmap_closedir'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1439' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locfile.c' l='434' u='c' c='siblings_uncached'/>
+<use f='codebrowser/nscd/nscd.c' l='265' u='c' c='main'/>
+<use f='codebrowser/support/support_descriptors.c' l='114' u='c' c='support_descriptors_list'/>
+<use f='codebrowser/support/support_wait_for_thread_exit.c' l='42' u='c' c='support_wait_for_thread_exit'/>
+<use f='codebrowser/support/test-container.c' l='582' u='c' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='639' u='c' c='rsync_1'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/closedir.c' l='54' macro='1' type='int closedir(DIR * )'/>

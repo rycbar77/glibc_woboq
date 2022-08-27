@@ -1,0 +1,5 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='325' type='void __deallocate_stack(struct pthread * pd)'/>
+<doc f='codebrowser/nptl/pthreadP.h' l='324'>/* Free allocated stack.  */</doc>
+<def f='codebrowser/nptl/allocatestack.c' l='787' ll='807' type='void __deallocate_stack(struct pthread * pd)'/>
+<use f='codebrowser/nptl/pthread_create.c' l='368' u='c' c='__free_tcb'/>
+<use f='codebrowser/nptl/pthread_create.c' l='845' u='c' c='__pthread_create_2_1'/>

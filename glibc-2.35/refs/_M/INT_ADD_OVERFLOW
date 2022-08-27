@@ -1,0 +1,50 @@
+<dec f='codebrowser/include/intprops.h' l='360'/>
+<doc f='codebrowser/include/intprops.h' l='311'>/* Check for integer overflow, and report low order bits of answer.
+
+   The INT_&lt;op&gt;_OVERFLOW macros return 1 if the corresponding C operators
+   might not yield numerically correct answers due to arithmetic overflow.
+   The INT_&lt;op&gt;_WRAPV macros compute the low-order bits of the sum,
+   difference, and product of two C integers, and return 1 if these
+   low-order bits are not numerically correct.
+   These macros work correctly on all known practical hosts, and do not rely
+   on undefined behavior due to signed arithmetic overflow.
+
+   Example usage, assuming A and B are long int:
+
+     if (INT_MULTIPLY_OVERFLOW (a, b))
+       printf (&quot;result would overflow\n&quot;);
+     else
+       printf (&quot;result is %ld (no overflow)\n&quot;, a * b);
+
+   Example usage with WRAPV flavor:
+
+     long int result;
+     bool overflow = INT_MULTIPLY_WRAPV (a, b, &amp;result);
+     printf (&quot;result is %ld (%s)\n&quot;, result,
+             overflow ? &quot;after overflow&quot; : &quot;no overflow&quot;);
+
+   Restrictions on these macros:
+
+   These macros do not check for all possible numerical problems or
+   undefined or unspecified behavior: they do not check for division
+   by zero, for bad shift counts, or for shifting negative numbers.
+
+   These macros may evaluate their arguments zero or multiple times, so the
+   arguments should not have side effects.
+
+   The WRAPV macros are not constant expressions.  They support only
+   +, binary -, and *.
+
+   Because the WRAPV macros convert the result, they report overflow
+   in different circumstances than the OVERFLOW macros do.  For
+   example, in the typical case with 16-bit &apos;short&apos; and 32-bit &apos;int&apos;,
+   if A, B and R are all of type &apos;short&apos; then INT_ADD_OVERFLOW (A, B)
+   returns false because the addition cannot overflow after A and B
+   are converted to &apos;int&apos;, whereas INT_ADD_WRAPV (A, B, &amp;R) returns
+   true or false depending on whether the sum fits into &apos;short&apos;.
+
+   These macros are tuned for their last input argument being a constant.
+
+   Return 1 if the integer expressions A * B, A - B, -A, A * B, A / B,
+   A % B, and A &lt;&lt; B would overflow, respectively.  */</doc>
+<use f='codebrowser/stdlib/canonicalize.c' l='342' u='c'/>

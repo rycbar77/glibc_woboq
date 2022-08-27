@@ -1,0 +1,6 @@
+<dec f='codebrowser/libio/bits/libio.h' l='210' type='int (*)(struct _IO_codecvt *, __mbstate_t *, const char *, const char *, size_t)'/>
+<offset>384</offset>
+<use f='codebrowser/libio/iofwide.c' l='75' u='w'/>
+<use f='codebrowser/libio/wfileops.c' l='514' u='r' c='_IO_wfile_sync'/>
+<use f='codebrowser/libio/wfileops.c' l='666' u='r' c='do_ftell_wide'/>
+<use f='codebrowser/libio/wfileops.c' l='822' u='r' c='_IO_wfile_seekoff'/>

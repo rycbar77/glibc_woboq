@@ -1,0 +1,25 @@
+<dec f='codebrowser/resolv/gai_misc.h' l='53' type='struct waitlist *'/>
+<offset>192</offset>
+<doc f='codebrowser/resolv/gai_misc.h' l='52'>/* List of waiting processes.  */</doc>
+<use f='codebrowser/resolv/gai_misc.c' l='239' u='w' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_notify.c' l='109' u='r' c='__gai_notify'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='55' u='r' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='59' u='w' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='110' u='a' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='110' u='r' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='114' u='w' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='164' u='r' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='168' u='w' c='__getaddrinfo_a'/>
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='85' type='struct waitlist *'/>
+<offset>384</offset>
+<doc f='codebrowser/sysdeps/generic/aio_misc.h' l='84'>/* List of waiting processes.  */</doc>
+<use f='codebrowser/rt/aio_misc.c' l='360' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_notify.c' l='129' u='r' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_suspend.c' l='78' u='a' c='cleanup'/>
+<use f='codebrowser/rt/aio_suspend.c' l='146' u='r' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/aio_suspend.c' l='149' u='w' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/aio_suspend.c' l='220' u='a' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='149' u='r' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='152' u='w' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='212' u='r' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='215' u='w' c='lio_listio_internal'/>

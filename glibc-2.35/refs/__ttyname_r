@@ -1,0 +1,13 @@
+<dec f='codebrowser/include/unistd.h' l='144' type='int __ttyname_r(int __fd, char * __buf, size_t __buflen)'/>
+<dec f='codebrowser/include/unistd.h' l='145' type='int __ttyname_r(int , char * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='145' c='__ttyname_r'/>
+<use f='codebrowser/debug/ttyname_r_chk.c' l='27' u='c' c='__ttyname_r_chk'/>
+<use f='codebrowser/login/login.c' l='43' u='c' c='tty_name'/>
+<use f='codebrowser/misc/ttyslot.c' l='58' u='c' c='ttyslot'/>
+<use f='codebrowser/sysdeps/unix/getlogin.c' l='53' u='c' c='getlogin_fd0'/>
+<use f='codebrowser/sysdeps/unix/getlogin_r.c' l='54' u='c' c='getlogin_r_fd0'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname.c' l='51' u='c' c='ttyname'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='92' ll='196' type='int __ttyname_r(int fd, char * buf, size_t buflen)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='198' c='ttyname_r'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='90'>/* Store at most BUFLEN character of the pathname of the terminal FD is
+   open on in BUF.  Return 0 on success,  otherwise an error number.  */</doc>

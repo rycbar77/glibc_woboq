@@ -1,0 +1,24 @@
+<dec f='codebrowser/nscd/nscd.h' l='84' type='char[]'/>
+<use f='codebrowser/nscd/nscd.h' l='99' u='r' c='init_traced_file'/>
+<use f='codebrowser/nscd/nscd.h' l='110' u='r' c='init_traced_file'/>
+<offset>33088</offset>
+<doc f='codebrowser/nscd/nscd.h' l='83'>/* The full-path name of the registered file.  */</doc>
+<use f='codebrowser/nscd/cache.c' l='279' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='288' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='298' c='prune_cache'/>
+<use f='codebrowser/nscd/connections.c' l='856' u='r' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='861' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='865' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='878' c='install_watches'/>
+<use f='codebrowser/nscd/connections.c' l='910' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='916' u='r' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='920' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='1806' u='r' c='check_file'/>
+<use f='codebrowser/nscd/connections.c' l='1838' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1843' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1851' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1865' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1890' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1916' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1924' u='r' c='inotify_check_files'/>
+<use f='codebrowser/nscd/connections.c' l='1928' c='inotify_check_files'/>

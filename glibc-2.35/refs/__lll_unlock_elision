@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/lowlevellock.h' l='197' type='int __lll_unlock_elision(int * lock, int private)'/>
+<dec f='codebrowser/sysdeps/nptl/lowlevellock.h' l='199' type='int __lll_unlock_elision(int * , int )'/>
+<use f='codebrowser/sysdeps/nptl/lowlevellock.h' l='199' c='__lll_unlock_elision'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='77' macro='1' u='c' c='__pthread_mutex_unlock_usercnt'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-unlock.c' l='23' ll='33' type='int __lll_unlock_elision(int * lock, int private)'/>

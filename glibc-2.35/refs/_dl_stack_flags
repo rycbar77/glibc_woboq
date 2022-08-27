@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='443' type='Elf64_Word'/>
+<use f='codebrowser/elf/dl-load.c' l='1309' macro='1' u='r' c='_dl_map_object_from_fd'/>
+<def f='codebrowser/elf/dl-support.c' l='187' macro='1' type='Elf64_Word'/>
+<use f='codebrowser/elf/dl-support.c' l='412' u='w' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/nptl/allocatestack.c' l='333' macro='1' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='455' macro='1' u='r' c='allocate_stack'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='51' macro='1' u='w' c='make_main_stack_executable'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='338' macro='1' u='r' c='__spawnix'/>

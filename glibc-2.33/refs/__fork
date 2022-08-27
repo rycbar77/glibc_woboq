@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/unistd.h' l='160' type='__pid_t __fork()'/>
+<dec f='codebrowser/include/unistd.h' l='161' type='__pid_t __fork()'/>
+<use f='codebrowser/include/unistd.h' l='161' c='__fork'/>
+<use f='codebrowser/misc/daemon.c' l='48' u='c' c='daemon'/>
+<use f='codebrowser/sunrpc/openchild.c' l='63' u='c' c='_openchild'/>
+<def f='codebrowser/sysdeps/nptl/fork.c' l='156' macro='1' type='__pid_t __fork()'/>

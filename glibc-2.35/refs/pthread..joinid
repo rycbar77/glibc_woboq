@@ -1,0 +1,21 @@
+<dec f='codebrowser/nptl/descr.h' l='346' type='struct pthread *'/>
+<offset>12608</offset>
+<doc f='codebrowser/nptl/descr.h' l='340'>/* If the thread waits to join another one the ID of the latter is
+     stored here.
+
+     In case a thread is detached this field contains a pointer of the
+     TCB if the thread itself.  This is something which cannot happen
+     in normal operation.  */</doc>
+<use f='codebrowser/nptl/pthread_create.c' l='355' u='w' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='571' macro='1' u='r' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='692' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_detach.c' l='36' u='a' c='___pthread_detach'/>
+<use f='codebrowser/nptl/pthread_detach.c' l='42' macro='1' u='r' c='___pthread_detach'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='55' macro='1' u='r' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='48' macro='1' u='r' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='58' u='r' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='77' u='a' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='77' u='a' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='77' u='a' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='92' u='a' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='131' u='w' c='__pthread_clockjoin_ex'/>

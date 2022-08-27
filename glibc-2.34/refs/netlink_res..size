@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/netlinkaccess.h' l='32' type='size_t'/>
+<offset>128</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/netlinkaccess.h' l='32'>/* Size of response.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='107' u='r' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/if_index.c' l='141' u='r' c='if_nameindex_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='223' u='w' c='__netlink_request'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='359' u='r' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='438' u='r' c='getifaddrs_internal'/>

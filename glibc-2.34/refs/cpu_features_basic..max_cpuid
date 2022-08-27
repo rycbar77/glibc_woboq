@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/x86/include/cpu-features.h' l='833' type='int'/>
+<offset>32</offset>
+<use f='codebrowser/sysdeps/x86/dl-diagnostics-cpu.c' l='49' u='r' c='_dl_diagnostics_cpu'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='252' u='r' c='handle_intel'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='496' u='r' c='get_common_cache_info'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/dl-minsigstacksize.h' l='27' u='r' c='dl_check_minsigstacksize'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='218' u='r' c='update_active'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='348' u='r' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='362' u='r' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='369' u='r' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='376' u='r' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='415' c='init_cpu_features'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/malloc/malloc.c' l='1979' type='void * sysmalloc(size_t , mstate )'/>
+<def f='codebrowser/malloc/malloc.c' l='2387' ll='2856' type='void * sysmalloc(size_t nb, mstate av)'/>
+<use f='codebrowser/malloc/malloc.c' l='3700' u='c' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4294' u='c' c='_int_malloc'/>
+<doc f='codebrowser/malloc/malloc.c' l='1975'>/*
+   Other internal utilities operating on mstates
+ */</doc>
+<doc f='codebrowser/malloc/malloc.c' l='2380'>/*
+   sysmalloc handles malloc cases requiring more memory from the system.
+   On entry, it is assumed that av-&gt;top does not have enough
+   space to service request for nb bytes, thus requiring that av-&gt;top
+   be extended or replaced.
+ */</doc>

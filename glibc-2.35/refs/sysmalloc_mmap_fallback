@@ -1,0 +1,9 @@
+<def f='codebrowser/malloc/malloc.c' l='2507' ll='2544' type='void * sysmalloc_mmap_fallback(long * s, size_t nb, size_t old_size, size_t minsize, size_t pagesize, int extra_flags, mstate av)'/>
+<use f='codebrowser/malloc/malloc.c' l='2747' u='c' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2752' u='c' c='sysmalloc'/>
+<doc f='codebrowser/malloc/malloc.c' l='2501'>/*
+   Allocate memory using mmap() based on S and NB requested size, aligning to
+   PAGESIZE if required.  The EXTRA_FLAGS is used on mmap() call.  If the call
+   succeedes S is updated with the allocated size.  This is used as a fallback
+   if MORECORE fails.
+ */</doc>

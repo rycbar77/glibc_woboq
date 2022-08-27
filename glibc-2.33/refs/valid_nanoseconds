@@ -1,0 +1,12 @@
+<def f='codebrowser/include/time.h' l='491' ll='495' type='_Bool valid_nanoseconds(__syscall_slong_t ns)'/>
+<doc f='codebrowser/include/time.h' l='489'>/* Check if a value is in the valid nanoseconds range. Return true if
+   it is, false otherwise.  */</doc>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='629' u='c' c='__pthread_cond_timedwait'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='666' u='c' c='__pthread_cond_clockwait'/>
+<use f='codebrowser/nptl/pthread_rwlock_common.c' l='293' u='c' c='__pthread_rwlock_rdlock_full64'/>
+<use f='codebrowser/nptl/pthread_rwlock_common.c' l='598' u='c' c='__pthread_rwlock_wrlock_full64'/>
+<use f='codebrowser/nptl/sem_clockwait.c' l='37' u='c' c='__sem_clockwait'/>
+<use f='codebrowser/nptl/sem_timedwait.c' l='29' u='c' c='__sem_timedwait'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_settime.c' l='29' u='c' c='__clock_settime'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='236' u='c' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='544' u='c' c='__pthread_mutex_clocklock_common'/>

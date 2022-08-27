@@ -1,0 +1,9 @@
+<dec f='codebrowser/misc/libgen.h' l='34' type='char * __xpg_basename(char * __path)'/>
+<doc f='codebrowser/misc/libgen.h' l='28'>/* Return final component of PATH.
+
+   This is the weird XPG version of this function.  It sometimes will
+   modify its argument.  Therefore we normally use the GNU version (in
+   &lt;string.h&gt;) and only if this header is included make the XPG
+   version available under the real name.  */</doc>
+<use f='codebrowser/elf/ldconfig.c' l='1042' macro='1' u='c' c='search_dir'/>
+<def f='codebrowser/stdlib/xpg_basename.c' l='23' ll='70' type='char * __xpg_basename(char * filename)'/>

@@ -1,0 +1,7 @@
+<def f='codebrowser/nss/nss_action.h' l='53' ll='57' type='int nss_actions_bits_index(enum nss_status status)'/>
+<use f='codebrowser/nss/nss_action.h' l='63' u='c' c='nss_action_get'/>
+<use f='codebrowser/nss/nss_action.h' l='72' u='c' c='nss_action_set'/>
+<doc f='codebrowser/nss/nss_action.h' l='49'>/* Index in actions of an NSS status.  Note that in nss/nss.h the
+   status starts at -2, and we shift that up to zero by adding 2.
+   Thus for example NSS_STATUS_TRYAGAIN, which is -2, would index into
+   the 0th bit place as expected.  */</doc>

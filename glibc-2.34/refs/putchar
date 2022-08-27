@@ -1,0 +1,28 @@
+<dec f='codebrowser/libio/stdio.h' l='550' type='int putchar(int __c)'/>
+<def f='codebrowser/libio/bits/stdio.h' l='81' ll='85' macro='1' type='int putchar(int __c)'/>
+<doc f='codebrowser/libio/stdio.h' l='546'>/* Write a character to stdout.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/elf/cache.c' l='309' u='c' c='print_extensions'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='661' u='c' c='do_print_human'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='671' u='c' c='do_print_human'/>
+<def f='codebrowser/libio/putchar.c' l='23' ll='31' type='int putchar(int c)'/>
+<use f='codebrowser/locale/programs/locale.c' l='778' u='c' c='print_assignment'/>
+<use f='codebrowser/locale/programs/locale.c' l='787' u='c' c='print_assignment'/>
+<use f='codebrowser/locale/programs/locale.c' l='788' u='c' c='print_assignment'/>
+<use f='codebrowser/locale/programs/locale.c' l='791' u='c' c='print_assignment'/>
+<use f='codebrowser/locale/programs/locale.c' l='792' u='c' c='print_assignment'/>
+<use f='codebrowser/locale/programs/locale.c' l='839' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='840' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='855' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='863' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='864' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='883' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='895' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='940' u='c' c='print_item'/>
+<use f='codebrowser/support/echo-container.c' l='29' u='c' c='main'/>
+<use f='codebrowser/support/echo-container.c' l='32' u='c' c='main'/>
+<use f='codebrowser/support/shell-container.c' l='80' u='c' c='echo_func'/>
+<use f='codebrowser/support/shell-container.c' l='83' u='c' c='echo_func'/>
+<use f='codebrowser/timezone/zdump.c' l='1011' u='c' c='showtrans'/>

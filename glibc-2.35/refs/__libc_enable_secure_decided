@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/unistd.h' l='195' type='int'/>
+<use f='codebrowser/elf/dl-support.c' l='316' u='w' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='329' u='w' c='_dl_aux_init'/>
+<def f='codebrowser/elf/enbl-secure.c' l='30' type='int'/>
+<use f='codebrowser/elf/enbl-secure.c' l='37' u='r' c='__libc_init_secure'/>
+<doc f='codebrowser/elf/enbl-secure.c' l='29'>/* If nonzero __libc_enable_secure is already set.  */</doc>

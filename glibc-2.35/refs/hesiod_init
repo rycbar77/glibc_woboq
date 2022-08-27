@@ -1,0 +1,10 @@
+<dec f='codebrowser/hesiod/hesiod.h' l='42' type='int hesiod_init(void ** context)'/>
+<def f='codebrowser/hesiod/hesiod.c' l='76' ll='130' type='int hesiod_init(void ** context)'/>
+<doc f='codebrowser/hesiod/hesiod.c' l='73'>/*
+ * This function is called to initialize a hesiod_p.
+ */</doc>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='60' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='180' u='c' c='_nss_hesiod_initgroups_dyn'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='70' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-pwd.c' l='58' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='71' u='c' c='lookup'/>

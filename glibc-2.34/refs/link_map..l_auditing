@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/link.h' l='193' type='unsigned int'/>
+<offset>6379</offset>
+<doc f='codebrowser/include/link.h' l='193'>/* Nonzero if the DSO is used in auditing.  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='1945' u='r' c='open_path'/>
+<use f='codebrowser/elf/dl-open.c' l='846' u='r' c='_dl_open'/>
+<use f='codebrowser/elf/rtld.c' l='1061' u='w' c='load_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='2482' u='r' c='dl_main'/>

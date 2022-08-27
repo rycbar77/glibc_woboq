@@ -1,0 +1,14 @@
+<dec f='codebrowser/intl/libintl.h' l='82' type='char * textdomain(const char * __domainname)'/>
+<doc f='codebrowser/intl/libintl.h' l='79'>/* Set the current default message catalog to DOMAINNAME.
+   If DOMAINNAME is null, return the current default.
+   If DOMAINNAME is &quot;&quot;, reset to the default of &quot;messages&quot;.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='170' u='c' c='main'/>
+<use f='codebrowser/debug/pcprofiledump.c' l='87' u='c' c='main'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='130' u='c' c='main'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='293' u='c' c='main'/>
+<def f='codebrowser/intl/textdomain.c' l='124' macro='1' type='char * textdomain(const char * )'/>
+<use f='codebrowser/locale/programs/locale.c' l='196' u='c' c='main'/>
+<use f='codebrowser/locale/programs/localedef.c' l='207' u='c' c='main'/>
+<use f='codebrowser/posix/getconf.c' l='480' u='c' c='main'/>
+<use f='codebrowser/timezone/zdump.c' l='428' u='c' c='main'/>
+<use f='codebrowser/timezone/zic.c' l='693' u='c' c='main'/>

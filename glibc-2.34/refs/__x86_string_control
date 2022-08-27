@@ -1,0 +1,5 @@
+<def f='codebrowser/sysdeps/x86/cacheinfo.h' l='55' type='int'/>
+<use f='codebrowser/sysdeps/x86/cacheinfo.h' l='81' u='w' c='init_cacheinfo'/>
+<doc f='codebrowser/sysdeps/x86/cacheinfo.h' l='52'>/* A bit-wise OR of string/memory requirements for optimal performance
+   e.g. X86_STRING_CONTROL_AVOID_SHORT_DISTANCE_REP_MOVSB.  These bits
+   are used at runtime to tune implementation behavior.  */</doc>

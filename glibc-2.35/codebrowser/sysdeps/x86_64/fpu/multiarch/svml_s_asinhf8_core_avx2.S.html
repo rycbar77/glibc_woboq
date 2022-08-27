@@ -1,0 +1,475 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>svml_s_asinhf8_core_avx2.S source code [codebrowser/sysdeps/x86_64/fpu/multiarch/svml_s_asinhf8_core_avx2.S] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/fpu/multiarch/svml_s_asinhf8_core_avx2.S'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>x86_64</a>/<a href='..'>fpu</a>/<a href='./'>multiarch</a>/<a href='svml_s_asinhf8_core_avx2.S.html'>svml_s_asinhf8_core_avx2.S</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Function asinhf vectorized with AVX2.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/*</i></td></tr>
+<tr><th id="20">20</th><td><i> * ALGORITHM DESCRIPTION:</i></td></tr>
+<tr><th id="21">21</th><td><i> *</i></td></tr>
+<tr><th id="22">22</th><td><i> *   Compute asinh(x) as log(x + sqrt(x*x + 1))</i></td></tr>
+<tr><th id="23">23</th><td><i> *</i></td></tr>
+<tr><th id="24">24</th><td><i> *   Special cases:</i></td></tr>
+<tr><th id="25">25</th><td><i> *</i></td></tr>
+<tr><th id="26">26</th><td><i> *   asinh(NaN) = quiet NaN, and raise invalid exception</i></td></tr>
+<tr><th id="27">27</th><td><i> *   asinh(INF) = that INF</i></td></tr>
+<tr><th id="28">28</th><td><i> *   asinh(0)   = that 0</i></td></tr>
+<tr><th id="29">29</th><td><i> *</i></td></tr>
+<tr><th id="30">30</th><td><i> */</i></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><i>/* Offsets for data table __svml_sasinh_data_internal</i></td></tr>
+<tr><th id="33">33</th><td><i> */</i></td></tr>
+<tr><th id="34">34</th><td><u>#define <dfn class="macro" id="_M/SgnMask" data-ref="_M/SgnMask">SgnMask</dfn>                       	0</u></td></tr>
+<tr><th id="35">35</th><td><u>#define <dfn class="macro" id="_M/sOne" data-ref="_M/sOne">sOne</dfn>                          	32</u></td></tr>
+<tr><th id="36">36</th><td><u>#define <dfn class="macro" id="_M/sPoly" data-ref="_M/sPoly">sPoly</dfn>                         	64</u></td></tr>
+<tr><th id="37">37</th><td><u>#define <dfn class="macro" id="_M/iBrkValue" data-ref="_M/iBrkValue">iBrkValue</dfn>                     	320</u></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/iOffExpoMask" data-ref="_M/iOffExpoMask">iOffExpoMask</dfn>                  	352</u></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/sBigThreshold" data-ref="_M/sBigThreshold">sBigThreshold</dfn>                 	384</u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/sC2" data-ref="_M/sC2">sC2</dfn>                           	416</u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/sC3" data-ref="_M/sC3">sC3</dfn>                           	448</u></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/sHalf" data-ref="_M/sHalf">sHalf</dfn>                         	480</u></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/sLargestFinite" data-ref="_M/sLargestFinite">sLargestFinite</dfn>                	512</u></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/sLittleThreshold" data-ref="_M/sLittleThreshold">sLittleThreshold</dfn>              	544</u></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/sSign" data-ref="_M/sSign">sSign</dfn>                         	576</u></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/sThirtyOne" data-ref="_M/sThirtyOne">sThirtyOne</dfn>                    	608</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/sTopMask8" data-ref="_M/sTopMask8">sTopMask8</dfn>                     	640</u></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/XScale" data-ref="_M/XScale">XScale</dfn>                        	672</u></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/sLn2" data-ref="_M/sLn2">sLn2</dfn>                          	704</u></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><u>#include <a href="../../../unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td>        .text</td></tr>
+<tr><th id="54">54</th><td>	.section .text.avx2,<q>"ax"</q>,@progbits</td></tr>
+<tr><th id="55">55</th><td><a class="macro" href="../../../x86/sysdep.h.html#91" title=".globl _ZGVdN8v_asinhf_avx2; .type _ZGVdN8v_asinhf_avx2,@function; .align 1&lt;&lt;4; _ZGVdN8v_asinhf_avx2: .cfi_startproc; endbr64;" data-ref="_M/ENTRY">ENTRY</a>(<span class='warning' title="type specifier missing, defaults to &apos;int&apos;"><dfn class="decl def" id="_ZGVdN8v_asinhf_avx2" title='_ZGVdN8v_asinhf_avx2' data-ref="_ZGVdN8v_asinhf_avx2" data-ref-filename="_ZGVdN8v_asinhf_avx2">_ZGVdN8v_asinhf_avx2</dfn></span>)</td></tr>
+<tr><th id="56">56</th><td>        <span class='error' title="unknown type name &apos;pushq&apos;">pushq</span>     <span class='error' title="expected identifier or &apos;(&apos;">%</span>rbp</td></tr>
+<tr><th id="57">57</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#44" title=".cfi_def_cfa_offset 16" data-ref="_M/cfi_def_cfa_offset">cfi_def_cfa_offset</a>(<var>16</var>)</td></tr>
+<tr><th id="58">58</th><td>        movq      %rsp, %rbp</td></tr>
+<tr><th id="59">59</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 6, 16" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>6</var>, <var>16</var>)</td></tr>
+<tr><th id="60">60</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 6, -16" data-ref="_M/cfi_offset">cfi_offset</a>(<var>6</var>, -<var>16</var>)</td></tr>
+<tr><th id="61">61</th><td>        andq      $-<var>32</var>, %rsp</td></tr>
+<tr><th id="62">62</th><td>        subq      $<var>96</var>, %rsp</td></tr>
+<tr><th id="63">63</th><td>        vmovaps   %ymm0, %ymm9</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><i>/* Load the constant 1 and a sign mask */</i></td></tr>
+<tr><th id="66">66</th><td>        vmovups   <a class="macro" href="#35" title="32" data-ref="_M/sOne">sOne</a>+__svml_sasinh_data_internal(%rip), %ymm8</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><i>/* No need to split X when FMA is available in hardware. */</i></td></tr>
+<tr><th id="69">69</th><td>        vmulps    %ymm9, %ymm9, %ymm5</td></tr>
+<tr><th id="70">70</th><td>        vmovups   <a class="macro" href="#47" title="640" data-ref="_M/sTopMask8">sTopMask8</a>+__svml_sasinh_data_internal(%rip), %ymm1</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><i>/*</i></td></tr>
+<tr><th id="73">73</th><td><i> * Finally, express Y + W = X^2 + 1 accurately where Y has &lt;= 8 bits.</i></td></tr>
+<tr><th id="74">74</th><td><i> * If |X| &lt;= 1 then |XHi| &lt;= 1 and so |X2Hi| &lt;= 1, so we can treat 1</i></td></tr>
+<tr><th id="75">75</th><td><i> * as the dominant component in the compensated summation. Otherwise,</i></td></tr>
+<tr><th id="76">76</th><td><i> * if |X| &gt;= 1, then since X2Hi only has 22 significant bits, the basic</i></td></tr>
+<tr><th id="77">77</th><td><i> * addition will be exact anyway until we get to |X| &gt;= 2^24. But by</i></td></tr>
+<tr><th id="78">78</th><td><i> * that time the log function is well-conditioned enough that the</i></td></tr>
+<tr><th id="79">79</th><td><i> * rounding error doesn't matter. Hence we can treat 1 as dominant even</i></td></tr>
+<tr><th id="80">80</th><td><i> * if it literally isn't.</i></td></tr>
+<tr><th id="81">81</th><td><i> */</i></td></tr>
+<tr><th id="82">82</th><td>        vaddps    %ymm5, %ymm8, %ymm13</td></tr>
+<tr><th id="83">83</th><td>        vandps    %ymm1, %ymm13, %ymm2</td></tr>
+<tr><th id="84">84</th><td>        vmovaps   %ymm9, %ymm4</td></tr>
+<tr><th id="85">85</th><td>        vsubps    %ymm13, %ymm8, %ymm11</td></tr>
+<tr><th id="86">86</th><td>        vsubps    %ymm2, %ymm13, %ymm15</td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td><i>/*</i></td></tr>
+<tr><th id="89">89</th><td><i> * Compute R = 1/sqrt(Y + W) * (1 + d)</i></td></tr>
+<tr><th id="90">90</th><td><i> * Force R to &lt;= 8 significant bits.</i></td></tr>
+<tr><th id="91">91</th><td><i> * This means that R * Y and R^2 * Y are exactly representable.</i></td></tr>
+<tr><th id="92">92</th><td><i> */</i></td></tr>
+<tr><th id="93">93</th><td>        vrsqrtps  %ymm2, %ymm0</td></tr>
+<tr><th id="94">94</th><td>        vfmsub213ps %ymm5, %ymm9, %ymm4</td></tr>
+<tr><th id="95">95</th><td>        vaddps    %ymm11, %ymm5, %ymm12</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td><i>/*</i></td></tr>
+<tr><th id="98">98</th><td><i> * Get the absolute value of the input, since we will exploit antisymmetry</i></td></tr>
+<tr><th id="99">99</th><td><i> * and mostly assume X &gt;= 0 in the core computation</i></td></tr>
+<tr><th id="100">100</th><td><i> */</i></td></tr>
+<tr><th id="101">101</th><td>        vandps    <a class="macro" href="#34" title="0" data-ref="_M/SgnMask">SgnMask</a>+__svml_sasinh_data_internal(%rip), %ymm9, %ymm6</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><i>/*</i></td></tr>
+<tr><th id="104">104</th><td><i> * Check whether the input is finite, by checking |X| &lt;= MaxFloat</i></td></tr>
+<tr><th id="105">105</th><td><i> * Otherwise set the rangemask so that the callout will get used.</i></td></tr>
+<tr><th id="106">106</th><td><i> * Note that this will also use the callout for NaNs since not(NaN &lt;= MaxFloat)</i></td></tr>
+<tr><th id="107">107</th><td><i> */</i></td></tr>
+<tr><th id="108">108</th><td>        vcmpnle_uqps <a class="macro" href="#43" title="512" data-ref="_M/sLargestFinite">sLargestFinite</a>+__svml_sasinh_data_internal(%rip), %ymm6, %ymm10</td></tr>
+<tr><th id="109">109</th><td>        vaddps    %ymm12, %ymm4, %ymm14</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td><i>/*</i></td></tr>
+<tr><th id="112">112</th><td><i> * Unfortunately, we can still be in trouble if |X| &lt;= 2^-5, since</i></td></tr>
+<tr><th id="113">113</th><td><i> * the absolute error 2^-(7+24)-ish in sqrt(1 + X^2) gets scaled up</i></td></tr>
+<tr><th id="114">114</th><td><i> * by 1/X and comes close to our threshold. Hence if |X| &lt;= 2^-4,</i></td></tr>
+<tr><th id="115">115</th><td><i> * perform an alternative computation</i></td></tr>
+<tr><th id="116">116</th><td><i> * sqrt(1 + X^2) - 1 = X^2/2 - X^4/8 + X^6/16</i></td></tr>
+<tr><th id="117">117</th><td><i> * X2 = X^2</i></td></tr>
+<tr><th id="118">118</th><td><i> */</i></td></tr>
+<tr><th id="119">119</th><td>        vaddps    %ymm4, %ymm5, %ymm4</td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td><i>/*</i></td></tr>
+<tr><th id="122">122</th><td><i> * The following computation can go wrong for very large X, basically</i></td></tr>
+<tr><th id="123">123</th><td><i> * because X^2 overflows. But for large X we have</i></td></tr>
+<tr><th id="124">124</th><td><i> * asinh(X) / log(2 X) - 1 =~= 1/(4 * X^2), so for X &gt;= 2^30</i></td></tr>
+<tr><th id="125">125</th><td><i> * we can just later stick X back into the log and tweak up the exponent.</i></td></tr>
+<tr><th id="126">126</th><td><i> * Actually we scale X by 2^-30 and tweak the exponent up by 31,</i></td></tr>
+<tr><th id="127">127</th><td><i> * to stay in the safe range for the later log computation.</i></td></tr>
+<tr><th id="128">128</th><td><i> * Compute a flag now telling us when do do this.</i></td></tr>
+<tr><th id="129">129</th><td><i> */</i></td></tr>
+<tr><th id="130">130</th><td>        vcmplt_oqps <a class="macro" href="#39" title="384" data-ref="_M/sBigThreshold">sBigThreshold</a>+__svml_sasinh_data_internal(%rip), %ymm6, %ymm7</td></tr>
+<tr><th id="131">131</th><td>        vaddps    %ymm15, %ymm14, %ymm3</td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td><i>/*</i></td></tr>
+<tr><th id="134">134</th><td><i> * Now       1 / (1 + d)</i></td></tr>
+<tr><th id="135">135</th><td><i> * = 1 / (1 + (sqrt(1 - e) - 1))</i></td></tr>
+<tr><th id="136">136</th><td><i> * = 1 / sqrt(1 - e)</i></td></tr>
+<tr><th id="137">137</th><td><i> * = 1 + 1/2 * e + 3/8 * e^2 + 5/16 * e^3 + 35/128 * e^4 + ...</i></td></tr>
+<tr><th id="138">138</th><td><i> * So compute the first three nonconstant terms of that, so that</i></td></tr>
+<tr><th id="139">139</th><td><i> * we have a relative correction (1 + Corr) to apply to S etc.</i></td></tr>
+<tr><th id="140">140</th><td><i> * C1 = 1/2</i></td></tr>
+<tr><th id="141">141</th><td><i> * C2 = 3/8</i></td></tr>
+<tr><th id="142">142</th><td><i> * C3 = 5/16</i></td></tr>
+<tr><th id="143">143</th><td><i> */</i></td></tr>
+<tr><th id="144">144</th><td>        vmovups   <a class="macro" href="#41" title="448" data-ref="_M/sC3">sC3</a>+__svml_sasinh_data_internal(%rip), %ymm12</td></tr>
+<tr><th id="145">145</th><td>        vmovmskps %ymm10, %edx</td></tr>
+<tr><th id="146">146</th><td>        vandps    %ymm1, %ymm0, %ymm10</td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td><i>/*</i></td></tr>
+<tr><th id="149">149</th><td><i> * Compute S = (Y/sqrt(Y + W)) * (1 + d)</i></td></tr>
+<tr><th id="150">150</th><td><i> * and T = (W/sqrt(Y + W)) * (1 + d)</i></td></tr>
+<tr><th id="151">151</th><td><i> * so that S + T = sqrt(Y + W) * (1 + d)</i></td></tr>
+<tr><th id="152">152</th><td><i> * S is exact, and the rounding error in T is OK.</i></td></tr>
+<tr><th id="153">153</th><td><i> */</i></td></tr>
+<tr><th id="154">154</th><td>        vmulps    %ymm10, %ymm2, %ymm15</td></tr>
+<tr><th id="155">155</th><td>        vmulps    %ymm3, %ymm10, %ymm14</td></tr>
+<tr><th id="156">156</th><td>        vmovups   <a class="macro" href="#42" title="480" data-ref="_M/sHalf">sHalf</a>+__svml_sasinh_data_internal(%rip), %ymm3</td></tr>
+<tr><th id="157">157</th><td>        vsubps    %ymm8, %ymm15, %ymm0</td></tr>
+<tr><th id="158">158</th><td></td></tr>
+<tr><th id="159">159</th><td><i>/*</i></td></tr>
+<tr><th id="160">160</th><td><i> * Obtain sqrt(1 + X^2) - 1 in two pieces</i></td></tr>
+<tr><th id="161">161</th><td><i> * sqrt(1 + X^2) - 1</i></td></tr>
+<tr><th id="162">162</th><td><i> * = sqrt(Y + W) - 1</i></td></tr>
+<tr><th id="163">163</th><td><i> * = (S + T) * (1 + Corr) - 1</i></td></tr>
+<tr><th id="164">164</th><td><i> * = [S - 1] + [T + (S + T) * Corr]</i></td></tr>
+<tr><th id="165">165</th><td><i> * We need a compensated summation for the last part. We treat S - 1</i></td></tr>
+<tr><th id="166">166</th><td><i> * as the larger part; it certainly is until about X &lt; 2^-4, and in that</i></td></tr>
+<tr><th id="167">167</th><td><i> * case, the error is affordable since X dominates over sqrt(1 + X^2) - 1</i></td></tr>
+<tr><th id="168">168</th><td><i> * Final sum is dTmp5 (hi) + dTmp7 (lo)</i></td></tr>
+<tr><th id="169">169</th><td><i> */</i></td></tr>
+<tr><th id="170">170</th><td>        vaddps    %ymm14, %ymm15, %ymm13</td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td><i>/*</i></td></tr>
+<tr><th id="173">173</th><td><i> * Compute e = -(2 * d + d^2)</i></td></tr>
+<tr><th id="174">174</th><td><i> * The first FMR is exact, and the rounding error in the other is acceptable</i></td></tr>
+<tr><th id="175">175</th><td><i> * since d and e are ~ 2^-8</i></td></tr>
+<tr><th id="176">176</th><td><i> */</i></td></tr>
+<tr><th id="177">177</th><td>        vmovaps   %ymm8, %ymm11</td></tr>
+<tr><th id="178">178</th><td>        vfnmadd231ps %ymm15, %ymm10, %ymm11</td></tr>
+<tr><th id="179">179</th><td>        vfnmadd231ps %ymm14, %ymm10, %ymm11</td></tr>
+<tr><th id="180">180</th><td>        vfmadd213ps <a class="macro" href="#40" title="416" data-ref="_M/sC2">sC2</a>+__svml_sasinh_data_internal(%rip), %ymm11, %ymm12</td></tr>
+<tr><th id="181">181</th><td>        vfmadd213ps %ymm3, %ymm11, %ymm12</td></tr>
+<tr><th id="182">182</th><td>        vmulps    %ymm12, %ymm11, %ymm1</td></tr>
+<tr><th id="183">183</th><td></td></tr>
+<tr><th id="184">184</th><td><i>/* Now multiplex the two possible computations */</i></td></tr>
+<tr><th id="185">185</th><td>        vcmple_oqps <a class="macro" href="#44" title="544" data-ref="_M/sLittleThreshold">sLittleThreshold</a>+__svml_sasinh_data_internal(%rip), %ymm6, %ymm11</td></tr>
+<tr><th id="186">186</th><td>        vfmadd213ps %ymm14, %ymm13, %ymm1</td></tr>
+<tr><th id="187">187</th><td>        vaddps    %ymm0, %ymm1, %ymm2</td></tr>
+<tr><th id="188">188</th><td>        vsubps    %ymm2, %ymm0, %ymm10</td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td><i>/* sX2over2 = X^2/2 */</i></td></tr>
+<tr><th id="191">191</th><td>        vmulps    %ymm4, %ymm3, %ymm0</td></tr>
+<tr><th id="192">192</th><td>        vaddps    %ymm10, %ymm1, %ymm1</td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td><i>/* sX4over4 = X^4/4 */</i></td></tr>
+<tr><th id="195">195</th><td>        vmulps    %ymm0, %ymm0, %ymm5</td></tr>
+<tr><th id="196">196</th><td></td></tr>
+<tr><th id="197">197</th><td><i>/* sX46 = -X^4/4 + X^6/8 */</i></td></tr>
+<tr><th id="198">198</th><td>        vfmsub231ps %ymm0, %ymm5, %ymm5</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><i>/* sX46over2 = -X^4/8 + x^6/16 */</i></td></tr>
+<tr><th id="201">201</th><td>        vmulps    %ymm5, %ymm3, %ymm3</td></tr>
+<tr><th id="202">202</th><td>        vaddps    %ymm3, %ymm0, %ymm5</td></tr>
+<tr><th id="203">203</th><td>        vblendvps %ymm11, %ymm5, %ymm2, %ymm2</td></tr>
+<tr><th id="204">204</th><td>        vsubps    %ymm5, %ymm0, %ymm4</td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td><i>/*</i></td></tr>
+<tr><th id="207">207</th><td><i> * Now do another compensated sum to add |X| + [sqrt(1 + X^2) - 1].</i></td></tr>
+<tr><th id="208">208</th><td><i> * It's always safe to assume |X| is larger.</i></td></tr>
+<tr><th id="209">209</th><td><i> * This is the final 2-part argument to the log1p function</i></td></tr>
+<tr><th id="210">210</th><td><i> */</i></td></tr>
+<tr><th id="211">211</th><td>        vaddps    %ymm2, %ymm6, %ymm14</td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td><i>/*</i></td></tr>
+<tr><th id="214">214</th><td><i> * Now resume the main code.</i></td></tr>
+<tr><th id="215">215</th><td><i> * reduction: compute r,n</i></td></tr>
+<tr><th id="216">216</th><td><i> */</i></td></tr>
+<tr><th id="217">217</th><td>        vmovups   <a class="macro" href="#37" title="320" data-ref="_M/iBrkValue">iBrkValue</a>+__svml_sasinh_data_internal(%rip), %ymm5</td></tr>
+<tr><th id="218">218</th><td>        vaddps    %ymm4, %ymm3, %ymm10</td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td><i>/*</i></td></tr>
+<tr><th id="221">221</th><td><i> * Now we feed into the log1p code, using H in place of _VARG1 and</i></td></tr>
+<tr><th id="222">222</th><td><i> * also adding L into Xl.</i></td></tr>
+<tr><th id="223">223</th><td><i> * compute 1+x as high, low parts</i></td></tr>
+<tr><th id="224">224</th><td><i> */</i></td></tr>
+<tr><th id="225">225</th><td>        vmaxps    %ymm14, %ymm8, %ymm15</td></tr>
+<tr><th id="226">226</th><td>        vminps    %ymm14, %ymm8, %ymm0</td></tr>
+<tr><th id="227">227</th><td>        vblendvps %ymm11, %ymm10, %ymm1, %ymm12</td></tr>
+<tr><th id="228">228</th><td>        vsubps    %ymm14, %ymm6, %ymm1</td></tr>
+<tr><th id="229">229</th><td>        vaddps    %ymm0, %ymm15, %ymm3</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td><i>/* Now multiplex to the case X = 2^-30 * input, Xl = sL = 0 in the "big" case. */</i></td></tr>
+<tr><th id="232">232</th><td>        vmulps    <a class="macro" href="#48" title="672" data-ref="_M/XScale">XScale</a>+__svml_sasinh_data_internal(%rip), %ymm6, %ymm6</td></tr>
+<tr><th id="233">233</th><td>        vaddps    %ymm1, %ymm2, %ymm13</td></tr>
+<tr><th id="234">234</th><td>        vsubps    %ymm3, %ymm15, %ymm15</td></tr>
+<tr><th id="235">235</th><td>        vaddps    %ymm13, %ymm12, %ymm1</td></tr>
+<tr><th id="236">236</th><td>        vaddps    %ymm15, %ymm0, %ymm2</td></tr>
+<tr><th id="237">237</th><td>        vblendvps %ymm7, %ymm3, %ymm6, %ymm0</td></tr>
+<tr><th id="238">238</th><td>        vaddps    %ymm2, %ymm1, %ymm4</td></tr>
+<tr><th id="239">239</th><td>        vpsubd    %ymm5, %ymm0, %ymm1</td></tr>
+<tr><th id="240">240</th><td>        vpsrad    $<var>23</var>, %ymm1, %ymm6</td></tr>
+<tr><th id="241">241</th><td>        vpand     <a class="macro" href="#38" title="352" data-ref="_M/iOffExpoMask">iOffExpoMask</a>+__svml_sasinh_data_internal(%rip), %ymm1, %ymm2</td></tr>
+<tr><th id="242">242</th><td>        vmovups   <a class="macro" href="#36" title="64" data-ref="_M/sPoly">sPoly</a>+<var>224</var>+__svml_sasinh_data_internal(%rip), %ymm1</td></tr>
+<tr><th id="243">243</th><td>        vpslld    $<var>23</var>, %ymm6, %ymm10</td></tr>
+<tr><th id="244">244</th><td>        vpaddd    %ymm5, %ymm2, %ymm13</td></tr>
+<tr><th id="245">245</th><td>        vcvtdq2ps %ymm6, %ymm0</td></tr>
+<tr><th id="246">246</th><td>        vpsubd    %ymm10, %ymm8, %ymm12</td></tr>
+<tr><th id="247">247</th><td></td></tr>
+<tr><th id="248">248</th><td><i>/* polynomial evaluation */</i></td></tr>
+<tr><th id="249">249</th><td>        vsubps    %ymm8, %ymm13, %ymm8</td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td><i>/* Add 31 to the exponent in the "large" case to get log(2 * input) */</i></td></tr>
+<tr><th id="252">252</th><td>        vaddps    <a class="macro" href="#46" title="608" data-ref="_M/sThirtyOne">sThirtyOne</a>+__svml_sasinh_data_internal(%rip), %ymm0, %ymm3</td></tr>
+<tr><th id="253">253</th><td>        vandps    %ymm7, %ymm4, %ymm11</td></tr>
+<tr><th id="254">254</th><td>        vmulps    %ymm12, %ymm11, %ymm14</td></tr>
+<tr><th id="255">255</th><td>        vblendvps %ymm7, %ymm0, %ymm3, %ymm0</td></tr>
+<tr><th id="256">256</th><td>        vaddps    %ymm8, %ymm14, %ymm2</td></tr>
+<tr><th id="257">257</th><td>        vfmadd213ps <a class="macro" href="#36" title="64" data-ref="_M/sPoly">sPoly</a>+<var>192</var>+__svml_sasinh_data_internal(%rip), %ymm2, %ymm1</td></tr>
+<tr><th id="258">258</th><td>        vfmadd213ps <a class="macro" href="#36" title="64" data-ref="_M/sPoly">sPoly</a>+<var>160</var>+__svml_sasinh_data_internal(%rip), %ymm2, %ymm1</td></tr>
+<tr><th id="259">259</th><td>        vfmadd213ps <a class="macro" href="#36" title="64" data-ref="_M/sPoly">sPoly</a>+<var>128</var>+__svml_sasinh_data_internal(%rip), %ymm2, %ymm1</td></tr>
+<tr><th id="260">260</th><td>        vfmadd213ps <a class="macro" href="#36" title="64" data-ref="_M/sPoly">sPoly</a>+<var>96</var>+__svml_sasinh_data_internal(%rip), %ymm2, %ymm1</td></tr>
+<tr><th id="261">261</th><td>        vfmadd213ps <a class="macro" href="#36" title="64" data-ref="_M/sPoly">sPoly</a>+<var>64</var>+__svml_sasinh_data_internal(%rip), %ymm2, %ymm1</td></tr>
+<tr><th id="262">262</th><td>        vfmadd213ps <a class="macro" href="#36" title="64" data-ref="_M/sPoly">sPoly</a>+<var>32</var>+__svml_sasinh_data_internal(%rip), %ymm2, %ymm1</td></tr>
+<tr><th id="263">263</th><td>        vfmadd213ps <a class="macro" href="#36" title="64" data-ref="_M/sPoly">sPoly</a>+__svml_sasinh_data_internal(%rip), %ymm2, %ymm1</td></tr>
+<tr><th id="264">264</th><td>        vmulps    %ymm1, %ymm2, %ymm4</td></tr>
+<tr><th id="265">265</th><td>        vfmadd213ps %ymm2, %ymm2, %ymm4</td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td><i>/* final reconstruction */</i></td></tr>
+<tr><th id="268">268</th><td>        vfmadd132ps <a class="macro" href="#49" title="704" data-ref="_M/sLn2">sLn2</a>+__svml_sasinh_data_internal(%rip), %ymm4, %ymm0</td></tr>
+<tr><th id="269">269</th><td></td></tr>
+<tr><th id="270">270</th><td><i>/* Finally, reincorporate the original sign. */</i></td></tr>
+<tr><th id="271">271</th><td>        vandps    <a class="macro" href="#45" title="576" data-ref="_M/sSign">sSign</a>+__svml_sasinh_data_internal(%rip), %ymm9, %ymm7</td></tr>
+<tr><th id="272">272</th><td>        vxorps    %ymm0, %ymm7, %ymm0</td></tr>
+<tr><th id="273">273</th><td>        testl     %edx, %edx</td></tr>
+<tr><th id="274">274</th><td></td></tr>
+<tr><th id="275">275</th><td><i>/* Go to special inputs processing branch */</i></td></tr>
+<tr><th id="276">276</th><td>        jne       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH)</td></tr>
+<tr><th id="277">277</th><td>                                <u># LOE rbx r12 r13 r14 r15 edx ymm0 ymm9</u></td></tr>
+<tr><th id="278">278</th><td></td></tr>
+<tr><th id="279">279</th><td><i>/* Restore registers</i></td></tr>
+<tr><th id="280">280</th><td><i> * and exit the function</i></td></tr>
+<tr><th id="281">281</th><td><i> */</i></td></tr>
+<tr><th id="282">282</th><td></td></tr>
+<tr><th id="283">283</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT):</td></tr>
+<tr><th id="284">284</th><td>        movq      %rbp, %rsp</td></tr>
+<tr><th id="285">285</th><td>        popq      %rbp</td></tr>
+<tr><th id="286">286</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 7, 8" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>7</var>, <var>8</var>)</td></tr>
+<tr><th id="287">287</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 6" data-ref="_M/cfi_restore">cfi_restore</a>(<var>6</var>)</td></tr>
+<tr><th id="288">288</th><td>        ret</td></tr>
+<tr><th id="289">289</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#42" title=".cfi_def_cfa 6, 16" data-ref="_M/cfi_def_cfa">cfi_def_cfa</a>(<var>6</var>, <var>16</var>)</td></tr>
+<tr><th id="290">290</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#46" title=".cfi_offset 6, -16" data-ref="_M/cfi_offset">cfi_offset</a>(<var>6</var>, -<var>16</var>)</td></tr>
+<tr><th id="291">291</th><td></td></tr>
+<tr><th id="292">292</th><td><i>/* Branch to process</i></td></tr>
+<tr><th id="293">293</th><td><i> * special inputs</i></td></tr>
+<tr><th id="294">294</th><td><i> */</i></td></tr>
+<tr><th id="295">295</th><td></td></tr>
+<tr><th id="296">296</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_BRANCH" data-ref="_M/L">L</a>(SPECIAL_VALUES_BRANCH):</td></tr>
+<tr><th id="297">297</th><td>        vmovups   %ymm9, <var>32</var>(%rsp)</td></tr>
+<tr><th id="298">298</th><td>        vmovups   %ymm0, <var>64</var>(%rsp)</td></tr>
+<tr><th id="299">299</th><td>                                <u># LOE rbx r12 r13 r14 r15 edx ymm0</u></td></tr>
+<tr><th id="300">300</th><td></td></tr>
+<tr><th id="301">301</th><td>        xorl      %eax, %eax</td></tr>
+<tr><th id="302">302</th><td>                                <u># LOE rbx r12 r13 r14 r15 eax edx</u></td></tr>
+<tr><th id="303">303</th><td></td></tr>
+<tr><th id="304">304</th><td>        vzeroupper</td></tr>
+<tr><th id="305">305</th><td>        movq      %r12, <var>16</var>(%rsp)</td></tr>
+<tr><th id="306">306</th><td>        <i>/*  DW_CFA_expression: r12 (r12) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -80; DW_OP_plus)  */</i></td></tr>
+<tr><th id="307">307</th><td>        .cfi_escape <var>0x10</var>, <var>0x0c</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xb0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="308">308</th><td>        movl      %eax, %r12d</td></tr>
+<tr><th id="309">309</th><td>        movq      %r13, <var>8</var>(%rsp)</td></tr>
+<tr><th id="310">310</th><td>        <i>/*  DW_CFA_expression: r13 (r13) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -88; DW_OP_plus)  */</i></td></tr>
+<tr><th id="311">311</th><td>        .cfi_escape <var>0x10</var>, <var>0x0d</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa8</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="312">312</th><td>        movl      %edx, %r13d</td></tr>
+<tr><th id="313">313</th><td>        movq      %r14, (%rsp)</td></tr>
+<tr><th id="314">314</th><td>        <i>/*  DW_CFA_expression: r14 (r14) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -96; DW_OP_plus)  */</i></td></tr>
+<tr><th id="315">315</th><td>        .cfi_escape <var>0x10</var>, <var>0x0e</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="316">316</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="317">317</th><td></td></tr>
+<tr><th id="318">318</th><td><i>/* Range mask</i></td></tr>
+<tr><th id="319">319</th><td><i> * bits check</i></td></tr>
+<tr><th id="320">320</th><td><i> */</i></td></tr>
+<tr><th id="321">321</th><td></td></tr>
+<tr><th id="322">322</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK):</td></tr>
+<tr><th id="323">323</th><td>        btl       %r12d, %r13d</td></tr>
+<tr><th id="324">324</th><td></td></tr>
+<tr><th id="325">325</th><td><i>/* Call scalar math function */</i></td></tr>
+<tr><th id="326">326</th><td>        jc        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL)</td></tr>
+<tr><th id="327">327</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="328">328</th><td></td></tr>
+<tr><th id="329">329</th><td><i>/* Special inputs</i></td></tr>
+<tr><th id="330">330</th><td><i> * processing loop</i></td></tr>
+<tr><th id="331">331</th><td><i> */</i></td></tr>
+<tr><th id="332">332</th><td></td></tr>
+<tr><th id="333">333</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP):</td></tr>
+<tr><th id="334">334</th><td>        incl      %r12d</td></tr>
+<tr><th id="335">335</th><td>        cmpl      $<var>8</var>, %r12d</td></tr>
+<tr><th id="336">336</th><td></td></tr>
+<tr><th id="337">337</th><td><i>/* Check bits in range mask */</i></td></tr>
+<tr><th id="338">338</th><td>        jl        <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LRANGEMASK_CHECK" data-ref="_M/L">L</a>(RANGEMASK_CHECK)</td></tr>
+<tr><th id="339">339</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="340">340</th><td></td></tr>
+<tr><th id="341">341</th><td>        movq      <var>16</var>(%rsp), %r12</td></tr>
+<tr><th id="342">342</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 12" data-ref="_M/cfi_restore">cfi_restore</a>(<var>12</var>)</td></tr>
+<tr><th id="343">343</th><td>        movq      <var>8</var>(%rsp), %r13</td></tr>
+<tr><th id="344">344</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 13" data-ref="_M/cfi_restore">cfi_restore</a>(<var>13</var>)</td></tr>
+<tr><th id="345">345</th><td>        movq      (%rsp), %r14</td></tr>
+<tr><th id="346">346</th><td>        <a class="macro" href="../../../generic/sysdep.h.html#50" title=".cfi_restore 14" data-ref="_M/cfi_restore">cfi_restore</a>(<var>14</var>)</td></tr>
+<tr><th id="347">347</th><td>        vmovups   <var>64</var>(%rsp), %ymm0</td></tr>
+<tr><th id="348">348</th><td></td></tr>
+<tr><th id="349">349</th><td><i>/* Go to exit */</i></td></tr>
+<tr><th id="350">350</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LEXIT" data-ref="_M/L">L</a>(EXIT)</td></tr>
+<tr><th id="351">351</th><td>        <i>/*  DW_CFA_expression: r12 (r12) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -80; DW_OP_plus)  */</i></td></tr>
+<tr><th id="352">352</th><td>        .cfi_escape <var>0x10</var>, <var>0x0c</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xb0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="353">353</th><td>        <i>/*  DW_CFA_expression: r13 (r13) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -88; DW_OP_plus)  */</i></td></tr>
+<tr><th id="354">354</th><td>        .cfi_escape <var>0x10</var>, <var>0x0d</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa8</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="355">355</th><td>        <i>/*  DW_CFA_expression: r14 (r14) (DW_OP_lit8; DW_OP_minus; DW_OP_const4s: -32; DW_OP_and; DW_OP_const4s: -96; DW_OP_plus)  */</i></td></tr>
+<tr><th id="356">356</th><td>        .cfi_escape <var>0x10</var>, <var>0x0e</var>, <var>0x0e</var>, <var>0x38</var>, <var>0x1c</var>, <var>0x0d</var>, <var>0xe0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x1a</var>, <var>0x0d</var>, <var>0xa0</var>, <var>0xff</var>, <var>0xff</var>, <var>0xff</var>, <var>0x22</var></td></tr>
+<tr><th id="357">357</th><td>                                <u># LOE rbx r12 r13 r14 r15 ymm0</u></td></tr>
+<tr><th id="358">358</th><td></td></tr>
+<tr><th id="359">359</th><td><i>/* Scalar math fucntion call</i></td></tr>
+<tr><th id="360">360</th><td><i> * to process special input</i></td></tr>
+<tr><th id="361">361</th><td><i> */</i></td></tr>
+<tr><th id="362">362</th><td></td></tr>
+<tr><th id="363">363</th><td><a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSCALAR_MATH_CALL" data-ref="_M/L">L</a>(SCALAR_MATH_CALL):</td></tr>
+<tr><th id="364">364</th><td>        movl      %r12d, %r14d</td></tr>
+<tr><th id="365">365</th><td>        movss     <var>32</var>(%rsp,%r14,<var>4</var>), %xmm0</td></tr>
+<tr><th id="366">366</th><td>        call      asinhf@PLT</td></tr>
+<tr><th id="367">367</th><td>                                <u># LOE rbx r14 r15 r12d r13d xmm0</u></td></tr>
+<tr><th id="368">368</th><td></td></tr>
+<tr><th id="369">369</th><td>        movss     %xmm0, <var>64</var>(%rsp,%r14,<var>4</var>)</td></tr>
+<tr><th id="370">370</th><td></td></tr>
+<tr><th id="371">371</th><td><i>/* Process special inputs in loop */</i></td></tr>
+<tr><th id="372">372</th><td>        jmp       <a class="macro" href="../../../x86/sysdep.h.html#114" title=".LSPECIAL_VALUES_LOOP" data-ref="_M/L">L</a>(SPECIAL_VALUES_LOOP)</td></tr>
+<tr><th id="373">373</th><td>                                <u># LOE rbx r15 r12d r13d</u></td></tr>
+<tr><th id="374">374</th><td><a class="macro" href="../../../x86/sysdep.h.html#94" title=".cfi_endproc; .size _ZGVdN8v_asinhf_avx2,.-_ZGVdN8v_asinhf_avx2;" data-ref="_M/END">END</a>(_ZGVdN8v_asinhf_avx2)</td></tr>
+<tr><th id="375">375</th><td></td></tr>
+<tr><th id="376">376</th><td>        <span class='error' title="expected identifier or &apos;(&apos;">.</span>section .rodata, <q>"a"</q></td></tr>
+<tr><th id="377">377</th><td>        .align <var>32</var></td></tr>
+<tr><th id="378">378</th><td></td></tr>
+<tr><th id="379">379</th><td><u>#<span data-ppcond="379">ifdef</span> <span class="macro" data-ref="_M/__svml_sasinh_data_internal_typedef">__svml_sasinh_data_internal_typedef</span></u></td></tr>
+<tr><th id="380">380</th><td><b>typedef</b> <em>unsigned</em> <em>int</em> VUINT32;</td></tr>
+<tr><th id="381">381</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="382">382</th><td>        __declspec(align(<var>32</var>)) VUINT32 SgnMask[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="383">383</th><td>        __declspec(align(<var>32</var>)) VUINT32 sOne[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="384">384</th><td>        __declspec(align(<var>32</var>)) VUINT32 sPoly[<var>8</var>][<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="385">385</th><td>        __declspec(align(<var>32</var>)) VUINT32 iBrkValue[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="386">386</th><td>        __declspec(align(<var>32</var>)) VUINT32 iOffExpoMask[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="387">387</th><td>        __declspec(align(<var>32</var>)) VUINT32 sBigThreshold[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="388">388</th><td>        __declspec(align(<var>32</var>)) VUINT32 sC2[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="389">389</th><td>        __declspec(align(<var>32</var>)) VUINT32 sC3[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="390">390</th><td>        __declspec(align(<var>32</var>)) VUINT32 sHalf[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="391">391</th><td>        __declspec(align(<var>32</var>)) VUINT32 sLargestFinite[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="392">392</th><td>        __declspec(align(<var>32</var>)) VUINT32 sLittleThreshold[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="393">393</th><td>        __declspec(align(<var>32</var>)) VUINT32 sSign[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="394">394</th><td>        __declspec(align(<var>32</var>)) VUINT32 sThirtyOne[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="395">395</th><td>        __declspec(align(<var>32</var>)) VUINT32 sTopMask8[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="396">396</th><td>        __declspec(align(<var>32</var>)) VUINT32 XScale[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="397">397</th><td>        __declspec(align(<var>32</var>)) VUINT32 sLn2[<var>8</var>][<var>1</var>];</td></tr>
+<tr><th id="398">398</th><td>} __svml_sasinh_data_internal;</td></tr>
+<tr><th id="399">399</th><td><u>#<span data-ppcond="379">endif</span></u></td></tr>
+<tr><th id="400">400</th><td>__svml_sasinh_data_internal:</td></tr>
+<tr><th id="401">401</th><td>        <i>/*== SgnMask ==*/</i></td></tr>
+<tr><th id="402">402</th><td>        .<em>long</em> <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var>, <var>0x7fffffff</var></td></tr>
+<tr><th id="403">403</th><td>        <i>/*== sOne = SP 1.0 ==*/</i></td></tr>
+<tr><th id="404">404</th><td>        .align <var>32</var></td></tr>
+<tr><th id="405">405</th><td>        .<em>long</em> <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var>, <var>0x3f800000</var></td></tr>
+<tr><th id="406">406</th><td>        <i>/*== sPoly[] = SP polynomial ==*/</i></td></tr>
+<tr><th id="407">407</th><td>        .align <var>32</var></td></tr>
+<tr><th id="408">408</th><td>        .<em>long</em> <var>0xbf000000</var>, <var>0xbf000000</var>, <var>0xbf000000</var>, <var>0xbf000000</var>, <var>0xbf000000</var>, <var>0xbf000000</var>, <var>0xbf000000</var>, <var>0xbf000000</var> <i>/* -5.0000000000000000000000000e-01 P0 */</i></td></tr>
+<tr><th id="409">409</th><td>        .<em>long</em> <var>0x3eaaaa94</var>, <var>0x3eaaaa94</var>, <var>0x3eaaaa94</var>, <var>0x3eaaaa94</var>, <var>0x3eaaaa94</var>, <var>0x3eaaaa94</var>, <var>0x3eaaaa94</var>, <var>0x3eaaaa94</var> <i>/*  3.3333265781402587890625000e-01 P1 */</i></td></tr>
+<tr><th id="410">410</th><td>        .<em>long</em> <var>0xbe80058e</var>, <var>0xbe80058e</var>, <var>0xbe80058e</var>, <var>0xbe80058e</var>, <var>0xbe80058e</var>, <var>0xbe80058e</var>, <var>0xbe80058e</var>, <var>0xbe80058e</var> <i>/* -2.5004237890243530273437500e-01 P2 */</i></td></tr>
+<tr><th id="411">411</th><td>        .<em>long</em> <var>0x3e4ce190</var>, <var>0x3e4ce190</var>, <var>0x3e4ce190</var>, <var>0x3e4ce190</var>, <var>0x3e4ce190</var>, <var>0x3e4ce190</var>, <var>0x3e4ce190</var>, <var>0x3e4ce190</var> <i>/*  2.0007920265197753906250000e-01 P3 */</i></td></tr>
+<tr><th id="412">412</th><td>        .<em>long</em> <var>0xbe28ad37</var>, <var>0xbe28ad37</var>, <var>0xbe28ad37</var>, <var>0xbe28ad37</var>, <var>0xbe28ad37</var>, <var>0xbe28ad37</var>, <var>0xbe28ad37</var>, <var>0xbe28ad37</var> <i>/* -1.6472326219081878662109375e-01 P4 */</i></td></tr>
+<tr><th id="413">413</th><td>        .<em>long</em> <var>0x3e0fcb12</var>, <var>0x3e0fcb12</var>, <var>0x3e0fcb12</var>, <var>0x3e0fcb12</var>, <var>0x3e0fcb12</var>, <var>0x3e0fcb12</var>, <var>0x3e0fcb12</var>, <var>0x3e0fcb12</var> <i>/*  1.4042308926582336425781250e-01 P5 */</i></td></tr>
+<tr><th id="414">414</th><td>        .<em>long</em> <var>0xbe1ad9e3</var>, <var>0xbe1ad9e3</var>, <var>0xbe1ad9e3</var>, <var>0xbe1ad9e3</var>, <var>0xbe1ad9e3</var>, <var>0xbe1ad9e3</var>, <var>0xbe1ad9e3</var>, <var>0xbe1ad9e3</var> <i>/* -1.5122179687023162841796875e-01 P6 */</i></td></tr>
+<tr><th id="415">415</th><td>        .<em>long</em> <var>0x3e0d84ed</var>, <var>0x3e0d84ed</var>, <var>0x3e0d84ed</var>, <var>0x3e0d84ed</var>, <var>0x3e0d84ed</var>, <var>0x3e0d84ed</var>, <var>0x3e0d84ed</var>, <var>0x3e0d84ed</var> <i>/*  1.3820238411426544189453125e-01 P7 */</i></td></tr>
+<tr><th id="416">416</th><td>        <i>/*== iBrkValue = SP 2/3 ==*/</i></td></tr>
+<tr><th id="417">417</th><td>        .align <var>32</var></td></tr>
+<tr><th id="418">418</th><td>        .<em>long</em> <var>0x3f2aaaab</var>, <var>0x3f2aaaab</var>, <var>0x3f2aaaab</var>, <var>0x3f2aaaab</var>, <var>0x3f2aaaab</var>, <var>0x3f2aaaab</var>, <var>0x3f2aaaab</var>, <var>0x3f2aaaab</var></td></tr>
+<tr><th id="419">419</th><td>        <i>/*== iOffExpoMask = SP significand mask ==*/</i></td></tr>
+<tr><th id="420">420</th><td>        .align <var>32</var></td></tr>
+<tr><th id="421">421</th><td>        .<em>long</em> <var>0x007fffff</var>, <var>0x007fffff</var>, <var>0x007fffff</var>, <var>0x007fffff</var>, <var>0x007fffff</var>, <var>0x007fffff</var>, <var>0x007fffff</var>, <var>0x007fffff</var></td></tr>
+<tr><th id="422">422</th><td>        <i>/*== sBigThreshold ==*/</i></td></tr>
+<tr><th id="423">423</th><td>        .align <var>32</var></td></tr>
+<tr><th id="424">424</th><td>        .<em>long</em> <var>0x4E800000</var>, <var>0x4E800000</var>, <var>0x4E800000</var>, <var>0x4E800000</var>, <var>0x4E800000</var>, <var>0x4E800000</var>, <var>0x4E800000</var>, <var>0x4E800000</var></td></tr>
+<tr><th id="425">425</th><td>        <i>/*== sC2 ==*/</i></td></tr>
+<tr><th id="426">426</th><td>        .align <var>32</var></td></tr>
+<tr><th id="427">427</th><td>        .<em>long</em> <var>0x3EC00000</var>, <var>0x3EC00000</var>, <var>0x3EC00000</var>, <var>0x3EC00000</var>, <var>0x3EC00000</var>, <var>0x3EC00000</var>, <var>0x3EC00000</var>, <var>0x3EC00000</var></td></tr>
+<tr><th id="428">428</th><td>        <i>/*== sC3 ==*/</i></td></tr>
+<tr><th id="429">429</th><td>        .align <var>32</var></td></tr>
+<tr><th id="430">430</th><td>        .<em>long</em> <var>0x3EA00000</var>, <var>0x3EA00000</var>, <var>0x3EA00000</var>, <var>0x3EA00000</var>, <var>0x3EA00000</var>, <var>0x3EA00000</var>, <var>0x3EA00000</var>, <var>0x3EA00000</var></td></tr>
+<tr><th id="431">431</th><td>        <i>/*== sHalf ==*/</i></td></tr>
+<tr><th id="432">432</th><td>        .align <var>32</var></td></tr>
+<tr><th id="433">433</th><td>        .<em>long</em> <var>0x3F000000</var>, <var>0x3F000000</var>, <var>0x3F000000</var>, <var>0x3F000000</var>, <var>0x3F000000</var>, <var>0x3F000000</var>, <var>0x3F000000</var>, <var>0x3F000000</var></td></tr>
+<tr><th id="434">434</th><td>        <i>/*== sLargestFinite ==*/</i></td></tr>
+<tr><th id="435">435</th><td>        .align <var>32</var></td></tr>
+<tr><th id="436">436</th><td>        .<em>long</em> <var>0x7F7FFFFF</var>, <var>0x7F7FFFFF</var>, <var>0x7F7FFFFF</var>, <var>0x7F7FFFFF</var>, <var>0x7F7FFFFF</var>, <var>0x7F7FFFFF</var>, <var>0x7F7FFFFF</var>, <var>0x7F7FFFFF</var></td></tr>
+<tr><th id="437">437</th><td>        <i>/*== sLittleThreshold ==*/</i></td></tr>
+<tr><th id="438">438</th><td>        .align <var>32</var></td></tr>
+<tr><th id="439">439</th><td>        .<em>long</em> <var>0x3D800000</var>, <var>0x3D800000</var>, <var>0x3D800000</var>, <var>0x3D800000</var>, <var>0x3D800000</var>, <var>0x3D800000</var>, <var>0x3D800000</var>, <var>0x3D800000</var></td></tr>
+<tr><th id="440">440</th><td>        <i>/*== sSign ==*/</i></td></tr>
+<tr><th id="441">441</th><td>        .align <var>32</var></td></tr>
+<tr><th id="442">442</th><td>        .<em>long</em> <var>0x80000000</var>, <var>0x80000000</var>, <var>0x80000000</var>, <var>0x80000000</var>, <var>0x80000000</var>, <var>0x80000000</var>, <var>0x80000000</var>, <var>0x80000000</var></td></tr>
+<tr><th id="443">443</th><td>        <i>/*== sThirtyOne ==*/</i></td></tr>
+<tr><th id="444">444</th><td>        .align <var>32</var></td></tr>
+<tr><th id="445">445</th><td>        .<em>long</em> <var>0x41F80000</var>, <var>0x41F80000</var>, <var>0x41F80000</var>, <var>0x41F80000</var>, <var>0x41F80000</var>, <var>0x41F80000</var>, <var>0x41F80000</var>, <var>0x41F80000</var></td></tr>
+<tr><th id="446">446</th><td>        <i>/*== sTopMask8 ==*/</i></td></tr>
+<tr><th id="447">447</th><td>        .align <var>32</var></td></tr>
+<tr><th id="448">448</th><td>        .<em>long</em> <var>0xFFFF0000</var>, <var>0xFFFF0000</var>, <var>0xFFFF0000</var>, <var>0xFFFF0000</var>, <var>0xFFFF0000</var>, <var>0xFFFF0000</var>, <var>0xFFFF0000</var>, <var>0xFFFF0000</var></td></tr>
+<tr><th id="449">449</th><td>        <i>/*== XScale ==*/</i></td></tr>
+<tr><th id="450">450</th><td>        .align <var>32</var></td></tr>
+<tr><th id="451">451</th><td>        .<em>long</em> <var>0x30800000</var>, <var>0x30800000</var>, <var>0x30800000</var>, <var>0x30800000</var>, <var>0x30800000</var>, <var>0x30800000</var>, <var>0x30800000</var>, <var>0x30800000</var></td></tr>
+<tr><th id="452">452</th><td>        <i>/*== sLn2 = SP ln(2) ==*/</i></td></tr>
+<tr><th id="453">453</th><td>        .align <var>32</var></td></tr>
+<tr><th id="454">454</th><td>        .<em>long</em> <var>0x3f317218</var>, <var>0x3f317218</var>, <var>0x3f317218</var>, <var>0x3f317218</var>, <var>0x3f317218</var>, <var>0x3f317218</var>, <var>0x3f317218</var>, <var>0x3f317218</var></td></tr>
+<tr><th id="455">455</th><td>        .align <var>32</var></td></tr>
+<tr><th id="456">456</th><td>        .type	__svml_sasinh_data_internal,@object</td></tr>
+<tr><th id="457">457</th><td>        .size	__svml_sasinh_data_internal,.-__svml_sasinh_data_internal</td></tr>
+<tr><th id="458">458</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

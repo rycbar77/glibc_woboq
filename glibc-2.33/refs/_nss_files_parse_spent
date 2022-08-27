@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/nss_files.h' l='65' type='int _nss_files_parse_spent(char * , void * , struct parser_data * , size_t , int * )'/>
+<dec f='codebrowser/include/nss_files.h' l='75' type='int _nss_files_parse_spent(char * , void * , struct parser_data * , size_t , int * )'/>
+<use f='codebrowser/include/nss_files.h' l='75' c='_nss_files_parse_spent'/>
+<use f='codebrowser/shadow/fgetspent_r.c' l='39' macro='1' u='r' c='__fgetspent_r'/>
+<def f='codebrowser/shadow/sgetspent_r.c' l='36' macro='1' type='int _nss_files_parse_spent(char * line, void * generic_result, struct parser_data * data, size_t datalen, int * errnop)'/>
+<use f='codebrowser/shadow/sgetspent_r.c' l='98' macro='1' u='c' c='__sgetspent_r'/>

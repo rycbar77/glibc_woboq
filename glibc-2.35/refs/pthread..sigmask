@@ -1,0 +1,20 @@
+<dec f='codebrowser/nptl/descr.h' l='388' type='sigset_t'/>
+<offset>18304</offset>
+<doc f='codebrowser/nptl/descr.h' l='385'>/* Signal mask for the new thread.  Used during thread startup to
+     restore the signal mask.  (Threads are launched with all signals
+     masked.)  */</doc>
+<use f='codebrowser/nptl/pthread_create.c' l='426' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='504' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='505' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='506' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='506' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='506' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='506' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='506' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='506' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='506' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='506' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='506' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='776' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='783' u='w' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='786' u='a' c='__pthread_create_2_1'/>

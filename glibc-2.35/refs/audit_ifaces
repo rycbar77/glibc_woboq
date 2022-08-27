@@ -1,0 +1,23 @@
+<def f='codebrowser/sysdeps/generic/ldsodefs.h' l='256' ll='284'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='283'/>
+<size>72</size>
+<mbr r='audit_ifaces::activity' o='0' t='void (*)(uintptr_t *, unsigned int)'/>
+<mbr r='audit_ifaces::objsearch' o='64' t='char *(*)(const char *, uintptr_t *, unsigned int)'/>
+<mbr r='audit_ifaces::objopen' o='128' t='unsigned int (*)(struct link_map *, Lmid_t, uintptr_t *)'/>
+<mbr r='audit_ifaces::preinit' o='192' t='void (*)(uintptr_t *)'/>
+<mbr r='audit_ifaces::objclose' o='448' t='unsigned int (*)(uintptr_t *)'/>
+<mbr r='audit_ifaces::next' o='512' t='struct audit_ifaces *'/>
+<use f='codebrowser/elf/dl-audit.c' l='29' c='_dl_audit_activity_map'/>
+<use f='codebrowser/elf/dl-audit.c' l='58' c='_dl_audit_objsearch'/>
+<use f='codebrowser/elf/dl-audit.c' l='80' c='_dl_audit_objopen'/>
+<use f='codebrowser/elf/dl-audit.c' l='101' c='_dl_audit_objclose'/>
+<use f='codebrowser/elf/dl-audit.c' l='121' c='_dl_audit_preinit'/>
+<use f='codebrowser/elf/dl-audit.c' l='147' c='__GI__dl_audit_symbind_alt'/>
+<use f='codebrowser/elf/dl-audit.c' l='214' c='_dl_audit_symbind'/>
+<use f='codebrowser/elf/dl-audit.c' l='291' c='_dl_audit_pltenter'/>
+<use f='codebrowser/elf/dl-audit.c' l='364' c='_dl_audit_pltexit'/>
+<size>72</size>
+<use f='codebrowser/elf/rtld.c' l='955' c='load_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='1016' c='load_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='1075' c='load_audit_modules'/>
+<size>72</size>

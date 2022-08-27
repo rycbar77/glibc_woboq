@@ -1,0 +1,25 @@
+<def f='codebrowser/signal/bits/types/__sigval_t.h' l='24' ll='28'/>
+<use f='codebrowser/signal/bits/types/__sigval_t.h' l='30'/>
+<use f='codebrowser/signal/signal.h' l='292' c='sigqueue'/>
+<use f='codebrowser/sysdeps/pthread/bits/sigthread.h' l='41' c='pthread_sigqueue'/>
+<use f='codebrowser/include/signal.h' l='53' c='__sigqueue'/>
+<size>8</size>
+<mbr r='sigval::sival_int' o='0' t='int'/>
+<mbr r='sigval::sival_ptr' o='0' t='void *'/>
+<use f='codebrowser/nptl/pthread_sigqueue.c' l='28' c='__pthread_sigqueue'/>
+<size>8</size>
+<use f='codebrowser/resolv/gai_misc.h' l='97' c='__gai_sigqueue'/>
+<size>8</size>
+<use f='codebrowser/sysdeps/generic/aio_misc.h' l='119' c='__aio_sigqueue'/>
+<size>8</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_sigqueue.c' l='31' c='__aio_sigqueue'/>
+<size>8</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/gai_sigqueue.c' l='31' c='__gai_sigqueue'/>
+<size>8</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='45'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='46'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='88' c='notification_function'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='89' c='notification_function'/>
+<size>8</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigqueue.c' l='26' c='__sigqueue'/>
+<size>8</size>

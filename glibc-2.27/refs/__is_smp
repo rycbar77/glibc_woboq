@@ -1,0 +1,7 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='196' type='int'/>
+<doc f='codebrowser/nptl/pthreadP.h' l='195'>/* Flag whether the machine is SMP or not.  */</doc>
+<use f='codebrowser/nptl/nptl-init.c' l='466' u='w' c='__pthread_initialize_minimal_internal'/>
+<def f='codebrowser/nptl/vars.c' l='31' type='int'/>
+<doc f='codebrowser/nptl/vars.c' l='30'>/* Flag whether the machine is SMP or not.  */</doc>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='121' u='r' c='__pthread_mutex_cond_lock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='113' u='r' c='__pthread_mutex_timedlock'/>

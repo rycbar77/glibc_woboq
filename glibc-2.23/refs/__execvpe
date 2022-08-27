@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/unistd.h' l='70' type='int __execvpe(const char * file, char *const * argv, char *const * envp)'/>
+<use f='codebrowser/posix/execvp.c' l='26' u='c' c='execvp'/>
+<def f='codebrowser/posix/execvpe.c' l='47' ll='215' type='int __execvpe(const char * file, char *const * argv, char *const * envp)'/>
+<use f='codebrowser/posix/execvpe.c' l='216' c='execvpe'/>
+<doc f='codebrowser/posix/execvpe.c' l='45'>/* Execute FILE, searching in the `PATH&apos; environment variable if it contains
+   no slashes, with arguments ARGV and environment from ENVP.  */</doc>

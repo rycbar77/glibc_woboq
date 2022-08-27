@@ -1,0 +1,7 @@
+<dec f='codebrowser/posix/unistd.h' l='698' type='__uid_t getuid()'/>
+<doc f='codebrowser/posix/unistd.h' l='697'>/* Get the real user ID of the calling process.  */</doc>
+<use f='codebrowser/support/support_become_root.c' l='85' u='c' c='support_become_root'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='156' u='c' c='copy_and_spawn_sgid'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='212' u='c' c='support_capture_subprogram_self_sgid'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='226' u='c' c='support_capture_subprogram_self_sgid'/>
+<use f='codebrowser/support/test-container.c' l='866' u='c' c='main'/>

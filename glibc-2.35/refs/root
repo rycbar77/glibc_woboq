@@ -1,0 +1,7 @@
+<def f='codebrowser/malloc/mcheck-impl.c' l='47' type='struct hdr *'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='114' u='r' c='__mcheck_checkptr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='148' u='w' c='unlink_blk'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='155' u='r' c='link_blk'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='156' u='w' c='link_blk'/>
+<doc f='codebrowser/malloc/mcheck-impl.c' l='45'>/* This is the beginning of the list of all memory blocks allocated.
+   It is only constructed if the pedantic testing is requested.  */</doc>

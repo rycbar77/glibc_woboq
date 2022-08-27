@@ -1,0 +1,13 @@
+<dec f='include/selinux/avc.h' l='83' type='int sidput(security_id_t sid)'/>
+<doc f='include/selinux/avc.h' l='73'>/**
+ * sidput - decrement SID reference counter.
+ * @sid: SID reference
+ *
+ * Decrement the reference counter for @sid, indicating that
+ * a reference to @sid is no longer in use.  Return the 
+ * new reference count.  When the reference count reaches
+ * zero, the SID is invalid, and avc_context_to_sid() must
+ * be called to obtain a new SID for the security context.
+ */</doc>
+<use f='codebrowser/nscd/selinux.c' l='432' u='c' c='nscd_request_avc_has_perm'/>
+<use f='codebrowser/nscd/selinux.c' l='434' u='c' c='nscd_request_avc_has_perm'/>

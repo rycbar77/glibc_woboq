@@ -1,0 +1,58 @@
+<def f='codebrowser/elf/dl-find_object.c' l='108' ll='122'/>
+<use f='codebrowser/elf/dl-find_object.c' l='112'/>
+<use f='codebrowser/elf/dl-find_object.c' l='129'/>
+<use f='codebrowser/elf/dl-find_object.c' l='134' c='_dlfo_mappings_segment_count_used'/>
+<use f='codebrowser/elf/dl-find_object.c' l='147' c='_dlfo_mappings_segment_count_allocated'/>
+<use f='codebrowser/elf/dl-find_object.c' l='165' c='_dlfo_mappings_segment_allocate_unpadded'/>
+<use f='codebrowser/elf/dl-find_object.c' l='174' c='_dlfo_mappings_segment_allocate_unpadded'/>
+<use f='codebrowser/elf/dl-find_object.c' l='176' c='_dlfo_mappings_segment_allocate_unpadded'/>
+<use f='codebrowser/elf/dl-find_object.c' l='178' c='_dlfo_mappings_segment_allocate_unpadded'/>
+<use f='codebrowser/elf/dl-find_object.c' l='192' c='_dlfo_mappings_segment_allocate'/>
+<use f='codebrowser/elf/dl-find_object.c' l='194' c='_dlfo_mappings_segment_allocate'/>
+<use f='codebrowser/elf/dl-find_object.c' l='212' c='_dlfo_mappings_segment_allocate'/>
+<use f='codebrowser/elf/dl-find_object.c' l='214' c='_dlfo_mappings_segment_allocate'/>
+<use f='codebrowser/elf/dl-find_object.c' l='226' c='_dlfo_mappings_segment_allocate'/>
+<use f='codebrowser/elf/dl-find_object.c' l='227' c='_dlfo_mappings_segment_allocate'/>
+<use f='codebrowser/elf/dl-find_object.c' l='234' c='_dlfo_mappings_segment_allocate'/>
+<use f='codebrowser/elf/dl-find_object.c' l='309' c='_dlfo_mappings_active_segment'/>
+<use f='codebrowser/elf/dl-find_object.c' l='417' c='_dl_find_object'/>
+<use f='codebrowser/elf/dl-find_object.c' l='635' c='_dlfo_update_init_seg'/>
+<use f='codebrowser/elf/dl-find_object.c' l='656' c='_dl_find_object_update_1'/>
+<use f='codebrowser/elf/dl-find_object.c' l='660' c='_dl_find_object_update_1'/>
+<use f='codebrowser/elf/dl-find_object.c' l='821' c='_dl_find_object_dlclose'/>
+<use f='codebrowser/elf/dl-find_object.c' l='846' c='_dl_find_object_freeres'/>
+<use f='codebrowser/elf/dl-find_object.c' l='849' c='_dl_find_object_freeres'/>
+<size>32</size>
+<doc f='codebrowser/elf/dl-find_object.c' l='75'>/* Mappings created by dlopen can go away with dlclose, so a dynamic
+   data structure with some synchronization is needed.  Individual
+   segments are similar to the _dlfo_nodelete_mappings array above.
+   The previous segment contains lower addresses and is at most half
+   as long.  Checking the address of the base address of the first
+   element during a lookup can therefore approximate a binary search
+   over all segments, even though the data is not stored in one
+   contiguous array.
+
+   During updates, the segments are overwritten in place.  A software
+   transactional memory construct (involving the
+   _dlfo_loaded_mappings_version variable) is used to detect
+   concurrent modification, and retry as necessary.  (This approach is
+   similar to seqlocks, except that two copies are used, and there is
+   only one writer, ever, due to the loader lock.)  Technically,
+   relaxed MO loads and stores need to be used for the shared TM data,
+   to avoid data races.
+
+   The memory allocations are never deallocated, but slots used for
+   objects that have been dlclose&apos;d can be reused by dlopen.  The
+   memory can live in the regular C malloc heap.
+
+   The segments are populated from the start of the list, with the
+   mappings with the highest address.  Only if this segment is full,
+   previous segments are used for mappings at lower addresses.  The
+   remaining segments are populated as needed, but after allocating
+   further segments, some of the initial segments (at the end of the
+   linked list) can be empty (with size 0).
+
+   Adding new elements to this data structure is another source of
+   quadratic behavior for dlopen.  If the other causes of quadratic
+   behavior are eliminated, a more complicated data structure will be
+   needed.  */</doc>

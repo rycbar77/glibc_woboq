@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/internal-ioctl.h' l='21' ll='25' type='_Bool __ioctl_arch(int * r, int fd, unsigned long request, void * arg)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ioctl.c' l='33' u='c' c='__ioctl'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/internal-ioctl.h' l='19'>/* Architecture ports may choose to override this default implementation
+   to provide architecture specific ioctl support.  */</doc>

@@ -1,0 +1,32 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='231' type='const char *'/>
+<offset>0</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='231'>/* Name requested (before search).  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='426' u='r' c='add_name_to_object'/>
+<use f='codebrowser/elf/dl-load.c' l='440' u='w' c='add_name_to_object'/>
+<use f='codebrowser/elf/dl-misc.c' l='75' u='r' c='_dl_name_match_p'/>
+<use f='codebrowser/elf/dl-object.c' l='104' u='w' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='125' u='r' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-open.c' l='83' u='r' c='add_to_global_resize_failure'/>
+<use f='codebrowser/elf/dl-open.c' l='736' u='r' c='dl_open_worker_begin'/>
+<use f='codebrowser/elf/dl-support.c' l='90' u='w'/>
+<use f='codebrowser/elf/setup-vdso.h' l='87' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/rtld.c' l='1189' u='w' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1202' u='r' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1211' u='w' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1305' u='w' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1661' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1666' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1739' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2067' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2073' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2073' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2141' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2142' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2143' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2147' u='r' c='dl_main'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='178' u='r' c='la_objopen'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='179' u='r' c='la_objopen'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='182' u='r' c='la_objopen'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='182' u='r' c='la_objopen'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='186' u='r' c='la_objopen'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='186' u='r' c='la_objopen'/>

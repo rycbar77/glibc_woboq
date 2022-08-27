@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/pthread/threads.h' l='196' type='int tss_set(tss_t __tss_id, void * __val)'/>
+<doc f='codebrowser/sysdeps/pthread/threads.h' l='194'>/* Sets the value of the thread-specific storage identified by __TSS_ID for
+   the current thread to __VAL.  */</doc>
+<def f='codebrowser/sysdeps/pthread/tss_set.c' l='21' ll='26' type='int tss_set(tss_t tss_id, void * val)'/>

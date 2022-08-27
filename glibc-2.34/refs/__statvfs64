@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/sys/statvfs.h' l='6' type='int __statvfs64(const char * __file, struct statvfs64 * __buf)'/>
+<doc f='codebrowser/include/sys/statvfs.h' l='5'>/* Now define the internal interfaces.  */</doc>
+<use f='codebrowser/sysdeps/posix/pathconf.c' l='71' u='c' c='posix_pathconf'/>
+<use f='codebrowser/sysdeps/posix/pathconf.c' l='183' u='c' c='posix_pathconf'/>
+<use f='codebrowser/sysdeps/posix/pathconf.c' l='195' u='c' c='posix_pathconf'/>
+<use f='codebrowser/sysdeps/posix/pathconf.c' l='207' u='c' c='posix_pathconf'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/statvfs64.c' l='28' ll='39' type='int __statvfs64(const char * file, struct statvfs64 * buf)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/statvfs64.c' l='40' c='statvfs64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/statvfs64.c' l='46' c='__statvfs'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/statvfs64.c' l='47' c='statvfs'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/statvfs64.c' l='27'>/* Return information about the filesystem on which FILE resides.  */</doc>

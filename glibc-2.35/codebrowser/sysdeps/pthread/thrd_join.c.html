@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>thrd_join.c source code [codebrowser/sysdeps/pthread/thrd_join.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/pthread/thrd_join.c'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>sysdeps</a>/<a href='./'>pthread</a>/<a href='thrd_join.c.html'>thrd_join.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* C11 threads thread join implementation.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2018-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="thrd_priv.h.html">"thrd_priv.h"</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../../include/shlib-compat.h.html">&lt;shlib-compat.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><em>int</em></td></tr>
+<tr><th id="23">23</th><td><dfn class="decl def fn" id="__thrd_join" title='__thrd_join' data-ref="__thrd_join" data-ref-filename="__thrd_join">__thrd_join</dfn> (<a class="typedef" href="threads.h.html#thrd_t" title='thrd_t' data-type='__thrd_t' data-ref="thrd_t" data-ref-filename="thrd_t">thrd_t</a> <dfn class="local col1 decl" id="1thr" title='thr' data-type='thrd_t' data-ref="1thr" data-ref-filename="1thr">thr</dfn>, <em>int</em> *<dfn class="local col2 decl" id="2res" title='res' data-type='int *' data-ref="2res" data-ref-filename="2res">res</dfn>)</td></tr>
+<tr><th id="24">24</th><td>{</td></tr>
+<tr><th id="25">25</th><td>  <em>void</em> *<dfn class="local col3 decl" id="3pthread_res" title='pthread_res' data-type='void *' data-ref="3pthread_res" data-ref-filename="3pthread_res">pthread_res</dfn>;</td></tr>
+<tr><th id="26">26</th><td>  <em>int</em> <dfn class="local col4 decl" id="4err_code" title='err_code' data-type='int' data-ref="4err_code" data-ref-filename="4err_code">err_code</dfn> = <a class="ref fn" href="../nptl/pthreadP.h.html#__pthread_join" title='__pthread_join' data-ref="__pthread_join" data-ref-filename="__pthread_join">__pthread_join</a> (<a class="local col1 ref" href="#1thr" title='thr' data-ref="1thr" data-ref-filename="1thr">thr</a>, &amp;<a class="local col3 ref" href="#3pthread_res" title='pthread_res' data-ref="3pthread_res" data-ref-filename="3pthread_res">pthread_res</a>);</td></tr>
+<tr><th id="27">27</th><td>  <b>if</b> (<a class="local col2 ref" href="#2res" title='res' data-ref="2res" data-ref-filename="2res">res</a>)</td></tr>
+<tr><th id="28">28</th><td>   *<a class="local col2 ref" href="#2res" title='res' data-ref="2res" data-ref-filename="2res">res</a> = (<em>int</em>) (<a class="typedef" href="../../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a>) <a class="local col3 ref" href="#3pthread_res" title='pthread_res' data-ref="3pthread_res" data-ref-filename="3pthread_res">pthread_res</a>;</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td>  <b>return</b> <a class="ref fn" href="thrd_priv.h.html#thrd_err_map" title='thrd_err_map' data-ref="thrd_err_map" data-ref-filename="thrd_err_map">thrd_err_map</a> (<a class="local col4 ref" href="#4err_code" title='err_code' data-ref="4err_code" data-ref-filename="4err_code">err_code</a>);</td></tr>
+<tr><th id="31">31</th><td>}</td></tr>
+<tr><th id="32">32</th><td><u>#<span data-ppcond="32">if</span> <a class="macro" href="../../build/config.h.html#198" title="1" data-ref="_M/PTHREAD_IN_LIBC">PTHREAD_IN_LIBC</a></u></td></tr>
+<tr><th id="33">33</th><td><a class="macro" href="../../include/shlib-compat.h.html#116" title="extern __typeof (__thrd_join) thrd_join __attribute__ ((weak, alias (&quot;__thrd_join&quot;))) ;" data-ref="_M/versioned_symbol">versioned_symbol</a> (libc, <a class="ref fn" href="#__thrd_join" title='__thrd_join' data-ref="__thrd_join" data-ref-filename="__thrd_join">__thrd_join</a>, <dfn class="decl def fn" id="thrd_join" title='thrd_join' data-ref="thrd_join" data-ref-filename="thrd_join">thrd_join</dfn>, GLIBC_2_34);</td></tr>
+<tr><th id="34">34</th><td><u># <span data-ppcond="34">if</span> <a class="macro" href="../../include/shlib-compat.h.html#113" title="0" data-ref="_M/OTHER_SHLIB_COMPAT">OTHER_SHLIB_COMPAT</a> (libpthread, GLIBC_2_28, GLIBC_2_34)</u></td></tr>
+<tr><th id="35">35</th><td>compat_symbol (libc, __thrd_join, thrd_join, GLIBC_2_28);</td></tr>
+<tr><th id="36">36</th><td><u># <span data-ppcond="34">endif</span></u></td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="32">else</span> /* !PTHREAD_IN_LIBC */</u></td></tr>
+<tr><th id="38">38</th><td>strong_alias (__thrd_join, thrd_join)</td></tr>
+<tr><th id="39">39</th><td><u>#<span data-ppcond="32">endif</span></u></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

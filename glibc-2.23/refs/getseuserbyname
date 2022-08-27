@@ -1,0 +1,6 @@
+<dec f='include/selinux/selinux.h' l='709' type='int getseuserbyname(const char * linuxuser, char ** seuser, char ** level)'/>
+<doc f='include/selinux/selinux.h' l='704'>/* Get the SELinux username and level to use for a given Linux username. 
+   These values may then be passed into the get_ordered_context_list*
+   and get_default_context* functions to obtain a context for the user.
+   Returns 0 on success or -1 otherwise.
+   Caller must free the returned strings via free. */</doc>

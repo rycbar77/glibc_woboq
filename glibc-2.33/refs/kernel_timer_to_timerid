@@ -1,0 +1,7 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='66' ll='70' type='timer_t kernel_timer_to_timerid(kernel_timer_t ktimerid)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='60'>/* For !SIGEV_THREAD, the resulting &apos;timer_t&apos; is the returned kernel timer
+   identifer (kernel_timer_t), while for SIGEV_THREAD it uses the fact malloc
+   returns at least _Alignof (max_align_t) pointers plus that valid
+   kernel_timer_t are always positive to set the MSB bit of the returned
+   &apos;timer_t&apos; to indicate the timer handles a SIGEV_THREAD.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='72' u='c' c='__timer_create_new'/>

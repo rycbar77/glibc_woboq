@@ -1,0 +1,5 @@
+<dec f='codebrowser/misc/search.h' l='171' type='void * lfind(const void * __key, const void * __base, size_t * __nmemb, size_t __size, __compar_fn_t __compar)'/>
+<doc f='codebrowser/misc/search.h' l='169'>/* Perform linear search for KEY by comparing by COMPAR in an array
+   [BASE,BASE+NMEMB*SIZE).  */</doc>
+<use f='codebrowser/misc/lsearch.c' l='30' u='c' c='lsearch'/>
+<def f='codebrowser/misc/lsearch.c' l='42' ll='56' type='void * lfind(const void * key, const void * base, size_t * nmemb, size_t size, __compar_fn_t compar)'/>

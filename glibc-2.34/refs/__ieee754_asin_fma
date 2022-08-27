@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='47' macro='1' type='double __ieee754_asin_fma(double x)'/>
+<doc f='codebrowser/sysdeps/ieee754/dbl-64/e_asin.c' l='44'>/* asin with max ULP of ~0.516 based on random sampling.  */</doc>
+<dec f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-fma4.h' l='23' macro='1' type='double __ieee754_asin_fma(double )'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-fma4.h' l='33' macro='1' u='r' c='ieee754_asin_ifunc_selector'/>

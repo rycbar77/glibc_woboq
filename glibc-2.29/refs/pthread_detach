@@ -1,0 +1,4 @@
+<def f='codebrowser/nptl/pthread_detach.c' l='56' macro='1' type='int pthread_detach(pthread_t )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='110' c='__gthrw_pthread_detach'/>
+<use f='codebrowser/support/xpthread_detach.c' l='24' u='c' c='xpthread_detach'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='98' u='c' c='notification_function'/>

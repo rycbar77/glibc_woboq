@@ -1,0 +1,19 @@
+<def f='codebrowser/inet/net-internal.h' l='88' ll='91'/>
+<use f='codebrowser/inet/net-internal.h' l='96' c='__deadline_is_infinite'/>
+<use f='codebrowser/inet/net-internal.h' l='114' c='__deadline_elapsed'/>
+<use f='codebrowser/inet/net-internal.h' l='123' c='__deadline_first'/>
+<use f='codebrowser/inet/net-internal.h' l='124' c='__deadline_first'/>
+<use f='codebrowser/inet/net-internal.h' l='124' c='__deadline_first'/>
+<use f='codebrowser/inet/net-internal.h' l='139' c='__deadline_from_timeval'/>
+<use f='codebrowser/inet/net-internal.h' l='146' c='__deadline_to_ms'/>
+<use f='codebrowser/inet/deadline.c' l='39' c='infinite_deadline'/>
+<use f='codebrowser/inet/deadline.c' l='42' c='infinite_deadline'/>
+<use f='codebrowser/inet/deadline.c' l='45' c='__deadline_from_timeval'/>
+<use f='codebrowser/inet/deadline.c' l='73' c='__deadline_from_timeval'/>
+<use f='codebrowser/inet/deadline.c' l='78' c='__deadline_to_ms'/>
+<size>16</size>
+<doc f='codebrowser/inet/net-internal.h' l='87'>/* Computed absolute deadline.  */</doc>
+<mbr r='deadline::absolute' o='0' t='struct timespec'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='303' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='305' c='clntudp_call'/>
+<size>16</size>

@@ -1,0 +1,58 @@
+<dec f='codebrowser/sysdeps/nptl/thread_db.h' l='35' type='1'/>
+<doc f='codebrowser/sysdeps/nptl/thread_db.h' l='35'>/* No further specified error.  */</doc>
+<use f='codebrowser/nptl_db/fetch-value.c' l='36' u='r' c='_td_check_sizeof'/>
+<use f='codebrowser/nptl_db/fetch-value.c' l='60' u='r' c='_td_locate_field'/>
+<use f='codebrowser/nptl_db/fetch-value.c' l='137' u='r' c='_td_fetch_value'/>
+<use f='codebrowser/nptl_db/fetch-value.c' l='185' u='r' c='_td_store_value'/>
+<use f='codebrowser/nptl_db/td_init.c' l='38' macro='1' u='r' c='__td_ta_rtld_global'/>
+<use f='codebrowser/nptl_db/td_ta_clear_event.c' l='38' macro='1' u='r' c='td_ta_clear_event'/>
+<use f='codebrowser/nptl_db/td_ta_clear_event.c' l='40' macro='1' u='r' c='td_ta_clear_event'/>
+<use f='codebrowser/nptl_db/td_ta_clear_event.c' l='72' macro='1' c='td_ta_clear_event'/>
+<use f='codebrowser/nptl_db/td_ta_event_addr.c' l='39' macro='1' u='r' c='td_ta_event_addr'/>
+<use f='codebrowser/nptl_db/td_ta_event_addr.c' l='43' macro='1' u='r' c='td_ta_event_addr'/>
+<use f='codebrowser/nptl_db/td_ta_event_getmsg.c' l='45' macro='1' u='r' c='td_ta_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_ta_event_getmsg.c' l='56' macro='1' u='r' c='td_ta_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_ta_event_getmsg.c' l='84' macro='1' c='td_ta_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_ta_event_getmsg.c' l='94' macro='1' u='r' c='td_ta_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_ta_get_nthreads.c' l='35' macro='1' u='r' c='td_ta_get_nthreads'/>
+<use f='codebrowser/nptl_db/td_ta_map_lwp2thr.c' l='47' u='r' c='__td_ta_lookup_th_unique'/>
+<use f='codebrowser/nptl_db/td_ta_map_lwp2thr.c' l='97' u='r' c='__td_ta_lookup_th_unique'/>
+<use f='codebrowser/nptl_db/td_ta_map_lwp2thr.c' l='120' u='r' c='__td_ta_lookup_th_unique'/>
+<use f='codebrowser/nptl_db/td_ta_map_lwp2thr.c' l='141' u='r' c='__td_ta_lookup_th_unique'/>
+<use f='codebrowser/nptl_db/td_ta_map_lwp2thr.c' l='150' u='r' c='__td_ta_lookup_th_unique'/>
+<use f='codebrowser/nptl_db/td_ta_map_lwp2thr.c' l='161' u='r' c='__td_ta_lookup_th_unique'/>
+<use f='codebrowser/nptl_db/td_ta_map_lwp2thr.c' l='201' u='r' c='td_ta_map_lwp2thr'/>
+<use f='codebrowser/nptl_db/td_ta_new.c' l='44' u='r' c='td_ta_new'/>
+<use f='codebrowser/nptl_db/td_ta_set_event.c' l='38' macro='1' u='r' c='td_ta_set_event'/>
+<use f='codebrowser/nptl_db/td_ta_set_event.c' l='40' macro='1' u='r' c='td_ta_set_event'/>
+<use f='codebrowser/nptl_db/td_ta_set_event.c' l='72' macro='1' c='td_ta_set_event'/>
+<use f='codebrowser/nptl_db/td_ta_thr_iter.c' l='76' u='r' c='iterate_thread_list'/>
+<use f='codebrowser/nptl_db/td_ta_tsd_iter.c' l='52' macro='1' u='r' c='td_ta_tsd_iter'/>
+<use f='codebrowser/nptl_db/td_ta_tsd_iter.c' l='56' u='r' c='td_ta_tsd_iter'/>
+<use f='codebrowser/nptl_db/td_thr_clear_event.c' l='38' macro='1' u='r' c='td_thr_clear_event'/>
+<use f='codebrowser/nptl_db/td_thr_clear_event.c' l='70' macro='1' c='td_thr_clear_event'/>
+<use f='codebrowser/nptl_db/td_thr_event_enable.c' l='46' macro='1' u='r' c='td_thr_event_enable'/>
+<use f='codebrowser/nptl_db/td_thr_event_getmsg.c' l='37' macro='1' u='r' c='td_thr_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_thr_event_getmsg.c' l='62' macro='1' c='td_thr_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_thr_event_getmsg.c' l='70' macro='1' u='r' c='td_thr_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_thr_event_getmsg.c' l='73' macro='1' u='r' c='td_thr_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_thr_get_info.c' l='49' macro='1' c='td_thr_get_info'/>
+<use f='codebrowser/nptl_db/td_thr_get_info.c' l='58' macro='1' u='r' c='td_thr_get_info'/>
+<use f='codebrowser/nptl_db/td_thr_getfpregs.c' l='33' u='r' c='td_thr_getfpregs'/>
+<use f='codebrowser/nptl_db/td_thr_getfpregs.c' l='52' u='r' c='td_thr_getfpregs'/>
+<use f='codebrowser/nptl_db/td_thr_getgregs.c' l='33' u='r' c='td_thr_getgregs'/>
+<use f='codebrowser/nptl_db/td_thr_getgregs.c' l='52' u='r' c='td_thr_getgregs'/>
+<use f='codebrowser/nptl_db/td_thr_set_event.c' l='38' macro='1' u='r' c='td_thr_set_event'/>
+<use f='codebrowser/nptl_db/td_thr_set_event.c' l='70' macro='1' c='td_thr_set_event'/>
+<use f='codebrowser/nptl_db/td_thr_setfpregs.c' l='33' u='r' c='td_thr_setfpregs'/>
+<use f='codebrowser/nptl_db/td_thr_setfpregs.c' l='49' u='r' c='td_thr_setfpregs'/>
+<use f='codebrowser/nptl_db/td_thr_setgregs.c' l='33' u='r' c='td_thr_setgregs'/>
+<use f='codebrowser/nptl_db/td_thr_setgregs.c' l='49' u='r' c='td_thr_setgregs'/>
+<use f='codebrowser/nptl_db/td_thr_tlsbase.c' l='43' u='r' c='dtv_slotinfo_list'/>
+<use f='codebrowser/nptl_db/td_thr_tlsbase.c' l='94' u='r' c='dtv_slotinfo'/>
+<use f='codebrowser/nptl_db/td_thr_tlsbase.c' l='157' macro='1' u='r' c='td_thr_tlsbase'/>
+<use f='codebrowser/nptl_db/td_thr_tlsbase.c' l='167' u='r' c='td_thr_tlsbase'/>
+<use f='codebrowser/nptl_db/td_thr_tsd.c' l='34' macro='1' u='r' c='td_thr_tsd'/>
+<use f='codebrowser/nptl_db/td_thr_tsd.c' l='77' macro='1' u='r' c='td_thr_tsd'/>
+<use f='codebrowser/nptl_db/td_thr_validate.c' l='33' u='r' c='__td_ta_stack_user'/>
+<use f='codebrowser/nptl_db/td_thr_validate.c' l='51' u='r' c='__td_ta_stack_used'/>

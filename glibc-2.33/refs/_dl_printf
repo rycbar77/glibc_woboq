@@ -1,0 +1,43 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='776' type='void _dl_printf(const char * fmt)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='774'>/* Write a message on the specified descriptor standard output.  The
+   parameters are interpreted as for a `printf&apos; call.  */</doc>
+<def f='codebrowser/elf/dl-misc.c' l='305' ll='313' type='void _dl_printf(const char * fmt)'/>
+<use f='codebrowser/elf/dl-tunables.c' l='414' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='417' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='421' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='427' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='433' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='439' u='c' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-usage.c' l='42' u='c' c='_dl_version'/>
+<use f='codebrowser/elf/dl-usage.c' l='75' u='c' c='print_search_path_for_help_1'/>
+<use f='codebrowser/elf/dl-usage.c' l='88' u='c' c='print_search_path_for_help'/>
+<use f='codebrowser/elf/dl-usage.c' l='102' u='c' c='print_search_path_for_help'/>
+<use f='codebrowser/elf/dl-usage.c' l='115' u='c' c='print_hwcap_1'/>
+<use f='codebrowser/elf/dl-usage.c' l='119' u='c' c='print_hwcap_1'/>
+<use f='codebrowser/elf/dl-usage.c' l='120' u='c' c='print_hwcap_1'/>
+<use f='codebrowser/elf/dl-usage.c' l='130' u='c' c='print_hwcap_1_finish'/>
+<use f='codebrowser/elf/dl-usage.c' l='132' u='c' c='print_hwcap_1_finish'/>
+<use f='codebrowser/elf/dl-usage.c' l='141' u='c' c='print_hwcaps_subdirectories_header'/>
+<use f='codebrowser/elf/dl-usage.c' l='192' u='c' c='print_hwcaps_subdirectories'/>
+<use f='codebrowser/elf/dl-usage.c' l='201' u='c' c='print_legacy_hwcap_directories'/>
+<use f='codebrowser/elf/dl-usage.c' l='206' u='c' c='print_legacy_hwcap_directories'/>
+<use f='codebrowser/elf/dl-usage.c' l='208' u='c' c='print_legacy_hwcap_directories'/>
+<use f='codebrowser/elf/dl-usage.c' l='217' u='c' c='print_legacy_hwcap_directories'/>
+<use f='codebrowser/elf/dl-usage.c' l='230' u='c' c='_dl_help'/>
+<use f='codebrowser/elf/rtld.c' l='2041' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2046' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2055' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2059' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2095' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2099' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2109' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2115' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2117' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2121' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2140' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2201' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2205' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2224' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2637' u='c' c='process_dl_debug'/>
+<use f='codebrowser/elf/rtld.c' l='2641' u='c' c='process_dl_debug'/>
+<use f='codebrowser/elf/rtld.c' l='2645' u='c' c='process_dl_debug'/>

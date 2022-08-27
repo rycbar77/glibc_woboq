@@ -1,0 +1,40 @@
+<dec f='codebrowser/include/link.h' l='281' type='struct link_map **'/>
+<offset>7808</offset>
+<doc f='codebrowser/include/link.h' l='280'>/* List of object in order of the init and fini calls.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='213' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='217' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='318' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='328' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='332' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='715' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-deps.c' l='79' u='r' c='_dl_build_local_scope'/>
+<use f='codebrowser/elf/dl-deps.c' l='80' u='r' c='_dl_build_local_scope'/>
+<use f='codebrowser/elf/dl-deps.c' l='213' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='450' u='w' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='468' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='473' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='623' u='w' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-init.c' l='117' u='r' c='_dl_init'/>
+<use f='codebrowser/elf/dl-libc.c' l='292' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-libc.c' l='293' u='w' c='free_mem'/>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='40' u='r' c='dl_isa_level_check'/>
+<use f='codebrowser/elf/dl-lookup.c' l='617' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='617' u='r' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='658' u='r' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='659' u='r' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='661' u='r' c='add_dependency'/>
+<use f='codebrowser/elf/dl-open.c' l='642' u='r' c='dl_open_worker_begin'/>
+<use f='codebrowser/elf/dl-open.c' l='651' u='r' c='dl_open_worker_begin'/>
+<use f='codebrowser/elf/dl-open.c' l='667' u='r' c='dl_open_worker_begin'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='64' u='r' c='_dl_sort_maps_original'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='101' u='r' c='_dl_sort_maps_original'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='148' u='r' c='dfs_traversal'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='150' u='r' c='dfs_traversal'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='152' u='r' c='dfs_traversal'/>
+<use f='codebrowser/elf/rtld.c' l='2187' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2423' u='r' c='dl_main'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='101' u='r' c='dl_cet_check'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='152' u='r' c='dl_cet_check'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='163' u='r' c='dl_cet_check'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='190' u='r' c='dl_cet_check'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='192' u='r' c='dl_cet_check'/>

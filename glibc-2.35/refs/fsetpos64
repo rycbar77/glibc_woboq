@@ -1,0 +1,13 @@
+<dec f='codebrowser/libio/stdio.h' l='782' type='int fsetpos64(FILE * __stream, const fpos64_t * __pos)'/>
+<def f='codebrowser/libio/iofsetpos.c' l='76' macro='1' type='int fsetpos64(FILE * , const __fpos_t * )'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='266' u='c' c='getgrent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='399' u='c' c='internal_getgrnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-grp.c' l='530' u='c' c='internal_getgrgid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-initgroups.c' l='393' u='c' c='internal_getgrent_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='506' u='c' c='getpwent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='604' u='c' c='getpwent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='706' u='c' c='internal_getpwnam_r'/>
+<use f='codebrowser/nss/nss_compat/compat-pwd.c' l='912' u='c' c='internal_getpwuid_r'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='461' u='c' c='getspent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='558' u='c' c='getspent_next_file'/>
+<use f='codebrowser/nss/nss_compat/compat-spwd.c' l='661' u='c' c='internal_getspnam_r'/>

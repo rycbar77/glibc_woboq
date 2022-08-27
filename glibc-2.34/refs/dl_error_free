@@ -1,0 +1,5 @@
+<def f='codebrowser/dlfcn/dlerror.h' l='48' ll='61' type='void dl_error_free(void * ptr)'/>
+<use f='codebrowser/dlfcn/dlerror.h' l='72' u='c' c='dl_action_result_errstring_free'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='174' u='c' c='_dlerror_run'/>
+<doc f='codebrowser/dlfcn/dlerror.h' l='46'>/* Used to free the errstring member of struct dl_action_result in the
+   dl_action_result_errstring_rtld case.  */</doc>

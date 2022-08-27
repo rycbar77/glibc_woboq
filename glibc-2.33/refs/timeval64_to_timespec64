@@ -1,0 +1,12 @@
+<def f='codebrowser/include/time.h' l='377' ll='386' type='struct timespec timeval64_to_timespec64(const struct timeval tv64)'/>
+<doc f='codebrowser/include/time.h' l='376'>/* Convert a struct __timeval64 into a struct __timespec64.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='31' u='c' c='__futimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='32' u='c' c='__futimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimesat.c' l='30' u='c' c='__futimesat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimesat.c' l='31' u='c' c='__futimesat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lutimes.c' l='30' u='c' c='__lutimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lutimes.c' l='31' u='c' c='__lutimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/select.c' l='39' u='c' c='__select'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/settimeofday.c' l='39' u='c' c='__settimeofday'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/utimes.c' l='29' u='c' c='__utimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/utimes.c' l='30' u='c' c='__utimes'/>

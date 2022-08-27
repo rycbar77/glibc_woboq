@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/ieee754/ieee754.h' l='89' type='unsigned int'/>
+<dec f='codebrowser/sysdeps/ieee754/ieee754.h' l='116' type='unsigned int'/>
+<offset>0</offset>
+<doc f='codebrowser/sysdeps/ieee754/ieee754.h' l='88'>/* Together these comprise the mantissa.  */</doc>
+<doc f='codebrowser/sysdeps/ieee754/ieee754.h' l='115'>/* Together these comprise the mantissa.  */</doc>
+<use f='codebrowser/stdlib/erand48_r.c' l='40' u='w' c='__erand48_r'/>
+<use f='codebrowser/stdlib/strtod_nan_main.c' l='55' macro='1' u='w' c='__strtod_nan'/>
+<use f='codebrowser/stdlib/strtod_nan_main.c' l='55' macro='1' u='r' c='__strtod_nan'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dbl2mpn.c' l='47' u='r' c='__mpn_extract_double'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/mpn2dbl.c' l='39' u='w' c='__mpn_construct_double'/>
+<use f='codebrowser/stdio-common/printf_fphex.c' l='264' u='r' c='__printf_fphex'/>

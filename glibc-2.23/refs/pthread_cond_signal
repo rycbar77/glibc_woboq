@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='977' type='int pthread_cond_signal(pthread_cond_t * __cond)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='976'>/* Wake up one thread waiting for condition variable COND.  */</doc>
+<use f='codebrowser/resolv/gai_misc.c' l='288' u='c' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='398' u='c' c='handle_requests'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='466' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='663' u='c' c='handle_fildes_io'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/x86_64/pthread_cond_signal.S' l='160' macro='1' type='int'/>

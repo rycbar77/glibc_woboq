@@ -1,0 +1,9 @@
+<def f='codebrowser/nptl/pthread_create.c' l='53' type='struct pthread *'/>
+<dec f='codebrowser/nptl/pthread_create.c' l='54' type='typeof (__nptl_last_event)'/>
+<use f='codebrowser/nptl/pthread_create.c' l='54'/>
+<use f='codebrowser/nptl/pthread_create.c' l='476' u='r' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='477' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='817' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='818' u='a' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl_db/structs.def' l='81' u='r'/>
+<doc f='codebrowser/nptl/pthread_create.c' l='52'>/* Pointer to descriptor with the last event.  */</doc>

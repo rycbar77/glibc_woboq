@@ -1,0 +1,6 @@
+<dec f='codebrowser/nscd/nscd.h' l='240' type='time_t'/>
+<doc f='codebrowser/nscd/nscd.h' l='239'>/* How much time between restarts.  */</doc>
+<def f='codebrowser/nscd/nscd.c' l='87' type='time_t'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='256' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='278' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='120' u='r' c='send_stats'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/link.h' l='177' type='1'/>
+<doc f='codebrowser/include/link.h' l='177'>/* Library needed by main executable.  */</doc>
+<use f='codebrowser/elf/dl-deps.c' l='66' u='r' c='openaux'/>
+<use f='codebrowser/elf/dl-find_object.c' l='511' u='r' c='_dlfo_process_initial'/>
+<use f='codebrowser/elf/dl-load.c' l='1194' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1472' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/setup-vdso.h' l='32' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/rtld.c' l='665' u='r' c='map_doit'/>
+<use f='codebrowser/elf/rtld.c' l='1740' u='r' c='dl_main'/>

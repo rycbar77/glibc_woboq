@@ -1,0 +1,16 @@
+<dec f='codebrowser/resolv/bits/types/res_state.h' l='45' type='int[3]'/>
+<offset>64</offset>
+<use f='codebrowser/resolv/res-close.c' l='105' u='r' c='__res_iclose'/>
+<use f='codebrowser/resolv/res-close.c' l='107' u='r' c='__res_iclose'/>
+<use f='codebrowser/resolv/res-close.c' l='108' u='w' c='__res_iclose'/>
+<use f='codebrowser/resolv/res_send.c' l='320' u='w' c='__res_context_send'/>
+<use f='codebrowser/resolv/res_send.c' l='797' u='r' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='803' u='w' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='806' u='r' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='810' u='w' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='815' u='r' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='823' u='r' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='851' u='r' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='969' u='r' c='send_dg'/>
+<use f='codebrowser/resolv/res_send.c' l='1278' u='r' c='send_dg'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='512' u='w' c='update_from_conf'/>

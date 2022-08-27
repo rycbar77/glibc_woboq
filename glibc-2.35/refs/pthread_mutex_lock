@@ -1,0 +1,19 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='794' type='int pthread_mutex_lock(pthread_mutex_t * __mutex)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='793'>/* Lock a mutex.  */</doc>
+<use f='codebrowser/nscd/cache.c' l='218' u='c' c='cache_add'/>
+<use f='codebrowser/nscd/connections.c' l='980' u='c' c='invalidate_cache'/>
+<use f='codebrowser/nscd/connections.c' l='1521' u='c' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1552' u='c' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1567' u='c' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1600' u='c' c='nscd_run_worker'/>
+<use f='codebrowser/nscd/connections.c' l='1710' u='c' c='nscd_run_worker'/>
+<use f='codebrowser/nscd/connections.c' l='1724' u='c' c='fd_ready'/>
+<use f='codebrowser/nscd/connections.c' l='1957' u='c' c='clear_db_cache'/>
+<use f='codebrowser/nscd/grpcache.c' l='208' u='c' c='cache_addgr'/>
+<use f='codebrowser/nscd/mem.c' l='113' u='c' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='520' u='c' c='mempool_alloc'/>
+<use f='codebrowser/nscd/pwdcache.c' l='201' u='c' c='cache_addpw'/>
+<use f='codebrowser/nscd/selinux.c' l='302' u='c' c='avc_get_lock'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='749' u='c' c='__gthread_mutex_lock'/>
+<use f='codebrowser/support/xpthread_mutex_lock.c' l='24' u='c' c='xpthread_mutex_lock'/>
+<use f='codebrowser/sysdeps/nptl/dl-mutex.c' l='25'/>

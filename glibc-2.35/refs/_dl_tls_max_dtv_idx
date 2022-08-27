@@ -1,0 +1,38 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='448' type='size_t'/>
+<def f='codebrowser/csu/libc-tls.c' l='43' type='size_t'/>
+<use f='codebrowser/csu/libc-tls.c' l='84' macro='1' u='w' c='init_slotinfo'/>
+<use f='codebrowser/csu/libc-tls.c' l='101' macro='1' u='r' c='init_static_tls'/>
+<doc f='codebrowser/csu/libc-tls.c' l='42'>/* Highest dtv index currently needed.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='89' macro='1' u='r' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='104' macro='1' u='a' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='104' macro='1' u='a' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='104' macro='1' u='a' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='104' macro='1' u='a' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='104' macro='1' u='a' c='remove_slotinfo'/>
+<use f='codebrowser/elf/dl-close.c' l='540' macro='1' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='540' macro='1' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='540' macro='1' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='540' macro='1' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='540' macro='1' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-tls.c' l='147' macro='1' u='r' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='156' macro='1' u='r' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='156' macro='1' u='r' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='170' macro='1' u='r' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='174' macro='1' u='r' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='174' macro='1' u='r' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='186' macro='1' u='r' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='188' macro='1' u='a' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='188' macro='1' u='a' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='188' macro='1' u='a' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='188' macro='1' u='a' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='188' macro='1' u='a' c='_dl_assign_tls_modid'/>
+<use f='codebrowser/elf/dl-tls.c' l='200' macro='1' u='r' c='_dl_count_modids'/>
+<use f='codebrowser/elf/dl-tls.c' l='370' macro='1' u='a' c='allocate_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='370' macro='1' u='a' c='allocate_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='370' macro='1' u='a' c='allocate_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='370' macro='1' u='a' c='allocate_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='370' macro='1' u='a' c='allocate_dtv'/>
+<use f='codebrowser/elf/dl-tls.c' l='542' macro='1' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='545' macro='1' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='565' macro='1' u='r' c='_dl_allocate_tls_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='614' macro='1' u='r' c='_dl_allocate_tls_init'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='204' type='const char *'/>
+<offset>64</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='203'>/* Strings saying where the definition came from.  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='535' u='w' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='740' u='w' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='1522' u='r' c='print_search_path'/>
+<use f='codebrowser/elf/dl-load.c' l='1887' u='r' c='open_path'/>
+<use f='codebrowser/elf/dl-load.c' l='1889' u='r' c='open_path'/>
+<use f='codebrowser/elf/dl-usage.c' l='75' u='r' c='print_search_path_for_help_1'/>

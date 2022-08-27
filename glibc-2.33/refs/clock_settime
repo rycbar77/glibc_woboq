@@ -1,0 +1,4 @@
+<dec f='codebrowser/time/time.h' l='216' type='int clock_settime(clockid_t __clock_id, const struct timespec * __tp)'/>
+<use f='codebrowser/include/time.h' l='28' c='__clock_settime'/>
+<doc f='codebrowser/time/time.h' l='215'>/* Set clock CLOCK_ID to value TP.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/clock_settime.c' l='71' macro='1' type='int clock_settime(clockid_t , const struct timespec * )'/>

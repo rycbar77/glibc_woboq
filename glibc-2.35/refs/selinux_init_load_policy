@@ -1,0 +1,16 @@
+<dec f='include/selinux/selinux.h' l='318' type='int selinux_init_load_policy(int * enforce)'/>
+<doc f='include/selinux/selinux.h' l='303'>/* 
+ * Perform the initial policy load.
+ * This function determines the desired enforcing mode, sets the
+ * the *enforce argument accordingly for the caller to use, sets the 
+ * SELinux kernel enforcing status to match it, and loads the policy.
+ * It also internally handles the initial selinuxfs mount required to
+ * perform these actions.
+ *
+ * The function returns 0 if everything including the policy load succeeds.
+ * In this case, init is expected to re-exec itself in order to transition
+ * to the proper security context.
+ * Otherwise, the function returns -1, and init must check *enforce to
+ * determine how to proceed.  If enforcing (*enforce &gt; 0), then init should
+ * halt the system.  Otherwise, init may proceed normally without a re-exec.
+ */</doc>

@@ -1,0 +1,32 @@
+<dec f='codebrowser/libio/stdio.h' l='283' type='FILE * fopen64(const char *restrict __filename, const char *restrict __modes)'/>
+<use f='codebrowser/catgets/gencat.c' l='283' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='1021' u='c' c='write_out'/>
+<use f='codebrowser/elf/ldconfig.c' l='1224' u='c' c='parse_conf'/>
+<use f='codebrowser/elf/ldconfig.c' l='1231' u='c' c='parse_conf'/>
+<use f='codebrowser/elf/readlib.c' l='90' u='c' c='process_file'/>
+<use f='codebrowser/elf/sln.c' l='94' u='c' c='makesymlinks'/>
+<use f='codebrowser/hesiod/hesiod.c' l='258' u='c' c='parse_config_file'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='144' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='425' u='c' c='write_output'/>
+<def f='codebrowser/libio/iofopen.c' l='95' macro='1' type='FILE * fopen64(const char * , const char * )'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='223' u='c' c='charmap_open'/>
+<use f='codebrowser/locale/programs/linereader.c' l='57' u='c' c='lr_open'/>
+<use f='codebrowser/locale/programs/locale.c' l='531' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1207' u='c' c='add_locale_to_archive'/>
+<use f='codebrowser/nscd/dbg_log.c' l='44' u='c' c='init_logfile'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1778' u='c' c='gaiconf_init'/>
+<use f='codebrowser/nscd/nscd.c' l='592' u='c' c='check_pid'/>
+<use f='codebrowser/nscd/nscd.c' l='619' u='c' c='write_pid'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='67' u='c' c='nscd_parse_file'/>
+<use f='codebrowser/resolv/res_hconf.c' l='280' u='c' c='do_init'/>
+<use f='codebrowser/nss/makedb.c' l='244' u='c' c='main'/>
+<use f='codebrowser/support/shell-container.c' l='397' u='c' c='run_script'/>
+<use f='codebrowser/support/test-container.c' l='663' u='c' c='check_for_unshare_hints'/>
+<use f='codebrowser/support/test-container.c' l='678' u='c' c='check_for_unshare_hints'/>
+<use f='codebrowser/support/test-container.c' l='876' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='885' u='c' c='main'/>
+<use f='codebrowser/timezone/zic.c' l='1031' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1038' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1193' u='c' c='infile'/>
+<use f='codebrowser/timezone/zic.c' l='1996' u='c' c='writezone'/>
+<use f='codebrowser/timezone/zic.c' l='2001' u='c' c='writezone'/>

@@ -1,0 +1,7 @@
+<def f='codebrowser/sysdeps/ieee754/flt-32/reduce_aux.h' l='28' ll='62' type='double reduce_aux(float x, int * n, double alpha)'/>
+<use f='codebrowser/sysdeps/ieee754/flt-32/e_j0f.c' l='210' u='c' c='j0f_asympt'/>
+<use f='codebrowser/sysdeps/ieee754/flt-32/e_j0f.c' l='491' u='c' c='y0f_asympt'/>
+<doc f='codebrowser/sysdeps/ieee754/flt-32/reduce_aux.h' l='26'>/* Return h and update n such that:
+   Now x - pi/4 - alpha = h + n*pi/2 mod (2*pi).  */</doc>
+<use f='codebrowser/sysdeps/ieee754/flt-32/e_j1f.c' l='215' u='c' c='j1f_asympt'/>
+<use f='codebrowser/sysdeps/ieee754/flt-32/e_j1f.c' l='502' u='c' c='y1f_asympt'/>

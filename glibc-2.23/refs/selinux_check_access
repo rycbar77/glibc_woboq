@@ -1,0 +1,18 @@
+<dec f='include/selinux/selinux.h' l='635' type='int selinux_check_access(const char * scon, const char * tcon, const char * tclass, const char * perm, void * auditdata)'/>
+<doc f='include/selinux/selinux.h' l='618'>/**
+ * selinux_check_access - Check permissions and perform appropriate auditing.
+ * @scon: source security context
+ * @tcon: target security context
+ * @tclass: target security class string
+ * @perm: requested permissions string, interpreted based on @tclass
+ * @auditdata: auxiliary audit data
+ *
+ * Check the AVC to determine whether the @perm permissions are granted
+ * for the SID pair (@scon, @tcon), interpreting the permissions
+ * based on @tclass.
+ * Return %0 if all @perm permissions are granted, -%1 with 
+ * @errno set to %EACCES if any permissions are denied or to another 
+ * value upon other errors.
+ * If auditing or logging is configured the appropriate callbacks will be called
+ * and passed the auditdata field
+ */</doc>

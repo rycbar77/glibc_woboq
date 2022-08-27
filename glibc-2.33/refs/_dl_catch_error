@@ -1,0 +1,19 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='891' type='int _dl_catch_error(const char ** objname, const char ** errstring, _Bool * mallocedp, void (*)(void *) operate, void * args)'/>
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='894' type='int _dl_catch_error(const char ** , const char ** , _Bool * , void (*)(void *) , void * )'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='894' c='_dl_catch_error'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='882'>/* Call OPERATE, catching errors from `_dl_signal_error&apos; and related
+   functions.  If there is no error, *ERRSTRING is set to null.  If
+   there is an error, *ERRSTRING is set to a string constructed from
+   the strings passed to _dl_signal_error, and the error code passed
+   is the return value and *OBJNAME is set to the object name which
+   experienced the problems.  ERRSTRING if nonzero points to a
+   malloc&apos;ed string which the caller has to free after use.  ARGS is
+   passed as argument to OPERATE.  MALLOCEDP is set to true only if
+   the returned string is allocated using the libc&apos;s malloc.  */</doc>
+<def f='codebrowser/elf/dl-error-skeleton.c' l='222' ll='232' type='int _dl_catch_error(const char ** objname, const char ** errstring, _Bool * mallocedp, void (*)(void *) operate, void * args)'/>
+<use f='codebrowser/elf/dl-libc.c' l='46' u='c' c='dlerror_run'/>
+<use f='codebrowser/elf/rtld.c' l='829' u='c' c='do_preload'/>
+<use f='codebrowser/elf/rtld.c' l='970' u='c' c='load_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='980' u='c' c='load_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='1049' u='c' c='load_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='1363' u='c' c='dl_main'/>

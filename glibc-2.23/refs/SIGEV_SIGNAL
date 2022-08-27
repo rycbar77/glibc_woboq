@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/siginfo.h' l='349' type='0'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/siginfo.h' l='349'>/* Notify via signal.  */</doc>
+<use f='codebrowser/resolv/gai_notify.c' l='86' macro='1' u='r' c='__gai_notify_only'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='92' macro='1' u='r' c='getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='156' macro='1' u='r' c='getaddrinfo_a'/>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='96' macro='1' u='r' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='70' macro='1' u='r' c='__timer_create_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='84' macro='1' u='r' c='__timer_create_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='147' macro='1' u='r' c='__timer_create_new'/>

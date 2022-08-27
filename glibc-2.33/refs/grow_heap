@@ -1,0 +1,4 @@
+<def f='codebrowser/malloc/arena.c' l='580' ll='604' type='int grow_heap(heap_info * h, long diff)'/>
+<use f='codebrowser/malloc/malloc.c' l='2557' u='c' c='sysmalloc'/>
+<doc f='codebrowser/malloc/arena.c' l='577'>/* Grow a heap.  size is automatically rounded up to a
+   multiple of the page size. */</doc>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/libio/stdio.h' l='764' type='int feof(FILE * __stream)'/>
+<doc f='codebrowser/libio/stdio.h' l='763'>/* Return the EOF indicator for STREAM.  */</doc>
+<use f='codebrowser/catgets/gencat.c' l='310' u='c' c='read_input_file'/>
+<def f='codebrowser/libio/feof.c' l='43' macro='1' type='int feof(FILE * )'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='259' u='c' c='charmap_aliases'/>
+<use f='codebrowser/locale/programs/linereader.c' l='128' u='c' c='lr_ignore_rest'/>
+<use f='codebrowser/support/xgetline.c' l='32' u='c' c='xgetline'/>

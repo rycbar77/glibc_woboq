@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/dlfcn.h' l='133' type='int __dladdr1(const void * address, Dl_info * info, void ** extra_info, int flags)'/>
+<def f='codebrowser/dlfcn/dladdr1.c' l='23' ll='41' type='int __dladdr1(const void * address, Dl_info * info, void ** extra, int flags)'/>
+<use f='codebrowser/dlfcn/dladdr1.c' l='42' c='dladdr1'/>
+<use f='codebrowser/elf/rtld_static_init.c' l='36' u='r'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/stdlib.h' l='302' type='void * __default_morecore(ptrdiff_t )'/>
+<dec f='codebrowser/include/stdlib.h' l='303' type='void * __default_morecore(ptrdiff_t )'/>
+<use f='codebrowser/include/stdlib.h' l='303' c='__default_morecore'/>
+<dec f='codebrowser/malloc/malloc.c' l='383' type='void * __default_morecore(ptrdiff_t )'/>
+<use f='codebrowser/malloc/malloc.c' l='384' u='r'/>
+<dec f='codebrowser/malloc/malloc.h' l='81' type='void * __default_morecore(ptrdiff_t __size)'/>
+<doc f='codebrowser/malloc/malloc.h' l='80'>/* Default value of `__morecore&apos;.  */</doc>
+<def f='codebrowser/malloc/morecore.c' l='44' ll='52' type='void * __default_morecore(ptrdiff_t increment)'/>
+<doc f='codebrowser/malloc/morecore.c' l='41'>/* Allocate INCREMENT more bytes of data space,
+   and return the start of data space, or NULL on errors.
+   If INCREMENT is negative, shrink data space.  */</doc>

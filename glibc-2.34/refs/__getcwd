@@ -1,0 +1,16 @@
+<dec f='codebrowser/include/unistd.h' l='82' type='char * __getcwd(char * __buf, size_t __size)'/>
+<dec f='codebrowser/include/unistd.h' l='83' type='char * __getcwd(char * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='83' c='__getcwd'/>
+<use f='codebrowser/debug/getcwd_chk.c' l='29' u='c' c='__getcwd_chk'/>
+<use f='codebrowser/debug/getwd_chk.c' l='26' u='c' c='__getwd_chk'/>
+<dec f='codebrowser/sysdeps/generic/dl-unistd.h' l='23' type='char * __getcwd(char * , size_t )'/>
+<use f='codebrowser/sysdeps/generic/dl-unistd.h' l='23' c='__getcwd'/>
+<use f='codebrowser/elf/dl-object.c' l='221' u='c' c='_dl_new_object'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='395' u='c' c='__gconv_get_path'/>
+<use f='codebrowser/intl/dcigettext.c' l='136' u='c' c='__dcigettext'/>
+<use f='codebrowser/io/getdirname.c' l='42' u='c' c='get_current_dir_name'/>
+<use f='codebrowser/io/getwd.c' l='39' u='c' c='getwd'/>
+<use f='codebrowser/stdlib/canonicalize.c' l='239' u='c' c='realpath_stk'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getcwd.c' l='48' ll='132' type='char * __getcwd(char * buf, size_t size)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getcwd.c' l='134' c='getcwd'/>
+<use f='codebrowser/io/ftw.c' l='703' u='c' c='ftw_startup'/>

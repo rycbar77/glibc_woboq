@@ -1,0 +1,42 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/dirent.h' l='33' type='char[256]'/>
+<offset>152</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/dirent.h' l='33'>/* We must not include limits.h! */</doc>
+<use f='codebrowser/elf/pldd.c' l='150' u='r' c='main'/>
+<use f='codebrowser/elf/pldd.c' l='154' u='r' c='main'/>
+<use f='codebrowser/elf/pldd.c' l='158' c='main'/>
+<use f='codebrowser/iconv/gconv_parseconfdir.h' l='154' u='r' c='gconv_parseconfdir'/>
+<use f='codebrowser/iconv/gconv_parseconfdir.h' l='158' u='r' c='gconv_parseconfdir'/>
+<use f='codebrowser/iconv/gconv_parseconfdir.h' l='162' c='gconv_parseconfdir'/>
+<use f='codebrowser/locale/programs/locale.c' l='315' u='r' c='select_dirs'/>
+<use f='codebrowser/locale/programs/locale.c' l='315' u='r' c='select_dirs'/>
+<use f='codebrowser/locale/programs/locale.c' l='325' u='r' c='select_dirs'/>
+<use f='codebrowser/locale/programs/locale.c' l='328' u='r' c='select_dirs'/>
+<use f='codebrowser/locale/programs/locale.c' l='452' u='r' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='460' u='r' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='465' u='r' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='476' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='513' u='r' c='write_locales'/>
+<use f='codebrowser/support/support_wait_for_thread_exit.c' l='48' u='r' c='support_wait_for_thread_exit'/>
+<use f='codebrowser/support/support_wait_for_thread_exit.c' l='48' u='r' c='support_wait_for_thread_exit'/>
+<use f='codebrowser/support/support_wait_for_thread_exit.c' l='49' u='r' c='support_wait_for_thread_exit'/>
+<use f='codebrowser/support/support_wait_for_thread_exit.c' l='52' u='r' c='support_wait_for_thread_exit'/>
+<use f='codebrowser/support/support_wait_for_thread_exit.c' l='54' c='support_wait_for_thread_exit'/>
+<use f='codebrowser/support/test-container.c' l='506' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='507' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='511' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='513' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='599' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='600' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='604' u='r' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='606' u='r' c='rsync_1'/>
+<use f='codebrowser/posix/glob.c' l='145' u='r' c='convert_dirent'/>
+<use f='codebrowser/io/fts.c' l='723' u='r' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='723' u='r' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='723' u='r' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='723' u='r' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='726' u='r' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='726' macro='1' u='r' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='728' macro='1' u='r' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='730' macro='1' u='r' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='754' macro='1' u='r' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='771' macro='1' u='r' c='fts_build'/>

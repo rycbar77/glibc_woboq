@@ -1,0 +1,20 @@
+<dec f='codebrowser/string/string.h' l='440' type='char * strsep(char **restrict __stringp, const char *restrict __delim)'/>
+<doc f='codebrowser/string/string.h' l='438'>/* Return the next DELIM-delimited token from *STRINGP,
+   terminating it with a &apos;\0&apos;, and update *STRINGP to point past it.  */</doc>
+<def f='codebrowser/elf/dl-minimal.c' l='295' macro='1' type='char * strsep(char ** , const char * )'/>
+<use f='codebrowser/elf/rtld.c' l='1764' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2504' u='c' c='process_dl_audit'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='311' u='c' c='main'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='316' u='c' c='main'/>
+<use f='codebrowser/locale/programs/charmap.c' l='116' u='c' c='charmap_read'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='264' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='276' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='283' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='333' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='341' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='407' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='415' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='445' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/locfile.c' l='79' u='c' c='locfile_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='89' u='c' c='repertoire_read'/>
+<def f='codebrowser/string/strsep.c' l='47' macro='1' type='char * strsep(char ** , const char * )'/>

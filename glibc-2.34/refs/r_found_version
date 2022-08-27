@@ -1,0 +1,35 @@
+<use f='codebrowser/include/link.h' l='154'/>
+<def f='codebrowser/sysdeps/generic/ldsodefs.h' l='183' ll='190'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='1013' c='_dl_lookup_symbol_x'/>
+<size>24</size>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='181'>/* For the version handling we need an array with only names and their
+   hash values.  */</doc>
+<mbr r='r_found_version::name' o='0' t='const char *'/>
+<mbr r='r_found_version::hash' o='64' t='Elf64_Word'/>
+<mbr r='r_found_version::hidden' o='96' t='int'/>
+<mbr r='r_found_version::filename' o='128' t='const char *'/>
+<use f='codebrowser/elf/dynamic-link.h' l='73' c='elf_machine_rela'/>
+<size>24</size>
+<use f='codebrowser/elf/dl-libc.c' l='88'/>
+<use f='codebrowser/elf/dl-libc.c' l='134' c='do_dlsym_private'/>
+<size>24</size>
+<use f='codebrowser/elf/dl-lookup.c' l='60' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='360' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='819' c='_dl_debug_bindings'/>
+<use f='codebrowser/elf/dl-lookup.c' l='833' c='_dl_lookup_symbol_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='999' c='_dl_debug_bindings'/>
+<size>24</size>
+<use f='codebrowser/elf/dl-minimal.c' l='73' c='lookup_malloc_symbol'/>
+<use f='codebrowser/elf/dl-minimal.c' l='98' c='__rtld_malloc_init_real'/>
+<size>24</size>
+<use f='codebrowser/elf/dl-runtime.c' l='83' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='238' c='_dl_profile_fixup'/>
+<size>24</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso.h' l='48' c='dl_vdso_vsym'/>
+<size>24</size>
+<use f='codebrowser/elf/dl-sym.c' l='67'/>
+<use f='codebrowser/elf/dl-sym.c' l='86' c='do_sym'/>
+<use f='codebrowser/elf/dl-sym.c' l='180' c='_dl_vsym'/>
+<size>24</size>
+<use f='codebrowser/elf/dl-version.c' l='273' c='_dl_check_map_versions'/>
+<size>24</size>

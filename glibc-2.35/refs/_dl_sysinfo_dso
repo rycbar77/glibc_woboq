@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='672' type='const Elf64_Ehdr *'/>
+<def f='codebrowser/elf/dl-support.c' l='212' type='const Elf64_Ehdr *'/>
+<use f='codebrowser/elf/setup-vdso.h' l='24' macro='1' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='36' macro='1' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='37' macro='1' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='38' macro='1' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='62' macro='1' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/dl-support.c' l='294' macro='1' u='w' c='_dl_aux_init'/>
+<doc f='codebrowser/elf/dl-support.c' l='211'>/* Address of the ELF headers in the vsyscall page.  */</doc>

@@ -1,0 +1,47 @@
+<dec f='codebrowser/include/programs/xmalloc.h' l='33' type='char * xstrdup(const char * )'/>
+<use f='codebrowser/elf/cache.c' l='957' u='c' c='search_aux_cache'/>
+<use f='codebrowser/elf/ldconfig.c' l='206' u='c' c='path_hwcap'/>
+<use f='codebrowser/elf/ldconfig.c' l='345' u='c' c='new_sub_entry'/>
+<use f='codebrowser/elf/ldconfig.c' l='473' u='c' c='add_dir_1'/>
+<use f='codebrowser/elf/ldconfig.c' l='667' u='c' c='manual_link'/>
+<use f='codebrowser/elf/ldconfig.c' l='1060' u='c' c='search_dir'/>
+<use f='codebrowser/elf/ldconfig.c' l='1112' u='c' c='search_dir'/>
+<use f='codebrowser/elf/ldconfig.c' l='1127' u='c' c='search_dir'/>
+<use f='codebrowser/elf/readlib.c' l='145' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='193' u='c' c='implicit_soname'/>
+<use f='codebrowser/elf/readelflib.c' l='321' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='321' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/stringtable.c' l='154' u='c' c='stringtable_finalize'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='527' u='c' c='new_module'/>
+<use f='codebrowser/locale/programs/linereader.c' l='73' u='c' c='lr_create'/>
+<use f='codebrowser/locale/programs/locale.c' l='513' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='594' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='672' u='c' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='697' u='c' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='747' u='c' c='write_charmaps'/>
+<use f='codebrowser/locale/programs/locale.c' l='759' u='c' c='write_charmaps'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='129' u='c' c='repertoire_read'/>
+<dec f='codebrowser/locale/programs/xstrdup.c' l='28' type='char * xstrdup(char * string)'/>
+<def f='codebrowser/locale/programs/xstrdup.c' l='32' ll='36' type='char * xstrdup(char * string)'/>
+<doc f='codebrowser/locale/programs/xstrdup.c' l='30'>/* Return a newly allocated copy of STRING.  */</doc>
+<use f='codebrowser/nscd/nscd.c' l='484' u='c' c='more_help'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='194' u='c' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='204' u='c' c='nscd_parse_file'/>
+<dec f='codebrowser/support/support.h' l='105' type='char * xstrdup(const char * )'/>
+<dec f='codebrowser/support/support.h' l='113' type='char * xstrdup(const char * )'/>
+<use f='codebrowser/support/support_format_address_family.c' l='29' u='c' c='support_format_address_family'/>
+<use f='codebrowser/support/support_format_address_family.c' l='31' u='c' c='support_format_address_family'/>
+<use f='codebrowser/support/support_format_address_family.c' l='33' u='c' c='support_format_address_family'/>
+<use f='codebrowser/support/support_format_address_family.c' l='35' u='c' c='support_format_address_family'/>
+<use f='codebrowser/support/support_format_herrno.c' l='44' u='c' c='support_format_herrno'/>
+<use f='codebrowser/support/test-container.c' l='792' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='794' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='825' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='828' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='839' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='856' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='858' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1000' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1002' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='1008' u='c' c='main'/>
+<def f='codebrowser/support/xstrdup.c' l='23' ll='30' type='char * xstrdup(const char * s)'/>

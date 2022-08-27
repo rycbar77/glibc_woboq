@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='952' type='struct link_map * _dl_map_object(struct link_map * loader, const char * name, int type, int trace_mode, int mode, Lmid_t nsid)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='949'>/* Open the shared object NAME and map in its segments.
+   LOADER&apos;s DT_RPATH is used in searching for NAME.
+   If the object is already opened, returns its existing map.  */</doc>
+<use f='codebrowser/elf/dl-deps.c' l='64' u='c' c='openaux'/>
+<def f='codebrowser/elf/dl-load.c' l='2032' ll='2343' type='struct link_map * _dl_map_object(struct link_map * loader, const char * name, int type, int trace_mode, int mode, Lmid_t nsid)'/>
+<doc f='codebrowser/elf/dl-load.c' l='2030'>/* Map in the shared object file NAME.  */</doc>
+<use f='codebrowser/elf/dl-open.c' l='530' u='c' c='dl_open_worker'/>
+<use f='codebrowser/elf/rtld.c' l='653' u='c' c='map_doit'/>
+<use f='codebrowser/elf/rtld.c' l='1366' u='c' c='dl_main'/>

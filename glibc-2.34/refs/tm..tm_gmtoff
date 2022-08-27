@@ -1,0 +1,14 @@
+<dec f='codebrowser/time/bits/types/struct_tm.h' l='20' type='long'/>
+<offset>320</offset>
+<doc f='codebrowser/time/bits/types/struct_tm.h' l='20'>/* Seconds east of UTC.  */</doc>
+<use f='codebrowser/time/getdate.c' l='195' u='w' c='__getdate_r'/>
+<use f='codebrowser/time/strftime_l.c' l='1359' u='r' c='__strftime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='789' u='w' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='811' u='w' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='813' u='w' c='__strptime_internal'/>
+<use f='codebrowser/time/strptime_l.c' l='813' u='r' c='__strptime_internal'/>
+<use f='codebrowser/time/tzfile.c' l='750' u='w' c='__tzfile_compute'/>
+<use f='codebrowser/time/tzset.c' l='539' u='w' c='__tz_compute'/>
+<use f='codebrowser/time/tzset.c' l='600' u='w' c='__tz_convert'/>
+<use f='codebrowser/time/tzset.c' l='603' u='r' c='__tz_convert'/>
+<use f='codebrowser/timezone/zdump.c' l='736' macro='1' u='r' c='gmtoff'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/posix/unistd.h' l='675' type='__uid_t getuid()'/>
+<doc f='codebrowser/posix/unistd.h' l='674'>/* Get the real user ID of the calling process.  */</doc>
+<use f='codebrowser/support/support_become_root.c' l='85' u='c' c='support_become_root'/>
+<use f='codebrowser/support/test-container.c' l='815' u='c' c='main'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_sigqueue.c' l='44' u='c' c='__aio_sigqueue'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pthread_sigqueue.c' l='60' u='c' c='pthread_sigqueue'/>

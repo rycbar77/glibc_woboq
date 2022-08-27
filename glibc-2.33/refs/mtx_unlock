@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/pthread/threads.h' l='144' type='int mtx_unlock(mtx_t * __mutex)'/>
+<doc f='codebrowser/sysdeps/pthread/threads.h' l='142'>/* Unlock the mutex pointed by __MUTEX.  It may potentially awake other
+   threads waiting on this mutex.  */</doc>
+<def f='codebrowser/sysdeps/pthread/mtx_unlock.c' l='21' ll='26' type='int mtx_unlock(mtx_t * mutex)'/>

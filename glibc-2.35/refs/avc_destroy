@@ -1,0 +1,10 @@
+<dec f='include/selinux/avc.h' l='249' type='void avc_destroy()'/>
+<doc f='include/selinux/avc.h' l='240'>/**
+ * avc_destroy - Free all AVC structures.
+ *
+ * Destroy all AVC structures and free all allocated
+ * memory.  User-supplied locking, memory, and audit
+ * callbacks will be retained, but security-event
+ * callbacks will not.  All SID&apos;s will be invalidated.
+ * User must call avc_init() if further use of AVC is desired.
+ */</doc>

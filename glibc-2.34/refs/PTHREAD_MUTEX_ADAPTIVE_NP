@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='52' type='3'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='82' u='r'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='91' u='r'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='108' u='r'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='130' u='r' c='__pthread_mutex_cond_lock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='102' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='73' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='94' u='r' c='__pthread_mutex_unlock_usercnt'/>
+<use f='codebrowser/nptl/pthread_mutexattr_settype.c' l='28' u='r' c='___pthread_mutexattr_settype'/>

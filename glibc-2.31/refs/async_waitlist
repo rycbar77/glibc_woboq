@@ -1,0 +1,9 @@
+<def f='codebrowser/sysdeps/pthread/lio_listio.c' l='36' ll='41'/>
+<use f='codebrowser/sysdeps/pthread/lio_listio.c' l='170' c='lio_listio_internal'/>
+<use f='codebrowser/sysdeps/pthread/lio_listio.c' l='172' c='lio_listio_internal'/>
+<use f='codebrowser/sysdeps/pthread/lio_listio.c' l='173' c='lio_listio_internal'/>
+<size>72</size>
+<doc f='codebrowser/sysdeps/pthread/lio_listio.c' l='35'>/* We need this special structure to handle asynchronous I/O.  */</doc>
+<mbr r='async_waitlist::counter' o='0' t='unsigned int'/>
+<mbr r='async_waitlist::sigev' o='64' t='struct sigevent'/>
+<mbr r='async_waitlist::list' o='576' t='struct waitlist[0]'/>

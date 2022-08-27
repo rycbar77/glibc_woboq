@@ -1,0 +1,9 @@
+<dec f='codebrowser/nptl/nptl-stack.h' l='38' type='void __nptl_stack_list_del(list_t * elem)'/>
+<dec f='codebrowser/nptl/nptl-stack.h' l='39' type='void __nptl_stack_list_del(list_t * )'/>
+<use f='codebrowser/nptl/nptl-stack.h' l='39' c='__nptl_stack_list_del'/>
+<doc f='codebrowser/nptl/nptl-stack.h' l='37'>/* Remove the stack ELEM from its list.  */</doc>
+<def f='codebrowser/nptl/nptl-stack.c' l='25' ll='37' type='void __nptl_stack_list_del(list_t * elem)'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='72' u='c' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='116' u='c' c='__nptl_deallocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='105' u='c' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='488' u='c' c='allocate_stack'/>

@@ -1,0 +1,6 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='51' ll='56' type='void __clear_internal_signals(sigset_t * set)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='80' u='c' c='__libc_signal_block_app'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='50'>/* Remove internal glibc signal from the mask.  */</doc>
+<use f='codebrowser/nptl/pthread_attr_setsigmask.c' l='31' u='c' c='pthread_attr_setsigmask_np'/>
+<use f='codebrowser/nptl/pthread_sigmask.c' l='36' u='c' c='__pthread_sigmask'/>
+<use f='codebrowser/signal/sigfillset.c' l='34' u='c' c='sigfillset'/>

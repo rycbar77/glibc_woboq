@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='1121' type='int pthread_cond_signal(pthread_cond_t * __cond)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='1120'>/* Wake up one thread waiting for condition variable COND.  */</doc>
+<def f='codebrowser/nptl/pthread_cond_signal.c' l='97' macro='1' type='int pthread_cond_signal(pthread_cond_t * )'/>
+<use f='codebrowser/nscd/cache.c' l='228' u='c' c='cache_add'/>
+<use f='codebrowser/nscd/connections.c' l='1767' u='c' c='fd_ready'/>
+<use f='codebrowser/nscd/connections.c' l='1960' u='c' c='clear_db_cache'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='859' u='c' c='__gthread_cond_signal'/>

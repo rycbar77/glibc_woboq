@@ -1,0 +1,6 @@
+<dec f='codebrowser/support/resolv_test.h' l='189' type='void resolv_response_add_name(struct resolv_response_builder * , const char * name)'/>
+<doc f='codebrowser/support/resolv_test.h' l='187'>/* Add a compressed domain name to the RDATA part of a resource
+   record.  */</doc>
+<use f='codebrowser/support/resolv_test.c' l='259' u='c' c='resolv_response_add_question'/>
+<def f='codebrowser/support/resolv_test.c' l='266' ll='352' type='void resolv_response_add_name(struct resolv_response_builder * b, const char *const origname)'/>
+<use f='codebrowser/support/resolv_test.c' l='364' u='c' c='resolv_response_open_record'/>

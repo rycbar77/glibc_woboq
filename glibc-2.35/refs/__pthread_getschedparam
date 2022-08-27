@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='337' type='int __pthread_getschedparam(pthread_t thread_id, int * policy, struct sched_param * param)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='339' type='int __pthread_getschedparam(pthread_t , int * , struct sched_param * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='339' c='__pthread_getschedparam'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='336'>/* Namespace save aliases.  */</doc>
+<def f='codebrowser/nptl/pthread_getschedparam.c' l='24' ll='71' type='int __pthread_getschedparam(pthread_t threadid, int * policy, struct sched_param * param)'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='73' c='pthread_getschedparam'/>
+<use f='codebrowser/rt/aio_misc.c' l='334' u='c' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='500' u='c' c='handle_fildes_io'/>

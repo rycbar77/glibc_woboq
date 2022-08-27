@@ -1,0 +1,4 @@
+<dec f='codebrowser/support/support.h' l='44' type='void ignore_stderr()'/>
+<doc f='codebrowser/support/support.h' l='43'>/* Avoid all the buffer overflow messages on stderr.  */</doc>
+<def f='codebrowser/support/ignore_stderr.c' l='26' ll='38' type='void ignore_stderr()'/>
+<use f='codebrowser/support/set_fortify_handler.c' l='33' u='c' c='set_fortify_handler'/>

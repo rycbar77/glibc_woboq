@@ -1,0 +1,5 @@
+<dec f='codebrowser/time/time.h' l='116' type='size_t strftime_l(char *restrict __s, size_t __maxsize, const char *restrict __format, const struct tm *restrict __tp, locale_t __loc)'/>
+<use f='codebrowser/include/time.h' l='16' c='__strftime_l'/>
+<doc f='codebrowser/time/time.h' l='113'>/* Similar to the two functions above but take the information from
+   the provided locale and not the global locale.  */</doc>
+<def f='codebrowser/time/strftime_l.c' l='1455' macro='1' type='size_t strftime_l(char *restrict , size_t , const char *restrict , const struct tm *restrict , locale_t )'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/nptl/futex-internal.h' l='351' type='int __futex_abstimed_wait64(unsigned int * futex_word, unsigned int expected, clockid_t clockid, const struct timespec * abstime, int private)'/>
+<use f='codebrowser/sysdeps/nptl/futex-internal.h' l='367' u='c' c='__futex_clocklock64'/>
+<use f='codebrowser/nptl/pthread_rwlock_common.c' l='332' u='c' c='__pthread_rwlock_rdlock_full64'/>
+<use f='codebrowser/nptl/pthread_rwlock_common.c' l='460' u='c' c='__pthread_rwlock_rdlock_full64'/>
+<use f='codebrowser/nptl/pthread_rwlock_common.c' l='730' u='c' c='__pthread_rwlock_wrlock_full64'/>
+<use f='codebrowser/nptl/pthread_rwlock_common.c' l='829' u='c' c='__pthread_rwlock_wrlock_full64'/>
+<def f='codebrowser/sysdeps/nptl/futex-internal.c' l='107' ll='114' type='int __futex_abstimed_wait64(unsigned int * futex_word, unsigned int expected, clockid_t clockid, const struct timespec * abstime, int private)'/>
+<use f='codebrowser/sysdeps/pthread/aio_suspend.c' l='101' macro='1' u='c' c='do_aio_misc_wait'/>
+<use f='codebrowser/sysdeps/pthread/lio_listio.c' l='142' macro='1' u='c' c='lio_listio_internal'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='428' u='c' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='268' u='c' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='401' u='c' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='550' u='c' c='__pthread_mutex_clocklock_common'/>

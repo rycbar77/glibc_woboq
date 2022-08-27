@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/glob.h' l='12' type='int __glob64(const char * __pattern, int __flags, int (*)(const char *, int) __errfunc, glob64_t * __pglob)'/>
+<dec f='codebrowser/include/glob.h' l='15' type='int __glob64(const char * , int , int (*)(const char *, int) , glob64_t * )'/>
+<use f='codebrowser/include/glob.h' l='15' c='__glob64'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/glob.c' l='29' macro='1' type='int __glob64(const char * , int , int (*)(const char *, int) , glob_t * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/glob.c' l='30' c='glob64'/>

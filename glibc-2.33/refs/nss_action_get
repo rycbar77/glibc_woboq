@@ -1,0 +1,15 @@
+<def f='codebrowser/nss/nss_action.h' l='60' ll='65' type='lookup_actions nss_action_get(const struct nss_action * action, enum nss_status status)'/>
+<doc f='codebrowser/nss/nss_action.h' l='59'>/* Returns the lookup_action value for STATUS in ACTION.  */</doc>
+<use f='codebrowser/nss/getXXbyYY_r.c' l='321' macro='1' u='c' c='__getgrgid_r'/>
+<use f='codebrowser/grp/initgroups.c' l='130' macro='1' u='c' c='internal_getgrouplist'/>
+<use f='codebrowser/nss/getnssent_r.c' l='95' macro='1' u='c' c='__nss_setent'/>
+<use f='codebrowser/nss/getnssent_r.c' l='216' macro='1' u='c' c='__nss_getent_r'/>
+<use f='codebrowser/nss/nss_action_parse.c' l='145' u='c' c='nss_action_parse'/>
+<use f='codebrowser/nss/nsswitch.c' l='113' macro='1' u='c' c='__nss_lookup'/>
+<use f='codebrowser/nss/nsswitch.c' l='137' macro='1' u='c' c='__nss_next2'/>
+<use f='codebrowser/nss/nsswitch.c' l='138' macro='1' u='c' c='__nss_next2'/>
+<use f='codebrowser/nss/nsswitch.c' l='139' macro='1' u='c' c='__nss_next2'/>
+<use f='codebrowser/nss/nsswitch.c' l='140' macro='1' u='c' c='__nss_next2'/>
+<use f='codebrowser/nss/nsswitch.c' l='150' macro='1' u='c' c='__nss_next2'/>
+<use f='codebrowser/nss/nsswitch.c' l='166' macro='1' u='c' c='__nss_next2'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='901' macro='1' u='c' c='gaih_inet'/>

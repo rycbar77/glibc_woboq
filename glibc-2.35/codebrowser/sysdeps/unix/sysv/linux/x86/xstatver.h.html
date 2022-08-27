@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>xstatver.h source code [codebrowser/sysdeps/unix/sysv/linux/x86/xstatver.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/x86/xstatver.h'; var root_path = '../../../../../..'; var data_path = '../../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../../..'>codebrowser</a>/<a href='../../../..'>sysdeps</a>/<a href='../../..'>unix</a>/<a href='../..'>sysv</a>/<a href='..'>linux</a>/<a href='./'>x86</a>/<a href='xstatver.h.html'>xstatver.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Versions of the 'struct stat' data structure used in compatibility xstat</i></td></tr>
+<tr><th id="2">2</th><td><i>   functions.  */</i></td></tr>
+<tr><th id="3">3</th><td><u>#<span data-ppcond="3">ifndef</span> <span class="macro" data-ref="_M/__x86_64__">__x86_64__</span></u></td></tr>
+<tr><th id="4">4</th><td><u># define _STAT_VER_LINUX_OLD	1</u></td></tr>
+<tr><th id="5">5</th><td><u># define _STAT_VER_KERNEL	1</u></td></tr>
+<tr><th id="6">6</th><td><u># define _STAT_VER_SVR4		2</u></td></tr>
+<tr><th id="7">7</th><td><u># define _STAT_VER_LINUX	3</u></td></tr>
+<tr><th id="8">8</th><td><u># define _MKNOD_VER_LINUX	1</u></td></tr>
+<tr><th id="9">9</th><td><u># define _MKNOD_VER_SVR4	2</u></td></tr>
+<tr><th id="10">10</th><td><u>#<span data-ppcond="3">else</span></u></td></tr>
+<tr><th id="11">11</th><td><u># define <dfn class="macro" id="_M/_STAT_VER_KERNEL" data-ref="_M/_STAT_VER_KERNEL">_STAT_VER_KERNEL</dfn>	0</u></td></tr>
+<tr><th id="12">12</th><td><u># define <dfn class="macro" id="_M/_STAT_VER_LINUX" data-ref="_M/_STAT_VER_LINUX">_STAT_VER_LINUX</dfn>	1</u></td></tr>
+<tr><th id="13">13</th><td><u># define <dfn class="macro" id="_M/_MKNOD_VER_LINUX" data-ref="_M/_MKNOD_VER_LINUX">_MKNOD_VER_LINUX</dfn>	0</u></td></tr>
+<tr><th id="14">14</th><td><u>#<span data-ppcond="3">endif</span></u></td></tr>
+<tr><th id="15">15</th><td><u>#define <dfn class="macro" id="_M/_STAT_VER" data-ref="_M/_STAT_VER">_STAT_VER</dfn>		_STAT_VER_LINUX</u></td></tr>
+<tr><th id="16">16</th><td><u>#define <dfn class="macro" id="_M/_MKNOD_VER" data-ref="_M/_MKNOD_VER">_MKNOD_VER</dfn>		_MKNOD_VER_LINUX</u></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../../../../argp/argp-eexst.c.html'>codebrowser/argp/argp-eexst.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

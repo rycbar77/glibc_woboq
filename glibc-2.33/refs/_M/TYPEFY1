@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86_64/sysdep.h' l='226'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86_64/sysdep.h' l='223'>/* NB: This also works when X is an array.  For an array X,  type of
+   (X) - (X) is ptrdiff_t, which is signed, since size of ptrdiff_t
+   == size of pointer, cast is a NOP.   */</doc>

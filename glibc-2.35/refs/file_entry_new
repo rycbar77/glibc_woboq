@@ -1,0 +1,14 @@
+<def f='codebrowser/sysdeps/generic/dl-cache.h' l='85' ll='100'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='120' c='dl_cache_hwcap_extension'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='180'/>
+<use f='codebrowser/elf/cache.c' l='273' c='glibc_hwcaps_string'/>
+<use f='codebrowser/elf/cache.c' l='624' c='save_cache'/>
+<size>24</size>
+<mbr r='file_entry_new::osversion' o='96' t='uint32_t'/>
+<mbr r='file_entry_new::hwcap' o='128' t='uint64_t'/>
+<use f='codebrowser/sysdeps/x86/dl-isa-level.h' l='24' c='dl_cache_hwcap_isa_level_compatible'/>
+<use f='codebrowser/elf/dl-cache.c' l='277' c='search_cache'/>
+<use f='codebrowser/elf/dl-cache.c' l='281' c='search_cache'/>
+<use f='codebrowser/elf/dl-cache.c' l='282' c='search_cache'/>
+<use f='codebrowser/elf/dl-cache.c' l='426' c='_dl_load_cache_lookup'/>
+<size>24</size>

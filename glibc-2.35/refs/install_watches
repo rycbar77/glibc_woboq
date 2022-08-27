@@ -1,0 +1,5 @@
+<dec f='codebrowser/nscd/nscd.h' l='263' type='void install_watches(struct traced_file * finfo)'/>
+<use f='codebrowser/nscd/cache.c' l='304' u='c' c='prune_cache'/>
+<def f='codebrowser/nscd/connections.c' l='850' ll='883' type='void install_watches(struct traced_file * finfo)'/>
+<use f='codebrowser/nscd/connections.c' l='913' u='c' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='959' u='c' c='invalidate_cache'/>

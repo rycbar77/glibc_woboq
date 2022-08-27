@@ -1,0 +1,4 @@
+<dec f='codebrowser/elf/stringtable.h' l='62' type='void stringtable_free(struct stringtable * table)'/>
+<doc f='codebrowser/elf/stringtable.h' l='59'>/* Deallocate the string table (but not the TABLE pointer itself).
+   (The table can be re-used for adding more strings without
+   initialization.)  */</doc>

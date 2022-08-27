@@ -1,0 +1,20 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/socket_type.h' l='29' type='2'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/socket_type.h' l='29'>/* Connectionless, unreliable datagrams
+				   of fixed maximum length.  */</doc>
+<use f='codebrowser/nss/getent.c' l='368' macro='1' u='r' c='ahosts_keys_int'/>
+<use f='codebrowser/resolv/res_hconf.c' l='426' macro='1' u='r' c='_res_hconf_reorder_addrs'/>
+<use f='codebrowser/resolv/res_send.c' l='988' macro='1' u='r' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='994' macro='1' u='r' c='reopen'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='174' macro='1' u='r' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='242' macro='1' u='r' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/rtime.c' l='85' macro='1' u='r' c='__GI_rtime'/>
+<use f='codebrowser/sunrpc/rtime.c' l='93' macro='1' u='r' c='__GI_rtime'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='133' macro='1' u='r' c='__GI_svcudp_bufcreate'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='108' macro='1' u='r'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='113' macro='1' u='r'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2515' macro='1' u='r' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/opensock.c' l='84' macro='1' u='r' c='__opensock'/>
+<use f='codebrowser/misc/syslog.c' l='63' macro='1' u='r'/>
+<use f='codebrowser/misc/syslog.c' l='368' macro='1' u='r' c='openlog_internal'/>
+<use f='codebrowser/misc/syslog.c' l='369' macro='1' u='r' c='openlog_internal'/>
+<use f='codebrowser/misc/syslog.c' l='420' macro='1' u='r' c='closelog'/>

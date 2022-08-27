@@ -1,0 +1,6 @@
+<dec f='codebrowser/locale/programs/charmap-dir.h' l='38' type='char ** charmap_aliases(const char * directory, const char * name)'/>
+<def f='codebrowser/locale/programs/charmap-dir.c' l='245' ll='292' type='char ** charmap_aliases(const char * directory, const char * name)'/>
+<doc f='codebrowser/locale/programs/charmap-dir.c' l='244'>/* Returns a NULL terminated list of alias names of a charmap.  */</doc>
+<doc f='codebrowser/locale/programs/charmap-dir.h' l='37'>/* Returns a NULL terminated list of alias names of a charmap.  */</doc>
+<use f='codebrowser/locale/programs/charmap.c' l='159' u='c' c='charmap_read'/>
+<use f='codebrowser/locale/programs/locale.c' l='749' u='c' c='write_charmaps'/>

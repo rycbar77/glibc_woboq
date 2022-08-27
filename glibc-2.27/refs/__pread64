@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/unistd.h' l='42' type='ssize_t __pread64(int __fd, void * __buf, size_t __nbytes, __off64_t __offset)'/>
+<dec f='codebrowser/include/unistd.h' l='44' type='ssize_t __pread64(int , void * , size_t , __off64_t )'/>
+<use f='codebrowser/include/unistd.h' l='44' c='__pread64'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/pread64.c' l='32' macro='1' type='ssize_t __pread64(int , void * , size_t , __off64_t )'/>

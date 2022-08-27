@@ -1,0 +1,7 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='983' type='int grantpt(int __fd)'/>
+<dec f='codebrowser/include/stdlib.h' l='144' type='int grantpt(int )'/>
+<use f='codebrowser/include/stdlib.h' l='144' c='grantpt'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='982'>/* Chown the slave to the calling user.  */</doc>
+<use f='codebrowser/login/openpty.c' l='103' u='c' c='__openpty'/>
+<use f='codebrowser/support/support_openpty.c' l='66' u='c' c='support_openpty'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/grantpt.c' l='25' ll='41' type='int grantpt(int fd)'/>

@@ -1,0 +1,10 @@
+<use f='codebrowser/malloc/malloc.c' l='739' c='__libc_mallinfo'/>
+<def f='codebrowser/malloc/malloc.h' l='86' ll='98'/>
+<dec f='codebrowser/malloc/malloc.h' l='118' type='struct mallinfo mallinfo()'/>
+<use f='codebrowser/malloc/malloc.h' l='118' c='mallinfo'/>
+<use f='codebrowser/malloc/malloc.c' l='5217' c='__libc_mallinfo'/>
+<use f='codebrowser/malloc/malloc.c' l='5220' c='__libc_mallinfo'/>
+<def f='codebrowser/malloc/malloc.c' l='5871' macro='1' type='struct mallinfo mallinfo()'/>
+<size>40</size>
+<doc f='codebrowser/malloc/malloc.h' l='84'>/* SVID2/XPG mallinfo structure */</doc>
+<doc f='codebrowser/malloc/malloc.h' l='117'>/* Returns a copy of the updated current mallinfo. */</doc>

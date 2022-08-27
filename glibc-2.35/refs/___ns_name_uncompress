@@ -1,0 +1,6 @@
+<def f='codebrowser/resolv/ns_name_uncompress.c' l='24' ll='35' type='int ___ns_name_uncompress(const unsigned char * msg, const unsigned char * eom, const unsigned char * src, char * dst, size_t dstsiz)'/>
+<use f='codebrowser/resolv/ns_name_uncompress.c' l='36' c='ns_name_uncompress'/>
+<use f='codebrowser/resolv/ns_name_uncompress.c' l='38' c='__ns_name_uncompress'/>
+<doc f='codebrowser/resolv/ns_name_uncompress.c' l='21'>/* Expand compressed domain name to presentation format.  Returns the
+   number of bytes read out of `src&apos;, or -1 (with errno set).  The
+   root domain is returned as &quot;.&quot;, not &quot;&quot;.  */</doc>

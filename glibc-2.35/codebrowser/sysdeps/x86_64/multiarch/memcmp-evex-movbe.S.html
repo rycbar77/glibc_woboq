@@ -1,0 +1,477 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>memcmp-evex-movbe.S source code [codebrowser/sysdeps/x86_64/multiarch/memcmp-evex-movbe.S] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/x86_64/multiarch/memcmp-evex-movbe.S'; var root_path = '../../../..'; var data_path = '../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>sysdeps</a>/<a href='..'>x86_64</a>/<a href='./'>multiarch</a>/<a href='memcmp-evex-movbe.S.html'>memcmp-evex-movbe.S</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* memcmp/wmemcmp optimized with 256-bit EVEX instructions.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">if</span> <a class="macro" href="../../../include/libc-symbols.h.html#35" title="(20 == 20)" data-ref="_M/IS_IN">IS_IN</a> (libc)</u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><i>/* memcmp/wmemcmp is implemented as:</i></td></tr>
+<tr><th id="22">22</th><td><i>   1. Use ymm vector compares when possible. The only case where</i></td></tr>
+<tr><th id="23">23</th><td><i>      vector compares is not possible for when size &lt; CHAR_PER_VEC</i></td></tr>
+<tr><th id="24">24</th><td><i>      and loading from either s1 or s2 would cause a page cross.</i></td></tr>
+<tr><th id="25">25</th><td><i>   2. For size from 2 to 7 bytes on page cross, load as big endian</i></td></tr>
+<tr><th id="26">26</th><td><i>      with movbe and bswap to avoid branches.</i></td></tr>
+<tr><th id="27">27</th><td><i>   3. Use xmm vector compare when size &gt;= 4 bytes for memcmp or</i></td></tr>
+<tr><th id="28">28</th><td><i>      size &gt;= 8 bytes for wmemcmp.</i></td></tr>
+<tr><th id="29">29</th><td><i>   4. Optimistically compare up to first 4 * CHAR_PER_VEC one at a</i></td></tr>
+<tr><th id="30">30</th><td><i>      to check for early mismatches. Only do this if its guranteed the</i></td></tr>
+<tr><th id="31">31</th><td><i>      work is not wasted.</i></td></tr>
+<tr><th id="32">32</th><td><i>   5. If size is 8 * VEC_SIZE or less, unroll the loop.</i></td></tr>
+<tr><th id="33">33</th><td><i>   6. Compare 4 * VEC_SIZE at a time with the aligned first memory</i></td></tr>
+<tr><th id="34">34</th><td><i>      area.</i></td></tr>
+<tr><th id="35">35</th><td><i>   7. Use 2 vector compares when size is 2 * CHAR_PER_VEC or less.</i></td></tr>
+<tr><th id="36">36</th><td><i>   8. Use 4 vector compares when size is 4 * CHAR_PER_VEC or less.</i></td></tr>
+<tr><th id="37">37</th><td><i>   9. Use 8 vector compares when size is 8 * CHAR_PER_VEC or less.</i></td></tr>
+<tr><th id="38">38</th><td><i></i></td></tr>
+<tr><th id="39">39</th><td><i>When possible the implementation tries to optimize for frontend in the</i></td></tr>
+<tr><th id="40">40</th><td><i>following ways:</i></td></tr>
+<tr><th id="41">41</th><td><i>Throughput:</i></td></tr>
+<tr><th id="42">42</th><td><i>    1. All code sections that fit are able to run optimally out of the</i></td></tr>
+<tr><th id="43">43</th><td><i>       LSD.</i></td></tr>
+<tr><th id="44">44</th><td><i>    2. All code sections that fit are able to run optimally out of the</i></td></tr>
+<tr><th id="45">45</th><td><i>       DSB</i></td></tr>
+<tr><th id="46">46</th><td><i>    3. Basic blocks are contained in minimum number of fetch blocks</i></td></tr>
+<tr><th id="47">47</th><td><i>       necessary.</i></td></tr>
+<tr><th id="48">48</th><td><i></i></td></tr>
+<tr><th id="49">49</th><td><i>Latency:</i></td></tr>
+<tr><th id="50">50</th><td><i>    1. Logically connected basic blocks are put in the same</i></td></tr>
+<tr><th id="51">51</th><td><i>       cache-line.</i></td></tr>
+<tr><th id="52">52</th><td><i>    2. Logically connected basic blocks that do not fit in the same</i></td></tr>
+<tr><th id="53">53</th><td><i>       cache-line are put in adjacent lines. This can get beneficial</i></td></tr>
+<tr><th id="54">54</th><td><i>       L2 spatial prefetching and L1 next-line prefetching.  */</i></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><u># include <a href="../../unix/sysv/linux/x86_64/sysdep.h.html">&lt;sysdep.h&gt;</a></u></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><u># <span data-ppcond="58">ifndef</span> <span class="macro" data-ref="_M/MEMCMP">MEMCMP</span></u></td></tr>
+<tr><th id="59">59</th><td><u>#  define <dfn class="macro" id="_M/MEMCMP" data-ref="_M/MEMCMP">MEMCMP</dfn>	<span class='warning' title="type specifier missing, defaults to &apos;int&apos;"><dfn class="decl def" id="__memcmp_evex_movbe" title='__memcmp_evex_movbe' data-ref="__memcmp_evex_movbe" data-ref-filename="__memcmp_evex_movbe">__memcmp_evex_movbe</dfn></span></u></td></tr>
+<tr><th id="60">60</th><td><u># <span data-ppcond="58">endif</span></u></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><u># define <dfn class="macro" id="_M/VMOVU" data-ref="_M/VMOVU">VMOVU</dfn>		vmovdqu64</u></td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td><u># <span data-ppcond="64">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WMEMCMP">USE_AS_WMEMCMP</span></u></td></tr>
+<tr><th id="65">65</th><td><u>#  define VMOVU_MASK	vmovdqu32</u></td></tr>
+<tr><th id="66">66</th><td><u>#  define CHAR_SIZE	4</u></td></tr>
+<tr><th id="67">67</th><td><u>#  define VPCMP	vpcmpd</u></td></tr>
+<tr><th id="68">68</th><td><u>#  define VPTEST	vptestmd</u></td></tr>
+<tr><th id="69">69</th><td><u># <span data-ppcond="64">else</span></u></td></tr>
+<tr><th id="70">70</th><td><u>#  define <dfn class="macro" id="_M/VMOVU_MASK" data-ref="_M/VMOVU_MASK">VMOVU_MASK</dfn>	vmovdqu8</u></td></tr>
+<tr><th id="71">71</th><td><u>#  define <dfn class="macro" id="_M/CHAR_SIZE" data-ref="_M/CHAR_SIZE">CHAR_SIZE</dfn>	1</u></td></tr>
+<tr><th id="72">72</th><td><u>#  define <dfn class="macro" id="_M/VPCMP" data-ref="_M/VPCMP">VPCMP</dfn>	<span class='error' title="unknown type name &apos;vpcmpub&apos;">vpcmpub</span></u></td></tr>
+<tr><th id="73">73</th><td><u>#  define <dfn class="macro" id="_M/VPTEST" data-ref="_M/VPTEST">VPTEST</dfn>	vptestmb</u></td></tr>
+<tr><th id="74">74</th><td><u># <span data-ppcond="64">endif</span></u></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td><u># define <dfn class="macro" id="_M/VEC_SIZE" data-ref="_M/VEC_SIZE">VEC_SIZE</dfn>	32</u></td></tr>
+<tr><th id="78">78</th><td><u># define <dfn class="macro" id="_M/PAGE_SIZE" data-ref="_M/PAGE_SIZE">PAGE_SIZE</dfn>	4096</u></td></tr>
+<tr><th id="79">79</th><td><u># define <dfn class="macro" id="_M/CHAR_PER_VEC" data-ref="_M/CHAR_PER_VEC">CHAR_PER_VEC</dfn>	(VEC_SIZE / CHAR_SIZE)</u></td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><u># define <dfn class="macro" id="_M/XMM0" data-ref="_M/XMM0">XMM0</dfn>		xmm16</u></td></tr>
+<tr><th id="82">82</th><td><u># define <dfn class="macro" id="_M/XMM1" data-ref="_M/XMM1">XMM1</dfn>		xmm17</u></td></tr>
+<tr><th id="83">83</th><td><u># define <dfn class="macro" id="_M/XMM2" data-ref="_M/XMM2">XMM2</dfn>		xmm18</u></td></tr>
+<tr><th id="84">84</th><td><u># define <dfn class="macro" id="_M/YMM0" data-ref="_M/YMM0">YMM0</dfn>		ymm16</u></td></tr>
+<tr><th id="85">85</th><td><u># define <dfn class="macro" id="_M/XMM1" data-ref="_M/XMM1">XMM1</dfn>		xmm17</u></td></tr>
+<tr><th id="86">86</th><td><u># define <dfn class="macro" id="_M/XMM2" data-ref="_M/XMM2">XMM2</dfn>		xmm18</u></td></tr>
+<tr><th id="87">87</th><td><u># define <dfn class="macro" id="_M/YMM1" data-ref="_M/YMM1">YMM1</dfn>		ymm17</u></td></tr>
+<tr><th id="88">88</th><td><u># define <dfn class="macro" id="_M/YMM2" data-ref="_M/YMM2">YMM2</dfn>		ymm18</u></td></tr>
+<tr><th id="89">89</th><td><u># define <dfn class="macro" id="_M/YMM3" data-ref="_M/YMM3">YMM3</dfn>		ymm19</u></td></tr>
+<tr><th id="90">90</th><td><u># define <dfn class="macro" id="_M/YMM4" data-ref="_M/YMM4">YMM4</dfn>		ymm20</u></td></tr>
+<tr><th id="91">91</th><td><u># define <dfn class="macro" id="_M/YMM5" data-ref="_M/YMM5">YMM5</dfn>		ymm21</u></td></tr>
+<tr><th id="92">92</th><td><u># define <dfn class="macro" id="_M/YMM6" data-ref="_M/YMM6">YMM6</dfn>		ymm22</u></td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td><i>/* Warning!</i></td></tr>
+<tr><th id="95">95</th><td><i>           wmemcmp has to use SIGNED comparison for elements.</i></td></tr>
+<tr><th id="96">96</th><td><i>           memcmp has to use UNSIGNED comparison for elemnts.</i></td></tr>
+<tr><th id="97">97</th><td><i>*/</i></td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td>	.section .text.evex,<q>"ax"</q>,@progbits</td></tr>
+<tr><th id="100">100</th><td><i>/* Cache align memcmp entry. This allows for much more thorough</i></td></tr>
+<tr><th id="101">101</th><td><i>   frontend optimization.  */</i></td></tr>
+<tr><th id="102">102</th><td><a class="macro" href="../../x86/sysdep.h.html#81" title=".globl __memcmp_evex_movbe; .type __memcmp_evex_movbe,@function; .align 1&lt;&lt;6; __memcmp_evex_movbe: .cfi_startproc; endbr64;" data-ref="_M/ENTRY_P2ALIGN">ENTRY_P2ALIGN</a> (<a class="macro" href="#59" title="__memcmp_evex_movbe" data-ref="_M/MEMCMP">MEMCMP</a>, <var>6</var>)</td></tr>
+<tr><th id="103">103</th><td><u># <span data-ppcond="103">ifdef</span> <span class="macro" data-ref="_M/__ILP32__">__ILP32__</span></u></td></tr>
+<tr><th id="104">104</th><td>	<i>/* Clear the upper 32 bits.  */</i></td></tr>
+<tr><th id="105">105</th><td>	movl	%edx, %edx</td></tr>
+<tr><th id="106">106</th><td><u># <span data-ppcond="103">endif</span></u></td></tr>
+<tr><th id="107">107</th><td>	<span class='error' title="unknown type name &apos;cmp&apos;">cmp</span>	<span class='error' title="expected identifier or &apos;(&apos;">$</span><a class="macro" href="#79" title="(32 / 1)" data-ref="_M/CHAR_PER_VEC">CHAR_PER_VEC</a>, %<a class="macro" href="../sysdep.h.html#86" title="rdx" data-ref="_M/RDX_LP">RDX_LP</a></td></tr>
+<tr><th id="108">108</th><td>	<i>/* Fall through for [0, VEC_SIZE] as its the hottest.  */</i></td></tr>
+<tr><th id="109">109</th><td>	ja	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lmore_1x_vec" data-ref="_M/L">L</a>(more_1x_vec)</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td>	<i>/* Create mask for CHAR's we want to compare. This allows us to</i></td></tr>
+<tr><th id="112">112</th><td><i>	   avoid having to include page cross logic.  */</i></td></tr>
+<tr><th id="113">113</th><td>	movl	$-<var>1</var>, %ecx</td></tr>
+<tr><th id="114">114</th><td>	bzhil	%edx, %ecx, %ecx</td></tr>
+<tr><th id="115">115</th><td>	kmovd	%ecx, %k2</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td>	<i>/* Safe to load full ymm with mask.  */</i></td></tr>
+<tr><th id="118">118</th><td>	<a class="macro" href="#70" title="vmovdqu8" data-ref="_M/VMOVU_MASK">VMOVU_MASK</a> (%rsi), %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a>{%k2}</td></tr>
+<tr><th id="119">119</th><td>	<a class="macro" href="#72" title="vpcmpub" data-ref="_M/VPCMP">VPCMP</a>	<span class='error' title="expected identifier or &apos;(&apos;">$</span><var>4</var>,(%rdi), %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a>, %k1{%k2}</td></tr>
+<tr><th id="120">120</th><td>	<span class='error' title="unknown type name &apos;kmovd&apos;">kmovd</span>	<span class='error' title="expected identifier or &apos;(&apos;">%</span>k1, %eax</td></tr>
+<tr><th id="121">121</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="122">122</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_0" data-ref="_M/L">L</a>(return_vec_0)</td></tr>
+<tr><th id="123">123</th><td>	ret</td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="126">126</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_0" data-ref="_M/L">L</a>(return_vec_0):</td></tr>
+<tr><th id="127">127</th><td>	tzcntl	%eax, %eax</td></tr>
+<tr><th id="128">128</th><td><u># <span data-ppcond="128">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WMEMCMP">USE_AS_WMEMCMP</span></u></td></tr>
+<tr><th id="129">129</th><td>	movl	(%rdi, %rax, CHAR_SIZE), %ecx</td></tr>
+<tr><th id="130">130</th><td>	xorl	%edx, %edx</td></tr>
+<tr><th id="131">131</th><td>	cmpl	(%rsi, %rax, CHAR_SIZE), %ecx</td></tr>
+<tr><th id="132">132</th><td>	<i>/* NB: no partial register stall here because xorl zero idiom</i></td></tr>
+<tr><th id="133">133</th><td><i>	   above.  */</i></td></tr>
+<tr><th id="134">134</th><td>	setg	%dl</td></tr>
+<tr><th id="135">135</th><td>	leal	-<var>1</var>(%rdx, %rdx), %eax</td></tr>
+<tr><th id="136">136</th><td><u># <span data-ppcond="128">else</span></u></td></tr>
+<tr><th id="137">137</th><td>	movzbl	(%rsi, %rax), %ecx</td></tr>
+<tr><th id="138">138</th><td>	movzbl	(%rdi, %rax), %eax</td></tr>
+<tr><th id="139">139</th><td>	subl	%ecx, %eax</td></tr>
+<tr><th id="140">140</th><td><u># <span data-ppcond="128">endif</span></u></td></tr>
+<tr><th id="141">141</th><td>	ret</td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="145">145</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lmore_1x_vec" data-ref="_M/L">L</a>(more_1x_vec):</td></tr>
+<tr><th id="146">146</th><td>	<i>/* From VEC to 2 * VEC.  No branch when size == VEC_SIZE.  */</i></td></tr>
+<tr><th id="147">147</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rsi), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="148">148</th><td>	<i>/* Use compare not equals to directly check for mismatch.  */</i></td></tr>
+<tr><th id="149">149</th><td>	<a class="macro" href="#72" title="vpcmpub" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>,(%rdi), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %k1</td></tr>
+<tr><th id="150">150</th><td>	kmovd	%k1, %eax</td></tr>
+<tr><th id="151">151</th><td>	<i>/* NB: eax must be destination register if going to</i></td></tr>
+<tr><th id="152">152</th><td><i>	   L(return_vec_[0,2]). For L(return_vec_3) destination register</i></td></tr>
+<tr><th id="153">153</th><td><i>	   must be ecx.  */</i></td></tr>
+<tr><th id="154">154</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="155">155</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_0" data-ref="_M/L">L</a>(return_vec_0)</td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td>	cmpq	$(<a class="macro" href="#79" title="(32 / 1)" data-ref="_M/CHAR_PER_VEC">CHAR_PER_VEC</a> * <var>2</var>), %rdx</td></tr>
+<tr><th id="158">158</th><td>	jbe	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Llast_1x_vec" data-ref="_M/L">L</a>(last_1x_vec)</td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td>	<i>/* Check second VEC no matter what.  */</i></td></tr>
+<tr><th id="161">161</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rsi), %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a></td></tr>
+<tr><th id="162">162</th><td>	<a class="macro" href="#72" title="vpcmpub" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, <a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rdi), %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a>, %k1</td></tr>
+<tr><th id="163">163</th><td>	kmovd	%k1, %eax</td></tr>
+<tr><th id="164">164</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="165">165</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_1" data-ref="_M/L">L</a>(return_vec_1)</td></tr>
+<tr><th id="166">166</th><td></td></tr>
+<tr><th id="167">167</th><td>	<i>/* Less than 4 * VEC.  */</i></td></tr>
+<tr><th id="168">168</th><td>	cmpq	$(<a class="macro" href="#79" title="(32 / 1)" data-ref="_M/CHAR_PER_VEC">CHAR_PER_VEC</a> * <var>4</var>), %rdx</td></tr>
+<tr><th id="169">169</th><td>	jbe	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Llast_2x_vec" data-ref="_M/L">L</a>(last_2x_vec)</td></tr>
+<tr><th id="170">170</th><td></td></tr>
+<tr><th id="171">171</th><td>	<i>/* Check third and fourth VEC no matter what.  */</i></td></tr>
+<tr><th id="172">172</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rsi), %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a></td></tr>
+<tr><th id="173">173</th><td>	<a class="macro" href="#72" title="vpcmpub" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>,(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdi), %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a>, %k1</td></tr>
+<tr><th id="174">174</th><td>	kmovd	%k1, %eax</td></tr>
+<tr><th id="175">175</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="176">176</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_2" data-ref="_M/L">L</a>(return_vec_2)</td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rsi), %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="179">179</th><td>	<a class="macro" href="#72" title="vpcmpub" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>,(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rdi), %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a>, %k1</td></tr>
+<tr><th id="180">180</th><td>	kmovd	%k1, %ecx</td></tr>
+<tr><th id="181">181</th><td>	testl	%ecx, %ecx</td></tr>
+<tr><th id="182">182</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_3" data-ref="_M/L">L</a>(return_vec_3)</td></tr>
+<tr><th id="183">183</th><td></td></tr>
+<tr><th id="184">184</th><td>	<i>/* Go to 4x VEC loop.  */</i></td></tr>
+<tr><th id="185">185</th><td>	cmpq	$(<a class="macro" href="#79" title="(32 / 1)" data-ref="_M/CHAR_PER_VEC">CHAR_PER_VEC</a> * <var>8</var>), %rdx</td></tr>
+<tr><th id="186">186</th><td>	ja	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lmore_8x_vec" data-ref="_M/L">L</a>(more_8x_vec)</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td>	<i>/* Handle remainder of size = 4 * VEC + 1 to 8 * VEC without any</i></td></tr>
+<tr><th id="189">189</th><td><i>	   branches.  */</i></td></tr>
+<tr><th id="190">190</th><td></td></tr>
+<tr><th id="191">191</th><td>	<i>/* Load first two VEC from s2 before adjusting addresses.  */</i></td></tr>
+<tr><th id="192">192</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	-(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>)(%rsi, %rdx, <a class="macro" href="#71" title="1" data-ref="_M/CHAR_SIZE">CHAR_SIZE</a>), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="193">193</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	-(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rsi, %rdx, <a class="macro" href="#71" title="1" data-ref="_M/CHAR_SIZE">CHAR_SIZE</a>), %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a></td></tr>
+<tr><th id="194">194</th><td>	leaq	-(<var>4</var> * <a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>)(%rdi, %rdx, <a class="macro" href="#71" title="1" data-ref="_M/CHAR_SIZE">CHAR_SIZE</a>), %rdi</td></tr>
+<tr><th id="195">195</th><td>	leaq	-(<var>4</var> * <a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>)(%rsi, %rdx, <a class="macro" href="#71" title="1" data-ref="_M/CHAR_SIZE">CHAR_SIZE</a>), %rsi</td></tr>
+<tr><th id="196">196</th><td></td></tr>
+<tr><th id="197">197</th><td>	<i>/* Wait to load from s1 until addressed adjust due to</i></td></tr>
+<tr><th id="198">198</th><td><i>	   unlamination of microfusion with complex address mode.  */</i></td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td>	<i>/* vpxor will be all 0s if s1 and s2 are equal. Otherwise it</i></td></tr>
+<tr><th id="201">201</th><td><i>	   will have some 1s.  */</i></td></tr>
+<tr><th id="202">202</th><td>	vpxorq	(%rdi), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="203">203</th><td>	vpxorq	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>)(%rdi), %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a>, %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a></td></tr>
+<tr><th id="204">204</th><td></td></tr>
+<tr><th id="205">205</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rsi), %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a></td></tr>
+<tr><th id="206">206</th><td>	vpxorq	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdi), %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a>, %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a></td></tr>
+<tr><th id="207">207</th><td></td></tr>
+<tr><th id="208">208</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rsi), %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="209">209</th><td>	<i>/* Ternary logic to xor (VEC_SIZE * 3)(%rdi) with YMM4 while</i></td></tr>
+<tr><th id="210">210</th><td><i>	   oring with YMM1. Result is stored in YMM4.  */</i></td></tr>
+<tr><th id="211">211</th><td>	vpternlogd $<var>0xde</var>,(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rdi), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td>	<i>/* Or together YMM2, YMM3, and YMM4 into YMM4.  */</i></td></tr>
+<tr><th id="214">214</th><td>	vpternlogd $<var>0xfe</var>, %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a>, %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a>, %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td>	<i>/* Test YMM4 against itself. Store any CHAR mismatches in k1.</i></td></tr>
+<tr><th id="217">217</th><td><i>	 */</i></td></tr>
+<tr><th id="218">218</th><td>	<a class="macro" href="#73" title="vptestmb" data-ref="_M/VPTEST">VPTEST</a>	%<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a>, %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a>, %k1</td></tr>
+<tr><th id="219">219</th><td>	<i>/* k1 must go to ecx for L(return_vec_0_1_2_3).  */</i></td></tr>
+<tr><th id="220">220</th><td>	kmovd	%k1, %ecx</td></tr>
+<tr><th id="221">221</th><td>	testl	%ecx, %ecx</td></tr>
+<tr><th id="222">222</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_0_1_2_3" data-ref="_M/L">L</a>(return_vec_0_1_2_3)</td></tr>
+<tr><th id="223">223</th><td>	<i>/* NB: eax must be zero to reach here.  */</i></td></tr>
+<tr><th id="224">224</th><td>	ret</td></tr>
+<tr><th id="225">225</th><td></td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td>	.p2align <var>4</var>,, <var>8</var></td></tr>
+<tr><th id="228">228</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_end_return_vec_0_1_2_3" data-ref="_M/L">L</a>(<var>8x_end_return_vec_0_1_2_3</var>):</td></tr>
+<tr><th id="229">229</th><td>	movq	%rdx, %rdi</td></tr>
+<tr><th id="230">230</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_return_vec_0_1_2_3" data-ref="_M/L">L</a>(<var>8x_return_vec_0_1_2_3</var>):</td></tr>
+<tr><th id="231">231</th><td>	addq	%rdi, %rsi</td></tr>
+<tr><th id="232">232</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_0_1_2_3" data-ref="_M/L">L</a>(return_vec_0_1_2_3):</td></tr>
+<tr><th id="233">233</th><td>	<a class="macro" href="#73" title="vptestmb" data-ref="_M/VPTEST">VPTEST</a>	%<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %k0</td></tr>
+<tr><th id="234">234</th><td>	kmovd	%k0, %eax</td></tr>
+<tr><th id="235">235</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="236">236</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_0" data-ref="_M/L">L</a>(return_vec_0)</td></tr>
+<tr><th id="237">237</th><td></td></tr>
+<tr><th id="238">238</th><td>	<a class="macro" href="#73" title="vptestmb" data-ref="_M/VPTEST">VPTEST</a>	%<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a>, %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a>, %k0</td></tr>
+<tr><th id="239">239</th><td>	kmovd	%k0, %eax</td></tr>
+<tr><th id="240">240</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="241">241</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_1" data-ref="_M/L">L</a>(return_vec_1)</td></tr>
+<tr><th id="242">242</th><td></td></tr>
+<tr><th id="243">243</th><td>	<a class="macro" href="#73" title="vptestmb" data-ref="_M/VPTEST">VPTEST</a>	%<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a>, %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a>, %k0</td></tr>
+<tr><th id="244">244</th><td>	kmovd	%k0, %eax</td></tr>
+<tr><th id="245">245</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="246">246</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_2" data-ref="_M/L">L</a>(return_vec_2)</td></tr>
+<tr><th id="247">247</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_3" data-ref="_M/L">L</a>(return_vec_3):</td></tr>
+<tr><th id="248">248</th><td>	<i>/* bsf saves 1 byte from tzcnt. This keep L(return_vec_3) in one</i></td></tr>
+<tr><th id="249">249</th><td><i>	   fetch block and the entire L(*return_vec_0_1_2_3) in 1 cache</i></td></tr>
+<tr><th id="250">250</th><td><i>	   line.  */</i></td></tr>
+<tr><th id="251">251</th><td>	bsfl	%ecx, %ecx</td></tr>
+<tr><th id="252">252</th><td><u># <span data-ppcond="252">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WMEMCMP">USE_AS_WMEMCMP</span></u></td></tr>
+<tr><th id="253">253</th><td>	movl	(VEC_SIZE * <var>3</var>)(%rdi, %rcx, CHAR_SIZE), %eax</td></tr>
+<tr><th id="254">254</th><td>	xorl	%edx, %edx</td></tr>
+<tr><th id="255">255</th><td>	cmpl	(VEC_SIZE * <var>3</var>)(%rsi, %rcx, CHAR_SIZE), %eax</td></tr>
+<tr><th id="256">256</th><td>	setg	%dl</td></tr>
+<tr><th id="257">257</th><td>	leal	-<var>1</var>(%rdx, %rdx), %eax</td></tr>
+<tr><th id="258">258</th><td><u># <span data-ppcond="252">else</span></u></td></tr>
+<tr><th id="259">259</th><td>	movzbl	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rdi, %rcx), %eax</td></tr>
+<tr><th id="260">260</th><td>	movzbl	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rsi, %rcx), %ecx</td></tr>
+<tr><th id="261">261</th><td>	subl	%ecx, %eax</td></tr>
+<tr><th id="262">262</th><td><u># <span data-ppcond="252">endif</span></u></td></tr>
+<tr><th id="263">263</th><td>	ret</td></tr>
+<tr><th id="264">264</th><td></td></tr>
+<tr><th id="265">265</th><td></td></tr>
+<tr><th id="266">266</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="267">267</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_1" data-ref="_M/L">L</a>(return_vec_1):</td></tr>
+<tr><th id="268">268</th><td>	<i>/* bsf saves 1 byte over tzcnt and keeps L(return_vec_1) in one</i></td></tr>
+<tr><th id="269">269</th><td><i>	   fetch block.  */</i></td></tr>
+<tr><th id="270">270</th><td>	bsfl	%eax, %eax</td></tr>
+<tr><th id="271">271</th><td><u># <span data-ppcond="271">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WMEMCMP">USE_AS_WMEMCMP</span></u></td></tr>
+<tr><th id="272">272</th><td>	movl	VEC_SIZE(%rdi, %rax, CHAR_SIZE), %ecx</td></tr>
+<tr><th id="273">273</th><td>	xorl	%edx, %edx</td></tr>
+<tr><th id="274">274</th><td>	cmpl	VEC_SIZE(%rsi, %rax, CHAR_SIZE), %ecx</td></tr>
+<tr><th id="275">275</th><td>	setg	%dl</td></tr>
+<tr><th id="276">276</th><td>	leal	-<var>1</var>(%rdx, %rdx), %eax</td></tr>
+<tr><th id="277">277</th><td><u># <span data-ppcond="271">else</span></u></td></tr>
+<tr><th id="278">278</th><td>	movzbl	<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rsi, %rax), %ecx</td></tr>
+<tr><th id="279">279</th><td>	movzbl	<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rdi, %rax), %eax</td></tr>
+<tr><th id="280">280</th><td>	subl	%ecx, %eax</td></tr>
+<tr><th id="281">281</th><td><u># <span data-ppcond="271">endif</span></u></td></tr>
+<tr><th id="282">282</th><td>	ret</td></tr>
+<tr><th id="283">283</th><td></td></tr>
+<tr><th id="284">284</th><td>	.p2align <var>4</var>,, <var>10</var></td></tr>
+<tr><th id="285">285</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_2" data-ref="_M/L">L</a>(return_vec_2):</td></tr>
+<tr><th id="286">286</th><td>	<i>/* bsf saves 1 byte over tzcnt and keeps L(return_vec_2) in one</i></td></tr>
+<tr><th id="287">287</th><td><i>	   fetch block.  */</i></td></tr>
+<tr><th id="288">288</th><td>	bsfl	%eax, %eax</td></tr>
+<tr><th id="289">289</th><td><u># <span data-ppcond="289">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WMEMCMP">USE_AS_WMEMCMP</span></u></td></tr>
+<tr><th id="290">290</th><td>	movl	(VEC_SIZE * <var>2</var>)(%rdi, %rax, CHAR_SIZE), %ecx</td></tr>
+<tr><th id="291">291</th><td>	xorl	%edx, %edx</td></tr>
+<tr><th id="292">292</th><td>	cmpl	(VEC_SIZE * <var>2</var>)(%rsi, %rax, CHAR_SIZE), %ecx</td></tr>
+<tr><th id="293">293</th><td>	setg	%dl</td></tr>
+<tr><th id="294">294</th><td>	leal	-<var>1</var>(%rdx, %rdx), %eax</td></tr>
+<tr><th id="295">295</th><td><u># <span data-ppcond="289">else</span></u></td></tr>
+<tr><th id="296">296</th><td>	movzbl	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rsi, %rax), %ecx</td></tr>
+<tr><th id="297">297</th><td>	movzbl	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdi, %rax), %eax</td></tr>
+<tr><th id="298">298</th><td>	subl	%ecx, %eax</td></tr>
+<tr><th id="299">299</th><td><u># <span data-ppcond="289">endif</span></u></td></tr>
+<tr><th id="300">300</th><td>	ret</td></tr>
+<tr><th id="301">301</th><td></td></tr>
+<tr><th id="302">302</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="303">303</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lmore_8x_vec" data-ref="_M/L">L</a>(more_8x_vec):</td></tr>
+<tr><th id="304">304</th><td>	<i>/* Set end of s1 in rdx.  */</i></td></tr>
+<tr><th id="305">305</th><td>	leaq	-(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>)(%rdi, %rdx, <a class="macro" href="#71" title="1" data-ref="_M/CHAR_SIZE">CHAR_SIZE</a>), %rdx</td></tr>
+<tr><th id="306">306</th><td>	<i>/* rsi stores s2 - s1. This allows loop to only update one</i></td></tr>
+<tr><th id="307">307</th><td><i>	   pointer.  */</i></td></tr>
+<tr><th id="308">308</th><td>	subq	%rdi, %rsi</td></tr>
+<tr><th id="309">309</th><td>	<i>/* Align s1 pointer.  */</i></td></tr>
+<tr><th id="310">310</th><td>	andq	$-<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>, %rdi</td></tr>
+<tr><th id="311">311</th><td>	<i>/* Adjust because first 4x vec where check already.  */</i></td></tr>
+<tr><th id="312">312</th><td>	subq	$-(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>), %rdi</td></tr>
+<tr><th id="313">313</th><td></td></tr>
+<tr><th id="314">314</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="315">315</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lloop_4x_vec" data-ref="_M/L">L</a>(loop_4x_vec):</td></tr>
+<tr><th id="316">316</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rsi, %rdi), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="317">317</th><td>	vpxorq	(%rdi), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="318">318</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rsi, %rdi), %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a></td></tr>
+<tr><th id="319">319</th><td>	vpxorq	<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rdi), %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a>, %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a></td></tr>
+<tr><th id="320">320</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rsi, %rdi), %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a></td></tr>
+<tr><th id="321">321</th><td>	vpxorq	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdi), %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a>, %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a></td></tr>
+<tr><th id="322">322</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rsi, %rdi), %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="323">323</th><td>	vpternlogd $<var>0xde</var>,(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rdi), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="324">324</th><td>	vpternlogd $<var>0xfe</var>, %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a>, %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a>, %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="325">325</th><td>	<a class="macro" href="#73" title="vptestmb" data-ref="_M/VPTEST">VPTEST</a>	%<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a>, %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a>, %k1</td></tr>
+<tr><th id="326">326</th><td>	kmovd	%k1, %ecx</td></tr>
+<tr><th id="327">327</th><td>	testl	%ecx, %ecx</td></tr>
+<tr><th id="328">328</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_return_vec_0_1_2_3" data-ref="_M/L">L</a>(<var>8x_return_vec_0_1_2_3</var>)</td></tr>
+<tr><th id="329">329</th><td>	subq	$-(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>4</var>), %rdi</td></tr>
+<tr><th id="330">330</th><td>	cmpq	%rdx, %rdi</td></tr>
+<tr><th id="331">331</th><td>	jb	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lloop_4x_vec" data-ref="_M/L">L</a>(loop_4x_vec)</td></tr>
+<tr><th id="332">332</th><td></td></tr>
+<tr><th id="333">333</th><td>	subq	%rdx, %rdi</td></tr>
+<tr><th id="334">334</th><td>	<i>/* rdi has 4 * VEC_SIZE - remaining length.  */</i></td></tr>
+<tr><th id="335">335</th><td>	cmpl	$(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>), %edi</td></tr>
+<tr><th id="336">336</th><td>	jae	<a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_last_1x_vec" data-ref="_M/L">L</a>(<var>8x_last_1x_vec</var>)</td></tr>
+<tr><th id="337">337</th><td>	<i>/* Load regardless of branch.  */</i></td></tr>
+<tr><th id="338">338</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rsi, %rdx), %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a></td></tr>
+<tr><th id="339">339</th><td>	cmpl	$(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>), %edi</td></tr>
+<tr><th id="340">340</th><td>	jae	<a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_last_2x_vec" data-ref="_M/L">L</a>(<var>8x_last_2x_vec</var>)</td></tr>
+<tr><th id="341">341</th><td></td></tr>
+<tr><th id="342">342</th><td>	vpxorq	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdx), %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a>, %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a></td></tr>
+<tr><th id="343">343</th><td></td></tr>
+<tr><th id="344">344</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(%rsi, %rdx), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="345">345</th><td>	vpxorq	(%rdx), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="346">346</th><td></td></tr>
+<tr><th id="347">347</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rsi, %rdx), %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a></td></tr>
+<tr><th id="348">348</th><td>	vpxorq	<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rdx), %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a>, %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a></td></tr>
+<tr><th id="349">349</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rsi, %rdx), %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="350">350</th><td>	vpternlogd $<var>0xde</var>,(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rdx), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="351">351</th><td>	vpternlogd $<var>0xfe</var>, %<a class="macro" href="#88" title="ymm18" data-ref="_M/YMM2">YMM2</a>, %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a>, %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a></td></tr>
+<tr><th id="352">352</th><td>	<a class="macro" href="#73" title="vptestmb" data-ref="_M/VPTEST">VPTEST</a>	%<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a>, %<a class="macro" href="#90" title="ymm20" data-ref="_M/YMM4">YMM4</a>, %k1</td></tr>
+<tr><th id="353">353</th><td>	kmovd	%k1, %ecx</td></tr>
+<tr><th id="354">354</th><td>	testl	%ecx, %ecx</td></tr>
+<tr><th id="355">355</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_end_return_vec_0_1_2_3" data-ref="_M/L">L</a>(<var>8x_end_return_vec_0_1_2_3</var>)</td></tr>
+<tr><th id="356">356</th><td>	<i>/* NB: eax must be zero to reach here.  */</i></td></tr>
+<tr><th id="357">357</th><td>	ret</td></tr>
+<tr><th id="358">358</th><td></td></tr>
+<tr><th id="359">359</th><td>	<i>/* Only entry is from L(more_8x_vec).  */</i></td></tr>
+<tr><th id="360">360</th><td>	.p2align <var>4</var>,, <var>10</var></td></tr>
+<tr><th id="361">361</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_last_2x_vec" data-ref="_M/L">L</a>(<var>8x_last_2x_vec</var>):</td></tr>
+<tr><th id="362">362</th><td>	<a class="macro" href="#72" title="vpcmpub" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>,(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdx), %<a class="macro" href="#89" title="ymm19" data-ref="_M/YMM3">YMM3</a>, %k1</td></tr>
+<tr><th id="363">363</th><td>	kmovd	%k1, %eax</td></tr>
+<tr><th id="364">364</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="365">365</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_return_vec_2" data-ref="_M/L">L</a>(<var>8x_return_vec_2</var>)</td></tr>
+<tr><th id="366">366</th><td>	<i>/* Naturally aligned to 16 bytes.  */</i></td></tr>
+<tr><th id="367">367</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_last_1x_vec" data-ref="_M/L">L</a>(<var>8x_last_1x_vec</var>):</td></tr>
+<tr><th id="368">368</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rsi, %rdx), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="369">369</th><td>	<a class="macro" href="#72" title="vpcmpub" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>,(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rdx), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %k1</td></tr>
+<tr><th id="370">370</th><td>	kmovd	%k1, %eax</td></tr>
+<tr><th id="371">371</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="372">372</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_return_vec_3" data-ref="_M/L">L</a>(<var>8x_return_vec_3</var>)</td></tr>
+<tr><th id="373">373</th><td>	ret</td></tr>
+<tr><th id="374">374</th><td></td></tr>
+<tr><th id="375">375</th><td>	<i>/* Not ideally aligned (at offset +9 bytes in fetch block) but</i></td></tr>
+<tr><th id="376">376</th><td><i>	   not aligning keeps it in the same cache line as</i></td></tr>
+<tr><th id="377">377</th><td><i>	   L(8x_last_1x/2x_vec) so likely worth it. As well, saves code</i></td></tr>
+<tr><th id="378">378</th><td><i>	   size.  */</i></td></tr>
+<tr><th id="379">379</th><td>	.p2align <var>4</var>,, <var>4</var></td></tr>
+<tr><th id="380">380</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_return_vec_2" data-ref="_M/L">L</a>(<var>8x_return_vec_2</var>):</td></tr>
+<tr><th id="381">381</th><td>	subq	$<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>, %rdx</td></tr>
+<tr><th id="382">382</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".L8x_return_vec_3" data-ref="_M/L">L</a>(<var>8x_return_vec_3</var>):</td></tr>
+<tr><th id="383">383</th><td>	bsfl	%eax, %eax</td></tr>
+<tr><th id="384">384</th><td><u># <span data-ppcond="384">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WMEMCMP">USE_AS_WMEMCMP</span></u></td></tr>
+<tr><th id="385">385</th><td>	leaq	(%rdx, %rax, CHAR_SIZE), %rax</td></tr>
+<tr><th id="386">386</th><td>	movl	(VEC_SIZE * <var>3</var>)(%rax), %ecx</td></tr>
+<tr><th id="387">387</th><td>	xorl	%edx, %edx</td></tr>
+<tr><th id="388">388</th><td>	cmpl	(VEC_SIZE * <var>3</var>)(%rsi, %rax), %ecx</td></tr>
+<tr><th id="389">389</th><td>	setg	%dl</td></tr>
+<tr><th id="390">390</th><td>	leal	-<var>1</var>(%rdx, %rdx), %eax</td></tr>
+<tr><th id="391">391</th><td><u># <span data-ppcond="384">else</span></u></td></tr>
+<tr><th id="392">392</th><td>	addq	%rdx, %rax</td></tr>
+<tr><th id="393">393</th><td>	movzbl	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rsi, %rax), %ecx</td></tr>
+<tr><th id="394">394</th><td>	movzbl	(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>3</var>)(%rax), %eax</td></tr>
+<tr><th id="395">395</th><td>	subl	%ecx, %eax</td></tr>
+<tr><th id="396">396</th><td><u># <span data-ppcond="384">endif</span></u></td></tr>
+<tr><th id="397">397</th><td>	ret</td></tr>
+<tr><th id="398">398</th><td></td></tr>
+<tr><th id="399">399</th><td>	.p2align <var>4</var>,, <var>10</var></td></tr>
+<tr><th id="400">400</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Llast_2x_vec" data-ref="_M/L">L</a>(last_2x_vec):</td></tr>
+<tr><th id="401">401</th><td>	<i>/* Check second to last VEC.  */</i></td></tr>
+<tr><th id="402">402</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	-(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rsi, %rdx, <a class="macro" href="#71" title="1" data-ref="_M/CHAR_SIZE">CHAR_SIZE</a>), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="403">403</th><td>	<a class="macro" href="#72" title="vpcmpub" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, -(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdi, %rdx, <a class="macro" href="#71" title="1" data-ref="_M/CHAR_SIZE">CHAR_SIZE</a>), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %k1</td></tr>
+<tr><th id="404">404</th><td>	kmovd	%k1, %eax</td></tr>
+<tr><th id="405">405</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="406">406</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_1_end" data-ref="_M/L">L</a>(return_vec_1_end)</td></tr>
+<tr><th id="407">407</th><td></td></tr>
+<tr><th id="408">408</th><td>	<i>/* Check last VEC.  */</i></td></tr>
+<tr><th id="409">409</th><td>	.p2align <var>4</var></td></tr>
+<tr><th id="410">410</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Llast_1x_vec" data-ref="_M/L">L</a>(last_1x_vec):</td></tr>
+<tr><th id="411">411</th><td>	<a class="macro" href="#62" title="vmovdqu64" data-ref="_M/VMOVU">VMOVU</a>	-(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>1</var>)(%rsi, %rdx, <a class="macro" href="#71" title="1" data-ref="_M/CHAR_SIZE">CHAR_SIZE</a>), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a></td></tr>
+<tr><th id="412">412</th><td>	<a class="macro" href="#72" title="vpcmpub" data-ref="_M/VPCMP">VPCMP</a>	$<var>4</var>, -(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>1</var>)(%rdi, %rdx, <a class="macro" href="#71" title="1" data-ref="_M/CHAR_SIZE">CHAR_SIZE</a>), %<a class="macro" href="#87" title="ymm17" data-ref="_M/YMM1">YMM1</a>, %k1</td></tr>
+<tr><th id="413">413</th><td>	kmovd	%k1, %eax</td></tr>
+<tr><th id="414">414</th><td>	testl	%eax, %eax</td></tr>
+<tr><th id="415">415</th><td>	jnz	<a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_0_end" data-ref="_M/L">L</a>(return_vec_0_end)</td></tr>
+<tr><th id="416">416</th><td>	ret</td></tr>
+<tr><th id="417">417</th><td></td></tr>
+<tr><th id="418">418</th><td></td></tr>
+<tr><th id="419">419</th><td>	<i>/* Don't align. Takes 2-fetch blocks either way and aligning</i></td></tr>
+<tr><th id="420">420</th><td><i>	   will cause code to spill into another cacheline.  */</i></td></tr>
+<tr><th id="421">421</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_1_end" data-ref="_M/L">L</a>(return_vec_1_end):</td></tr>
+<tr><th id="422">422</th><td>	<i>/* Use bsf to save code size. This is necessary to have</i></td></tr>
+<tr><th id="423">423</th><td><i>	   L(one_or_less) fit in aligning bytes between.  */</i></td></tr>
+<tr><th id="424">424</th><td>	bsfl	%eax, %eax</td></tr>
+<tr><th id="425">425</th><td>	addl	%edx, %eax</td></tr>
+<tr><th id="426">426</th><td><u># <span data-ppcond="426">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WMEMCMP">USE_AS_WMEMCMP</span></u></td></tr>
+<tr><th id="427">427</th><td>	movl	-(VEC_SIZE * <var>2</var>)(%rdi, %rax, CHAR_SIZE), %ecx</td></tr>
+<tr><th id="428">428</th><td>	xorl	%edx, %edx</td></tr>
+<tr><th id="429">429</th><td>	cmpl	-(VEC_SIZE * <var>2</var>)(%rsi, %rax, CHAR_SIZE), %ecx</td></tr>
+<tr><th id="430">430</th><td>	setg	%dl</td></tr>
+<tr><th id="431">431</th><td>	leal	-<var>1</var>(%rdx, %rdx), %eax</td></tr>
+<tr><th id="432">432</th><td><u># <span data-ppcond="426">else</span></u></td></tr>
+<tr><th id="433">433</th><td>	movzbl	-(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rsi, %rax), %ecx</td></tr>
+<tr><th id="434">434</th><td>	movzbl	-(<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a> * <var>2</var>)(%rdi, %rax), %eax</td></tr>
+<tr><th id="435">435</th><td>	subl	%ecx, %eax</td></tr>
+<tr><th id="436">436</th><td><u># <span data-ppcond="426">endif</span></u></td></tr>
+<tr><th id="437">437</th><td>	ret</td></tr>
+<tr><th id="438">438</th><td></td></tr>
+<tr><th id="439">439</th><td>	<i>/* Don't align. Takes 2-fetch blocks either way and aligning</i></td></tr>
+<tr><th id="440">440</th><td><i>	   will cause code to spill into another cacheline.  */</i></td></tr>
+<tr><th id="441">441</th><td><a class="macro" href="../../x86/sysdep.h.html#114" title=".Lreturn_vec_0_end" data-ref="_M/L">L</a>(return_vec_0_end):</td></tr>
+<tr><th id="442">442</th><td>	tzcntl	%eax, %eax</td></tr>
+<tr><th id="443">443</th><td>	addl	%edx, %eax</td></tr>
+<tr><th id="444">444</th><td><u># <span data-ppcond="444">ifdef</span> <span class="macro" data-ref="_M/USE_AS_WMEMCMP">USE_AS_WMEMCMP</span></u></td></tr>
+<tr><th id="445">445</th><td>	movl	-VEC_SIZE(%rdi, %rax, CHAR_SIZE), %ecx</td></tr>
+<tr><th id="446">446</th><td>	xorl	%edx, %edx</td></tr>
+<tr><th id="447">447</th><td>	cmpl	-VEC_SIZE(%rsi, %rax, CHAR_SIZE), %ecx</td></tr>
+<tr><th id="448">448</th><td>	setg	%dl</td></tr>
+<tr><th id="449">449</th><td>	leal	-<var>1</var>(%rdx, %rdx), %eax</td></tr>
+<tr><th id="450">450</th><td><u># <span data-ppcond="444">else</span></u></td></tr>
+<tr><th id="451">451</th><td>	movzbl	-<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rsi, %rax), %ecx</td></tr>
+<tr><th id="452">452</th><td>	movzbl	-<a class="macro" href="#77" title="32" data-ref="_M/VEC_SIZE">VEC_SIZE</a>(%rdi, %rax), %eax</td></tr>
+<tr><th id="453">453</th><td>	subl	%ecx, %eax</td></tr>
+<tr><th id="454">454</th><td><u># <span data-ppcond="444">endif</span></u></td></tr>
+<tr><th id="455">455</th><td>	ret</td></tr>
+<tr><th id="456">456</th><td>	<i>/* 1-byte until next cache line.  */</i></td></tr>
+<tr><th id="457">457</th><td></td></tr>
+<tr><th id="458">458</th><td><a class="macro" href="../../x86/sysdep.h.html#94" title=".cfi_endproc; .size __memcmp_evex_movbe,.-__memcmp_evex_movbe;" data-ref="_M/END">END</a> (<a class="macro" href="#59" title="__memcmp_evex_movbe" data-ref="_M/MEMCMP">MEMCMP</a>)</td></tr>
+<tr><th id="459">459</th><td><u>#<span data-ppcond="19">endif</span></u></td></tr>
+<tr><th id="460">460</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

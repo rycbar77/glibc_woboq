@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='73' ll='78' type='void __libc_signal_block_all(sigset_t * set)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='72'>/* Block all signals, including internal glibc ones.  */</doc>
+<use f='codebrowser/nptl/pthread_create.c' l='727' u='c' c='__pthread_create_2_1'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='361' u='c' c='__spawnix'/>

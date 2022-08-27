@@ -1,0 +1,9 @@
+<dec f='codebrowser/signal/signal.h' l='205' type='int sigaddset(sigset_t * __set, int __signo)'/>
+<dec f='codebrowser/include/signal.h' l='9' type='int sigaddset(sigset_t * , int )'/>
+<use f='codebrowser/include/signal.h' l='9' c='sigaddset'/>
+<doc f='codebrowser/signal/signal.h' l='204'>/* Add SIGNO to SET.  */</doc>
+<def f='codebrowser/signal/sigaddset.c' l='24' ll='36' type='int sigaddset(sigset_t * set, int signo)'/>
+<doc f='codebrowser/signal/sigaddset.c' l='23'>/* Add SIGNO to SET.  */</doc>
+<use f='codebrowser/signal/sighold.c' l='30' u='c' c='sighold'/>
+<use f='codebrowser/signal/sigrelse.c' l='30' u='c' c='sigrelse'/>
+<use f='codebrowser/sysdeps/posix/sigset.c' l='35' u='c' c='sigset'/>

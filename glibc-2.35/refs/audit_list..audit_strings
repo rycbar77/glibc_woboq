@@ -1,0 +1,9 @@
+<dec f='codebrowser/elf/dl-main.h' l='45' type='const char *[16]'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/dl-main.h' l='42'>/* Array of strings containing colon-separated path lists.  Each
+     audit module needs its own namespace, so pre-allocate the largest
+     possible list.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='217' u='r' c='audit_list_add_string'/>
+<use f='codebrowser/elf/rtld.c' l='217' u='r' c='audit_list_add_string'/>
+<use f='codebrowser/elf/rtld.c' l='220' u='w' c='audit_list_add_string'/>
+<use f='codebrowser/elf/rtld.c' l='256' u='r' c='audit_list_next'/>

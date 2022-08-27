@@ -1,0 +1,34 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='339' type='int __pthread_mutex_lock(pthread_mutex_t * __mutex)'/>
+<use f='codebrowser/dlfcn/dlsym.c' l='68' macro='1' c='__dlsym'/>
+<use f='codebrowser/dlfcn/dlsym.c' l='68' macro='1' u='r' c='__dlsym'/>
+<use f='codebrowser/dlfcn/dlvsym.c' l='72' macro='1' c='__dlvsym'/>
+<use f='codebrowser/dlfcn/dlvsym.c' l='72' macro='1' u='r' c='__dlvsym'/>
+<use f='codebrowser/elf/dl-addr.c' l='131' macro='1' c='_dl_addr'/>
+<use f='codebrowser/elf/dl-addr.c' l='131' macro='1' u='r' c='_dl_addr'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='426' type='int __pthread_mutex_lock(pthread_mutex_t * __mutex)'/>
+<use f='codebrowser/elf/dl-close.c' l='540' macro='1' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='540' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='656' macro='1' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='656' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='812' macro='1' c='_dl_close'/>
+<use f='codebrowser/elf/dl-close.c' l='812' macro='1' u='r' c='_dl_close'/>
+<use f='codebrowser/elf/dl-fini.c' l='53' macro='1' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-fini.c' l='53' macro='1' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='40' macro='1' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='40' macro='1' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-lookup.c' l='205' macro='1' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='205' macro='1' u='r' c='do_lookup_unique'/>
+<use f='codebrowser/elf/dl-lookup.c' l='616' macro='1' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='616' macro='1' u='r' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='662' macro='1' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='662' macro='1' u='r' c='add_dependency'/>
+<use f='codebrowser/elf/dl-object.c' l='33' macro='1' c='_dl_add_to_namespace_list'/>
+<use f='codebrowser/elf/dl-object.c' l='33' macro='1' u='r' c='_dl_add_to_namespace_list'/>
+<use f='codebrowser/elf/dl-open.c' l='542' macro='1' c='_dl_open'/>
+<use f='codebrowser/elf/dl-open.c' l='542' macro='1' u='r' c='_dl_open'/>
+<use f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='114' macro='1' c='__cxa_thread_atexit_impl'/>
+<use f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='114' macro='1' u='r' c='__cxa_thread_atexit_impl'/>
+<use f='codebrowser/elf/tlsdeschtab.h' l='146' macro='1' c='_dl_tlsdesc_resolve_early_return_p'/>
+<use f='codebrowser/elf/tlsdeschtab.h' l='146' macro='1' u='r' c='_dl_tlsdesc_resolve_early_return_p'/>
+<use f='codebrowser/sysdeps/x86_64/tlsdesc.c' l='129' macro='1' c='_dl_tlsdesc_resolve_hold_fixup'/>
+<use f='codebrowser/sysdeps/x86_64/tlsdesc.c' l='129' macro='1' u='r' c='_dl_tlsdesc_resolve_hold_fixup'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/elf/stringtable.h' l='37' type='struct stringtable_entry **'/>
+<offset>0</offset>
+<doc f='codebrowser/elf/stringtable.h' l='37'>/* Array of hash table buckets.  */</doc>
+<use f='codebrowser/elf/stringtable.c' l='37' u='w' c='stringtable_init'/>
+<use f='codebrowser/elf/stringtable.c' l='37' u='r' c='stringtable_init'/>
+<use f='codebrowser/elf/stringtable.c' l='62' u='r' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='66' u='r' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='76' u='r' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='77' u='w' c='stringtable_rehash'/>
+<use f='codebrowser/elf/stringtable.c' l='95' u='r' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='112' u='r' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='113' u='r' c='stringtable_add'/>
+<use f='codebrowser/elf/stringtable.c' l='164' u='r' c='stringtable_finalize'/>
+<use f='codebrowser/elf/stringtable.c' l='205' u='r' c='stringtable_finalize'/>

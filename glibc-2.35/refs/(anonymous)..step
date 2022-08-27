@@ -1,0 +1,15 @@
+<dec f='codebrowser/libio/libio.h' l='52' type='struct __gconv_step *'/>
+<offset>0</offset>
+<use f='codebrowser/libio/fileops.c' l='333' u='w' c='_IO_new_file_fopen'/>
+<use f='codebrowser/libio/fileops.c' l='340' u='w' c='_IO_new_file_fopen'/>
+<use f='codebrowser/libio/iofclose.c' l='65' u='r' c='_IO_new_fclose'/>
+<use f='codebrowser/libio/iofclose.c' l='66' u='r' c='_IO_new_fclose'/>
+<use f='codebrowser/libio/iofwide.c' l='83' u='w' c='_IO_fwide'/>
+<use f='codebrowser/libio/iofwide.c' l='90' u='w' c='_IO_fwide'/>
+<use f='codebrowser/libio/iofwide.c' l='117' u='r' c='__libio_codecvt_out'/>
+<use f='codebrowser/libio/iofwide.c' l='169' u='r' c='__libio_codecvt_in'/>
+<use f='codebrowser/libio/iofwide.c' l='217' u='r' c='__libio_codecvt_encoding'/>
+<use f='codebrowser/libio/iofwide.c' l='221' u='r' c='__libio_codecvt_encoding'/>
+<use f='codebrowser/libio/iofwide.c' l='222' u='r' c='__libio_codecvt_encoding'/>
+<use f='codebrowser/libio/iofwide.c' l='226' u='r' c='__libio_codecvt_encoding'/>
+<use f='codebrowser/libio/iofwide.c' l='238' u='r' c='__libio_codecvt_length'/>

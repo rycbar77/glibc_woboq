@@ -1,0 +1,20 @@
+<def f='codebrowser/sysdeps/nptl/futex-internal.h' l='173' ll='178' type='void futex_wait_simple(unsigned int * futex_word, unsigned int expected, int private)'/>
+<doc f='codebrowser/sysdeps/nptl/futex-internal.h' l='166'>/* Like futex_wait but does not provide any indication why we stopped waiting.
+   Thus, when this function returns, you have to always check FUTEX_WORD to
+   determine whether you need to continue waiting, and you cannot detect
+   whether the waiting was interrupted by a signal.  Example use:
+     while (atomic_load_relaxed (&amp;futex_word) == 23)
+       futex_wait_simple (&amp;futex_word, 23, FUTEX_PRIVATE);
+   This is common enough to make providing this wrapper worthwhile.  */</doc>
+<use f='codebrowser/nptl/nptl_setxid.c' l='105' u='c' c='setxid_mark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='236' u='c' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/pthread_barrier_destroy.c' l='50' u='c' c='__pthread_barrier_destroy'/>
+<use f='codebrowser/nptl/pthread_barrier_wait.c' l='126' u='c' c='___pthread_barrier_wait'/>
+<use f='codebrowser/nptl/pthread_barrier_wait.c' l='184' u='c' c='___pthread_barrier_wait'/>
+<use f='codebrowser/nptl/pthread_cond_common.c' l='140' u='c' c='__condvar_acquire_lock'/>
+<use f='codebrowser/nptl/pthread_cond_common.c' l='276' u='c' c='__condvar_quiesce_and_switch_g1'/>
+<use f='codebrowser/nptl/pthread_cond_destroy.c' l='53' u='c' c='__pthread_cond_destroy'/>
+<use f='codebrowser/nptl/pthread_create.c' l='563' u='c' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_once.c' l='105' u='c' c='__pthread_once_slow'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='51' u='c' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='74' u='c' c='__thread_gscope_wait'/>

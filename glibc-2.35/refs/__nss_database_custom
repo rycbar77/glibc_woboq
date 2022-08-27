@@ -1,0 +1,8 @@
+<dec f='codebrowser/nss/nsswitch.h' l='77' type='_Bool[17]'/>
+<doc f='codebrowser/nss/nsswitch.h' l='76'>/* Flags whether custom rules for database is set.  */</doc>
+<use f='codebrowser/nss/getXXbyYY_r.c' l='250' u='r' c='__getgrgid_r'/>
+<use f='codebrowser/grp/initgroups.c' l='54' u='r' c='internal_getgrouplist'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='160' u='r' c='nscd_setnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='367' u='r' c='innetgr'/>
+<use f='codebrowser/nss/nss_database.c' l='266' u='w' c='__nss_configure_lookup'/>
+<def f='codebrowser/nss/nsswitch.c' l='55' macro='1' type='_Bool[17]'/>

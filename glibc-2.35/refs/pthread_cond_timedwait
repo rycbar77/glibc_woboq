@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='1145' type='int pthread_cond_timedwait(pthread_cond_t *restrict __cond, pthread_mutex_t *restrict __mutex, const struct timespec *restrict __abstime)'/>
+<def f='codebrowser/nptl/pthread_cond_wait.c' l='661' macro='1' type='int pthread_cond_timedwait(pthread_cond_t * , pthread_mutex_t * , const struct timespec * )'/>
+<use f='codebrowser/nscd/connections.c' l='1527' u='c' c='nscd_run_prune'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='872' u='c' c='__gthread_cond_timedwait'/>

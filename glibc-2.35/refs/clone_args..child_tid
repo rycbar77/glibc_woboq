@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/clone3.h' l='42' type='__aligned_uint64_t'/>
+<use f='codebrowser/nptl/pthread_create.c' l='290' u='w' c='create_thread'/>
+<offset>128</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/clone3.h' l='41'>/* Where to store child TID, in child&apos;s memory (pid_t *).  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='86' u='r' c='__clone_internal'/>

@@ -1,0 +1,20 @@
+<dec f='codebrowser/nptl/descr.h' l='81' type='struct pthread_unwind_buf *'/>
+<offset>0</offset>
+<doc f='codebrowser/nptl/descr.h' l='80'>/* Pointer to the previous cleanup buffer.  */</doc>
+<use f='codebrowser/nptl/cleanup.c' l='30' u='w' c='___pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='52' u='r' c='___pthread_unregister_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='52' u='r' c='___pthread_unregister_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='52' u='r' c='___pthread_unregister_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='52' c='___pthread_unregister_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='52' c='___pthread_unregister_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='52' u='r' c='___pthread_unregister_cancel'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='30' u='w' c='___pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='55' u='r' c='___pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='55' u='r' c='___pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='55' u='r' c='___pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='55' c='___pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='55' c='___pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='55' u='r' c='___pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/pthread_create.c' l='414' u='w' c='start_thread'/>
+<use f='codebrowser/nptl/unwind.c' l='144' u='r' c='___pthread_unwind_next'/>
+<use f='codebrowser/sysdeps/nptl/libc_start_call_main.h' l='51' u='w' c='__libc_start_call_main'/>

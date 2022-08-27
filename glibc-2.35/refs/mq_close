@@ -1,0 +1,4 @@
+<dec f='codebrowser/rt/mqueue.h' l='43' type='int mq_close(mqd_t __mqdes)'/>
+<doc f='codebrowser/rt/mqueue.h' l='41'>/* Removes the association between message queue descriptor MQDES and its
+   message queue.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/mq_close.c' l='30' macro='1' type='int mq_close(mqd_t )'/>

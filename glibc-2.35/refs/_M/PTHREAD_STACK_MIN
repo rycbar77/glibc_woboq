@@ -1,0 +1,21 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/pthread_stack_min.h' l='20'/>
+<use f='codebrowser/sysdeps/pthread/allocalim.h' l='28' u='a'/>
+<use f='codebrowser/sysdeps/pthread/allocalim.h' l='29' u='c'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/pthread_stack_min.h' l='20'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/pthread_stack_min.h' l='19'>/* Minimum size for a thread.  We are free to choose a reasonable value.  */</doc>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='716' u='c'/>
+<use f='codebrowser/sysdeps/nptl/pthread_early_init.h' l='38' u='c'/>
+<use f='codebrowser/sysdeps/nptl/pthread_early_init.h' l='41' u='c'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='144' u='c'/>
+<use f='codebrowser/nptl/pthread_attr_setstack.c' l='59' u='c'/>
+<use f='codebrowser/nptl/pthread_attr_setstacksize.c' l='48' u='c'/>
+<use f='codebrowser/nptl/allocatestack.c' l='194' u='c'/>
+<use f='codebrowser/nptl/allocatestack.c' l='195' u='c'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='102' u='c'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/pthread_stack_min-dynamic.h' l='26'/>
+<use f='codebrowser/support/support_set_small_thread_stack_size.c' l='30' u='a'/>
+<use f='codebrowser/support/support_set_small_thread_stack_size.c' l='31' u='c'/>
+<use f='codebrowser/support/support_set_small_thread_stack_size.c' l='32' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf-pthread_stack_min.h' l='27' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf-pthread_stack_min.h' l='30' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sysconf-pthread_stack_min.h' l='31' u='c'/>

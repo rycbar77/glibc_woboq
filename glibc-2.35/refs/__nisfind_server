@@ -1,0 +1,5 @@
+<dec f='codebrowser/nis/rpcsvc/nislib.h' l='277' type='nis_error __nisfind_server(const_nis_name , int , directory_obj ** , dir_binding * , unsigned int )'/>
+<def f='codebrowser/nis/nis_call.c' l='703' ll='795' type='nis_error __nisfind_server(const_nis_name name, int search_parent, directory_obj ** dir, dir_binding * dbp, unsigned int flags)'/>
+<use f='codebrowser/nis/nis_call.c' l='802' u='c' c='__prepare_niscall'/>
+<use f='codebrowser/nis/nis_lookup.c' l='128' u='c' c='__GI_nis_lookup'/>
+<use f='codebrowser/nis/nis_table.c' l='284' u='c' c='__GI_nis_list'/>

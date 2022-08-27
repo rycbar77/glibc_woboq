@@ -1,0 +1,28 @@
+<dec f='codebrowser/include/sys/socket.h' l='10' type='int __socket(int __domain, int __type, int __protocol)'/>
+<dec f='codebrowser/include/sys/socket.h' l='12' type='int __socket(int , int , int )'/>
+<use f='codebrowser/include/sys/socket.h' l='12' c='__socket'/>
+<doc f='codebrowser/include/sys/socket.h' l='7'>/* Create a new socket of type TYPE in domain DOMAIN, using
+   protocol PROTOCOL.  If PROTOCOL is zero, one is chosen automatically.
+   Returns a file descriptor for the new socket, or -1 for errors.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='391' u='c' c='rresvport_af'/>
+<use f='codebrowser/inet/rexec.c' l='90' u='c' c='rexec_af'/>
+<use f='codebrowser/inet/rexec.c' l='118' u='c' c='rexec_af'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='171' u='c' c='open_socket'/>
+<use f='codebrowser/resolv/res_hconf.c' l='391' u='c' c='_res_hconf_reorder_addrs'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='150' u='c' c='__GI_clnttcp_create'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='179' u='c' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='136' u='c' c='__GI_clntunix_create'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='51' u='c' c='__get_socket'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='242' u='c' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/rtime.c' l='88' u='c' c='__GI_rtime'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='163' u='c' c='__GI_svctcp_create'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='134' u='c' c='__GI_svcudp_bufcreate'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='161' u='c' c='__GI_svcunix_create'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2351' u='c' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_native.c' l='44' u='c' c='__check_native'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='316' u='c' c='__check_pf'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='258' u='c' c='__netlink_open'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='160' u='c' c='init_mq_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/opensock.c' l='65' u='c' c='__opensock'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/opensock.c' l='100' u='c' c='__opensock'/>
+<use f='codebrowser/misc/syslog.c' l='350' u='c' c='openlog_internal'/>

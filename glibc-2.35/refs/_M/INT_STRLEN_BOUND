@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/intprops.h' l='120'/>
+<use f='codebrowser/sysdeps/generic/fd_to_filename.h' l='28' u='c'/>
+<doc f='codebrowser/include/intprops.h' l='111'>/* Bound on length of the string representing an integer type or expression T.
+   T must not be a bit-field expression.
+
+   Subtract 1 for the sign bit if T is signed, and then add 1 more for
+   a minus sign if needed.
+
+   Because _GL_SIGNED_TYPE_OR_EXPR sometimes returns 1 when its argument is
+   unsigned, this macro may overestimate the true bound by one byte when
+   applied to unsigned types of size 2, 4, 16, ... bytes.  */</doc>

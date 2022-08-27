@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/argp.h' l='7' type='void __argp_error_internal(const struct argp_state * state, const char * fmt, struct __va_list_tag * ap, unsigned int mode_flags)'/>
+<def f='codebrowser/argp/argp-help.c' l='1865' ll='1907' type='void __argp_error_internal(const struct argp_state * state, const char * fmt, struct __va_list_tag * ap, unsigned int mode_flags)'/>
+<use f='codebrowser/argp/argp-help.c' l='1913' u='c' c='__argp_error'/>
+<doc f='codebrowser/argp/argp-help.c' l='1862'>/* If appropriate, print the printf string FMT and following args, preceded
+   by the program name and `:&apos;, to stderr, and followed by a `Try ... --help&apos;
+   message, then exit (1).  */</doc>

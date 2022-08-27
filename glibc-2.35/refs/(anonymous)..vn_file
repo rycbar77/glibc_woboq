@@ -1,0 +1,11 @@
+<dec f='codebrowser/elf/elf.h' l='1078' type='Elf32_Word'/>
+<dec f='codebrowser/elf/elf.h' l='1089' type='Elf64_Word'/>
+<offset>32</offset>
+<doc f='codebrowser/elf/elf.h' l='1078'>/* Offset of filename for this
+					   dependency */</doc>
+<doc f='codebrowser/elf/elf.h' l='1089'>/* Offset of filename for this
+					   dependency */</doc>
+<use f='codebrowser/elf/dl-version.c' l='200' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='306' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/rtld.c' l='2238' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2251' u='r' c='dl_main'/>

@@ -1,0 +1,5 @@
+<def f='codebrowser/sysdeps/generic/dl-debug.h' l='25' ll='31' type='void elf_setup_debug_entry(struct link_map * l, struct r_debug * r)'/>
+<use f='codebrowser/elf/dl-reloc-static-pie.c' l='72' u='c' c='_dl_relocate_static_pie'/>
+<doc f='codebrowser/sysdeps/generic/dl-debug.h' l='22'>/* There is a DT_DEBUG entry in the dynamic section.  Fill it in with the
+   run-time address of the r_debug structure  */</doc>
+<use f='codebrowser/elf/rtld.c' l='1823' u='c' c='dl_main'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1166' type='void _dl_mcount_wrapper(void * selfpc)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1163'>/* This function is simply a wrapper around the _dl_mcount function
+   which does not require a FROMPC parameter since this is the
+   calling function.  */</doc>
+<def f='codebrowser/elf/dl-profstub.c' l='27' ll='31' type='void _dl_mcount_wrapper(void * selfpc)'/>
+<doc f='codebrowser/elf/dl-profstub.c' l='23'>/* This is the map for the shared object we profile.  It is defined here
+   only because we test for this value being NULL or not.  */</doc>

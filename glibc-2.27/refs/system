@@ -1,0 +1,6 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='781' type='int system(const char * __command)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='777'>/* Execute the given line as a shell command.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<def f='codebrowser/sysdeps/posix/system.c' l='187' macro='1' type='int system(const char * )'/>

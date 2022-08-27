@@ -1,0 +1,40 @@
+<dec f='codebrowser/malloc/malloc.c' l='1825' type='mchunkptr'/>
+<use f='codebrowser/malloc/malloc.c' l='1963' u='w' c='malloc_init_state'/>
+<use f='codebrowser/malloc/arena.c' l='47' u='r' c='heap_trim'/>
+<use f='codebrowser/malloc/arena.c' l='47' u='w' c='heap_trim'/>
+<use f='codebrowser/malloc/arena.c' l='47' u='w' c='_int_new_arena'/>
+<use f='codebrowser/malloc/arena.c' l='47' u='r' c='_int_new_arena'/>
+<use f='codebrowser/malloc/hooks.c' l='223' macro='1' u='r' c='top_check'/>
+<use f='codebrowser/malloc/malloc.c' l='2528' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2570' macro='1' u='w' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2571' macro='1' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2824' u='w' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2825' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2875' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2883' u='w' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2917' u='r' c='systrim'/>
+<use f='codebrowser/malloc/malloc.c' l='2934' u='r' c='systrim'/>
+<use f='codebrowser/malloc/malloc.c' l='2963' u='r' c='systrim'/>
+<use f='codebrowser/malloc/malloc.c' l='3615' macro='1' u='r' c='__libc_calloc'/>
+<use f='codebrowser/malloc/malloc.c' l='3616' macro='1' u='r' c='__libc_calloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4326' u='r' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4336' u='w' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4539' u='r' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4544' u='r' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4544' u='r' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4567' u='r' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4612' u='w' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4635' u='r' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4642' macro='1' u='r' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4732' u='r' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='4759' u='w' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='4811' u='r' c='_int_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4816' u='w' c='_int_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4817' u='r' c='_int_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4823' u='r' c='_int_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='5142' u='r' c='int_mallinfo'/>
+<use f='codebrowser/malloc/malloc.c' l='5187' u='r' c='int_mallinfo'/>
+<use f='codebrowser/malloc/malloc.c' l='5706' u='r' c='__malloc_info'/>
+<use f='codebrowser/malloc/malloc.c' l='5776' macro='1' u='r' c='__malloc_info'/>
+<offset>768</offset>
+<doc f='codebrowser/malloc/malloc.c' l='1824'>/* Base of the topmost chunk -- not otherwise kept in a bin */</doc>

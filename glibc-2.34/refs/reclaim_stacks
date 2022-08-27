@@ -1,0 +1,6 @@
+<def f='codebrowser/sysdeps/nptl/fork.h' l='55' ll='150' type='void reclaim_stacks()'/>
+<use f='codebrowser/posix/fork.c' l='102' u='c' c='__libc_fork'/>
+<doc f='codebrowser/sysdeps/nptl/fork.h' l='51'>/* In case of a fork() call the memory allocation in the child will be
+   the same but only one thread is running.  All stacks except that of
+   the one running thread are not used anymore.  We have to recycle
+   them.  */</doc>

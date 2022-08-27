@@ -1,0 +1,17 @@
+<dec f='codebrowser/posix/regex_internal.c' l='39' type='unsigned int re_string_context_at(const re_string_t * input, Idx idx, int eflags)'/>
+<use f='codebrowser/posix/regex_internal.c' l='628' u='c' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='677' u='c' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='772' u='c' c='re_string_reconstruct'/>
+<def f='codebrowser/posix/regex_internal.c' l='925' ll='963' type='unsigned int re_string_context_at(const re_string_t * input, Idx idx, int eflags)'/>
+<use f='codebrowser/posix/regexec.c' l='1008' u='c' c='acquire_init_state_context'/>
+<use f='codebrowser/posix/regexec.c' l='1199' u='c' c='check_halt_state_context'/>
+<use f='codebrowser/posix/regexec.c' l='2239' u='c' c='transit_state'/>
+<use f='codebrowser/posix/regexec.c' l='2299' u='c' c='merge_state_with_log'/>
+<use f='codebrowser/posix/regexec.c' l='2460' u='c' c='transit_state_mb'/>
+<use f='codebrowser/posix/regexec.c' l='2494' u='c' c='transit_state_mb'/>
+<use f='codebrowser/posix/regexec.c' l='2530' u='c' c='transit_state_bkref'/>
+<use f='codebrowser/posix/regexec.c' l='2560' u='c' c='transit_state_bkref'/>
+<use f='codebrowser/posix/regexec.c' l='2866' u='c' c='check_arrival'/>
+<use f='codebrowser/posix/regexec.c' l='2953' u='c' c='check_arrival'/>
+<use f='codebrowser/posix/regexec.c' l='3962' u='c' c='check_node_accept'/>
+<doc f='codebrowser/posix/regex_internal.c' l='923'>/* Return the context at IDX in INPUT.  */</doc>

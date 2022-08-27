@@ -1,0 +1,4 @@
+<dec f='codebrowser/support/support.h' l='221' type='void support_stack_free(struct support_stack * stack)'/>
+<doc f='codebrowser/support/support.h' l='220'>/* Deallocate the STACK.  */</doc>
+<def f='codebrowser/support/support_stack_alloc.c' l='77' ll='83' type='void support_stack_free(struct support_stack * stack)'/>
+<use f='codebrowser/support/xsigstack.c' l='71' u='c' c='xfree_sigstack'/>

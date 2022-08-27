@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='36' type='void __timer_fork_subprocess()'/>
+<dec f='codebrowser/sysdeps/nptl/fork.h' l='48' type='void __timer_fork_subprocess()'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='48' c='__timer_fork_subprocess'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='48' u='r' c='fork_system_setup_after_fork'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='48' u='c' c='fork_system_setup_after_fork'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='34'>/* Called from fork so that the new subprocess re-creates the
+   notification thread if necessary.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='118' ll='123' type='void __timer_fork_subprocess()'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='117'>/* Reset variables so that after a fork a new helper thread gets started.  */</doc>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/fenv.h' l='11' type='int __feraiseexcept(int __excepts)'/>
+<use f='codebrowser/math/s_iseqsig_template.c' l='38' u='c' c='__iseqsig'/>
+<use f='codebrowser/math/w_ilogb_template.c' l='35' u='c' c='__ilogb'/>
+<use f='codebrowser/math/w_llogb_template.c' l='43' u='c' c='__llogb'/>
+<use f='codebrowser/sysdeps/x86/fpu/fenv_private.h' l='151' u='c' c='libc_feupdateenv_test_sse'/>
+<use f='codebrowser/sysdeps/x86/fpu/fenv_private.h' l='170' u='c' c='libc_feupdateenv_test_387'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/feupdateenv.c' l='38' u='c' c='__feupdateenv'/>
+<def f='codebrowser/sysdeps/x86_64/fpu/fraiseexcpt.c' l='22' ll='118' type='int __feraiseexcept(int excepts)'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/fraiseexcpt.c' l='120' c='feraiseexcept'/>

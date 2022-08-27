@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/include/asm/prctl.h' l='17'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/include/asm/prctl.h' l='12'>/* Return CET features in unsigned long long *addr:
+     features: addr[0].
+     shadow stack base address: addr[1].
+     shadow stack size: addr[2].
+ */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86_64/getcontext.S' l='73' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86_64/swapcontext.S' l='117' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/cpu-features.c' l='27' u='c'/>

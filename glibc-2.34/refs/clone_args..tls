@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/clone3.h' l='52' type='__aligned_uint64_t'/>
+<use f='codebrowser/nptl/pthread_create.c' l='292' u='w' c='create_thread'/>
+<offset>448</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/clone3.h' l='51'>/* Location of new TLS.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='37' u='r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clone-internal.c' l='85' u='r' c='__clone_internal'/>

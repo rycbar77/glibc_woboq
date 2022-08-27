@@ -1,0 +1,5 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='101' ll='108' type='kernel_timer_t timerid_to_kernel_timer(timer_t timerid)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='30' u='c' c='___timer_delete'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_getoverr.c' l='28' u='c' c='___timer_getoverrun'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_gettime.c' l='90' u='c' c='___timer_gettime_new'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_settime.c' l='118' u='c' c='___timer_settime_new'/>

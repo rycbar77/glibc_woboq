@@ -1,0 +1,9 @@
+<def f='codebrowser/resolv/gai_misc.h' l='27' ll='40'/>
+<use f='codebrowser/resolv/gai_misc.h' l='29'/>
+<use f='codebrowser/resolv/gai_misc.h' l='54'/>
+<size>32</size>
+<doc f='codebrowser/resolv/gai_misc.h' l='26'>/* Used to synchronize.  */</doc>
+<mbr r='waitlist::next' o='0' t='struct waitlist *'/>
+<mbr r='waitlist::counterp' o='64' t='volatile unsigned int *'/>
+<mbr r='waitlist::sigevp' o='128' t='struct sigevent *'/>
+<mbr r='waitlist::caller_pid' o='192' t='pid_t'/>

@@ -1,0 +1,26 @@
+<dec f='codebrowser/nss/nsswitch.h' l='129' type='void * __nss_lookup_function(struct nss_action * ni, const char * fct_name)'/>
+<dec f='codebrowser/nss/nsswitch.h' l='130' type='void * __nss_lookup_function(struct nss_action * , const char * )'/>
+<use f='codebrowser/nss/nsswitch.h' l='130' c='__nss_lookup_function'/>
+<doc f='codebrowser/nss/nsswitch.h' l='127'>/* Search for the service described in NI for a function named FCT_NAME
+   and return a pointer to this function if successful.  */</doc>
+<use f='codebrowser/grp/compat-initgroups.c' l='23' u='c' c='compat_call'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='27' u='c' c='compat_call'/>
+<use f='codebrowser/grp/compat-initgroups.c' l='35' u='c' c='compat_call'/>
+<use f='codebrowser/grp/initgroups.c' l='95' u='c' c='internal_getgrouplist'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='78' u='c' c='endnetgrent_hook'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='116' u='c' c='__internal_setnetgrent_reuse'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='255' u='c' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='284' u='c' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='404' u='c' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='468' u='c' c='innetgr'/>
+<use f='codebrowser/nss/nsswitch.c' l='108' u='c' c='__nss_lookup'/>
+<use f='codebrowser/nss/nsswitch.c' l='110' u='c' c='__nss_lookup'/>
+<use f='codebrowser/nss/nsswitch.c' l='118' u='c' c='__nss_lookup'/>
+<use f='codebrowser/nss/nsswitch.c' l='120' u='c' c='__nss_lookup'/>
+<use f='codebrowser/nss/nsswitch.c' l='161' u='c' c='__nss_next2'/>
+<use f='codebrowser/nss/nsswitch.c' l='163' u='c' c='__nss_next2'/>
+<def f='codebrowser/nss/nsswitch.c' l='173' ll='179' type='void * __nss_lookup_function(nss_action_list ni, const char * fct_name)'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='312' u='c' c='getcanonname'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='743' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='820' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='827' u='c' c='gaih_inet'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/nscd/nscd.h' l='216' type='const char *'/>
+<doc f='codebrowser/nscd/nscd.h' l='215'>/* Name and UID of user who is allowed to request statistics.  */</doc>
+<def f='codebrowser/nscd/connections.c' l='65' type='const char *'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='203' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='204' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='206' u='r' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='181' u='r' c='receive_print_stats'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='183' u='r' c='receive_print_stats'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='186' u='r' c='receive_print_stats'/>

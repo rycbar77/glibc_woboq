@@ -1,0 +1,4 @@
+<def f='codebrowser/csu/elf-init.c' l='95' ll='107' type='void __libc_csu_fini()'/>
+<doc f='codebrowser/csu/elf-init.c' l='92'>/* This function should not be used anymore.  We run the executable&apos;s
+   destructor now just like any other.  We cannot remove the function,
+   though.  */</doc>

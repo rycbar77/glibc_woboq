@@ -1,0 +1,19 @@
+<use f='codebrowser/elf/dl-diagnostics.c' l='247' macro='1' u='r' c='_dl_print_diagnostics'/>
+<use f='codebrowser/elf/dl-minimal.c' l='135' macro='1' u='r' c='rtld_malloc'/>
+<use f='codebrowser/elf/dl-minimal.c' l='136' macro='1' u='r' c='rtld_malloc'/>
+<use f='codebrowser/elf/dl-minimal.c' l='148' macro='1' u='r' c='rtld_malloc'/>
+<use f='codebrowser/elf/dl-minimal.c' l='148' macro='1' u='r' c='rtld_malloc'/>
+<use f='codebrowser/elf/dl-minimal.c' l='151' macro='1' u='r' c='rtld_malloc'/>
+<use f='codebrowser/elf/rtld.c' l='360' u='w'/>
+<use f='codebrowser/elf/rtld.c' l='1516' macro='1' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld_static_init.c' l='73' c='__rtld_static_init'/>
+<use f='codebrowser/elf/rtld_static_init.c' l='74' u='w' c='__rtld_static_init'/>
+<use f='codebrowser/malloc/arena.c' l='447' macro='1' u='r' c='new_heap'/>
+<use f='codebrowser/malloc/arena.c' l='525' macro='1' u='r' c='grow_heap'/>
+<use f='codebrowser/malloc/arena.c' l='591' macro='1' u='r' c='heap_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='2409' macro='1' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2879' macro='1' u='r' c='systrim'/>
+<use f='codebrowser/malloc/malloc.c' l='2934' macro='1' u='r' c='munmap_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='2965' macro='1' u='r' c='mremap_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='4930' macro='1' u='r' c='mtrim'/>
+<use f='codebrowser/malloc/malloc-check.c' l='144' macro='1' u='r' c='mem2chunk_check'/>

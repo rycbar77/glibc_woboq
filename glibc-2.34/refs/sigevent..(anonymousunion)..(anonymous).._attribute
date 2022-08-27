@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/types/sigevent_t.h' l='39' type='pthread_attr_t *'/>
+<offset>64</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/types/sigevent_t.h' l='39'>/* Thread attributes.  */</doc>
+<use f='codebrowser/resolv/gai_notify.c' l='65' macro='1' u='r' c='__gai_notify_only'/>
+<use f='codebrowser/rt/aio_notify.c' l='67' macro='1' u='r' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='236' macro='1' u='r' c='__mq_notify'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='244' macro='1' u='r' c='__mq_notify'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='91' macro='1' u='r' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='97' macro='1' u='r' c='___timer_create'/>

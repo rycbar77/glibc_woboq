@@ -1,0 +1,5 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='892' type='char * gcvt(double __value, int __ndigit, char * __buf)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='889'>/* If possible convert VALUE to a string with NDIGIT significant digits.
+   Otherwise use exponential representation.  The resulting string will
+   be written to BUF.  */</doc>
+<def f='codebrowser/misc/efgcvt.c' l='42' macro='1' type='char * gcvt(double , int , char * )'/>

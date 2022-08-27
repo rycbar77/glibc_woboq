@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='212' type='int'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='211'>/* Concurrency handling.  */</doc>
+<use f='codebrowser/nptl/pthread_getconcurrency.c' l='24' u='r' c='__pthread_getconcurrency'/>
+<def f='codebrowser/nptl/pthread_setconcurrency.c' l='23' type='int'/>
+<use f='codebrowser/nptl/pthread_setconcurrency.c' l='32' u='w' c='__pthread_setconcurrency'/>
+<doc f='codebrowser/nptl/pthread_setconcurrency.c' l='22'>/* Global definition.  Needed in pthread_getconcurrency as well.  */</doc>

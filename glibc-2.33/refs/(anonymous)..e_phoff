@@ -1,0 +1,19 @@
+<dec f='codebrowser/elf/elf.h' l='70' type='Elf32_Off'/>
+<dec f='codebrowser/elf/elf.h' l='88' type='Elf64_Off'/>
+<offset>256</offset>
+<doc f='codebrowser/elf/elf.h' l='70'>/* Program header table file offset */</doc>
+<doc f='codebrowser/elf/elf.h' l='88'>/* Program header table file offset */</doc>
+<use f='codebrowser/elf/dl-load.h' l='94' u='r' c='_dl_postprocess_loadcmd'/>
+<use f='codebrowser/elf/dl-load.h' l='96' u='r' c='_dl_postprocess_loadcmd'/>
+<use f='codebrowser/elf/dl-load.h' l='98' u='r' c='_dl_postprocess_loadcmd'/>
+<use f='codebrowser/elf/dl-load.c' l='1093' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1094' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1099' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1760' u='r' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1761' u='r' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1766' u='r' c='open_verify'/>
+<use f='codebrowser/elf/setup-vdso.h' l='39' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/readelflib.c' l='84' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='84' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/rtld.c' l='1720' u='r' c='dl_main'/>
+<use f='codebrowser/csu/libc-start.c' l='188' u='r' c='__libc_start_main'/>

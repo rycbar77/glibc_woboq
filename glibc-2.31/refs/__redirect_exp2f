@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/x86_64/fpu/multiarch/e_exp2f.c' l='22' type='float __redirect_exp2f(float )'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-fma.h' l='21' macro='1' c='__exp2f_sse2'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/ifunc-fma.h' l='22' macro='1' c='__exp2f_fma'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/e_exp2f.c' l='27' c='__exp2f'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/e_exp2f.c' l='27' c='__exp2f_ifunc'/>
+<use f='codebrowser/sysdeps/x86_64/fpu/multiarch/e_exp2f.c' l='27' c='__exp2f_ifunc'/>

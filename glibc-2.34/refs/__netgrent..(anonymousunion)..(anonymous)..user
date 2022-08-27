@@ -1,0 +1,7 @@
+<dec f='codebrowser/inet/netgroup.h' l='43' type='const char *'/>
+<offset>64</offset>
+<use f='codebrowser/inet/getnetgrent_r.c' l='221' u='w' c='nscd_getnetgrent'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='330' u='r' c='__internal_getnetgrent_r'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='450' u='r' c='innetgr'/>
+<use f='codebrowser/inet/getnetgrent_r.c' l='451' u='r' c='innetgr'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='265' u='w' c='_nss_netgroup_parseline'/>

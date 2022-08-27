@@ -1,0 +1,20 @@
+<dec f='codebrowser/resolv/gai_misc.h' l='34' type='volatile unsigned int *'/>
+<offset>64</offset>
+<use f='codebrowser/resolv/gai_notify.c' l='118' macro='1' u='r' c='__gai_notify'/>
+<use f='codebrowser/resolv/gai_notify.c' l='118' macro='1' u='r' c='__gai_notify'/>
+<use f='codebrowser/resolv/gai_notify.c' l='118' macro='1' u='r' c='__gai_notify'/>
+<use f='codebrowser/resolv/gai_notify.c' l='129' u='r' c='__gai_notify'/>
+<use f='codebrowser/resolv/gai_notify.c' l='134' u='r' c='__gai_notify'/>
+<use f='codebrowser/resolv/gai_suspend.c' l='57' u='w' c='___gai_suspend_time64'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='112' u='w' c='__getaddrinfo_a'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='166' u='w' c='__getaddrinfo_a'/>
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='54' type='volatile unsigned int *'/>
+<offset>128</offset>
+<use f='codebrowser/rt/aio_notify.c' l='141' macro='1' u='r' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_notify.c' l='141' macro='1' u='r' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_notify.c' l='141' macro='1' u='r' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_notify.c' l='152' u='r' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_notify.c' l='157' u='r' c='__aio_notify'/>
+<use f='codebrowser/rt/aio_suspend.c' l='148' u='w' c='___aio_suspend_time64'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='151' u='w' c='lio_listio_internal'/>
+<use f='codebrowser/rt/lio_listio-common.c' l='214' u='w' c='lio_listio_internal'/>

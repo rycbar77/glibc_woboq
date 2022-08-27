@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='852' type='void _dl_error_free(void * ptr)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='850'>/* Used internally to implement dlerror message freeing.  See
+   include/dlfcn.h and dlfcn/dlerror.c.  */</doc>
+<use f='codebrowser/dlfcn/dlerror.h' l='59' u='c' c='dl_error_free'/>
+<def f='codebrowser/elf/dl-exception.c' l='37' ll='42' type='void _dl_error_free(void * ptr)'/>
+<doc f='codebrowser/elf/dl-exception.c' l='33'>/* Call free in the main libc.so.  This allows other namespaces to
+   free pointers on the main libc heap, via GLRO (dl_error_free).  It
+   also avoids calling free on the special, pre-allocated
+   out-of-memory error message.  */</doc>
+<use f='codebrowser/elf/dl-libc.c' l='51' macro='1' u='c' c='dlerror_run'/>
+<use f='codebrowser/elf/rtld.c' l='370'/>

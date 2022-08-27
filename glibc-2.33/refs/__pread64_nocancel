@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='47' type='ssize_t __pread64_nocancel(int , void * , size_t , __off64_t )'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='80' type='ssize_t __pread64_nocancel(int , void * , size_t , __off64_t )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='80' c='__pread64_nocancel'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='46'>/* Non cancellable pread syscall (LFS version).  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='1098' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1765' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1804' u='c' c='open_verify'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/pread64_nocancel.c' l='23' ll='27' type='ssize_t __pread64_nocancel(int fd, void * buf, size_t count, off64_t offset)'/>
+<use f='codebrowser/login/utmp_file.c' l='173' u='c' c='read_last_entry'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1295' type='void _dl_aux_init(Elf64_auxv_t * av)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1294'>/* Used by static binaries to check the auxiliary vector.  */</doc>
+<def f='codebrowser/elf/dl-support.c' l='237' ll='322' type='void _dl_aux_init(Elf64_auxv_t * av)'/>
+<use f='codebrowser/csu/libc-start.c' l='264' u='c' c='__libc_start_main_impl'/>

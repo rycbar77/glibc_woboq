@@ -1,0 +1,15 @@
+<dec f='codebrowser/nscd/nscd_proto.h' l='34' type='int'/>
+<use f='codebrowser/nss/getXXbyYY_r.c' l='246' macro='1' u='r' c='__getgrgid_r'/>
+<use f='codebrowser/nss/getXXbyYY_r.c' l='246' macro='1' u='w' c='__getgrgid_r'/>
+<use f='codebrowser/nss/getXXbyYY_r.c' l='247' macro='1' u='w' c='__getgrgid_r'/>
+<use f='codebrowser/nss/getXXbyYY_r.c' l='249' macro='1' u='r' c='__getgrgid_r'/>
+<use f='codebrowser/grp/initgroups.c' l='50' u='r' c='internal_getgrouplist'/>
+<use f='codebrowser/grp/initgroups.c' l='51' u='w' c='internal_getgrouplist'/>
+<use f='codebrowser/grp/initgroups.c' l='52' u='w' c='internal_getgrouplist'/>
+<use f='codebrowser/grp/initgroups.c' l='53' u='r' c='internal_getgrouplist'/>
+<use f='codebrowser/grp/initgroups.c' l='61' u='w' c='internal_getgrouplist'/>
+<def f='codebrowser/nscd/nscd_getgr_r.c' l='38' type='int'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='137' u='w' c='nscd_getgr_r'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='148' u='w' c='nscd_getgr_r'/>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='86' u='w' c='__nscd_getgrouplist'/>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='135' u='w' c='__nscd_getgrouplist'/>

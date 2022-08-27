@@ -1,0 +1,5 @@
+<def f='codebrowser/sysdeps/nptl/pthreadP.h' l='699' ll='709' type='int check_sched_priority_attr(int pr, int pol)'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='697'>/* Returns 0 if PR is within the accepted range of priority values for
+   the scheduling policy POL or EINVAL otherwise.  */</doc>
+<use f='codebrowser/nptl/pthread_attr_setschedparam.c' l='29' u='c' c='__pthread_attr_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='42' u='c' c='__pthread_setattr_default_np'/>

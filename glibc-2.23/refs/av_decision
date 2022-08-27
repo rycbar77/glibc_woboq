@@ -1,0 +1,12 @@
+<def f='include/selinux/selinux.h' l='132' ll='139'/>
+<use f='include/selinux/selinux.h' l='194' c='security_compute_av'/>
+<use f='include/selinux/selinux.h' l='199' c='security_compute_av_raw'/>
+<use f='include/selinux/selinux.h' l='205' c='security_compute_av_flags'/>
+<use f='include/selinux/selinux.h' l='210' c='security_compute_av_flags_raw'/>
+<size>24</size>
+<mbr r='av_decision::allowed' o='0' t='access_vector_t'/>
+<mbr r='av_decision::decided' o='32' t='access_vector_t'/>
+<mbr r='av_decision::auditallow' o='64' t='access_vector_t'/>
+<mbr r='av_decision::auditdeny' o='96' t='access_vector_t'/>
+<mbr r='av_decision::seqno' o='128' t='unsigned int'/>
+<mbr r='av_decision::flags' o='160' t='unsigned int'/>

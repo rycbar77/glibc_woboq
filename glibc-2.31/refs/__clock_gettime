@@ -1,0 +1,26 @@
+<dec f='codebrowser/include/time.h' l='23' type='int __clock_gettime(clockid_t , struct timespec * )'/>
+<dec f='codebrowser/include/time.h' l='24' type='int __clock_gettime(clockid_t , struct timespec * )'/>
+<use f='codebrowser/include/time.h' l='24' c='__clock_gettime'/>
+<use f='codebrowser/include/time.h' l='326' u='c' c='time_now'/>
+<use f='codebrowser/inet/deadline.c' l='31' u='c' c='__deadline_current_time'/>
+<use f='codebrowser/inet/deadline.c' l='32' u='c' c='__deadline_current_time'/>
+<use f='codebrowser/nptl/lll_timedlock_wait.c' l='40' u='c' c='__lll_clocklock_wait'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='54' u='c' c='clockwait_tid'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='63' u='c' c='wait_on_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='74' u='c' c='wait_on_socket'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='216' u='c' c='open_socket'/>
+<use f='codebrowser/include/random-bits.h' l='34' u='c' c='random_bits'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='256' u='c' c='authdes_marshal'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='458' u='c' c='synchronize'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='126' u='c' c='__GI_authunix_create'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='301' u='c' c='authunix_refresh'/>
+<use f='codebrowser/sunrpc/create_xid.c' l='44' u='c' c='_create_xid'/>
+<use f='codebrowser/sunrpc/svcauth_des.c' l='301' u='c' c='_svcauth_des'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='621' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock.c' l='34' u='c' c='clock'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/clock_gettime.c' l='30' macro='1' type='int __clock_gettime(clockid_t clock_id, struct timespec * tp)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_gettime.c' l='100' c='clock_gettime'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/clock_gettime.c' l='28'>/* Get current value of CLOCK and store it in TP.  */</doc>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='549' u='c' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/time/ftime.c' l='26' u='c' c='ftime'/>
+<use f='codebrowser/time/timespec_get.c' l='27' u='c' c='timespec_get'/>

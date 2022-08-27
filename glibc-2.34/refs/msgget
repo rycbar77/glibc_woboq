@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysvipc/sys/msg.h' l='74' type='int msgget(key_t __key, int __msgflg)'/>
+<doc f='codebrowser/sysvipc/sys/msg.h' l='73'>/* Get messages queue.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/msgget.c' l='26' ll='34' type='int msgget(key_t key, int msgflg)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/msgget.c' l='23'>/* Return descriptor for message queue associated with KEY.  The MSGFLG
+   parameter describes how to proceed with clashing of key values.  */</doc>

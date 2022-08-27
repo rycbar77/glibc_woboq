@@ -1,0 +1,9 @@
+<dec f='codebrowser/signal/signal.h' l='196' type='int sigemptyset(sigset_t * __set)'/>
+<dec f='codebrowser/include/signal.h' l='5' type='int sigemptyset(sigset_t * )'/>
+<use f='codebrowser/include/signal.h' l='5' c='sigemptyset'/>
+<doc f='codebrowser/signal/signal.h' l='195'>/* Clear all signals from SET.  */</doc>
+<def f='codebrowser/signal/sigempty.c' l='23' ll='35' type='int sigemptyset(sigset_t * set)'/>
+<doc f='codebrowser/signal/sigempty.c' l='22'>/* Clear all signals from SET.  */</doc>
+<use f='codebrowser/signal/sighold.c' l='29' u='c' c='sighold'/>
+<use f='codebrowser/signal/sigrelse.c' l='29' u='c' c='sigrelse'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='83' u='c' c='__gai_start_notify_thread'/>

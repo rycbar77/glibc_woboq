@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/stdlib.h' l='120' type='void __call_tls_dtors()'/>
+<dec f='codebrowser/include/stdlib.h' l='125' type='void __call_tls_dtors()'/>
+<use f='codebrowser/include/stdlib.h' l='125' c='__call_tls_dtors'/>
+<use f='codebrowser/nptl/pthread_create.c' l='448' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='450' u='c' c='start_thread'/>
+<def f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='147' ll='168' type='void __call_tls_dtors()'/>
+<doc f='codebrowser/stdlib/cxa_thread_atexit_impl.c' l='145'>/* Call the destructors.  This is called either when a thread returns from the
+   initial function or when the process exits via the exit function.  */</doc>
+<use f='codebrowser/stdlib/exit.c' l='43' u='a' c='__run_exit_handlers'/>
+<use f='codebrowser/stdlib/exit.c' l='46' u='c' c='__run_exit_handlers'/>

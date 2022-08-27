@@ -1,0 +1,16 @@
+<dec f='codebrowser/resolv/netdb.h' l='258' type='char **'/>
+<offset>64</offset>
+<doc f='codebrowser/resolv/netdb.h' l='258'>/* Alias list.  */</doc>
+<use f='codebrowser/nss/nss_files/files-service.c' l='51' u='r' c='_nss_db_getservbyname_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='36' u='w' c='_nss_files_parse_servent'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='228' u='w' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='285' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='289' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='318' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='327' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='333' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/servicescache.c' l='167' u='r' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='174' u='r' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='226' u='r' c='cache_addserv'/>
+<use f='codebrowser/nss/getent.c' l='757' u='r' c='print_services'/>
+<use f='codebrowser/nss/getent.c' l='760' u='r' c='print_services'/>

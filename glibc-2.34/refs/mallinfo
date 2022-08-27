@@ -1,0 +1,22 @@
+<def f='codebrowser/malloc/malloc.h' l='81' ll='93'/>
+<dec f='codebrowser/malloc/malloc.h' l='113' type='struct mallinfo mallinfo()'/>
+<use f='codebrowser/malloc/malloc.h' l='113' c='mallinfo'/>
+<use f='codebrowser/malloc/malloc.c' l='5133' c='__libc_mallinfo'/>
+<use f='codebrowser/malloc/malloc.c' l='5136' c='__libc_mallinfo'/>
+<def f='codebrowser/malloc/malloc-debug.c' l='482' ll='496' type='struct mallinfo mallinfo()'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='482' c='mallinfo'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='488' c='mallinfo'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='491' c='mallinfo'/>
+<size>40</size>
+<doc f='codebrowser/malloc/malloc.h' l='79'>/* SVID2/XPG mallinfo structure */</doc>
+<doc f='codebrowser/malloc/malloc.h' l='112'>/* Returns a copy of the updated current mallinfo. */</doc>
+<mbr r='mallinfo::arena' o='0' t='int'/>
+<mbr r='mallinfo::ordblks' o='32' t='int'/>
+<mbr r='mallinfo::smblks' o='64' t='int'/>
+<mbr r='mallinfo::hblks' o='96' t='int'/>
+<mbr r='mallinfo::hblkhd' o='128' t='int'/>
+<mbr r='mallinfo::usmblks' o='160' t='int'/>
+<mbr r='mallinfo::fsmblks' o='192' t='int'/>
+<mbr r='mallinfo::uordblks' o='224' t='int'/>
+<mbr r='mallinfo::fordblks' o='256' t='int'/>
+<mbr r='mallinfo::keepcost' o='288' t='int'/>

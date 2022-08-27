@@ -1,0 +1,4 @@
+<def f='codebrowser/nptl/allocatestack.c' l='56' ll='142' type='struct pthread * get_cached_stack(size_t * sizep, void ** memp)'/>
+<use f='codebrowser/nptl/allocatestack.c' l='362' u='c' c='allocate_stack'/>
+<doc f='codebrowser/nptl/allocatestack.c' l='54'>/* Get a stack frame from the cache.  We have to match by size since
+   some blocks might be too small or far too large.  */</doc>

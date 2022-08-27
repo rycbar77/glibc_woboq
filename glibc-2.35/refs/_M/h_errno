@@ -1,0 +1,43 @@
+<dec f='codebrowser/resolv/netdb.h' l='56'/>
+<use f='codebrowser/include/netdb.h' l='8' u='w'/>
+<dec f='codebrowser/include/netdb.h' l='12'/>
+<use f='codebrowser/include/netdb.h' l='14' u='c'/>
+<doc f='codebrowser/resolv/netdb.h' l='54'>/* Error status for non-reentrant lookup functions.
+   We use a macro to access always the thread-specific `h_errno&apos; variable.  */</doc>
+<use f='codebrowser/inet/herrno-loc.c' l='27' u='c'/>
+<use f='codebrowser/inet/herrno.c' l='20' u='w'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='318' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='561' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='562' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='586' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='595' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='597' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='749' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='754' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='756' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='759' u='c'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='912' u='c'/>
+<use f='codebrowser/nscd/hstcache.c' l='415' u='c'/>
+<use f='codebrowser/nscd/hstcache.c' l='418' u='c'/>
+<use f='codebrowser/nscd/hstcache.c' l='421' u='c'/>
+<use f='codebrowser/nscd/hstcache.c' l='423' u='c'/>
+<use f='codebrowser/nscd/hstcache.c' l='461' u='c'/>
+<use f='codebrowser/nscd/hstcache.c' l='472' u='c'/>
+<use f='codebrowser/nscd/hstcache.c' l='478' u='c'/>
+<use f='codebrowser/nss/getnssent_r.c' l='195' u='c'/>
+<use f='codebrowser/resolv/herror.c' l='87' u='c'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='136' u='c'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='179' u='c'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='228' u='c'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='233' u='c'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='243' u='c'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='244' u='c'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='388' u='c'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='393' u='c'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='404' u='c'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='405' u='c'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='534' u='c'/>
+<use f='codebrowser/resolv/res_query.c' l='381' u='c'/>
+<use f='codebrowser/support/support_format_hostent.c' l='46' u='c'/>
+<use f='codebrowser/support/support_format_hostent.c' l='50' u='c'/>
+<use f='codebrowser/support/support_format_netent.c' l='32' u='c'/>

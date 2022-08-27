@@ -1,0 +1,20 @@
+<dec f='codebrowser/resolv/resolv_context.h' l='80' type='void __resolv_context_put(struct resolv_context * ctx)'/>
+<dec f='codebrowser/resolv/resolv_context.h' l='81' type='void __resolv_context_put(struct resolv_context * )'/>
+<use f='codebrowser/resolv/resolv_context.h' l='81' c='__resolv_context_put'/>
+<doc f='codebrowser/resolv/resolv_context.h' l='77'>/* Deallocate the temporary resolver context.  Converse of
+   __resolv_context_get.  Restore the RES_USE_INET6 flag if necessary.
+   Do nothing if CTX is NULL.  */</doc>
+<use f='codebrowser/nss/digits_dots.c' l='57' u='c' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/getnssent_r.c' l='104' u='c' c='__nss_setent'/>
+<use f='codebrowser/nss/getnssent_r.c' l='149' u='c' c='__nss_endent'/>
+<use f='codebrowser/nss/getnssent_r.c' l='250' u='c' c='__nss_getent_r'/>
+<def f='codebrowser/resolv/resolv_context.c' l='220' ll='237' type='void __resolv_context_put(struct resolv_context * ctx)'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='790' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='259' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='270' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='284' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='259' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='270' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='284' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='891' u='c' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='936' u='c' c='gaih_inet'/>

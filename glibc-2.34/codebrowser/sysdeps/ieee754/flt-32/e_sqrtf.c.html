@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>e_sqrtf.c source code [codebrowser/sysdeps/ieee754/flt-32/e_sqrtf.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/ieee754/flt-32/e_sqrtf.c'; var root_path = '../../../..'; var data_path = '../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>sysdeps</a>/<a href='..'>ieee754</a>/<a href='./'>flt-32</a>/<a href='e_sqrtf.c.html'>e_sqrtf.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* e_sqrtf.c -- float version of e_sqrt.c.</i></td></tr>
+<tr><th id="2">2</th><td><i> * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.</i></td></tr>
+<tr><th id="3">3</th><td><i> */</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><i>/*</i></td></tr>
+<tr><th id="6">6</th><td><i> * ====================================================</i></td></tr>
+<tr><th id="7">7</th><td><i> * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.</i></td></tr>
+<tr><th id="8">8</th><td><i> *</i></td></tr>
+<tr><th id="9">9</th><td><i> * Developed at SunPro, a Sun Microsystems, Inc. business.</i></td></tr>
+<tr><th id="10">10</th><td><i> * Permission to use, copy, modify, and distribute this</i></td></tr>
+<tr><th id="11">11</th><td><i> * software is freely granted, provided that this notice</i></td></tr>
+<tr><th id="12">12</th><td><i> * is preserved.</i></td></tr>
+<tr><th id="13">13</th><td><i> * ====================================================</i></td></tr>
+<tr><th id="14">14</th><td><i> */</i></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#include <a href="../../../include/math.h.html">&lt;math.h&gt;</a></u></td></tr>
+<tr><th id="17">17</th><td><u>#include <a href="../../x86/fpu/math_private.h.html">&lt;math_private.h&gt;</a></u></td></tr>
+<tr><th id="18">18</th><td><u>#include <a href="../libm-alias-finite.h.html">&lt;libm-alias-finite.h&gt;</a></u></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../../generic/math-use-builtins.h.html">&lt;math-use-builtins.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><em>float</em></td></tr>
+<tr><th id="22">22</th><td><dfn class="decl def fn" id="__ieee754_sqrtf" title='__ieee754_sqrtf' data-ref="__ieee754_sqrtf" data-ref-filename="__ieee754_sqrtf">__ieee754_sqrtf</dfn>(<em>float</em> <dfn class="local col1 decl" id="1x" title='x' data-type='float' data-ref="1x" data-ref-filename="1x">x</dfn>)</td></tr>
+<tr><th id="23">23</th><td>{</td></tr>
+<tr><th id="24">24</th><td><u>#<span data-ppcond="24">if</span> <a class="macro" href="../../x86_64/fpu/math-use-builtins-sqrt.h.html#2" title="1" data-ref="_M/USE_SQRTF_BUILTIN">USE_SQRTF_BUILTIN</a></u></td></tr>
+<tr><th id="25">25</th><td>	<b>return</b> <a class="ref fn" href="#25" title='__builtin_sqrtf' data-ref="__builtin_sqrtf" data-ref-filename="__builtin_sqrtf">__builtin_sqrtf</a> (<a class="local col1 ref" href="#1x" title='x' data-ref="1x" data-ref-filename="1x">x</a>);</td></tr>
+<tr><th id="26">26</th><td><u>#<span data-ppcond="24">else</span></u></td></tr>
+<tr><th id="27">27</th><td>	<i>/* Use generic implementation.  */</i></td></tr>
+<tr><th id="28">28</th><td>	<em>float</em> z;</td></tr>
+<tr><th id="29">29</th><td>	int32_t sign = (<em>int</em>)<var>0x80000000</var>;</td></tr>
+<tr><th id="30">30</th><td>	int32_t ix,s,q,m,t,i;</td></tr>
+<tr><th id="31">31</th><td>	uint32_t r;</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td>	GET_FLOAT_WORD(ix,x);</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td>    <i>/* take care of Inf and NaN */</i></td></tr>
+<tr><th id="36">36</th><td>	<b>if</b>((ix&amp;<var>0x7f800000</var>)==<var>0x7f800000</var>) {</td></tr>
+<tr><th id="37">37</th><td>	    <b>return</b> x*x+x;		<i>/* sqrt(NaN)=NaN, sqrt(+inf)=+inf</i></td></tr>
+<tr><th id="38">38</th><td><i>					   sqrt(-inf)=sNaN */</i></td></tr>
+<tr><th id="39">39</th><td>	}</td></tr>
+<tr><th id="40">40</th><td>    <i>/* take care of zero */</i></td></tr>
+<tr><th id="41">41</th><td>	<b>if</b>(ix&lt;=<var>0</var>) {</td></tr>
+<tr><th id="42">42</th><td>	    <b>if</b>((ix&amp;(~sign))==<var>0</var>) <b>return</b> x;<i>/* sqrt(+-0) = +-0 */</i></td></tr>
+<tr><th id="43">43</th><td>	    <b>else</b> <b>if</b>(ix&lt;<var>0</var>)</td></tr>
+<tr><th id="44">44</th><td>		<b>return</b> (x-x)/(x-x);		<i>/* sqrt(-ve) = sNaN */</i></td></tr>
+<tr><th id="45">45</th><td>	}</td></tr>
+<tr><th id="46">46</th><td>    <i>/* normalize x */</i></td></tr>
+<tr><th id="47">47</th><td>	m = (ix&gt;&gt;<var>23</var>);</td></tr>
+<tr><th id="48">48</th><td>	<b>if</b>(m==<var>0</var>) {				<i>/* subnormal x */</i></td></tr>
+<tr><th id="49">49</th><td>	    <b>for</b>(i=<var>0</var>;(ix&amp;<var>0x00800000</var>)==<var>0</var>;i++) ix&lt;&lt;=<var>1</var>;</td></tr>
+<tr><th id="50">50</th><td>	    m -= i-<var>1</var>;</td></tr>
+<tr><th id="51">51</th><td>	}</td></tr>
+<tr><th id="52">52</th><td>	m -= <var>127</var>;	<i>/* unbias exponent */</i></td></tr>
+<tr><th id="53">53</th><td>	ix = (ix&amp;<var>0x007fffff</var>)|<var>0x00800000</var>;</td></tr>
+<tr><th id="54">54</th><td>	<b>if</b>(m&amp;<var>1</var>)	<i>/* odd m, double x to make it even */</i></td></tr>
+<tr><th id="55">55</th><td>	    ix += ix;</td></tr>
+<tr><th id="56">56</th><td>	m &gt;&gt;= <var>1</var>;	<i>/* m = [m/2] */</i></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td>    <i>/* generate sqrt(x) bit by bit */</i></td></tr>
+<tr><th id="59">59</th><td>	ix += ix;</td></tr>
+<tr><th id="60">60</th><td>	q = s = <var>0</var>;		<i>/* q = sqrt(x) */</i></td></tr>
+<tr><th id="61">61</th><td>	r = <var>0x01000000</var>;		<i>/* r = moving bit from right to left */</i></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td>	<b>while</b>(r!=<var>0</var>) {</td></tr>
+<tr><th id="64">64</th><td>	    t = s+r;</td></tr>
+<tr><th id="65">65</th><td>	    <b>if</b>(t&lt;=ix) {</td></tr>
+<tr><th id="66">66</th><td>		s    = t+r;</td></tr>
+<tr><th id="67">67</th><td>		ix  -= t;</td></tr>
+<tr><th id="68">68</th><td>		q   += r;</td></tr>
+<tr><th id="69">69</th><td>	    }</td></tr>
+<tr><th id="70">70</th><td>	    ix += ix;</td></tr>
+<tr><th id="71">71</th><td>	    r&gt;&gt;=<var>1</var>;</td></tr>
+<tr><th id="72">72</th><td>	}</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td>    <i>/* use floating add to find out rounding direction */</i></td></tr>
+<tr><th id="75">75</th><td>	<b>if</b>(ix!=<var>0</var>) {</td></tr>
+<tr><th id="76">76</th><td>	    z = <var>0x1p0</var> - <var>0x1.4484cp-100</var>; <i>/* trigger inexact flag.  */</i></td></tr>
+<tr><th id="77">77</th><td>	    <b>if</b> (z &gt;= <var>0x1p0</var>) {</td></tr>
+<tr><th id="78">78</th><td>		z = <var>0x1p0</var> + <var>0x1.4484cp-100</var>;</td></tr>
+<tr><th id="79">79</th><td>		<b>if</b> (z &gt; <var>0x1p0</var>)</td></tr>
+<tr><th id="80">80</th><td>		    q += <var>2</var>;</td></tr>
+<tr><th id="81">81</th><td>		<b>else</b></td></tr>
+<tr><th id="82">82</th><td>		    q += (q&amp;<var>1</var>);</td></tr>
+<tr><th id="83">83</th><td>	    }</td></tr>
+<tr><th id="84">84</th><td>	}</td></tr>
+<tr><th id="85">85</th><td>	ix = (q&gt;&gt;<var>1</var>)+<var>0x3f000000</var>;</td></tr>
+<tr><th id="86">86</th><td>	ix += (m &lt;&lt;<var>23</var>);</td></tr>
+<tr><th id="87">87</th><td>	SET_FLOAT_WORD(z,ix);</td></tr>
+<tr><th id="88">88</th><td>	<b>return</b> z;</td></tr>
+<tr><th id="89">89</th><td><u>#<span data-ppcond="24">endif</span> /* ! USE_SQRTF_BUILTIN  */</u></td></tr>
+<tr><th id="90">90</th><td>}</td></tr>
+<tr><th id="91">91</th><td><u>#<span data-ppcond="91">ifndef</span> <span class="macro" data-ref="_M/__ieee754_sqrtf">__ieee754_sqrtf</span></u></td></tr>
+<tr><th id="92">92</th><td><a class="macro" href="../libm-alias-finite.h.html#36" title="" data-ref="_M/libm_alias_finite">libm_alias_finite</a> (__ieee754_sqrtf, __sqrtf)</td></tr>
+<tr><th id="93">93</th><td><u>#<span data-ppcond="91">endif</span></u></td></tr>
+<tr><th id="94">94</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

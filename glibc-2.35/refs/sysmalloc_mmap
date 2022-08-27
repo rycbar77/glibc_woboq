@@ -1,0 +1,10 @@
+<def f='codebrowser/malloc/malloc.c' l='2419' ll='2499' type='void * sysmalloc_mmap(size_t nb, size_t pagesize, int extra_flags, mstate av)'/>
+<use f='codebrowser/malloc/malloc.c' l='2589' u='c' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2594' u='c' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2678' u='c' c='sysmalloc'/>
+<doc f='codebrowser/malloc/malloc.c' l='2412'>/*
+   sysmalloc handles malloc cases requiring more memory from the system.
+   On entry, it is assumed that av-&gt;top does not have enough
+   space to service request for nb bytes, thus requiring that av-&gt;top
+   be extended or replaced.
+ */</doc>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/libio/bits/libio.h' l='96'/>
+<doc f='codebrowser/libio/bits/libio.h' l='90'>/* Magic numbers and bits for the _flags field.
+   The magic numbers use the high-order bits of _flags;
+   the remaining bits are available for variable flags.
+   Note: The magic numbers must all be negative if stdio
+   emulation is desired. */</doc>
+<dec f='codebrowser/libio/libio.h' l='71'/>
+<doc f='codebrowser/libio/libio.h' l='67'>/* Magic number and bits for the _flags field.  The magic number is
+   mostly vestigial, but preserved for compatibility.  It occupies the
+   high 16 bits of _flags; the low 16 bits are actual flag bits.  */</doc>
+<use f='codebrowser/libio/fileops.c' l='159' u='c'/>
+<use f='codebrowser/libio/genops.c' l='532' u='c'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='2319' u='c'/>

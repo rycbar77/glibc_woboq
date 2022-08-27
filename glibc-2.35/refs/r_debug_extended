@@ -1,0 +1,17 @@
+<def f='codebrowser/elf/link.h' l='74' ll='84'/>
+<use f='codebrowser/elf/link.h' l='83'/>
+<use f='codebrowser/include/link.h' l='369'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='373'/>
+<size>48</size>
+<doc f='codebrowser/elf/link.h' l='68'>/* The extended rendezvous structure used by the run-time dynamic linker
+   to communicate details of shared object loading to the debugger.  If
+   the executable&apos;s dynamic section has a DT_DEBUG element, the run-time
+   linker sets that element&apos;s value to the address where this structure
+   can be found.  */</doc>
+<mbr r='r_debug_extended::base' o='0' t='struct r_debug'/>
+<mbr r='r_debug_extended::r_next' o='320' t='struct r_debug_extended *'/>
+<use f='codebrowser/elf/dl-debug.c' l='39' c='_dl_debug_update'/>
+<use f='codebrowser/elf/dl-debug.c' l='57' c='_dl_debug_initialize'/>
+<use f='codebrowser/elf/dl-debug.c' l='57' c='_dl_debug_initialize'/>
+<use f='codebrowser/elf/dl-debug.c' l='75' c='_dl_debug_initialize'/>
+<size>48</size>

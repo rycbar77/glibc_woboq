@@ -1,0 +1,23 @@
+<dec f='codebrowser/sysdeps/x86_64/nptl/tls.h' l='120'/>
+<use f='codebrowser/nptl/descr.h' l='410' u='c'/>
+<doc f='codebrowser/sysdeps/x86_64/nptl/tls.h' l='118'>/* The TCB can have any size and the memory following the address the
+   thread pointer points to is unspecified.  Allocate the TCB there.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='93' u='c'/>
+<use f='codebrowser/csu/libc-tls.c' l='142' u='c'/>
+<use f='codebrowser/csu/libc-tls.c' l='168' u='c'/>
+<use f='codebrowser/csu/libc-tls.c' l='185' u='c'/>
+<use f='codebrowser/elf/dl-close.c' l='588' u='c'/>
+<use f='codebrowser/elf/dl-reloc.c' l='62' u='c'/>
+<use f='codebrowser/nptl/allocatestack.c' l='256' u='c'/>
+<use f='codebrowser/nptl/allocatestack.c' l='270' u='c'/>
+<use f='codebrowser/nptl/allocatestack.c' l='379' u='c'/>
+<use f='codebrowser/nptl/allocatestack.c' l='567' u='c'/>
+<use f='codebrowser/nptl/pthread_create.c' l='626' u='c'/>
+<use f='codebrowser/nptl_db/structs.def' l='102' u='c'/>
+<use f='codebrowser/nptl_db/structs.def' l='102' u='c'/>
+<use f='codebrowser/nptl_db/db_info.c' l='60' u='c'/>
+<use f='codebrowser/nptl_db/structs.def' l='102' u='c'/>
+<use f='codebrowser/elf/dl-tls.c' l='408' u='c'/>
+<use f='codebrowser/elf/dl-tls.c' l='441' u='c'/>
+<use f='codebrowser/elf/dl-tls.c' l='583' u='c'/>
+<use f='codebrowser/elf/dl-tls.c' l='1065' u='c'/>

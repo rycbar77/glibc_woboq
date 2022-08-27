@@ -1,0 +1,6 @@
+<dec f='codebrowser/libio/libioP.h' l='680' type='int __obstack_vprintf_internal(struct obstack * ob, const char * fmt, struct __va_list_tag * ap, unsigned int mode_flags)'/>
+<use f='codebrowser/debug/obprintf_chk.c' l='34' u='c' c='__obstack_printf_chk'/>
+<use f='codebrowser/debug/vobprintf_chk.c' l='30' u='c' c='__obstack_vprintf_chk'/>
+<def f='codebrowser/libio/obprintf.c' l='118' ll='175' type='int __obstack_vprintf_internal(struct obstack * obstack, const char * format, struct __va_list_tag * args, unsigned int mode_flags)'/>
+<use f='codebrowser/libio/obprintf.c' l='180' u='c' c='__obstack_vprintf'/>
+<use f='codebrowser/libio/obprintf.c' l='190' u='c' c='__obstack_printf'/>

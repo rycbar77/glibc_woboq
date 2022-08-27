@@ -1,0 +1,7 @@
+<dec f='codebrowser/resolv/gai_misc.h' l='97' type='int __gai_sigqueue(int sig, const union sigval val, pid_t caller_pid)'/>
+<dec f='codebrowser/resolv/gai_misc.h' l='98' type='int __gai_sigqueue(int , const union sigval , pid_t )'/>
+<use f='codebrowser/resolv/gai_misc.h' l='98' c='__gai_sigqueue'/>
+<doc f='codebrowser/resolv/gai_misc.h' l='96'>/* Send the signal.  */</doc>
+<use f='codebrowser/resolv/gai_notify.c' l='95' u='c' c='__gai_notify_only'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/gai_sigqueue.c' l='30' ll='46' type='int __gai_sigqueue(int sig, const union sigval val, pid_t caller_pid)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/gai_sigqueue.c' l='29'>/* Return any pending signal or wait for one for the given time.  */</doc>

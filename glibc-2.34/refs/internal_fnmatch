@@ -1,0 +1,16 @@
+<dec f='codebrowser/posix/fnmatch_loop.c' l='31' macro='1' type='int internal_fnmatch(const char * pattern, const char * string, const char * string_end, _Bool no_leading_period, int flags, struct fnmatch_struct * ends, size_t alloca_used)'/>
+<def f='codebrowser/posix/fnmatch_loop.c' l='40' macro='1' type='int internal_fnmatch(const char * pattern, const char * string, const char * string_end, _Bool no_leading_period, int flags, struct fnmatch_struct * ends, size_t alloca_used)'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='184' macro='1' u='c' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='193' macro='1' u='c' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='207' macro='1' u='c' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1085' macro='1' u='c' c='ext_match'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1095' macro='1' u='c' c='ext_match'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1100' macro='1' u='c' c='ext_match'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1108' macro='1' u='c' c='ext_match'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1125' macro='1' u='c' c='ext_match'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1135' macro='1' u='c' c='ext_match'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1153' macro='1' u='c' c='ext_match'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='1160' macro='1' u='c' c='ext_match'/>
+<use f='codebrowser/posix/fnmatch.c' l='303' u='c' c='__fnmatch'/>
+<doc f='codebrowser/posix/fnmatch_loop.c' l='29'>/* Match STRING against the file name pattern PATTERN, returning zero if
+   it matches, nonzero if not.  */</doc>

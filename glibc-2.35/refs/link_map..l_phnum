@@ -1,0 +1,22 @@
+<dec f='codebrowser/include/link.h' l='137' type='Elf64_Half'/>
+<offset>5568</offset>
+<use f='codebrowser/elf/dl-addr-obj.c' l='66' u='r' c='_dl_addr_inside_object'/>
+<use f='codebrowser/elf/dl-find_object.h' l='103' u='r' c='_dl_find_object_from_map'/>
+<use f='codebrowser/elf/dl-find_object.c' l='486' u='r' c='_dlfo_process_initial'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='67' u='r' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/dl-load.c' l='1077' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1100' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1110' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1368' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1410' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-profile.c' l='207' u='r' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-reloc.c' l='254' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/setup-vdso.h' l='38' u='w' c='setup_vdso'/>
+<use f='codebrowser/elf/setup-vdso.h' l='39' u='r' c='setup_vdso'/>
+<use f='codebrowser/elf/dl-support.c' l='340' u='w' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/rtld.c' l='1116' u='r' c='rtld_chain_load'/>
+<use f='codebrowser/elf/rtld.c' l='1141' u='r' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1585' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1629' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1768' u='w' c='dl_main'/>
+<use f='codebrowser/elf/sprof.c' l='450' u='r' c='load_shobj'/>

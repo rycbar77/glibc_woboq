@@ -1,0 +1,15 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='128' type='int32_t'/>
+<dec f='codebrowser/nscd/nscd-client.h' l='141' type='int32_t'/>
+<offset>160</offset>
+<use f='codebrowser/nscd/aicache.c' l='42' u='w'/>
+<use f='codebrowser/nscd/aicache.c' l='373' u='w' c='addhstaiX'/>
+<use f='codebrowser/nscd/cachedumper.c' l='225' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='262' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/hstcache.c' l='52' u='w'/>
+<use f='codebrowser/nscd/hstcache.c' l='73' u='w'/>
+<use f='codebrowser/nscd/hstcache.c' l='87' u='w'/>
+<use f='codebrowser/nscd/hstcache.c' l='265' u='w' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='268' u='a' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='268' u='a' c='cache_addhst'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='181' u='r' c='__nscd_getai'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='423' u='r' c='nscd_gethst_r'/>

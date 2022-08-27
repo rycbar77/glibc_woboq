@@ -1,0 +1,7 @@
+<dec f='codebrowser/resolv/netdb.h' l='259' type='int'/>
+<offset>128</offset>
+<doc f='codebrowser/resolv/netdb.h' l='259'>/* Port number.  */</doc>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='236' u='w' c='nscd_getserv_r'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='35' u='w' c='_nss_files_parse_servent'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='59' u='r' c='_nss_files_getservbyport_r'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='187' u='r' c='gaih_inet_serv'/>

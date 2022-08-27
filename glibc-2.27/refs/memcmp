@@ -1,0 +1,84 @@
+<dec f='codebrowser/string/string.h' l='63' type='int memcmp(const void * __s1, const void * __s2, size_t __n)'/>
+<dec f='codebrowser/include/string.h' l='128' type='int memcmp(const void * , const void * , unsigned long )'/>
+<use f='codebrowser/include/string.h' l='128' c='memcmp'/>
+<doc f='codebrowser/string/string.h' l='62'>/* Compare N bytes of S1 and S2.  */</doc>
+<use f='codebrowser/elf/cache.c' l='187' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='192' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='193' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='215' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='217' u='c' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='706' u='c' c='load_aux_cache'/>
+<use f='codebrowser/elf/dl-cache.c' l='207' u='c' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-cache.c' l='219' u='c' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-cache.c' l='224' u='c' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='102' u='c' c='_dl_important_hwcaps'/>
+<use f='codebrowser/elf/dl-load.c' l='171' u='c' c='is_trusted_path_normalize'/>
+<use f='codebrowser/elf/dl-load.c' l='429' u='c' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='1511' macro='1' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1511' macro='1' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1515' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1560' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1649' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='2039' u='c' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-profile.c' l='420' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='422' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/elf/readlib.c' l='119' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='160' u='c' c='process_file'/>
+<use f='codebrowser/elf/readelflib.c' l='149' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='149' u='c' c='process_elf64_file'/>
+<use f='codebrowser/elf/rtld.c' l='2379' u='c' c='process_dl_debug'/>
+<use f='codebrowser/elf/rtld.c' l='2488' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2494' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2499' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2505' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2512' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2519' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2525' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2530' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2538' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2554' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2561' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2568' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2575' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2583' macro='1' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2586' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2596' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2603' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2614' u='c' c='process_envvars'/>
+<use f='codebrowser/elf/rtld.c' l='2623' macro='1' u='c' c='process_envvars'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='310' u='c' c='add_module'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='407' u='c' c='read_conf_file'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='410' u='c' c='read_conf_file'/>
+<use f='codebrowser/inet/rcmd.c' l='689' u='c' c='__checkhost_sa'/>
+<use f='codebrowser/locale/newlocale.c' l='134' u='c' c='__newlocale'/>
+<use f='codebrowser/locale/setlocale.c' l='301' u='c' c='setlocale'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='482' u='c' c='__nscd_cache_search'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='543' u='c' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='762' u='c' c='internal_fnmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='543' u='c' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/fnmatch_loop.c' l='762' u='c' c='internal_fnwmatch'/>
+<use f='codebrowser/posix/regexec.c' l='1275' u='c' c='proceed_next_node'/>
+<use f='codebrowser/posix/regexec.c' l='2682' u='c' c='get_subexp'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='236' u='c' c='same_address_v6'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='223' u='c' c='init'/>
+<use f='codebrowser/string/str-two-way.h' l='79' u='c' c='two_way_short_needle'/>
+<use f='codebrowser/string/str-two-way.h' l='79' u='c' c='two_way_long_needle'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1682' u='c' c='in6aicmp'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2373' u='c' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/tempname.c' l='220' u='c' c='__gen_tempname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname.c' l='153' u='c' c='ttyname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='138' u='c' c='__ttyname_r'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='37' c='__memcmp_sse2'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='50' c='__memcmp_avx2_movbe'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='54' c='__memcmp_sse4_1'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='56' c='__memcmp_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='58' c='__memcmp_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/memcmp.c' l='29' macro='1' type='int memcmp(const void * , const void * , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/memcmp.c' l='31' c='bcmp'/>
+<use f='codebrowser/time/tzfile.c' l='135' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='136' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='190' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='413' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzset.c' l='94' u='c' c='__tzstring_len'/>
+<use f='codebrowser/wctype/wctype.c' l='37' u='c' c='__wctype'/>
+<use f='codebrowser/wctype/wctype_l.c' l='38' u='c' c='__wctype_l'/>

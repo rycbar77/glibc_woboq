@@ -1,0 +1,18 @@
+<dec f='codebrowser/locale/programs/locfile.h' l='123' type='void end_locale_structure(struct locale_file * file)'/>
+<use f='codebrowser/locale/programs/3level.h' l='312' u='c' c='add_locale_collidx_table'/>
+<use f='codebrowser/locale/programs/3level.h' l='312' u='c' c='add_locale_collseq_table'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='993' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1003' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1037' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1046' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1054' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1087' u='c' c='ctype_output'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3541' u='c' c='add_locale_wctype_table'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='235' u='c' c='identification_output'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='571' u='c' c='time_output'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='579' u='c' c='time_output'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='601' u='c' c='time_output'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='633' u='c' c='time_output'/>
+<def f='codebrowser/locale/programs/locfile.c' l='669' ll='675' type='void end_locale_structure(struct locale_file * file)'/>
+<doc f='codebrowser/locale/programs/locfile.c' l='667'>/* Finish a structure element that was started by start_locale_structure.
+   Empty structures are OK and behave like add_locale_empty.  */</doc>

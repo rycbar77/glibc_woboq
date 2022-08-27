@@ -1,0 +1,16 @@
+<dec f='codebrowser/nscd/nscd_proto.h' l='36' type='int'/>
+<dec f='codebrowser/nscd/nscd_getai.c' l='32' type='int'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='51' u='w' c='__nscd_getai'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='102' u='w' c='__nscd_getai'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='177' u='w' c='__nscd_getai'/>
+<doc f='codebrowser/nscd/nscd_getai.c' l='31'>/* Define in nscd_gethst_r.c.  */</doc>
+<def f='codebrowser/nscd/nscd_gethst_r.c' l='30' type='int'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='104' u='r' c='__nscd_get_nl_timestamp'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='148' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='226' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='237' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='627' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='628' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='629' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='631' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='725' u='r' c='gaih_inet'/>

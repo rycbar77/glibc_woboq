@@ -1,0 +1,135 @@
+<def f='codebrowser/nscd/nscd-client.h' l='211' ll='238'/>
+<use f='codebrowser/nscd/nscd-client.h' l='241' c='datahead_init_common'/>
+<use f='codebrowser/nscd/nscd-client.h' l='259' c='datahead_init_pos'/>
+<use f='codebrowser/nscd/nscd-client.h' l='271' c='datahead_init_neg'/>
+<use f='codebrowser/nscd/nscd-client.h' l='433' c='__nscd_cache_search'/>
+<size>24</size>
+<doc f='codebrowser/nscd/nscd-client.h' l='210'>/* Head of record in data part of database.  */</doc>
+<mbr r='datahead::allocsize' o='0' t='nscd_ssize_t'/>
+<mbr r='datahead::recsize' o='32' t='nscd_ssize_t'/>
+<mbr r='datahead::timeout' o='64' t='nscd_time_t'/>
+<mbr r='datahead::notfound' o='128' t='uint8_t'/>
+<mbr r='datahead::nreloads' o='136' t='uint8_t'/>
+<mbr r='datahead::usable' o='144' t='uint8_t'/>
+<mbr r='datahead::unused' o='152' t='uint8_t'/>
+<mbr r='datahead::ttl' o='160' t='uint32_t'/>
+<mbr r='datahead::data' o='192' t='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.35/argp/../grp/../nscd/nscd-client.h:225:3)[0]'/>
+<use f='codebrowser/nscd/nscd.h' l='277' c='cache_search'/>
+<use f='codebrowser/nscd/nscd.h' l='281' c='cache_add'/>
+<use f='codebrowser/nscd/nscd.h' l='292' c='readdpwbyname'/>
+<use f='codebrowser/nscd/nscd.h' l='294' c='readdpwbyuid'/>
+<use f='codebrowser/nscd/nscd.h' l='302' c='readdgrbyname'/>
+<use f='codebrowser/nscd/nscd.h' l='304' c='readdgrbygid'/>
+<use f='codebrowser/nscd/nscd.h' l='316' c='readdhstbyname'/>
+<use f='codebrowser/nscd/nscd.h' l='318' c='readdhstbyaddr'/>
+<use f='codebrowser/nscd/nscd.h' l='320' c='readdhstbynamev6'/>
+<use f='codebrowser/nscd/nscd.h' l='322' c='readdhstbyaddrv6'/>
+<use f='codebrowser/nscd/nscd.h' l='328' c='readdhstai'/>
+<use f='codebrowser/nscd/nscd.h' l='335' c='readdinitgroups'/>
+<use f='codebrowser/nscd/nscd.h' l='341' c='readdservbyname'/>
+<use f='codebrowser/nscd/nscd.h' l='345' c='readdservbyport'/>
+<use f='codebrowser/nscd/nscd.h' l='351' c='readdinnetgr'/>
+<use f='codebrowser/nscd/nscd.h' l='355' c='readdgetnetgrent'/>
+<use f='codebrowser/nscd/aicache.c' l='49' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='60' c='addhstaiX'/>
+<use f='codebrowser/nscd/aicache.c' l='531' c='readdhstai'/>
+<size>24</size>
+<use f='codebrowser/nscd/cache.c' l='48'/>
+<use f='codebrowser/nscd/cache.c' l='72' c='cache_search'/>
+<use f='codebrowser/nscd/cache.c' l='79' c='cache_search'/>
+<use f='codebrowser/nscd/cache.c' l='93' c='cache_search'/>
+<use f='codebrowser/nscd/cache.c' l='94' c='cache_search'/>
+<use f='codebrowser/nscd/cache.c' l='136' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='352' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='352' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='470' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='471' c='prune_cache'/>
+<size>24</size>
+<use f='codebrowser/nscd/cachedumper.c' l='140' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/cachedumper.c' l='140' c='nscd_print_cache'/>
+<size>24</size>
+<use f='codebrowser/nscd/connections.c' l='424' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/connections.c' l='427' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/connections.c' l='427' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/connections.c' l='434' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/connections.c' l='440' c='verify_persistent_db'/>
+<use f='codebrowser/nscd/connections.c' l='1136' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1137' c='handle_request'/>
+<size>24</size>
+<use f='codebrowser/nscd/grpcache.c' l='72' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='82' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='87' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='87' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='413' c='addgrbyX'/>
+<use f='codebrowser/nscd/grpcache.c' l='468' c='readdgrbyname'/>
+<use f='codebrowser/nscd/grpcache.c' l='505' c='readdgrbygid'/>
+<size>24</size>
+<use f='codebrowser/nscd/hstcache.c' l='94' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='104' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='109' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='109' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='429' c='addhstbyX'/>
+<use f='codebrowser/nscd/hstcache.c' l='494' c='readdhstbyname'/>
+<use f='codebrowser/nscd/hstcache.c' l='516' c='readdhstbyaddr'/>
+<use f='codebrowser/nscd/hstcache.c' l='538' c='readdhstbynamev6'/>
+<use f='codebrowser/nscd/hstcache.c' l='560' c='readdhstbyaddrv6'/>
+<size>24</size>
+<use f='codebrowser/nscd/initgrcache.c' l='54' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='66' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='395' c='readdinitgroups'/>
+<size>24</size>
+<use f='codebrowser/nscd/mem.c' l='181' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='182' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='377' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='377' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='460' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='464' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='468' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='468' c='gc'/>
+<size>24</size>
+<use f='codebrowser/nscd/netgroupcache.c' l='63'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='115' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='453' c='addinnetgrX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='499' c='addinnetgrX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='612' c='addgetnetgrentX_ignore'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='632' c='readdgetnetgrent'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='654' c='readdinnetgr'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_getai.c' l='75' c='__nscd_getai'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='107' c='nscd_getgr_r'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='169' c='nscd_gethst_r'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='102' c='nscd_getpw_r'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='118' c='nscd_getserv_r'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_helper.c' l='449' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='460' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='484' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='487' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='488' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='499' c='__nscd_cache_search'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_initgroups.c' l='55' c='__nscd_getgrouplist'/>
+<size>24</size>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='64' c='__nscd_setnetgrent'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='218' c='__nscd_innetgr'/>
+<size>24</size>
+<use f='codebrowser/nscd/pwdcache.c' l='78' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='88' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='93' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='93' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='391' c='addpwbyX'/>
+<use f='codebrowser/nscd/pwdcache.c' l='447' c='readdpwbyname'/>
+<use f='codebrowser/nscd/pwdcache.c' l='484' c='readdpwbyuid'/>
+<size>24</size>
+<use f='codebrowser/nscd/servicescache.c' l='66' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='76' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='81' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='81' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='342' c='addservbyX'/>
+<use f='codebrowser/nscd/servicescache.c' l='394' c='readdservbyname'/>
+<use f='codebrowser/nscd/servicescache.c' l='416' c='readdservbyport'/>
+<size>24</size>

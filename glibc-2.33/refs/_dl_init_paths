@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1063' type='void _dl_init_paths(const char * library_path, const char * source, const char * glibc_hwcaps_prepend, const char * glibc_hwcaps_mask)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1058'>/* Initialize the basic data structure for the search paths.  SOURCE
+   is either &quot;LD_LIBRARY_PATH&quot; or &quot;--library-path&quot;.
+   GLIBC_HWCAPS_PREPEND adds additional glibc-hwcaps subdirectories to
+   search.  GLIBC_HWCAPS_MASK is used to filter the built-in
+   subdirectories if not NULL.  */</doc>
+<def f='codebrowser/elf/dl-load.c' l='684' ll='838' type='void _dl_init_paths(const char * llp, const char * source, const char * glibc_hwcaps_prepend, const char * glibc_hwcaps_mask)'/>
+<use f='codebrowser/elf/dl-support.c' l='339' u='c' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-main.h' l='109' u='c' c='call_init_paths'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/generic/malloc-hugepages.h' l='25' type='unsigned long __malloc_default_thp_pagesize()'/>
+<doc f='codebrowser/sysdeps/generic/malloc-hugepages.h' l='24'>/* Return the default transparent huge page size.  */</doc>
+<use f='codebrowser/malloc/malloc.c' l='5440' u='c' c='do_set_hugetlb'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c' l='25' ll='48' type='unsigned long __malloc_default_thp_pagesize()'/>

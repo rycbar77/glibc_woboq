@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/ipc-perm.h' l='35' type='__mode_t'/>
+<offset>160</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/ipc-perm.h' l='35'>/* Read/write permission.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/msgctl.c' l='27' u='r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/msgctl.c' l='145' u='r' c='__msgctl'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/msgctl.c' l='147' u='w' c='__msgctl'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/semctl.c' l='134' u='r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/semctl.c' l='196' u='r' c='__semctl'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/semctl.c' l='198' u='w' c='__semctl'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/shmctl.c' l='28' u='r'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/shmctl.c' l='148' u='r' c='__shmctl'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/shmctl.c' l='150' u='w' c='__shmctl'/>

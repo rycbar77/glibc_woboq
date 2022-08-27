@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/stdio.h' l='136' type='int _IO_fputs(const char * , _IO_FILE * )'/>
+<dec f='codebrowser/include/stdio.h' l='137' type='int _IO_fputs(const char * , _IO_FILE * )'/>
+<use f='codebrowser/include/stdio.h' l='137' c='_IO_fputs'/>
+<dec f='codebrowser/libio/iolibio.h' l='30' type='int _IO_fputs(const char * , _IO_FILE * )'/>
+<dec f='codebrowser/libio/iolibio.h' l='31' type='int _IO_fputs(const char * , _IO_FILE * )'/>
+<use f='codebrowser/libio/iolibio.h' l='31' c='_IO_fputs'/>
+<def f='codebrowser/libio/iofputs.c' l='30' ll='42' type='int _IO_fputs(const char * str, _IO_FILE * fp)'/>
+<use f='codebrowser/libio/iofputs.c' l='45' c='fputs'/>
+<use f='codebrowser/malloc/malloc.c' l='5404' macro='1' u='c' c='__malloc_info'/>
+<use f='codebrowser/malloc/malloc.c' l='5553' macro='1' u='c' c='__malloc_info'/>

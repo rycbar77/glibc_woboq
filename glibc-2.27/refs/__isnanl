@@ -1,0 +1,11 @@
+<dec f='codebrowser/math/bits/mathcalls-helper-functions.h' l='36' macro='1' type='int __isnanl(long double __value)'/>
+<dec f='codebrowser/include/math.h' l='24' type='int __isnanl(long double )'/>
+<use f='codebrowser/include/math.h' l='24' c='__isnanl'/>
+<use f='codebrowser/stdio-common/printf_fp.c' l='389' macro='1' u='c' c='__printf_fp_l'/>
+<use f='codebrowser/stdio-common/printf_fp.c' l='392' macro='1' u='c' c='__printf_fp_l'/>
+<use f='codebrowser/stdio-common/printf_size.c' l='157' macro='1' u='c' c='__printf_size'/>
+<use f='codebrowser/stdio-common/printf_size.c' l='160' macro='1' u='c' c='__printf_size'/>
+<use f='codebrowser/stdio-common/printf_fphex.c' l='217' macro='1' u='c' c='__printf_fphex'/>
+<use f='codebrowser/stdio-common/printf_fphex.c' l='220' macro='1' u='c' c='__printf_fphex'/>
+<def f='codebrowser/sysdeps/i386/fpu/s_isnanl.c' l='29' ll='41' type='int __isnanl(long double x)'/>
+<use f='codebrowser/sysdeps/i386/fpu/s_isnanl.c' l='43' c='isnanl'/>

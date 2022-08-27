@@ -1,0 +1,25 @@
+<dec f='codebrowser/posix/regex_internal.h' l='591' type='const re_dfa_t *const'/>
+<use f='codebrowser/posix/regexec.c' l='600' u='w' c='re_search_internal'/>
+<use f='codebrowser/posix/regexec.c' l='908' u='r' c='prune_impossible_nodes'/>
+<use f='codebrowser/posix/regexec.c' l='1004' u='r' c='acquire_init_state_context'/>
+<use f='codebrowser/posix/regexec.c' l='1046' u='r' c='check_matching'/>
+<use f='codebrowser/posix/regexec.c' l='1201' u='r' c='check_halt_state_context'/>
+<use f='codebrowser/posix/regexec.c' l='1216' u='r' c='proceed_next_node'/>
+<use f='codebrowser/posix/regexec.c' l='1611' u='r' c='build_sifted_states'/>
+<use f='codebrowser/posix/regexec.c' l='1721' u='r' c='update_cur_sifted_state'/>
+<use f='codebrowser/posix/regexec.c' l='1844' u='r' c='check_dst_limits'/>
+<use f='codebrowser/posix/regexec.c' l='1879' u='r' c='check_dst_limits_calc_pos_1'/>
+<use f='codebrowser/posix/regexec.c' l='2077' u='r' c='sift_states_bkref'/>
+<use f='codebrowser/posix/regexec.c' l='2176' u='r' c='sift_states_iter_mb'/>
+<use f='codebrowser/posix/regexec.c' l='2248' u='r' c='transit_state'/>
+<use f='codebrowser/posix/regexec.c' l='2263' u='r' c='merge_state_with_log'/>
+<use f='codebrowser/posix/regexec.c' l='2371' u='r' c='check_subexp_matching_top'/>
+<use f='codebrowser/posix/regexec.c' l='2442' u='r' c='transit_state_mb'/>
+<use f='codebrowser/posix/regexec.c' l='2511' u='r' c='transit_state_bkref'/>
+<use f='codebrowser/posix/regexec.c' l='2623' u='r' c='get_subexp'/>
+<use f='codebrowser/posix/regexec.c' l='2827' u='r' c='check_arrival'/>
+<use f='codebrowser/posix/regexec.c' l='2992' u='r' c='check_arrival_add_next_nodes'/>
+<use f='codebrowser/posix/regexec.c' l='3166' u='r' c='expand_bkref_cache'/>
+<use f='codebrowser/posix/regexec.c' l='3949' u='r' c='check_node_accept'/>
+<use f='codebrowser/posix/regexec.c' l='3950' u='r' c='check_node_accept'/>
+<offset>896</offset>

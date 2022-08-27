@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='428' type='void (*)(struct link_map *)'/>
+<use f='codebrowser/elf/dl-open.c' l='497' macro='1' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-reloc.c' l='105' macro='1' u='r' c='_dl_try_allocate_static_tls'/>
+<def f='codebrowser/elf/dl-support.c' l='137' type='void (*)(struct link_map *)'/>
+<use f='codebrowser/nptl/nptl-init.c' l='454' macro='1' u='w' c='__pthread_initialize_minimal_internal'/>

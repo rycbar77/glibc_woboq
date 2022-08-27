@@ -1,0 +1,21 @@
+<def f='include/c++/11/ext/type_traits.h' l='169' ll='170'/>
+<def f='include/c++/11/ext/type_traits.h' l='175' ll='177'/>
+<def f='include/c++/11/ext/type_traits.h' l='179' ll='181'/>
+<use f='include/c++/11/ext/type_traits.h' l='180'/>
+<def f='include/c++/11/ext/type_traits.h' l='183' ll='185'/>
+<use f='include/c++/11/ext/type_traits.h' l='184'/>
+<def f='include/c++/11/ext/type_traits.h' l='187' ll='189'/>
+<use f='include/c++/11/ext/type_traits.h' l='188'/>
+<use f='include/c++/11/ext/type_traits.h' l='197'/>
+<use f='include/c++/11/ext/type_traits.h' l='198'/>
+<use f='include/c++/11/ext/type_traits.h' l='205'/>
+<use f='include/c++/11/ext/type_traits.h' l='206'/>
+<use f='include/c++/11/ext/type_traits.h' l='207'/>
+<use f='include/c++/11/ext/type_traits.h' l='214'/>
+<use f='include/c++/11/ext/type_traits.h' l='215'/>
+<use f='include/c++/11/ext/type_traits.h' l='216'/>
+<use f='include/c++/11/ext/type_traits.h' l='217'/>
+<size>1</size>
+<doc f='include/c++/11/ext/type_traits.h' l='172'>// No nested __type member for non-integer non-floating point types,
+  // allows this type to be used for SFINAE to constrain overloads in
+  // &lt;cmath&gt; and &lt;complex&gt; to only the intended types.</doc>

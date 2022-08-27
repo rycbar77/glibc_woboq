@@ -1,0 +1,15 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='53' type='0'/>
+<use f='codebrowser/nscd/cache.c' l='50'/>
+<use f='codebrowser/nscd/cachedumper.c' l='183' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/connections.c' l='81' u='r'/>
+<use f='codebrowser/nscd/connections.c' l='219'/>
+<use f='codebrowser/nscd/connections.c' l='1169' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1642' u='r' c='nscd_run_worker'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='49' u='r' c='__nscd_getpwnam_r'/>
+<use f='codebrowser/nscd/pwdcache.c' l='333' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='341' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='342' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='347' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='381' u='r' c='lookup'/>
+<use f='codebrowser/nscd/pwdcache.c' l='451' u='r' c='readdpwbyname'/>
+<use f='codebrowser/nscd/selinux.c' l='48' u='r'/>

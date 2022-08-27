@@ -1,0 +1,29 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='48' type='1'/>
+<use f='codebrowser/sysdeps/nptl/pthread.h' l='54'/>
+<use f='codebrowser/elf/dl-open.c' l='824' macro='1' u='r' c='_dl_open'/>
+<use f='codebrowser/elf/dl-support.c' l='225' macro='1'/>
+<use f='codebrowser/elf/dl-support.c' l='229' macro='1'/>
+<use f='codebrowser/elf/rtld.c' l='324' macro='1'/>
+<use f='codebrowser/elf/rtld.c' l='325' macro='1'/>
+<use f='codebrowser/elf/rtld.c' l='332' macro='1'/>
+<use f='codebrowser/nptl/pthreadP.h' l='79' u='r'/>
+<use f='codebrowser/nptl/pthreadP.h' l='88' u='r'/>
+<use f='codebrowser/nptl/pthreadP.h' l='105' u='r'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='71' u='r' c='__pthread_mutex_unlock_usercnt'/>
+<use f='codebrowser/sysdeps/nptl/fork.c' l='133' macro='1' u='r' c='__libc_fork'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='100' macro='1'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='96' u='r' c='__pthread_mutex_cond_lock'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='385' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='421' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='421' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='515' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='63' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='64' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='356' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='393' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='393' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='487' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='46' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='47' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='260' u='r' c='__pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='395' u='r' c='__pthread_mutex_trylock'/>

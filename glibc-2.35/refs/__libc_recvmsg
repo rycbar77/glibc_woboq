@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/sys/socket.h' l='101' type='ssize_t __libc_recvmsg(int __fd, struct msghdr * __message, int __flags)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/recvmsg.c' l='34' macro='1' type='ssize_t __libc_recvmsg(int fd, struct msghdr * msg, int flags)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/recvmsg.c' l='59' c='recvmsg'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/recvmsg.c' l='60' c='__recvmsg'/>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/stdio.h' l='75' type='int __asprintf_chk(char ** , int , const char * )'/>
+<def f='codebrowser/debug/asprintf_chk.c' l='24' ll='38' type='int __asprintf_chk(char ** result_ptr, int flag, const char * format)'/>
+<doc f='codebrowser/debug/asprintf_chk.c' l='22'>/* Write formatted output from FORMAT to a string which is
+   allocated with malloc and stored in *STRING_PTR.  */</doc>
+<dec f='codebrowser/libio/bits/stdio2.h' l='166' type='int __asprintf_chk(char **restrict __ptr, int __flag, const char *restrict __fmt)'/>
+<use f='codebrowser/nscd/nscd.c' l='488' macro='1' u='c' c='more_help'/>
+<use f='codebrowser/nscd/nscd.c' l='497' macro='1' u='c' c='more_help'/>
+<use f='codebrowser/resolv/res_hconf.c' l='117' macro='1' u='c' c='arg_trimdomain_list'/>
+<use f='codebrowser/resolv/res_hconf.c' l='138' macro='1' u='c' c='arg_trimdomain_list'/>
+<use f='codebrowser/resolv/res_hconf.c' l='174' macro='1' u='c' c='arg_bool'/>
+<use f='codebrowser/resolv/res_hconf.c' l='218' macro='1' u='c' c='parse_line'/>
+<use f='codebrowser/resolv/res_hconf.c' l='250' macro='1' u='c' c='parse_line'/>

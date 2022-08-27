@@ -1,0 +1,5 @@
+<dec f='codebrowser/time/time.h' l='331' type='int timer_create(clockid_t __clock_id, struct sigevent *restrict __evp, timer_t *restrict __timerid)'/>
+<doc f='codebrowser/time/time.h' l='330'>/* Create new per-process timer using CLOCK_ID.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='46' c='__timer_create'/>
+<use f='codebrowser/support/support_create_timer.c' l='44' u='c' c='support_create_timer'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='139' macro='1' type='int timer_create(clockid_t , struct sigevent * , timer_t * )'/>

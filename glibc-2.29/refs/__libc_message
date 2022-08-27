@@ -1,0 +1,5 @@
+<use f='codebrowser/debug/fortify_fail.c' l='33' u='c' c='__fortify_fail_abort'/>
+<def f='codebrowser/sysdeps/posix/libc_fatal.c' l='66' ll='183' type='void __libc_message(enum __libc_message_action action, const char * fmt)'/>
+<use f='codebrowser/sysdeps/posix/libc_fatal.c' l='191' u='c' c='__libc_fatal'/>
+<doc f='codebrowser/sysdeps/posix/libc_fatal.c' l='65'>/* Abort with an error message.  */</doc>
+<use f='codebrowser/malloc/malloc.c' l='5352' u='c' c='malloc_printerr'/>

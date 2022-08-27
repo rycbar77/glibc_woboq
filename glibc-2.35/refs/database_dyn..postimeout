@@ -1,0 +1,21 @@
+<dec f='codebrowser/nscd/nscd.h' l='145' type='unsigned long'/>
+<use f='codebrowser/nscd/aicache.c' l='365' u='r' c='addhstaiX'/>
+<offset>1984</offset>
+<doc f='codebrowser/nscd/nscd.h' l='145'>/* In seconds.  */</doc>
+<use f='codebrowser/nscd/connections.c' l='127' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='146' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='165' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='184' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='203' u='w'/>
+<use f='codebrowser/nscd/grpcache.c' l='102' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='239' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/hstcache.c' l='256' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/initgrcache.c' l='189' u='r' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='273' u='r' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='361' u='r' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='127' u='w' c='nscd_parse_file'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='131' u='r' c='send_stats'/>
+<use f='codebrowser/nscd/pwdcache.c' l='108' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='222' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/servicescache.c' l='96' u='r' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='208' u='r' c='cache_addserv'/>

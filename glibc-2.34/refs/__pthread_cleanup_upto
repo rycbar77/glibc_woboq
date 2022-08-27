@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='300' type='void __pthread_cleanup_upto(long * target, char * targetframe)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='301' type='void __pthread_cleanup_upto(long * , char * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='301' c='__pthread_cleanup_upto'/>
+<doc f='codebrowser/sysdeps/nptl/pthreadP.h' l='299'>/* longjmp handling.  */</doc>
+<def f='codebrowser/nptl/pthread_cleanup_upto.c' l='24' ll='61' type='void __pthread_cleanup_upto(long * target, char * targetframe)'/>
+<use f='codebrowser/sysdeps/nptl/jmp-unwind.c' l='27' u='c' c='_longjmp_unwind'/>

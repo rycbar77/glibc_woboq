@@ -1,0 +1,6 @@
+<dec f='codebrowser/login/pty.h' l='42' type='int forkpty(int * __amaster, char * __name, const struct termios * __termp, const struct winsize * __winp)'/>
+<dec f='codebrowser/include/pty.h' l='6' type='int forkpty(int * , char * , const struct termios * , const struct winsize * )'/>
+<use f='codebrowser/include/pty.h' l='6' c='forkpty'/>
+<def f='codebrowser/login/forkpty.c' l='56' macro='1' type='int forkpty(int * , char * , const struct termios * , const struct winsize * )'/>
+<doc f='codebrowser/login/pty.h' l='40'>/* Create child process and establish the slave pseudo terminal as the
+   child&apos;s controlling terminal.  */</doc>

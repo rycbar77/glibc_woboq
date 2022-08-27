@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='268' type='struct audit_ifaces *'/>
+<offset>512</offset>
+<use f='codebrowser/elf/dl-sym-post.h' l='98' u='r' c='_dl_sym_post'/>
+<use f='codebrowser/elf/rtld.c' l='1047' u='w' c='load_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='1051' u='w' c='load_audit_module'/>
+<use f='codebrowser/elf/rtld.c' l='1079' u='r' c='notify_audit_modules_of_loaded_object'/>
+<use f='codebrowser/elf/rtld.c' l='1795' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2491' u='r' c='dl_main'/>

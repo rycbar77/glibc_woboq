@@ -1,0 +1,9 @@
+<dec f='codebrowser/elf/dl-main.h' l='48' type='size_t'/>
+<offset>1024</offset>
+<doc f='codebrowser/elf/dl-main.h' l='47'>/* Number of entries added to audit_strings.  */</doc>
+<use f='codebrowser/elf/rtld.c' l='192' u='w' c='audit_list_init'/>
+<use f='codebrowser/elf/rtld.c' l='204' u='r' c='audit_list_add_string'/>
+<use f='codebrowser/elf/rtld.c' l='207' u='w' c='audit_list_add_string'/>
+<use f='codebrowser/elf/rtld.c' l='211' u='r' c='audit_list_add_string'/>
+<use f='codebrowser/elf/rtld.c' l='238' u='r' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='1751' u='r' c='dl_main'/>

@@ -1,0 +1,23 @@
+<dec f='codebrowser/nptl_db/thread_dbP.h' l='184' type='td_err_e _td_locate_field(td_thragent_t * ta, uint32_t * desc, int descriptor_name, psaddr_t idx, psaddr_t * address)'/>
+<def f='codebrowser/nptl_db/fetch-value.c' l='43' ll='85' type='td_err_e _td_locate_field(td_thragent_t * ta, uint32_t * desc, int descriptor_name, psaddr_t idx, psaddr_t * address)'/>
+<use f='codebrowser/nptl_db/fetch-value.c' l='94' u='c' c='_td_fetch_value'/>
+<use f='codebrowser/nptl_db/fetch-value.c' l='147' u='c' c='_td_store_value'/>
+<use f='codebrowser/nptl_db/fetch-value.c' l='194' u='c' c='_td_fetch_value_local'/>
+<use f='codebrowser/nptl_db/fetch-value.c' l='246' u='c' c='_td_store_value_local'/>
+<use f='codebrowser/nptl_db/td_ta_event_getmsg.c' l='54' macro='1' u='c' c='td_ta_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_ta_thr_iter.c' l='52' macro='1' u='c' c='iterate_thread_list'/>
+<use f='codebrowser/nptl_db/td_ta_tsd_iter.c' l='42' u='c' c='td_ta_tsd_iter'/>
+<use f='codebrowser/nptl_db/td_thr_clear_event.c' l='35' macro='1' u='c' c='td_thr_clear_event'/>
+<use f='codebrowser/nptl_db/td_thr_event_getmsg.c' l='34' macro='1' u='c' c='td_thr_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_thr_event_getmsg.c' l='92' macro='1' u='c' c='td_thr_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_thr_event_getmsg.c' l='109' macro='1' u='c' c='td_thr_event_getmsg'/>
+<use f='codebrowser/nptl_db/td_thr_get_info.c' l='62' macro='1' u='c' c='td_thr_get_info'/>
+<use f='codebrowser/nptl_db/td_thr_set_event.c' l='35' macro='1' u='c' c='td_thr_set_event'/>
+<use f='codebrowser/nptl_db/td_thr_tlsbase.c' l='97' macro='1' u='c' c='dtv_slotinfo'/>
+<use f='codebrowser/nptl_db/td_thr_tlsbase.c' l='183' macro='1' u='c' c='td_thr_tlsbase'/>
+<use f='codebrowser/nptl_db/td_thr_tlsbase.c' l='222' macro='1' u='c' c='td_thr_tlsbase'/>
+<use f='codebrowser/nptl_db/td_thr_tsd.c' l='45' macro='1' u='c' c='td_thr_tsd'/>
+<use f='codebrowser/nptl_db/td_thr_tsd.c' l='69' macro='1' u='c' c='td_thr_tsd'/>
+<use f='codebrowser/nptl_db/td_thr_validate.c' l='26' macro='1' u='c' c='__td_ta_stack_user'/>
+<use f='codebrowser/nptl_db/td_thr_validate.c' l='44' macro='1' u='c' c='__td_ta_stack_used'/>
+<use f='codebrowser/nptl_db/td_thr_validate.c' l='71' macro='1' u='c' c='check_thread_list'/>

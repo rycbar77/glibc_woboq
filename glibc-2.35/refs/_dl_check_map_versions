@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1112' type='int _dl_check_map_versions(struct link_map * map, int verbose, int trace_mode)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1110'>/* Check the version dependencies for MAP.  If VERBOSE print some more
+   diagnostics.  */</doc>
+<use f='codebrowser/elf/dl-open.c' l='600' u='c' c='dl_open_worker_begin'/>
+<def f='codebrowser/elf/dl-version.c' l='153' ll='356' type='int _dl_check_map_versions(struct link_map * map, int verbose, int trace_mode)'/>
+<use f='codebrowser/elf/dl-version.c' l='367' u='c' c='_dl_check_all_versions'/>

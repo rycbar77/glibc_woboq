@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='463' type='size_t'/>
+<def f='codebrowser/csu/libc-tls.c' l='53' type='size_t'/>
+<use f='codebrowser/csu/libc-tls.c' l='97' macro='1' u='w' c='init_static_tls'/>
+<doc f='codebrowser/csu/libc-tls.c' l='52'>/* Size actually allocated in the static TLS block.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='570' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='572' macro='1' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='578' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='579' macro='1' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='748' macro='1' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='749' macro='1' u='w' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-reloc.c' l='63' macro='1' u='r' c='_dl_try_allocate_static_tls'/>
+<use f='codebrowser/elf/dl-reloc.c' l='81' macro='1' u='r' c='_dl_try_allocate_static_tls'/>
+<use f='codebrowser/elf/dl-reloc.c' l='83' macro='1' u='w' c='_dl_try_allocate_static_tls'/>

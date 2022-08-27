@@ -1,0 +1,55 @@
+<def f='codebrowser/resolv/resolv_conf.h' l='36' ll='60'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='74' c='__resolv_conf_load'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='80' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='86' c='__resolv_conf_get'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='89' c='__resolv_conf_put'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='95' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='95' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='101' c='__resolv_conf_attach'/>
+<use f='codebrowser/resolv/resolv_context.h' l='56'/>
+<size>72</size>
+<doc f='codebrowser/resolv/resolv_conf.h' l='33'>/* Extended resolver state associated with res_state objects.  Client
+   code can reach this state through a struct resolv_context
+   object.  */</doc>
+<mbr r='resolv_conf::__refcount' o='0' t='size_t'/>
+<mbr r='resolv_conf::nameserver_list' o='64' t='const struct sockaddr **'/>
+<mbr r='resolv_conf::nameserver_list_size' o='128' t='size_t'/>
+<mbr r='resolv_conf::search_list' o='192' t='const char *const *'/>
+<mbr r='resolv_conf::search_list_size' o='256' t='size_t'/>
+<mbr r='resolv_conf::sort_list' o='320' t='const struct resolv_sortlist_entry *'/>
+<mbr r='resolv_conf::sort_list_size' o='384' t='size_t'/>
+<mbr r='resolv_conf::options' o='448' t='unsigned int'/>
+<mbr r='resolv_conf::retrans' o='480' t='unsigned int'/>
+<mbr r='resolv_conf::retry' o='512' t='unsigned int'/>
+<mbr r='resolv_conf::ndots' o='544' t='unsigned int'/>
+<use f='codebrowser/resolv/res_init.c' l='163'/>
+<use f='codebrowser/resolv/res_init.c' l='552' c='__resolv_conf_load'/>
+<use f='codebrowser/resolv/res_init.c' l='581' c='__resolv_conf_load'/>
+<use f='codebrowser/resolv/res_init.c' l='622' c='__res_vinit'/>
+<size>72</size>
+<use f='codebrowser/resolv/resolv_conf.c' l='70'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='113' c='conf_decrement'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='120' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='130' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='174' c='resolv_conf_get_1'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='187' c='resolv_conf_get_1'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='193' c='resolv_conf_get_1'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='243' c='resolv_conf_matches'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='337' c='__resolv_conf_get'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='340' c='__resolv_conf_get'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='350' c='__resolv_conf_put'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='360' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='361' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='365' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='392' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='399' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='400' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='400' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='400' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='466' c='update_from_conf'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='568' c='decrement_at_index'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='568' c='decrement_at_index'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='578' c='__resolv_conf_attach'/>
+<size>72</size>
+<use f='codebrowser/resolv/resolv_context.c' l='85' c='maybe_init'/>
+<size>72</size>

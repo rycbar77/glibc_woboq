@@ -1,0 +1,8 @@
+<dec f='include/selinux/avc.h' l='444' type='void avc_sid_stats()'/>
+<doc f='include/selinux/avc.h' l='437'>/**
+ * avc_sid_stats - log SID table statistics.
+ *
+ * Log a message with information about the size and
+ * distribution of the SID table.  The audit callback
+ * is used to print the message.
+ */</doc>

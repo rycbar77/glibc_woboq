@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/fcntl.h' l='11' type='int __libc_fcntl(int fd, int cmd)'/>
+<dec f='codebrowser/include/fcntl.h' l='12' type='int __libc_fcntl(int , int )'/>
+<use f='codebrowser/include/fcntl.h' l='12' c='__libc_fcntl'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fcntl64.c' l='62' macro='1' type='int __libc_fcntl(int , int )'/>

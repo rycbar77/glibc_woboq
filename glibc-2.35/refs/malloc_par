@@ -1,0 +1,18 @@
+<def f='codebrowser/malloc/malloc.c' l='1874' ll='1918'/>
+<use f='codebrowser/malloc/malloc.c' l='1935'/>
+<size>104</size>
+<mbr r='malloc_par::trim_threshold' o='0' t='unsigned long'/>
+<mbr r='malloc_par::top_pad' o='64' t='size_t'/>
+<mbr r='malloc_par::mmap_threshold' o='128' t='size_t'/>
+<mbr r='malloc_par::arena_test' o='192' t='size_t'/>
+<mbr r='malloc_par::arena_max' o='256' t='size_t'/>
+<mbr r='malloc_par::thp_pagesize' o='320' t='size_t'/>
+<mbr r='malloc_par::hp_pagesize' o='384' t='size_t'/>
+<mbr r='malloc_par::hp_flags' o='448' t='int'/>
+<mbr r='malloc_par::n_mmaps' o='480' t='int'/>
+<mbr r='malloc_par::n_mmaps_max' o='512' t='int'/>
+<mbr r='malloc_par::max_n_mmaps' o='544' t='int'/>
+<mbr r='malloc_par::no_dyn_threshold' o='576' t='int'/>
+<mbr r='malloc_par::mmapped_mem' o='640' t='size_t'/>
+<mbr r='malloc_par::max_mmapped_mem' o='704' t='size_t'/>
+<mbr r='malloc_par::sbrk_base' o='768' t='char *'/>

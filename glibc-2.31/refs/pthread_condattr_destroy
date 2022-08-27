@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='1024' type='int pthread_condattr_destroy(pthread_condattr_t * __attr)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='1023'>/* Destroy condition variable attribute ATTR.  */</doc>
+<def f='codebrowser/nptl/forward.c' l='70' macro='1' type='int pthread_condattr_destroy(pthread_condattr_t * attr)'/>
+<def f='codebrowser/nptl/pthread_condattr_destroy.c' l='28' macro='1' type='int pthread_condattr_destroy(pthread_condattr_t * )'/>

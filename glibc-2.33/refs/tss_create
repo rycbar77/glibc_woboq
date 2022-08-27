@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/pthread/threads.h' l='188' type='int tss_create(tss_t * __tss_id, tss_dtor_t __destructor)'/>
+<doc f='codebrowser/sysdeps/pthread/threads.h' l='185'>/* Create new thread-specific storage key and stores it in the object pointed
+   by __TSS_ID.  If __DESTRUCTOR is not NULL, the function will be called when
+   the thread terminates.  */</doc>
+<def f='codebrowser/sysdeps/pthread/tss_create.c' l='21' ll='33' type='int tss_create(tss_t * tss_id, tss_dtor_t destructor)'/>

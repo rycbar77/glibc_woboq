@@ -1,0 +1,6 @@
+<dec f='codebrowser/support/subprocess.h' l='48' type='int support_process_wait(struct support_subprocess * proc)'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='79' u='c' c='support_capture_poll'/>
+<doc f='codebrowser/support/subprocess.h' l='46'>/* Wait for the subprocess indicated by PROC::PID.  Return the status
+   indicate by waitpid call.  */</doc>
+<use f='codebrowser/support/support_subprocess.c' l='105' u='c' c='support_subprogram_wait'/>
+<def f='codebrowser/support/support_subprocess.c' l='108' ll='117' type='int support_process_wait(struct support_subprocess * proc)'/>

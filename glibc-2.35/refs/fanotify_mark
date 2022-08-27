@@ -1,0 +1,3 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sys/fanotify.h' l='32' type='int fanotify_mark(int __fanotify_fd, unsigned int __flags, uint64_t __mask, int __dfd, const char * __pathname)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fanotify_mark.c' l='35' macro='1' type='int fanotify_mark(int , unsigned int , uint64_t , int , const char * )'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sys/fanotify.h' l='31'>/* Add, remove, or modify an fanotify mark on a filesystem object.  */</doc>

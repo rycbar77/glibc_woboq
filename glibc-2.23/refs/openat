@@ -1,0 +1,3 @@
+<dec f='codebrowser/io/fcntl.h' l='203' type='int openat(int __fd, const char * __file, int __oflag)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/openat.c' l='61' macro='1' type='int openat(int , const char * , int )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/wordsize-64/openat.c' l='11' c='openat64'/>

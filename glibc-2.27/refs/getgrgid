@@ -1,0 +1,6 @@
+<dec f='codebrowser/grp/grp.h' l='101' type='struct group * getgrgid(__gid_t __gid)'/>
+<doc f='codebrowser/grp/grp.h' l='97'>/* Search for an entry with a matching group ID.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/nss/getXXbyYY.c' l='93' macro='1' type='struct group * getgrgid(gid_t gid)'/>

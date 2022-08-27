@@ -1,0 +1,9 @@
+<dec f='codebrowser/malloc/malloc.c' l='1906' type='char *'/>
+<use f='codebrowser/malloc/malloc.c' l='2764' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2765' u='w' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc-check.c' l='125' u='r' c='mem2chunk_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='126' u='r' c='mem2chunk_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='129' u='r' c='mem2chunk_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='185' u='r' c='top_check'/>
+<offset>768</offset>
+<doc f='codebrowser/malloc/malloc.c' l='1905'>/* First address handed out by MORECORE/sbrk.  */</doc>

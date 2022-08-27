@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1177' type='void * _dl_allocate_tls_init(void * )'/>
+<use f='codebrowser/nptl/allocatestack.c' l='237' u='c' c='get_cached_stack'/>
+<def f='codebrowser/elf/dl-tls.c' l='515' ll='604' type='void * _dl_allocate_tls_init(void * result)'/>
+<use f='codebrowser/elf/dl-tls.c' l='610' u='c' c='_dl_allocate_tls'/>

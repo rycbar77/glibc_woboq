@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/rpc/auth_des.h' l='12' type='bool_t xdr_authdes_verf(XDR * xdrs, struct authdes_verf * verf)'/>
+<dec f='codebrowser/include/rpc/auth_des.h' l='35' type='bool_t xdr_authdes_verf(XDR * , struct authdes_verf * )'/>
+<use f='codebrowser/include/rpc/auth_des.h' l='35' c='xdr_authdes_verf'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='333' u='c' c='authdes_marshal'/>

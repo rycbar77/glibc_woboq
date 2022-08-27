@@ -1,0 +1,14 @@
+<use f='codebrowser/nscd/nscd_proto.h' l='67' c='__nscd_getai'/>
+<def f='codebrowser/nscd/nscd-client.h' l='146' ll='152'/>
+<size>32</size>
+<doc f='codebrowser/nscd/nscd-client.h' l='145'>/* Structure filled in by __nscd_getai.  */</doc>
+<mbr r='nscd_ai_result::naddrs' o='0' t='int'/>
+<mbr r='nscd_ai_result::canon' o='64' t='char *'/>
+<mbr r='nscd_ai_result::family' o='128' t='uint8_t *'/>
+<mbr r='nscd_ai_result::addrs' o='192' t='char *'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='43' c='__nscd_getai'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='67' c='__nscd_getai'/>
+<use f='codebrowser/nscd/nscd_getai.c' l='120' c='__nscd_getai'/>
+<size>32</size>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='631' c='gaih_inet'/>
+<size>32</size>

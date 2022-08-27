@@ -1,0 +1,7 @@
+<def f='codebrowser/resolv/ns_name_pton.c' l='26' ll='150' type='int ___ns_name_pton(const char * src, unsigned char * dst, size_t dstsiz)'/>
+<use f='codebrowser/resolv/ns_name_pton.c' l='151' c='ns_name_pton'/>
+<use f='codebrowser/resolv/ns_name_pton.c' l='152' c='__ns_name_pton'/>
+<doc f='codebrowser/resolv/ns_name_pton.c' l='22'>/* Converts an ASCII string into an encoded domain name as per
+   RFC1035.  Returns -1 if it fails, 1 if string was fully qualified,
+   0 is string was not fully qualified.  Enforces label and domain
+   length limits.  */</doc>

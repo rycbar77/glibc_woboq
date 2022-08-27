@@ -1,0 +1,6 @@
+<dec f='include/selinux/selinux.h' l='542' type='int selinux_getenforcemode(int * enforce)'/>
+<doc f='include/selinux/selinux.h' l='537'>/*
+  selinux_getenforcemode reads the /etc/selinux/config file and determines 
+  whether the machine should be started in enforcing (1), permissive (0) or 
+  disabled (-1) mode.
+ */</doc>

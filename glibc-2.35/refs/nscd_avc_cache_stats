@@ -1,0 +1,5 @@
+<dec f='codebrowser/nscd/selinux.h' l='41' type='void nscd_avc_cache_stats(struct avc_cache_stats * cstats)'/>
+<doc f='codebrowser/nscd/selinux.h' l='40'>/* Initialize AVC statistic information.  */</doc>
+<use f='codebrowser/nscd/nscd_stat.c' l='152' u='c' c='send_stats'/>
+<def f='codebrowser/nscd/selinux.c' l='442' ll='446' type='void nscd_avc_cache_stats(struct avc_cache_stats * cstats)'/>
+<doc f='codebrowser/nscd/selinux.c' l='441'>/* Wrapper to get AVC statistics.  */</doc>

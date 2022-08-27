@@ -1,0 +1,5 @@
+<dec f='codebrowser/sunrpc/rpc/key_prot.h' l='73' type='bool_t xdr_keybuf(XDR * , char * )'/>
+<dec f='codebrowser/include/rpc/key_prot.h' l='8' type='bool_t xdr_keybuf(XDR * , char * )'/>
+<use f='codebrowser/include/rpc/key_prot.h' l='8' c='xdr_keybuf'/>
+<use f='codebrowser/sunrpc/key_call.c' l='73' u='r' c='__GI_key_setsecret'/>
+<use f='codebrowser/sunrpc/key_call.c' l='269' u='r' c='__GI_key_get_conv'/>

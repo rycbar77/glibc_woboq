@@ -1,0 +1,11 @@
+<dec f='codebrowser/resolv/arpa/nameser.h' l='422' type='int ns_name_ntol(const unsigned char * , unsigned char * , size_t )'/>
+<def f='codebrowser/resolv/ns_name.c' l='48' ll='90' type='int ns_name_ntol(const u_char * src, u_char * dst, size_t dstsiz)'/>
+<doc f='codebrowser/resolv/ns_name.c' l='38'>/*%
+ *	Convert a network strings labels into all lowercase.
+ *
+ * return:
+ *\li	Number of bytes written to buffer, or -1 (with errno set)
+ *
+ * notes:
+ *\li	Enforces label and domain length limits.
+ */</doc>

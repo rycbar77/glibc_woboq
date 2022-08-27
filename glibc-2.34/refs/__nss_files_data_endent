@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/nss_files.h' l='108' type='enum nss_status __nss_files_data_endent(enum nss_files_file file)'/>
+<dec f='codebrowser/include/nss_files.h' l='109' type='enum nss_status __nss_files_data_endent(enum nss_files_file )'/>
+<use f='codebrowser/include/nss_files.h' l='109' c='__nss_files_data_endent'/>
+<doc f='codebrowser/include/nss_files.h' l='107'>/* Performs the end*ent operation for FILE.  */</doc>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='69' u='c' c='_nss_files_endaliasent'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='99' u='c' c='_nss_files_endetherent'/>
+<def f='codebrowser/nss/nss_files_data.c' l='142' ll='160' type='enum nss_status __nss_files_data_endent(enum nss_files_file file)'/>

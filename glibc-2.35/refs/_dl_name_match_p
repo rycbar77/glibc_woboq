@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='288' type='int _dl_name_match_p(const char * __name, const struct link_map * __map)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='287'>/* Test whether given NAME matches any of the names of the given object.  */</doc>
+<use f='codebrowser/sysdeps/x86_64/dl-machine.h' l='105' u='c' c='elf_machine_runtime_setup'/>
+<use f='codebrowser/elf/dl-load.c' l='2026' u='c' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-lookup.c' l='107' u='c' c='check_match'/>
+<use f='codebrowser/elf/dl-lookup.c' l='107' u='c' c='check_match'/>
+<def f='codebrowser/elf/dl-misc.c' l='66' ll='83' type='int _dl_name_match_p(const char * name, const struct link_map * map)'/>
+<doc f='codebrowser/elf/dl-misc.c' l='65'>/* Test whether given NAME matches any of the names of the given object.  */</doc>
+<use f='codebrowser/elf/dl-version.c' l='38' u='c' c='find_needed'/>
+<use f='codebrowser/elf/dl-version.c' l='44' u='c' c='find_needed'/>
+<use f='codebrowser/elf/rtld.c' l='712' u='c' c='find_needed'/>
+<use f='codebrowser/elf/rtld.c' l='2070' u='c' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2319' u='c' c='dl_main'/>

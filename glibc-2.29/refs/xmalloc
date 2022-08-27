@@ -1,0 +1,103 @@
+<dec f='codebrowser/include/programs/xmalloc.h' l='25' type='void * xmalloc(size_t n)'/>
+<use f='codebrowser/catgets/gencat.c' l='308' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='380' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='775' u='c' c='read_input_file'/>
+<use f='codebrowser/catgets/gencat.c' l='1271' u='c' c='read_old'/>
+<doc f='codebrowser/include/programs/xmalloc.h' l='24'>/* Prototypes for a few program-wide used functions.  */</doc>
+<use f='codebrowser/elf/cache.c' l='336' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='353' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='379' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='430' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='502' u='c' c='add_to_cache'/>
+<use f='codebrowser/elf/cache.c' l='665' u='c' c='insert_to_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='765' u='c' c='save_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='807' u='c' c='save_aux_cache'/>
+<use f='codebrowser/elf/chroot_canon.c' l='59' u='c' c='chroot_canon'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='296' u='c' c='convert_charseq'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='422' u='c' c='new_alias'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='529' u='c' c='new_module'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='660' u='c' c='handle_dir'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='806' u='c' c='new_name'/>
+<use f='codebrowser/iconv/iconvconfig.c' l='917' u='c' c='generate_name_info'/>
+<use f='codebrowser/iconv/strtab.c' l='317' u='c' c='strtabfinalize'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='62' u='c' c='charmap_opendir'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='67' u='c' c='charmap_opendir'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='111' u='c' c='charmap_readdir'/>
+<use f='codebrowser/locale/programs/charmap.c' l='292' u='c' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='484' u='c' c='address_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='821' u='c' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2586' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3077' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3791' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='308' u='c' c='ctype_startup'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='252' u='r' c='ctype_startup'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1652' u='c' c='charclass_charcode_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1671' u='c' c='charclass_charcode_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1796' u='c' c='read_widestring'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1810' u='c' c='read_widestring'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1832' u='c' c='read_widestring'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2699' u='c' c='ctype_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3624' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3626' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3676' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3677' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3680' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3689' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3709' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3740' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3742' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3955' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3956' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3957' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3958' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='115' u='c' c='monetary_startup'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='362' u='c' c='monetary_finish'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='634' u='c' c='monetary_read'/>
+<use f='codebrowser/locale/programs/ld-numeric.c' l='260' u='c' c='numeric_read'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='237' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='243' u='c' c='time_finish'/>
+<use f='codebrowser/locale/programs/linereader.c' l='71' u='c' c='lr_create'/>
+<use f='codebrowser/locale/programs/linereader.c' l='477' u='c' c='get_symname'/>
+<use f='codebrowser/locale/programs/linereader.c' l='547' u='c' c='get_ident'/>
+<use f='codebrowser/locale/programs/linereader.c' l='603' u='c' c='get_string'/>
+<use f='codebrowser/locale/programs/linereader.c' l='640' u='c' c='get_string'/>
+<use f='codebrowser/locale/programs/locale.c' l='681' u='c' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/localedef.c' l='538' u='c' c='construct_output_path'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='321' u='c' c='compare_from_file'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1635' u='c' c='show_archive_content'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1657' u='c' c='show_archive_content'/>
+<use f='codebrowser/locale/programs/locfile.c' l='412' u='c' c='siblings_uncached'/>
+<use f='codebrowser/locale/programs/locfile.c' l='509' u='c' c='compare_files'/>
+<use f='codebrowser/locale/programs/locfile.c' l='573' u='c' c='init_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='42' u='r' c='init_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='735' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='748' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='861' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='872' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/locfile.c' l='921' u='c' c='write_locale_data'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='108' u='c' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='127' u='c' c='repertoire_read'/>
+<dec f='codebrowser/locale/programs/xmalloc.c' l='29' type='void * xmalloc(size_t n)'/>
+<def f='codebrowser/locale/programs/xmalloc.c' l='69' ll='78' macro='1' type='void * xmalloc(size_t n)'/>
+<use f='codebrowser/locale/programs/xmalloc.c' l='101' u='c' c='xrealloc'/>
+<dec f='codebrowser/locale/programs/xstrdup.c' l='27' type='void * xmalloc(size_t n)'/>
+<use f='codebrowser/locale/programs/xstrdup.c' l='35' u='c' c='xstrdup'/>
+<dec f='codebrowser/support/support.h' l='86' type='void * xmalloc(size_t )'/>
+<doc f='codebrowser/support/support.h' l='83'>/* Error-checking wrapper functions which terminate the process on
+   error.  */</doc>
+<use f='codebrowser/support/resolv_test.c' l='75' u='c' c='allocate_compressed_name'/>
+<use f='codebrowser/support/resolv_test.c' l='430' u='c' c='resolv_response_buffer'/>
+<use f='codebrowser/support/resolv_test.c' l='439' u='c' c='response_builder_allocate'/>
+<use f='codebrowser/support/resolv_test.c' l='613' u='c' c='start_server_thread'/>
+<use f='codebrowser/support/resolv_test.c' l='876' u='c' c='server_thread_tcp_client'/>
+<use f='codebrowser/support/resolv_test.c' l='970' u='c' c='server_thread_tcp'/>
+<use f='codebrowser/support/resolv_test.c' l='1112' u='c' c='resolv_test_start'/>
+<use f='codebrowser/support/shell-container.c' l='306' u='c' c='run_command_string'/>
+<use f='codebrowser/support/support_chroot.c' l='47' u='c' c='support_chroot_create'/>
+<use f='codebrowser/support/support_descriptors.c' l='62' u='c' c='support_descriptors_list'/>
+<use f='codebrowser/support/support_openpty.c' l='39' u='c' c='xptsname'/>
+<use f='codebrowser/support/temp_file.c' l='68' u='c' c='create_temp_file'/>
+<use f='codebrowser/support/test-container.c' l='179' u='c' c='concat'/>
+<use f='codebrowser/support/test-container.c' l='310' u='c' c='r_setup'/>
+<def f='codebrowser/support/xmalloc.c' l='25' ll='34' type='void * xmalloc(size_t n)'/>
+<use f='codebrowser/support/xsigstack.c' l='68' u='c' c='xalloc_sigstack'/>

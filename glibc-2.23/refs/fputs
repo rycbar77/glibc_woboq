@@ -1,0 +1,57 @@
+<dec f='codebrowser/libio/stdio.h' l='689' type='int fputs(const char *restrict __s, FILE *restrict __stream)'/>
+<doc f='codebrowser/libio/stdio.h' l='685'>/* Write a string to STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/iconv/iconv_prog.c' l='686' u='c' c='do_print_human'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='791' u='c' c='print_known_names'/>
+<def f='codebrowser/libio/iofputs.c' l='46' macro='1' type='int fputs(const char * , _IO_FILE * )'/>
+<use f='codebrowser/locale/programs/locale.c' l='838' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='855' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='861' u='c' c='print_item'/>
+<use f='codebrowser/malloc/memusage.c' l='905' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='914' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='922' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='928' u='c' c='dest'/>
+<use f='codebrowser/nss/getent.c' l='911' u='c' c='more_help'/>
+<use f='codebrowser/resolv/res_debug.c' l='201' u='c' c='do_section'/>
+<use f='codebrowser/resolv/res_debug.c' l='296' u='c' c='__p_cdnname'/>
+<use f='codebrowser/resolv/res_debug.c' l='338' u='c' c='__p_fqname'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>
+<use f='codebrowser/sysdeps/ieee754/k_standard.c' l='25' u='c' c='__kernel_standard'/>

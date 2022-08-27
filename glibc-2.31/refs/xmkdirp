@@ -1,0 +1,11 @@
+<dec f='codebrowser/support/xunistd.h' l='49' type='void xmkdirp(const char * , mode_t )'/>
+<doc f='codebrowser/support/xunistd.h' l='48'>/* Equivalent of &quot;mkdir -p&quot;.  */</doc>
+<use f='codebrowser/support/test-container.c' l='767' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='815' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='816' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='817' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='993' u='c' c='main'/>
+<def f='codebrowser/support/xmkdirp.c' l='30' ll='66' type='void xmkdirp(const char * path, mode_t mode)'/>
+<use f='codebrowser/support/xmkdirp.c' l='56' u='c' c='xmkdirp'/>
+<doc f='codebrowser/support/xmkdirp.c' l='27'>/* Equivalent of &quot;mkdir -p&quot;.  Any failures cause FAIL_EXIT1 so no
+   return code is needed.  */</doc>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/unistd.h' l='50' type='ssize_t __libc_pread64(int __fd, void * __buf, size_t __nbytes, __off64_t __offset)'/>
+<use f='codebrowser/debug/pread64_chk.c' l='28' u='c' c='__pread64_chk'/>
+<use f='codebrowser/sysdeps/posix/posix_fallocate64.c' l='107' u='c' c='internal_fallocate64'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/pread64.c' l='22' ll='26' type='ssize_t __libc_pread64(int fd, void * buf, size_t count, off64_t offset)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pread64.c' l='28' c='__pread64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pread64.c' l='30' c='pread64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pread64.c' l='33' c='__libc_pread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pread64.c' l='34' c='__pread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pread64.c' l='35' c='pread'/>

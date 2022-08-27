@@ -1,0 +1,15 @@
+<def f='codebrowser/dlfcn/dlerror.h' l='37' ll='44'/>
+<use f='codebrowser/dlfcn/dlerror.h' l='65' c='dl_action_result_errstring_free'/>
+<use f='codebrowser/dlfcn/dlerror.h' l='83'/>
+<use f='codebrowser/dlfcn/dlerror.h' l='84'/>
+<use f='codebrowser/dlfcn/dlerror.h' l='88'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='39' c='__dlerror'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='114' c='_dlerror_run'/>
+<size>24</size>
+<mbr r='dl_action_result::errcode' o='0' t='int'/>
+<mbr r='dl_action_result::errstring_source' o='32' t='char'/>
+<mbr r='dl_action_result::returned' o='40' t='_Bool'/>
+<mbr r='dl_action_result::objname' o='64' t='const char *'/>
+<mbr r='dl_action_result::errstring' o='128' t='char *'/>
+<use f='codebrowser/dlfcn/libc_dlerror_result.c' l='24'/>
+<size>24</size>

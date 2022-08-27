@@ -1,0 +1,6 @@
+<def f='codebrowser/malloc/dynarray-skeleton.c' l='354' macro='1' type='const struct sockaddr ** nameserver_list_emplace(struct nameserver_list * list)'/>
+<use f='codebrowser/resolv/res_init.c' l='445' u='c' c='res_vinit_1'/>
+<use f='codebrowser/resolv/res_init.c' l='511' u='c' c='res_vinit_1'/>
+<doc f='codebrowser/malloc/dynarray-skeleton.c' l='344'>/* Allocate a place for a new element in *LIST and return a pointer to
+   it.  The pointer can be NULL if the dynamic array cannot be
+   enlarged due to a memory allocation failure.  */</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/resolv/gai_misc.h' l='94' type='int __gai_notify_only(struct sigevent * sigev, pid_t caller_pid)'/>
+<doc f='codebrowser/resolv/gai_misc.h' l='93'>/* Notify initiator of request.  */</doc>
+<def f='codebrowser/resolv/gai_notify.c' l='53' ll='101' type='int __gai_notify_only(struct sigevent * sigev, pid_t caller_pid)'/>
+<use f='codebrowser/resolv/gai_notify.c' l='131' u='c' c='__gai_notify'/>
+<use f='codebrowser/resolv/getaddrinfo_a.c' l='91' u='c' c='__getaddrinfo_a'/>

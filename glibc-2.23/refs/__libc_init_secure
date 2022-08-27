@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/libc-internal.h' l='10' type='void __libc_init_secure()'/>
+<doc f='codebrowser/include/libc-internal.h' l='9'>/* Initialize the `__libc_enable_secure&apos; flag.  */</doc>
+<def f='codebrowser/elf/enbl-secure.c' l='30' ll='36' type='void __libc_init_secure()'/>
+<use f='codebrowser/csu/init-first.c' l='75' u='c' c='__libc_init_first'/>

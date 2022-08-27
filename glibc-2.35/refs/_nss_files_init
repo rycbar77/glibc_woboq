@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/nss_files.h' l='138' macro='1' type='void _nss_files_init(void (*)(size_t, struct traced_file *) )'/>
+<dec f='codebrowser/include/nss_files.h' l='144' type='void _nss_files_init(void (*)(size_t, struct traced_file *) cb)'/>
+<def f='codebrowser/nss/nss_files/files-init.c' l='41' ll='50' type='void _nss_files_init(void (*)(size_t, struct traced_file *) cb)'/>
+<use f='codebrowser/nss/nss_module.c' l='159' u='c' c='module_load_nss_files'/>

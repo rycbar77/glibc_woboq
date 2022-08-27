@@ -1,0 +1,128 @@
+<def f='codebrowser/locale/programs/linereader.h' l='60' ll='80'/>
+<use f='codebrowser/locale/programs/linereader.h' l='84' c='lr_open'/>
+<use f='codebrowser/locale/programs/linereader.h' l='85' c='lr_create'/>
+<use f='codebrowser/locale/programs/linereader.h' l='87' c='lr_eof'/>
+<use f='codebrowser/locale/programs/linereader.h' l='88' c='lr_close'/>
+<use f='codebrowser/locale/programs/linereader.h' l='89' c='lr_next'/>
+<use f='codebrowser/locale/programs/linereader.h' l='90' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.h' l='95' c='lr_ignore_rest'/>
+<use f='codebrowser/locale/programs/linereader.h' l='100' c='lr_error'/>
+<use f='codebrowser/locale/programs/linereader.h' l='125' c='lr_getc'/>
+<use f='codebrowser/locale/programs/linereader.h' l='143' c='lr_ungetc'/>
+<use f='codebrowser/locale/programs/linereader.h' l='155' c='lr_ungetn'/>
+<use f='codebrowser/locale/programs/charmap.c' l='43' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='45' c='new_width'/>
+<use f='codebrowser/locale/programs/charmap.c' l='48' c='charmap_new_char'/>
+<use f='codebrowser/locale/programs/charmap.c' l='61' c='cmlr_open'/>
+<use f='codebrowser/locale/programs/charmap.c' l='95' c='charmap_read'/>
+<use f='codebrowser/locale/programs/charmap.c' l='171' c='charmap_read'/>
+<use f='codebrowser/locale/programs/charmap.c' l='187' c='charmap_read'/>
+<use f='codebrowser/locale/programs/charmap.c' l='276' c='parse_charmap'/>
+<use f='codebrowser/locale/programs/charmap.c' l='865' c='new_width'/>
+<use f='codebrowser/locale/programs/charmap.c' l='933' c='charmap_new_char'/>
+<size>120</size>
+<mbr r='linereader::fp' o='0' t='FILE *'/>
+<mbr r='linereader::fname' o='64' t='const char *'/>
+<mbr r='linereader::buf' o='128' t='char *'/>
+<mbr r='linereader::bufsize' o='192' t='size_t'/>
+<mbr r='linereader::bufact' o='256' t='size_t'/>
+<mbr r='linereader::lineno' o='320' t='size_t'/>
+<mbr r='linereader::idx' o='384' t='size_t'/>
+<mbr r='linereader::comment_char' o='448' t='char'/>
+<mbr r='linereader::escape_char' o='456' t='char'/>
+<mbr r='linereader::token' o='512' t='struct token'/>
+<mbr r='linereader::translate_strings' o='832' t='int'/>
+<mbr r='linereader::return_widestr' o='864' t='int'/>
+<mbr r='linereader::hash_fct' o='896' t='kw_hash_fct_t'/>
+<use f='codebrowser/locale/programs/locfile.h' l='50' c='handle_copy'/>
+<use f='codebrowser/locale/programs/locfile.h' l='133' c='ctype_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='147' c='collate_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='159' c='monetary_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='171' c='numeric_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='183' c='messages_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='195' c='time_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='207' c='paper_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='219' c='name_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='231' c='address_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='243' c='telephone_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='255' c='measurement_read'/>
+<use f='codebrowser/locale/programs/locfile.h' l='267' c='identification_read'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='83' c='address_startup'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='369' c='address_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-collate.c' l='419' c='check_duplicate'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='462' c='read_directions'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='639' c='find_element'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='696' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='952' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1075' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1496' c='collate_startup'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2521' c='skip_to'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2561' c='collate_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='256' c='ctype_startup'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='260' c='ctype_class_new'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='262' c='ctype_map_new'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='289' c='ctype_startup'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1119' c='ctype_class_new'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1145' c='ctype_map_new'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1338' c='charclass_symbolic_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1451' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1576' c='charclass_charcode_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1784' c='read_widestring'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1855' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1938' c='read_translit_ignore_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2064' c='ctype_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-identification.c' l='74' c='identification_startup'/>
+<use f='codebrowser/locale/programs/ld-identification.c' l='244' c='identification_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-measurement.c' l='41' c='measurement_startup'/>
+<use f='codebrowser/locale/programs/ld-measurement.c' l='133' c='measurement_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-messages.c' l='47' c='messages_startup'/>
+<use f='codebrowser/locale/programs/ld-messages.c' l='197' c='messages_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='106' c='monetary_startup'/>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='435' c='monetary_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-name.c' l='46' c='name_startup'/>
+<use f='codebrowser/locale/programs/ld-name.c' l='173' c='name_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-numeric.c' l='47' c='numeric_startup'/>
+<use f='codebrowser/locale/programs/ld-numeric.c' l='149' c='numeric_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-paper.c' l='42' c='paper_startup'/>
+<use f='codebrowser/locale/programs/ld-paper.c' l='133' c='paper_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='44' c='telephone_startup'/>
+<use f='codebrowser/locale/programs/ld-telephone.c' l='189' c='telephone_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/ld-time.c' l='117' c='time_startup'/>
+<use f='codebrowser/locale/programs/ld-time.c' l='670' c='time_read'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/linereader.c' l='37' c='get_toplvl_escape'/>
+<use f='codebrowser/locale/programs/linereader.c' l='38' c='get_symname'/>
+<use f='codebrowser/locale/programs/linereader.c' l='39' c='get_ident'/>
+<use f='codebrowser/locale/programs/linereader.c' l='40' c='get_string'/>
+<use f='codebrowser/locale/programs/linereader.c' l='47' c='lr_open'/>
+<use f='codebrowser/locale/programs/linereader.c' l='64' c='lr_create'/>
+<use f='codebrowser/locale/programs/linereader.c' l='67' c='lr_create'/>
+<use f='codebrowser/locale/programs/linereader.c' l='70' c='lr_create'/>
+<use f='codebrowser/locale/programs/linereader.c' l='106' c='lr_eof'/>
+<use f='codebrowser/locale/programs/linereader.c' l='113' c='lr_ignore_rest'/>
+<use f='codebrowser/locale/programs/linereader.c' l='142' c='lr_close'/>
+<use f='codebrowser/locale/programs/linereader.c' l='151' c='lr_next'/>
+<use f='codebrowser/locale/programs/linereader.c' l='191' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='337' c='get_toplvl_escape'/>
+<use f='codebrowser/locale/programs/linereader.c' l='464' c='get_symname'/>
+<use f='codebrowser/locale/programs/linereader.c' l='538' c='get_ident'/>
+<use f='codebrowser/locale/programs/linereader.c' l='591' c='get_string'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/locfile.c' l='54' c='locfile_read'/>
+<use f='codebrowser/locale/programs/locfile.c' l='955' c='handle_copy'/>
+<size>120</size>
+<use f='codebrowser/locale/programs/repertoire.c' l='40' c='repertoire_new_char'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='57' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='384' c='repertoire_new_char'/>
+<size>120</size>

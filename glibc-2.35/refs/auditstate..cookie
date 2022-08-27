@@ -1,0 +1,16 @@
+<dec f='codebrowser/include/link.h' l='362' type='uintptr_t'/>
+<offset>0</offset>
+<use f='codebrowser/elf/dl-audit.c' l='33' u='a' c='_dl_audit_activity_map'/>
+<use f='codebrowser/elf/dl-audit.c' l='64' u='a' c='_dl_audit_objsearch'/>
+<use f='codebrowser/elf/dl-audit.c' l='86' u='a' c='_dl_audit_objopen'/>
+<use f='codebrowser/elf/dl-audit.c' l='108' u='a' c='_dl_audit_objclose'/>
+<use f='codebrowser/elf/dl-audit.c' l='125' u='a' c='_dl_audit_preinit'/>
+<use f='codebrowser/elf/dl-audit.c' l='159' u='a' c='__GI__dl_audit_symbind_alt'/>
+<use f='codebrowser/elf/dl-audit.c' l='160' u='a' c='__GI__dl_audit_symbind_alt'/>
+<use f='codebrowser/elf/dl-audit.c' l='229' u='a' c='_dl_audit_symbind'/>
+<use f='codebrowser/elf/dl-audit.c' l='230' u='a' c='_dl_audit_symbind'/>
+<use f='codebrowser/elf/dl-audit.c' l='304' u='a' c='_dl_audit_pltenter'/>
+<use f='codebrowser/elf/dl-audit.c' l='304' u='a' c='_dl_audit_pltenter'/>
+<use f='codebrowser/elf/dl-audit.c' l='375' u='a' c='_dl_audit_pltexit'/>
+<use f='codebrowser/elf/dl-audit.c' l='375' u='a' c='_dl_audit_pltexit'/>
+<use f='codebrowser/elf/rtld.c' l='1062' u='w' c='load_audit_module'/>

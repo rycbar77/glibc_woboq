@@ -1,0 +1,5 @@
+<def f='codebrowser/math/mul_split.h' l='66' ll='77' type='void mul_expansion(double * hi, double * lo, double h1, double l1, double h2, double l2)'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/e_gamma_r.c' l='105' u='c' c='gamma_positive'/>
+<doc f='codebrowser/math/mul_split.h' l='63'>/* Multiplication of two floating-point expansions: *hi + *lo is an
+   approximation of (h1+l1)*(h2+l2), assuming |l1| &lt;= 1/2*ulp(h1)
+   and |l2| &lt;= 1/2*ulp(h2) and rounding to nearest.  */</doc>

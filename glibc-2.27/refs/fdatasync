@@ -1,0 +1,6 @@
+<dec f='codebrowser/posix/unistd.h' l='1118' type='int fdatasync(int __fildes)'/>
+<doc f='codebrowser/posix/unistd.h' l='1116'>/* Synchronize at least the data part of a file with the underlying
+   media.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fdatasync.c' l='25' ll='29' type='int fdatasync(int fd)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/fdatasync.c' l='23'>/* Synchronize at least the data part of a file with the underlying
+   media.  */</doc>

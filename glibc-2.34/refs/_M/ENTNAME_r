@@ -1,0 +1,13 @@
+<dec f='codebrowser/nss/nss_files/files-XXX.c' l='40'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='165' u='c'/>
+<use f='codebrowser/nss/nss_files/files-XXX.c' l='184' u='c'/>
+<doc f='codebrowser/nss/nss_files/files-XXX.c' l='29'>/* These symbols are defined by the including source file:
+
+   ENTNAME -- database name of the structure and functions (hostent, pwent).
+   STRUCTURE -- struct name, define only if not ENTNAME (passwd, group).
+   DATABASE -- string of the database file&apos;s name (&quot;hosts&quot;, &quot;passwd&quot;).
+
+   NEED_H_ERRNO - defined iff an arg `int *herrnop&apos; is used.
+
+   Also see files-parse.c.
+*/</doc>

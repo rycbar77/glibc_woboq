@@ -1,0 +1,18 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='613' type='size_t'/>
+<def f='codebrowser/csu/libc-tls.c' l='54' type='size_t'/>
+<use f='codebrowser/csu/libc-tls.c' l='98' macro='1' u='w' c='init_static_tls'/>
+<doc f='codebrowser/csu/libc-tls.c' l='53'>/* Alignment requirement of the static TLS block.  */</doc>
+<use f='codebrowser/elf/dl-reloc.c' l='56' macro='1' u='r' c='_dl_try_allocate_static_tls'/>
+<use f='codebrowser/nptl/nptl-stack.h' l='59' macro='1' u='r' c='__nptl_tls_static_size_for_stack'/>
+<use f='codebrowser/nptl/nptl-stack.h' l='59' macro='1' u='r' c='__nptl_tls_static_size_for_stack'/>
+<use f='codebrowser/nptl/nptl-stack.h' l='59' macro='1' u='r' c='__nptl_tls_static_size_for_stack'/>
+<use f='codebrowser/nptl/nptl-stack.h' l='59' macro='1' u='r' c='__nptl_tls_static_size_for_stack'/>
+<use f='codebrowser/nptl/nptl-stack.h' l='59' macro='1' u='r' c='__nptl_tls_static_size_for_stack'/>
+<use f='codebrowser/nptl/nptl-stack.h' l='59' macro='1' u='r' c='__nptl_tls_static_size_for_stack'/>
+<use f='codebrowser/nptl/nptl-stack.h' l='59' macro='1' u='r' c='__nptl_tls_static_size_for_stack'/>
+<use f='codebrowser/nptl/nptl-stack.h' l='59' macro='1' u='r' c='__nptl_tls_static_size_for_stack'/>
+<dec f='codebrowser/elf/rtld_static_init.c' l='75' type='typeof (dl-&gt;_dl_tls_static_align)'/>
+<use f='codebrowser/elf/rtld_static_init.c' l='77' u='r' c='__rtld_static_init'/>
+<use f='codebrowser/nptl/allocatestack.c' l='220' macro='1' u='r' c='allocate_stack'/>
+<use f='codebrowser/elf/dl-tls.c' l='400' macro='1' u='r' c='_dl_get_tls_static_info'/>
+<use f='codebrowser/elf/dl-tls.c' l='435' macro='1' u='r' c='_dl_allocate_tls_storage'/>

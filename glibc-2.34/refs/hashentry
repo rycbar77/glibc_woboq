@@ -1,0 +1,34 @@
+<def f='codebrowser/nscd/nscd-client.h' l='285' ll='301'/>
+<use f='codebrowser/nscd/nscd-client.h' l='296'/>
+<size>32</size>
+<doc f='codebrowser/nscd/nscd-client.h' l='284'>/* Structure for one hash table entry.  */</doc>
+<mbr r='hashentry::type' o='0' t='request_type'/>
+<mbr r='hashentry::first' o='8' t='_Bool'/>
+<mbr r='hashentry::len' o='32' t='nscd_ssize_t'/>
+<mbr r='hashentry::key' o='64' t='ref_t'/>
+<mbr r='hashentry::owner' o='96' t='int32_t'/>
+<mbr r='hashentry::next' o='128' t='ref_t'/>
+<mbr r='hashentry::packet' o='160' t='ref_t'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='445' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='445' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='466' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='466' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='512' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='513' c='__nscd_cache_search'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='445' c='__nscd_cache_search'/>
+<size>32</size>
+<use f='codebrowser/nscd/nscd.h' l='292' c='readdpwbyname'/>
+<use f='codebrowser/nscd/nscd.h' l='294' c='readdpwbyuid'/>
+<use f='codebrowser/nscd/nscd.h' l='302' c='readdgrbyname'/>
+<use f='codebrowser/nscd/nscd.h' l='304' c='readdgrbygid'/>
+<use f='codebrowser/nscd/nscd.h' l='316' c='readdhstbyname'/>
+<use f='codebrowser/nscd/nscd.h' l='318' c='readdhstbyaddr'/>
+<use f='codebrowser/nscd/nscd.h' l='320' c='readdhstbynamev6'/>
+<use f='codebrowser/nscd/nscd.h' l='322' c='readdhstbyaddrv6'/>
+<use f='codebrowser/nscd/nscd.h' l='328' c='readdhstai'/>
+<use f='codebrowser/nscd/nscd.h' l='335' c='readdinitgroups'/>
+<use f='codebrowser/nscd/nscd.h' l='341' c='readdservbyname'/>
+<use f='codebrowser/nscd/nscd.h' l='345' c='readdservbyport'/>
+<use f='codebrowser/nscd/nscd.h' l='351' c='readdinnetgr'/>
+<use f='codebrowser/nscd/nscd.h' l='355' c='readdgetnetgrent'/>
+<size>32</size>

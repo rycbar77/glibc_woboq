@@ -1,0 +1,12 @@
+<dec f='codebrowser/malloc/malloc.c' l='1836' type='int'/>
+<use f='codebrowser/malloc/malloc.c' l='1782' u='w' c='malloc_init_state'/>
+<use f='codebrowser/malloc/malloc.c' l='1780' u='r' c='sysmalloc_mmap_fallback'/>
+<use f='codebrowser/malloc/malloc.c' l='1782' u='w' c='sysmalloc_mmap_fallback'/>
+<use f='codebrowser/malloc/malloc.c' l='1780' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1780' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1780' u='r' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='1780' u='r' c='_int_free'/>
+<use f='codebrowser/malloc/malloc-check.c' l='123' macro='1' u='r' c='mem2chunk_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='184' macro='1' u='r' c='top_check'/>
+<offset>32</offset>
+<doc f='codebrowser/malloc/malloc.c' l='1835'>/* Flags (formerly in max_fast).  */</doc>

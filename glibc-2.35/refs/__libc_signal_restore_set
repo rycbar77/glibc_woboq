@@ -1,0 +1,6 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='107' ll='112' type='void __libc_signal_restore_set(const sigset_t * set)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='106'>/* Restore current process signal mask.  */</doc>
+<use f='codebrowser/nptl/pthread_create.c' l='426' u='c' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='833' u='c' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_kill.c' l='67' u='c' c='__pthread_kill_implementation'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='419' u='c' c='__spawnix'/>

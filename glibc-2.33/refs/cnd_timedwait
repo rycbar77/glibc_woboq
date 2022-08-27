@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/pthread/threads.h' l='174' type='int cnd_timedwait(cnd_t *restrict __cond, mtx_t *restrict __mutex, const struct timespec *restrict __time_point)'/>
+<doc f='codebrowser/sysdeps/pthread/threads.h' l='171'>/* Block current thread on the condition variable until condition variable
+   pointed by __COND is signaled or time pointed by __TIME_POINT is
+   reached.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/cnd_timedwait.c' l='44' macro='1' type='int cnd_timedwait(cnd_t *restrict , mtx_t *restrict , const struct timespec *restrict )'/>

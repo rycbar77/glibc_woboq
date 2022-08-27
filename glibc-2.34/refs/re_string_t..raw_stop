@@ -1,0 +1,11 @@
+<dec f='codebrowser/posix/regex_internal.h' l='398' type='Idx'/>
+<use f='codebrowser/posix/regex_internal.c' l='194' u='w' c='re_string_construct_common'/>
+<use f='codebrowser/posix/regex_internal.c' l='436' u='r' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='593' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='650' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='701' u='r' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regexec.c' l='641' u='w' c='re_search_internal'/>
+<offset>544</offset>
+<doc f='codebrowser/posix/regex_internal.h' l='395'>/* End of the buffer may be shorter than its length in the cases such
+     as re_match_2, re_search_2.  Then, we use STOP for end of the buffer
+     instead of LEN.  */</doc>

@@ -1,0 +1,15 @@
+<def f='codebrowser/malloc/mcheck.h' l='27' ll='34'/>
+<use f='codebrowser/malloc/mcheck.h' l='41' c='mcheck'/>
+<use f='codebrowser/malloc/mcheck.h' l='45' c='mcheck_pedantic'/>
+<use f='codebrowser/malloc/mcheck.h' l='53' c='mprobe'/>
+<doc f='codebrowser/malloc/mcheck.h' l='25'>/* Return values for `mprobe&apos;: these are the kinds of inconsistencies that
+   `mcheck&apos; enables detection of.  */</doc>
+<use f='codebrowser/malloc/mcheck-impl.c' l='34'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='67' c='checkhdr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='70' c='checkhdr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='104' c='__mcheck_checkptr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='349' c='mabort'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='384' c='__mcheck_initialize'/>
+<use f='codebrowser/malloc/mcheck.c' l='35' c='mcheck'/>
+<use f='codebrowser/malloc/mcheck.c' l='45' c='mcheck_pedantic'/>
+<use f='codebrowser/malloc/mcheck.c' l='54' c='mprobe'/>

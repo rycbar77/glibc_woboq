@@ -1,0 +1,6 @@
+<dec f='codebrowser/signal/signal.h' l='222' type='int sigdelset(sigset_t * __set, int __signo)'/>
+<doc f='codebrowser/signal/signal.h' l='221'>/* Remove SIGNO from SET.  */</doc>
+<def f='codebrowser/signal/sigdelset.c' l='21' ll='31' type='int sigdelset(sigset_t * set, int signo)'/>
+<doc f='codebrowser/signal/sigdelset.c' l='20'>/* Add SIGNO to SET.  */</doc>
+<use f='codebrowser/signal/sigrelse.c' l='34' u='c' c='sigrelse'/>
+<use f='codebrowser/sysdeps/posix/sigpause.c' l='38' u='c' c='do_sigpause'/>

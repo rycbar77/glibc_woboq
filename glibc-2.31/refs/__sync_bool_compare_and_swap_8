@@ -1,0 +1,9 @@
+<use f='codebrowser/gmon/mcount.c' l='72' macro='1' u='c' c='__mcount_internal'/>
+<use f='codebrowser/malloc/malloc.c' l='2353' macro='1' u='c' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2883' macro='1' u='c' c='mremap_chunk'/>
+<use f='codebrowser/malloc/set-freeres.c' l='40' macro='1' u='c' c='__libc_freeres'/>
+<use f='codebrowser/nptl/pthread_create.c' l='519' macro='1' u='c' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='807' macro='1' u='c' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_detach.c' l='37' macro='1' u='c' c='__pthread_detach'/>
+<use f='codebrowser/nptl/pthread_key_create.c' l='34' macro='1' u='c' c='__pthread_key_create'/>
+<use f='codebrowser/nptl/pthread_key_delete.c' l='34' macro='1' u='c' c='__pthread_key_delete'/>

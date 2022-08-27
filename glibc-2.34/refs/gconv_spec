@@ -1,0 +1,24 @@
+<def f='codebrowser/iconv/gconv_int.h' l='79' ll='85'/>
+<use f='codebrowser/iconv/gconv_int.h' l='151' c='__gconv_open'/>
+<use f='codebrowser/iconv/gconv_int.h' l='166' c='__gconv_create_spec'/>
+<use f='codebrowser/iconv/gconv_int.h' l='167' c='__gconv_create_spec'/>
+<use f='codebrowser/iconv/gconv_int.h' l='173' c='__gconv_destroy_spec'/>
+<size>24</size>
+<doc f='codebrowser/iconv/gconv_int.h' l='78'>/* The specification of the conversion that needs to be performed.  */</doc>
+<mbr r='gconv_spec::fromcode' o='0' t='char *'/>
+<mbr r='gconv_spec::tocode' o='64' t='char *'/>
+<mbr r='gconv_spec::translit' o='128' t='_Bool'/>
+<mbr r='gconv_spec::ignore' o='136' t='_Bool'/>
+<use f='codebrowser/iconv/gconv_charset.c' l='163' c='__gconv_create_spec'/>
+<use f='codebrowser/iconv/gconv_charset.c' l='164' c='__gconv_create_spec'/>
+<use f='codebrowser/iconv/gconv_charset.c' l='168' c='__gconv_create_spec'/>
+<use f='codebrowser/iconv/gconv_charset.c' l='222' c='__gconv_destroy_spec'/>
+<size>24</size>
+<use f='codebrowser/iconv/gconv_open.c' l='34' c='__gconv_open'/>
+<size>24</size>
+<use f='codebrowser/iconv/iconv_open.c' l='35' c='iconv_open'/>
+<size>24</size>
+<use f='codebrowser/iconv/iconv_prog.c' l='171' c='main'/>
+<size>24</size>
+<use f='codebrowser/intl/dcigettext.c' l='1123' c='_nl_find_msg'/>
+<size>24</size>

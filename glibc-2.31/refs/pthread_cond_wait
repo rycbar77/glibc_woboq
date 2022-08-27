@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='986' type='int pthread_cond_wait(pthread_cond_t *restrict __cond, pthread_mutex_t *restrict __mutex)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='981'>/* Wait for condition variable COND to be signaled or broadcast.
+   MUTEX is assumed to be locked before.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<def f='codebrowser/nptl/pthread_cond_wait.c' l='658' macro='1' type='int pthread_cond_wait(pthread_cond_t * , pthread_mutex_t * )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='128' c='__gthrw_pthread_cond_wait'/>
+<use f='codebrowser/support/xpthread_cond_wait.c' l='25' u='c' c='xpthread_cond_wait'/>

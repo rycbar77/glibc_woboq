@@ -1,0 +1,3 @@
+<dec f='codebrowser/include/glob.h' l='41' type='int __glob64(const char * __pattern, int __flags, int (*)(const char *, int) __errfunc, glob64_t * __pglob)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/glob.c' l='35' macro='1' type='int __glob64(const char * , int , int (*)(const char *, int) , glob_t * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/glob.c' l='36' c='glob64'/>

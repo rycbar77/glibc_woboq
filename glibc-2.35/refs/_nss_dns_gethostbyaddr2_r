@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/nss_dns.h' l='24' macro='1' type='enum nss_status _nss_dns_gethostbyaddr2_r(const void * , __socklen_t , int , struct hostent * , char * , size_t , int * , int * , int32_t * )'/>
+<dec f='codebrowser/include/nss_dns.h' l='27' type='enum nss_status _nss_dns_gethostbyaddr2_r(const void * , __socklen_t , int , struct hostent * , char * , size_t , int * , int * , int32_t * )'/>
+<use f='codebrowser/include/nss_dns.h' l='27' c='_nss_dns_gethostbyaddr2_r'/>
+<def f='codebrowser/resolv/nss_dns/dns-host.c' l='423' ll='561' type='enum nss_status _nss_dns_gethostbyaddr2_r(const void * addr, socklen_t len, int af, struct hostent * result, char * buffer, size_t buflen, int * errnop, int * h_errnop, int32_t * ttlp)'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='570' u='c' c='_nss_dns_gethostbyaddr_r'/>
+<use f='codebrowser/resolv/nss_dns_functions.c' l='33' u='a' c='__nss_dns_functions'/>

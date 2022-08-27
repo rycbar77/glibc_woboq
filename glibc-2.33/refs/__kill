@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/signal.h' l='24' type='int __kill(__pid_t __pid, int __sig)'/>
+<dec f='codebrowser/include/signal.h' l='25' type='int __kill(__pid_t , int )'/>
+<use f='codebrowser/include/signal.h' l='25' c='__kill'/>
+<use f='codebrowser/posix/wordexp.c' l='1097' u='c' c='exec_comm'/>
+<use f='codebrowser/sysdeps/posix/killpg.c' l='34' u='c' c='killpg'/>

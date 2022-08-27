@@ -1,0 +1,14 @@
+<dec f='codebrowser/string/string.h' l='449' type='char * __stpcpy(char *restrict __dest, const char *restrict __src)'/>
+<dec f='codebrowser/include/string.h' l='83' type='char * __stpcpy(char *restrict , const char *restrict )'/>
+<use f='codebrowser/include/string.h' l='83' c='__stpcpy'/>
+<doc f='codebrowser/string/string.h' l='448'>/* Copy SRC to DEST, returning the address of the terminating &apos;\0&apos; in DEST.  */</doc>
+<use f='codebrowser/elf/sotruss-lib.c' l='89' u='c' c='init'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='181' u='c' c='__nscd_innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='185' u='c' c='__nscd_innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='192' u='c' c='__nscd_innetgr'/>
+<use f='codebrowser/nscd/nscd_netgroup.c' l='199' u='c' c='__nscd_innetgr'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='208' c='__stpcpy_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='210' c='__stpcpy_sse2_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='211' c='__stpcpy_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/stpcpy.c' l='33' macro='1' type='char * __stpcpy(char *restrict , const char *restrict )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/stpcpy.c' l='35' c='stpcpy'/>

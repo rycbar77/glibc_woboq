@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/link.h' l='148' type='struct r_scope_elem'/>
+<offset>5760</offset>
+<doc f='codebrowser/include/link.h' l='146'>/* We need a special searchlist to process objects marked with
+       DT_SYMBOLIC.  */</doc>
+<use f='codebrowser/elf/dl-close.c' l='347' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='393' u='a' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-load.c' l='1423' u='m' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1424' u='m' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1431' u='a' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-object.c' l='99' u='m' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-object.c' l='103' u='m' c='_dl_new_object'/>
+<use f='codebrowser/elf/dl-support.c' l='96' u='w'/>

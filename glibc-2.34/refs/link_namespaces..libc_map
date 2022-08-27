@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='340' type='struct link_map *'/>
+<offset>256</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='338'>/* Once libc.so has been loaded into the namespace, this points to
+       its link map.  */</doc>
+<use f='codebrowser/elf/dl-deps.c' l='616' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-load.c' l='1485' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1489' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-open.c' l='518' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='773' u='r' c='dl_open_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='889' u='w' c='_dl_open'/>
+<use f='codebrowser/elf/rtld.c' l='1625' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2467' u='r' c='dl_main'/>
+<use f='codebrowser/sysdeps/nptl/dl-mutex.c' l='37' u='r' c='__rtld_mutex_init'/>

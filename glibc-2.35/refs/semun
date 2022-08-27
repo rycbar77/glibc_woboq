@@ -1,0 +1,10 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/semctl.c' l='29' ll='35'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/semctl.c' l='39'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/semctl.c' l='38' c='__semctl'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/semctl.c' l='38' c='__semctl'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/semctl.c' l='179' c='__semctl'/>
+<size>8</size>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/semctl.c' l='25'>/* The struct used to issue the syscall.  For architectures that assume
+   64-bit time as default (!__ASSUME_TIME64_SYSCALLS) the syscall will
+   split the resulting 64-bit sem_{o,c}time in two fields (sem_{o,c}time
+   and __sem_{o,c}time_high).  */</doc>

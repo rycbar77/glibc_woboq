@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/link.h' l='340' type='size_t'/>
+<offset>9152</offset>
+<use f='codebrowser/elf/dl-load.c' l='1241' u='w' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-reloc.c' l='322' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='335' u='r' c='_dl_protect_relro'/>
+<use f='codebrowser/elf/dl-reloc.c' l='335' u='r' c='_dl_protect_relro'/>
+<use f='codebrowser/elf/dl-support.c' l='408' u='w' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='413' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/rtld.c' l='1557' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1717' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2350' u='r' c='dl_main'/>

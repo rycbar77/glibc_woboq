@@ -1,0 +1,7 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='621' type='int vwprintf(const wchar_t *restrict __format, struct __va_list_tag * __arg)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='617'>/* Write formatted output to stdout from argument list ARG.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/vwprintf.c' l='30' macro='1' type='int vwprintf(const wchar_t * , struct __va_list_tag * )'/>
+<def f='codebrowser/wcsmbs/bits/wchar2.h' l='316' ll='320' macro='1' type='int vwprintf(const wchar_t *restrict __fmt, struct __va_list_tag * __ap)'/>

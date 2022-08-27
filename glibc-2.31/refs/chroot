@@ -1,0 +1,6 @@
+<dec f='codebrowser/posix/unistd.h' l='942' type='int chroot(const char * __path)'/>
+<doc f='codebrowser/posix/unistd.h' l='940'>/* Make PATH be the root directory (the starting point for absolute paths).
+   This call is restricted to the super-user.  */</doc>
+<use f='codebrowser/support/support_can_chroot.c' l='34' u='c' c='callback'/>
+<use f='codebrowser/support/test-container.c' l='999' u='c' c='main'/>
+<use f='codebrowser/support/xchroot.c' l='26' u='c' c='xchroot'/>

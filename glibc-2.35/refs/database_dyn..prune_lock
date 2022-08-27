@@ -1,0 +1,12 @@
+<dec f='codebrowser/nscd/nscd.h' l='130' type='pthread_mutex_t'/>
+<offset>832</offset>
+<use f='codebrowser/nscd/cache.c' l='218' u='a' c='cache_add'/>
+<use f='codebrowser/nscd/cache.c' l='226' u='a' c='cache_add'/>
+<use f='codebrowser/nscd/connections.c' l='116' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='135' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='154' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='173' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='192' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='1517' u='a' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/connections.c' l='1957' u='a' c='clear_db_cache'/>
+<use f='codebrowser/nscd/connections.c' l='1959' u='a' c='clear_db_cache'/>

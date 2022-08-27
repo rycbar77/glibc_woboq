@@ -1,0 +1,35 @@
+<dec f='codebrowser/elf/dl-tunables.h' l='54' type='void __tunable_get_val(tunable_id_t , void * , tunable_callback_t )'/>
+<use f='codebrowser/elf/dl-cache.c' l='208' macro='1' u='c' c='search_cache'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='173' macro='1' u='c' c='_dl_important_hwcaps'/>
+<def f='codebrowser/elf/dl-tunables.c' l='450' ll='483' type='void __tunable_get_val(tunable_id_t id, void * valp, tunable_callback_t callback)'/>
+<doc f='codebrowser/elf/dl-tunables.c' l='448'>/* Set the tunable value.  This is called by the module that the tunable exists
+   in. */</doc>
+<use f='codebrowser/elf/dl-usage.c' l='210' macro='1' u='c' c='print_legacy_hwcap_directories'/>
+<use f='codebrowser/malloc/arena.c' l='363' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='364' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='365' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='366' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='367' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='368' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='369' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='370' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='372' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='373' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='374' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='377' macro='1' u='c' c='ptmalloc_init'/>
+<use f='codebrowser/nptl/pthread_mutex_conf.c' l='43' macro='1' u='c' c='__pthread_tunables_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='110' macro='1' u='c' c='elision_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='112' macro='1' u='c' c='elision_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='114' macro='1' u='c' c='elision_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='116' macro='1' u='c' c='elision_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-conf.c' l='118' macro='1' u='c' c='elision_init'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='895' macro='1' u='c' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='900' macro='1' u='c' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='905' macro='1' u='c' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='910' macro='1' u='c' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='917' macro='1' u='c' c='dl_init_cacheinfo'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='645' macro='1' u='c' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='701' macro='1' u='c' c='init_cpu_features'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='703' macro='1' u='c' c='init_cpu_features'/>
+<use f='codebrowser/elf/dl-tls.c' l='97' macro='1' u='c' c='_dl_tls_static_surplus_init'/>
+<use f='codebrowser/elf/dl-tls.c' l='98' macro='1' u='c' c='_dl_tls_static_surplus_init'/>

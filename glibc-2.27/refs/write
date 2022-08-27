@@ -1,0 +1,14 @@
+<dec f='codebrowser/posix/unistd.h' l='369' type='ssize_t write(int __fd, const void * __buf, size_t __n)'/>
+<dec f='codebrowser/include/unistd.h' l='62' type='ssize_t write(int , const void * , size_t )'/>
+<use f='codebrowser/include/unistd.h' l='62' c='write'/>
+<doc f='codebrowser/posix/unistd.h' l='365'>/* Write N bytes of BUF to FD.  Return the number written, or -1.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/elf/cache.c' l='438' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='449' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='452' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='457' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='819' u='c' c='save_aux_cache'/>
+<use f='codebrowser/io/copy_file_range-compat.c' l='120' u='c' c='copy_file_range_compat'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/write.c' l='33' macro='1' type='ssize_t write(int , const void * , size_t )'/>

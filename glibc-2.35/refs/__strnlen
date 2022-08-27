@@ -1,0 +1,25 @@
+<dec f='codebrowser/include/string.h' l='12' type='size_t __strnlen(const char * __string, size_t __maxlen)'/>
+<dec f='codebrowser/include/string.h' l='114' type='size_t __strnlen(const char * , size_t )'/>
+<use f='codebrowser/include/string.h' l='114' c='__strnlen'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='314' macro='1' u='c' c='add_module'/>
+<use f='codebrowser/inet/getnameinfo.c' l='332' u='c' c='gni_host_inet_numeric'/>
+<use f='codebrowser/posix/execvpe.c' l='98' u='c' c='__execvpe_common'/>
+<use f='codebrowser/posix/execvpe.c' l='99' u='c' c='__execvpe_common'/>
+<use f='codebrowser/posix/fnmatch.c' l='52' u='c' c='fnmatch_convert_to_wide'/>
+<use f='codebrowser/posix/wordexp.c' l='338' macro='1' u='c' c='parse_tilde'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='1125' u='c' c='__vfprintf_internal'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='1125' u='c' c='printf_positional'/>
+<use f='codebrowser/stdlib/putenv.c' l='68' macro='1' u='c' c='putenv'/>
+<use f='codebrowser/string/argz-stringify.c' l='30' u='c' c='__argz_stringify'/>
+<use f='codebrowser/string/strcasestr.c' l='75' u='c' c='__strcasestr'/>
+<use f='codebrowser/string/strndup.c' l='42' u='c' c='__strndup'/>
+<use f='codebrowser/sysdeps/unix/getlogin_r.c' l='82' u='c' c='getlogin_r_fd0'/>
+<use f='codebrowser/string/stpncpy.c' l='42' u='c' c='__stpncpy_sse2'/>
+<use f='codebrowser/string/strncat.c' l='34' u='c' c='__strncat_sse2'/>
+<use f='codebrowser/string/strncpy.c' l='29' u='c' c='__strncpy_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strnlen.c' l='31' macro='1' type='size_t __strnlen(const char * , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strnlen.c' l='32' c='strnlen'/>
+<use f='codebrowser/string/strstr.c' l='96' u='c' c='__strstr_sse2'/>
+<use f='codebrowser/string/strstr.c' l='128' u='c' c='__strstr_sse2'/>
+<use f='codebrowser/wcsmbs/mbsnrtowcs.c' l='59' u='c' c='__mbsnrtowcs'/>
+<use f='codebrowser/wcsmbs/mbsrtowcs_l.c' l='115' u='c' c='__mbsrtowcs_l'/>

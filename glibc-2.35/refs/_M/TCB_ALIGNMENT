@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/x86/nptl/pthreaddef.h' l='38'/>
+<use f='codebrowser/nptl/descr.h' l='39' u='a'/>
+<use f='codebrowser/nptl/descr.h' l='41' u='c'/>
+<use f='codebrowser/nptl/descr.h' l='418' u='c'/>
+<doc f='codebrowser/sysdeps/x86/nptl/pthreaddef.h' l='31'>/* Alignment requirement for TCB.
+
+   Some processors such as Intel Atom pay a big penalty on every
+   access using a segment override if that segment&apos;s base is not
+   aligned to the size of a cache line.  (See Intel 64 and IA-32
+   Architectures Optimization Reference Manual, section 13.3.3.3,
+   &quot;Segment Base&quot;.)  On such machines, a cache line is 64 bytes.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='93' u='c'/>
+<use f='codebrowser/csu/libc-tls.c' l='112' u='c'/>
+<use f='codebrowser/csu/libc-tls.c' l='218' u='c'/>
+<use f='codebrowser/nptl/allocatestack.c' l='225' u='c'/>

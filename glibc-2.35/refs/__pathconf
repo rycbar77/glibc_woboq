@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/unistd.h' l='113' type='long __pathconf(const char * __path, int __name)'/>
+<use f='codebrowser/sysdeps/posix/pathconf.c' l='224' c='pathconf'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='38' ll='60' type='long __pathconf(const char * file, int name)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/pathconf.c' l='37'>/* Get file-specific information about FILE.  */</doc>

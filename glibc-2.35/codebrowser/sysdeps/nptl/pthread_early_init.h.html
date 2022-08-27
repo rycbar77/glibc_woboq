@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>pthread_early_init.h source code [codebrowser/sysdeps/nptl/pthread_early_init.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/nptl/pthread_early_init.h'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>sysdeps</a>/<a href='./'>nptl</a>/<a href='pthread_early_init.h.html'>pthread_early_init.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* pthread initialization called from __libc_early_init.  NPTL version.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_PTHREAD_EARLY_INIT_H">_PTHREAD_EARLY_INIT_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/_PTHREAD_EARLY_INIT_H" data-ref="_M/_PTHREAD_EARLY_INIT_H">_PTHREAD_EARLY_INIT_H</dfn> 1</u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../../nptl/nptl-stack.h.html">&lt;nptl/nptl-stack.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="pthreadP.h.html">&lt;pthreadP.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="pthread_mutex_conf.h.html">&lt;pthread_mutex_conf.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../../include/sys/resource.h.html">&lt;sys/resource.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><em>static</em> <b>inline</b> <em>void</em></td></tr>
+<tr><th id="28">28</th><td><dfn class="decl def fn" id="__pthread_early_init" title='__pthread_early_init' data-ref="__pthread_early_init" data-ref-filename="__pthread_early_init">__pthread_early_init</dfn> (<em>void</em>)</td></tr>
+<tr><th id="29">29</th><td>{</td></tr>
+<tr><th id="30">30</th><td>  <i>/* Determine the default allowed stack size.  This is the size used</i></td></tr>
+<tr><th id="31">31</th><td><i>     in case the user does not specify one.  */</i></td></tr>
+<tr><th id="32">32</th><td>  <b>struct</b> <a class="type" href="../unix/sysv/linux/bits/resource.h.html#rlimit" title='rlimit' data-ref="rlimit" data-ref-filename="rlimit">rlimit</a> <dfn class="local col8 decl" id="48limit" title='limit' data-type='struct rlimit' data-ref="48limit" data-ref-filename="48limit">limit</dfn>;</td></tr>
+<tr><th id="33">33</th><td>  <b>if</b> (<a class="ref fn" href="../../include/sys/resource.h.html#__getrlimit" title='__getrlimit' data-ref="__getrlimit" data-ref-filename="__getrlimit">__getrlimit</a> (<a class="macro" href="../unix/sysv/linux/bits/resource.h.html#47" title="RLIMIT_STACK" data-ref="_M/RLIMIT_STACK">RLIMIT_STACK</a>, &amp;<a class="local col8 ref" href="#48limit" title='limit' data-ref="48limit" data-ref-filename="48limit">limit</a>) != <var>0</var></td></tr>
+<tr><th id="34">34</th><td>      || <a class="local col8 ref" href="#48limit" title='limit' data-ref="48limit" data-ref-filename="48limit">limit</a>.<a class="ref field" href="../unix/sysv/linux/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur" data-ref-filename="rlimit..rlim_cur">rlim_cur</a> == <a class="macro" href="../unix/sysv/linux/bits/resource.h.html#115" title="((__rlim_t) -1)" data-ref="_M/RLIM_INFINITY">RLIM_INFINITY</a>)</td></tr>
+<tr><th id="35">35</th><td>    <i>/* The system limit is not usable.  Use an architecture-specific</i></td></tr>
+<tr><th id="36">36</th><td><i>       default.  */</i></td></tr>
+<tr><th id="37">37</th><td>    <a class="local col8 ref" href="#48limit" title='limit' data-ref="48limit" data-ref-filename="48limit">limit</a>.<a class="ref field" href="../unix/sysv/linux/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur" data-ref-filename="rlimit..rlim_cur">rlim_cur</a> = <a class="macro" href="../x86/nptl/pthreaddef.h.html#19" title="(2 * 1024 * 1024)" data-ref="_M/ARCH_STACK_DEFAULT_SIZE">ARCH_STACK_DEFAULT_SIZE</a>;</td></tr>
+<tr><th id="38">38</th><td>  <b>else</b> <b>if</b> (<a class="local col8 ref" href="#48limit" title='limit' data-ref="48limit" data-ref-filename="48limit">limit</a>.<a class="ref field" href="../unix/sysv/linux/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur" data-ref-filename="rlimit..rlim_cur">rlim_cur</a> &lt; <a class="macro" href="../unix/sysv/linux/bits/pthread_stack_min.h.html#20" title="16384" data-ref="_M/PTHREAD_STACK_MIN">PTHREAD_STACK_MIN</a>)</td></tr>
+<tr><th id="39">39</th><td>    <i>/* The system limit is unusably small.</i></td></tr>
+<tr><th id="40">40</th><td><i>       Use the minimal size acceptable.  */</i></td></tr>
+<tr><th id="41">41</th><td>    <a class="local col8 ref" href="#48limit" title='limit' data-ref="48limit" data-ref-filename="48limit">limit</a>.<a class="ref field" href="../unix/sysv/linux/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur" data-ref-filename="rlimit..rlim_cur">rlim_cur</a> = <a class="macro" href="../unix/sysv/linux/bits/pthread_stack_min.h.html#20" title="16384" data-ref="_M/PTHREAD_STACK_MIN">PTHREAD_STACK_MIN</a>;</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td>  <i>/* Make sure it meets the minimum size that allocate_stack</i></td></tr>
+<tr><th id="44">44</th><td><i>     (allocatestack.c) will demand, which depends on the page size.  */</i></td></tr>
+<tr><th id="45">45</th><td>  <em>const</em> <a class="typedef" href="../../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a> <dfn class="local col9 decl" id="49pagesz" title='pagesz' data-type='const uintptr_t' data-ref="49pagesz" data-ref-filename="49pagesz">pagesz</dfn> = <a class="macro" href="../generic/ldsodefs.h.html#540" title="_dl_pagesize" data-ref="_M/GLRO">GLRO</a>(dl_pagesize);</td></tr>
+<tr><th id="46">46</th><td>  <em>const</em> <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col0 decl" id="50minstack" title='minstack' data-type='const size_t' data-ref="50minstack" data-ref-filename="50minstack">minstack</dfn> = (<a class="local col9 ref" href="#49pagesz" title='pagesz' data-ref="49pagesz" data-ref-filename="49pagesz">pagesz</a> + <a class="ref fn" href="../../nptl/nptl-stack.h.html#__nptl_tls_static_size_for_stack" title='__nptl_tls_static_size_for_stack' data-ref="__nptl_tls_static_size_for_stack" data-ref-filename="__nptl_tls_static_size_for_stack">__nptl_tls_static_size_for_stack</a> ()</td></tr>
+<tr><th id="47">47</th><td>                           + <a class="macro" href="../x86/nptl/pthreaddef.h.html#29" title="2048" data-ref="_M/MINIMAL_REST_STACK">MINIMAL_REST_STACK</a>);</td></tr>
+<tr><th id="48">48</th><td>  <b>if</b> (<a class="local col8 ref" href="#48limit" title='limit' data-ref="48limit" data-ref-filename="48limit">limit</a>.<a class="ref field" href="../unix/sysv/linux/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur" data-ref-filename="rlimit..rlim_cur">rlim_cur</a> &lt; <a class="local col0 ref" href="#50minstack" title='minstack' data-ref="50minstack" data-ref-filename="50minstack">minstack</a>)</td></tr>
+<tr><th id="49">49</th><td>    <a class="local col8 ref" href="#48limit" title='limit' data-ref="48limit" data-ref-filename="48limit">limit</a>.<a class="ref field" href="../unix/sysv/linux/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur" data-ref-filename="rlimit..rlim_cur">rlim_cur</a> = <a class="local col0 ref" href="#50minstack" title='minstack' data-ref="50minstack" data-ref-filename="50minstack">minstack</a>;</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td>  <i>/* Round the resource limit up to page size.  */</i></td></tr>
+<tr><th id="52">52</th><td>  <a class="local col8 ref" href="#48limit" title='limit' data-ref="48limit" data-ref-filename="48limit">limit</a>.<a class="ref field" href="../unix/sysv/linux/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur" data-ref-filename="rlimit..rlim_cur">rlim_cur</a> = <a class="macro" href="../../include/libc-pointer-arith.h.html#53" title="(((limit.rlim_cur) + (pagesz) - 1) &amp; -((__typeof__ ((limit.rlim_cur) + (pagesz) - 1)) ((pagesz))))" data-ref="_M/ALIGN_UP">ALIGN_UP</a> (<a class="local col8 ref" href="#48limit" title='limit' data-ref="48limit" data-ref-filename="48limit">limit</a>.<a class="ref field" href="../unix/sysv/linux/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur" data-ref-filename="rlimit..rlim_cur">rlim_cur</a>, <a class="local col9 ref" href="#49pagesz" title='pagesz' data-ref="49pagesz" data-ref-filename="49pagesz">pagesz</a>);</td></tr>
+<tr><th id="53">53</th><td>  <a class="ref" href="pthreadP.h.html#__default_pthread_attr" title='__default_pthread_attr' data-ref="__default_pthread_attr" data-ref-filename="__default_pthread_attr">__default_pthread_attr</a>.<a class="ref field" href="internaltypes.h.html#pthread_attr_transparent::internal" title='pthread_attr_transparent::internal' data-ref="pthread_attr_transparent::internal" data-ref-filename="pthread_attr_transparent..internal">internal</a>.<a class="ref field" href="internaltypes.h.html#pthread_attr::stacksize" title='pthread_attr::stacksize' data-ref="pthread_attr::stacksize" data-ref-filename="pthread_attr..stacksize">stacksize</a> = <a class="local col8 ref" href="#48limit" title='limit' data-ref="48limit" data-ref-filename="48limit">limit</a>.<a class="ref field" href="../unix/sysv/linux/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur" data-ref-filename="rlimit..rlim_cur">rlim_cur</a>;</td></tr>
+<tr><th id="54">54</th><td>  <a class="ref" href="pthreadP.h.html#__default_pthread_attr" title='__default_pthread_attr' data-ref="__default_pthread_attr" data-ref-filename="__default_pthread_attr">__default_pthread_attr</a>.<a class="ref field" href="internaltypes.h.html#pthread_attr_transparent::internal" title='pthread_attr_transparent::internal' data-ref="pthread_attr_transparent::internal" data-ref-filename="pthread_attr_transparent..internal">internal</a>.<a class="ref field" href="internaltypes.h.html#pthread_attr::guardsize" title='pthread_attr::guardsize' data-ref="pthread_attr::guardsize" data-ref-filename="pthread_attr..guardsize">guardsize</a> = <a class="macro" href="../generic/ldsodefs.h.html#540" title="_dl_pagesize" data-ref="_M/GLRO">GLRO</a> (dl_pagesize);</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><u>#<span data-ppcond="56">if</span> <a class="macro" href="../../build/config.h.html#270" title="1" data-ref="_M/HAVE_TUNABLES">HAVE_TUNABLES</a></u></td></tr>
+<tr><th id="57">57</th><td>  <a class="ref fn" href="pthread_mutex_conf.h.html#__pthread_tunables_init" title='__pthread_tunables_init' data-ref="__pthread_tunables_init" data-ref-filename="__pthread_tunables_init">__pthread_tunables_init</a> ();</td></tr>
+<tr><th id="58">58</th><td><u>#<span data-ppcond="56">endif</span></u></td></tr>
+<tr><th id="59">59</th><td>}</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><u>#<span data-ppcond="19">endif</span>  /* _PTHREAD_EARLY_INIT_H */</u></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../elf/libc_early_init.c.html'>codebrowser/elf/libc_early_init.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

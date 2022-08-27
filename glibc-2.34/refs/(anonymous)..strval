@@ -1,0 +1,15 @@
+<dec f='codebrowser/elf/dl-tunables.h' l='41' type='const char *'/>
+<offset>0</offset>
+<use f='codebrowser/elf/dl-tunables.c' l='105' u='w' c='do_tunable_update_val'/>
+<use f='codebrowser/elf/dl-tunables.c' l='105' u='r' c='do_tunable_update_val'/>
+<use f='codebrowser/elf/dl-tunables.c' l='151' u='w' c='tunable_initialize'/>
+<use f='codebrowser/elf/dl-tunables.c' l='364' u='r' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='390' u='r' c='__tunables_print'/>
+<use f='codebrowser/elf/dl-tunables.c' l='425' u='r' c='__tunable_get_val'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='109' u='r' c='_dl_tunable_set_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='303' u='r' c='_dl_tunable_set_x86_ibt'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='305' u='r' c='_dl_tunable_set_x86_ibt'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='307' u='r' c='_dl_tunable_set_x86_ibt'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='316' u='r' c='_dl_tunable_set_x86_shstk'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='318' u='r' c='_dl_tunable_set_x86_shstk'/>
+<use f='codebrowser/sysdeps/x86/cpu-tunables.c' l='320' u='r' c='_dl_tunable_set_x86_shstk'/>

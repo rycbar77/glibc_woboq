@@ -1,0 +1,8 @@
+<def f='codebrowser/malloc/arena.c' l='97' type='mstate'/>
+<use f='codebrowser/malloc/arena.c' l='221' u='r' c='__malloc_fork_unlock_child'/>
+<use f='codebrowser/malloc/arena.c' l='222' u='r' c='__malloc_fork_unlock_child'/>
+<use f='codebrowser/malloc/arena.c' l='227' u='r' c='__malloc_fork_unlock_child'/>
+<use f='codebrowser/malloc/arena.c' l='347' u='w' c='ptmalloc_init'/>
+<use f='codebrowser/malloc/arena.c' l='1005' u='r' c='__malloc_arena_thread_freeres'/>
+<use f='codebrowser/malloc/arena.c' l='1006' u='w' c='__malloc_arena_thread_freeres'/>
+<doc f='codebrowser/malloc/arena.c' l='95'>/* Thread specific data.  */</doc>

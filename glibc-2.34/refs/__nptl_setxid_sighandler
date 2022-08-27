@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='664' type='void __nptl_setxid_sighandler(int sig, siginfo_t * si, void * ctx)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='665' type='void __nptl_setxid_sighandler(int , siginfo_t * , void * )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='665' c='__nptl_setxid_sighandler'/>
+<def f='codebrowser/nptl/nptl_setxid.c' l='56' ll='94' type='void __nptl_setxid_sighandler(int sig, siginfo_t * si, void * ctx)'/>
+<doc f='codebrowser/nptl/nptl_setxid.c' l='53'>/* We use the SIGSETXID signal in the setuid, setgid, etc. implementations to
+   tell each thread to call the respective setxid syscall on itself.  This is
+   the handler.  */</doc>
+<use f='codebrowser/nptl/pthread_create.c' l='78' u='r' c='late_init'/>

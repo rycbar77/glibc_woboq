@@ -1,0 +1,20 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='344' ll='349'/>
+<size>12</size>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='343'>/* User visible structure for SCM_CREDENTIALS message */</doc>
+<mbr r='ucred::pid' o='0' t='pid_t'/>
+<mbr r='ucred::uid' o='32' t='uid_t'/>
+<mbr r='ucred::gid' o='64' t='gid_t'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='441' c='__msgread'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='454' c='__msgread'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='490' c='__msgwrite'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='491' c='__msgwrite'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='501' c='__msgwrite'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='504' c='__msgwrite'/>
+<size>12</size>
+<use f='codebrowser/sunrpc/svc_unix.c' l='316'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='318'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='318'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='380' c='__msgwrite'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='390' c='__msgwrite'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='393' c='__msgwrite'/>
+<size>12</size>

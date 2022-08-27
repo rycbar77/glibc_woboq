@@ -1,0 +1,6 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='595' type='int atexit(void (*)(void) __func)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='594'>/* Register a function to be called when `exit&apos; is called.  */</doc>
+<use f='codebrowser/csu/gmon-start.c' l='99' u='c' c='__gmon_start__'/>
+<def f='codebrowser/stdlib/atexit.c' l='40' ll='47' type='int atexit(void (*)(void) func)'/>
+<doc f='codebrowser/stdlib/atexit.c' l='39'>/* Register FUNC to be executed by `exit&apos;.  */</doc>
+<use f='codebrowser/support/support_test_main.c' l='358' u='c' c='support_test_main'/>

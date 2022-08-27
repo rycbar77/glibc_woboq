@@ -1,0 +1,12 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='330' type='unsigned int'/>
+<offset>192</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='327'>/* This is zero at program start to signal that the global scope map is
+       allocated by rtld.  Later it keeps the size of the map.  It might be
+       reset if in _dl_close if the last global object is removed.  */</doc>
+<use f='codebrowser/elf/dl-libc.c' l='297' u='r' c='free_mem'/>
+<use f='codebrowser/elf/dl-libc.c' l='311' u='w' c='free_mem'/>
+<use f='codebrowser/elf/dl-open.c' l='127' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='132' u='r' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='156' u='w' c='add_to_global_resize'/>
+<use f='codebrowser/elf/dl-open.c' l='184' u='r' c='add_to_global_update'/>
+<use f='codebrowser/elf/dl-open.c' l='184' u='r' c='add_to_global_update'/>

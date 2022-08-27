@@ -1,0 +1,36 @@
+<def f='codebrowser/sysdeps/nptl/internaltypes.h' l='160' ll='185'/>
+<size>16</size>
+<doc f='codebrowser/sysdeps/nptl/internaltypes.h' l='159'>/* Semaphore variable structure.  */</doc>
+<mbr r='new_sem::data' o='0' t='uint64_t'/>
+<mbr r='new_sem::private' o='64' t='int'/>
+<mbr r='new_sem::pad' o='96' t='int'/>
+<use f='codebrowser/nptl/semaphoreP.h' l='25' c='__new_sem_open_init'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='88' c='__sem_wait_cleanup'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='88' c='__sem_wait_cleanup'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='105' c='do_futex_wait'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='125' c='__new_sem_wait_fast'/>
+<use f='codebrowser/nptl/sem_waitcommon.c' l='164' c='__new_sem_wait_slow64'/>
+<use f='codebrowser/nptl/sem_clockwait.c' l='43' c='___sem_clockwait64'/>
+<use f='codebrowser/nptl/sem_clockwait.c' l='46' c='___sem_clockwait64'/>
+<size>16</size>
+<use f='codebrowser/nptl/sem_getvalue.c' l='27' c='__new_sem_getvalue'/>
+<use f='codebrowser/nptl/sem_getvalue.c' l='27' c='__new_sem_getvalue'/>
+<size>16</size>
+<use f='codebrowser/nptl/sem_init.c' l='29' c='__new_sem_init'/>
+<use f='codebrowser/nptl/sem_init.c' l='46' c='__new_sem_init'/>
+<use f='codebrowser/nptl/sem_init.c' l='46' c='__new_sem_init'/>
+<size>16</size>
+<use f='codebrowser/nptl/sem_post.c' l='34' c='__new_sem_post'/>
+<use f='codebrowser/nptl/sem_post.c' l='34' c='__new_sem_post'/>
+<size>16</size>
+<use f='codebrowser/nptl/sem_timedwait.c' l='37' c='___sem_timedwait64'/>
+<use f='codebrowser/nptl/sem_timedwait.c' l='40' c='___sem_timedwait64'/>
+<size>16</size>
+<use f='codebrowser/nptl/sem_wait.c' l='39' c='__new_sem_wait'/>
+<use f='codebrowser/nptl/sem_wait.c' l='42' c='__new_sem_wait'/>
+<use f='codebrowser/nptl/sem_wait.c' l='81' c='__new_sem_trywait'/>
+<size>16</size>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='110' c='__sem_open'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='116' c='__sem_open'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='117' c='__sem_open'/>
+<size>16</size>

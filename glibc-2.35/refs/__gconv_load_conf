@@ -1,0 +1,9 @@
+<dec f='codebrowser/iconv/gconv_int.h' l='213' type='void __gconv_load_conf()'/>
+<doc f='codebrowser/iconv/gconv_int.h' l='212'>/* Read all the configuration data and cache it if not done so already.  */</doc>
+<def f='codebrowser/iconv/gconv_conf.c' l='525' ll='529' type='void __gconv_load_conf()'/>
+<doc f='codebrowser/iconv/gconv_conf.c' l='521'>/* Read all configuration files found in the user-specified and the default
+   path, but do it only &quot;once&quot; using __gconv_read_conf to do the actual
+   work.  This is the function that must be called when reading iconv
+   configuration.  */</doc>
+<use f='codebrowser/iconv/gconv_db.c' l='707' u='c' c='__gconv_compare_alias'/>
+<use f='codebrowser/iconv/gconv_db.c' l='727' u='c' c='__gconv_find_transform'/>

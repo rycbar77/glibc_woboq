@@ -1,0 +1,17 @@
+<dec f='codebrowser/math/math-narrow.h' l='49'/>
+<doc f='codebrowser/math/math-narrow.h' l='33'>/* Carry out a computation using round-to-odd.  The computation is
+   EXPR; the union type in which to store the result is UNION and the
+   subfield of the &quot;ieee&quot; field of that union with the low part of the
+   mantissa is MANTISSA; SUFFIX is the suffix for both underlying libm
+   functions for the argument type (for computations where a libm
+   function rather than a C operator is used when argument and result
+   types are the same) and the libc_fe* macros to ensure that the
+   correct rounding mode is used, for platforms with multiple rounding
+   modes where those macros set only the relevant mode.
+   CLEAR_UNDERFLOW indicates whether underflow exceptions must be
+   cleared (in the case where a round-toward-zero underflow might not
+   indicate an underflow after narrowing, when that narrowing only
+   reduces precision not exponent range and the architecture uses
+   before-rounding tininess detection).  This macro does not work
+   correctly if the sign of an exact zero result depends on the
+   rounding mode, so that case must be checked for separately.  */</doc>

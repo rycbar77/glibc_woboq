@@ -1,0 +1,29 @@
+<dec f='codebrowser/iconv/gconv_int.h' l='166' type='struct gconv_spec * __gconv_create_spec(struct gconv_spec * conv_spec, const char * fromcode, const char * tocode)'/>
+<dec f='codebrowser/iconv/gconv_int.h' l='168' type='struct gconv_spec * __gconv_create_spec(struct gconv_spec * , const char * , const char * )'/>
+<use f='codebrowser/iconv/gconv_int.h' l='168' c='__gconv_create_spec'/>
+<doc f='codebrowser/iconv/gconv_int.h' l='154'>/* This function accepts the charset names of the source and destination of the
+   conversion and populates *conv_spec with an equivalent conversion
+   specification that may later be used by __gconv_open.  The charset names
+   might contain options in the form of suffixes that alter the conversion,
+   e.g. &quot;ISO-10646/UTF-8/TRANSLIT&quot;.  It processes the charset names, ignoring
+   and truncating any suffix options in fromcode, and processing and truncating
+   any suffix options in tocode.  Supported suffix options (&quot;TRANSLIT&quot; or
+   &quot;IGNORE&quot;) when found in tocode lead to the corresponding flag in *conv_spec
+   to be set to true.  Unrecognized suffix options are silently discarded.  If
+   the function succeeds, it returns conv_spec back to the caller.  It returns
+   NULL upon failure.  */</doc>
+<def f='codebrowser/iconv/gconv_charset.c' l='163' ll='217' type='struct gconv_spec * __gconv_create_spec(struct gconv_spec * conv_spec, const char * fromcode, const char * tocode)'/>
+<doc f='codebrowser/iconv/gconv_charset.c' l='152'>/* This function accepts the charset names of the source and destination of the
+   conversion and populates *conv_spec with an equivalent conversion
+   specification that may later be used by __gconv_open.  The charset names
+   might contain options in the form of suffixes that alter the conversion,
+   e.g. &quot;ISO-10646/UTF-8/TRANSLIT&quot;.  It processes the charset names, ignoring
+   and truncating any suffix options in fromcode, and processing and truncating
+   any suffix options in tocode.  Supported suffix options (&quot;TRANSLIT&quot; or
+   &quot;IGNORE&quot;) when found in tocode lead to the corresponding flag in *conv_spec
+   to be set to true.  Unrecognized suffix options are silently discarded.  If
+   the function succeeds, it returns conv_spec back to the caller.  It returns
+   NULL upon failure.  conv_spec must be allocated and freed by the caller.  */</doc>
+<use f='codebrowser/iconv/iconv_open.c' l='36' u='c' c='iconv_open'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='173' u='c' c='main'/>
+<use f='codebrowser/intl/dcigettext.c' l='1125' u='c' c='_nl_find_msg'/>

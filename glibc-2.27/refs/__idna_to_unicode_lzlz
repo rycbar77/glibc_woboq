@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/idna.h' l='5' type='int __idna_to_unicode_lzlz(const char * , char ** , int )'/>
+<use f='codebrowser/inet/getnameinfo.c' l='299' u='c' c='gni_host_inet_name'/>
+<def f='codebrowser/libidn/idn-stub.c' l='72' ll='102' type='int __idna_to_unicode_lzlz(const char * input, char ** output, int flags)'/>
+<doc f='codebrowser/libidn/idn-stub.c' l='70'>/* Stub to dlopen libcidn.so and invoke the real idna_to_ascii_lz, or
+   return IDNA_DLOPEN_ERROR on failure.  */</doc>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1041' u='c' c='gaih_inet'/>

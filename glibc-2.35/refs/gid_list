@@ -1,0 +1,24 @@
+<def f='codebrowser/malloc/dynarray-skeleton.c' l='126' macro='1'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='181' macro='1' c='gid_list_free__array__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='197' macro='1' c='gid_list_init'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='207' macro='1' c='gid_list_free'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='218' macro='1' c='gid_list_has_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='227' macro='1' c='gid_list_mark_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='241' macro='1' c='gid_list_size'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='250' macro='1' c='gid_list_at'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='262' macro='1' c='gid_list_begin'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='272' macro='1' c='gid_list_end'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='279' macro='1' c='gid_list_add__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='299' macro='1' c='gid_list_add'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='320' macro='1' c='gid_list_emplace__tail__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='335' macro='1' c='gid_list_emplace__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='358' macro='1' c='gid_list_emplace'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='377' macro='1' c='gid_list_resize'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='422' macro='1' c='gid_list_remove_last'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='439' macro='1' c='gid_list_clear'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='488' macro='1' c='gid_list_finalize'/>
+<use f='codebrowser/nss/getent.c' l='512' c='initgroups_keys'/>
+<size>64</size>
+<doc f='codebrowser/malloc/dynarray-skeleton.c' l='125'>/* All fields of this struct are private to the implementation.  */</doc>
+<mbr r='gid_list::u' o='0' t='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.35/argp/../malloc/dynarray-skeleton.c:128:3)'/>
+<mbr r='gid_list::scratch' o='192' t='gid_t[10]'/>

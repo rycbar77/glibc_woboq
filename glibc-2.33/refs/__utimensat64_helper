@@ -1,0 +1,13 @@
+<dec f='codebrowser/include/time.h' l='191' type='int __utimensat64_helper(int fd, const char * file, const struct timespec * tsp, int flags)'/>
+<dec f='codebrowser/include/time.h' l='193' type='int __utimensat64_helper(int , const char * , const struct timespec * , int )'/>
+<use f='codebrowser/include/time.h' l='193' c='__utimensat64_helper'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimens.c' l='37' u='c' c='__futimens'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='35' u='c' c='__futimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimesat.c' l='34' u='c' c='__futimesat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lutimes.c' l='34' u='c' c='__lutimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/utime.c' l='36' u='c' c='__utime'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/utimensat.c' l='27' ll='62' type='int __utimensat64_helper(int fd, const char * file, const struct timespec * tsp64, int flags)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/utimensat.c' l='76' u='c' c='__utimensat'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/utimensat.c' l='25'>/* Helper function defined for easy reusage of the code which calls utimensat
+   and utimensat_time64 syscall.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/utimes.c' l='33' u='c' c='__utimes'/>

@@ -1,0 +1,11 @@
+<def f='codebrowser/login/utmp_file.c' l='79' ll='118' type='_Bool try_file_lock(int fd, int type)'/>
+<use f='codebrowser/login/utmp_file.c' l='198' u='c' c='__libc_getutent_r'/>
+<use f='codebrowser/login/utmp_file.c' l='253' u='c' c='internal_getut_r'/>
+<use f='codebrowser/login/utmp_file.c' l='303' u='c' c='__libc_getutline_r'/>
+<use f='codebrowser/login/utmp_file.c' l='371' u='c' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='470' u='c' c='__libc_updwtmp'/>
+<doc f='codebrowser/login/utmp_file.c' l='73'>/* try_file_lock (LOCKING, FD, TYPE) returns true if the locking
+   operation failed and recovery needs to be performed.
+
+   file_unlock (FD) removes the lock (which must have been
+   successfully acquired). */</doc>

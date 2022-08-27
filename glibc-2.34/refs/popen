@@ -1,0 +1,6 @@
+<dec f='codebrowser/libio/stdio.h' l='823' type='FILE * popen(const char * __command, const char * __modes)'/>
+<doc f='codebrowser/libio/stdio.h' l='819'>/* Create a new stream connected to a pipe running the given command.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/iopopen.c' l='320' macro='1' type='FILE * popen(const char * , const char * )'/>

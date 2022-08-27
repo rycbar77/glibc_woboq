@@ -1,0 +1,187 @@
+<use f='codebrowser/iconv/gconv.h' l='71'/>
+<use f='codebrowser/iconv/gconv.h' l='76'/>
+<use f='codebrowser/iconv/gconv.h' l='79'/>
+<use f='codebrowser/iconv/gconv.h' l='80'/>
+<def f='codebrowser/iconv/gconv.h' l='84' ll='112'/>
+<use f='codebrowser/iconv/gconv.h' l='143'/>
+<use f='codebrowser/libio/libio.h' l='52'/>
+<size>104</size>
+<doc f='codebrowser/iconv/gconv.h' l='83'>/* Description of a conversion step.  */</doc>
+<mbr r='__gconv_step::__shlib_handle' o='0' t='struct __gconv_loaded_object *'/>
+<mbr r='__gconv_step::__modname' o='64' t='const char *'/>
+<mbr r='__gconv_step::__counter' o='128' t='int'/>
+<mbr r='__gconv_step::__from_name' o='192' t='char *'/>
+<mbr r='__gconv_step::__to_name' o='256' t='char *'/>
+<mbr r='__gconv_step::__fct' o='320' t='__gconv_fct'/>
+<mbr r='__gconv_step::__btowc_fct' o='384' t='__gconv_btowc_fct'/>
+<mbr r='__gconv_step::__init_fct' o='448' t='__gconv_init_fct'/>
+<mbr r='__gconv_step::__end_fct' o='512' t='__gconv_end_fct'/>
+<mbr r='__gconv_step::__min_needed_from' o='576' t='int'/>
+<mbr r='__gconv_step::__max_needed_from' o='608' t='int'/>
+<mbr r='__gconv_step::__min_needed_to' o='640' t='int'/>
+<mbr r='__gconv_step::__max_needed_to' o='672' t='int'/>
+<mbr r='__gconv_step::__stateful' o='704' t='int'/>
+<mbr r='__gconv_step::__data' o='768' t='void *'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.h' l='29'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.h' l='31'/>
+<use f='codebrowser/iconv/gconv_int.h' l='191' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_int.h' l='197' c='__gconv_lookup_cache'/>
+<use f='codebrowser/iconv/gconv_int.h' l='209' c='__gconv_release_step'/>
+<use f='codebrowser/iconv/gconv_int.h' l='233' c='__gconv_close_transform'/>
+<use f='codebrowser/iconv/gconv_int.h' l='239' c='__gconv_release_cache'/>
+<use f='codebrowser/iconv/gconv_int.h' l='254' c='__gconv_get_builtin_trans'/>
+<use f='codebrowser/iconv/gconv_int.h' l='258' c='__gconv_transliterate'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_ascii_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_internal_ascii'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_utf8_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_internal_utf8'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_ucs2_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_internal_ucs2'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_ucs2reverse_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_internal_ucs2reverse'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_internal_ucs4'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_ucs4_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_internal_ucs4le'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_ucs4le_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_internal_utf16'/>
+<use f='codebrowser/iconv/gconv_int.h' l='275' c='__gconv_transform_utf16_internal'/>
+<use f='codebrowser/iconv/gconv_int.h' l='300' c='__gconv_btwoc_ascii'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.h' l='58' c='__wcsmbs_getfct'/>
+<size>104</size>
+<use f='codebrowser/iconv/gconv_builtin.c' l='61' c='__gconv_get_builtin_trans'/>
+<size>104</size>
+<use f='codebrowser/iconv/gconv_cache.c' l='182' c='find_module'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='246' c='__gconv_lookup_cache'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='255' c='__gconv_lookup_cache'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='310' c='__gconv_lookup_cache'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='311' c='__gconv_lookup_cache'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='365' c='__gconv_lookup_cache'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='365' c='__gconv_lookup_cache'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='446' c='__gconv_release_cache'/>
+<size>104</size>
+<use f='codebrowser/iconv/gconv_close.c' l='27' c='__gconv_close'/>
+<size>104</size>
+<use f='codebrowser/iconv/gconv_db.c' l='100'/>
+<use f='codebrowser/iconv/gconv_db.c' l='124' c='derivation_lookup'/>
+<use f='codebrowser/iconv/gconv_db.c' l='145' c='add_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='195' c='free_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='204' c='__gconv_release_step'/>
+<use f='codebrowser/iconv/gconv_db.c' l='230' c='gen_steps'/>
+<use f='codebrowser/iconv/gconv_db.c' l='233' c='gen_steps'/>
+<use f='codebrowser/iconv/gconv_db.c' l='243' c='gen_steps'/>
+<use f='codebrowser/iconv/gconv_db.c' l='243' c='gen_steps'/>
+<use f='codebrowser/iconv/gconv_db.c' l='368' c='increment_counter'/>
+<use f='codebrowser/iconv/gconv_db.c' l='376' c='increment_counter'/>
+<use f='codebrowser/iconv/gconv_db.c' l='429' c='find_derivation'/>
+<use f='codebrowser/iconv/gconv_db.c' l='719' c='__gconv_find_transform'/>
+<use f='codebrowser/iconv/gconv_db.c' l='783' c='__gconv_close_transform'/>
+<size>104</size>
+<use f='codebrowser/iconv/gconv_open.c' l='36' c='__gconv_open'/>
+<size>104</size>
+<use f='codebrowser/iconv/gconv_simple.c' l='48' c='__gconv_btwoc_ascii'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='75' c='internal_ucs4_loop'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='168' c='internal_ucs4_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_internal_ucs4'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_ucs4'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_internal_ucs4'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='232' c='ucs4_internal_loop'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='365' c='ucs4_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_ucs4_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_ucs4_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_ucs4_internal'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='442' c='internal_ucs4le_loop'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='539' c='internal_ucs4le_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_internal_ucs4le'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_ucs4le'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_internal_ucs4le'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='602' c='ucs4le_internal_loop'/>
+<use f='codebrowser/iconv/gconv_simple.c' l='742' c='ucs4le_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_ucs4le_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_ucs4le_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_ucs4le_internal'/>
+<use f='codebrowser/iconv/loop.c' l='285' c='ascii_internal_loop'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_ascii_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_ascii_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_ascii_internal'/>
+<use f='codebrowser/iconv/loop.c' l='285' c='internal_ascii_loop'/>
+<use f='codebrowser/iconv/loop.c' l='367' c='internal_ascii_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_internal_ascii'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_ascii'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_internal_ascii'/>
+<use f='codebrowser/iconv/loop.c' l='285' c='internal_utf8_loop'/>
+<use f='codebrowser/iconv/loop.c' l='367' c='internal_utf8_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_internal_utf8'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_utf8'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_internal_utf8'/>
+<use f='codebrowser/iconv/loop.c' l='285' c='utf8_internal_loop'/>
+<use f='codebrowser/iconv/loop.c' l='367' c='utf8_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_utf8_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_utf8_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_utf8_internal'/>
+<use f='codebrowser/iconv/loop.c' l='285' c='ucs2_internal_loop'/>
+<use f='codebrowser/iconv/loop.c' l='367' c='ucs2_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_ucs2_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_ucs2_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_ucs2_internal'/>
+<use f='codebrowser/iconv/loop.c' l='285' c='internal_ucs2_loop'/>
+<use f='codebrowser/iconv/loop.c' l='367' c='internal_ucs2_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_internal_ucs2'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_ucs2'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_internal_ucs2'/>
+<use f='codebrowser/iconv/loop.c' l='285' c='ucs2reverse_internal_loop'/>
+<use f='codebrowser/iconv/loop.c' l='367' c='ucs2reverse_internal_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_ucs2reverse_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_ucs2reverse_internal'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_ucs2reverse_internal'/>
+<use f='codebrowser/iconv/loop.c' l='285' c='internal_ucs2reverse_loop'/>
+<use f='codebrowser/iconv/loop.c' l='367' c='internal_ucs2reverse_loop_single'/>
+<use f='codebrowser/iconv/skeleton.c' l='387' c='__gconv_transform_internal_ucs2reverse'/>
+<use f='codebrowser/iconv/skeleton.c' l='394' c='__gconv_transform_internal_ucs2reverse'/>
+<use f='codebrowser/iconv/skeleton.c' l='399' c='__gconv_transform_internal_ucs2reverse'/>
+<size>104</size>
+<use f='codebrowser/iconv/gconv_trans.c' l='32' c='__gconv_transliterate'/>
+<size>104</size>
+<use f='codebrowser/iconvdata/iso-2022-jp.c' l='134' c='gconv_init'/>
+<use f='codebrowser/iconvdata/iso-2022-jp.c' l='136' c='gconv_init'/>
+<use f='codebrowser/iconvdata/iso-2022-jp.c' l='204' c='gconv_end'/>
+<use f='codebrowser/iconvdata/iso-2022-jp.c' l='206' c='gconv_end'/>
+<size>104</size>
+<use f='codebrowser/iconvdata/iso646.c' l='125' c='gconv_init'/>
+<use f='codebrowser/iconvdata/iso646.c' l='127' c='gconv_init'/>
+<use f='codebrowser/iconvdata/iso646.c' l='188' c='gconv_end'/>
+<use f='codebrowser/iconvdata/iso646.c' l='190' c='gconv_end'/>
+<size>104</size>
+<use f='codebrowser/iconvdata/unicode.c' l='91' c='gconv_init'/>
+<use f='codebrowser/iconvdata/unicode.c' l='93' c='gconv_init'/>
+<use f='codebrowser/iconvdata/unicode.c' l='137' c='gconv_end'/>
+<use f='codebrowser/iconvdata/unicode.c' l='139' c='gconv_end'/>
+<size>104</size>
+<use f='codebrowser/iconvdata/utf-16.c' l='108' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-16.c' l='110' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-16.c' l='186' c='gconv_end'/>
+<use f='codebrowser/iconvdata/utf-16.c' l='188' c='gconv_end'/>
+<size>104</size>
+<use f='codebrowser/iconvdata/utf-32.c' l='106' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-32.c' l='108' c='gconv_init'/>
+<use f='codebrowser/iconvdata/utf-32.c' l='184' c='gconv_end'/>
+<use f='codebrowser/iconvdata/utf-32.c' l='186' c='gconv_end'/>
+<size>104</size>
+<use f='codebrowser/libio/iofwide.c' l='117' c='__libio_codecvt_out'/>
+<use f='codebrowser/libio/iofwide.c' l='169' c='__libio_codecvt_in'/>
+<use f='codebrowser/libio/iofwide.c' l='238' c='__libio_codecvt_length'/>
+<size>104</size>
+<use f='codebrowser/wcsmbs/mbsnrtowcs.c' l='47' c='__mbsnrtowcs'/>
+<size>104</size>
+<use f='codebrowser/wcsmbs/mbsrtowcs_l.c' l='45' c='__mbsrtowcs_l'/>
+<size>104</size>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='31'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='50'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='73'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='75'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='81' c='__wcsmbs_getfct'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='85' c='__wcsmbs_getfct'/>
+<size>104</size>
+<use f='codebrowser/wcsmbs/wcsnrtombs.c' l='46' c='__wcsnrtombs'/>
+<size>104</size>
+<use f='codebrowser/wcsmbs/wcsrtombs.c' l='42' c='__wcsrtombs'/>
+<size>104</size>

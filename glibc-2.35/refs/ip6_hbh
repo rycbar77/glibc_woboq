@@ -1,0 +1,14 @@
+<def f='codebrowser/inet/netinet/ip6.h' l='57' ll='62'/>
+<use f='codebrowser/inet/inet6_opt.c' l='39' c='inet6_opt_init'/>
+<use f='codebrowser/inet/inet6_opt.c' l='39' c='inet6_opt_init'/>
+<use f='codebrowser/inet/inet6_opt.c' l='47' c='inet6_opt_init'/>
+<use f='codebrowser/inet/inet6_opt.c' l='83' c='inet6_opt_append'/>
+<use f='codebrowser/inet/inet6_opt.c' l='142' c='inet6_opt_finish'/>
+<use f='codebrowser/inet/inet6_opt.c' l='190' c='inet6_opt_next'/>
+<use f='codebrowser/inet/inet6_opt.c' l='191' c='inet6_opt_next'/>
+<use f='codebrowser/inet/inet6_opt.c' l='232' c='inet6_opt_find'/>
+<use f='codebrowser/inet/inet6_opt.c' l='233' c='inet6_opt_find'/>
+<size>2</size>
+<doc f='codebrowser/inet/netinet/ip6.h' l='56'>/* Hop-by-Hop options header.  */</doc>
+<mbr r='ip6_hbh::ip6h_nxt' o='0' t='uint8_t'/>
+<mbr r='ip6_hbh::ip6h_len' o='8' t='uint8_t'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/sys/statfs.h' l='11' type='int __statfs64(const char * __file, struct statfs64 * __buf)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/statfs64.c' l='28' ll='36' type='int __statfs64(const char * file, struct statfs64 * buf)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/statfs64.c' l='37' c='statfs64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/statfs64.c' l='40' c='__statfs'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/statfs64.c' l='41' c='statfs'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/statfs64.c' l='27'>/* Return information about the filesystem on which FILE resides.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/statvfs64.c' l='32' u='c' c='__statvfs64'/>

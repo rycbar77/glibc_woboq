@@ -1,0 +1,21 @@
+<dec f='codebrowser/nptl/descr.h' l='331' type='int'/>
+<offset>12480</offset>
+<doc f='codebrowser/nptl/descr.h' l='330'>/* Lock to synchronize access to the descriptor.  */</doc>
+<use f='codebrowser/nptl/allocatestack.c' l='550' u='w' c='allocate_stack'/>
+<use f='codebrowser/nptl/pthread_create.c' l='247' u='a' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='348' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='358' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='847' u='a' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='880' u='a' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='43' u='a' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='201' u='a' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='38' u='a' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_getschedparam.c' l='68' u='a' c='__pthread_getschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='39' u='a' c='__pthread_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedparam.c' l='67' u='a' c='__pthread_setschedparam'/>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='41' u='a' c='__pthread_setschedprio'/>
+<use f='codebrowser/nptl/pthread_setschedprio.c' l='60' u='a' c='__pthread_setschedprio'/>
+<use f='codebrowser/nptl/tpp.c' l='119' u='a' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='155' u='a' c='__pthread_tpp_change_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='172' u='a' c='__pthread_current_priority'/>
+<use f='codebrowser/nptl/tpp.c' l='194' u='a' c='__pthread_current_priority'/>

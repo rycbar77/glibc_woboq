@@ -1,0 +1,13 @@
+<def f='codebrowser/sysdeps/generic/tls-internal-struct.h' l='22' ll='26'/>
+<use f='codebrowser/nptl/descr.h' l='410'/>
+<size>16</size>
+<mbr r='tls_internal_t::strsignal_buf' o='0' t='char *'/>
+<mbr r='tls_internal_t::strerror_l_buf' o='64' t='char *'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/tls-internal.h' l='25' c='__glibc_tls_internal'/>
+<size>16</size>
+<use f='codebrowser/nptl/allocatestack.c' l='228' c='get_cached_stack'/>
+<size>16</size>
+<use f='codebrowser/string/strerror_l.c' l='43' c='__strerror_l'/>
+<size>16</size>
+<use f='codebrowser/string/strsignal.c' l='33' c='strsignal'/>
+<size>16</size>

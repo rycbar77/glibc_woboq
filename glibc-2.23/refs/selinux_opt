@@ -1,0 +1,5 @@
+<def f='include/selinux/selinux.h' l='145' ll='148'/>
+<size>16</size>
+<doc f='include/selinux/selinux.h' l='144'>/* Structure for passing options, used by AVC and label subsystems */</doc>
+<mbr r='selinux_opt::type' o='0' t='int'/>
+<mbr r='selinux_opt::value' o='64' t='const char *'/>

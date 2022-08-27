@@ -1,0 +1,33 @@
+<def f='codebrowser/sunrpc/rpc/clnt.h' l='387' ll='390'/>
+<dec f='codebrowser/sunrpc/rpc/clnt.h' l='392' type='struct rpc_createerr'/>
+<use f='codebrowser/sunrpc/rpc/clnt.h' l='392'/>
+<use f='codebrowser/sunrpc/rpc/rpc.h' l='73' c='__rpc_thread_createerr'/>
+<size>32</size>
+<doc f='codebrowser/sunrpc/rpc/clnt.h' l='384'>/*
+ * If a creation fails, the following allows the user to figure out why.
+ */</doc>
+<mbr r='rpc_createerr::cf_stat' o='0' t='enum clnt_stat'/>
+<mbr r='rpc_createerr::cf_error' o='64' t='struct rpc_err'/>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='103' c='__GI_clnt_create'/>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='119' c='__GI_clnt_create'/>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='167' c='__GI_clnt_create'/>
+<size>32</size>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='279' c='__GI_clnt_spcreateerror'/>
+<size>32</size>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='122' c='__GI_clnttcp_create'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='155' c='__GI_clnttcp_create'/>
+<size>32</size>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='133' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='177' c='__libc_clntudp_bufcreate'/>
+<size>32</size>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='123' c='__GI_clntunix_create'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='140' c='__GI_clntunix_create'/>
+<size>32</size>
+<use f='codebrowser/sunrpc/pm_getport.c' l='113' c='__libc_rpc_getport'/>
+<size>32</size>
+<def f='codebrowser/sunrpc/rpc_common.c' l='50' type='struct rpc_createerr'/>
+<use f='codebrowser/sunrpc/rpc_common.c' l='50'/>
+<size>32</size>
+<use f='codebrowser/sunrpc/rpc_thread.c' l='96' c='__rpc_thread_createerr'/>
+<use f='codebrowser/sunrpc/rpc_thread.c' l='103' u='a' c='__rpc_thread_createerr'/>
+<size>32</size>

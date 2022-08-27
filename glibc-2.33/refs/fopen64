@@ -1,0 +1,12 @@
+<dec f='codebrowser/libio/stdio.h' l='270' type='FILE * fopen64(const char *restrict __filename, const char *restrict __modes)'/>
+<def f='codebrowser/libio/iofopen.c' l='95' macro='1' type='FILE * fopen64(const char * , const char * )'/>
+<use f='codebrowser/support/shell-container.c' l='392' u='c' c='run_script'/>
+<use f='codebrowser/support/test-container.c' l='662' u='c' c='check_for_unshare_hints'/>
+<use f='codebrowser/support/test-container.c' l='677' u='c' c='check_for_unshare_hints'/>
+<use f='codebrowser/support/test-container.c' l='875' u='c' c='main'/>
+<use f='codebrowser/support/test-container.c' l='884' u='c' c='main'/>
+<use f='codebrowser/timezone/zic.c' l='1031' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1038' u='c' c='dolink'/>
+<use f='codebrowser/timezone/zic.c' l='1193' u='c' c='infile'/>
+<use f='codebrowser/timezone/zic.c' l='1996' u='c' c='writezone'/>
+<use f='codebrowser/timezone/zic.c' l='2001' u='c' c='writezone'/>

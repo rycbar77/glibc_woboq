@@ -1,0 +1,11 @@
+<dec f='codebrowser/libio/stdio.h' l='684' type='int fseek(FILE * __stream, long __off, int __whence)'/>
+<dec f='codebrowser/include/stdio.h' l='161' type='int fseek(FILE * , long , int )'/>
+<use f='codebrowser/include/stdio.h' l='161' c='fseek'/>
+<doc f='codebrowser/libio/stdio.h' l='680'>/* Seek to a certain position on STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/fseek.c' l='30' ll='39' type='int fseek(_IO_FILE * fp, long offset, int whence)'/>
+<use f='codebrowser/misc/mntent_r.c' l='253' u='c' c='__addmntent'/>
+<use f='codebrowser/time/tzfile.c' l='217' u='c' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='432' u='c' c='__tzfile_read'/>

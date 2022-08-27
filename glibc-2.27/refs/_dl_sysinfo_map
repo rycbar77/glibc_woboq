@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='580' type='struct link_map *'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='61' macro='1' u='r' c='_dl_important_hwcaps'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='63' macro='1' u='r' c='_dl_important_hwcaps'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='64' macro='1' u='r' c='_dl_important_hwcaps'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='69' macro='1' u='r' c='_dl_important_hwcaps'/>
+<def f='codebrowser/elf/dl-support.c' l='201' type='struct link_map *'/>
+<use f='codebrowser/elf/setup-vdso.h' l='114' macro='1' u='w' c='setup_vdso'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso.c' l='26' macro='1' u='r' c='_dl_vdso_vsym'/>

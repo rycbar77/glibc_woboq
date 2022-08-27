@@ -1,0 +1,14 @@
+<dec f='codebrowser/sunrpc/rpc/rpc.h' l='89' type='int * __rpc_thread_svc_max_pollfd()'/>
+<dec f='codebrowser/include/rpc/rpc.h' l='54' type='int * __rpc_thread_svc_max_pollfd()'/>
+<use f='codebrowser/include/rpc/rpc.h' l='54' c='__rpc_thread_svc_max_pollfd'/>
+<def f='codebrowser/sunrpc/rpc_thread.c' l='120' ll='129' type='int * __rpc_thread_svc_max_pollfd()'/>
+<use f='codebrowser/sunrpc/rpc_thread.c' l='133' c='__EI___rpc_thread_svc_max_pollfd'/>
+<use f='codebrowser/sunrpc/svc.c' l='107' macro='1' u='c' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='118' macro='1' u='c' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='122' macro='1' u='c' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='124' macro='1' u='c' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='125' macro='1' u='c' c='__GI_xprt_register'/>
+<use f='codebrowser/sunrpc/svc.c' l='145' macro='1' u='c' c='__GI_xprt_unregister'/>
+<use f='codebrowser/sunrpc/svc.c' l='433' macro='1' u='c' c='__GI_svc_getreq_poll'/>
+<use f='codebrowser/sunrpc/svc_run.c' l='48' macro='1' u='c' c='__GI_svc_exit'/>
+<use f='codebrowser/sunrpc/svc_run.c' l='61' macro='1' u='c' c='__GI_svc_run'/>

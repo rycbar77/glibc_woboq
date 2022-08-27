@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/link.h' l='219' type='_Bool'/>
+<offset>6400</offset>
+<use f='codebrowser/elf/get-dynamic-info.h' l='162' u='w' c='elf_get_dynamic_info'/>
+<use f='codebrowser/elf/dl-lookup.c' l='190' u='w' c='mark_nodelete'/>
+<use f='codebrowser/elf/dl-lookup.c' l='203' u='r' c='is_nodelete'/>
+<use f='codebrowser/elf/dl-open.c' l='450' u='r' c='activate_nodelete'/>
+<use f='codebrowser/elf/dl-open.c' l='463' u='w' c='activate_nodelete'/>
+<use f='codebrowser/elf/dl-open.c' l='585' u='w' c='dl_open_worker'/>

@@ -1,0 +1,5 @@
+<def f='codebrowser/elf/dl-tls.c' l='405' ll='418' type='void ** tcb_to_pointer_to_free_location(void * tcb)'/>
+<use f='codebrowser/elf/dl-tls.c' l='469' u='c' c='_dl_allocate_tls_storage'/>
+<use f='codebrowser/elf/dl-tls.c' l='653' u='c' c='_dl_deallocate_tls'/>
+<doc f='codebrowser/elf/dl-tls.c' l='403'>/* Derive the location of the pointer to the start of the original
+   allocation (before alignment) from the pointer to the TCB.  */</doc>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dl-call-libc-early-init.c source code [codebrowser/elf/dl-call-libc-early-init.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/elf/dl-call-libc-early-init.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>elf</a>/<a href='dl-call-libc-early-init.c.html'>dl-call-libc-early-init.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Invoke the early initialization function in libc.so.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2020-2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../include/assert.h.html">&lt;assert.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/ldsodefs.h.html">&lt;ldsodefs.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="libc-early-init.h.html">&lt;libc-early-init.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../include/link.h.html">&lt;link.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include &lt;stddef.h&gt;</u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>void</em></td></tr>
+<tr><th id="26">26</th><td><dfn class="decl def fn" id="_dl_call_libc_early_init" title='_dl_call_libc_early_init' data-ref="_dl_call_libc_early_init" data-ref-filename="_dl_call_libc_early_init">_dl_call_libc_early_init</dfn> (<b>struct</b> <a class="type" href="../include/link.h.html#link_map" title='link_map' data-ref="link_map" data-ref-filename="link_map">link_map</a> *<dfn class="local col4 decl" id="4libc_map" title='libc_map' data-type='struct link_map *' data-ref="4libc_map" data-ref-filename="4libc_map">libc_map</dfn>, <b>_Bool</b> <dfn class="local col5 decl" id="5initial" title='initial' data-type='_Bool' data-ref="5initial" data-ref-filename="5initial">initial</dfn>)</td></tr>
+<tr><th id="27">27</th><td>{</td></tr>
+<tr><th id="28">28</th><td>  <i>/* There is nothing to do if we did not actually load libc.so.  */</i></td></tr>
+<tr><th id="29">29</th><td>  <b>if</b> (<a class="local col4 ref" href="#4libc_map" title='libc_map' data-ref="4libc_map" data-ref-filename="4libc_map">libc_map</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="30">30</th><td>    <b>return</b>;</td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td>  <em>const</em> <a class="macro" href="link.h.html#30" title="Elf64_Sym" data-ref="_M/ElfW">ElfW</a>(Sym) *<dfn class="local col6 decl" id="6sym" title='sym' data-type='const Elf64_Sym *' data-ref="6sym" data-ref-filename="6sym">sym</dfn></td></tr>
+<tr><th id="33">33</th><td>    = <a class="ref fn" href="../sysdeps/generic/ldsodefs.h.html#_dl_lookup_direct" title='_dl_lookup_direct' data-ref="_dl_lookup_direct" data-ref-filename="_dl_lookup_direct">_dl_lookup_direct</a> (<a class="local col4 ref" href="#4libc_map" title='libc_map' data-ref="4libc_map" data-ref-filename="4libc_map">libc_map</a>, <q>"__libc_early_init"</q>,</td></tr>
+<tr><th id="34">34</th><td>                         <var>0x069682ac</var>, <i>/* dl_new_hash output.  */</i></td></tr>
+<tr><th id="35">35</th><td>                         <q>"GLIBC_PRIVATE"</q>,</td></tr>
+<tr><th id="36">36</th><td>                         <var>0x0963cf85</var>); <i>/* _dl_elf_hash output.  */</i></td></tr>
+<tr><th id="37">37</th><td>  <a class="macro" href="../assert/assert.h.html#104" title="((void) sizeof ((sym != ((void*)0)) ? 1 : 0), __extension__ ({ if (sym != ((void*)0)) ; else __assert_fail (&quot;sym != NULL&quot;, &quot;/media/rr/Data/glibc_source/glibc-2.34/elf/dl-call-libc-early-init.c&quot;, 37, __extension__ __PRETTY_FUNCTION__); }))" data-ref="_M/assert">assert</a> (<a class="local col6 ref" href="#6sym" title='sym' data-ref="6sym" data-ref-filename="6sym">sym</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="38">38</th><td>  <b>__typeof</b> (<a class="ref fn" href="libc-early-init.h.html#__libc_early_init" title='__libc_early_init' data-ref="__libc_early_init" data-ref-filename="__libc_early_init">__libc_early_init</a>) *<dfn class="local col7 decl" id="7early_init" title='early_init' data-type='typeof (__libc_early_init) *' data-ref="7early_init" data-ref-filename="7early_init">early_init</dfn></td></tr>
+<tr><th id="39">39</th><td>    = <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#104" title="(void *) ((sym) == ((void*)0) ? 0 : (__builtin_expect (((sym)-&gt;st_shndx == 0xfff1), 0) ? 0 : ((0) || (libc_map) ? (libc_map)-&gt;l_addr : 0)) + (sym)-&gt;st_value)" data-ref="_M/DL_SYMBOL_ADDRESS">DL_SYMBOL_ADDRESS</a> (<a class="local col4 ref" href="#4libc_map" title='libc_map' data-ref="4libc_map" data-ref-filename="4libc_map">libc_map</a>, <a class="local col6 ref" href="#6sym" title='sym' data-ref="6sym" data-ref-filename="6sym">sym</a>);</td></tr>
+<tr><th id="40">40</th><td>  <a class="local col7 ref" href="#7early_init" title='early_init' data-ref="7early_init" data-ref-filename="7early_init">early_init</a> (<a class="local col5 ref" href="#5initial" title='initial' data-ref="5initial" data-ref-filename="5initial">initial</a>);</td></tr>
+<tr><th id="41">41</th><td>}</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

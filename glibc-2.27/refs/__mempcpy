@@ -1,0 +1,51 @@
+<dec f='codebrowser/string/string.h' l='374' type='void * __mempcpy(void *restrict __dest, const void *restrict __src, size_t __n)'/>
+<dec f='codebrowser/include/string.h' l='79' type='void * __mempcpy(void *restrict , const void *restrict , size_t )'/>
+<use f='codebrowser/include/string.h' l='79' c='__mempcpy'/>
+<doc f='codebrowser/string/string.h' l='372'>/* Copy N bytes of SRC to DEST, return pointer to bytes after the
+   last written byte.  */</doc>
+<use f='codebrowser/elf/cache.c' l='402' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='410' u='c' c='save_cache'/>
+<use f='codebrowser/elf/cache.c' l='789' u='c' c='save_aux_cache'/>
+<use f='codebrowser/elf/chroot_canon.c' l='63' u='c' c='chroot_canon'/>
+<use f='codebrowser/elf/chroot_canon.c' l='114' u='c' c='chroot_canon'/>
+<dec f='codebrowser/elf/rtld.c' l='48' type='void * __mempcpy(void *restrict , const void *restrict , size_t )'/>
+<use f='codebrowser/elf/rtld.c' l='48' c='__mempcpy'/>
+<doc f='codebrowser/elf/rtld.c' l='47'>/* Avoid PLT use for our local calls at startup.  */</doc>
+<use f='codebrowser/sysdeps/posix/libc_fatal.c' l='160' u='c' c='__libc_message'/>
+<use f='codebrowser/intl/dcigettext.c' l='656' u='c' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='774' u='c' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='1114' u='c' c='_nl_find_msg'/>
+<use f='codebrowser/misc/mntent_r.c' l='42' u='c' c='__setmntent'/>
+<use f='codebrowser/nptl/pthread_attr_getaffinity.c' l='48' u='c' c='__pthread_attr_getaffinity_new'/>
+<use f='codebrowser/posix/execvpe.c' l='134' u='c' c='__execvpe'/>
+<use f='codebrowser/posix/glob.c' l='389' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='430' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='430' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='554' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='718' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='718' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='771' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='794' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='850' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='852' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='903' u='c' c='__glob_lstat_compat'/>
+<use f='codebrowser/posix/glob.c' l='1229' u='c' c='prefix_array'/>
+<use f='codebrowser/posix/glob.c' l='1231' u='c' c='prefix_array'/>
+<use f='codebrowser/posix/glob.c' l='1296' u='c' c='glob_in_dir'/>
+<use f='codebrowser/posix/glob.c' l='1296' u='c' c='glob_in_dir'/>
+<use f='codebrowser/posix/glob.c' l='1296' u='c' c='glob_in_dir'/>
+<use f='codebrowser/posix/glob.c' l='1395' u='c' c='glob_in_dir'/>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='1218' u='c' c='__sysconf_check_spec'/>
+<use f='codebrowser/sysdeps/posix/sysconf.c' l='1218' u='c' c='__sysconf_check_spec'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='512' c='__mempcpy_avx512_no_vzeroupper'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='515' c='__mempcpy_avx512_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='518' c='__mempcpy_avx512_unaligned_erms'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='521' c='__mempcpy_avx_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='524' c='__mempcpy_avx_unaligned_erms'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='527' c='__mempcpy_ssse3_back'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='529' c='__mempcpy_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='531' c='__mempcpy_sse2_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='533' c='__mempcpy_sse2_unaligned_erms'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='535' c='__mempcpy_erms'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/mempcpy.c' l='33' macro='1' type='void * __mempcpy(void *restrict , const void *restrict , size_t )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/mempcpy.c' l='35' c='mempcpy'/>

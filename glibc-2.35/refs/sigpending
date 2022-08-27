@@ -1,0 +1,5 @@
+<dec f='codebrowser/signal/signal.h' l='247' type='int sigpending(sigset_t * __set)'/>
+<doc f='codebrowser/signal/signal.h' l='246'>/* Put in SET all signals that are blocked and waiting to be delivered.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/sigpending.c' l='24' ll='28' type='int sigpending(sigset_t * set)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sigpending.c' l='22'>/* Change the set of blocked signals to SET,
+   wait until a signal arrives, and restore the set of blocked signals.  */</doc>

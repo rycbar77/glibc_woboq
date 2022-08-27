@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/stdlib.h' l='184' type='double ____strtod_l_internal(const char *restrict __nptr, char **restrict __endptr, int __group, locale_t __loc)'/>
+<dec f='codebrowser/include/stdlib.h' l='216' type='double ____strtod_l_internal(const char *restrict , char **restrict , int , locale_t )'/>
+<use f='codebrowser/include/stdlib.h' l='216' c='____strtod_l_internal'/>
+<use f='codebrowser/stdlib/strtod.c' l='69' macro='1' u='c' c='__strtod_internal'/>
+<use f='codebrowser/stdlib/strtod.c' l='82' macro='1' u='c' c='strtod'/>
+<dec f='codebrowser/stdlib/strtod_l.c' l='40' type='double ____strtod_l_internal(const char * , char ** , int , locale_t )'/>
+<def f='codebrowser/stdlib/strtod_l.c' l='506' macro='1' type='double ____strtod_l_internal(const char * nptr, char ** endptr, int group, locale_t loc)'/>
+<use f='codebrowser/stdlib/strtod_l.c' l='1783' macro='1' u='c' c='__strtod_l'/>

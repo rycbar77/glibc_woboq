@@ -1,0 +1,10 @@
+<dec f='codebrowser/libio/stdio.h' l='662' type='int ungetc(int __c, FILE * __stream)'/>
+<dec f='codebrowser/include/stdio.h' l='215' type='int ungetc(int , FILE * )'/>
+<use f='codebrowser/include/stdio.h' l='215' c='ungetc'/>
+<doc f='codebrowser/libio/stdio.h' l='658'>/* Push a character back onto the input buffer of STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/libio/ioungetc.c' l='29' ll='42' type='int ungetc(int c, FILE * fp)'/>
+<use f='codebrowser/libio/ioungetc.c' l='44' c='_IO_ungetc'/>
+<use f='codebrowser/nss/nss_files/files-alias.c' l='280' u='c' c='get_next_alias'/>

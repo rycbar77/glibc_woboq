@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/pthread/threads.h' l='161' type='int mtx_trylock(mtx_t * __mutex)'/>
+<doc f='codebrowser/sysdeps/pthread/threads.h' l='158'>/* Try to lock the mutex pointed by __MUTEX without blocking.  If the mutex
+   is free the current threads takes control of it, otherwise it returns
+   immediately.  */</doc>
+<def f='codebrowser/sysdeps/pthread/mtx_trylock.c' l='29' macro='1' type='int mtx_trylock(mtx_t * )'/>

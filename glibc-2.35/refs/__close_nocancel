@@ -1,0 +1,42 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='52' type='int __close_nocancel(int )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='59' u='c' c='__close_nocancel_nostatus'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='81' type='int __close_nocancel(int )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='81' c='__close_nocancel'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/not-cancel.h' l='51'>/* Uncancelable close.  */</doc>
+<use f='codebrowser/elf/dl-load.c' l='976' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1004' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1051' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1380' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1669' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1830' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1951' u='c' c='open_path'/>
+<use f='codebrowser/elf/dl-load.c' l='1972' u='c' c='open_path'/>
+<use f='codebrowser/elf/dl-misc.c' l='60' u='c' c='_dl_sysdep_read_whole_file'/>
+<use f='codebrowser/elf/dl-profile.c' l='338' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='374' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='394' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/libio/fileops.c' l='201' u='c' c='_IO_file_open'/>
+<use f='codebrowser/libio/fileops.c' l='1159' u='c' c='_IO_file_close_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='1167' u='c' c='_IO_file_close'/>
+<use f='codebrowser/libio/iopopen.c' l='92' u='c' c='spawn_process'/>
+<use f='codebrowser/libio/iopopen.c' l='184' u='c' c='_IO_new_proc_open'/>
+<use f='codebrowser/libio/iopopen.c' l='208' u='c' c='_IO_new_proc_open'/>
+<use f='codebrowser/libio/iopopen.c' l='209' u='c' c='_IO_new_proc_open'/>
+<use f='codebrowser/libio/iopopen.c' l='275' u='c' c='_IO_new_proc_close'/>
+<use f='codebrowser/sunrpc/pm_getmaps.c' l='84' u='c' c='__GI_pmap_getmaps'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/close_nocancel.c' l='23' ll='27' type='int __close_nocancel(int fd)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/closedir.c' l='52' u='c' c='__closedir'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/closefrom_fallback.c' l='45' u='c' c='__closefrom_fallback'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/closefrom_fallback.c' l='89' u='c' c='__closefrom_fallback'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/closefrom_fallback.c' l='99' u='c' c='__closefrom_fallback'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fchmodat.c' l='54' u='c' c='fchmodat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fchmodat.c' l='66' u='c' c='fchmodat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fchmodat.c' l='87' u='c' c='fchmodat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c' l='35' u='c' c='__malloc_default_thp_pagesize'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c' l='64' u='c' c='__malloc_thp_mode'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c' l='121' u='c' c='malloc_default_hugepage_size'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c' l='200' u='c' c='__malloc_hugepage_config'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='187' u='c' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='210' u='c' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='229' u='c' c='__spawni_child'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-sysdep.c' l='95' u='c' c='_dl_discover_osversion'/>

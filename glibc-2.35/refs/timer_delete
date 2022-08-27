@@ -1,0 +1,5 @@
+<dec f='codebrowser/time/time.h' l='336' type='int timer_delete(timer_t __timerid)'/>
+<doc f='codebrowser/time/time.h' l='335'>/* Delete timer TIMERID.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/kernel-posix-timers.h' l='48' c='__timer_delete'/>
+<use f='codebrowser/support/support_create_timer.c' l='65' u='c' c='support_delete_timer'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/timer_delete.c' l='66' macro='1' type='int timer_delete(timer_t )'/>

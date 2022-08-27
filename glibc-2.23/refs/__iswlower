@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/wctype.h' l='55' type='int __iswlower(wint_t )'/>
+<use f='codebrowser/posix/regex_internal.c' l='315' u='c' c='build_wcs_upper_buffer'/>
+<use f='codebrowser/posix/regex_internal.c' l='385' u='c' c='build_wcs_upper_buffer'/>
+<dec f='codebrowser/wctype/wcfuncs.c' l='54' macro='1' type='int __iswlower(wint_t __wc)'/>
+<def f='codebrowser/wctype/wcfuncs.c' l='54' macro='1' type='int __iswlower(wint_t wc)'/>
+<use f='codebrowser/wctype/wcfuncs.c' l='54' macro='1' c='iswlower'/>

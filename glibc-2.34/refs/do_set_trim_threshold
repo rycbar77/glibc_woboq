@@ -1,0 +1,7 @@
+<dec f='codebrowser/malloc/arena.c' l='225' macro='1' type='int do_set_trim_threshold(size_t value)'/>
+<use f='codebrowser/malloc/arena.c' l='225' macro='1' u='c' c='_dl_tunable_set_trim_threshold'/>
+<def f='codebrowser/malloc/malloc.c' l='5205' ll='5213' type='int do_set_trim_threshold(size_t value)'/>
+<use f='codebrowser/malloc/malloc.c' l='5357' u='c' c='__libc_mallopt'/>
+<doc f='codebrowser/malloc/malloc.c' l='5202'>/*
+   ------------------------------ mallopt ------------------------------
+ */</doc>

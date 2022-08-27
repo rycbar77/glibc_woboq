@@ -1,0 +1,10 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='117' type='double strtod(const char *restrict __nptr, char **restrict __endptr)'/>
+<use f='codebrowser/stdlib/bits/stdlib-float.h' l='27' u='c' c='atof'/>
+<dec f='codebrowser/include/stdlib.h' l='225' type='double strtod(const char * , char ** )'/>
+<use f='codebrowser/include/stdlib.h' l='225' c='strtod'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='116'>/* Convert a string to a floating-point number.  */</doc>
+<use f='codebrowser/stdlib/atof.c' l='27' u='c' c='atof'/>
+<def f='codebrowser/stdlib/strtod.c' l='77' ll='84' macro='1' type='double strtod(const char * nptr, char ** endptr)'/>
+<use f='codebrowser/stdlib/strtod.c' l='108' c='strtof64'/>
+<use f='codebrowser/stdlib/strtod.c' l='117' c='strtof32x'/>
+<use f='include/c++/11/bits/basic_string.h' l='6650' u='a' c='_ZNSt7__cxx114stodERKNS_12basic_stringIcSt11char_traitsIcESaIcEEEPm'/>

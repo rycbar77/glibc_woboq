@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/timex.h' l='48' type='int'/>
+<offset>1280</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/timex.h' l='48'>/* TAI offset (ro) */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='128' u='w' c='valid_timex_to_timex64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='128' u='r' c='valid_timex_to_timex64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='158' u='w' c='valid_timex64_to_timex'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/include/sys/timex.h' l='158' u='r' c='valid_timex64_to_timex'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettime.c' l='43' u='r' c='__ntp_gettime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ntp_gettimex.c' l='39' u='r' c='__ntp_gettimex'/>

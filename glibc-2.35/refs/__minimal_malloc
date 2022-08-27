@@ -1,0 +1,6 @@
+<def f='codebrowser/elf/dl-minimal-malloc.c' l='33' ll='71' type='void * __minimal_malloc(size_t n)'/>
+<doc f='codebrowser/elf/dl-minimal-malloc.c' l='32'>/* Allocate an aligned memory block.  */</doc>
+<dec f='codebrowser/sysdeps/generic/dl-minimal-malloc.h' l='23' type='void * __minimal_malloc(size_t n)'/>
+<use f='codebrowser/elf/dl-minimal.c' l='45' u='a' c='__rtld_malloc_init_stubs'/>
+<use f='codebrowser/elf/dl-minimal.c' l='54' u='a' c='__rtld_malloc_is_complete'/>
+<use f='codebrowser/elf/dl-tunables.c' l='52' u='c' c='tunables_strdup'/>

@@ -1,0 +1,22 @@
+<def f='codebrowser/inet/netinet/ip6.h' l='83' ll='93'/>
+<size>8</size>
+<doc f='codebrowser/inet/netinet/ip6.h' l='82'>/* Type 0 Routing header */</doc>
+<mbr r='ip6_rthdr0::ip6r0_nxt' o='0' t='uint8_t'/>
+<mbr r='ip6_rthdr0::ip6r0_len' o='8' t='uint8_t'/>
+<mbr r='ip6_rthdr0::ip6r0_type' o='16' t='uint8_t'/>
+<mbr r='ip6_rthdr0::ip6r0_segleft' o='24' t='uint8_t'/>
+<mbr r='ip6_rthdr0::ip6r0_reserved' o='32' t='uint8_t'/>
+<mbr r='ip6_rthdr0::ip6r0_slmap' o='40' t='uint8_t[3]'/>
+<mbr r='ip6_rthdr0::ip6r0_addr' o='64' t='struct in6_addr[0]'/>
+<use f='codebrowser/inet/inet6_rth.c' l='38' c='inet6_rth_space'/>
+<use f='codebrowser/inet/inet6_rth.c' l='62' c='inet6_rth_init'/>
+<use f='codebrowser/inet/inet6_rth.c' l='91' c='inet6_rth_add'/>
+<use f='codebrowser/inet/inet6_rth.c' l='93' c='inet6_rth_add'/>
+<use f='codebrowser/inet/inet6_rth.c' l='122' c='inet6_rth_reverse'/>
+<use f='codebrowser/inet/inet6_rth.c' l='123' c='inet6_rth_reverse'/>
+<use f='codebrowser/inet/inet6_rth.c' l='125' c='inet6_rth_reverse'/>
+<use f='codebrowser/inet/inet6_rth.c' l='126' c='inet6_rth_reverse'/>
+<use f='codebrowser/inet/inet6_rth.c' l='129' c='inet6_rth_reverse'/>
+<use f='codebrowser/inet/inet6_rth.c' l='184' c='inet6_rth_getaddr'/>
+<use f='codebrowser/inet/inet6_rth.c' l='186' c='inet6_rth_getaddr'/>
+<size>8</size>

@@ -1,0 +1,20 @@
+<dec f='codebrowser/io/sys/stat.h' l='226' type='int fstat64(int __fd, struct stat64 * __buf)'/>
+<use f='codebrowser/elf/readlib.c' l='102' u='c' c='process_file'/>
+<use f='codebrowser/iconv/iconv_charmap.c' l='179' u='c' c='charmap_conversion'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='283' u='c' c='main'/>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='171' u='c' c='fopen_uncompressed'/>
+<use f='codebrowser/locale/programs/locale.c' l='497' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='652' u='c' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='296' u='c' c='file_data_available_p'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='353' u='c' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='612' u='c' c='open_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1453' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1470' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/support/shell-container.c' l='107' u='c' c='copy_func'/>
+<use f='codebrowser/support/support-xfstat.c' l='26' u='c' c='xfstat'/>
+<use f='codebrowser/support/support_copy_file_range.c' l='41' u='c' c='support_copy_file_range'/>
+<use f='codebrowser/support/support_copy_file_range.c' l='41' u='c' c='support_copy_file_range'/>
+<use f='codebrowser/support/support_descriptors.c' l='102' u='c' c='support_descriptors_list'/>
+<use f='codebrowser/support/support_test_main.c' l='121' u='c' c='signal_handler'/>
+<use f='codebrowser/support/test-container.c' l='418' u='c' c='copy_one_file'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/fstat64.c' l='47' macro='1' type='int fstat64(int , struct stat64 * )'/>

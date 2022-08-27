@@ -1,0 +1,6 @@
+<dec f='codebrowser/elf/dl-tls.c' l='65'/>
+<use f='codebrowser/elf/dl-tls.c' l='83' u='c'/>
+<doc f='codebrowser/elf/dl-tls.c' l='61'>/* Size of initial-exec TLS in libc.so.  This should be the maximum of
+   observed PT_GNU_TLS sizes across all architectures.  Some
+   architectures have lower values due to differences in type sizes
+   and link editor capabilities.  */</doc>

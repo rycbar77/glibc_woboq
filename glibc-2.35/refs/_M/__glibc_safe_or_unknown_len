@@ -1,0 +1,12 @@
+<dec f='codebrowser/misc/sys/cdefs.h' l='167'/>
+<doc f='codebrowser/misc/sys/cdefs.h' l='164'>/* Length is known to be safe at compile time if the __L * __S &lt;= __OBJSZ
+   condition can be folded to a constant and if it is true.  The -1 check is
+   redundant because since it implies that __glibc_safe_len_cond is true.  */</doc>
+<use f='codebrowser/socket/bits/socket2.h' l='37' u='c'/>
+<use f='codebrowser/socket/bits/socket2.h' l='65' u='c'/>
+<use f='codebrowser/libio/bits/stdio2.h' l='265' u='c'/>
+<use f='codebrowser/libio/bits/stdio2.h' l='292' u='c'/>
+<use f='codebrowser/libio/bits/stdio2.h' l='317' u='c'/>
+<use f='codebrowser/libio/bits/stdio2.h' l='347' u='c'/>
+<use f='codebrowser/wcsmbs/bits/wchar2.h' l='346' u='c'/>
+<use f='codebrowser/wcsmbs/bits/wchar2.h' l='372' u='c'/>

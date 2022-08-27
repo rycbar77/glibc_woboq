@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/netdb.h' l='284' macro='1' type='enum nss_status _nss_dns_getnetbyaddr_r(uint32_t addr, int type, struct netent * net, char * buffer, size_t buflen, int * errnop, int * herrnop)'/>
+<dec f='codebrowser/include/nss_dns.h' l='24' macro='1' type='enum nss_status _nss_dns_getnetbyaddr_r(uint32_t , int , struct netent * , char * , size_t , int * , int * )'/>
+<dec f='codebrowser/include/nss_dns.h' l='33' type='enum nss_status _nss_dns_getnetbyaddr_r(uint32_t , int , struct netent * , char * , size_t , int * , int * )'/>
+<use f='codebrowser/include/nss_dns.h' l='33' c='_nss_dns_getnetbyaddr_r'/>
+<def f='codebrowser/resolv/nss_dns/dns-network.c' l='156' ll='247' type='enum nss_status _nss_dns_getnetbyaddr_r(uint32_t net, int type, struct netent * result, char * buffer, size_t buflen, int * errnop, int * herrnop)'/>
+<use f='codebrowser/resolv/nss_dns_functions.c' l='36' u='a' c='__nss_dns_functions'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/intl/gettextP.h' l='226' type='int'/>
+<use f='codebrowser/intl/bindtextdom.c' l='310' u='w' c='set_binding_values'/>
+<use f='codebrowser/intl/dcigettext.c' l='575' u='r' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='807' u='r' c='__dcigettext'/>
+<use f='codebrowser/intl/dcigettext.c' l='829' u='r' c='__dcigettext'/>
+<def f='codebrowser/intl/loadmsgcat.c' l='509' type='int'/>
+<doc f='codebrowser/intl/loadmsgcat.c' l='506'>/* We need a sign, whether a new catalog was loaded, which can be associated
+   with all translations.  This is important if the translations are
+   cached by one of GCC&apos;s features.  */</doc>
+<use f='codebrowser/intl/textdomain.c' l='111' u='w' c='__textdomain'/>
+<dec f='codebrowser/locale/setlocale.c' l='127' type='int'/>
+<use f='codebrowser/locale/setlocale.c' l='392' u='w' c='setlocale'/>
+<use f='codebrowser/locale/setlocale.c' l='460' u='w' c='setlocale'/>
+<doc f='codebrowser/locale/setlocale.c' l='126'>/* Defined in loadmsgcat.c.  */</doc>

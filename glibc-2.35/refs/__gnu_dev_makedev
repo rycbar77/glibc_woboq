@@ -1,0 +1,8 @@
+<dec f='codebrowser/include/sys/sysmacros.h' l='44' macro='1' type='__dev_t __gnu_dev_makedev(unsigned int __major, unsigned int __minor)'/>
+<def f='codebrowser/include/sys/sysmacros.h' l='49' macro='1' type='__dev_t __gnu_dev_makedev(unsigned int __major, unsigned int __minor)'/>
+<use f='codebrowser/csu/check_fds.c' l='52' u='c' c='check_one_fd'/>
+<use f='codebrowser/csu/check_fds.c' l='57' u='c' c='check_one_fd'/>
+<def f='codebrowser/misc/makedev.c' l='34' macro='1' type='__dev_t __gnu_dev_makedev(unsigned int __major, unsigned int __minor)'/>
+<use f='codebrowser/misc/makedev.c' l='35' c='gnu_dev_makedev'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='56' u='c' c='fstatat64_time64_statx'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='57' u='c' c='fstatat64_time64_statx'/>

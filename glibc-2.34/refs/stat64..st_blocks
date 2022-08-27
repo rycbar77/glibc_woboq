@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='131' type='__blkcnt64_t'/>
+<offset>512</offset>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/bits/struct_stat.h' l='131'>/* Nr. 512-byte blocks allocated.  */</doc>
+<use f='codebrowser/support/support_descriptor_supports_holes.c' l='49' u='r' c='support_descriptor_supports_holes'/>
+<use f='codebrowser/support/support_descriptor_supports_holes.c' l='51' u='r' c='support_descriptor_supports_holes'/>
+<use f='codebrowser/support/support_descriptor_supports_holes.c' l='67' u='r' c='support_descriptor_supports_holes'/>
+<use f='codebrowser/support/support_descriptor_supports_holes.c' l='75' u='r' c='support_descriptor_supports_holes'/>
+<use f='codebrowser/support/support_descriptor_supports_holes.c' l='82' u='r' c='support_descriptor_supports_holes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fstatat64.c' l='70' u='w' c='fstatat64_time64_statx'/>
+<use f='codebrowser/io/statx_generic.c' l='77' u='r' c='statx_generic'/>

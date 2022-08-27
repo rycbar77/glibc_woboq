@@ -1,0 +1,15 @@
+<dec f='codebrowser/include/link.h' l='287' type='struct link_map *[]'/>
+<offset>64</offset>
+<use f='codebrowser/elf/dl-close.c' l='243' u='r' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-deps.c' l='566' u='a' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='581' u='a' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='585' u='w' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-lookup.c' l='630' u='a' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='673' u='a' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='682' u='a' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='774' u='a' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='774' u='a' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='776' u='w' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='788' u='w' c='add_dependency'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='93' u='a' c='_dl_sort_maps_original'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='167' u='r' c='dfs_traversal'/>

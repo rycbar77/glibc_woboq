@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='482' type='int matchpathcon_init_prefix(const char * path, const char * prefix)'/>
+<doc f='include/selinux/selinux.h' l='480'>/* Same as matchpathcon_init, but only load entries with
+   regexes that have stems that are prefixes of &apos;prefix&apos;. */</doc>

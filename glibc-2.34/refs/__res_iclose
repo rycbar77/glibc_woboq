@@ -1,0 +1,24 @@
+<dec f='codebrowser/include/resolv.h' l='34' type='void __res_iclose(res_state statp, _Bool free_addr)'/>
+<dec f='codebrowser/include/resolv.h' l='37' type='void __res_iclose(res_state , _Bool )'/>
+<use f='codebrowser/include/resolv.h' l='37' c='__res_iclose'/>
+<def f='codebrowser/resolv/res-close.c' l='93' ll='118' type='void __res_iclose(res_state statp, _Bool free_addr)'/>
+<use f='codebrowser/resolv/res-close.c' l='124' u='c' c='__res_nclose'/>
+<use f='codebrowser/resolv/res-close.c' l='138' u='c' c='__res_thread_freeres'/>
+<doc f='codebrowser/resolv/res-close.c' l='91'>/* Close all open sockets.  If FREE_ADDR is true, deallocate any
+   separately allocated name server addresses.  */</doc>
+<use f='codebrowser/resolv/res_libc.c' l='73' u='c' c='__res_init'/>
+<use f='codebrowser/resolv/res_send.c' l='310' u='c' c='__res_context_send'/>
+<use f='codebrowser/resolv/res_send.c' l='412' u='c' c='__res_context_send'/>
+<use f='codebrowser/resolv/res_send.c' l='418' u='c' c='__res_context_send'/>
+<use f='codebrowser/resolv/res_send.c' l='479' u='c' c='close_and_return_error'/>
+<use f='codebrowser/resolv/res_send.c' l='598' u='c' c='send_vc'/>
+<use f='codebrowser/resolv/res_send.c' l='605' u='c' c='send_vc'/>
+<use f='codebrowser/resolv/res_send.c' l='676' u='c' c='send_vc'/>
+<use f='codebrowser/resolv/res_send.c' l='826' u='c' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='853' u='c' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='1014' u='c' c='send_dg'/>
+<use f='codebrowser/resolv/res_send.c' l='1241' u='c' c='send_dg'/>
+<use f='codebrowser/resolv/res_send.c' l='1253' u='c' c='send_dg'/>
+<use f='codebrowser/resolv/res_send.c' l='1270' u='c' c='send_dg'/>
+<use f='codebrowser/resolv/resolv_context.c' l='94' u='c' c='maybe_init'/>
+<use f='codebrowser/support/resolv_test.c' l='1182' u='c' c='resolv_test_start'/>

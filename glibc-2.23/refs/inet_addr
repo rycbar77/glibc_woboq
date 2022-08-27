@@ -1,0 +1,5 @@
+<dec f='codebrowser/inet/arpa/inet.h' l='34' type='in_addr_t inet_addr(const char * __cp)'/>
+<doc f='codebrowser/inet/arpa/inet.h' l='32'>/* Convert Internet host address from numbers-and-dots notation in CP
+   into binary data in network byte order.  */</doc>
+<use f='codebrowser/nss/getent.c' l='553' u='c' c='networks_keys'/>
+<def f='codebrowser/resolv/inet_addr.c' l='100' macro='1' type='in_addr_t inet_addr(const char * )'/>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/uio-ext.h' l='29' type='ssize_t process_vm_readv(pid_t __pid, const struct iovec * __lvec, unsigned long __liovcnt, const struct iovec * __rvec, unsigned long __riovcnt, unsigned long __flags)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/uio-ext.h' l='28'>/* Read from another process&apos; address space.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/process_vm_readv.c' l='24' ll='32' type='ssize_t process_vm_readv(pid_t pid, const struct iovec * local_iov, unsigned long liovcnt, const struct iovec * remote_iov, unsigned long riovcnt, unsigned long flags)'/>

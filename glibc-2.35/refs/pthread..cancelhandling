@@ -1,0 +1,64 @@
+<dec f='codebrowser/nptl/descr.h' l='281' type='int'/>
+<offset>6208</offset>
+<doc f='codebrowser/nptl/descr.h' l='280'>/* Flags determining processing of cancellation.  */</doc>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='278' u='a' c='__do_cancel'/>
+<use f='codebrowser/nptl/cancellation.c' l='37' c='__pthread_enable_asynccancel'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='27' u='a' c='__nptl_free_tcb'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='27' u='a' c='__nptl_free_tcb'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='27' u='a' c='__nptl_free_tcb'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='27' u='a' c='__nptl_free_tcb'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='27' u='a' c='__nptl_free_tcb'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='27' u='a' c='__nptl_free_tcb'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='27' u='a' c='__nptl_free_tcb'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='27' u='a' c='__nptl_free_tcb'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='27' u='a' c='__nptl_free_tcb'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='27' u='a' c='__nptl_free_tcb'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='27' u='a' c='__nptl_free_tcb'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='81' c='__nptl_setxid_sighandler'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='82' u='a' c='__nptl_setxid_sighandler'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='113' u='r' c='setxid_mark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='128' u='a' c='setxid_mark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='140' u='r' c='setxid_unmark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='144' u='a' c='setxid_unmark_thread'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='156' u='r' c='setxid_signal_thread'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='45' u='a' c='sigcancel_handler'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='45' u='a' c='sigcancel_handler'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='45' u='a' c='sigcancel_handler'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='45' u='a' c='sigcancel_handler'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='45' u='a' c='sigcancel_handler'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='95' u='a' c='__pthread_cancel'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='95' u='a' c='__pthread_cancel'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='95' u='a' c='__pthread_cancel'/>
+<use f='codebrowser/nptl/allocatestack.c' l='121' u='w' c='get_cached_stack'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='490' u='a' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='554' u='r' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='564' u='r' c='start_thread'/>
+<use f='codebrowser/nptl_db/structs.def' l='56' u='r'/>
+<use f='codebrowser/nptl/pthread_detach.c' l='48' u='r' c='___pthread_detach'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='59' u='r' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_join_common.c' l='63' u='r' c='__pthread_clockjoin_ex'/>
+<use f='codebrowser/nptl/pthread_testcancel.c' l='26' c='___pthread_testcancel'/>

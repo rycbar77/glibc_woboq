@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso-setup.c' l='53' type='int (*)(struct timeval *, void *)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-vdso-setup.h' l='33' macro='1' u='w' c='setup_vdso_pointers'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/gettimeofday.c' l='53' macro='1' c='__gettimeofday'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/gettimeofday.c' l='53' macro='1' u='r' c='__gettimeofday'/>

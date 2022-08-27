@@ -1,0 +1,10 @@
+<dec f='codebrowser/posix/regex_internal.h' l='552' type='unsigned int'/>
+<use f='codebrowser/posix/regex_internal.c' l='1654' u='w' c='create_ci_newstate'/>
+<use f='codebrowser/posix/regex_internal.c' l='1708' u='w' c='create_cd_newstate'/>
+<use f='codebrowser/posix/regexec.c' l='1077' u='r' c='check_matching'/>
+<use f='codebrowser/posix/regexec.c' l='1758' u='r' c='update_cur_sifted_state'/>
+<use f='codebrowser/posix/regexec.c' l='2326' u='r' c='merge_state_with_log'/>
+<use f='codebrowser/posix/regexec.c' l='2886' u='r' c='check_arrival'/>
+<use f='codebrowser/posix/regexec.c' l='2895' u='r' c='check_arrival'/>
+<offset>646</offset>
+<doc f='codebrowser/posix/regex_internal.h' l='551'>/* If this state has backreference node(s).  */</doc>

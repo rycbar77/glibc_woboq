@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/unistd.h' l='287' type='int access(const char * __name, int __type)'/>
+<doc f='codebrowser/posix/unistd.h' l='286'>/* Test for access to NAME using the real UID and real GID.  */</doc>
+<use f='codebrowser/elf/sln.c' l='185' u='c' c='makesymlink'/>
+<use f='codebrowser/malloc/memusage.c' l='276' u='c' c='me'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/access.c' l='33' macro='1' type='int access(const char * , int )'/>

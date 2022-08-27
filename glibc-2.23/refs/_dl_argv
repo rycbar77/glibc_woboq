@@ -1,0 +1,172 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='646' type='char **'/>
+<use f='codebrowser/elf/dl-addr.c' l='36' u='r' c='determine_info'/>
+<use f='codebrowser/elf/dl-conflict.c' l='36' macro='1' u='r' c='_dl_resolve_conflicts'/>
+<use f='codebrowser/elf/dl-deps.c' l='311' macro='1' u='r' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-error.c' l='125' macro='1' u='r' c='_dl_signal_error'/>
+<use f='codebrowser/elf/dl-fini.c' l='223' macro='1' u='r' c='_dl_fini'/>
+<use f='codebrowser/elf/dl-init.c' l='51' macro='1' u='r' c='call_init'/>
+<use f='codebrowser/elf/dl-init.c' l='101' macro='1' u='r' c='_dl_init'/>
+<use f='codebrowser/elf/dl-load.c' l='1478' macro='1' u='r' c='print_search_path'/>
+<use f='codebrowser/elf/dl-load.c' l='1980' macro='1' u='r' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-lookup.c' l='383' macro='1' u='r' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='761' macro='1' u='r' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='763' macro='1' u='r' c='add_dependency'/>
+<use f='codebrowser/elf/dl-lookup.c' l='844' macro='1' u='r' c='_dl_lookup_symbol_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='871' macro='1' u='r' c='_dl_lookup_symbol_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='1006' macro='1' u='r' c='_dl_debug_bindings'/>
+<use f='codebrowser/elf/dl-lookup.c' l='1008' macro='1' u='r' c='_dl_debug_bindings'/>
+<use f='codebrowser/elf/dl-open.c' l='719' macro='1' u='r' c='_dl_show_scope'/>
+<use f='codebrowser/elf/dl-open.c' l='730' macro='1' u='r' c='_dl_show_scope'/>
+<use f='codebrowser/elf/dl-reloc.c' l='183' macro='1' u='r' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='278' macro='1' u='r' c='_dl_relocate_object'/>
+<def f='codebrowser/elf/dl-support.c' l='39' type='char **'/>
+<doc f='codebrowser/elf/dl-support.c' l='39'>/* This is checked for some error messages.  */</doc>
+<use f='codebrowser/elf/dl-version.c' l='88' macro='1' u='r' c='match_symbol'/>
+<use f='codebrowser/elf/dl-version.c' l='165' macro='1' u='r' c='match_symbol'/>
+<use f='codebrowser/elf/dl-version.c' l='213' macro='1' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='237' macro='1' u='r' c='_dl_check_map_versions'/>
+<def f='codebrowser/elf/rtld.c' l='83' type='char **'/>
+<use f='codebrowser/elf/rtld.c' l='86'/>
+<use f='codebrowser/elf/rtld.c' l='86'/>
+<use f='codebrowser/elf/rtld.c' l='494' u='r' c='dlmopen_doit'/>
+<use f='codebrowser/elf/rtld.c' l='800' macro='1' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='803' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='810' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='812' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='818' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='820' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='825' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='827' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='830' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='834' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='836' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='839' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='843' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='845' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='847' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='851' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='885' u='w' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='913' macro='1' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='926' macro='1' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='970' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1712' macro='1' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1712' macro='1' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1799' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1807' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='1871' macro='1' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2185' macro='1' u='r' c='print_unresolved'/>
+<use f='codebrowser/elf/rtld.c' l='2195' macro='1' u='r' c='print_missing_version'/>

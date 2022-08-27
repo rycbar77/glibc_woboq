@@ -1,0 +1,9 @@
+<dec f='codebrowser/nscd/nscd.h' l='68' type='time_t'/>
+<use f='codebrowser/nscd/nscd.h' l='96' u='w' c='init_traced_file'/>
+<offset>0</offset>
+<doc f='codebrowser/nscd/nscd.h' l='67'>/* Tracks the last modified time of the traced file.  */</doc>
+<use f='codebrowser/nscd/cache.c' l='295' u='r' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='301' u='w' c='prune_cache'/>
+<use f='codebrowser/nscd/connections.c' l='921' u='w' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='924' u='w' c='register_traced_file'/>
+<use f='codebrowser/nscd/connections.c' l='953' u='w' c='invalidate_cache'/>

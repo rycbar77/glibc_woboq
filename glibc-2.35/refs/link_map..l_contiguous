@@ -1,0 +1,14 @@
+<dec f='codebrowser/include/link.h' l='203' type='unsigned int'/>
+<offset>6386</offset>
+<doc f='codebrowser/include/link.h' l='203'>/* Nonzero if inter-segment holes are
+				    mprotected or if no holes are present at
+				    all.  */</doc>
+<use f='codebrowser/elf/dl-find_object.c' l='43' u='r' c='_dl_find_object_slow'/>
+<use f='codebrowser/elf/dl-find_object.c' l='478' u='r' c='_dlfo_process_initial'/>
+<use f='codebrowser/elf/dl-find_object.c' l='566' u='r' c='_dl_find_object_init'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='123' u='w' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-map-segments.h' l='131' u='w' c='_dl_map_segments'/>
+<use f='codebrowser/elf/dl-open.c' l='221' u='r' c='_dl_find_dso_for_object'/>
+<use f='codebrowser/elf/rtld.c' l='1151' u='w' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1230' u='r' c='rtld_setup_main_map'/>
+<use f='codebrowser/elf/rtld.c' l='1232' u='w' c='rtld_setup_main_map'/>

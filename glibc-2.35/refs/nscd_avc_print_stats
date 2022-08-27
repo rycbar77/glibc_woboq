@@ -1,0 +1,5 @@
+<dec f='codebrowser/nscd/selinux.h' l='43' type='void nscd_avc_print_stats(struct avc_cache_stats * cstats)'/>
+<doc f='codebrowser/nscd/selinux.h' l='42'>/* Display statistics on AVC usage.  */</doc>
+<use f='codebrowser/nscd/nscd_stat.c' l='327' u='c' c='receive_print_stats'/>
+<def f='codebrowser/nscd/selinux.c' l='450' ll='465' type='void nscd_avc_print_stats(struct avc_cache_stats * cstats)'/>
+<doc f='codebrowser/nscd/selinux.c' l='449'>/* Print the AVC statistics to stdout.  */</doc>

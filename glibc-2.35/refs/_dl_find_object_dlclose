@@ -1,0 +1,5 @@
+<dec f='codebrowser/elf/dl-find_object.h' l='136' type='void _dl_find_object_dlclose(struct link_map * l)'/>
+<use f='codebrowser/elf/dl-close.c' l='687' u='c' c='_dl_close_worker'/>
+<doc f='codebrowser/elf/dl-find_object.h' l='134'>/* Called by dlclose to remove the link map from the DWARF EH frame
+   data structures.  Needs to be protected by loader write lock.  */</doc>
+<def f='codebrowser/elf/dl-find_object.c' l='809' ll='839' type='void _dl_find_object_dlclose(struct link_map * map)'/>

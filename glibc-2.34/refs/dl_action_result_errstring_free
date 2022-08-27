@@ -1,0 +1,7 @@
+<def f='codebrowser/dlfcn/dlerror.h' l='64' ll='78' type='void dl_action_result_errstring_free(struct dl_action_result * result)'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='63' u='c' c='__dlerror'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='95' u='c' c='__dlerror'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='127' u='c' c='_dlerror_run'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='183' u='c' c='_dlerror_run'/>
+<doc f='codebrowser/dlfcn/dlerror.h' l='63'>/* Deallocate RESULT-&gt;errstring, leaving *RESULT itself allocated.  */</doc>
+<use f='codebrowser/dlfcn/libc_dlerror_result.c' l='34' u='c' c='__libc_dlerror_result_free'/>

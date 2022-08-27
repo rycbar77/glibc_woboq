@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='511' type='int matchpathcon_index(const char * path, mode_t mode, char ** con)'/>
+<doc f='include/selinux/selinux.h' l='509'>/* Same as above, but return a specification index for 
+   later use in a matchpathcon_filespec_add() call - see below. */</doc>

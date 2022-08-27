@@ -1,0 +1,11 @@
+<dec f='codebrowser/signal/signal.h' l='202' type='int sigfillset(sigset_t * __set)'/>
+<dec f='codebrowser/include/signal.h' l='8' type='int sigfillset(sigset_t * )'/>
+<use f='codebrowser/include/signal.h' l='8' c='sigfillset'/>
+<doc f='codebrowser/signal/signal.h' l='201'>/* Set all signals in SET.  */</doc>
+<use f='codebrowser/malloc/memusage.c' l='294' u='c' c='me'/>
+<def f='codebrowser/signal/sigfillset.c' l='24' ll='36' type='int sigfillset(sigset_t * set)'/>
+<doc f='codebrowser/signal/sigfillset.c' l='23'>/* Set all signals in SET.  */</doc>
+<use f='codebrowser/support/delayed_exit.c' l='46' u='c' c='delayed_exit'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_misc.h' l='55' u='c' c='__aio_create_helper_thread'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='108' u='c' c='__gai_create_helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='77' u='c' c='change_sigmask'/>

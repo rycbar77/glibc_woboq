@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/mqueue.h' l='6' type='int __mq_timedsend(mqd_t , const char * , size_t , unsigned int , const struct timespec * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_send.c' l='28' u='c' c='mq_send'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/mq_timedsend.c' l='25' macro='1' type='int __mq_timedsend(mqd_t mqdes, const char * msg_ptr, size_t msg_len, unsigned int msg_prio, const struct timespec * abs_timeout)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_timedsend.c' l='75' c='mq_timedsend'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/mq_timedsend.c' l='22'>/* Add message pointed by MSG_PTR to message queue MQDES, stop blocking
+   on full message queue if ABS_TIMEOUT expires.  */</doc>

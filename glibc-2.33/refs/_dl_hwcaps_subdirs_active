@@ -1,0 +1,9 @@
+<dec f='codebrowser/elf/dl-hwcaps.h' l='113' type='uint32_t _dl_hwcaps_subdirs_active()'/>
+<doc f='codebrowser/elf/dl-hwcaps.h' l='108'>/* Returns a bitmap of active subdirectories in _dl_hwcaps_subdirs.
+   Bit 0 (the LSB) corresponds to the first substring in
+   _dl_hwcaps_subdirs, bit 1 to the second substring, and so on.
+   There is no direct correspondence between HWCAP bitmasks and this
+   bitmask.  */</doc>
+<use f='codebrowser/elf/dl-hwcaps.c' l='184' u='c' c='_dl_important_hwcaps'/>
+<use f='codebrowser/elf/dl-usage.c' l='175' u='c' c='print_hwcaps_subdirectories'/>
+<def f='codebrowser/sysdeps/x86_64/dl-hwcaps-subdirs.c' l='27' ll='52' type='uint32_t _dl_hwcaps_subdirs_active()'/>

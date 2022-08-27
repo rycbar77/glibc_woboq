@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/x86/setjmpP.h' l='101' type='__jmp_buf_sigset_t'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/setjmpP.h' l='113'/>
+<use f='codebrowser/setjmp/longjmp.c' l='35' macro='1' u='a' c='__longjmp_chk'/>
+<offset>0</offset>
+<use f='codebrowser/setjmp/sigjmp.c' l='31' macro='1' u='a' c='__sigjmp_save'/>
+<use f='codebrowser/sysdeps/x86/longjmp.c' l='39' macro='1' u='a' c='__libc_longjmp'/>

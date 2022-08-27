@@ -1,0 +1,16 @@
+<dec f='codebrowser/nscd/nscd.h' l='131' type='pthread_mutex_t'/>
+<offset>1152</offset>
+<use f='codebrowser/nscd/connections.c' l='117' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='136' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='155' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='174' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='193' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='980' u='a' c='invalidate_cache'/>
+<use f='codebrowser/nscd/connections.c' l='982' u='a' c='invalidate_cache'/>
+<use f='codebrowser/nscd/connections.c' l='1518' u='a' c='nscd_run_prune'/>
+<use f='codebrowser/nscd/grpcache.c' l='208' u='a' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='215' u='a' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='377' u='a' c='cache_addgr'/>
+<use f='codebrowser/nscd/pwdcache.c' l='201' u='a' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='208' u='a' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='355' u='a' c='cache_addpw'/>

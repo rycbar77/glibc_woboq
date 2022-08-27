@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='330' type='int __pthread_mutexattr_init(pthread_mutexattr_t * __attr)'/>
+<dec f='codebrowser/nptl/pthreadP.h' l='398' type='int __pthread_mutexattr_init(pthread_mutexattr_t * attr)'/>
+<def f='codebrowser/nptl/pthread_mutexattr_init.c' l='23' ll='39' type='int __pthread_mutexattr_init(pthread_mutexattr_t * attr)'/>
+<use f='codebrowser/nptl/pthread_mutexattr_init.c' l='40' c='pthread_mutexattr_init'/>
+<use f='codebrowser/sysdeps/pthread/mtx_init.c' l='33' u='c' c='mtx_init'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='40'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='41' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='52' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='60' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='68' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='78' u='c'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='86' u='c'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sigsetops.h' l='37'>/* Linux sig* functions only handle up to __NSIG_WORDS words instead of
+   full _SIGSET_NWORDS sigset size.  The signal numbers are 1-based, and
+   bit 0 of a signal mask is for signal 1.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/x86/setjmpP.h' l='119' u='c'/>

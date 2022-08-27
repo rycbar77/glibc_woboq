@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/generic/malloc-hugepages.h' l='41' type='void __malloc_hugepage_config(size_t requested, size_t * pagesize, int * flags)'/>
+<doc f='codebrowser/sysdeps/generic/malloc-hugepages.h' l='37'>/* Return the supported huge page size from the REQUESTED sizes on PAGESIZE
+   along with the required extra mmap flags on FLAGS,  Requesting the value
+   of 0 returns the default huge page size, otherwise the value will be
+   matched against the sizes supported by the system.  */</doc>
+<use f='codebrowser/malloc/malloc.c' l='5443' u='c' c='do_set_hugetlb'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/malloc-hugepages.c' l='132' ll='201' type='void __malloc_hugepage_config(size_t requested, size_t * pagesize, int * flags)'/>

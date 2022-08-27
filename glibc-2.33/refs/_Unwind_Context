@@ -1,0 +1,22 @@
+<use f='codebrowser/sysdeps/generic/unwind.h' l='118'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='135'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='144' c='_Unwind_GetGR'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='145' c='_Unwind_SetGR'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='147' c='_Unwind_GetIP'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='148' c='_Unwind_SetIP'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='151' c='_Unwind_GetCFA'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='153' c='_Unwind_GetLanguageSpecificData'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='155' c='_Unwind_GetRegionStart'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='174'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='213' c='_Unwind_GetDataRelBase'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='214' c='_Unwind_GetTextRelBase'/>
+<use f='codebrowser/debug/backtrace.c' l='73' c='backtrace_helper'/>
+<use f='codebrowser/elf/static-stubs.c' l='43' c='__gcc_personality_v0'/>
+<use f='codebrowser/nptl/unwind.c' l='43' c='unwind_stop'/>
+<use f='codebrowser/sysdeps/gnu/unwind-resume.c' l='30' macro='1'/>
+<use f='codebrowser/sysdeps/gnu/unwind-resume.c' l='73' macro='1' c='__gcc_personality_v0'/>
+<use f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='30' macro='1'/>
+<use f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='33'/>
+<use f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='110' macro='1' c='__gcc_personality_v0'/>
+<use f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='139' c='_Unwind_GetCFA'/>
+<use f='codebrowser/sysdeps/nptl/unwind-forcedunwind.c' l='146' c='_Unwind_GetCFA'/>

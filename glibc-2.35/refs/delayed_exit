@@ -1,0 +1,5 @@
+<dec f='codebrowser/support/xthread.h' l='31' type='void delayed_exit(int seconds)'/>
+<def f='codebrowser/support/delayed_exit.c' l='41' ll='55' type='void delayed_exit(int seconds)'/>
+<doc f='codebrowser/support/xthread.h' l='28'>/* Terminate the process (with exit status 0) after SECONDS have
+   elapsed, from a helper thread.  The process is terminated with the
+   exit function, so atexit handlers are executed.  */</doc>

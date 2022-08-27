@@ -1,0 +1,9 @@
+<dec f='codebrowser/argp/argp.h' l='406' type='error_t'/>
+<def f='codebrowser/argp/argp-eexst.c' l='31' type='error_t'/>
+<doc f='codebrowser/argp/argp-eexst.c' l='28'>/* The exit status that argp will use when exiting due to a parsing error.
+   If not defined or set by the user program, this defaults to EX_USAGE from
+   &lt;sysexits.h&gt;.  */</doc>
+<doc f='codebrowser/argp/argp.h' l='403'>/* The exit status that argp will use when exiting due to a parsing error.
+   If not defined or set by the user program, this defaults to EX_USAGE from
+   &lt;sysexits.h&gt;.  */</doc>
+<use f='codebrowser/argp/argp-help.c' l='1739' u='r' c='__argp_state_help'/>

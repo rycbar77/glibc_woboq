@@ -1,0 +1,49 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='879' type='void _dl_signal_error(int errcode, const char * object, const char * occasion, const char * errstring)'/>
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='882' type='void _dl_signal_error(int , const char * , const char * , const char * )'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='882' c='_dl_signal_error'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='912' u='c' c='_dl_signal_cerror'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='878'>/* Like _dl_signal_exception, but creates the exception first.  */</doc>
+<use f='codebrowser/dlfcn/dlinfo.c' l='43' u='c' c='dlinfo_doit'/>
+<use f='codebrowser/dlfcn/dlmopen.c' l='53' u='c' c='dlmopen_doit'/>
+<use f='codebrowser/dlfcn/dlmopen.c' l='58' u='c' c='dlmopen_doit'/>
+<use f='codebrowser/dlfcn/dlopen.c' l='54' u='c' c='dlopen_doit'/>
+<use f='codebrowser/elf/dl-close.c' l='408' u='c' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='870' u='c' c='_dl_close'/>
+<use f='codebrowser/elf/dl-deps.c' l='219' u='c' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='112' u='c' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='125' u='c' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='112' u='c' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='125' u='c' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='442' u='c' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='482' u='c' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='528' u='c' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='547' u='c' c='_dl_map_object_deps'/>
+<def f='codebrowser/elf/dl-error-skeleton.c' l='106' ll='125' type='void _dl_signal_error(int errcode, const char * objname, const char * occation, const char * errstring)'/>
+<use f='codebrowser/elf/dl-error-skeleton.c' l='168' u='c' c='_dl_signal_cerror'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='103' u='c' c='compute_priorities'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='246' u='c' c='_dl_important_hwcaps'/>
+<use f='codebrowser/elf/dl-hwcaps.c' l='261' u='c' c='_dl_important_hwcaps'/>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='60' u='c' c='dl_isa_level_check'/>
+<use f='codebrowser/elf/dl-load.c' l='432' u='c' c='add_name_to_object'/>
+<use f='codebrowser/elf/dl-load.c' l='533' u='c' c='fillin_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='649' u='c' c='decompose_rpath'/>
+<use f='codebrowser/elf/dl-load.c' l='729' u='c' c='_dl_init_paths'/>
+<use f='codebrowser/elf/dl-load.c' l='993' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1698' u='c' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='2313' u='c' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2331' u='c' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-load.c' l='2336' u='c' c='_dl_map_object'/>
+<use f='codebrowser/elf/dl-open.c' l='79' u='c' c='add_to_global_resize_failure'/>
+<use f='codebrowser/elf/dl-open.c' l='293' u='c' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='807' u='c' c='_dl_open'/>
+<use f='codebrowser/elf/dl-open.c' l='824' u='c' c='_dl_open'/>
+<use f='codebrowser/elf/dl-open.c' l='847' u='c' c='_dl_open'/>
+<use f='codebrowser/elf/dl-reloc.c' l='139' u='c' c='_dl_allocate_static_tls'/>
+<use f='codebrowser/elf/dl-reloc.c' l='235' u='c' c='_dl_relocate_object'/>
+<use f='codebrowser/elf/dl-reloc.c' l='342' u='c' c='_dl_protect_relro'/>
+<use f='codebrowser/elf/dl-reloc.c' l='378' u='c' c='_dl_reloc_bad_type'/>
+<use f='codebrowser/elf/dl-sym.c' l='138' u='c' c='do_sym'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='151' u='c' c='dl_cet_check'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='162' u='c' c='dl_cet_check'/>
+<use f='codebrowser/sysdeps/x86/dl-cet.c' l='193' u='c' c='dl_cet_check'/>
+<use f='codebrowser/elf/dl-tls.c' l='1039' u='c' c='_dl_add_to_slotinfo'/>

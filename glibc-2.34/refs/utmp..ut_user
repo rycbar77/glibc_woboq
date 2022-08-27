@@ -1,0 +1,9 @@
+<dec f='codebrowser/bits/utmp.h' l='66' type='char[32]'/>
+<offset>352</offset>
+<use f='codebrowser/login/logout.c' l='48' macro='1' u='r' c='__logout'/>
+<use f='codebrowser/login/logout.c' l='48' macro='1' u='r' c='__logout'/>
+<use f='codebrowser/login/logwtmp.c' l='37' macro='1' u='r' c='__logwtmp'/>
+<use f='codebrowser/login/logwtmp.c' l='37' macro='1' u='r' c='__logwtmp'/>
+<use f='codebrowser/sysdeps/unix/getlogin.c' l='73' u='r' c='getlogin_fd0'/>
+<use f='codebrowser/sysdeps/unix/getlogin_r.c' l='82' u='r' c='getlogin_r_fd0'/>
+<use f='codebrowser/sysdeps/unix/getlogin_r.c' l='91' u='r' c='getlogin_r_fd0'/>

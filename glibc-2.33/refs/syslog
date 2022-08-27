@@ -1,0 +1,10 @@
+<dec f='codebrowser/misc/sys/syslog.h' l='190' type='void syslog(int __pri, const char * __fmt)'/>
+<dec f='codebrowser/include/sys/syslog.h' l='6' type='void syslog(int , const char * )'/>
+<use f='codebrowser/include/sys/syslog.h' l='6' c='syslog'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='184' u='c' c='fmtmsg'/>
+<doc f='codebrowser/misc/sys/syslog.h' l='186'>/* Generate a log message using FMT string and option arguments.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<def f='codebrowser/misc/syslog.c' l='127' macro='1' type='void syslog(int , const char * )'/>
+<use f='codebrowser/misc/syslog.c' l='173' u='c' c='__vsyslog_internal'/>

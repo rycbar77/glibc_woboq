@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/resolv.h' l='62' type='int __libc_dn_skipname(const unsigned char * , const unsigned char * )'/>
+<def f='codebrowser/resolv/dn_skipname.c' l='99' macro='1' type='int __libc_dn_skipname(const unsigned char * , const unsigned char * )'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='91' u='c' c='_nss_dns_getcanonname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-canon.c' l='109' u='c' c='_nss_dns_getcanonname_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-network.c' l='323' u='c' c='getanswer_r'/>

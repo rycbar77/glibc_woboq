@@ -1,0 +1,10 @@
+<def f='codebrowser/malloc/malloc.c' l='1626' ll='1664' type='void unlink_chunk(mstate av, mchunkptr p)'/>
+<use f='codebrowser/malloc/arena.c' l='621' u='c' c='heap_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='4092' u='c' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4194' u='c' c='_int_malloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4494' u='c' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4503' u='c' c='_int_free'/>
+<use f='codebrowser/malloc/malloc.c' l='4659' u='c' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='4667' u='c' c='malloc_consolidate'/>
+<use f='codebrowser/malloc/malloc.c' l='4759' u='c' c='_int_realloc'/>
+<doc f='codebrowser/malloc/malloc.c' l='1625'>/* Take a chunk off a bin list.  */</doc>

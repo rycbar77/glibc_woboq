@@ -1,0 +1,6 @@
+<dec f='codebrowser/bits/utmp.h' l='61' type='pid_t'/>
+<offset>32</offset>
+<doc f='codebrowser/bits/utmp.h' l='61'>/* Process ID of login process.  */</doc>
+<use f='codebrowser/login/login.c' l='94' u='w' c='__login'/>
+<use f='codebrowser/login/logwtmp.c' l='33' u='w' c='__logwtmp'/>
+<use f='codebrowser/login/programs/utmpdump.c' l='41' u='r' c='print_entry'/>

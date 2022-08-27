@@ -1,0 +1,11 @@
+<dec f='codebrowser/nscd/nscd.h' l='148' type='int'/>
+<offset>2112</offset>
+<doc f='codebrowser/nscd/nscd.h' l='148'>/* Writable file descriptor.  */</doc>
+<use f='codebrowser/nscd/connections.c' l='129' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='148' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='167' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='186' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='205' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='576' u='w' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='743' u='w' c='nscd_init'/>
+<use f='codebrowser/nscd/mem.c' l='552' u='r' c='mempool_alloc'/>

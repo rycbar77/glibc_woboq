@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='375' type='char * __stpcpy_sse2(char * , const char * )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='375' u='r' c='__libc_ifunc_impl_list'/>
+<def f='codebrowser/sysdeps/x86_64/strcpy.S' l='28' macro='1' type='int'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-strcpy.h' l='23' macro='1' type='char * __stpcpy_sse2(char *restrict , const char *restrict )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-strcpy.h' l='56' macro='1' u='r' c='stpcpy_ifunc_selector'/>

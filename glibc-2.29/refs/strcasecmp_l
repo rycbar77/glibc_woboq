@@ -1,0 +1,5 @@
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='232' c='__strcasecmp_l_avx'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='235' c='__strcasecmp_l_sse42'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='238' c='__strcasecmp_l_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='241' c='__strcasecmp_l_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strcasecmp_l.c' l='34' macro='1' type='int strcasecmp_l(const char * , const char * , locale_t )'/>

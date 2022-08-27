@@ -1,0 +1,5 @@
+<dec f='codebrowser/rt/aio.h' l='160' type='int aio_cancel(int __fildes, struct aiocb * __aiocbp)'/>
+<doc f='codebrowser/rt/aio.h' l='158'>/* Try to cancel asynchronous I/O requests outstanding against file
+   descriptor FILDES.  */</doc>
+<def f='codebrowser/sysdeps/pthread/aio_cancel.c' l='40' ll='153' type='int aio_cancel(int fildes, struct aiocb * aiocbp)'/>
+<use f='codebrowser/sysdeps/pthread/aio_cancel.c' l='156' c='aio_cancel64'/>

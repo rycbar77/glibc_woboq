@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/nptl/lowlevellock.h' l='201' type='int __lll_trylock_elision(int * lock, short * adapt_count)'/>
+<dec f='codebrowser/sysdeps/nptl/lowlevellock.h' l='202' type='int __lll_trylock_elision(int * , short * )'/>
+<use f='codebrowser/sysdeps/nptl/lowlevellock.h' l='202' c='__lll_trylock_elision'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='64' macro='1' u='c' c='___pthread_mutex_trylock'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-trylock.c' l='30' ll='75' type='int __lll_trylock_elision(int * futex, short * adapt_count)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/x86/elision-trylock.c' l='27'>/* Try to elide a futex trylock.  FUTEX is the futex variable.  ADAPT_COUNT is
+   the adaptation counter in the mutex.  */</doc>

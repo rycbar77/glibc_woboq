@@ -1,0 +1,36 @@
+<dec f='codebrowser/resolv/netdb.h' l='104' type='char **'/>
+<offset>192</offset>
+<doc f='codebrowser/resolv/netdb.h' l='104'>/* List of addresses from name server.  */</doc>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='273' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='291' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='294' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='318' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='338' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='352' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nss/digits_dots.c' l='183' u='w' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nss/digits_dots.c' l='275' u='w' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='92' u='w' c='parse_line'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='107' u='r' c='_nss_files_gethostbyaddr_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='136' u='r' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='137' u='r' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='192' u='r' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='218' u='r' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='311' u='w' c='gethostbyname3_multi'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='436' u='r' c='_nss_files_gethostbyname4_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='436' u='r' c='_nss_files_gethostbyname4_r'/>
+<use f='codebrowser/nss/nss_files/files-hosts.c' l='462' u='r' c='_nss_files_gethostbyname4_r'/>
+<use f='codebrowser/resolv/mapv4v6hostent.h' l='69' u='r' c='map_v4v6_hostent'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='747' u='w' c='getanswer_r'/>
+<use f='codebrowser/resolv/res_hconf.c' l='506' u='r' c='_res_hconf_reorder_addrs'/>
+<use f='codebrowser/resolv/res_hconf.c' l='508' u='r' c='_res_hconf_reorder_addrs'/>
+<use f='codebrowser/resolv/res_hconf.c' l='519' u='r' c='_res_hconf_reorder_addrs'/>
+<use f='codebrowser/resolv/res_hconf.c' l='520' u='r' c='_res_hconf_reorder_addrs'/>
+<use f='codebrowser/resolv/res_hconf.c' l='520' u='r' c='_res_hconf_reorder_addrs'/>
+<use f='codebrowser/resolv/res_hconf.c' l='521' u='r' c='_res_hconf_reorder_addrs'/>
+<use f='codebrowser/sunrpc/rpc_gethostbyname.c' l='70' macro='1' u='r' c='__libc_rpc_gethostbyname'/>
+<use f='codebrowser/support/support_format_hostent.c' l='63' u='r' c='support_format_hostent'/>
+<use f='codebrowser/support/support_format_hostent.c' l='66' u='r' c='support_format_hostent'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='207' u='r' c='convert_hostent_to_gaih_addrtuple'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='225' u='r' c='convert_hostent_to_gaih_addrtuple'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='231' u='r' c='convert_hostent_to_gaih_addrtuple'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/gethostid.c' l='125' macro='1' u='r' c='gethostid'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/sigevent-consts.h' l='33' type='2'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/sigevent-consts.h' l='33'>/* Deliver via thread creation.  */</doc>
+<use f='codebrowser/resolv/gai_notify.c' l='59' macro='1' u='r' c='__gai_notify_only'/>
+<use f='codebrowser/rt/aio_notify.c' l='61' macro='1' u='r' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='210' macro='1' u='r' c='__mq_notify'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='255' macro='1' u='r' c='__mq_notify'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='45' macro='1' u='r' c='___timer_create'/>

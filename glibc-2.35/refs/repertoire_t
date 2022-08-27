@@ -1,0 +1,63 @@
+<def f='codebrowser/locale/programs/repertoire.h' l='26' ll='33'/>
+<use f='codebrowser/locale/programs/repertoire.h' l='46' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.h' l='52' c='repertoire_find_value'/>
+<use f='codebrowser/locale/programs/repertoire.h' l='56' c='repertoire_find_symbol'/>
+<use f='codebrowser/locale/programs/repertoire.h' l='60' c='repertoire_find_seq'/>
+<use f='codebrowser/iconv/dummy-repertoire.c' l='25' c='repertoire_find_value'/>
+<use f='codebrowser/iconv/dummy-repertoire.c' l='33' c='repertoire_find_symbol'/>
+<size>456</size>
+<mbr r='repertoire_t::name' o='0' t='const char *'/>
+<mbr r='repertoire_t::mem_pool' o='64' t='struct obstack'/>
+<mbr r='repertoire_t::char_table' o='768' t='hash_table'/>
+<mbr r='repertoire_t::reverse_table' o='1728' t='hash_table'/>
+<mbr r='repertoire_t::seq_table' o='2688' t='hash_table'/>
+<use f='codebrowser/locale/programs/linereader.h' l='93' c='lr_token'/>
+<size>456</size>
+<use f='codebrowser/locale/programs/ld-collate.c' l='421' c='check_duplicate'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='464' c='read_directions'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='698' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='953' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1077' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='2565' c='collate_read'/>
+<size>456</size>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='170'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='269' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='272' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1257' c='get_character'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1341' c='charclass_symbolic_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1454' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1579' c='charclass_charcode_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1786' c='read_widestring'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1857' c='read_translit_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1941' c='read_translit_ignore_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2068' c='ctype_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2897' c='set_class_defaults'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3610' c='allocate_arrays'/>
+<size>456</size>
+<use f='codebrowser/locale/programs/ld-messages.c' l='201' c='messages_read'/>
+<size>456</size>
+<use f='codebrowser/locale/programs/ld-monetary.c' l='439' c='monetary_read'/>
+<size>456</size>
+<use f='codebrowser/locale/programs/ld-numeric.c' l='153' c='numeric_read'/>
+<size>456</size>
+<use f='codebrowser/locale/programs/ld-time.c' l='674' c='time_read'/>
+<size>456</size>
+<use f='codebrowser/locale/programs/linereader.c' l='43' c='get_string'/>
+<use f='codebrowser/locale/programs/linereader.c' l='192' c='lr_token'/>
+<use f='codebrowser/locale/programs/linereader.c' l='592' c='get_string'/>
+<size>456</size>
+<use f='codebrowser/locale/programs/repertoire.c' l='54' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='58' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='59' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='60' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='126' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='126' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='127' c='repertoire_read'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='352' c='repertoire_compare'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='352' c='repertoire_compare'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='353' c='repertoire_compare'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='353' c='repertoire_compare'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='478' c='repertoire_find_value'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='494' c='repertoire_find_symbol'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='510' c='repertoire_find_seq'/>
+<size>456</size>

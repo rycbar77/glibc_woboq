@@ -1,0 +1,10 @@
+<dec f='codebrowser/malloc/mcheck-impl.c' l='37' type='size_t'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='86' u='r' c='checkhdr'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='181' u='r' c='free_mcheck'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='214' u='w' c='malloc_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='265' u='w' c='memalign_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='312' u='r' c='realloc_mcheck_before'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='336' u='w' c='realloc_mcheck_after'/>
+<use f='codebrowser/malloc/mcheck-impl.c' l='410' u='r' c='mcheck_usable_size'/>
+<offset>0</offset>
+<doc f='codebrowser/malloc/mcheck-impl.c' l='37'>/* Exact size requested by user.  */</doc>

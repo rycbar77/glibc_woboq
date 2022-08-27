@@ -1,0 +1,12 @@
+<def f='codebrowser/elf/rtld.c' l='345' ll='375' type='struct rtld_global_ro'/>
+<doc f='codebrowser/elf/rtld.c' l='343'>/* This variable is similar to _rtld_local, but all values are
+   read-only after relocation.  */</doc>
+<use f='codebrowser/malloc/arena.c' l='447' macro='1' u='m' c='new_heap'/>
+<use f='codebrowser/malloc/arena.c' l='525' macro='1' u='m' c='grow_heap'/>
+<use f='codebrowser/malloc/arena.c' l='591' macro='1' u='m' c='heap_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='2409' macro='1' u='m' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2879' macro='1' u='m' c='systrim'/>
+<use f='codebrowser/malloc/malloc.c' l='2934' macro='1' u='m' c='munmap_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='2965' macro='1' u='m' c='mremap_chunk'/>
+<use f='codebrowser/malloc/malloc.c' l='4930' macro='1' u='m' c='mtrim'/>
+<use f='codebrowser/malloc/malloc-check.c' l='144' macro='1' u='m' c='mem2chunk_check'/>

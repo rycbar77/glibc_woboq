@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='877' type='char *'/>
+<offset>128</offset>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='875'>/* This buffer typically stores both objname and errstring
+     above.  */</doc>
+<use f='codebrowser/elf/dl-error-skeleton.c' l='230' u='r' c='_dl_catch_error'/>
+<use f='codebrowser/elf/dl-exception.c' l='51' u='w' c='oom_exception'/>
+<use f='codebrowser/elf/dl-exception.c' l='76' u='w' c='adjust_message_buffer'/>
+<use f='codebrowser/elf/dl-exception.c' l='78' u='w' c='adjust_message_buffer'/>
+<use f='codebrowser/elf/dl-exception.c' l='251' u='r' c='_dl_exception_free'/>
+<use f='codebrowser/elf/dl-exception.c' l='254' u='w' c='_dl_exception_free'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/malloc/malloc.c' l='3712'/>
+<use f='codebrowser/malloc/malloc.c' l='3740' u='c'/>
+<doc f='codebrowser/malloc/malloc.c' l='3706'>/*
+     If the size qualifies as a fastbin, first check corresponding bin.
+     This code is safe to execute even if av is not yet initialized, so we
+     can try it without checking, which saves some time on this fast path.
+   */</doc>

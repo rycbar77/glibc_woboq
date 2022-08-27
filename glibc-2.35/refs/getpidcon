@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='49' type='int getpidcon(pid_t pid, char ** con)'/>
+<doc f='include/selinux/selinux.h' l='47'>/* Get context of process identified by pid, and 
+   set *con to refer to it.  Caller must free via freecon. */</doc>

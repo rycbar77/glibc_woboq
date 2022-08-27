@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/nss_files.h' l='125' type='int _nss_files_parse_sgent(char * , void * , struct parser_data * , size_t , int * )'/>
+<use f='codebrowser/nss/nss_files/files-sgrp.c' l='33' macro='1' u='c' c='_nss_db_getsgnam_r'/>
+<use f='codebrowser/gshadow/fgetsgent_r.c' l='39' macro='1' u='r' c='__fgetsgent_r'/>
+<def f='codebrowser/gshadow/sgetsgent_r.c' l='35' macro='1' type='int _nss_files_parse_sgent(char * line, void * generic_result, struct parser_data * data, size_t datalen, int * errnop)'/>
+<use f='codebrowser/gshadow/sgetsgent_r.c' l='69' macro='1' u='c' c='__sgetsgent_r'/>

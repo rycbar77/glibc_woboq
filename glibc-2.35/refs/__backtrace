@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/execinfo.h' l='6' type='int __backtrace(void ** __array, int __size)'/>
+<dec f='codebrowser/include/execinfo.h' l='7' type='int __backtrace(void ** , int )'/>
+<use f='codebrowser/include/execinfo.h' l='7' c='__backtrace'/>
+<def f='codebrowser/debug/backtrace.c' l='63' ll='86' type='int __backtrace(void ** array, int size)'/>
+<use f='codebrowser/debug/backtrace.c' l='87' c='backtrace'/>

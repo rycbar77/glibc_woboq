@@ -1,0 +1,5 @@
+<dec f='codebrowser/posix/unistd.h' l='1038' type='int ftruncate64(int __fd, __off64_t __length)'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='170' u='c' c='create_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='433' u='c' c='enlarge_archive'/>
+<use f='codebrowser/support/xftruncate.c' l='25' u='c' c='xftruncate'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/ftruncate64.c' l='32' macro='1' type='int ftruncate64(int , __off64_t )'/>

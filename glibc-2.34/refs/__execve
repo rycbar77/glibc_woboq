@@ -1,0 +1,9 @@
+<dec f='codebrowser/include/unistd.h' l='106' type='int __execve(const char * __path, char *const * __argv, char *const * __envp)'/>
+<use f='codebrowser/posix/execl.c' l='56' u='c' c='execl'/>
+<use f='codebrowser/posix/execle.c' l='58' u='c' c='execle'/>
+<use f='codebrowser/posix/execv.c' l='25' u='c' c='execv'/>
+<use f='codebrowser/posix/execvpe.c' l='67' u='c' c='maybe_script_execute'/>
+<use f='codebrowser/posix/execvpe.c' l='84' u='c' c='__execvpe_common'/>
+<use f='codebrowser/posix/execvpe.c' l='136' u='c' c='__execvpe_common'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fexecve.c' l='55' u='c' c='fexecve'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='427' u='r' c='__spawni'/>

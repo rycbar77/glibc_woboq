@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/stdlib.h' l='104' type='int __posix_openpt(int __oflag)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getpt.c' l='27' ll='31' type='int __posix_openpt(int oflag)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getpt.c' l='32' c='posix_openpt'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getpt.c' l='38' u='c' c='__getpt'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/getpt.c' l='26'>/* Open a master pseudo terminal and return its file descriptor.  */</doc>

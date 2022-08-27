@@ -1,0 +1,3 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='391' type='int pthread_attr_setsigmask_np(pthread_attr_t * __attr, const __sigset_t * sigmask)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='390'>/* Store *SIGMASK as the signal mask for the new thread in *ATTR.  */</doc>
+<def f='codebrowser/nptl/pthread_attr_setsigmask.c' l='22' ll='34' type='int pthread_attr_setsigmask_np(pthread_attr_t * attr, const sigset_t * sigmask)'/>

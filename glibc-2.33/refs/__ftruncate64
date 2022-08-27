@@ -1,0 +1,10 @@
+<dec f='codebrowser/include/unistd.h' l='165' type='int __ftruncate64(int __fd, __off64_t __length)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/ftruncate64.c' l='26' ll='31' type='int __ftruncate64(int fd, off64_t length)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ftruncate64.c' l='32' c='ftruncate64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ftruncate64.c' l='35' c='__ftruncate'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ftruncate64.c' l='36' c='ftruncate'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/ftruncate64.c' l='25'>/* Truncate the file referenced by FD to LENGTH bytes.  */</doc>
+<use f='codebrowser/sysdeps/posix/posix_fallocate64.c' l='64' u='c' c='internal_fallocate64'/>
+<use f='codebrowser/login/utmp_file.c' l='433' u='c' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='483' u='c' c='__libc_updwtmp'/>
+<use f='codebrowser/login/utmp_file.c' l='495' u='c' c='__libc_updwtmp'/>

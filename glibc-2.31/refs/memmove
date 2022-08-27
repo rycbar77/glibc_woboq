@@ -1,0 +1,64 @@
+<dec f='codebrowser/string/string.h' l='47' type='void * memmove(void * __dest, const void * __src, size_t __n)'/>
+<dec f='codebrowser/include/string.h' l='132' type='void * memmove(void * , const void * , unsigned long )'/>
+<use f='codebrowser/include/string.h' l='132' c='memmove'/>
+<doc f='codebrowser/string/string.h' l='45'>/* Copy N bytes of SRC to DEST, guaranteeing
+   correct behavior for overlapping strings.  */</doc>
+<use f='codebrowser/argp/argp-fmtstream.c' l='140' u='c' c='__argp_fmtstream_update'/>
+<use f='codebrowser/argp/argp-fmtstream.c' l='203' u='c' c='__argp_fmtstream_update'/>
+<use f='codebrowser/argp/argp-fmtstream.c' l='283' u='c' c='__argp_fmtstream_update'/>
+<use f='codebrowser/argp/argp-fmtstream.c' l='326' u='c' c='__argp_fmtstream_update'/>
+<use f='codebrowser/argp/argp-fmtstream.c' l='373' u='c' c='__argp_fmtstream_ensure'/>
+<def f='codebrowser/string/bits/string_fortified.h' l='37' ll='41' macro='1' type='void * memmove(void * __dest, const void * __src, size_t __len)'/>
+<use f='codebrowser/debug/wmemmove_chk.c' l='28' u='c' c='__wmemmove_chk'/>
+<use f='codebrowser/elf/chroot_canon.c' l='155' u='c' c='chroot_canon'/>
+<use f='codebrowser/elf/dl-load.c' l='1345' u='c' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='65' u='c' c='_dl_sort_maps'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='72' u='c' c='_dl_sort_maps'/>
+<use f='codebrowser/elf/dl-sort-maps.c' l='84' u='c' c='_dl_sort_maps'/>
+<use f='codebrowser/inet/inet6_rth.c' l='130' u='c' c='inet6_rth_reverse'/>
+<use f='codebrowser/libio/genops.c' l='247' u='c' c='save_for_backup'/>
+<use f='codebrowser/libio/wfileops.c' l='165' u='c' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='299' u='c' c='_IO_wfile_underflow'/>
+<use f='codebrowser/libio/wfileops.c' l='315' u='c' c='_IO_wfile_underflow'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='755' u='c' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='817' u='c' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3923' u='c' c='allocate_arrays'/>
+<use f='codebrowser/misc/efgcvt_r-template.c' l='113' u='c' c='__fcvt_r'/>
+<use f='codebrowser/posix/regex_internal.c' l='636' u='c' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='638' u='c' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='680' u='c' c='re_string_reconstruct'/>
+<use f='codebrowser/posix/regex_internal.c' l='684' u='c' c='re_string_reconstruct'/>
+<use f='codebrowser/resolv/inet_pton.c' l='226' u='c' c='inet_pton6'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='2200' u='c' c='group_number'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='2239' u='c' c='group_number'/>
+<use f='codebrowser/stdio-common/vfprintf-internal.c' l='2288' u='c' c='_IO_helper_overflow'/>
+<use f='codebrowser/stdlib/canonicalize.c' l='191' u='c' c='__realpath'/>
+<use f='codebrowser/string/argz-delete.c' l='33' u='c' c='argz_delete'/>
+<use f='codebrowser/string/argz-insert.c' l='53' u='c' c='__argz_insert'/>
+<use f='codebrowser/string/argz-insert.c' l='54' u='c' c='__argz_insert'/>
+<use f='codebrowser/string/envz.c' l='167' u='c' c='envz_strip'/>
+<use f='codebrowser/sysdeps/posix/sprofil.c' l='212' u='c' c='insert'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='499' u='c' c='generic_getcwd'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/getsysstats.c' l='84' u='c' c='next_line'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='816' u='c' c='getifaddrs_internal'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname.c' l='155' u='c' c='ttyname'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ttyname_r.c' l='140' u='c' c='__ttyname_r'/>
+<use f='codebrowser/io/fts.c' l='246' u='c' c='fts_load'/>
+<use f='codebrowser/io/fts.c' l='249' u='c' c='fts_load'/>
+<use f='codebrowser/io/fts.c' l='448' u='c' c='fts_read'/>
+<use f='codebrowser/io/fts.c' l='796' u='c' c='fts_build'/>
+<use f='codebrowser/io/fts.c' l='1004' u='c' c='fts_alloc'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='94' c='__memmove_avx_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='97' c='__memmove_avx_unaligned_erms'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='100' c='__memmove_avx512_no_vzeroupper'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='103' c='__memmove_avx512_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='106' c='__memmove_avx512_unaligned_erms'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='109' c='__memmove_ssse3_back'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='111' c='__memmove_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='113' c='__memmove_erms'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='114' c='__memmove_sse2_unaligned'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='116' c='__memmove_sse2_unaligned_erms'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/memmove.c' l='32' macro='1' type='void * memmove(void * , const void * , size_t )'/>
+<use f='codebrowser/timezone/zic.c' l='872' u='c' c='relname'/>
+<use f='codebrowser/timezone/zic.c' l='2159' u='c' c='doabbr'/>
+<use f='codebrowser/wcsmbs/wmemmove.c' l='26' u='c' c='__wmemmove'/>

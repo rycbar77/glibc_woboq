@@ -1,0 +1,9 @@
+<def f='codebrowser/elf/dl-find_object.h' l='91' ll='120' type='void _dl_find_object_from_map(struct link_map * l, struct dl_find_object_internal * result)'/>
+<doc f='codebrowser/elf/dl-find_object.h' l='89'>/* Extract the object location data from a link map and writes it to
+   *RESULT using relaxed MO stores.  */</doc>
+<use f='codebrowser/elf/dl-find_object.c' l='47' u='c' c='_dl_find_object_slow'/>
+<use f='codebrowser/elf/dl-find_object.c' l='481' u='c' c='_dlfo_process_initial'/>
+<use f='codebrowser/elf/dl-find_object.c' l='515' u='c' c='_dlfo_process_initial'/>
+<use f='codebrowser/elf/dl-find_object.c' l='523' u='c' c='_dlfo_process_initial'/>
+<use f='codebrowser/elf/dl-find_object.c' l='567' u='c' c='_dl_find_object_init'/>
+<use f='codebrowser/elf/dl-find_object.c' l='758' u='c' c='_dl_find_object_update_1'/>

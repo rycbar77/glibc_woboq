@@ -1,0 +1,33 @@
+<dec f='codebrowser/nscd/nscd.h' l='128' type='pthread_rwlock_t'/>
+<use f='codebrowser/nscd/aicache.c' l='507' u='a' c='addhstaiX'/>
+<offset>0</offset>
+<use f='codebrowser/nscd/cache.c' l='448' u='a' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='451' u='a' c='prune_cache'/>
+<use f='codebrowser/nscd/cache.c' l='504' u='a' c='prune_cache'/>
+<use f='codebrowser/nscd/connections.c' l='115' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='134' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='153' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='172' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='191' u='w'/>
+<use f='codebrowser/nscd/connections.c' l='496' u='a' c='nscd_init'/>
+<use f='codebrowser/nscd/connections.c' l='1129' u='a' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1132' u='a' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1151' u='a' c='handle_request'/>
+<use f='codebrowser/nscd/connections.c' l='1156' u='a' c='handle_request'/>
+<use f='codebrowser/nscd/grpcache.c' l='151' u='a' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='375' u='a' c='cache_addgr'/>
+<use f='codebrowser/nscd/hstcache.c' l='177' u='a' c='cache_addhst'/>
+<use f='codebrowser/nscd/hstcache.c' l='394' u='a' c='cache_addhst'/>
+<use f='codebrowser/nscd/initgrcache.c' l='235' u='a' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/initgrcache.c' l='368' u='a' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/mem.c' l='110' u='a' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='498' u='a' c='gc'/>
+<use f='codebrowser/nscd/mem.c' l='518' u='a' c='mempool_alloc'/>
+<use f='codebrowser/nscd/mem.c' l='563' u='a' c='mempool_alloc'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='436' u='a' c='addgetnetgrentX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='566' u='a' c='addinnetgrX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='596' u='a' c='addinnetgrX'/>
+<use f='codebrowser/nscd/pwdcache.c' l='158' u='a' c='cache_addpw'/>
+<use f='codebrowser/nscd/pwdcache.c' l='353' u='a' c='cache_addpw'/>
+<use f='codebrowser/nscd/servicescache.c' l='146' u='a' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='302' u='a' c='cache_addserv'/>

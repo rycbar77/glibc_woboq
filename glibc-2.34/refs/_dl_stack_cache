@@ -1,0 +1,16 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='477' type='list_t'/>
+<def f='codebrowser/elf/dl-support.c' l='189' type='list_t'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='65' macro='1' u='a' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='65' macro='1' u='a' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='102' macro='1' u='a' c='queue_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='71' macro='1' u='a' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='71' macro='1' u='a' c='get_cached_stack'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='78' macro='1' u='m' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='78' macro='1' u='a' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='79' macro='1' u='a' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='135' macro='1' u='a' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='49' macro='1' u='a' c='__tls_pre_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='49' macro='1' u='a' c='__tls_pre_init_tp'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='49' macro='1' u='a' c='__tls_pre_init_tp'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='83' macro='1' u='a' c='_dl_make_stacks_executable'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='83' macro='1' u='a' c='_dl_make_stacks_executable'/>

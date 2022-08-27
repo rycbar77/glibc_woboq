@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='98' type='int setsockcreatecon(const char * context)'/>
+<doc f='include/selinux/selinux.h' l='96'>/* Set the sockcreate security context for subsequent socket creations.
+   Call with NULL if you want to reset to the default. */</doc>

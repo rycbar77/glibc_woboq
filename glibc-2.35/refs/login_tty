@@ -1,0 +1,7 @@
+<dec f='codebrowser/login/utmp.h' l='41' type='int login_tty(int __fd)'/>
+<dec f='codebrowser/include/utmp.h' l='33' type='int login_tty(int )'/>
+<use f='codebrowser/include/utmp.h' l='33' c='login_tty'/>
+<doc f='codebrowser/login/utmp.h' l='39'>/* Make FD be the controlling terminal, stdin, stdout, and stderr;
+   then close FD.  Returns 0 on success, nonzero on error.  */</doc>
+<use f='codebrowser/login/forkpty.c' l='43' u='c' c='__forkpty'/>
+<def f='codebrowser/login/login_tty.c' l='77' macro='1' type='int login_tty(int )'/>

@@ -1,0 +1,13 @@
+<def f='codebrowser/include/link.h' l='349' ll='353'/>
+<size>16</size>
+<doc f='codebrowser/include/link.h' l='345'>/* Information used by audit modules.  For most link maps, this data
+   immediate follows the link map in memory.  For the dynamic linker,
+   it is allocated separately.  See link_map_audit_state in
+   &lt;ldsodefs.h&gt;.  */</doc>
+<mbr r='auditstate::cookie' o='0' t='uintptr_t'/>
+<mbr r='auditstate::bindflags' o='64' t='unsigned int'/>
+<use f='codebrowser/elf/dl-sym-post.h' l='76' c='_dl_sym_post'/>
+<use f='codebrowser/elf/dl-sym-post.h' l='78' c='_dl_sym_post'/>
+<size>16</size>
+<use f='codebrowser/elf/rtld.c' l='1091' c='notify_audit_modules_of_loaded_object'/>
+<size>16</size>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/include/sys/stat.h' l='66' type='int __chmod(const char * __file, __mode_t __mode)'/>
+<dec f='codebrowser/include/sys/stat.h' l='67' type='int __chmod(const char * , __mode_t )'/>
+<use f='codebrowser/include/sys/stat.h' l='67' c='__chmod'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/fchmodat.c' l='74' u='c' c='fchmodat'/>

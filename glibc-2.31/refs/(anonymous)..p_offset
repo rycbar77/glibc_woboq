@@ -1,0 +1,22 @@
+<dec f='codebrowser/elf/elf.h' l='682' type='Elf32_Off'/>
+<dec f='codebrowser/elf/elf.h' l='695' type='Elf64_Off'/>
+<offset>64</offset>
+<doc f='codebrowser/elf/elf.h' l='682'>/* Segment file offset */</doc>
+<doc f='codebrowser/elf/elf.h' l='695'>/* Segment file offset */</doc>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='159' u='r' c='_dl_process_pt_note'/>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='160' u='r' c='_dl_process_pt_note'/>
+<use f='codebrowser/sysdeps/x86/dl-prop.h' l='170' u='r' c='_dl_process_pt_note'/>
+<use f='codebrowser/elf/dl-load.c' l='1071' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1084' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1084' u='r' c='_dl_map_object_from_fd'/>
+<use f='codebrowser/elf/dl-load.c' l='1689' u='r' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1690' u='r' c='open_verify'/>
+<use f='codebrowser/elf/dl-load.c' l='1707' u='r' c='open_verify'/>
+<use f='codebrowser/elf/readelflib.c' l='103' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='108' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='125' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='199' u='r' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='103' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='108' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='125' u='r' c='process_elf64_file'/>
+<use f='codebrowser/elf/readelflib.c' l='199' u='r' c='process_elf64_file'/>

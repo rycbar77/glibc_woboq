@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/include/sys/sem.h' l='6' type='int __semtimedop(int , struct sembuf * , size_t , const struct timespec * )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/semop.c' l='28' u='c' c='semop'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/semtimedop.c' l='39' macro='1' type='int __semtimedop(int semid, struct sembuf * sops, size_t nsops, const struct timespec * timeout)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/semtimedop.c' l='85' c='semtimedop'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/semtimedop.c' l='37'>/* Perform user-defined atomical operation of array of semaphores.  */</doc>

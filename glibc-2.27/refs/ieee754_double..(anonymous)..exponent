@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/ieee754/ieee754.h' l='91' type='unsigned int'/>
+<dec f='codebrowser/sysdeps/ieee754/ieee754.h' l='119' type='unsigned int'/>
+<offset>52</offset>
+<use f='codebrowser/stdlib/erand48_r.c' l='38' u='w' c='__erand48_r'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dbl2mpn.c' l='38' u='r' c='__mpn_extract_double'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/dbl2mpn.c' l='56' u='r' c='__mpn_extract_double'/>
+<use f='codebrowser/sysdeps/ieee754/dbl-64/mpn2dbl.c' l='33' u='w' c='__mpn_construct_double'/>
+<use f='codebrowser/stdio-common/printf_fphex.c' l='290' u='r' c='__printf_fphex'/>
+<use f='codebrowser/stdio-common/printf_fphex.c' l='292' u='r' c='__printf_fphex'/>

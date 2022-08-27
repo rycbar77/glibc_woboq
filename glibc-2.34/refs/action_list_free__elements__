@@ -1,0 +1,8 @@
+<def f='codebrowser/malloc/dynarray-skeleton.c' l='170' macro='1' type='void action_list_free__elements__(struct nss_action * __dynarray_array, size_t __dynarray_used)'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='209' macro='1' u='c' c='action_list_free'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='229' macro='1' u='c' c='action_list_mark_failed'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='411' macro='1' u='c' c='action_list_resize'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='443' macro='1' u='c' c='action_list_clear'/>
+<doc f='codebrowser/malloc/dynarray-skeleton.c' l='166'>/* Internal function.  Call DYNARRAY_ELEMENT_FREE with the array
+   elements.  Name mangling needed due to the DYNARRAY_ELEMENT_FREE
+   macro expansion.  */</doc>

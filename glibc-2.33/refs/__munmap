@@ -1,0 +1,48 @@
+<dec f='codebrowser/include/sys/mman.h' l='12' type='int __munmap(void * __addr, size_t __len)'/>
+<dec f='codebrowser/include/sys/mman.h' l='13' type='int __munmap(void * , size_t )'/>
+<use f='codebrowser/include/sys/mman.h' l='13' c='__munmap'/>
+<use f='codebrowser/assert/assert.c' l='80' u='c' c='__assert_fail_base'/>
+<use f='codebrowser/catgets/catgets.c' l='135' u='c' c='catclose'/>
+<use f='codebrowser/catgets/open_catalog.c' l='271' u='c' c='__open_catalog'/>
+<use f='codebrowser/elf/dl-cache.c' l='435' u='c' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-cache.c' l='470' u='c' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-cache.c' l='477' u='c' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-cache.c' l='534' u='c' c='_dl_unload_cache'/>
+<use f='codebrowser/elf/dl-unmap-segments.h' l='32' u='c' c='_dl_unmap_segments'/>
+<dec f='codebrowser/sysdeps/generic/dl-mman.h' l='22' type='int __munmap(void * , size_t )'/>
+<use f='codebrowser/sysdeps/generic/dl-mman.h' l='22' c='__munmap'/>
+<use f='codebrowser/elf/dl-profile.c' l='379' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/elf/dl-profile.c' l='432' u='c' c='_dl_start_profile'/>
+<use f='codebrowser/elf/rtld.c' l='1918' u='c' c='dl_main'/>
+<use f='codebrowser/sysdeps/posix/libc_fatal.c' l='146' u='c' c='__libc_message'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='131' u='c' c='__gconv_load_cache'/>
+<use f='codebrowser/iconv/gconv_cache.c' l='463' u='c' c='free_mem'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='453' u='c' c='_nl_load_domain'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='453' u='c' c='_nl_load_domain'/>
+<use f='codebrowser/intl/loadmsgcat.c' l='453' u='c' c='_nl_unload_domain'/>
+<use f='codebrowser/libio/fileops.c' l='561' u='c' c='mmap_remap_check'/>
+<use f='codebrowser/libio/fileops.c' l='577' u='c' c='mmap_remap_check'/>
+<use f='codebrowser/libio/fileops.c' l='625' u='c' c='mmap_remap_check'/>
+<use f='codebrowser/libio/fileops.c' l='687' u='c' c='decide_maybe_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='1156' u='c' c='_IO_file_close_mmap'/>
+<use f='codebrowser/locale/loadarchive.c' l='237' u='c' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/loadarchive.c' l='426' u='c' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/loadarchive.c' l='536' u='c' c='_nl_archive_subfreeres'/>
+<use f='codebrowser/locale/loadarchive.c' l='542' u='c' c='_nl_archive_subfreeres'/>
+<use f='codebrowser/locale/loadlocale.c' l='273' u='c' c='_nl_load_locale'/>
+<use f='codebrowser/locale/loadlocale.c' l='298' u='c' c='_nl_unload_locale'/>
+<use f='codebrowser/malloc/arena.c' l='532' u='c' c='new_heap'/>
+<use f='codebrowser/malloc/arena.c' l='545' u='c' c='new_heap'/>
+<use f='codebrowser/malloc/arena.c' l='548' u='c' c='new_heap'/>
+<use f='codebrowser/malloc/arena.c' l='560' u='c' c='new_heap'/>
+<use f='codebrowser/malloc/arena.c' l='567' u='c' c='new_heap'/>
+<use f='codebrowser/malloc/arena.c' l='642' u='c' c='heap_trim'/>
+<use f='codebrowser/malloc/malloc.c' l='3003' u='c' c='munmap_chunk'/>
+<use f='codebrowser/nptl/allocatestack.c' l='271' u='c' c='free_stacks'/>
+<use f='codebrowser/nptl/allocatestack.c' l='591' u='c' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='628' u='c' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='658' u='c' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='696' u='c' c='allocate_stack'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='250' u='c' c='__nscd_unmap'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='355' u='c' c='__nscd_get_mapping'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='409' u='c' c='__spawnix'/>

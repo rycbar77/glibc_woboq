@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/generic/dl-cache.h' l='161' type='uint32_t'/>
+<use f='codebrowser/elf/cache.c' l='408' u='r' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='411' u='r' c='print_cache'/>
+<use f='codebrowser/elf/cache.c' l='635' u='w' c='save_cache'/>
+<offset>160</offset>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='161'>/* Number of entries.  */</doc>
+<use f='codebrowser/elf/dl-cache.c' l='427' u='r' c='_dl_load_cache_lookup'/>
+<use f='codebrowser/elf/dl-cache.c' l='489' u='r' c='_dl_load_cache_lookup'/>

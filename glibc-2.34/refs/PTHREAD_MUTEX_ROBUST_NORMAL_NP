@@ -1,0 +1,20 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='76' type='16'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='78' u='r'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='80' u='r'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='82' u='r'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='93' u='r'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='185' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='367' u='r' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='634' u='r' c='__pthread_mutex_cond_lock_adjust'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='634' u='r' c='__pthread_mutex_cond_lock_adjust'/>
+<use f='codebrowser/nptl/pthread_mutex_consistent.c' l='30' u='r' c='__pthread_mutex_consistent'/>
+<use f='codebrowser/nptl/pthread_mutex_destroy.c' l='33' u='r' c='___pthread_mutex_destroy'/>
+<use f='codebrowser/nptl/pthread_mutex_init.c' l='103' u='r' c='___pthread_mutex_init'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='127' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='316' u='r' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='86' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='225' u='r' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='141' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='244' u='r' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='253' u='r' c='__pthread_mutex_unlock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='279' u='r' c='__pthread_mutex_unlock_full'/>

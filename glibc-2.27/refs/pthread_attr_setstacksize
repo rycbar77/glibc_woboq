@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='376' type='int pthread_attr_setstacksize(pthread_attr_t * __attr, size_t __stacksize)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='373'>/* Add information about the minimum stack size needed for the thread
+   to be started.  This size must never be less than PTHREAD_STACK_MIN
+   and must also not exceed the system limits.  */</doc>
+<def f='codebrowser/nptl/pthread_attr_setstacksize.c' l='46' macro='1' type='int pthread_attr_setstacksize(pthread_attr_t * , size_t )'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='100' u='c' c='__gai_create_helper_thread'/>

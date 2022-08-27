@@ -1,0 +1,7 @@
+<dec f='codebrowser/malloc/malloc-debug.c' l='28' type='void * __libc_malloc(size_t )'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='39' macro='1' c='__debug_malloc'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='119' u='c' c='generic_hook_ini'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='181' u='c' c='__debug_malloc'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='384' u='c' c='__debug_calloc'/>
+<use f='codebrowser/malloc/malloc-debug.c' l='593' u='c' c='malloc_set_state'/>
+<doc f='codebrowser/malloc/malloc-debug.c' l='27'>/* Support only the glibc allocators.  */</doc>

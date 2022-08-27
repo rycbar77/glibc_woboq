@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/x86_64/dl-machine.h' l='49' ll='54' type='Elf64_Addr elf_machine_dynamic()'/>
+<doc f='codebrowser/sysdeps/x86_64/dl-machine.h' l='48'>/* Return the link-time address of _DYNAMIC.  */</doc>
+<use f='codebrowser/elf/dl-reloc-static-pie.c' l='44' u='c' c='_dl_relocate_static_pie'/>
+<use f='codebrowser/elf/rtld.c' l='556' u='c' c='_dl_start'/>

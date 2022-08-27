@@ -1,0 +1,29 @@
+<dec f='codebrowser/locale/locarchive.h' l='58' type='uint32_t'/>
+<use f='codebrowser/locale/loadarchive.c' l='302' u='r' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/loadarchive.c' l='305' u='r' c='_nl_load_locale_from_archive'/>
+<offset>64</offset>
+<doc f='codebrowser/locale/locarchive.h' l='57'>/* Offset of the locale record.  */</doc>
+<use f='codebrowser/locale/programs/locale.c' l='670' u='r' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='684' u='r' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='687' u='r' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='477' u='r' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='482' u='r' c='enlarge_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='731' u='r' c='insert_name'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='749' u='r' c='insert_name'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='792' u='r' c='add_alias'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='792' u='r' c='add_alias'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='793' u='r' c='add_alias'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='810' u='r' c='add_alias'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='816' u='r' c='add_alias'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='821' u='w' c='add_alias'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='985' u='r' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1089' u='r' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1092' u='w' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1097' u='r' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1106' u='r' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1110' u='w' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1116' u='r' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1128' u='r' c='add_locale'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1568' u='w' c='delete_locales_from_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1647' u='r' c='show_archive_content'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1651' u='r' c='show_archive_content'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='223' type='int __pthread_once(pthread_once_t * __once_control, void (*)(void) __init_routine)'/>
+<dec f='codebrowser/sysdeps/nptl/libc-lockP.h' l='225' type='int __pthread_once(pthread_once_t * , void (*)(void) )'/>
+<use f='codebrowser/sysdeps/nptl/libc-lockP.h' l='225' c='__pthread_once'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='506' type='int __pthread_once(pthread_once_t * once_control, void (*)(void) init_routine)'/>
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='508' type='int __pthread_once(pthread_once_t * , void (*)(void) )'/>
+<use f='codebrowser/sysdeps/nptl/pthreadP.h' l='508' c='__pthread_once'/>
+<use f='codebrowser/iconv/gconv_conf.c' l='528' macro='1' u='c' c='__gconv_load_conf'/>
+<use f='codebrowser/inet/getnetgrent.c' l='40' macro='1' u='c' c='getnetgrent'/>
+<def f='codebrowser/nptl/pthread_once.c' l='147' macro='1' type='int __pthread_once(pthread_once_t * , void (*)(void) )'/>
+<use f='codebrowser/stdlib/fmtmsg.c' l='107' macro='1' u='c' c='fmtmsg'/>
+<use f='codebrowser/sunrpc/auth_none.c' l='96' macro='1' u='c' c='__GI_authnone_create'/>
+<use f='codebrowser/sunrpc/rpc_thread.c' l='59' macro='1' u='c' c='__rpc_thread_variables'/>
+<use f='codebrowser/sysdeps/pthread/call_once.c' l='31' u='c' c='__call_once'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='219' u='c' c='__mq_notify'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='70' u='c' c='___timer_create'/>

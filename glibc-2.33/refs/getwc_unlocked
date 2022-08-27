@@ -1,0 +1,9 @@
+<dec f='codebrowser/wcsmbs/wchar.h' l='784' type='wint_t getwc_unlocked(__FILE * __stream)'/>
+<doc f='codebrowser/wcsmbs/wchar.h' l='777'>/* These are defined to be equivalent to the `char&apos; functions defined
+   in POSIX.1:1996.
+
+   These functions are not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation they are cancellation points and
+   therefore not marked with __THROW.  */</doc>
+<def f='codebrowser/libio/getwc_u.c' l='39' macro='1' type='wint_t getwc_unlocked(FILE * )'/>

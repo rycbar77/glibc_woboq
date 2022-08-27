@@ -1,0 +1,12 @@
+<dec f='codebrowser/malloc/malloc.c' l='1110' type='void _int_free(mstate , mchunkptr , int )'/>
+<use f='codebrowser/malloc/malloc.c' l='2564' u='c' c='sysmalloc'/>
+<use f='codebrowser/malloc/malloc.c' l='2825' u='c' c='sysmalloc'/>
+<def f='codebrowser/malloc/malloc.c' l='4306' ll='4589' type='void _int_free(mstate av, mchunkptr p, int have_lock)'/>
+<use f='codebrowser/malloc/malloc.c' l='4787' u='c' c='_int_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4815' u='c' c='_int_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4893' u='c' c='_int_memalign'/>
+<use f='codebrowser/malloc/malloc.c' l='4911' u='c' c='_int_memalign'/>
+<use f='codebrowser/malloc/malloc-check.c' l='239' u='c' c='free_check'/>
+<doc f='codebrowser/malloc/malloc.c' l='4302'>/*
+   ------------------------------ free ------------------------------
+ */</doc>

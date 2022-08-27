@@ -1,0 +1,6 @@
+<dec f='codebrowser/locale/programs/charmap-dir.h' l='41' type='void charmap_free_aliases(char ** aliases)'/>
+<def f='codebrowser/locale/programs/charmap-dir.c' l='295' ll='307' type='void charmap_free_aliases(char ** aliases)'/>
+<doc f='codebrowser/locale/programs/charmap-dir.c' l='294'>/* Frees an alias list returned by charmap_aliases.  */</doc>
+<doc f='codebrowser/locale/programs/charmap-dir.h' l='40'>/* Frees an alias list returned by charmap_aliases.  */</doc>
+<use f='codebrowser/locale/programs/charmap.c' l='168' u='c' c='charmap_read'/>
+<use f='codebrowser/locale/programs/locale.c' l='761' u='c' c='write_charmaps'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/lowlevellock.h' l='185' type='int __lll_clocklock_elision(int * futex, short * adapt_count, clockid_t clockid, const struct timespec * timeout, int private)'/>
+<dec f='codebrowser/sysdeps/nptl/lowlevellock.h' l='189' type='int __lll_clocklock_elision(int * , short * , clockid_t , const struct timespec * , int )'/>
+<use f='codebrowser/sysdeps/nptl/lowlevellock.h' l='189' c='__lll_clocklock_elision'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='95' macro='1' u='c' c='__pthread_mutex_clocklock_common'/>

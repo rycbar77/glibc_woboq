@@ -1,0 +1,17 @@
+<dec f='codebrowser/grp/grp.h' l='45' type='char *'/>
+<offset>64</offset>
+<doc f='codebrowser/grp/grp.h' l='45'>/* Password.	*/</doc>
+<use f='codebrowser/grp/fgetgrent_r.c' l='39' u='w' c='_nss_files_parse_grent'/>
+<use f='codebrowser/grp/fgetgrent_r.c' l='44' u='w' c='_nss_files_parse_grent'/>
+<use f='codebrowser/grp/grp-merge.c' l='59' u='r' c='__copy_grp'/>
+<use f='codebrowser/grp/grp-merge.c' l='61' u='r' c='__copy_grp'/>
+<use f='codebrowser/grp/grp-merge.c' l='62' u='w' c='__copy_grp'/>
+<use f='codebrowser/grp/putgrent.c' l='38' u='r' c='putgrent'/>
+<use f='codebrowser/grp/putgrent.c' l='49' u='r' c='putgrent'/>
+<use f='codebrowser/grp/putgrent.c' l='49' u='r' c='putgrent'/>
+<use f='codebrowser/grp/putgrent.c' l='52' u='r' c='putgrent'/>
+<use f='codebrowser/grp/putgrent.c' l='52' u='r' c='putgrent'/>
+<use f='codebrowser/nscd/grpcache.c' l='163' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/grpcache.c' l='254' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='182' u='w' c='nscd_getgr_r'/>
+<use f='codebrowser/nscd/nscd_getgr_r.c' l='281' u='r' c='nscd_getgr_r'/>

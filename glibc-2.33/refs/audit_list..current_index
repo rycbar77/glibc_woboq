@@ -1,0 +1,10 @@
+<dec f='codebrowser/elf/dl-main.h' l='51' type='size_t'/>
+<offset>1088</offset>
+<doc f='codebrowser/elf/dl-main.h' l='50'>/* Index into the audit_strings array (for the iteration phase).  */</doc>
+<use f='codebrowser/elf/rtld.c' l='193' u='w' c='audit_list_init'/>
+<use f='codebrowser/elf/rtld.c' l='237' u='w' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='238' u='r' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='243' u='r' c='audit_list_next'/>
+<use f='codebrowser/elf/rtld.c' l='279' u='r' c='audit_list_count'/>
+<use f='codebrowser/elf/rtld.c' l='279' u='r' c='audit_list_count'/>
+<use f='codebrowser/elf/rtld.c' l='283' u='w' c='audit_list_count'/>

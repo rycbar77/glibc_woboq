@@ -1,0 +1,16 @@
+<dec f='codebrowser/hesiod/hesiod.h' l='48' type='void hesiod_free_list(void * context, char ** list)'/>
+<use f='codebrowser/hesiod/hesiod.c' l='181' u='c' c='hesiod_to_bind'/>
+<use f='codebrowser/hesiod/hesiod.c' l='199' u='c' c='hesiod_to_bind'/>
+<def f='codebrowser/hesiod/hesiod.c' l='227' ll='234' type='void hesiod_free_list(void * context, char ** list)'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='76' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='83' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='163' u='c' c='internal_gid_from_group'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='259' u='c' c='_nss_hesiod_initgroups_dyn'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='92' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='103' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='115' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-pwd.c' l='74' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-pwd.c' l='81' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='93' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='104' u='c' c='lookup'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='116' u='c' c='lookup'/>

@@ -1,0 +1,20 @@
+<dec f='codebrowser/sysdeps/generic/_itoa.h' l='48' type='const char[]'/>
+<dec f='codebrowser/sysdeps/generic/_itoa.h' l='51' type='typeof (_itoa_lower_digits)'/>
+<use f='codebrowser/sysdeps/generic/_itoa.h' l='51'/>
+<use f='codebrowser/elf/dl-minimal.c' l='221' u='r' c='_itoa'/>
+<def f='codebrowser/elf/dl-minimal.c' l='229' type='const char[16]'/>
+<use f='codebrowser/elf/dl-minimal.c' l='230'/>
+<use f='codebrowser/elf/dl-minimal.c' l='230'/>
+<doc f='codebrowser/elf/dl-minimal.c' l='227'>/* The &apos;_itoa_lower_digits&apos; variable in libc.so is able to handle bases
+   up to 36.  We don&apos;t need this here.  */</doc>
+<use f='codebrowser/elf/dl-reloc.c' l='363' u='r' c='_dl_reloc_bad_type'/>
+<use f='codebrowser/elf/dl-reloc.c' l='363' u='r' c='_dl_reloc_bad_type'/>
+<use f='codebrowser/elf/dl-reloc.c' l='363' u='r' c='_dl_reloc_bad_type'/>
+<use f='codebrowser/elf/dl-reloc.c' l='363' u='r' c='_dl_reloc_bad_type'/>
+<use f='codebrowser/elf/dl-reloc.c' l='363' u='r' c='_dl_reloc_bad_type'/>
+<use f='codebrowser/elf/dl-reloc.c' l='363' u='r' c='_dl_reloc_bad_type'/>
+<use f='codebrowser/elf/dl-reloc.c' l='363' u='r' c='_dl_reloc_bad_type'/>
+<use f='codebrowser/elf/dl-reloc.c' l='363' u='r' c='_dl_reloc_bad_type'/>
+<use f='codebrowser/stdio-common/_itoa.c' l='166' u='r' c='_itoa_word'/>
+<def f='codebrowser/stdio-common/itoa-digits.c' l='22' ll='23' type='const char[36]'/>
+<doc f='codebrowser/stdio-common/itoa-digits.c' l='21'>/* Lower-case digits.  */</doc>

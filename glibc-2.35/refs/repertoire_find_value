@@ -1,0 +1,19 @@
+<dec f='codebrowser/locale/programs/repertoire.h' l='52' type='uint32_t repertoire_find_value(const struct repertoire_t * repertoire, const char * name, size_t len)'/>
+<def f='codebrowser/iconv/dummy-repertoire.c' l='24' ll='29' type='uint32_t repertoire_find_value(const struct repertoire_t * repertoire, const char * name, size_t len)'/>
+<doc f='codebrowser/locale/programs/repertoire.h' l='51'>/* Return UCS4 value of character with given NAME.  */</doc>
+<use f='codebrowser/locale/programs/ld-collate.c' l='968' u='c' c='insert_value'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1205' u='c' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='1401' u='c' c='handle_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='680' u='c' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='721' u='c' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1263' u='c' c='get_character'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1323' u='c' c='get_character'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1625' u='c' c='charclass_charcode_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1797' u='c' c='read_widestring'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1826' u='c' c='read_widestring'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1971' u='c' c='read_translit_ignore_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='2022' u='c' c='read_translit_ignore_entry'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3773' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='3817' u='c' c='allocate_arrays'/>
+<use f='codebrowser/locale/programs/linereader.c' l='819' u='c' c='get_string'/>
+<def f='codebrowser/locale/programs/repertoire.c' l='477' ll='490' type='uint32_t repertoire_find_value(const struct repertoire_t * rep, const char * name, size_t len)'/>

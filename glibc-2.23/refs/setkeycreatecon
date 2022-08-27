@@ -1,0 +1,3 @@
+<dec f='include/selinux/selinux.h' l='87' type='int setkeycreatecon(const char * context)'/>
+<doc f='include/selinux/selinux.h' l='85'>/* Set the keycreate security context for subsequent key creations.
+   Call with NULL if you want to reset to the default. */</doc>

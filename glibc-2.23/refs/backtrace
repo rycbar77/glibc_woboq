@@ -1,0 +1,5 @@
+<dec f='codebrowser/debug/execinfo.h' l='27' type='int backtrace(void ** __array, int __size)'/>
+<doc f='codebrowser/debug/execinfo.h' l='25'>/* Store up to SIZE return address of the current program state in
+   ARRAY and return the exact number of values stored.  */</doc>
+<use f='codebrowser/debug/segfault.c' l='98' u='c' c='catch_segfault'/>
+<def f='codebrowser/sysdeps/x86_64/backtrace.c' l='118' macro='1' type='int backtrace(void ** , int )'/>

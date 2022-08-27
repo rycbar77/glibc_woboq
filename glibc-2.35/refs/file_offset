@@ -1,0 +1,8 @@
+<def f='codebrowser/login/utmp_file.c' l='39' type='off64_t'/>
+<use f='codebrowser/login/utmp_file.c' l='49' u='r' c='matches_last_entry'/>
+<use f='codebrowser/login/utmp_file.c' l='151' u='w' c='__libc_setutent'/>
+<use f='codebrowser/login/utmp_file.c' l='172' u='r' c='read_last_entry'/>
+<use f='codebrowser/login/utmp_file.c' l='181' u='w' c='read_last_entry'/>
+<use f='codebrowser/login/utmp_file.c' l='379' u='w' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='412' u='r' c='__libc_pututline'/>
+<use f='codebrowser/login/utmp_file.c' l='440' u='w' c='__libc_pututline'/>

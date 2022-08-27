@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='1125' type='int pthread_cond_broadcast(pthread_cond_t * __cond)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='1124'>/* Wake up all threads waiting for condition variables COND.  */</doc>
+<def f='codebrowser/nptl/pthread_cond_broadcast.c' l='90' macro='1' type='int pthread_cond_broadcast(pthread_cond_t * )'/>
+<use f='include/x86_64-linux-gnu/c++/11/bits/gthr-default.h' l='853' u='c' c='__gthread_cond_broadcast'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/sysdeps/generic/dl-cache.h' l='170' type='uint8_t'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='194' u='r' c='cache_file_new_matches_endian'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='195' u='r' c='cache_file_new_matches_endian'/>
+<use f='codebrowser/elf/cache.c' l='637' u='w' c='save_cache'/>
+<offset>224</offset>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='164'>/* flags &amp; cache_file_new_flags_endian_mask is one of the values
+     cache_file_new_flags_endian_unset, cache_file_new_flags_endian_invalid,
+     cache_file_new_flags_endian_little, cache_file_new_flags_endian_big.
+
+     The remaining bits are unused and should be generated as zero and
+     ignored by readers.  */</doc>

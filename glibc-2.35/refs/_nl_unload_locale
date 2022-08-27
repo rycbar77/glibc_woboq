@@ -1,0 +1,5 @@
+<dec f='codebrowser/locale/localeinfo.h' l='352' type='void _nl_unload_locale(struct __locale_data * locale)'/>
+<doc f='codebrowser/locale/localeinfo.h' l='351'>/* Free all resource.  */</doc>
+<use f='codebrowser/locale/findlocale.c' l='351' u='c' c='_nl_remove_locale'/>
+<def f='codebrowser/locale/loadlocale.c' l='284' ll='308' type='void _nl_unload_locale(struct __locale_data * locale)'/>
+<use f='codebrowser/locale/setlocale.c' l='492' u='c' c='free_category'/>

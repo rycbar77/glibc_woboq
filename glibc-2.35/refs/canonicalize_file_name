@@ -1,0 +1,5 @@
+<dec f='codebrowser/stdlib/stdlib.h' l='797' type='char * canonicalize_file_name(const char * __name)'/>
+<doc f='codebrowser/stdlib/stdlib.h' l='795'>/* Return a malloc&apos;d string containing the canonical absolute name of the
+   existing named file.  */</doc>
+<use f='codebrowser/elf/sprof.c' l='612' u='c' c='load_shobj'/>
+<def f='codebrowser/stdlib/canonicalize.c' l='475' macro='1' type='char * canonicalize_file_name(const char * )'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/resolv/netdb.h' l='666' type='void freeaddrinfo(struct addrinfo * __ai)'/>
+<dec f='codebrowser/include/netdb.h' l='27' type='void freeaddrinfo(struct addrinfo * )'/>
+<use f='codebrowser/include/netdb.h' l='27' c='freeaddrinfo'/>
+<doc f='codebrowser/resolv/netdb.h' l='665'>/* Free `addrinfo&apos; structure AI including associated storage.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='156' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='181' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='230' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='346' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='354' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='455' u='c' c='ruserok_af'/>
+<use f='codebrowser/inet/rcmd.c' l='696' u='c' c='__checkhost_sa'/>
+<use f='codebrowser/inet/rexec.c' l='181' u='c' c='rexec_af'/>
+<use f='codebrowser/inet/rexec.c' l='188' u='c' c='rexec_af'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2243' u='c' c='getaddrinfo'/>
+<def f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2480' ll='2492' type='void freeaddrinfo(struct addrinfo * ai)'/>

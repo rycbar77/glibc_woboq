@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='558' type='int'/>
+<use f='codebrowser/elf/dl-runtime.c' l='142' macro='1' u='r' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='380' macro='1' u='r' c='_dl_profile_fixup'/>
+<def f='codebrowser/elf/dl-support.c' l='80' type='int'/>
+<use f='codebrowser/elf/dl-support.c' l='349' u='w' c='_dl_non_dynamic_init'/>
+<doc f='codebrowser/elf/dl-support.c' l='79'>/* Nonzero if runtime lookup should not update the .got/.plt.  */</doc>

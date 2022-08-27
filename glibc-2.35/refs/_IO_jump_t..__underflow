@@ -1,0 +1,9 @@
+<dec f='codebrowser/libio/libioP.h' l='299' type='_IO_underflow_t'/>
+<offset>256</offset>
+<use f='codebrowser/libio/fileops.c' l='648' macro='1' u='r' c='_IO_file_underflow_mmap'/>
+<use f='codebrowser/libio/fileops.c' l='725' macro='1' u='r' c='_IO_file_underflow_maybe_mmap'/>
+<use f='codebrowser/libio/genops.c' l='293' macro='1' u='r' c='__underflow'/>
+<use f='codebrowser/libio/genops.c' l='362' macro='1' u='r' c='_IO_default_uflow'/>
+<use f='codebrowser/libio/wfileops.c' l='401' macro='1' u='r' c='_IO_wfile_underflow_maybe_mmap'/>
+<use f='codebrowser/libio/wgenops.c' l='202' macro='1' u='r' c='_IO_wdefault_uflow'/>
+<use f='codebrowser/libio/wgenops.c' l='276' macro='1' u='r' c='__wunderflow'/>

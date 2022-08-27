@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/time.h' l='295' type='int __getdate_r(const char * __string, struct tm * __resbufp)'/>
+<dec f='codebrowser/include/time.h' l='296' type='int __getdate_r(const char * , struct tm * )'/>
+<use f='codebrowser/include/time.h' l='296' c='__getdate_r'/>
+<def f='codebrowser/time/getdate.c' l='106' ll='291' type='int __getdate_r(const char * string, struct tm * tp)'/>
+<use f='codebrowser/time/getdate.c' l='292' c='getdate_r'/>
+<use f='codebrowser/time/getdate.c' l='300' u='c' c='getdate'/>

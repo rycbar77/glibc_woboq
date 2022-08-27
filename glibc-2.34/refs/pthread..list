@@ -1,0 +1,31 @@
+<dec f='codebrowser/nptl/descr.h' l='167' type='list_t'/>
+<offset>5632</offset>
+<doc f='codebrowser/nptl/descr.h' l='165'>/* This descriptor&apos;s link on the GL (dl_stack_used) or
+     GL (dl_stack_user) list.  */</doc>
+<use f='codebrowser/nptl/nptl-stack.c' l='69' u='a' c='__nptl_free_stacks'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='102' u='a' c='queue_stack'/>
+<use f='codebrowser/nptl/nptl-stack.c' l='117' u='a' c='__nptl_deallocate_stack'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='192' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='202' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='218' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='227' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='248' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/nptl_setxid.c' l='257' u='a' c='__nptl_setxid'/>
+<use f='codebrowser/nptl/allocatestack.c' l='75' u='a' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='105' u='a' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='108' u='a' c='get_cached_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='319' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='444' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='486' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl_db/structs.def' l='52' u='r'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='103' u='a' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='140' u='a' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='147' u='a' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/fork.h' l='149' u='a' c='reclaim_stacks'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='36' u='a' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/nptl/dl-thread_gscope_wait.c' l='59' u='a' c='__thread_gscope_wait'/>
+<use f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='61' u='a' c='__tls_init_tp'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='74' u='a' c='_dl_make_stacks_executable'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/dl-execstack.c' l='86' u='a' c='_dl_make_stacks_executable'/>
+<use f='codebrowser/elf/dl-tls.c' l='1086' u='a' c='_dl_init_static_tls'/>
+<use f='codebrowser/elf/dl-tls.c' l='1090' u='a' c='_dl_init_static_tls'/>

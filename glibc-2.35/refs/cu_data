@@ -1,0 +1,24 @@
+<def f='codebrowser/nis/nis_findserv.c' l='30' ll='45'/>
+<use f='codebrowser/nis/nis_findserv.c' l='83' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/nis/nis_findserv.c' l='154' c='__nis_findfastest_with_timeout'/>
+<size>160</size>
+<doc f='codebrowser/nis/nis_findserv.c' l='29'>/* Private data kept per client handle, from sunrpc/clnt_udp.c */</doc>
+<def f='codebrowser/sunrpc/clnt_udp.c' l='90' ll='105'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='129' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='135' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='280' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='280' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='531' c='clntudp_geterr'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='531' c='clntudp_geterr'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='540' c='clntudp_freeres'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='540' c='clntudp_freeres'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='555' c='clntudp_control'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='555' c='clntudp_control'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='648' c='clntudp_destroy'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='648' c='clntudp_destroy'/>
+<size>160</size>
+<doc f='codebrowser/sunrpc/clnt_udp.c' l='85'>/*
+ * Private data kept per client handle.  This private struct is
+ * unfortunately part of the ABI; ypbind contains a copy of it and
+ * accesses it through CLIENT::cl_private field.
+ */</doc>

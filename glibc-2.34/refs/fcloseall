@@ -1,0 +1,8 @@
+<dec f='codebrowser/libio/stdio.h' l='243' type='int fcloseall()'/>
+<doc f='codebrowser/libio/stdio.h' l='237'>/* Close all streams.
+
+   This function is not part of POSIX and therefore no official
+   cancellation point.  But due to similarity with an POSIX interface
+   or due to the implementation it is a cancellation point and
+   therefore not marked with __THROW.  */</doc>
+<def f='codebrowser/libio/fcloseall.c' l='37' macro='1' type='int fcloseall()'/>

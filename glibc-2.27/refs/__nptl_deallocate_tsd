@@ -1,0 +1,6 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='591' type='void __nptl_deallocate_tsd()'/>
+<def f='codebrowser/nptl/pthread_create.c' l='247' ll='337' type='void __nptl_deallocate_tsd()'/>
+<use f='codebrowser/nptl/pthread_create.c' l='473' u='c' c='start_thread'/>
+<doc f='codebrowser/nptl/pthread_create.c' l='246'>/* Deallocate POSIX thread-local-storage.  */</doc>
+<dec f='codebrowser/csu/libc-start.c' l='316' type='void __nptl_deallocate_tsd()'/>
+<use f='codebrowser/csu/libc-start.c' l='317' u='c' c='__libc_start_main'/>

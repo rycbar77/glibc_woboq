@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/sys/uio.h' l='8' type='ssize_t __writev(int __fd, const struct iovec * __iovec, int __count)'/>
+<use f='codebrowser/debug/backtracesymsfd.c' l='118' u='c' c='__backtrace_symbols_fd'/>
+<use f='codebrowser/sysdeps/posix/libc_fatal.c' l='44' u='c' c='writev_for_fatal'/>
+<use f='codebrowser/inet/rcmd.c' l='320' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rexec.c' l='164' u='c' c='rexec_af'/>
+<use f='codebrowser/misc/syslog.c' l='247' u='c' c='__vsyslog_chk'/>

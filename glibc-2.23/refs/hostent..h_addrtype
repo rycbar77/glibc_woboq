@@ -1,0 +1,25 @@
+<dec f='codebrowser/resolv/netdb.h' l='104' type='int'/>
+<offset>128</offset>
+<doc f='codebrowser/resolv/netdb.h' l='104'>/* Host address type.  */</doc>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='286' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='291' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nss/digits_dots.c' l='187' u='w' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/digits_dots.c' l='192' u='w' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/digits_dots.c' l='262' u='w' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/getent.c' l='277' u='r' c='print_hosts'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='537' u='w' c='res_gethostbyname2'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='763' u='w' c='res_gethostbyaddr'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='770' u='w' c='res_gethostbyaddr'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='840' u='w' c='_gethtent'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='884' u='r' c='_gethtbyname2'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='905' u='r' c='_gethtbyaddr'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='935' u='r' c='map_v4v6_hostent'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='937' u='w' c='map_v4v6_hostent'/>
+<use f='codebrowser/resolv/mapv4v6hostent.h' l='65' u='r' c='map_v4v6_hostent'/>
+<use f='codebrowser/resolv/mapv4v6hostent.h' l='67' u='w' c='map_v4v6_hostent'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='178' u='w' c='_nss_dns_gethostbyname3_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='239' u='w' c='_nss_dns_gethostbyname3_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='517' u='w' c='_nss_dns_gethostbyaddr2_r'/>
+<use f='codebrowser/resolv/res_hconf.c' l='410' u='r' c='_res_hconf_reorder_addrs'/>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='98' u='r' c='__GI_clnt_create'/>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='108' u='r' c='__GI_clnt_create'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/dlfcn/dlfcn.h' l='37'/>
+<doc f='codebrowser/dlfcn/dlfcn.h' l='33'>/* If the first argument of `dlsym&apos; or `dlvsym&apos; is set to RTLD_NEXT
+   the run-time address of the symbol called NAME in the next shared
+   object is returned.  The &quot;next&quot; relation is defined by the order
+   the shared objects were loaded.  */</doc>
+<use f='codebrowser/elf/dl-sym.c' l='129' u='c'/>
+<use f='codebrowser/malloc/memusage.c' l='242' u='c'/>
+<use f='codebrowser/malloc/memusage.c' l='243' u='c'/>
+<use f='codebrowser/malloc/memusage.c' l='244' u='c'/>
+<use f='codebrowser/malloc/memusage.c' l='245' u='c'/>
+<use f='codebrowser/malloc/memusage.c' l='247' u='c'/>
+<use f='codebrowser/malloc/memusage.c' l='250' u='c'/>
+<use f='codebrowser/malloc/memusage.c' l='252' u='c'/>
+<use f='codebrowser/malloc/memusage.c' l='254' u='c'/>

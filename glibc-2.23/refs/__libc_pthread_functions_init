@@ -1,0 +1,42 @@
+<dec f='codebrowser/sysdeps/nptl/pthread-functions.h' l='104' type='int'/>
+<def f='codebrowser/nptl/forward.c' l='31' type='int'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_attr_destroy'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_attr_init_2_1'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_attr_getdetachstate'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_attr_setdetachstate'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_attr_getinheritsched'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_attr_setinheritsched'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_attr_getschedparam'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_attr_setschedparam'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_attr_getschedpolicy'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_attr_setschedpolicy'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_attr_getscope'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_attr_setscope'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_condattr_destroy'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_condattr_init'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_broadcast_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_broadcast'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_destroy_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_destroy'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_init_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_init'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_signal_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_signal'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_wait_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_wait'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_timedwait_2_0'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_cond_timedwait'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_equal'/>
+<use f='codebrowser/nptl/forward.c' l='49' u='r' c='__pthread_exit'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_getschedparam'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_setschedparam'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_mutex_destroy'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_mutex_init'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_mutex_lock'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_mutex_unlock'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_self'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='__pthread_setcancelstate'/>
+<use f='codebrowser/nptl/forward.c' l='38' u='r' c='pthread_setcanceltype'/>
+<use f='codebrowser/nptl/forward.c' l='49' u='r' c='__pthread_unwind'/>
+<use f='codebrowser/sunrpc/auth_none.c' l='95' macro='1' u='r' c='__GI_authnone_create'/>
+<use f='codebrowser/sunrpc/rpc_thread.c' l='63' macro='1' u='r' c='__rpc_thread_variables'/>

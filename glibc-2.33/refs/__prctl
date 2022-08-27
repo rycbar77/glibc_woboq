@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/sys/prctl.h' l='6' type='int __prctl(int __option)'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/prctl.c' l='28' ll='39' type='int __prctl(int option)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/prctl.c' l='42' c='prctl'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/prctl.c' l='23'>/* Unconditionally read all potential arguments.  This may pass
+   garbage values to the kernel, but avoids the need for teaching
+   glibc the argument counts of individual options (including ones
+   that are added to the kernel in the future).  */</doc>

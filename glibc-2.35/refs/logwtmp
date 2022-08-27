@@ -1,0 +1,5 @@
+<dec f='codebrowser/login/utmp.h' l='51' type='void logwtmp(const char * __ut_line, const char * __ut_name, const char * __ut_host)'/>
+<dec f='codebrowser/include/utmp.h' l='35' type='void logwtmp(const char * , const char * , const char * )'/>
+<use f='codebrowser/include/utmp.h' l='35' c='logwtmp'/>
+<doc f='codebrowser/login/utmp.h' l='50'>/* Append to wtmp an entry for the current time and the given info.  */</doc>
+<def f='codebrowser/login/logwtmp.c' l='45' macro='1' type='void logwtmp(const char * , const char * , const char * )'/>

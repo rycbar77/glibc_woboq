@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/nss_files.h' l='58' type='int _nss_files_parse_grent(char * , void * , struct parser_data * , size_t , int * )'/>
+<dec f='codebrowser/include/nss_files.h' l='68' type='int _nss_files_parse_grent(char * , void * , struct parser_data * , size_t , int * )'/>
+<use f='codebrowser/include/nss_files.h' l='68' c='_nss_files_parse_grent'/>
+<def f='codebrowser/grp/fgetgrent_r.c' l='33' macro='1' type='int _nss_files_parse_grent(char * line, void * generic_result, struct parser_data * data, size_t datalen, int * errnop)'/>
+<use f='codebrowser/grp/fgetgrent_r.c' l='58' macro='1' u='r' c='__fgetgrent_r'/>

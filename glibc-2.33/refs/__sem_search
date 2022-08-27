@@ -1,0 +1,7 @@
+<dec f='codebrowser/nptl/semaphoreP.h' l='44' type='int __sem_search(const void * a, const void * b)'/>
+<doc f='codebrowser/nptl/semaphoreP.h' l='43'>/* Comparison function for search in tree with existing mappings.  */</doc>
+<use f='codebrowser/sysdeps/pthread/sem_close.c' l='63' u='r' c='sem_close'/>
+<def f='codebrowser/sysdeps/pthread/sem_open.c' l='37' ll='53' type='int __sem_search(const void * a, const void * b)'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='84' u='r' c='check_add_mapping'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='113' u='r' c='check_add_mapping'/>
+<doc f='codebrowser/sysdeps/pthread/sem_open.c' l='36'>/* Comparison function for search of existing mapping.  */</doc>

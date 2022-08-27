@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>nptl-stack.h source code [codebrowser/nptl/nptl-stack.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/nptl/nptl-stack.h'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>nptl</a>/<a href='nptl-stack.h.html'>nptl-stack.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Stack cache management for NPTL.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2002-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_NPTL_STACK_H">_NPTL_STACK_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/_NPTL_STACK_H" data-ref="_M/_NPTL_STACK_H">_NPTL_STACK_H</dfn></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="descr.h.html">&lt;nptl/descr.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../sysdeps/unix/sysv/linux/ldsodefs.h.html">&lt;ldsodefs.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../include/list.h.html">&lt;list.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#include &lt;stdbool.h&gt;</u></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><i>/* Maximum size of the cache, in bytes.  40 MiB by default.  */</i></td></tr>
+<tr><th id="28">28</th><td><b>extern</b> <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="decl" id="__nptl_stack_cache_maxsize" title='__nptl_stack_cache_maxsize' data-ref="__nptl_stack_cache_maxsize" data-ref-filename="__nptl_stack_cache_maxsize">__nptl_stack_cache_maxsize</dfn> <a class="macro" href="../include/libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><i>/* Check whether the stack is still used or not.  */</i></td></tr>
+<tr><th id="31">31</th><td><em>static</em> <b>inline</b> <span class="macro" title="_Bool" data-ref="_M/bool">bool</span></td></tr>
+<tr><th id="32">32</th><td><dfn class="decl def fn" id="__nptl_stack_in_use" title='__nptl_stack_in_use' data-ref="__nptl_stack_in_use" data-ref-filename="__nptl_stack_in_use">__nptl_stack_in_use</dfn> (<b>struct</b> <a class="type" href="descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a> *<dfn class="local col6 decl" id="6pd" title='pd' data-type='struct pthread *' data-ref="6pd" data-ref-filename="6pd">pd</dfn>)</td></tr>
+<tr><th id="33">33</th><td>{</td></tr>
+<tr><th id="34">34</th><td>  <b>return</b> <a class="local col6 ref" href="#6pd" title='pd' data-ref="6pd" data-ref-filename="6pd">pd</a>-&gt;<a class="ref field" href="descr.h.html#pthread::tid" title='pthread::tid' data-ref="pthread::tid" data-ref-filename="pthread..tid">tid</a> &lt;= <var>0</var>;</td></tr>
+<tr><th id="35">35</th><td>}</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><i>/* Remove the stack ELEM from its list.  */</i></td></tr>
+<tr><th id="38">38</th><td><em>void</em> <dfn class="decl fn" id="__nptl_stack_list_del" title='__nptl_stack_list_del' data-ref="__nptl_stack_list_del" data-ref-filename="__nptl_stack_list_del">__nptl_stack_list_del</dfn> (<a class="typedef" href="../include/list_t.h.html#list_t" title='list_t' data-type='struct list_head' data-ref="list_t" data-ref-filename="list_t">list_t</a> *<dfn class="local col7 decl" id="7elem" title='elem' data-type='list_t *' data-ref="7elem" data-ref-filename="7elem">elem</dfn>);</td></tr>
+<tr><th id="39">39</th><td><a class="macro" href="../include/libc-symbols.h.html#621" title="extern __typeof (__nptl_stack_list_del) __nptl_stack_list_del __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__nptl_stack_list_del" title='__nptl_stack_list_del' data-ref="__nptl_stack_list_del" data-ref-filename="__nptl_stack_list_del"><a class="ref fn" href="#__nptl_stack_list_del" title='__nptl_stack_list_del' data-ref="__nptl_stack_list_del" data-ref-filename="__nptl_stack_list_del">__nptl_stack_list_del</a></a>)</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><i>/* Add ELEM to a stack list.  LIST can be either &amp;GL (dl_stack_used)</i></td></tr>
+<tr><th id="42">42</th><td><i>   or &amp;GL (dl_stack_cache).  */</i></td></tr>
+<tr><th id="43">43</th><td><em>void</em> <dfn class="decl fn" id="__nptl_stack_list_add" title='__nptl_stack_list_add' data-ref="__nptl_stack_list_add" data-ref-filename="__nptl_stack_list_add">__nptl_stack_list_add</dfn> (<a class="typedef" href="../include/list_t.h.html#list_t" title='list_t' data-type='struct list_head' data-ref="list_t" data-ref-filename="list_t">list_t</a> *<dfn class="local col8 decl" id="8elem" title='elem' data-type='list_t *' data-ref="8elem" data-ref-filename="8elem">elem</dfn>, <a class="typedef" href="../include/list_t.h.html#list_t" title='list_t' data-type='struct list_head' data-ref="list_t" data-ref-filename="list_t">list_t</a> *<dfn class="local col9 decl" id="9list" title='list' data-type='list_t *' data-ref="9list" data-ref-filename="9list">list</dfn>);</td></tr>
+<tr><th id="44">44</th><td><a class="macro" href="../include/libc-symbols.h.html#621" title="extern __typeof (__nptl_stack_list_add) __nptl_stack_list_add __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__nptl_stack_list_add" title='__nptl_stack_list_add' data-ref="__nptl_stack_list_add" data-ref-filename="__nptl_stack_list_add"><a class="ref fn" href="#__nptl_stack_list_add" title='__nptl_stack_list_add' data-ref="__nptl_stack_list_add" data-ref-filename="__nptl_stack_list_add">__nptl_stack_list_add</a></a>)</td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><i>/* Free allocated stack.  */</i></td></tr>
+<tr><th id="47">47</th><td><b>extern</b> <em>void</em> <dfn class="decl fn" id="__nptl_deallocate_stack" title='__nptl_deallocate_stack' data-ref="__nptl_deallocate_stack" data-ref-filename="__nptl_deallocate_stack">__nptl_deallocate_stack</dfn> (<b>struct</b> <a class="type" href="descr.h.html#pthread" title='pthread' data-ref="pthread" data-ref-filename="pthread">pthread</a> *<dfn class="local col0 decl" id="10pd" title='pd' data-type='struct pthread *' data-ref="10pd" data-ref-filename="10pd">pd</dfn>);</td></tr>
+<tr><th id="48">48</th><td><a class="macro" href="../include/libc-symbols.h.html#621" title="extern __typeof (__nptl_deallocate_stack) __nptl_deallocate_stack __attribute__ ((visibility (&quot;hidden&quot;)));" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (<a class="decl fn" href="#__nptl_deallocate_stack" title='__nptl_deallocate_stack' data-ref="__nptl_deallocate_stack" data-ref-filename="__nptl_deallocate_stack"><a class="ref fn" href="#__nptl_deallocate_stack" title='__nptl_deallocate_stack' data-ref="__nptl_deallocate_stack" data-ref-filename="__nptl_deallocate_stack">__nptl_deallocate_stack</a></a>)</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><i>/* Free stacks until cache size is lower than LIMIT.  */</i></td></tr>
+<tr><th id="51">51</th><td><em>void</em> <dfn class="decl fn" id="__nptl_free_stacks" title='__nptl_free_stacks' data-ref="__nptl_free_stacks" data-ref-filename="__nptl_free_stacks">__nptl_free_stacks</dfn> (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col1 decl" id="11limit" title='limit' data-type='size_t' data-ref="11limit" data-ref-filename="11limit">limit</dfn>) <a class="macro" href="../include/libc-symbols.h.html#436" title="__attribute__ ((visibility (&quot;hidden&quot;)))" data-ref="_M/attribute_hidden">attribute_hidden</a>;</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><i>/* Compute the size of the static TLS area based on data from the</i></td></tr>
+<tr><th id="54">54</th><td><i>   dynamic loader.  */</i></td></tr>
+<tr><th id="55">55</th><td><em>static</em> <b>inline</b> <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span></td></tr>
+<tr><th id="56">56</th><td><dfn class="decl def fn" id="__nptl_tls_static_size_for_stack" title='__nptl_tls_static_size_for_stack' data-ref="__nptl_tls_static_size_for_stack" data-ref-filename="__nptl_tls_static_size_for_stack">__nptl_tls_static_size_for_stack</dfn> (<em>void</em>)</td></tr>
+<tr><th id="57">57</th><td>{</td></tr>
+<tr><th id="58">58</th><td>  <b>return</b> <a class="macro" href="../misc/sys/param.h.html#93" title="(__builtin_constant_p (_dl_tls_static_align) &amp;&amp; ((((_dl_tls_static_align) - 1) &amp; (_dl_tls_static_align)) == 0) ? (((_dl_tls_static_size) + (_dl_tls_static_align) - 1) &amp; ~((_dl_tls_static_align) - 1)) : ((((_dl_tls_static_size) + ((_dl_tls_static_align) - 1)) / (_dl_tls_static_align)) * (_dl_tls_static_align)))" data-ref="_M/roundup">roundup</a> (<a class="macro" href="../sysdeps/generic/ldsodefs.h.html#540" title="_dl_tls_static_size" data-ref="_M/GLRO">GLRO</a> (dl_tls_static_size), <a class="macro" href="../sysdeps/generic/ldsodefs.h.html#540" title="_dl_tls_static_align" data-ref="_M/GLRO">GLRO</a> (dl_tls_static_align));</td></tr>
+<tr><th id="59">59</th><td>}</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><u>#<span data-ppcond="19">endif</span> /* _NPTL_STACK_H */</u></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../elf/libc_early_init.c.html'>codebrowser/elf/libc_early_init.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

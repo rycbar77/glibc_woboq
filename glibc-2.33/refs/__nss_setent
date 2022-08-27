@@ -1,0 +1,3 @@
+<dec f='codebrowser/nss/nsswitch.h' l='148' type='void __nss_setent(const char * func_name, db_lookup_function lookup_fct, struct nss_action ** nip, struct nss_action ** startp, struct nss_action ** last_nip, int stayon, int * stayon_tmp, int res)'/>
+<use f='codebrowser/nss/getXXent_r.c' l='125' u='c' c='setgrent'/>
+<def f='codebrowser/nss/getnssent_r.c' l='50' ll='108' type='void __nss_setent(const char * func_name, db_lookup_function lookup_fct, nss_action_list * nip, nss_action_list * startp, nss_action_list * last_nip, int stayopen, int * stayopen_tmp, int res)'/>

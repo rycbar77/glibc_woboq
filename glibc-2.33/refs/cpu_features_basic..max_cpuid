@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/x86/include/cpu-features.h' l='816' type='int'/>
+<offset>32</offset>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='252' u='r' c='handle_intel'/>
+<use f='codebrowser/sysdeps/x86/dl-cacheinfo.h' l='496' u='r' c='get_common_cache_info'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='210' u='r' c='update_usable'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='340' u='r' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='354' u='r' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='361' u='r' c='get_common_indices'/>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='398' c='init_cpu_features'/>

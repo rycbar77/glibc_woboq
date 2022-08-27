@@ -1,0 +1,9 @@
+<dec f='codebrowser/nis/nis_intern.h' l='55' type='nis_error __do_niscall2(const nis_server * serv, u_int serv_len, u_long prog, xdrproc_t xargs, caddr_t req, xdrproc_t xres, caddr_t resp, unsigned int flags, nis_cb * cb)'/>
+<def f='codebrowser/nis/nis_call.c' l='381' ll='406' type='nis_error __do_niscall2(const nis_server * server, u_int server_len, u_long prog, xdrproc_t xargs, caddr_t req, xdrproc_t xres, caddr_t resp, unsigned int flags, nis_cb * cb)'/>
+<use f='codebrowser/nis/nis_checkpoint.c' l='60' u='c' c='__GI_nis_checkpoint'/>
+<use f='codebrowser/nis/nis_mkdir.c' l='34' u='c' c='__GI_nis_mkdir'/>
+<use f='codebrowser/nis/nis_ping.c' l='64' u='c' c='__GI_nis_ping'/>
+<use f='codebrowser/nis/nis_rmdir.c' l='32' u='c' c='__GI_nis_rmdir'/>
+<use f='codebrowser/nis/nis_server.c' l='41' u='c' c='__GI_nis_servstate'/>
+<use f='codebrowser/nis/nis_server.c' l='68' u='c' c='__GI_nis_stats'/>
+<use f='codebrowser/nis/nis_util.c' l='38' u='c' c='__nis_finddirectory'/>

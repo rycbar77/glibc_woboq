@@ -1,0 +1,28 @@
+<dec f='codebrowser/resolv/netdb.h' l='105' type='int'/>
+<offset>160</offset>
+<doc f='codebrowser/resolv/netdb.h' l='105'>/* Length of address.  */</doc>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='287' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='292' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='297' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nss/digits_dots.c' l='188' u='w' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/digits_dots.c' l='193' u='w' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/nss/digits_dots.c' l='263' u='w' c='__nss_hostname_digits_dots'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='405' u='r' c='getanswer'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='538' u='w' c='res_gethostbyname2'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='764' u='w' c='res_gethostbyaddr'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='771' u='w' c='res_gethostbyaddr'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='839' u='w' c='_gethtent'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='935' u='r' c='map_v4v6_hostent'/>
+<use f='codebrowser/resolv/gethnamaddr.c' l='938' u='w' c='map_v4v6_hostent'/>
+<use f='codebrowser/resolv/mapv4v6hostent.h' l='65' u='r' c='map_v4v6_hostent'/>
+<use f='codebrowser/resolv/mapv4v6hostent.h' l='68' u='w' c='map_v4v6_hostent'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='179' u='w' c='_nss_dns_gethostbyname3_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='240' u='w' c='_nss_dns_gethostbyname3_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='518' u='w' c='_nss_dns_gethostbyaddr2_r'/>
+<use f='codebrowser/resolv/nss_dns/dns-host.c' l='898' u='r' c='getanswer_r'/>
+<use f='codebrowser/sunrpc/clnt_gen.c' l='111' u='r' c='__GI_clnt_create'/>
+<use f='codebrowser/sunrpc/clnt_simp.c' l='119' u='r' c='__GI_callrpc'/>
+<use f='codebrowser/sunrpc/getrpcport.c' l='64' u='r' c='getrpcport'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='650' u='r' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/gethostid.c' l='112' u='r' c='gethostid'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/gethostid.c' l='112' u='r' c='gethostid'/>

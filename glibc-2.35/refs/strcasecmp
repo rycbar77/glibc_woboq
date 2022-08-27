@@ -1,0 +1,16 @@
+<dec f='codebrowser/string/strings.h' l='116' type='int strcasecmp(const char * __s1, const char * __s2)'/>
+<doc f='codebrowser/string/strings.h' l='115'>/* Compare S1 and S2, ignoring case.  */</doc>
+<use f='codebrowser/hesiod/hesiod.c' l='282' u='c' c='parse_config_file'/>
+<use f='codebrowser/hesiod/hesiod.c' l='284' u='c' c='parse_config_file'/>
+<use f='codebrowser/hesiod/hesiod.c' l='290' u='c' c='parse_config_file'/>
+<use f='codebrowser/hesiod/hesiod.c' l='296' u='c' c='parse_config_file'/>
+<use f='codebrowser/hesiod/hesiod.c' l='298' u='c' c='parse_config_file'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='110' u='c' c='lookup'/>
+<use f='codebrowser/locale/programs/charmap.c' l='162' u='c' c='charmap_read'/>
+<use f='codebrowser/nscd/nscd_conf.c' l='235' u='c' c='nscd_parse_file'/>
+<use f='codebrowser/resolv/res_debug.c' l='508' u='c' c='__sym_ston'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='397' c='__strcasecmp_avx'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='400' c='__strcasecmp_sse42'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='403' c='__strcasecmp_ssse3'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='406' c='__strcasecmp_sse2'/>
+<def f='codebrowser/sysdeps/x86_64/multiarch/strcasecmp.c' l='34' macro='1' type='int strcasecmp(const char * , const char * )'/>

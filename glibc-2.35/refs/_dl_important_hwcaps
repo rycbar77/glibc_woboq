@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1181' type='const struct r_strlenpair * _dl_important_hwcaps(const char * prepend, const char * mask, size_t * sz, size_t * max_capstrlen)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1175'>/* Return an array with the names of the important hardware
+   capabilities.  PREPEND is a colon-separated list of glibc-hwcaps
+   directories to search first.  MASK is a colon-separated list used
+   to filter the built-in glibc-hwcaps subdirectories.  The length of
+   the array is written to *SZ, and the maximum of all strings length
+   is written to *MAX_CAPSTRLEN.  */</doc>
+<def f='codebrowser/elf/dl-hwcaps.c' l='168' ll='378' type='const struct r_strlenpair * _dl_important_hwcaps(const char * glibc_hwcaps_prepend, const char * glibc_hwcaps_mask, size_t * sz, size_t * max_capstrlen)'/>
+<doc f='codebrowser/elf/dl-hwcaps.c' l='167'>/* Return an array of useful/necessary hardware capability names.  */</doc>

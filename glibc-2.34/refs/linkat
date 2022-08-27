@@ -1,0 +1,4 @@
+<dec f='codebrowser/posix/unistd.h' l='825' type='int linkat(int __fromfd, const char * __from, int __tofd, const char * __to, int __flags)'/>
+<doc f='codebrowser/posix/unistd.h' l='823'>/* Like link but relative paths in TO and FROM are interpreted relative
+   to FROMFD and TOFD respectively.  */</doc>
+<use f='codebrowser/timezone/zic.c' l='977' u='c' c='hardlinkerr'/>

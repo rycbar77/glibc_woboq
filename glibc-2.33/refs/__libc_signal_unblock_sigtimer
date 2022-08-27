@@ -1,0 +1,3 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='94' ll='99' type='void __libc_signal_unblock_sigtimer(sigset_t * set)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/internal-signals.h' l='93'>/* Unblock only SIGTIMER and return the previous set on SET.  */</doc>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='45' u='c' c='timer_sigev_thread'/>

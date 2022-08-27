@@ -1,0 +1,10 @@
+<dec f='codebrowser/malloc/malloc.c' l='1109' type='void * _int_malloc(mstate , size_t )'/>
+<def f='codebrowser/malloc/malloc.c' l='3656' ll='4300' type='void * _int_malloc(mstate av, size_t bytes)'/>
+<use f='codebrowser/malloc/malloc.c' l='4765' u='c' c='_int_realloc'/>
+<use f='codebrowser/malloc/malloc.c' l='4855' u='c' c='_int_memalign'/>
+<use f='codebrowser/malloc/malloc-check.c' l='206' u='c' c='malloc_check'/>
+<use f='codebrowser/malloc/malloc-check.c' l='303' u='c' c='realloc_check'/>
+<doc f='codebrowser/malloc/malloc.c' l='1107'>/* Internal routines.  */</doc>
+<doc f='codebrowser/malloc/malloc.c' l='3652'>/*
+   ------------------------------ malloc ------------------------------
+ */</doc>

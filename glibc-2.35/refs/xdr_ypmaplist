@@ -1,0 +1,7 @@
+<dec f='codebrowser/nis/rpcsvc/yp.h' l='328' type='bool_t xdr_ypmaplist(XDR * , ypmaplist * )'/>
+<dec f='codebrowser/include/rpcsvc/yp.h' l='23' type='bool_t xdr_ypmaplist(XDR * , ypmaplist * )'/>
+<use f='codebrowser/include/rpcsvc/yp.h' l='23' c='xdr_ypmaplist'/>
+<def f='codebrowser/nis/yp_xdr.c' l='206' ll='214' type='bool_t xdr_ypmaplist(XDR * xdrs, ypmaplist * objp)'/>
+<use f='codebrowser/nis/yp_xdr.c' l='213' u='r' c='xdr_ypmaplist'/>
+<use f='codebrowser/nis/yp_xdr.c' l='215' c='__EI_xdr_ypmaplist'/>
+<use f='codebrowser/nis/yp_xdr.c' l='224' u='r' c='xdr_ypresp_maplist'/>

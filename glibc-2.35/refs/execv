@@ -1,0 +1,8 @@
+<dec f='codebrowser/posix/unistd.h' l='584' type='int execv(const char * __path, char *const * __argv)'/>
+<doc f='codebrowser/posix/unistd.h' l='583'>/* Execute PATH with arguments ARGV and environment from `environ&apos;.  */</doc>
+<use f='codebrowser/nscd/connections.c' l='1438' u='c' c='restart'/>
+<use f='codebrowser/nscd/connections.c' l='1440' u='c' c='restart'/>
+<def f='codebrowser/posix/execv.c' l='22' ll='26' type='int execv(const char * path, char *const * argv)'/>
+<doc f='codebrowser/posix/execv.c' l='21'>/* Execute PATH with arguments ARGV and environment from `environ&apos;.  */</doc>
+<use f='codebrowser/support/support_test_main.c' l='238' u='c' c='run_test_function'/>
+<use f='codebrowser/support/test-container.c' l='699' u='c' c='run_ldconfig'/>

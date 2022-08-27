@@ -1,0 +1,23 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='237' type='16384'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/bits/socket.h' l='237'>/* Do not generate SIGPIPE.  */</doc>
+<use f='codebrowser/misc/syslog.c' l='267' macro='1' u='r' c='__vsyslog_internal'/>
+<use f='codebrowser/misc/syslog.c' l='277' macro='1' u='r' c='__vsyslog_internal'/>
+<use f='codebrowser/nscd/aicache.c' l='463' macro='1' u='r' c='addhstaiX'/>
+<use f='codebrowser/nscd/connections.c' l='272' macro='1' u='r' c='writeall'/>
+<use f='codebrowser/nscd/connections.c' l='1035' macro='1' u='r' c='send_ro_fd'/>
+<use f='codebrowser/nscd/connections.c' l='1113' macro='1' u='r' c='handle_request'/>
+<use f='codebrowser/nscd/grpcache.c' l='113' macro='1' u='r' c='cache_addgr'/>
+<use f='codebrowser/nscd/hstcache.c' l='137' macro='1' u='r' c='cache_addhst'/>
+<use f='codebrowser/nscd/initgrcache.c' l='196' macro='1' u='r' c='addinitgroupsX'/>
+<use f='codebrowser/nscd/netgroupcache.c' l='87' macro='1' u='r' c='do_notfound'/>
+<use f='codebrowser/nscd/nscd.c' l='356' macro='1' u='r' c='invalidate_db'/>
+<use f='codebrowser/nscd/nscd.c' l='398' macro='1' u='r' c='send_shutdown'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='202' macro='1' u='r' c='open_socket'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='154' macro='1' u='r' c='send_stats'/>
+<use f='codebrowser/nscd/nscd_stat.c' l='202' macro='1' u='r' c='receive_print_stats'/>
+<use f='codebrowser/nscd/pwdcache.c' l='119' macro='1' u='r' c='cache_addpw'/>
+<use f='codebrowser/nscd/servicescache.c' l='107' macro='1' u='r' c='cache_addserv'/>
+<use f='codebrowser/resolv/res_send.c' l='1065' macro='1' u='r' c='send_dg'/>
+<use f='codebrowser/resolv/res_send.c' l='1104' macro='1' u='r' c='send_dg'/>
+<use f='codebrowser/resolv/res_send.c' l='1106' macro='1' u='r' c='send_dg'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='118' macro='1' u='r' c='helper_thread'/>

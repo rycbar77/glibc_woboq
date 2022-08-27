@@ -1,0 +1,10 @@
+<dec f='codebrowser/elf/dl-find_object.c' l='161' type='63'/>
+<use f='codebrowser/elf/dl-find_object.c' l='168' u='r' c='_dlfo_mappings_segment_allocate_unpadded'/>
+<use f='codebrowser/elf/dl-find_object.c' l='169' u='r' c='_dlfo_mappings_segment_allocate_unpadded'/>
+<use f='codebrowser/elf/dl-find_object.c' l='201' u='r' c='_dlfo_mappings_segment_allocate'/>
+<doc f='codebrowser/elf/dl-find_object.c' l='155'>/* This is essentially an arbitrary value.  dlopen allocates plenty of
+   memory anyway, so over-allocated a bit does not hurt.  Not having
+   many small-ish segments helps to avoid many small binary searches.
+   Not using a power of 2 means that we do not waste an extra page
+   just for the malloc header if a mapped allocation is used in the
+   glibc allocator.  */</doc>

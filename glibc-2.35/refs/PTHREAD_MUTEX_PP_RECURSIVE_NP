@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/nptl/pthreadP.h' l='102' type='65'/>
+<use f='codebrowser/nptl/pthread_mutex_lock.c' l='511' c='__pthread_mutex_cond_lock_full'/>
+<use f='codebrowser/nptl/pthread_mutex_setprioceiling.c' l='59' u='r' c='__pthread_mutex_setprioceiling'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='448' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_trylock.c' l='368' c='___pthread_mutex_trylock'/>
+<use f='codebrowser/nptl/pthread_mutex_unlock.c' l='307' c='__pthread_mutex_unlock_full'/>

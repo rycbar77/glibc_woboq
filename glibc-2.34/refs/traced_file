@@ -1,0 +1,27 @@
+<use f='codebrowser/nss/nss.h' l='173'/>
+<use f='codebrowser/include/nss_files.h' l='144' c='_nss_files_init'/>
+<use f='codebrowser/nss/nsswitch.h' l='127' c='__nss_disable_nscd'/>
+<def f='codebrowser/nscd/nscd.h' l='66' ll='86'/>
+<use f='codebrowser/nscd/nscd.h' l='71'/>
+<use f='codebrowser/nscd/nscd.h' l='94' c='init_traced_file'/>
+<use f='codebrowser/nscd/nscd.h' l='141'/>
+<use f='codebrowser/nscd/nscd.h' l='262' c='register_traced_file'/>
+<use f='codebrowser/nss/nss_files/files-init.c' l='27' c='register_file'/>
+<use f='codebrowser/nss/nss_files/files-init.c' l='31' c='register_file'/>
+<use f='codebrowser/nss/nss_files/files-init.c' l='31' c='register_file'/>
+<use f='codebrowser/nss/nss_files/files-init.c' l='42' c='_nss_files_init'/>
+<size>4136</size>
+<doc f='codebrowser/nscd/nscd.h' l='64'>/* Records the file registered per database that when changed
+   or modified requires invalidating the database.  */</doc>
+<mbr r='traced_file::mtime' o='0' t='time_t'/>
+<mbr r='traced_file::next' o='64' t='struct traced_file *'/>
+<mbr r='traced_file::call_res_init' o='128' t='int'/>
+<mbr r='traced_file::inotify_descr' o='160' t='int[2]'/>
+<mbr r='traced_file::dname' o='224' t='char[4096]'/>
+<mbr r='traced_file::sfname' o='33024' t='char *'/>
+<mbr r='traced_file::fname' o='33088' t='char[]'/>
+<use f='codebrowser/nss/nss_module.c' l='60'/>
+<use f='codebrowser/nss/nss_module.c' l='155' c='module_load_nss_files'/>
+<use f='codebrowser/nss/nss_module.c' l='262' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='266' c='module_load'/>
+<size>4136</size>

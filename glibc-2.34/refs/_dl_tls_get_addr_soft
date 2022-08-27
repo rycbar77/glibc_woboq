@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1278' type='void * _dl_tls_get_addr_soft(struct link_map * l)'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1276'>/* Look up the module&apos;s TLS block as for __tls_get_addr,
+   but never touch anything.  Return null if it&apos;s not allocated yet.  */</doc>
+<use f='codebrowser/dlfcn/dlinfo.c' l='74' macro='1' u='c' c='dlinfo_doit'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='74' macro='1' u='c' c='__dl_iterate_phdr'/>
+<use f='codebrowser/elf/rtld.c' l='371'/>
+<def f='codebrowser/elf/dl-tls.c' l='957' ll='999' type='void * _dl_tls_get_addr_soft(struct link_map * l)'/>
+<doc f='codebrowser/elf/dl-tls.c' l='955'>/* Look up the module&apos;s TLS block as for __tls_get_addr,
+   but never touch anything.  Return null if it&apos;s not allocated yet.  */</doc>

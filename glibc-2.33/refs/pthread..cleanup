@@ -1,0 +1,41 @@
+<dec f='codebrowser/nptl/descr.h' l='272' type='struct _pthread_cleanup_buffer *'/>
+<offset>6080</offset>
+<doc f='codebrowser/nptl/descr.h' l='271'>/* List of cleanup buffers.  */</doc>
+<use f='codebrowser/nptl/cleanup.c' l='32' c='__pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='31' c='_pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='33' u='r' c='_pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='33' u='r' c='_pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='33' u='r' c='_pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='33' u='r' c='_pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='33' u='r' c='_pthread_cleanup_push'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='43' u='r' c='_pthread_cleanup_pop'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='43' u='r' c='_pthread_cleanup_pop'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='43' u='r' c='_pthread_cleanup_pop'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='43' u='r' c='_pthread_cleanup_pop'/>
+<use f='codebrowser/nptl/cleanup_compat.c' l='43' u='r' c='_pthread_cleanup_pop'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='32' c='__pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer_compat.c' l='30' c='_pthread_cleanup_push_defer'/>
+<use f='codebrowser/nptl/cleanup_defer_compat.c' l='54' u='r' c='_pthread_cleanup_push_defer'/>
+<use f='codebrowser/nptl/cleanup_defer_compat.c' l='54' u='r' c='_pthread_cleanup_push_defer'/>
+<use f='codebrowser/nptl/cleanup_defer_compat.c' l='54' u='r' c='_pthread_cleanup_push_defer'/>
+<use f='codebrowser/nptl/cleanup_defer_compat.c' l='54' u='r' c='_pthread_cleanup_push_defer'/>
+<use f='codebrowser/nptl/cleanup_defer_compat.c' l='54' u='r' c='_pthread_cleanup_push_defer'/>
+<use f='codebrowser/nptl/cleanup_defer_compat.c' l='65' u='r' c='_pthread_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/cleanup_defer_compat.c' l='65' u='r' c='_pthread_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/cleanup_defer_compat.c' l='65' u='r' c='_pthread_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/cleanup_defer_compat.c' l='65' u='r' c='_pthread_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/cleanup_defer_compat.c' l='65' u='r' c='_pthread_cleanup_pop_restore'/>
+<use f='codebrowser/nptl/pt-cleanup.c' l='36' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/pt-cleanup.c' l='60' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/pt-cleanup.c' l='60' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/pt-cleanup.c' l='60' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/pt-cleanup.c' l='60' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/pt-cleanup.c' l='60' u='r' c='__pthread_cleanup_upto'/>
+<use f='codebrowser/nptl/allocatestack.c' l='223' u='w' c='get_cached_stack'/>
+<use f='codebrowser/nptl/unwind.c' l='47' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='90' u='r' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='90' u='r' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='90' u='r' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='90' u='r' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='90' u='r' c='unwind_stop'/>
+<use f='codebrowser/csu/libc-start.c' l='326' c='__libc_start_main'/>

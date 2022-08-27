@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='1189' type='void __tls_pre_init_tp()'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='1187'>/* This function is called very early from dl_main to set up TLS and
+   other thread-related data structures.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='117' u='c' c='__libc_setup_tls'/>
+<use f='codebrowser/elf/rtld.c' l='1125' u='c' c='dl_main'/>
+<def f='codebrowser/sysdeps/nptl/dl-tls_init_tp.c' l='42' ll='55' type='void __tls_pre_init_tp()'/>

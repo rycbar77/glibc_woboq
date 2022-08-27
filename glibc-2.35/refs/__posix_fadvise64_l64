@@ -1,0 +1,8 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/posix_fadvise64.c' l='23' type='int __posix_fadvise64_l64(int fd, off64_t offset, off64_t len, int advise)'/>
+<dec f='codebrowser/sysdeps/unix/sysv/linux/posix_fadvise64.c' l='24' type='int __posix_fadvise64_l64(int , off64_t , off64_t , int )'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/posix_fadvise64.c' l='24' c='__posix_fadvise64_l64'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/posix_fadvise64.c' l='41' ll='55' type='int __posix_fadvise64_l64(int fd, off64_t offset, off64_t len, int advise)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/posix_fadvise64.c' l='76' c='posix_fadvise64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/posix_fadvise64.c' l='77' c='posix_fadvise'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/posix_fadvise64.c' l='38'>/* Advice the system about the expected behaviour of the application with
+   respect to the file associated with FD.  */</doc>

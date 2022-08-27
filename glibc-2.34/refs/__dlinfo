@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/dlfcn.h' l='131' type='int __dlinfo(void * handle, int request, void * arg)'/>
+<def f='codebrowser/dlfcn/dlinfo.c' l='104' ll='108' type='int __dlinfo(void * handle, int request, void * arg)'/>
+<use f='codebrowser/dlfcn/dlinfo.c' l='109' c='dlinfo'/>
+<doc f='codebrowser/dlfcn/dlinfo.c' l='103'>/* Also used with _dlfcn_hook.  */</doc>
+<use f='codebrowser/elf/rtld_static_init.c' l='37' u='r'/>

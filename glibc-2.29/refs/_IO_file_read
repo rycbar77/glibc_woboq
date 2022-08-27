@@ -1,0 +1,11 @@
+<dec f='codebrowser/libio/libioP.h' l='569' type='ssize_t _IO_file_read(FILE * , void * , ssize_t )'/>
+<dec f='codebrowser/libio/libioP.h' l='570' type='ssize_t _IO_file_read(FILE * , void * , ssize_t )'/>
+<use f='codebrowser/libio/libioP.h' l='570' c='_IO_file_read'/>
+<def f='codebrowser/libio/fileops.c' l='1136' ll='1142' type='ssize_t _IO_file_read(FILE * fp, void * buf, ssize_t size)'/>
+<use f='codebrowser/libio/fileops.c' l='1455' u='r'/>
+<use f='codebrowser/libio/fileops.c' l='1480'/>
+<use f='codebrowser/libio/fileops.c' l='1504'/>
+<use f='codebrowser/libio/iopopen.c' l='306'/>
+<use f='codebrowser/libio/wfileops.c' l='1038' u='r'/>
+<use f='codebrowser/libio/wfileops.c' l='1064'/>
+<use f='codebrowser/libio/wfileops.c' l='1088'/>

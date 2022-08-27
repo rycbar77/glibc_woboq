@@ -1,0 +1,10 @@
+<dec f='codebrowser/resolv/resolv_conf.h' l='74' type='struct resolv_conf * __resolv_conf_load(struct __res_state * preinit, struct file_change_detection * change)'/>
+<doc f='codebrowser/resolv/resolv_conf.h' l='68'>/* Read /etc/resolv.conf and return a configuration object, or NULL if
+   /etc/resolv.conf cannot be read due to memory allocation errors.
+   If PREINIT is not NULL, some configuration values are taken from
+   the struct __res_state object.  If CHANGE is not null, file change
+   detection data is written to *CHANGE, based on the state of the
+   file after reading it.  */</doc>
+<def f='codebrowser/resolv/res_init.c' l='552' ll='611' type='struct resolv_conf * __resolv_conf_load(struct __res_state * preinit, struct file_change_detection * change)'/>
+<use f='codebrowser/resolv/res_init.c' l='626' u='c' c='__res_vinit'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='140' u='c' c='__resolv_conf_get_current'/>

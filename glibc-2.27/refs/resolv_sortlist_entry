@@ -1,0 +1,33 @@
+<def f='codebrowser/resolv/resolv_conf.h' l='27' ll='31'/>
+<use f='codebrowser/resolv/resolv_conf.h' l='51'/>
+<use f='codebrowser/resolv/resolv_context.h' l='157' c='__resolv_context_sort_entry'/>
+<use f='codebrowser/resolv/resolv_context.h' l='167' c='__resolv_context_sort_entry'/>
+<use f='codebrowser/resolv/resolv_context.h' l='173' c='__resolv_context_sort_entry'/>
+<size>8</size>
+<doc f='codebrowser/resolv/resolv_conf.h' l='26'>/* This type corresponds to members of the _res.sort_list array.  */</doc>
+<mbr r='resolv_sortlist_entry::addr' o='0' t='struct in_addr'/>
+<mbr r='resolv_sortlist_entry::mask' o='32' t='uint32_t'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='136' macro='1'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='166' macro='1' c='sort_list_free__elements__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='245' macro='1' c='sort_list_at'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='257' macro='1' c='sort_list_begin'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='267' macro='1' c='sort_list_end'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='275' macro='1' c='sort_list_add__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='277' macro='1' c='sort_list_add__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='295' macro='1' c='sort_list_add'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='315' macro='1' c='sort_list_emplace__tail__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='318' macro='1' c='sort_list_emplace__tail__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='330' macro='1' c='sort_list_emplace__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='333' macro='1' c='sort_list_emplace__'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='353' macro='1' c='sort_list_emplace'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='398' macro='1' c='sort_list_resize'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='483' macro='1' c='sort_list_finalize'/>
+<use f='codebrowser/malloc/dynarray-skeleton.c' l='489' macro='1' c='sort_list_finalize'/>
+<use f='codebrowser/resolv/res_init.c' l='474' c='res_vinit_1'/>
+<size>8</size>
+<use f='codebrowser/resolv/resolv_conf.c' l='389' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='464' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='465' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='465' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='465' c='__resolv_conf_allocate'/>
+<size>8</size>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/dirent/dirent.h' l='134' type='DIR * opendir(const char * __name)'/>
+<doc f='codebrowser/dirent/dirent.h' l='129'>/* Open a directory stream on NAME.
+   Return a DIR stream on the directory, or NULL if it could not be opened.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/locale/programs/charmap-dir.c' l='53' u='c' c='charmap_opendir'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='1367' u='c' c='add_locales_to_archive'/>
+<use f='codebrowser/locale/programs/locfile.c' l='392' u='c' c='siblings_uncached'/>
+<use f='codebrowser/support/support_descriptors.c' l='66' u='c' c='support_descriptors_list'/>
+<use f='codebrowser/support/test-container.c' l='501' u='c' c='rsync_1'/>
+<use f='codebrowser/support/test-container.c' l='594' u='c' c='rsync_1'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/opendir.c' l='88' macro='1' type='DIR * opendir(const char * )'/>

@@ -1,0 +1,44 @@
+<def f='codebrowser/nptl/descr.h' l='63' ll='90'/>
+<use f='codebrowser/nptl/descr.h' l='79'/>
+<use f='codebrowser/nptl/descr.h' l='275'/>
+<size>104</size>
+<doc f='codebrowser/nptl/descr.h' l='61'>/* Internal version of the buffer to store cancellation handler
+   information.  */</doc>
+<mbr r='pthread_unwind_buf::cancel_jmp_buf' o='0' t='struct (unnamed struct at /media/rr/Data/glibc_source/glibc-2.33/argp/../nptl/descr.h:65:3)[1]'/>
+<mbr r='pthread_unwind_buf::priv' o='576' t='union (unnamed union at /media/rr/Data/glibc_source/glibc-2.33/argp/../nptl/descr.h:71:3)'/>
+<use f='codebrowser/nptl/cleanup.c' l='27' c='__pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='27' c='__pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='35' c='__pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='35' c='__pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='35' c='__pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='35' c='__pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='35' c='__pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='35' c='__pthread_register_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='44' c='__pthread_unregister_cancel'/>
+<use f='codebrowser/nptl/cleanup.c' l='44' c='__pthread_unregister_cancel'/>
+<size>104</size>
+<use f='codebrowser/nptl/cleanup_defer.c' l='27' c='__pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='27' c='__pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='57' c='__pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='57' c='__pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='57' c='__pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='57' c='__pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='57' c='__pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='57' c='__pthread_register_cancel_defer'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='66' c='__pthread_unregister_cancel_restore'/>
+<use f='codebrowser/nptl/cleanup_defer.c' l='66' c='__pthread_unregister_cancel_restore'/>
+<size>104</size>
+<use f='codebrowser/nptl/pthread_create.c' l='401' c='start_thread'/>
+<size>104</size>
+<use f='codebrowser/nptl/unwind.c' l='45' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='123' c='__pthread_unwind'/>
+<use f='codebrowser/nptl/unwind.c' l='123' c='__pthread_unwind'/>
+<use f='codebrowser/nptl/unwind.c' l='144' c='__pthread_unwind_next'/>
+<use f='codebrowser/nptl/unwind.c' l='144' c='__pthread_unwind_next'/>
+<size>104</size>
+<use f='codebrowser/csu/libc-start.c' l='307' c='__libc_start_main'/>
+<size>104</size>
+<use f='codebrowser/sysdeps/x86/nptl/pt-longjmp.c' l='31'/>
+<use f='codebrowser/sysdeps/x86/nptl/pt-longjmp.c' l='33'/>
+<use f='codebrowser/sysdeps/x86/nptl/pt-longjmp.c' l='34'/>
+<size>104</size>

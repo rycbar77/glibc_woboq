@@ -1,0 +1,5 @@
+<def f='codebrowser/sysdeps/x86_64/dl-machine.h' l='41' ll='46' type='Elf64_Addr elf_machine_load_address()'/>
+<use f='codebrowser/sysdeps/x86_64/dl-machine.h' l='53' u='c' c='elf_machine_dynamic'/>
+<doc f='codebrowser/sysdeps/x86_64/dl-machine.h' l='40'>/* Return the run-time load address of the shared object.  */</doc>
+<use f='codebrowser/elf/dl-reloc-static-pie.c' l='41' u='c' c='_dl_relocate_static_pie'/>
+<use f='codebrowser/elf/rtld.c' l='553' u='c' c='_dl_start'/>

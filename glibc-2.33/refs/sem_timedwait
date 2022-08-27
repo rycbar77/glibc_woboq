@@ -1,0 +1,6 @@
+<dec f='codebrowser/sysdeps/pthread/semaphore.h' l='62' type='int sem_timedwait(sem_t *restrict __sem, const struct timespec *restrict __abstime)'/>
+<doc f='codebrowser/sysdeps/pthread/semaphore.h' l='58'>/* Similar to `sem_wait&apos; but wait only until ABSTIME.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<def f='codebrowser/nptl/sem_timedwait.c' l='56' macro='1' type='int sem_timedwait(sem_t * , const struct timespec * )'/>

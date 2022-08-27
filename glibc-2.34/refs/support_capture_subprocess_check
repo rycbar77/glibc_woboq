@@ -1,0 +1,10 @@
+<dec f='codebrowser/support/capture_subprocess.h' l='71' type='void support_capture_subprocess_check(struct support_capture_subprocess * , const char * context, int status_or_signal, int allowed)'/>
+<doc f='codebrowser/support/capture_subprocess.h' l='64'>/* Check that the subprocess exited and that only the allowed outputs
+   happened.  If STATUS_OR_SIGNAL is nonnegative, it is the expected
+   (decoded) exit status of the process, as returned by WEXITSTATUS.
+   If STATUS_OR_SIGNAL is negative, -STATUS_OR_SIGNAL is the expected
+   termination signal, as returned by WTERMSIG.  ALLOWED is a
+   combination of support_capture_allow flags.  Report errors under
+   the CONTEXT message.  */</doc>
+<def f='codebrowser/support/support_capture_subprocess_check.c' l='48' ll='98' type='void support_capture_subprocess_check(struct support_capture_subprocess * proc, const char * context, int status_or_signal, int allowed)'/>
+<use f='codebrowser/support/test-container.c' l='1153' u='c' c='main'/>

@@ -1,0 +1,9 @@
+<def f='codebrowser/nptl/pthread_attr_init.c' l='51' macro='1' type='int pthread_attr_init(pthread_attr_t * )'/>
+<use f='codebrowser/support/xpthread_attr_init.c' l='24' u='c' c='xpthread_attr_init'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/aio_misc.h' l='45' u='c' c='__aio_create_helper_thread'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='661' u='c' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/pthread/aio_notify.c' l='65' u='c' c='__aio_notify_only'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='93' u='c' c='__gai_create_helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/mq_notify.c' l='174' u='c' c='init_mq_netlink'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='159' u='c' c='__start_helper_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='122' u='c' c='__timer_create_new'/>

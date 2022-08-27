@@ -1,0 +1,4 @@
+<def f='codebrowser/nptl/sem_timedwait.c' l='25' ll='42' type='int ___sem_timedwait64(sem_t * sem, const struct timespec * abstime)'/>
+<use f='codebrowser/nptl/sem_timedwait.c' l='45' c='___sem_timedwait'/>
+<doc f='codebrowser/nptl/sem_timedwait.c' l='23'>/* This is in a separate file because because sem_timedwait is only provided
+   if __USE_XOPEN2K is defined.  */</doc>

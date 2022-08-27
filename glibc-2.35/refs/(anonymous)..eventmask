@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/nptl/thread_db.h' l='214' type='td_thr_events_t'/>
+<offset>0</offset>
+<doc f='codebrowser/sysdeps/nptl/thread_db.h' l='214'>/* Mask of enabled events.  */</doc>
+<use f='codebrowser/nptl/pthread_create.c' l='466' u='m' c='start_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='612' u='m' c='report_thread_creation'/>
+<use f='codebrowser/nptl_db/structs.def' l='61' macro='1' u='r'/>
+<use f='codebrowser/nptl_db/structs.def' l='62' macro='1' u='m'/>
+<use f='codebrowser/nptl_db/structs.def' l='62' macro='1' u='m'/>
+<use f='codebrowser/nptl_db/structs.def' l='62' macro='1' u='m'/>

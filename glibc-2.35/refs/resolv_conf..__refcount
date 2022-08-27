@@ -1,0 +1,21 @@
+<dec f='codebrowser/resolv/resolv_conf.h' l='40' type='size_t'/>
+<offset>0</offset>
+<doc f='codebrowser/resolv/resolv_conf.h' l='38'>/* Reference counter.  The object is deallocated once it reaches
+     zero.  For internal use within resolv_conf only.  */</doc>
+<use f='codebrowser/resolv/resolv_conf.c' l='115' u='r' c='conf_decrement'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='115' u='r' c='conf_decrement'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='116' u='w' c='conf_decrement'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='164' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='164' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='165' u='w' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='166' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='166' u='r' c='__resolv_conf_get_current'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='194' u='r' c='resolv_conf_get_1'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='194' u='r' c='resolv_conf_get_1'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='195' u='w' c='resolv_conf_get_1'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='407' u='w' c='__resolv_conf_allocate'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='580' u='r' c='__resolv_conf_attach'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='580' u='r' c='__resolv_conf_attach'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='617' u='w' c='__resolv_conf_attach'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='618' u='r' c='__resolv_conf_attach'/>
+<use f='codebrowser/resolv/resolv_conf.c' l='618' u='r' c='__resolv_conf_attach'/>

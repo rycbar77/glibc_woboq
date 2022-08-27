@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/nss_files.h' l='61' type='int _nss_files_parse_pwent(char * , void * , struct parser_data * , size_t , int * )'/>
+<dec f='codebrowser/include/nss_files.h' l='71' type='int _nss_files_parse_pwent(char * , void * , struct parser_data * , size_t , int * )'/>
+<use f='codebrowser/include/nss_files.h' l='71' c='_nss_files_parse_pwent'/>
+<def f='codebrowser/pwd/fgetpwent_r.c' l='31' macro='1' type='int _nss_files_parse_pwent(char * line, void * generic_result, struct parser_data * data, size_t datalen, int * errnop)'/>
+<use f='codebrowser/pwd/fgetpwent_r.c' l='72' macro='1' u='r' c='__fgetpwent_r'/>

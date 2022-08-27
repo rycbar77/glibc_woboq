@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ether.h source code [codebrowser/include/netinet/ether.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="etherent "/>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/include/netinet/ether.h'; var root_path = '../../..'; var data_path = '../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>include</a>/<a href='./'>netinet</a>/<a href='ether.h.html'>ether.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/_NETINET_ETHER_H">_NETINET_ETHER_H</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#include <a href="../../inet/netinet/ether.h.html">&lt;inet/netinet/ether.h&gt;</a></u></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u># <span data-ppcond="4">ifndef</span> <span class="macro" data-ref="_M/_ISOMAC">_ISOMAC</span></u></td></tr>
+<tr><th id="5">5</th><td></td></tr>
+<tr><th id="6">6</th><td><a class="macro" href="../libc-symbols.h.html#632" title="" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (ether_aton_r)</td></tr>
+<tr><th id="7">7</th><td><a class="macro" href="../libc-symbols.h.html#632" title="" data-ref="_M/libc_hidden_proto">libc_hidden_proto</a> (ether_ntoa_r)</td></tr>
+<tr><th id="8">8</th><td></td></tr>
+<tr><th id="9">9</th><td><i>/* Because the `ethers' lookup does not fit so well in the scheme we</i></td></tr>
+<tr><th id="10">10</th><td><i>   define a dummy struct here which helps us to use the available</i></td></tr>
+<tr><th id="11">11</th><td><i>   functions.  */</i></td></tr>
+<tr><th id="12">12</th><td><b>struct</b> <dfn class="type def" id="etherent" title='etherent' data-ref="etherent" data-ref-filename="etherent">etherent</dfn></td></tr>
+<tr><th id="13">13</th><td>{</td></tr>
+<tr><th id="14">14</th><td>  <em>const</em> <em>char</em> *<dfn class="decl field" id="etherent::e_name" title='etherent::e_name' data-ref="etherent::e_name" data-ref-filename="etherent..e_name">e_name</dfn>;</td></tr>
+<tr><th id="15">15</th><td>  <b>struct</b> <a class="type" href="../../sysdeps/unix/sysv/linux/net/ethernet.h.html#ether_addr" title='ether_addr' data-ref="ether_addr" data-ref-filename="ether_addr">ether_addr</a> <dfn class="decl field" id="etherent::e_addr" title='etherent::e_addr' data-ref="etherent::e_addr" data-ref-filename="etherent..e_addr">e_addr</dfn>;</td></tr>
+<tr><th id="16">16</th><td>};</td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><u>#define <dfn class="macro" id="_M/DECLARE_NSS_PROTOTYPES" data-ref="_M/DECLARE_NSS_PROTOTYPES">DECLARE_NSS_PROTOTYPES</dfn>(service)					      \</u></td></tr>
+<tr><th id="19">19</th><td><u>extern enum <dfn class="type" id="nss_status" title='nss_status' data-ref="nss_status" data-ref-filename="nss_status"><a class="type" href="#32" title='nss_status' data-ref="nss_status" data-ref-filename="nss_status">nss_status</a></dfn> _nss_ ## service ## _setetherent (int <dfn class="local col4 decl" id="14__stayopen" title='__stayopen' data-type='int' data-ref="14__stayopen" data-ref-filename="14__stayopen">__stayopen</dfn>);     \</u></td></tr>
+<tr><th id="20">20</th><td><u>extern enum <a class="type" href="#32" title='nss_status' data-ref="nss_status" data-ref-filename="nss_status">nss_status</a> _nss_ ## service ## _endetherent (void);		      \</u></td></tr>
+<tr><th id="21">21</th><td><u>extern enum <a class="type" href="#32" title='nss_status' data-ref="nss_status" data-ref-filename="nss_status">nss_status</a> _nss_ ## service ## _getetherent_r		      \</u></td></tr>
+<tr><th id="22">22</th><td><u>                       (struct <a class="type" href="#etherent" title='etherent' data-ref="etherent" data-ref-filename="etherent">etherent</a> *<dfn class="local col5 decl" id="15result" title='result' data-type='struct etherent *' data-ref="15result" data-ref-filename="15result">result</dfn>, char *<dfn class="local col6 decl" id="16buffer" title='buffer' data-type='char *' data-ref="16buffer" data-ref-filename="16buffer">buffer</dfn>,		      \</u></td></tr>
+<tr><th id="23">23</th><td><u>			<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col7 decl" id="17buflen" title='buflen' data-type='size_t' data-ref="17buflen" data-ref-filename="17buflen">buflen</dfn>, int *<dfn class="local col8 decl" id="18errnop" title='errnop' data-type='int *' data-ref="18errnop" data-ref-filename="18errnop">errnop</dfn>);			      \</u></td></tr>
+<tr><th id="24">24</th><td><u>extern enum <a class="type" href="#32" title='nss_status' data-ref="nss_status" data-ref-filename="nss_status">nss_status</a> _nss_ ## service ## _gethostton_r		      \</u></td></tr>
+<tr><th id="25">25</th><td><u>                       (const char *<dfn class="local col9 decl" id="19name" title='name' data-type='const char *' data-ref="19name" data-ref-filename="19name">name</dfn>, struct <a class="type" href="#etherent" title='etherent' data-ref="etherent" data-ref-filename="etherent">etherent</a> *<dfn class="local col0 decl" id="20eth" title='eth' data-type='struct etherent *' data-ref="20eth" data-ref-filename="20eth">eth</dfn>,		      \</u></td></tr>
+<tr><th id="26">26</th><td><u>			char *<dfn class="local col1 decl" id="21buffer" title='buffer' data-type='char *' data-ref="21buffer" data-ref-filename="21buffer">buffer</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col2 decl" id="22buflen" title='buflen' data-type='size_t' data-ref="22buflen" data-ref-filename="22buflen">buflen</dfn>, int *<dfn class="local col3 decl" id="23errnop" title='errnop' data-type='int *' data-ref="23errnop" data-ref-filename="23errnop">errnop</dfn>);	      \</u></td></tr>
+<tr><th id="27">27</th><td><u>extern enum <a class="type" href="#32" title='nss_status' data-ref="nss_status" data-ref-filename="nss_status">nss_status</a> _nss_ ## service ## _getntohost_r		      \</u></td></tr>
+<tr><th id="28">28</th><td><u>                       (const struct <a class="type" href="../../sysdeps/unix/sysv/linux/net/ethernet.h.html#ether_addr" title='ether_addr' data-ref="ether_addr" data-ref-filename="ether_addr">ether_addr</a> *<dfn class="local col4 decl" id="24addr" title='addr' data-type='const struct ether_addr *' data-ref="24addr" data-ref-filename="24addr">addr</dfn>,			      \</u></td></tr>
+<tr><th id="29">29</th><td><u>			struct <a class="type" href="#etherent" title='etherent' data-ref="etherent" data-ref-filename="etherent">etherent</a> *<dfn class="local col5 decl" id="25eth" title='eth' data-type='struct etherent *' data-ref="25eth" data-ref-filename="25eth">eth</dfn>,				      \</u></td></tr>
+<tr><th id="30">30</th><td><u>			char *<dfn class="local col6 decl" id="26buffer" title='buffer' data-type='char *' data-ref="26buffer" data-ref-filename="26buffer">buffer</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col7 decl" id="27buflen" title='buflen' data-type='size_t' data-ref="27buflen" data-ref-filename="27buflen">buflen</dfn>, int *<dfn class="local col8 decl" id="28errnop" title='errnop' data-type='int *' data-ref="28errnop" data-ref-filename="28errnop">errnop</dfn>);</u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><a class="macro" href="#18" title="extern enum nss_status _nss_files_setetherent (int __stayopen); extern enum nss_status _nss_files_endetherent (void); extern enum nss_status _nss_files_getetherent_r (struct etherent *result, char *buffer, size_t buflen, int *errnop); extern enum nss_status _nss_files_gethostton_r (const char *name, struct etherent *eth, char *buffer, size_t buflen, int *errnop); extern enum nss_status _nss_files_getntohost_r (const struct ether_addr *addr, struct etherent *eth, char *buffer, size_t buflen, int *errnop);" data-ref="_M/DECLARE_NSS_PROTOTYPES">DECLARE_NSS_PROTOTYPES</a> (files)</td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><u>#undef <a class="macro" href="#18" data-ref="_M/DECLARE_NSS_PROTOTYPES">DECLARE_NSS_PROTOTYPES</a></u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u># <span data-ppcond="4">endif</span> /* !_ISOMAC */</u></td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="1">endif</span></u></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../build/nss/db-ethers.c.html'>codebrowser/build/nss/db-ethers.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

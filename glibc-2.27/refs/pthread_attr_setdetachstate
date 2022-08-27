@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/nptl/pthread.h' l='300' type='int pthread_attr_setdetachstate(pthread_attr_t * __attr, int __detachstate)'/>
+<doc f='codebrowser/sysdeps/nptl/pthread.h' l='299'>/* Set detach state attribute.  */</doc>
+<def f='codebrowser/nptl/forward.c' l='72' macro='1' type='int pthread_attr_setdetachstate(pthread_attr_t * attr, int detachstate)'/>
+<def f='codebrowser/nptl/pthread_attr_setdetachstate.c' l='43' macro='1' type='int pthread_attr_setdetachstate(pthread_attr_t * , int )'/>
+<use f='codebrowser/sysdeps/nptl/gai_misc.h' l='97' u='c' c='__gai_create_helper_thread'/>

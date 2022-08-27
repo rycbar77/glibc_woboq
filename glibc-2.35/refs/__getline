@@ -1,0 +1,13 @@
+<dec f='codebrowser/include/stdio.h' l='55' type='__ssize_t __getline(char ** __lineptr, size_t * __n, FILE * __stream)'/>
+<use f='codebrowser/inet/rcmd.c' l='756' u='c' c='__validuser2_sa'/>
+<use f='codebrowser/misc/getpass.c' l='96' u='c' c='getpass'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='122' u='c' c='__pthread_getattr_np'/>
+<use f='codebrowser/nss/nss_database.c' l='283' u='c' c='nss_database_reload_1'/>
+<use f='codebrowser/nss/nss_files/files-initgroups.c' l='58' u='c' c='_nss_files_initgroups_dyn'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='81' u='c' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/nss/nss_files/files-netgrp.c' l='113' u='c' c='_nss_files_setnetgrent'/>
+<use f='codebrowser/resolv/res_init.c' l='314' u='c' c='res_vinit_1'/>
+<def f='codebrowser/stdio-common/getline.c' l='25' ll='29' type='__ssize_t __getline(char ** lineptr, size_t * n, FILE * stream)'/>
+<use f='codebrowser/stdio-common/getline.c' l='31' c='getline'/>
+<doc f='codebrowser/stdio-common/getline.c' l='24'>/* Like getdelim, but always looks for a newline.  */</doc>
+<use f='codebrowser/time/getdate.c' l='184' u='c' c='__getdate_r'/>

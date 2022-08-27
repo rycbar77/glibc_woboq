@@ -1,0 +1,7 @@
+<dec f='codebrowser/resolv/resolv_conf.h' l='86' type='struct resolv_conf * __resolv_conf_get(struct __res_state * )'/>
+<doc f='codebrowser/resolv/resolv_conf.h' l='83'>/* Return the extended resolver state for *RESP, or NULL if it cannot
+   be determined.  A call to this function must be paired with a call
+   to __resolv_conf_put.  */</doc>
+<def f='codebrowser/resolv/resolv_conf.c' l='337' ll='347' type='struct resolv_conf * __resolv_conf_get(struct __res_state * resp)'/>
+<use f='codebrowser/resolv/resolv_context.c' l='124' u='c' c='maybe_init'/>
+<use f='codebrowser/resolv/resolv_context.c' l='137' u='c' c='context_alloc'/>

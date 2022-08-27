@@ -1,0 +1,10 @@
+<dec f='codebrowser/sysdeps/generic/dl-cache.h' l='263' type='const void *'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='288' u='r' c='cache_extension_verify'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='291' u='w' c='cache_extension_verify'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='340' u='w' c='cache_extension_load'/>
+<use f='codebrowser/elf/cache.c' l='277' u='r' c='glibc_hwcaps_string'/>
+<use f='codebrowser/elf/cache.c' l='304' u='r' c='print_extensions'/>
+<use f='codebrowser/elf/cache.c' l='307' u='r' c='print_extensions'/>
+<offset>0</offset>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='261'>/* Address and size of this extension section.  base is NULL if the
+     section is missing from the file.  */</doc>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/libio/libioP.h' l='484' type='int _IO_do_write(FILE * , const char * , size_t )'/>
+<dec f='codebrowser/libio/libioP.h' l='485' type='int _IO_do_write(FILE * , const char * , size_t )'/>
+<use f='codebrowser/libio/libioP.h' l='485' c='_IO_do_write'/>
+<use f='codebrowser/libio/fileops.c' l='135' macro='1' u='c' c='_IO_new_file_close_it'/>
+<use f='codebrowser/libio/fileops.c' l='171' macro='1' u='c' c='_IO_new_file_finish'/>
+<use f='codebrowser/libio/fileops.c' l='775' u='c' c='_IO_new_file_overflow'/>
+<use f='codebrowser/libio/fileops.c' l='778' macro='1' u='c' c='_IO_new_file_overflow'/>
+<use f='codebrowser/libio/fileops.c' l='783' u='c' c='_IO_new_file_overflow'/>
+<use f='codebrowser/libio/fileops.c' l='798' macro='1' u='c' c='_IO_new_file_sync'/>
+<def f='codebrowser/libio/fileops.c' l='1418' macro='1' type='int _IO_do_write(FILE * , const char * , size_t )'/>
+<use f='codebrowser/libio/iovdprintf.c' l='56' macro='1' u='c' c='__vdprintf_internal'/>
+<use f='codebrowser/libio/wfileops.c' l='464' macro='1' u='c' c='_IO_wfile_overflow'/>
+<use f='codebrowser/libio/wfileops.c' l='467' macro='1' u='c' c='_IO_wfile_overflow'/>
+<use f='codebrowser/libio/wfileops.c' l='472' macro='1' u='c' c='_IO_wfile_overflow'/>
+<use f='codebrowser/libio/wfileops.c' l='486' macro='1' u='c' c='_IO_wfile_sync'/>

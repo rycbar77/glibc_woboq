@@ -1,0 +1,7 @@
+<dec f='codebrowser/socket/sys/socket.h' l='113' type='int socket(int __domain, int __type, int __protocol)'/>
+<doc f='codebrowser/socket/sys/socket.h' l='110'>/* Create a new socket of type TYPE in domain DOMAIN, using
+   protocol PROTOCOL.  If PROTOCOL is zero, one is chosen automatically.
+   Returns a file descriptor for the new socket, or -1 for errors.  */</doc>
+<use f='codebrowser/resolv/res_send.c' l='776' u='c' c='send_vc'/>
+<use f='codebrowser/resolv/res_send.c' l='988' u='c' c='reopen'/>
+<use f='codebrowser/resolv/res_send.c' l='994' u='c' c='reopen'/>

@@ -1,0 +1,24 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='203' type='int'/>
+<use f='codebrowser/nptl/nptl-init.c' l='316' u='a' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='316' u='a' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='319' u='w' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='319' u='a' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/pthread_attr_getstacksize.c' l='35' u='a' c='__pthread_attr_getstacksize'/>
+<use f='codebrowser/nptl/pthread_attr_getstacksize.c' l='35' u='a' c='__pthread_attr_getstacksize'/>
+<use f='codebrowser/nptl/pthread_attr_getstacksize.c' l='37' u='w' c='__pthread_attr_getstacksize'/>
+<use f='codebrowser/nptl/pthread_attr_getstacksize.c' l='37' u='a' c='__pthread_attr_getstacksize'/>
+<use f='codebrowser/nptl/allocatestack.c' l='417' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='417' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='419' u='w' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='419' u='a' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='962' u='w' c='__reclaim_stacks'/>
+<use f='codebrowser/nptl/pthread_getattr_default_np.c' l='24' u='a' c='__pthread_getattr_default_np'/>
+<use f='codebrowser/nptl/pthread_getattr_default_np.c' l='24' u='a' c='__pthread_getattr_default_np'/>
+<use f='codebrowser/nptl/pthread_getattr_default_np.c' l='26' u='w' c='__pthread_getattr_default_np'/>
+<use f='codebrowser/nptl/pthread_getattr_default_np.c' l='26' u='a' c='__pthread_getattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='67' u='a' c='pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='67' u='a' c='pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='81' u='w' c='pthread_setattr_default_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='81' u='a' c='pthread_setattr_default_np'/>
+<def f='codebrowser/nptl/vars.c' l='28' type='int'/>
+<doc f='codebrowser/nptl/vars.c' l='27'>/* Mutex protecting __default_pthread_attr.  */</doc>

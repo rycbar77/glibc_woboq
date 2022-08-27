@@ -1,0 +1,41 @@
+<dec f='codebrowser/libio/stdio.h' l='387' type='int __asprintf(char **restrict __ptr, const char *restrict __fmt)'/>
+<dec f='codebrowser/include/stdio.h' l='186' type='int __asprintf(char **restrict , const char *restrict )'/>
+<use f='codebrowser/include/stdio.h' l='186' c='__asprintf'/>
+<use f='codebrowser/assert/assert.c' l='57' u='c' c='__assert_fail_base'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='74' u='c' c='__dlerror'/>
+<use f='codebrowser/dlfcn/dlerror.c' l='81' u='c' c='__dlerror'/>
+<use f='codebrowser/iconv/gconv_parseconfdir.h' l='30' u='c' c='gconv_parseconfdir'/>
+<use f='codebrowser/inet/rcmd.c' l='203' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='216' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='252' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='268' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='271' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='303' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='327' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='330' u='c' c='rcmd_af'/>
+<use f='codebrowser/intl/dcigettext.c' l='630' u='c' c='__dcigettext'/>
+<use f='codebrowser/nss/nss_module.c' l='184' u='c' c='module_load'/>
+<use f='codebrowser/nss/nss_module.c' l='233' u='c' c='module_load'/>
+<use f='codebrowser/resolv/res_hconf.c' l='118' u='c' c='arg_trimdomain_list'/>
+<use f='codebrowser/resolv/res_hconf.c' l='139' u='c' c='arg_trimdomain_list'/>
+<use f='codebrowser/resolv/res_hconf.c' l='175' u='c' c='arg_bool'/>
+<use f='codebrowser/resolv/res_hconf.c' l='219' u='c' c='parse_line'/>
+<use f='codebrowser/resolv/res_hconf.c' l='251' u='c' c='parse_line'/>
+<def f='codebrowser/stdio-common/asprintf.c' l='38' macro='1' type='int __asprintf(char ** , const char * )'/>
+<use f='codebrowser/stdio-common/psignal.c' l='43' u='c' c='psignal'/>
+<use f='codebrowser/string/strerror_l.c' l='45' u='c' c='__strerror_l'/>
+<use f='codebrowser/string/strsignal.c' l='39' u='c' c='strsignal'/>
+<use f='codebrowser/string/strsignal.c' l='43' u='c' c='strsignal'/>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='80' u='c' c='__GI_clnt_sperror'/>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='85' u='c' c='__GI_clnt_sperror'/>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='91' u='c' c='__GI_clnt_sperror'/>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='99' u='c' c='__GI_clnt_sperror'/>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='101' u='c' c='__GI_clnt_sperror'/>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='107' u='c' c='__GI_clnt_sperror'/>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='113' u='c' c='__GI_clnt_sperror'/>
+<use f='codebrowser/sunrpc/clnt_perr.c' l='302' u='c' c='__GI_clnt_spcreateerror'/>
+<use f='codebrowser/sunrpc/svc_simple.c' l='72' u='c' c='__registerrpc'/>
+<use f='codebrowser/sunrpc/svc_simple.c' l='90' u='c' c='__registerrpc'/>
+<use f='codebrowser/sunrpc/svc_simple.c' l='161' u='c' c='universal'/>
+<use f='codebrowser/sunrpc/svc_simple.c' l='170' u='c' c='universal'/>
+<use f='codebrowser/time/tzfile.c' l='147' u='c' c='__tzfile_read'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/include/shm-directory.h' l='32' type='char[269]'/>
+<use f='codebrowser/posix/shm-directory.c' l='35' u='r' c='__shm_get_name'/>
+<use f='codebrowser/posix/shm-directory.c' l='35' u='r' c='__shm_get_name'/>
+<offset>0</offset>
+<doc f='codebrowser/include/shm-directory.h' l='30'>/* The combined prefix/name.  The sizeof includes the terminating
+     NUL byte.  4 bytes are needed for the optional &quot;sem.&quot; prefix.  */</doc>
+<use f='codebrowser/rt/shm_open.c' l='40' u='r' c='__shm_open'/>
+<use f='codebrowser/rt/shm_unlink.c' l='36' u='r' c='__shm_unlink'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='67' u='r' c='__sem_open'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='167' u='r' c='__sem_open'/>
+<use f='codebrowser/sysdeps/pthread/sem_unlink.c' l='42' u='r' c='__sem_unlink'/>

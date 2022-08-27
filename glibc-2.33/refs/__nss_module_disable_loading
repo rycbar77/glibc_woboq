@@ -1,0 +1,5 @@
+<dec f='codebrowser/nss/nss_module.h' l='91' type='void __nss_module_disable_loading()'/>
+<doc f='codebrowser/nss/nss_module.h' l='90'>/* Block attempts to dlopen any module we haven&apos;t already opened.  */</doc>
+<use f='codebrowser/nss/nss_database.c' l='404' u='c' c='nss_database_check_reload_and_get'/>
+<def f='codebrowser/nss/nss_module.c' l='353' ll='363' type='void __nss_module_disable_loading()'/>
+<doc f='codebrowser/nss/nss_module.c' l='352'>/* Block attempts to dlopen any module we haven&apos;t already opened.  */</doc>

@@ -1,0 +1,22 @@
+<dec f='codebrowser/resolv/bits/types/res_state.h' l='36' type='int'/>
+<offset>3968</offset>
+<doc f='codebrowser/resolv/bits/types/res_state.h' l='36'>/* last one set for this context */</doc>
+<use f='codebrowser/resolv/res_hostalias.c' l='30' macro='1' u='w' c='context_hostalias_common'/>
+<use f='codebrowser/resolv/res_query.c' l='202' macro='1' u='w' c='__res_context_query'/>
+<use f='codebrowser/resolv/res_query.c' l='214' macro='1' u='w' c='__res_context_query'/>
+<use f='codebrowser/resolv/res_query.c' l='249' macro='1' u='w' c='__res_context_query'/>
+<use f='codebrowser/resolv/res_query.c' l='252' macro='1' u='w' c='__res_context_query'/>
+<use f='codebrowser/resolv/res_query.c' l='258' macro='1' u='w' c='__res_context_query'/>
+<use f='codebrowser/resolv/res_query.c' l='271' macro='1' u='w' c='__res_context_query'/>
+<use f='codebrowser/resolv/res_query.c' l='289' macro='1' u='w' c='context_query_common'/>
+<use f='codebrowser/resolv/res_query.c' l='350' macro='1' u='w' c='__res_context_search'/>
+<use f='codebrowser/resolv/res_query.c' l='461' macro='1' u='w' c='__res_context_search'/>
+<use f='codebrowser/resolv/res_query.c' l='465' u='r' c='__res_context_search'/>
+<use f='codebrowser/resolv/res_query.c' l='522' macro='1' u='w' c='__res_context_search'/>
+<use f='codebrowser/resolv/res_query.c' l='524' macro='1' u='w' c='__res_context_search'/>
+<use f='codebrowser/resolv/res_query.c' l='526' macro='1' u='w' c='__res_context_search'/>
+<use f='codebrowser/resolv/res_query.c' l='539' macro='1' u='w' c='context_search_common'/>
+<use f='codebrowser/resolv/res_query.c' l='602' macro='1' u='w' c='__res_context_querydomain'/>
+<use f='codebrowser/resolv/res_query.c' l='610' macro='1' u='w' c='__res_context_querydomain'/>
+<use f='codebrowser/resolv/res_query.c' l='631' macro='1' u='w' c='context_querydomain_common'/>
+<use f='codebrowser/resolv/res_send.c' l='438' macro='1' u='w' c='context_send_common'/>

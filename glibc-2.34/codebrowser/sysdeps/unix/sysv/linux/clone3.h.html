@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>clone3.h source code [codebrowser/sysdeps/unix/sysv/linux/clone3.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="clone_args "/>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/clone3.h'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>unix</a>/<a href='..'>sysv</a>/<a href='./'>linux</a>/<a href='clone3.h.html'>clone3.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* The wrapper of clone3.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library.  If not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/_CLONE3_H">_CLONE3_H</span></u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/_CLONE3_H" data-ref="_M/_CLONE3_H">_CLONE3_H</dfn>	1</u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../../../../include/features.h.html">&lt;features.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include &lt;stddef.h&gt;</u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../../../../include/bits/types.h.html">&lt;bits/types.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><a class="macro" href="../../../../misc/sys/cdefs.h.html#135" title="" data-ref="_M/__BEGIN_DECLS">__BEGIN_DECLS</a></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><i>/* The unsigned 64-bit and 8-byte aligned integer type.  */</i></td></tr>
+<tr><th id="29">29</th><td><b>typedef</b> <a class="macro" href="../../../../posix/bits/types.h.html#135" title="unsigned long int" data-ref="_M/__U64_TYPE">__U64_TYPE</a> <dfn class="typedef" id="__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</dfn> <b>__attribute__</b> ((__aligned__ (<var>8</var>)));</td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><i>/* This struct should only be used in an argument to the clone3 system</i></td></tr>
+<tr><th id="32">32</th><td><i>   call (along with its size argument).  It may be extended with new</i></td></tr>
+<tr><th id="33">33</th><td><i>   fields in the future.  */</i></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><b>struct</b> <dfn class="type def" id="clone_args" title='clone_args' data-ref="clone_args" data-ref-filename="clone_args">clone_args</dfn></td></tr>
+<tr><th id="36">36</th><td>{</td></tr>
+<tr><th id="37">37</th><td>  <i>/* Flags bit mask.  */</i></td></tr>
+<tr><th id="38">38</th><td>  <a class="typedef" href="#__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</a> <dfn class="decl field" id="clone_args::flags" title='clone_args::flags' data-ref="clone_args::flags" data-ref-filename="clone_args..flags">flags</dfn>;</td></tr>
+<tr><th id="39">39</th><td>  <i>/* Where to store PID file descriptor (pid_t *).  */</i></td></tr>
+<tr><th id="40">40</th><td>  <a class="typedef" href="#__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</a> <dfn class="decl field" id="clone_args::pidfd" title='clone_args::pidfd' data-ref="clone_args::pidfd" data-ref-filename="clone_args..pidfd">pidfd</dfn>;</td></tr>
+<tr><th id="41">41</th><td>  <i>/* Where to store child TID, in child's memory (pid_t *).  */</i></td></tr>
+<tr><th id="42">42</th><td>  <a class="typedef" href="#__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</a> <dfn class="decl field" id="clone_args::child_tid" title='clone_args::child_tid' data-ref="clone_args::child_tid" data-ref-filename="clone_args..child_tid">child_tid</dfn>;</td></tr>
+<tr><th id="43">43</th><td>  <i>/* Where to store child TID, in parent's memory (int *). */</i></td></tr>
+<tr><th id="44">44</th><td>  <a class="typedef" href="#__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</a> <dfn class="decl field" id="clone_args::parent_tid" title='clone_args::parent_tid' data-ref="clone_args::parent_tid" data-ref-filename="clone_args..parent_tid">parent_tid</dfn>;</td></tr>
+<tr><th id="45">45</th><td>  <i>/* Signal to deliver to parent on child termination */</i></td></tr>
+<tr><th id="46">46</th><td>  <a class="typedef" href="#__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</a> <dfn class="decl field" id="clone_args::exit_signal" title='clone_args::exit_signal' data-ref="clone_args::exit_signal" data-ref-filename="clone_args..exit_signal">exit_signal</dfn>;</td></tr>
+<tr><th id="47">47</th><td>  <i>/* The lowest address of stack.  */</i></td></tr>
+<tr><th id="48">48</th><td>  <a class="typedef" href="#__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</a> <dfn class="decl field" id="clone_args::stack" title='clone_args::stack' data-ref="clone_args::stack" data-ref-filename="clone_args..stack">stack</dfn>;</td></tr>
+<tr><th id="49">49</th><td>  <i>/* Size of stack.  */</i></td></tr>
+<tr><th id="50">50</th><td>  <a class="typedef" href="#__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</a> <dfn class="decl field" id="clone_args::stack_size" title='clone_args::stack_size' data-ref="clone_args::stack_size" data-ref-filename="clone_args..stack_size">stack_size</dfn>;</td></tr>
+<tr><th id="51">51</th><td>  <i>/* Location of new TLS.  */</i></td></tr>
+<tr><th id="52">52</th><td>  <a class="typedef" href="#__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</a> <dfn class="decl field" id="clone_args::tls" title='clone_args::tls' data-ref="clone_args::tls" data-ref-filename="clone_args..tls">tls</dfn>;</td></tr>
+<tr><th id="53">53</th><td>  <i>/* Pointer to a pid_t array (since Linux 5.5).  */</i></td></tr>
+<tr><th id="54">54</th><td>  <a class="typedef" href="#__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</a> <dfn class="decl field" id="clone_args::set_tid" title='clone_args::set_tid' data-ref="clone_args::set_tid" data-ref-filename="clone_args..set_tid">set_tid</dfn>;</td></tr>
+<tr><th id="55">55</th><td>  <i>/* Number of elements in set_tid (since Linux 5.5). */</i></td></tr>
+<tr><th id="56">56</th><td>  <a class="typedef" href="#__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</a> <dfn class="decl field" id="clone_args::set_tid_size" title='clone_args::set_tid_size' data-ref="clone_args::set_tid_size" data-ref-filename="clone_args..set_tid_size">set_tid_size</dfn>;</td></tr>
+<tr><th id="57">57</th><td>  <i>/* File descriptor for target cgroup of child (since Linux 5.7).  */</i></td></tr>
+<tr><th id="58">58</th><td>  <a class="typedef" href="#__aligned_uint64_t" title='__aligned_uint64_t' data-type='unsigned long' data-ref="__aligned_uint64_t" data-ref-filename="__aligned_uint64_t">__aligned_uint64_t</a> <dfn class="decl field" id="clone_args::cgroup" title='clone_args::cgroup' data-ref="clone_args::cgroup" data-ref-filename="clone_args..cgroup">cgroup</dfn>;</td></tr>
+<tr><th id="59">59</th><td>};</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><i>/* The wrapper of clone3.  */</i></td></tr>
+<tr><th id="62">62</th><td><b>extern</b> <em>int</em> <dfn class="decl fn" id="clone3" title='clone3' data-ref="clone3" data-ref-filename="clone3">clone3</dfn> (<b>struct</b> <a class="type" href="#clone_args" title='clone_args' data-ref="clone_args" data-ref-filename="clone_args">clone_args</a> *<dfn class="local col3 decl" id="3__cl_args" title='__cl_args' data-type='struct clone_args *' data-ref="3__cl_args" data-ref-filename="3__cl_args">__cl_args</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col4 decl" id="4__size" title='__size' data-type='size_t' data-ref="4__size" data-ref-filename="4__size">__size</dfn>,</td></tr>
+<tr><th id="63">63</th><td>		   <em>int</em> (*<dfn class="local col5 decl" id="5__func" title='__func' data-type='int (*)(void *)' data-ref="5__func" data-ref-filename="5__func">__func</dfn>) (<em>void</em> *<dfn class="local col6 decl" id="6__arg" title='__arg' data-type='void *' data-ref="6__arg" data-ref-filename="6__arg">__arg</dfn>), <em>void</em> *<dfn class="local col7 decl" id="7__arg" title='__arg' data-type='void *' data-ref="7__arg" data-ref-filename="7__arg">__arg</dfn>);</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><a class="macro" href="../../../../misc/sys/cdefs.h.html#136" title="" data-ref="_M/__END_DECLS">__END_DECLS</a></td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><u>#<span data-ppcond="19">endif</span> /* clone3.h */</u></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../../../nptl/pthread_create.c.html'>codebrowser/nptl/pthread_create.c</a><br/>Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

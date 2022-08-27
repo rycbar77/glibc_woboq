@@ -1,0 +1,8 @@
+<dec f='codebrowser/sunrpc/rpc/des_crypt.h' l='85' type='int ecb_crypt(char * __key, char * __buf, unsigned int __len, unsigned int __mode)'/>
+<dec f='codebrowser/include/rpc/des_crypt.h' l='10' type='int ecb_crypt(char * , char * , unsigned int , unsigned int )'/>
+<use f='codebrowser/include/rpc/des_crypt.h' l='10' c='ecb_crypt'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='281' u='c' c='authdes_marshal'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='361' u='c' c='authdes_validate'/>
+<doc f='codebrowser/sunrpc/rpc/des_crypt.h' l='82'>/*
+ * Electronic Code Book mode
+ */</doc>

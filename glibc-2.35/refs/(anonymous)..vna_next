@@ -1,0 +1,13 @@
+<dec f='codebrowser/elf/elf.h' l='1110' type='Elf32_Word'/>
+<dec f='codebrowser/elf/elf.h' l='1120' type='Elf64_Word'/>
+<offset>96</offset>
+<doc f='codebrowser/elf/elf.h' l='1110'>/* Offset in bytes to next vernaux
+					   entry */</doc>
+<doc f='codebrowser/elf/elf.h' l='1120'>/* Offset in bytes to next vernaux
+					   entry */</doc>
+<use f='codebrowser/elf/dl-version.c' l='227' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='232' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='309' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/dl-version.c' l='314' u='r' c='_dl_check_map_versions'/>
+<use f='codebrowser/elf/rtld.c' l='2257' u='r' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2263' u='r' c='dl_main'/>

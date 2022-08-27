@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='570' type='const char *'/>
+<use f='codebrowser/elf/dl-cache.c' l='205' macro='1' u='r' c='search_cache'/>
+<use f='codebrowser/elf/dl-load.c' l='328' macro='1' u='r' c='_dl_dst_substitute'/>
+<def f='codebrowser/elf/dl-support.c' l='52' type='const char *'/>
+<use f='codebrowser/elf/dl-support.c' l='276' macro='1' u='w' c='_dl_aux_init'/>
+<use f='codebrowser/elf/dl-support.c' l='403' u='r' c='_dl_non_dynamic_init'/>
+<use f='codebrowser/elf/dl-support.c' l='404' u='r' c='_dl_non_dynamic_init'/>
+<doc f='codebrowser/elf/dl-support.c' l='51'>/* Name of the architecture.  */</doc>
+<use f='codebrowser/sysdeps/x86/cpu-features.c' l='802' macro='1' u='w' c='init_cpu_features'/>

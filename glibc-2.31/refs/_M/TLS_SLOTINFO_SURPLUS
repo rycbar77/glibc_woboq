@@ -1,0 +1,9 @@
+<dec f='codebrowser/sysdeps/generic/ldsodefs.h' l='445'/>
+<doc f='codebrowser/sysdeps/generic/ldsodefs.h' l='442'>/* Number of additional entries in the slotinfo array of each slotinfo
+   list element.  A large number makes it almost certain take we never
+   have to iterate beyond the first element in the slotinfo list.  */</doc>
+<use f='codebrowser/csu/libc-tls.c' l='32' u='c'/>
+<use f='codebrowser/elf/rtld.c' l='711' u='c'/>
+<use f='codebrowser/elf/dl-tls.c' l='918' u='c'/>
+<use f='codebrowser/elf/dl-tls.c' l='935' u='c'/>
+<use f='codebrowser/elf/dl-tls.c' l='938' u='c'/>

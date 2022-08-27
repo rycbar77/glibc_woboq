@@ -1,0 +1,28 @@
+<dec f='codebrowser/sunrpc/rpc/svc.h' l='108' type='const struct xp_ops *'/>
+<offset>64</offset>
+<use f='codebrowser/nis/nis_callback.c' l='123' macro='1' u='r' c='cb_prog_1'/>
+<use f='codebrowser/nis/nis_callback.c' l='155' macro='1' u='r' c='cb_prog_1'/>
+<use f='codebrowser/nis/nis_callback.c' l='169' macro='1' u='r' c='cb_prog_1'/>
+<use f='codebrowser/nis/nis_callback.c' l='185' macro='1' u='r' c='cb_prog_1'/>
+<use f='codebrowser/nis/nis_callback.c' l='330' macro='1' u='r' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='340' macro='1' u='r' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='360' macro='1' u='r' c='__nis_create_callback'/>
+<use f='codebrowser/nis/nis_callback.c' l='373' macro='1' u='r' c='__nis_destroy_callback'/>
+<use f='codebrowser/sunrpc/svc.c' l='262' macro='1' u='r' c='__GI_svc_sendreply'/>
+<use f='codebrowser/sunrpc/svc.c' l='280' macro='1' u='r' c='__GI_svcerr_noproc'/>
+<use f='codebrowser/sunrpc/svc.c' l='298' macro='1' u='r' c='__GI_svcerr_decode'/>
+<use f='codebrowser/sunrpc/svc.c' l='316' macro='1' u='r' c='__GI_svcerr_systemerr'/>
+<use f='codebrowser/sunrpc/svc.c' l='334' macro='1' u='r' c='__GI_svcerr_auth'/>
+<use f='codebrowser/sunrpc/svc.c' l='356' macro='1' u='r' c='__GI_svcerr_noprog'/>
+<use f='codebrowser/sunrpc/svc.c' l='373' macro='1' u='r' c='__GI_svcerr_progvers'/>
+<use f='codebrowser/sunrpc/svc.c' l='474' macro='1' u='r' c='__GI_svc_getreq_common'/>
+<use f='codebrowser/sunrpc/svc.c' l='537' macro='1' u='r' c='__GI_svc_getreq_common'/>
+<use f='codebrowser/sunrpc/svc.c' l='539' macro='1' u='r' c='__GI_svc_getreq_common'/>
+<use f='codebrowser/sunrpc/svc_raw.c' l='83' u='w' c='__GI_svcraw_create'/>
+<use f='codebrowser/sunrpc/svc_simple.c' l='150' macro='1' u='r' c='universal'/>
+<use f='codebrowser/sunrpc/svc_simple.c' l='167' macro='1' u='r' c='universal'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='199' u='w' c='__GI_svctcp_create'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='245' u='w' c='makefd_xprt'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='173' u='w' c='__GI_svcudp_bufcreate'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='196' u='w' c='__GI_svcunix_create'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='238' u='w' c='makefd_xprt'/>

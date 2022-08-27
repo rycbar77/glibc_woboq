@@ -1,0 +1,20 @@
+<dec f='codebrowser/resolv/netdb.h' l='574' type='struct addrinfo *'/>
+<offset>320</offset>
+<doc f='codebrowser/resolv/netdb.h' l='574'>/* Pointer to next in list.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='194' u='r' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='211' u='r' c='rcmd_af'/>
+<use f='codebrowser/inet/rcmd.c' l='449' u='r' c='ruserok_af'/>
+<use f='codebrowser/inet/rcmd.c' l='687' u='r' c='__checkhost_sa'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='81' u='r' c='format_ai_flags'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='87' u='r' c='format_ai_flags'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='103' u='r' c='format_ai_canonname'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='109' u='r' c='format_ai_canonname'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='208' u='r' c='format_ai_family'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='153' u='w'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1065' u='w' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1088' u='a' c='gaih_inet'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2251' u='a' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2297' u='r' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2456' u='w' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2457' u='w' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2488' u='r' c='freeaddrinfo'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/iconv/gconv_int.h' l='209' type='void __gconv_release_step(struct __gconv_step * step)'/>
+<doc f='codebrowser/iconv/gconv_int.h' l='208'>/* Free data associated with a step&apos;s structure.  */</doc>
+<use f='codebrowser/iconv/gconv_cache.c' l='426' u='c' c='__gconv_lookup_cache'/>
+<def f='codebrowser/iconv/gconv_db.c' l='203' ll='226' type='void __gconv_release_step(struct __gconv_step * step)'/>
+<use f='codebrowser/iconv/gconv_db.c' l='344' u='c' c='gen_steps'/>
+<use f='codebrowser/iconv/gconv_db.c' l='391' u='c' c='increment_counter'/>
+<use f='codebrowser/iconv/gconv_db.c' l='794' u='c' c='__gconv_close_transform'/>
+<doc f='codebrowser/iconv/gconv_db.c' l='202'>/* Decrement the reference count for a single step in a steps array.  */</doc>
+<use f='codebrowser/libio/iofclose.c' l='65' u='c' c='_IO_new_fclose'/>
+<use f='codebrowser/libio/iofclose.c' l='66' u='c' c='_IO_new_fclose'/>

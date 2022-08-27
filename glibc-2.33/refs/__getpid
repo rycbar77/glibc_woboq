@@ -1,0 +1,26 @@
+<dec f='codebrowser/include/unistd.h' l='111' type='__pid_t __getpid()'/>
+<dec f='codebrowser/include/unistd.h' l='112' type='__pid_t __getpid()'/>
+<use f='codebrowser/include/unistd.h' l='112' c='__getpid'/>
+<dec f='codebrowser/sysdeps/generic/dl-unistd.h' l='24' type='__pid_t __getpid()'/>
+<use f='codebrowser/sysdeps/generic/dl-unistd.h' l='24' c='__getpid'/>
+<use f='codebrowser/elf/dl-misc.c' l='97' u='c' c='_dl_debug_vdprintf'/>
+<use f='codebrowser/elf/rtld.c' l='2869' u='c' c='process_envvars'/>
+<use f='codebrowser/gmon/gmon.c' l='364' u='c' c='write_gmon'/>
+<use f='codebrowser/inet/bindresvport.c' l='75' u='c' c='bindresvport'/>
+<use f='codebrowser/inet/rcmd.c' l='131' u='c' c='rcmd_af'/>
+<use f='codebrowser/io/lockf64.c' l='44' u='c' c='__lockf64'/>
+<use f='codebrowser/nptl/nptl-init.c' l='133' u='c' c='sigcancel_handler'/>
+<use f='codebrowser/nptl/nptl-init.c' l='186' u='c' c='sighandler_setxid'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='68' u='c' c='__pthread_cancel'/>
+<use f='codebrowser/nptl/allocatestack.c' l='1030' u='c' c='setxid_signal_thread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/createthread.c' l='132' u='c' c='create_thread'/>
+<use f='codebrowser/posix/wordexp.c' l='1418' u='c' c='parse_param'/>
+<use f='codebrowser/resolv/res_randomid.c' l='90' u='c' c='__res_randomid'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='497' u='c' c='__msgwrite'/>
+<use f='codebrowser/sunrpc/key_call.c' l='421' u='c' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='469' u='c' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='386' u='c' c='__msgwrite'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/pthread_kill.c' l='51' u='c' c='__pthread_kill'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/sigqueue.c' l='36' u='c' c='__sigqueue'/>
+<use f='codebrowser/misc/syslog.c' l='203' u='c' c='__vsyslog_internal'/>
+<use f='codebrowser/misc/syslog.c' l='235' u='c' c='__vsyslog_internal'/>

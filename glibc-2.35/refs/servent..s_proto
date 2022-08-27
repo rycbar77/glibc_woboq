@@ -1,0 +1,12 @@
+<dec f='codebrowser/resolv/netdb.h' l='260' type='char *'/>
+<offset>192</offset>
+<doc f='codebrowser/resolv/netdb.h' l='260'>/* Protocol to use.  */</doc>
+<use f='codebrowser/nss/nss_files/files-service.c' l='46' u='r' c='_nss_db_getservbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='61' u='r' c='_nss_db_getservbyport_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='43' u='w' c='_nss_files_parse_servent'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='110' u='r' c='lookup'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='233' u='w' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/nscd_getserv_r.c' l='331' u='r' c='nscd_getserv_r'/>
+<use f='codebrowser/nscd/servicescache.c' l='158' u='r' c='cache_addserv'/>
+<use f='codebrowser/nscd/servicescache.c' l='220' u='r' c='cache_addserv'/>
+<use f='codebrowser/nss/getent.c' l='754' u='r' c='print_services'/>

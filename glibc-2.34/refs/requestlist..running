@@ -1,0 +1,41 @@
+<dec f='codebrowser/resolv/gai_misc.h' l='46' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/resolv/gai_misc.c' l='199' u='r' c='__gai_remove_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='238' u='w' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='259' u='w' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='287' u='w' c='__gai_enqueue_request'/>
+<use f='codebrowser/resolv/gai_misc.c' l='347' u='r' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='347' u='r' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='362' u='r' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='385' u='r' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='394' u='r' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='394' u='r' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='395' u='w' c='handle_requests'/>
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='74' type='int'/>
+<use f='codebrowser/rt/aio_cancel.c' l='91' u='r' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='117' u='r' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='142' u='r' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='142' u='r' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='142' u='r' c='__aio_cancel'/>
+<use f='codebrowser/rt/aio_cancel.c' l='142' u='r' c='__aio_cancel'/>
+<offset>0</offset>
+<use f='codebrowser/rt/aio_misc.c' l='178' u='w' c='__aio_free_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='223' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='223' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='224' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='223' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='223' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='224' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='253' u='w' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='256' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='435' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='447' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='474' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='515' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='515' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='612' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='612' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='613' u='w' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='653' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='653' u='r' c='handle_fildes_io'/>
+<use f='codebrowser/rt/aio_misc.c' l='654' u='w' c='handle_fildes_io'/>

@@ -1,0 +1,11 @@
+<def f='include/linux/rtnetlink.h' l='535' ll='537'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_native.c' l='64' c='__check_native'/>
+<size>1</size>
+<doc f='include/linux/rtnetlink.h' l='531'>/****
+ *		General form of address family dependent message.
+ ****/</doc>
+<mbr r='rtgenmsg::rtgen_family' o='0' t='unsigned char'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/check_pf.c' l='117' c='make_request'/>
+<size>1</size>
+<use f='codebrowser/sysdeps/unix/sysv/linux/ifaddrs.c' l='99' c='__netlink_sendreq'/>
+<size>1</size>

@@ -1,0 +1,12 @@
+<def f='codebrowser/include/time.h' l='505' ll='509' type='_Bool valid_nanoseconds(__syscall_slong_t ns)'/>
+<doc f='codebrowser/include/time.h' l='503'>/* Check if a value is in the valid nanoseconds range. Return true if
+   it is, false otherwise.  */</doc>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='636' u='c' c='___pthread_cond_timedwait64'/>
+<use f='codebrowser/nptl/pthread_cond_wait.c' l='677' u='c' c='___pthread_cond_clockwait64'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='223' u='c' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='531' u='c' c='__pthread_mutex_clocklock_common'/>
+<use f='codebrowser/nptl/pthread_rwlock_common.c' l='293' u='c' c='__pthread_rwlock_rdlock_full64'/>
+<use f='codebrowser/nptl/pthread_rwlock_common.c' l='598' u='c' c='__pthread_rwlock_wrlock_full64'/>
+<use f='codebrowser/nptl/sem_clockwait.c' l='37' u='c' c='___sem_clockwait64'/>
+<use f='codebrowser/nptl/sem_timedwait.c' l='29' u='c' c='___sem_timedwait64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock_settime.c' l='29' u='c' c='__clock_settime'/>

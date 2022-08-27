@@ -1,0 +1,8 @@
+<def f='include/selinux/avc.h' l='21' ll='24'/>
+<use f='include/selinux/avc.h' l='25'/>
+<size>16</size>
+<doc f='include/selinux/avc.h' l='18'>/*
+ * SID format and operations
+ */</doc>
+<mbr r='security_id::ctx' o='0' t='char *'/>
+<mbr r='security_id::refcnt' o='64' t='unsigned int'/>

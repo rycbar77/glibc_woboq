@@ -1,0 +1,13 @@
+<dec f='codebrowser/sysdeps/generic/math_private.h' l='65' type='uint32_t'/>
+<dec f='codebrowser/sysdeps/x86_64/fpu/math_ldbl.h' l='32' type='uint32_t'/>
+<offset>0</offset>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_frexpl.c' l='47' macro='1' u='r' c='__frexpl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_modfl.c' l='38' macro='1' u='r' c='__modfl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_modfl.c' l='42' macro='1' u='w' c='__modfl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_modfl.c' l='48' macro='1' u='w' c='__modfl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_modfl.c' l='51' macro='1' u='w' c='__modfl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_modfl.c' l='60' macro='1' u='w' c='__modfl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_modfl.c' l='66' macro='1' u='w' c='__modfl'/>
+<use f='codebrowser/sysdeps/ieee754/ldbl-96/s_modfl.c' l='69' macro='1' u='w' c='__modfl'/>
+<use f='codebrowser/sysdeps/i386/fpu/s_isinfl.c' l='23' macro='1' u='r' c='__isinfl'/>
+<use f='codebrowser/sysdeps/i386/fpu/s_isnanl.c' l='32' macro='1' u='r' c='__isnanl'/>

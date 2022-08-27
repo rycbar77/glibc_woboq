@@ -1,0 +1,4 @@
+<def f='codebrowser/sysdeps/unix/sysv/linux/x86_64/sigcontextinfo.h' l='21' ll='25' type='uintptr_t sigcontext_get_pc(const ucontext_t * ctx)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/profil-counter.h' l='26' u='c' c='__profil_counter_ushort'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/profil-counter.h' l='26' u='c' c='__profil_counter_uint'/>
+<use f='codebrowser/debug/segfault.c' l='104' u='c' c='catch_segfault'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/include/sys/socket.h' l='60' type='int __connect(int __fd, __CONST_SOCKADDR_ARG __addr, socklen_t __len)'/>
+<dec f='codebrowser/include/sys/socket.h' l='61' type='int __connect(int , __CONST_SOCKADDR_ARG , socklen_t )'/>
+<use f='codebrowser/include/sys/socket.h' l='61' c='__connect'/>
+<use f='codebrowser/inet/rcmd.c' l='184' u='c' c='rcmd_af'/>
+<use f='codebrowser/inet/rexec.c' l='95' u='c' c='rexec_af'/>
+<use f='codebrowser/nscd/nscd_helper.c' l='183' u='c' c='open_socket'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='153' u='c' c='__GI_clnttcp_create'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='139' u='c' c='__GI_clntunix_create'/>
+<use f='codebrowser/sunrpc/pm_getport.c' l='69' u='c' c='__get_socket'/>
+<use f='codebrowser/sunrpc/rtime.c' l='125' u='c' c='__GI_rtime'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2406' u='c' c='getaddrinfo'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='2411' u='c' c='getaddrinfo'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/connect.c' l='32' macro='1' type='int __connect(int , __CONST_SOCKADDR_ARG , socklen_t )'/>
+<use f='codebrowser/misc/syslog.c' l='356' u='c' c='openlog_internal'/>

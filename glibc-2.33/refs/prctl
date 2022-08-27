@@ -1,0 +1,5 @@
+<dec f='codebrowser/sysdeps/unix/sysv/linux/sys/prctl.h' l='45' type='int prctl(int __option)'/>
+<use f='codebrowser/nptl/pthread_getname.c' l='42' u='c' c='pthread_getname_np'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/sys/prctl.h' l='44'>/* Control process execution.  */</doc>
+<use f='codebrowser/nptl/pthread_setname.c' l='43' u='c' c='pthread_setname_np'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/prctl.c' l='42' macro='1' type='int prctl(int )'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='76' type='struct requestlist *'/>
+<offset>64</offset>
+<use f='codebrowser/rt/aio_misc.c' l='231' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='232' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='236' u='w' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='236' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='240' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='241' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='246' u='w' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='248' u='w' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='248' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='400' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='403' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='409' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='412' u='w' c='__aio_enqueue_request'/>

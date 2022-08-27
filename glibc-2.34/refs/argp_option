@@ -1,0 +1,64 @@
+<def f='codebrowser/argp/argp.h' l='43' ll='74'/>
+<use f='codebrowser/argp/argp.h' l='186'/>
+<use f='codebrowser/argp/argp.h' l='495' c='_option_is_short'/>
+<use f='codebrowser/argp/argp.h' l='496' c='__option_is_short'/>
+<use f='codebrowser/argp/argp.h' l='500' c='_option_is_end'/>
+<use f='codebrowser/argp/argp.h' l='501' c='__option_is_end'/>
+<use f='codebrowser/argp/argp.h' l='532' c='__option_is_short'/>
+<use f='codebrowser/argp/argp.h' l='544' c='__option_is_end'/>
+<size>48</size>
+<doc f='codebrowser/argp/argp.h' l='38'>/* A description of a particular option.  A pointer to an array of
+   these is passed in the OPTIONS field of an argp structure.  Each option
+   entry can correspond to one long option and/or one short option; more
+   names for the same option can be added by following an entry in an option
+   array with options having the OPTION_ALIAS flag set.  */</doc>
+<mbr r='argp_option::name' o='0' t='const char *'/>
+<mbr r='argp_option::key' o='64' t='int'/>
+<mbr r='argp_option::arg' o='128' t='const char *'/>
+<mbr r='argp_option::flags' o='192' t='int'/>
+<mbr r='argp_option::doc' o='256' t='const char *'/>
+<mbr r='argp_option::group' o='320' t='int'/>
+<use f='codebrowser/argp/argp-help.c' l='360'/>
+<use f='codebrowser/argp/argp-help.c' l='437' c='make_hol'/>
+<use f='codebrowser/argp/argp-help.c' l='438' c='make_hol'/>
+<use f='codebrowser/argp/argp-help.c' l='555' c='hol_entry_short_iterate'/>
+<use f='codebrowser/argp/argp-help.c' l='556' c='hol_entry_short_iterate'/>
+<use f='codebrowser/argp/argp-help.c' l='562' c='hol_entry_short_iterate'/>
+<use f='codebrowser/argp/argp-help.c' l='562' c='hol_entry_short_iterate'/>
+<use f='codebrowser/argp/argp-help.c' l='584' c='hol_entry_long_iterate'/>
+<use f='codebrowser/argp/argp-help.c' l='585' c='hol_entry_long_iterate'/>
+<use f='codebrowser/argp/argp-help.c' l='591' c='hol_entry_long_iterate'/>
+<use f='codebrowser/argp/argp-help.c' l='591' c='hol_entry_long_iterate'/>
+<use f='codebrowser/argp/argp-help.c' l='607' c='until_short'/>
+<use f='codebrowser/argp/argp-help.c' l='607' c='until_short'/>
+<use f='codebrowser/argp/argp-help.c' l='625' c='hol_entry_first_long'/>
+<use f='codebrowser/argp/argp-help.c' l='643' c='hol_find_entry'/>
+<use f='codebrowser/argp/argp-help.c' l='979' c='hol_append'/>
+<use f='codebrowser/argp/argp-help.c' l='1064' c='arg'/>
+<use f='codebrowser/argp/argp-help.c' l='1214' c='hol_entry_help'/>
+<use f='codebrowser/argp/argp-help.c' l='1214' c='hol_entry_help'/>
+<use f='codebrowser/argp/argp-help.c' l='1371' c='add_argless_short_opt'/>
+<use f='codebrowser/argp/argp-help.c' l='1372' c='add_argless_short_opt'/>
+<use f='codebrowser/argp/argp-help.c' l='1385' c='usage_argful_short_opt'/>
+<use f='codebrowser/argp/argp-help.c' l='1386' c='usage_argful_short_opt'/>
+<use f='codebrowser/argp/argp-help.c' l='1417' c='usage_long_opt'/>
+<use f='codebrowser/argp/argp-help.c' l='1418' c='usage_long_opt'/>
+<size>48</size>
+<use f='codebrowser/argp/argp-parse.c' l='99'/>
+<use f='codebrowser/argp/argp-parse.c' l='165'/>
+<use f='codebrowser/argp/argp-parse.c' l='318' c='convert_options'/>
+<use f='codebrowser/argp/argp-parse.c' l='323' c='convert_options'/>
+<use f='codebrowser/argp/argp-parse.c' l='457' c='calc_sizes'/>
+<size>48</size>
+<use f='codebrowser/catgets/gencat.c' l='107'/>
+<size>48</size>
+<use f='codebrowser/debug/pcprofiledump.c' l='51'/>
+<size>48</size>
+<use f='codebrowser/iconv/iconv_prog.c' l='58'/>
+<size>48</size>
+<use f='codebrowser/iconv/iconvconfig.c' l='125'/>
+<size>48</size>
+<use f='codebrowser/locale/programs/locale.c' l='68'/>
+<size>48</size>
+<use f='codebrowser/locale/programs/localedef.c' l='114'/>
+<size>48</size>

@@ -1,0 +1,28 @@
+<dec f='codebrowser/sunrpc/rpc/auth.h' l='103' type='struct auth_ops *'/>
+<offset>448</offset>
+<use f='codebrowser/nis/nis_call.c' l='64' macro='1' u='r' c='__nisbind_destroy'/>
+<use f='codebrowser/nis/nis_call.c' l='76' macro='1' u='r' c='__nisbind_next'/>
+<use f='codebrowser/nis/nis_findserv.c' l='152' macro='1' u='r' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/nis/nis_findserv.c' l='191' macro='1' u='r' c='__nis_findfastest_with_timeout'/>
+<use f='codebrowser/nis/ypclnt.c' l='1024' macro='1' u='r' c='__GI_yp_update'/>
+<use f='codebrowser/sunrpc/auth_des.c' l='192' u='w' c='__GI_authdes_pk_create'/>
+<use f='codebrowser/sunrpc/auth_none.c' l='83' u='w' c='authnone_create_once'/>
+<use f='codebrowser/sunrpc/auth_unix.c' l='118' u='w' c='__GI_authunix_create'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='155' macro='1' u='r' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='183' macro='1' u='r' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='190' macro='1' u='r' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_raw.c' l='196' macro='1' u='r' c='clntraw_call'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='255' macro='1' u='r' c='clnttcp_call'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='304' macro='1' u='r' c='clnttcp_call'/>
+<use f='codebrowser/sunrpc/clnt_tcp.c' l='324' macro='1' u='r' c='clnttcp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='339' macro='1' u='r' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='499' macro='1' u='r' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='514' macro='1' u='r' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='234' macro='1' u='r' c='clntunix_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='281' macro='1' u='r' c='clntunix_call'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='301' macro='1' u='r' c='clntunix_call'/>
+<use f='codebrowser/sunrpc/key_call.c' l='421' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='432' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='444' macro='1' u='r' c='getkeyserv_handle'/>
+<use f='codebrowser/sunrpc/key_call.c' l='571' macro='1' u='r' c='__rpc_thread_key_cleanup'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='389' macro='1' u='r' c='__GI_clnt_broadcast'/>

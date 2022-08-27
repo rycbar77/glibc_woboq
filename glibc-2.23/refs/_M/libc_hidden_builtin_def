@@ -1,0 +1,30 @@
+<dec f='codebrowser/include/libc-symbols.h' l='673'/>
+<use f='codebrowser/sysdeps/x86_64/ffs.c' l='39' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/memchr.S' l='311' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/memcmp.S' l='358' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/memcpy.S' l='578' u='c'/>
+<use f='codebrowser/string/memmove.c' l='114' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/mempcpy.S' l='8' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/memset.S' l='126' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strcpy.S' l='86' u='w'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/strcpy.S' l='90'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/stpcpy.S' l='9' u='c'/>
+<doc f='codebrowser/sysdeps/x86_64/multiarch/strcpy.S' l='87'>/* It doesn&apos;t make sense to send libc-internal strcpy calls through a PLT.
+   The speedup we get from using SSSE3 instruction is likely eaten away
+   by the indirect call in the PLT.  */</doc>
+<use f='codebrowser/sysdeps/x86_64/strcmp.S' l='2267' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strcmp.S' l='201' u='w'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/strcmp.S' l='205'/>
+<doc f='codebrowser/sysdeps/x86_64/multiarch/strcmp.S' l='202'>/* It doesn&apos;t make sense to send libc-internal strcmp calls through a PLT.
+   The speedup we get from using SSE4.2 instruction is likely eaten away
+   by the indirect call in the PLT.  */</doc>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strcat.S' l='72' u='w'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strchr.S' l='49' u='w'/>
+<use f='codebrowser/sysdeps/x86_64/strcspn.S' l='125' u='c'/>
+<use f='codebrowser/string/strncpy.c' l='34' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/strspn.S' l='115' u='c'/>
+<use f='codebrowser/string/strstr.c' l='90' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/rawmemchr.S' l='207' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/strlen.S' l='239' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/strnlen.S' l='6' u='c'/>
+<use f='codebrowser/sysdeps/x86_64/strrchr.S' l='228' u='c'/>

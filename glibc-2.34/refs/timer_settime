@@ -1,0 +1,4 @@
+<dec f='codebrowser/time/time.h' l='340' type='int timer_settime(timer_t __timerid, int __flags, const struct itimerspec *restrict __value, struct itimerspec *restrict __ovalue)'/>
+<use f='codebrowser/support/support_create_timer.c' l='54' u='c' c='support_create_timer'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_settime.c' l='110' c='__timer_settime_new'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/timer_settime.c' l='122' macro='1' type='int timer_settime(timer_t , int , const struct itimerspec * , struct itimerspec * )'/>

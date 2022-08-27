@@ -1,0 +1,7 @@
+<dec f='codebrowser/support/timespec.h' l='52' type='time_t support_timespec_ns(struct timespec time)'/>
+<def f='codebrowser/support/timespec.c' l='65' ll='74' type='time_t support_timespec_ns(struct timespec time)'/>
+<use f='codebrowser/support/timespec.c' l='112' u='c' c='support_timespec_check_in_range'/>
+<use f='codebrowser/support/timespec.c' l='115' u='c' c='support_timespec_check_in_range'/>
+<doc f='codebrowser/support/timespec.c' l='62'>/* Convert TIME to nanoseconds stored in a time_t.
+   Returns time_t maximum or minimum if the conversion overflows
+   or underflows, respectively.  */</doc>

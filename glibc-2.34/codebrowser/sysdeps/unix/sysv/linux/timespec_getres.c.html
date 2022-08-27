@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>timespec_getres.c source code [codebrowser/sysdeps/unix/sysv/linux/timespec_getres.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/sysdeps/unix/sysv/linux/timespec_getres.c'; var root_path = '../../../../..'; var data_path = '../../../../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../../..'>codebrowser</a>/<a href='../../..'>sysdeps</a>/<a href='../..'>unix</a>/<a href='..'>sysv</a>/<a href='./'>linux</a>/<a href='timespec_getres.c.html'>timespec_getres.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Get resolution of a time base.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="../../../../include/time.h.html">&lt;time.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><i>/* Set TS to resolution of time base BASE.  */</i></td></tr>
+<tr><th id="22">22</th><td><em>int</em></td></tr>
+<tr><th id="23">23</th><td><a class="macro" href="../../../../include/time.h.html#320" title="__timespec_getres" data-ref="_M/__timespec_getres64">__timespec_getres64</a> (<b>struct</b> <a class="macro" href="../../../../include/struct___timespec64.h.html#5" title="timespec" data-ref="_M/__timespec64">__timespec64</a> *<dfn class="local col1 decl" id="1ts" title='ts' data-type='struct timespec *' data-ref="1ts" data-ref-filename="1ts">ts</dfn>, <em>int</em> <dfn class="local col2 decl" id="2base" title='base' data-type='int' data-ref="2base" data-ref-filename="2base">base</dfn>)</td></tr>
+<tr><th id="24">24</th><td>{</td></tr>
+<tr><th id="25">25</th><td>  <b>if</b> (<a class="local col2 ref" href="#2base" title='base' data-ref="2base" data-ref-filename="2base">base</a> == <a class="macro" href="../../../../time/time.h.html#65" title="1" data-ref="_M/TIME_UTC">TIME_UTC</a>)</td></tr>
+<tr><th id="26">26</th><td>    {</td></tr>
+<tr><th id="27">27</th><td>      <a class="macro" href="../../../../include/time.h.html#173" title="__clock_getres" data-ref="_M/__clock_getres64">__clock_getres64</a> (<a class="macro" href="bits/time.h.html#46" title="0" data-ref="_M/CLOCK_REALTIME">CLOCK_REALTIME</a>, <a class="local col1 ref" href="#1ts" title='ts' data-ref="1ts" data-ref-filename="1ts">ts</a>);</td></tr>
+<tr><th id="28">28</th><td>      <b>return</b> <a class="local col2 ref" href="#2base" title='base' data-ref="2base" data-ref-filename="2base">base</a>;</td></tr>
+<tr><th id="29">29</th><td>    }</td></tr>
+<tr><th id="30">30</th><td>  <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="31">31</th><td>}</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="33">if</span> <a class="macro" href="x86/bits/timesize.h.html#24" title="64" data-ref="_M/__TIMESIZE">__TIMESIZE</a> != 64</u></td></tr>
+<tr><th id="34">34</th><td>libc_hidden_def (__timespec_getres64)</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><em>int</em></td></tr>
+<tr><th id="37">37</th><td>__timespec_getres (<b>struct</b> timespec *ts, <em>int</em> base)</td></tr>
+<tr><th id="38">38</th><td>{</td></tr>
+<tr><th id="39">39</th><td>  <em>int</em> ret;</td></tr>
+<tr><th id="40">40</th><td>  <b>struct</b> __timespec64 tp64;</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td>  ret = __timespec_getres64 (&amp;tp64, base);</td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td>  <b>if</b> (ret == TIME_UTC &amp;&amp; ts != NULL)</td></tr>
+<tr><th id="45">45</th><td>    *ts = valid_timespec64_to_timespec (tp64);</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td>  <b>return</b> ret;</td></tr>
+<tr><th id="48">48</th><td>}</td></tr>
+<tr><th id="49">49</th><td><u>#<span data-ppcond="33">endif</span></u></td></tr>
+<tr><th id="50">50</th><td><a class="macro" href="../../../../include/libc-symbols.h.html#141" title="extern __typeof (__timespec_getres) timespec_getres __attribute__ ((alias (&quot;__timespec_getres&quot;))) ;" data-ref="_M/strong_alias">strong_alias</a> (<a class="ref fn" href="#23" title='__timespec_getres' data-ref="__timespec_getres" data-ref-filename="__timespec_getres">__timespec_getres</a>, <dfn class="decl def fn" id="timespec_getres" title='timespec_getres' data-ref="timespec_getres" data-ref-filename="timespec_getres">timespec_getres</dfn>);</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.34</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/malloc/malloc.c' l='1797'/>
+<use f='codebrowser/malloc/malloc.c' l='1977' u='c'/>
+<use f='codebrowser/malloc/malloc.c' l='5422' u='c'/>
+<doc f='codebrowser/malloc/malloc.c' l='1788'>/*
+   Set value of max_fast.
+   Use impossibly small value if 0.
+   Precondition: there are no existing fastbin chunks in the main arena.
+   Since do_check_malloc_state () checks this, we call malloc_consolidate ()
+   before changing max_fast.  Note other arenas will leak their fast bin
+   entries if max_fast is reduced.
+ */</doc>

@@ -1,0 +1,24 @@
+<dec f='codebrowser/include/programs/xmalloc.h' l='31' type='char * xstrdup(const char * )'/>
+<use f='codebrowser/elf/cache.c' l='641' u='c' c='search_aux_cache'/>
+<use f='codebrowser/elf/readlib.c' l='146' u='c' c='process_file'/>
+<use f='codebrowser/elf/readlib.c' l='194' u='c' c='implicit_soname'/>
+<use f='codebrowser/elf/readelflib.c' l='246' u='c' c='process_elf32_file'/>
+<use f='codebrowser/elf/readelflib.c' l='246' u='c' c='process_elf64_file'/>
+<use f='codebrowser/locale/programs/linereader.c' l='74' u='c' c='lr_create'/>
+<use f='codebrowser/locale/programs/locale.c' l='514' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='595' u='c' c='write_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='673' u='c' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='698' u='c' c='write_archive_locales'/>
+<use f='codebrowser/locale/programs/locale.c' l='746' u='c' c='write_charmaps'/>
+<use f='codebrowser/locale/programs/locale.c' l='758' u='c' c='write_charmaps'/>
+<use f='codebrowser/locale/programs/repertoire.c' l='130' u='c' c='repertoire_read'/>
+<dec f='codebrowser/locale/programs/xstrdup.c' l='28' type='char * xstrdup(char * string)'/>
+<def f='codebrowser/locale/programs/xstrdup.c' l='32' ll='36' type='char * xstrdup(char * string)'/>
+<doc f='codebrowser/locale/programs/xstrdup.c' l='30'>/* Return a newly allocated copy of STRING.  */</doc>
+<dec f='codebrowser/support/support.h' l='92' type='char * xstrdup(const char * )'/>
+<use f='codebrowser/support/support_format_address_family.c' l='29' u='c' c='support_format_address_family'/>
+<use f='codebrowser/support/support_format_address_family.c' l='31' u='c' c='support_format_address_family'/>
+<use f='codebrowser/support/support_format_address_family.c' l='33' u='c' c='support_format_address_family'/>
+<use f='codebrowser/support/support_format_address_family.c' l='35' u='c' c='support_format_address_family'/>
+<use f='codebrowser/support/support_format_herrno.c' l='44' u='c' c='support_format_herrno'/>
+<def f='codebrowser/support/xstrdup.c' l='23' ll='30' type='char * xstrdup(const char * s)'/>

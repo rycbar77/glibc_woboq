@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/link.h' l='381' type='int __dl_iterate_phdr(int (*)(struct dl_phdr_info *, size_t, void *) callback, void * data)'/>
+<dec f='codebrowser/include/link.h' l='384' type='int __dl_iterate_phdr(int (*)(struct dl_phdr_info *, size_t, void *) , void * )'/>
+<use f='codebrowser/include/link.h' l='384' c='__dl_iterate_phdr'/>
+<def f='codebrowser/elf/dl-iteratephdr.c' l='30' ll='84' type='int __dl_iterate_phdr(int (*)(struct dl_phdr_info *, size_t, void *) callback, void * data)'/>
+<use f='codebrowser/elf/dl-iteratephdr.c' l='87' c='dl_iterate_phdr'/>
+<use f='codebrowser/gmon/gmon.c' l='403' u='c' c='write_gmon'/>

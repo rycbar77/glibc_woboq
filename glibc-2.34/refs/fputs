@@ -1,0 +1,43 @@
+<dec f='codebrowser/libio/stdio.h' l='649' type='int fputs(const char *restrict __s, FILE *restrict __stream)'/>
+<dec f='codebrowser/include/stdio.h' l='200' type='int fputs(const char *restrict , FILE *restrict )'/>
+<use f='codebrowser/include/stdio.h' l='200' c='fputs'/>
+<doc f='codebrowser/libio/stdio.h' l='645'>/* Write a string to STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/elf/cache.c' l='177' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='180' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='186' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='189' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='192' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='195' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='198' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='201' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='204' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='207' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='210' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='213' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='217' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='220' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='223' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='226' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='229' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='232' u='c' c='print_entry'/>
+<use f='codebrowser/elf/cache.c' l='306' u='c' c='print_extensions'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='666' u='c' c='do_print_human'/>
+<use f='codebrowser/iconv/iconv_prog.c' l='769' u='c' c='print_known_names'/>
+<def f='codebrowser/libio/iofputs.c' l='45' macro='1' type='int fputs(const char * , FILE * )'/>
+<use f='codebrowser/locale/programs/locale.c' l='837' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='854' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='860' u='c' c='print_item'/>
+<use f='codebrowser/locale/programs/locale.c' l='1102' u='c' c='setlocale_diagnostics'/>
+<use f='codebrowser/malloc/malloc.c' l='5605' u='c' c='__malloc_info'/>
+<use f='codebrowser/malloc/malloc.c' l='5763' u='c' c='__malloc_info'/>
+<use f='codebrowser/malloc/memusage.c' l='905' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='914' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='922' u='c' c='dest'/>
+<use f='codebrowser/malloc/memusage.c' l='928' u='c' c='dest'/>
+<use f='codebrowser/support/echo-container.c' l='30' u='c' c='main'/>
+<use f='codebrowser/support/shell-container.c' l='81' u='c' c='echo_func'/>
+<use f='codebrowser/support/support_test_compare_blob.c' l='45' u='c' c='report_blob'/>
+<use f='codebrowser/support/support_test_compare_string.c' l='46' u='c' c='report_string'/>

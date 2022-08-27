@@ -1,0 +1,4 @@
+<dec f='codebrowser/libio/stdio.h' l='265' type='FILE * fdopen(int __fd, const char * __modes)'/>
+<doc f='codebrowser/libio/stdio.h' l='264'>/* Create a new stream that refers to an existing system file descriptor.  */</doc>
+<use f='codebrowser/elf/sotruss-lib.c' l='114' u='c' c='init'/>
+<def f='codebrowser/libio/iofdopen.c' l='170' macro='1' type='FILE * fdopen(int , const char * )'/>

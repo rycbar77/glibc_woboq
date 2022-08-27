@@ -1,0 +1,7 @@
+<dec f='codebrowser/string/envz.h' l='63' type='void envz_remove(char **restrict __envz, size_t *restrict __envz_len, const char *restrict __name)'/>
+<dec f='codebrowser/include/envz.h' l='8' type='void envz_remove(char **restrict , size_t *restrict , const char *restrict )'/>
+<use f='codebrowser/include/envz.h' l='8' c='envz_remove'/>
+<def f='codebrowser/string/envz.c' l='76' ll='82' type='void envz_remove(char ** envz, size_t * envz_len, const char * name)'/>
+<use f='codebrowser/string/envz.c' l='94' u='c' c='envz_add'/>
+<doc f='codebrowser/string/envz.c' l='75'>/* Remove the entry for NAME from ENVZ &amp; ENVZ_LEN, if any.  */</doc>
+<doc f='codebrowser/string/envz.h' l='62'>/* Remove the entry for NAME from ENVZ &amp; ENVZ_LEN, if any.  */</doc>

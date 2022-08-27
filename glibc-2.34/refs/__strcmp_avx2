@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='477' type='int __strcmp_avx2(const char * , const char * )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/ifunc-impl-list.c' l='477' u='r' c='__libc_ifunc_impl_list'/>
+<dec f='codebrowser/sysdeps/x86_64/multiarch/strcmp.c' l='32' macro='1' type='int __strcmp_avx2(const char * , const char * )'/>
+<use f='codebrowser/sysdeps/x86_64/multiarch/strcmp.c' l='54' macro='1' u='r' c='strcmp_ifunc_selector'/>

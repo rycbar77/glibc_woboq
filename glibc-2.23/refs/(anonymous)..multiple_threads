@@ -1,0 +1,19 @@
+<dec f='codebrowser/sysdeps/x86_64/nptl/tls.h' l='59' type='int'/>
+<offset>192</offset>
+<use f='codebrowser/elf/dl-close.c' l='518' macro='1' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-open.c' l='132' macro='1' c='add_to_global'/>
+<use f='codebrowser/elf/dl-scope.c' l='30' macro='1' c='_dl_scope_free'/>
+<use f='codebrowser/elf/dl-sym.c' l='106' macro='1' c='do_sym'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='98' u='r' c='pthread_cancel'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='98' u='r' c='pthread_cancel'/>
+<use f='codebrowser/nptl/pthread_cancel.c' l='98' u='r' c='pthread_cancel'/>
+<use f='codebrowser/nptl/allocatestack.c' l='421' u='w' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='557' u='w' c='allocate_stack'/>
+<use f='codebrowser/nptl/pthread_create.c' l='709' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='709' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='709' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_routines.c' l='89' macro='1' c='timer_helper_thread'/>
+<use f='codebrowser/elf/dl-runtime.c' l='101' macro='1' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='115' macro='1' c='_dl_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='225' macro='1' c='_dl_profile_fixup'/>
+<use f='codebrowser/elf/dl-runtime.c' l='236' macro='1' c='_dl_profile_fixup'/>

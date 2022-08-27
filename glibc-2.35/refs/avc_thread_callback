@@ -1,0 +1,7 @@
+<def f='include/selinux/avc.h' l='152' ll='158'/>
+<use f='include/selinux/avc.h' l='202' c='avc_init'/>
+<size>16</size>
+<mbr r='avc_thread_callback::func_create_thread' o='0' t='void *(*)(void (*)(void))'/>
+<mbr r='avc_thread_callback::func_stop_thread' o='64' t='void (*)(void *)'/>
+<use f='codebrowser/nscd/selinux.c' l='101'/>
+<size>16</size>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/grp.h' l='51' macro='1' type='enum nss_status _nss_files_initgroups_dyn(const char * user, gid_t group, long * start, long * size, gid_t ** groupsp, long limit, int * errnop)'/>
+<dec f='codebrowser/include/nss_files.h' l='138' macro='1' type='enum nss_status _nss_files_initgroups_dyn(const char * , __gid_t , long * , long * , __gid_t ** , long , int * )'/>
+<dec f='codebrowser/nss/function.def' l='71' macro='1' type='enum nss_status _nss_files_initgroups_dyn(const char * , gid_t , long * , long * , gid_t ** , long , int * )'/>
+<use f='codebrowser/nss/function.def' l='71' macro='1' c='_nss_files_initgroups_dyn'/>
+<def f='codebrowser/nss/nss_files/files-initgroups.c' l='31' ll='129' type='enum nss_status _nss_files_initgroups_dyn(const char * user, gid_t group, long * start, long * size, gid_t ** groupsp, long limit, int * errnop)'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/sysdeps/pthread/threads.h' l='106' type='void thrd_exit(int __res)'/>
+<doc f='codebrowser/sysdeps/pthread/threads.h' l='104'>/* Terminate current thread execution, cleaning up any thread local
+   storage and freeing resources.  Returns the value specified in __RES.  */</doc>
+<def f='codebrowser/sysdeps/pthread/thrd_exit.c' l='28' macro='1' type='void thrd_exit(int )'/>

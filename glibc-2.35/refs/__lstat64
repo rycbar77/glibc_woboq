@@ -1,0 +1,12 @@
+<dec f='codebrowser/include/sys/stat.h' l='37' type='int __lstat64(const char * __file, struct stat64 * __buf)'/>
+<dec f='codebrowser/include/sys/stat.h' l='45' type='int __lstat64(const char * , struct stat64 * )'/>
+<use f='codebrowser/include/sys/stat.h' l='45' c='__lstat64'/>
+<use f='codebrowser/iconv/gconv_parseconfdir.h' l='35' u='c' c='gconv_parseconfdir'/>
+<use f='codebrowser/inet/rcmd.c' l='478' macro='1' u='c' c='iruserfopen'/>
+<use f='codebrowser/sysdeps/posix/tempname.c' l='194' macro='1' u='c' c='try_nocreate'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='259' macro='1' u='c' c='__getcwd_generic'/>
+<use f='codebrowser/sysdeps/posix/getcwd.c' l='264' macro='1' u='c' c='__getcwd_generic'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/lstat64.c' l='27' macro='1' type='int __lstat64(const char * file, struct stat64 * buf)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lstat64.c' l='43' c='lstat64'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lstat64.c' l='49' c='__lstat'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lstat64.c' l='50' c='lstat'/>

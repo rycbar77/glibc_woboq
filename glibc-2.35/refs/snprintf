@@ -1,0 +1,57 @@
+<dec f='codebrowser/libio/stdio.h' l='378' type='int snprintf(char *restrict __s, size_t __maxlen, const char *restrict __format)'/>
+<doc f='codebrowser/libio/stdio.h' l='377'>/* Maximum chars of output to write in MAXLEN.  */</doc>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='54' macro='1' u='c' c='_nss_db_gethostton_r'/>
+<use f='codebrowser/nss/nss_files/files-ethers.c' l='60' macro='1' u='c' c='_nss_db_getntohost_r'/>
+<use f='codebrowser/nss/nss_files/files-grp.c' l='33' macro='1' u='c' c='_nss_db_getgrnam_r'/>
+<use f='codebrowser/nss/nss_files/files-grp.c' l='40' macro='1' u='c' c='_nss_db_getgrgid_r'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='38' macro='1' u='c' c='_nss_db_getprotobyname_r'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='42' macro='1' u='c' c='_nss_db_getprotobynumber_r'/>
+<use f='codebrowser/nss/nss_files/files-pwd.c' l='33' macro='1' u='c' c='_nss_db_getpwnam_r'/>
+<use f='codebrowser/nss/nss_files/files-pwd.c' l='40' macro='1' u='c' c='_nss_db_getpwuid_r'/>
+<use f='codebrowser/nss/nss_files/files-rpc.c' l='38' macro='1' u='c' c='_nss_db_getrpcbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-rpc.c' l='42' macro='1' u='c' c='_nss_db_getrpcbynumber_r'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='41' macro='1' u='c' c='_nss_db_getservbyname_r'/>
+<use f='codebrowser/nss/nss_files/files-service.c' l='55' macro='1' u='c' c='_nss_db_getservbyport_r'/>
+<use f='codebrowser/nss/nss_files/files-sgrp.c' l='33' macro='1' u='c' c='_nss_db_getsgnam_r'/>
+<use f='codebrowser/nss/nss_files/files-spwd.c' l='33' macro='1' u='c' c='_nss_db_getspnam_r'/>
+<use f='codebrowser/elf/pldd.c' l='107' u='c' c='main'/>
+<use f='codebrowser/elf/pldd.c' l='127' u='c' c='main'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='91' u='c' c='init'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='256' u='c' c='print_enter'/>
+<use f='codebrowser/elf/sotruss-lib.c' l='343' u='c' c='print_exit'/>
+<use f='codebrowser/elf/sprof.c' l='600' u='c' c='load_shobj'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-grp.c' l='110' u='c' c='_nss_hesiod_getgrgid_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='140' u='c' c='_nss_hesiod_getprotobynumber_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-pwd.c' l='108' u='c' c='_nss_hesiod_getpwuid_r'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-service.c' l='143' u='c' c='_nss_hesiod_getservbyport_r'/>
+<use f='codebrowser/locale/programs/ld-address.c' l='484' u='c' c='address_read'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='765' u='c' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='825' u='c' c='insert_weights'/>
+<use f='codebrowser/locale/programs/ld-collate.c' l='3519' u='c' c='collate_read'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='529' u='c' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='544' u='c' c='ctype_finish'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1272' u='c' c='get_character'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1477' u='c' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1481' u='c' c='charclass_ucs4_ellipsis'/>
+<use f='codebrowser/locale/programs/ld-ctype.c' l='1711' u='c' c='find_translit2'/>
+<use f='codebrowser/locale/programs/linereader.c' l='719' u='c' c='get_string'/>
+<use f='codebrowser/nis/nis_error.c' l='82' u='c' c='__GI_nis_sperror_r'/>
+<use f='codebrowser/nis/nis_local_names.c' l='94' u='c' c='__GI_nis_local_principal'/>
+<use f='codebrowser/nis/ypclnt.c' l='85' u='c' c='yp_bind_file'/>
+<use f='codebrowser/nss/getent.c' l='391' u='c' c='ahosts_keys_int'/>
+<use f='codebrowser/nss/getent.c' l='404' u='c' c='ahosts_keys_int'/>
+<use f='codebrowser/resolv/ns_print.c' l='567' u='c' c='ns_sprintrrf'/>
+<def f='codebrowser/stdio-common/snprintf.c' l='37' macro='1' type='int snprintf(char *restrict , size_t , const char *restrict )'/>
+<use f='codebrowser/support/support_become_root.c' l='47' u='c' c='setup_uid_gid_mapping'/>
+<use f='codebrowser/support/support_become_root.c' l='72' u='c' c='setup_uid_gid_mapping'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='136' u='c' c='format_ai_one'/>
+<use f='codebrowser/support/support_format_addrinfo.c' l='153' u='c' c='format_ai_one'/>
+<use f='codebrowser/support/support_process_state.c' l='53' u='c' c='support_process_state_wait'/>
+<use f='codebrowser/timezone/zdump.c' l='791' u='c' c='format_local_time'/>
+<use f='codebrowser/timezone/zdump.c' l='791' u='c' c='format_local_time'/>
+<use f='codebrowser/timezone/zdump.c' l='791' u='c' c='format_local_time'/>
+<use f='codebrowser/timezone/zdump.c' l='791' u='c' c='format_utc_offset'/>
+<use f='codebrowser/timezone/zdump.c' l='791' u='c' c='format_utc_offset'/>
+<use f='codebrowser/timezone/zdump.c' l='791' u='c' c='format_utc_offset'/>
+<use f='codebrowser/timezone/zdump.c' l='791' u='c' c='istrftime'/>
+<use f='codebrowser/timezone/zdump.c' l='791' u='c' c='istrftime'/>

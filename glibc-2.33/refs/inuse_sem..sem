@@ -1,0 +1,6 @@
+<dec f='codebrowser/nptl/semaphoreP.h' l='31' type='sem_t *'/>
+<offset>192</offset>
+<use f='codebrowser/sysdeps/pthread/sem_close.c' l='36' u='r' c='walker'/>
+<use f='codebrowser/sysdeps/pthread/sem_close.c' l='65' u='r' c='sem_close'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='88' u='r' c='check_add_mapping'/>
+<use f='codebrowser/sysdeps/pthread/sem_open.c' l='108' u='w' c='check_add_mapping'/>

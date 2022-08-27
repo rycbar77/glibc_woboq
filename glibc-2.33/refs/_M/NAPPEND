@@ -1,0 +1,7 @@
+<dec f='codebrowser/io/fts.c' l='306'/>
+<use f='codebrowser/io/fts.c' l='447' u='c'/>
+<use f='codebrowser/io/fts.c' l='707' u='c'/>
+<doc f='codebrowser/io/fts.c' l='302'>/*
+ * Special case of &quot;/&quot; at the end of the path so that slashes aren&apos;t
+ * appended which would cause paths to be written as &quot;....//foo&quot;.
+ */</doc>

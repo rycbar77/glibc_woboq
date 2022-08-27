@@ -1,0 +1,6 @@
+<dec f='codebrowser/posix/spawn_int.h' l='84' type='int __spawni(pid_t * pid, const char * path, const posix_spawn_file_actions_t * file_actions, const posix_spawnattr_t * attrp, char *const * argv, char *const * envp, int xflags)'/>
+<use f='codebrowser/posix/spawn.c' l='30' u='c' c='__posix_spawn'/>
+<use f='codebrowser/posix/spawnp.c' l='30' u='c' c='__posix_spawnp'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='428' ll='438' type='int __spawni(pid_t * pid, const char * file, const posix_spawn_file_actions_t * acts, const posix_spawnattr_t * attrp, char *const * argv, char *const * envp, int xflags)'/>
+<doc f='codebrowser/sysdeps/unix/sysv/linux/spawni.c' l='426'>/* Spawn a new process executing PATH with the attributes describes in *ATTRP.
+   Before running the process perform the actions described in FILE-ACTIONS. */</doc>

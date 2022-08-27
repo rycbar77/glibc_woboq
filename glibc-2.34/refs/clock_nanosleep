@@ -1,0 +1,3 @@
+<dec f='codebrowser/time/time.h' l='311' type='int clock_nanosleep(clockid_t __clock_id, int __flags, const struct timespec * __req, struct timespec * __rem)'/>
+<use f='codebrowser/include/time.h' l='34' c='__clock_nanosleep'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/clock_nanosleep.c' l='95' macro='1' type='int clock_nanosleep(clockid_t , int , const struct timespec * , struct timespec * )'/>

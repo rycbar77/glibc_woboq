@@ -1,0 +1,57 @@
+<dec f='codebrowser/time/time.h' l='122' type='__time_t'/>
+<offset>0</offset>
+<doc f='codebrowser/time/time.h' l='122'>/* Seconds.  */</doc>
+<use f='codebrowser/elf/cache.c' l='612' macro='1' u='r' c='search_aux_cache'/>
+<use f='codebrowser/elf/cache.c' l='670' macro='1' u='r' c='add_to_aux_cache'/>
+<use f='codebrowser/locale/loadarchive.c' l='411' macro='1' u='r' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/loadarchive.c' l='411' macro='1' u='r' c='_nl_load_locale_from_archive'/>
+<use f='codebrowser/locale/programs/locarchive.c' l='625' u='w' c='open_archive'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futex-internal.h' l='170' u='r' c='futex_abstimed_wait'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futex-internal.h' l='201' u='r' c='futex_abstimed_wait_cancelable'/>
+<use f='codebrowser/nptl/pthread_clock_gettime.c' l='60' u='w' c='__pthread_clock_gettime'/>
+<use f='codebrowser/resolv/gai_misc.c' l='365' u='w' c='handle_requests'/>
+<use f='codebrowser/resolv/gai_misc.c' l='370' u='w' c='handle_requests'/>
+<use f='codebrowser/resolv/res_send.c' l='140' u='w' c='evConsTime'/>
+<use f='codebrowser/resolv/res_send.c' l='147' u='w' c='evAddTime'/>
+<use f='codebrowser/resolv/res_send.c' l='147' u='r' c='evAddTime'/>
+<use f='codebrowser/resolv/res_send.c' l='147' u='r' c='evAddTime'/>
+<use f='codebrowser/resolv/res_send.c' l='150' u='w' c='evAddTime'/>
+<use f='codebrowser/resolv/res_send.c' l='158' u='w' c='evSubTime'/>
+<use f='codebrowser/resolv/res_send.c' l='158' u='r' c='evSubTime'/>
+<use f='codebrowser/resolv/res_send.c' l='158' u='r' c='evSubTime'/>
+<use f='codebrowser/resolv/res_send.c' l='164' u='w' c='evSubTime'/>
+<use f='codebrowser/resolv/res_send.c' l='170' u='r' c='evCmpTime'/>
+<use f='codebrowser/resolv/res_send.c' l='170' u='r' c='evCmpTime'/>
+<use f='codebrowser/resolv/res_send.c' l='184' macro='1' u='w' c='evNowTime'/>
+<use f='codebrowser/resolv/res_send.c' l='1147' u='r' c='send_dg'/>
+<use f='codebrowser/sunrpc/svc.c' l='575' u='w' c='__svc_accept_failed'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1830' u='r' c='check_gaiconf_mtime'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='1830' u='r' c='check_gaiconf_mtime'/>
+<use f='codebrowser/sysdeps/posix/sleep.c' l='42' u='r' c='__sleep'/>
+<use f='codebrowser/sysdeps/posix/sleep.c' l='46' u='w' c='__sleep'/>
+<use f='codebrowser/sysdeps/posix/sleep.c' l='47' u='r' c='__sleep'/>
+<use f='codebrowser/sysdeps/posix/sleep.c' l='51' u='w' c='__sleep'/>
+<use f='codebrowser/sysdeps/posix/sleep.c' l='58' u='r' c='__sleep'/>
+<use f='codebrowser/sysdeps/posix/usleep.c' l='26' u='w' c='usleep'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='631' u='w' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/pthread/aio_misc.c' l='636' u='w' c='handle_fildes_io'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/clock.c' l='37' u='r' c='clock'/>
+<use f='codebrowser/sysdeps/posix/clock_getres.c' l='51' u='w' c='hp_timing_getres'/>
+<use f='codebrowser/sysdeps/posix/clock_getres.c' l='68' u='w' c='realtime_getres'/>
+<use f='codebrowser/sysdeps/unix/clock_gettime.c' l='67' u='w' c='hp_timing_gettime'/>
+<use f='codebrowser/sysdeps/unix/clock_gettime.c' l='85' macro='1' u='w' c='realtime_gettime'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='45' macro='1' u='w' c='__futimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/futimes.c' l='46' macro='1' u='w' c='__futimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lutimes.c' l='39' macro='1' u='w' c='lutimes'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/lutimes.c' l='40' macro='1' u='w' c='lutimes'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='322' u='w' c='pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='322' u='r' c='pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='322' u='r' c='pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='327' u='w' c='pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='329' u='r' c='pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='475' u='w' c='pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='475' u='r' c='pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='480' u='w' c='pthread_mutex_timedlock'/>
+<use f='codebrowser/nptl/pthread_mutex_timedlock.c' l='484' u='r' c='pthread_mutex_timedlock'/>
+<use f='codebrowser/time/tzfile.c' l='163' macro='1' u='r' c='__tzfile_read'/>
+<use f='codebrowser/time/tzfile.c' l='185' macro='1' u='r' c='__tzfile_read'/>

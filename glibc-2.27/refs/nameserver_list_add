@@ -1,0 +1,4 @@
+<def f='codebrowser/malloc/dynarray-skeleton.c' l='295' macro='1' type='void nameserver_list_add(struct nameserver_list * list, const struct sockaddr * item)'/>
+<doc f='codebrowser/malloc/dynarray-skeleton.c' l='290'>/* Add ITEM at the end of the array, enlarging it by one element.
+   Mark *LIST as failed if the dynamic array allocation size cannot be
+   increased.  */</doc>

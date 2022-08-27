@@ -1,0 +1,10 @@
+<def f='codebrowser/nptl/descr.h' l='120' ll='124'/>
+<use f='codebrowser/nptl/descr.h' l='378'/>
+<size>4</size>
+<doc f='codebrowser/nptl/descr.h' l='119'>/* Data strcture used to handle thread priority protection.  */</doc>
+<mbr r='priority_protection_data::priomax' o='0' t='int'/>
+<mbr r='priority_protection_data::priomap' o='32' t='unsigned int[]'/>
+<use f='codebrowser/nptl/nptl_free_tcb.c' l='33' c='__nptl_free_tcb'/>
+<size>4</size>
+<use f='codebrowser/nptl/tpp.c' l='57' c='__pthread_tpp_change_priority'/>
+<size>4</size>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/resource/sys/resource.h' l='87' type='int getrusage(__rusage_who_t __who, struct rusage * __usage)'/>
+<doc f='codebrowser/resource/sys/resource.h' l='85'>/* Return resource usage information on process indicated by WHO
+   and put it in *USAGE.  Returns 0 for success, -1 for failure.  */</doc>
+<def f='codebrowser/sysdeps/unix/sysv/linux/getrusage.c' l='58' macro='1' type='int getrusage(enum __rusage_who , struct rusage * )'/>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/dirent/dirent.h' l='162' type='struct dirent * readdir(DIR * __dirp)'/>
+<use f='codebrowser/support/support_wait_for_thread_exit.c' l='36' u='c' c='support_wait_for_thread_exit'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/readdir64.c' l='94' macro='1' type='struct dirent64 * readdir(DIR * )'/>

@@ -1,0 +1,30 @@
+<dec f='codebrowser/sysdeps/nptl/internaltypes.h' l='33' type='int'/>
+<offset>64</offset>
+<doc f='codebrowser/sysdeps/nptl/internaltypes.h' l='32'>/* Various flags like detachstate, scope, etc.  */</doc>
+<use f='codebrowser/nptl/pthread_attr_getdetachstate.c' l='29' u='r' c='__pthread_attr_getdetachstate'/>
+<use f='codebrowser/nptl/pthread_attr_getinheritsched.c' l='30' u='r' c='__pthread_attr_getinheritsched'/>
+<use f='codebrowser/nptl/pthread_attr_getscope.c' l='30' u='r' c='__pthread_attr_getscope'/>
+<use f='codebrowser/nptl/pthread_attr_setdetachstate.c' l='37' u='w' c='__pthread_attr_setdetachstate'/>
+<use f='codebrowser/nptl/pthread_attr_setdetachstate.c' l='39' u='w' c='__pthread_attr_setdetachstate'/>
+<use f='codebrowser/nptl/pthread_attr_setinheritsched.c' l='36' u='w' c='__pthread_attr_setinheritsched'/>
+<use f='codebrowser/nptl/pthread_attr_setinheritsched.c' l='38' u='w' c='__pthread_attr_setinheritsched'/>
+<use f='codebrowser/nptl/pthread_attr_setschedparam.c' l='39' u='w' c='__pthread_attr_setschedparam'/>
+<use f='codebrowser/nptl/pthread_attr_setschedpolicy.c' l='39' u='w' c='__pthread_attr_setschedpolicy'/>
+<use f='codebrowser/nptl/pthread_attr_setscope.c' l='34' u='w' c='__pthread_attr_setscope'/>
+<use f='codebrowser/nptl/pthread_attr_setstack.c' l='53' u='w' c='__pthread_attr_setstack'/>
+<use f='codebrowser/nptl/pthread_attr_setstackaddr.c' l='35' u='w' c='__pthread_attr_setstackaddr'/>
+<use f='codebrowser/nptl/allocatestack.c' l='237' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/pthread_create.c' l='241' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='318' u='r' c='create_thread'/>
+<use f='codebrowser/nptl/pthread_create.c' l='643' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='649' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='679' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='680' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='683' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_create.c' l='688' u='r' c='__pthread_create_2_1'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='53' u='w' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='57' u='w' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_getattr_np.c' l='170' u='w' c='__pthread_getattr_np'/>
+<use f='codebrowser/nptl/pthread_setattr_default_np.c' l='57' u='r' c='__pthread_setattr_default_np'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='101' u='w' c='___timer_create'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/timer_create.c' l='101' u='r' c='___timer_create'/>

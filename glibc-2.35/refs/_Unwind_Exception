@@ -1,0 +1,23 @@
+<use f='codebrowser/sysdeps/generic/unwind.h' l='74'/>
+<def f='codebrowser/sysdeps/generic/unwind.h' l='76' ll='92'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='112' c='_Unwind_RaiseException'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='118'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='120' c='_Unwind_ForcedUnwind'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='125' c='_Unwind_DeleteException'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='129' c='_Unwind_Resume'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='174'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='184' c='_Unwind_SjLj_RaiseException'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='186' c='_Unwind_SjLj_ForcedUnwind'/>
+<use f='codebrowser/sysdeps/generic/unwind.h' l='187' c='_Unwind_SjLj_Resume'/>
+<use f='codebrowser/nptl/descr.h' l='368'/>
+<size>32</size>
+<use f='codebrowser/elf/static-stubs.c' l='31' c='_Unwind_Resume'/>
+<use f='codebrowser/elf/static-stubs.c' l='41' c='__gcc_personality_v0'/>
+<size>32</size>
+<use f='codebrowser/nptl/unwind.c' l='41' c='unwind_stop'/>
+<use f='codebrowser/nptl/unwind.c' l='110' c='unwind_cleanup'/>
+<size>32</size>
+<use f='codebrowser/sysdeps/generic/unwind-resume.c' l='35' c='_Unwind_Resume'/>
+<use f='codebrowser/sysdeps/generic/unwind-resume.c' l='42' macro='1' c='__gcc_personality_v0'/>
+<use f='codebrowser/sysdeps/generic/unwind-resume.c' l='48' c='_Unwind_ForcedUnwind'/>
+<size>32</size>

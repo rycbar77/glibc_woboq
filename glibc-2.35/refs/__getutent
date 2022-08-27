@@ -1,0 +1,6 @@
+<dec f='codebrowser/include/utmp.h' l='11' type='struct utmp * __getutent()'/>
+<dec f='codebrowser/include/utmp.h' l='12' type='struct utmp * __getutent()'/>
+<use f='codebrowser/include/utmp.h' l='12' c='__getutent'/>
+<def f='codebrowser/login/getutent.c' l='26' ll='42' type='struct utmp * __getutent()'/>
+<use f='codebrowser/login/getutent.c' l='44' c='getutent'/>
+<use f='codebrowser/login/getutxent.c' l='24' u='c' c='getutxent'/>

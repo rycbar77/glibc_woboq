@@ -1,0 +1,7 @@
+<dec f='codebrowser/include/dlfcn.h' l='52' type='void * __libc_dlopen_mode(const char * __name, int __mode)'/>
+<def f='codebrowser/elf/dl-libc.c' l='150' ll='163' type='void * __libc_dlopen_mode(const char * name, int mode)'/>
+<doc f='codebrowser/elf/dl-libc.c' l='148'>/* ... and these functions call dlerror_run. */</doc>
+<use f='codebrowser/elf/rtld_static_init.c' l='39' u='r'/>
+<use f='codebrowser/iconv/gconv_dl.c' l='114' macro='1' u='c' c='__gconv_find_shlib'/>
+<use f='codebrowser/inet/idna.c' l='52' macro='1' u='c' c='functions_allocate'/>
+<use f='codebrowser/nss/nss_module.c' l='191' macro='1' u='c' c='module_load'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/include/nss_files.h' l='121' type='int _nss_files_parse_protoent(char * , void * , struct parser_data * , size_t , int * )'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='38' macro='1' u='c' c='_nss_db_getprotobyname_r'/>
+<use f='codebrowser/nss/nss_files/files-proto.c' l='42' macro='1' u='c' c='_nss_db_getprotobynumber_r'/>
+<def f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='40' macro='1' type='int _nss_files_parse_protoent(char * line, void * generic_result, struct parser_data * data, size_t datalen, int * errnop)'/>
+<use f='codebrowser/hesiod/nss_hesiod/hesiod-proto.c' l='100' macro='1' u='c' c='lookup'/>

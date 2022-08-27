@@ -1,0 +1,21 @@
+<dec f='codebrowser/sysdeps/generic/aio_misc.h' l='77' type='struct requestlist *'/>
+<offset>128</offset>
+<use f='codebrowser/rt/aio_misc.c' l='190' u='r' c='__aio_find_req'/>
+<use f='codebrowser/rt/aio_misc.c' l='211' u='r' c='__aio_find_req_fd'/>
+<use f='codebrowser/rt/aio_misc.c' l='232' u='w' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='232' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='234' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='235' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='236' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='241' u='w' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='245' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='246' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='249' u='w' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='249' u='r' c='__aio_remove_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='348' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='401' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='408' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='408' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='410' u='w' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='411' u='r' c='__aio_enqueue_request'/>
+<use f='codebrowser/rt/aio_misc.c' l='412' u='r' c='__aio_enqueue_request'/>

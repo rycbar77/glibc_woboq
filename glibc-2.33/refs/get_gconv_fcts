@@ -1,0 +1,16 @@
+<def f='codebrowser/wcsmbs/wcsmbsload.h' l='67' ll='77' type='const struct gconv_fcts * get_gconv_fcts(struct __locale_data * data)'/>
+<doc f='codebrowser/wcsmbs/wcsmbsload.h' l='65'>/* Check whether the LC_CTYPE locale changed since the last call.
+   Update the pointers appropriately.  */</doc>
+<use f='codebrowser/stdlib/mblen.c' l='45' u='c' c='mblen'/>
+<use f='codebrowser/stdlib/mbtowc.c' l='47' u='c' c='mbtowc'/>
+<use f='codebrowser/stdlib/wctomb.c' l='46' u='c' c='wctomb'/>
+<use f='codebrowser/wcsmbs/btowc.c' l='47' u='c' c='__btowc'/>
+<use f='codebrowser/wcsmbs/mbrtoc16.c' l='88' u='c' c='mbrtoc16'/>
+<use f='codebrowser/wcsmbs/mbrtowc.c' l='70' u='c' c='__mbrtowc'/>
+<use f='codebrowser/wcsmbs/mbsnrtowcs.c' l='63' u='c' c='__mbsnrtowcs'/>
+<use f='codebrowser/wcsmbs/mbsrtowcs_l.c' l='57' u='c' c='__mbsrtowcs_l'/>
+<use f='codebrowser/wcsmbs/wcrtomb.c' l='66' u='c' c='__wcrtomb'/>
+<use f='codebrowser/wcsmbs/wcsmbsload.c' l='222' u='c' c='__wcsmbs_clone_conv'/>
+<use f='codebrowser/wcsmbs/wcsnrtombs.c' l='61' u='c' c='__wcsnrtombs'/>
+<use f='codebrowser/wcsmbs/wcsrtombs.c' l='53' u='c' c='__wcsrtombs'/>
+<use f='codebrowser/wcsmbs/wctob.c' l='60' u='c' c='wctob'/>

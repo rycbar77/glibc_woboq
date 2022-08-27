@@ -1,0 +1,8 @@
+<def f='include/linux/fanotify.h' l='157' ll='160'/>
+<size>8</size>
+<doc f='include/linux/fanotify.h' l='153'>/*
+ * This structure is used for info records of type FAN_EVENT_INFO_TYPE_PIDFD.
+ * It holds a pidfd for the pid that was responsible for generating an event.
+ */</doc>
+<mbr r='fanotify_event_info_pidfd::hdr' o='0' t='struct fanotify_event_info_header'/>
+<mbr r='fanotify_event_info_pidfd::pidfd' o='32' t='__s32'/>

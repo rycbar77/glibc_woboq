@@ -1,0 +1,13 @@
+<dec f='codebrowser/nptl/pthreadP.h' l='208' type='size_t'/>
+<doc f='codebrowser/nptl/pthreadP.h' l='207'>/* Size and alignment of static TLS block.  */</doc>
+<def f='codebrowser/nptl/nptl-init.c' l='48' type='size_t'/>
+<use f='codebrowser/nptl/nptl-init.c' l='285' u='a' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='292' u='w' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='292' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='292' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='310' u='r' c='__pthread_initialize_minimal_internal'/>
+<use f='codebrowser/nptl/nptl-init.c' l='362' u='r' c='__pthread_get_minstack'/>
+<doc f='codebrowser/nptl/nptl-init.c' l='47'>/* Size and alignment of static TLS block.  */</doc>
+<use f='codebrowser/nptl/allocatestack.c' l='437' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='538' u='r' c='allocate_stack'/>
+<use f='codebrowser/nptl/allocatestack.c' l='768' u='r' c='allocate_stack'/>

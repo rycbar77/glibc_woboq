@@ -1,0 +1,19 @@
+<dec f='codebrowser/resolv/netdb.h' l='100' type='char *'/>
+<offset>0</offset>
+<doc f='codebrowser/resolv/netdb.h' l='100'>/* Official name of host.  */</doc>
+<use f='codebrowser/inet/getnameinfo.c' l='119' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='149' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='172' u='r' c='nrl_domainname'/>
+<use f='codebrowser/inet/getnameinfo.c' l='283' u='r' c='gni_host_inet_name'/>
+<use f='codebrowser/inet/getnameinfo.c' l='284' u='r' c='gni_host_inet_name'/>
+<use f='codebrowser/inet/getnameinfo.c' l='293' u='r' c='gni_host_inet_name'/>
+<use f='codebrowser/inet/getnameinfo.c' l='301' u='r' c='gni_host_inet_name'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='280' u='w' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='304' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='355' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nscd/nscd_gethst_r.c' l='408' u='r' c='nscd_gethst_r'/>
+<use f='codebrowser/nss/digits_dots.c' l='178' u='w' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/nss/digits_dots.c' l='270' u='w' c='__nss_hostname_digits_dots_context'/>
+<use f='codebrowser/resolv/res_hconf.c' l='568' u='r' c='_res_hconf_trim_domains'/>
+<use f='codebrowser/support/support_format_hostent.c' l='60' u='r' c='support_format_hostent'/>
+<use f='codebrowser/sysdeps/posix/getaddrinfo.c' l='236' u='r' c='convert_hostent_to_gaih_addrtuple'/>

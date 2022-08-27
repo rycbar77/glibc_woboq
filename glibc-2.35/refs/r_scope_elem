@@ -1,0 +1,48 @@
+<def f='codebrowser/include/link.h' l='66' ll='72'/>
+<use f='codebrowser/include/link.h' l='144'/>
+<use f='codebrowser/include/link.h' l='148'/>
+<use f='codebrowser/include/link.h' l='262'/>
+<use f='codebrowser/include/link.h' l='267'/>
+<use f='codebrowser/include/link.h' l='271'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='341'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='583'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='1051' c='_dl_lookup_symbol_x'/>
+<use f='codebrowser/sysdeps/generic/ldsodefs.h' l='1085' c='_dl_relocate_object'/>
+<size>16</size>
+<doc f='codebrowser/include/link.h' l='64'>/* Structure to describe a single list of scope elements.  The lookup
+   functions get passed an array of pointers to such structures.  */</doc>
+<mbr r='r_scope_elem::r_list' o='0' t='struct link_map **'/>
+<mbr r='r_scope_elem::r_nlist' o='64' t='unsigned int'/>
+<use f='codebrowser/sysdeps/x86_64/dl-machine.h' l='60' c='elf_machine_runtime_setup'/>
+<size>16</size>
+<use f='codebrowser/elf/dl-close.c' l='316' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='368' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='382' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='383' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='415' c='_dl_close_worker'/>
+<use f='codebrowser/elf/dl-close.c' l='470' c='_dl_close_worker'/>
+<size>16</size>
+<use f='codebrowser/elf/dynamic-link.h' l='45' c='elf_machine_rela'/>
+<use f='codebrowser/elf/dynamic-link.h' l='60' c='elf_machine_lazy_rel'/>
+<use f='codebrowser/elf/do-rel.h' l='43' c='elf_dynamic_do_Rela'/>
+<size>16</size>
+<use f='codebrowser/elf/dl-deps.c' l='543' c='_dl_map_object_deps'/>
+<use f='codebrowser/elf/dl-deps.c' l='543' c='_dl_map_object_deps'/>
+<size>16</size>
+<use f='codebrowser/elf/dl-lookup.c' l='360' c='do_lookup_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='837' c='_dl_lookup_symbol_x'/>
+<use f='codebrowser/elf/dl-lookup.c' l='844' c='_dl_lookup_symbol_x'/>
+<size>16</size>
+<use f='codebrowser/elf/dl-open.c' l='278' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='294' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='295' c='resize_scopes'/>
+<use f='codebrowser/elf/dl-open.c' l='304' c='resize_scopes'/>
+<size>16</size>
+<use f='codebrowser/elf/dl-reloc.c' l='192' c='_dl_relocate_object'/>
+<size>16</size>
+<use f='codebrowser/elf/dl-support.c' l='124'/>
+<size>16</size>
+<use f='codebrowser/elf/rtld.c' l='708' c='find_needed'/>
+<use f='codebrowser/elf/rtld.c' l='2060' c='dl_main'/>
+<use f='codebrowser/elf/rtld.c' l='2947' c='print_statistics'/>
+<size>16</size>

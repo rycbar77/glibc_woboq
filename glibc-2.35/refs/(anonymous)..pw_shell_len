@@ -1,0 +1,8 @@
+<dec f='codebrowser/nscd/nscd-client.h' l='100' type='nscd_ssize_t'/>
+<offset>256</offset>
+<use f='codebrowser/nscd/cachedumper.c' l='193' u='r' c='nscd_print_cache'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='162' u='r' c='nscd_getpw_r'/>
+<use f='codebrowser/nscd/nscd_getpw_r.c' l='198' u='r' c='nscd_getpw_r'/>
+<use f='codebrowser/nscd/pwdcache.c' l='49' u='w'/>
+<use f='codebrowser/nscd/pwdcache.c' l='71' u='w'/>
+<use f='codebrowser/nscd/pwdcache.c' l='232' u='w' c='cache_addpw'/>

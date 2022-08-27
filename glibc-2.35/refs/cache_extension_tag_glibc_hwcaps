@@ -1,0 +1,14 @@
+<dec f='codebrowser/sysdeps/generic/dl-cache.h' l='221' type='1'/>
+<use f='codebrowser/sysdeps/generic/dl-cache.h' l='286' u='a' c='cache_extension_verify'/>
+<use f='codebrowser/elf/cache.c' l='276' u='m' c='glibc_hwcaps_string'/>
+<use f='codebrowser/elf/cache.c' l='280' u='m' c='glibc_hwcaps_string'/>
+<use f='codebrowser/elf/cache.c' l='532' u='r' c='write_extensions'/>
+<doc f='codebrowser/sysdeps/generic/dl-cache.h' l='212'>/* glibc-hwcaps subdirectory information.  An array of uint32_t
+      values, which are indices into the string table.  The strings
+      are sorted lexicographically (according to strcmp).  The extra
+      level of indirection (instead of using string table indices
+      directly) allows the dynamic loader to compute the preference
+      order of the hwcaps names more efficiently.
+
+      For this section, 4-byte alignment is required, and the section
+      size must be a multiple of 4.  */</doc>

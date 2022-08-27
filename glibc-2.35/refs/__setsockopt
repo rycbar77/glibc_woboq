@@ -1,0 +1,17 @@
+<dec f='codebrowser/include/sys/socket.h' l='125' type='int __setsockopt(int __fd, int __level, int __optname, const void * __optval, socklen_t __optlen)'/>
+<dec f='codebrowser/include/sys/socket.h' l='128' type='int __setsockopt(int , int , int , const void * , socklen_t )'/>
+<use f='codebrowser/include/sys/socket.h' l='128' c='__setsockopt'/>
+<doc f='codebrowser/include/sys/socket.h' l='122'>/* Set socket FD&apos;s option OPTNAME at protocol level LEVEL
+   to *OPTVAL (which is OPTLEN bytes long).
+   Returns 0 on success, -1 for errors.  */</doc>
+<use f='codebrowser/resolv/res_enable_icmp.c' l='30' u='c' c='__res_enable_icmp'/>
+<use f='codebrowser/resolv/res_enable_icmp.c' l='32' u='c' c='__res_enable_icmp'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='192' u='c' c='__libc_clntudp_bufcreate'/>
+<use f='codebrowser/sunrpc/clnt_unix.c' l='461' u='c' c='__msgread'/>
+<use f='codebrowser/sunrpc/pmap_rmt.c' l='249' u='c' c='__GI_clnt_broadcast'/>
+<use f='codebrowser/sunrpc/svc_udp.c' l='187' u='c' c='__GI_svcudp_bufcreate'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='347' u='c' c='__msgread'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setipv4sourcefilter.c' l='54' u='c' c='setipv4sourcefilter'/>
+<def f='codebrowser/sysdeps/unix/sysv/linux/setsockopt.c' l='92' ll='103' type='int __setsockopt(int fd, int level, int optname, const void * optval, socklen_t len)'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setsockopt.c' l='105' c='setsockopt'/>
+<use f='codebrowser/sysdeps/unix/sysv/linux/setsourcefilter.c' l='64' u='c' c='setsourcefilter'/>

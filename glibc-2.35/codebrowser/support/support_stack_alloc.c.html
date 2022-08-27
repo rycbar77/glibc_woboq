@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>support_stack_alloc.c source code [codebrowser/support/support_stack_alloc.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/support/support_stack_alloc.c'; var root_path = '../..'; var data_path = '../../../data'; var ecma_script_api_version = 2;</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>support</a>/<a href='support_stack_alloc.c.html'>support_stack_alloc.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Allocate a stack suitable to be used with xclone or xsigaltstack.</i></td></tr>
+<tr><th id="2">2</th><td><i>   Copyright (C) 2021-2022 Free Software Foundation, Inc.</i></td></tr>
+<tr><th id="3">3</th><td><i>   This file is part of the GNU C Library.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   The GNU C Library is free software; you can redistribute it and/or</i></td></tr>
+<tr><th id="6">6</th><td><i>   modify it under the terms of the GNU Lesser General Public</i></td></tr>
+<tr><th id="7">7</th><td><i>   License as published by the Free Software Foundation; either</i></td></tr>
+<tr><th id="8">8</th><td><i>   version 2.1 of the License, or (at your option) any later version.</i></td></tr>
+<tr><th id="9">9</th><td><i></i></td></tr>
+<tr><th id="10">10</th><td><i>   The GNU C Library is distributed in the hope that it will be useful,</i></td></tr>
+<tr><th id="11">11</th><td><i>   but WITHOUT ANY WARRANTY; without even the implied warranty of</i></td></tr>
+<tr><th id="12">12</th><td><i>   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</i></td></tr>
+<tr><th id="13">13</th><td><i>   Lesser General Public License for more details.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>   You should have received a copy of the GNU Lesser General Public</i></td></tr>
+<tr><th id="16">16</th><td><i>   License along with the GNU C Library; if not, see</i></td></tr>
+<tr><th id="17">17</th><td><i>   &lt;<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.  */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="check.h.html">&lt;support/check.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="support.h.html">&lt;support/support.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="xunistd.h.html">&lt;support/xunistd.h&gt;</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../include/stdint.h.html">&lt;stdint.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="24">24</th><td><u>#include <a href="../include/stackinfo.h.html">&lt;stackinfo.h&gt;</a></u></td></tr>
+<tr><th id="25">25</th><td><u>#include <a href="../include/sys/mman.h.html">&lt;sys/mman.h&gt;</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../include/sys/param.h.html">&lt;sys/param.h&gt;</a> /* roundup, MAX  */</u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#<span data-ppcond="28">ifndef</span> <a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-map-flags-generic.h.html#33" data-ref="_M/MAP_NORESERVE">MAP_NORESERVE</a></u></td></tr>
+<tr><th id="29">29</th><td><u># define MAP_NORESERVE 0</u></td></tr>
+<tr><th id="30">30</th><td><u>#<span data-ppcond="28">endif</span></u></td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="31">ifndef</span> <a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-map-flags-generic.h.html#36" data-ref="_M/MAP_STACK">MAP_STACK</a></u></td></tr>
+<tr><th id="32">32</th><td><u># define MAP_STACK 0</u></td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="31">endif</span></u></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><b>struct</b> <a class="type" href="support.h.html#support_stack" title='support_stack' data-ref="support_stack" data-ref-filename="support_stack">support_stack</a></td></tr>
+<tr><th id="36">36</th><td><dfn class="decl def fn" id="support_stack_alloc" title='support_stack_alloc' data-ref="support_stack_alloc" data-ref-filename="support_stack_alloc">support_stack_alloc</dfn> (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col1 decl" id="1size" title='size' data-type='size_t' data-ref="1size" data-ref-filename="1size">size</dfn>)</td></tr>
+<tr><th id="37">37</th><td>{</td></tr>
+<tr><th id="38">38</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col2 decl" id="2pagesize" title='pagesize' data-type='size_t' data-ref="2pagesize" data-ref-filename="2pagesize">pagesize</dfn> = <a class="ref fn" href="../posix/unistd.h.html#sysconf" title='sysconf' data-ref="sysconf" data-ref-filename="sysconf">sysconf</a> (<a class="macro" href="../bits/confname.h.html#134" title="_SC_PAGESIZE" data-ref="_M/_SC_PAGESIZE">_SC_PAGESIZE</a>);</td></tr>
+<tr><th id="39">39</th><td>  <b>if</b> (<a class="local col2 ref" href="#2pagesize" title='pagesize' data-ref="2pagesize" data-ref-filename="2pagesize">pagesize</a> == -<var>1</var>)</td></tr>
+<tr><th id="40">40</th><td>    <a class="macro" href="check.h.html#40" title="support_exit_failure_impl (1, &quot;/media/rr/Data/glibc_source/glibc-2.35/support/support_stack_alloc.c&quot;, 40, &quot;sysconf (_SC_PAGESIZE): %m\n&quot;)" data-ref="_M/FAIL_EXIT1">FAIL_EXIT1</a> (<q>"sysconf (_SC_PAGESIZE): %m\n"</q>);</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td>  <i>/* Always supply at least sysconf (_SC_SIGSTKSZ) space; passing 0</i></td></tr>
+<tr><th id="43">43</th><td><i>     as size means only that much space.  No matter what the number is,</i></td></tr>
+<tr><th id="44">44</th><td><i>     round it up to a whole number of pages.  */</i></td></tr>
+<tr><th id="45">45</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col3 decl" id="3stacksize" title='stacksize' data-type='size_t' data-ref="3stacksize" data-ref-filename="3stacksize">stacksize</dfn> = <a class="macro" href="../misc/sys/param.h.html#93" title="(__builtin_constant_p (pagesize) &amp;&amp; ((((pagesize) - 1) &amp; (pagesize)) == 0) ? (((size + sysconf (_SC_SIGSTKSZ)) + (pagesize) - 1) &amp; ~((pagesize) - 1)) : ((((size + sysconf (_SC_SIGSTKSZ)) + ((pagesize) - 1)) / (pagesize)) * (pagesize)))" data-ref="_M/roundup">roundup</a> (<a class="local col1 ref" href="#1size" title='size' data-ref="1size" data-ref-filename="1size">size</a> + <a class="ref fn" href="../posix/unistd.h.html#sysconf" title='sysconf' data-ref="sysconf" data-ref-filename="sysconf">sysconf</a> (<a class="macro" href="../bits/confname.h.html#535" title="_SC_SIGSTKSZ" data-ref="_M/_SC_SIGSTKSZ">_SC_SIGSTKSZ</a>),</td></tr>
+<tr><th id="46">46</th><td>			      <a class="local col2 ref" href="#2pagesize" title='pagesize' data-ref="2pagesize" data-ref-filename="2pagesize">pagesize</a>);</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td>  <i>/* The guard bands need to be large enough to intercept offset</i></td></tr>
+<tr><th id="49">49</th><td><i>     accesses from a stack address that might otherwise hit another</i></td></tr>
+<tr><th id="50">50</th><td><i>     mapping.  Make them at least twice as big as the stack itself, to</i></td></tr>
+<tr><th id="51">51</th><td><i>     defend against an offset by the entire size of a large</i></td></tr>
+<tr><th id="52">52</th><td><i>     stack-allocated array.  The minimum is 1MiB, which is arbitrarily</i></td></tr>
+<tr><th id="53">53</th><td><i>     chosen to be larger than any "typical" wild pointer offset.</i></td></tr>
+<tr><th id="54">54</th><td><i>     Again, no matter what the number is, round it up to a whole</i></td></tr>
+<tr><th id="55">55</th><td><i>     number of pages.  */</i></td></tr>
+<tr><th id="56">56</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col4 decl" id="4guardsize" title='guardsize' data-type='size_t' data-ref="4guardsize" data-ref-filename="4guardsize">guardsize</dfn> = <a class="macro" href="../misc/sys/param.h.html#93" title="(__builtin_constant_p (pagesize) &amp;&amp; ((((pagesize) - 1) &amp; (pagesize)) == 0) ? ((((((2 * stacksize)&gt;(1024 * 1024))?(2 * stacksize):(1024 * 1024))) + (pagesize) - 1) &amp; ~((pagesize) - 1)) : (((((((2 * stacksize)&gt;(1024 * 1024))?(2 * stacksize):(1024 * 1024))) + ((pagesize) - 1)) / (pagesize)) * (pagesize)))" data-ref="_M/roundup">roundup</a> (<a class="macro" href="../misc/sys/param.h.html#103" title="(((2 * stacksize)&gt;(1024 * 1024))?(2 * stacksize):(1024 * 1024))" data-ref="_M/MAX">MAX</a> (<var>2</var> * <a class="local col3 ref" href="#3stacksize" title='stacksize' data-ref="3stacksize" data-ref-filename="3stacksize">stacksize</a>, <var>1024</var> * <var>1024</var>), <a class="local col2 ref" href="#2pagesize" title='pagesize' data-ref="2pagesize" data-ref-filename="2pagesize">pagesize</a>);</td></tr>
+<tr><th id="57">57</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col5 decl" id="5alloc_size" title='alloc_size' data-type='size_t' data-ref="5alloc_size" data-ref-filename="5alloc_size">alloc_size</dfn> = <a class="local col4 ref" href="#4guardsize" title='guardsize' data-ref="4guardsize" data-ref-filename="4guardsize">guardsize</a> + <a class="local col3 ref" href="#3stacksize" title='stacksize' data-ref="3stacksize" data-ref-filename="3stacksize">stacksize</a> + <a class="local col4 ref" href="#4guardsize" title='guardsize' data-ref="4guardsize" data-ref-filename="4guardsize">guardsize</a>;</td></tr>
+<tr><th id="58">58</th><td>  <i>/* Use MAP_NORESERVE so that RAM will not be wasted on the guard</i></td></tr>
+<tr><th id="59">59</th><td><i>     bands; touch all the pages of the actual stack before returning,</i></td></tr>
+<tr><th id="60">60</th><td><i>     so we know they are allocated.  */</i></td></tr>
+<tr><th id="61">61</th><td>  <em>void</em> *<dfn class="local col6 decl" id="6alloc_base" title='alloc_base' data-type='void *' data-ref="6alloc_base" data-ref-filename="6alloc_base">alloc_base</dfn> = <a class="ref fn" href="xunistd.h.html#xmmap" title='xmmap' data-ref="xmmap" data-ref-filename="xmmap">xmmap</a> (<var>0</var>,</td></tr>
+<tr><th id="62">62</th><td>                            <a class="local col5 ref" href="#5alloc_size" title='alloc_size' data-ref="5alloc_size" data-ref-filename="5alloc_size">alloc_size</a>,</td></tr>
+<tr><th id="63">63</th><td>                            <a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-linux.h.html#35" title="0x0" data-ref="_M/PROT_NONE">PROT_NONE</a>,</td></tr>
+<tr><th id="64">64</th><td>                            <a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-linux.h.html#43" title="0x02" data-ref="_M/MAP_PRIVATE">MAP_PRIVATE</a>|<a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-linux.h.html#57" title="0x20" data-ref="_M/MAP_ANONYMOUS">MAP_ANONYMOUS</a>|<a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-map-flags-generic.h.html#33" title="0x04000" data-ref="_M/MAP_NORESERVE">MAP_NORESERVE</a>|<a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-map-flags-generic.h.html#36" title="0x20000" data-ref="_M/MAP_STACK">MAP_STACK</a>,</td></tr>
+<tr><th id="65">65</th><td>                            -<var>1</var>);</td></tr>
+<tr><th id="66">66</th><td>  <i>/* Some architecture still requires executable stack for the signal return</i></td></tr>
+<tr><th id="67">67</th><td><i>     trampoline, although PF_X could be overridden if PT_GNU_STACK is present.</i></td></tr>
+<tr><th id="68">68</th><td><i>     However since glibc does not export such information with a proper ABI,</i></td></tr>
+<tr><th id="69">69</th><td><i>     it uses the historical permissions.  */</i></td></tr>
+<tr><th id="70">70</th><td>  <em>int</em> <dfn class="local col7 decl" id="7prot" title='prot' data-type='int' data-ref="7prot" data-ref-filename="7prot">prot</dfn> = <a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-linux.h.html#32" title="0x1" data-ref="_M/PROT_READ">PROT_READ</a> | <a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-linux.h.html#33" title="0x2" data-ref="_M/PROT_WRITE">PROT_WRITE</a></td></tr>
+<tr><th id="71">71</th><td>	     | (<a class="macro" href="../sysdeps/x86_64/stackinfo.h.html#37" title="((1 &lt;&lt; 2)|(1 &lt;&lt; 1)|(1 &lt;&lt; 0))" data-ref="_M/DEFAULT_STACK_PERMS">DEFAULT_STACK_PERMS</a> &amp; <a class="macro" href="../elf/elf.h.html#733" title="(1 &lt;&lt; 0)" data-ref="_M/PF_X">PF_X</a> ? <a class="macro" href="../sysdeps/unix/sysv/linux/bits/mman-linux.h.html#34" title="0x4" data-ref="_M/PROT_EXEC">PROT_EXEC</a> : <var>0</var>);</td></tr>
+<tr><th id="72">72</th><td>  <a class="ref fn" href="xunistd.h.html#xmprotect" title='xmprotect' data-ref="xmprotect" data-ref-filename="xmprotect">xmprotect</a> (<a class="local col6 ref" href="#6alloc_base" title='alloc_base' data-ref="6alloc_base" data-ref-filename="6alloc_base">alloc_base</a> + <a class="local col4 ref" href="#4guardsize" title='guardsize' data-ref="4guardsize" data-ref-filename="4guardsize">guardsize</a>, <a class="local col3 ref" href="#3stacksize" title='stacksize' data-ref="3stacksize" data-ref-filename="3stacksize">stacksize</a>, <a class="local col7 ref" href="#7prot" title='prot' data-ref="7prot" data-ref-filename="7prot">prot</a>);</td></tr>
+<tr><th id="73">73</th><td>  <a class="ref fn" href="../string/string.h.html#memset" title='memset' data-ref="memset" data-ref-filename="memset">memset</a> (<a class="local col6 ref" href="#6alloc_base" title='alloc_base' data-ref="6alloc_base" data-ref-filename="6alloc_base">alloc_base</a> + <a class="local col4 ref" href="#4guardsize" title='guardsize' data-ref="4guardsize" data-ref-filename="4guardsize">guardsize</a>, <var>0xA5</var>, <a class="local col3 ref" href="#3stacksize" title='stacksize' data-ref="3stacksize" data-ref-filename="3stacksize">stacksize</a>);</td></tr>
+<tr><th id="74">74</th><td>  <b>return</b> (<b>struct</b> <a class="type" href="support.h.html#support_stack" title='support_stack' data-ref="support_stack" data-ref-filename="support_stack">support_stack</a>) { <a class="local col6 ref" href="#6alloc_base" title='alloc_base' data-ref="6alloc_base" data-ref-filename="6alloc_base">alloc_base</a> + <a class="local col4 ref" href="#4guardsize" title='guardsize' data-ref="4guardsize" data-ref-filename="4guardsize">guardsize</a>, <a class="local col3 ref" href="#3stacksize" title='stacksize' data-ref="3stacksize" data-ref-filename="3stacksize">stacksize</a>, <a class="local col4 ref" href="#4guardsize" title='guardsize' data-ref="4guardsize" data-ref-filename="4guardsize">guardsize</a> };</td></tr>
+<tr><th id="75">75</th><td>}</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td><em>void</em></td></tr>
+<tr><th id="78">78</th><td><dfn class="decl def fn" id="support_stack_free" title='support_stack_free' data-ref="support_stack_free" data-ref-filename="support_stack_free">support_stack_free</dfn> (<b>struct</b> <a class="type" href="support.h.html#support_stack" title='support_stack' data-ref="support_stack" data-ref-filename="support_stack">support_stack</a> *<dfn class="local col8 decl" id="8stack" title='stack' data-type='struct support_stack *' data-ref="8stack" data-ref-filename="8stack">stack</dfn>)</td></tr>
+<tr><th id="79">79</th><td>{</td></tr>
+<tr><th id="80">80</th><td>  <em>void</em> *<dfn class="local col9 decl" id="9alloc_base" title='alloc_base' data-type='void *' data-ref="9alloc_base" data-ref-filename="9alloc_base">alloc_base</dfn> = (<em>void</em> *)((<a class="typedef" href="../stdlib/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t" data-ref-filename="uintptr_t">uintptr_t</a>) <a class="local col8 ref" href="#8stack" title='stack' data-ref="8stack" data-ref-filename="8stack">stack</a>-&gt;<a class="ref field" href="support.h.html#support_stack::stack" title='support_stack::stack' data-ref="support_stack::stack" data-ref-filename="support_stack..stack">stack</a> - <a class="local col8 ref" href="#8stack" title='stack' data-ref="8stack" data-ref-filename="8stack">stack</a>-&gt;<a class="ref field" href="support.h.html#support_stack::guardsize" title='support_stack::guardsize' data-ref="support_stack::guardsize" data-ref-filename="support_stack..guardsize">guardsize</a>);</td></tr>
+<tr><th id="81">81</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t" data-ref-filename="size_t">size_t</span> <dfn class="local col0 decl" id="10alloc_size" title='alloc_size' data-type='size_t' data-ref="10alloc_size" data-ref-filename="10alloc_size">alloc_size</dfn> = <a class="local col8 ref" href="#8stack" title='stack' data-ref="8stack" data-ref-filename="8stack">stack</a>-&gt;<a class="ref field" href="support.h.html#support_stack::size" title='support_stack::size' data-ref="support_stack::size" data-ref-filename="support_stack..size">size</a> + <var>2</var> * <a class="local col8 ref" href="#8stack" title='stack' data-ref="8stack" data-ref-filename="8stack">stack</a>-&gt;<a class="ref field" href="support.h.html#support_stack::guardsize" title='support_stack::guardsize' data-ref="support_stack::guardsize" data-ref-filename="support_stack..guardsize">guardsize</a>;</td></tr>
+<tr><th id="82">82</th><td>  <a class="ref fn" href="xunistd.h.html#xmunmap" title='xmunmap' data-ref="xmunmap" data-ref-filename="xmunmap">xmunmap</a> (<a class="local col9 ref" href="#9alloc_base" title='alloc_base' data-ref="9alloc_base" data-ref-filename="9alloc_base">alloc_base</a>, <a class="local col0 ref" href="#10alloc_size" title='alloc_size' data-ref="10alloc_size" data-ref-filename="10alloc_size">alloc_size</a>);</td></tr>
+<tr><th id="83">83</th><td>}</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2022-Aug-27</em> from project codebrowser revision <em>2.35</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

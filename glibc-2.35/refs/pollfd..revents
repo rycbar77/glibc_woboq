@@ -1,0 +1,29 @@
+<dec f='codebrowser/io/sys/poll.h' l='40' type='short'/>
+<offset>48</offset>
+<doc f='codebrowser/io/sys/poll.h' l='40'>/* Types of events that actually occurred.  */</doc>
+<use f='codebrowser/inet/rcmd.c' l='264' u='r' c='rcmd_af'/>
+<use f='codebrowser/nis/nis_callback.c' l='214' u='w' c='internal_nis_do_callback'/>
+<use f='codebrowser/nscd/connections.c' l='2064' u='r' c='main_loop_poll'/>
+<use f='codebrowser/nscd/connections.c' l='2097' u='r' c='main_loop_poll'/>
+<use f='codebrowser/nscd/connections.c' l='2121' u='r' c='main_loop_poll'/>
+<use f='codebrowser/nscd/connections.c' l='2135' u='r' c='main_loop_poll'/>
+<use f='codebrowser/resolv/res_send.c' l='1034' u='r' c='send_dg'/>
+<use f='codebrowser/resolv/res_send.c' l='1121' u='r' c='send_dg'/>
+<use f='codebrowser/resolv/res_send.c' l='1286' u='r' c='send_dg'/>
+<use f='codebrowser/sunrpc/clnt_udp.c' l='411' u='r' c='clntudp_call'/>
+<use f='codebrowser/sunrpc/svc.c' l='436' u='r' c='__GI_svc_getreq_poll'/>
+<use f='codebrowser/sunrpc/svc.c' l='439' u='r' c='__GI_svc_getreq_poll'/>
+<use f='codebrowser/sunrpc/svc_run.c' l='84' u='w' c='__GI_svc_run'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='341' u='r' c='readtcp'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='341' u='r' c='readtcp'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='342' u='r' c='readtcp'/>
+<use f='codebrowser/sunrpc/svc_tcp.c' l='347' u='r' c='readtcp'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='440' u='r' c='readunix'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='440' u='r' c='readunix'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='441' u='r' c='readunix'/>
+<use f='codebrowser/sunrpc/svc_unix.c' l='446' u='r' c='readunix'/>
+<use f='codebrowser/support/resolv_test.c' l='771' u='r' c='server_thread_udp_single'/>
+<use f='codebrowser/support/resolv_test.c' l='775' u='w' c='server_thread_udp_single'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='35' u='r' c='transfer'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='44' u='w' c='transfer'/>
+<use f='codebrowser/support/support_capture_subprocess.c' l='50' u='w' c='transfer'/>

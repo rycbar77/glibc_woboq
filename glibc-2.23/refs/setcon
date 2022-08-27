@@ -1,0 +1,9 @@
+<dec f='include/selinux/selinux.h' l='44' type='int setcon(const char * con)'/>
+<doc f='include/selinux/selinux.h' l='36'>/* Set the current security context to con.  
+   Note that use of this function requires that the entire application
+   be trusted to maintain any desired separation between the old and new 
+   security contexts, unlike exec-based transitions performed via setexeccon.  
+   When possible, decompose your application and use setexeccon()+execve() 
+   instead. Note that the application may lose access to its open descriptors
+   as a result of a setcon() unless policy allows it to use descriptors opened
+   by the old context. */</doc>
